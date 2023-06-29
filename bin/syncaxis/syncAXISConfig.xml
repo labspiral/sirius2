@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cfg:Configuration xmlns:cfg="syncAXIS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="cfg syncAXIS_1_8.xsd" Version="1.8">
+  <cfg:GeneralConfig>
+    <cfg:ACSController></cfg:ACSController>
+    <cfg:InitialOperationMode>ScannerAndStage</cfg:InitialOperationMode>
+    <cfg:InitialListHandlingMode>ReturnAtOnce</cfg:InitialListHandlingMode>
+	<cfg:DynamicViolationReaction>WarningOnly</cfg:DynamicViolationReaction>
+    <cfg:BaseDirectoryPath> YOUR WORKING  DIRECTORY PATH TO BIN </cfg:BaseDirectoryPath>
+    <cfg:SimulationConfig>
+      <cfg:SimulationMode>true</cfg:SimulationMode>
+      <cfg:SimOutputFileDirectory>[BaseDirectoryPath]/sirius2logs/</cfg:SimOutputFileDirectory>
+      <cfg:BinaryOutput>false</cfg:BinaryOutput>
+      <cfg:DisableFileOutput>false</cfg:DisableFileOutput>
+    </cfg:SimulationConfig>
+    <cfg:LogConfig>
+      <cfg:LogfilePath>[BaseDirectoryPath]/sirius2logs/syncAxisLog.txt</cfg:LogfilePath>
+      <cfg:Loglevel>Warn</cfg:Loglevel>
+      <cfg:EnableConsoleLogging>true</cfg:EnableConsoleLogging>
+      <cfg:EnableFilelogging>true</cfg:EnableFilelogging>
+      <cfg:MaxLogfileSize>26214400</cfg:MaxLogfileSize>
+      <cfg:MaxBackupFileCount>0</cfg:MaxBackupFileCount>
+    </cfg:LogConfig>
+  </cfg:GeneralConfig>
+  <cfg:RTCConfig>
+    <cfg:BoardIdentificationMethod>UseFirstFound</cfg:BoardIdentificationMethod>
+    <cfg:ProgramFileDirectory>[BaseDirectoryPath]</cfg:ProgramFileDirectory>
+    <cfg:Boards>
+      <cfg:RTC6>
+        <cfg:SerialNumber>123456</cfg:SerialNumber>
+        <cfg:HeadA>ScanDevice1</cfg:HeadA>
+        <cfg:HeadB>Stage1</cfg:HeadB>
+      </cfg:RTC6>
+    </cfg:Boards>
+  </cfg:RTCConfig>
+  <cfg:ScanDeviceConfig>
+    <cfg:FieldLimits>
+      <cfg:XDirection Unit="mm" Max="27" Min="-27" />
+      <cfg:YDirection Unit="mm" Max="27" Min="-27" />
+    </cfg:FieldLimits>
+    <cfg:DynamicLimits>
+      <cfg:Velocity Unit="rad/s">90</cfg:Velocity>
+      <cfg:Acceleration Unit="rad/s^2">1.1314e5</cfg:Acceleration>
+      <cfg:Jerk Unit="rad/s^3">4e9</cfg:Jerk>
+    </cfg:DynamicLimits>
+    <cfg:CalculationDynamics>
+      <cfg:MarkDynamics>
+        <cfg:Acceleration Unit="rad/s^2">1.1314e5</cfg:Acceleration>
+        <cfg:Jerk Unit="rad/s^3">4e9</cfg:Jerk>
+      </cfg:MarkDynamics>
+      <cfg:JumpDynamics>
+        <cfg:Acceleration Unit="rad/s^2">1.1314e5</cfg:Acceleration>
+        <cfg:Jerk Unit="rad/s^3">4e9</cfg:Jerk>
+      </cfg:JumpDynamics>
+    </cfg:CalculationDynamics>
+    <cfg:MonitoringLevel>Position</cfg:MonitoringLevel>
+    <cfg:DefaultCorrectionFile>0</cfg:DefaultCorrectionFile>
+    <cfg:FocalLength Unit="mm">100</cfg:FocalLength>
+    <cfg:Delay Unit="s">0.00125</cfg:Delay>
+    <cfg:ScanDeviceList>
+      <cfg:ScanDevice Name="ScanDevice1">
+        <cfg:CorrectionFileList>
+          <cfg:CorrectionFilePath CalibrationFactor="-1"></cfg:CorrectionFilePath>
+        </cfg:CorrectionFileList>
+		    <cfg:BasePartDisplacement>
+          <cfg:Matrix>
+            <cfg:T11>1</cfg:T11>
+            <cfg:T12>0</cfg:T12>
+            <cfg:T21>0</cfg:T21>
+            <cfg:T22>1</cfg:T22>
+          </cfg:Matrix>
+          <cfg:Offset X="0" Y="0" Unit="mm" />
+		    </cfg:BasePartDisplacement>
+        <cfg:Alignment>
+          <cfg:Matrix>
+            <cfg:T11>1</cfg:T11>
+            <cfg:T12>0</cfg:T12>
+            <cfg:T21>0</cfg:T21>
+            <cfg:T22>1</cfg:T22>
+          </cfg:Matrix>
+          <cfg:Offset X="0" Y="0" Unit="mm" />
+        </cfg:Alignment>
+      </cfg:ScanDevice>
+    </cfg:ScanDeviceList>
+  </cfg:ScanDeviceConfig>
+  <cfg:StageConfig>
+    <cfg:MonitoringLevel>Jerk</cfg:MonitoringLevel>
+    <cfg:StageList>
+      <cfg:Stage Name="Stage1">
+        <cfg:FieldLimits>
+          <cfg:XDirection Unit="mm" Max="150" Min="-150" />
+          <cfg:YDirection Unit="mm" Max="150" Min="-150" />
+        </cfg:FieldLimits>
+        <cfg:DynamicLimits>
+          <cfg:Velocity Unit="mm/s">1000</cfg:Velocity>
+          <cfg:Acceleration Unit="mm/s^2">10000</cfg:Acceleration>
+          <cfg:Jerk Unit="mm/s^3">100000</cfg:Jerk>
+        </cfg:DynamicLimits>
+        <cfg:CalculationDynamics>
+          <cfg:Velocity Unit="mm/s">500</cfg:Velocity>
+          <cfg:Acceleration Unit="mm/s^2">5000</cfg:Acceleration>
+          <cfg:Jerk Unit="mm/s^3">50000</cfg:Jerk>
+        </cfg:CalculationDynamics>
+        <cfg:Alignment>
+          <cfg:Matrix>
+            <cfg:T11>1</cfg:T11>
+            <cfg:T12>0</cfg:T12>
+            <cfg:T21>0</cfg:T21>
+            <cfg:T22>1</cfg:T22>
+          </cfg:Matrix>
+          <cfg:Offset X="0" Y="0" Unit="mm" />
+        </cfg:Alignment>
+        <cfg:StageAxisX>0</cfg:StageAxisX>
+        <cfg:StageAxisY>1</cfg:StageAxisY>
+        <cfg:SlecEtherCATNodeID>0</cfg:SlecEtherCATNodeID>
+      </cfg:Stage>
+    </cfg:StageList>
+  </cfg:StageConfig>
+  <cfg:LaserConfig>
+    <cfg:LaserMode>5</cfg:LaserMode>
+    <cfg:LaserOutput Unit="s" HalfPeriod="5e-6" PulseLength="1e-6" />
+    <cfg:LaserStandby Unit="s" HalfPeriod="0.00" PulseLength="0.0" />
+    <cfg:QSwitchDelay Unit="s">0.0</cfg:QSwitchDelay>
+    <cfg:FPulseKillerLength Unit="s">0.0</cfg:FPulseKillerLength>
+    <cfg:LaserControlFlags>
+      <cfg:LaserDisable>false</cfg:LaserDisable>
+      <cfg:PulseSwitchSetting>false</cfg:PulseSwitchSetting>
+      <cfg:LaserSignalPhaseShift>false</cfg:LaserSignalPhaseShift>
+      <cfg:LaserOnSignalActiveLow>false</cfg:LaserOnSignalActiveLow>
+      <cfg:Laser1Laser2SignalActiveLow>false</cfg:Laser1Laser2SignalActiveLow>
+    </cfg:LaserControlFlags>
+    <cfg:AutomaticLaserControl>
+      <cfg:ActiveChannel>
+      </cfg:ActiveChannel>
+      <cfg:AnalogOut1 DefaultOutput="0.5" Format="Factor">
+        <cfg:Shift Unit="s">-0.001</cfg:Shift>
+        <cfg:RadiusFactor RadiusUnit="mm" Enabled="false" />
+        <cfg:VelocityFactor VelocityUnit="mm/s" Enabled="true">
+          <cfg:DataPoint Velocity="0" Factor="0.0"/>
+          <cfg:DataPoint Velocity="400" Factor="1.0"/>
+          <cfg:DataPoint Velocity="4000" Factor="2.0"/>
+        </cfg:VelocityFactor>
+      </cfg:AnalogOut1>
+      <cfg:SpotDistance DefaultOutput="0.005" Unit="mm">
+        <cfg:RadiusFactor RadiusUnit="mm" Enabled="false" />
+        <cfg:VelocityFactor VelocityUnit="mm/s" Enabled="false" />
+      </cfg:SpotDistance>
+    </cfg:AutomaticLaserControl>
+  </cfg:LaserConfig>
+  <cfg:TrajectoryConfig>
+     <cfg:MarkConfig>
+      <cfg:JumpSpeed Unit="mm/s">400</cfg:JumpSpeed>
+      <cfg:MarkSpeed Unit="mm/s">400</cfg:MarkSpeed>
+      <cfg:MinimalMarkSpeed Unit="mm/s">50</cfg:MinimalMarkSpeed>
+      <cfg:LaserSwitchConfig>
+        <cfg:LaserPreTriggerTime Unit="s">0e-6</cfg:LaserPreTriggerTime>
+        <cfg:LaserSwitchOffsetTime Unit="s">-20e-6</cfg:LaserSwitchOffsetTime>
+        <cfg:LaserMinOffTime Unit="s">15.625e-9</cfg:LaserMinOffTime>
+      </cfg:LaserSwitchConfig>
+    </cfg:MarkConfig>
+    <cfg:GeometryConfig>
+      <cfg:MaxBlendRadius Unit="mm">0.75</cfg:MaxBlendRadius>
+      <cfg:ApproxBlendLimit Unit="mm">0.5</cfg:ApproxBlendLimit>
+      <cfg:BlendMode>MinimalBlending</cfg:BlendMode>
+      <cfg:AutoCyclicGeometry>1</cfg:AutoCyclicGeometry>
+      <cfg:SplineConversionLengthLimit Unit="mm">3</cfg:SplineConversionLengthLimit>
+      <cfg:SplineMode>Deactivated</cfg:SplineMode>
+    </cfg:GeometryConfig>
+    <cfg:VectorResolution Unit="mm">0.020</cfg:VectorResolution>
+  </cfg:TrajectoryConfig>
+  <cfg:MotionDecompositionConfig>
+    <cfg:FilterBandwidth>2</cfg:FilterBandwidth>
+    <cfg:HeuristicConfig>
+      <cfg:DynamicReductionFunctions>
+        <cfg:DynamicReductionFunction Units="mm and mm/s">
+          <cfg:DataPoint Length="0.0" Velocity="2000" />
+          <cfg:DataPoint Length="27.0" Velocity="2000" />
+          <cfg:DataPoint Length="27.01" Velocity="700" />
+          <cfg:DataPoint Length="54.0" Velocity="700" />
+        </cfg:DynamicReductionFunction>
+      </cfg:DynamicReductionFunctions>
+    </cfg:HeuristicConfig>
+  </cfg:MotionDecompositionConfig>
+  <cfg:IOConfig>
+    <cfg:DefaultOutputs>
+      <cfg:LaserPinOut Format="Bitpattern" Value="1" />
+      <cfg:AnalogOut1 Format="Factor" Value="0.5" />
+      <cfg:AnalogOut2 Format="Factor" Value="0.5" />
+    </cfg:DefaultOutputs>
+    <cfg:LaserInitSequence>
+      <cfg:SetAnalogOut1 Format="Factor" Value="0.5" />
+      <cfg:SetAnalogOut2 Format="Factor" Value="0.5" />
+      <cfg:SetLaserPinOut Format="Bitpattern" Value="1" />
+    </cfg:LaserInitSequence>
+    <cfg:LaserShutdownSequence>
+      <cfg:SetLaserPinOut Format="Bitpattern" Value="0" />
+      <cfg:SetAnalogOut2 Format="Factor" Value="0.0" />
+      <cfg:SetAnalogOut1 Format="Factor" Value="0.0" />
+    </cfg:LaserShutdownSequence>
+  </cfg:IOConfig>
+</cfg:Configuration>

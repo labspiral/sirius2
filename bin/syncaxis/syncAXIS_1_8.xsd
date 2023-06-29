@@ -1,0 +1,1306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="syncAXIS" version="1.8" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cfg="syncAXIS">
+  <xs:complexType name="SimulationConfigType">
+    <xs:all>
+      <xs:element name="SimulationMode" type="xs:boolean" default="true">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">The SimulationMode parameter determines whether the simulation mode is activated or not. If true, the syncAXIS control instance will not communicate with any Hardware device (except the XL SCAN Dongle) but will, instead, write the trajectory planning results into a text file.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SimOutputFileDirectory" type="xs:string" minOccurs="0" default="">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Directory path for the simulation output files.The name of each simulation outpur file differs according to the signature described in the syncAXIS API manual.}</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BinaryOutput" type="xs:boolean" minOccurs="0" default="false">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Activates writing binary values in the simulation output files.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DisableFileOutput" type="xs:boolean" minOccurs="0" default="false">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Deactivates the writing of simulation output files. Simulations will get much faster. This mode is recommended if not interested in the whole trajectory but the job characteristics only.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="LogConfigType">
+    <xs:all>
+      <xs:element name="LogfilePath" type="xs:string" default="Error.log">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">File path of the log file that is created by the syncAXIS control instance when logging is enabled. If this file already exists, logging information will be appended to the file.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Loglevel" default="Warn">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Sets the logging level. Possible values are "Error", "Warn", "Info", "Debug" and "Trace". Loglevel "Debug" and "Trace" are only available with XL SCAN - Service Dongles.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Error" />
+            <xs:enumeration value="Warn" />
+            <xs:enumeration value="Info" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="EnableConsoleLogging" type="xs:boolean" default="false">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Determines whether console logging will be activated.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EnableFilelogging" type="xs:boolean" default="true">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Determines whether file logging will be activated.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaxLogfileSize" type="xs:positiveInteger" default="5242880" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">The maximum size of a single log file.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaxBackupFileCount" type="xs:nonNegativeInteger" default="10" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Determines how many files to be backed up (by adding a counting integer to the file name) before the actual file will be continuously overwritten.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:simpleType name="IPAddressType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(([01][0-9][0-9]|2[0-4][0-9]|25[0-5]|[0-9][0-9]|[0-9])\.){3}([01][0-9][0-9]|2[0-4][0-9]|25[0-5]|[0-9][0-9]|[0-9])" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="GeneralConfigType">
+    <xs:all>
+      <xs:element name="ACSController" type="cfg:IPAddressType" minOccurs="0" default="127.0.0.1">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">IP address of the ACS Controller EtherCAT network.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="InitialOperationMode" default="ScannerAndStage">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Sets the initial operation mode.  Possible values are ScannerAndStage, ScannerOnly, and StageOnly.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="ScannerAndStage" />
+            <xs:enumeration value="ScannerOnly" />
+            <xs:enumeration value="StageOnly" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="InitialListHandlingMode" default="ReturnAtOnce">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Sets the initial list handling mode. This setting specifies how buffering of the slsc_list_*-functions is handled. Possible values are "ReturnAtOnce" and "RepeatWhileBufferFull". "RepeatWhilePredicate" is only possible via syncAXIS-API.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="ReturnAtOnce" />
+            <xs:enumeration value="RepeatWhileBufferFull" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DynamicViolationReaction" default="WarningOnly">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Defines which reaction occurs automatically, as soon as a certain monitoring criterion (dynamic limits, working field limits) is violated. Possible values are WarningOnly, AbortImmediately, and StopAndReport.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="WarningOnly" />
+            <xs:enumeration value="AbortImmediately" />
+            <xs:enumeration value="StopAndReport" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LogConfig" type="cfg:LogConfigType"> 
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Parameters used for enabling logging and the amount of log message to be recorded.  Warning: the amount of logging may affect the execution.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BaseDirectoryPath" type="xs:string" minOccurs="0" default="">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">This value functions as a macro which can be inserted as '[BaseDirectoryPath]\' with certain configuration file tags (SimOutputFileDirectory, LogfilePath, ProgramFileDirectory. Its purpose is to make folderpath specifications shorter and easier to change.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SimulationConfig" type="cfg:SimulationConfigType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Parameters used for managing the simulation mode of the syste</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:simpleType name="LaserPortType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LaserOnSignal" />
+      <xs:enumeration value="Laser1Signal" />
+      <xs:enumeration value="Laser2Signal" />
+      <xs:enumeration value="FirstPulseKillerSignal" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LaserPortsConfigType">
+    <xs:all>
+      <xs:element name="LaserOn" type="cfg:LaserPortType" default="LaserOnSignal">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Specifies the laser signal for output channel Laser On.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Laser1" type="cfg:LaserPortType" default="Laser1Signal">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Specifies the laser signal for output channel Laser 1.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Laser2" type="cfg:LaserPortType" default="Laser2Signal">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Specifies the laser signal for output channel Laser 2.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:simpleType name="NonNegDouble">
+    <xs:restriction base="xs:double">
+      <xs:minInclusive value="0.0" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="NonNegMin1over64usDouble">
+    <xs:restriction base="xs:double">
+      <xs:minInclusive value="15.625e-9" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Max1sDouble">
+    <xs:restriction base="xs:double">
+      <xs:maxInclusive value="1.0" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="NonNegMax1sDouble">
+    <xs:restriction base="xs:double">
+      <xs:minInclusive value="0.0" />
+      <xs:maxInclusive value="1.0" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Duration">
+    <xs:simpleContent>
+      <xs:extension base="cfg:NonNegDouble">
+        <xs:attribute name="Unit" fixed="s" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DurationMin1over64us">
+    <xs:simpleContent>
+      <xs:extension base="cfg:NonNegMin1over64usDouble">
+        <xs:attribute name="Unit" fixed="s" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DurationMax1s">
+    <xs:simpleContent>
+      <xs:extension base="cfg:NonNegMax1sDouble">
+        <xs:attribute name="Unit" fixed="s" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TimeShift">
+    <xs:simpleContent>
+      <xs:extension base="xs:double">
+        <xs:attribute name="Unit" fixed="s" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TimeShiftMax1s">
+    <xs:simpleContent>
+      <xs:extension base="cfg:Max1sDouble">
+        <xs:attribute name="Unit" fixed="s" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="NonZeroDouble">
+    <xs:restriction base="xs:double">
+      <xs:minInclusive value="0.00001" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="NonZeroLength">
+    <xs:simpleContent>
+      <xs:extension base="cfg:NonZeroDouble">
+        <xs:attribute name="Unit" fixed="mm" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Length">
+    <xs:simpleContent>
+      <xs:extension base="xs:double">
+        <xs:attribute name="Unit" fixed="mm" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Velocity">
+    <xs:simpleContent>
+      <xs:extension base="cfg:NonZeroDouble">
+        <xs:attribute name="Unit" fixed="mm/s" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ZeroVelocity">
+    <xs:simpleContent>
+      <xs:extension base="cfg:NonNegDouble">
+        <xs:attribute name="Unit" fixed="mm/s" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Acceleration">
+    <xs:simpleContent>
+      <xs:extension base="cfg:NonZeroDouble">
+        <xs:attribute name="Unit" fixed="mm/s^2" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Jerk">
+    <xs:simpleContent>
+      <xs:extension base="cfg:NonZeroDouble">
+        <xs:attribute name="Unit" fixed="mm/s^3" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RadVelocity">
+    <xs:simpleContent>
+      <xs:extension base="cfg:NonZeroDouble">
+        <xs:attribute name="Unit" fixed="rad/s" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RadAcceleration">
+    <xs:simpleContent>
+      <xs:extension base="cfg:NonZeroDouble">
+        <xs:attribute name="Unit" fixed="rad/s^2" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RadJerk">
+    <xs:simpleContent>
+      <xs:extension base="cfg:NonZeroDouble">
+        <xs:attribute name="Unit" fixed="rad/s^3" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Angle">
+    <xs:simpleContent>
+      <xs:extension base="xs:double">
+        <xs:attribute name="Unit" fixed="rad" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="PulseConfigType">
+    <xs:attribute name="Unit" fixed="s" type="xs:string" use="optional" />
+    <xs:attribute name="HalfPeriod" use="required">
+      <xs:annotation>
+        <xs:documentation xml:lang="EN">This parameter determines the pulse repetition rate. The Pulse Half Period is half the time between the two consecutive rising edges of the Laser 1 (and/or Laser 2) signal pulses.</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:double">
+          <xs:minInclusive value="0.0" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="PulseLength" use="required">
+      <xs:annotation>
+        <xs:documentation xml:lang="EN">The Pulse Length is the width of the Laser 1 (and/or Laser 2) signal pulses.</xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:double">
+          <xs:minInclusive value="0.0" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="DataPointLengthVelType">
+    <xs:attribute name="Length" type="xs:double" />
+    <xs:attribute name="Velocity" type="xs:double" />
+  </xs:complexType>
+  <xs:complexType name="CharacteristicCurveLengthVelType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">List of data points that define the characteristic curve.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DataPoint" type="cfg:DataPointLengthVelType" minOccurs="2" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="Units" fixed="mm and mm/s" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="LaserSwitchConfigType">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN">Laser Switch Settings</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="LaserPreTriggerTime" type="cfg:TimeShift" default="0">
+         <xs:annotation>
+            <xs:documentation xml:lang="en">Adding a certain time upfront the Laser On gate signal (i.e. shifts the laser on event forward in time while keeping the laser off event).</xs:documentation>
+         </xs:annotation>
+      </xs:element>
+      <xs:element name="LaserSwitchOffsetTime" type="cfg:TimeShiftMax1s" default="-20e-6">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Moving the Laser Off gate signal back in time for positive values. Negative values can be used to compensate for laser response times.</xs:documentation>
+          </xs:annotation>
+      </xs:element>
+      <xs:element name="LaserMinOffTime" type="cfg:DurationMin1over64us" default="1e-6">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Minimum duration the laser must be switched off in between two disjointed mark elements. Jump time will be increased to this minimum if necessary.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="Unit" fixed="s" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:simpleType name="FactorType">
+    <xs:restriction base="xs:double">
+      <xs:minInclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CharacteristicCurveVelocityFactorType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The VelocityFactor is a scaling factor that is multiplied to the output value of that specific Channel dependent on the spot velocity of the laser beam.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DataPoint" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="Velocity" type="cfg:NonNegDouble" use="required" />
+          <xs:attribute name="Factor" type="cfg:FactorType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="Enabled" type="xs:boolean" use="required" />
+    <xs:attribute name="VelocityUnit" fixed="mm/s" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="CharacteristicCurveRadiusFactorType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The RadiusFactor is a scaling factor that is multiplied to the output value of that specific Channel dependent on the excursion radius of the laser beam.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DataPoint" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="Radius" type="cfg:NonNegDouble" use="required" />
+          <xs:attribute name="Factor" type="cfg:FactorType" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="Enabled" type="xs:boolean" use="required" />
+    <xs:attribute name="RadiusUnit" fixed="mm" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="LaserControlFlagsType">
+    <xs:all>
+      <xs:element minOccurs="0" name="LaserDisable" type="xs:boolean" default="false">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Defines whether the laser control signals are active or deactivated.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PulseSwitchSetting" type="xs:boolean" default="false">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Defines whether the Laser1 and Laser2 signals are cut off after the Laser on phase.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LaserSignalPhaseShift" type="xs:boolean" default="false">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Defines whether the Laser1 and Laser2 signals are phase shifted.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LaserOnSignalActiveLow" type="xs:boolean" default="false">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Defines whether the LaserOn signal is low active (true).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Laser1Laser2SignalActiveLow" type="xs:boolean" default="false">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Defines whether the Laser1 / Laser2 signals are low active (true).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LaserPulsesAtRisingEdge" type="xs:boolean" default="false">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">[Experimental] Defines if laser pulses for output synchronisation is at rising or falling edge. If true then it is on rising edge.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OutputSynchronizationOn" type="xs:boolean" default="false">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">[Experimental] Defines whether the RTC6 should synchronize on an external signal.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="ChannelConfigurationTypeShift">
+          <xs:simpleContent>
+            <xs:extension base="xs:double">
+              <xs:attribute name="Unit" fixed="s" type="xs:string" use="optional" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+  <xs:complexType name="ChannelConfigurationAnalogOutType">
+    <xs:all>
+      <xs:element name="Shift" type="cfg:ChannelConfigurationTypeShift" minOccurs="0" default="0.0">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Additional time shift. Currently only n*10us, i.e. multiples of 10us are supported.</xs:documentation>
+          </xs:annotation>
+      </xs:element>
+      <xs:element name="RadiusFactor" type="cfg:CharacteristicCurveRadiusFactorType" />
+      <xs:element name="VelocityFactor" type="cfg:CharacteristicCurveVelocityFactorType" />
+    </xs:all>
+    <xs:attribute name="DefaultOutput" type="cfg:UnitIntervalType" use="required">
+     <xs:annotation>
+        <xs:documentation xml:lang="EN">Default output being multiplied to the maximum value of 10V. The factors caused by the characteristic curves of the respective laser control channel are additionionally multiplied to that value.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Format" fixed="Factor" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="ChannelConfigurationTimeType">
+    <xs:all>
+      <xs:element name="Shift" type="cfg:ChannelConfigurationTypeShift" minOccurs="0" default="0.0">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Additional time shift. Currently only n*10us, i.e. multiples of 10us are supported.</xs:documentation>
+          </xs:annotation>
+      </xs:element>
+      <xs:element name="RadiusFactor" type="cfg:CharacteristicCurveRadiusFactorType" />
+      <xs:element name="VelocityFactor" type="cfg:CharacteristicCurveVelocityFactorType" />
+    </xs:all>
+    <xs:attribute name="DefaultOutput" type="cfg:NonNegDouble" use="required">
+      <xs:annotation>
+        <xs:documentation xml:lang="EN">Default output which is multiplied with the factors defined by the characteristic curves of the respective laser control channel.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Unit" fixed="s" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="ChannelConfigurationDistanceType">
+    <xs:all>
+      <xs:element name="Shift" type="cfg:ChannelConfigurationTypeShift" minOccurs="0" default="0.0">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Additional time shift. Currently only n*10us, i.e. multiples of 10us are supported.</xs:documentation>
+          </xs:annotation>
+      </xs:element>
+      <xs:element name="RadiusFactor" type="cfg:CharacteristicCurveRadiusFactorType" />
+      <xs:element name="VelocityFactor" type="cfg:CharacteristicCurveVelocityFactorType" />
+    </xs:all>
+    <xs:attribute name="DefaultOutput" type="cfg:NonNegDouble" use="required">
+       <xs:annotation>
+        <xs:documentation xml:lang="EN">Default spot distance in [mm]. The factors caused by the characteristic curves of the respective laser control channel are being multiplied to the spot velocity information, i.e. causing an inverse scaling of the actual spot distance (but linear to the deposed laser energy).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Unit" fixed="mm" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:simpleType name="ChannelType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AnalogOut1" />
+      <xs:enumeration value="AnalogOut2" />
+      <xs:enumeration value="PulseLength" />
+      <xs:enumeration value="HalfPeriod" />
+      <xs:enumeration value="SpotDistance" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ActiveChannelType">
+    <xs:sequence>
+      <xs:element name="Channel" type="cfg:ChannelType" minOccurs="0" maxOccurs="2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LaserConfigType">
+    <xs:all>
+      <xs:element name="LaserMode" default="0" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Defines the RTC Laser Mode of the syncAXIS control instance.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:nonNegativeInteger">
+            <xs:maxInclusive value="6" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LaserPortCfg" type="cfg:LaserPortsConfigType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Sets the output ports of the various laser signals.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LaserOutput" type="cfg:PulseConfigType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Defines the pulse train of the laser control output during 'Laser is on' which is dependent on the Laser Mode.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LaserStandby" type="cfg:PulseConfigType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Defines the pulse train of the laser control output during the 'laser is off which dependent on the Laser Mode.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="QSwitchDelay" type="cfg:Duration" default="0" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Defines the delay of the Q-Switch signal.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FPulseKillerLength" type="cfg:Duration" default="0" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Defines the length of the FirstPulseKiller signal.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LaserControlFlags" type="cfg:LaserControlFlagsType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Defines the laser control flags enabled.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AutomaticLaserControl">
+        <xs:annotation>
+           <xs:documentation xml:lang="en">All automatic laser control settings are defines within this parent tag.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="ActiveChannel" type="cfg:ActiveChannelType">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">Defines which outputs (analog outputs, spot distance and laser signals) are adapted (based on radius and velocity) automatically via channels.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="AnalogOut1" type="cfg:ChannelConfigurationAnalogOutType" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">Defines how the voltage of the Analog Out 1 port is adapted based on radius and velocity.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="AnalogOut2" type="cfg:ChannelConfigurationAnalogOutType" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">Defines how the voltage of the Analog Out 2 port is adapted based on radius and velocity.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="PulseLength" type="cfg:ChannelConfigurationTimeType" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">Defines how the pulse length is adapted based on radius and velocity.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="HalfPeriod" type="cfg:ChannelConfigurationTimeType" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">Defines how the pulse half period is adapted based on radius and velocity.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="SpotDistance" type="cfg:ChannelConfigurationDistanceType" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">Defines how the spot distance is adapted based on radius and velocity.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="MarkConfigType">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN">Mark Configuration Settings</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="JumpSpeed" type="cfg:Velocity" default="400">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Maximum velocity per axis of the virtual laser focal point (if the laser was on) relative to the surface of the material being processed during a jump.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MarkSpeed" type="cfg:Velocity" default="400">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Desired velocity of the laser focal point along a mark vector relative to the surface of the material being processed.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MinimalMarkSpeed" type="cfg:ZeroVelocity" default="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Sets a lower limit for mark velocity reduction when calculating blend arc between adjacent mark vectors.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LaserSwitchConfig" type="cfg:LaserSwitchConfigType" />
+    </xs:all>
+    <xs:attribute name="VelocityUnit" fixed="mm/s" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="GeometryConfigType">
+      <xs:annotation>
+      <xs:documentation xml:lang="EN">Geometry Configuration Settings</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="MaxBlendRadius" type="cfg:Length" default="1.0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Maximum radius of range circle for blending between two adjacent mark vectors. Limited by the minimum of half the length of the two adjacent vectors</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ApproxBlendLimit" type="cfg:Length" default="0.5">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Maximum allowed minimum distance between the blend arc of two adjacent mark vectors and their connecting vertex.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BlendMode" default="MinimalBlending">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Deactivated = No blendings are used instead a skywriting jump will be inserted between adjacent vectors; VariableBlending = Blending will be adjusted by velocity constrained by MaxVectorBlendRadius and VectorApproxLimit; MinimalBlending  = If true trajectory planning will use blends between adjacent vectors with minimal distance to their connecting vertex; FixedBlending = Deprecated. Converts consecutive lines into a composite spline.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Deactivated" />
+            <xs:enumeration value="VariableBlending" />
+            <xs:enumeration value="MinimalBlending" />
+            <xs:enumeration value="FixedBlending" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="AutoCyclicGeometry" type="xs:boolean" default="false">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">If set "true" and is applied if either BlendMode is in "FixedBlending" or SplineMode is "Interpolating" or "Approximating". Treats closed splines as cyclic splines (all edges are smooth). Deprecated setting, it is recommended not to change this.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SplineConversionLengthLimit" type="cfg:Length" default="0.5">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Maximum length of vectors to be treated as spline points. Deprecated setting, it is recommended not to change this.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SplineMode" default="Deactivated">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Configures how polygons are converted to a spline path: Deactivated = polygons do not get converted into splines; Interpolating = every polygon point is interpolated; Approximating = polygon is approximated using the ApproxLimit parameter. Deprecated setting, it is recommended to leave in Deactivated.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Deactivated" />
+            <xs:enumeration value="Interpolating" />
+            <xs:enumeration value="Approximating" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="DynamicReductionFunctionType">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="DynamicReductionFunction" type="cfg:CharacteristicCurveLengthVelType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Velocity reduction curve. It is possible to provide a list of curves, which can be selected via API command.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HeuristicConfigType">
+    <xs:all>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">Having long vectors exceeding the length of half the scan head field of view with high velocities, the stage might experience a higher dynamic load than it is capable of. For those cases, a function in form of a characteristic curve of DataPoints containing length and velocity information can be defined to reduce the combined velocity accordingly.</xs:documentation>
+      </xs:annotation>
+      <xs:element name="DynamicReductionFunctions" type="cfg:DynamicReductionFunctionType" minOccurs="0" />
+      <xs:element name="HeuristicForJumpsOnly" type="xs:boolean" minOccurs="0" default="false" />
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="TrajectoryConfigType">
+    <xs:all>
+      <xs:element name="MarkConfig" type="cfg:MarkConfigType" />
+      <xs:element name="GeometryConfig" type="cfg:GeometryConfigType" />
+      <xs:element name="VectorResolution" type="cfg:NonZeroLength" default="0.02">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Sets a global minimum length to be used when identifying whether two points are equal.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  
+
+
+  
+  
+  <xs:complexType name="RangeType">
+    <xs:attribute name="Unit" fixed="mm" type="xs:string" use="optional" />
+    <xs:attribute name="Max" type="xs:double" use="required" />
+    <xs:attribute name="Min" type="xs:double" use="required" />
+  </xs:complexType>
+  <xs:complexType name="RectangleType">
+    <xs:all>
+      <xs:element name="XDirection" type="cfg:RangeType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Maximal range for X in mm</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="YDirection" type="cfg:RangeType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Maximal range for Y in mm</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZDirection" type="cfg:RangeType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Reserved</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="StageDynamicLimitsType">
+    <xs:all>
+      <xs:element name="Velocity" default="1000.0" type="cfg:Velocity">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The stages maximal velocity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Acceleration" default="10000.0" type="cfg:Acceleration">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The stages maximal acceleration.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Jerk" default="100000.0" type="cfg:Jerk">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The stages maximal jerk.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="ScanHeadDynamicLimitsType">
+    <xs:all>
+      <xs:element name="Velocity" default="90.0" type="cfg:RadVelocity">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The maximal velocity of the scan device.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Acceleration" default="1.1314e5" type="cfg:RadAcceleration">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The maximal acceleration of the scan device.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Jerk" default="4e9" type="cfg:RadJerk">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The maximal jerk of the scan device.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="ScanHeadDynamicsType">
+    <xs:all>
+      <xs:element name="Acceleration" default="1.1314e5" type="cfg:RadAcceleration">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The acceleration of the scan device for trajectory planning.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Jerk" default="4e9" type="cfg:RadJerk">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The jerk of the scan device for trajectory planning.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="ScanHeadCalculationDynamicsType">
+    <xs:all>
+      <xs:element name="MarkDynamics" type="cfg:ScanHeadDynamicsType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The mark dynamics (acceleration and jerk) of the scan device.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="JumpDynamics" type="cfg:ScanHeadDynamicsType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The jump dynamics (acceleration and jerk) of the scan device.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="StageListType">
+    <xs:sequence minOccurs="1" maxOccurs="4">
+      <xs:element name="Stage" type="cfg:StageType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Definition of each stage in the system. Up to 4 are possible.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType> 
+  <xs:complexType name="CTimeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:double">
+        <xs:attribute name="Unit" fixed="ms" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="StageConfigType">
+    <xs:all>
+      <xs:element name="DelayShift" type="cfg:TimeShiftMax1s" default="0.0" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The Delay Shift parameter is needed to modifiy time synchronization of the scan device, stage and laser control. In case marking results are not satisfying, this value might be optimized further by the user.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CTIME" type="cfg:CTimeType" default="-1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Configuration parameter of acs stage. If missing or set to -1, read parameter from acs.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MonitoringLevel" default="Jerk">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Defines the monitoring level for the reaction defined in DynamicViolationReaction. Lower orders are always included (i.e. Velocity tracks position and velocity breaches etc.)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Deactivated" />
+            <xs:enumeration value="Position" />
+            <xs:enumeration value="Velocity" />
+            <xs:enumeration value="Acceleration" />
+            <xs:enumeration value="Jerk" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="StageList" type="cfg:StageListType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">List of stages.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="StageType">
+    <xs:all>
+      <xs:element name="FieldLimits" type="cfg:RectangleType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Defines the stage's field limits for observation purposes.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DynamicLimits" type="cfg:StageDynamicLimitsType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Defines the stage's dynamic limits for observation purposes.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CalculationDynamics" type="cfg:StageDynamicLimitsType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Defines the stage's dynamic limits used for the calculation of StageOnly motion.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Alignment" type="cfg:TransformationType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Transformation applied to stage motion. Should be used for the alignment of the stage to another reference system (e.g. scan device or another stage).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StageAxisX" type="xs:nonNegativeInteger" default="0" minOccurs="0">
+              <xs:annotation>
+          <xs:documentation xml:lang="en">StageAxisX</xs:documentation>
+        </xs:annotation>
+        </xs:element>
+      <xs:element name="StageAxisY" type="xs:nonNegativeInteger" default="1" minOccurs="0">
+              <xs:annotation>
+          <xs:documentation xml:lang="en">StageAxisY</xs:documentation>
+        </xs:annotation>
+        </xs:element>
+      <xs:element name="SlecEtherCATNodeID" type="xs:nonNegativeInteger" default="0" minOccurs="0">
+              <xs:annotation>
+          <xs:documentation xml:lang="en">SlecEtherCATNodeID</xs:documentation>
+        </xs:annotation>
+        </xs:element>
+    </xs:all>
+    <xs:attribute name="Name" type="cfg:StageNameType">
+       <xs:annotation>
+          <xs:documentation xml:lang="EN">Name of stage (non editable).  Must be unique.</xs:documentation>
+         </xs:annotation>    
+    </xs:attribute>
+  </xs:complexType>
+  
+  <xs:complexType name="DoubleMatrix2x2Type">
+    <xs:sequence>
+      <xs:element name="T11" type="xs:double" default="1" />
+      <xs:element name="T12" type="xs:double" default="0" />
+      <xs:element name="T21" type="xs:double" default="0" />
+      <xs:element name="T22" type="xs:double" default="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MotionDecompositionConfigType">
+    <xs:all>
+      <xs:element name="FilterBandwidth" default="2">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">The Filter Bandwidth value is the very parameter that determines the decomposition of scan device and positioning stage motion. The larger the Filter Bandwidth value, the more dynamic load is assigned to the positioning stage. The lower, the more load to the scan device. </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="cfg:NonZeroDouble">
+              <xs:attribute name="Unit" fixed="Hz" type="xs:string" use="optional" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="HeuristicConfig" type="cfg:HeuristicConfigType" minOccurs="0">
+      </xs:element>
+    </xs:all>
+  </xs:complexType>    
+  <xs:complexType name="CorrectionFilePathType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="CalibrationFactor" type="xs:double" use="optional" default="-1" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CorrectionFileListType">
+    <xs:sequence minOccurs="1" maxOccurs="4">
+      <xs:element name="CorrectionFilePath" type="cfg:CorrectionFilePathType" default="">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Path of a correction file (*.ct5). If empty or invalid, a 1-to-1 correction file is loaded.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BoardsType">
+    <xs:sequence minOccurs="1" maxOccurs="4">
+      <xs:element name="RTC6" type="cfg:BoardType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Definition of each RTC6 card in the system. Up to 4 are possible.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EthSearchType">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element name="Broadcast" type="cfg:BroadcastType">
+          <xs:annotation>
+            <xs:documentation xml:lang="EN">Executes a broadcast search in the specified subnet.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="IPScan" type="cfg:IPScanType">
+          <xs:annotation>
+            <xs:documentation xml:lang="EN">Executes an IP scan in the specified subnet by sending network packets to the ip addresses in the specified range.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="IPList" type="cfg:IPListType">
+          <xs:annotation>
+            <xs:documentation xml:lang="EN">Executes an IP scan in the specified subnet by sending network packets to the ip addresses specified in the list.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:choice>
+      <xs:element name="EthMaxTimeout" type="cfg:Duration" minOccurs="0" default="2.0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Defines the maximal ethernet timeout.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BroadcastType">
+    <xs:all>
+      <xs:element name="IP" type="cfg:IPAddressType" default="169.254.1.0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">The subnet's network address for the broadcast search, e.g. 192.168.0.0. for 192.168.0.0/16.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NetMask" type="cfg:IPAddressType" default="255.255.0.0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">The subnet's network mask for the broadcast search, e.g. 255.255.0.0 for 192.168.0.0./16.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="IPScanType">
+    <xs:all>
+      <xs:element name="StartIp" type="cfg:IPAddressType" default="169.254.1.0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Lower IP range boundary for the IP range search.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EndIp" type="cfg:IPAddressType" default="169.254.1.100">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Upper IP range boundary for the IP range search.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="IPListType">
+    <xs:sequence>
+      <xs:element name="IPAddress" type="cfg:IPAddressType" default="169.254.1.0" maxOccurs="255">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">IP address of the RTC6eth board.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="IdentifierNameType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="ScanDevice1" />
+      <xs:enumeration value="ScanDevice2" />
+      <xs:enumeration value="ScanDevice3" />
+      <xs:enumeration value="ScanDevice4" />
+      <xs:enumeration value="ScanDevice5" />
+      <xs:enumeration value="ScanDevice6" />
+      <xs:enumeration value="ScanDevice7" />
+      <xs:enumeration value="ScanDevice8" />
+      <xs:enumeration value="Stage1" />
+      <xs:enumeration value="Stage2" />
+      <xs:enumeration value="Stage3" />
+      <xs:enumeration value="Stage4" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ScanDeviceNameType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ScanDevice1" />
+      <xs:enumeration value="ScanDevice2" />
+      <xs:enumeration value="ScanDevice3" />
+      <xs:enumeration value="ScanDevice4" />
+      <xs:enumeration value="ScanDevice5" />
+      <xs:enumeration value="ScanDevice6" />
+      <xs:enumeration value="ScanDevice7" />
+      <xs:enumeration value="ScanDevice8" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StageNameType">
+      <xs:restriction base="xs:string">
+      <xs:enumeration value="Stage1" />
+      <xs:enumeration value="Stage2" />
+      <xs:enumeration value="Stage3" />
+      <xs:enumeration value="Stage4" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BoardType">
+    <xs:all>
+      <xs:element name="SerialNumber" type="xs:nonNegativeInteger" minOccurs="0" default="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">The Serial number of the RTC board to be selected if BoardIdentificationMethod "BySerialNumber" was selected.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HeadA" type="cfg:IdentifierNameType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Scan device or  stage connected to first scan head.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HeadB" type="cfg:IdentifierNameType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Scan device or  stage connected to second scan head.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="ScanDeviceListType">
+    <xs:sequence minOccurs="1" maxOccurs="8">
+      <xs:element name="ScanDevice" type="cfg:ScanDeviceType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Definition of each Scan device in the system. Up to 4 are possible.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ScanDeviceType">
+    <xs:all>
+      <xs:element name="CorrectionFileList" type="cfg:CorrectionFileListType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">List of correction files.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Alignment" type="cfg:TransformationType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Transformation applied to the scan device motion. Should be used for the alignment of the scan device to another reference system (e.g. stage or another scan device).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BasePartDisplacement" type="cfg:TransformationType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Additional transformation applied to scan device motion to compensate for the disorientation of a work piece. As the stages motion component cannot be transformed accordingly for mutliple parts, it's contribution is also compensated by the scanner.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="Name" type="cfg:ScanDeviceNameType">
+      <xs:annotation>
+        <xs:documentation xml:lang="EN">Name of scanhead device (non editable). Must be unique.</xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="TransformationType">
+    <xs:all>
+      <xs:element name="Matrix" type="cfg:DoubleMatrix2x2Type">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Transformation matrix for the respective component.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Offset">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Offset of the respective component.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:attribute name="X" type="xs:double" default="0" />
+          <xs:attribute name="Y" type="xs:double" default="0" />
+          <xs:attribute name="Unit" fixed="mm" type="xs:string" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="RTCConfigType">
+    <xs:all>
+      <xs:element name="BoardIdentificationMethod" default="UseFirstFound">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Determines what RTC to be used for this syncAXIS control instance. If there is only one, with UseFirstFound the first RTC found by the RTC DLL is used. Using BySerialNumber a specific RTC can by selected by its serial number.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="UseFirstFound" />
+            <xs:enumeration value="BySerialNumber" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ProgramFileDirectory" type="xs:string" minOccurs="0" default="">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Directory to the RTC Firmware (program files: RTC6RBF.rbf, RTC6DAT.dat and RTC6OUT.out).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Boards" type="cfg:BoardsType">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">List of boards to be used.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EthSearch" type="cfg:EthSearchType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Enables and manages the ethernet options.</xs:documentation>          
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="ScanDeviceConfigType">
+    <xs:all>
+      <xs:element name="DynamicLimits" type="cfg:ScanHeadDynamicLimitsType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Determines the dynamic limits of the scan device.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CalculationDynamics" type="cfg:ScanHeadCalculationDynamicsType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Determines calculation dynamics of the scan device.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FieldLimits" type="cfg:RectangleType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Defines the image field limit of the scan device.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MonitoringLevel" default="Position">
+         <xs:annotation>
+          <xs:documentation xml:lang="en">Defines the monitoring level for the reaction defined in DynamicViolationReaction. Possible values are Deactivated, Position, Velocity, Acceleration, and Jerk. Lower orders are always included (i.e. Velocity tracks position and velocity breaches etc.)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Deactivated" />
+            <xs:enumeration value="Position" />
+            <xs:enumeration value="Velocity" />
+            <xs:enumeration value="Acceleration" />
+            <xs:enumeration value="Jerk" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="FocalLength" type="cfg:Length" minOccurs="0" default="100">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The focal length of the scan system. Depends on the optics used. syncAXIS control uses these values to plan trajectories for the operation modes "ScannerOnly" and "ScannerAndStage".</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Delay" type="cfg:DurationMax1s" minOccurs="0" default="0.00125">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Delay of the scan system. excelliSCAN 14 typically have a delay of 1.25 ms.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ScanDeviceList" type="cfg:ScanDeviceListType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">List of scan devices.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DefaultCorrectionFile" minOccurs="0" default="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Determines which correction file from the list of Correction Files will be used within this syncAXIS control instance.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:nonNegativeInteger">
+            <xs:maxInclusive value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="LaserPinOutType">
+    <xs:attribute name="Format" fixed="Bitpattern" type="xs:string" use="optional" />
+    <xs:attribute name="Value" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="3" />
+          <xs:pattern value="(0x[0-3]|[0-3])" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:simpleType name="UnitIntervalType">
+    <xs:restriction base="xs:double">
+      <xs:minInclusive value="0.0" />
+      <xs:maxInclusive value="1.0" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AnalogOutType">
+    <xs:annotation>
+      <xs:documentation xml:lang="EN">AnalogOutType AnalogOutType.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="Format" fixed="Factor" type="xs:string" use="optional" />
+    <xs:attribute name="Value" type="cfg:UnitIntervalType" use="required" />
+  </xs:complexType>
+  <xs:complexType name="DigitalOutType">
+    <xs:attribute name="Format" fixed="Bitpattern" type="xs:string" use="optional" />
+    <xs:attribute name="Value" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="6" />
+          <xs:minLength value="1" />
+          <xs:pattern value="(0x[0-9a-fA-F]+|[0-9]+)" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="Mask" use="optional">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="6" />
+          <xs:minLength value="1" />
+          <xs:pattern value="(0x[0-9a-fA-F]+|[0-9]+)" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="RtcCommandSeqType">
+    <xs:sequence>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="Delay" type="cfg:Duration" />
+        <xs:element name="SetLaserPinOut" type="cfg:LaserPinOutType" />
+        <xs:element name="SetAnalogOut1" type="cfg:AnalogOutType" />
+        <xs:element name="SetAnalogOut2" type="cfg:AnalogOutType" />
+        <xs:element name="SetExt1DigitalOut" type="cfg:DigitalOutType" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IOInitialisationConfigType">
+    <xs:all>
+      <xs:element name="DefaultOutputs" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Configures the state to which the various peripheral RTC output ports will be set at the beginning and end of a job, and after job execution halted either via software command,  external stop or via automatic stop triggered by head power NOK status or stage status NOK.  If a specific port is not explicitly set the output will remain unchanged on these occasions.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="LaserPinOut" type="cfg:LaserPinOutType" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="EN">Laser Pin Out bitmask.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="AnalogOut1" type="cfg:AnalogOutType" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="EN">Analog Out 1 value.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="AnalogOut2" type="cfg:AnalogOutType" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="EN">Analog Out 2 value.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LaserInitSequence" type="cfg:RtcCommandSeqType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Command sequence which will executed during initialization immediately after a successful stage handshake and setting of the default outputs.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LaserShutdownSequence" type="cfg:RtcCommandSeqType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="EN">Command sequence which will be executed on syncAXIS instance destruction.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:attributeGroup name="VersionGroup">
+    <xs:attribute name="Version" fixed="1.8" use="required" />
+  </xs:attributeGroup>
+  <xs:element name="Configuration">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="GeneralConfig" type="cfg:GeneralConfigType" />
+        <xs:element name="RTCConfig" type="cfg:RTCConfigType" />
+        <xs:element name="ScanDeviceConfig" type="cfg:ScanDeviceConfigType" />
+        <xs:element name="LaserConfig" type="cfg:LaserConfigType" />
+        <xs:element name="IOConfig" type="cfg:IOInitialisationConfigType" minOccurs="0" />
+        <xs:element name="TrajectoryConfig" type="cfg:TrajectoryConfigType" />
+        <xs:element name="StageConfig" type="cfg:StageConfigType" />
+        <xs:element name="MotionDecompositionConfig" type="cfg:MotionDecompositionConfigType" />
+        <xs:element name="SystemConfig" minOccurs="0">
+          <xs:complexType mixed="true">
+            <xs:sequence>
+              <xs:any maxOccurs="unbounded" minOccurs="0" processContents="skip" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:all>
+      <xs:attributeGroup ref="cfg:VersionGroup" />
+    </xs:complexType>
+  </xs:element>
+  
+  
+</xs:schema>
