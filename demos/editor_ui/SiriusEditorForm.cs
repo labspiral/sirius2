@@ -418,7 +418,7 @@ namespace Demos
         private void MnuMofAngularBeginEnd_Click(object sender, EventArgs e)
         {
             {
-                var entity = EntityFactory.CreateMoFEnd();
+                var entity = EntityFactory.CreateMoFEnd(Vector2.Zero);
                 document.ActAdd(entity);
             }
             {
@@ -436,7 +436,7 @@ namespace Demos
         private void MnuMofXYBeginEnd_Click(object sender, EventArgs e)
         {
             {
-                var entity = EntityFactory.CreateMoFEnd();
+                var entity = EntityFactory.CreateMoFEnd(Vector2.Zero);
                 document.ActAdd(entity);
             }
             {
@@ -491,7 +491,7 @@ namespace Demos
             if (result != DialogResult.OK)
                 return;
             Cursor.Current = Cursors.WaitCursor;
-            Document.ActImport(dlg.FileName);
+            Document.ActImport(dlg.FileName, out var entity);
             Cursor.Current = Cursors.Default;
         }
 
@@ -526,8 +526,7 @@ namespace Demos
             var form = new ImageTextForm();
             if (DialogResult.OK != form.ShowDialog())
                 return;
-            BitmapHelper.CreateFontTextToImage(form.FontName, form.ImageEmSize, form.ImageText, out var bitmap, out var sizef);
-            var entity = EntityFactory.CreateImageText(form.FontName, form.ImageText, form.ImageEmSize, 10);
+            var entity = EntityFactory.CreateImageText(form.FontName, form.ImageText, form.Style, form.IsFill, form.OutlineSize, form.PixelSize, 2);
             Document.ActAdd(entity);
         }
 

@@ -266,7 +266,6 @@ namespace Demos
 
         private void CreateTestEntities()
         {
-#if DEBUG
             var document = siriusEditorUserControl1.Document;
             Debug.Assert(null != document.ActiveLayer);
 
@@ -333,17 +332,17 @@ namespace Demos
             // Image entity 
             var filename2 = Path.Combine("sample", "checkerboard.bmp");
             var image2 = EntityFactory.CreateImage(filename2, 10);
-            image2.Translate(-30, 10);
+            image2.Translate(-30, 25);
             document.ActAdd(image2);
 
             // ImageText entity
-            var imagetext1 = EntityFactory.CreateImageText("Arial", "Hello Sirius2", 32, 2);
+            var imagetext1 = EntityFactory.CreateImageText("Arial", $"1234567890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", FontStyle.Regular, true, 3, 64, 10);
             imagetext1.Name = "MyText1";
             imagetext1.Translate(-30, -30);
             document.ActAdd(imagetext1);
 
             // Text entity
-            var text1 = EntityFactory.CreateText("Arial", $"1234567890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", 1);
+            var text1 = EntityFactory.CreateText("Arial", $"Hello{Environment.NewLine}おはようございます{Environment.NewLine}您好{Environment.NewLine}สวัสดีครับ{Environment.NewLine}Hola{Environment.NewLine}Bonjour{Environment.NewLine}Hallo{Environment.NewLine}اَلسَّلاَمُ عَلَيْكُمْ{Environment.NewLine}", FontStyle.Bold, 2.5f);
             text1.Name = "MyText2";
             document.ActAdd(text1);
 
@@ -409,7 +408,7 @@ namespace Demos
             // STL entity
             if (EntityFactory.CreateStereoLithography(Path.Combine("sample", "Nefertiti_face.stl"), out var stl))
             {
-                stl.Alignment = Alignment.MiddleCenter;
+                stl.Alignment = Alignments.MiddleCenter;
                 stl.Scale(0.2);
                 stl.Translate(30, 10);
                 stl.RotateZ(-90);
@@ -419,7 +418,7 @@ namespace Demos
             // Dxf entity
             if (EntityFactory.CreateDxf(Path.Combine("sample", "BIKE.dxf"), out var dxf))
             {
-                dxf.Alignment = Alignment.MiddleCenter;
+                dxf.Alignment = Alignments.MiddleCenter;
                 dxf.Scale(0.02);
                 dxf.Translate(25, -35);
                 document.ActAdd(dxf);
@@ -428,7 +427,7 @@ namespace Demos
             // HPGL entity
             if (EntityFactory.CreateHpgl(Path.Combine("sample", "SimplexOpt.plt"), out var hpgl))
             {
-                hpgl.Alignment = Alignment.MiddleCenter;
+                hpgl.Alignment = Alignments.MiddleCenter;
                 hpgl.Scale(0.02);
                 hpgl.Translate(-2, 37);
                 document.ActAdd(hpgl);
@@ -437,28 +436,62 @@ namespace Demos
             // HPGL entity
             if (EntityFactory.CreateHpgl(Path.Combine("sample", "columbiao.plt"), out var hpgl2))
             {
-                hpgl2.Alignment = Alignment.MiddleCenter;
+                hpgl2.Alignment = Alignments.MiddleCenter;
                 hpgl2.Scale(0.01);
                 hpgl2.Translate(-35, -20);
                 document.ActAdd(hpgl2);
             }
-#endif
+            var dataMatrix1 = EntityFactory.CreateDataMatrix("0123456789",  BarcodeCells.Dots, 3, 4);
+            dataMatrix1.Translate(-23, 2);
+            document.ActAdd(dataMatrix1);
+            var dataMatrix2 = EntityFactory.CreateDataMatrix("SIRIUS2", BarcodeCells.Lines, 4, 4);
+            dataMatrix2.Translate(-23, 7);
+            document.ActAdd(dataMatrix2);
+            var dataMatrix3 = EntityFactory.CreateDataMatrix("ABCDEFGHIJKLMNOPQRSTUVWXYZ", BarcodeCells.Circles, 3, 4);
+            dataMatrix3.Translate(-28, 2);
+            document.ActAdd(dataMatrix3);
+            var dataMatrix4 = EntityFactory.CreateDataMatrix("abcdefghijklmnopqrstuvwxyz", BarcodeCells.Outline, 2, 4);
+            dataMatrix4.Translate(-28, 7);
+            document.ActAdd(dataMatrix4);
+
+            var qr1 = EntityFactory.CreateQRCode("0123456789", BarcodeCells.Hatch, 3, 4);
+            qr1.CellHatch.HatchMode = HatchModes.CrossLine;
+            qr1.CellHatch.HatchInterval = 0.05f;
+            qr1.CellHatch.HatchAngle = 100;
+            qr1.CellHatch.HatchAngle2 = 10;
+            qr1.Translate(-23, 12);
+            document.ActAdd(qr1);
+
+            var qr2 = EntityFactory.CreateQRCode("abcdefghijklmnopqrstuvwxyz", BarcodeCells.Outline, 3, 4);
+            qr2.Translate(-28, 12);
+            document.ActAdd(qr2);
+
+            //var pdf1 = EntityFactory.CreatePDF417("0123456789", Barcode2DCells.Dots, 3, 4);
+            //pdf1.Translate(-23, 17);
+            //document.ActAdd(pdf1);
         }
 
         private void CustomConverter()
         {
             var document = siriusEditorUserControl1.Document;
-            SpiralLab.Sirius2.Winforms.Config.OnTextConvert += Imagetext1_OnTextConvert;
+            SpiralLab.Sirius2.Winforms.Config.OnTextConvert += Text_OnTextConvert;
         }
 
-        private bool Imagetext1_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
+        private bool Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
         {
             var entity = textConvertible as IEntity;
             if (entity.Name == "MyText1")
             {
                 // For example, convert string to DateTime format
-                textConvertible.ConvertedText = DateTime.Now.ToString(textConvertible.Text);
-                Logger.Log(Logger.Type.Debug, $"entity: {entity.Name} [{entity.Id}] text {textConvertible.Text} -> {textConvertible.ConvertedText}");
+                // link: https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
+                 string dateTimeStr = textConvertible.SourceText; //like as "yyyyMMdd HH:mm:ss"
+                textConvertible.ConvertedText = DateTime.Now.ToString(dateTimeStr);
+
+                // For eaxmple, convert hex string to hex binary
+                //string hexStr = textConvertible.SourceText; //like as "fe3009333137303130323031f9200134fe300120fc2006";
+                //var byteArray = Enumerable.Range(0, hexStr.Length / 2).Select(x => Convert.ToByte(hexStr.Substring(x * 2, 2), 16)).ToArray();
+                //var byteArrayAsString = new String(byteArray.Select(b => (char)b).ToArray());
+                Logger.Log(Logger.Type.Debug, $"entity: {entity.Name} [{entity.Id}] text {textConvertible.SourceText} -> {textConvertible.ConvertedText}");
             }
             return true;
         }
@@ -511,7 +544,7 @@ namespace Demos
         }
 
 
-        #region User would be control marker by remotely
+        #region Control marker by remotely
         /// <summary>
         /// Ready status
         /// </summary>

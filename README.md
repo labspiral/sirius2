@@ -47,11 +47,9 @@ Link: [Youtube](http://www.youtube.com/watch?v=3Y3fzXr54gQ)
 
  - spirallab.sirius2.dll
     - Target frameworks: NET Framework 4.7.2, NET Standard 2.0, NET5 or higher 
-    - Dependencies: NLog, Newtonsoft.Json, CalibrationLibrary, syncAXIS, RTC5DLL, RTC6DLL, ...
 
  - spirallab.sirius2.winforms.dll
     - Target frameworks: NET Framework 4.7.2
-    - Dependencies: OpenTK, OpenTK.GLControl, ...
 
 
 ----
@@ -83,10 +81,20 @@ Link: [Youtube](http://www.youtube.com/watch?v=3Y3fzXr54gQ)
 
 **7. Version history**
 
-DEVELOPER PREVIEW VERSION! IT WIIL BE CHANGED WITHOUT NOTIFICATION BEFORE OFFICIAL RELEASE  
 
-* 2023.7.1 v0.6
-  - developer preview version 
+DEVELOPER PREVIEW VERSION. IT WIIL BE CHANGED WITHOUT NOTIFICATION !
+
+
+* 2023.7.7 v0.7
+  - added) datamatrix barcode entity
+  - added) qrcode barcode entity
+  - fixed) imagetext 
+     - font style and alignment
+     - fill mode
+  - added) import file with preview
+  - added) extract hatches 
+
+* 2023.7.1 v0.6 (developer preview version) 
   - added) text entity 
   - added) write data, write data ext16 entity
   - added) ramp factor at line, polyline for automatic laser control by defined vector
@@ -142,8 +150,5 @@ DEVELOPER PREVIEW VERSION! IT WIIL BE CHANGED WITHOUT NOTIFICATION BEFORE OFFICI
   - Selection entities by rubber banding is not supported yet
   - Editing child of EntityGroup is not supported yet
   - Multi-languages are not supported yet
-* General
-  - x32 (32bits windows) is not supported officially
-  - SIRIUS2 is not compatible with SIRIUS(old version)
-  
+
    

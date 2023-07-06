@@ -39,9 +39,10 @@ namespace Demos
         {
             // Initialize sirius2 library
             SpiralLab.Sirius2.Core.Initialize();
+            SpiralLab.Sirius2.Core.License(out var license);
+            Console.WriteLine($"License: {license.ToString()}");
 
             bool success = true;
-
             // Fied of view : 60mm
             var fov = 60.0;
             // RTC5,6 using 20bits resolution

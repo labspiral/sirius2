@@ -2108,26 +2108,32 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.BaseMatrix">
             <summary>
+            Base matrix
             User configurable base matrix (like as rotate, translate, ...)
-            <para>Transform applied at last</para>
-            <para>Result matrix = (top to bottom matrix) * <c>BaseMatrix</c></para>
             </summary>
+            <remarks>
+            Transformed matrix result are applied at last.
+            Result matrix = (from top to bottom matrix) * <c>BaseMatrix</c>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.ToResult">
             <summary>
-            Transform whole matries at stack
+            Result matrix
+            Calculate whole matries at stack
             <para>Result matrix = (top to bottom matrix) * <c>BaseMatrix</c></para>
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.Identity">
             <summary>
             Clear (or reset) as identity matrix 
-            <para><c>BaseMatrix</c> is not modified</para>
             </summary>
+            <remarks>
+            <c>BaseMatrix</c> is not modified
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.Push(`0)">
             <summary>
-            Push into stack at top
+            Push matrix into stack at top
             </summary>
             <param name="matrix">Matrix like as rotate, translate, scale, ...</param>
         </member>
@@ -2147,27 +2153,27 @@
             Offset 
             </summary>
             <remarks>
-            Dx,Dy,Dz and angle
+            Dx, Dy, Dz and angle
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.Offset.Dx">
             <summary>
-            Translate X (mm)
+            Translate x (mm)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.Offset.Dy">
             <summary>
-            Translate Y (mm)
+            Translate y (mm)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.Offset.Dz">
             <summary>
-            Translate Z (mm)
+            Translate z (mm)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.Offset.AngleZ">
             <summary>
-            Rotate Z (degree)
+            Rotate z (°)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.Offset.ToMatrix">
@@ -2249,7 +2255,7 @@
             <param name="index">Controller identifier (0,1,2,...)</param>
             <param name="kFactor">K-Factor (bits/mm)</param>
             <param name="ctFileName">Field correction file at Table1</param>
-            <returns></returns>
+            <returns><c>RtcVirtual</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.ScannerFactory.CreateRtc5(System.Int32,System.Double,SpiralLab.Sirius2.Scanner.LaserMode,SpiralLab.Sirius2.Scanner.RtcSignalLevel,SpiralLab.Sirius2.Scanner.RtcSignalLevel,System.String)">
             <summary>
@@ -2261,7 +2267,7 @@
             <param name="laser12SignalLevel"><c>RtcSignalLevel</c></param>
             <param name="laserOnSignalLevel"><c>RtcSignalLevel</c></param>
             <param name="ctFileName">Field correction file at Table1</param>
-            <returns></returns>
+            <returns><c>Rtc5</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.ScannerFactory.CreateRtc6(System.Int32,System.Double,SpiralLab.Sirius2.Scanner.LaserMode,SpiralLab.Sirius2.Scanner.RtcSignalLevel,SpiralLab.Sirius2.Scanner.RtcSignalLevel,System.String)">
             <summary>
@@ -2273,7 +2279,7 @@
             <param name="laser12SignalLevel"><c>RtcSignalLevel</c></param>
             <param name="laserOnSignalLevel"><c>RtcSignalLevel</c></param>
             <param name="ctFileName">Field correction file at Table1</param>
-            <returns></returns>
+            <returns><c>Rtc6</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.ScannerFactory.CreateRtc6Ethernet(System.Int32,System.String,System.String,System.Double,SpiralLab.Sirius2.Scanner.LaserMode,SpiralLab.Sirius2.Scanner.RtcSignalLevel,SpiralLab.Sirius2.Scanner.RtcSignalLevel,System.String)">
             <summary>
@@ -2287,7 +2293,7 @@
             <param name="laser12SignalLevel"><c>RtcSignalLevel</c></param>
             <param name="laserOnSignalLevel"><c>RtcSignalLevel</c></param>
             <param name="ctFileName">Field correction file at Table1</param>
-            <returns></returns>
+            <returns><c>Rtc6Ethernet</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.ScannerFactory.CreateRtc6SyncAxis(System.Int32,System.String)">
             <summary>
@@ -2295,6 +2301,7 @@
             </summary>
             <param name="index">Identifier (0,1,2,3, ...)</param>
             <param name="configXMLFile">Config XML filename</param>
+            <returns><c>Rtc6SyncAxis</c></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc5LaserControlSignal">
             <summary>
@@ -6572,12 +6579,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.IJob.StartTime">
             <summary>
-            Start time
+            Started time
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.IJob.EndTime">
             <summary>
-            End time
+            Ended time
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.IJob.ExecutionTime">

@@ -295,7 +295,7 @@ namespace Demos
                 this.Offsets = new Offset[1] { Offset.Zero };
 
             // Reset to start
-            this.PenColor = Color.Transparent;
+            this.CurrentPenColor = Color.Transparent;
 
             // Reset measurement session
             this.CurrentSession = null;
