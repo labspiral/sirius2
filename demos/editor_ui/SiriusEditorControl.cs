@@ -398,13 +398,13 @@ namespace Demos
 
         private void MnuQRCode_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateQRCode("SIRIUS2", BarcodeCells.Dots, 5, 2);
+            var entity = EntityFactory.CreateQRCode("SIRIUS2", BarcodeCells.Dots, 5, 2, 2);
             document.ActAdd(entity);
         }
 
         private void MnuDataMatrix_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateDataMatrix("SIRIUS2", BarcodeCells.Dots, 5, 2);
+            var entity = EntityFactory.CreateDataMatrix("SIRIUS2", BarcodeCells.Dots, 5, 2,2 );
             document.ActAdd(entity);
         }
 

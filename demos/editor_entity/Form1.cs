@@ -441,20 +441,20 @@ namespace Demos
                 hpgl2.Translate(-35, -20);
                 document.ActAdd(hpgl2);
             }
-            var dataMatrix1 = EntityFactory.CreateDataMatrix("0123456789",  BarcodeCells.Dots, 3, 4);
+            var dataMatrix1 = EntityFactory.CreateDataMatrix("0123456789",  BarcodeCells.Dots, 3, 4, 4);
             dataMatrix1.Translate(-23, 2);
             document.ActAdd(dataMatrix1);
-            var dataMatrix2 = EntityFactory.CreateDataMatrix("SIRIUS2", BarcodeCells.Lines, 4, 4);
+            var dataMatrix2 = EntityFactory.CreateDataMatrix("SIRIUS2", BarcodeCells.Lines, 4, 4, 4);
             dataMatrix2.Translate(-23, 7);
             document.ActAdd(dataMatrix2);
-            var dataMatrix3 = EntityFactory.CreateDataMatrix("ABCDEFGHIJKLMNOPQRSTUVWXYZ", BarcodeCells.Circles, 3, 4);
+            var dataMatrix3 = EntityFactory.CreateDataMatrix("ABCDEFGHIJKLMNOPQRSTUVWXYZ", BarcodeCells.Circles, 3, 4, 4);
             dataMatrix3.Translate(-28, 2);
             document.ActAdd(dataMatrix3);
-            var dataMatrix4 = EntityFactory.CreateDataMatrix("abcdefghijklmnopqrstuvwxyz", BarcodeCells.Outline, 2, 4);
+            var dataMatrix4 = EntityFactory.CreateDataMatrix("abcdefghijklmnopqrstuvwxyz", BarcodeCells.Outline, 2, 4, 4);
             dataMatrix4.Translate(-28, 7);
             document.ActAdd(dataMatrix4);
 
-            var qr1 = EntityFactory.CreateQRCode("0123456789", BarcodeCells.Hatch, 3, 4);
+            var qr1 = EntityFactory.CreateQRCode("0123456789", BarcodeCells.Hatch, 3, 4, 4);
             qr1.CellHatch.HatchMode = HatchModes.CrossLine;
             qr1.CellHatch.HatchInterval = 0.05f;
             qr1.CellHatch.HatchAngle = 100;
@@ -462,7 +462,7 @@ namespace Demos
             qr1.Translate(-23, 12);
             document.ActAdd(qr1);
 
-            var qr2 = EntityFactory.CreateQRCode("abcdefghijklmnopqrstuvwxyz", BarcodeCells.Outline, 3, 4);
+            var qr2 = EntityFactory.CreateQRCode("abcdefghijklmnopqrstuvwxyz", BarcodeCells.Outline, 3, 4, 4);
             qr2.Translate(-28, 12);
             document.ActAdd(qr2);
 

@@ -893,13 +893,14 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.EntityQRCode.#ctor(System.String,SpiralLab.Sirius2.Winforms.BarcodeCells,System.Int32,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.EntityQRCode.#ctor(System.String,SpiralLab.Sirius2.Winforms.BarcodeCells,System.Int32,System.Double,System.Double)">
             <summary>
             Constructor
             </summary>
             <param name="text">Text</param>
             <param name="cell"><c>Barcode2DCells</c></param>
             <param name="dotFactor">Cell dot factor (1*1, 2*2, ...)</param>
+            <param name="width">Width (mm)</param>
             <param name="height">Height (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.EntityQRCode.ToString">
@@ -956,13 +957,14 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.EntityDataMatrix.#ctor(System.String,SpiralLab.Sirius2.Winforms.BarcodeCells,System.Int32,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.EntityDataMatrix.#ctor(System.String,SpiralLab.Sirius2.Winforms.BarcodeCells,System.Int32,System.Double,System.Double)">
             <summary>
             Constructor
             </summary>
             <param name="text">Text</param>
             <param name="cell"><c>Barcode2DCells</c></param>
             <param name="dotFactor">Cell dot factor (1*1, 2*2, ...)</param>
+            <param name="width">Width (mm)</param>
             <param name="height">Height (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.EntityDataMatrix.ToString">
@@ -6877,23 +6879,25 @@
             <param name="blockName">Master block name</param>
             <returns></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.EntityFactory.CreateDataMatrix(System.String,SpiralLab.Sirius2.Winforms.BarcodeCells,System.Int32,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.EntityFactory.CreateDataMatrix(System.String,SpiralLab.Sirius2.Winforms.BarcodeCells,System.Int32,System.Double,System.Double)">
             <summary>
             Create DataMatrix entity
             </summary>
             <param name="text">Text</param>
             <param name="cell"><c>Barcode2DCells</c></param>
             <param name="dotFactor">Cell dot factor (1*1, 2*2, ...)</param>
+            <param name="width">Width (mm)</param>
             <param name="height">Height (mm)</param>
             <returns></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.EntityFactory.CreateQRCode(System.String,SpiralLab.Sirius2.Winforms.BarcodeCells,System.Int32,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.EntityFactory.CreateQRCode(System.String,SpiralLab.Sirius2.Winforms.BarcodeCells,System.Int32,System.Double,System.Double)">
             <summary>
             Create QRCode entity
             </summary>
             <param name="text">Text</param>
             <param name="cell"><c>Barcode2DCells</c></param>
             <param name="dotFactor">Cell dot factor (1*1, 2*2, ...)</param>
+            <param name="width">Width (mm)</param>
             <param name="height">Height (mm)</param>
             <returns></returns>
         </member>
