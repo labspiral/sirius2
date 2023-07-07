@@ -868,6 +868,16 @@
             GS1 format or not
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.EntityQRCode.Encoding">
+            <summary>
+            Encoding 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.EntityQRCode.QrVersion">
+            <summary>
+            QR code version
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.EntityQRCode.Px">
             <summary>
             X Pixels
@@ -914,6 +924,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.EntityDataMatrix.IsTextDataGS1">
             <summary>
             GS1 format or not
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.EntityDataMatrix.Encoding">
+            <summary>
+            Encoding 
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.EntityDataMatrix.Px">
@@ -2632,6 +2647,23 @@
             <remarks>
             Argument: Target <c>IEntity</c>
             Return: Sorted result orders
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.IsPathSortAndMerge">
+            <summary>
+            Enable sort and merge path or not
+            </summary>
+            <remarks>
+            Calculated when importing hpgl(plt) or dxf file
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.PathSortAndMergeThreshold">
+            <summary>
+            Threshold distance for sort and merge path at <c>EntityGroup</c>
+            </summary>
+            <remarks>
+            Used with <c>IsPathSortAndMerge</c> if True.
+            Calculated when importing hpgl(plt) or dxf file
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.SamplePath">
@@ -5893,6 +5925,20 @@
         <member name="M:SpiralLab.Sirius2.Winforms.EntityGroup.Clone">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.EntityGroup.PathSort">
+            <summary>
+            Sort path order by <c>In</c>, <c>Out</c>
+            </summary>
+            <remarks>
+            Path could be reversed to connect <c>In</c>, <c>Out</c> between <c>IEntity</c>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.EntityGroup.PathMerge">
+            <summary>
+            Merge path into <c>EntityPolyline2D</c>
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.EntityGroup.Explode">
             <inheritdoc/>
         </member>
@@ -5915,6 +5961,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.EntityGroup.Mark(SpiralLab.Sirius2.Winforms.IMarker)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.EntityGroup.Reverse">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.EntityLayerSyncAxis">

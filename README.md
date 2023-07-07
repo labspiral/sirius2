@@ -38,6 +38,7 @@ Link: [Youtube](http://www.youtube.com/watch?v=3Y3fzXr54gQ)
 | Editor                |3D                                                     |2D                      |
 | Render engine         |OpenTK (with shaders)                                  |SharpGL                 |
 | Render speed          |Faster                                                 |Acceptable              |
+| Customization         |Easy, Simple                                           |Acceptable              |
 
 
 ----
@@ -73,7 +74,8 @@ Link: [Youtube](http://www.youtube.com/watch?v=3Y3fzXr54gQ)
  
  - Email: hcchoi@spirallab.co.kr
  - Homepage: http://spirallab.co.kr
- - 2023 Copyright to (c)SpiralLAB. All rights reserved.
+ - 2023 Copyright to (c)SpiralLAB
+ - All rights reserved.
  
 
 ----
