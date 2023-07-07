@@ -926,9 +926,19 @@
             GS1 format or not
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.EntityDataMatrix.Encoding">
+        <member name="P:SpiralLab.Sirius2.Winforms.EntityDataMatrix.IsCompactEncoding">
             <summary>
-            Encoding 
+            CompactEncoding or not
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.EntityDataMatrix.IsC40">
+            <summary>
+            C40 or not
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.EntityDataMatrix.IsSquare">
+            <summary>
+            Square
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.EntityDataMatrix.Px">

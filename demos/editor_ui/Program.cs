@@ -21,7 +21,7 @@ namespace Demos
         // Used this config file if using XL-SCAN (syncAXIS)
         // public static string IniFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config_syncaxis.ini");
 
-        public static SiriusEditorForm EditorForm { get; set; }
+        public static SiriusEditorUserControl EditorForm { get; set; }
 
         [STAThread]
         static void Main()
@@ -33,7 +33,7 @@ namespace Demos
             SpiralLab.Sirius2.Core.Initialize();
         
             // Create main form
-            EditorForm = new SiriusEditorForm();
+            EditorForm = new SiriusEditorUserControl();
 
             // Create devices
             CreateDevices();
