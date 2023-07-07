@@ -22,8 +22,6 @@
  * 
  */
 
-using OpenTK;
-using SpiralLab.Sirius2.Winforms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,8 +30,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Windows.Forms;
+using SpiralLab.Sirius2.Winforms;
+using OpenTK;
 
 namespace Demos
 {
@@ -42,7 +42,6 @@ namespace Demos
         public Form1()
         {
             InitializeComponent();
-
             this.Shown += Form1_Shown;
         }
 
@@ -54,5 +53,6 @@ namespace Demos
             // Set FOV area: WxH, it will be drawn as red rectangle
             Config.DocumentDefaultViewFovSize = new SizeF(100, 100);
         }
+
     }
 }

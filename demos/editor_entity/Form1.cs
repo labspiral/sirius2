@@ -64,38 +64,51 @@ namespace Demos
 
             RegisterScannerFieldCorrectionEvent();
         }
-
-        private void RegisterScannerFieldCorrectionEvent()
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // Event will be fired when select scanner field correction 2d at popup-menu
-            SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2D += Config_OnScannerFieldCorrection2D;
-        }
+            var document = siriusEditorUserControl1.Document;
+            var marker = siriusEditorUserControl1.Marker;
+            var laser = siriusEditorUserControl1.Laser;
+            var rtc = siriusEditorUserControl1.Rtc;
 
-        private RtcCorrection2D Config_OnScannerFieldCorrection2D(IRtc rtc)
-        {
-            // Measured x,y error data
-            int rows = 7;
-            int cols = 7;
-            float interval = 10.0f;
-            var rtcCorrection2D = new RtcCorrection2D(rtc.KFactor, rows, cols, interval, interval, rtc.CorrectionFiles[(int)rtc.PrimaryHeadTable].FileName, string.Empty);
-            float left = -interval * (float)(int)(cols / 2);
-            float top = interval * (float)(int)(rows / 2);
-            var rand = new Random();
-            for (int row = 0; row < rows; row++)
+            if (document.IsModified)
             {
-                for (int col = 0; col < cols; col++)
-                {
-                    rtcCorrection2D.AddRelative(row, col,
-                        new System.Numerics.Vector2(left + col * interval, top - row * interval),
-                        new System.Numerics.Vector2(
-                            rand.Next(20) / 1000.0f - 0.01f,
-                            rand.Next(20) / 1000.0f - 0.01f)
-                        );
-                }
+                var form = new SpiralLab.Sirius2.Winforms.MessageBox($"Do you really want to exit without save ?", "Warning", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = form.ShowDialog(this);
+                if (dialogResult == DialogResult.Yes)
+                    e.Cancel = false;
+                else
+                    e.Cancel = true;
             }
-            return rtcCorrection2D;
-        }
 
+            if (rtc.CtlGetStatus(RtcStatus.Busy) ||
+                laser.IsBusy ||
+                marker.IsBusy)
+            {
+                var form = new SpiralLab.Sirius2.Winforms.MessageBox($"Do you really want to exit during working on progressing... ?", "Warning", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = form.ShowDialog(this);
+                if (dialogResult == DialogResult.Yes)
+                    e.Cancel = false;
+                else
+                    e.Cancel = true;
+            }
+
+            if (e.Cancel == false)
+                this.DestroyDevices();
+        }
+        private void DestroyDevices()
+        {
+            var marker = siriusEditorUserControl1.Marker;
+            var laser = siriusEditorUserControl1.Laser;
+            var rtc = siriusEditorUserControl1.Rtc;
+            marker.Stop();
+            marker.Dispose();
+            laser.Dispose();
+            rtc.Dispose();
+            siriusEditorUserControl1.Rtc = null;
+            siriusEditorUserControl1.Laser = null;
+            siriusEditorUserControl1.Marker = null;
+        }
         private void CreateDevices()
         {
             bool success = true;
@@ -236,7 +249,6 @@ namespace Demos
             siriusEditorUserControl1.Rtc = rtc;
             siriusEditorUserControl1.Laser = laser;
         }
-
         private void CreateMarker()
         {
             var rtcType = NativeMethods.ReadIni(Program.ConfigFileName, "RTC", "TYPE", "Rtc5");
@@ -263,7 +275,6 @@ namespace Demos
             // Assign Document, Rtc, Laser at IMarker
             marker.Ready(siriusEditorUserControl1.Document, siriusEditorUserControl1.View, siriusEditorUserControl1.Rtc, siriusEditorUserControl1.Laser);
         }
-
         private void CreateTestEntities()
         {
             var document = siriusEditorUserControl1.Document;
@@ -470,13 +481,11 @@ namespace Demos
             //pdf1.Translate(-23, 17);
             //document.ActAdd(pdf1);
         }
-
         private void CustomConverter()
         {
             var document = siriusEditorUserControl1.Document;
             SpiralLab.Sirius2.Winforms.Config.OnTextConvert += Text_OnTextConvert;
         }
-
         private bool Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
         {
             var entity = textConvertible as IEntity;
@@ -495,56 +504,37 @@ namespace Demos
             }
             return true;
         }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void RegisterScannerFieldCorrectionEvent()
         {
-            var document = siriusEditorUserControl1.Document;
-            var marker = siriusEditorUserControl1.Marker;
-            var laser = siriusEditorUserControl1.Laser;
-            var rtc = siriusEditorUserControl1.Rtc;
-
-            if (document.IsModified)
+            // Event will be fired when select scanner field correction 2d at popup-menu
+            SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2D += Config_OnScannerFieldCorrection2D;
+        }
+        private RtcCorrection2D Config_OnScannerFieldCorrection2D(IRtc rtc)
+        {
+            // Measured x,y error data
+            int rows = 7;
+            int cols = 7;
+            float interval = 10.0f;
+            var rtcCorrection2D = new RtcCorrection2D(rtc.KFactor, rows, cols, interval, interval, rtc.CorrectionFiles[(int)rtc.PrimaryHeadTable].FileName, string.Empty);
+            float left = -interval * (float)(int)(cols / 2);
+            float top = interval * (float)(int)(rows / 2);
+            var rand = new Random();
+            for (int row = 0; row < rows; row++)
             {
-                var form = new SpiralLab.Sirius2.Winforms.MessageBox($"Do you really want to exit without save ?", "Warning", MessageBoxButtons.YesNo);
-                DialogResult dialogResult = form.ShowDialog(this);
-                if (dialogResult == DialogResult.Yes)
-                    e.Cancel = false;
-                else
-                    e.Cancel = true;
+                for (int col = 0; col < cols; col++)
+                {
+                    rtcCorrection2D.AddRelative(row, col,
+                        new System.Numerics.Vector2(left + col * interval, top - row * interval),
+                        new System.Numerics.Vector2(
+                            rand.Next(20) / 1000.0f - 0.01f,
+                            rand.Next(20) / 1000.0f - 0.01f)
+                        );
+                }
             }
-
-            if (rtc.CtlGetStatus(RtcStatus.Busy) ||
-                laser.IsBusy ||
-                marker.IsBusy)
-            {
-                var form = new SpiralLab.Sirius2.Winforms.MessageBox($"Do you really want to exit during working on progressing... ?", "Warning", MessageBoxButtons.YesNo);
-                DialogResult dialogResult = form.ShowDialog(this);
-                if (dialogResult == DialogResult.Yes)
-                    e.Cancel = false;
-                else
-                    e.Cancel = true;
-            }
-
-            if (e.Cancel == false)
-                this.DestroyDevices();
+            return rtcCorrection2D;
         }
 
-        private void DestroyDevices()
-        {
-            var marker = siriusEditorUserControl1.Marker;
-            var laser = siriusEditorUserControl1.Laser;
-            var rtc = siriusEditorUserControl1.Rtc;
-            marker.Stop();
-            marker.Dispose();
-            laser.Dispose();
-            rtc.Dispose();
-            siriusEditorUserControl1.Rtc = null;
-            siriusEditorUserControl1.Laser = null;
-            siriusEditorUserControl1.Marker = null;
-        }
-
-
-        #region Control marker by remotely
+        #region Control by remotely
         /// <summary>
         /// Ready status
         /// </summary>
@@ -557,7 +547,6 @@ namespace Demos
                 return marker.IsReady;
             }
         }
-
         /// <summary>
         /// Busy status
         /// </summary>
@@ -570,7 +559,6 @@ namespace Demos
                 return marker.IsBusy;
             }
         }
-
         /// <summary>
         /// Error status
         /// </summary>
@@ -591,10 +579,11 @@ namespace Demos
         /// <returns></returns>
         public bool Open(string fileName)
         {
+            if (this.IsBusy)
+                return false;
             var doc = siriusEditorUserControl1.Document;
             return doc.ActOpen(fileName);
         }
-
         /// <summary>
         /// Start marker
         /// </summary>
@@ -602,17 +591,16 @@ namespace Demos
         /// <returns></returns>
         public bool Start(SpiralLab.Sirius2.Mathematics.Offset[] offets = null)
         {
-            var marker = siriusEditorUserControl1.Marker;
             if (!this.IsReady)
                 return false;
             if (this.IsBusy)
                 return false;
             if (this.IsError)
                 return false;
+            var marker = siriusEditorUserControl1.Marker;
             marker.Offsets = offets;
             return marker.Start();
         }
-
         /// <summary>
         /// Stop marker
         /// </summary>
@@ -622,7 +610,6 @@ namespace Demos
             var marker = siriusEditorUserControl1.Marker;
             return marker.Stop();
         }
-
         /// <summary>
         /// Reset marker status
         /// </summary>

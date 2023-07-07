@@ -99,6 +99,13 @@ namespace Demos
             var laser = siriusEditorUserControl1.Laser;
             var rtc = siriusEditorUserControl1.Rtc;
             marker.Stop();
+
+            marker.OnStarted -= Marker_OnStarted;
+            marker.OnFinished -= Marker_OnFinished;
+            marker.OnFailed -= Marker_OnFailed;
+            marker.OnBeforeLayer -= Marker_OnBeforeLayer;
+            marker.OnAfterLayer -= Marker_OnAfterLayer;
+
             marker.Dispose();
             laser.Dispose();
             rtc.Dispose();
@@ -212,7 +219,39 @@ namespace Demos
 
             // Assign Document, Rtc, Laser at IMarker
             marker.Ready(siriusEditorUserControl1.Document, siriusEditorUserControl1.View, siriusEditorUserControl1.Rtc, siriusEditorUserControl1.Laser);
+
+            marker.OnStarted += Marker_OnStarted;
+            marker.OnFinished += Marker_OnFinished;
+            marker.OnFailed += Marker_OnFailed;
+            marker.OnBeforeLayer += Marker_OnBeforeLayer;
+            marker.OnAfterLayer += Marker_OnAfterLayer;
         }
+
+        #region Marker events
+        private void Marker_OnStarted(IMarker marker)
+        {
+            // marker has started
+        }
+        private bool Marker_OnBeforeLayer(IMarker marker, EntityLayer layer)
+        {
+            // do somethings before mark layer
+            return true;
+        }
+        private bool Marker_OnAfterLayer(IMarker marker, EntityLayer layer)
+        {
+            // do somethings after mark layer
+            return true;
+        }
+        private void Marker_OnFailed(IMarker marker, TimeSpan timeSpan)
+        {
+            // marker has failed
+        }
+        private void Marker_OnFinished(IMarker marker, TimeSpan timeSpan)
+        {
+            // marker has finished
+        }
+        #endregion
+
         private RtcCorrection2D Config_OnScannerFieldCorrection2D(IRtc rtc)
         {
             // Measured x,y error data
@@ -238,7 +277,7 @@ namespace Demos
             return rtcCorrection2D;
         }
 
-        #region User would be control marker by remotely
+        #region Control by remotely
         /// <summary>
         /// Ready status
         /// </summary>
@@ -251,7 +290,6 @@ namespace Demos
                 return marker.IsReady;
             }
         }
-
         /// <summary>
         /// Busy status
         /// </summary>
@@ -264,7 +302,6 @@ namespace Demos
                 return marker.IsBusy;
             }
         }
-
         /// <summary>
         /// Error status
         /// </summary>
@@ -285,10 +322,11 @@ namespace Demos
         /// <returns></returns>
         public bool Open(string fileName)
         {
+            if (this.IsBusy)
+                return false;
             var doc = siriusEditorUserControl1.Document;
             return doc.ActOpen(fileName);
         }
-
         /// <summary>
         /// Start marker
         /// </summary>
@@ -296,17 +334,16 @@ namespace Demos
         /// <returns></returns>
         public bool Start(SpiralLab.Sirius2.Mathematics.Offset[] offets = null)
         {
-            var marker = siriusEditorUserControl1.Marker;
             if (!this.IsReady)
                 return false;
             if (this.IsBusy)
                 return false;
             if (this.IsError)
                 return false;
+            var marker = siriusEditorUserControl1.Marker;
             marker.Offsets = offets;
             return marker.Start();
         }
-
         /// <summary>
         /// Stop marker
         /// </summary>
@@ -316,7 +353,6 @@ namespace Demos
             var marker = siriusEditorUserControl1.Marker;
             return marker.Stop();
         }
-
         /// <summary>
         /// Reset marker status
         /// </summary>

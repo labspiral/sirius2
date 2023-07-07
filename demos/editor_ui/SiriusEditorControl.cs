@@ -369,8 +369,7 @@ namespace Demos
             btnImageText.Click += BtnImageText_Click;
             btnImportFile.Click += BtnImportFile_Click;
             mnuDataMatrix.Click += MnuDataMatrix_Click;
-            mnuQRCode.Click += MnuQRCode_Click
-                ;
+            mnuQRCode.Click += MnuQRCode_Click;
 
             mnuMeasurementBeginEnd.Click += BtnMeasurementBeginEnd_Click;
             mnuTimer.Click += BtnTimer_Click;
@@ -390,10 +389,12 @@ namespace Demos
             mnuWriteData.Click += MnuWriteData_Click;
             mnuWriteDataExt16.Click += MnuWriteDataExt16_Click;
 
-
             TreeViewCtrl.View = EditorCtrl.View;
             TreeViewBlockCtrl.View = EditorCtrl.View;
             PropertyGridCtrl.View = EditorCtrl.View;
+
+            //create one by default
+            this.Document = new DocumentBase();
         }
 
         private void MnuQRCode_Click(object sender, EventArgs e)
@@ -621,8 +622,6 @@ namespace Demos
 
         private void SiriusEditorUserControl_Load(object sender, EventArgs e)
         {
-            //create one by default
-            this.Document = new DocumentBase();
             Document.ActNew();
             timerStatus.Enabled = true;
         }

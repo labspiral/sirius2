@@ -50,7 +50,7 @@ using OpenTK.Mathematics;
 namespace Demos
 {
     /// <summary>
-    /// MyMarker
+    /// Custom marker
     /// </summary>
     public class MyMarker
         : MarkerBase
