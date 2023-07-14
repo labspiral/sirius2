@@ -2,7 +2,7 @@
 
 **1. Descriptions**
 
- Super easy library for Control Scanner and Laser
+ SuperEasy Library for Control Scanner and Laser
 
 [![SIRIUS2 DEMO](http://img.youtube.com/vi/3Y3fzXr54gQ/0.jpg)](http://www.youtube.com/watch?v=3Y3fzXr54gQ "SIRIUS2 DEMO")
 
@@ -38,7 +38,7 @@ Link: [Youtube](http://www.youtube.com/watch?v=3Y3fzXr54gQ)
 | Editor                |3D                                                     |2D                      |
 | Render engine         |OpenTK (with shaders)                                  |SharpGL                 |
 | Render speed          |Faster                                                 |Acceptable              |
-| Customization         |Easy, Simple                                           |Acceptable              |
+| Customization         |Expandable                                             |Acceptable              |
 
 
 ----
@@ -47,10 +47,11 @@ Link: [Youtube](http://www.youtube.com/watch?v=3Y3fzXr54gQ)
 **4. Modules**
 
  - spirallab.sirius2.dll
-    - Target frameworks: NET Framework 4.7.2, NET Standard 2.0, NET5 or higher 
-
+    - Target frameworks: NET Framework 4.7.2, NET Standard 2.0, NET6.0 or higher 
+    - Target platforms: Windows (x64) only
  - spirallab.sirius2.winforms.dll
     - Target frameworks: NET Framework 4.7.2
+    - Target platforms: Windows (x64) only
 
 
 ----
@@ -58,11 +59,10 @@ Link: [Youtube](http://www.youtube.com/watch?v=3Y3fzXr54gQ)
 
 **5. How to use ?**
 
- - Target platforms
-    - Windows (x64) only
- - Dll assembly(reference) files
-    - spirallab.sirius2.dll 
-	- spirallab.sirius2.winforms.dll
+ - Demo 'init' project for beginner
+ - Demo 'editor_entity' project for user interface
+    - config.ini for RTC5 or RTC6
+    - config_syncaxis.ini for syncAxis
 
  *The program running 30 mins at evalution copy mode !*
 
@@ -72,10 +72,10 @@ Link: [Youtube](http://www.youtube.com/watch?v=3Y3fzXr54gQ)
 
 **6. Author**
  
- - Email: hcchoi@spirallab.co.kr
+ - 2023 Copyright to (c)SpiralLAB.
+ - All rights reserved. 
  - Homepage: http://spirallab.co.kr
- - 2023 Copyright to (c)SpiralLAB
- - All rights reserved.
+ - Email: hcchoi@spirallab.co.kr
  
 
 ----
@@ -86,6 +86,13 @@ Link: [Youtube](http://www.youtube.com/watch?v=3Y3fzXr54gQ)
 
 DEVELOPER PREVIEW VERSION. IT WIIL BE CHANGED WITHOUT NOTIFICATION !
 
+
+* 2023.7.14 v0.8
+  - added) preliminary document (doc\sirius2)
+  - added) new namespace for marker, opengl
+  - added) import dxf with text entity 
+  - removed) path optimizer license
+  - fixed) improved stability
 
 * 2023.7.7 v0.7
   - added) datamatrix barcode entity
@@ -148,9 +155,8 @@ DEVELOPER PREVIEW VERSION. IT WIIL BE CHANGED WITHOUT NOTIFICATION !
 
 * Editor
   - Editing EntityBlock is not supported yet
-  - Hatch inside of entity is not supported yet (extracted hatch only)
+  - Hatch inside of entity is not supported yet (extract hatch only)
   - Selection entities by rubber banding is not supported yet
-  - Editing child of EntityGroup is not supported yet
   - Multi-languages are not supported yet
-
-   
+  
+  

@@ -1,4 +1,4 @@
-﻿using SpiralLab.Sirius2.Winforms;
+﻿using SpiralLab.Sirius2.Winforms.UI;
 
 namespace Demos
 {
@@ -125,32 +125,32 @@ namespace Demos
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.editorControl1 = new SpiralLab.Sirius2.Winforms.EditorUserControl();
+            this.editorControl1 = new SpiralLab.Sirius2.Winforms.UI.EditorUserControl();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.rtcControl1 = new SpiralLab.Sirius2.Winforms.RtcUserControl();
-            this.laserControl1 = new SpiralLab.Sirius2.Winforms.LaserUserControl();
+            this.rtcControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcUserControl();
+            this.laserControl1 = new SpiralLab.Sirius2.Winforms.UI.LaserUserControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.offsetControl1 = new SpiralLab.Sirius2.Winforms.OffsetUserControl();
-            this.markerControl1 = new SpiralLab.Sirius2.Winforms.MarkerUserControl();
+            this.offsetControl1 = new SpiralLab.Sirius2.Winforms.UI.OffsetUserControl();
+            this.markerControl1 = new SpiralLab.Sirius2.Winforms.UI.MarkerUserControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.rtcDIUserControl1 = new SpiralLab.Sirius2.Winforms.RtcDIUserControl();
-            this.rtcDOUserControl1 = new SpiralLab.Sirius2.Winforms.RtcDOUserControl();
-            this.logControl1 = new SpiralLab.Sirius2.Winforms.LogUserControl();
+            this.rtcDIUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl();
+            this.rtcDOUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl();
+            this.logControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.propertyGridControl1 = new SpiralLab.Sirius2.Winforms.PropertyGridUserControl();
+            this.propertyGridControl1 = new SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.treeViewControl1 = new SpiralLab.Sirius2.Winforms.TreeViewUserControl();
-            this.penControl1 = new SpiralLab.Sirius2.Winforms.PenUserControl();
+            this.treeViewControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl();
+            this.penControl1 = new SpiralLab.Sirius2.Winforms.UI.PenUserControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.treeViewBlockControl1 = new SpiralLab.Sirius2.Winforms.TreeViewBlockUserControl();
+            this.treeViewBlockControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl();
             this.tlsTop2.SuspendLayout();
             this.tlsTop.SuspendLayout();
             this.statusStrip1.SuspendLayout();

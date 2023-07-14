@@ -37,7 +37,10 @@ using SpiralLab.Sirius2.IO;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
 using SpiralLab.Sirius2.Winforms;
+using SpiralLab.Sirius2.Winforms.UI;
 using OpenTK;
+using SpiralLab.Sirius2.Winforms.Entity;
+using SpiralLab.Sirius2.Winforms.Marker;
 
 namespace Demos
 {
@@ -393,8 +396,9 @@ namespace Demos
             TreeViewBlockCtrl.View = EditorCtrl.View;
             PropertyGridCtrl.View = EditorCtrl.View;
 
-            //create one by default
+            //create document by default
             this.Document = new DocumentBase();
+            Document.ActNew();
         }
 
         private void MnuQRCode_Click(object sender, EventArgs e)
@@ -405,7 +409,7 @@ namespace Demos
 
         private void MnuDataMatrix_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateDataMatrix("SIRIUS2", BarcodeCells.Dots, 5, 2,2 );
+            var entity = EntityFactory.CreateDataMatrix("SIRIUS2", BarcodeCells.Dots, 5, 2, 2);
             document.ActAdd(entity);
         }
 
@@ -424,11 +428,11 @@ namespace Demos
         private void MnuAlcDefinedVector_Click(object sender, EventArgs e)
         {
             {
-                var entity = EntityFactory.CreateALCDefinedVectorEnd();
+                var entity = EntityFactory.CreateRampEnd();
                 document.ActAdd(entity);
             }
             {
-                var entity = EntityFactory.CreateALCDefinedVectorBegin(AutoLaserControlSignal.Frequency, 50 * 1000);
+                var entity = EntityFactory.CreateRampBegin(AutoLaserControlSignal.Frequency, 50 * 1000);
                 document.ActInsert(entity, document.ActiveLayer, 0);
             }
         }
@@ -476,7 +480,15 @@ namespace Demos
         private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Document.ActSelectClear();
-            EditorCtrl.View.ViewMode = ViewModes.Entity;
+            switch (tabControl1.SelectedIndex)
+            {
+                case 1:
+                    EditorCtrl.View.ViewMode = ViewModes.Entity;
+                    break;
+                case 2:
+                    EditorCtrl.View.ViewMode = ViewModes.Block;
+                    break;
+            }
             EditorCtrl.View.Render();
         }
 
@@ -485,7 +497,7 @@ namespace Demos
         /// </summary>
         /// <param name="msg"></param>
         /// <param name="keyData"></param>
-        /// <returns></returns>
+        /// <returns>ProcessCmdKey return</returns>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == (Keys.F5))
@@ -509,25 +521,25 @@ namespace Demos
 
         private void MnuMarginBottom_Click(object sender, EventArgs e)
         {
-            document.ActAlign(document.Selected, MarginAlignment.Bottom);
+            document.ActAlign(document.Selected, MarginAlignments.Bottom);
             DoRender();
         }
 
         private void MnuMarginTop_Click(object sender, EventArgs e)
         {
-            document.ActAlign(document.Selected, MarginAlignment.Top);
+            document.ActAlign(document.Selected, MarginAlignments.Top);
             DoRender();
         }
 
         private void MnuMarginRight_Click(object sender, EventArgs e)
         {
-            document.ActAlign(document.Selected, MarginAlignment.Right);
+            document.ActAlign(document.Selected, MarginAlignments.Right);
             DoRender();
         }
 
         private void MnuMarginLeft_Click(object sender, EventArgs e)
         {
-            document.ActAlign(document.Selected, MarginAlignment.Left);
+            document.ActAlign(document.Selected, MarginAlignments.Left);
             DoRender();
         }
 
@@ -545,7 +557,7 @@ namespace Demos
             if (rtcMoF == null)
                 return;
 
-            var form = new SpiralLab.Sirius2.Winforms.MessageBox($"Do you really want to reset encoder values ?", "Warning", MessageBoxButtons.YesNo);
+            var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to reset encoder values ?", "Warning", MessageBoxButtons.YesNo);
             DialogResult dialogResult = form.ShowDialog(this);
             if (dialogResult != DialogResult.Yes)
                 return;
@@ -555,7 +567,7 @@ namespace Demos
 
         private void MnuMofAngularWait_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateMoFWait(EncoderWaitCondition.Over, 90);
+            var entity = EntityFactory.CreateMoFWait(RtcEncoderWaitCondition.Over, 90);
             document.ActAdd(entity);
         }
 
@@ -567,7 +579,7 @@ namespace Demos
                 
             }
             {
-                var entity = EntityFactory.CreateMoFBegin(MoFEncoderType.Angular);
+                var entity = EntityFactory.CreateMoFBegin(RtcEncoderType.Angular);
                 document.ActInsert(entity, document.ActiveLayer, 0);
             }
 
@@ -575,7 +587,7 @@ namespace Demos
 
         private void MnuMofXYWait_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateMoFWait(RtcEncoder.EncX, EncoderWaitCondition.Over, 10);
+            var entity = EntityFactory.CreateMoFWait(RtcEncoder.EncX, RtcEncoderWaitCondition.Over, 10);
             document.ActAdd(entity);
         }
 
@@ -586,7 +598,7 @@ namespace Demos
                 document.ActAdd(entity);
             }
             {
-                var entity = EntityFactory.CreateMoFBegin(MoFEncoderType.XY);
+                var entity = EntityFactory.CreateMoFBegin(RtcEncoderType.XY);
                 document.ActInsert(entity, document.ActiveLayer, 0);
             }
         }
@@ -622,7 +634,7 @@ namespace Demos
 
         private void SiriusEditorUserControl_Load(object sender, EventArgs e)
         {
-            Document.ActNew();
+
             timerStatus.Enabled = true;
         }
 
@@ -676,7 +688,7 @@ namespace Demos
 
         private void BtnText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateText("Arial", $"Hello{Environment.NewLine}SIRIUS2", FontStyle.Regular, 2);
+            var entity = EntityFactory.CreateText("Arial", $"Hello{Environment.NewLine}SIRIUS2",  FontStyle.Regular, 2);
             Document.ActAdd(entity);
         }
 
@@ -712,7 +724,7 @@ namespace Demos
         {
             if (Document.Clipboard == null || Document.Clipboard.Length == 0)
             {
-                var form = new SpiralLab.Sirius2.Winforms.MessageBox($"Clipboard are empty. Please copy or cut at first", "Warning", MessageBoxButtons.OK);
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Clipboard are empty. Please copy or cut at first", "Warning", MessageBoxButtons.OK);
                 form.ShowDialog(this);
                 return;
             }
@@ -779,13 +791,13 @@ namespace Demos
                 switch (rtcMoF.EncoderType)
                 {
                     default:
-                    case MoFEncoderType.XY:
+                    case RtcEncoderType.XY:
                         {
                             rtcMoF.CtlMofGetEncoder(out var x, out var y, out var xMm, out var yMm);
                             lblEncoder.Text = $"ENC XY: {x}, {y} [{xMm:F3}, {yMm:F3}]";
                         }
                         break;
-                    case MoFEncoderType.Angular:
+                    case RtcEncoderType.Angular:
                         { 
                             rtcMoF.CtlMofGetAngularEncoder(out var x, out var angle);
                             lblEncoder.Text = $"ENC X,0: {x} [{angle:F3}˚]";
@@ -799,7 +811,7 @@ namespace Demos
         {
             if (document.IsModified)
             {
-                var form = new SpiralLab.Sirius2.Winforms.MessageBox($"Do you really want to new file without save ?", "Warning", MessageBoxButtons.YesNo);
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to new file without save ?", "Warning", MessageBoxButtons.YesNo);
                 DialogResult dialogResult = form.ShowDialog(this);
                 if (dialogResult != DialogResult.Yes)
                     return;
@@ -820,7 +832,7 @@ namespace Demos
                 return;
             if (Document.IsModified)
             {
-                var form = new SpiralLab.Sirius2.Winforms.MessageBox($"Do you really want to open new file without save ?", "Warning", MessageBoxButtons.YesNo);
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to open new file without save ?", "Warning", MessageBoxButtons.YesNo);
                 DialogResult dialogResult = form.ShowDialog(this);
                 if (dialogResult != DialogResult.Yes)
                     return;
@@ -869,7 +881,7 @@ namespace Demos
         }
         private void LblHelp_Click(object sender, EventArgs e)
         {
-            var form = new SpiralLab.Sirius2.Winforms.MessageBox(Config.KeyboardHelpMessage, "Help - Keyboards", MessageBoxButtons.OK);
+            var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(Config.KeyboardHelpMessage, "Help - Keyboards", MessageBoxButtons.OK);
             DialogResult dialogResult = form.ShowDialog(this);
         }
 

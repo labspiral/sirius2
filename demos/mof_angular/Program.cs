@@ -369,14 +369,14 @@ namespace Demos
              */
 
             // Wait until condition has matched
-            success &= rtcMof.ListMofAngularWait(0, EncoderWaitCondition.Over);
+            success &= rtcMof.ListMofAngularWait(0, RtcEncoderWaitCondition.Over);
 
             // Draw circle
             success &= rtc.ListJumpTo(-rotateCenter + new Vector2(10, 0));
             success &= rtc.ListArcTo(-rotateCenter, 360.0f);
 
             // Wait until condition has matched
-            success &= rtcMof.ListMofAngularWait(180, EncoderWaitCondition.Over);
+            success &= rtcMof.ListMofAngularWait(180, RtcEncoderWaitCondition.Over);
 
             // Draw circle
             success &= rtc.ListJumpTo(rotateCenter + rotateCenter + new Vector2(10, 0));

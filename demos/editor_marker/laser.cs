@@ -163,10 +163,7 @@ namespace Demos
         {
             this.Dispose(false);
         }
-        /// <summary>
-        /// Dispose internal resource
-        /// </summary>
-        /// <param name="disposing"></param>
+        /// <inheritdoc/>  
         protected override void Dispose(bool disposing)
         {
             if (this.disposed)

@@ -174,7 +174,6 @@ namespace Demos
                     case ConsoleKey.D4:
                         DrawCircle2(laser, rtc);
                         break;
-
                 }
             } while (true);
 

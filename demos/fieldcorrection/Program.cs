@@ -31,6 +31,7 @@ using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
 using SpiralLab.Sirius2.Winforms;
+using SpiralLab.Sirius2.Winforms.UI;
 
 namespace Demos
 {

@@ -39,6 +39,8 @@ using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
 using SpiralLab.Sirius2.Winforms;
+using SpiralLab.Sirius2.Winforms.Entity;
+using SpiralLab.Sirius2.Winforms.Marker;
 
 namespace Demos
 {
@@ -61,8 +63,6 @@ namespace Demos
             CreateMarker();
             CreateTestEntities();
             CustomConverter();
-
-            RegisterScannerFieldCorrectionEvent();
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -73,7 +73,7 @@ namespace Demos
 
             if (document.IsModified)
             {
-                var form = new SpiralLab.Sirius2.Winforms.MessageBox($"Do you really want to exit without save ?", "Warning", MessageBoxButtons.YesNo);
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to exit without save ?", "Warning", MessageBoxButtons.YesNo);
                 DialogResult dialogResult = form.ShowDialog(this);
                 if (dialogResult == DialogResult.Yes)
                     e.Cancel = false;
@@ -85,7 +85,7 @@ namespace Demos
                 laser.IsBusy ||
                 marker.IsBusy)
             {
-                var form = new SpiralLab.Sirius2.Winforms.MessageBox($"Do you really want to exit during working on progressing... ?", "Warning", MessageBoxButtons.YesNo);
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to exit during working on progressing... ?", "Warning", MessageBoxButtons.YesNo);
                 DialogResult dialogResult = form.ShowDialog(this);
                 if (dialogResult == DialogResult.Yes)
                     e.Cancel = false;
@@ -347,7 +347,7 @@ namespace Demos
             document.ActAdd(image2);
 
             // ImageText entity
-            var imagetext1 = EntityFactory.CreateImageText("Arial", $"1234567890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", FontStyle.Regular, true, 3, 64, 10);
+            var imagetext1 = EntityFactory.CreateImageText("Arial", $"1234567890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", FontStyle.Regular, true, 3, 5);
             imagetext1.Name = "MyText1";
             imagetext1.Translate(-30, -30);
             document.ActAdd(imagetext1);
@@ -476,10 +476,6 @@ namespace Demos
             var qr2 = EntityFactory.CreateQRCode("abcdefghijklmnopqrstuvwxyz", BarcodeCells.Outline, 3, 4, 4);
             qr2.Translate(-28, 12);
             document.ActAdd(qr2);
-
-            //var pdf1 = EntityFactory.CreatePDF417("0123456789", Barcode2DCells.Dots, 3, 4);
-            //pdf1.Translate(-23, 17);
-            //document.ActAdd(pdf1);
         }
         private void CustomConverter()
         {
@@ -504,41 +500,12 @@ namespace Demos
             }
             return true;
         }
-        private void RegisterScannerFieldCorrectionEvent()
-        {
-            // Event will be fired when select scanner field correction 2d at popup-menu
-            SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2D += Config_OnScannerFieldCorrection2D;
-        }
-        private RtcCorrection2D Config_OnScannerFieldCorrection2D(IRtc rtc)
-        {
-            // Measured x,y error data
-            int rows = 7;
-            int cols = 7;
-            float interval = 10.0f;
-            var rtcCorrection2D = new RtcCorrection2D(rtc.KFactor, rows, cols, interval, interval, rtc.CorrectionFiles[(int)rtc.PrimaryHeadTable].FileName, string.Empty);
-            float left = -interval * (float)(int)(cols / 2);
-            float top = interval * (float)(int)(rows / 2);
-            var rand = new Random();
-            for (int row = 0; row < rows; row++)
-            {
-                for (int col = 0; col < cols; col++)
-                {
-                    rtcCorrection2D.AddRelative(row, col,
-                        new System.Numerics.Vector2(left + col * interval, top - row * interval),
-                        new System.Numerics.Vector2(
-                            rand.Next(20) / 1000.0f - 0.01f,
-                            rand.Next(20) / 1000.0f - 0.01f)
-                        );
-                }
-            }
-            return rtcCorrection2D;
-        }
 
         #region Control by remotely
         /// <summary>
         /// Ready status
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Status</returns>
         public bool IsReady
         {
             get
@@ -550,7 +517,7 @@ namespace Demos
         /// <summary>
         /// Busy status
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Status</returns>
         public bool IsBusy
         {
             get
@@ -562,7 +529,7 @@ namespace Demos
         /// <summary>
         /// Error status
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Status</returns>
         public bool IsError
         {
             get
@@ -576,7 +543,7 @@ namespace Demos
         /// Open recipe (.sirius2 file)
         /// </summary>
         /// <param name="fileName">Filename</param>
-        /// <returns></returns>
+        /// <returns>Success or failed</returns>
         public bool Open(string fileName)
         {
             if (this.IsBusy)
@@ -588,7 +555,7 @@ namespace Demos
         /// Start marker
         /// </summary>
         /// <param name="offets">Array of offset</param>
-        /// <returns></returns>
+        /// <returns>Success or failed</returns>
         public bool Start(SpiralLab.Sirius2.Mathematics.Offset[] offets = null)
         {
             if (!this.IsReady)
@@ -604,7 +571,7 @@ namespace Demos
         /// <summary>
         /// Stop marker
         /// </summary>
-        /// <returns></returns>
+        ///<returns>Success or failed</returns>
         public bool Stop()
         {
             var marker = siriusEditorUserControl1.Marker;
@@ -613,7 +580,7 @@ namespace Demos
         /// <summary>
         /// Reset marker status
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Success or failed</returns>
         public bool Reset()
         {
             var marker = siriusEditorUserControl1.Marker;

@@ -49,10 +49,11 @@ namespace Demos
         [STAThread]
         static void Main(string[] args)
         {
-            if (args.Length > 0)
-                ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, args[0]);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            if (args.Length > 0)
+                ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, args[0]);
             try
             {
                 Application.Run(new Form1());
@@ -62,7 +63,7 @@ namespace Demos
                 System.Diagnostics.StackTrace t = new System.Diagnostics.StackTrace();
                 var stackTrceResult = t.ToString();
                 Logger.Log(Logger.Type.Fatal, ex, stackTrceResult);
-                System.Windows.Forms.MessageBox.Show(stackTrceResult, "Exception !");
+                System.Windows.Forms.MessageBox.Show(stackTrceResult, ex.Message);
             }
         }
     }

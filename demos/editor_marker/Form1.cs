@@ -38,6 +38,9 @@ using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
 using SpiralLab.Sirius2.Winforms;
+using SpiralLab.Sirius2.Winforms.Entity;
+using SpiralLab.Sirius2.Winforms.Marker;
+using SpiralLab.Sirius2.Winforms.UI;
 
 namespace Demos
 {
@@ -70,7 +73,7 @@ namespace Demos
             var rtc = siriusEditorUserControl1.Rtc;
             if (document.IsModified)
             {
-                var form = new SpiralLab.Sirius2.Winforms.MessageBox($"Do you really want to exit without save ?", "Warning", MessageBoxButtons.YesNo);
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to exit without save ?", "Warning", MessageBoxButtons.YesNo);
                 DialogResult dialogResult = form.ShowDialog(this);
                 if (dialogResult == DialogResult.Yes)
                     e.Cancel = false;
@@ -82,7 +85,7 @@ namespace Demos
                 laser.IsBusy ||
                 marker.IsBusy)
             {
-                var form = new SpiralLab.Sirius2.Winforms.MessageBox($"Do you really want to exit during working on progressing... ?", "Warning", MessageBoxButtons.YesNo);
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to exit during working on progressing... ?", "Warning", MessageBoxButtons.YesNo);
                 DialogResult dialogResult = form.ShowDialog(this);
                 if (dialogResult == DialogResult.Yes)
                     e.Cancel = false;

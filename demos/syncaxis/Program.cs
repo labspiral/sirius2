@@ -123,12 +123,12 @@ namespace Demos
                         rtc.CtlReset();
                         break;
                     case ConsoleKey.O:
-                        rtc.CtlSetScannerPosition(Vector2.Zero);
+                        rtc.CtlMoveScannerPosition(Vector2.Zero);
                         // If multiple stages 
                         //rtc.CtlSelectStage( Stage.Stage1, CorrectionTableIndex.Table1);
                         rtc.StageMoveSpeed = 10;
                         rtc.StageMoveTimeOut = 5;
-                        rtc.CtlSetStagePosition(Vector2.Zero);
+                        rtc.CtlMoveStagePosition(Vector2.Zero);
                         break;
                     case ConsoleKey.C:
                         PrintJobCharacteristic(rtc);
@@ -754,7 +754,7 @@ namespace Demos
             if (counts > 0)
             {
                 var lastJob = rtc.JobHistory[counts - 1] as JobSyncAxis;
-                Console.WriteLine($"Job ID: [{lastJob.ID}]. Name= {lastJob.Name}. Result= {lastJob.ResultStatus}. Exec Time= {lastJob.ExecutionTime}s. Started= {lastJob.StartTime}. Ended= {lastJob.EndTime}");
+                Console.WriteLine($"Job ID: [{lastJob.ID}]. Name= {lastJob.Name}. Result= {lastJob.Result}. Exec Time= {lastJob.ExecutionTime}s. Started= {lastJob.StartTime}. Ended= {lastJob.EndTime}");
                 Console.WriteLine($"Scanner Utilization: {lastJob.UtilizedScanner}");
                 Console.WriteLine($"Scanner Position Max: {lastJob.Characteristic.Scanner.ScanPosMax} mm");
                 Console.WriteLine($"Scanner Velocity Max: {lastJob.Characteristic.Scanner.ScanVelMax} mm/s");

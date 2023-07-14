@@ -274,7 +274,7 @@ namespace Demos
             // MoF begin
             success &= rtcMof.ListMofBegin();
             // Wait until condition has matched
-            success &= rtcMof.ListMofWait(RtcEncoder.EncX, 10, EncoderWaitCondition.Over);
+            success &= rtcMof.ListMofWait(RtcEncoder.EncX, 10, RtcEncoderWaitCondition.Over);
 
             // Draw circle
             success &= rtc.ListJumpTo(new Vector2((float)10, 0));
@@ -392,7 +392,7 @@ namespace Demos
                 // MoF begin
                 success &= rtcMof.ListMofBegin();
                 // Wait until condition has matched
-                success &= rtcMof.ListMofWait(RtcEncoder.EncX, 0, EncoderWaitCondition.Over);
+                success &= rtcMof.ListMofWait(RtcEncoder.EncX, 0, RtcEncoderWaitCondition.Over);
                 success &= rtc.ListMarkTo(new Vector2(0, height));
                 success &= rtc.ListMarkTo(new Vector2(width, height));
                 success &= rtc.ListMarkTo(new Vector2(width, -height));

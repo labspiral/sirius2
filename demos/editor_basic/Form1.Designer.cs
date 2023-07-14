@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.siriusEditorUserControl1 = new SpiralLab.Sirius2.Winforms.SiriusEditorUserControl();
+            this.siriusEditorUserControl1 = new SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl();
             this.SuspendLayout();
             // 
             // siriusEditorUserControl1
@@ -61,7 +61,7 @@
 
         #endregion
 
-        private SpiralLab.Sirius2.Winforms.SiriusEditorUserControl siriusEditorUserControl1;
+        private SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl siriusEditorUserControl1;
     }
 }
 

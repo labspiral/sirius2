@@ -41,6 +41,9 @@ using SpiralLab.Sirius2.Scanner;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Winforms;
 using SpiralLab.Sirius2;
+using SpiralLab.Sirius2.Winforms.Entity;
+using SpiralLab.Sirius2.Winforms.Marker;
+using SpiralLab.Sirius2.Winforms.OpenGL;
 #if NETFRAMEWORK
 using OpenTK;
 #elif NET
@@ -188,10 +191,7 @@ namespace Demos
         {
             this.Dispose(false);
         }
-        /// <summary>
-        /// Dispose internal resources
-        /// </summary>
-        /// <param name="disposing"></param>
+        /// <inheritdoc/>  
         protected override void Dispose(bool disposing)
         {
             if (this.disposed)

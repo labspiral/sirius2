@@ -1,6 +1,8 @@
 ﻿using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
 using SpiralLab.Sirius2.Winforms;
+using SpiralLab.Sirius2.Winforms.Marker;
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
