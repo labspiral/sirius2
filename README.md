@@ -4,9 +4,9 @@
 
  SuperEasy Library for Control Scanner and Laser
 
-[![SIRIUS2 DEMO](http://img.youtube.com/vi/3Y3fzXr54gQ/0.jpg)](http://www.youtube.com/watch?v=3Y3fzXr54gQ "SIRIUS2 DEMO")
+[![SIRIUS2 DEMO](http://img.youtube.com/vi/wTNeATLo2HQ/0.jpg)](https://youtu.be/wTNeATLo2HQ "SIRIUS2 DEMO")
 
-Link: [Youtube](http://www.youtube.com/watch?v=3Y3fzXr54gQ)
+[![SIRIUS2 DEMO](http://img.youtube.com/vi/3MlErOf4cc8/0.jpg)](https://youtu.be/3MlErOf4cc8 "SIRIUS2 DEMO")
 
 
 ----
