@@ -152,6 +152,10 @@ namespace Demos
                 case "rtc6e":
                     rtc = ScannerFactory.CreateRtc6Ethernet(rtcId, "192.168.0.100", "255.255.255.0", kfactor, laserMode, signalLevel, signalLevel, correctionPath);
                     break;
+                case "syncaxis":
+                    string configXmlFileName = NativeMethods.ReadIni(Program.ConfigFileName, "RTC", "CONFIG_XML", string.Empty);
+                    rtc = ScannerFactory.CreateRtc6SyncAxis(rtcId, configXmlFileName);
+                    break;
             }
 
             // Initialize RTC controller
@@ -190,7 +194,6 @@ namespace Demos
             success &= rtc.CtlSpeed(50, 50);
             #endregion
 
-
             #region Initialize Laser source
             // Create custom laser source
             float maxWatt = 20;
@@ -214,8 +217,17 @@ namespace Demos
         }
         private void CreateMarker()
         {
-            // Create custome marker
-            IMarker marker = new MyMarker(0, "MyMarker");
+            var rtcType = NativeMethods.ReadIni(Program.ConfigFileName, "RTC", "TYPE", "Rtc5");
+            IMarker marker = null;
+            switch (rtcType.Trim().ToLower())
+            {
+                default:
+                    marker = new MyRtcMarker(0, "MyMarker");// Create custom marker for RTC5,6
+                    break;
+                case "syncaxis":
+                    marker = new MySyncAxisMarker(0, "MyMarker");// Create custom marker for syncAXIS
+                    break;
+            }
 
             // Assign instances to user control
             siriusEditorUserControl1.Marker = marker;

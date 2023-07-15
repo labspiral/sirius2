@@ -38,9 +38,9 @@ using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
 using SpiralLab.Sirius2.Winforms;
 using SpiralLab.Sirius2.Winforms.UI;
-using OpenTK;
 using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
+using OpenTK;
 
 namespace Demos
 {
@@ -117,11 +117,11 @@ namespace Demos
                     {
                         mof.OnEncoderChanged -= Mof_OnEncoderChanged;
                     }
-                    myDIExt1.Dispose();
-                    myDILaserPort.Dispose();
-                    myDOExt1.Dispose();
-                    myDOExt2.Dispose();
-                    myDOLaserPort.Dispose();
+                    myDIExt1?.Dispose();
+                    myDOExt1?.Dispose();
+                    myDOExt2?.Dispose();
+                    myDILaserPort?.Dispose();
+                    myDOLaserPort?.Dispose();
 
                     myDIExt1 = null;
                     myDILaserPort = null;
@@ -142,16 +142,22 @@ namespace Demos
                 {
                     // RTC extension DIO
                     myDIExt1 = IOFactory.CreateInputExtension1(rtc);
-                    myDILaserPort = IOFactory.CreateInputLaserPort(rtc);
                     myDOExt1 = IOFactory.CreateOutputExtension1(rtc);
-                    myDOExt2 = IOFactory.CreateOutputExtension2(rtc);
-                    myDOLaserPort = IOFactory.CreateOutputLaserPort(rtc);
+                    if (rtc is IRtcSyncAxis)
+                    {
+                    }
+                    else
+                    {
+                        myDILaserPort = IOFactory.CreateInputLaserPort(rtc);
+                        myDOLaserPort = IOFactory.CreateOutputLaserPort(rtc);
+                        myDOExt2 = IOFactory.CreateOutputExtension2(rtc);
+                    }
 
-                    myDIExt1.Initialize();
-                    myDILaserPort.Initialize();
-                    myDOExt1.Initialize();
-                    myDOExt2.Initialize();
-                    myDOLaserPort.Initialize();
+                    myDIExt1?.Initialize();
+                    myDOExt1?.Initialize();
+                    myDOExt2?.Initialize();
+                    myDILaserPort?.Initialize();
+                    myDOLaserPort?.Initialize();
 
                     rtcDIUserControl1.DIExt1 = myDIExt1;
                     rtcDIUserControl1.DILaserPort = myDILaserPort;
@@ -697,7 +703,8 @@ namespace Demos
             var form = new ImageTextForm();
             if (DialogResult.OK != form.ShowDialog())
                 return;
-            var entity = EntityFactory.CreateImageText(form.FontName, form.ImageText, form.Style, form.IsFill, form.OutlineSize, form.PixelSize, 10);
+            
+            var entity = EntityFactory.CreateImageText(form.FontName, form.ImageText, form.Style, form.IsFill, form.OutlinePixel, form.HeightPixel, 10);
             Document.ActAdd(entity);
         }
 

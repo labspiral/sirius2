@@ -34,8 +34,10 @@ namespace Demos
         /// <summary>
         /// Your config ini file
         /// </summary>
-        public static string ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.ini");
-        
+        //public static string ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.ini");
+        // Used this config file if using XL-SCAN (syncAXIS)
+         public static string ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config_syncaxis.ini");
+
         [STAThread]
         static void Main()
         {

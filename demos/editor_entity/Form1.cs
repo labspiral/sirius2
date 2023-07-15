@@ -347,7 +347,7 @@ namespace Demos
             document.ActAdd(image2);
 
             // ImageText entity
-            var imagetext1 = EntityFactory.CreateImageText("Arial", $"1234567890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", FontStyle.Regular, true, 3, 5);
+            var imagetext1 = EntityFactory.CreateImageText("Arial", $"1234567890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", FontStyle.Regular, false, 3, 64, 10);
             imagetext1.Name = "MyText1";
             imagetext1.Translate(-30, -30);
             document.ActAdd(imagetext1);

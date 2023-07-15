@@ -17,7 +17,7 @@
  *               `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Custom marker
+ * Description : Custom marker for RTC5,6
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  */
 
@@ -44,18 +44,13 @@ using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.OpenGL;
-#if NETFRAMEWORK
-using OpenTK;
-#elif NET
-using OpenTK.Mathematics;
-#endif
 
 namespace Demos
 {
     /// <summary>
-    /// Custom marker
+    /// Custom marker for RTC5,6
     /// </summary>
-    public class MyMarker
+    public class MyRtcMarker
         : MarkerBase
     {
         /// <summary>
@@ -162,7 +157,7 @@ namespace Demos
         /// <summary>
         /// Constructor
         /// </summary>
-        public MyMarker()
+        public MyRtcMarker()
             : base()
         {
             IsExternalStart = false;
@@ -178,7 +173,7 @@ namespace Demos
         /// </summary>
         /// <param name="index">Index</param>
         /// <param name="name">Name</param>
-        public MyMarker(int index, string name)
+        public MyRtcMarker(int index, string name)
             : this()
         {
             Index = index;
@@ -187,7 +182,7 @@ namespace Demos
         /// <summary>
         /// Finalizer
         /// </summary>
-        ~MyMarker()
+        ~MyRtcMarker()
         {
             this.Dispose(false);
         }
@@ -319,14 +314,13 @@ namespace Demos
 
             // Shallow copy for cross-thread issue
             layers = new List<EntityLayer>(Document.InternalData.Layers);
-
+            
             CurrentOffsetIndex = 0;
             CurrentLayerIndex = 0;
             CurrentLayer = null;
             CurrentEntityIndex = 0;
             CurrentEntity = null;
             AccumulatedMarks++;
-
             this.thread = new Thread(this.MarkerThread);
             this.thread.Name = $"MyMarker: {this.Name}";
             this.thread.Start();

@@ -1516,14 +1516,14 @@
             FontStyle
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.PixelSize">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.PixelHeight">
             <summary>
-            PixelSize
+            Height (pixel)
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.pixelSize">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.pixelHeight">
             <summary>
-            Pixel size 
+            Height (pixel)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.IsFill">
@@ -1531,12 +1531,12 @@
             Fill
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.OutlineSize">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.PixelOutline">
             <summary>
-            Outline
+            Outline (pixel)
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.outlineSize">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.pixelOutline">
             <summary>
             Outline size
             </summary>
@@ -1556,7 +1556,7 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.#ctor(System.String,System.String,System.Drawing.FontStyle,System.Boolean,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.#ctor(System.String,System.String,System.Drawing.FontStyle,System.Boolean,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Constructor
             </summary>
@@ -1564,9 +1564,10 @@
             <param name="text"></param>
             <param name="style">Font style</param>
             <param name="isFill">Is fill (or outline)</param>
-            <param name="outlineSize">Outline size (if outline only)</param>
-            <param name="height">Height</param>
-            <param name="width">Width</param>
+            <param name="pixelOutline">Outline size (if outline only)</param>
+            <param name="pixelHeight">Height (pixel)</param>
+            <param name="height">Height (mm)</param>
+            <param name="width">Width (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.Clone">
             <inheritdoc/>
@@ -2447,32 +2448,6 @@
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPenSyncAxis.approxBlendLimit">
             <summary>
             SyncAxis approx. Blend Limit (mm)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPenSyncAxis.IsSpotDistanceControlSupress">
-            <summary>
-            Suppress Spot distance control
-            </summary>
-            <remarks>
-            Activated if greater then 0
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPenSyncAxis.isSpotDistanceControlSupress">
-            <summary>
-            Suppress Spot distance control
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPenSyncAxis.SpotDistanceControlDelayTime">
-            <summary>
-            Suppress Spot distance control
-            </summary>
-            <remarks>
-            Activated if greater then 0
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPenSyncAxis.spotDistanceControlDelayTime">
-            <summary>
-            Suppress Spot distance control
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPenSyncAxis.#ctor">
@@ -4472,7 +4447,7 @@
             <param name="width">Width (mm) (If width is 0, aspect-ratio will be calculated by automatically)</param>
             <returns><c>EntityImage</c> </returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateImageText(System.String,System.String,System.Drawing.FontStyle,System.Boolean,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateImageText(System.String,System.String,System.Drawing.FontStyle,System.Boolean,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Create <c>EntityImageText</c> entity
             </summary>
@@ -4481,6 +4456,7 @@
             <param name="style"><c>System.Drawing.FontStyle</c></param>
             <param name="isFill">Fill (or outline)</param>
             <param name="outlineSize">Outline size (if outline)</param>
+            <param name="pixelHeight">Height (pixel)</param>
             <param name="height">Height (mm)</param>
             <param name="width">Width (mm) (If width is 0, aspect-ratio will be calculated by automatically)</param>
             <returns><c>EntityImageText</c> </returns>
@@ -5817,7 +5793,6 @@
             Do external control works like as i/o, motion stage controls before mark layer.<br/>
             If returned False, mark progress would be stopped.<br/>
             </remarks>
-            
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnAfterLayer">
             <summary>
@@ -5898,6 +5873,15 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Offsets">
             <summary>
             Array of offset (dx, dy, dz and angle z)
+            <code>
+            var offsets = new SpiralLab.Sirius2.Mathematics.Offset[] 
+            {
+                new Offset(-10, 0, 0),
+                new Offset(10, 0, 0),
+            };
+            marker.Offsets = offets;
+            marker.Start(); 
+            </code>
             </summary>
             <remarks>
             Default: <c>SpiralLab.Sirius2.Mathematics.Offset.Zero</c>
@@ -5977,15 +5961,6 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Start">
             <summary>
             Start
-            <code>
-            var offsets = new SpiralLab.Sirius2.Mathematics.Offset[] 
-            {
-                new Offset(-10, 0, 0),
-                new Offset(10, 0, 0),
-            };
-            marker.Offsets = offets;
-            marker.Start(); 
-            </code>
             </summary>
             <returns>Success or not</returns>
         </member>
@@ -9850,9 +9825,9 @@
             Font name
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.UI.ImageTextForm.PixelSize">
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.ImageTextForm.HeightPixel">
             <summary>
-            Pixel Size
+            Height pixel
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.ImageTextForm.ImageText">
@@ -9870,9 +9845,9 @@
             Is Fill 
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.UI.ImageTextForm.OutlineSize">
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.ImageTextForm.OutlinePixel">
             <summary>
-            Outline size
+            Outline pixel
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.ImageTextForm.#ctor">
