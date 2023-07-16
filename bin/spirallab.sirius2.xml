@@ -12874,6 +12874,22 @@
             <param name="angularJerk">excelliSCAN14: 4e9, excelliSCAN20: 1e9</param>
             <returns>Success or failed</returns>
         </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.SyncAxisViewerHelper">
+            <summary>
+            SyncAxisViewer helper 
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.SyncAxisViewerHelper.Plot(System.String)">
+            <summary>
+            View simulation output data by syncAXIS viewer
+            </summary>
+            <remarks>
+            Used with <c>Config.SyncAxisViewerProgramPath</c> <br/>
+            Used with <c>SpiralLab.Sirius2.Config.SyncAxisSimulateFilePath</c> <br/>
+            </remarks>
+            <param name="filename">Simulted output filename</param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Scanner.WobbelShape">
             <summary>
             Wobbel shapes

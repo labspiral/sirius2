@@ -76,6 +76,33 @@ namespace SpiralLab.Sirius2.Winforms.Marker
         public System.Drawing.Color OperationStatusColor { get; protected set; }
 
         /// <summary>
+        /// Is plot simulation output to syncAxis viewer
+        /// </summary>
+        [RefreshProperties(RefreshProperties.All)]
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("SyncAXIS")]
+        [DisplayName("Plot")]
+        [Description("Plot Simulated Output by syncAXIS")]
+        public virtual bool IsMeasurementPlot
+        {
+            get { return isMeasurementPlot; }
+            set
+            {
+                if (!File.Exists(SpiralLab.Sirius2.Config.SyncAxisViewerProgramPath))
+                {
+                    MessageBox.Show($"syncaxis viewer program is not exist at '{SpiralLab.Sirius2.Config.MeasurementGNUPlotProgramPath}'", "Warning", MessageBoxButtons.OK);
+                    return;
+                }
+                isMeasurementPlot = value;
+            }
+        }
+        /// <summary>
+        /// Is plot measurement session to graph or not
+        /// </summary>
+        protected bool isMeasurementPlot;
+
+        /// <summary>
         /// Internal marker thread 
         /// </summary>
         protected Thread thread;
@@ -380,7 +407,16 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                         break;
                     }
                     if (success)
-                        ShowSyncAxisViewer(rtcSyncAxis);
+                    {
+                        if (this.IsMeasurementPlot)
+                        {
+                            if (rtcSyncAxis.IsSimulationMode)
+                            {
+                                string simulatedFileName = Path.Combine(SpiralLab.Sirius2.Config.SyncAxisSimulateFilePath, rtcSyncAxis.SimulationFileName);
+                                SyncAxisViewerHelper.Plot(simulatedFileName);
+                            }
+                        }
+                    }
                 }
                 rtc.MatrixStack.Pop(); 
                 if (!success)
@@ -400,51 +436,6 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                 Logger.Log(Logger.Type.Error, $"marker [{Index}]: mark has failed");
                 this.NotifyFailed();
             }
-        }
-
-        private void ShowSyncAxisViewer(IRtcSyncAxis rtcSyncAXIS)
-        {
-            Debug.Assert(rtcSyncAXIS != null);
-            if (rtcSyncAXIS.IsSimulationMode)
-            {
-                if (!File.Exists(SpiralLab.Sirius2.Config.SyncAxisViewerProgramPath))
-                {
-                    MessageBox.Show($"SyncAxis Viewer is not founded at {SpiralLab.Sirius2.Config.SyncAxisViewerProgramPath}", "Error", MessageBoxButtons.OK);
-                }
-                else
-                {
-                    string simulatedFileName = Path.Combine(SpiralLab.Sirius2.Config.SyncAxisSimulateFilePath, rtcSyncAXIS.SimulationFileName);
-                    if (!File.Exists(simulatedFileName))
-                        Thread.Sleep(2000);
-
-                    if (!File.Exists(simulatedFileName))
-                    {
-                        Logger.Log(Logger.Type.Debug, $"marker [{this.Index}] {this.Name}: simulated log file is not exist: {simulatedFileName}");
-                        return;
-                    }
-                    Task.Run(() =>
-                    {
-                        ProcessStartInfo startInfo = new ProcessStartInfo();
-                        startInfo.WorkingDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "syncaxis", "Tools", "syncAXIS_Viewer");
-                        startInfo.CreateNoWindow = false;
-                        startInfo.UseShellExecute = false;
-                        startInfo.FileName = SpiralLab.Sirius2.Config.SyncAxisViewerProgramPath;
-                        startInfo.WindowStyle = ProcessWindowStyle.Normal;
-                        startInfo.Arguments = "-a";
-                        if (!string.IsNullOrEmpty(simulatedFileName))
-                            startInfo.Arguments = simulatedFileName;
-                        try
-                        {
-                            var proc = Process.Start(startInfo);
-                            Logger.Log(Logger.Type.Debug, $"marker [{this.Index}] {this.Name}: syncAxis viewer has opened {simulatedFileName}");
-                        }
-                        catch (Exception ex)
-                        {
-                            Logger.Log(Logger.Type.Error, ex.Message);
-                        }
-                    });
-                }
-            }
-        }
+        }        
     }
 }

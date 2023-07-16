@@ -5572,6 +5572,16 @@
             Op status 
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.IsMeasurementPlot">
+            <summary>
+            Is plot simulation output to syncAxis viewer
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.isMeasurementPlot">
+            <summary>
+            Is plot measurement session to graph or not
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.thread">
             <summary>
             Internal marker thread 
@@ -9956,6 +9966,14 @@
             </summary>
             <remarks>
             Custom message box
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.MessageBox.TextLabel">
+            <summary>
+            <c>TextBoxWithLabel</c> for input values
+            </summary>
+            <remarks>
+            Visibility : False (by default)
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.MessageBox.#ctor">

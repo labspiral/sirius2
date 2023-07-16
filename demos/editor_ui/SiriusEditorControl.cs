@@ -488,10 +488,10 @@ namespace Demos
             Document.ActSelectClear();
             switch (tabControl1.SelectedIndex)
             {
-                case 1:
+                case 0:
                     EditorCtrl.View.ViewMode = ViewModes.Entity;
                     break;
-                case 2:
+                case 1:
                     EditorCtrl.View.ViewMode = ViewModes.Block;
                     break;
             }
