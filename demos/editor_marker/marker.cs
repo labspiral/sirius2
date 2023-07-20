@@ -44,6 +44,8 @@ using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.OpenGL;
+using SpiralLab.Sirius2.Scanner.Rtc;
+using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
 
 namespace Demos
 {

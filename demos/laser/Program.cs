@@ -30,6 +30,7 @@ using System.Windows.Forms;
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
+using SpiralLab.Sirius2.Scanner.Rtc;
 
 namespace Demos
 {
@@ -117,7 +118,7 @@ namespace Demos
             Console.WriteLine($"laser source [{laserType}]: {laser.Name} has created");
 
             // Assign RTC into laser
-            laser.Rtc = rtc;
+            laser.Scanner = rtc;
             // Initialize laser
             success &= laser.Initialize();
             // Default output power to 1%

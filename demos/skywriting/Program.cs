@@ -30,6 +30,7 @@ using System.Numerics;
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
+using SpiralLab.Sirius2.Scanner.Rtc;
 
 namespace Demos
 {
@@ -75,7 +76,7 @@ namespace Demos
             var laser = LaserFactory.CreateVirtual(0, 20);
 
             // Assign RTC into laser
-            laser.Rtc = rtc;
+            laser.Scanner = rtc;
             // Initialize laser
             success &= laser.Initialize();
             // Default power as 2W

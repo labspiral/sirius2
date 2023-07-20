@@ -34,6 +34,7 @@ using System.Threading;
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
+using SpiralLab.Sirius2.Scanner.Rtc;
 
 namespace Demos
 {
@@ -48,7 +49,10 @@ namespace Demos
     {
         /// <inheritdoc/>
         public virtual event PropertyChangedEventHandler PropertyChanged;
-        /// <inheritdoc/>
+        /// <summary>
+        /// Nofity property value has changed
+        /// </summary>
+        /// <param name="propertyName">Property name</param>
         protected void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
             var receivers = this.PropertyChanged?.GetInvocationList();
@@ -173,7 +177,7 @@ namespace Demos
 
         /// <inheritdoc/>  
         [Browsable(false)]
-        public virtual IRtc Rtc { get; set; }
+        public virtual IScanner Scanner { get; set; }
 
         /// <inheritdoc/>  
         [Browsable(false)]
@@ -348,9 +352,9 @@ namespace Demos
             GC.SuppressFinalize(this);
         }
         /// <summary>
-        /// Dispose internal resource
+        /// Dispose internal resources
         /// </summary>
-        /// <param name="disposing"></param>
+        /// <param name="disposing">Explicit dispose or not</param>
         protected virtual void Dispose(bool disposing)
         {
             if (this.disposed)
@@ -410,6 +414,8 @@ namespace Demos
         public virtual bool CtlPower(double watt)
         {
             Debug.Assert(this.MaxPowerWatt > 0);
+            var rtc = Scanner as IRtc;
+            Debug.Assert(rtc != null);
             bool success = true;
             if (watt > this.MaxPowerWatt)
                 watt = this.MaxPowerWatt;
@@ -428,9 +434,9 @@ namespace Demos
                     case PowerControlMethod.Analog:
                         double dataVoltage = percentage / 100.0 * (this.MaxVoltage - this.MinVoltage) + this.MinVoltage;
                         if (1 == this.AnalogPortNo)
-                            success &= this.Rtc.CtlWriteData<double>(ExtensionChannel.ExtAO1, dataVoltage);
+                            success &= rtc.CtlWriteData<double>(ExtensionChannel.ExtAO1, dataVoltage);
                         else if (2 == this.AnalogPortNo)
-                            success &= this.Rtc.CtlWriteData<double>(ExtensionChannel.ExtAO2, dataVoltage);
+                            success &= rtc.CtlWriteData<double>(ExtensionChannel.ExtAO2, dataVoltage);
                         break;
                 }
                 Thread.Sleep((int)this.PowerControlDelayTime);
@@ -457,8 +463,8 @@ namespace Demos
         public virtual bool ListPower(double watt)
         {
             Debug.Assert(this.MaxPowerWatt > 0);
-            if (null == Rtc)
-                return true;
+            var rtc = Scanner as IRtc;
+            Debug.Assert(rtc != null);
             if (watt > this.MaxPowerWatt)
                 watt = this.MaxPowerWatt;
             lock (SyncRoot)
@@ -476,10 +482,10 @@ namespace Demos
                     case PowerControlMethod.Analog:
                         double dataVoltage = percentage / 100.0 * (this.MaxVoltage - this.MinVoltage) + this.MinVoltage;
                         if (1 == this.AnalogPortNo)
-                            success &= this.Rtc.ListWriteData<double>(ExtensionChannel.ExtAO1, dataVoltage);
+                            success &= rtc.ListWriteData<double>(ExtensionChannel.ExtAO1, dataVoltage);
                         else
-                            success &= this.Rtc.ListWriteData<double>(ExtensionChannel.ExtAO2, dataVoltage);
-                        success &= this.Rtc.ListWait(this.PowerControlDelayTime);
+                            success &= rtc.ListWriteData<double>(ExtensionChannel.ExtAO2, dataVoltage);
+                        success &= rtc.ListWait(this.PowerControlDelayTime);
                         break;
                 }
                 if (success)

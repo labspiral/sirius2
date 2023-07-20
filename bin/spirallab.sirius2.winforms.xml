@@ -59,7 +59,7 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRampBegin.#ctor(SpiralLab.Sirius2.Scanner.AutoLaserControlSignal,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRampBegin.#ctor(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignal,System.Double)">
             <summary>
             Constructor
             </summary>
@@ -175,7 +175,7 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWriteData.#ctor(SpiralLab.Sirius2.Scanner.ExtensionChannel,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWriteData.#ctor(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannel,System.Double)">
             <summary>
             Constructor
             </summary>
@@ -288,6 +288,7 @@
             <summary>
             Constructor
             </summary>
+            <param name="degree">Degree (2 or 3)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCurve.#ctor(OpenTK.Vector2,OpenTK.Vector2,OpenTK.Vector2)">
             <summary>
@@ -723,6 +724,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.Dispose(System.Boolean)">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.HatchByAngle(SpiralLab.Sirius2.Winforms.Entity.EntityGroup,System.Boolean,System.Double,System.Double,System.Double,System.Double)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <inheritdoc/>
         </member>
@@ -765,6 +769,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.ToPolylines">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417">
@@ -1096,6 +1103,11 @@
             Used by internally (Do NOT edit)
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityText._FontName">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityText.polylines">
             <summary>
             Array of <c>EntityPolyline2D</c>
@@ -1137,6 +1149,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.ToPolylines">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.HatchByAngle(SpiralLab.Sirius2.Winforms.Entity.EntityGroup,System.Boolean,System.Double,System.Double,System.Double,System.Double)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
@@ -1316,7 +1331,7 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.#ctor(SpiralLab.Sirius2.Scanner.RtcEncoder,SpiralLab.Sirius2.Scanner.RtcEncoderWaitCondition,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.#ctor(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoder,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitCondition,System.Double)">
             <summary>
             Constructor (MoF XY)
             </summary>
@@ -1324,7 +1339,7 @@
             <param name="condition"><c>EncoderWaitCondition</c></param>
             <param name="position">Wait position (mm)</param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.#ctor(SpiralLab.Sirius2.Scanner.RtcEncoderWaitCondition,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.#ctor(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitCondition,System.Double)">
             <summary>
             Constructor (MoF Angular)
             </summary>
@@ -1420,7 +1435,7 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFBegin.#ctor(SpiralLab.Sirius2.Scanner.RtcEncoderType)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFBegin.#ctor(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderType)">
             <summary>
             Constructor
             </summary>
@@ -1551,6 +1566,11 @@
             Used by internally (Do NOT edit)
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageText._FontName">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.#ctor">
             <summary>
             Constructor
@@ -1560,8 +1580,8 @@
             <summary>
             Constructor
             </summary>
-            <param name="fontName"></param>
-            <param name="text"></param>
+            <param name="fontName">Font(family) name</param>
+            <param name="text">Text</param>
             <param name="style">Font style</param>
             <param name="isFill">Is fill (or outline)</param>
             <param name="pixelOutline">Outline size (if outline only)</param>
@@ -1784,7 +1804,7 @@
             Raster Direction
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.Base64EncodedImage">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage._BitmapImage">
             <summary>
             Image Encodering t Base64 
             </summary>
@@ -1792,6 +1812,11 @@
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImage.bitmap">
             <summary>
             Bitmap resource for image
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage._FileName">
+            <summary>
+            Used by internally (Do NOT edit)
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImage.glBuffer">
@@ -2049,6 +2074,16 @@
             <para>Must be exist master <c>EntityBlock</c> in <c>IDocument.Blocks</c></para>
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert.masterBlockName">
+            <summary>
+            Master block name
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert._MasterBlockName">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert.#ctor">
             <summary>
             Constructor
@@ -2229,21 +2264,42 @@
             <summary>
             Render boundgin box at <c>IView</c>
             </summary>
-            <param name="view"></param>
+            <param name="view"><c>IView</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point)">
             <summary>
             Hittest by Min, Max (Before transformed)
             </summary>
-            <param name="view"></param>
-            <param name="p"></param>
+            <param name="view"><c>IView</c></param>
+            <param name="mousePosition">Mouse location</param>
             <returns>Is hitted or not</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.IntersectXY(OpenTK.Vector2)">
+            <summary>
+            Intersected x, y position within bound box or not
+            </summary>
+            <param name="v">X,Y position</param>
+            <returns>Intersected(or included) or not</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.IntersectXY(SpiralLab.Sirius2.Winforms.Entity.BoundingBox)">
+            <summary>
+            Intersected width, height within bound box or not
+            </summary>
+            <remarks>
+            Applied. AABB (Axis Aligned Bounding Box) 
+            </remarks>
+            <param name="bbox"><c>BoundingBox</c></param>
+            <returns></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.RealUnion(SpiralLab.Sirius2.Winforms.Entity.BoundingBox)">
             <summary>
             Union region only real(or transformed) coordinate values
             </summary>
             <param name="bbox"><c>BoundingBox</c></param>
+            <remarks>
+            Real bounding box means all vertices has matrix transfored (or applied).<br/>
+            So only <c>RealMin</c>, <c>RealMax</c> values are meaningful.<br/>
+            </remarks>
             <returns><c>BoundingBox</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.RealUnions(SpiralLab.Sirius2.Winforms.Entity.BoundingBox[])">
@@ -2251,29 +2307,33 @@
             Union region only real(or transformed) coordinate values
             </summary>
             <param name="bboxes">Array of <c>BoundingBox</c></param>
+            <remarks>
+            Real bounding box means all vertices has matrix transfored (or applied).<br/>
+            So only <c>RealMin</c>, <c>RealMax</c> values are meaningful.<br/>
+            </remarks>
             <returns><c>BoundingBox</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.RealBoundingBox(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
             <summary>
-            Get real bounding box include children entities
+            Get real bounding box includes children <c>IEntity</c>
             </summary>
-            <param name="entity"></param>
-            <returns><c>BoundingBox</c></returns>
+            <param name="entity">Target <c>IEntity</c></param>
             <remarks>
-            Real bounding box means all vertices has matrix transfored (or applied).
-            So only RealMin, RealMax values are meaningful.
+            Real bounding box means all vertices has matrix transfored (or applied).<br/>
+            So only <c>RealMin</c>, <c>RealMax</c> values are meaningful.<br/>
             </remarks>
+            <returns><c>BoundingBox</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.RealBoundingBox(SpiralLab.Sirius2.Winforms.Entity.IEntity[])">
             <summary>
             Get real bounding box include children entities
             </summary>
             <param name="entities">Array of entities</param>
-            <returns><c>BoundingBox</c></returns>
             <remarks>
-            Real bounding box means all vertices has matrix transfored (or applied).
-            So only RealMin, RealMax values are meaningful.
+            Real bounding box means all vertices has matrix transfored (or applied).<br/>
+            So only <c>RealMin</c>, <c>RealMax</c> values are meaningful.<br/>
             </remarks>
+            <returns><c>BoundingBox</c></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementEnd">
             <summary>
@@ -2306,6 +2366,11 @@
             <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementBegin.Title">
+            <summary>
+            Title
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementBegin.title">
             <summary>
             Title
             </summary>
@@ -2346,17 +2411,22 @@
             Raw Data Format or not 
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementBegin._Title">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementBegin.#ctor">
             <summary>
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementBegin.#ctor(System.Double,SpiralLab.Sirius2.Scanner.MeasurementChannel[])">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementBegin.#ctor(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel[])">
             <summary>
             Constructor
             </summary>
-            <param name="samplingFrequency"></param>
-            <param name="channels"></param>
+            <param name="samplingFrequency">Sampling frequency (Hz)</param>
+            <param name="channels">Array of <c>MeasurementChannel</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementBegin.Clone">
             <inheritdoc/>
@@ -2429,7 +2499,7 @@
             SyncAxis min mark speed (mm/s)
             </summary>
             <remarks>
-            Activated if greater then 0
+            Activated if greater than 0
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPenSyncAxis.minMarkSpeed">
@@ -2439,10 +2509,10 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPenSyncAxis.ApproxBlendLimit">
             <summary>
-            SyncAxis approx. Blend Limit (mm)
+            SyncAxis approx. blend Limit (mm)
             </summary>
             <remarks>
-            Activated if greater then 0
+            Activated if greater than 0
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPenSyncAxis.approxBlendLimit">
@@ -2667,7 +2737,7 @@
             Skywriting angular limit at mode 3
             </summary>
             <remarks>
-            Activated skywriting if greater then angular limit
+            Activated skywriting if greater than angular limit
             Example. If 90 degree, activated 91,92,...
             </remarks>
         </member>
@@ -2747,6 +2817,11 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Description">
             <inheritdoc/>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBase.description">
+            <summary>
+            Name of <c>IEntity</c>
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase.IsRenderable">
             <inheritdoc/>
@@ -2847,6 +2922,16 @@
             </summary>
             <returns><c>Matrix4</c></returns>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase._Name">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase._Description">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase._ModelTranslate">
             <summary>
             Used by internally (Do NOT edit)
@@ -2934,6 +3019,27 @@
             <summary>
             Re-adjust position for align by <c>Alignment</c> value
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.ResetModelMatrix(SpiralLab.Sirius2.Winforms.Entity.EntityBase)">
+            <summary>
+            Reset(or identity) model matrix 
+            </summary>
+            <param name="entity"><c>EntityBase</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.HatchByAngle(SpiralLab.Sirius2.Winforms.Entity.EntityGroup,System.Boolean,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Do hatch within <c>EntityBase</c> if possible
+            </summary>
+            <remarks>
+            Used with <c>IExtractPolyline</c>
+            </remarks>
+            <param name="targetGroup">Added hatch result into <c>EntityGroup</c></param>
+            <param name="isZigZag">Zigzag or not</param>
+            <param name="angle">Angle (degree)</param>
+            <param name="interval">Interval (mm)</param>
+            <param name="exclude">Exclude (mm)</param>
+            <param name="shift">Shift (mm)</param>
+            <returns></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
@@ -3251,21 +3357,21 @@
             <summary>
             Translate dx, dy, dz
             </summary>
-            <param name="dXyz"><c>Vector3</c> for dx, dy, dz (mm)</param>
+            <param name="deltaXyz"><c>Vector3</c> for dx, dy, dz (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.Translate(OpenTK.Vector2)">
             <summary>
             Translate dx, dy
             </summary>
-            <param name="dXy"><c>Vector2</c> for dx, dy (mm)</param>
+            <param name="deltaXy"><c>Vector2</c> for dx, dy (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.Translate(System.Double,System.Double,System.Double)">
             <summary>
             Translate dx, dy, dz
             </summary>
-            <param name="dX">Dx (mm)</param>
-            <param name="dY">Dy (mm)</param>
-            <param name="dZ">Dz (mm) (Default= 0)</param>
+            <param name="dx">Dx (mm)</param>
+            <param name="dy">Dy (mm)</param>
+            <param name="dz">Dz (mm) (Default= 0)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.RotateX(System.Double)">
             <summary>
@@ -3297,7 +3403,7 @@
             <summary>
             Scale sx, sy, sz
             </summary>
-            <param name="dScale">Delta scale</param>
+            <param name="deltaScale">Delta scale</param>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.IMarkerable">
             <summary>
@@ -3376,7 +3482,7 @@
             Extract array of <c>EntityPolyline2D</c>
             </summary>
             <remarks>
-            Transformed with Model 4x4 matrix
+            <c>EntityPolyline2D</c> are calculated(or applied) by model matrix.
             </remarks>
             <returns>Array of <c>EntityPolyline2D</c></returns>
         </member>
@@ -3477,8 +3583,7 @@
             Face (Triangle)
             </summary>
             <remarks>
-            Face: Vector1,Normal1, Vector2,Normal2, Vector3,Normal3 
-            Length: 6
+            6 Vertices (= Vector1,Normal1, Vector2,Normal2, Vector3,Normal3) <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityFace._Vertices">
@@ -3751,11 +3856,11 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityLayer.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityLayer.PropertyVisibility(SpiralLab.Sirius2.Scanner.IRtc)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityLayer.PropertyVisibility(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
             <summary>
-            Property visibility
+            Property visibility for <c>IRtc</c>
             </summary>
-            <param name="rtc"></param>
+            <param name="rtc"><c>IRtc</c></param>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">
             <summary>
@@ -3763,7 +3868,7 @@
             <para>Inherited from <c>EntityPen</c> -> <c>EntityPenSyncAxis</c> -> <c>EntityPenRtc</c> -> <c>EntityControlBase</c> -> <c>EntityBase</c> </para>
             </summary>
             <remarks>
-            When <c>IDocument</c> has created, <c>EntityPen</c> are created and reset default values by <c>Config.OnCreatePen</c> event
+            When <c>IDocument</c> has created, <c>EntityPen</c> are created by <c>Config.OnCreatePen</c> event also.
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.Power">
@@ -3852,7 +3957,11 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPen.Equals(SpiralLab.Sirius2.Winforms.Entity.EntityPen)">
-            <inheritdoc/>
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other"><c>EntityPen</c></param>
+            <returns>True if the current object is equal to the other parameter; otherwise, false.</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPen.Equals(System.Object)">
             <inheritdoc/>
@@ -3863,17 +3972,17 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPen.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPen.PropertyVisibility(SpiralLab.Sirius2.Scanner.IRtc)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPen.PropertyVisibility(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
             <summary>
-            Property visibility
+            Property visibility for <c>IRtc</c>
             </summary>
-            <param name="rtc"></param>
+            <param name="rtc"><c>IRtc</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPen.PropertyVisibility(SpiralLab.Sirius2.Laser.ILaser)">
             <summary>
-            Property visibility
+            Property visibility for <c>ILaser</c>
             </summary>
-            <param name="laser"></param>
+            <param name="laser"><c>ILaser</c></param>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral">
             <summary>
@@ -4042,11 +4151,11 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPoints.Reverse">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPoints.PropertyVisibility(SpiralLab.Sirius2.Scanner.IRtc)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPoints.PropertyVisibility(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
             <summary>
-            Property visibility
+            Property visibility for <c>IRtc</c>
             </summary>
-            <param name="rtc"></param>
+            <param name="rtc"><c>IRtc</c></param>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityPoint">
             <summary>
@@ -4213,6 +4322,14 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityLine.Reverse">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityLine.Extend(System.Double,System.Double)">
+            <summary>
+            Extend length of <c>Start</c>, <c>End</c>
+            </summary>
+            <param name="startDistance">Extend length of <c>Start</c></param>
+            <param name="endDistance">Extend length of <c>End</c></param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityLine.ToPolylines">
             <inheritdoc/>
         </member>
@@ -4255,10 +4372,31 @@
             Extract vertices from <c>EntityPolyline2D</c>
             </summary>
             <remarks>
-            Vertices are calculated before transform matries.
-            Divided arc to lines by <c>Config.DivideArcToLinesDistance</c>
+            Divided arc into lines by <c>Config.DivideArcToLinesDistance</c>. <br/>
+            Vertices are not calculated(or applied) <c>Parent</c> model matrix. <br/>
             </remarks>
             <returns>Array of <c>Vertor3</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.ToVertices(OpenTK.Matrix4)">
+            <summary>
+            Extract vertices from <c>EntityPolyline2D</c>
+            </summary>
+            <remarks>
+            Divided arc into lines by <c>Config.DivideArcToLinesDistance</c>. <br/>
+            Vertices are calculated(or applied) by model matrix. <br/>
+            </remarks>
+            <param name="matrix">4x4 matrix</param>
+            <returns>Array of <c>Vertor3</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.IsClockwisePolygon(OpenTK.Vector3[])">
+            <summary>
+            Clockwise winding or not
+            </summary>
+            <param name="polygon">Array of <c>Vector3</c></param>
+            <returns>True(CW winding) or False (CCW winding)</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.HatchByAngle(SpiralLab.Sirius2.Winforms.Entity.EntityGroup,System.Boolean,System.Double,System.Double,System.Double,System.Double)">
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <inheritdoc/>
@@ -4287,6 +4425,11 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityFactory">
             <summary>
             EntityFactory
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.#ctor">
+            <summary>
+            Constructor
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateLine(OpenTK.Vector2,OpenTK.Vector2)">
@@ -4355,16 +4498,16 @@
             <summary>
             Create <c>EntityRectangle</c> entity
             </summary>
-            <param name="center"></param>
-            <param name="width"></param>
-            <param name="height"></param>
+            <param name="center">Center x,y of rectangle</param>
+            <param name="width">Width (mm)</param>
+            <param name="height">Height (mm)</param>
             <returns><c>EntityRectangle</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateSpiral(OpenTK.Vector2,System.Double,System.Double,System.Double,System.UInt32,System.Boolean)">
             <summary>
             Create <c>EntitySpiral</c> entity
             </summary>
-            <param name="center">X, Y Center (mm)</param>
+            <param name="center">Center x, y (mm)</param>
             <param name="startDiameter">Inner diameter (mm)</param>
             <param name="endDiameter">Outter diameter (mm)</param>
             <param name="height">Height (mm)</param>
@@ -4526,7 +4669,7 @@
             <param name="mesc">Delay time (msec)</param>
             <returns><c>EntityTimer</c> </returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.MeasurementChannel[])">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel[])">
             <summary>
             Create <c>EntityMeasurementBegin</c> entity
             </summary>
@@ -4540,14 +4683,14 @@
             </summary>
             <returns><c>EntityMeasurementEnd</c> </returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFBegin(SpiralLab.Sirius2.Scanner.RtcEncoderType)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFBegin(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderType)">
             <summary>
             Create <c>EntityMoFBegin</c> entity
             </summary>
             <param name="type"><c>MoFEncoderType</c></param>
             <returns><c>EntityMoFBegin</c> </returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.RtcEncoder,SpiralLab.Sirius2.Scanner.RtcEncoderWaitCondition,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoder,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitCondition,System.Double)">
             <summary>
             Create <c>EntityMoFWait</c> Wait for X/Y
             </summary>
@@ -4556,7 +4699,7 @@
             <param name="position">Wait position (mm)</param>
             <returns><c>EntityMoFWait</c> </returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.RtcEncoderWaitCondition,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitCondition,System.Double)">
             <summary>
             Create <c>EntityMoFWait</c> Wait for Angular
             </summary>
@@ -4578,7 +4721,7 @@
             <param name="zDefocus">Z defocus (mm)</param>
             <returns><c>EntityZDefocus</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateRampBegin(SpiralLab.Sirius2.Scanner.AutoLaserControlSignal,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateRampBegin(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignal,System.Double)">
             <summary>
             Create <c>EntityRampBegin</c> entity 
             </summary>
@@ -4598,7 +4741,7 @@
             </remarks>
             <returns><c>EntityRampEnd</c> </returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWriteData(SpiralLab.Sirius2.Scanner.ExtensionChannel,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWriteData(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannel,System.Double)">
             <summary>
             Create <c>EntityWriteData</c> entity 
             </summary>
@@ -4613,9 +4756,9 @@
             <remarks>
             Write digital output at RTC EXTENSION 1 port (16bits)
             </remarks>
-            <param name="bitPosition"></param>
-            <param name="onOff"></param>
-            <returns> <c>EntityWriteDataExt16</c> </returns>
+            <param name="bitPosition">Bit position (0~15)</param>
+            <param name="onOff">On(off)</param>
+            <returns> <c>EntityWriteDataExt16</c></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityVertex2D">
             <summary>
@@ -4689,8 +4832,8 @@
             <summary>
             Distance between <c>EntityVertex2D</c>
             </summary>
-            <param name="v1"></param>
-            <param name="v2"></param>
+            <param name="v1"><c>EntityVertex2D</c></param>
+            <param name="v2"><c>EntityVertex2D</c></param>
             <returns>Distance</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityVertex2D.AngleZ(SpiralLab.Sirius2.Winforms.Entity.EntityVertex2D,SpiralLab.Sirius2.Winforms.Entity.EntityVertex2D)">
@@ -4799,8 +4942,8 @@
             <summary>
             Distance between <c>EntityVertex3D</c>
             </summary>
-            <param name="v1"></param>
-            <param name="v2"></param>
+            <param name="v1"><c>EntityVertex3D</c></param>
+            <param name="v2"><c>EntityVertex3D</c></param>
             <returns>Distance</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityVertex3D.AngleX(SpiralLab.Sirius2.Winforms.Entity.EntityVertex3D,SpiralLab.Sirius2.Winforms.Entity.EntityVertex3D)">
@@ -4981,7 +5124,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStl.ExtractPointsCloud(OpenTK.Vector3,SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud@)">
             <summary>
-            Extract point clounds from STL surface and return <c>EntityPointsCloud</c>
+            Extract point clouds from STL surface and return <c>EntityPointsCloud</c>
             </summary>
             <param name="dir">Directional vector</param>
             <param name="entityPointsColud">Created <c>EntityPointCloud</c> if succeeded</param>
@@ -5187,7 +5330,7 @@
             </summary>
             <returns>Description for <c>MeasurementSession</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MeasurementSession.Save(SpiralLab.Sirius2.Scanner.IRtcMeasurement)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MeasurementSession.Save(SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement)">
             <summary>
             Save measurement result into file
             </summary>
@@ -5206,6 +5349,11 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Marker.MarkerFactory">
             <summary>
             MarkerFactory
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerFactory.#ctor">
+            <summary>
+            Constructor
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerFactory.CreateVirtual(System.Int32)">
@@ -5410,7 +5558,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Initialize">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Start">
@@ -5540,7 +5688,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual.Initialize">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual.Start">
@@ -5615,7 +5763,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.Initialize">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.Start">
@@ -5738,7 +5886,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.Initialize">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.Start">
@@ -5958,7 +6106,7 @@
             </summary>
             <returns>Success or not</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
             <summary>
             Ready
             </summary>
@@ -5991,11 +6139,16 @@
             GLBufferFactory
             </summary>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLBufferFactory.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLBufferFactory.CreateVertex3(OpenTK.Vector3[])">
             <summary>
             Array of X,Y,Z vertex
             </summary>
-            <param name="vertices"></param>
+            <param name="vertices">Array of <c>Vector3</c></param>
             <returns><c>GLVertex3Buffer</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLBufferFactory.CreateVertexNormal3(OpenTK.Vector3[])">
@@ -6068,7 +6221,7 @@
             <summary>
             Array of X,Y,Z vertex
             </summary>
-            <param name="vertices"></param>
+            <param name="vertices">Array of <c>Vector3</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLVertex3Buffer.Render(OpenTK.Graphics.OpenGL.PrimitiveType)">
             <inheritdoc/>
@@ -6125,28 +6278,28 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.LookAt(OpenTK.Vector3)">
             <summary>
-            Move look at to target location
+            Move look at position to target location
             </summary>
-            <param name="target"></param>
+            <param name="target">Look at <c>Vector3</c> location</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.LookAt(OpenTK.Vector3,SpiralLab.Sirius2.Winforms.IView)">
             <summary>
-             Move look at to target location with smooth rendering
+            Move look at position to target location with smoothly
             </summary>
-            <param name="target"></param>
-            <param name="view"></param>
+            <param name="target">Look at <c>Vector3</c> location</param>
+            <param name="view">Target <c>IView</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.ZoomIn(System.Drawing.Point)">
             <summary>
             Zoom in
             </summary>
-            <param name="p">Mouse location</param>
+            <param name="mouseLocation">Mouse location</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.ZoomOut(System.Drawing.Point)">
             <summary>
             Zoom out
             </summary>
-            <param name="p">Mouse location</param>
+            <param name="mouseLocation">Mouse location</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.YawPitch(System.Int32,System.Int32)">
             <summary>
@@ -6206,9 +6359,6 @@
             <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.OpenGL.StaticCamera.AspectRatio">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.OpenGL.StaticCamera.Sensitivity">
             <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.OpenGL.StaticCamera.ViewMatrix">
@@ -6305,7 +6455,7 @@
             <summary>
             Draw array of vertices by assigned <c>PrimitiveType</c>
             </summary>
-            <param name="primitiveType"><c>PrimitiveType</c></param>
+            <param name="primitiveType"><c>OpenTK.Graphics.OpenGL.PrimitiveType</c></param>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.OpenGL.Shader">
             <summary>
@@ -6434,6 +6584,11 @@
         <member name="T:SpiralLab.Sirius2.Winforms.OpenGL.ShaderFactory">
             <summary>
             ShaderFactory
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.ShaderFactory.#ctor">
+            <summary>
+            Constructor
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.ShaderFactory.CreateShader2D">
@@ -6647,6 +6802,14 @@
             Type of internal objects at file 
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.SamplePath">
+            <summary>
+            Sample file path
+            </summary>
+            <remarks>
+            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sample")
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.PensColor">
             <summary>
             Array of Pen colors
@@ -6664,12 +6827,16 @@
             <summary>
             Notify create <c>IPen</c> entity
             </summary>
-            <param name="color"></param>
-            <returns>Success of failed</returns>
+            <remarks>
+            Each <c>Config.PensColor</c> would be created. <br/>
+            Used with <c>Config.OnCreatePen</c>.<br/>
+            </remarks>
+            <param name="color"><c>System.Drawing.Color</c></param>
+            <returns><c>EntityPen</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Config.PenReset(System.Drawing.Color,SpiralLab.Sirius2.Winforms.Entity.EntityPen@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.PenReset(System.Drawing.Color,SpiralLab.Sirius2.Winforms.Entity.EntityPen)">
             <summary>
-            Reset <c>EntityPen</c> values when created
+            Reset(or initialize) <c>EntityPen</c> values when created
             </summary>
             <param name="color"><c>System.Drawing.Color</c></param>
             <param name="pen"><c>EntityPen</c></param>
@@ -6779,6 +6946,21 @@
             <remarks>
             Default directional vector: 0,0,-1
             </remarks>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnExtractPointsCloud">
+            <summary>
+            Event handler to create <c>EntityPointsCloud</c> from 3D model
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyExtractPointsCloud(SpiralLab.Sirius2.Winforms.Entity.EntityStl,OpenTK.Vector3)">
+            <summary>
+            Notify create <c>IPen</c> entity
+            </summary>
+            <remarks>
+            </remarks>
+            <param name="entity"><c>EntityStl</c></param>
+            <param name="dir">Directional normal vector</param>
+            <returns><c>EntityPointsCloud</c> (null, if failed)</returns>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.TreeviewWarningNodeCounts">
             <summary>
@@ -6926,6 +7108,36 @@
             <remarks>
             Activated only single entity has selected 
             </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.CameraInitPosition">
+            <summary>
+            Camera init position
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.CameraXPositivePosition">
+            <summary>
+            Camera x positive position
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.CameraXNegativePosition">
+            <summary>
+            Camera x negative position
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.CameraYNegativePosition">
+            <summary>
+            Camera y positive position
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.CamereaSensitivity">
+            <summary>
+            Camera yaw/pitch sensitivity 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.CamereaLookAtSteps">
+            <summary>
+            When camera move lookat position, render step times with smoothly
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.HitTestByHotTracking">
             <summary>
@@ -7105,14 +7317,14 @@
             User should be create <c>RtcCorrection3D</c> and return it.
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection2D(SpiralLab.Sirius2.Scanner.IRtc)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection2D(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
             <summary>
             Notify <c>RtcCorrection2D</c> for 2D scanner field correction
             </summary>
             <param name="rtc"><c>IRtc</c></param>
             <returns><c>RtcCorrection2D</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection3D(SpiralLab.Sirius2.Scanner.IRtc)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection3D(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
             <summary>
             Notify <c>RtcCorrection3D</c> for 3D scanner field correction
             </summary>
@@ -7162,14 +7374,6 @@
             <remarks>
             Used with <c>IsPathSortAndMerge</c> if True.
             Calculated when importing hpgl(plt) or dxf file.
-            </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config.SamplePath">
-            <summary>
-            Sample file path
-            </summary>
-            <remarks>
-            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sample")
             </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.IDocumentData">
@@ -7332,8 +7536,8 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocument.PenDic">
             <summary>
-            Dictionary of <c>EntityPen</c> 
-            <para>Key: int value of <c>Color</c> (Convert <c>Color</c> value to <c>ToArgb</c>), Value: <c>EntityPen</c></para>
+            Dictionary of <c>IEntityPen</c> 
+            <para>Key: int value of <c>Color</c> (Convert <c>Color</c> value to <c>ToArgb</c>), Value: <c>IEntityPen</c></para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">
@@ -7377,6 +7581,7 @@
             <summary>
             Opened <c>IDocumentData.InternalData</c> and notify <c>OnOpened</c> event 
             </summary>
+            <param name="fileName">Filename</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActImport(System.String,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
@@ -7391,6 +7596,7 @@
             <summary>
             Saved <c>IDocument.InternalData</c> and notify <c>OnSaved</c> event 
             </summary>
+            <param name="fileName">Filename</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActAdd(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
@@ -7461,7 +7667,7 @@
             <summary>
             Explode <c>IEntity</c> to seperated <c>IEntity</c> at <c>IDocument.InternalData</c> and notify <c>OnAdd</c>, <c>NotifyRemove</c>
             </summary>
-            <param name="entity">Target <c>Entity</c> to explode</param>
+            <param name="entity">Target <c>IEntity</c> to explode</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActHatch(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.HatchModes,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
@@ -7485,14 +7691,15 @@
             <param name="entity">Target <c>IEntity</c> to reverse</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActDivide(SpiralLab.Sirius2.Winforms.Entity.IEntity[])">
+        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActDivide(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.Entity.BoundingBox[])">
             <summary>
             Divide array of <c>IEntity</c> at <c>IDocument.InternalData</c> and notify <c>OnAdd</c> if succeed.
             </summary>
-            <param name="entities">Target <c>Entity</c> to divide</param>
             <remarks>
             Not implemented(or supported) yet
             </remarks>
+            <param name="entities">Target array of <c>IEntity</c> to divide</param>
+            <param name="rects">Array of <c>BoundingBox</c> to divide</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActCopy">
@@ -7518,7 +7725,7 @@
             <summary>
             Align to x,y,z center array of <c>IEntity</c> at <c>IDocument</c>
             </summary>
-            <param name="entities">Target <c>Entity</c> to align</param>
+            <param name="entities">Target <c>IEntity</c> to align</param>
             <param name="center">Center x,y,z location</param>
             <returns>Success or failed</returns>
         </member>
@@ -7526,7 +7733,7 @@
             <summary>
             Align to x,y center array of <c>IEntity</c> at <c>IDocument</c>
             </summary>
-            <param name="entities">Target <c>Entity</c> to align</param>
+            <param name="entities">Target <c>IEntity</c> to align</param>
             <param name="center">Center x,y location</param>
             <returns>Success or failed</returns>
         </member>
@@ -7534,7 +7741,7 @@
             <summary>
             Align array of <c>IEntity</c> at margin alignment location
             </summary>
-            <param name="entities">Target <c>Entity</c> to margin alignment</param>
+            <param name="entities">Target <c>IEntity</c> to margin alignment</param>
             <param name="marginAlignment"><c>MarginAlignment</c></param>
             <returns>Success or failed</returns>
         </member>
@@ -7544,7 +7751,7 @@
             </summary>
             <param name="view"><c>IView</c></param>
             <param name="keys">SHIFT:merge(+), CTRL:toggle(-,+), ALT:exclude(-)</param>
-            <param name="p">Mouse click location</param>
+            <param name="mousePosition">Mouse click location</param>
             <returns>Counts of selected <c>IEntity</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActTransit(SpiralLab.Sirius2.Winforms.Entity.IEntity[],OpenTK.Vector3)">
@@ -7552,7 +7759,7 @@
             Transit array of <c>IEntity</c> by delta distance
             </summary>
             <param name="entities">Array of <c>IEntity</c></param>
-            <param name="delta">Dx, Dy, Dz (mm) </param>
+            <param name="deltaXyz">Dx, Dy, Dz (mm) </param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActPropertyChanged(SpiralLab.Sirius2.Winforms.Entity.IEntity[],System.String,System.Object,System.Object)">
@@ -7592,7 +7799,7 @@
             <param name="targetIndex">Target index</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActPointsCloudCalibration(SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud,SpiralLab.Sirius2.Scanner.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActPointsCloudCalibration(SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud,SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
             <summary>
             Convert 3D scanner field correction by extract points cloud from <c>EntityPointsCloud</c> entity.
             </summary>
@@ -7600,7 +7807,22 @@
             Input correction file: Used source correction file at <c>Rtc.CorrectionFiles[0].FileName</c>.<br/>
             Output correction file: If calibration had succeeded, correction table has load and selected by automatically at last table location.<br/>
             </remarks>
-            <param name="entityPointsCloud">Target <c>EntityPointsCloud</c> entity</param>
+            <param name="entity">Target <c>EntityPointsCloud</c> entity</param>
+            <param name="rtc"><c>IRtc</c></param>
+            <param name="inputCtFileName">Input correction filename</param>
+            <param name="newCtFileName">Created new correction filename if succeeded</param>
+            <param name="returnCode">Error code if failed</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActPointsCloudCalibration(OpenTK.Vector3[],SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+            <summary>
+            Convert 3D scanner field correction by  array of vertices.
+            </summary>
+            <remarks>
+            Input correction file: Used source correction file at <c>Rtc.CorrectionFiles[0].FileName</c>.<br/>
+            Output correction file: If calibration had succeeded, correction table has load and selected by automatically at last table location.<br/>
+            </remarks>
+            <param name="vertices">Array of x,y,z vertex</param>
             <param name="rtc"><c>IRtc</c></param>
             <param name="inputCtFileName">Input correction filename</param>
             <param name="newCtFileName">Created new correction filename if succeeded</param>
@@ -7640,7 +7862,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.FindById(System.UInt32,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <summary>
-            Find <c>IEntity</c> entity by <c>Entity.ID</c> at <c>IDocument</c> 
+            Find <c>IEntity</c> entity by <c>EntityBase.ID</c> at <c>IDocument</c> 
             </summary>
             <param name="entityId">ID of <c>IEntity</c></param>
             <param name="foundedEntity">Founded entit</param>
@@ -7691,7 +7913,7 @@
             <summary>
             Notify <c>IEntity</c> has added
             </summary>
-            <param name="entity">Array of <c>IEntity</c></param>
+            <param name="entities">Array of <c>IEntity</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.NotifyInsert(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.IEntity,System.Int32)">
             <summary>
@@ -7752,6 +7974,21 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.DocumentData._Layers">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.DocumentData._Name">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.DocumentData._Descriptio">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.DocumentData._ExtensionData">
             <summary>
             Used by internally (Do NOT edit)
             </summary>
@@ -7885,7 +8122,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActExplode(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActDivide(SpiralLab.Sirius2.Winforms.Entity.IEntity[])">
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActDivide(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.Entity.BoundingBox[])">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActHatch(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.HatchModes,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
@@ -7936,7 +8173,10 @@
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActSimulateStop">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActPointsCloudCalibration(SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud,SpiralLab.Sirius2.Scanner.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActPointsCloudCalibration(SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud,SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActPointsCloudCalibration(OpenTK.Vector3[],SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.FindByLayerName(System.String,SpiralLab.Sirius2.Winforms.Entity.EntityLayer@)">
@@ -8004,6 +8244,11 @@
             Serializer for SpiralLab.Sirius2 Document 
             </summary>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.OpenSirius(System.String,SpiralLab.Sirius2.Winforms.IDocument)">
             <summary>
             Open document from sirius2 file
@@ -8012,20 +8257,20 @@
             <param name="document">IDocument interface</param>
             <returns>Success of failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.SaveSirius(SpiralLab.Sirius2.Winforms.IDocument,System.String)">
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.SaveSirius(System.String,SpiralLab.Sirius2.Winforms.IDocument)">
             <summary>
             Save document into sirius2 file
             </summary>
-            <param name="document"></param>
-            <param name="fileName"></param>
+            <param name="fileName">Filename</param>
+            <param name="document"><c>IDocument</c></param>
             <returns>Success of failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.OpenDxf(System.String,SpiralLab.Sirius2.Winforms.IDocument)">
             <summary>
             Open document from dxf file
             </summary>
-            <param name="fileName"></param>
-            <param name="document"></param>
+            <param name="fileName">Filename</param>
+            <param name="document"><c>IDocument</c></param>
             <returns>Success of failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.BeforeOpen(SpiralLab.Sirius2.Winforms.IDocument)">
@@ -8818,6 +9063,11 @@
             OpenTK Helper
             </summary>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKHelper.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenTKHelper.ScreenToWorldDistance(System.Drawing.Point,OpenTK.Vector3,OpenTK.Matrix4,OpenTK.Matrix4)">
             <summary>
             Screen to world coordinate and calculate distance from test point
@@ -8871,9 +9121,9 @@
             World to screen coordinate
             https://gamedev.stackexchange.com/questions/35263/converting-world-space-coordinate-to-screen-space-coordinate-and-getting-incorre
             </summary>
-            <param name="worldPosition"></param>
-            <param name="modelView"></param>
-            <param name="projection"></param>
+            <param name="worldPosition">World position</param>
+            <param name="modelView">Model view matrix</param>
+            <param name="projection">Projection matrix</param>
             <returns><c>Vector3</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenTKHelper.PointToLineDistance(OpenTK.Vector3,OpenTK.Vector3,OpenTK.Vector3)">
@@ -8889,7 +9139,7 @@
             <summary>
             Load 4x4 matrix into GL context
             </summary>
-            <param name="matrix"></param>
+            <param name="matrix"><c>Matrix4</c></param>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.OpenTKExtension">
             <summary>
@@ -8966,21 +9216,6 @@
             CEO Toughman by (c)Youngsoft
             </summary>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.EnumHelper">
-            <summary>
-            Extract string from attribute Description of Enum 
-            </summary>
-            <remarks>
-            [Description("??")] 
-            </remarks>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.EnumHelper.GetDescription(System.Enum)">
-            <summary>
-            Get Description
-            </summary>
-            <param name="value"></param>
-            <returns>String</returns>
-        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.PenColorEditor">
             <summary>
             Pen color editor
@@ -9044,24 +9279,6 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.FontNameEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
             <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.HashCodeByPropertyExtensions">
-            <summary>
-            Hashcode helper (from properties)
-            </summary>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.PropertyGridHelper">
-            <summary>
-            PropertyGrid helper
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.PropertyGridHelper.PropertyBrowsable(System.Type,System.String,System.Boolean)">
-            <summary>
-            Browsable visible 
-            </summary>
-            <param name="type">Type</param>
-            <param name="name">Property name</param>
-            <param name="visible">visible or not</param>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.FloatTypeConverter">
             <summary>
@@ -9135,6 +9352,39 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.WriteDataExt16StringConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
             <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.EnumHelper">
+            <summary>
+            Extract string from attribute Description of Enum 
+            </summary>
+            <remarks>
+            [Description("??")] 
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.EnumHelper.GetDescription(System.Enum)">
+            <summary>
+            Get Description
+            </summary>
+            <param name="value"></param>
+            <returns>String</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.HashCodeByPropertyExtensions">
+            <summary>
+            Hashcode helper (from properties)
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.PropertyGridHelper">
+            <summary>
+            PropertyGrid helper
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.PropertyGridHelper.PropertyBrowsable(System.Type,System.String,System.Boolean)">
+            <summary>
+            Browsable visible 
+            </summary>
+            <param name="type">Type</param>
+            <param name="name">Property name</param>
+            <param name="visible">visible or not</param>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.marker.markerbase">
             <summary>
@@ -9611,6 +9861,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.UI.ImportForm.Entity">
             <summary>
             Imported <c>IEntity</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.ImportForm.FileName">
+            <summary>
+            Selected filename
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.ImportForm.#ctor">
@@ -10293,19 +10548,28 @@
             <summary>
             Update DIO names
             </summary>
-            <param name="names"></param>
+            <remarks>
+            Used with <c>Config.DOut_RtcExtension1Port</c>
+            </remarks>
+            <param name="names">Array of names</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl.UpdateExtension2PortNames(System.String[])">
             <summary>
             Update DIO names
             </summary>
-            <param name="names"></param>
+            <remarks>
+            Used with <c>Config.DOut_RtcExtension2Port</c>
+            </remarks>
+            <param name="names">Array of names</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl.UpdateLaserPortNames(System.String[])">
             <summary>
             Update DIO names
             </summary>
-            <param name="names"></param>
+            <remarks>
+            Used with <c>Config.DOut_RtcLaserPort</c>
+            </remarks>
+            <param name="names">Array of names</param>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl.components">
             <summary>
@@ -10356,13 +10620,19 @@
             <summary>
             Update DIO names
             </summary>
-            <param name="names"></param>
+            <remarks>
+            Used with <c>Config.DIN_RtcExtension1Port</c>
+            </remarks>
+            <param name="names">Array of names</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl.UpdateLaserPortNames(System.String[])">
             <summary>
             Update DIO names
             </summary>
-            <param name="names"></param>
+            <remarks>
+            Used with <c>Config.DIN_RtcLaserPort</c>
+            </remarks>
+            <param name="names">Array of names</param>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl.components">
             <summary>
@@ -10400,7 +10670,7 @@
             </summary>
             <param name="entity">Target <c>IEntity</c></param>
             <param name="rotate"> Angle for x,y,z axis</param>
-            <param name="wfes"></param>
+            <param name="wfes"><c>IWindowsFormsEditorService</c></param>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.RotateForm.components">
             <summary>
@@ -10448,7 +10718,7 @@
             </summary>
             <param name="entity">Target <c>IEntity</c></param>
             <param name="alignment"><c>Alignment</c></param>
-            <param name="wfes"></param>
+            <param name="wfes"><c>IWindowsFormsEditorService</c></param>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.AlignmentForm.components">
             <summary>
@@ -10496,7 +10766,7 @@
             </summary>
             <param name="entity">Target <c>IEntity</c></param>
             <param name="scale">Model scale value</param>
-            <param name="wfes"></param>
+            <param name="wfes"><c>IWindowsFormsEditorService</c></param>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.ScaleForm.components">
             <summary>
@@ -10578,7 +10848,7 @@
             <c>RtcCorrection2D</c>
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm.#ctor(SpiralLab.Sirius2.Scanner.IRtc,SpiralLab.Sirius2.Scanner.RtcCorrection2D)">
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm.#ctor(SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection2D)">
             <summary>
             Constructor
             </summary>
@@ -10625,7 +10895,7 @@
             <c>RtcCorrection3D</c>
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.UI.RtcCorrection3DForm.#ctor(SpiralLab.Sirius2.Scanner.IRtc,SpiralLab.Sirius2.Scanner.RtcCorrection3D)">
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.RtcCorrection3DForm.#ctor(SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection3D)">
             <summary>
             Constructor
             </summary>
@@ -10806,14 +11076,6 @@
             <summary>
             Constructor
             </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)">
-            <summary>
-            Short cut keys for F5, CTRL+F5, F6
-            </summary>
-            <param name="msg"></param>
-            <param name="keyData"></param>
-            <returns>ProcessCmdKey return</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DoRender">
             <summary>
@@ -11101,71 +11363,71 @@
             <summary>
             To implement OnLoad event
             </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
+            <param name="sender">Sender(or caller)</param>
+            <param name="e"><c>EventArgs</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IView.OnResized(System.Object,System.EventArgs)">
             <summary>
             To implement OnResized event
             </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
+            <param name="sender">Sender(or caller)</param>
+            <param name="e"><c>EventArgs</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IView.OnMouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
             <summary>
             To implement OnMouseDown event
             </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
+            <param name="sender">Sender(or caller)</param>
+            <param name="e"><c>EventArgs</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IView.OnMouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
             <summary>
             To implement OnMouseUp event
             </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
+            <param name="sender">Sender(or caller)</param>
+            <param name="e"><c>MouseEventArgs</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IView.OnMouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
             <summary>
             To implement OnMouseMove event
             </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
+            <param name="sender">Sender(or caller)</param>
+            <param name="e"><c>MouseEventArgs</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IView.OnMouseWheel(System.Object,System.Windows.Forms.MouseEventArgs)">
             <summary>
             To implement OnMouseWheel event
             </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
+            <param name="sender">Sender(or caller)</param>
+            <param name="e"><c>MouseEventArgs</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IView.OnPreviewKeyDown(System.Object,System.Windows.Forms.PreviewKeyDownEventArgs)">
             <summary>
             To implement OnPreviewKeyDown event
             </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
+            <param name="sender">Sender(or caller)</param>
+            <param name="e"><c>PreviewKeyDownEventArgs</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IView.OnKeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
             <summary>
             To implement OnKeyPress event
             </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
+            <param name="sender">Sender(or caller)</param>
+            <param name="e"><c>KeyPressEventArgs</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IView.OnKeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
             <summary>
              To implement OnKeyDown event
             </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
+            <param name="sender">Sender(or caller)</param>
+            <param name="e"><c>KeyPressEventArgs</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IView.OnKeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
             <summary>
              To implement OnKeyUp event
             </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
+            <param name="sender">Sender(or caller)</param>
+            <param name="e"><c>KeyEventArgs</c></param>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.ViewBase">
             <summary>

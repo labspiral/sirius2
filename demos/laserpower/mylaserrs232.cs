@@ -34,6 +34,7 @@ using System.Threading;
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
+using SpiralLab.Sirius2.Scanner.Rtc;
 
 namespace Demos
 {
@@ -49,7 +50,10 @@ namespace Demos
     {
         /// <inheritdoc/>
         public virtual event PropertyChangedEventHandler PropertyChanged;
-        /// <inheritdoc/>
+        /// <summary>
+        /// Nofity property value has changed
+        /// </summary>
+        /// <param name="propertyName">Property name</param>
         protected void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
             var receivers = this.PropertyChanged?.GetInvocationList();
@@ -170,7 +174,7 @@ namespace Demos
 
         /// <inheritdoc/>  
         [Browsable(false)]
-        public virtual IRtc Rtc { get; set; }
+        public virtual IScanner Scanner { get; set; }
 
         /// <inheritdoc/>  
         [Browsable(false)]
@@ -295,9 +299,9 @@ namespace Demos
             GC.SuppressFinalize(this);
         }
         /// <summary>
-        /// Dispose internal resource
+        /// Dispose internal resources
         /// </summary>
-        /// <param name="disposing"></param>
+        /// <param name="disposing">Explicit dispose or not</param>
         protected virtual void Dispose(bool disposing)
         {
             if (this.disposed)
@@ -329,7 +333,9 @@ namespace Demos
         /// <inheritdoc/>  
         public bool Initialize()
         {
-            var rtcSerialComm = this.Rtc as IRtcSerialComm;
+            var rtc = Scanner as IRtc;
+            Debug.Assert(rtc != null);
+            var rtcSerialComm = rtc as IRtcSerialComm;
             Debug.Assert(null != rtcSerialComm);
             //config baudrate
             bool success = rtcSerialComm.CtlSerialConfig(9600);
@@ -364,6 +370,8 @@ namespace Demos
         public virtual bool CtlPower(double watt)
         {
             Debug.Assert(this.MaxPowerWatt > 0);
+            var rtc = Scanner as IRtc;
+            Debug.Assert(rtc != null);
             bool success = true;
             if (watt > this.MaxPowerWatt)
                 watt = this.MaxPowerWatt;
@@ -379,7 +387,7 @@ namespace Demos
                         Logger.Log(Logger.Type.Error, $"laser [{this.Index}]: unsupported !");
                         return false;
                     case PowerControlMethod.Rs232:
-                        if (this.Rtc is IRtcSerialComm rtcSerialComm)
+                        if (rtc is IRtcSerialComm rtcSerialComm)
                         {
                             //to cleanup recv buffer
                             rtcSerialComm.CtlSerialRead(out byte[] dummy);
@@ -414,8 +422,8 @@ namespace Demos
         public virtual bool ListPower(double watt)
         {
             Debug.Assert(this.MaxPowerWatt > 0);
-            if (null == Rtc)
-                return true;
+            var rtc = Scanner as IRtc;
+            Debug.Assert(rtc != null);
             if (watt > this.MaxPowerWatt)
                 watt = this.MaxPowerWatt;
             lock (SyncRoot)
@@ -431,13 +439,13 @@ namespace Demos
                         Logger.Log(Logger.Type.Error, $"laser [{this.Index}]: unsupported !");
                         return false;
                 case PowerControlMethod.Rs232:
-                    if (this.Rtc is IRtcSerialComm rtcSerialComm)
+                    if (rtc is IRtcSerialComm rtcSerialComm)
                     {
                         string text = string.Format(rs232StringFormat, percentage);
                         success &= rtcSerialComm.ListSerialWrite(text);
                         //byte[] bytes = Encoding.UTF8.GetBytes(text);
                         //success &= rtcSerialComm.ListSerialWrite(bytes);
-                        success &= this.Rtc.ListWait(this.PowerControlDelayTime);
+                        success &= rtc.ListWait(this.PowerControlDelayTime);
                     }
                     break;
                 }

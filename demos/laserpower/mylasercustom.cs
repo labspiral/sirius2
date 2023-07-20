@@ -34,6 +34,7 @@ using System.Threading;
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
+using SpiralLab.Sirius2.Scanner.Rtc;
 
 namespace Demos
 {
@@ -48,7 +49,10 @@ namespace Demos
     {
         /// <inheritdoc/>
         public virtual event PropertyChangedEventHandler PropertyChanged;
-        /// <inheritdoc/>
+        /// <summary>
+        /// Nofity property value has changed
+        /// </summary>
+        /// <param name="propertyName">Property name</param>
         protected void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
             var receivers = this.PropertyChanged?.GetInvocationList();
@@ -173,7 +177,7 @@ namespace Demos
 
         /// <inheritdoc/>  
         [Browsable(false)]
-        public virtual IRtc Rtc { get; set; }
+        public virtual IScanner Scanner { get; set; }
 
         /// <inheritdoc/>  
         [Browsable(false)]
@@ -273,9 +277,9 @@ namespace Demos
             GC.SuppressFinalize(this);
         }
         /// <summary>
-        /// Dispose internal resource
+        /// Dispose internal resources
         /// </summary>
-        /// <param name="disposing"></param>
+        /// <param name="disposing">Explicit dispose or not</param>
         protected virtual void Dispose(bool disposing)
         {
             if (this.disposed)
@@ -335,6 +339,8 @@ namespace Demos
         public virtual bool CtlPower(double watt)
         {
             Debug.Assert(this.MaxPowerWatt > 0);
+            var rtc = Scanner as IRtc;
+            Debug.Assert(rtc != null);
             bool success = true;
             if (watt > this.MaxPowerWatt)
                 watt = this.MaxPowerWatt;
@@ -377,8 +383,8 @@ namespace Demos
         public virtual bool ListPower(double watt)
         {
             Debug.Assert(this.MaxPowerWatt > 0);
-            if (null == Rtc)
-                return true;
+            var rtc = Scanner as IRtc;
+            Debug.Assert(rtc != null);
             if (watt > this.MaxPowerWatt)
                 watt = this.MaxPowerWatt;
             lock (SyncRoot)
@@ -396,15 +402,15 @@ namespace Demos
                     case PowerControlMethod.Custom:
                         // do something you want to vary output laser power
                         // for example
-                        success &= this.Rtc.ListEnd();
-                        success &= this.Rtc.ListExecute(true);
+                        success &= rtc.ListEnd();
+                        success &= rtc.ListExecute(true);
                         // vary laser output power 
                         // it takes some time
                         // ...
                         Thread.Sleep((int)this.PowerControlDelayTime);
                         //
                         // and then restart list buffer
-                        success &= this.Rtc.ListBegin(this.Rtc.ListType);
+                        success &= rtc.ListBegin(rtc.ListType);
                         break;
                 }
                 if (success)

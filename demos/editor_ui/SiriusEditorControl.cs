@@ -40,6 +40,8 @@ using SpiralLab.Sirius2.Winforms;
 using SpiralLab.Sirius2.Winforms.UI;
 using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
+using SpiralLab.Sirius2.Scanner.Rtc;
+using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
 using OpenTK;
 
 namespace Demos
@@ -498,33 +500,6 @@ namespace Demos
             EditorCtrl.View.Render();
         }
 
-        /// <summary>
-        /// Short cut keys for F5, CTRL+F5, F6
-        /// </summary>
-        /// <param name="msg"></param>
-        /// <param name="keyData"></param>
-        /// <returns>ProcessCmdKey return</returns>
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == (Keys.F5))
-            {
-                MarkerCtrl.BtnStart_Click(this, EventArgs.Empty);
-                return true;
-            }
-            else if (keyData == (Keys.Control | Keys.F5))
-            {
-                MarkerCtrl.BtnStop_Click(this, EventArgs.Empty);
-                return true;
-            }
-            else if (keyData == (Keys.F6))
-            {
-                MarkerCtrl.BtnReset_Click(this, EventArgs.Empty);
-                return true;
-            }
-
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
-
         private void MnuMarginBottom_Click(object sender, EventArgs e)
         {
             document.ActAlign(document.Selected, MarginAlignments.Bottom);
@@ -711,7 +686,7 @@ namespace Demos
         private void BtnDivide_Click(object sender, EventArgs e)
         {
             if (document.Selected.Length > 0)
-                Document.ActDivide(document.Selected);
+                Document.ActDivide(document.Selected, null);
         }
 
         private void BtnZoomIn_Click(object sender, EventArgs e)

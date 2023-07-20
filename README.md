@@ -47,11 +47,12 @@
 **4. Modules**
 
  - spirallab.sirius2.dll
-    - Target frameworks: NET Framework 4.7.2, NET Standard 2.0, NET6.0 or higher 
-    - Target platforms: Windows (x64) only
  - spirallab.sirius2.winforms.dll
     - Target frameworks: NET Framework 4.7.2
     - Target platforms: Windows (x64) only
+ - dependencies
+    - OpenTK v3.3.3 (https://www.nuget.org/packages/OpenTK/3.3.3)
+    - OpenTK.GLControl v3.3.3 (https://www.nuget.org/packages/OpenTK.GLControl/)
 
 
 ----
@@ -59,10 +60,11 @@
 
 **5. How to use ?**
 
- - Demo 'init' project for beginner
- - Demo 'editor_entity' project for user interface
-    - config.ini for RTC5 or RTC6
-    - config_syncaxis.ini for syncAxis
+ - Demo 'init' console project for beginner
+ - Demo 'editor_basic' winforms project for user interface
+ - Demo 'editor_entity' winforms project for create entities
+    - config "config.ini" for RTC5 or RTC6
+    - config "config_syncaxis.ini" for XL-SCAN
 
  *The program running 30 mins at evalution copy mode !*
 
@@ -85,6 +87,16 @@
 
 
 DEVELOPER PREVIEW VERSION. IT WIIL BE CHANGED WITHOUT NOTIFICATION !
+
+
+* 2023.7.21 v0.8.1
+  - added) new namespaces
+    - spiralab.sirius2.rtc 
+    - spiralab.sirius2.rtc.syncaxis
+  - added) changable camera look at position
+  - added) encode and decode for unicode string 
+  - fixed) hatch bug at some entities
+  - fixed) unable to edit bug at propertygrid
 
 
 * 2023.7.14 v0.8

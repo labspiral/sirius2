@@ -38,6 +38,7 @@ using OpenTK;
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
+using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Winforms;
 using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
@@ -230,7 +231,7 @@ namespace Demos
             }
 
             // Assign RTC into laser source
-            laser.Rtc = rtc;
+            laser.Scanner = rtc;
 
             // Initialize laser source
             success &= laser.Initialize();
@@ -353,7 +354,7 @@ namespace Demos
             document.ActAdd(imagetext1);
 
             // Text entity
-            var text1 = EntityFactory.CreateText("Arial", $"Hello{Environment.NewLine}おはようございます{Environment.NewLine}您好{Environment.NewLine}สวัสดีครับ{Environment.NewLine}Hola{Environment.NewLine}Bonjour{Environment.NewLine}Hallo{Environment.NewLine}اَلسَّلاَمُ عَلَيْكُمْ{Environment.NewLine}", FontStyle.Bold, 2.5f);
+            var text1 = EntityFactory.CreateText("Arial", $"1234567890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", FontStyle.Bold, 2.5f);
             text1.Name = "MyText2";
             document.ActAdd(text1);
 

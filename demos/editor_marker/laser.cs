@@ -32,7 +32,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
-using SpiralLab.Sirius2.Scanner;
+using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2;
 
@@ -215,6 +215,8 @@ namespace Demos
         public virtual bool CtlPower(double watt)
         {
             Debug.Assert(this.MaxPowerWatt > 0);
+            var rtc = Scanner as IRtc;
+            Debug.Assert(rtc != null);
             bool success = true;
             if (watt > this.MaxPowerWatt)
                 watt = this.MaxPowerWatt;
@@ -226,9 +228,9 @@ namespace Demos
 
                 double dataVoltage = percentage / 100.0 * (this.MaxVoltage - this.MinVoltage) + this.MinVoltage;
                 if (1 == this.AnalogPortNo)
-                    success &= this.Rtc.CtlWriteData<double>(ExtensionChannel.ExtAO1, dataVoltage);
+                    success &= rtc.CtlWriteData<double>(ExtensionChannel.ExtAO1, dataVoltage);
                 else if (2 == this.AnalogPortNo)
-                    success &= this.Rtc.CtlWriteData<double>(ExtensionChannel.ExtAO2, dataVoltage);
+                    success &= rtc.CtlWriteData<double>(ExtensionChannel.ExtAO2, dataVoltage);
 
                 Thread.Sleep((int)this.PowerControlDelayTime);
                 if (success)
@@ -254,8 +256,8 @@ namespace Demos
         public virtual bool ListPower(double watt)
         {
             Debug.Assert(this.MaxPowerWatt > 0);
-            if (null == Rtc)
-                return true;
+            var rtc = Scanner as IRtc;
+            Debug.Assert(rtc != null);
             if (watt > this.MaxPowerWatt)
                 watt = this.MaxPowerWatt;
             lock (SyncRoot)
@@ -267,10 +269,10 @@ namespace Demos
 
                 double dataVoltage = percentage / 100.0 * (this.MaxVoltage - this.MinVoltage) + this.MinVoltage;
                 if (1 == this.AnalogPortNo)
-                    success &= this.Rtc.ListWriteData<double>(ExtensionChannel.ExtAO1, dataVoltage);
+                    success &= rtc.ListWriteData<double>(ExtensionChannel.ExtAO1, dataVoltage);
                 else
-                    success &= this.Rtc.ListWriteData<double>(ExtensionChannel.ExtAO2, dataVoltage);
-                success &= this.Rtc.ListWait(this.PowerControlDelayTime);
+                    success &= rtc.ListWriteData<double>(ExtensionChannel.ExtAO2, dataVoltage);
+                success &= rtc.ListWait(this.PowerControlDelayTime);
                        
                 if (success)
                     LastPowerWatt = watt;

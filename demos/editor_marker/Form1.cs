@@ -37,6 +37,7 @@ using System.Windows.Forms;
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
+using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Winforms;
 using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
@@ -200,7 +201,7 @@ namespace Demos
             ILaser laser = new MyLaser(0, "MyLaser", maxWatt);
 
             // Assign RTC into laser source
-            laser.Rtc = rtc;
+            laser.Scanner = rtc;
 
             // Initialize laser source
             success &= laser.Initialize();

@@ -32,6 +32,7 @@ using System.Numerics;
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
+using SpiralLab.Sirius2.Scanner.Rtc;
 
 namespace Demos
 {
@@ -77,7 +78,7 @@ namespace Demos
             var laser = LaserFactory.CreateVirtual(0, 20);
 
             // Assign RTC into laser
-            laser.Rtc = rtc;
+            laser.Scanner = rtc;
             // Initialize laser
             success &= laser.Initialize();
             // Default power as 2W
@@ -137,8 +138,8 @@ namespace Demos
         /// </summary>
         private static bool DrawLine1(ILaser laser, IRtc rtc, float x1, float y1, float x2, float y2)
         {
-            var alc = rtc as IRtcAutoLaserControl;
-            if (null == alc)
+            var rtcAlc = rtc as IRtcAutoLaserControl;
+            if (null == rtcAlc)
                 return false;
             bool success = true;
             var rtcMeasurement = rtc as IRtcMeasurement;
@@ -155,9 +156,9 @@ namespace Demos
             };
 
             // Position dependent ALC off
-            alc.CtlAutoLaserControlByPositionTable(null);
+            rtcAlc.CtlAutoLaserControlByPositionTable(null);
             // Analog1: 5V (Min: 4V, Max: 6V)
-            success &= alc.CtlAutoLaserControl<double>(AutoLaserControlSignal.Analog1, AutoLaserControlMode.SetVelocity, 5, 4, 6);
+            success &= rtcAlc.CtlAutoLaserControl<double>(AutoLaserControlSignal.Analog1, AutoLaserControlMode.SetVelocity, 5, 4, 6);
             success &= rtc.ListBegin();
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             success &= rtc.ListJumpTo(new Vector2(x1, y1));
@@ -187,8 +188,8 @@ namespace Demos
         /// </summary>
         private static bool DrawLine2(ILaser laser, IRtc rtc, float x1, float y1, float x2, float y2)
         {
-            var alc = rtc as IRtcAutoLaserControl;
-            if (null == alc)
+            var rtcAlc = rtc as IRtcAutoLaserControl;
+            if (null == rtcAlc)
                 return false;
             bool success = true;
             var rtcMeasurement = rtc as IRtcMeasurement;
@@ -210,9 +211,9 @@ namespace Demos
             kvList.Add(new KeyValuePair<double, double>(10, 1));
             kvList.Add(new KeyValuePair<double, double>(15, 1.1));
             // Position dependent ALC on
-            success &= alc.CtlAutoLaserControlByPositionTable(kvList.ToArray());
+            success &= rtcAlc.CtlAutoLaserControlByPositionTable(kvList.ToArray());
             // Analog1: 5V (Min: 4V, Max: 6V)
-            success &= alc.CtlAutoLaserControl<float>(AutoLaserControlSignal.Analog1, AutoLaserControlMode.SetVelocity, 5, 0, 10);
+            success &= rtcAlc.CtlAutoLaserControl<float>(AutoLaserControlSignal.Analog1, AutoLaserControlMode.SetVelocity, 5, 0, 10);
             success &= rtc.ListBegin();
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             success &= rtc.ListJumpTo(new Vector2(x1, y1));
@@ -243,12 +244,12 @@ namespace Demos
         /// </summary>
         private static bool DrawLine3(ILaser laser, IRtc rtc, float x1, float y1, float x2, float y2)
         {
-            var alc = rtc as IRtcAutoLaserControl;
-            if (null == alc)
+            var rtcAlc = rtc as IRtcAutoLaserControl;
+            if (null == rtcAlc)
                 return false;
             bool success = true;
             // Position dependent ALC off
-            success &= alc.CtlAutoLaserControlByPositionTable(null);
+            success &= rtcAlc.CtlAutoLaserControlByPositionTable(null);
             var rtcMeasurement = rtc as IRtcMeasurement;
             Debug.Assert(rtcMeasurement != null);
             // 10KHz Sample rate (max 100KHz)
@@ -262,10 +263,10 @@ namespace Demos
                  MeasurementChannel.OutputPeriod, // Converted Raw Data to Frequency(Hz) 
             };
 
-            // Target frequency : 100KHz
-            // Lower cut off frequency : 50KHz
-            // Upper cut off frequency : 120KHz
-            success &= alc.CtlAutoLaserControl<float>(AutoLaserControlSignal.Frequency, AutoLaserControlMode.ActualVelocity, 50 * 1000, 40 * 1000, 60 * 1000);
+            // Target frequency : 50KHz
+            // Lower cut off frequency : 40KHz
+            // Upper cut off frequency : 60KHz
+            success &= rtcAlc.CtlAutoLaserControl<float>(AutoLaserControlSignal.Frequency, AutoLaserControlMode.ActualVelocity, 50 * 1000, 40 * 1000, 60 * 1000);
             success &= rtc.ListBegin();
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             success &= rtc.ListJumpTo(new Vector2(x1, y1));
@@ -294,8 +295,8 @@ namespace Demos
         /// </summary>
         private static bool DrawLine4(ILaser laser, IRtc rtc, float x1, float y1, float x2, float y2)
         {
-            var alc = rtc as IRtcAutoLaserControl;
-            if (null == alc)
+            var rtcAlc = rtc as IRtcAutoLaserControl;
+            if (null == rtcAlc)
                 return false;
             bool success = true;
 
@@ -313,16 +314,16 @@ namespace Demos
             };
 
             // Position dependent ALC off
-            success &= alc.CtlAutoLaserControlByPositionTable(null);
+            success &= rtcAlc.CtlAutoLaserControlByPositionTable(null);
             success &= rtc.ListBegin();
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             // Analog1 voltage : 5V
             // Jump ramp with 0.5 : 5 * 0.5 = 2.5V
             // Mark ramp with 1.5 : 5 * 1.5 = 7.5V
-            success &= alc.ListAlcByVectorBegin<float>(AutoLaserControlSignal.Analog1, 5F); 
+            success &= rtcAlc.ListAlcByVectorBegin<double>(AutoLaserControlSignal.Analog1, 5); 
             success &= rtc.ListJumpTo(new Vector2(x1, y1), 0.5F); 
             success &= rtc.ListMarkTo(new Vector2(x2, y2), 1.5F); 
-            success &= alc.ListAlcByVectorEnd();
+            success &= rtcAlc.ListAlcByVectorEnd();
             success &= rtc.ListJumpTo(Vector2.Zero);
             success &= rtcMeasurement.ListMeasurementEnd();
             if (success)

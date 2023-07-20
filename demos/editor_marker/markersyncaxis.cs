@@ -44,6 +44,8 @@ using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.OpenGL;
+using SpiralLab.Sirius2.Scanner.Rtc;
+using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
 
 namespace SpiralLab.Sirius2.Winforms.Marker
 {
@@ -167,28 +169,28 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                 return;
             switch(rtcSyncAxis.OpStatus)
             {
-                case Scanner.OperationStatus.Unknown:
+                case OperationStatus.Unknown:
                     if (OperationStatusColor != Color.DarkGray)
                     {
                         OperationStatusColor = Color.DarkGray;
                         NotifyPropertyChanged("OperationStatusColor");
                     }
                     break;
-                case Scanner.OperationStatus.Red:
+                case OperationStatus.Red:
                     if (OperationStatusColor != Color.Red)
                     {
                         OperationStatusColor = Color.Red;
                         NotifyPropertyChanged("OperationStatusColor");
                     }
                     break;
-                case Scanner.OperationStatus.Yellow:
+                case OperationStatus.Yellow:
                     if (OperationStatusColor != Color.Yellow)
                     {
                         OperationStatusColor = Color.Yellow;
                         NotifyPropertyChanged("OperationStatusColor");
                     }
                     break;
-                case Scanner.OperationStatus.Green:
+                case OperationStatus.Green:
                     if (OperationStatusColor != Color.Green)
                     {
                         OperationStatusColor = Color.Green;
