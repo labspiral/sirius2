@@ -43,6 +43,7 @@ using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
 using OpenTK;
+using SpiralLab.Sirius2.Winforms.Common;
 
 namespace Demos
 {

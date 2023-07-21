@@ -5130,12 +5130,12 @@
             <param name="entityPointsColud">Created <c>EntityPointCloud</c> if succeeded</param>
             <returns>Success of failed</returns>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.FontHelper">
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.FontHelper">
             <summary>
             FontHelper
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.FontHelper.GetOutlines(System.String,System.String,System.Single,System.Int32,System.Drawing.StringAlignment,System.Drawing.StringAlignment,System.Boolean,System.Drawing.RectangleF@,SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D[]@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.FontHelper.GetOutlines(System.String,System.String,System.Single,System.Int32,System.Drawing.StringAlignment,System.Drawing.StringAlignment,System.Boolean,System.Drawing.RectangleF@,SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D[]@)">
             <summary>
             Get outline of font text string
             </summary>
@@ -5150,96 +5150,101 @@
             <param name="polylines">Created array of <c>EntityPolyline2D</c></param>
             <returns>Success or not</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.FontHelper.EncodeTo(System.String)">
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.TextHelper">
+            <summary>
+            TextHelper
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.TextHelper.EncodeTo(System.String)">
             <summary>
             Encode string to Base64 
             </summary>
             <param name="str">string</param>
             <returns>Base64</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.FontHelper.DecodeFrom(System.String)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.TextHelper.DecodeFrom(System.String)">
             <summary>
             Decode Base64 to string
             </summary>
             <param name="base64String">base64 formatted string</param>
             <returns>string</returns>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Gdi.POINTFLOAT.X">
+        <member name="F:SpiralLab.Sirius2.Winforms.Common.Gdi.POINTFLOAT.X">
             <summary>
             Specifies the horizontal (x) coordinate of a point.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Gdi.POINTFLOAT.Y">
+        <member name="F:SpiralLab.Sirius2.Winforms.Common.Gdi.POINTFLOAT.Y">
             <summary>
             Specifies the vertical (y) coordinate of a point.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Gdi.GLYPHMETRICSFLOAT.gmfBlackBoxX">
+        <member name="F:SpiralLab.Sirius2.Winforms.Common.Gdi.GLYPHMETRICSFLOAT.gmfBlackBoxX">
             <summary>
             Specifies the width of the smallest rectangle (the glyph's black box) that completely encloses the glyph.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Gdi.GLYPHMETRICSFLOAT.gmfBlackBoxY">
+        <member name="F:SpiralLab.Sirius2.Winforms.Common.Gdi.GLYPHMETRICSFLOAT.gmfBlackBoxY">
             <summary>
             Specifies the height of the smallest rectangle (the glyph's black box) that completely encloses the glyph.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Gdi.GLYPHMETRICSFLOAT.gmfptGlyphOrigin">
+        <member name="F:SpiralLab.Sirius2.Winforms.Common.Gdi.GLYPHMETRICSFLOAT.gmfptGlyphOrigin">
             <summary>
             Specifies the x and y coordinates of the upper-left corner of the smallest rectangle that completely encloses the glyph.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Gdi.GLYPHMETRICSFLOAT.gmfCellIncX">
+        <member name="F:SpiralLab.Sirius2.Winforms.Common.Gdi.GLYPHMETRICSFLOAT.gmfCellIncX">
             <summary>
             Specifies the horizontal distance from the origin of the current character cell to the origin of the next character cell.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Gdi.GLYPHMETRICSFLOAT.gmfCellIncY">
+        <member name="F:SpiralLab.Sirius2.Winforms.Common.Gdi.GLYPHMETRICSFLOAT.gmfCellIncY">
             <summary>
             Specifies the vertical distance from the origin of the current character cell to the origin of the next character cell.
             </summary>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.BitmapHelper">
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.BitmapHelper">
             <summary>
             BitmapHelper
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.BitmapHelper.EncodeTo(System.Drawing.Bitmap)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.EncodeTo(System.Drawing.Bitmap)">
             <summary>
             Encode bitmap to base64 encoding
             </summary>
             <param name="bitmap">Bitmap</param>
             <returns>Base64</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.BitmapHelper.DecodeFrom(System.String)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.DecodeFrom(System.String)">
             <summary>
             Decode base64 encoding to bitmap
             </summary>
             <param name="base64String">base64 formatted string</param>
             <returns>Bitmap</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.BitmapHelper.ConvertToBitmap(System.String)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.ConvertToBitmap(System.String)">
             <summary>
             Load bitmap to image
             </summary>
             <param name="fileName"></param>
             <returns><c>System.Drawing.Bitmap </c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.BitmapHelper.ConvertToBitmap(System.IO.Stream)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.ConvertToBitmap(System.IO.Stream)">
             <summary>
             Convert stream to image
             </summary>
             <param name="stream">Stream</param>
             <returns>Bitmap</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.BitmapHelper.RGB2Gray(System.Drawing.Color)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.RGB2Gray(System.Drawing.Color)">
             <summary>
             RGB to gray
             </summary>
             <param name="color"><c>Color</c></param>
             <returns>Gray level from 0 ~ 1</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.BitmapHelper.ToStream(System.Drawing.Image,System.Drawing.Imaging.ImageFormat)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.ToStream(System.Drawing.Image,System.Drawing.Imaging.ImageFormat)">
             <summary>
             Image Extension
             </summary>
@@ -5247,7 +5252,7 @@
             <param name="format"><c>ImageFormat</c></param>
             <returns><c>Stream</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.BitmapHelper.CreateTextToImage(System.String,System.String,System.Double,System.Int32,System.Drawing.StringAlignment,System.Boolean,System.Double,System.Drawing.Bitmap@,System.Drawing.SizeF@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.CreateTextToImage(System.String,System.String,System.Double,System.Int32,System.Drawing.StringAlignment,System.Boolean,System.Double,System.Drawing.Bitmap@,System.Drawing.SizeF@)">
             <summary>
             Create bitmap text
             </summary>
@@ -5261,6 +5266,339 @@
             <param name="bitmap">Created <c>System.Drawing.Bitmap</c></param>
             <param name="sizef">Create size of <c>System.Drawing.Bitmap</c></param>
             <returns>Success of failed</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper">
+            <summary>
+            OpenTK Helper
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper.ScreenToWorldDistance(System.Drawing.Point,OpenTK.Vector3,OpenTK.Matrix4,OpenTK.Matrix4)">
+            <summary>
+            Screen to world coordinate and calculate distance from test point
+            </summary>
+            <param name="mouseLocation">Mouse x,y (pixel)</param>
+            <param name="testPoint">Target point (x,y,z)</param>
+            <param name="modelView">Modelview matrix</param>
+            <param name="projection">Project matrix</param>
+            <returns>Distance</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper.ScreenToWorldPlaneZIntersect(System.Drawing.Point,OpenTK.Vector3,OpenTK.Matrix4,OpenTK.Matrix4)">
+            <summary>
+            Screen to world coordinate and intersecct z plane
+            </summary>
+            <param name="mouseLocation">Mouse x,y (pixel)</param>
+            <param name="testPoint">Target point (x,y,z)</param>
+            <param name="modelView">Modelview matrix</param>
+            <param name="projection">Project matrix</param>
+            <returns><c>Vector3</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper.UnProject(System.Drawing.Point,OpenTK.Matrix4,OpenTK.Matrix4,OpenTK.Vector3@,OpenTK.Vector3@)">
+            <summary>
+            Screen to world coordinate and get near/far position
+            </summary>
+            <param name="mouseLocation">Mouse x,y (pixel)</param>
+            <param name="modelView">Modelview matrix</param>
+            <param name="projection">Project matrix</param>
+            <param name="near">Camera near</param>
+            <param name="far">Camera far</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper.UnProject(OpenTK.Vector3,OpenTK.Matrix4,OpenTK.Matrix4)">
+            <summary>
+            Screen to world coordinate
+            </summary>
+            <param name="screenPosition"></param>
+            <param name="modelView"></param>
+            <param name="projection"></param>
+            <returns><c>Vector3</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper.ClosestPoint(OpenTK.Vector3,OpenTK.Vector3,OpenTK.Vector3)">
+            <summary>
+            Closest point from v at start -> end ray
+            </summary>
+            <param name="start">Start (or near)</param>
+            <param name="end">End (or far)</param>
+            <param name="v">Point (x,y,z)</param>
+            <returns><c>Vector3</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper.WorldToScreen(OpenTK.Vector3,OpenTK.Matrix4,OpenTK.Matrix4)">
+            <summary>
+            World to screen coordinate
+            https://gamedev.stackexchange.com/questions/35263/converting-world-space-coordinate-to-screen-space-coordinate-and-getting-incorre
+            </summary>
+            <param name="worldPosition">World position</param>
+            <param name="modelView">Model view matrix</param>
+            <param name="projection">Projection matrix</param>
+            <returns><c>Vector3</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper.PointToLineDistance(OpenTK.Vector3,OpenTK.Vector3,OpenTK.Vector3)">
+            <summary>
+            Shortest distance from point and line
+            </summary>
+            <param name="start">Line from</param>
+            <param name="end">Line to</param>
+            <param name="v">Point (x,y,z)</param>
+            <returns>Distance</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper.LoadMatrix(OpenTK.Matrix4@)">
+            <summary>
+            Load 4x4 matrix into GL context
+            </summary>
+            <param name="matrix"><c>Matrix4</c></param>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.OpenTKExtension">
+            <summary>
+            OpenTK extension
+            <para>Convert type between System.Numerics and OpenTK</para>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKExtension.ToVector3(System.Drawing.Color)">
+            <summary>
+            System.Drawing.Color to OpenTK.Vector3
+            </summary>
+            <param name="color"><c>System.Drawing.Color </c></param>
+            <returns><c>Vector3</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKExtension.ToVector4(System.Drawing.Color)">
+            <summary>
+            System.Drawing.Color to OpenTK.Vector4
+            </summary>
+            <param name="color"><c>System.Drawing.Color </c></param>
+            <returns></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKExtension.ToNumeric(OpenTK.Vector2)">
+            <summary>
+            OpenTK.Vector2 to System.Numerics.Vector2
+            </summary>
+            <param name="v"><c>OpenTK.Vector3</c></param>
+            <returns><c>Vector2</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKExtension.ToOpenTK(System.Numerics.Vector2)">
+            <summary>
+            System.Numerics.Vector2 to OpenTK.Vector2
+            </summary>
+            <param name="v"><c>System.Numerics.Vector2</c></param>
+            <returns><c>Vector2</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKExtension.ToNumeric(OpenTK.Vector3)">
+            <summary>
+            OpenTK.Vector3 to System.Numerics.Vector3
+            </summary>
+            <param name="v"><c>OpenTK.Vector3</c></param>
+            <returns><c>Vector3</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKExtension.ToOpenTK(System.Numerics.Vector3)">
+            <summary>
+            System.Numerics.Vector3 to OpenTK.Vector3
+            </summary>
+            <param name="v"><c>System.Numerics.Vector3</c></param>
+            <returns><c>Vector3</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKExtension.ToNumeric(OpenTK.Matrix4)">
+            <summary>
+            OpenTK.Matrix4 to System.Numerics.Matrix4x4
+            </summary>
+            <param name="m"><c>OpenTK.Matrix4</c></param>
+            <returns><c>Matrix4x4</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKExtension.ToOpenTK(System.Numerics.Matrix4x4)">
+            <summary>
+            System.Numerics.Matrix3x2 to OpenTK.Matrix3
+            </summary>
+            <param name="m"><c>System.Numerics.Matrix4x4</c></param>
+             <returns><c>Matrix4x4</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKExtension.RoundUp(OpenTK.Vector3,System.Int32)">
+            <summary>
+            Round up floating point
+            </summary>
+            <param name="v">OpenTK.Matrix3</param>
+            <param name="decimals"></param>
+            <returns><c>Vector3</c></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.PropertyGridLocalizationAttribute">
+            <summary>
+            CEO Toughman by (c)Youngsoft
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.PenColorEditor">
+            <summary>
+            Pen color editor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PenColorEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PenColorEditor.PaintValue(System.Drawing.Design.PaintValueEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PenColorEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PenColorEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.AlignmentEditor">
+            <summary>
+            Alignment editor  by trackbar
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.AlignmentEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.AlignmentEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.ScaleEditor">
+            <summary>
+            Scale editor  by trackbar
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.ScaleEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.ScaleEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.RotateZEditor">
+            <summary>
+            Rotate z editor  by trackbar
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.RotateZEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.RotateZEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.FontNameEditor">
+            <summary>
+            Fontname (family) editor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.FontNameEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.FontNameEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.FontNameEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.FloatTypeConverter">
+            <summary>
+            Double converter
+            </summary>
+            <remarks>
+            Used with PropertyGrid
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.FloatTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.FloatTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.FloatTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.OpenTKVector2Converter">
+            <summary>
+            OpenTKVector2 format converter
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKVector2Converter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKVector2Converter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKVector2Converter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.OpenTKVector3Converter">
+            <summary>
+            OpenTKVector3 format converter
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKVector3Converter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKVector3Converter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKVector3Converter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.OpenTKVector4Converter">
+            <summary>
+            OpenTKVector4 format converter
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKVector4Converter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKVector4Converter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKVector4Converter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.WriteDataExt16StringConverter">
+             <summary>
+            WriteDataExt16StringConverter
+             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.WriteDataExt16StringConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.WriteDataExt16StringConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.WriteDataExt16StringConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.EnumHelper">
+            <summary>
+            Extract string from attribute Description of Enum 
+            </summary>
+            <remarks>
+            [Description("??")] 
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.EnumHelper.GetDescription(System.Enum)">
+            <summary>
+            Get Description
+            </summary>
+            <param name="value"></param>
+            <returns>String</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.HashCodeByPropertyExtensions">
+            <summary>
+            Hashcode helper (from properties)
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.PropertyGridHelper">
+            <summary>
+            PropertyGrid helper
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PropertyGridHelper.PropertyBrowsable(System.Type,System.String,System.Boolean)">
+            <summary>
+            Browsable visible 
+            </summary>
+            <param name="type">Type</param>
+            <param name="name">Property name</param>
+            <param name="visible">visible or not</param>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.STLHelper">
+            <summary>
+            STLHelper
+            </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Marker.MeasurementSession">
             <summary>
@@ -6260,6 +6598,9 @@
             <summary>
             Fov (projection)
             </summary>
+            <remarks>
+            0~180
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.ViewMatrix">
             <summary>
@@ -7112,6 +7453,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Config.CameraInitPosition">
             <summary>
             Camera init position
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.CameraInitFov">
+            <summary>
+            Camera FOV (zoom factor and 0~180)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.CameraXPositivePosition">
@@ -9058,334 +9404,6 @@
               Model Translate과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.OpenTKHelper">
-            <summary>
-            OpenTK Helper
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKHelper.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKHelper.ScreenToWorldDistance(System.Drawing.Point,OpenTK.Vector3,OpenTK.Matrix4,OpenTK.Matrix4)">
-            <summary>
-            Screen to world coordinate and calculate distance from test point
-            </summary>
-            <param name="mouseLocation">Mouse x,y (pixel)</param>
-            <param name="testPoint">Target point (x,y,z)</param>
-            <param name="modelView">Modelview matrix</param>
-            <param name="projection">Project matrix</param>
-            <returns>Distance</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKHelper.ScreenToWorldPlaneZIntersect(System.Drawing.Point,OpenTK.Vector3,OpenTK.Matrix4,OpenTK.Matrix4)">
-            <summary>
-            Screen to world coordinate and intersecct z plane
-            </summary>
-            <param name="mouseLocation">Mouse x,y (pixel)</param>
-            <param name="testPoint">Target point (x,y,z)</param>
-            <param name="modelView">Modelview matrix</param>
-            <param name="projection">Project matrix</param>
-            <returns><c>Vector3</c></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKHelper.UnProject(System.Drawing.Point,OpenTK.Matrix4,OpenTK.Matrix4,OpenTK.Vector3@,OpenTK.Vector3@)">
-            <summary>
-            Screen to world coordinate and get near/far position
-            </summary>
-            <param name="mouseLocation">Mouse x,y (pixel)</param>
-            <param name="modelView">Modelview matrix</param>
-            <param name="projection">Project matrix</param>
-            <param name="near">Camera near</param>
-            <param name="far">Camera far</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKHelper.UnProject(OpenTK.Vector3,OpenTK.Matrix4,OpenTK.Matrix4)">
-            <summary>
-            Screen to world coordinate
-            </summary>
-            <param name="screenPosition"></param>
-            <param name="modelView"></param>
-            <param name="projection"></param>
-            <returns><c>Vector3</c></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKHelper.ClosestPoint(OpenTK.Vector3,OpenTK.Vector3,OpenTK.Vector3)">
-            <summary>
-            Closest point from v at start -> end ray
-            </summary>
-            <param name="start">Start (or near)</param>
-            <param name="end">End (or far)</param>
-            <param name="v">Point (x,y,z)</param>
-            <returns><c>Vector3</c></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKHelper.WorldToScreen(OpenTK.Vector3,OpenTK.Matrix4,OpenTK.Matrix4)">
-            <summary>
-            World to screen coordinate
-            https://gamedev.stackexchange.com/questions/35263/converting-world-space-coordinate-to-screen-space-coordinate-and-getting-incorre
-            </summary>
-            <param name="worldPosition">World position</param>
-            <param name="modelView">Model view matrix</param>
-            <param name="projection">Projection matrix</param>
-            <returns><c>Vector3</c></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKHelper.PointToLineDistance(OpenTK.Vector3,OpenTK.Vector3,OpenTK.Vector3)">
-            <summary>
-            Shortest distance from point and line
-            </summary>
-            <param name="start">Line from</param>
-            <param name="end">Line to</param>
-            <param name="v">Point (x,y,z)</param>
-            <returns>Distance</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKHelper.LoadMatrix(OpenTK.Matrix4@)">
-            <summary>
-            Load 4x4 matrix into GL context
-            </summary>
-            <param name="matrix"><c>Matrix4</c></param>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.OpenTKExtension">
-            <summary>
-            OpenTK extension
-            <para>Convert type between System.Numerics and OpenTK</para>
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKExtension.ToVector3(System.Drawing.Color)">
-            <summary>
-            System.Drawing.Color to OpenTK.Vector3
-            </summary>
-            <param name="color"><c>System.Drawing.Color </c></param>
-            <returns><c>Vector3</c></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKExtension.ToVector4(System.Drawing.Color)">
-            <summary>
-            System.Drawing.Color to OpenTK.Vector4
-            </summary>
-            <param name="color"><c>System.Drawing.Color </c></param>
-            <returns></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKExtension.ToNumeric(OpenTK.Vector2)">
-            <summary>
-            OpenTK.Vector2 to System.Numerics.Vector2
-            </summary>
-            <param name="v"><c>OpenTK.Vector3</c></param>
-            <returns><c>Vector2</c></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKExtension.ToOpenTK(System.Numerics.Vector2)">
-            <summary>
-            System.Numerics.Vector2 to OpenTK.Vector2
-            </summary>
-            <param name="v"><c>System.Numerics.Vector2</c></param>
-            <returns><c>Vector2</c></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKExtension.ToNumeric(OpenTK.Vector3)">
-            <summary>
-            OpenTK.Vector3 to System.Numerics.Vector3
-            </summary>
-            <param name="v"><c>OpenTK.Vector3</c></param>
-            <returns><c>Vector3</c></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKExtension.ToOpenTK(System.Numerics.Vector3)">
-            <summary>
-            System.Numerics.Vector3 to OpenTK.Vector3
-            </summary>
-            <param name="v"><c>System.Numerics.Vector3</c></param>
-            <returns><c>Vector3</c></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKExtension.ToNumeric(OpenTK.Matrix4)">
-            <summary>
-            OpenTK.Matrix4 to System.Numerics.Matrix4x4
-            </summary>
-            <param name="m"><c>OpenTK.Matrix4</c></param>
-            <returns><c>Matrix4x4</c></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKExtension.ToOpenTK(System.Numerics.Matrix4x4)">
-            <summary>
-            System.Numerics.Matrix3x2 to OpenTK.Matrix3
-            </summary>
-            <param name="m"><c>System.Numerics.Matrix4x4</c></param>
-             <returns><c>Matrix4x4</c></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKExtension.RoundUp(OpenTK.Vector3,System.Int32)">
-            <summary>
-            Round up floating point
-            </summary>
-            <param name="v">OpenTK.Matrix3</param>
-            <param name="decimals"></param>
-            <returns><c>Vector3</c></returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.PropertyGridLocalizationAttribute">
-            <summary>
-            CEO Toughman by (c)Youngsoft
-            </summary>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.PenColorEditor">
-            <summary>
-            Pen color editor
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.PenColorEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.PenColorEditor.PaintValue(System.Drawing.Design.PaintValueEventArgs)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.PenColorEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.PenColorEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.AlignmentEditor">
-            <summary>
-            Alignment editor  by trackbar
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.AlignmentEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.AlignmentEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.ScaleEditor">
-            <summary>
-            Scale editor  by trackbar
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.ScaleEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.ScaleEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.RotateZEditor">
-            <summary>
-            Rotate z editor  by trackbar
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.RotateZEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.RotateZEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.FontNameEditor">
-            <summary>
-            Fontname (family) editor
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.FontNameEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.FontNameEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.FontNameEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.FloatTypeConverter">
-            <summary>
-            Double converter
-            </summary>
-            <remarks>
-            Used with PropertyGrid
-            </remarks>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.FloatTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.FloatTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.FloatTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.OpenTKVector2Converter">
-            <summary>
-            OpenTKVector2 format converter
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKVector2Converter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKVector2Converter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKVector2Converter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.OpenTKVector3Converter">
-            <summary>
-            OpenTKVector3 format converter
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKVector3Converter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKVector3Converter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKVector3Converter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.OpenTKVector4Converter">
-            <summary>
-            OpenTKVector4 format converter
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKVector4Converter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKVector4Converter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenTKVector4Converter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.WriteDataExt16StringConverter">
-             <summary>
-            WriteDataExt16StringConverter
-             </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.WriteDataExt16StringConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.WriteDataExt16StringConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.WriteDataExt16StringConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.EnumHelper">
-            <summary>
-            Extract string from attribute Description of Enum 
-            </summary>
-            <remarks>
-            [Description("??")] 
-            </remarks>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.EnumHelper.GetDescription(System.Enum)">
-            <summary>
-            Get Description
-            </summary>
-            <param name="value"></param>
-            <returns>String</returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.HashCodeByPropertyExtensions">
-            <summary>
-            Hashcode helper (from properties)
-            </summary>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.PropertyGridHelper">
-            <summary>
-            PropertyGrid helper
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.PropertyGridHelper.PropertyBrowsable(System.Type,System.String,System.Boolean)">
-            <summary>
-            Browsable visible 
-            </summary>
-            <param name="type">Type</param>
-            <param name="name">Property name</param>
-            <param name="visible">visible or not</param>
-        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.marker.markerbase">
             <summary>
               지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
@@ -11241,11 +11259,6 @@
             <summary>
             For Empty Tree Node
             Expand/collapse when +- icon has clicked
-            </summary>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.STLHelper">
-            <summary>
-            STLHelper
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.ViewModes">

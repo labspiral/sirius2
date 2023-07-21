@@ -93,7 +93,7 @@ DEVELOPER PREVIEW VERSION. IT WIIL BE CHANGED WITHOUT NOTIFICATION !
   - added) new namespaces
     - spiralab.sirius2.rtc 
     - spiralab.sirius2.rtc.syncaxis
-  - added) changable camera look at position
+  - added) changeable camera look at position
   - added) encode and decode for unicode string 
   - fixed) hatch bug at some entities
   - fixed) unable to edit bug at propertygrid
