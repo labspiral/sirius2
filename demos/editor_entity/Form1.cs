@@ -35,6 +35,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OpenTK;
+using OpenTK.Graphics.OpenGL;
+
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
@@ -327,6 +329,11 @@ namespace Demos
             // Rectangle entity
             var rectangle1 = EntityFactory.CreateRectangle(new Vector2(10, -10), 10, 5);
             document.ActAdd(rectangle1);
+            // Hatch with polygon within rectangle
+            var rectanglehatch = rectangle1.Hatch(HatchModes.Polygon, HatchJoints.Miter, false, 0, 0, 0.2f, 0, 0);
+            foreach(var hatch in rectanglehatch.Children)
+                hatch.Color = SpiralLab.Sirius2.Winforms.Config.PensColor[1];
+            document.ActAdd(rectanglehatch);
 
             // Spiral entity
             var spiral1 = EntityFactory.CreateSpiral(Vector2.Zero, 8, 12, 5, 20, false);
@@ -369,6 +376,22 @@ namespace Demos
             polyline1.Translate(-10, -10, 0);
             document.ActAdd(polyline1);
 
+            // Expanded Polyline2D 
+            var expandedPolylines = polyline1.Expand(HatchJoints.Round, 0.5);
+            foreach (var expandedPolyline in expandedPolylines)
+            {
+                expandedPolyline.Color = SpiralLab.Sirius2.Winforms.Config.PensColor[2];
+                document.ActAdd(expandedPolyline);
+            }
+
+            // Shrink Polyline2D
+            var shrinkedPolylines = polyline1.Expand(HatchJoints.Miter, -2);
+            foreach (var shrinkedPolyline in shrinkedPolylines)
+            {
+                shrinkedPolyline.Color = SpiralLab.Sirius2.Winforms.Config.PensColor[3];
+                document.ActAdd(shrinkedPolyline);
+            }
+
             // Polyline2D entity
             var vertices2 = new List<EntityVertex2D>();
             vertices2.Add(new EntityVertex2D(-5, -5));
@@ -391,26 +414,45 @@ namespace Demos
             document.ActAdd(group1);
 
             // Block item
-            var polyline3 = new EntityPolyline2D();
-            polyline3.Children.Add(new EntityVertex2D(10, 10));
-            polyline3.Children.Add(new EntityVertex2D(10, 15));
-            polyline3.Children.Add(new EntityVertex2D(5, 20));
-            polyline3.Children.Add(new EntityVertex2D(4, 8));
+            var vertices3 = new List<EntityVertex2D>();
+            vertices3.Add(new EntityVertex2D(10, 10));
+            vertices3.Add(new EntityVertex2D(10, 15));
+            vertices3.Add(new EntityVertex2D(5, 20));
+            vertices3.Add(new EntityVertex2D(4, 8));
+            var polyline3 = EntityFactory.CreatePolyline2D(vertices3.ToArray());
             // Block entity
-            var block = new EntityBlock("MyBlock", new IEntity[] { polyline3 });
+            var block = EntityFactory.CreateBlock("MyBlock", new IEntity[] { polyline3 });
             // Block entity has include polyline2D entity 
             document.ActAdd(block);
 
             // BlockInsert entity
-            var insert1 = new EntityBlockInsert(block.Name);
+            var insert1 = EntityFactory.CreateBlockInsert(block.Name);
             document.ActAdd(insert1);
 
             // BlockInsert entity
-            var insert2 = new EntityBlockInsert(block.Name);
+            var insert2 = EntityFactory.CreateBlockInsert(block.Name);
             insert2.Scale(1.5);
             insert2.RotateZ(30);
             insert2.Translate(-1, 2, 0);
             document.ActAdd(insert2);
+
+            // Curve(conic spline) entity
+            var vertices4 = new List<Vector2>();
+            vertices4.Add(new Vector2(10, -3));
+            vertices4.Add(new Vector2(11, -4));
+            vertices4.Add(new Vector2(14, -1));
+            var conicSpline = EntityFactory.CreateCurve(vertices4.ToArray());
+            document.ActAdd(conicSpline);
+
+            // Curve(cubic spline) entity
+            var vertices5 = new List<Vector2>();
+            vertices5.Add(new Vector2(10, -3));
+            vertices5.Add(new Vector2(11, -4));
+            vertices5.Add(new Vector2(14, -1));
+            vertices5.Add(new Vector2(16, -2));
+            var cubicSpline = EntityFactory.CreateCurve(vertices5.ToArray());
+            cubicSpline.Translate(0, -2);
+            document.ActAdd(cubicSpline);
 
             // Create new layer
             var layer1 = EntityFactory.CreateLayer("1");
@@ -453,7 +495,7 @@ namespace Demos
                 hpgl2.Translate(-35, -20);
                 document.ActAdd(hpgl2);
             }
-            var dataMatrix1 = EntityFactory.CreateDataMatrix("0123456789",  BarcodeCells.Dots, 3, 4, 4);
+            var dataMatrix1 = EntityFactory.CreateDataMatrix("0123456789", BarcodeCells.Dots, 3, 4, 4);
             dataMatrix1.Translate(-23, 2);
             document.ActAdd(dataMatrix1);
             var dataMatrix2 = EntityFactory.CreateDataMatrix("SIRIUS2", BarcodeCells.Lines, 4, 4, 4);

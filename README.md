@@ -13,8 +13,7 @@
 
 
 **2. Features**
-
- - More easy, simple and expandable architecture to create own laser application.
+ 
  - Support SCANLAB's RTC5, RTC6 and RTC6ethernet controllers.
  - Support SCANLAB's XL-SCAN (syncAxis) controllers.
  - Support 2D,3D scanner field correction.
@@ -51,6 +50,9 @@
     - Target frameworks: NET Framework 4.7.2
     - Target platforms: Windows (x64) only
  - dependencies
+    - SCANLAB RTC5 (2022.11.11)
+    - SCANLAB RTC6 v.1.15.4 (2023.01.23)
+    - SCANLAB syncAXIS v.1.8.2 (2023.3.9)
     - OpenTK v3.3.3 (https://www.nuget.org/packages/OpenTK/3.3.3)
     - OpenTK.GLControl v3.3.3 (https://www.nuget.org/packages/OpenTK.GLControl/)
 
@@ -89,6 +91,10 @@
 DEVELOPER PREVIEW VERSION. IT WIIL BE CHANGED WITHOUT NOTIFICATION !
 
 
+* 2023.7.26 v0.8.2
+  - added) hatch with polygon
+  - added) expand or shrink path for polyline 
+
 * 2023.7.21 v0.8.1
   - added) new namespaces
     - spiralab.sirius2.rtc 
@@ -97,7 +103,6 @@ DEVELOPER PREVIEW VERSION. IT WIIL BE CHANGED WITHOUT NOTIFICATION !
   - added) encode and decode for unicode string 
   - fixed) hatch bug at some entities
   - fixed) unable to edit bug at propertygrid
-
 
 * 2023.7.14 v0.8
   - added) preliminary document (doc\sirius2)
