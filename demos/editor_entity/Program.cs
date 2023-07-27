@@ -54,17 +54,7 @@ namespace Demos
 
             if (args.Length > 0)
                 ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, args[0]);
-            try
-            {
-                Application.Run(new Form1());
-            }
-            catch(Exception ex) 
-            {
-                System.Diagnostics.StackTrace t = new System.Diagnostics.StackTrace();
-                var stackTrceResult = t.ToString();
-                Logger.Log(Logger.Type.Fatal, ex, stackTrceResult);
-                System.Windows.Forms.MessageBox.Show(stackTrceResult, ex.Message);
-            }
+            Application.Run(new Form1());
         }
     }
 }

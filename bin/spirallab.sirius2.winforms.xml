@@ -284,7 +284,7 @@
             Used by internally (Do NOT edit)
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCurve.#ctor(System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCurve.#ctor">
             <summary>
             Constructor
             </summary>
@@ -1012,6 +1012,168 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityDataMatrix.RegenEncode">
             <inheritdoc/>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.LetterSpaces">
+            <summary>
+            LetterSpaces
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.LetterSpaces.Variable">
+            <summary>
+            Variable
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.LetterSpaces.Fixed">
+            <summary>
+            Fixed
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText">
+            <summary>
+            EntitySiriusText entity
+            </summary>
+            <remarks>
+            Allowed glyph ascii code range from: 0 ~ Config.SiriusFontAsciiMax
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.FontName">
+            <summary>
+            Text
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.SourceText">
+            <inheritdoc/>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.sourceText">
+            <summary>
+            Source text
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.IsConvertedText">
+            <inheritdoc/>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.isConvertedText">
+            <summary>
+            Converted text or not
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.ConvertedText">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.Height">
+            <summary>
+            Text height
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.height">
+            <summary>
+            Text height
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.TextVerticalAlignment">
+            <summary>
+            String vertical alignment
+            </summary>
+            <remarks>
+            Default: Near
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.LetterSpace">
+            <summary>
+            Letter space way
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.LetterSpacing">
+            <summary>
+            Letter spacing (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.WordSpacing">
+            <summary>
+            Word spacing (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.LineSpacing">
+            <summary>
+            Line spacing (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.IsReversed">
+            <summary>
+            Reversed pathes or not
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText._SourceText">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText._ConvertedText">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText._FontName">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.group">
+            <summary>
+            Array of <c>EntityPolyline2D</c>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.#ctor(System.String,System.String,System.Double,SpiralLab.Sirius2.Winforms.Entity.LetterSpaces,System.Double,System.Double,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="fontName">Font name</param>
+            <param name="text">Text</param>
+            <param name="height">Height (mm)</param>
+            <param name="characterSpace"><c>LetterSpaces</c></param>
+            <param name="letterSpacing">Letter Spaceing (mm)</param>
+            <param name="wordSpacing">Word Spaceing (mm)</param>
+            <param name="lineSpacing">Line Spaceing (mm)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.Explode">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.Reverse">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.Regen">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.RegenInOut">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.Render(SpiralLab.Sirius2.Winforms.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">
             <summary>
             EntityText entity
@@ -1040,16 +1202,6 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityText.ConvertedText">
             <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityText.Width">
-            <summary>
-            Width (mm)
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityText.width">
-            <summary>
-            Width (mm)
-            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityText.Height">
             <summary>
@@ -1115,7 +1267,7 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.#ctor(System.String,System.String,System.Drawing.FontStyle,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.#ctor(System.String,System.String,System.Drawing.FontStyle,System.Double)">
             <summary>
             Constructor
             </summary>
@@ -1123,7 +1275,6 @@
             <param name="text">Text</param>
             <param name="style"><c>System.Drawing.FontStyle</c></param>
             <param name="height">Height (mm)</param>
-            <param name="width">Width (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.ToString">
             <inheritdoc/>
@@ -2146,6 +2297,16 @@
             </summary>
             <remarks>Value has applied parent model matrix</remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.Width">
+            <summary>
+            Width (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.Height">
+            <summary>
+            Height (mm)
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.RealMin">
             <summary>
             Real min x,y,z (mm)
@@ -2166,19 +2327,19 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.RealWidth">
             <summary>
-            Width (mm)
+            Real. Width (mm)
             </summary>
             <remarks>Value has applied parent model matrix</remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.RealHeight">
             <summary>
-            Height (mm)
+            Real. Height (mm)
             </summary>
             <remarks>Value has applied parent model matrix</remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.RealDepth">
             <summary>
-            Depth (mm)
+            Real. Depth (mm)
             </summary>
             <remarks>Value has applied parent model matrix</remarks>
         </member>
@@ -4854,13 +5015,13 @@
             <param name="text">Text</param>
             <param name="style"><c>System.Drawing.FontStyle</c></param>
             <param name="isFill">Fill (or outline)</param>
-            <param name="outlineSize">Outline size (if outline)</param>
-            <param name="pixelHeight">Height (pixel)</param>
+            <param name="pixelOutline">Outline size (pixel)</param>
+            <param name="pixelHeight">Height size (pixel)</param>
             <param name="height">Height (mm)</param>
             <param name="width">Width (mm) (If width is 0, aspect-ratio will be calculated by automatically)</param>
             <returns><c>EntityImageText</c> </returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateText(System.String,System.String,System.Drawing.FontStyle,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateText(System.String,System.String,System.Drawing.FontStyle,System.Double)">
             <summary>
             Create <c>EntityText</c> entity
             <code>
@@ -4873,9 +5034,23 @@
             <param name="fontName">Font family name</param>
             <param name="text">Text</param>
             <param name="style"><c>System.Drawing.FontStyle</c></param>
-            <param name="height">Height (mm)</param>
-            <param name="width">Width (mm) (If width is 0, aspect-ratio will be calculated by automatically)</param>
+            <param name="height">Height (mm)</param>        
             <returns><c>EntityText</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateSiriusText(System.String,System.String,System.Double)">
+            <summary>
+            Create <c>EntitySiriusText</c> entity
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var text = EntityFactory.CreateSiriusText("romans2.cxf", $"1234567890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^*()-_=+[{{]|}}\\|;:'\",./?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", 2.5);
+            document.ActAdd(text);
+            </code>
+            </summary>
+            <param name="fontName">Cxf font filename</param>
+            <param name="text">Text</param>
+            <param name="height">Height (mm)</param>
+            <returns><c>EntitySiriusText</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateBlock(System.String,SpiralLab.Sirius2.Winforms.Entity.IEntity[])">
             <summary>
@@ -5511,6 +5686,112 @@
             <param name="entityPointsColud">Created <c>EntityPointCloud</c> if succeeded</param>
             <returns>Success of failed</returns>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.LffFont">
+            <summary>
+            LffFont
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Common.LffFont.CapitalHeight">
+            <summary>
+            Capital height (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Common.LffFont.XHeight">
+            <summary>
+            X height (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Common.LffFont.Ascender">
+            <summary>
+            https://learn.microsoft.com/en-us/dotnet/desktop/winforms/advanced/how-to-obtain-font-metrics?view=netframeworkdesktop-4.8
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Common.LffFont.Author">
+            <summary>
+            폰트 파일에 지정된 저자
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Common.LffFont.Name">
+            <summary>
+            폰트파일에 지정된 이름
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Common.LffFont.Encoding">
+            <summary>
+            폰트 파일에 지정된 엔코딩 포맷
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.LffFont.#ctor(System.String)">
+            <summary>
+            Constructor 
+            </summary>
+            <param name="fontFileName">llf font filename</param>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.LffFontsCache">
+            <summary>
+            LffFontsCache
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.LffFontsCache.Load(System.String)">
+            <summary>
+            Load lff font into cache
+            </summary>
+            <param name="fontFileName">Lff font filename</param>
+            <returns></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.CxfFont">
+            <summary>
+            CxfFont
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Common.CxfFont.CapitalHeight">
+            <summary>
+            Capital height (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Common.CxfFont.XHeight">
+            <summary>
+            X height (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Common.CxfFont.Ascender">
+            <summary>
+            https://learn.microsoft.com/en-us/dotnet/desktop/winforms/advanced/how-to-obtain-font-metrics?view=netframeworkdesktop-4.8
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Common.CxfFont.Author">
+            <summary>
+            폰트 파일에 지정된 저자
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Common.CxfFont.Name">
+            <summary>
+            폰트파일에 지정된 이름
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Common.CxfFont.Encoding">
+            <summary>
+            폰트 파일에 지정된 엔코딩 포맷
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.CxfFont.#ctor(System.String)">
+            <summary>
+            Constructor 
+            </summary>
+            <param name="fontFileName">cxf font filename</param>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.CxfFontsCache">
+            <summary>
+            CxfFontsCache
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.CxfFontsCache.Load(System.String)">
+            <summary>
+            Load cxf font into cache
+            </summary>
+            <param name="fontFileName">Cxf font filename</param>
+            <returns></returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.FontHelper">
             <summary>
             FontHelper
@@ -5583,6 +5864,11 @@
         <member name="F:SpiralLab.Sirius2.Winforms.Common.Gdi.GLYPHMETRICSFLOAT.gmfCellIncY">
             <summary>
             Specifies the vertical distance from the origin of the current character cell to the origin of the next character cell.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.Gdi.ABC">
+            <summary>
+            https://learn.microsoft.com/en-us/windows/win32/gdi/character-widths
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.BitmapHelper">
@@ -5869,6 +6155,11 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.FontNameEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
             <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.SiriusFontNameConverter">
+            <summary>
+             Fontname (cxf, llf) converter
+            </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.FloatTypeConverter">
             <summary>
@@ -7526,7 +7817,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.SamplePath">
             <summary>
-            Sample file path
+            Sample file path (.dxf, .plt, ..stl, ..)
             </summary>
             <remarks>
             Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sample")
@@ -7596,6 +7887,22 @@
             <summary>
             Smoothing mode hint for <c>EntityImageText</c>
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.SiriusFontAsciiMax">
+            <summary>
+            Sirius font glyph limit for max ascii hexa
+            </summary>
+            <remarks>
+            Default: 255 (0~255)
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.SiriusFontPath">
+            <summary>
+            Sirius font path (.cxf font file)
+            </summary>
+            <remarks>
+            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "siriusfonts")
+            </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnTextConvert">
             <summary>

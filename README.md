@@ -91,6 +91,12 @@
 DEVELOPER PREVIEW VERSION. IT WIIL BE CHANGED WITHOUT NOTIFICATION !
 
 
+* 2023.7.28 v0.8.3
+  - added) sirius text entity
+    - cxf font
+    - lff font
+  - fixed) file open exception with curve entity
+
 * 2023.7.26 v0.8.2
   - added) hatch with polygon
   - added) expand or shrink path for polyline 

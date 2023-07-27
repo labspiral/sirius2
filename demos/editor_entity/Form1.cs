@@ -36,7 +36,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
-
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
@@ -355,15 +354,21 @@ namespace Demos
             document.ActAdd(image2);
 
             // ImageText entity
-            var imagetext1 = EntityFactory.CreateImageText("Arial", $"1234567890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", FontStyle.Regular, false, 3, 64, 10);
+            var imagetext1 = EntityFactory.CreateImageText("Arial", $"12345 67890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", FontStyle.Regular, false, 3, 64, 10);
             imagetext1.Name = "MyText1";
             imagetext1.Translate(-30, -30);
             document.ActAdd(imagetext1);
 
             // Text entity
-            var text1 = EntityFactory.CreateText("Arial", $"1234567890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", FontStyle.Bold, 2.5f);
+            var text1 = EntityFactory.CreateText("Arial", $"12345 67890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", FontStyle.Bold, 2.5);
             text1.Name = "MyText2";
             document.ActAdd(text1);
+
+            // Sirius text entity
+            var text2 = EntityFactory.CreateSiriusText("romans2.cxf", $"12345 67890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", 2.5); 
+            text2.Name = "MyText3";
+            text2.Translate(18, -12);
+            document.ActAdd(text2);
 
             // Polyline2D entity
             var vertices1 = new List<EntityVertex2D>();
