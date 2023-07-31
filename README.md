@@ -63,7 +63,7 @@
 **5. How to use ?**
 
  - Demo 'init' console project for beginner
- - Demo 'editor_basic' winforms project for user interface
+ - Demo 'editor_basic' winforms project for beginner
  - Demo 'editor_entity' winforms project for create entities
     - config "config.ini" for RTC5 or RTC6
     - config "config_syncaxis.ini" for XL-SCAN
