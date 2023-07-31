@@ -364,8 +364,20 @@ namespace Demos
             text1.Name = "MyText2";
             document.ActAdd(text1);
 
+            // Text circular entity
+            var textCircular1 = EntityFactory.CreateCircularText("Times New Roman", $"ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789", FontStyle.Regular, 1.5, TextCircularDirections.ClockWise, 6, 90);
+            textCircular1.Name = "MyTextCircular1";
+            textCircular1.Translate(25, -23);
+            document.ActAdd(textCircular1);
+
+            // Text circular entity
+            var textCircular2 = EntityFactory.CreateCircularText("Century Gothic", $"ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789", FontStyle.Regular, 2, TextCircularDirections.CounterClockWise, 8, -180);
+            textCircular2.Name = "MyTextCircular2";
+            textCircular2.Translate(25, -23);
+            document.ActAdd(textCircular2);
+
             // Sirius text entity
-            var text2 = EntityFactory.CreateSiriusText("romans2.cxf", $"12345 67890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", 2.5); 
+            var text2 = EntityFactory.CreateSiriusText("romans2.cxf", $"12345 67890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", 2); 
             text2.Name = "MyText3";
             text2.Translate(18, -12);
             document.ActAdd(text2);
@@ -478,8 +490,8 @@ namespace Demos
             if (EntityFactory.CreateDxf(Path.Combine("sample", "BIKE.dxf"), out var dxf))
             {
                 dxf.Alignment = Alignments.MiddleCenter;
-                dxf.Scale(0.02);
-                dxf.Translate(25, -35);
+                dxf.Scale(0.01);
+                dxf.Translate(25, -40);
                 document.ActAdd(dxf);
             }
 

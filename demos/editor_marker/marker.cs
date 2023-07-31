@@ -375,7 +375,7 @@ namespace Demos
                     success = rtcExtension.CtlExternalControl(extMode);
                 }
             }
-            this.isThreadBusy = false;
+            this.isInternalBusy = false;
             return success;
         }
         /// <inheritdoc/>
@@ -409,7 +409,7 @@ namespace Demos
             Debug.Assert(document != null);
             Debug.Assert(null == rtcSyncAxis);
 
-            this.isThreadBusy = true;
+            this.isInternalBusy = true;
             this.NotifyStarted();
             var dtStarted = DateTime.Now;            
             bool success = true;
@@ -526,7 +526,7 @@ namespace Demos
 
             rtc.MatrixStack = oldMatrixStack;
             this.TimeSpan = DateTime.Now - dtStarted;
-            this.isThreadBusy = false;
+            this.isInternalBusy = false;
             if (!IsExternalStart)
             {
                 if (success)

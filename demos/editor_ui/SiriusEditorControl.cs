@@ -35,21 +35,27 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using SpiralLab.Sirius2.IO;
 using SpiralLab.Sirius2.Laser;
-using SpiralLab.Sirius2.Scanner;
-using SpiralLab.Sirius2.Winforms;
-using SpiralLab.Sirius2.Winforms.UI;
-using SpiralLab.Sirius2.Winforms.Entity;
-using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
-using OpenTK;
+using SpiralLab.Sirius2.Winforms.Entity;
+using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Common;
+using SpiralLab.Sirius2.Winforms;
+using OpenTK;
+#if NETFRAMEWORK
+using OpenTK;
+#elif NET
+using OpenTK.Mathematics;
+#endif
 
 namespace Demos
 {
     /// <summary>
     /// SiriusEditorUserControl
     /// </summary>
+    /// <remarks>
+    /// User can insert(or create) usercontrol at own winforms
+    /// </remarks>
     public partial class SiriusEditorUserControl : Form
     {
         /// <summary>
@@ -199,9 +205,8 @@ namespace Demos
                 if (null != laser)
                 {
                     EntityPen.PropertyVisibility(laser);
-                    if (null != document)
-                        foreach (var pen in document.InternalData.Pens)
-                            pen.PowerMax = laser.MaxPowerWatt;
+                    foreach (var pen in document.InternalData.Pens)
+                        pen.PowerMax = laser.MaxPowerWatt;
                 }
             }
         }
@@ -254,84 +259,84 @@ namespace Demos
         /// <summary>
         /// Usercontrol for Treeview
         /// </summary>
-        public TreeViewUserControl TreeViewCtrl
+        public SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl TreeViewCtrl
         { 
             get { return treeViewControl1; } 
         }
         /// <summary>
         /// Usercontrol for Treeview with block
         /// </summary>
-        public TreeViewBlockUserControl TreeViewBlockCtrl
+        public SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl TreeViewBlockCtrl
         {
             get { return treeViewBlockControl1; }
         }
         /// <summary>
         /// Usercontrol for propertygrid
         /// </summary>
-        public PropertyGridUserControl PropertyGridCtrl
+        public SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl PropertyGridCtrl
         {
             get { return propertyGridControl1; }
         }
         /// <summary>
         /// Usercontrol for editor
         /// </summary>
-        public EditorUserControl EditorCtrl
+        public SpiralLab.Sirius2.Winforms.UI.EditorUserControl EditorCtrl
         {
             get { return editorControl1; }
         }
         /// <summary>
         /// Usercontrol for pen
         /// </summary>
-        public PenUserControl PenCtrl
+        public SpiralLab.Sirius2.Winforms.UI.PenUserControl PenCtrl
         {
             get { return penControl1; }
         }
         /// <summary>
         /// Usercontrol for laser
         /// </summary>
-        public LaserUserControl LaserCtrl
+        public SpiralLab.Sirius2.Winforms.UI.LaserUserControl LaserCtrl
         {
             get { return laserControl1; }
         }
         /// <summary>
         /// Usercontrol for rtc
         /// </summary>
-        public RtcUserControl RtcCtrl
+        public SpiralLab.Sirius2.Winforms.UI.RtcUserControl RtcCtrl
         {
             get { return rtcControl1; }
         }
         /// <summary>
         /// Usercontrol for marker
         /// </summary>
-        public MarkerUserControl MarkerCtrl
+        public SpiralLab.Sirius2.Winforms.UI.MarkerUserControl MarkerCtrl
         {
             get { return markerControl1; }
         }
         /// <summary>
         /// Usercontrol for offset
         /// </summary>
-        public OffsetUserControl OffsetCtrl
+        public SpiralLab.Sirius2.Winforms.UI.OffsetUserControl OffsetCtrl
         {
             get { return offsetControl1; }
         }
         /// <summary>
         /// Usercontrol for DI
         /// </summary>
-        public RtcDIUserControl RtcDICtrl
+        public SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl RtcDICtrl
         {
             get { return rtcDIUserControl1; }
         }
         /// <summary>
         /// Usercontrol for DO
         /// </summary>
-        public RtcDOUserControl RtcDOCtrl
+        public SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl RtcDOCtrl
         {
             get { return rtcDOUserControl1; }
         }
         /// <summary>
         /// Usercontrol for log
         /// </summary>
-        public LogUserControl LogCtrl
+        public SpiralLab.Sirius2.Winforms.UI.LogUserControl LogCtrl
         {
             get { return logControl1; }
         }
@@ -379,6 +384,7 @@ namespace Demos
             btnSpiral.Click += BtnSpiral_Click;
             btnText.Click += BtnText_Click;
             btnImageText.Click += BtnImageText_Click;
+            btnSiriusText.Click += BtnSiriusText_Click;
             btnImportFile.Click += BtnImportFile_Click;
             mnuDataMatrix.Click += MnuDataMatrix_Click;
             mnuQRCode.Click += MnuQRCode_Click;
@@ -405,9 +411,14 @@ namespace Demos
             TreeViewBlockCtrl.View = EditorCtrl.View;
             PropertyGridCtrl.View = EditorCtrl.View;
 
-            //create document by default
+            //create one by default
             this.Document = new DocumentBase();
-            Document.ActNew();
+        }
+
+        private void BtnSiriusText_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateSiriusText("romans2.cxf", "SIRIUS2", 2.5);
+            document.ActAdd(entity);
         }
 
         private void MnuQRCode_Click(object sender, EventArgs e)
@@ -489,7 +500,7 @@ namespace Demos
         private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Document.ActSelectClear();
-            switch (tabControl1.SelectedIndex)
+            switch(tabControl1.SelectedIndex)
             {
                 case 0:
                     EditorCtrl.View.ViewMode = ViewModes.Entity;
@@ -500,6 +511,33 @@ namespace Demos
             }
             EditorCtrl.View.Render();
         }
+
+        ///// <summary>
+        ///// Short cut keys for F5, CTRL+F5, F6
+        ///// </summary>
+        ///// <param name="msg"></param>
+        ///// <param name="keyData"></param>
+        ///// <returns>ProcessCmdKey return</returns>
+        //protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        //{
+        //    if (keyData == (Keys.F5))
+        //    {
+        //        MarkerCtrl.BtnStart_Click(this, EventArgs.Empty);
+        //        return true;
+        //    }
+        //    else if (keyData == (Keys.Control | Keys.F5))
+        //    {
+        //        MarkerCtrl.BtnStop_Click(this, EventArgs.Empty);
+        //        return true;
+        //    }
+        //    else if (keyData == (Keys.F6))
+        //    {
+        //        MarkerCtrl.BtnReset_Click(this, EventArgs.Empty);
+        //        return true;
+        //    }
+
+        //    return base.ProcessCmdKey(ref msg, keyData);
+        //}
 
         private void MnuMarginBottom_Click(object sender, EventArgs e)
         {
@@ -564,7 +602,6 @@ namespace Demos
                 var entity = EntityFactory.CreateMoFBegin(RtcEncoderType.Angular);
                 document.ActInsert(entity, document.ActiveLayer, 0);
             }
-
         }
 
         private void MnuMofXYWait_Click(object sender, EventArgs e)
@@ -616,7 +653,7 @@ namespace Demos
 
         private void SiriusEditorUserControl_Load(object sender, EventArgs e)
         {
-
+            Document.ActNew();
             timerStatus.Enabled = true;
         }
 
@@ -634,7 +671,7 @@ namespace Demos
             //Cursor.Current = Cursors.Default;
             
             // or preview import winform
-            var form = new ImportForm();
+            var form = new SpiralLab.Sirius2.Winforms.UI.ImportForm();
             DialogResult dialogResult = form.ShowDialog(this);
             if (dialogResult != DialogResult.OK)
                 return;
@@ -670,17 +707,16 @@ namespace Demos
 
         private void BtnText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateText("Arial", $"Hello{Environment.NewLine}SIRIUS2",  FontStyle.Regular, 2);
+            var entity = EntityFactory.CreateText("Arial", $"Hello{Environment.NewLine}SIRIUS2", FontStyle.Regular, 2);
             Document.ActAdd(entity);
         }
 
         private void BtnImageText_Click(object sender, EventArgs e)
         {
-            var form = new ImageTextForm();
+            var form = new SpiralLab.Sirius2.Winforms.UI.ImageTextForm();
             if (DialogResult.OK != form.ShowDialog())
                 return;
-            
-            var entity = EntityFactory.CreateImageText(form.FontName, form.ImageText, form.Style, form.IsFill, form.OutlinePixel, form.HeightPixel, 10);
+            var entity = EntityFactory.CreateImageText(form.FontName, form.ImageText, form.Style, form.IsFill, form.OutlinePixel, form.HeightPixel, 5, 10);
             Document.ActAdd(entity);
         }
 
@@ -712,7 +748,7 @@ namespace Demos
                 return;
             }
             {
-                var form = new ArrayForm();
+                var form = new SpiralLab.Sirius2.Winforms.UI.ArrayForm();
                 if (DialogResult.OK != form.ShowDialog(this))
                     return;
                 foreach (var o in form.Calcuated)
@@ -741,7 +777,7 @@ namespace Demos
         }
         private void BtnAbout_Click(object sender, EventArgs e)
         {
-            var form = new AboutForm();
+            var form = new SpiralLab.Sirius2.Winforms.UI.AboutForm();
             form.ShowDialog();
         }
 
@@ -755,6 +791,7 @@ namespace Demos
         }
         private void Document_OnSelected(IDocument document, IEntity[] entities)
         {
+            lblSelected.Text = $"Selected: {entities.Length}";
         }
 
         private void Renderer_Paint(object sender, PaintEventArgs e)
@@ -794,7 +831,7 @@ namespace Demos
         {
             if (document.IsModified)
             {
-                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to new file without save ?", "Warning", MessageBoxButtons.YesNo);
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to new document without save ?", "Warning", MessageBoxButtons.YesNo);
                 DialogResult dialogResult = form.ShowDialog(this);
                 if (dialogResult != DialogResult.Yes)
                     return;
@@ -815,7 +852,7 @@ namespace Demos
                 return;
             if (Document.IsModified)
             {
-                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to open new file without save ?", "Warning", MessageBoxButtons.YesNo);
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to open without save ?", "Warning", MessageBoxButtons.YesNo);
                 DialogResult dialogResult = form.ShowDialog(this);
                 if (dialogResult != DialogResult.Yes)
                     return;
@@ -979,7 +1016,7 @@ namespace Demos
         }
 
         /// <summary>
-        /// Do render <c>IView</c>
+        /// Do <c>IView</c> render
         /// </summary>
         public void DoRender()
         {

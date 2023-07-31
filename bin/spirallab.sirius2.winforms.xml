@@ -288,7 +288,6 @@
             <summary>
             Constructor
             </summary>
-            <param name="degree">Degree (2 or 3)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCurve.#ctor(OpenTK.Vector2,OpenTK.Vector2,OpenTK.Vector2)">
             <summary>
@@ -1028,12 +1027,19 @@
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText">
-            <summary>
-            EntitySiriusText entity
-            </summary>
-            <remarks>
-            Allowed glyph ascii code range from: 0 ~ Config.SiriusFontAsciiMax
-            </remarks>
+             <summary>
+             EntitySiriusText entity
+             </summary>
+             <remarks>
+             Allowed glyph ascii code range from: 0 ~ Config.SiriusFontAsciiMax <br/>
+            Customizatble font file format: cxf, lff <br/>
+             <list type="utilities">
+             <item><description>ttf2lff : https://github.com/LibreCAD/LibreCAD/tree/master/tools/ttf2lff </description></item>
+             <item><description>ttf2lff : https://github.com/Rallaz/LibreCAD/tree/dwgsupp2/tools/ttf2lff </description></item>
+             <item><description>jhf2lff : https://github.com/Rallaz/LibreCAD/blob/dwgsupp2/tools/ttf2lff/lfftransform.cpp </description></item>
+             <item><description>jhf2c : http://sol.gfxile.net/hershey/hershey.cpp </description></item>
+             </list>
+             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.FontName">
             <summary>
@@ -1174,6 +1180,97 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.TextCircularDirections">
+            <summary>
+            Text Circular Directions
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.TextCircularDirections.ClockWise">
+            <summary>
+            Clock wise
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.TextCircularDirections.CounterClockWise">
+            <summary>
+            Counter clock wise
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText">
+            <summary>
+            EntityCircularText entity
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.TextHorizontalAlignment">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.TextVerticalAlignment">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.IsReversed">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.Direction">
+            <summary>
+            Text circular direction
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.Radius">
+            <summary>
+            Text radius
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.radius">
+            <summary>
+            Text radius
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.StartAngle">
+            <summary>
+            Text starting angle (degree)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.LetterSpacing">
+            <summary>
+            Letter spacing (mm)
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.#ctor(System.String,System.String,System.Drawing.FontStyle,System.Double,SpiralLab.Sirius2.Winforms.Entity.TextCircularDirections,System.Double,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="fontName">Font name</param>
+            <param name="text">Text</param>
+            <param name="style"><c>System.Drawing.FontStyle</c></param>
+            <param name="height">Height (mm)</param>
+            <param name="direction"><c>TextCircularDirections</c></param>
+            <param name="radius">Radius (mm)</param>
+            <param name="startAngle">Start angle (Degree)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.RegenVertices">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.Render(SpiralLab.Sirius2.Winforms.IView)">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">
             <summary>
             EntityText entity
@@ -1304,6 +1401,11 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.Regen">
             <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.RegenVertices">
+            <summary>
+            Regen internal vertices
+            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.RegenInOut">
             <inheritdoc/>
@@ -3326,7 +3428,7 @@
             Synchronization object 
             </summary>
             <remarks>
-            Used to prevent cross thread issue. <br/>
+            Used to prevent cross-thread issue. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Id">
@@ -3334,7 +3436,7 @@
             ID of <c>IEntity</c>
             </summary>
             <remarks>
-            Automatically assigned (or increased) at runtime. <br/>
+            Automatically assigned (and increased) value at runtime. <br/>
             Not saved.<br/>
             </remarks>
         </member>
@@ -3352,7 +3454,7 @@
             Color of <c>IEntity</c>
             </summary>
             <remarks>
-            Converted <c>Color</c> to Vector4 format. <br/>
+            To convert <c>System.Drawing.Color</c> to <c>OpenTK.Vector4</c> format. <br/>
             Used by internally.<br/>
             </remarks>
         </member>
@@ -3376,7 +3478,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.IsHitTestable">
             <summary>
-            Allow do hittest <c>IEntity</c> or not
+            Allow do hit-test <c>IEntity</c> or not
             </summary>
             <remarks>
             Used with <c>IRenderable</c> interface. <br/>
@@ -3416,7 +3518,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.IsHasChildren">
             <summary>
-            Is has child of <c>IEntity</c> or not
+            Is has children of <c>IEntity</c> or not
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Children">
@@ -3424,21 +3526,24 @@
             List children of <c>IEntity</c> 
             </summary>
             <remarks>
-            <c>Children</c> are shown at <c>TreeView</c> control as <c>TreeNode</c>. <br/>
+            <c>Children</c> are shown at <c>TreeView</c> control as child <c>TreeNode</c>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ChildCount">
             <summary>
             Counts children of <c>IEntity</c>
             </summary>
+            <remarks>
+            Exactly same with <c>Children.Count</c> <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.In">
             <summary>
             In(or start) X,Y,Z (mm)
             </summary>
             <remarks>
-            Transformed(or applied) model matrix. <br/>
-            Recalculate by <c>RegenInOut</c>. <br/>
+            Result value are transformed(or applied) by model matrix. <br/>
+            Recalculated by <c>RegenInOut</c>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Out">
@@ -3446,8 +3551,8 @@
             Out(or end) X,Y,Z (mm)
             </summary>
             <remarks>
-            Transformed(or applied) model matrix. <br/>
-            Recalculate by <c>RegenInOut</c>. <br/>
+            Result value are transformed(or applied) by model matrix. <br/>
+            Recalculated by <c>RegenInOut</c>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.BBox">
@@ -3456,7 +3561,7 @@
             </summary>
             <remarks>
             Dimension information of <c>IEntity</c>. <br/>
-            Recalculate real coordinate values by <c>BBox.Regen</c>. <br/>
+            Recalculated real coordinate values by <c>BBox.Regen</c>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Alignment">
@@ -3474,7 +3579,7 @@
             </summary>
             <remarks>
             Translate for alignment if <c>Alignment</c> value has assigned. <br/>
-            Calculated by automatically when <c>Alignment</c> has modified. <br/>
+            Calculated when <c>Alignment</c> has modified. <br/>
             Real alignment = <c>BBox.Min</c> + <c>ModelAlign</c><br/>
             </remarks>
         </member>
@@ -3483,7 +3588,7 @@
             Model translate
             </summary>
             <remarks>
-            Translated by dx, dy and dz (mm).  <br/>
+            Translated distance by dx, dy and dz (mm). <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">
@@ -3491,7 +3596,7 @@
             Model scale
             </summary>
             <remarks>
-            Scaled by sx, sy, sz (Must be > 0).  <br/>
+            Scaled factors by sx, sy, sz (Must be > 0). <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">
@@ -3499,7 +3604,7 @@
             Model rotate
             </summary>
             <remarks>
-            Rotated at x,y and z axis (°). <br/>
+            Rotated degree values at x,y and z axis (°). <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelMatrix">
@@ -3509,7 +3614,6 @@
             <remarks>
             4x4 matrix for transformation. <br/>
             <c>ModelMatrix</c> = <c>ModelAlign</c> * <c>ModelRotate</c> * <c>ModelRotate</c> * <c>ModelTranslate</c>.<br/>
-            Used with <c>IRenderable.Render</c> and <c>IMarkerable.Mark</c>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Node">
@@ -3527,10 +3631,11 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.Regen">
             <summary>
-            Regenerate internal data by manually
+            Regenerate internal data by forcily(or manually)
             </summary>
             <remarks>
-            Regenerate whole vertices, bounding box, in, out location, and alignment.
+            Regenerate whole vertices, bounding box, in, out location, and alignment. <br/>
+            <c>IEntity</c> would be regenerated whenever do <c>IDocument.ActAdd</c> by automatically<br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.RegenInOut">
@@ -3559,9 +3664,9 @@
             <summary>
             Translate dx, dy, dz
             </summary>
-            <param name="dx">Dx (mm)</param>
-            <param name="dy">Dy (mm)</param>
-            <param name="dz">Dz (mm) (Default= 0)</param>
+            <param name="dx">dx (mm)</param>
+            <param name="dy">dy (mm)</param>
+            <param name="dz">dz (mm) (Default= 0)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.RotateX(System.Double)">
             <summary>
@@ -3593,6 +3698,9 @@
             <summary>
             Scale sx, sy, sz
             </summary>
+            <remarks>
+            Should be greater than zero (scale factor > 0)
+            </remarks>
             <param name="deltaScale">Delta scale</param>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.IMarkerable">
@@ -3613,7 +3721,7 @@
             Do mark <c>IEntity</c>
             </summary>
             <remarks>
-            Consider as working within async threads
+            Consider as its working <c>Mark</c> within async threads. <br/>
             </remarks>
             <param name="marker"><c>IMarker</c></param>
             <returns>Success or not</returns>
@@ -3704,7 +3812,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Line">
             <summary>
-            Line
+            Line (like as |||| or ////)
             </summary>
             <remarks>
             Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values.
@@ -3712,7 +3820,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">
             <summary>
-            Cross Lines
+            Cross Lines (like as #####)
             </summary>
             <remarks>
             Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>angle2</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values.
@@ -3720,11 +3828,12 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Polygon">
             <summary>
-            Polygon 
+            Polygon (like as expand or shrink)
             </summary>
             <remarks>
             Used with <c>HatchJoints</c>, <c>internal</c> values. <br/>
             Adjust <c>Config.DivideArcToLinesDistance</c> value to reduce vertices at arc path. <br/>
+            Must be aware winding direction are same within polylines. <br/>
             </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">
@@ -3767,7 +3876,7 @@
             Is closed figure(or path) or not
             </summary>
             <remarks>
-            Determined by all sub-figures. <br/>
+            Determined by all child <c>IEntity</c> are closed or not. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.IHatchable.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
@@ -3779,7 +3888,6 @@
             Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values for <c>HatchModes.Line</c> mode. <br/>
             Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>angle2</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values for <c>HatchModes.CrossLine</c> mode. <br/>
             Used with <c>HatchJoints</c>, <c>internal</c> values for <c>HatchModes.Polygon</c> mode. <br/>
-            Model matrix are not applied but accumulated into hatched <c>EntityGroup</c>. <br/>
             </remarks>
             <param name="hatchMode"><c>HatchModes</c></param>
             <param name="hatchJoint"><c>HatchJoints</c></param>
@@ -3951,7 +4059,26 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
-            <inheritdoc/>
+            <summary>
+            Do hatch for closed figures at <c>IEntity</c>
+            <para>It would be hatched by 2D (Z=0) coordinates only</para>
+            </summary>
+            <remarks>
+            Used with internal array of <c>EntityPolyline</c> from <c>IEntity</c>. <br/>
+            Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values for <c>HatchModes.Line</c> mode. <br/>
+            Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>angle2</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values for <c>HatchModes.CrossLine</c> mode. <br/>
+            Used with <c>HatchJoints</c>, <c>internal</c> values for <c>HatchModes.Polygon</c> mode. <br/>
+            Model matrix are not applied but accumulated into hatched <c>EntityGroup</c>. <br/>
+            </remarks>
+            <param name="hatchMode"><c>HatchModes</c></param>
+            <param name="hatchJoint"><c>HatchJoints</c></param>
+            <param name="isZigZag">ZigZag</param>
+            <param name="angle">Angle 1st</param>
+            <param name="angle2">Angle 2nd for <c>CrossLine</c></param>        
+            <param name="interval">Interval (mm)</param>
+            <param name="exclude">Exclude (mm)</param>        
+            <param name="shift">Shift offset (mm)</param>  
+            <returns>Hatched <c>EntityGroup</c> entity</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.Regen">
             <inheritdoc/>
@@ -5036,6 +5163,25 @@
             <param name="style"><c>System.Drawing.FontStyle</c></param>
             <param name="height">Height (mm)</param>        
             <returns><c>EntityText</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateCircularText(System.String,System.String,System.Drawing.FontStyle,System.Double,SpiralLab.Sirius2.Winforms.Entity.TextCircularDirections,System.Double,System.Double)">
+            <summary>
+            Create <c>EntityCircularText</c> entity
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var text = EntityFactory.EntityTextCircular("Arial", $"1234567890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^*()-_=+[{{]|}}\\|;:'\",./?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", FontStyle.Bold, 2.5, 10);
+            document.ActAdd(text);
+            </code>
+            </summary>
+            <param name="fontName">Font family name</param>
+            <param name="text">Text</param>
+            <param name="style"><c>System.Drawing.FontStyle</c></param>
+            <param name="height">Height (mm)</param>       
+            <param name="direction"><c>TextCircularDirections</c></param>   
+            <param name="radius">Radius (mm)</param>  
+            <param name="startAngle">Starting angle(mm)</param>  
+            <returns><c>EntityTextCircular</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateSiriusText(System.String,System.String,System.Double)">
             <summary>
@@ -6161,6 +6307,15 @@
              Fontname (cxf, llf) converter
             </summary>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.SiriusFontNameConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.SiriusFontNameConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.SiriusFontNameConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.FloatTypeConverter">
             <summary>
             Double converter
@@ -6541,7 +6696,7 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Tag">
             <inheritdoc/>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.isThreadBusy">
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.isInternalBusy">
             <summary>
             Worker thread is working or not
             </summary>
@@ -6584,6 +6739,9 @@
             <summary>
             Mark each <c>IEntity</c>
             </summary>
+            <remarks>
+            Consider as its working <c>Mark</c> within async threads. <br/>
+            </remarks> 
             <param name="offsetIndex">Offset index</param>
             <param name="layer"><c>EntityLayer</c></param>
             <param name="entityIndex">Entity index</param>
@@ -6594,6 +6752,9 @@
             <summary>
             Mark each <c>EntityLayer</c>
             </summary>
+            <remarks>
+            Consider as its working <c>Mark</c> within async threads. <br/>
+            </remarks> 
             <param name="offsetIndex">Offset index</param>
             <param name="layer"><c>EntityLayer</c></param>
             <param name="offset"><c>Offset</c></param>
@@ -6609,34 +6770,45 @@
             <summary>
             Notify makrer has started event
             </summary>
+            <remarks>
+            Consider as its working within async threads. <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyFailed">
             <summary>
             Notify marker has failed event
             </summary>
+            <remarks>
+            Consider as its working within async threads. <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyFinished">
             <summary>
             Notify marker has finished event
             </summary>
+            <remarks>
+            Consider as its working within async threads. <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyBeforeLayer(SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">
             <summary>
-            Notify before mark <c>EntityLayer</c> event
+            Notify marker about to before <c>EntityLayer</c> event
             </summary>
             <param name="layer"><c>EntityLayer</c></param>
             <remarks>
-            Do something to works before mark <c>EntityLayer</c><br/>
+            Do something works before do <c>EntityLayer</c>. <br/>
+            Consider as its working within async threads. <br/>
             </remarks>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyAfterLayer(SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">
             <summary>
-            Notify after mark <c>EntityLayer</c> event
+            Notify marker after <c>EntityLayer</c> event
             </summary>
             <param name="layer"><c>EntityLayer</c></param>
             <remarks>
-            Do something to works after mark <c>EntityLayer</c>
+            Do something to works after do <c>EntityLayer</c>. <br/>
+            Consider as its working within async threads. <br/>
             </remarks>
             <returns>Success or failed</returns>
         </member>
@@ -6646,7 +6818,8 @@
             </summary>
             <param name="entity"><c>IEntity</c></param>
             <remarks>
-            Do something to works before mark <c>IEntity</c>
+            Do something to works before do <c>IEntity</c>. <br/>
+            Consider as its working within async threads. <br/>
             </remarks>
             <returns>Success or failed</returns>
         </member>
@@ -6656,7 +6829,8 @@
             </summary>
             <param name="entity"><c>IEntity</c></param>
             <remarks>
-            Do something to works after mark <c>IEntity</c><br/>
+            Do something to works after do <c>IEntity</c>. <br/>
+            Consider as its working within async threads. <br/>
             </remarks>
             <returns>Success or failed</returns>
         </member>
@@ -6942,16 +7116,25 @@
             <summary>
             OnStarted event handler
             </summary>
+            <remarks>
+            Consider as its working <c>Mark</c> within async threads. <br/>
+            </remarks> 
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnFailed">
             <summary>
             OnFailed event handler
             </summary>
+            <remarks>
+            Consider as its working <c>Mark</c> within async threads. <br/>
+            </remarks> 
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnFinished">
             <summary>
             OnFinished event handler
             </summary>
+            <remarks>
+            Consider as its working <c>Mark</c> within async threads. <br/>
+            </remarks> 
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnBeforeLayer">
             <summary>
@@ -6960,6 +7143,7 @@
             <remarks>
             Do external control works like as i/o, motion stage controls before mark layer.<br/>
             If returned False, mark progress would be stopped.<br/>
+            Consider as its working <c>Mark</c> within async threads. <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnAfterLayer">
@@ -6969,6 +7153,7 @@
             <remarks>
             Do external control works like as i/o, motion stage controls after mark layer.<br/>
             If returned False, mark progress would be stopped.<br/>
+            Consider as its working <c>Mark</c> within async threads. <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnBeforeEntity">
@@ -6978,6 +7163,7 @@
             <remarks>
             Consider as within RTC list buffer is executing.<br/>
             If returned False, mark progress would be stopped.<br/>
+            Consider as its working <c>Mark</c> within async threads. <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnAfterEntity">
@@ -6987,6 +7173,7 @@
             <remarks>
             Consider as within RTC list buffer is executing.<br/>
             If returned False, mark progress would be stopped.<br/>
+            Consider as its working <c>Mark</c> within async threads. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Index">
@@ -7024,8 +7211,8 @@
             Jump to origin (0,0) location after mark has finished
             </summary>
             <remarks>
-            Must be <c>True</c> if using syncAXIS.<br/>
-            syncAXIS has recalculate every trajectory planning from origin location.<br/>
+            Must be <c>True</c> if using syncAXIS. <br/>
+            syncAXIS has recalculate every trajectory planning from origin location. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.AccumulatedMarks">
@@ -7120,6 +7307,9 @@
             <summary>
             Ready
             </summary>
+            <remarks>
+            Must be once <c>Ready</c> before do <c>Start</c> <br/>
+            </remarks>
             <param name="document"><c>IDocument</c></param>
             <param name="view"><c>IView</c></param>
             <param name="rtc"><c>IRtc</c></param>
@@ -7142,6 +7332,9 @@
             <summary>
             Reset
             </summary>
+            <remarks>
+            If <c>IsError</c> is <c>True</c>, try to <c>Reset</c> for clear error status. <br/>
+            </remarks>
             <returns>Success or not</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.OpenGL.GLBufferFactory">
@@ -11010,7 +11203,7 @@
             MessageBox winforms
             </summary>
             <remarks>
-            Custom message box
+            Customized message box <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.MessageBox.TextLabel">
@@ -11018,7 +11211,7 @@
             <c>TextBoxWithLabel</c> for input values
             </summary>
             <remarks>
-            Visibility : False (by default)
+            Visibility: <c>False</c> (by default)
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.MessageBox.#ctor">

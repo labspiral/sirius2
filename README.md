@@ -67,6 +67,8 @@
  - Demo 'editor_entity' winforms project for create entities
     - config "config.ini" for RTC5 or RTC6
     - config "config_syncaxis.ini" for XL-SCAN
+ - Demo 'editor_marker' winforms project for custom marker
+ - Demo 'editor_ui' winforms project for custom ui
 
  *The program running 30 mins at evalution copy mode !*
 
@@ -87,9 +89,9 @@
 
 **7. Version history**
 
-
-DEVELOPER PREVIEW VERSION. IT WIIL BE CHANGED WITHOUT NOTIFICATION !
-
+* 2023.8.1 v0.8.5
+  - added) circular text entity
+  - added) support High DPI
 
 * 2023.7.28 v0.8.3
   - added) sirius text entity
@@ -177,9 +179,6 @@ DEVELOPER PREVIEW VERSION. IT WIIL BE CHANGED WITHOUT NOTIFICATION !
 **8. Known Issues**
 
 * Editor
-  - Editing EntityBlock is not supported yet
-  - Hatch inside of entity is not supported yet (extract hatch only)
   - Selection entities by rubber banding is not supported yet
   - Multi-languages are not supported yet
-  
   

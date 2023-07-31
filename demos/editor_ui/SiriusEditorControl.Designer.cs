@@ -1,6 +1,4 @@
-﻿using SpiralLab.Sirius2.Winforms.UI;
-
-namespace Demos
+﻿namespace Demos
 {
     partial class SiriusEditorUserControl
     {
@@ -47,6 +45,8 @@ namespace Demos
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnText = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImageText = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSiriusText = new System.Windows.Forms.ToolStripMenuItem();
             this.ddbBarcode = new System.Windows.Forms.ToolStripDropDownButton();
             this.mnuDataMatrix = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQRCode = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,6 +107,8 @@ namespace Demos
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblEncoder = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblSelected = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel12 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRenderTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblHelp = new System.Windows.Forms.ToolStripStatusLabel();
@@ -125,31 +127,31 @@ namespace Demos
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.editorControl1 = new SpiralLab.Sirius2.Winforms.UI.EditorUserControl();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.rtcControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcUserControl();
-            this.laserControl1 = new SpiralLab.Sirius2.Winforms.UI.LaserUserControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.offsetControl1 = new SpiralLab.Sirius2.Winforms.UI.OffsetUserControl();
-            this.markerControl1 = new SpiralLab.Sirius2.Winforms.UI.MarkerUserControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.rtcDIUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl();
-            this.rtcDOUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl();
-            this.logControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.propertyGridControl1 = new SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.editorControl1 = new SpiralLab.Sirius2.Winforms.UI.EditorUserControl();
+            this.rtcControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcUserControl();
+            this.laserControl1 = new SpiralLab.Sirius2.Winforms.UI.LaserUserControl();
+            this.offsetControl1 = new SpiralLab.Sirius2.Winforms.UI.OffsetUserControl();
+            this.markerControl1 = new SpiralLab.Sirius2.Winforms.UI.MarkerUserControl();
+            this.rtcDIUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl();
+            this.rtcDOUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl();
+            this.logControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
+            this.propertyGridControl1 = new SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl();
             this.treeViewControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl();
             this.penControl1 = new SpiralLab.Sirius2.Winforms.UI.PenUserControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.treeViewBlockControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl();
             this.tlsTop2.SuspendLayout();
             this.tlsTop.SuspendLayout();
@@ -189,7 +191,7 @@ namespace Demos
             // 
             // tlsTop2
             // 
-            this.tlsTop2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tlsTop2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlsTop2.GripMargin = new System.Windows.Forms.Padding(5, 2, 5, 2);
             this.tlsTop2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tlsTop2.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -211,7 +213,8 @@ namespace Demos
             this.toolStripDropDownButton3});
             this.tlsTop2.Location = new System.Drawing.Point(0, 31);
             this.tlsTop2.Name = "tlsTop2";
-            this.tlsTop2.Size = new System.Drawing.Size(1264, 31);
+            this.tlsTop2.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.tlsTop2.Size = new System.Drawing.Size(1280, 31);
             this.tlsTop2.TabIndex = 19;
             this.tlsTop2.Text = "toolStrip2";
             // 
@@ -253,7 +256,7 @@ namespace Demos
             this.btnLine.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLine.Name = "btnLine";
             this.btnLine.Size = new System.Drawing.Size(28, 28);
-            this.btnLine.Text = "Line Entity";
+            this.btnLine.Text = "Line";
             this.btnLine.ToolTipText = "Line";
             // 
             // btnArc
@@ -263,7 +266,7 @@ namespace Demos
             this.btnArc.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnArc.Name = "btnArc";
             this.btnArc.Size = new System.Drawing.Size(28, 28);
-            this.btnArc.Text = "Arc Entity";
+            this.btnArc.Text = "Arc";
             this.btnArc.ToolTipText = "Arc";
             // 
             // btnCircle
@@ -273,7 +276,7 @@ namespace Demos
             this.btnCircle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCircle.Name = "btnCircle";
             this.btnCircle.Size = new System.Drawing.Size(28, 28);
-            this.btnCircle.Text = "Circle Entity";
+            this.btnCircle.Text = "Circle";
             this.btnCircle.ToolTipText = "Circle";
             // 
             // btnTrepan
@@ -284,6 +287,7 @@ namespace Demos
             this.btnTrepan.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnTrepan.Name = "btnTrepan";
             this.btnTrepan.Size = new System.Drawing.Size(28, 28);
+            this.btnTrepan.Text = "Trepan";
             this.btnTrepan.ToolTipText = "Trepan";
             // 
             // btnRectangle
@@ -293,7 +297,7 @@ namespace Demos
             this.btnRectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRectangle.Name = "btnRectangle";
             this.btnRectangle.Size = new System.Drawing.Size(28, 28);
-            this.btnRectangle.Text = "Rectangle Entity";
+            this.btnRectangle.Text = "Rectangle";
             this.btnRectangle.ToolTipText = "Rectangle";
             // 
             // btnPolyline
@@ -304,7 +308,7 @@ namespace Demos
             this.btnPolyline.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPolyline.Name = "btnPolyline";
             this.btnPolyline.Size = new System.Drawing.Size(28, 28);
-            this.btnPolyline.Text = "Polyline Entity";
+            this.btnPolyline.Text = "Polyline";
             this.btnPolyline.ToolTipText = "Polyline";
             // 
             // btnSpiral
@@ -314,7 +318,7 @@ namespace Demos
             this.btnSpiral.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSpiral.Name = "btnSpiral";
             this.btnSpiral.Size = new System.Drawing.Size(28, 28);
-            this.btnSpiral.Text = "Spiral Entity";
+            this.btnSpiral.Text = "Spiral";
             this.btnSpiral.ToolTipText = "Spiral";
             // 
             // btnImportFile
@@ -332,18 +336,20 @@ namespace Demos
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnText,
-            this.btnImageText});
+            this.btnImageText,
+            this.toolStripMenuItem1,
+            this.btnSiriusText});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(37, 28);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Text = "Text";
             // 
             // btnText
             // 
             this.btnText.Image = ((System.Drawing.Image)(resources.GetObject("btnText.Image")));
             this.btnText.Name = "btnText";
-            this.btnText.Size = new System.Drawing.Size(145, 30);
+            this.btnText.Size = new System.Drawing.Size(141, 30);
             this.btnText.Text = "Text";
             this.btnText.ToolTipText = "Text";
             // 
@@ -351,9 +357,22 @@ namespace Demos
             // 
             this.btnImageText.Image = ((System.Drawing.Image)(resources.GetObject("btnImageText.Image")));
             this.btnImageText.Name = "btnImageText";
-            this.btnImageText.Size = new System.Drawing.Size(145, 30);
+            this.btnImageText.Size = new System.Drawing.Size(141, 30);
             this.btnImageText.Text = "Image Text";
             this.btnImageText.ToolTipText = "Image Text (Raster)";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(138, 6);
+            // 
+            // btnSiriusText
+            // 
+            this.btnSiriusText.Image = ((System.Drawing.Image)(resources.GetObject("btnSiriusText.Image")));
+            this.btnSiriusText.Name = "btnSiriusText";
+            this.btnSiriusText.Size = new System.Drawing.Size(141, 30);
+            this.btnSiriusText.Text = "Sirius Text";
+            this.btnSiriusText.ToolTipText = "Sirius Text";
             // 
             // ddbBarcode
             // 
@@ -365,14 +384,14 @@ namespace Demos
             this.ddbBarcode.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ddbBarcode.Name = "ddbBarcode";
             this.ddbBarcode.Size = new System.Drawing.Size(37, 28);
-            this.ddbBarcode.Text = "Data matrix entity";
+            this.ddbBarcode.Text = "Barcode";
             this.ddbBarcode.ToolTipText = "Barcode";
             // 
             // mnuDataMatrix
             // 
             this.mnuDataMatrix.Image = ((System.Drawing.Image)(resources.GetObject("mnuDataMatrix.Image")));
             this.mnuDataMatrix.Name = "mnuDataMatrix";
-            this.mnuDataMatrix.Size = new System.Drawing.Size(145, 30);
+            this.mnuDataMatrix.Size = new System.Drawing.Size(139, 30);
             this.mnuDataMatrix.Text = "DataMatrix";
             this.mnuDataMatrix.ToolTipText = "DataMatrix";
             // 
@@ -380,7 +399,7 @@ namespace Demos
             // 
             this.mnuQRCode.Image = ((System.Drawing.Image)(resources.GetObject("mnuQRCode.Image")));
             this.mnuQRCode.Name = "mnuQRCode";
-            this.mnuQRCode.Size = new System.Drawing.Size(145, 30);
+            this.mnuQRCode.Size = new System.Drawing.Size(139, 30);
             this.mnuQRCode.Text = "QR Code";
             this.mnuQRCode.ToolTipText = "QR Code";
             // 
@@ -412,7 +431,7 @@ namespace Demos
             // 
             this.mnuTimer.Image = ((System.Drawing.Image)(resources.GetObject("mnuTimer.Image")));
             this.mnuTimer.Name = "mnuTimer";
-            this.mnuTimer.Size = new System.Drawing.Size(222, 30);
+            this.mnuTimer.Size = new System.Drawing.Size(214, 30);
             this.mnuTimer.Text = "Timer";
             this.mnuTimer.ToolTipText = "Timer";
             // 
@@ -420,7 +439,7 @@ namespace Demos
             // 
             this.mnuMeasurementBeginEnd.Image = ((System.Drawing.Image)(resources.GetObject("mnuMeasurementBeginEnd.Image")));
             this.mnuMeasurementBeginEnd.Name = "mnuMeasurementBeginEnd";
-            this.mnuMeasurementBeginEnd.Size = new System.Drawing.Size(222, 30);
+            this.mnuMeasurementBeginEnd.Size = new System.Drawing.Size(214, 30);
             this.mnuMeasurementBeginEnd.Text = "Measurement";
             this.mnuMeasurementBeginEnd.ToolTipText = "Measurement Begin/End";
             // 
@@ -437,7 +456,7 @@ namespace Demos
             this.toolStripMenuItem27});
             this.mnuMoF.Image = ((System.Drawing.Image)(resources.GetObject("mnuMoF.Image")));
             this.mnuMoF.Name = "mnuMoF";
-            this.mnuMoF.Size = new System.Drawing.Size(222, 30);
+            this.mnuMoF.Size = new System.Drawing.Size(214, 30);
             this.mnuMoF.Text = "MoF";
             this.mnuMoF.ToolTipText = "Marking On The Fly";
             // 
@@ -445,67 +464,67 @@ namespace Demos
             // 
             this.mnuMofXYBeginEnd.Image = ((System.Drawing.Image)(resources.GetObject("mnuMofXYBeginEnd.Image")));
             this.mnuMofXYBeginEnd.Name = "mnuMofXYBeginEnd";
-            this.mnuMofXYBeginEnd.Size = new System.Drawing.Size(190, 30);
+            this.mnuMofXYBeginEnd.Size = new System.Drawing.Size(184, 30);
             this.mnuMofXYBeginEnd.Text = "Begin/End";
-            this.mnuMofXYBeginEnd.ToolTipText = "MOTF Begin/End";
+            this.mnuMofXYBeginEnd.ToolTipText = "XY Begin/End";
             // 
             // mnuMofXYWait
             // 
             this.mnuMofXYWait.Image = ((System.Drawing.Image)(resources.GetObject("mnuMofXYWait.Image")));
             this.mnuMofXYWait.Name = "mnuMofXYWait";
-            this.mnuMofXYWait.Size = new System.Drawing.Size(190, 30);
+            this.mnuMofXYWait.Size = new System.Drawing.Size(184, 30);
             this.mnuMofXYWait.Text = "Wait";
-            this.mnuMofXYWait.ToolTipText = "MOTF Wait";
+            this.mnuMofXYWait.ToolTipText = "XY Wait";
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(187, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(181, 6);
             // 
             // mnuMofAngularBeginEnd
             // 
             this.mnuMofAngularBeginEnd.Image = ((System.Drawing.Image)(resources.GetObject("mnuMofAngularBeginEnd.Image")));
             this.mnuMofAngularBeginEnd.Name = "mnuMofAngularBeginEnd";
-            this.mnuMofAngularBeginEnd.Size = new System.Drawing.Size(190, 30);
+            this.mnuMofAngularBeginEnd.Size = new System.Drawing.Size(184, 30);
             this.mnuMofAngularBeginEnd.Text = "Angular Begin/End";
-            this.mnuMofAngularBeginEnd.ToolTipText = "MOTF Angular Begin/End";
+            this.mnuMofAngularBeginEnd.ToolTipText = "Angular Begin/End";
             // 
             // mnuMofAngularWait
             // 
             this.mnuMofAngularWait.Image = ((System.Drawing.Image)(resources.GetObject("mnuMofAngularWait.Image")));
             this.mnuMofAngularWait.Name = "mnuMofAngularWait";
-            this.mnuMofAngularWait.Size = new System.Drawing.Size(190, 30);
+            this.mnuMofAngularWait.Size = new System.Drawing.Size(184, 30);
             this.mnuMofAngularWait.Text = "Angular Wait";
-            this.mnuMofAngularWait.ToolTipText = "MOTF Angular Wait";
+            this.mnuMofAngularWait.ToolTipText = "Angular Wait";
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(187, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(181, 6);
             // 
             // toolStripMenuItem26
             // 
             this.toolStripMenuItem26.Enabled = false;
             this.toolStripMenuItem26.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem26.Image")));
             this.toolStripMenuItem26.Name = "toolStripMenuItem26";
-            this.toolStripMenuItem26.Size = new System.Drawing.Size(190, 30);
+            this.toolStripMenuItem26.Size = new System.Drawing.Size(184, 30);
             this.toolStripMenuItem26.Text = "Ext Start Delay";
-            this.toolStripMenuItem26.ToolTipText = "MOTF Ext Start Delay";
+            this.toolStripMenuItem26.ToolTipText = "Ext. Start Delay";
             // 
             // toolStripMenuItem27
             // 
             this.toolStripMenuItem27.Enabled = false;
             this.toolStripMenuItem27.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem27.Image")));
             this.toolStripMenuItem27.Name = "toolStripMenuItem27";
-            this.toolStripMenuItem27.Size = new System.Drawing.Size(190, 30);
+            this.toolStripMenuItem27.Size = new System.Drawing.Size(184, 30);
             this.toolStripMenuItem27.Text = "Repeat";
-            this.toolStripMenuItem27.ToolTipText = "MOTF Repeat";
+            this.toolStripMenuItem27.ToolTipText = "Repeat";
             // 
             // mnuAlcDefinedVector
             // 
             this.mnuAlcDefinedVector.Image = ((System.Drawing.Image)(resources.GetObject("mnuAlcDefinedVector.Image")));
             this.mnuAlcDefinedVector.Name = "mnuAlcDefinedVector";
-            this.mnuAlcDefinedVector.Size = new System.Drawing.Size(222, 30);
+            this.mnuAlcDefinedVector.Size = new System.Drawing.Size(214, 30);
             this.mnuAlcDefinedVector.Text = "Ramp";
             this.mnuAlcDefinedVector.ToolTipText = "Ramp Begin/End (Automatica Laser Control by Defined Vector)";
             // 
@@ -513,7 +532,7 @@ namespace Demos
             // 
             this.mnuZDefocus.Image = ((System.Drawing.Image)(resources.GetObject("mnuZDefocus.Image")));
             this.mnuZDefocus.Name = "mnuZDefocus";
-            this.mnuZDefocus.Size = new System.Drawing.Size(222, 30);
+            this.mnuZDefocus.Size = new System.Drawing.Size(214, 30);
             this.mnuZDefocus.Text = "Z Defocus";
             this.mnuZDefocus.ToolTipText = "Z Defocus";
             // 
@@ -526,7 +545,7 @@ namespace Demos
             this.toolStripMenuItem16});
             this.mnuData.Image = ((System.Drawing.Image)(resources.GetObject("mnuData.Image")));
             this.mnuData.Name = "mnuData";
-            this.mnuData.Size = new System.Drawing.Size(222, 30);
+            this.mnuData.Size = new System.Drawing.Size(214, 30);
             this.mnuData.Text = "Data";
             this.mnuData.ToolTipText = "Read/Write Data";
             // 
@@ -534,7 +553,7 @@ namespace Demos
             // 
             this.mnuWriteData.Image = ((System.Drawing.Image)(resources.GetObject("mnuWriteData.Image")));
             this.mnuWriteData.Name = "mnuWriteData";
-            this.mnuWriteData.Size = new System.Drawing.Size(157, 30);
+            this.mnuWriteData.Size = new System.Drawing.Size(148, 30);
             this.mnuWriteData.Text = "Write";
             this.mnuWriteData.ToolTipText = "Write Data";
             // 
@@ -542,7 +561,7 @@ namespace Demos
             // 
             this.mnuWriteDataExt16.Image = ((System.Drawing.Image)(resources.GetObject("mnuWriteDataExt16.Image")));
             this.mnuWriteDataExt16.Name = "mnuWriteDataExt16";
-            this.mnuWriteDataExt16.Size = new System.Drawing.Size(157, 30);
+            this.mnuWriteDataExt16.Size = new System.Drawing.Size(148, 30);
             this.mnuWriteDataExt16.Text = "Ext16";
             this.mnuWriteDataExt16.ToolTipText = "Write Extension 16 Bits";
             // 
@@ -551,7 +570,7 @@ namespace Demos
             this.toolStripMenuItem14.Enabled = false;
             this.toolStripMenuItem14.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem14.Image")));
             this.toolStripMenuItem14.Name = "toolStripMenuItem14";
-            this.toolStripMenuItem14.Size = new System.Drawing.Size(157, 30);
+            this.toolStripMenuItem14.Size = new System.Drawing.Size(148, 30);
             this.toolStripMenuItem14.Text = "Ext16 If";
             this.toolStripMenuItem14.ToolTipText = "Extension16 If Cond";
             // 
@@ -560,7 +579,7 @@ namespace Demos
             this.toolStripMenuItem16.Enabled = false;
             this.toolStripMenuItem16.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem16.Image")));
             this.toolStripMenuItem16.Name = "toolStripMenuItem16";
-            this.toolStripMenuItem16.Size = new System.Drawing.Size(157, 30);
+            this.toolStripMenuItem16.Size = new System.Drawing.Size(148, 30);
             this.toolStripMenuItem16.Text = "Wait Ext16 If";
             this.toolStripMenuItem16.ToolTipText = "Wait Extension16 If cond";
             // 
@@ -573,7 +592,7 @@ namespace Demos
             this.toolStripMenuItem28.Enabled = false;
             this.toolStripMenuItem28.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem28.Image")));
             this.toolStripMenuItem28.Name = "toolStripMenuItem28";
-            this.toolStripMenuItem28.Size = new System.Drawing.Size(222, 30);
+            this.toolStripMenuItem28.Size = new System.Drawing.Size(214, 30);
             this.toolStripMenuItem28.Text = "Automatic Laser Control";
             this.toolStripMenuItem28.ToolTipText = "Automatic Laser Control";
             // 
@@ -581,26 +600,26 @@ namespace Demos
             // 
             this.toolStripMenuItem29.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem29.Image")));
             this.toolStripMenuItem29.Name = "toolStripMenuItem29";
-            this.toolStripMenuItem29.Size = new System.Drawing.Size(252, 30);
+            this.toolStripMenuItem29.Size = new System.Drawing.Size(244, 30);
             this.toolStripMenuItem29.Text = "Pulse On Demand";
             this.toolStripMenuItem29.ToolTipText = "Pulse On Demand";
             // 
             // toolStripSeparator14
             // 
             this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size(249, 6);
+            this.toolStripSeparator14.Size = new System.Drawing.Size(241, 6);
             // 
             // toolStripMenuItem31
             // 
             this.toolStripMenuItem31.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem31.Image")));
             this.toolStripMenuItem31.Name = "toolStripMenuItem31";
-            this.toolStripMenuItem31.Size = new System.Drawing.Size(252, 30);
+            this.toolStripMenuItem31.Size = new System.Drawing.Size(244, 30);
             this.toolStripMenuItem31.Text = "Pulse On Demand Begin/End";
             this.toolStripMenuItem31.ToolTipText = "Pulse On Demand Begin/End for SyncAxis";
             // 
             // tlsTop
             // 
-            this.tlsTop.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tlsTop.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlsTop.GripMargin = new System.Windows.Forms.Padding(5, 2, 5, 2);
             this.tlsTop.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tlsTop.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -624,7 +643,8 @@ namespace Demos
             this.ddbAlign});
             this.tlsTop.Location = new System.Drawing.Point(0, 0);
             this.tlsTop.Name = "tlsTop";
-            this.tlsTop.Size = new System.Drawing.Size(1264, 31);
+            this.tlsTop.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.tlsTop.Size = new System.Drawing.Size(1280, 31);
             this.tlsTop.TabIndex = 18;
             this.tlsTop.Text = "toolStrip1";
             // 
@@ -787,7 +807,7 @@ namespace Demos
             // 
             this.mnuMarginLeft.Image = ((System.Drawing.Image)(resources.GetObject("mnuMarginLeft.Image")));
             this.mnuMarginLeft.Name = "mnuMarginLeft";
-            this.mnuMarginLeft.Size = new System.Drawing.Size(124, 30);
+            this.mnuMarginLeft.Size = new System.Drawing.Size(121, 30);
             this.mnuMarginLeft.Text = "Left";
             this.mnuMarginLeft.ToolTipText = "Margin Align to Left";
             // 
@@ -795,7 +815,7 @@ namespace Demos
             // 
             this.mnuMarginRight.Image = ((System.Drawing.Image)(resources.GetObject("mnuMarginRight.Image")));
             this.mnuMarginRight.Name = "mnuMarginRight";
-            this.mnuMarginRight.Size = new System.Drawing.Size(124, 30);
+            this.mnuMarginRight.Size = new System.Drawing.Size(121, 30);
             this.mnuMarginRight.Text = "Right";
             this.mnuMarginRight.ToolTipText = "Margin Align to Right";
             // 
@@ -803,7 +823,7 @@ namespace Demos
             // 
             this.mnuMarginTop.Image = ((System.Drawing.Image)(resources.GetObject("mnuMarginTop.Image")));
             this.mnuMarginTop.Name = "mnuMarginTop";
-            this.mnuMarginTop.Size = new System.Drawing.Size(124, 30);
+            this.mnuMarginTop.Size = new System.Drawing.Size(121, 30);
             this.mnuMarginTop.Text = "Top";
             this.mnuMarginTop.ToolTipText = "Margin Align to Top";
             // 
@@ -811,13 +831,13 @@ namespace Demos
             // 
             this.mnuMarginBottom.Image = ((System.Drawing.Image)(resources.GetObject("mnuMarginBottom.Image")));
             this.mnuMarginBottom.Name = "mnuMarginBottom";
-            this.mnuMarginBottom.Size = new System.Drawing.Size(124, 30);
+            this.mnuMarginBottom.Size = new System.Drawing.Size(121, 30);
             this.mnuMarginBottom.Text = "Bottom";
             this.mnuMarginBottom.ToolTipText = "Margin Align to Bottom";
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusStrip1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblName,
@@ -830,6 +850,8 @@ namespace Demos
             this.toolStripStatusLabel1,
             this.lblEncoder,
             this.toolStripStatusLabel7,
+            this.lblSelected,
+            this.toolStripStatusLabel12,
             this.lblRenderTime,
             this.toolStripStatusLabel4,
             this.lblHelp,
@@ -842,17 +864,17 @@ namespace Demos
             this.toolStripStatusLabel6,
             this.toolStripStatusLabel11,
             this.toolStripStatusLabel3});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 830);
-            this.statusStrip1.Margin = new System.Windows.Forms.Padding(5);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 769);
+            this.statusStrip1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1264, 31);
+            this.statusStrip1.Size = new System.Drawing.Size(1280, 31);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 29;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblName
             // 
-            this.lblName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(57, 26);
             this.lblName.Text = "NoName";
@@ -867,7 +889,7 @@ namespace Demos
             // 
             this.lblProcessTime.Image = ((System.Drawing.Image)(resources.GetObject("lblProcessTime.Image")));
             this.lblProcessTime.Name = "lblProcessTime";
-            this.lblProcessTime.Size = new System.Drawing.Size(111, 26);
+            this.lblProcessTime.Size = new System.Drawing.Size(104, 26);
             this.lblProcessTime.Text = "Mark: 0 msec";
             // 
             // toolStripStatusLabel5
@@ -886,15 +908,15 @@ namespace Demos
             // toolStripStatusLabel10
             // 
             this.toolStripStatusLabel10.Name = "toolStripStatusLabel10";
-            this.toolStripStatusLabel10.Size = new System.Drawing.Size(291, 26);
+            this.toolStripStatusLabel10.Size = new System.Drawing.Size(273, 26);
             this.toolStripStatusLabel10.Spring = true;
             // 
             // lblPos
             // 
             this.lblPos.Image = ((System.Drawing.Image)(resources.GetObject("lblPos.Image")));
             this.lblPos.Name = "lblPos";
-            this.lblPos.Size = new System.Drawing.Size(131, 26);
-            this.lblPos.Text = "XY : 0.000, 0.000";
+            this.lblPos.Size = new System.Drawing.Size(118, 26);
+            this.lblPos.Text = "XY: 0.000, 0.000";
             // 
             // toolStripStatusLabel1
             // 
@@ -906,7 +928,7 @@ namespace Demos
             // 
             this.lblEncoder.Image = ((System.Drawing.Image)(resources.GetObject("lblEncoder.Image")));
             this.lblEncoder.Name = "lblEncoder";
-            this.lblEncoder.Size = new System.Drawing.Size(107, 26);
+            this.lblEncoder.Size = new System.Drawing.Size(99, 26);
             this.lblEncoder.Text = "ENC XY: 0, 0";
             // 
             // toolStripStatusLabel7
@@ -915,12 +937,24 @@ namespace Demos
             this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
             this.toolStripStatusLabel7.Size = new System.Drawing.Size(8, 26);
             // 
+            // lblSelected
+            // 
+            this.lblSelected.Name = "lblSelected";
+            this.lblSelected.Size = new System.Drawing.Size(68, 26);
+            this.lblSelected.Text = "Selected: 0";
+            // 
+            // toolStripStatusLabel12
+            // 
+            this.toolStripStatusLabel12.AutoSize = false;
+            this.toolStripStatusLabel12.Name = "toolStripStatusLabel12";
+            this.toolStripStatusLabel12.Size = new System.Drawing.Size(8, 26);
+            // 
             // lblRenderTime
             // 
             this.lblRenderTime.Image = ((System.Drawing.Image)(resources.GetObject("lblRenderTime.Image")));
             this.lblRenderTime.Name = "lblRenderTime";
-            this.lblRenderTime.Size = new System.Drawing.Size(127, 26);
-            this.lblRenderTime.Text = "Render : 0 msec";
+            this.lblRenderTime.Size = new System.Drawing.Size(119, 26);
+            this.lblRenderTime.Text = "Render: 0 msec";
             // 
             // toolStripStatusLabel4
             // 
@@ -941,7 +975,7 @@ namespace Demos
             // 
             this.toolStripStatusLabel13.AutoSize = false;
             this.toolStripStatusLabel13.Name = "toolStripStatusLabel13";
-            this.toolStripStatusLabel13.Size = new System.Drawing.Size(18, 26);
+            this.toolStripStatusLabel13.Size = new System.Drawing.Size(12, 26);
             // 
             // lblReady
             // 
@@ -1012,27 +1046,29 @@ namespace Demos
             this.imageList1.Images.SetKeyName(0, "cube_24px.png");
             this.imageList1.Images.SetKeyName(1, "binary_code2_24px.png");
             this.imageList1.Images.SetKeyName(2, "welder_24px.png");
-            this.imageList1.Images.SetKeyName(3, "video_card_24px.png");
-            this.imageList1.Images.SetKeyName(4, "sheets_24px.png");
-            this.imageList1.Images.SetKeyName(5, "candy_cane_pattern_24px.png");
-            this.imageList1.Images.SetKeyName(6, "spreadsheet_file_24px.png");
-            this.imageList1.Images.SetKeyName(7, "Electricity Hazard_24px.png");
-            this.imageList1.Images.SetKeyName(8, "paint_palette_24px.png");
-            this.imageList1.Images.SetKeyName(9, "sheets2_24px.png");
-            this.imageList1.Images.SetKeyName(10, "chain_intermediate_24px.png");
-            this.imageList1.Images.SetKeyName(11, "Stacked Organizational Chart.png");
-            this.imageList1.Images.SetKeyName(12, "Login.png");
-            this.imageList1.Images.SetKeyName(13, "Binary Code.png");
-            this.imageList1.Images.SetKeyName(14, "Ctrl.png");
-            this.imageList1.Images.SetKeyName(15, "Video Card.png");
-            this.imageList1.Images.SetKeyName(16, "Picture.png");
-            this.imageList1.Images.SetKeyName(17, "Property.png");
-            this.imageList1.Images.SetKeyName(18, "3D Object.png");
-            this.imageList1.Images.SetKeyName(19, "Circled Play.png");
-            this.imageList1.Images.SetKeyName(20, "Paint Palette.png");
-            this.imageList1.Images.SetKeyName(21, "Vending Machine.png");
-            this.imageList1.Images.SetKeyName(22, "Processor.png");
-            this.imageList1.Images.SetKeyName(23, "Processor2.png");
+            this.imageList1.Images.SetKeyName(3, "sheets_24px.png");
+            this.imageList1.Images.SetKeyName(4, "candy_cane_pattern_24px.png");
+            this.imageList1.Images.SetKeyName(5, "spreadsheet_file_24px.png");
+            this.imageList1.Images.SetKeyName(6, "Electricity Hazard_24px.png");
+            this.imageList1.Images.SetKeyName(7, "paint_palette_24px.png");
+            this.imageList1.Images.SetKeyName(8, "sheets2_24px.png");
+            this.imageList1.Images.SetKeyName(9, "chain_intermediate_24px.png");
+            this.imageList1.Images.SetKeyName(10, "Stacked Organizational Chart.png");
+            this.imageList1.Images.SetKeyName(11, "Login.png");
+            this.imageList1.Images.SetKeyName(12, "Binary Code.png");
+            this.imageList1.Images.SetKeyName(13, "Ctrl.png");
+            this.imageList1.Images.SetKeyName(14, "Video Card.png");
+            this.imageList1.Images.SetKeyName(15, "Picture.png");
+            this.imageList1.Images.SetKeyName(16, "Property.png");
+            this.imageList1.Images.SetKeyName(17, "3D Object.png");
+            this.imageList1.Images.SetKeyName(18, "Circled Play.png");
+            this.imageList1.Images.SetKeyName(19, "Paint Palette.png");
+            this.imageList1.Images.SetKeyName(20, "Vending Machine.png");
+            this.imageList1.Images.SetKeyName(21, "Processor.png");
+            this.imageList1.Images.SetKeyName(22, "Processor2.png");
+            this.imageList1.Images.SetKeyName(23, "Pencil.png");
+            this.imageList1.Images.SetKeyName(24, "Design.png");
+            this.imageList1.Images.SetKeyName(25, "Video Card.png");
             // 
             // splitter3
             // 
@@ -1040,7 +1076,7 @@ namespace Demos
             this.splitter3.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter3.Location = new System.Drawing.Point(0, 62);
             this.splitter3.Name = "splitter3";
-            this.splitter3.Size = new System.Drawing.Size(1264, 1);
+            this.splitter3.Size = new System.Drawing.Size(1280, 1);
             this.splitter3.TabIndex = 33;
             this.splitter3.TabStop = false;
             // 
@@ -1054,7 +1090,7 @@ namespace Demos
             this.panBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panBody.Location = new System.Drawing.Point(0, 63);
             this.panBody.Name = "panBody";
-            this.panBody.Size = new System.Drawing.Size(1264, 767);
+            this.panBody.Size = new System.Drawing.Size(1280, 706);
             this.panBody.TabIndex = 34;
             // 
             // splitContainer3
@@ -1071,9 +1107,9 @@ namespace Demos
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.logControl1);
-            this.splitContainer3.Panel2MinSize = 100;
-            this.splitContainer3.Size = new System.Drawing.Size(680, 767);
-            this.splitContainer3.SplitterDistance = 589;
+            this.splitContainer3.Panel2MinSize = 80;
+            this.splitContainer3.Size = new System.Drawing.Size(716, 706);
+            this.splitContainer3.SplitterDistance = 570;
             this.splitContainer3.SplitterWidth = 1;
             this.splitContainer3.TabIndex = 35;
             // 
@@ -1090,43 +1126,30 @@ namespace Demos
             this.tabControl3.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(680, 589);
+            this.tabControl3.Size = new System.Drawing.Size(716, 570);
             this.tabControl3.TabIndex = 35;
             this.tabControl3.TabStop = false;
             // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.editorControl1);
-            this.tabPage6.ImageIndex = 18;
+            this.tabPage6.ImageIndex = 17;
             this.tabPage6.Location = new System.Drawing.Point(4, 36);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(672, 549);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage6.Size = new System.Drawing.Size(708, 530);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = " Editor ";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // editorControl1
-            // 
-            this.editorControl1.AllowDrop = true;
-            this.editorControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.editorControl1.Document = null;
-            this.editorControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editorControl1.Location = new System.Drawing.Point(3, 3);
-            this.editorControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.editorControl1.Name = "editorControl1";
-            this.editorControl1.Rtc = null;
-            this.editorControl1.Size = new System.Drawing.Size(666, 543);
-            this.editorControl1.TabIndex = 26;
-            // 
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.splitContainer2);
-            this.tabPage8.ImageIndex = 23;
+            this.tabPage8.ImageIndex = 25;
             this.tabPage8.Location = new System.Drawing.Point(4, 36);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(688, 579);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage8.Size = new System.Drawing.Size(708, 530);
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = " Laser ";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1145,41 +1168,19 @@ namespace Demos
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.laserControl1);
-            this.splitContainer2.Size = new System.Drawing.Size(682, 573);
+            this.splitContainer2.Size = new System.Drawing.Size(702, 524);
             this.splitContainer2.SplitterDistance = 350;
             this.splitContainer2.SplitterWidth = 2;
             this.splitContainer2.TabIndex = 3;
             // 
-            // rtcControl1
-            // 
-            this.rtcControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtcControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtcControl1.Location = new System.Drawing.Point(0, 0);
-            this.rtcControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.rtcControl1.Name = "rtcControl1";
-            this.rtcControl1.Rtc = null;
-            this.rtcControl1.Size = new System.Drawing.Size(350, 573);
-            this.rtcControl1.TabIndex = 3;
-            // 
-            // laserControl1
-            // 
-            this.laserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.laserControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.laserControl1.Laser = null;
-            this.laserControl1.Location = new System.Drawing.Point(0, 0);
-            this.laserControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.laserControl1.Name = "laserControl1";
-            this.laserControl1.Size = new System.Drawing.Size(330, 573);
-            this.laserControl1.TabIndex = 6;
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.splitContainer1);
-            this.tabPage5.ImageIndex = 20;
+            this.tabPage5.ImageIndex = 24;
             this.tabPage5.Location = new System.Drawing.Point(4, 36);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(688, 579);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage5.Size = new System.Drawing.Size(708, 530);
             this.tabPage5.TabIndex = 3;
             this.tabPage5.Text = " Marker ";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1198,41 +1199,19 @@ namespace Demos
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.markerControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(682, 573);
+            this.splitContainer1.Size = new System.Drawing.Size(702, 524);
             this.splitContainer1.SplitterDistance = 280;
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 1;
             // 
-            // offsetControl1
-            // 
-            this.offsetControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.offsetControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offsetControl1.Location = new System.Drawing.Point(0, 0);
-            this.offsetControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.offsetControl1.Marker = null;
-            this.offsetControl1.Name = "offsetControl1";
-            this.offsetControl1.Size = new System.Drawing.Size(280, 573);
-            this.offsetControl1.TabIndex = 0;
-            // 
-            // markerControl1
-            // 
-            this.markerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.markerControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.markerControl1.Location = new System.Drawing.Point(0, 0);
-            this.markerControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.markerControl1.Marker = null;
-            this.markerControl1.Name = "markerControl1";
-            this.markerControl1.Size = new System.Drawing.Size(400, 573);
-            this.markerControl1.TabIndex = 2;
-            // 
             // tabPage9
             // 
             this.tabPage9.Controls.Add(this.splitContainer4);
-            this.tabPage9.ImageIndex = 13;
+            this.tabPage9.ImageIndex = 12;
             this.tabPage9.Location = new System.Drawing.Point(4, 36);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(688, 579);
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage9.Size = new System.Drawing.Size(708, 530);
             this.tabPage9.TabIndex = 4;
             this.tabPage9.Text = "DIO";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -1250,57 +1229,18 @@ namespace Demos
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.rtcDOUserControl1);
-            this.splitContainer4.Size = new System.Drawing.Size(682, 573);
-            this.splitContainer4.SplitterDistance = 339;
+            this.splitContainer4.Size = new System.Drawing.Size(702, 524);
+            this.splitContainer4.SplitterDistance = 320;
             this.splitContainer4.SplitterWidth = 2;
             this.splitContainer4.TabIndex = 0;
-            // 
-            // rtcDIUserControl1
-            // 
-            this.rtcDIUserControl1.DIExt1 = null;
-            this.rtcDIUserControl1.DILaserPort = null;
-            this.rtcDIUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtcDIUserControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtcDIUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.rtcDIUserControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.rtcDIUserControl1.Name = "rtcDIUserControl1";
-            this.rtcDIUserControl1.Rtc = null;
-            this.rtcDIUserControl1.Size = new System.Drawing.Size(339, 573);
-            this.rtcDIUserControl1.TabIndex = 0;
-            // 
-            // rtcDOUserControl1
-            // 
-            this.rtcDOUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtcDOUserControl1.DOExt1 = null;
-            this.rtcDOUserControl1.DOExt2 = null;
-            this.rtcDOUserControl1.DOLaserPort = null;
-            this.rtcDOUserControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtcDOUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.rtcDOUserControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.rtcDOUserControl1.Name = "rtcDOUserControl1";
-            this.rtcDOUserControl1.Rtc = null;
-            this.rtcDOUserControl1.Size = new System.Drawing.Size(341, 573);
-            this.rtcDOUserControl1.TabIndex = 0;
-            // 
-            // logControl1
-            // 
-            this.logControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.logControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logControl1.Location = new System.Drawing.Point(0, 0);
-            this.logControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.logControl1.MaxItems = 1000;
-            this.logControl1.Name = "logControl1";
-            this.logControl1.Size = new System.Drawing.Size(680, 177);
-            this.logControl1.TabIndex = 0;
             // 
             // splitter2
             // 
             this.splitter2.BackColor = System.Drawing.SystemColors.Control;
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter2.Location = new System.Drawing.Point(962, 0);
+            this.splitter2.Location = new System.Drawing.Point(998, 0);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(2, 767);
+            this.splitter2.Size = new System.Drawing.Size(2, 706);
             this.splitter2.TabIndex = 32;
             this.splitter2.TabStop = false;
             // 
@@ -1310,45 +1250,32 @@ namespace Demos
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Right;
             this.tabControl2.ImageList = this.imageList1;
             this.tabControl2.ItemSize = new System.Drawing.Size(80, 32);
-            this.tabControl2.Location = new System.Drawing.Point(964, 0);
+            this.tabControl2.Location = new System.Drawing.Point(1000, 0);
             this.tabControl2.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(300, 767);
+            this.tabControl2.Size = new System.Drawing.Size(280, 706);
             this.tabControl2.TabIndex = 31;
             this.tabControl2.TabStop = false;
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.propertyGridControl1);
-            this.tabPage4.ImageIndex = 17;
+            this.tabPage4.ImageIndex = 16;
             this.tabPage4.Location = new System.Drawing.Point(4, 36);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(292, 727);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Size = new System.Drawing.Size(272, 666);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = " Property ";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // propertyGridControl1
-            // 
-            this.propertyGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propertyGridControl1.Document = null;
-            this.propertyGridControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.propertyGridControl1.Location = new System.Drawing.Point(3, 3);
-            this.propertyGridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.propertyGridControl1.Name = "propertyGridControl1";
-            this.propertyGridControl1.SelecteObject = null;
-            this.propertyGridControl1.Size = new System.Drawing.Size(286, 721);
-            this.propertyGridControl1.TabIndex = 27;
-            this.propertyGridControl1.View = null;
             // 
             // splitter1
             // 
             this.splitter1.BackColor = System.Drawing.SystemColors.Control;
             this.splitter1.Location = new System.Drawing.Point(280, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(2, 767);
+            this.splitter1.Size = new System.Drawing.Size(2, 706);
             this.splitter1.TabIndex = 30;
             this.splitter1.TabStop = false;
             // 
@@ -1363,18 +1290,18 @@ namespace Demos
             this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(280, 767);
+            this.tabControl1.Size = new System.Drawing.Size(280, 706);
             this.tabControl1.TabIndex = 29;
             this.tabControl1.TabStop = false;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.splitContainer5);
-            this.tabPage1.ImageIndex = 11;
+            this.tabPage1.ImageIndex = 10;
             this.tabPage1.Location = new System.Drawing.Point(4, 36);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(272, 727);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(272, 666);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = " Layer ";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1395,22 +1322,144 @@ namespace Demos
             // 
             this.splitContainer5.Panel2.Controls.Add(this.penControl1);
             this.splitContainer5.Panel2MinSize = 150;
-            this.splitContainer5.Size = new System.Drawing.Size(266, 721);
-            this.splitContainer5.SplitterDistance = 549;
+            this.splitContainer5.Size = new System.Drawing.Size(266, 660);
+            this.splitContainer5.SplitterDistance = 500;
             this.splitContainer5.SplitterWidth = 2;
             this.splitContainer5.TabIndex = 25;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage2.Controls.Add(this.treeViewBlockControl1);
+            this.tabPage2.ImageIndex = 11;
+            this.tabPage2.Location = new System.Drawing.Point(4, 36);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Size = new System.Drawing.Size(272, 666);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = " Block ";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // editorControl1
+            // 
+            this.editorControl1.AllowDrop = true;
+            this.editorControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editorControl1.Document = null;
+            this.editorControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editorControl1.Location = new System.Drawing.Point(3, 3);
+            this.editorControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.editorControl1.Name = "editorControl1";
+            this.editorControl1.Rtc = null;
+            this.editorControl1.Size = new System.Drawing.Size(702, 524);
+            this.editorControl1.TabIndex = 26;
+            // 
+            // rtcControl1
+            // 
+            this.rtcControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtcControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtcControl1.Location = new System.Drawing.Point(0, 0);
+            this.rtcControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.rtcControl1.Name = "rtcControl1";
+            this.rtcControl1.Rtc = null;
+            this.rtcControl1.Size = new System.Drawing.Size(350, 524);
+            this.rtcControl1.TabIndex = 3;
+            // 
+            // laserControl1
+            // 
+            this.laserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.laserControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.laserControl1.Laser = null;
+            this.laserControl1.Location = new System.Drawing.Point(0, 0);
+            this.laserControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.laserControl1.Name = "laserControl1";
+            this.laserControl1.Size = new System.Drawing.Size(350, 524);
+            this.laserControl1.TabIndex = 6;
+            // 
+            // offsetControl1
+            // 
+            this.offsetControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.offsetControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.offsetControl1.Location = new System.Drawing.Point(0, 0);
+            this.offsetControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.offsetControl1.Marker = null;
+            this.offsetControl1.Name = "offsetControl1";
+            this.offsetControl1.Size = new System.Drawing.Size(280, 524);
+            this.offsetControl1.TabIndex = 0;
+            // 
+            // markerControl1
+            // 
+            this.markerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.markerControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.markerControl1.Location = new System.Drawing.Point(0, 0);
+            this.markerControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.markerControl1.Marker = null;
+            this.markerControl1.Name = "markerControl1";
+            this.markerControl1.Size = new System.Drawing.Size(420, 524);
+            this.markerControl1.TabIndex = 2;
+            // 
+            // rtcDIUserControl1
+            // 
+            this.rtcDIUserControl1.DIExt1 = null;
+            this.rtcDIUserControl1.DILaserPort = null;
+            this.rtcDIUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtcDIUserControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtcDIUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.rtcDIUserControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.rtcDIUserControl1.Name = "rtcDIUserControl1";
+            this.rtcDIUserControl1.Rtc = null;
+            this.rtcDIUserControl1.Size = new System.Drawing.Size(320, 524);
+            this.rtcDIUserControl1.TabIndex = 0;
+            // 
+            // rtcDOUserControl1
+            // 
+            this.rtcDOUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtcDOUserControl1.DOExt1 = null;
+            this.rtcDOUserControl1.DOExt2 = null;
+            this.rtcDOUserControl1.DOLaserPort = null;
+            this.rtcDOUserControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtcDOUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.rtcDOUserControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.rtcDOUserControl1.Name = "rtcDOUserControl1";
+            this.rtcDOUserControl1.Rtc = null;
+            this.rtcDOUserControl1.Size = new System.Drawing.Size(380, 524);
+            this.rtcDOUserControl1.TabIndex = 0;
+            // 
+            // logControl1
+            // 
+            this.logControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.logControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logControl1.Location = new System.Drawing.Point(0, 0);
+            this.logControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.logControl1.MaxItems = 1000;
+            this.logControl1.Name = "logControl1";
+            this.logControl1.Size = new System.Drawing.Size(716, 135);
+            this.logControl1.TabIndex = 0;
+            // 
+            // propertyGridControl1
+            // 
+            this.propertyGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propertyGridControl1.Document = null;
+            this.propertyGridControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.propertyGridControl1.Location = new System.Drawing.Point(3, 3);
+            this.propertyGridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.propertyGridControl1.Name = "propertyGridControl1";
+            this.propertyGridControl1.SelecteObject = null;
+            this.propertyGridControl1.Size = new System.Drawing.Size(266, 660);
+            this.propertyGridControl1.TabIndex = 27;
+            this.propertyGridControl1.View = null;
             // 
             // treeViewControl1
             // 
             this.treeViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.treeViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeViewControl1.Document = null;
-            this.treeViewControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeViewControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeViewControl1.Location = new System.Drawing.Point(0, 0);
             this.treeViewControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.treeViewControl1.Name = "treeViewControl1";
             this.treeViewControl1.Rtc = null;
-            this.treeViewControl1.Size = new System.Drawing.Size(266, 549);
+            this.treeViewControl1.Size = new System.Drawing.Size(266, 500);
             this.treeViewControl1.TabIndex = 25;
             this.treeViewControl1.View = null;
             // 
@@ -1419,25 +1468,12 @@ namespace Demos
             this.penControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.penControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.penControl1.Document = null;
-            this.penControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.penControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.penControl1.Location = new System.Drawing.Point(0, 0);
             this.penControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.penControl1.Name = "penControl1";
-            this.penControl1.Size = new System.Drawing.Size(266, 170);
+            this.penControl1.Size = new System.Drawing.Size(266, 158);
             this.penControl1.TabIndex = 2;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage2.Controls.Add(this.treeViewBlockControl1);
-            this.tabPage2.ImageIndex = 12;
-            this.tabPage2.Location = new System.Drawing.Point(4, 36);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(272, 766);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = " Block ";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // treeViewBlockControl1
             // 
@@ -1448,24 +1484,23 @@ namespace Demos
             this.treeViewBlockControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.treeViewBlockControl1.Name = "treeViewBlockControl1";
             this.treeViewBlockControl1.Rtc = null;
-            this.treeViewBlockControl1.Size = new System.Drawing.Size(262, 756);
+            this.treeViewBlockControl1.Size = new System.Drawing.Size(262, 656);
             this.treeViewBlockControl1.TabIndex = 1;
             this.treeViewBlockControl1.View = null;
             // 
             // SiriusEditorUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 861);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.panBody);
             this.Controls.Add(this.splitter3);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tlsTop2);
             this.Controls.Add(this.tlsTop);
-            this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SiriusEditorUserControl";
-            this.Text = "Sirius2 Custom Editor  - (c)SpiralLAB";
+            this.Size = new System.Drawing.Size(1280, 800);
             this.tlsTop2.ResumeLayout(false);
             this.tlsTop2.PerformLayout();
             this.tlsTop.ResumeLayout(false);
@@ -1591,24 +1626,24 @@ namespace Demos
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.TabControl tabControl3;
         private System.Windows.Forms.TabPage tabPage6;
-        private EditorUserControl editorControl1;
+        private SpiralLab.Sirius2.Winforms.UI.EditorUserControl editorControl1;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private RtcUserControl rtcControl1;
-        private LaserUserControl laserControl1;
+        private SpiralLab.Sirius2.Winforms.UI.RtcUserControl rtcControl1;
+        private SpiralLab.Sirius2.Winforms.UI.LaserUserControl laserControl1;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private OffsetUserControl offsetControl1;
-        private MarkerUserControl markerControl1;
+        private SpiralLab.Sirius2.Winforms.UI.OffsetUserControl offsetControl1;
+        private SpiralLab.Sirius2.Winforms.UI.MarkerUserControl markerControl1;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.SplitContainer splitContainer4;
-        private RtcDIUserControl rtcDIUserControl1;
-        private RtcDOUserControl rtcDOUserControl1;
-        private LogUserControl logControl1;
+        private SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl rtcDIUserControl1;
+        private SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl rtcDOUserControl1;
+        private SpiralLab.Sirius2.Winforms.UI.LogUserControl logControl1;
         private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage4;
-        private PropertyGridUserControl propertyGridControl1;
+        private SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl propertyGridControl1;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -1620,13 +1655,17 @@ namespace Demos
         private System.Windows.Forms.ToolStripMenuItem mnuMarginTop;
         private System.Windows.Forms.ToolStripMenuItem mnuMarginBottom;
         private System.Windows.Forms.SplitContainer splitContainer5;
-        private TreeViewUserControl treeViewControl1;
-        private PenUserControl penControl1;
-        private TreeViewBlockUserControl treeViewBlockControl1;
+        private SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl treeViewControl1;
+        private SpiralLab.Sirius2.Winforms.UI.PenUserControl penControl1;
+        private SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl treeViewBlockControl1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem btnImageText;
         private System.Windows.Forms.ToolStripMenuItem btnText;
         private System.Windows.Forms.ToolStripMenuItem mnuAlcDefinedVector;
+        private System.Windows.Forms.ToolStripStatusLabel lblSelected;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel12;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem btnSiriusText;
     }
 }

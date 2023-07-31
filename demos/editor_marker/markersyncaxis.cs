@@ -326,7 +326,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                 }
                 while (true);
             }
-            this.isThreadBusy = false;
+            this.isInternalBusy = false;
             return success;
         }
         /// <inheritdoc/>
@@ -355,7 +355,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             Debug.Assert(document != null);
             Debug.Assert(null != rtcSyncAxis);
             
-            this.isThreadBusy = true;
+            this.isInternalBusy = true;
             this.NotifyStarted();
             var dtStarted = DateTime.Now;
             bool success = true;     
@@ -427,7 +427,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
 
             rtc.MatrixStack = oldMatrixStack;
             this.TimeSpan = DateTime.Now - dtStarted;
-            this.isThreadBusy = false;
+            this.isInternalBusy = false;
             if (success)
             {
                 Logger.Log(Logger.Type.Debug, $"marker [{Index}]: mark has finished");
