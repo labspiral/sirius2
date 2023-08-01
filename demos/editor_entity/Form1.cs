@@ -30,6 +30,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -65,7 +66,9 @@ namespace Demos
             CreateMarker();
             CreateTestEntities();
             CustomConverter();
+           
         }
+
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             var document = siriusEditorUserControl1.Document;
@@ -140,12 +143,18 @@ namespace Demos
                     break;
                 case "rtc5":
                     rtc = ScannerFactory.CreateRtc5(rtcId, kfactor, laserMode, signalLevel, signalLevel, correctionPath);
+                    // user event for apply scanner field correction
+                    SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DApply += Config_OnScannerFieldCorrection2DApply;
                     break;
                 case "rtc6":
                     rtc = ScannerFactory.CreateRtc6(rtcId, kfactor, laserMode, signalLevel, signalLevel, correctionPath);
+                    // user event for apply scanner field correction
+                    SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DApply += Config_OnScannerFieldCorrection2DApply;
                     break;
                 case "rtc6e":
                     rtc = ScannerFactory.CreateRtc6Ethernet(rtcId, "192.168.0.100", "255.255.255.0", kfactor, laserMode, signalLevel, signalLevel, correctionPath);
+                    // user event for apply scanner field correction
+                    SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DApply += Config_OnScannerFieldCorrection2DApply;
                     break;
                 case "syncaxis":
                     string configXmlFileName = NativeMethods.ReadIni(Program.ConfigFileName, "RTC", "CONFIG_XML", string.Empty);
@@ -560,6 +569,21 @@ namespace Demos
             }
             return true;
         }
+        private bool Config_OnScannerFieldCorrection2DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm form)
+        {
+            var ctFullFileName = form.RtcCorrection.TargetCorrectionFile;
+            Debug.Assert(File.Exists(ctFullFileName));
+            bool success = true;
+            var currentTable = form.Rtc.PrimaryHeadTable;
+            success &= form.Rtc.CtlLoadCorrectionFile(currentTable, ctFullFileName);
+            success &= form.Rtc.CtlSelectCorrection(currentTable);
+            Debug.Assert(success);
+            MessageBox.Show($"New correction file: {ctFullFileName} has applied", "Scanner Field Correction", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            var ctFileName = ctFullFileName.Replace(SpiralLab.Sirius2.Config.CorrectionPath + "\\", "");
+            NativeMethods.WriteIni<string>(Program.ConfigFileName, "RTC", "CORRECTION", ctFileName);
+            return true;
+        }
 
         #region Control by remotely
         /// <summary>
@@ -645,6 +669,118 @@ namespace Demos
         {
             var marker = siriusEditorUserControl1.Marker;
             return marker.Reset();
+        }
+        #endregion
+
+        #region Utilities
+        /// <summary>
+        /// Find <c>IEntity</c> by name
+        /// </summary>
+        /// <param name="entityName">Entity name</param>
+        /// <param name="entity">Founded <c>IEntity</c></param>
+        /// <returns>Success or failed</returns>
+        public bool EntityFind(string entityName, out IEntity entity)
+        {
+            var marker = siriusEditorUserControl1.Marker;
+            var doc = marker.Document;
+            Debug.Assert(doc != null);
+            return doc.FindByName(entityName, out entity);
+        }
+        /// <summary>
+        /// Find <c>EntityPen</c> by color
+        /// </summary>
+        /// <param name="color"><c>System.Drawing.Color</c> value at <c>Config.PensColor</c></param>
+        /// <param name="entity">Founded <c>EntityPen</c></param>
+        /// <returns>Success or failed</returns>
+        public bool EntityFind(System.Drawing.Color color, out EntityPen entity)
+        {
+            var marker = siriusEditorUserControl1.Marker;
+            var doc = marker.Document;
+            Debug.Assert(doc != null);
+            return doc.FindByPenColor(color, out entity);
+        }
+        /// <summary>
+        /// Translate <c>IEntity</c> 
+        /// </summary>
+        /// <param name="entity">Target <c>IEntity</c></param>
+        /// <param name="deltaXyz">Dx, Dy, Dz (mm)</param>
+        /// <returns>Success or failed</returns>
+        public bool EntityTranslate(IEntity entity, OpenTK.Vector3 deltaXyz)
+        {
+            var marker = siriusEditorUserControl1.Marker;
+            var doc = marker.Document;
+            Debug.Assert(doc != null);
+            Debug.Assert(entity != null);
+
+            // you can use 'doc.Act...' functions also
+            return doc.ActTransit(new IEntity[] { entity }, deltaXyz);
+        }
+        /// <summary>
+        /// Query property list from <c>IEntity</c> 
+        /// </summary>
+        /// <remarks>
+        /// Target properties are Browasable attribute is <c>True</c> only <br/>
+        /// </remarks>
+        /// <param name="entity">Target <c>IEntity</c> </param>
+        /// <returns><c>Dictionary<string, object></c></returns>
+        public Dictionary<string, object> EntityProperties(IEntity entity)
+        {
+            return PropertyList(entity);
+            Dictionary<string, object> PropertyList(object objectType)
+            {
+                if (objectType == null) return new Dictionary<string, object>();
+                Type t = objectType.GetType();
+                PropertyInfo[] props = t.GetProperties();
+                Dictionary<string, object> dic = new Dictionary<string, object>();
+                foreach (PropertyInfo prp in props)
+                {
+                    //Attribute [Browsable] is True only
+                    if (prp.GetCustomAttributes<BrowsableAttribute>().Contains(BrowsableAttribute.Yes))
+                    {
+                        object value = prp.GetValue(objectType, new object[] { });
+                        dic.Add(prp.Name, value);
+                    }
+                }
+                return dic;
+            }
+        }
+        /// <summary>
+        /// Read property value at <c>IEntity</c> 
+        /// </summary>
+        /// <param name="entity">Target <c>IEntity</c></param>
+        /// <param name="propName">Property name</param>
+        /// <param name="propValue">Property value</param>
+        /// <returns>Success or failed</returns>
+        public bool EntityReadPropertyValue(IEntity entity, string propName, out object propValue)
+        {
+            propValue = null;
+            Debug.Assert(entity != null);
+            Type type = entity.GetType();
+            var propInfo = type.GetProperty(propName, BindingFlags.Public | BindingFlags.Instance);
+            if (null == propInfo || !propInfo.CanRead)
+                return false;
+            propValue = propInfo.GetValue(entity);
+            return true;
+        }
+        /// <summary>
+        /// Write property value at <c>IEntity</c> 
+        /// </summary>
+        /// <param name="entity">Target <c>IEntity</c></param>
+        /// <param name="propName">Property name</param>
+        /// <param name="propValue">Property value</param>
+        /// <returns>Success or failed</returns>
+        public bool EntityWritePropertyValue(IEntity entity, string propName, object propValue)
+        {
+            Debug.Assert(entity != null);
+            Type type = entity.GetType();
+            var propInfo = type.GetProperty(propName, BindingFlags.Public | BindingFlags.Instance);
+            if (null == propInfo || !propInfo.CanWrite)
+                return false;
+            var convertedValue = Convert.ChangeType(propValue, propInfo.PropertyType);
+            propInfo.SetValue(entity, convertedValue, null);
+            // Regen data by forcily
+            entity.Regen();
+            return true;
         }
         #endregion
     }

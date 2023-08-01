@@ -31,9 +31,11 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OpenTK;
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
@@ -64,7 +66,7 @@ namespace Demos
             CreateMarker();
 
             // Event will be fired when select scanner field correction 2d at popup-menu
-            SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2D += Config_OnScannerFieldCorrection2D;
+            SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DShow += Config_OnScannerFieldCorrection2DShow;
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -268,7 +270,7 @@ namespace Demos
         }
         #endregion
 
-        private RtcCorrection2D Config_OnScannerFieldCorrection2D(IRtc rtc)
+        private RtcCorrection2D Config_OnScannerFieldCorrection2DShow(IRtc rtc)
         {
             // Measured x,y error data
             int rows = 7;
@@ -378,6 +380,6 @@ namespace Demos
             var marker = siriusEditorUserControl1.Marker;
             return marker.Reset();
         }
-        #endregion
+        #endregion       
     }
 }

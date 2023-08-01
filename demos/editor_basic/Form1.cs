@@ -33,7 +33,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Windows.Forms;
 using SpiralLab.Sirius2.Winforms;
-using OpenTK;
+
 
 namespace Demos
 {
@@ -42,10 +42,10 @@ namespace Demos
         public Form1()
         {
             InitializeComponent();
-            this.Shown += Form1_Shown;
+            this.Load += Form1_Load;
         }
 
-        private void Form1_Shown(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
             // Initialize sirius2 library
             SpiralLab.Sirius2.Core.Initialize();

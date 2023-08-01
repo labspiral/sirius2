@@ -275,7 +275,6 @@ namespace Demos
             }
             return success;
         }
-
         private static bool ConvertFieldCorrection2DByCalLibAndSelect(IRtc rtc)
         {
             // 9 points: 3x3
@@ -303,7 +302,6 @@ namespace Demos
             }
             return success;
         }
-
         private static bool ConvertFieldCorrection2DByWinforms(IRtc rtc)
         {
             // 9 points: 3x3
@@ -322,8 +320,20 @@ namespace Demos
             correction.AddRelative(2, 2, new Vector2(20, -20), new Vector2(0.025f, 0.02f));
 
             var form = new RtcCorrection2DForm(rtc, correction);
+            //SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DApply += Config_OnScannerFieldCorrection2DApply;
             form.ShowDialog();
-
+            //SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DApply -= Config_OnScannerFieldCorrection2DApply;
+            return true;
+        }
+        private static bool Config_OnScannerFieldCorrection2DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm form)
+        {
+            var ctFullFileName = form.RtcCorrection.TargetCorrectionFile;
+            Debug.Assert(File.Exists(ctFullFileName));
+            bool success = true;
+            var currentTable = form.Rtc.PrimaryHeadTable;
+            success &= form.Rtc.CtlLoadCorrectionFile(currentTable, ctFullFileName);
+            success &= form.Rtc.CtlSelectCorrection(currentTable);
+            Debug.Assert(success);
             return true;
         }
         private static bool ConvertFieldCorrection3DByWinforms(IRtc rtc)
@@ -356,7 +366,20 @@ namespace Demos
             correction.AddRelative(2, 2, new Vector3(20, -20, 0), new Vector3(0.01f, 0.01f, 0));
 
             var form = new RtcCorrection3DForm(rtc, correction);
+            //SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply += Config_OnScannerFieldCorrection3DApply;
             form.ShowDialog();
+            //SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply -= Config_OnScannerFieldCorrection3DApply;
+            return true;
+        }
+        private static bool Config_OnScannerFieldCorrection3DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection3DForm form)
+        {
+            var ctFullFileName = form.RtcCorrection.TargetCorrectionFile;
+            Debug.Assert(File.Exists(ctFullFileName));
+            bool success = true;
+            var currentTable = form.Rtc.PrimaryHeadTable;
+            success &= form.Rtc.CtlLoadCorrectionFile(currentTable, ctFullFileName);
+            success &= form.Rtc.CtlSelectCorrection(currentTable, currentTable);
+            Debug.Assert(success);
             return true;
         }
     }

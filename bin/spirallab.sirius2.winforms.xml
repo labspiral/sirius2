@@ -6735,6 +6735,18 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Reset">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.LayerWork(System.Int32,SpiralLab.Sirius2.Winforms.Entity.EntityLayer,SpiralLab.Sirius2.Mathematics.Offset)">
+            <summary>
+            Mark each <c>EntityLayer</c>
+            </summary>
+            <remarks>
+            Consider as its working <c>Mark</c> within async threads. <br/>
+            </remarks> 
+            <param name="offsetIndex">Offset index</param>
+            <param name="layer"><c>EntityLayer</c></param>
+            <param name="offset"><c>Offset</c></param>
+            <returns>Success of failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.EntityWork(System.Int32,SpiralLab.Sirius2.Winforms.Entity.EntityLayer,System.Int32,SpiralLab.Sirius2.Winforms.Entity.IEntity)">
             <summary>
             Mark each <c>IEntity</c>
@@ -6746,18 +6758,6 @@
             <param name="layer"><c>EntityLayer</c></param>
             <param name="entityIndex">Entity index</param>
             <param name="entity"><c>IEntity</c></param>
-            <returns>Success of failed</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.LayerWork(System.Int32,SpiralLab.Sirius2.Winforms.Entity.EntityLayer,SpiralLab.Sirius2.Mathematics.Offset)">
-            <summary>
-            Mark each <c>EntityLayer</c>
-            </summary>
-            <remarks>
-            Consider as its working <c>Mark</c> within async threads. <br/>
-            </remarks> 
-            <param name="offsetIndex">Offset index</param>
-            <param name="layer"><c>EntityLayer</c></param>
-            <param name="offset"><c>Offset</c></param>
             <returns>Success of failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyPropertyChanged(System.String)">
@@ -8470,9 +8470,9 @@
             2 bits 
             </remarks>
         </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2D">
+        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DShow">
             <summary>
-            Event for scanner field correction 2D
+            Event for show(or popup) scanner field correction 2D by <c>RtcCorrection2DForm</c> winforms
             <code>
             SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2D += Config_OnScannerFieldCorrection2D;
             private RtcCorrection2D Config_OnScannerFieldCorrection2D(IRtc rtc)
@@ -8499,13 +8499,13 @@
             </code>
             </summary>
             <remarks>
-            When select scanner field correction 2D at popup-menu item.
-            User should be create <c>RtcCorrection2D</c> and return it.
+            When select scanner field correction 2D at popup-menu item. <br/>
+            User should be create <c>RtcCorrection2D</c> and return it. <br/>
             </remarks>
         </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3D">
+        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DShow">
             <summary>
-            Event for scanner field correction 3D
+            Event for show(or popup) scanner field correction 2D by <c>RtcCorrection3DForm</c> winforms
             <code>
             SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3D += Config_OnScannerFieldCorrection3D;
             private RtcCorrection3D Config_OnScannerFieldCorrection3D(IRtc rtc)
@@ -8540,23 +8540,71 @@
             </code>
             </summary>
             <remarks>
-            When select scanner field correction 3D at popup-menu item.
-            User should be create <c>RtcCorrection3D</c> and return it.
+            When select scanner field correction 3D at popup-menu item. <br/>
+            User should be create <c>RtcCorrection3D</c> and return it. <br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection2D(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection2DShow(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
             <summary>
-            Notify <c>RtcCorrection2D</c> for 2D scanner field correction
+            Notiffy show(or popup) scanner field correction 2D by <c>RtcCorrection2DForm</c> winforms
             </summary>
             <param name="rtc"><c>IRtc</c></param>
             <returns><c>RtcCorrection2D</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection3D(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection3DShow(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
             <summary>
-            Notify <c>RtcCorrection3D</c> for 3D scanner field correction
+            Notify show(or popup) scanner field correction 2D by <c>RtcCorrection2DForm</c> winforms
             </summary>
             <param name="rtc"><c>IRtc</c></param>
             <returns><c>RtcCorrection3D</c></returns>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DApply">
+            <summary>
+            Event for apply scanner field correction 2D by <c>RtcCorrection2DForm</c> winforms
+            <code>
+            SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DApply += Config_OnScannerFieldCorrection2DApply;
+            private void Config_OnScannerFieldCorrection2DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm form)
+            {
+               Debug.Assert(File.Exists(form.TargetCorrectionFile));
+               bool success = true;
+               var currentTable = form.Rtc.PrimaryHeadTable;
+               success &amp;= form.Rtc.CtlLoadCorrectionFile(currentTable, form.RtcCorrection.TargetCorrectionFile);
+               success &amp;= form.Rtc.CtlSelectCorrection(currentTable);
+               Debug.Assert(success);
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply">
+            <summary>
+            Event for apply scanner field correction 3D by <c>RtcCorrection3DForm</c> winforms
+            <code>
+            SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply += Config_OnScannerFieldCorrection3DApply;
+            private void Config_OnScannerFieldCorrection3DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection3DForm form)
+            {
+               Debug.Assert(File.Exists(form.TargetCorrectionFile));
+               bool success = true;
+               var currentTable = form.Rtc.PrimaryHeadTable;
+               success &amp;= form.Rtc.CtlLoadCorrectionFile(currentTable, form.RtcCorrection.TargetCorrectionFile);
+               success &amp;= form.Rtc.CtlSelectCorrection(currentTable, currentTable);
+               Debug.Assert(success);
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection2DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm)">
+            <summary>
+            Notify show(or popup) scanner field correction 2D by <c>RtcCorrection2DForm</c> winforms
+            </summary>
+            <param name="form"><c>SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm</c></param>
+            <returns>If there are no event handlers, returned <c>False</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection3DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection3DForm)">
+            <summary>
+            Notify show(or popup) scanner field correction 3D by <c>RtcCorrection3DForm</c> winforms
+            </summary>
+            <param name="form"><c>SpiralLab.Sirius2.Winforms.UI.RtcCorrection3DForm</c></param>
+            <returns>If there are no event handlers, returned <c>False</c></returns>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.PathOptimizerBasePosition">
             <summary>
@@ -8739,33 +8787,44 @@
         <member name="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">
             <summary>
             <c>IDocumentData</c> internal data 
-            <para>Real document data for open and save</para>
             </summary>
+            <remarks>
+            Real document data for open and save
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocument.Selected">
             <summary>
             Array of selected <c>IEntity</c>
-            <para>Modified by <c>ActSelect</c></para>
             </summary>
+            <remarks>
+            Modified by <c>ActSelect</c>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocument.Clipboard">
             <summary>
             Array of <c>IEntity</c> at clipboard
-            <para>Modified by <c>ActCopy</c> or <c>ActCut</c></para>
             </summary>
+            <remarks>
+            Modified by <c>ActCopy</c> or <c>ActCut</c>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocument.EntityDic">
             <summary>
             Dictionary of <c>IEntity</c> 
-            <para>Key: ID of <c>IEntity</c>, Value: <c>IEntity</c></para>
-            <para>Add and Removed by internally</para>
             </summary>
+            <remarks>
+            Key: ID of <c>IEntity</c>, Value: <c>IEntity</c> <br/>
+            Added (or removed) by internally <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocument.PenDic">
             <summary>
             Dictionary of <c>IEntityPen</c> 
-            <para>Key: int value of <c>Color</c> (Convert <c>Color</c> value to <c>ToArgb</c>), Value: <c>IEntityPen</c></para>
             </summary>
+            <remarks>
+            Key: int value of <c>Color</c> (Convert <c>Color</c> value to <c>ToArgb</c>) <br/>
+            Value: <c>IEntityPen</c> <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">
             <summary>
@@ -8780,10 +8839,10 @@
         <member name="P:SpiralLab.Sirius2.Winforms.IDocument.IsReady">
             <summary>
             Ready status
-            <para>Used by internally (Do NOT edit)</para>
             </summary>
             <remarks>
             <c>IsReady</c> status goes to <c>False</c>.<br/> when opening or saving <c>IDocumentData</c> <br/>
+            Used by internally (Do NOT edit) <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocument.Tag">
@@ -9200,7 +9259,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.NotifyPropertyChanged">
             <summary>
-            Notify <c>IEntity</c> property value has changed
+            Notify property value of <c>IEntity</c> has changed
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.DocumentData">

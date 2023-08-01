@@ -215,7 +215,6 @@ namespace Demos
             // Assign Document, Rtc, Laser at IMarker
             marker.Ready(EditorForm.Document, EditorForm.View, EditorForm.Rtc, EditorForm.Laser);
         }
-
         private static void DestroyDevices()
         {
             var marker = EditorForm.Marker;

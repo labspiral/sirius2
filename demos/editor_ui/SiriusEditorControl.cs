@@ -16,7 +16,7 @@
  *               `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : SiriusEditor usercontrol
+ * Description : Open sourced SiriusEditorUserControl
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -54,7 +54,7 @@ namespace Demos
     /// SiriusEditorUserControl
     /// </summary>
     /// <remarks>
-    /// User can insert(or create) usercontrol at own winforms
+    /// Open sourced 'SiriusEditorUserControl'
     /// </remarks>
     public partial class SiriusEditorUserControl : Form
     {
