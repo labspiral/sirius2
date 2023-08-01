@@ -352,7 +352,7 @@
             SyncAxis simulation output file path
             </summary>
             <remarks>
-            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sirius2logs")
+            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "siriuslogs")
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.MergeDistanceThreshold">
