@@ -152,6 +152,8 @@ namespace Demos
                 Console.WriteLine("'F5' : draw circles (by duty cycle output)");
                 Console.WriteLine("'F6' : draw circles (by rs232 communication)");
                 Console.WriteLine("'F7' : draw circles (by custom control)");
+                Console.WriteLine("'1' : laser signal on");
+                Console.WriteLine("'0' : laser signal off");
                 Console.WriteLine("'Q'  : quit");
                 Console.Write("Select your target : ");
                 key = Console.ReadKey(false);
@@ -188,6 +190,13 @@ namespace Demos
                         break;
                     case ConsoleKey.F7:
                         DrawCircleWithMeasurement(rtc, laser, MeasurementChannel.FreeVariable1, watt);                        
+                        break;
+                    case ConsoleKey.D1:
+                        rtc.CtlMoveTo(Vector2.Zero);
+                        rtc.CtlLaserOn();
+                        break;
+                    case ConsoleKey.D0:
+                        rtc.CtlLaserOff();
                         break;
                 }
                 Logger.Log(Logger.Type.Info, $"Processing time: {sw.Elapsed.TotalSeconds:F3} sec");

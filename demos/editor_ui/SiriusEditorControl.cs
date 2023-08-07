@@ -417,7 +417,7 @@ namespace Demos
 
         private void BtnSiriusText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateSiriusText("romans2.cxf", "SIRIUS2", 2.5);
+            var entity = EntityFactory.CreateSiriusText(Config.DefaultSiriusFont, "SIRIUS2", 2.5);
             document.ActAdd(entity);
         }
 
@@ -707,7 +707,7 @@ namespace Demos
 
         private void BtnText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateText("Arial", $"Hello{Environment.NewLine}SIRIUS2", FontStyle.Regular, 2);
+            var entity = EntityFactory.CreateText(Config.DefaultFont, $"Hello{Environment.NewLine}SIRIUS2", FontStyle.Regular, 2);
             Document.ActAdd(entity);
         }
 

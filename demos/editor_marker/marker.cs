@@ -445,7 +445,7 @@ namespace Demos
                     success &= NotifyBeforeLayer(layer);
                     if (!success)
                     {
-                        Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer by before event handler"); ;
+                        Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer at before event handler"); ;
                         break;
                     }
                     if (null != rtcAlc && layer.IsALC)
@@ -498,7 +498,7 @@ namespace Demos
                     success &= NotifyAfterLayer(layer);
                     if (!success)
                     {
-                        Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer by after event handler"); ;
+                        Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer at after event handler"); ;
                         break;
                     }
                 }
@@ -531,14 +531,14 @@ namespace Demos
             {
                 if (success)
                 {
-                    Logger.Log(Logger.Type.Debug, $"marker [{Index}]: mark has finished");
+                    Logger.Log(Logger.Type.Info, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
                     this.NotifyFinished();
                     if (this.IsMeasurementPlot)
                         this.NotifyPlot();
                 }
                 else
                 {
-                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: mark has failed");
+                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: mark has failed with {this.TimeSpan.TotalSeconds:F3}s");
                     this.NotifyFailed();
                 }
             }

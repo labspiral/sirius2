@@ -35,7 +35,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using OpenTK;
+
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
@@ -295,91 +297,6 @@ namespace Demos
             return rtcCorrection2D;
         }
 
-        #region Control by remotely
-        /// <summary>
-        /// Ready status
-        /// </summary>
-        /// <returns></returns>
-        public bool IsReady
-        {
-            get
-            {
-                var marker = siriusEditorUserControl1.Marker;
-                return marker.IsReady;
-            }
-        }
-        /// <summary>
-        /// Busy status
-        /// </summary>
-        /// <returns></returns>
-        public bool IsBusy
-        {
-            get
-            {
-                var marker = siriusEditorUserControl1.Marker;
-                return marker.IsBusy;
-            }
-        }
-        /// <summary>
-        /// Error status
-        /// </summary>
-        /// <returns></returns>
-        public bool IsError
-        {
-            get
-            {
-                var marker = siriusEditorUserControl1.Marker;
-                return marker.IsError;
-            }
-        }
-
-        /// <summary>
-        /// Open recipe (.sirius2 file)
-        /// </summary>
-        /// <param name="fileName">Filename</param>
-        /// <returns></returns>
-        public bool Open(string fileName)
-        {
-            if (this.IsBusy)
-                return false;
-            var doc = siriusEditorUserControl1.Document;
-            return doc.ActOpen(fileName);
-        }
-        /// <summary>
-        /// Start marker
-        /// </summary>
-        /// <param name="offets">Array of offset</param>
-        /// <returns></returns>
-        public bool Start(SpiralLab.Sirius2.Mathematics.Offset[] offets = null)
-        {
-            if (!this.IsReady)
-                return false;
-            if (this.IsBusy)
-                return false;
-            if (this.IsError)
-                return false;
-            var marker = siriusEditorUserControl1.Marker;
-            marker.Offsets = offets;
-            return marker.Start();
-        }
-        /// <summary>
-        /// Stop marker
-        /// </summary>
-        /// <returns></returns>
-        public bool Stop()
-        {
-            var marker = siriusEditorUserControl1.Marker;
-            return marker.Stop();
-        }
-        /// <summary>
-        /// Reset marker status
-        /// </summary>
-        /// <returns></returns>
-        public bool Reset()
-        {
-            var marker = siriusEditorUserControl1.Marker;
-            return marker.Reset();
-        }
-        #endregion       
+       
     }
 }

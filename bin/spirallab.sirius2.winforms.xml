@@ -4,6 +4,125 @@
         <name>spirallab.sirius2.winforms</name>
     </assembly>
     <members>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.CharacterSetFormats">
+            <summary>
+            CharacterSetFormats
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.CharacterSetFormats.Date">
+            <summary>
+            Date format
+            </summary>
+            <remarks>
+            For example, YYYY/MM/DD
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.CharacterSetFormats.Time">
+            <summary>
+            Time format
+            </summary>
+            <remarks>
+            For example, HH:mm:dd
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.CharacterSetFormats.SerialNo">
+            <summary>
+            SerialNo format
+            </summary>
+            <remarks>
+            For example, 0001, 0002, ...
+            </remarks>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.CharacterSetDate">
+            <summary>
+            CharacterSetDate
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CharacterSetDate.DateFormat">
+            <summary>
+            Date format
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CharacterSetDate.IsLeadingWithZero">
+            <summary>
+            Num of digits
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CharacterSetDate.#ctor(SpiralLab.Sirius2.Winforms.Entity.EntityBase)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="text"><c>EntityBase</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CharacterSetDate.ToString">
+            <summary>
+            Represent <c>CharacterSetDate</c> as string
+            </summary>
+            <returns><c>CharacterSetDate</c> as string</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CharacterSetDate.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.CharacterSetTime">
+            <summary>
+            CharacterSetTime
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CharacterSetTime.TimeFormat">
+            <summary>
+            Date format
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CharacterSetTime.IsLeadingWithZero">
+            <summary>
+            Num of digits
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CharacterSetTime.#ctor(SpiralLab.Sirius2.Winforms.Entity.EntityBase)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="text"><c>EntityBase</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CharacterSetTime.ToString">
+            <summary>
+            Represent <c>CharacterSetTime</c> as string
+            </summary>
+            <returns><c>CharacterSetTime</c> as string</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CharacterSetTime.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.CharacterSetSerialNo">
+            <summary>
+            CharacterSetSerialNo
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CharacterSetSerialNo.NumOfDigits">
+            <summary>
+            Num of digits
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CharacterSetSerialNo.SerialFormat">
+            <summary>
+            <c>SiriusSerialFormat</c>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CharacterSetSerialNo.#ctor(SpiralLab.Sirius2.Winforms.Entity.EntityBase)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="text"><c>EntityBase</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CharacterSetSerialNo.ToString">
+            <summary>
+            Represent <c>CharacterSetSerialNo</c> as string
+            </summary>
+            <returns><c>CharacterSetSerialNo</c> as string</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CharacterSetSerialNo.Clone">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityRampEnd">
             <summary>
             EntityRampEnd entity
@@ -669,11 +788,6 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.IsConvertedText">
             <inheritdoc/>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.isConvertedText">
-            <summary>
-            Converted text or not
-            </summary>
-        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.ConvertedText">
             <inheritdoc/>
         </member>
@@ -769,6 +883,309 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.ToPolylines">
             <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.IMarkerable">
+            <summary>
+            IMarkerable interface
+            </summary>
+            <remarks>
+            Markerable means, support laser processing by list commands within <c>IRtc.ListBegin</c> and <c>IRtc.ListEnd</c>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.IMarkerable.Repeats">
+            <summary>
+            Repeat counts when do <c>Mark</c>
+            </summary>
+            <remarks>
+            Default: 1 (Must be > 0)
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IMarkerable.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <summary>
+            Do mark <c>IEntity</c>
+            </summary>
+            <remarks>
+            Consider as its working <c>Mark</c> within async threads. <br/>
+            </remarks>
+            <param name="marker"><c>IMarker</c></param>
+            <returns>Success or not</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.IRenderable">
+            <summary>
+            IRenderable interface
+            </summary>
+            <remarks>
+            Renderable means, support render(or hittest) entity to show at view by <c>OpenTK</c>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.IRenderable.View">
+            <summary>
+            Rendered target <c>IView</c>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IRenderable.Render(SpiralLab.Sirius2.Winforms.IView)">
+            <summary>
+            Do render <c>IEntity</c> at <c>IView</c>
+            </summary>
+            <param name="view"><c>IView</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IRenderable.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <summary>
+            Do hit-test (like as mouse click) for <c>IEntity</c> at <c>IView</c>
+            </summary>
+            <param name="view"><c>IView</c></param>
+            <param name="mousePosition">Mouse position by <c>System.Drawing.Point</c></param>
+            <param name="hittedEntity">Hitted <c>IEntity</c> if succeeded</param>
+            <returns>Success of hit test or not</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.IExplodable">
+            <summary>
+            IExplodable interface
+            </summary>
+            <remarks>
+            Explodable means, possible to explod entity to more primitive type of entities. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IExplodable.Explode">
+            <summary>
+            Explode <c>IEntity</c> into array of sub <c>IEntity</c>
+            </summary>
+            <returns>Exploded array of <c>IEntity</c></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.IReversable">
+            <summary>
+            IReversable interface
+            </summary>
+            <remarks>
+            Reversable means, possible to reverse internal order of marks at entity. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IReversable.Reverse">
+            <summary>
+            Reverse internal path order
+            </summary>
+            <returns>Success or not</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.IExtractPolyline">
+            <summary>
+            IExtractPolyline
+            </summary>
+            <remarks>
+            ExtractPolyline means, possible to extract internal marks data into polylines. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IExtractPolyline.ToPolylines">
+            <summary>
+            Extract array of <c>EntityPolyline2D</c>
+            </summary>
+            <remarks>
+            Returned <c>EntityPolyline2D</c> are transformed(or applied) by model matrix.
+            </remarks>
+            <returns>Array of <c>EntityPolyline2D</c></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.IExpandable">
+            <summary>
+            IExpandable
+            </summary>
+            <remarks>
+            Expandable means, possible to expand(or shrink) internal mark pathes. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IExpandable.Expand(SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Double)">
+            <summary>
+            Create array of <c>EntityPolyline2D</c> by expand(or shrink) distance
+            </summary>
+            <remarks>
+            Expand or shrink <c>EntityPolyline2D</c> from <c>IEntity</c>. <br/>
+            +: Expand <br/>
+            -: Shrink <br/>
+            </remarks>
+            <param name="hatchJoint"><c>HatchJoints</c></param>
+            <param name="expandDistance">Expand distance (mm)</param>
+            <returns>Array of <c>EntityPolyline2D</c></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.HatchModes">
+            <summary>
+            Hatch modes
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Line">
+            <summary>
+            Line (like as |||| or ////)
+            </summary>
+            <remarks>
+            Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">
+            <summary>
+            Cross Lines (like as #####)
+            </summary>
+            <remarks>
+            Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>angle2</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Polygon">
+            <summary>
+            Polygon (like as expand or shrink)
+            </summary>
+            <remarks>
+            Used with <c>HatchJoints</c>, <c>internal</c> values. <br/>
+            Adjust <c>Config.DivideArcToLinesDistance</c> value to reduce vertices at arc path. <br/>
+            Must be aware winding direction are same within polylines. <br/>
+            </remarks>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">
+            <summary>
+            Hatch joints
+            <seealso href="http://www.angusj.com/delphi/clipper/documentation/Docs/Units/ClipperLib/Types/JoinType.htm">Joint type</seealso><br/>
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchJoints.Square">
+            <summary>
+            Square joint
+            </summary>
+            <remarks>
+            Squaring is applied uniformally at all convex edge joins.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchJoints.Round">
+            <summary>
+            Square round
+            </summary>
+            <remarks>
+            While flattened paths can never perfectly trace an arc, they are approximated by a series of arc chords.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchJoints.Miter">
+            <summary>
+            Square miter
+            </summary>
+            <remarks>
+            For any given edge join, when miter offsetting would exceed that maximum distance, 'square' joining is applied.
+            </remarks>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.IHatchable">
+            <summary>
+            IHatchable interface
+            </summary>    
+            <remarks>
+            Hatchable means, possible to hatch (like as line, ...) within closed shapes. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.IHatchable.IsClosed">
+            <summary>
+            Is closed path or not
+            </summary>
+            <remarks>
+            Determined by all child <c>IEntity</c> are closed or not. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IHatchable.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Do hatch within closed path at <c>IEntity</c>
+            </summary>
+            <remarks>
+            Used with internal array of <c>EntityPolyline</c> from <c>IEntity</c>. <br/>
+            Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values for <c>HatchModes.Line</c> mode. <br/>
+            Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>angle2</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values for <c>HatchModes.CrossLine</c> mode. <br/>
+            Used with <c>HatchJoints</c>, <c>internal</c> values for <c>HatchModes.Polygon</c> mode. <br/>
+            </remarks>
+            <param name="hatchMode"><c>HatchModes</c></param>
+            <param name="hatchJoint"><c>HatchJoints</c></param>
+            <param name="isZigZag">ZigZag</param>
+            <param name="angle">Angle 1st</param>
+            <param name="angle2">Angle 2nd for <c>CrossLine</c></param>        
+            <param name="interval">Interval (mm)</param>
+            <param name="exclude">Exclude (mm)</param>        
+            <param name="shift">Shift offset (mm)</param>  
+            <returns>Hatched <c>EntityGroup</c> entity</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible" -->
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">
+            <summary>
+            Enable(or disable) converted text data 
+            <code>
+            SpiralLab.Sirius2.Winforms.Config.OnTextConvert += Text_OnTextConvert;
+            private bool Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
+            {
+                var entity = textConvertible as IEntity;
+                if (entity.Name == "TextEntityName1")
+                {
+                    // Example for "yyyyMMdd HH:mm:ss"
+                    textConvertible.ConvertedText = DateTime.Now.ToString(textConvertible.SourceText); 
+                }                
+                return true;
+            }
+            </code>
+            </summary>
+            <remarks>
+            To convert source(or input) text by user, should be add <c>Config.OnTextConvert</c> event handler at first. <br/>
+            <c>Config.OnTextConvert</c> event would be fired before do mark by <c>IMarkerable.Mark</c> at <c>IMarker</c>. <br/>
+            Used with <c>EntityCircularText</c>, <c>EntityImageText</c>, <c>EntityDataMatrix</c>, <c>EntityQRCode</c> entities. <br/>
+            Used with <c>EntityText</c>, <c>EntitySiriusText</c> when only <c>CharacterSetFormats.Normal</c> has configured. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.SourceText">
+            <summary>
+            Source text data
+            </summary>
+            <remarks>
+            If <c>IsConvertedText</c> is <c>False</c>, then <c>SourceText</c> is used for <c>IMarkerable.Mark</c>. <br/>
+            Used with <c>EntityCircularText</c>, <c>EntityImageText</c>, <c>EntityDataMatrix</c>, <c>EntityQRCode</c> entities. <br/>        
+            Used with <c>EntityText</c>, <c>EntitySiriusText</c> when only <c>CharacterSetFormats.Normal</c> has configured. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.ConvertedText">
+            <summary>
+            Converted text data
+            </summary>
+            <remarks>
+            If <c>IsConvertedText</c> is <c>True</c>, then <c>ConvertedText</c> is used for <c>IMarkerable.Mark</c>. <br/>
+            Used with <c>EntityCircularText</c>, <c>EntityImageText</c>, <c>EntityDataMatrix</c>, <c>EntityQRCode</c> entities. <br/>
+            Used with <c>EntityText</c>, <c>EntitySiriusText</c> when only <c>CharacterSetFormats.Normal</c> has configured. <br/>
+            </remarks>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.ITextCharacterSet">
+            <summary>
+            ITextCharacterSet interface
+            </summary>
+            <remarks>
+            TextCharacterSet means, possible to register(or download) character set into RTC buffer. <br/>
+            Text font data (like as <c>EntitySiriusText</c>) can be register (or download) into RTC controller. <br/>
+            Do re-register(or download) whenever text parameters like as font, size, roate, and scale has modified again. <br/>
+            Used with RTC5, RTC6 only. <br/>
+            Recommended to use with <c>IRtcMoF</c> by external /START trigger. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.ITextCharacterSet.IsNeedToRegister">
+            <summary>
+            Is need to <c>Register</c> or not
+            </summary>
+            <remarks>
+            If <c>True</c>, re-register itself whenever <c>IMarker.Start</c> by automatically. <br/>
+            Everytime do <c>Regen</c>, <c>IsNeedToRegister</c> goes to <c>True</c>. <br/> 
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.ITextCharacterSet.Register(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
+            <summary>
+            Register (or download) text data into RTC controller
+            </summary>
+            <remarks>
+            Used with RTC5, RTC6 only. <br/>
+            Used with <c>IRtcCharacterSet</c>. <br/>
+            Characterset buffer would be overwritten. <br/>
+            </remarks>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="characterSet">Target <c>CharacterSet</c></param>
+            <returns>Successs or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.ITextCharacterSet.IsCharacterSetEqual(SpiralLab.Sirius2.Winforms.Entity.ITextCharacterSet)">
+            <summary>
+            Compare characterset data to determine need to register(or download) or not
+            </summary>
+            <param name="textCharacterSet"><c>ITextCharacterSet</c></param>
+            <returns></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417">
             <summary>
@@ -1011,6 +1428,162 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityDataMatrix.RegenEncode">
             <inheritdoc/>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText">
+            <summary>
+            EntitySiriusCharacterSetText entity
+            </summary>
+            <remarks>
+            Allowed glyph ascii code range from: 0 ~ <c>Config.SiriusFontAsciiMax</c>. <br/>
+            Customizable font file format: cxf, lff <br/>
+            <list type="utilities">
+            <item><description>ttf2lff : https://github.com/LibreCAD/LibreCAD/tree/master/tools/ttf2lff </description></item>
+            <item><description>ttf2lff : https://github.com/Rallaz/LibreCAD/tree/dwgsupp2/tools/ttf2lff </description></item>
+            <item><description>jhf2lff : https://github.com/Rallaz/LibreCAD/blob/dwgsupp2/tools/ttf2lff/lfftransform.cpp </description></item>
+            <item><description>jhf2c : http://sol.gfxile.net/hershey/hershey.cpp </description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.FontName">
+            <summary>
+            Text
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.CharacterSetFormat">
+            <summary>
+            <c>CharacterSetFormats</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.CharacterSetDate">
+            <summary>
+            <c>CharacterSetDate</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.CharacterSetSerialNo">
+            <summary>
+            <c>CharacterSetSerialNo</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.CharacterSetTime">
+            <summary>
+            <c>CharacterSetTime</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.ConvertedText">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.Height">
+            <summary>
+            Text height
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.height">
+            <summary>
+            Text height
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.TextVerticalAlignment">
+            <summary>
+            String vertical alignment
+            </summary>
+            <remarks>
+            Default: Near
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.LetterSpace">
+            <summary>
+            Letter space way
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.LetterSpacing">
+            <summary>
+            Letter spacing (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.WordSpacing">
+            <summary>
+            Word spacing (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.LineSpacing">
+            <summary>
+            Line spacing (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.IsNeedToRegister">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText._ConvertedText">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText._FontName">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.group">
+            <summary>
+            Array of <c>EntityPolyline2D</c>
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.characterSet">
+            <summary>
+            Registered <c>CharacterSet</c>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.#ctor(SpiralLab.Sirius2.Winforms.Entity.CharacterSetFormats,System.String,System.Double,SpiralLab.Sirius2.Winforms.Entity.LetterSpaces,System.Double,System.Double,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="format"><c>CharacterSetFormats</c></param>
+            <param name="fontName">Font name</param>
+            <param name="height">Height (mm)</param>
+            <param name="characterSpace"><c>LetterSpaces</c></param>
+            <param name="letterSpacing">Letter Spaceing (mm)</param>
+            <param name="wordSpacing">Word Spaceing (mm)</param>
+            <param name="lineSpacing">Line Spaceing (mm)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.Regen">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.RegenInOut">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.Render(SpiralLab.Sirius2.Winforms.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.Register(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.IsCharacterSetEqual(SpiralLab.Sirius2.Winforms.Entity.ITextCharacterSet)">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.LetterSpaces">
             <summary>
             LetterSpaces
@@ -1027,19 +1600,20 @@
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText">
-             <summary>
-             EntitySiriusText entity
-             </summary>
-             <remarks>
-             Allowed glyph ascii code range from: 0 ~ Config.SiriusFontAsciiMax <br/>
-            Customizatble font file format: cxf, lff <br/>
-             <list type="utilities">
-             <item><description>ttf2lff : https://github.com/LibreCAD/LibreCAD/tree/master/tools/ttf2lff </description></item>
-             <item><description>ttf2lff : https://github.com/Rallaz/LibreCAD/tree/dwgsupp2/tools/ttf2lff </description></item>
-             <item><description>jhf2lff : https://github.com/Rallaz/LibreCAD/blob/dwgsupp2/tools/ttf2lff/lfftransform.cpp </description></item>
-             <item><description>jhf2c : http://sol.gfxile.net/hershey/hershey.cpp </description></item>
-             </list>
-             </remarks>
+            <summary>
+            EntitySiriusText entity
+            </summary>
+            <remarks>
+            Used with customizable font format: cxf, lff. <br/>
+            Allowed glyph ascii code range from: 0 ~ <c>Config.SiriusFontAsciiMax</c>. <br/>
+            Font converter utilities: <br/>
+            <list type="utilities">
+            <item><description>ttf2lff: https://github.com/LibreCAD/LibreCAD/tree/master/tools/ttf2lff </description></item>
+            <item><description>ttf2lff: https://github.com/Rallaz/LibreCAD/tree/dwgsupp2/tools/ttf2lff </description></item>
+            <item><description>jhf2lff: https://github.com/Rallaz/LibreCAD/blob/dwgsupp2/tools/ttf2lff/lfftransform.cpp </description></item>
+            <item><description>jhf2c: http://sol.gfxile.net/hershey/hershey.cpp </description></item>
+            </list>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.FontName">
             <summary>
@@ -1056,11 +1630,6 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.IsConvertedText">
             <inheritdoc/>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.isConvertedText">
-            <summary>
-            Converted text or not
-            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.ConvertedText">
             <inheritdoc/>
@@ -1165,6 +1734,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.Reverse">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.ToPolylines">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.Regen">
             <inheritdoc/>
         </member>
@@ -1199,6 +1771,9 @@
             <summary>
             EntityCircularText entity
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.SourceText">
+            <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.TextHorizontalAlignment">
             <inheritdoc/>
@@ -1271,10 +1846,157 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.Render(SpiralLab.Sirius2.Winforms.IView)">
             <inheritdoc/>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText">
+            <summary>
+            EntityCharacterSetText entity
+            </summary>
+            <remarks>
+            Used with installed system fonts. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.FontName">
+            <summary>
+            Text
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.CharacterSetFormat">
+            <summary>
+            <c>CharacterSetFormats</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.CharacterSetDate">
+            <summary>
+            <c>CharacterSetDate</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.CharacterSetSerialNo">
+            <summary>
+            <c>CharacterSetSerialNo</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.CharacterSetTime">
+            <summary>
+            <c>CharacterSetTime</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.ConvertedText">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.Height">
+            <summary>
+            Text height
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.height">
+            <summary>
+            Text height
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.TextHorizontalAlignment">
+            <summary>
+            String horizontal alignment
+            </summary>
+            <remarks>
+            Default: Near 
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.TextVerticalAlignment">
+            <summary>
+            String vertical alignment
+            </summary>
+            <remarks>
+            Default: Near
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.TextStyle">
+            <summary>
+            FontStyle
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText._ConvertedText">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText._FontName">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.IsNeedToRegister">
+            <inheritdoc/>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.polylines">
+            <summary>
+            Array of <c>EntityPolyline2D</c>
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.characterSet">
+            <summary>
+            Registered <c>CharacterSet</c>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.#ctor(SpiralLab.Sirius2.Winforms.Entity.CharacterSetFormats,System.String,System.Drawing.FontStyle,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="format"><c>CharacterSetFormats</c></param>
+            <param name="fontName">Font name</param>
+            <param name="style"><c>System.Drawing.FontStyle</c></param>
+            <param name="height">Height (mm)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.Regen">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.RegenVertices">
+            <summary>
+            Regen internal vertices
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.RegenInOut">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.Render(SpiralLab.Sirius2.Winforms.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.Register(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.IsCharacterSetEqual(SpiralLab.Sirius2.Winforms.Entity.ITextCharacterSet)">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">
             <summary>
             EntityText entity
             </summary>
+            <remarks>
+            Used by installed system fonts
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityText.FontName">
             <summary>
@@ -1291,11 +2013,6 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityText.IsConvertedText">
             <inheritdoc/>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityText.isConvertedText">
-            <summary>
-            Converted text or not
-            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityText.ConvertedText">
             <inheritdoc/>
@@ -1439,7 +2156,7 @@
             Constructor
             </summary>
             <param name="vertices">Array of <c>Vertex2D</c></param>
-            <param name="isClosed">Closed figure or not</param>
+            <param name="isClosed">Closed path or not</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline3D.Finalize">
             <summary>
@@ -1757,11 +2474,6 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.IsConvertedText">
             <inheritdoc/>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.isConvertedText">
-            <summary>
-            Converted text
-            </summary>
-        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.ConvertedText">
             <inheritdoc/>
         </member>
@@ -1835,6 +2547,9 @@
             <param name="pixelHeight">Height (pixel)</param>
             <param name="height">Height (mm)</param>
             <param name="width">Width (mm)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.ToString">
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.Clone">
             <inheritdoc/>
@@ -2307,7 +3022,16 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert.Color">
-            <inheritdoc/>
+            <summary>
+            <c>EntityBlockInsert</c> is not used its own color
+            <code>
+            foreach(var item in block.Children)
+                item.Color = System.Drawing.Color.Yellow;
+            </code>
+            </summary>
+            <remarks>
+            Assign <c>IEntity.Color</c> at <c>Children</c> instead. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert.Owner">
             <summary>
@@ -3703,245 +4427,6 @@
             </remarks>
             <param name="deltaScale">Delta scale</param>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.IMarkerable">
-            <summary>
-            IMarkerable interface
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.IMarkerable.Repeats">
-            <summary>
-            Repeat counts when do <c>Mark</c>
-            </summary>
-            <remarks>
-            Default: 1 (Must be > 0)
-            </remarks>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IMarkerable.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
-            <summary>
-            Do mark <c>IEntity</c>
-            </summary>
-            <remarks>
-            Consider as its working <c>Mark</c> within async threads. <br/>
-            </remarks>
-            <param name="marker"><c>IMarker</c></param>
-            <returns>Success or not</returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.IRenderable">
-            <summary>
-            IRenderable interface
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.IRenderable.View">
-            <summary>
-            Rendered target <c>IView</c>
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IRenderable.Render(SpiralLab.Sirius2.Winforms.IView)">
-            <summary>
-            Do render <c>IEntity</c> at <c>IView</c>
-            </summary>
-            <param name="view"><c>IView</c></param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IRenderable.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
-            <summary>
-            Do hit-test (like as mouse click) for <c>IEntity</c> at <c>IView</c>
-            </summary>
-            <param name="view"><c>IView</c></param>
-            <param name="mousePosition">Mouse position by <c>System.Drawing.Point</c></param>
-            <param name="hittedEntity">Hitted <c>IEntity</c> if succeeded</param>
-            <returns>Success of hit test or not</returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.IExplodable">
-            <summary>
-            IExplodable interface
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IExplodable.Explode">
-            <summary>
-            Explode <c>IEntity</c> into array of sub <c>IEntity</c>
-            </summary>
-            <returns>Exploded array of <c>IEntity</c></returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.IReversable">
-            <summary>
-            IReversable interface
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IReversable.Reverse">
-            <summary>
-            Reverse internal path order
-            </summary>
-            <returns>Success or not</returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.IExtractPolyline">
-            <summary>
-            IExtractPolyline
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IExtractPolyline.ToPolylines">
-            <summary>
-            Extract array of <c>EntityPolyline2D</c>
-            </summary>
-            <remarks>
-            Returned <c>EntityPolyline2D</c> are transformed(or applied) by model matrix.
-            </remarks>
-            <returns>Array of <c>EntityPolyline2D</c></returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.IExpandable">
-            <summary>
-            IExpandable
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IExpandable.Expand(SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Double)">
-            <summary>
-            Create array of <c>EntityPolyline2D</c> by expand(or shrink) distance
-            </summary>
-            <remarks>
-            Expand or shrink <c>EntityPolyline2D</c> from <c>IEntity</c>. <br/>
-            +: Expand <br/>
-            -: Shrink <br/>
-            </remarks>
-            <param name="hatchJoint"><c>HatchJoints</c></param>
-            <param name="expandDistance">Expand distance (mm)</param>
-            <returns>Array of <c>EntityPolyline2D</c></returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.HatchModes">
-            <summary>
-            Hatch modes
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Line">
-            <summary>
-            Line (like as |||| or ////)
-            </summary>
-            <remarks>
-            Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values.
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">
-            <summary>
-            Cross Lines (like as #####)
-            </summary>
-            <remarks>
-            Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>angle2</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values.
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Polygon">
-            <summary>
-            Polygon (like as expand or shrink)
-            </summary>
-            <remarks>
-            Used with <c>HatchJoints</c>, <c>internal</c> values. <br/>
-            Adjust <c>Config.DivideArcToLinesDistance</c> value to reduce vertices at arc path. <br/>
-            Must be aware winding direction are same within polylines. <br/>
-            </remarks>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">
-            <summary>
-            Hatch joints
-            <seealso href="http://www.angusj.com/delphi/clipper/documentation/Docs/Units/ClipperLib/Types/JoinType.htm">Joint type</seealso><br/>
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchJoints.Square">
-            <summary>
-            Square joint
-            </summary>
-            <remarks>
-            Squaring is applied uniformally at all convex edge joins.
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchJoints.Round">
-            <summary>
-            Square round
-            </summary>
-            <remarks>
-            While flattened paths can never perfectly trace an arc, they are approximated by a series of arc chords.
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchJoints.Miter">
-            <summary>
-            Square miter
-            </summary>
-            <remarks>
-            For any given edge join, when miter offsetting would exceed that maximum distance, 'square' joining is applied.
-            </remarks>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.IHatchable">
-            <summary>
-            IHatchable interface
-            </summary>    
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.IHatchable.IsClosed">
-            <summary>
-            Is closed figure(or path) or not
-            </summary>
-            <remarks>
-            Determined by all child <c>IEntity</c> are closed or not. <br/>
-            </remarks>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IHatchable.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
-            <summary>
-            Do hatch for closed figures at <c>IEntity</c>
-            </summary>
-            <remarks>
-            Used with internal array of <c>EntityPolyline</c> from <c>IEntity</c>. <br/>
-            Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values for <c>HatchModes.Line</c> mode. <br/>
-            Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>angle2</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values for <c>HatchModes.CrossLine</c> mode. <br/>
-            Used with <c>HatchJoints</c>, <c>internal</c> values for <c>HatchModes.Polygon</c> mode. <br/>
-            </remarks>
-            <param name="hatchMode"><c>HatchModes</c></param>
-            <param name="hatchJoint"><c>HatchJoints</c></param>
-            <param name="isZigZag">ZigZag</param>
-            <param name="angle">Angle 1st</param>
-            <param name="angle2">Angle 2nd for <c>CrossLine</c></param>        
-            <param name="interval">Interval (mm)</param>
-            <param name="exclude">Exclude (mm)</param>        
-            <param name="shift">Shift offset (mm)</param>  
-            <returns>Hatched <c>EntityGroup</c> entity</returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible">
-            <summary>
-            ITextConvertible interface
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">
-            <summary>
-            Enable(or disable) converted text data 
-            <code>
-            SpiralLab.Sirius2.Winforms.Config.OnTextConvert += Text_OnTextConvert;
-            private bool Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
-            {
-                var entity = textConvertible as IEntity;
-                if (entity.Name == "TextEntityName1")
-                {
-                    // Example for "yyyyMMdd HH:mm:ss"
-                    textConvertible.ConvertedText = DateTime.Now.ToString(textConvertible.SourceText); 
-                }                
-                return true;
-            }
-            </code>
-            </summary>
-            <remarks>
-            To enable(or use it), user should be attached <c>Config.OnTextConvert</c> event handler at first.
-            <c>Config.OnTextConvert</c> event would be fired before do mark by <c>IMarkerable.Mark</c> at <c>IMarker</c>.
-            </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.SourceText">
-            <summary>
-            Source text data
-            </summary>
-            <remarks>
-            If <c>IsConvertedText</c> is <c>False</c>, <c>SourceText</c> value used.
-            </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.ConvertedText">
-            <summary>
-            Converted text data
-            </summary>
-            <remarks>
-            If <c>IsConvertedText</c> is <c>True</c>, <c>ConvertedText</c> value used.
-            </remarks>
-        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityFace">
             <summary>
             EntityFace
@@ -4008,7 +4493,7 @@
             </code>
             </summary>
             <remarks>
-            Assign <c>IEntity.Color</c> at <c>Children</c> instead <br/>
+            Assign <c>IEntity.Color</c> at <c>Children</c> instead. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.IsClosed">
@@ -4060,7 +4545,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
-            Do hatch for closed figures at <c>IEntity</c>
+            Do hatch for closed path at <c>IEntity</c>
             <para>It would be hatched by 2D (Z=0) coordinates only</para>
             </summary>
             <remarks>
@@ -4411,7 +4896,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral.IsClosed">
             <summary>
-            Closed figure or not
+            Closed or not
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral.RadialPitch">
@@ -4438,7 +4923,7 @@
             <param name="endDiameter">End diameter (mm)</param>
             <param name="height">Height (mm)</param>
             <param name="revolutions">Revolutions</param>
-            <param name="isClosed">Closed figure or not</param>
+            <param name="isClosed">Closed path or not</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral.Finalize">
             <summary>
@@ -4747,7 +5232,7 @@
             Constructor
             </summary>
             <param name="vertices">Array of <c>Vertex2D</c></param>
-            <param name="isClosed">Closed figure or not</param>
+            <param name="isClosed">Closed path or not</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.Finalize">
             <summary>
@@ -4966,7 +5451,7 @@
             <param name="endDiameter">Outter diameter (mm)</param>
             <param name="height">Height (mm)</param>
             <param name="revolutions">Revolutions</param>
-            <param name="isClosed">Closed figure or not</param>
+            <param name="isClosed">Closed path or not</param>
             <returns><c>EntitySpiral</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePolyline2D(SpiralLab.Sirius2.Winforms.Entity.EntityVertex2D[],System.Boolean)">
@@ -4987,7 +5472,7 @@
             </code>
             </summary>
             <param name="vertices">Array of <c>Vertex2D</c></param>
-            <param name="isClosed">Closed figure or not</param>
+            <param name="isClosed">Closed path or not</param>
             <returns><c>CreatePolyline2D</c> </returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateStereoLithography(System.String,SpiralLab.Sirius2.Winforms.Entity.EntityStl@)">
@@ -5170,7 +5655,7 @@
             <code>
             var document = siriusEditorUserControl1.Document;
             ...
-            var text = EntityFactory.EntityTextCircular("Arial", $"1234567890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^*()-_=+[{{]|}}\\|;:'\",./?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", FontStyle.Bold, 2.5, 10);
+            var text = EntityFactory.CreateCircularText("Arial", $"1234567890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^*()-_=+[{{]|}}\\|;:'\",./?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", FontStyle.Bold, 2.5, 10);
             document.ActAdd(text);
             </code>
             </summary>
@@ -5182,6 +5667,28 @@
             <param name="radius">Radius (mm)</param>  
             <param name="startAngle">Starting angle(mm)</param>  
             <returns><c>EntityTextCircular</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateCharacterSetText(System.String,SpiralLab.Sirius2.Winforms.Entity.CharacterSetFormats,System.Double)">
+            <summary>
+            Create <c>CreateCharacterSetText</c> entity
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var textHour = EntityFactory.CreateCharacterSetText("Arial", CharacterSetFormats.Time, 5);
+            textHour.CharacterSetTime.TimeFormat = TimeFormat.Hours24;
+            var textMin = EntityFactory.CreateCharacterSetText("Arial", CharacterSetFormats.Time, 5);
+            textMin.CharacterSetTime.TimeFormat = TimeFormat.Minutes;
+            var textSec = EntityFactory.CreateCharacterSetText("Arial", CharacterSetFormats.Time, 5);
+            textSec.CharacterSetTime.TimeFormat = TimeFormat.Seconds;
+            document.ActAdd(textHour);
+            document.ActAdd(textMin);
+            document.ActAdd(textSec);
+            </code>
+            </summary>
+            <param name="format"><c>CharacterSetFormats</c></param>
+            <param name="fontName">Font name</param>
+            <param name="height">Height (mm)</param>
+            <returns><c>EntityCharacterSetText</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateSiriusText(System.String,System.String,System.Double)">
             <summary>
@@ -5198,13 +5705,34 @@
             <param name="height">Height (mm)</param>
             <returns><c>EntitySiriusText</c></returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateSiriusCharacterSetText(System.String,SpiralLab.Sirius2.Winforms.Entity.CharacterSetFormats,System.Double)">
+            <summary>
+            Create <c>EntitySiriusCharacterSetText</c> entity
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var textSerial = EntityFactory.CreateSiriusCharacterSetText("romans2.cxf", CharacterSetFormats.Time, 5);
+            textSerial.CharacterSetSerialNo.NumOfDigits = 4;
+            textSerial.CharacterSetSerialNo.SerialFormat = SerialNoFormat.LeadingWithZero;
+            document.ActAdd(textSerial);
+            ...
+            var rtcCharacterSet = rtc as IRtcCharacterSet;
+            rtcCharacterSet.SerialStartNo = 1000;
+            rtcCharacterSet.SerialIncrementStep = 1;
+            </code>
+            </summary>
+            <param name="format"><c>CharacterSetFormats</c></param>
+            <param name="fontName">Font name</param>
+            <param name="height">Height (mm)</param>
+            <returns><c>EntitySiriusCharacterSetText</c></returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateBlock(System.String,SpiralLab.Sirius2.Winforms.Entity.IEntity[])">
             <summary>
             Create <c>EntityBlock</c> entity
             <code>
             var document = siriusEditorUserControl1.Document;
             ...
-            var vertices = new List&lt;EntityVertex2D&gt;();
+            var vertices = new List&lt;EntityVertex2D&gt;(4);
             vertices.Add(new EntityVertex2D(10, 10));
             vertices.Add(new EntityVertex2D(10, 15));
             vertices.Add(new EntityVertex2D(5, 20));
@@ -5287,12 +5815,12 @@
             <code>
             var document = siriusEditorUserControl1.Document;
             ...
-            var layer1 = EntityFactory.CreateLayer("1");
+            var layer1 = EntityFactory.CreateLayer("0");
             document.ActAdd(layer1);
             </code>
             </summary>
             <param name="name">Name</param>
-            <returns><c>EntityLayer</c> </returns>
+            <returns><c>EntityLayer</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateTimer(System.Double)">
             <summary>
@@ -5832,6 +6360,44 @@
             <param name="entityPointsColud">Created <c>EntityPointCloud</c> if succeeded</param>
             <returns>Success of failed</returns>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.CharacterSetHelper">
+            <summary>
+            CharacterSetHelper
+            </summary>
+            <remarks>
+            RTC characterset helper for register.
+            Used with <c>ITextCharacterSet</c> (RTC5 or RTC6 only).
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Common.CharacterSetHelper.RtcCharacterSetMaxCount">
+            <summary>
+            Max. character set 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Common.CharacterSetHelper.RtcCharacterSetDictionary">
+            <summary>
+            Registered(or downloaded) character sets at each <c>IRtc</c>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.CharacterSetHelper.Register(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextCharacterSet,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet@)">
+            <summary>
+            Register characterset into RTC
+            </summary>
+            <param name="marker"><c>IMaker</c></param>
+            <param name="textCharacterSet"><c>ITextCharacterSet</c></param>
+            <param name="characterSet">Registered <c>CharacterSet</c></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.CharacterSetHelper.Clear(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <summary>
+            Clear characterset at RTC
+            </summary>
+            <remarks>
+            Should be called <c>Clear</c> whenever modified some text property value. <br/>
+            </remarks>
+            <param name="marker"><c>IMarker</c></param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.LffFont">
             <summary>
             LffFont
@@ -6083,11 +6649,6 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper">
             <summary>
             OpenTK Helper
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper.#ctor">
-            <summary>
-            Constructor
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper.ScreenToWorldDistance(System.Drawing.Point,OpenTK.Vector3,OpenTK.Matrix4,OpenTK.Matrix4)">
@@ -7073,6 +7634,18 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.RegisterCharacterSetIfModified">
+            <summary>
+            Download character set (font glyph) into RTC controller if <c>ITextCharacterSet</c> has modified. <br/>
+            Used with <c>IRtcCharacterSet</c> at spirallab.sirius2.dll. <br/>
+            Used with <c>ITextCharacterSet</c> at spirallab.sirius2.winforms.dll.<br/>
+            </summary>
+            <remarks>
+            If <c>ITextCharacterSet</c> entity has modified, it should be re-registered. <br/>
+            This function called leads to CPU burst. so need to optimized calls. <br/> 
+            </remarks>
+            <returns>Success of failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.Start">
             <inheritdoc/>
         </member>
@@ -7256,11 +7829,17 @@
             <summary>
             Current working(or marking layer) 
             </summary>
+            <remarks>
+            Used with <c>IEntity.IsMarkerable</c> <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.CurrentEntityIndex">
             <summary>
             Current working(or marking) entity index
             </summary>
+            <remarks>
+            Used with <c>IEntity.IsMarkerable</c> <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.CurrentEntity">
             <summary>
@@ -8097,38 +8676,52 @@
             Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "siriusfonts")
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.DefaultFont">
+            <summary>
+            Default font for create text entity
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.DefaultSiriusFont">
+            <summary>
+            Default font for create sirius text entity
+            </summary>
+        </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnTextConvert">
             <summary>
-            Event handler to convert <c>ITextConvertible.Text</c> to <c>ITextConvertible.TextConverted</c>
+            Event handler to convert text data.
+            <para>Used with <c>ITextConvertible</c> interface only</para>
             <code>
             SpiralLab.Sirius2.Winforms.Config.OnTextConvert += Text_OnTextConvert;
-            
-            private bool Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
+            ...
+            private string Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
             {
-                var entity = textConvertible as IEntity;
-                if (entity.Name == "TextEntityName1")
+                switch(entity.Name)
                 {
-                    // Example for "yyyyMMdd HH:mm:ss"
-                    textConvertible.ConvertedText = DateTime.Now.ToString(textConvertible.SourceText); 
-                }                
-                return true;
+                    case "TextEntityName1":
+                        // For example, "yyyyMMdd HH:mm:ss"
+                        return DateTime.Now.ToString(textConvertible.SourceText);    
+                }
+                return textConvertible.SourceText;;
             }
             </code>
             </summary>
             <remarks>
-            If <c>ITextConvertable.IsConvertText</c> is <c>True</c>, <c>Config.OnTextConvert</c> event would be fired
+            Event has fired when <c>ITextConvertable.IsConvertText</c> is <c>True</c> only. <br/>
+            Event has fired whenever do <c>IMarkerable.Mark</c> or <c>IEntity.Regen</c>. <br/>
+            <c>IMarker</c> value can be <c>NULL</c> while <c>IEntity.Regen</c>. <br/>
+            <c>IMarker.CurrentOffsetIndex</c> values are useful when marks at multiple offset positions. <br/>
             </remarks>        
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">
             <summary>
-            Notify for TextConvert
+            Notify for <c>ITextConvertible</c>
             </summary>
             <remarks>
-            If <c>ITextConvertable.IsConvertText</c> is <c>True</c>, it would be try to convert every <c>IMarkerable.Mark</c>.
+            If <c>ITextConvertable.IsConvertText</c> is <c>True</c>, it would be try to convert each <c>IMarkerable.Mark</c>.
             </remarks>
-            <param name="marker"><c>IMarker</c></param>
+            <param name="marker"><c>IMarker</c> (or it can be <c>NULL</c> while <c>IEntity.Regen</c>) </param>
             <param name="textConvertible"><c>ITextConvertible</c></param>
-            <returns>Text has converted or not</returns>
+            <returns>Converted text data (if failed, <c>SourceText</c> has returned. </returns>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.DxfSplineToPolygonalCounts">
             <summary>
@@ -9208,7 +9801,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.FindByType(System.Type,SpiralLab.Sirius2.Winforms.Entity.IEntity[]@)">
             <summary>
-            Find entities by <c>Type</c> at <c>IDocument</c> with recursively
+            Find entities by <c>Type</c> (also. compared by interface types) at <c>IDocument</c> with recursively
             </summary>
             <param name="entityType"><c>Type</c> of entity</param>
             <param name="foundedEntities">Array of <c>IEntity</c></param>

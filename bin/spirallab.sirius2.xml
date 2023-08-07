@@ -1638,6 +1638,11 @@
         <member name="P:SpiralLab.Sirius2.Laser.LaserBase.PowerControlMethod">
             <inheritdoc/>  
         </member>
+        <member name="F:SpiralLab.Sirius2.Laser.LaserBase.powerControlMethod">
+            <summary>
+            Laser power control method: <c>PowerControlMethod</c> if <c>IsPowerControl</c> is <c>True</c>
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Laser.LaserBase.PowerControlDelayTime">
             <inheritdoc/>  
         </member>
@@ -2496,8 +2501,8 @@
             Base matrix
             </summary>
             <remarks>
-            User configurable base matrix. (like as rotate, translate, ...)
-            Result = matries at stack * <c>BaseMatrix</c>.
+            User configurable base matrix. (like as rotate, translate, ...) <br/>
+            Result = matries at stack * <c>BaseMatrix</c>.<br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.ToResult">
@@ -2505,8 +2510,8 @@
             Result matrix
             </summary>
             <remarks>
-            Calculate whole matries at stack.
-            Result = matries at stack * <c>BaseMatrix</c>.
+            Calculate whole matries at stack. <br/>
+            Result = matries at stack * <c>BaseMatrix</c>. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.Identity">
@@ -2514,7 +2519,7 @@
             Clear (or reset) as identity matrix 
             </summary>
             <remarks>
-            <c>BaseMatrix</c> is not modified.
+            <c>BaseMatrix</c> is not modified. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.Push(`0)">
@@ -3960,7 +3965,10 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListMoFCall(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CharacterSets">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSet,System.Object)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlCharacterBegin(System.UInt32)">
@@ -5519,7 +5527,10 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMoFCall(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CharacterSets">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSet,System.Object)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlCharacterBegin(System.UInt32)">
@@ -6238,6 +6249,12 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListMarksTo(System.Numerics.Vector3[],System.Double[])">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListDashedMarkTo(System.Numerics.Vector3,System.Double[],System.Double)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListDashedArcTo(System.Numerics.Vector3,System.Double,System.Double[],System.Double)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListApproxBlendLimit(System.Double)">
@@ -7812,6 +7829,45 @@
             <param name="angularJerk">excelliSCAN14: 4e9, excelliSCAN20: 1e9</param>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListDashedMarkTo(System.Numerics.Vector3,System.Double[],System.Double)">
+            <summary>
+            List dashed mark (line)
+            </summary>
+            <remarks>
+            Each <c>laserSwitches</c> values are must meet the following requirements. <br/>
+            <list type="laserSwitches">
+            <item><description>Ascending order.</description></item>
+            <item><description>Length value should be &gt;= 0</description></item>
+            <item><description>&lt;= Total line length of the marking pattern section.</description></item>
+            <item><description>Duration of "Laser Standby" Operation &gt;= <c>LaserMinOffTime</c> + <c>LaserPreTriggerTime</c>.</description></item>
+            <item><description>Time between two switchings s of similar type: 1 µs.</description></item>
+            </list>
+            </remarks>
+            <param name="vPosition">X, Y position (mm)</param>
+            <param name="laserSwitches">Array of line length with laser switches (mm) (distance is not applied by matrix stack)(</param>
+            <param name="alcScaleFactor">Ramp factor if <c>ListAlcByVectorBegin</c> has enabled</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListDashedArcTo(System.Numerics.Vector3,System.Double,System.Double[],System.Double)">
+            <summary>
+            List dashed arc at center
+            </summary>
+            <remarks>
+            Each <c>laserSwitches</c> values are must meet the following requirements. <br/>
+            <list type="laserSwitches">
+            <item><description>Ascending order.</description></item>
+            <item><description>Length value should be &gt;= 0</description></item>
+            <item><description>&lt;= Total arc length of the marking pattern section.</description></item>
+            <item><description>Duration of "Laser Standby" Operation &gt;= <c>LaserMinOffTime</c> + <c>LaserPreTriggerTime</c>.</description></item>
+            <item><description>Time between two switchings s of similar type: 1 µs.</description></item>
+            </list>
+            </remarks>
+            <param name="vCenter">Center X, Y (mm)</param>
+            <param name="sweepAngleZ">Sweep angle (°) (+: CCW, -: CW)</param>
+            <param name="laserSwitches">Array of arc length with laser switches (mm) (distance is not applied by matrix stack)</param>
+            <param name="alcScaleFactor">(Unsupported!) Ramp factor if <c>ListAlcByVectorBegin</c> has enabled</param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.SyncAxisViewerHelper">
             <summary>
             SyncAxisViewer helper 
@@ -7827,10 +7883,10 @@
             View simulation output data by syncAXIS viewer
             </summary>
             <remarks>
-            Used with <c>Config.SyncAxisViewerProgramPath</c> <br/>
-            Used with <c>SpiralLab.Sirius2.Config.SyncAxisSimulateFilePath</c> <br/>
+            Used with <c>Config.SyncAxisViewerProgramPath</c>. <br/>
+            Used with <c>SpiralLab.Sirius2.Config.SyncAxisSimulateFilePath</c>. <br/>
             </remarks>
-            <param name="filename">Simulted output filename</param>
+            <param name="filename">Simulated output filename</param>
             <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes">
@@ -9181,7 +9237,10 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListMoFCall(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CharacterSets">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSet,System.Object)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlCharacterBegin(System.UInt32)">
@@ -10558,6 +10617,11 @@
             Character sets (aka. Font family)
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.CharacterSet.Unknown">
+            <summary>
+            Unknown(or not set)
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.CharacterSet._0">
             <summary>
             0
@@ -10585,7 +10649,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.DateFormat.Year2Digits">
             <summary>
-            Year 2 Digits 
+            Year (2 Digits)
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.DateFormat.Day">
@@ -10595,12 +10659,12 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.DateFormat.Year4Digits">
             <summary>
-            Year 4 Digits
+            Year (4 Digits)
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.DateFormat.MonthDigits">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.DateFormat.Month">
             <summary>
-            Month Digit
+            Month
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.TimeFormat">
@@ -10610,7 +10674,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.TimeFormat.Hours24">
             <summary>
-            24 Hours
+            Hours (24)
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.TimeFormat.Minutes">
@@ -10624,9 +10688,9 @@
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.TimeFormat.Hours12">
-             <summary>
-            12 Hours
-             </summary>
+            <summary>
+            Hours (12)
+            </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.SerialNoFormat">
             <summary>
@@ -10635,17 +10699,17 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SerialNoFormat.LeadingWithZero">
             <summary>
-            Leading with zero
+            Leading with zero (left aligned)
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SerialNoFormat.NoLeadingAndLeftAligned">
             <summary>
-            No leading and left aligned
+            No leading (left aligned)
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SerialNoFormat.LeadingWithBlank">
             <summary>
-            Leading with blank
+            Leading with blank (right aligned)
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet">
@@ -10654,6 +10718,17 @@
             <para>Used with <c>ListType.Single</c> only</para>
             <para>Used RTC list3 buffer. above RTC5</para>
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CharacterSets">
+            <summary>
+            Characterset key/value pairs.<br/>
+            <para>Created when assign(or download) character set into RTC buffer.</para>
+            </summary>
+            <remarks>
+            Key: <c>CharacterSet</c> <br/>
+            Value: User data <br/>
+            Max size: 4 <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.IsDateTimeOffset">
             <summary>
@@ -10701,7 +10776,7 @@
             Accumulated external /START trigger counts
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSet,System.Object)">
             <summary>
             Prepare to download character set into RTC 
             <para>Used. internal List3 buffer</para>
@@ -10736,6 +10811,7 @@
             </code>
             </summary>
             <param name="characterSet"><c>CharacterSet</c></param>
+             <param name="userData">User data</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterBegin(System.UInt32)">
@@ -10777,7 +10853,7 @@
             Reset serial no
             </summary>
             <param name="serialNo">Start serial no</param>
-            <param name="incrementStep">Increment step</param>
+            <param name="incrementStep">Increment step (avaiable range from 0~9999)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.ListText(System.String,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">

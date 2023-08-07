@@ -43,8 +43,6 @@ namespace Demos
     /// </summary>
     public class MyLaserDOut
         : ILaser
-        //, ILaserShutterControl
-        //, ILaserGuideControl
         , ILaserPowerControl
     {
         /// <inheritdoc/>
@@ -181,7 +179,7 @@ namespace Demos
 
         /// <inheritdoc/>  
         [Browsable(false)]
-        public virtual bool IsPowerControl { get; protected set; }
+        public virtual bool IsPowerControl { get; set; }
 
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
@@ -363,6 +361,8 @@ namespace Demos
         /// <inheritdoc/>  
         public virtual bool CtlPower(double watt)
         {
+            if (!this.IsPowerControl)
+                return true;
             Debug.Assert(this.MaxPowerWatt > 0);
             var rtc = Scanner as IRtc;
             Debug.Assert(rtc != null);
@@ -416,6 +416,8 @@ namespace Demos
         /// <inheritdoc/>  
         public virtual bool ListPower(double watt)
         {
+            if (!this.IsPowerControl)
+                return true;
             Debug.Assert(this.MaxPowerWatt > 0);
             var rtc = Scanner as IRtc;
             Debug.Assert(rtc != null);

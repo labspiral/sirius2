@@ -65,8 +65,7 @@ namespace Demos
             CreateDevices();
             CreateMarker();
             CreateTestEntities();
-            CustomConverter();
-           
+            CustomConverter();           
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -551,23 +550,17 @@ namespace Demos
             var document = siriusEditorUserControl1.Document;
             SpiralLab.Sirius2.Winforms.Config.OnTextConvert += Text_OnTextConvert;
         }
-        private bool Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
+        private string Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
         {
             var entity = textConvertible as IEntity;
-            if (entity.Name == "MyText1")
+            switch (entity.Name)
             {
-                // For example, convert string to DateTime format
-                // link: https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
-                 string dateTimeStr = textConvertible.SourceText; //like as "yyyyMMdd HH:mm:ss"
-                textConvertible.ConvertedText = DateTime.Now.ToString(dateTimeStr);
-
-                // For eaxmple, convert hex string to hex binary
-                //string hexStr = textConvertible.SourceText; //like as "fe3009333137303130323031f9200134fe300120fc2006";
-                //var byteArray = Enumerable.Range(0, hexStr.Length / 2).Select(x => Convert.ToByte(hexStr.Substring(x * 2, 2), 16)).ToArray();
-                //var byteArrayAsString = new String(byteArray.Select(b => (char)b).ToArray());
-                Logger.Log(Logger.Type.Debug, $"entity: {entity.Name} [{entity.Id}] text {textConvertible.SourceText} -> {textConvertible.ConvertedText}");
+                case "MyText1":
+                    // For example, convert to DateTime format. link: https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
+                    // Like as "yyyyMMdd HH:mm:ss"
+                    return DateTime.Now.ToString(textConvertible.SourceText);                    
             }
-            return true;
+            return textConvertible.SourceText;
         }
         private bool Config_OnScannerFieldCorrection2DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm form)
         {
@@ -585,203 +578,5 @@ namespace Demos
             return true;
         }
 
-        #region Control by remotely
-        /// <summary>
-        /// Ready status
-        /// </summary>
-        /// <returns>Status</returns>
-        public bool IsReady
-        {
-            get
-            {
-                var marker = siriusEditorUserControl1.Marker;
-                return marker.IsReady;
-            }
-        }
-        /// <summary>
-        /// Busy status
-        /// </summary>
-        /// <returns>Status</returns>
-        public bool IsBusy
-        {
-            get
-            {
-                var marker = siriusEditorUserControl1.Marker;
-                return marker.IsBusy;
-            }
-        }
-        /// <summary>
-        /// Error status
-        /// </summary>
-        /// <returns>Status</returns>
-        public bool IsError
-        {
-            get
-            {
-                var marker = siriusEditorUserControl1.Marker;
-                return marker.IsError;
-            }
-        }
-
-        /// <summary>
-        /// Open recipe (.sirius2 file)
-        /// </summary>
-        /// <param name="fileName">Filename</param>
-        /// <returns>Success or failed</returns>
-        public bool Open(string fileName)
-        {
-            if (this.IsBusy)
-                return false;
-            var doc = siriusEditorUserControl1.Document;
-            return doc.ActOpen(fileName);
-        }
-        /// <summary>
-        /// Start marker
-        /// </summary>
-        /// <param name="offets">Array of offset</param>
-        /// <returns>Success or failed</returns>
-        public bool Start(SpiralLab.Sirius2.Mathematics.Offset[] offets = null)
-        {
-            if (!this.IsReady)
-                return false;
-            if (this.IsBusy)
-                return false;
-            if (this.IsError)
-                return false;
-            var marker = siriusEditorUserControl1.Marker;
-            marker.Offsets = offets;
-            return marker.Start();
-        }
-        /// <summary>
-        /// Stop marker
-        /// </summary>
-        ///<returns>Success or failed</returns>
-        public bool Stop()
-        {
-            var marker = siriusEditorUserControl1.Marker;
-            return marker.Stop();
-        }
-        /// <summary>
-        /// Reset marker status
-        /// </summary>
-        /// <returns>Success or failed</returns>
-        public bool Reset()
-        {
-            var marker = siriusEditorUserControl1.Marker;
-            return marker.Reset();
-        }
-        #endregion
-
-        #region Utilities
-        /// <summary>
-        /// Find <c>IEntity</c> by name
-        /// </summary>
-        /// <param name="entityName">Entity name</param>
-        /// <param name="entity">Founded <c>IEntity</c></param>
-        /// <returns>Success or failed</returns>
-        public bool EntityFind(string entityName, out IEntity entity)
-        {
-            var marker = siriusEditorUserControl1.Marker;
-            var doc = marker.Document;
-            Debug.Assert(doc != null);
-            return doc.FindByName(entityName, out entity);
-        }
-        /// <summary>
-        /// Find <c>EntityPen</c> by color
-        /// </summary>
-        /// <param name="color"><c>System.Drawing.Color</c> value at <c>Config.PensColor</c></param>
-        /// <param name="entity">Founded <c>EntityPen</c></param>
-        /// <returns>Success or failed</returns>
-        public bool EntityFind(System.Drawing.Color color, out EntityPen entity)
-        {
-            var marker = siriusEditorUserControl1.Marker;
-            var doc = marker.Document;
-            Debug.Assert(doc != null);
-            return doc.FindByPenColor(color, out entity);
-        }
-        /// <summary>
-        /// Translate <c>IEntity</c> 
-        /// </summary>
-        /// <param name="entity">Target <c>IEntity</c></param>
-        /// <param name="deltaXyz">Dx, Dy, Dz (mm)</param>
-        /// <returns>Success or failed</returns>
-        public bool EntityTranslate(IEntity entity, OpenTK.Vector3 deltaXyz)
-        {
-            var marker = siriusEditorUserControl1.Marker;
-            var doc = marker.Document;
-            Debug.Assert(doc != null);
-            Debug.Assert(entity != null);
-
-            // you can use 'doc.Act...' functions also
-            return doc.ActTransit(new IEntity[] { entity }, deltaXyz);
-        }
-        /// <summary>
-        /// Query property list from <c>IEntity</c> 
-        /// </summary>
-        /// <remarks>
-        /// Target properties are Browasable attribute is <c>True</c> only <br/>
-        /// </remarks>
-        /// <param name="entity">Target <c>IEntity</c> </param>
-        /// <returns><c>Dictionary<string, object></c></returns>
-        public Dictionary<string, object> EntityProperties(IEntity entity)
-        {
-            return PropertyList(entity);
-            Dictionary<string, object> PropertyList(object objectType)
-            {
-                if (objectType == null) return new Dictionary<string, object>();
-                Type t = objectType.GetType();
-                PropertyInfo[] props = t.GetProperties();
-                Dictionary<string, object> dic = new Dictionary<string, object>();
-                foreach (PropertyInfo prp in props)
-                {
-                    //Attribute [Browsable] is True only
-                    if (prp.GetCustomAttributes<BrowsableAttribute>().Contains(BrowsableAttribute.Yes))
-                    {
-                        object value = prp.GetValue(objectType, new object[] { });
-                        dic.Add(prp.Name, value);
-                    }
-                }
-                return dic;
-            }
-        }
-        /// <summary>
-        /// Read property value at <c>IEntity</c> 
-        /// </summary>
-        /// <param name="entity">Target <c>IEntity</c></param>
-        /// <param name="propName">Property name</param>
-        /// <param name="propValue">Property value</param>
-        /// <returns>Success or failed</returns>
-        public bool EntityReadPropertyValue(IEntity entity, string propName, out object propValue)
-        {
-            propValue = null;
-            Debug.Assert(entity != null);
-            Type type = entity.GetType();
-            var propInfo = type.GetProperty(propName, BindingFlags.Public | BindingFlags.Instance);
-            if (null == propInfo || !propInfo.CanRead)
-                return false;
-            propValue = propInfo.GetValue(entity);
-            return true;
-        }
-        /// <summary>
-        /// Write property value at <c>IEntity</c> 
-        /// </summary>
-        /// <param name="entity">Target <c>IEntity</c></param>
-        /// <param name="propName">Property name</param>
-        /// <param name="propValue">Property value</param>
-        /// <returns>Success or failed</returns>
-        public bool EntityWritePropertyValue(IEntity entity, string propName, object propValue)
-        {
-            Debug.Assert(entity != null);
-            Type type = entity.GetType();
-            var propInfo = type.GetProperty(propName, BindingFlags.Public | BindingFlags.Instance);
-            if (null == propInfo || !propInfo.CanWrite)
-                return false;
-            var convertedValue = Convert.ChangeType(propValue, propInfo.PropertyType);
-            propInfo.SetValue(entity, convertedValue, null);
-            // Regen data by forcily
-            entity.Regen();
-            return true;
-        }
-        #endregion
     }
 }

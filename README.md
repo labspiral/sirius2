@@ -69,6 +69,7 @@
     - config "config_syncaxis.ini" for XL-SCAN
  - Demo 'editor_marker' winforms project for custom marker
  - Demo 'editor_ui' winforms project for custom ui
+ - Demo 'editor_remote' winforms project control by remotely 
 
  *The program running 30 mins at evalution copy mode !*
 
@@ -89,6 +90,15 @@
 
 **7. Version history**
 
+* 2023.8.8 v0.9.0
+  - added) editor_remote project
+  - added) new event handler 'OnScannerFieldCorrection2DApply'
+  - added) dashed mark/arc functions at rtc6syncaxis
+  - modified) Config.OnTextConvert event
+     - text and barcode entities are now support convertible text format
+     - also possible to marks at multiple offset positions with individual data
+  - added) (experimental) ITextCharacterSet interface with characterset text entities 
+  
 * 2023.8.1 v0.8.5
   - added) circular text entity
   - added) support High DPI
@@ -178,7 +188,8 @@
 
 **8. Known Issues**
 
-* Editor
-  - Selection entities by rubber banding is not supported yet
+* General
+  - ActDivide is not supported yet
+  - Select entities by rubber banding is not supported yet
   - Multi-languages are not supported yet
   

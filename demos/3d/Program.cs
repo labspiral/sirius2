@@ -106,7 +106,7 @@ namespace Demos
                 Console.WriteLine("'F1' : laser on during 5 secs");
                 Console.WriteLine("'F2' : mark square at specific z height");
                 Console.WriteLine("'F3' : mark squares with translate z height");
-                Console.WriteLine("'F4' : mark helix figure");
+                Console.WriteLine("'F4' : mark helix shape");
                 Console.WriteLine("-------------------------------------------------------");
                 Console.WriteLine("'C' : reset/revert correction file");
                 Console.WriteLine("'F9' : convert correction file by cylinder");

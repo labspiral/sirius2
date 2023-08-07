@@ -342,7 +342,7 @@ namespace Demos
 
             success &= rtc.ListBegin(ListType.Single);
             success &= rtc.ListJumpTo(new Vector2(-10, 0));
-            success &= rtcCharacterSet.ListDate(DateFormat.MonthDigits, true);
+            success &= rtcCharacterSet.ListDate(DateFormat.Month, true);
             success &= rtc.ListJumpTo(new Vector2(10, 0));
             success &= rtcCharacterSet.ListDate(DateFormat.Day, true);
             if (success)
