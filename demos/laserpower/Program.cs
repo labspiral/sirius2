@@ -94,13 +94,13 @@ namespace Demos
             {
                 default:
                 case 1:
-                    var myLaserDOut8 = new MyLaserDOut(0, "My DOut 8Bits Laser", maxWatt);
+                    var myLaserDOut8 = new MyLaserDOut(0, "My DOut 8Bits Laser", maxWatt, 0, 255);
                     myLaserDOut8.PowerControlMethod = PowerControlMethod.DigitalBits;
                     myLaserDOut8.DigitalBitsPortNo = 2; //RTC EXTENSION PORT 2 (8bits)
                     laser = myLaserDOut8;
                     break;
                 case 2:
-                    var myLaserDOut16 = new MyLaserDOut(0, "My DOut 16Bits Laser", maxWatt);
+                    var myLaserDOut16 = new MyLaserDOut(0, "My DOut 16Bits Laser", maxWatt, 0, 65535);
                     myLaserDOut16.PowerControlMethod = PowerControlMethod.DigitalBits;
                     myLaserDOut16.DigitalBitsPortNo = 1; //RTC EXTENSION PORT 1 (16bits)
                     laser = myLaserDOut16;

@@ -1500,7 +1500,7 @@
             <param name="powerControlMethod"><c>PowerControlMethod</c></param>
             <returns><c>LaserVirtual</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualAnalog(System.Int32,System.Double,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualAnalog(System.Int32,System.Double,System.Int32,System.Double,System.Double)">
             <summary>
             Create laser source by analog voltage output
             </summary>
@@ -1510,6 +1510,8 @@
             <param name="index">Identifier (0,1,2,...)</param>
             <param name="maxPowerWatt">Max power (W)</param>
             <param name="analogCh">1: <c>ExtensionChannel.ExtAO1</c>, 2: <c>ExtensionChannel.ExtAO2</c></param>
+            <param name="minVoltage">Min voltage (V)</param>
+            <param name="maxVoltage">Max voltage (V)</param>
             <returns><c>LaserVirtual</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualFrequency(System.Int32,System.Double,System.Double,System.Double)">
@@ -1538,7 +1540,7 @@
             <param name="maxDutyCycle">Max Duty Cycle Duty (%)</param>
             <returns><c>LaserVirtual</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualDO16Bits(System.Int32,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualDO16Bits(System.Int32,System.Double,System.UInt16,System.UInt16)">
             <summary>
             Create laser source by extension1 port with digital 16bits output
             </summary>
@@ -1548,9 +1550,11 @@
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
             <param name="maxPowerWatt">Max power (W)</param>
+            <param name="minBit">Min bit value (0)</param>
+            <param name="maxBit">Max bit value (65535)</param>
             <returns><c>LaserVirtual</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualDO8Bits(System.Int32,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualDO8Bits(System.Int32,System.Double,System.UInt16,System.UInt16)">
             <summary>
             Create laser source by extension2 port with digital 8bits output
             </summary>
@@ -1560,6 +1564,8 @@
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
             <param name="maxPowerWatt">Max power (W)</param>
+            <param name="minBit">Min bit value (0)</param>
+            <param name="maxBit">Max bit value (255)</param>
             <returns><c>LaserVirtual</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualRS232(System.Int32,System.Double,System.String)">
@@ -1570,6 +1576,7 @@
             Warning : Used RS232 port at RTC card.
             Fixed with <c>PowerControlMethod.Rs232</c>.
             Converted and transmitted data as <c>string.Format(Rs232StringFormat, percentage)</c>.
+            For example: "{0:F3}".
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
             <param name="maxPowerWatt">Max power (W)</param>
@@ -1750,6 +1757,18 @@
             <summary>
             EXTENSION Port for DigitalBits
             <para>Default: 2(8bits) (1: 16bits)</para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.LaserVirtual.DigitalBitMinValue">
+            <summary>
+            Min bit value for DigitalBits
+            <para>Default: 0</para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.LaserVirtual.DigitalBitMaxValue">
+            <summary>
+            Max bit value for DigitalBits
+            <para>Default: 255(or 65535)</para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.LaserVirtual.Rs232StringFormat">

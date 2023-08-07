@@ -17,7 +17,7 @@
  * 
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Many kinds of laser sources
+ * Description : How to use many kinds of laser sources
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -95,7 +95,7 @@ namespace Demos
                     break;
                 case 1:
                     // analog (V)
-                    laser = LaserFactory.CreateVirtualAnalog(laserId, maxWatt, 1);
+                    laser = LaserFactory.CreateVirtualAnalog(laserId, maxWatt, 1, 0, 10);
                     break;
                 case 2:
                     // frequency (Hz)
@@ -107,11 +107,11 @@ namespace Demos
                     break;
                 case 4:
                     // 16bits (0~65535)
-                    laser = LaserFactory.CreateVirtualDO16Bits(laserId, maxWatt);
+                    laser = LaserFactory.CreateVirtualDO16Bits(laserId, maxWatt, 0, 65535);
                     break;
                 case 5:
                     // 8bits (0~255)
-                    laser = LaserFactory.CreateVirtualDO8Bits(laserId, maxWatt);
+                    laser = LaserFactory.CreateVirtualDO8Bits(laserId, maxWatt, 0, 255);
                     break;
            
             }

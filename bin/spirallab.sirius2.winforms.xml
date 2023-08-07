@@ -469,6 +469,10 @@
             <summary>
             Dots
             </summary>
+            <remarks>
+            <c>Rtc6SyncAxis</c> is not supported <c>Dots</c> cell type. <br/>
+            Because <c>Rtc6SyncAxis</c> is not supported <c>IRtcRaster</c> interface. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.BarcodeCells.Lines">
             <summary>
@@ -884,6 +888,12 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.ToPolylines">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.PropertyVisibility(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
+            <summary>
+            Property visibility for <c>IRtc</c>
+            </summary>
+            <param name="rtc"><c>IRtc</c></param>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.IMarkerable">
             <summary>
             IMarkerable interface
@@ -1033,6 +1043,7 @@
             Used with <c>HatchJoints</c>, <c>internal</c> values. <br/>
             Adjust <c>Config.DivideArcToLinesDistance</c> value to reduce vertices at arc path. <br/>
             Must be aware winding direction are same within polylines. <br/>
+            This hatch type leads to CPU burst. so need to consider optimized calls. <br/> 
             </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">
@@ -6838,15 +6849,15 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Common.ScaleEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
             <inheritdoc/>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Common.RotateZEditor">
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.RotateEditor">
             <summary>
             Rotate z editor  by trackbar
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Common.RotateZEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.RotateEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Common.RotateZEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.RotateEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.FontNameEditor">
@@ -7642,7 +7653,7 @@
             </summary>
             <remarks>
             If <c>ITextCharacterSet</c> entity has modified, it should be re-registered. <br/>
-            This function called leads to CPU burst. so need to optimized calls. <br/> 
+            This function called leads to CPU burst. so need to consider optimized calls. <br/> 
             </remarks>
             <returns>Success of failed</returns>
         </member>

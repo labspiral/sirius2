@@ -98,6 +98,7 @@
      - text and barcode entities are now support convertible text format
      - also possible to marks at multiple offset positions with individual data
   - added) (experimental) ITextCharacterSet interface with characterset text entities 
+  - added) min/max digital out value at laservirtual
   
 * 2023.8.1 v0.8.5
   - added) circular text entity
