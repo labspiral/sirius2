@@ -5,15 +5,15 @@
     <cfg:InitialOperationMode>ScannerAndStage</cfg:InitialOperationMode>
     <cfg:InitialListHandlingMode>ReturnAtOnce</cfg:InitialListHandlingMode>
 	<cfg:DynamicViolationReaction>WarningOnly</cfg:DynamicViolationReaction>
-    <cfg:BaseDirectoryPath> YOUR WORKING  DIRECTORY PATH TO BIN </cfg:BaseDirectoryPath>
+    <cfg:BaseDirectoryPath>yoursirius2\bin\</cfg:BaseDirectoryPath>
     <cfg:SimulationConfig>
       <cfg:SimulationMode>true</cfg:SimulationMode>
-      <cfg:SimOutputFileDirectory>[BaseDirectoryPath]/sirius2logs/</cfg:SimOutputFileDirectory>
+      <cfg:SimOutputFileDirectory>[BaseDirectoryPath]/siriuslogs/</cfg:SimOutputFileDirectory>
       <cfg:BinaryOutput>false</cfg:BinaryOutput>
       <cfg:DisableFileOutput>false</cfg:DisableFileOutput>
     </cfg:SimulationConfig>
     <cfg:LogConfig>
-      <cfg:LogfilePath>[BaseDirectoryPath]/sirius2logs/syncAxisLog.txt</cfg:LogfilePath>
+      <cfg:LogfilePath>[BaseDirectoryPath]/siriuslogs/syncAxisLog.txt</cfg:LogfilePath>
       <cfg:Loglevel>Warn</cfg:Loglevel>
       <cfg:EnableConsoleLogging>true</cfg:EnableConsoleLogging>
       <cfg:EnableFilelogging>true</cfg:EnableFilelogging>
