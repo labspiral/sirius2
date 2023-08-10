@@ -42,16 +42,16 @@ namespace Demos
         public Form1()
         {
             InitializeComponent();
-            this.Load += Form1_Load;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
             // Initialize sirius2 library
             SpiralLab.Sirius2.Core.Initialize();
 
             // Set FOV area: WxH, it will be drawn as red rectangle
             Config.DocumentDefaultViewFovSize = new SizeF(100, 100);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
 
     }

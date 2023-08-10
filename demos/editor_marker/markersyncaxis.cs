@@ -50,22 +50,11 @@ using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
 namespace SpiralLab.Sirius2.Winforms.Marker
 {
     /// <summary>
-    /// MySyncAxisMarker
+    /// Custom marker for syncAXIS
     /// </summary>
     public class MySyncAxisMarker
         : MarkerBase
     {
-        /// <summary>
-        /// Plot measurement session to syncAXIS viewer
-        /// </summary>
-        [RefreshProperties(RefreshProperties.All)]
-        [Browsable(true)]
-        [ReadOnly(false)]
-        [Category("SyncAXIS")]
-        [DisplayName("Viewer")]
-        [Description("Execute SyncAXIS Viewer When Simulation Mode")]
-        public bool IsExecuteViewer { get; set; }
-
         /// <summary>
         /// Op status 
         /// </summary>
@@ -121,8 +110,8 @@ namespace SpiralLab.Sirius2.Winforms.Marker
         public MySyncAxisMarker()
               : base()
         {
+            isMeasurementPlot = true;
             IsJumpToOriginAfterFinished = true;
-            IsExecuteViewer = true;
             OperationStatusColor = Color.DarkGray;
             timerStatus.Interval = 100;
             timerStatus.Tick += TimerStatus_Tick;
@@ -405,7 +394,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                     success &= NotifyAfterLayer(layer);
                     if (!success)
                     {
-                        Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer by after event handler"); ;
+                        Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer by after event handler"); 
                         break;
                     }
                     if (success)
@@ -430,13 +419,12 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             this.isInternalBusy = false;
             if (success)
             {
-                Logger.Log(Logger.Type.Debug, $"marker [{Index}]: mark has finished");
+                Logger.Log(Logger.Type.Debug, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
                 this.NotifyFinished();
             }
             else
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: mark has failed");
-                this.NotifyFailed();
+                Logger.Log(Logger.Type.Error, $"marker [{Index}]: mark has failed with {this.TimeSpan.TotalSeconds:F3}s");
             }
         }        
     }

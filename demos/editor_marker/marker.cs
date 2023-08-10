@@ -46,6 +46,7 @@ using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.OpenGL;
 using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
+using SpiralLab.Sirius2.Winforms.Common;
 
 namespace Demos
 {
@@ -64,7 +65,23 @@ namespace Demos
         [Category("Data")]
         [DisplayName("External /START")]
         [Description("External /START")]
-        public virtual bool IsExternalStart { get; set; }
+        public virtual bool IsExternalStart
+        {
+            get { return isExternalStart; }
+            set
+            {
+                isExternalStart = value;
+                if (isExternalStart)
+                {
+                    ListType = ListType.Single;
+                    if (1 != this.Document.InternalData.Layers.Count)
+                        MessageBox.Show("Should be single layer only to use external /START", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                    ListType = ListType.Auto;
+            }
+        }
+        private bool isExternalStart = false;
 
         /// <summary>
         /// <c>ListType</c>
@@ -113,7 +130,8 @@ namespace Demos
             set { 
                 if (!File.Exists(SpiralLab.Sirius2.Config.MeasurementGNUPlotProgramPath))
                 {
-                    //gnuplot program is not exit !
+                    if (DialogResult.Yes == MessageBox.Show($"gnuplot program is not exist at '{SpiralLab.Sirius2.Config.MeasurementGNUPlotProgramPath}'.{Environment.NewLine}Press 'Yes' to open downloadable webpage", "Warning", MessageBoxButtons.YesNo))
+                        System.Diagnostics.Process.Start("http://tmacchant33.starfree.jp/gnuplot_bin.html");
                     return;
                 }
                 isMeasurementPlot = value;
@@ -166,9 +184,10 @@ namespace Demos
             ListType = ListType.Auto;
             isMeasurementPlot = false;
 
-            IsCheckTempOk = true;
-            IsCheckPowerOk = true;
-            IsCheckPositionAck = true;
+            // set 'True' if check scanner status
+            IsCheckTempOk = false;
+            IsCheckPowerOk = false;
+            IsCheckPositionAck = false;
         }
         /// <summary>
         /// Constructor
@@ -226,7 +245,29 @@ namespace Demos
                 Logger.Log(Logger.Type.Error, $"marker [{Index}]: assigned invalid RTC instance");
                 return false;
             }
+            // Clear registered characterset when ready
+            TextRegisterHelper.Unregister(this);
             return true;
+        }
+        /// <summary>
+        /// Register (or download) character set (font glyph) into RTC controller if <c>ITextRegisterable</c> has modified. <br/>
+        /// </summary>
+        /// <remarks>
+        /// If <c>ITextRegisterable</c> entity has modified, it should be re-registered. <br/>
+        /// </remarks>
+        /// <returns>Success or failed</returns>
+        public virtual bool RegisterCharacterSet()
+        {
+            bool success = true;
+            if (Document.FindByType(typeof(ITextRegisterable), out IEntity[] entities))
+            {
+                foreach (var entity in entities)
+                {
+                    if (entity is ITextRegisterable textRegisterable)
+                        success &= TextRegisterHelper.Register(textRegisterable, this, out var dummy);
+                }
+            }
+            return success;
         }
         /// <inheritdoc/>
         public override bool Start()
@@ -310,6 +351,11 @@ namespace Demos
                     return false;
                 }
             }
+
+            // if ITextRegisterable entity has regened(or modified), it should be re-registered.
+            // Here is re-register every time by forcily for example.
+            RegisterCharacterSet();
+
             // Clear queue
             while (sessionQueue.Count > 0) 
                 sessionQueue.TryDequeue(out var dummy);
@@ -417,7 +463,8 @@ namespace Demos
             if (IsExternalStart)
             {
                 // Set to list type to single by forcily if external /START used 
-                ListType = ListType.Single; 
+                ListType = ListType.Single;
+                // Should be exist only single layer for External /START 
                 Debug.Assert(document.InternalData.Layers.Count == 1); 
             }
 
@@ -502,6 +549,7 @@ namespace Demos
                         break;
                     }
                 }
+                // Pop offset matrix
                 rtc.MatrixStack.Pop();
                 if (!success)
                     break;
@@ -574,9 +622,7 @@ namespace Demos
         protected void NotifyPlot()
         {
             foreach (var session in sessionQueue)
-            {
                 session.Plot();
-            }            
         }
     }
 }

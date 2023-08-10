@@ -90,6 +90,10 @@
 
 **7. Version history**
 
+* 2023.8.10 v0.9.1
+  - added) hit-test by rubber banding 
+  - fixed) minor bugs
+ 
 * 2023.8.8 v0.9.0
   - added) editor_remote project
   - added) new event handler 'OnScannerFieldCorrection2DApply'
@@ -97,7 +101,7 @@
   - modified) Config.OnTextConvert event
      - text and barcode entities are now support convertible text format
      - also possible to marks at multiple offset positions with individual data
-  - added) (experimental) ITextCharacterSet interface with characterset text entities 
+  - added) (experimental) ITextRegisterable interface with characterset text entities 
   - added) min/max digital out value at laservirtual
   
 * 2023.8.1 v0.8.5
@@ -191,6 +195,5 @@
 
 * General
   - ActDivide is not supported yet
-  - Select entities by rubber banding is not supported yet
   - Multi-languages are not supported yet
   

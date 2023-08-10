@@ -16,7 +16,7 @@
  *               `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Open sourced SiriusEditorUserControl
+ * Description : SiriusEditor usercontrol
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -37,10 +37,11 @@ using SpiralLab.Sirius2.IO;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
+using SpiralLab.Sirius2.Winforms;
 using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Common;
-using SpiralLab.Sirius2.Winforms;
+using SpiralLab.Sirius2.Winforms.UI;
 using OpenTK;
 #if NETFRAMEWORK
 using OpenTK;
@@ -54,7 +55,7 @@ namespace Demos
     /// SiriusEditorUserControl
     /// </summary>
     /// <remarks>
-    /// Open sourced 'SiriusEditorUserControl'
+    /// Customizable editor
     /// </remarks>
     public partial class SiriusEditorUserControl : Form
     {
@@ -73,7 +74,7 @@ namespace Demos
         public IDocument Document
         {
             get { return document; }
-            protected set 
+            protected set
             {
                 if (document != null)
                 {
@@ -109,7 +110,7 @@ namespace Demos
                 }
                 PropertyGridCtrl.SelecteObject = null;
             }
-        }  
+        }
         private IDocument document;
 
         /// <summary>
@@ -138,7 +139,7 @@ namespace Demos
                     myDOExt2 = null;
                     myDOLaserPort = null;
                 }
-                
+
                 rtc = value;
                 rtcControl1.Rtc = rtc;
                 rtcDIUserControl1.Rtc = rtc;
@@ -172,7 +173,7 @@ namespace Demos
                     rtcDIUserControl1.DILaserPort = myDILaserPort;
                     rtcDIUserControl1.UpdateExtension1PortNames(Config.DIN_RtcExtension1Port);
                     rtcDIUserControl1.UpdateLaserPortNames(Config.DIN_RtcLaserPort);
-                    
+
                     rtcDOUserControl1.DOExt1 = myDOExt1;
                     rtcDOUserControl1.DOExt2 = myDOExt2;
                     rtcDOUserControl1.DOLaserPort = myDOLaserPort;
@@ -199,7 +200,7 @@ namespace Demos
             get { return laser; }
             set
             {
-                
+
                 laser = value;
                 laserControl1.Laser = laser;
                 if (null != laser)
@@ -260,8 +261,8 @@ namespace Demos
         /// Usercontrol for Treeview
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl TreeViewCtrl
-        { 
-            get { return treeViewControl1; } 
+        {
+            get { return treeViewControl1; }
         }
         /// <summary>
         /// Usercontrol for Treeview with block
@@ -342,7 +343,7 @@ namespace Demos
         }
 
         System.Windows.Forms.Timer timerProgress = new System.Windows.Forms.Timer();
-        System.Windows.Forms.Timer timerStatus  = new System.Windows.Forms.Timer();
+        System.Windows.Forms.Timer timerStatus = new System.Windows.Forms.Timer();
         Stopwatch timerProgressStopwatch = new Stopwatch();
 
         /// <summary>
@@ -384,7 +385,11 @@ namespace Demos
             btnSpiral.Click += BtnSpiral_Click;
             btnText.Click += BtnText_Click;
             btnImageText.Click += BtnImageText_Click;
+            btnCircularText.Click += BtnCircularText_Click;
+            btnCharacterSetText.Click += BtnCharacterSetText_Click;
             btnSiriusText.Click += BtnSiriusText_Click;
+            btnSiriusCharacterSetText.Click += BtnSiriusCharacterSetText_Click;
+
             btnImportFile.Click += BtnImportFile_Click;
             mnuDataMatrix.Click += MnuDataMatrix_Click;
             mnuQRCode.Click += MnuQRCode_Click;
@@ -413,6 +418,24 @@ namespace Demos
 
             //create one by default
             this.Document = new DocumentBase();
+        }
+
+        private void BtnSiriusCharacterSetText_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateSiriusCharacterSetText(Config.DefaultSiriusFont, CharacterSetFormats.Date, 5);
+            document.ActAdd(entity);
+        }
+
+        private void BtnCharacterSetText_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateCharacterSetText(Config.DefaultFont, CharacterSetFormats.Date, 5);
+            document.ActAdd(entity);
+        }
+
+        private void BtnCircularText_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateCircularText(Config.DefaultFont, "POWERED BY SIRIUS2 0123456789", FontStyle.Regular, 2, TextCircularDirections.ClockWise, 5, 180);
+            document.ActAdd(entity);
         }
 
         private void BtnSiriusText_Click(object sender, EventArgs e)
@@ -486,6 +509,8 @@ namespace Demos
                     mnuMoF.Enabled = false;
                     mnuZDefocus.Enabled = false;
                     lblEncoder.Visible = false;
+                    btnCharacterSetText.Enabled = false;
+                    btnSiriusCharacterSetText.Enabled = false;
                     break;
             }
         }
@@ -500,7 +525,7 @@ namespace Demos
         private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Document.ActSelectClear();
-            switch(tabControl1.SelectedIndex)
+            switch (tabControl1.SelectedIndex)
             {
                 case 0:
                     EditorCtrl.View.ViewMode = ViewModes.Entity;
@@ -511,33 +536,6 @@ namespace Demos
             }
             EditorCtrl.View.Render();
         }
-
-        ///// <summary>
-        ///// Short cut keys for F5, CTRL+F5, F6
-        ///// </summary>
-        ///// <param name="msg"></param>
-        ///// <param name="keyData"></param>
-        ///// <returns>ProcessCmdKey return</returns>
-        //protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        //{
-        //    if (keyData == (Keys.F5))
-        //    {
-        //        MarkerCtrl.BtnStart_Click(this, EventArgs.Empty);
-        //        return true;
-        //    }
-        //    else if (keyData == (Keys.Control | Keys.F5))
-        //    {
-        //        MarkerCtrl.BtnStop_Click(this, EventArgs.Empty);
-        //        return true;
-        //    }
-        //    else if (keyData == (Keys.F6))
-        //    {
-        //        MarkerCtrl.BtnReset_Click(this, EventArgs.Empty);
-        //        return true;
-        //    }
-
-        //    return base.ProcessCmdKey(ref msg, keyData);
-        //}
 
         private void MnuMarginBottom_Click(object sender, EventArgs e)
         {
@@ -596,7 +594,7 @@ namespace Demos
             {
                 var entity = EntityFactory.CreateMoFEnd(Vector2.Zero);
                 document.ActAdd(entity);
-                
+
             }
             {
                 var entity = EntityFactory.CreateMoFBegin(RtcEncoderType.Angular);
@@ -659,18 +657,6 @@ namespace Demos
 
         private void BtnImportFile_Click(object sender, EventArgs e)
         {
-            //var dlg = new OpenFileDialog();
-            //dlg.Filter = Config.FileImportModelFilters;
-            //dlg.Title = "Import Model File";
-            //dlg.InitialDirectory = SpiralLab.Sirius2.Winforms.Config.SamplePath;
-            //DialogResult result = dlg.ShowDialog();
-            //if (result != DialogResult.OK)
-            //    return;
-            //Cursor.Current = Cursors.WaitCursor;
-            //Document.ActImport(dlg.FileName, out var entity);
-            //Cursor.Current = Cursors.Default;
-            
-            // or preview import winform
             var form = new SpiralLab.Sirius2.Winforms.UI.ImportForm();
             DialogResult dialogResult = form.ShowDialog(this);
             if (dialogResult != DialogResult.OK)
@@ -695,7 +681,7 @@ namespace Demos
 
         private void BtnRectangle_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateRectangle(Vector2.Zero, 10,10);
+            var entity = EntityFactory.CreateRectangle(Vector2.Zero, 10, 10);
             document.ActAdd(entity);
         }
 
@@ -818,7 +804,7 @@ namespace Demos
                         }
                         break;
                     case RtcEncoderType.Angular:
-                        { 
+                        {
                             rtcMoF.CtlMofGetAngularEncoder(out var x, out var angle);
                             lblEncoder.Text = $"ENC X,0: {x} [{angle:F3}˚]";
                         }
@@ -890,13 +876,37 @@ namespace Demos
 
         private void BtnMeasurementBeginEnd_Click(object sender, EventArgs e)
         {
+            if (rtc is Rtc5)
             {
-                var entity = EntityFactory.CreateMeasurementEnd();
-                document.ActAdd(entity);
+                var entity1 = EntityFactory.CreateMeasurementEnd();
+                document.ActAdd(entity1);
+                var channels = new MeasurementChannel[4]
+                {
+                    MeasurementChannel.SampleX,
+                    MeasurementChannel.SampleY,
+                    MeasurementChannel.SampleZ,
+                    MeasurementChannel.LaserOn,
+                };
+                var entity2 = EntityFactory.CreateMeasurementBegin(5 * 1000, channels);
+                document.ActInsert(entity2, document.ActiveLayer, 0);
             }
+            else if (rtc is Rtc6)
             {
-                var entity = EntityFactory.CreateMeasurementBegin(5 * 1000);
-                document.ActInsert(entity, document.ActiveLayer, 0);
+                var entity1 = EntityFactory.CreateMeasurementEnd();
+                document.ActAdd(entity1);
+                var channels = new MeasurementChannel[8]
+                {
+                    MeasurementChannel.SampleX,
+                    MeasurementChannel.SampleY,
+                    MeasurementChannel.SampleZ,
+                    MeasurementChannel.LaserOn,
+                    MeasurementChannel.OutputPeriod,
+                    MeasurementChannel.PulseLength,
+                    MeasurementChannel.Enc0Counter,
+                    MeasurementChannel.Enc1Counter,
+                };
+                var entity2 = EntityFactory.CreateMeasurementBegin(5 * 1000, channels);
+                document.ActInsert(entity2, document.ActiveLayer, 0);
             }
         }
         private void LblHelp_Click(object sender, EventArgs e)
