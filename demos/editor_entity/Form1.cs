@@ -287,6 +287,7 @@ namespace Demos
         }
         private void CreateTestEntities()
         {
+            var rtc = siriusEditorUserControl1.Rtc;
             var document = siriusEditorUserControl1.Document;
             Debug.Assert(null != document.ActiveLayer);
 
@@ -349,18 +350,25 @@ namespace Demos
             spiral1.Translate(-35, 0);
             document.ActAdd(spiral1);
 
-            // Image entity
-            var filename1 = Path.Combine("sample", "lena.bmp");
-            var image1 = EntityFactory.CreateImage(filename1, 10, 10);
-            image1.Translate(-30, -15);
-            document.ActAdd(image1);
+            switch(rtc.RtcType)
+            {
+                case RtcType.Rtc6SyncAxis:
+                    break;
+                default:
+                    // Image entity
+                    var filename1 = Path.Combine("sample", "lena.bmp");
+                    var image1 = EntityFactory.CreateImage(filename1, 10, 10);
+                    image1.Translate(-30, -15);
+                    document.ActAdd(image1);
 
-            // Image entity 
-            var filename2 = Path.Combine("sample", "checkerboard.bmp");
-            var image2 = EntityFactory.CreateImage(filename2, 10);
-            image2.Translate(-30, 25);
-            document.ActAdd(image2);
-
+                    // Image entity 
+                    var filename2 = Path.Combine("sample", "checkerboard.bmp");
+                    var image2 = EntityFactory.CreateImage(filename2, 10);
+                    image2.Translate(-30, 25);
+                    document.ActAdd(image2);
+                    break;
+            }
+          
             // ImageText entity
             var imagetext1 = EntityFactory.CreateImageText("Arial", $"12345 67890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", FontStyle.Regular, false, 3, 64, 10);
             imagetext1.Name = "MyText1";
@@ -520,9 +528,16 @@ namespace Demos
                 hpgl2.Translate(-35, -20);
                 document.ActAdd(hpgl2);
             }
-            var dataMatrix1 = EntityFactory.CreateDataMatrix("0123456789", BarcodeCells.Dots, 3, 4, 4);
-            dataMatrix1.Translate(-23, 2);
-            document.ActAdd(dataMatrix1);
+            switch (rtc.RtcType)
+            {
+                case RtcType.Rtc6SyncAxis:
+                    break;
+                default:
+                    var dataMatrix1 = EntityFactory.CreateDataMatrix("0123456789", BarcodeCells.Dots, 3, 4, 4);
+                    dataMatrix1.Translate(-23, 2);
+                    document.ActAdd(dataMatrix1);
+                    break;
+            }
             var dataMatrix2 = EntityFactory.CreateDataMatrix("SIRIUS2", BarcodeCells.Lines, 4, 4, 4);
             dataMatrix2.Translate(-23, 7);
             document.ActAdd(dataMatrix2);
