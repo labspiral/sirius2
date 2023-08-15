@@ -38,21 +38,11 @@ namespace Demos
 {
     internal class Program
     {
-        /// <summary>
-        /// Your config ini file
-        /// </summary>
-        public static string ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.ini");
-        // Used this config file if using XL-SCAN (syncAXIS)
-        // public static string IniFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config_syncaxis.ini");
-
         [STAThread]
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            if (args.Length > 0)
-                ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, args[0]);
             Application.Run(new Form1());
         }
     }

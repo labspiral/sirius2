@@ -54,6 +54,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_ui", "demos\editor_u
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_remote", "demos\editor_remote\editor_remote.csproj", "{E4282CDD-2D0A-4085-B159-17F71C2C0C3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_multiple", "demos\editor_multiple\editor_multiple.csproj", "{36FA62B3-28B2-4B1C-A7C2-EB12CA6AAD72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -152,6 +154,10 @@ Global
 		{E4282CDD-2D0A-4085-B159-17F71C2C0C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4282CDD-2D0A-4085-B159-17F71C2C0C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4282CDD-2D0A-4085-B159-17F71C2C0C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36FA62B3-28B2-4B1C-A7C2-EB12CA6AAD72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36FA62B3-28B2-4B1C-A7C2-EB12CA6AAD72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36FA62B3-28B2-4B1C-A7C2-EB12CA6AAD72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36FA62B3-28B2-4B1C-A7C2-EB12CA6AAD72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

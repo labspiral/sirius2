@@ -90,6 +90,16 @@
 
 **7. Version history**
 
+* 2023.8.16 v.0.9.3
+  - added) editor_multiple demo
+  - added) zoom to fit (CTRL + 'F')
+  - added) editorhelper class for easy to use
+  - added) editable real bound box
+  - changed) file format with header information
+  - added) event OnOpenSirius, OnSaveSirius at editor
+  - changed) event OnEnded at marker
+  - changed) config.ini to support multiple devices
+
 * 2023.8.10 v0.9.1
   - added) hit-test by rubber banding 
   - fixed) minor bugs

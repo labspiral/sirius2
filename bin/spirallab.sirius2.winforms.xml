@@ -454,6 +454,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCurve.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCurve.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCurve.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
@@ -856,7 +859,7 @@
             <summary>
             Regen(or encode) bit matrix of barcode
             </summary>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.RegenCellOutline">
             <summary>
@@ -897,6 +900,18 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.IMarkerable">
             <summary>
             IMarkerable interface
+            <code>
+            var line = EntityFactory.CreateLine(new Vector2(-40, 40), new Vector2(40, 40));
+            line.Regen();
+            ...
+            var rtc = siriusEditorUserControl1.Rtc;
+            var marker = siriusEditorUserControl1.Marker;
+            bool success = true;
+            success &amp;= rtc.ListBegin();
+            line.Mark(marker);
+            success &amp;= rtc.ListEnd();
+            success &amp;= rtc.ListExecute(true);
+            </code>
             </summary>
             <remarks>
             Markerable means, support laser processing by list commands within <c>IRtc.ListBegin</c> and <c>IRtc.ListEnd</c>. <br/>
@@ -923,6 +938,19 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.IRenderable">
             <summary>
             IRenderable interface
+            <code>
+            var line = EntityFactory.CreateLine(new Vector2(-40, 40), new Vector2(40, 40));
+            line.Regen();
+            var view = siriusEditorUserControl1.View;
+            line.Render(view);
+            </code>
+            
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            var line = EntityFactory.CreateLine(new Vector2(-40, 40), new Vector2(40, 40));
+            // Rendered at view by automatically
+            document.ActAdd(line);
+            </code>
             </summary>
             <remarks>
             Renderable means, support render(or hittest) entity to show at view by <c>OpenTK</c>. <br/>
@@ -941,16 +969,49 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.IRenderable.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <summary>
-            Do hit-test (like as mouse click) for <c>IEntity</c> at <c>IView</c>
+            Do hittest(or intersect test) (like as mouse click) for <c>IEntity</c> at <c>IView</c>
             </summary>
+            <remarks>
+            Used with pixel coordinate system(px). <br/>
+            </remarks>
             <param name="view"><c>IView</c></param>
-            <param name="mousePosition">Mouse position by <c>System.Drawing.Point</c></param>
+            <param name="mousePosition">Clicked mouse position by <c>System.Drawing.Point</c></param>
+            <param name="hittedEntity">Hitted <c>IEntity</c> if succeeded</param>
+            <returns>Success of hit test or not</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IRenderable.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <summary>
+            Do hittest(or intersect test) (like as rectangle area) for <c>IEntity</c> at <c>IView</c>
+            </summary>
+            <remarks>
+            Used with x,y coordinate system at Z=0 plane(mm). <br/>
+            </remarks>
+            <param name="view"><c>IView</c></param>
+            <param name="start">Started location (mm)</param>
+            <param name="end">Ended location (mm)</param>
             <param name="hittedEntity">Hitted <c>IEntity</c> if succeeded</param>
             <returns>Success of hit test or not</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.IExplodable">
             <summary>
             IExplodable interface
+            <code>
+            EntityFactory.CreateDxf(Path.Combine("sample", "BIKE.dxf"), out var dxf);
+            dxf.Regen();
+            IEntity[] subEntities = dxf.Explode();
+            foreach(var entity in subEntities)
+            {
+                // something
+            }
+            </code>
+            
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            if (document.FindByName("BIKE.dxf", out var foundedEntity))
+            {
+                document.ActExplode(foundedEntity);
+            }
+            </code>
             </summary>
             <remarks>
             Explodable means, possible to explod entity to more primitive type of entities. <br/>
@@ -965,6 +1026,19 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.IReversable">
             <summary>
             IReversable interface
+            <code>
+            EntityFactory.CreateDxf(Path.Combine("sample", "BIKE.dxf"), out var dxf);
+            dxf.Regen();
+            dxf.Reverse();
+            </code>
+            
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            if (document.FindByName("BIKE.dxf", out var foundedEntity))
+            {
+                document.ActReverse();
+            }
+            </code>
             </summary>
             <remarks>
             Reversable means, possible to reverse internal order of marks at entity. <br/>
@@ -979,6 +1053,29 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.IExtractPolyline">
             <summary>
             IExtractPolyline
+            <code>
+            EntityFactory.CreateDxf(Path.Combine("sample", "BIKE.dxf"), out var dxf);
+            dxf.Regen();
+            EntityPolyline2D[] polylines = dxf.ToPolylines();
+            foreach(var polyline in polylines)
+            {
+                // something
+            }
+            </code>
+            
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            if (document.FindByName("BIKE.dxf", out var foundedEntity))
+            {
+                if (document.ActExtractPolylines(foundedEntity, out EntityPolyline2D[] polylines))
+                {
+                    foreach(var polyline in polylines)
+                    {
+                         // something
+                    }
+                }
+            }
+            </code>
             </summary>
             <remarks>
             ExtractPolyline means, possible to extract internal marks data into polylines. <br/>
@@ -995,7 +1092,17 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.IExpandable">
             <summary>
-            IExpandable
+            IExpandable interface
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var polyline = EntityFactory.CreatePolyline2D( ... );
+            polyline.Regen();
+            var expandedPolylines = polyline.Expand(HatchJoints.Round, 0.5);
+            var shrinkedPolylines = polyline.Expand(HatchJoints.Miter, -0.5);
+            document.ActAdd(expandedPolylines);
+            document.ActAdd(shrinkedPolylines);
+            </code>
             </summary>
             <remarks>
             Expandable means, possible to expand(or shrink) internal mark pathes. <br/>
@@ -1079,6 +1186,14 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.IHatchable">
             <summary>
             IHatchable interface
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var rectangle = EntityFactory.CreateRectangle(new Vector2(10, -10), 10, 5);
+            document.ActAdd(rectangle);
+            var rectanglehatch = rectangle.Hatch(HatchModes.Polygon, HatchJoints.Miter, false, 0, 0, 0.2f, 0, 0);
+            document.ActAdd(rectanglehatch);
+            </code>
             </summary>    
             <remarks>
             Hatchable means, possible to hatch (like as line, ...) within closed shapes. <br/>
@@ -1112,7 +1227,15 @@
             <param name="shift">Shift offset (mm)</param>  
             <returns>Hatched <c>EntityGroup</c> entity</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible" -->
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible">
+            <summary>
+            ITextConvertible interface
+            </summary>
+            <remarks>
+            TextConvertible means, possible to change(or convert) source text data into converted data. <br/>
+            Support text data at entity (like as barcode or text) can be converted format by event handler <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">
             <summary>
             Enable(or disable) converted text data 
@@ -1157,114 +1280,31 @@
             Used with <c>EntityText</c>, <c>EntitySiriusText</c> when only <c>CharacterSetFormats.Normal</c> has configured. <br/>
             </remarks>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.ITextCharacterSet">
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.ITextRegisterable">
             <summary>
-            ITextCharacterSet interface
+            ITextRegisterable interface
             </summary>
             <remarks>
-            TextCharacterSet means, possible to register(or download) character set into RTC buffer. <br/>
+            Possible to register(or download) character set into RTC buffer. <br/>
             Text font data (like as <c>EntitySiriusText</c>) can be register (or download) into RTC controller. <br/>
             Do re-register(or download) whenever text parameters like as font, size, roate, and scale has modified again. <br/>
             Used with RTC5, RTC6 only. <br/>
             Recommended to use with <c>IRtcMoF</c> by external /START trigger. <br/>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.ITextCharacterSet.IsNeedToRegister">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.ITextRegisterable.Register(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
             <summary>
-            Is need to <c>Register</c> or not
+            Register(or download) text characterset into RTC
             </summary>
             <remarks>
-            If <c>True</c>, re-register itself whenever <c>IMarker.Start</c> by automatically. <br/>
-            Everytime do <c>Regen</c>, <c>IsNeedToRegister</c> goes to <c>True</c>. <br/> 
-            </remarks>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.ITextCharacterSet.Register(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
-            <summary>
-            Register (or download) text data into RTC controller
-            </summary>
-            <remarks>
+            If <c>ITextRegisterable</c> entity has regened(or modified), it should be re-registered. <br/>
             Used with RTC5, RTC6 only. <br/>
             Used with <c>IRtcCharacterSet</c>. <br/>
-            Characterset buffer would be overwritten. <br/>
+            Characterset buffer at RTC would be overwritten. <br/>
             </remarks>
             <param name="marker"><c>IMarker</c></param>
             <param name="characterSet">Target <c>CharacterSet</c></param>
             <returns>Successs or failed</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.ITextCharacterSet.IsCharacterSetEqual(SpiralLab.Sirius2.Winforms.Entity.ITextCharacterSet)">
-            <summary>
-            Compare characterset data to determine need to register(or download) or not
-            </summary>
-            <param name="textCharacterSet"><c>ITextCharacterSet</c></param>
-            <returns></returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417">
-            <summary>
-            EntityPDF417 entity
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.QuiteZone">
-            <summary>
-            Quite Zone
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.quiteZone">
-            <summary>
-            Quite zone
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.IsTextDataGS1">
-            <summary>
-            GS1 format or not
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.isTextDataGS1">
-            <summary>
-            GS1 format or not
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.Px">
-            <summary>
-            X Pixels
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.px">
-            <summary>
-            X Pixels
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.Py">
-            <summary>
-            Y Pixels
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.py">
-            <summary>
-            Y Pixels
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.#ctor(System.String,SpiralLab.Sirius2.Winforms.Entity.BarcodeCells,System.Int32,System.Double)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="text">Text</param>
-            <param name="cell"><c>Barcode2DCells</c></param>
-            <param name="dotFactor">Cell dot factor (1*1, 2*2, ...)</param>
-            <param name="height">Height (mm)</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.ToString">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.Clone">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.RegenEncode">
-            <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityQRCode">
             <summary>
@@ -1520,9 +1560,6 @@
             Line spacing (mm)
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.IsNeedToRegister">
-            <inheritdoc/>
-        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText._ConvertedText">
             <summary>
             Used by internally (Do NOT edit)
@@ -1590,9 +1627,6 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.Register(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.IsCharacterSetEqual(SpiralLab.Sirius2.Winforms.Entity.ITextCharacterSet)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.LetterSpaces">
@@ -1758,6 +1792,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
@@ -1934,9 +1971,6 @@
             Used by internally (Do NOT edit)
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.IsNeedToRegister">
-            <inheritdoc/>
-        </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.polylines">
             <summary>
             Array of <c>EntityPolyline2D</c>
@@ -1996,9 +2030,6 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.Register(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.IsCharacterSetEqual(SpiralLab.Sirius2.Winforms.Entity.ITextCharacterSet)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">
@@ -2144,6 +2175,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
@@ -2193,6 +2227,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline3D.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline3D.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline3D.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
@@ -2643,7 +2680,7 @@
             Extract transformed array of x,y,z vertex
             </summary>
             <param name="vertices">Created array of <c>Vector3</c> if succeeded</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityImage">
             <summary>
@@ -2963,6 +3000,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityArc.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityArc.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityArc.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
@@ -3022,6 +3062,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBlock.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBlock.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBlock.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
@@ -3102,6 +3145,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
@@ -3260,28 +3306,43 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point)">
             <summary>
-            Hittest by Min, Max (Before transformed)
+            Hittest by clicked mouse location
             </summary>
+            <remarks>
+            Min, Max (Before transformed)
+            </remarks>
             <param name="view"><c>IView</c></param>
-            <param name="mousePosition">Mouse location</param>
+            <param name="mousePosition">Clicked mouse location</param>
             <returns>Is hitted or not</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.IntersectXY(OpenTK.Vector2)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2)">
+            <summary>
+            Hittest(or intersected) by rectangle area 
+            </summary>
+            <remarks>
+            Start, end location is corner of rectangle area. <br/>
+            </remarks>
+            <param name="view"><c>IView</c></param>
+            <param name="start">Started location (mm)</param>
+            <param name="end">Ended location (mm)</param>
+            <returns>Is hitted(or intersected) or not</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.Intersect(System.Double,System.Double,System.Double)">
+            <summary>
+            Hittest(or intersected) by x, y location 
+            </summary>
+            <param name="x">X (mm)</param>
+            <param name="y">Y (mm)</param>
+            <param name="threshold">Threshold (mm)</param>
+            <returns>Intersected(or included) or not</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.Intersect(OpenTK.Vector2,System.Double)">
             <summary>
             Intersected x, y position within bound box or not
             </summary>
-            <param name="v">X,Y position</param>
+            <param name="v">X,Y (mm) position</param>
+            <param name="threshold">Threshold (mm)</param>
             <returns>Intersected(or included) or not</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.IntersectXY(SpiralLab.Sirius2.Winforms.Entity.BoundingBox)">
-            <summary>
-            Intersected width, height within bound box or not
-            </summary>
-            <remarks>
-            Applied. AABB (Axis Aligned Bounding Box) 
-            </remarks>
-            <param name="bbox"><c>BoundingBox</c></param>
-            <returns></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.RealUnion(SpiralLab.Sirius2.Winforms.Entity.BoundingBox)">
             <summary>
@@ -4036,7 +4097,7 @@
             <param name="interval">Interval (mm)</param>
             <param name="exclude">Exclude (mm)</param>
             <param name="shift">Shift (mm)</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.InternalHatchByPolygon(SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D[],SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.EntityGroup,System.Double)">
             <summary>
@@ -4050,7 +4111,7 @@
             <param name="hatchJoint"><c>HatchJoints</c></param>
             <param name="hatchedGroup">Result hatch into  <c>EntityGroup</c></param>
             <param name="interval">Interval (mm)</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
@@ -4061,12 +4122,15 @@
             </summary>
             <param name="marker"><c>IMarker</c></param>
             <param name="entity"><c>IEntity</c></param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Render(SpiralLab.Sirius2.Winforms.IView)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Translate(OpenTK.Vector3)">
@@ -4588,6 +4652,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
@@ -4962,6 +5029,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
@@ -5035,6 +5105,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPoints.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPoints.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPoints.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
@@ -5208,6 +5281,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityLine.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityLine.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityLine.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
@@ -5294,6 +5370,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
@@ -5504,7 +5583,7 @@
             </summary>
             <param name="fileName">StereoLithography(.stl) filename</param>
             <param name="stlEntity"><c>EntityStl</c> entity</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateDxf(System.String,SpiralLab.Sirius2.Winforms.Entity.EntityGroup@)">
             <summary>
@@ -5522,7 +5601,7 @@
             </summary>
             <param name="fileName">Dxf(.dxf) filename</param>
             <param name="dxfEntity">Dxf <c>EntityGroup</c> entity</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateHpgl(System.String,SpiralLab.Sirius2.Winforms.Entity.EntityGroup@)">
             <summary>
@@ -5540,7 +5619,7 @@
             </summary>
             <param name="fileName">HPGL(.plt) filename</param>
             <param name="hpglEntity">HPGL entity</param>
-             <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateCurve(OpenTK.Vector2[])">
             <summary>
@@ -5634,7 +5713,7 @@
             document.ActAdd(imagetext);
             </code>
             </summary>
-            <param name="fontName">Font family name</param>
+            <param name="fontName">Font family name. Should be one of <c>Config.InstalledFontNames</c>.</param>
             <param name="text">Text</param>
             <param name="style"><c>System.Drawing.FontStyle</c></param>
             <param name="isFill">Fill (or outline)</param>
@@ -5654,7 +5733,7 @@
             document.ActAdd(text);
             </code>
             </summary>
-            <param name="fontName">Font family name</param>
+            <param name="fontName">Font family name. Should be one of <c>Config.InstalledFontNames</c>.</param>
             <param name="text">Text</param>
             <param name="style"><c>System.Drawing.FontStyle</c></param>
             <param name="height">Height (mm)</param>        
@@ -5670,7 +5749,7 @@
             document.ActAdd(text);
             </code>
             </summary>
-            <param name="fontName">Font family name</param>
+            <param name="fontName">Font family name. Should be one of <c>Config.InstalledFontNames</c>.</param>
             <param name="text">Text</param>
             <param name="style"><c>System.Drawing.FontStyle</c></param>
             <param name="height">Height (mm)</param>       
@@ -5696,8 +5775,8 @@
             document.ActAdd(textSec);
             </code>
             </summary>
+            <param name="fontName">Font family name. Should be one of <c>Config.InstalledFontNames</c>.</param>
             <param name="format"><c>CharacterSetFormats</c></param>
-            <param name="fontName">Font name</param>
             <param name="height">Height (mm)</param>
             <returns><c>EntityCharacterSetText</c></returns>
         </member>
@@ -5711,7 +5790,7 @@
             document.ActAdd(text);
             </code>
             </summary>
-            <param name="fontName">Cxf font filename</param>
+            <param name="fontName">Cxf(or lff) font filename</param>
             <param name="text">Text</param>
             <param name="height">Height (mm)</param>
             <returns><c>EntitySiriusText</c></returns>
@@ -5732,8 +5811,8 @@
             rtcCharacterSet.SerialIncrementStep = 1;
             </code>
             </summary>
+            <param name="fontName">Cxf(or lff) font filename</param>
             <param name="format"><c>CharacterSetFormats</c></param>
-            <param name="fontName">Font name</param>
             <param name="height">Height (mm)</param>
             <returns><c>EntitySiriusCharacterSetText</c></returns>
         </member>
@@ -6369,42 +6448,62 @@
             </summary>
             <param name="dir">Directional vector</param>
             <param name="entityPointsColud">Created <c>EntityPointCloud</c> if succeeded</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Common.CharacterSetHelper">
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.TextRegisterHelper">
             <summary>
-            CharacterSetHelper
+            TextRegisterHelper
             </summary>
             <remarks>
             RTC characterset helper for register.
-            Used with <c>ITextCharacterSet</c> (RTC5 or RTC6 only).
+            Used with <c>ITextRegisterable</c> (RTC5 or RTC6 only).
             </remarks>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Common.CharacterSetHelper.RtcCharacterSetMaxCount">
+        <member name="F:SpiralLab.Sirius2.Winforms.Common.TextRegisterHelper.RtcCharacterSetDictionary">
             <summary>
-            Max. character set 
+            Registered(or downloaded) character sets at <c>IRtc</c>
             </summary>
+            <remarks>
+            Key: <c>ITextRegisterable</c>. <br/>
+            Value:  (key: <c>IRtcCharacterSet</c>, value: <c>bool</c> (need to register flag)). <br/>
+            </remarks>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Common.CharacterSetHelper.RtcCharacterSetDictionary">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.TextRegisterHelper.SetToRegister(SpiralLab.Sirius2.Winforms.Entity.ITextRegisterable)">
             <summary>
-            Registered(or downloaded) character sets at each <c>IRtc</c>
+            Set 'need to register' flag to 'True'
             </summary>
+            <param name="textRegisterable"><c>ITextRegisterable</c></param>
+            <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Common.CharacterSetHelper.Register(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextCharacterSet,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.TextRegisterHelper.IsRegistered(SpiralLab.Sirius2.Winforms.Entity.ITextRegisterable)">
             <summary>
-            Register characterset into RTC
+            Check <c>ITextRegisterable</c> is registered or not
             </summary>
+            <param name="textRegisterable"><c>ITextRegisterable</c></param>
+            <returns>Registered or not</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.TextRegisterHelper.Register(SpiralLab.Sirius2.Winforms.Entity.ITextRegisterable,SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet@)">
+            <summary>
+            Register(or download) text characterset into RTC
+            </summary>
+            <remarks>
+            If <c>ITextRegisterable</c> entity has regened(or modified), it should be re-registered. <br/>
+            This function called leads to CPU burst. so need to consider optimized calls. <br/> 
+            Used with RTC5, RTC6 only. <br/>
+            Used with <c>IRtcCharacterSet</c>. <br/>
+            Characterset buffer at RTC would be overwritten. <br/>
+            </remarks>
+            <param name="textRegisterable"><c>ITextRegisterable</c></param>
             <param name="marker"><c>IMaker</c></param>
-            <param name="textCharacterSet"><c>ITextCharacterSet</c></param>
             <param name="characterSet">Registered <c>CharacterSet</c></param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Common.CharacterSetHelper.Clear(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.TextRegisterHelper.Unregister(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <summary>
-            Clear characterset at RTC
+            Unregister(or clear) characterset at RTC
             </summary>
             <remarks>
-            Should be called <c>Clear</c> whenever modified some text property value. <br/>
+            Should be called <c>Unregister</c> if need to clear characterset at RTC buffer. <br/>
             </remarks>
             <param name="marker"><c>IMarker</c></param>
             <returns>Success or failed</returns>
@@ -6655,7 +6754,39 @@
             <param name="horizontalAlignment">Horizontal of <c>StringAlignment</c></param>
             <param name="bitmap">Created <c>System.Drawing.Bitmap</c></param>
             <param name="sizef">Create size of <c>System.Drawing.Bitmap</c></param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.MathHelper">
+            <summary>
+            MathHelper
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.MathHelper.IntersectLineInLine(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double@,System.Double@)">
+            <summary>
+            직선과 직선이 교차(충돌) 하는지 여부 (교차점 구하기)
+            </summary>
+            <param name="x1"></param>
+            <param name="y1"></param>
+            <param name="x2"></param>
+            <param name="y2"></param>
+            <param name="x3"></param>
+            <param name="y3"></param>
+            <param name="x4"></param>
+            <param name="y4"></param>
+            <param name="collisionX"></param>
+            <param name="collisionY"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.MathHelper.IntersectLineInRect(SpiralLab.Sirius2.Winforms.Entity.BoundingBox,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            직선이 사각형 영역 내에 있던가, 혹은 모서리의 일부가 교차(포함)하는지 여부
+            </summary>
+            <param name="bbox"></param>
+            <param name="x1"></param>
+            <param name="y1"></param>
+            <param name="x2"></param>
+            <param name="y2"></param>
+            <returns></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper">
             <summary>
@@ -7072,7 +7203,7 @@
             Save measurement result into file
             </summary>
             <param name="rtcMeasurement"><c>IRtcMeasurement</c></param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MeasurementSession.Plot">
             <summary>
@@ -7081,44 +7212,53 @@
             <remarks>
             Used <c>Config.GNUPlotProgramPath</c> program.<br/>
             </remarks>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Marker.MarkerFactory">
             <summary>
             MarkerFactory
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerFactory.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerFactory.CreateVirtual(System.Int32)">
             <summary>
-            Create Marker
+            Create Virtual Marker
+            <code>
+            var marker = MarkerFactory.CreateVirtual(0);
+            </code>
             </summary>
-            <param name="index">Card id (starting from 0)</param>
+            <param name="index">Index (starting from 0)</param>
             <returns><c>MarkerVirtual</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerFactory.CreateRtc5(System.Int32)">
             <summary>
             Create RTC5 Marker
+            <code>
+            var marker1 = MarkerFactory.CreateRtc5(0);
+            var marker2 = MarkerFactory.CreateRtc5(1);
+            </code>
             </summary>
-            <param name="index">Card id (starting from 0)</param>
+            <param name="index">Index (starting from 0)</param>
             <returns><c>MarkerRtc</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerFactory.CreateRtc6(System.Int32)">
             <summary>
             Create RTC6 Marker
+            <code>
+            var marker1 = MarkerFactory.CreateRtc6(0);
+            var marker2 = MarkerFactory.CreateRtc6(1);
+            </code>
             </summary>
-            <param name="index">Card id (starting from 0)</param>
+            <param name="index">Index (starting from 0)</param>
             <returns><c>MarkerRtc</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerFactory.CreateSyncAxis(System.Int32)">
             <summary>
             Create SyncAXIS(XL-SCAN) Marker
+            <code>
+            var marker = MarkerFactory.CreateSyncAxis(0);
+            </code>
             </summary>
-            <param name="index">Instance id (starting from 0)</param>
+            <param name="index">Index (starting from 0)</param>
             <returns><c>MarkerSyncAxis</c></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Marker.MarkerBase">
@@ -7132,10 +7272,7 @@
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnStarted">
             <inheritdoc/>
         </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnFailed">
-            <inheritdoc/>
-        </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnFinished">
+        <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnEnded">
             <inheritdoc/>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnBeforeLayer">
@@ -7173,6 +7310,11 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.MarkTarget">
             <inheritdoc/>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.markTarget">
+            <summary>
+            <c>MarkTargets</c>
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.IsJumpToOriginAfterFinished">
             <inheritdoc/>
@@ -7317,7 +7459,7 @@
             <param name="offsetIndex">Offset index</param>
             <param name="layer"><c>EntityLayer</c></param>
             <param name="offset"><c>Offset</c></param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.EntityWork(System.Int32,SpiralLab.Sirius2.Winforms.Entity.EntityLayer,System.Int32,SpiralLab.Sirius2.Winforms.Entity.IEntity)">
             <summary>
@@ -7330,7 +7472,7 @@
             <param name="layer"><c>EntityLayer</c></param>
             <param name="entityIndex">Entity index</param>
             <param name="entity"><c>IEntity</c></param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyPropertyChanged(System.String)">
             <summary>
@@ -7346,15 +7488,7 @@
             Consider as its working within async threads. <br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyFailed">
-            <summary>
-            Notify marker has failed event
-            </summary>
-            <remarks>
-            Consider as its working within async threads. <br/>
-            </remarks>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyFinished">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyEnded(System.Boolean)">
             <summary>
             Notify marker has finished event
             </summary>
@@ -7364,7 +7498,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyBeforeLayer(SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">
             <summary>
-            Notify marker about to before <c>EntityLayer</c> event
+            Notify before mark <c>EntityLayer</c> event
             </summary>
             <param name="layer"><c>EntityLayer</c></param>
             <remarks>
@@ -7375,7 +7509,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyAfterLayer(SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">
             <summary>
-            Notify marker after <c>EntityLayer</c> event
+            Notify after mark <c>EntityLayer</c> event
             </summary>
             <param name="layer"><c>EntityLayer</c></param>
             <remarks>
@@ -7464,11 +7598,6 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis">
             <summary>
             MarkerSyncAxis
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.IsExecuteViewer">
-            <summary>
-            Plot measurement session to syncAXIS viewer
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.OperationStatusColor">
@@ -7645,17 +7774,14 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.RegisterCharacterSetIfModified">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.RegisterCharacterSet">
             <summary>
-            Download character set (font glyph) into RTC controller if <c>ITextCharacterSet</c> has modified. <br/>
-            Used with <c>IRtcCharacterSet</c> at spirallab.sirius2.dll. <br/>
-            Used with <c>ITextCharacterSet</c> at spirallab.sirius2.winforms.dll.<br/>
+            Register (or download) character set (font glyph) into RTC controller if <c>ITextRegisterable</c> has modified. <br/>
             </summary>
             <remarks>
-            If <c>ITextCharacterSet</c> entity has modified, it should be re-registered. <br/>
-            This function called leads to CPU burst. so need to consider optimized calls. <br/> 
+            If <c>ITextRegisterable</c> entity has modified, it should be re-registered. <br/>
             </remarks>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.Start">
             <inheritdoc/>
@@ -7704,20 +7830,14 @@
             Consider as its working <c>Mark</c> within async threads. <br/>
             </remarks> 
         </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnFailed">
+        <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnEnded">
             <summary>
-            OnFailed event handler
+            OnEnded event handler
             </summary>
             <remarks>
             Consider as its working <c>Mark</c> within async threads. <br/>
-            </remarks> 
-        </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnFinished">
-            <summary>
-            OnFinished event handler
-            </summary>
-            <remarks>
-            Consider as its working <c>Mark</c> within async threads. <br/>
+            'True' is sucess to mark. <br/>
+            'False' is sucess to mark. <br/>
             </remarks> 
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnBeforeLayer">
@@ -7806,8 +7926,11 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.MarkTarget">
             <summary>
-            <c>MarkTargets</c>
+            Target entities to mark
             </summary>
+            <remarks>
+            Default: <c>MarkTargets.All</c>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Offsets">
             <summary>
@@ -7861,6 +7984,9 @@
             <summary>
             Current working(or marking) pen color
             </summary>
+            <remarks>
+            Set value by internally. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.TimeSpan">
             <summary>
@@ -8097,6 +8223,12 @@
             </summary>
             <param name="mouseLocation">Mouse location</param>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.ZoomFit(SpiralLab.Sirius2.Winforms.Entity.BoundingBox)">
+            <summary>
+            Zoom fit
+            </summary>
+            <param name="bbox"><c>BoundingBox</c></param>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.YawPitch(System.Int32,System.Int32)">
             <summary>
             Yaw pitch control by mouse location
@@ -8183,6 +8315,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.StaticCamera.ZoomOut(System.Drawing.Point)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.StaticCamera.ZoomFit(SpiralLab.Sirius2.Winforms.Entity.BoundingBox)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.StaticCamera.YawPitch(System.Int32,System.Int32)">
@@ -8598,6 +8733,28 @@
             Type of internal objects at file 
             </summary>
         </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnOpenSirius">
+            <summary>
+            Event for open sirius file at <c>SiriusEditorUserControl</c>
+            </summary>
+            <remarks>
+            User can register event handler for open sirius file. <br/>
+            Event will be fired when user has click open button at menu. <br/>
+            If user event handler is not attahced, default routine has executed. <br/>
+            If returned 'False', default routine would be executed. <br/>
+            </remarks>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnSaveSirius">
+            <summary>
+            Event for save sirius file at <c>SiriusEditorUserControl</c>
+            </summary>
+            <remarks>
+            User can register event handler for save sirius file. <br/>
+            Event will be fired when user has click save button at menu. <br/>
+            If user event handler is not attahced, default routine has executed. <br/>
+            If returned 'False', default routine would be executed. <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.SamplePath">
             <summary>
             Sample file path (.dxf, .plt, ..stl, ..)
@@ -8616,7 +8773,9 @@
             Event for create pen entity
             </summary>
             <remarks>
-            Create pen entity when initialize
+            User can register event handler to override configure pen entity. <br/>
+            Event will be fired when creating pen entity. <br/>
+            If user event handler is not attahced, default routine has executed. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyCreatePen(System.Drawing.Color)">
@@ -8636,14 +8795,14 @@
             </summary>
             <param name="color"><c>System.Drawing.Color</c></param>
             <param name="pen"><c>EntityPen</c></param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config.FontInstalledNames">
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.InstalledFontNames">
             <summary>
-            List of font names
+            List of installed font names
             </summary>
             <remarks>
-            Installed font list at current owner windows system
+            Installed font list at current owner windows system. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ImageTextClearColor">
@@ -8699,7 +8858,7 @@
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnTextConvert">
             <summary>
-            Event handler to convert text data.
+            Event for convert text data.
             <para>Used with <c>ITextConvertible</c> interface only</para>
             <code>
             SpiralLab.Sirius2.Winforms.Config.OnTextConvert += Text_OnTextConvert;
@@ -8717,8 +8876,10 @@
             </code>
             </summary>
             <remarks>
-            Event has fired when <c>ITextConvertable.IsConvertText</c> is <c>True</c> only. <br/>
-            Event has fired whenever do <c>IMarkerable.Mark</c> or <c>IEntity.Regen</c>. <br/>
+            User can register event handler to convert data of <c>ITextConvertible</c>. <br/>
+            Event will be fired when <c>ITextConvertable.IsConvertText</c> is <c>True</c> only. <br/>
+            Event will be fired whenever do <c>IMarkerable.Mark</c> or <c>IEntity.Regen</c>. <br/>
+            If user event handler is not attahced, used <c>SourceText</c> value. <br/>
             <c>IMarker</c> value can be <c>NULL</c> while <c>IEntity.Regen</c>. <br/>
             <c>IMarker.CurrentOffsetIndex</c> values are useful when marks at multiple offset positions. <br/>
             </remarks>        
@@ -8775,8 +8936,13 @@
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnExtractPointsCloud">
             <summary>
-            Event handler to create <c>EntityPointsCloud</c> from 3D model
+            Event for create <c>EntityPointsCloud</c> from 3D model
             </summary>
+            <remarks>
+            User can register event handler for extract points cloud from 3D model. <br/>
+            Event will be fired when user select extract points cloud item at menu. <br/>
+            If user event handler is not attahced, default routine has executed. <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyExtractPointsCloud(SpiralLab.Sirius2.Winforms.Entity.EntityStl,OpenTK.Vector3)">
             <summary>
@@ -8815,10 +8981,13 @@
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnBlockInsert">
             <summary>
-            Event handler for create custom array of <c>EntityBlockInsert</c> at <c>TreeViewUserControl</c>
+            Event for create custom array of <c>EntityBlockInsert</c> at <c>TreeViewUserControl</c>
             </summary>
             <remarks>
-            If <c>ITextConvertable.IsConvertText</c> is <c>True</c>, <c>Config.OnTextConvert</c> event would be fired
+            User can register event handler for override <c>EntityBlockInsert</c> entity. <br/>
+            Event will be fired when user select blockinsert item at menu. <br/>
+            If user event handler is not attahced, default routine has executed. <br/>
+            If returned array of <c>EntityBlockInsert</c> (not <c>null</c>), values are inserted. <br/>
             </remarks>        
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyBlockInsert(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.Entity.EntityBlock)">
@@ -8877,14 +9046,14 @@
             Color of default entity 
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config.ColorSelectedEntity">
-            <summary>
-            Color of selected entity 
-            </summary>
-        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ColorSelectedBBox">
             <summary>
             Color of bounding-box selected entity 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.ColorRubberBand">
+            <summary>
+            Color of rubber band rectangle
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ColorGridPoints">
@@ -8926,6 +9095,9 @@
             <summary>
             If entity has selected, override line width and point size 
             </summary>
+            <remarks>
+            Should be >= 1
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.IsRenderBoundBoxWhenSelected">
             <summary>
@@ -9103,9 +9275,18 @@
             </code>
             </summary>
             <remarks>
-            When select scanner field correction 2D at popup-menu item. <br/>
-            User should be create <c>RtcCorrection2D</c> and return it. <br/>
+            User can register event handler for open(or show) scanner field correction 2d winforms. <br/>
+            Event will be fired when select scanner field correction 2D item at menu. <br/>
+            If user event handler is not attahced, default routine has executed. <br/>
+            If user event handler is attached, it should be create <c>RtcCorrection2D</c> and return it. <br/>
             </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection2DShow(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
+            <summary>
+            Notiffy show(or popup) scanner field correction 2D by <c>RtcCorrection2DForm</c> winforms
+            </summary>
+            <param name="rtc"><c>IRtc</c></param>
+            <returns><c>RtcCorrection2D</c></returns>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DShow">
             <summary>
@@ -9144,16 +9325,11 @@
             </code>
             </summary>
             <remarks>
-            When select scanner field correction 3D at popup-menu item. <br/>
-            User should be create <c>RtcCorrection3D</c> and return it. <br/>
+            User can register event handler for open(or show) scanner field correction 3d winforms. <br/>
+            Event will be fired when select scanner field correction 3D item at menu. <br/>
+            If user event handler is not attahced, default routine has executed. <br/>
+            If user event handler is attached, it should be create <c>RtcCorrection3D</c> and return it. <br/>
             </remarks>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection2DShow(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
-            <summary>
-            Notiffy show(or popup) scanner field correction 2D by <c>RtcCorrection2DForm</c> winforms
-            </summary>
-            <param name="rtc"><c>IRtc</c></param>
-            <returns><c>RtcCorrection2D</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection3DShow(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
             <summary>
@@ -9177,7 +9353,19 @@
                Debug.Assert(success);
             }
             </code>
+            <remarks>
+            User can register event handler for apply scanner field correction 2d at winforms. <br/>
+            Event will be fired when apply scanner field correction 2D at winforms. <br/>
+            If user event handler is not attahced, nothing has changed. <br/>
+            </remarks>
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection2DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm)">
+            <summary>
+            Notify show(or popup) scanner field correction 2D by <c>RtcCorrection2DForm</c> winforms
+            </summary>
+            <param name="form"><c>SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm</c></param>
+            <returns>If there are no event handlers, returned <c>False</c></returns>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply">
             <summary>
@@ -9194,14 +9382,12 @@
                Debug.Assert(success);
             }
             </code>
+            <remarks>
+            User can register event handler for apply scanner field correction 3d at winforms. <br/>
+            Event will be fired when apply scanner field correction 3D at winforms. <br/>
+            If user event handler is not attahced, nothing has changed. <br/>
+            </remarks>
             </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection2DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm)">
-            <summary>
-            Notify show(or popup) scanner field correction 2D by <c>RtcCorrection2DForm</c> winforms
-            </summary>
-            <param name="form"><c>SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm</c></param>
-            <returns>If there are no event handlers, returned <c>False</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection3DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection3DForm)">
             <summary>
@@ -9220,8 +9406,10 @@
             Event for optimize path winforms
             </summary>
             <remarks>
-            Argument: Target <c>IEntity</c>
-            Return: Sorted result orders
+            User can register event handler for optimize path winforms. <br/>
+            Event will be fired when select path optimizer button item at menu. <br/>
+            If user event handler is not attahced, default routine has executed. Extracted base-points by <c>Config.PathOptimizerBasePosition</c> and popup optimizer winforms. <br/>
+            If user event handler is attahced, user should be return values with array of sorted orders. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyOptimizePath(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
@@ -9589,6 +9777,17 @@
             <param name="shift">Shift (or offset) (mm)</param>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActExtractPolylines(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D[]@)">
+            <summary>
+            Extract array of <c>EntityPolyline2D</c> from <c>IEntity</c>
+            </summary>
+            <remarks>
+            Used with <c>IExtractPolyline</c>. <br/>
+            </remarks>
+            <param name="entity">Target <c>IEntity</c></param>
+            <param name="polylines">Extracted array of <c>EntityPolyline2D</c></param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActExpand(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Double)">
             <summary>
             Create expanded outline of of <c>IEntity</c> at <c>IDocument.InternalData</c> and notify <c>OnAdd</c> if succeed.
@@ -9668,14 +9867,32 @@
             <param name="marginAlignment"><c>MarginAlignment</c></param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActHitTest(SpiralLab.Sirius2.Winforms.IView,System.Windows.Forms.Keys,System.Drawing.Point)">
+        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActHitTest(SpiralLab.Sirius2.Winforms.IView,System.Windows.Forms.Keys,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity[]@)">
             <summary>
-            Hit testing for <c>IDocument</c>
+            Hittest(or intersect test) for <c>IEntity</c> at <c>IDocument</c>
             </summary>
+            <remarks>
+            Used with pixel coordinate system(px). <br/>
+            </remarks>
             <param name="view"><c>IView</c></param>
             <param name="keys">SHIFT:merge(+), CTRL:toggle(-,+), ALT:exclude(-)</param>
-            <param name="mousePosition">Mouse click location</param>
-            <returns>Counts of selected <c>IEntity</c></returns>
+            <param name="mousePosition">Clicked mouse location (pixel) </param>
+            <param name="hittedEntities">Array of <c>IEntity</c> if success to hit</param>
+            <returns>Success to hit or not</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActHitTest(SpiralLab.Sirius2.Winforms.IView,System.Windows.Forms.Keys,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity[]@)">
+            <summary>
+            Hittest(or intersect test) for <c>IEntity</c> at <c>IDocument</c>
+            </summary>
+            <remarks>
+            Used with x,y coordinate system at Z=0 plane(mm). <br/>
+            </remarks>
+            <param name="view"><c>IView</c></param>
+            <param name="keys">SHIFT:merge(+), CTRL:toggle(-,+), ALT:exclude(-)</param>
+            <param name="start">Started location (mm)</param>
+            <param name="end">Ended(or current) location (mm)</param>
+            <param name="hittedEntities">Array of <c>IEntity</c> if success to hit</param>
+            <returns>Success to hit or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActTransit(SpiralLab.Sirius2.Winforms.Entity.IEntity[],OpenTK.Vector3)">
             <summary>
@@ -9986,6 +10203,11 @@
             Activated(or current) <c>EntityLayer</c>
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.DocumentBase.View">
+            <summary>
+            Assigned <c>IView</c> 
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.DocumentBase.IsModified">
             <inheritdoc/>
         </member>
@@ -10054,6 +10276,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActHatch(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActExtractPolylines(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D[]@)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActExpand(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Double)">
             <inheritdoc/>
         </member>
@@ -10081,7 +10306,10 @@
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActTransit(SpiralLab.Sirius2.Winforms.Entity.IEntity[],OpenTK.Vector3)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActHitTest(SpiralLab.Sirius2.Winforms.IView,System.Windows.Forms.Keys,System.Drawing.Point)">
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActHitTest(SpiralLab.Sirius2.Winforms.IView,System.Windows.Forms.Keys,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity[]@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActHitTest(SpiralLab.Sirius2.Winforms.IView,System.Windows.Forms.Keys,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity[]@)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActPropertyChanged(SpiralLab.Sirius2.Winforms.Entity.IEntity[],System.String,System.Object,System.Object)">
@@ -10127,7 +10355,7 @@
             <param name="entityName"></param>
             <param name="entity"></param>
             <param name="foundedEntity"></param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.FindByType(System.Type,SpiralLab.Sirius2.Winforms.Entity.IEntity[]@)">
             <inheritdoc/>
@@ -10139,7 +10367,7 @@
             <param name="entityType"></param>
             <param name="entity"></param>
             <param name="foundedEntities"></param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.FindBlockByName(System.String,SpiralLab.Sirius2.Winforms.Entity.EntityBlock@)">
             <inheritdoc/>
@@ -10184,7 +10412,7 @@
             </summary>
             <param name="fileName">Filename</param>
             <param name="document">IDocument interface</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.SaveSirius(System.String,SpiralLab.Sirius2.Winforms.IDocument)">
             <summary>
@@ -10192,7 +10420,7 @@
             </summary>
             <param name="fileName">Filename</param>
             <param name="document"><c>IDocument</c></param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.OpenDxf(System.String,SpiralLab.Sirius2.Winforms.IDocument)">
             <summary>
@@ -10200,7 +10428,7 @@
             </summary>
             <param name="fileName">Filename</param>
             <param name="document"><c>IDocument</c></param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.BeforeOpen(SpiralLab.Sirius2.Winforms.IDocument)">
             <summary>
@@ -10229,7 +10457,7 @@
             </remarks>
             <param name="fileName">Filename</param>
             <param name="dxfEntity"><c>EntityGroup</c></param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.ImportHpgl(System.String,SpiralLab.Sirius2.Winforms.Entity.EntityGroup@)">
             <summary>
@@ -10240,7 +10468,7 @@
             </remarks>
             <param name="fileName">Filename</param>
             <param name="pltEntity"><c>EntityGroup</c></param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.controlbase">
             <summary>
@@ -12598,6 +12826,11 @@
             <c>IRtc</c>
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.EditorUserControl.Renderer">
+            <summary>
+            GL control
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.EditorUserControl.#ctor">
             <summary>
             Constructor
@@ -12722,6 +12955,15 @@
             <summary>
             Constructor
             </summary>
+            <remarks>
+            Create devices likes as <c>IRtc</c>, <c>ILaser</c> and <c>IMarker</c> and assign. <br/>
+            DIO devices likes as <c>DInput</c>s, <c>DInput</c>s are created when assign <c>IRtc</c> by automatically. <br/>
+            Create <c>IMarker</c> and assign. <br/>
+            <c>IDocument</c> is created by automatically. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.OnLoad(System.EventArgs)">
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DoRender">
             <summary>
@@ -12949,9 +13191,14 @@
             Render time (msec)
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.IView.IsRenderDragging">
+        <member name="P:SpiralLab.Sirius2.Winforms.IView.IsRubberBanding">
             <summary>
-            Is dragging entities or not
+            Is render for rubber banding rectangle or not
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.IView.IsDragging">
+            <summary>
+            Is render for dragging entities or not
             </summary>
             <remarks>
             Used by internally
@@ -12974,6 +13221,14 @@
             <summary>
             User data
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IView.MakeCurrent">
+            <summary>
+            Make render as current 
+            </summary>
+            <remarks>
+            Used with multiple <c>IView</c> only. <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IView.Render">
             <summary>
@@ -13116,10 +13371,18 @@
             Shader Lightning
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ViewBase.IsRenderDragging">
+        <member name="P:SpiralLab.Sirius2.Winforms.ViewBase.IsRubberBanding">
             <inheritdoc/>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ViewBase.IsRenderDraggingTest">
+        <member name="P:SpiralLab.Sirius2.Winforms.ViewBase.IsRubberBandingTest">
+            <summary>
+            Is rubber banding test has started or not
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ViewBase.IsDragging">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ViewBase.IsDraggingTest">
             <summary>
             Is dragging test has started or not
             </summary>
@@ -13172,6 +13435,12 @@
         <member name="M:SpiralLab.Sirius2.Winforms.ViewBase.OnResized(System.Object,System.EventArgs)">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.ViewBase.IsPressedAnyModifierKeys">
+            <summary>
+            Is pressed keys like as combination of CTRL, SHIFT, ALT
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.ViewBase.OnMouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
             <inheritdoc/>
         </member>
@@ -13196,6 +13465,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.ViewBase.OnKeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.ViewBase.MakeCurrent">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.ViewBase.Render">
             <inheritdoc/>
         </member>
@@ -13215,12 +13487,6 @@
             As perspective projection
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.ViewBase.DrawBoundingBox(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
-            <summary>
-            Draw bounding box
-            </summary>
-            <param name="entity"></param>
-        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.ViewBase.DrawAxes(OpenTK.Matrix4,System.Single)">
             <summary>
             Draw x,y,z axes at assigned model matrix
@@ -13232,6 +13498,12 @@
             <summary>
             Draw dragging entities
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.ViewBase.DrawBoundingBox(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
+            <summary>
+            Draw bounding box
+            </summary>
+            <param name="entity"><c>IEntity</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.ViewBase.DrawLayers">
             <summary>

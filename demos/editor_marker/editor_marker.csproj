@@ -69,6 +69,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\editor_entity\helper.cs">
+      <Link>helper.cs</Link>
+    </Compile>
     <Compile Include="..\editor_entity\nativemethods.cs">
       <Link>nativemethods.cs</Link>
     </Compile>

@@ -417,10 +417,10 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             rtc.MatrixStack = oldMatrixStack;
             this.TimeSpan = DateTime.Now - dtStarted;
             this.isInternalBusy = false;
+            this.NotifyEnded(success);
             if (success)
             {
                 Logger.Log(Logger.Type.Debug, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
-                this.NotifyFinished();
             }
             else
             {

@@ -68,17 +68,21 @@ namespace Demos
         public virtual bool IsExternalStart
         {
             get { return isExternalStart; }
-            set
-            {
+            set {
+                if (this.IsBusy)
+                {
+                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to set external start during busy");
+                    return;
+                }
                 isExternalStart = value;
                 if (isExternalStart)
                 {
-                    ListType = ListType.Single;
+                    listType = ListType.Single;
                     if (1 != this.Document.InternalData.Layers.Count)
-                        MessageBox.Show("Should be single layer only to use external /START", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"Should be single layer only to use external /START", "Warning", MessageBoxButtons.OK);
                 }
                 else
-                    ListType = ListType.Auto;
+                    listType = ListType.Auto;
             }
         }
         private bool isExternalStart = false;
@@ -92,7 +96,19 @@ namespace Demos
         [Category("Data")]
         [DisplayName("List type")]
         [Description("List type")]
-        public virtual ListType ListType { get; set; }
+        public virtual ListType ListType
+        {
+            get { return listType; }
+            set {
+                if (this.IsBusy)
+                {
+                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to set list type during busy");
+                    return;
+                }
+                listType = value;
+            }
+        }
+        private ListType listType;
 
         /// <summary>
         /// EntityMeasurementBegin (if executed)
@@ -108,7 +124,6 @@ namespace Demos
             get { return sessionQueue.ToArray(); }            
         }
         protected ConcurrentQueue<MeasurementSession> sessionQueue = new ConcurrentQueue<MeasurementSession>();
-
         /// <summary>
         /// Current (or last measurement session)
         /// Assigned by <c>EntityMeasurementBegin</c>
@@ -138,7 +153,6 @@ namespace Demos
             } 
         }
         protected bool isMeasurementPlot;
-
 
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
@@ -329,20 +343,6 @@ namespace Demos
                 return false;
             }
 
-            if (null == Offsets || 0 == Offsets.Length)
-                this.Offsets = new Offset[1] { Offset.Zero };
-
-            // Reset to start
-            this.CurrentPenColor = Color.Transparent;
-
-            // Reset measurement session
-            this.CurrentSession = null;
-
-            if (IsExternalStart)
-                Logger.Log(Logger.Type.Warn, $"marker [{Index}]: trying to start mark by external trigger with {this.Offsets.Length} offsets");
-            else
-                Logger.Log(Logger.Type.Warn, $"marker [{Index}]: trying to start mark with {this.Offsets.Length} offsets");
-
             if (null != thread)
             {
                 if (!this.thread.Join(500))
@@ -352,25 +352,51 @@ namespace Demos
                 }
             }
 
-            // if ITextRegisterable entity has regened(or modified), it should be re-registered.
-            // Here is re-register every time by forcily for example.
-            RegisterCharacterSet();
+            if (IsExternalStart)
+            {
+                // Should be exist only single layer for External /START 
+                if (Document.InternalData.Layers.Count != 1)
+                {
+                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: should be single layer only for external /START");
+                    return false;
+                }
+                // list type to single for external /START by forcily 
+                listType = ListType.Single;
+            }
 
-            // Clear queue
-            while (sessionQueue.Count > 0) 
+            if (null == Offsets || 0 == Offsets.Length)
+                this.Offsets = new Offset[1] { Offset.Zero };
+
+            // Reset current(or last) pen color
+            this.CurrentPenColor = Color.Transparent;
+
+            // Reset measurement session
+            this.CurrentSession = null;
+
+            // Clear measurement session queue
+            while (sessionQueue.Count > 0)
                 sessionQueue.TryDequeue(out var dummy);
+
+            // Register text if regened(or modified)
+            RegisterCharacterSet();
 
             // Shallow copy for cross-thread issue
             layers = new List<EntityLayer>(Document.InternalData.Layers);
-            
+
             CurrentOffsetIndex = 0;
             CurrentLayerIndex = 0;
             CurrentLayer = null;
             CurrentEntityIndex = 0;
             CurrentEntity = null;
             AccumulatedMarks++;
+
+            if (IsExternalStart)
+                Logger.Log(Logger.Type.Warn, $"marker [{Index}]: trying to start mark by external trigger with {this.Offsets.Length} offsets");
+            else
+                Logger.Log(Logger.Type.Warn, $"marker [{Index}]: trying to start mark with {this.Offsets.Length} offsets");
+
             this.thread = new Thread(this.MarkerThread);
-            this.thread.Name = $"MyMarker: {this.Name}";
+            this.thread.Name = $"Marker: {this.Name}";
             this.thread.Start();
             return true;
 
@@ -399,7 +425,8 @@ namespace Demos
                     {
                         success = false;
                         Logger.Log(Logger.Type.Error, $"marker [{Index}]: waiting for stop but timed out");
-                        break; //Timed out
+                        // Timed out
+                        break;
                     }
                 }
                 while (true);
@@ -421,6 +448,7 @@ namespace Demos
                     success = rtcExtension.CtlExternalControl(extMode);
                 }
             }
+
             this.isInternalBusy = false;
             return success;
         }
@@ -437,7 +465,7 @@ namespace Demos
         }
 
         /// <summary>
-        /// Marker thread for marking 
+        /// Marker thread
         /// </summary>
         protected virtual void MarkerThread()
         {
@@ -455,19 +483,11 @@ namespace Demos
             Debug.Assert(document != null);
             Debug.Assert(null == rtcSyncAxis);
 
-            this.isInternalBusy = true;
             this.NotifyStarted();
-            var dtStarted = DateTime.Now;            
+            var dtStarted = DateTime.Now;
             bool success = true;
 
-            if (IsExternalStart)
-            {
-                // Set to list type to single by forcily if external /START used 
-                ListType = ListType.Single;
-                // Should be exist only single layer for External /START 
-                Debug.Assert(document.InternalData.Layers.Count == 1); 
-            }
-
+            this.isInternalBusy = true;
             var oldMatrixStack = (IMatrixStack<System.Numerics.Matrix4x4>)rtc.MatrixStack.Clone();
             if (null != rtcMoF)
             {
@@ -482,7 +502,7 @@ namespace Demos
 
             for (int i = 0; i < Offsets.Length; i++)
             {
-                Logger.Log(Logger.Type.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i]}");
+                Logger.Log(Logger.Type.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
                 rtc.MatrixStack.Push(Offsets[i].ToMatrix);
                 CurrentOffsetIndex = i;
                 foreach (var layer in layers)
@@ -572,22 +592,27 @@ namespace Demos
                 }
             }
 
+            //if (null != rtc3D)
+            //{
+            //    if (rtc.Is3D && this.IsZDefocusOrigin)
+            //        rtc3D.ZDefocus = 0;
+            //}
+
             rtc.MatrixStack = oldMatrixStack;
             this.TimeSpan = DateTime.Now - dtStarted;
             this.isInternalBusy = false;
             if (!IsExternalStart)
             {
+                this.NotifyEnded(success);
                 if (success)
                 {
                     Logger.Log(Logger.Type.Info, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
-                    this.NotifyFinished();
                     if (this.IsMeasurementPlot)
                         this.NotifyPlot();
                 }
                 else
                 {
                     Logger.Log(Logger.Type.Error, $"marker [{Index}]: mark has failed with {this.TimeSpan.TotalSeconds:F3}s");
-                    this.NotifyFailed();
                 }
             }
             else
@@ -621,6 +646,7 @@ namespace Demos
         /// </summary>
         protected void NotifyPlot()
         {
+            // Plot as a graph
             foreach (var session in sessionQueue)
                 session.Plot();
         }

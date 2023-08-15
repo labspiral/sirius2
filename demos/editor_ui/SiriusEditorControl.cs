@@ -224,8 +224,7 @@ namespace Demos
                 if (marker != null)
                 {
                     marker.OnStarted -= Marker_OnStarted;
-                    marker.OnFinished -= Marker_OnFinished;
-                    marker.OnFailed -= Marker_OnFailed;
+                    marker.OnEnded -= Marker_OnEnded;
                 }
 
                 marker = value;
@@ -236,8 +235,7 @@ namespace Demos
                 if (marker != null)
                 {
                     marker.OnStarted += Marker_OnStarted;
-                    marker.OnFinished += Marker_OnFinished;
-                    marker.OnFailed += Marker_OnFailed;
+                    marker.OnEnded += Marker_OnEnded;
                 }
             }
         }
@@ -416,8 +414,11 @@ namespace Demos
             TreeViewBlockCtrl.View = EditorCtrl.View;
             PropertyGridCtrl.View = EditorCtrl.View;
 
-            //create one by default
+            // Create one by default
             this.Document = new DocumentBase();
+
+            // New document by default
+            Document.ActNew();
         }
 
         private void BtnSiriusCharacterSetText_Click(object sender, EventArgs e)
@@ -651,7 +652,6 @@ namespace Demos
 
         private void SiriusEditorUserControl_Load(object sender, EventArgs e)
         {
-            Document.ActNew();
             timerStatus.Enabled = true;
         }
 
@@ -999,32 +999,25 @@ namespace Demos
 
             }));
         }
-        private void Marker_OnFinished(IMarker marker, TimeSpan ts)
+        private void Marker_OnEnded(IMarker marker, bool success, TimeSpan ts)
         {
             this.Invoke(new MethodInvoker(delegate ()
             {
                 timerProgressStopwatch.Stop();
                 timerProgress.Stop();
-                lblProcessTime.ForeColor = statusStrip1.ForeColor;
-                lblProcessTime.Text = $"Marked: {ts.TotalSeconds:F1} sec";
-
-                EnableDisableControlByMarking(true);
-            }));
-
-        }
-        private void Marker_OnFailed(IMarker marker, TimeSpan ts)
-        {
-            this.Invoke(new MethodInvoker(delegate ()
-            {
-                timerProgressStopwatch.Stop();
-                timerProgress.Stop();
-                lblProcessTime.ForeColor = Color.Red;
-                lblProcessTime.Text = $"Failed: {ts.TotalSeconds:F1} sec";
-
+                if (success)
+                {
+                    lblProcessTime.ForeColor = statusStrip1.ForeColor;
+                    lblProcessTime.Text = $"Marked: {ts.TotalSeconds:F1} sec";
+                }
+                else
+                {
+                    lblProcessTime.ForeColor = Color.Red;
+                    lblProcessTime.Text = $"Failed: {ts.TotalSeconds:F1} sec";
+                }
                 EnableDisableControlByMarking(true);
             }));
         }
-
         /// <summary>
         /// Do <c>IView</c> render
         /// </summary>

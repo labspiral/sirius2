@@ -286,10 +286,11 @@
         </member>
         <member name="E:SpiralLab.Sirius2.Config.OnLogged">
             <summary>
-            Event handler for log message
+            Event for log message
             </summary>
             <remarks>
-            User can register event handler for log events
+            User can register event handler for log messages. <br/>
+            Event will be fired when logged messages. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Config.NotifyLogMessage(SpiralLab.Sirius2.Logger.Type,System.String)">
@@ -972,14 +973,22 @@
             Factory for create <c>DInput</c> or <c>DOutput</c> instances
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.IO.IOFactory.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
         <member name="M:SpiralLab.Sirius2.IO.IOFactory.CreateVirtualInput(System.Int32)">
             <summary>
             Create <c>DInputVirtual</c>
+            <code>
+            var dInput = IOFactory.CreateVirtualInput(0);
+            ...
+            do
+            {
+                dInput.Update();
+                if (dInput.IsAOn(0))
+                {
+                    // To do when 0bit goes to HIGH
+                }
+                ...
+            }while(true);
+            </code>
             </summary>
             <param name="index">Identifier (0,1,2,3, ...)</param>
             <returns><c>DInputVirtual</c></returns>
@@ -987,6 +996,19 @@
         <member name="M:SpiralLab.Sirius2.IO.IOFactory.CreateInputExtension1(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
             <summary>
             Create <c>RtcDInputExtension1Port</c>
+            <code>
+            var dInput = IOFactory.CreateInputExtension1(0);
+            ...
+            do
+            {
+                dInput.Update();
+                if (dInput.IsAOn(0))
+                {
+                    // To do when 0bit goes to HIGH
+                }
+                ...
+            }while(true);
+            </code>
             </summary>
             <remarks>
             Digital Input at RTC Extension Port1 (<c>ExtensionChannel.ExtDI16</c>)
@@ -997,6 +1019,19 @@
         <member name="M:SpiralLab.Sirius2.IO.IOFactory.CreateInputLaserPort(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
             <summary>
             Create <c>RtcDInputLaserPort</c>
+            <code>
+            var dInput = IOFactory.CreateInputLaserPort(0);
+            ...
+            do
+            {
+                dInput.Update();
+                if (dInput.IsAOn(0))
+                {
+                    // To do when 0bit goes to HIGH
+                }
+                ...
+            }while(true);
+            </code>
             </summary>
             <param name="rtc"><c>IRtc</c></param>
             <remarks>
@@ -1007,6 +1042,22 @@
         <member name="M:SpiralLab.Sirius2.IO.IOFactory.CreateVirtualOutput(System.Int32)">
             <summary>
             Create <c>DOutputVirtual</c>
+            <code>
+            var dInput = IOFactory.Create...
+            var dOutput = IOFactory.CreateVirtualOutput(0);
+            ...
+            do
+            {
+                dInput.Update();
+                if (dInput.IsAOn(0))
+                {
+                    // Set 0 output bit goes to HIGH
+                    dOutput.OutOn(0);
+                }
+                ...
+                dOutput.Update();
+            }while(true);
+            </code>
             </summary>
             <param name="index">Identifier (0,1,2,3, ...)</param>
             <returns><c>DOutputVirtual</c></returns>
@@ -1014,6 +1065,22 @@
         <member name="M:SpiralLab.Sirius2.IO.IOFactory.CreateOutputExtension1(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
             <summary>
             Create <c>RtcDOutputExtension1Port</c>
+            <code>
+            var dInput = IOFactory.Create...
+            var dOutput = IOFactory.CreateOutputExtension1(0);
+            ...
+            do
+            {
+                dInput.Update();
+                if (dInput.IsAOn(0))
+                {
+                    // Set 0 output bit goes to HIGH
+                    dOutput.OutOn(0);
+                }
+                ...
+                dOutput.Update();
+            }while(true);
+            </code>
             </summary>
             <param name="rtc"><c>IRtc</c></param>
             <remarks>
@@ -1024,6 +1091,22 @@
         <member name="M:SpiralLab.Sirius2.IO.IOFactory.CreateOutputExtension2(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
             <summary>
             Create <c>RtcDOutputExtension2Port</c>
+            <code>
+            var dInput = IOFactory.Create...
+            var dOutput = IOFactory.CreateOutputExtension2(0);
+            ...
+            do
+            {
+                dInput.Update();
+                if (dInput.IsAOn(0))
+                {
+                    // Set 0 output bit goes to HIGH
+                    dOutput.OutOn(0);
+                }
+                ...
+                dOutput.Update();
+            }while(true);
+            </code>
             </summary>
             <param name="rtc"><c>IRtc</c></param>
             <remarks>
@@ -1031,16 +1114,7 @@
             </remarks>
             <returns><c>RtcDOutputExtension2Port</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.IO.IOFactory.CreateOutputLaserPort(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
-            <summary>
-            Create <c>RtcDOutputLaserPort</c>
-            </summary>
-            <param name="rtc"><c>IRtc</c></param>
-            <remarks>
-            Digital Output at RTC Laser Port 2Pin (<c>ExtensionChannel.ExtDO2</c>)
-            </remarks>
-            <returns><c>RtcDOutputLaserPort</c></returns>
-        </member>
+        <!-- Badly formed XML comment ignored for member "M:SpiralLab.Sirius2.IO.IOFactory.CreateOutputLaserPort(SpiralLab.Sirius2.Scanner.Rtc.IRtc)" -->
         <member name="T:SpiralLab.Sirius2.IO.RtcDInputExtension1Port">
             <summary>
             DInput RTC Extension1 Port
@@ -1486,14 +1560,19 @@
             Factory for create <c>ILaser</c> instances
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtual(System.Int32,System.Double,SpiralLab.Sirius2.Laser.PowerControlMethod)">
             <summary>
             Create virtual laser source
+            <code>
+            var rtc = ScannerFactory.Create...
+            ...
+            float maxPowerWatt = 20;
+            var laser = LaserFactory.CreateVirtual(0, maxPowerWatt);
+            laser.Scanner = rtc;
+            bool success = true;
+            success &amp;= laser.Initialize();
+            success &amp;= laser.CtlPower(2);
+            </code>
             </summary>
             <param name="index">Identifier (0,1,2,...)</param>
             <param name="maxPowerWatt">Max power (W)</param>
@@ -1503,6 +1582,20 @@
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualAnalog(System.Int32,System.Double,System.Int32,System.Double,System.Double)">
             <summary>
             Create laser source by analog voltage output
+            <code>
+            var rtc = ScannerFactory.Create...
+            ...
+            float maxPowerWatt = 20;
+            int analogCh = 1;
+            // For example 0W(0V) ~ 20W(10V)
+            float minVoltage = 0;
+            float maxVoltage = 10;
+            var laser = LaserFactory.CreateVirtualAnalog(0, maxPowerWatt, analogCh, minVoltage, maxVoltage);
+            laser.Scanner = rtc;
+            bool success = true;
+            success &amp;= laser.Initialize();
+            success &amp;= laser.CtlPower(2);
+            </code>
             </summary>
             <remarks>
             Fixed with <c>PowerControlMethod.Analog</c>
@@ -1517,6 +1610,19 @@
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualFrequency(System.Int32,System.Double,System.Double,System.Double)">
             <summary>
             Create laser source by frequency output 
+            <code>
+            var rtc = ScannerFactory.Create...
+            ...
+            float maxPowerWatt = 20;
+            // For example 0W(50KHz) ~ 20W(100KHz)
+            float minFrequency = 50*1000;
+            float maxFrequency = 100*1000;
+            var laser = LaserFactory.CreateVirtualAnalog(0, maxPowerWatt, minFrequency, maxFrequency);
+            laser.Scanner = rtc;
+            bool success = true;
+            success &amp;= laser.Initialize();
+            success &amp;= laser.CtlPower(2);
+            </code>
             </summary>
             <remarks>
             Fixed with <c>PowerControlMethod.Frequency</c>
@@ -1530,6 +1636,20 @@
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualDutyCycle(System.Int32,System.Double,System.Double,System.Double)">
             <summary>
             Create laser source by pulse width output
+            <code>
+            var rtc = ScannerFactory.Create...
+            ...
+            float maxPowerWatt = 20;
+            // For example 0W(0%) ~ 20W(99%)
+            // If output frequency is 50Khz, 0W(0usec) ~ 20W( 1.8usec= 20usec * 0.9)
+            float minDutyCycle = 0;
+            float maxDutyCycle = 90;
+            var laser = LaserFactory.CreateVirtualDutyCycle(0, maxPowerWatt, minDutyCycle, maxDutyCycle);
+            laser.Scanner = rtc;
+            bool success = true;
+            success &amp;= laser.Initialize();
+            success &amp;= laser.CtlPower(2);
+            </code>
             </summary>
             <remarks>
             Fixed with <c>PowerControlMethod.DutyCycle</c>
@@ -1543,6 +1663,19 @@
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualDO16Bits(System.Int32,System.Double,System.UInt16,System.UInt16)">
             <summary>
             Create laser source by extension1 port with digital 16bits output
+            <code>
+            var rtc = ScannerFactory.Create...
+            ...
+            float maxPowerWatt = 20;
+            // For example 0W(0x00) ~ 20W(0xFFFF)
+            float minBits = 0;
+            float maxBits = 65535;
+            var laser = LaserFactory.CreateVirtualDO16Bits(0, maxPowerWatt, minBits, maxBits);
+            laser.Scanner = rtc;
+            bool success = true;
+            success &amp;= laser.Initialize();
+            success &amp;= laser.CtlPower(2);
+            </code>
             </summary>
             <remarks>
             Fixed with <c>PowerControlMethod.DigitalBits</c>
@@ -1557,6 +1690,19 @@
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualDO8Bits(System.Int32,System.Double,System.UInt16,System.UInt16)">
             <summary>
             Create laser source by extension2 port with digital 8bits output
+            <code>
+            var rtc = ScannerFactory.Create...
+            ...
+            float maxPowerWatt = 20;
+            // For example 0W(0x00) ~ 20W(0xFF)
+            float minBits = 0;
+            float maxBits = 255;
+            var laser = LaserFactory.CreateVirtualDO8Bits(0, maxPowerWatt, minBits, maxBits);
+            laser.Scanner = rtc;
+            bool success = true;
+            success &amp;= laser.Initialize();
+            success &amp;= laser.CtlPower(2);
+            </code>
             </summary>
             <remarks>
             Fixed with <c>PowerControlMethod.DigitalBits</c>
@@ -1571,16 +1717,28 @@
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualRS232(System.Int32,System.Double,System.String)">
             <summary>
             Create laser source by RS232 communication at RTC card
+            <code>
+            var rtc = ScannerFactory.Create...
+            ...
+            float maxPowerWatt = 20;
+            // For example 0W("0.000") ~ 20W("10.000")
+            string format = "{0:F3}";
+            var laser = LaserFactory.CreateVirtualRS232(0, maxPowerWatt, format);
+            laser.Scanner = rtc;
+            bool success = true;
+            success &amp;= laser.Initialize();
+            success &amp;= laser.CtlPower(2);
+            </code>
             </summary>
             <remarks>
-            Warning : Used RS232 port at RTC card.
-            Fixed with <c>PowerControlMethod.Rs232</c>.
-            Converted and transmitted data as <c>string.Format(Rs232StringFormat, percentage)</c>.
-            For example: "{0:F3}".
+            Warning : Used RS232 port at internal RTC card. <br/>
+            Fixed with <c>PowerControlMethod.Rs232</c>. <br/>
+            Converted and transmitted data as <c>string.Format(Rs232StringFormat, percentage)</c>. <br/>
+            Argument value is fixed to percentage value. For example, "{0:F3}" is means "{percentage:F3}". <br/>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
             <param name="maxPowerWatt">Max power (W)</param>
-            <param name="format">String format for rs232 communication</param>
+            <param name="format">Formatted string</param>
             <returns><c>LaserVirtual</c></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.LaserBase">
@@ -2679,16 +2837,18 @@
             ScannerFactory
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.ScannerFactory.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.ScannerFactory.CreateVirtual(System.Int32,System.Double,System.String)">
             <summary>
             Create virtual controller
+            <code>
+            var fov = 100.0f;
+            var kFactor = Math.Pow(2, 20) / fov;
+            var correctionFile = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, "cor_1to1.ct5");
+            var rtc = ScannerFactory.CreateVirtual(0, kFactor, correctionFile);
+            bool success = rtc.Initialize();
+            </code>
             </summary>
-            <param name="index">Controller identifier (0,1,2,...)</param>
+            <param name="index">Controller index (0,1,2,...)</param>
             <param name="kFactor">K-Factor (bits/mm)</param>
             <param name="ctFileName">Field correction file at Table1</param>
             <returns><c>RtcVirtual</c></returns>
@@ -2696,8 +2856,15 @@
         <member name="M:SpiralLab.Sirius2.Scanner.ScannerFactory.CreateRtc5(System.Int32,System.Double,SpiralLab.Sirius2.Scanner.Rtc.LaserMode,SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevel,SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevel,System.String)">
             <summary>
             Create SCANLAB's RTC5 controller
+            <code>
+            var fov = 100.0f;
+            var kFactor = Math.Pow(2, 20) / fov;
+            var correctionFile = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, "cor_1to1.ct5");
+            var rtc = ScannerFactory.CreateRtc5(0, kFactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            bool success = rtc.Initialize();
+            </code>
             </summary>
-            <param name="index">RTC Controller identifier (0,1,2,...)</param>
+            <param name="index">RTC Controller index (0,1,2,...)</param>
             <param name="kFactor">K-Factor (bits/mm)</param>
             <param name="laserMode"><c>LaserMode</c></param>
             <param name="laser12SignalLevel"><c>RtcSignalLevel</c></param>
@@ -2708,8 +2875,15 @@
         <member name="M:SpiralLab.Sirius2.Scanner.ScannerFactory.CreateRtc6(System.Int32,System.Double,SpiralLab.Sirius2.Scanner.Rtc.LaserMode,SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevel,SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevel,System.String)">
             <summary>
             Create SCANLAB's RTC6 controller
+            <code>
+            var fov = 100.0f;
+            var kFactor = Math.Pow(2, 20) / fov;
+            var correctionFile = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, "cor_1to1.ct5");
+            var rtc = ScannerFactory.CreateRtc6(0, kFactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            bool success = rtc.Initialize();
+            </code>
             </summary>
-            <param name="index">RTC Controller identifier (0,1,2,...)</param>
+            <param name="index">RTC Controller index (0,1,2,...)</param>
             <param name="kFactor">K-Factor (bits/mm)</param>
             <param name="laserMode"><c>LaserMode</c></param>
             <param name="laser12SignalLevel"><c>RtcSignalLevel</c></param>
@@ -2720,8 +2894,15 @@
         <member name="M:SpiralLab.Sirius2.Scanner.ScannerFactory.CreateRtc6Ethernet(System.Int32,System.String,System.String,System.Double,SpiralLab.Sirius2.Scanner.Rtc.LaserMode,SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevel,SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevel,System.String)">
             <summary>
             Create SCANLAB's RTC6 ethernet controller
+            <code>
+            var fov = 100.0f;
+            var kFactor = Math.Pow(2, 20) / fov;
+            var correctionFile = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, "cor_1to1.ct5");
+            var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kFactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            bool success = rtc.Initialize();
+            </code>
             </summary>
-            <param name="index">RTC Controller identifier (0,1,2,...)</param>
+            <param name="index">RTC Controller index (0,1,2,...)</param>
             <param name="ipAddress">IP address</param>
             <param name="subNetMask">Subnet mask </param>
             <param name="kFactor">K-Factor (bits/mm)</param>
@@ -2734,8 +2915,13 @@
         <member name="M:SpiralLab.Sirius2.Scanner.ScannerFactory.CreateRtc6SyncAxis(System.Int32,System.String)">
             <summary>
             Create SCANLAB's XL-SCAN(RTC6 + syncAXIS) controller
+            <code>
+            string configXmlFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "syncAxis", "syncAXISConfig.xml");
+            var rtc = ScannerFactory.CreateRtc6SyncAxis(0, configXmlFileName);
+            bool success = rtc.Initialize();
+            </code>
             </summary>
-            <param name="index">Identifier (0,1,2,3, ...)</param>
+            <param name="index">Instance index (0,1,2,3, ...)</param>
             <param name="configXMLFile">Config XML filename</param>
             <returns><c>Rtc6SyncAxis</c></returns>
         </member>
@@ -3719,7 +3905,7 @@
             Check list buffer availability for flow control
             </summary>
             <param name="count">counts of list commands</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlHomePosition(System.Numerics.Vector2)">
             <inheritdoc/>  
@@ -3984,6 +4170,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListMoFCall(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.MaxCharacterSetCount">
+            <inheritdoc/>  
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CharacterSets">
             <inheritdoc/>  
         </member>
@@ -4013,7 +4202,7 @@
             List matrix and offset (2x2 matrix + offset + angle at each scanhead)
             </summary>
             <param name="matrix">4x4 matrix</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListText(System.String,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
             <inheritdoc/>  
@@ -5281,7 +5470,7 @@
             Check list buffer availability for flow control
             </summary>
             <param name="count">counts of list commands</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlHomePosition(System.Numerics.Vector2)">
             <inheritdoc/>  
@@ -5541,13 +5730,16 @@
             <para>List x,y (or rotate) MoF end</para>
             </summary>
             <param name="vJumpPosition">Jump x,y,z position (mm)</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMoFCall(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CharacterSets">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.MaxCharacterSetCount">
             <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CharacterSets">
+            <inheritdoc/> 
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSet,System.Object)">
             <inheritdoc/>  
@@ -5575,7 +5767,7 @@
             List matrix and offset (2x2 matrix + offset + angle at each scanhead)
             </summary>
             <param name="matrix">4x4 matrix</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListText(System.String,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
             <inheritdoc/>  
@@ -8398,7 +8590,7 @@
             Convert correction file by dat file
             </summary>
             <param name="datFileFullPath">Dat File</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection2D.Convert">
             <inheritdoc/>  
@@ -8419,7 +8611,7 @@
             <param name="inputCtReadMeFileName">README file of source(input) correction file (ctbName_ReadMe.txt or ct5Name_ct5_ReadMe.txt)</param>
             <param name="outputCtFileName">Target(Output) correction file</param>
             <param name="returnCode">Error code if failed</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection3D">
             <summary>
@@ -8524,13 +8716,13 @@
             Convert correction file by dat file
             </summary>
             <param name="datFileFullPath">DAT file</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection3D.InternalConvert">
             <summary>
             Convert from ct5 format
             </summary>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection3D.NotifyResult(System.Boolean)">
             <summary>
@@ -8991,7 +9183,7 @@
             Check list buffer availability for flow control
             </summary>
             <param name="count">counts of list commands</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlHomePosition(System.Numerics.Vector2)">
             <inheritdoc/>  
@@ -9251,9 +9443,12 @@
             <para>List x,y (or rotate) MoF end</para>
             </summary>
             <param name="vJumpPosition">Jump x,y,z position (mm)</param>
-            <returns>Success of failed</returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListMoFCall(System.UInt32,System.UInt32)">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.MaxCharacterSetCount">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CharacterSets">
@@ -10738,16 +10933,15 @@
             <para>Used RTC list3 buffer. above RTC5</para>
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.MaxCharacterSetCount">
+            <summary>
+            Max. character set counts
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CharacterSets">
             <summary>
-            Characterset key/value pairs.<br/>
-            <para>Created when assign(or download) character set into RTC buffer.</para>
+            Registered list of charactersets
             </summary>
-            <remarks>
-            Key: <c>CharacterSet</c> <br/>
-            Value: User data <br/>
-            Max size: 4 <br/>
-            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.IsDateTimeOffset">
             <summary>
