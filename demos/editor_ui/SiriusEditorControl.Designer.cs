@@ -46,8 +46,10 @@
             this.btnText = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImageText = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCircularText = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCharacterSetText = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSiriusText = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSiriusCharacterSetText = new System.Windows.Forms.ToolStripMenuItem();
             this.ddbBarcode = new System.Windows.Forms.ToolStripDropDownButton();
             this.mnuDataMatrix = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQRCode = new System.Windows.Forms.ToolStripMenuItem();
@@ -154,8 +156,7 @@
             this.penControl1 = new SpiralLab.Sirius2.Winforms.UI.PenUserControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.treeViewBlockControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl();
-            this.btnCharacterSetText = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSiriusCharacterSetText = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnZoomFit = new System.Windows.Forms.ToolStripButton();
             this.tlsTop2.SuspendLayout();
             this.tlsTop.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -375,6 +376,14 @@
             this.btnCircularText.Text = "Circular Text";
             this.btnCircularText.ToolTipText = "Circular Text";
             // 
+            // btnCharacterSetText
+            // 
+            this.btnCharacterSetText.Image = ((System.Drawing.Image)(resources.GetObject("btnCharacterSetText.Image")));
+            this.btnCharacterSetText.Name = "btnCharacterSetText";
+            this.btnCharacterSetText.Size = new System.Drawing.Size(213, 30);
+            this.btnCharacterSetText.Text = "CharacterSet Text";
+            this.btnCharacterSetText.ToolTipText = "CharacterSet Text";
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -387,6 +396,14 @@
             this.btnSiriusText.Size = new System.Drawing.Size(213, 30);
             this.btnSiriusText.Text = "Sirius Text";
             this.btnSiriusText.ToolTipText = "Sirius Text";
+            // 
+            // btnSiriusCharacterSetText
+            // 
+            this.btnSiriusCharacterSetText.Image = ((System.Drawing.Image)(resources.GetObject("btnSiriusCharacterSetText.Image")));
+            this.btnSiriusCharacterSetText.Name = "btnSiriusCharacterSetText";
+            this.btnSiriusCharacterSetText.Size = new System.Drawing.Size(213, 30);
+            this.btnSiriusCharacterSetText.Text = "Sirius CharacterSet Text";
+            this.btnSiriusCharacterSetText.ToolTipText = "Sirius CharacterSet Text";
             // 
             // ddbBarcode
             // 
@@ -651,6 +668,7 @@
             this.toolStripSeparator7,
             this.btnZoomOut,
             this.btnZoomIn,
+            this.btnZoomFit,
             this.toolStripSeparator9,
             this.btnDelete,
             this.toolStripSeparator10,
@@ -879,7 +897,7 @@
             this.toolStripStatusLabel11,
             this.toolStripStatusLabel3});
             this.statusStrip1.Location = new System.Drawing.Point(0, 769);
-            this.statusStrip1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.statusStrip1.Margin = new System.Windows.Forms.Padding(5);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1280, 31);
             this.statusStrip1.SizingGrip = false;
@@ -1150,7 +1168,7 @@
             this.tabPage6.ImageIndex = 17;
             this.tabPage6.Location = new System.Drawing.Point(4, 36);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(708, 529);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = " Editor ";
@@ -1175,8 +1193,8 @@
             this.tabPage8.ImageIndex = 25;
             this.tabPage8.Location = new System.Drawing.Point(4, 36);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage8.Size = new System.Drawing.Size(708, 552);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(708, 529);
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = " Laser ";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1195,7 +1213,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.laserControl1);
-            this.splitContainer2.Size = new System.Drawing.Size(702, 546);
+            this.splitContainer2.Size = new System.Drawing.Size(702, 523);
             this.splitContainer2.SplitterDistance = 350;
             this.splitContainer2.SplitterWidth = 2;
             this.splitContainer2.TabIndex = 3;
@@ -1208,7 +1226,7 @@
             this.rtcControl1.Margin = new System.Windows.Forms.Padding(0);
             this.rtcControl1.Name = "rtcControl1";
             this.rtcControl1.Rtc = null;
-            this.rtcControl1.Size = new System.Drawing.Size(350, 546);
+            this.rtcControl1.Size = new System.Drawing.Size(350, 523);
             this.rtcControl1.TabIndex = 3;
             // 
             // laserControl1
@@ -1219,7 +1237,7 @@
             this.laserControl1.Location = new System.Drawing.Point(0, 0);
             this.laserControl1.Margin = new System.Windows.Forms.Padding(0);
             this.laserControl1.Name = "laserControl1";
-            this.laserControl1.Size = new System.Drawing.Size(350, 546);
+            this.laserControl1.Size = new System.Drawing.Size(350, 523);
             this.laserControl1.TabIndex = 6;
             // 
             // tabPage5
@@ -1228,8 +1246,8 @@
             this.tabPage5.ImageIndex = 24;
             this.tabPage5.Location = new System.Drawing.Point(4, 36);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage5.Size = new System.Drawing.Size(708, 552);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(708, 529);
             this.tabPage5.TabIndex = 3;
             this.tabPage5.Text = " Marker ";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1248,7 +1266,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.markerControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(702, 546);
+            this.splitContainer1.Size = new System.Drawing.Size(702, 523);
             this.splitContainer1.SplitterDistance = 279;
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 1;
@@ -1261,7 +1279,7 @@
             this.offsetControl1.Margin = new System.Windows.Forms.Padding(0);
             this.offsetControl1.Marker = null;
             this.offsetControl1.Name = "offsetControl1";
-            this.offsetControl1.Size = new System.Drawing.Size(279, 546);
+            this.offsetControl1.Size = new System.Drawing.Size(279, 523);
             this.offsetControl1.TabIndex = 0;
             // 
             // markerControl1
@@ -1272,7 +1290,7 @@
             this.markerControl1.Margin = new System.Windows.Forms.Padding(0);
             this.markerControl1.Marker = null;
             this.markerControl1.Name = "markerControl1";
-            this.markerControl1.Size = new System.Drawing.Size(421, 546);
+            this.markerControl1.Size = new System.Drawing.Size(421, 523);
             this.markerControl1.TabIndex = 2;
             // 
             // tabPage9
@@ -1281,8 +1299,8 @@
             this.tabPage9.ImageIndex = 12;
             this.tabPage9.Location = new System.Drawing.Point(4, 36);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage9.Size = new System.Drawing.Size(708, 552);
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(708, 529);
             this.tabPage9.TabIndex = 4;
             this.tabPage9.Text = "DIO";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -1300,7 +1318,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.rtcDOUserControl1);
-            this.splitContainer4.Size = new System.Drawing.Size(702, 546);
+            this.splitContainer4.Size = new System.Drawing.Size(702, 523);
             this.splitContainer4.SplitterDistance = 319;
             this.splitContainer4.SplitterWidth = 2;
             this.splitContainer4.TabIndex = 0;
@@ -1315,7 +1333,7 @@
             this.rtcDIUserControl1.Margin = new System.Windows.Forms.Padding(0);
             this.rtcDIUserControl1.Name = "rtcDIUserControl1";
             this.rtcDIUserControl1.Rtc = null;
-            this.rtcDIUserControl1.Size = new System.Drawing.Size(319, 546);
+            this.rtcDIUserControl1.Size = new System.Drawing.Size(319, 523);
             this.rtcDIUserControl1.TabIndex = 0;
             // 
             // rtcDOUserControl1
@@ -1329,7 +1347,7 @@
             this.rtcDOUserControl1.Margin = new System.Windows.Forms.Padding(0);
             this.rtcDOUserControl1.Name = "rtcDOUserControl1";
             this.rtcDOUserControl1.Rtc = null;
-            this.rtcDOUserControl1.Size = new System.Drawing.Size(381, 546);
+            this.rtcDOUserControl1.Size = new System.Drawing.Size(381, 523);
             this.rtcDOUserControl1.TabIndex = 0;
             // 
             // logControl1
@@ -1374,7 +1392,7 @@
             this.tabPage4.ImageIndex = 16;
             this.tabPage4.Location = new System.Drawing.Point(4, 36);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(272, 666);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = " Property ";
@@ -1423,7 +1441,7 @@
             this.tabPage1.ImageIndex = 10;
             this.tabPage1.Location = new System.Drawing.Point(4, 36);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(272, 666);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = " Layer ";
@@ -1483,8 +1501,8 @@
             this.tabPage2.ImageIndex = 11;
             this.tabPage2.Location = new System.Drawing.Point(4, 36);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(272, 694);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(272, 666);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = " Block ";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1498,25 +1516,19 @@
             this.treeViewBlockControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.treeViewBlockControl1.Name = "treeViewBlockControl1";
             this.treeViewBlockControl1.Rtc = null;
-            this.treeViewBlockControl1.Size = new System.Drawing.Size(262, 684);
+            this.treeViewBlockControl1.Size = new System.Drawing.Size(262, 656);
             this.treeViewBlockControl1.TabIndex = 1;
             this.treeViewBlockControl1.View = null;
             // 
-            // btnCharacterSetText
+            // btnZoomFit
             // 
-            this.btnCharacterSetText.Image = ((System.Drawing.Image)(resources.GetObject("btnCharacterSetText.Image")));
-            this.btnCharacterSetText.Name = "btnCharacterSetText";
-            this.btnCharacterSetText.Size = new System.Drawing.Size(213, 30);
-            this.btnCharacterSetText.Text = "CharacterSet Text";
-            this.btnCharacterSetText.ToolTipText = "CharacterSet Text";
-            // 
-            // btnSiriusCharacterSetText
-            // 
-            this.btnSiriusCharacterSetText.Image = ((System.Drawing.Image)(resources.GetObject("btnSiriusCharacterSetText.Image")));
-            this.btnSiriusCharacterSetText.Name = "btnSiriusCharacterSetText";
-            this.btnSiriusCharacterSetText.Size = new System.Drawing.Size(213, 30);
-            this.btnSiriusCharacterSetText.Text = "Sirius CharacterSet Text";
-            this.btnSiriusCharacterSetText.ToolTipText = "Sirius CharacterSet Text";
+            this.btnZoomFit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnZoomFit.Image = ((System.Drawing.Image)(resources.GetObject("btnZoomFit.Image")));
+            this.btnZoomFit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnZoomFit.Name = "btnZoomFit";
+            this.btnZoomFit.Size = new System.Drawing.Size(28, 28);
+            this.btnZoomFit.Text = "Zoom Fit";
+            this.btnZoomFit.ToolTipText = "Zoom Fit";
             // 
             // SiriusEditorUserControl
             // 
@@ -1700,5 +1712,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnCircularText;
         private System.Windows.Forms.ToolStripMenuItem btnCharacterSetText;
         private System.Windows.Forms.ToolStripMenuItem btnSiriusCharacterSetText;
+        private System.Windows.Forms.ToolStripButton btnZoomFit;
     }
 }

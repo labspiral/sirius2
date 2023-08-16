@@ -278,7 +278,18 @@ namespace Demos
                 foreach (var entity in entities)
                 {
                     if (entity is ITextRegisterable textRegisterable)
-                        success &= TextRegisterHelper.Register(textRegisterable, this, out var dummy);
+                    {
+                        switch (this.MarkTarget)
+                        {
+                            case MarkTargets.All:
+                                success &= TextRegisterHelper.Register(textRegisterable, this, out var dummy1);
+                                break;
+                            case MarkTargets.Selected:
+                                if (entity.IsSelected)
+                                    success &= TextRegisterHelper.Register(textRegisterable, this, out var dummy2);
+                                break;
+                        }
+                    }
                 }
             }
             return success;

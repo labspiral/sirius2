@@ -16,7 +16,7 @@
  *               `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : SiriusEditor usercontrol
+ * Description : Custom SiriusEditor usercontrol
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -55,7 +55,7 @@ namespace Demos
     /// SiriusEditorUserControl
     /// </summary>
     /// <remarks>
-    /// Customizable editor
+    /// User can insert(or create) usercontrol at own winforms
     /// </remarks>
     public partial class SiriusEditorUserControl : Form
     {
@@ -76,6 +76,8 @@ namespace Demos
             get { return document; }
             protected set
             {
+                if (document == value)
+                    return;
                 if (document != null)
                 {
                     document.OnSelected -= Document_OnSelected;
@@ -87,7 +89,6 @@ namespace Demos
                         vb.Renderer.Paint -= Renderer_Paint;
                     }
                 }
-
                 document = value;
                 PropertyGridCtrl.Document = document;
                 PenCtrl.Document = document;
@@ -96,7 +97,6 @@ namespace Demos
                 EditorCtrl.Document = document;
                 //RtcControl
                 //LaserCOntrol
-
                 if (document != null)
                 {
                     document.OnSelected += Document_OnSelected;
@@ -121,6 +121,8 @@ namespace Demos
             get { return rtc; }
             set
             {
+                if (rtc == value)
+                    return;
                 if (rtc != null)
                 {
                     if (rtc is IRtcMoF mof)
@@ -200,7 +202,8 @@ namespace Demos
             get { return laser; }
             set
             {
-
+                if (laser == value)
+                    return;
                 laser = value;
                 laserControl1.Laser = laser;
                 if (null != laser)
@@ -347,12 +350,18 @@ namespace Demos
         /// <summary>
         /// Constructor
         /// </summary>
+        /// <remarks>
+        /// Create devices likes as <c>IRtc</c>, <c>ILaser</c> and <c>IMarker</c> and assign. <br/>
+        /// DIO devices likes as <c>DInput</c>s, <c>DInput</c>s are created when assign <c>IRtc</c> by automatically. <br/>
+        /// Create <c>IMarker</c> and assign. <br/>
+        /// <c>IDocument</c> is created by automatically. <br/>
+        /// </remarks>
         public SiriusEditorUserControl()
         {
             InitializeComponent();
 
-            this.Load += SiriusEditorUserControl_Load;
-            this.Disposed += SiriusEditorUserControl_Disposed;
+            Disposed += SiriusEditorUserControl_Disposed;
+            VisibleChanged += SiriusEditorUserControl_VisibleChanged;
 
             tabControl1.SelectedIndexChanged += TabControl1_SelectedIndexChanged;
             timerProgress.Interval = 100;
@@ -371,8 +380,9 @@ namespace Demos
             btnCut.Click += BtnCut_Click;
             btnPaste.Click += BtnPaste_Click;
             btnPasteArray.Click += BtnPasteArray_Click;
-            btnZoomOut.Click += BtnZoomOut_Click;
             btnZoomIn.Click += BtnZoomIn_Click;
+            btnZoomOut.Click += BtnZoomOut_Click;
+            btnZoomFit.Click += BtnZoomFit_Click;
             btnDelete.Click += BtnDelete_Click;
 
             btnLine.Click += BtnLine_Click;
@@ -410,15 +420,29 @@ namespace Demos
             mnuWriteData.Click += MnuWriteData_Click;
             mnuWriteDataExt16.Click += MnuWriteDataExt16_Click;
 
+            // Create one by default
+            this.Document = new DocumentBase();
+            // New document by default
+            Document.ActNew();
+        }
+
+        /// <inheritdoc/>
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            InternalOnLoad(e);
+        }
+        private void InternalOnLoad(EventArgs e)
+        {
             TreeViewCtrl.View = EditorCtrl.View;
             TreeViewBlockCtrl.View = EditorCtrl.View;
             PropertyGridCtrl.View = EditorCtrl.View;
 
-            // Create one by default
-            this.Document = new DocumentBase();
 
-            // New document by default
-            Document.ActNew();
+        }
+        private void SiriusEditorUserControl_VisibleChanged(object sender, EventArgs e)
+        {
+            timerStatus.Enabled = Visible;
         }
 
         private void BtnSiriusCharacterSetText_Click(object sender, EventArgs e)
@@ -512,6 +536,7 @@ namespace Demos
                     lblEncoder.Visible = false;
                     btnCharacterSetText.Enabled = false;
                     btnSiriusCharacterSetText.Enabled = false;
+                    //also, need to visibility for barcode cell with dots set to false
                     break;
             }
         }
@@ -537,6 +562,33 @@ namespace Demos
             }
             EditorCtrl.View.Render();
         }
+
+        ///// <summary>
+        ///// Short cut keys for F5, CTRL+F5, F6
+        ///// </summary>
+        ///// <param name="msg"></param>
+        ///// <param name="keyData"></param>
+        ///// <returns>ProcessCmdKey return</returns>
+        //protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        //{
+        //    if (keyData == (Keys.F5))
+        //    {
+        //        MarkerCtrl.BtnStart_Click(this, EventArgs.Empty);
+        //        return true;
+        //    }
+        //    else if (keyData == (Keys.Control | Keys.F5))
+        //    {
+        //        MarkerCtrl.BtnStop_Click(this, EventArgs.Empty);
+        //        return true;
+        //    }
+        //    else if (keyData == (Keys.F6))
+        //    {
+        //        MarkerCtrl.BtnReset_Click(this, EventArgs.Empty);
+        //        return true;
+        //    }
+
+        //    return base.ProcessCmdKey(ref msg, keyData);
+        //}
 
         private void MnuMarginBottom_Click(object sender, EventArgs e)
         {
@@ -650,13 +702,21 @@ namespace Demos
             document.ActAdd(entity);
         }
 
-        private void SiriusEditorUserControl_Load(object sender, EventArgs e)
-        {
-            timerStatus.Enabled = true;
-        }
 
         private void BtnImportFile_Click(object sender, EventArgs e)
         {
+            //var dlg = new OpenFileDialog();
+            //dlg.Filter = Config.FileImportModelFilters;
+            //dlg.Title = "Import Model File";
+            //dlg.InitialDirectory = SpiralLab.Sirius2.Winforms.Config.SamplePath;
+            //DialogResult result = dlg.ShowDialog();
+            //if (result != DialogResult.OK)
+            //    return;
+            //Cursor.Current = Cursors.WaitCursor;
+            //Document.ActImport(dlg.FileName, out var entity);
+            //Cursor.Current = Cursors.Default;
+
+            // or preview import winform
             var form = new SpiralLab.Sirius2.Winforms.UI.ImportForm();
             DialogResult dialogResult = form.ShowDialog(this);
             if (dialogResult != DialogResult.OK)
@@ -722,6 +782,17 @@ namespace Demos
         private void BtnZoomOut_Click(object sender, EventArgs e)
         {
             EditorCtrl.View.Camera.ZoomOut(Point.Empty);
+            DoRender();
+        }
+        private void BtnZoomFit_Click(object sender, EventArgs e)
+        {
+            if (0 == Document.Selected.Length)
+                EditorCtrl.View.Camera.Reset();
+            else
+            {
+                var bbox = BoundingBox.RealBoundingBox(Document.Selected);
+                EditorCtrl.View.Camera.ZoomFit(bbox);
+            }
             DoRender();
         }
 
@@ -830,6 +901,8 @@ namespace Demos
         }
         private void BtnOpen_Click(object sender, EventArgs e)
         {
+            if (Config.NotifyOpen(this))
+                return;
             var dlg = new OpenFileDialog();
             dlg.Filter = Config.FileOpenFilters;
             dlg.Title = "Open File";
@@ -843,7 +916,6 @@ namespace Demos
                 if (dialogResult != DialogResult.Yes)
                     return;
             }
-
             Cursor.Current = Cursors.WaitCursor;
             document.ActOpen(dlg.FileName);
             Cursor.Current = Cursors.Default;
@@ -851,6 +923,8 @@ namespace Demos
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
+            if (Config.NotifySave(this))
+                return;
             var dlg = new SaveFileDialog();
             dlg.Filter = Config.FileSaveFilters;
             dlg.Title = "Save File";

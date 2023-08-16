@@ -268,7 +268,7 @@
             Correction path
             </summary>
             <remarks>
-            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "correction")<br/>
+            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "correction") <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.IsLogEnable">
@@ -276,7 +276,7 @@
             Enable(or disable) logging
             </summary>
             <remarks>
-            Default: True
+            Default: True <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.IsLogToConsole">
@@ -305,7 +305,7 @@
             Log file path
             </summary>
             <remarks>
-            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "siriuslogs")
+            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "siriuslogs") <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.CorreXionProProgramPath">
@@ -313,7 +313,7 @@
             SCANLAB's CorreXionPro.exe program file path
             </summary>
             <remarks>
-            Default path: \<c>CorrectionPath</c>\CorreXionPro.exe
+            Default path: \<c>CorrectionPath</c>\CorreXionPro.exe <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.StretchCorreXion5ProgramPath">
@@ -321,7 +321,7 @@
             SCANLAB's StretchcorreXion5.exe program file path
             </summary>
             <remarks>
-            Default path: Path.Combine(CorrectionPath, "stretchcorreXion5.exe")
+            Default path: Path.Combine(CorrectionPath, "stretchcorreXion5.exe") <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.CorrectionFileCoverterProgramPath">
@@ -329,7 +329,7 @@
             SCANLAB's CorrectionFileConverter.exe program file path
             </summary>
             <remarks>
-            Default path: Path.Combine( CorrectionPath, "CorrectionFileConverter.exe")
+            Default path: Path.Combine( CorrectionPath, "CorrectionFileConverter.exe") <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.CalibrationLibraryActivationCode">
@@ -337,7 +337,7 @@
             SCANLAB's CalibrationLibrary activation code
             </summary>
             <remarks>
-            Please assign your activation keycode
+            Please assign your activation keycode. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.SyncAxisViewerProgramPath">
@@ -345,7 +345,7 @@
             SyncAxis viewer program file path
             </summary>
             <remarks>
-            Default path:  Path.Combine( AppDomain.CurrentDomain.BaseDirectory, "syncaxis", "Tools", "syncAXIS_Viewer", "syncAXIS_Viewer.exe")
+            Default path: Path.Combine( AppDomain.CurrentDomain.BaseDirectory, "syncaxis", "Tools", "syncAXIS_Viewer", "syncAXIS_Viewer.exe") <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.SyncAxisSimulateFilePath">
@@ -353,7 +353,7 @@
             SyncAxis simulation output file path
             </summary>
             <remarks>
-            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "siriuslogs")
+            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "siriuslogs") <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.MergeDistanceThreshold">
@@ -362,8 +362,8 @@
             <para>Default: 0.001 mm</para>
             </summary>
             <remarks>
-            Marks or jumps for same positions are cause unexpected poor(likes as burn-in effect) quality.
-            So supress(or eliminate) jumps for same positions for higher quality.
+            Marks or jumps for same positions are cause unexpected poor(likes as burn-in effect) quality. <br/>
+            So supress(or eliminate) jumps for same positions for higher quality. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.JumpModeLimitLength">
@@ -409,9 +409,9 @@
             gnuplot program file path
             </summary>
             <remarks>
-            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "gnuplot", "gnuplot.exe").<br/>
+            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "gnuplot", "gnuplot.exe"). <br/>
             Copy gnuplot program into gnuplot directory. <br/>
-            <seealso href="http://tmacchant33.starfree.jp/gnuplot_bin.html">gnuplot download link</seealso><br/>
+            <seealso href="http://tmacchant33.starfree.jp/gnuplot_bin.html">gnuplot download link</seealso>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.MeasurementLaserOnFactor">
@@ -419,7 +419,7 @@
             Laser ON scale factor when convert measurement data 
             </summary>
             <remarks>
-            Default: Measurement channel for Laser On<br/>
+            Measurement channel: <c>MeasurementChannel.LaserOn</c>. <br/>
             Default: 1<br/>
             </remarks>
         </member>
@@ -434,7 +434,7 @@
             </summary>
             <remarks>
             Default: 1.2<br/>
-            Acceleration scale for when simulate(or render) laser path with jump and mark commands.<br/>
+            Acceleration scale for when simulate(or render) laser path with jump and mark commands. <br/>
             </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Core">

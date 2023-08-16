@@ -70,14 +70,26 @@
  - Demo 'editor_marker' winforms project for custom marker
  - Demo 'editor_ui' winforms project for custom ui
  - Demo 'editor_remote' winforms project control by remotely 
+ - Demo 'editor_multiple' winforms project for multiple instances
 
- *The program running 30 mins at evalution copy mode !*
+
+----
 
   
+**6. License**
+
+ - Per instance
+ - Option1: MoF 
+ - Option2: 3D 
+  
+ *Even if not purchase license, everything is fully functional during 30 mins (evaluation mode activated)*
+ *Evaluation mode is supported only 1 instance*
+ 
+ 
 ----
 
 
-**6. Author**
+**7. Author**
  
  - 2023 Copyright to (c)SpiralLAB.
  - All rights reserved. 
@@ -88,7 +100,7 @@
 ----
 
 
-**7. Version history**
+**8. Version history**
 
 * 2023.8.16 v.0.9.3
   - added) editor_multiple demo

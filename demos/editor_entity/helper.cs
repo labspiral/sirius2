@@ -49,6 +49,9 @@ using SpiralLab.Sirius2.Winforms.UI;
 
 namespace Demos
 {
+    /// <summary>
+    /// Demo editor helper
+    /// </summary>
     public static class EditorHelper
     {
         /// <summary>

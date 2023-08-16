@@ -8744,6 +8744,13 @@
             If returned 'False', default routine would be executed. <br/>
             </remarks>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyOpen(System.Object)">
+            <summary>
+            Notify open sirius file
+            </summary>
+            <param name="sender">Sender like as <c>SiriusEditorUserControl</c></param>
+            <returns></returns>
+        </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnSaveSirius">
             <summary>
             Event for save sirius file at <c>SiriusEditorUserControl</c>
@@ -8755,17 +8762,24 @@
             If returned 'False', default routine would be executed. <br/>
             </remarks>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifySave(System.Object)">
+            <summary>
+            Notify save sirius file
+            </summary>
+            <param name="sender">Sender like as <c>SiriusEditorUserControl</c></param>
+            <returns></returns>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.SamplePath">
             <summary>
             Sample file path (.dxf, .plt, ..stl, ..)
             </summary>
             <remarks>
-            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sample")
+            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sample") <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.PensColor">
             <summary>
-            Array of Pen colors
+            Array of <c>EntityPen</c> colors
             </summary>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnCreatePen">
@@ -8784,7 +8798,7 @@
             </summary>
             <remarks>
             Each <c>Config.PensColor</c> would be created. <br/>
-            Used with <c>Config.OnCreatePen</c>.<br/>
+            Used with <c>Config.OnCreatePen</c>. <br/>
             </remarks>
             <param name="color"><c>System.Drawing.Color</c></param>
             <returns><c>EntityPen</c></returns>
@@ -8802,7 +8816,7 @@
             List of installed font names
             </summary>
             <remarks>
-            Installed font list at current owner windows system. <br/>
+            Installed font list at windows system. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ImageTextClearColor">
@@ -8835,7 +8849,8 @@
             Sirius font glyph limit for max ascii hexa
             </summary>
             <remarks>
-            Default: 255 (0~255)
+            Supported file formats: cxf, llf <br/>
+            Default: 255 (0~255) <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.SiriusFontPath">
@@ -8843,7 +8858,7 @@
             Sirius font path (.cxf font file)
             </summary>
             <remarks>
-            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "siriusfonts")
+            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "siriusfonts") <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.DefaultFont">
@@ -8889,7 +8904,7 @@
             Notify for <c>ITextConvertible</c>
             </summary>
             <remarks>
-            If <c>ITextConvertable.IsConvertText</c> is <c>True</c>, it would be try to convert each <c>IMarkerable.Mark</c>.
+            If <c>ITextConvertable.IsConvertText</c> is <c>True</c>, it would be try to convert each <c>IMarkerable.Mark</c>. <br/>
             </remarks>
             <param name="marker"><c>IMarker</c> (or it can be <c>NULL</c> while <c>IEntity.Regen</c>) </param>
             <param name="textConvertible"><c>ITextConvertible</c></param>
@@ -8902,23 +8917,23 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.IsDxfImportRemovedColor">
             <summary>
-            Remoe entity color when import dxf
+            Remove color of entities when import dxf
             </summary>
             <remarks>
-            If true, overrided color is PensColor[0] (White)
+            If true, overrided color is PensColor[0] (White) <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.IsDxfOpenRemovedColor">
             <summary>
-            Remoe entity color when open dxf
+            Remove color of entities when open dxf
             </summary>
             <remarks>
-            If true, overrided color is PensColor[0] (White)
+            If true, overrided color is PensColor[0] (White) <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.DxfTextEntityDefaultFont">
             <summary>
-            Convert Text, MText entity at dxf file by assigned font.
+            Convert Text, MText entity at dxf file by assigned font
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.STLAlignZ">
@@ -8931,7 +8946,7 @@
             Directional vector for  extract points cloud from STL mode
             </summary>
             <remarks>
-            Default directional vector: 0,0,-1
+            Default directional vector: 0,0,-1 <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnExtractPointsCloud">
@@ -8948,15 +8963,13 @@
             <summary>
             Notify create <c>IPen</c> entity
             </summary>
-            <remarks>
-            </remarks>
             <param name="entity"><c>EntityStl</c></param>
             <param name="dir">Directional normal vector</param>
             <returns><c>EntityPointsCloud</c> (null, if failed)</returns>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.TreeviewWarningNodeCounts">
             <summary>
-            Occur warning message if treeview nodes counts excced this counts
+            Treeview node counts for occur warning message if nodes counts has excceeded
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.TreeviewNodeDefaultFont">
@@ -8995,7 +9008,7 @@
             Notify for TextConvert
             </summary>
             <remarks>
-            If <c>ITextConvertable.IsConvertText</c> is <c>True</c>, it would be try to convert every <c>IMarkerable.Mark</c>.
+            If <c>ITextConvertable.IsConvertText</c> is <c>True</c>, it would be try to convert every <c>IMarkerable.Mark</c>. <br/>
             </remarks>
             <param name="document"><c>IDocument</c></param>
             <param name="block"><c>EntityBlock</c></param>
@@ -9096,7 +9109,7 @@
             If entity has selected, override line width and point size 
             </summary>
             <remarks>
-            Should be >= 1
+            Should be >= 1 <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.IsRenderBoundBoxWhenSelected">
@@ -9152,7 +9165,7 @@
             Threshold pixel counts when hit testing         
             </summary>
             <remarks>
-            Default: 4px
+            Default: 4px <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.IsCameraMoveAtPropertyGrid">
@@ -9174,44 +9187,56 @@
             <summary>
             Transit by keyboard: CTRL
             </summary>
-            <remarks>Default: 1 mm</remarks>
+            <remarks>
+            Default: 1 mm <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardTransitXYCtrlAlt">
-             <summary>
-             Transit by keyboard: CTRL + ALT
-             </summary>
-            <remarks>Default: 0.1 mm</remarks>
+            <summary>
+            Transit by keyboard: CTRL + ALT
+            </summary>
+            <remarks>
+            Default: 0.1 mm <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardTransitXYCtrlAltShift">
-             <summary>
-             Transit by keyboard: CTRL + ALT + SHIFT
-             </summary>
-            <remarks>Default: 0.01 mm</remarks>
+            <summary>
+            Transit by keyboard: CTRL + ALT + SHIFT
+            </summary>
+            <remarks>
+            Default: 0.01 mm <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardRotateCtrl">
             <summary>
             Rotate by keyboard: CTRL
             </summary>
-            <remarks>Default: 90 deg</remarks>
+            <remarks>
+            Default: 90 deg <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardRotateCtrlAlt">
             <summary>
             Rotate by keyboard: CTRL + ALT
             </summary>
-            <remarks>Default: 10 deg</remarks>
+            <remarks>
+            Default: 10 deg <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardRotateCtrlAltShift">
             <summary>
             Rotate by keyboard: CTRL + ALT+ SHIFT
             </summary>
-            <remarks>Default: 1 deg</remarks>
+            <remarks>
+            Default: 1 deg <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.DIN_RtcExtension1Port">
             <summary>
             D.Input name lists at RTC Extension1 Port 
             </summary>
             <remarks>
-            16 bits
+            16 bits <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.DIN_RtcLaserPort">
@@ -9219,7 +9244,7 @@
             D.Input name lists at RTC Laser Port 
             </summary>
             <remarks>
-            2 bits
+            2 bits <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcExtension1Port">
@@ -9227,7 +9252,7 @@
             D.Output name lists at RTC Extension1 Port
             </summary>
             <remarks>
-            16bits 
+            16bits <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcExtension2Port">
@@ -9235,7 +9260,7 @@
             D.Output name lists at RTC Extension2 Port 
             </summary>
             <remarks>
-            8 bits 
+            8 bits <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcLaserPort">
@@ -9243,7 +9268,7 @@
             D.Output name lists at RTC Laser Port 
             </summary>
             <remarks>
-            2 bits 
+            2 bits <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DShow">
@@ -9398,8 +9423,11 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.PathOptimizerBasePosition">
             <summary>
-            <c>PathOptimizerBasePositions</c> when optimize pathes
+            Base position when optimize internal entity pathes
             </summary>
+            <remarks>
+            Used with <c>PathOptimizerBasePositions</c>. <br/>
+            </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnOptimizePath">
             <summary>
@@ -9428,10 +9456,10 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.IsPathSortAndMerge">
             <summary>
-            Enable sort and merge path or not
+            Enable sort and merge path or not when import files
             </summary>
             <remarks>
-            Calculated when importing hpgl(plt) or dxf file
+            Calculate and applied when importing hpgl(plt) or dxf file. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.PathSortAndMergeThreshold">
@@ -9439,8 +9467,8 @@
             Threshold distance for sort and merge path at <c>EntityGroup</c>
             </summary>
             <remarks>
-            Used with <c>IsPathSortAndMerge</c> if True.
-            Calculated when importing hpgl(plt) or dxf file.
+            Used with <c>IsPathSortAndMerge</c> if True. <br/>
+            Calculated when importing hpgl(plt) or dxf file. <br/>
             </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.IDocumentData">
