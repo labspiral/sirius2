@@ -78,12 +78,11 @@
   
 **6. License**
 
- - Per instance
- - Option1: MoF 
- - Option2: 3D 
-  
- *Even if not purchase license, everything is fully functional during 30 mins (evaluation mode activated)*
- *Evaluation mode is supported only 1 instance*
+ * Per instance
+   - Option1: MoF 
+   - Option2: 3D 
+ * Even if not purchase license, everything is fully functional during 30 mins (evaluation mode activated)
+ * Evaluation mode is supported only 1 instance
  
  
 ----
