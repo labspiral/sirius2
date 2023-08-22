@@ -276,13 +276,19 @@
             Enable(or disable) logging
             </summary>
             <remarks>
-            Default: True <br/>
+            Default: <c>True</c> <br/>
+            Output path: <c>Config.LogPath</c> <br/>
+            Should be configured before <c>Core.Initialize</c> has called. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.IsLogToConsole">
             <summary>
-            Enable(or disable) logging to console output
+            Enable(or disable) logging with console output
             </summary>
+            <remarks>
+            Default: <c>True</c> <br/>
+            Should be configured before <c>Core.Initialize</c> has called. <br/>
+            </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Config.OnLogged">
             <summary>
@@ -305,7 +311,8 @@
             Log file path
             </summary>
             <remarks>
-            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "siriuslogs") <br/>
+            Default: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "siriuslogs") <br/>
+            Should be configured before <c>Core.Initialize</c> has called. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.CorreXionProProgramPath">
@@ -313,7 +320,7 @@
             SCANLAB's CorreXionPro.exe program file path
             </summary>
             <remarks>
-            Default path: \<c>CorrectionPath</c>\CorreXionPro.exe <br/>
+            Default path: <c>Path.Combine(CorrectionPath, "CorreXionPro.exe")</c> <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.StretchCorreXion5ProgramPath">
@@ -321,7 +328,7 @@
             SCANLAB's StretchcorreXion5.exe program file path
             </summary>
             <remarks>
-            Default path: Path.Combine(CorrectionPath, "stretchcorreXion5.exe") <br/>
+            Default path: <c>Path.Combine(CorrectionPath, "stretchcorreXion5.exe")</c> <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.CorrectionFileCoverterProgramPath">
@@ -329,7 +336,7 @@
             SCANLAB's CorrectionFileConverter.exe program file path
             </summary>
             <remarks>
-            Default path: Path.Combine( CorrectionPath, "CorrectionFileConverter.exe") <br/>
+            Default path: <c>Path.Combine( CorrectionPath, "CorrectionFileConverter.exe")</c> <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.CalibrationLibraryActivationCode">
@@ -345,7 +352,7 @@
             SyncAxis viewer program file path
             </summary>
             <remarks>
-            Default path: Path.Combine( AppDomain.CurrentDomain.BaseDirectory, "syncaxis", "Tools", "syncAXIS_Viewer", "syncAXIS_Viewer.exe") <br/>
+            Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "syncaxis", "Tools", "syncAXIS_Viewer", "syncAXIS_Viewer.exe")</c> <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.SyncAxisSimulateFilePath">
@@ -353,7 +360,7 @@
             SyncAxis simulation output file path
             </summary>
             <remarks>
-            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "siriuslogs") <br/>
+            Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "siriuslogs")</c> <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.MergeDistanceThreshold">
@@ -401,7 +408,7 @@
             Measurement path
             </summary>
             <remarks>
-            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "measurement")
+            Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "measurement")</c> <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.MeasurementGNUPlotProgramPath">
@@ -409,7 +416,7 @@
             gnuplot program file path
             </summary>
             <remarks>
-            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "gnuplot", "gnuplot.exe"). <br/>
+            Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "gnuplot", "gnuplot.exe")</c> <br/>
             Copy gnuplot program into gnuplot directory. <br/>
             <seealso href="http://tmacchant33.starfree.jp/gnuplot_bin.html">gnuplot download link</seealso>
             </remarks>
@@ -419,7 +426,7 @@
             Laser ON scale factor when convert measurement data 
             </summary>
             <remarks>
-            Measurement channel: <c>MeasurementChannel.LaserOn</c>. <br/>
+            Measurement channel: <c>MeasurementChannel.LaserOn</c> <br/>
             Default: 1<br/>
             </remarks>
         </member>
@@ -433,18 +440,13 @@
             Virtual jump and mark accel scale
             </summary>
             <remarks>
-            Default: 1.2<br/>
+            Default: 1.2 <br/>
             Acceleration scale for when simulate(or render) laser path with jump and mark commands. <br/>
             </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Core">
             <summary>
             Core for <c>SpiralLab.Sirius2</c> library
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Core.#ctor">
-            <summary>
-            Constructor
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Core.Initialize">
@@ -2765,6 +2767,11 @@
             Rotate z (°)
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Mathematics.Offset.Tag">
+            <summary>
+            User data
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.Offset.ToMatrix">
             <summary>
             Calculate <c>Offset</c> to 4x4 matrix
@@ -2777,7 +2784,7 @@
             <param name="dx">Dx (mm)</param>
             <param name="dy">Dy (mm)</param>
             <param name="dz">Dz (mm)</param>
-            <param name="angleZ">Angle Z (deg)</param>
+            <param name="angleZ">Angle Z (°)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.Offset.ToString">
             <inheritdoc/>
@@ -8084,11 +8091,6 @@
             SyncAxisViewer helper 
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.SyncAxisViewerHelper.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.SyncAxisViewerHelper.Plot(System.String)">
             <summary>
             View simulation output data by syncAXIS viewer
@@ -8342,7 +8344,7 @@
             <param name="returnCode">Error code if failed</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.CylinderCalibration(System.Numerics.Vector3,System.Numerics.Vector3,System.Single,System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.CylinderCalibration(System.Numerics.Vector3,System.Numerics.Vector3,System.Double,System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
             <summary>
             (Experimental) Recalculates a 3D-Correction file for a user-defined cylindrical target surface that can be shifted, tilted, and rotated.
             <code>
@@ -8381,7 +8383,7 @@
             <param name="returnCode">Error code if failed</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.ConeCalibration(System.Numerics.Vector3,System.Numerics.Vector3,System.Single,System.Single,System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.ConeCalibration(System.Numerics.Vector3,System.Numerics.Vector3,System.Double,System.Double,System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
             <summary>
             (Experimental) Recalculates a 3D-Correction file for a user-defined cone target surface that can be shifted, tilted, and rotated.
             <code>
@@ -8503,6 +8505,18 @@
             <param name="inputCtReadMeFileName">README file of source(input) correction file (ctbName_ReadMe.txt or ct5Name_ct5_ReadMe.txt)</param>
             <param name="kFactor">K-Factor (bits/mm)</param>
             <param name="outputCtFileName">Target(Output) correction file</param>
+            <param name="returnCode">Error code if failed</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.BeamTiltCalibration(System.String,System.String,System.String,System.Double,System.Double,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+            <summary>
+            (Experimental) Recalculates the Correction table using offset values measured for galvanometer scanner angles of 0
+            </summary>
+            <param name="inputCtFileName">Source(Input) correction file</param>
+            <param name="inputCtReadMeFileName">README file of source(input) correction file (ctbName_ReadMe.txt or ct5Name_ct5_ReadMe.txt)</param>
+            <param name="outputCtFileName">Target(Output) correction file</param>
+            <param name="dx">Offset dx (mm)</param>
+            <param name="dy">Offset dy (mm)</param>
             <param name="returnCode">Error code if failed</param>
             <returns>Success or failed</returns>
         </member>
@@ -8826,6 +8840,9 @@
             Jump Mode
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ExternalCounts">
+            <inheritdoc/>  
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.Job">
             <inheritdoc/>  
         </member>
@@ -9009,9 +9026,6 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.SerialIncrementStep">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ExternalCounts">
             <inheritdoc/>  
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.cardId">
@@ -10991,7 +11005,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSet,System.Object)">
             <summary>
-            Prepare to download character set into RTC 
+            Begin register(or download) character set into RTC 
             <para>Used. internal List3 buffer</para>
             <para>Max buffer size: RTC5: <c>RTC5_LIST3_BUFFER_SIZE</c>, RTC6: <c>RTC6_LIST3_BUFFER_SIZE</c></para>
             <code>
@@ -11029,26 +11043,26 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterBegin(System.UInt32)">
             <summary>
-            Begin to download ASCII code (single character) with specific character set into RTC 
+            Begin register(or download) single glyph(or character) into RTC 
             </summary>
             <param name="asciiCode">ASCII code (0~255)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterEnd">
             <summary>
-            End to download character set into RTC 
+            End register(or download) single glyph(or character) into RTC 
             </summary>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterSetEnd">
             <summary>
-            End to download character set 
+            End register(or download) character set 
             </summary>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterSetIsExist(System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
             <summary>
-            Check ASCII code (single character) is exist with specific character set or not in RTC
+            Check single glyph(or character) is exist at character set or not
             </summary>
             <param name="asciiCode">ASCII code (0~255)</param>
             <param name="characterSet"><c>CharacterSet</c></param>
@@ -11056,7 +11070,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterSetClear(SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
             <summary>
-            Clear(or delete) specific character set (whole characters) in RTC 
+            Clear(or unregister) specific character set (whole characters) at RTC 
             </summary>
             <param name="characterSet"><c>CharacterSet</c></param>
             <returns>Success or failed</returns>

@@ -1121,6 +1121,29 @@
             <param name="expandDistance">Expand distance (mm)</param>
             <returns>Array of <c>EntityPolyline2D</c></returns>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.IArrayOfOffset">
+            <summary>
+            IArrayOfOffset interface
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.IArrayOfOffset.Offsets">
+            <summary>
+            Array of offset (dx, dy, dz and angle z)
+            <code>
+            var offsets = new SpiralLab.Sirius2.Mathematics.Offset[] 
+            {
+                new Offset(0, 0, 0),
+                new Offset(10, 0, 0),
+            };
+            entity.Offsets = offets;
+            </code>
+            </summary>
+            <remarks>
+            Default count: 1 <br/>
+            Default value: <c>SpiralLab.Sirius2.Mathematics.Offset.Zero</c> <br/>
+            If count is 1 and value is Offset.Zero, mean <c>IEntity</c> itself. <br/>
+            </remarks>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.HatchModes">
             <summary>
             Hatch modes
@@ -1275,7 +1298,8 @@
             Converted text data
             </summary>
             <remarks>
-            If <c>IsConvertedText</c> is <c>True</c>, then <c>ConvertedText</c> is used for <c>IMarkerable.Mark</c>. <br/>
+            If <c>IsConvertedText</c> is <c>True</c>, event <c>Config.OnTextConvert</c> will be fired and modified <c>ConvertedText</c> by return value. <br/>
+            <c>ConvertedText</c> is used for <c>IRenderable.Render</c> or <c>IMarkerable.Mark</c>. <br/>
             Used with <c>EntityCircularText</c>, <c>EntityImageText</c>, <c>EntityDataMatrix</c>, <c>EntityQRCode</c> entities. <br/>
             Used with <c>EntityText</c>, <c>EntitySiriusText</c> when only <c>CharacterSetFormats.Normal</c> has configured. <br/>
             </remarks>
@@ -1849,7 +1873,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.StartAngle">
             <summary>
-            Text starting angle (degree)
+            Text starting angle (°)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.LetterSpacing">
@@ -1872,7 +1896,7 @@
             <param name="height">Height (mm)</param>
             <param name="direction"><c>TextCircularDirections</c></param>
             <param name="radius">Radius (mm)</param>
-            <param name="startAngle">Start angle (Degree)</param>
+            <param name="startAngle">Start angle (°)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.ToString">
             <inheritdoc/>
@@ -2335,7 +2359,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.Angle">
             <summary>
-            Wait angular encoder angle (degree)
+            Wait angular encoder angle (°)
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.#ctor">
@@ -2608,6 +2632,29 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.ZSortOrder">
+            <summary>
+            Z sort order
+            </summary>
+            <remarks>
+            Used with <c>EntityPointsCloud</c>. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.ZSortOrder.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.ZSortOrder.Ascending">
+            <summary>
+            Ascending (From Z- to Z+)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.ZSortOrder.Descending">
+            <summary>
+            Descending (From Z+ to Z-)
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud">
             <summary>
             EntityPointsCloud entity
@@ -2624,11 +2671,10 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud.VectorAndNormal">
             <summary>
-            List of x,y,z vector and x,y,z normal
+            List of x,y,z vertices and x,y,z normals
             </summary>
             <remarks>
-            List of V1, V2, V3, N1, N2, N3, ...
-            Use <c>ExtractVertices</c> to extract vertices with transformation.
+            List of (v1, n1, v2, n2, v3, n3),... <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud.Mode">
@@ -2636,7 +2682,33 @@
             <c>PolygonMode</c>
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud.ZScale">
+            <summary>
+            Z scale factor (-, +)
+            </summary>
+            <remarks>
+            Z scale factor calculated when <c>ExtractVertices</c> has called. <br/>
+            That means whenever do <c>IDocument.ActPointsCloudCalibration</c>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud.Offsets">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud.ZOrder">
+            <summary>
+            Z sort order when <c>ExtractVertices</c>
+            </summary>
+            <remarks>
+            <c>False</c>: Descending order. <br/>
+            <c>True</c>: Ascending order. <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud._VectorAndNormals">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud._ZScale">
             <summary>
             Used by internally (Do NOT edit)
             </summary>
@@ -2650,7 +2722,7 @@
             <summary>
             Constructor
             </summary>
-            <param name="vertices">Array of <c>Vector3</c> (Vector and Normal)</param>
+            <param name="vertices">Array of <c>Vector3</c> (like as v1,n1, v2,n2,...)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud.Finalize">
             <summary>
@@ -2672,6 +2744,12 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud.Render(SpiralLab.Sirius2.Winforms.IView)">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud.RenderOffset(SpiralLab.Sirius2.Winforms.IView)">
+            <summary>
+            Do render offset of <c>IEntity</c> at <c>IView</c>
+            </summary>
+            <param name="view"></param>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
@@ -2679,6 +2757,11 @@
             <summary>
             Extract transformed array of x,y,z vertex
             </summary>
+            <remarks>
+            Z scale factor calculated(or applied) when <c>ExtractVertices</c> has called. <br/>
+            That means whenever do <c>IDocument.ActPointsCloudCalibration</c>. <br/>
+            Sorted z order by <c>IsZAscendingOrder</c>. <br/>
+            </remarks>
             <param name="vertices">Created array of <c>Vector3</c> if succeeded</param>
             <returns>Success or failed</returns>
         </member>
@@ -2914,12 +2997,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityArc.StartAngle">
             <summary>
-            Start angle (deg)
+            Start angle (°)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityArc.SweepAngle">
             <summary>
-            Sweep angle (deg)
+            Sweep angle (°)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityArc.StartRampFactor">
@@ -2939,7 +3022,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityArc.StepAngle">
             <summary>
-            Step angle (deg)
+            Step angle (°)
             <para>Default: 0</para>
             </summary>
         </member>
@@ -2954,9 +3037,9 @@
             </summary>
             <param name="center">Center X,Y (mm)</param>
             <param name="radius">Radius (mm)</param>
-            <param name="startAngle">Start angle (deg)</param>
-            <param name="sweepAngle">Sweep angle (deg)</param>
-            <param name="stepAngle">Step angle (deg) (Default: 0)</param>
+            <param name="startAngle">Start angle (°)</param>
+            <param name="sweepAngle">Sweep angle (°)</param>
+            <param name="stepAngle">Step angle (°) (Default: 0)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityArc.#ctor(OpenTK.Vector3,System.Double,System.Double,System.Double,System.UInt32)">
             <summary>
@@ -2964,9 +3047,9 @@
             </summary>
             <param name="center">Center X,Y,Z (mm)</param>
             <param name="radius">Radius (mm)</param>
-            <param name="startAngle">Start angle (deg)</param>
-            <param name="sweepAngle">Sweep angle (deg)</param>
-            <param name="stepAngle">Step angle (deg) (Default: 0)</param>
+            <param name="startAngle">Start angle (°)</param>
+            <param name="sweepAngle">Sweep angle (°)</param>
+            <param name="stepAngle">Step angle (°) (Default: 0)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityArc.Finalize">
             <summary>
@@ -3973,6 +4056,9 @@
             <summary>
             Entity model matrix 
             </summary>
+            <remarks>
+            <c>ModelMatrix</c> = <c>ModelAlign</c> * <c>ModelScale</c> * <c>ModelRotate</c> * <c>ModelTranslate</c> * <c>Parent.ModelMatrix</c>
+            </remarks>
             <returns><c>Matrix4</c></returns>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase._Name">
@@ -4093,7 +4179,7 @@
             <param name="max">Source dimension of max</param>
             <param name="hatchedGroup">Result hatch into  <c>EntityGroup</c></param>
             <param name="isZigZag">ZigZag</param>
-            <param name="angle">Angle (degree)</param>
+            <param name="angle">Angle (°)</param>
             <param name="interval">Interval (mm)</param>
             <param name="exclude">Exclude (mm)</param>
             <param name="shift">Shift (mm)</param>
@@ -4533,7 +4619,7 @@
             <summary>
             Constructor
             </summary>
-            <param name="vertices">Face = 6 vertices (3 * vector and normal)</param>
+            <param name="vertices">Face = 6 vertices ((= Vector1,Normal1, Vector2,Normal2, Vector3,Normal3)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFace.Clone">
             <inheritdoc/>
@@ -4547,12 +4633,12 @@
             </summary>
             <param name="delta"> dx, dy, dz (mm)</param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFace.Transform(OpenTK.Matrix4)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFace.ToTransform(OpenTK.Matrix4)">
             <summary>
             Transform <c>EntityFace</c> by 4x4 Matrix
             </summary>
             <param name="matrix">Transform <c>Matrix4</c></param>
-            <returns><c>EntityFace</c></returns>
+            <returns>Transformed(or created new) <c>EntityFace</c></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityGroup">
             <summary>
@@ -5503,9 +5589,9 @@
             </summary>
             <param name="center">X, Y Center (mm)</param>
             <param name="radius">Radius (mm)</param>
-            <param name="startAngle">Start angle (deg)</param>
-            <param name="sweepAngle">Sweep angle (deg)</param>
-            <param name="stepAngle">Step angle (deg) (Default: 0)</param>
+            <param name="startAngle">Start angle (°)</param>
+            <param name="sweepAngle">Sweep angle (°)</param>
+            <param name="stepAngle">Step angle (°) (Default: 0)</param>
             <returns><c>EntityArc</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateRectangle(OpenTK.Vector2,System.Double,System.Double)">
@@ -6330,7 +6416,7 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.STLMode">
             <summary>
-            STL modes
+            STL polygon modes
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLMode.Fill">
@@ -6346,6 +6432,61 @@
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLMode.Points">
             <summary>
             Points (vertices)
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.STLMaterialFaceMode">
+            <summary>
+            <c>STLMaterialFaceMode</c>
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLMaterialFaceMode.Front">
+            <summary>
+            Front
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLMaterialFaceMode.Back">
+            <summary>
+            Back
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLMaterialFaceMode.FrontAndBack">
+            <summary>
+            Front and back
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.STLCullFaceMode">
+            <summary>
+            STL cull face mode
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLCullFaceMode.Front">
+            <summary>
+            Front
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLCullFaceMode.Back">
+            <summary>
+            Back
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLCullFaceMode.FrontAndBack">
+            <summary>
+            Front and back
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.STLFrontFaceDirection">
+            <summary>
+            STL front face direction
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLFrontFaceDirection.Cw">
+            <summary>
+            Clock wise
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLFrontFaceDirection.Ccw">
+            <summary>
+            Counter clock wise
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.STLAlignZ">
@@ -6394,7 +6535,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStl.Mode">
             <summary>
-            <c>PolygonMode</c>
+            <c>STLMode</c>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStl.Faces">
@@ -6941,6 +7082,27 @@
             CEO Toughman by (c)Youngsoft
             </summary>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PropertyGridLocalizationAttribute.LocalizedCategoryAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            _C
+            </summary>
+            <param name="key"></param>
+            <param name="classType"></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PropertyGridLocalizationAttribute.LocalizedDisplayNameAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            _DISP
+            </summary>
+            <param name="key"></param>
+            <param name="classType"></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PropertyGridLocalizationAttribute.LocalizedDescriptionAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            _DESC
+            </summary>
+            <param name="key"></param>
+            <param name="classType"></param>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.PenColorEditor">
             <summary>
             Pen color editor
@@ -6989,6 +7151,17 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.RotateEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.OffsetEditor">
+            <summary>
+            Offset editor  by trackbar
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OffsetEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OffsetEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.FontNameEditor">
@@ -7128,6 +7301,359 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Common.STLHelper">
             <summary>
             STLHelper
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.marker.markersyncaxis">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markersyncaxis.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markersyncaxis.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markersyncaxis.Measurement_C">
+            <summary>
+              Looks up a localized string similar to Measurement.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markersyncaxis.Operation_Status_DESC">
+            <summary>
+              Looks up a localized string similar to Operation Status.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markersyncaxis.Plot_DESC">
+            <summary>
+              Looks up a localized string similar to Plot as syncAXIS Viwer After Finish to Mark (Simulation Mode).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markersyncaxis.Plot_DISP">
+            <summary>
+              Looks up a localized string similar to Plot.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markersyncaxis.Status_DISP">
+            <summary>
+              Looks up a localized string similar to Status.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markersyncaxis.SyncAXIS_C">
+            <summary>
+              Looks up a localized string similar to SyncAxis.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.marker.markerbase">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.AccumulatedMarks_DESC">
+            <summary>
+              Looks up a localized string similar to Accumulated Mark Counts.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.AccumulatedMarks_DISP">
+            <summary>
+              Looks up a localized string similar to Marks.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Basic_C">
+            <summary>
+              Looks up a localized string similar to Basic.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Busy_DESC">
+            <summary>
+              Looks up a localized string similar to Busy Status.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Busy_DISP">
+            <summary>
+              Looks up a localized string similar to Busy.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Entity_DESC">
+            <summary>
+              Looks up a localized string similar to Current(Working) Entity.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Entity_DISP">
+            <summary>
+              Looks up a localized string similar to Entity.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Entity_Index_DESC">
+            <summary>
+              Looks up a localized string similar to Current(Working) Entity.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Entity_Index_DISP">
+            <summary>
+              Looks up a localized string similar to Entity Index.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Error_DESC">
+            <summary>
+              Looks up a localized string similar to Error Status.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Error_DISP">
+            <summary>
+              Looks up a localized string similar to Error.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Index_DESC">
+            <summary>
+              Looks up a localized string similar to Index.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Index_DISP">
+            <summary>
+              Looks up a localized string similar to Index.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Jump_Origin_DESC">
+            <summary>
+              Looks up a localized string similar to Jump to Origin Location After Finish Mark.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Jump_Origin_DISP">
+            <summary>
+              Looks up a localized string similar to Jump Origin.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Layer_DESC">
+            <summary>
+              Looks up a localized string similar to Current(Working) Layer.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Layer_DISP">
+            <summary>
+              Looks up a localized string similar to Layer.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Layer_Index_DESC">
+            <summary>
+              Looks up a localized string similar to Current(Working) Layer Index.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Layer_Index_DISP">
+            <summary>
+              Looks up a localized string similar to Layer Index.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.MarkTime_DESC">
+            <summary>
+              Looks up a localized string similar to Mark SpanTime (Start and End Time).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.MarkTime_DISP">
+            <summary>
+              Looks up a localized string similar to Mark Time.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Name_DESC">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Name_DISP">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offset_Index_DESC">
+            <summary>
+              Looks up a localized string similar to Current(Working) Offset Index.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offset_Index_DISP">
+            <summary>
+              Looks up a localized string similar to Offset Index.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offsets_DESC">
+            <summary>
+              Looks up a localized string similar to Array of Offset (Dx, Dy, Dz and Angle).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offsets_DISP">
+            <summary>
+              Looks up a localized string similar to Offsets.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Pen_Color_DESC">
+            <summary>
+              Looks up a localized string similar to Current(Working) Pen Color.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Pen_Color_DISP">
+            <summary>
+              Looks up a localized string similar to Pen Color.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Ready_DESC">
+            <summary>
+              Looks up a localized string similar to Ready Status.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Ready_DISP">
+            <summary>
+              Looks up a localized string similar to Ready.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Status_C">
+            <summary>
+              Looks up a localized string similar to Status.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Target_DESC">
+            <summary>
+              Looks up a localized string similar to Mark Target.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Target_DISP">
+            <summary>
+              Looks up a localized string similar to Target.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Working_C">
+            <summary>
+              Looks up a localized string similar to Working.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.marker.markerrtc">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Check_C">
+            <summary>
+              Looks up a localized string similar to Check.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.External__START_DESC">
+            <summary>
+              Looks up a localized string similar to Enable/Disable External /START Trigger.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.External__START_DISP">
+            <summary>
+              Looks up a localized string similar to External /START.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.List_type_DESC">
+            <summary>
+              Looks up a localized string similar to RTC List Type. Single or Auto(Double) buffer.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.List_type_DISP">
+            <summary>
+              Looks up a localized string similar to List type.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.MaxMeasureTime_DESC">
+            <summary>
+              Looks up a localized string similar to Max. Time to Measurement (sec).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.MaxMeasureTime_DISP">
+            <summary>
+              Looks up a localized string similar to Time.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Measurement_C">
+            <summary>
+              Looks up a localized string similar to Measurement.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Plot_DESC">
+            <summary>
+              Looks up a localized string similar to Plot as Graph After Finish to Mark. Create Measurement Begin, End entity at First..
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Plot_DISP">
+            <summary>
+              Looks up a localized string similar to Plot.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Position_DESC">
+            <summary>
+              Looks up a localized string similar to Check Scanner Position Acknowledge Status Before Start Mark.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Position_DISP">
+            <summary>
+              Looks up a localized string similar to Position Ack.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Power_DESC">
+            <summary>
+              Looks up a localized string similar to Check Scanner Power Status When Start Mark.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Power_DISP">
+            <summary>
+              Looks up a localized string similar to Power Supply.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Session_DESC">
+            <summary>
+              Looks up a localized string similar to Entity(MeasurementBegin) for Measurement Session.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Session_DISP">
+            <summary>
+              Looks up a localized string similar to Session.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Temp_DESC">
+            <summary>
+              Looks up a localized string similar to Check Scanner Temperature Status When Start Mark.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Temp_DISP">
+            <summary>
+              Looks up a localized string similar to Temperature.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Marker.MeasurementSession">
@@ -8123,7 +8649,7 @@
             <summary>
             Array of (X,Y,Z vertex + X,Y,Z normal)
             </summary>
-            <param name="vertexAndNormal">Array of X,Y,Z vertex + X,Y,Z normal</param>
+            <param name="vertexAndNormal">Array of Vertex 1, Normal 1, Vertex2, Normal2, ...</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLVertex3Normal3Buffer.Render(OpenTK.Graphics.OpenGL.PrimitiveType)">
             <inheritdoc/>
@@ -8690,7 +9216,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.FileExtension">
             <summary>
-            Default file extensinn
+            Default file extension
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.FileOpenFilters">
@@ -8700,17 +9226,17 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.FileSaveFilters">
             <summary>
-            Open file filters
+            Save file filters
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.FileImportImageFilters">
             <summary>
-            Import image file filter
+            Import file filter for image files
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.FileImportModelFilters">
             <summary>
-            Import model file filter
+            Import file filter for vector(or 3D) files
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.FileMeasurementFilter">
@@ -8718,15 +9244,28 @@
             Measurement file filters
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Config.FileHeaderBytes">
+        <member name="F:SpiralLab.Sirius2.Winforms.Config.FileHeaderByteSize">
             <summary>
-            Default file header bytes
+            File header bytes
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config.FileHeaderData">
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.FileHeaderBytes">
             <summary>
-            Default file header data
+            File header (array of byte)
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.FileHeaderString">
+            <summary>
+            File header string
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.IsCompressedFileFormat">
+            <summary>
+            File format with compressed or not
+            </summary>
+            <remarks>
+            Used when <c>DocumentSerializer.SaveSirius</c> <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.FileKnownTypes">
             <summary>
@@ -8774,7 +9313,7 @@
             Sample file path (.dxf, .plt, ..stl, ..)
             </summary>
             <remarks>
-            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sample") <br/>
+            Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sample")</c> <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.PensColor">
@@ -8813,7 +9352,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.InstalledFontNames">
             <summary>
-            List of installed font names
+            List of installed fonts at windows system
             </summary>
             <remarks>
             Installed font list at windows system. <br/>
@@ -8849,7 +9388,7 @@
             Sirius font glyph limit for max ascii hexa
             </summary>
             <remarks>
-            Supported file formats: cxf, llf <br/>
+            Supported file formats: cxf, lff <br/>
             Default: 255 (0~255) <br/>
             </remarks>
         </member>
@@ -8858,18 +9397,24 @@
             Sirius font path (.cxf font file)
             </summary>
             <remarks>
-            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "siriusfonts") <br/>
+            Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "siriusfonts")</c> <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.DefaultFont">
             <summary>
             Default font for create text entity
             </summary>
+            <remarks>
+            Default: Arial
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.DefaultSiriusFont">
             <summary>
             Default font for create sirius text entity
             </summary>
+            <remarks>
+            Default: romans2.cxf
+            </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnTextConvert">
             <summary>
@@ -8878,7 +9423,7 @@
             <code>
             SpiralLab.Sirius2.Winforms.Config.OnTextConvert += Text_OnTextConvert;
             ...
-            private string Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
+            string Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
             {
                 switch(entity.Name)
                 {
@@ -8908,12 +9453,15 @@
             </remarks>
             <param name="marker"><c>IMarker</c> (or it can be <c>NULL</c> while <c>IEntity.Regen</c>) </param>
             <param name="textConvertible"><c>ITextConvertible</c></param>
-            <returns>Converted text data (if failed, <c>SourceText</c> has returned. </returns>
+            <returns>Converted text data (if failed, <c>SourceText</c> has returned)</returns>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.DxfSplineToPolygonalCounts">
             <summary>
             Divided line counts when convert dxf spline entity to lines
             </summary>
+            <remarks>
+            Default: 6 <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.IsDxfImportRemovedColor">
             <summary>
@@ -8935,11 +9483,17 @@
             <summary>
             Convert Text, MText entity at dxf file by assigned font
             </summary>
+            <remarks>
+            Default: Arial <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.STLAlignZ">
             <summary>
             Z Alignment when loading STL file 
             </summary>
+            <remarks>
+            Default: <c>STLAlignZ.Bottom</c> <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ExtractPointsCloudDirectionVector">
             <summary>
@@ -8967,10 +9521,18 @@
             <param name="dir">Directional normal vector</param>
             <returns><c>EntityPointsCloud</c> (null, if failed)</returns>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.IsRemoveWhenExtractPointCloud">
+            <summary>
+            Remove(or delete) <c>EntityStl</c> when extract(or create) <c>EntityPointsCloud</c>
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.TreeviewWarningNodeCounts">
             <summary>
             Treeview node counts for occur warning message if nodes counts has excceeded
             </summary>
+            <remarks>
+            Default: 500 <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.TreeviewNodeDefaultFont">
             <summary>
@@ -9016,17 +9578,17 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.DocumentDefaultViewFovSize">
             <summary>
-            Editor view FOV area (WxH)
+            Size of FOV area (WxH)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.DocumentDefaultViewVirtualImageSize">
             <summary>
-            Editor view virtual image field area (WxH)
+            Size of virtual image field area (WxH)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.DocumentColorBackgroundView">
             <summary>
-            Color of background view 
+            Color of background 
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ColorLight">
@@ -9036,7 +9598,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ColorFov">
             <summary>
-            Color of FOV
+            Color of FOV(or virtual image field) rectangle
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ColorAxisX">
@@ -9061,12 +9623,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ColorSelectedBBox">
             <summary>
-            Color of bounding-box selected entity 
+            Color of bounding-box cube
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ColorRubberBand">
             <summary>
-            Color of rubber band rectangle
+            Color of rubber-band rectangle
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ColorGridPoints">
@@ -9091,7 +9653,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.DiameterOfMarkSphere">
             <summary>
-            If mark laser spere, sizeof beam diameter
+            Diameter(or size of beam sphere) when be simulating 
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ColorNormalVectorAtPointsCloud">
@@ -9101,8 +9663,11 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ScaleNormalVectorAtPointsCloud">
             <summary>
-            Scale of normal vector at <c>EntityPointsCloud</c>
+            Scale of normal vector at <c>EntityPointsCloud</c> 
             </summary>
+            <remarks>
+            Scaled size of normal vectors at <c>EntityPointsCloud</c> <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.SizeofPointAndLineSelectedEntity">
             <summary>
@@ -9117,48 +9682,66 @@
             Is rendering bounding box of <c>IEntity</c> when selected
             </summary>
             <remarks>
-            Activated only single entity has selected 
+            Activated only single entity has selected. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.CameraInitPosition">
             <summary>
             Camera init position
             </summary>
+            <remarks>
+            Default camera position: 0,0,200 <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.CameraInitFov">
             <summary>
-            Camera FOV (zoom factor and 0~180)
+            Camera FOV
             </summary>
+            <remarks>
+            Camera zoom by fov. <br/>
+            Default fov: 30 <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.CameraXPositivePosition">
             <summary>
-            Camera x positive position
+            Camera x+ position
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.CameraXNegativePosition">
             <summary>
-            Camera x negative position
+            Camera x- position
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.CameraYNegativePosition">
             <summary>
-            Camera y positive position
+            Camera y- position
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.CamereaSensitivity">
             <summary>
-            Camera yaw/pitch sensitivity 
+            Camera yaw, pitch sensitivity 
             </summary>
+            <remarks>
+            Rotate yaw, pitch camera by holding mouse right button. <br/>
+            Default: 0.004 <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.CamereaLookAtSteps">
             <summary>
-            When camera move lookat position, render step times with smoothly
+            When move camera lookat position, step counts of render for smooth effect
             </summary>
+            <remarks>
+            Default: 10 <br/>
+            </remarks>  
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.HitTestByHotTracking">
             <summary>
             Pre Hittest when mouse is hovering over <c>IEntity</c>
             </summary>
+            <remarks>
+            It cause CPU-burst works load. <br/>
+            Should be configured before <c>Core.Initialize</c> has called. <br/>
+            </remarks>  
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.HitTestThresholdByPixel">
             <summary>
@@ -9185,7 +9768,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardTransitXYCtrl">
             <summary>
-            Transit by keyboard: CTRL
+            Move distance when press keyboard: CTRL
             </summary>
             <remarks>
             Default: 1 mm <br/>
@@ -9193,7 +9776,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardTransitXYCtrlAlt">
             <summary>
-            Transit by keyboard: CTRL + ALT
+            Move distance when press keyboard: CTRL + ALT
             </summary>
             <remarks>
             Default: 0.1 mm <br/>
@@ -9201,7 +9784,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardTransitXYCtrlAltShift">
             <summary>
-            Transit by keyboard: CTRL + ALT + SHIFT
+            Move distance when press keyboard: CTRL + ALT + SHIFT
             </summary>
             <remarks>
             Default: 0.01 mm <br/>
@@ -9209,7 +9792,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardRotateCtrl">
             <summary>
-            Rotate by keyboard: CTRL
+            Rotate angle when press keyboard: CTRL
             </summary>
             <remarks>
             Default: 90 deg <br/>
@@ -9217,7 +9800,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardRotateCtrlAlt">
             <summary>
-            Rotate by keyboard: CTRL + ALT
+            Rotate angle when press keyboard: CTRL + ALT
             </summary>
             <remarks>
             Default: 10 deg <br/>
@@ -9225,7 +9808,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardRotateCtrlAltShift">
             <summary>
-            Rotate by keyboard: CTRL + ALT+ SHIFT
+            Rotate angle when press keyboard: CTRL + ALT+ SHIFT
             </summary>
             <remarks>
             Default: 1 deg <br/>
@@ -9233,7 +9816,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.DIN_RtcExtension1Port">
             <summary>
-            D.Input name lists at RTC Extension1 Port 
+            List of digital input names at RTC Extension1 Port 
             </summary>
             <remarks>
             16 bits <br/>
@@ -9241,7 +9824,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.DIN_RtcLaserPort">
             <summary>
-            D.Input name lists at RTC Laser Port 
+            List of digital input names at RTC Laser Port 
             </summary>
             <remarks>
             2 bits <br/>
@@ -9249,7 +9832,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcExtension1Port">
             <summary>
-            D.Output name lists at RTC Extension1 Port
+            List of digital output names at RTC Extension1 Port
             </summary>
             <remarks>
             16bits <br/>
@@ -9257,7 +9840,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcExtension2Port">
             <summary>
-            D.Output name lists at RTC Extension2 Port 
+             List of digital output names at RTC Extension2 Port 
             </summary>
             <remarks>
             8 bits <br/>
@@ -9265,7 +9848,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcLaserPort">
             <summary>
-            D.Output name lists at RTC Laser Port 
+             List of digital output names at RTC Laser Port 
             </summary>
             <remarks>
             2 bits <br/>
@@ -9276,7 +9859,7 @@
             Event for show(or popup) scanner field correction 2D by <c>RtcCorrection2DForm</c> winforms
             <code>
             SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2D += Config_OnScannerFieldCorrection2D;
-            private RtcCorrection2D Config_OnScannerFieldCorrection2D(IRtc rtc)
+            RtcCorrection2D Config_OnScannerFieldCorrection2D(IRtc rtc)
             {
                 // Create RtcCorrection2D by measured x,y error data
                 int rows = 7;
@@ -9308,7 +9891,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection2DShow(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
             <summary>
-            Notiffy show(or popup) scanner field correction 2D by <c>RtcCorrection2DForm</c> winforms
+            Notify show(or popup) scanner field correction 2D by <c>RtcCorrection2DForm</c> winforms
             </summary>
             <param name="rtc"><c>IRtc</c></param>
             <returns><c>RtcCorrection2D</c></returns>
@@ -9318,7 +9901,7 @@
             Event for show(or popup) scanner field correction 2D by <c>RtcCorrection3DForm</c> winforms
             <code>
             SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3D += Config_OnScannerFieldCorrection3D;
-            private RtcCorrection3D Config_OnScannerFieldCorrection3D(IRtc rtc)
+            RtcCorrection3D Config_OnScannerFieldCorrection3D(IRtc rtc)
             {
                 // Create RtcCorrection3D by measured x,y error data at z plane
                 int rows = 3;
@@ -9368,7 +9951,7 @@
             Event for apply scanner field correction 2D by <c>RtcCorrection2DForm</c> winforms
             <code>
             SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DApply += Config_OnScannerFieldCorrection2DApply;
-            private void Config_OnScannerFieldCorrection2DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm form)
+            void Config_OnScannerFieldCorrection2DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm form)
             {
                Debug.Assert(File.Exists(form.TargetCorrectionFile));
                bool success = true;
@@ -9397,7 +9980,7 @@
             Event for apply scanner field correction 3D by <c>RtcCorrection3DForm</c> winforms
             <code>
             SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply += Config_OnScannerFieldCorrection3DApply;
-            private void Config_OnScannerFieldCorrection3DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection3DForm form)
+            void Config_OnScannerFieldCorrection3DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection3DForm form)
             {
                Debug.Assert(File.Exists(form.TargetCorrectionFile));
                bool success = true;
@@ -9420,6 +10003,24 @@
             </summary>
             <param name="form"><c>SpiralLab.Sirius2.Winforms.UI.RtcCorrection3DForm</c></param>
             <returns>If there are no event handlers, returned <c>False</c></returns>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnPointsCloudCalibrated">
+            <summary>
+            Event for pointscloud has calibrated(or sucess to convert)
+            </summary>
+            <remarks>
+            User can register event handler for pointscloud calibration has succeeded. <br/>
+            Event will be fired when success to convert pointscloud. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyPointsCloudCalibrated(OpenTK.Vector3[],SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String,System.String)">
+            <summary>
+            Notify pointscloud calibration when sucess to convert
+            </summary>
+            <param name="vertices">Array of x,y,z vertex</param>
+            <param name="rtc"><c>IRtc</c></param>
+            <param name="inputCtFileName">Input correction filename</param>
+            <param name="newCtFileName">Created new correction filename</param>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.PathOptimizerBasePosition">
             <summary>
@@ -9456,7 +10057,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.IsPathSortAndMerge">
             <summary>
-            Enable sort and merge path or not when import files
+            Enable sort and merge path or not when import file
             </summary>
             <remarks>
             Calculate and applied when importing hpgl(plt) or dxf file. <br/>
@@ -9468,7 +10069,7 @@
             </summary>
             <remarks>
             Used with <c>IsPathSortAndMerge</c> if True. <br/>
-            Calculated when importing hpgl(plt) or dxf file. <br/>
+            Calculate and applied when importing hpgl(plt) or dxf file. <br/>
             </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.IDocumentData">
@@ -9708,6 +10309,9 @@
             <summary>
             Saved <c>IDocument.InternalData</c> and notify <c>OnSaved</c> event 
             </summary>
+            <remarks>
+            Used with <c>Config.IsCompressedFileFormat</c> <br/>
+            </remarks>
             <param name="fileName">Filename</param>
             <returns>Success or failed</returns>
         </member>
@@ -9967,7 +10571,7 @@
             <param name="targetIndex">Target index</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActPointsCloudCalibration(SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud,SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActPointsCloudCalibration(SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud,SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.Boolean,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
             <summary>
             Convert 3D scanner field correction by extract points cloud from <c>EntityPointsCloud</c> entity.
             </summary>
@@ -9977,21 +10581,27 @@
             </remarks>
             <param name="entity">Target <c>EntityPointsCloud</c></param>
             <param name="rtc"><c>IRtc</c></param>
+            <param name="isLoadAndSelectIfSucceeded">Load and select new correction file into RTC if success to convert</param>
             <param name="inputCtFileName">Input correction filename</param>
             <param name="newCtFileName">Created new correction filename if succeeded</param>
             <param name="returnCode">Error code if failed</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActPointsCloudCalibration(OpenTK.Vector3[],SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActPointsCloudCalibration(OpenTK.Vector3[],SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.Boolean,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
             <summary>
-            Convert 3D scanner field correction by  array of vertices.
+            Convert 3D scanner field correction by array of vertices.
             </summary>
             <remarks>
-            Input correction file: Used source correction file at <c>Rtc.CorrectionFiles[0].FileName</c>.<br/>
-            Output correction file: If calibration had succeeded, correction table has load and selected by automatically at last table location.<br/>
+            Input correction file : Used source correction file at <c>Rtc.CorrectionFiles[0].FileName</c>. <br/>
+            Output correction file : If calibration had succeeded, correction table has load and selected by automatically at last table(TABLE4 or TABLE8) location. <br/>
+            The target surface must be provided as a a series of points in 3d space. <br/>
+            The function will interpolate between these points and adjust the Correction table so that the laser spot is always in focus on the given surface. <br/>
+            The user later needs to only command 2d positions to the RTC and the focal shift is automatically adjusted. <br/>
+            The coordinate system after the correction uses top view projection, meaning that X and Y are exactly the same as before. <br/>
             </remarks>
             <param name="vertices">Array of x,y,z vertex</param>
             <param name="rtc"><c>IRtc</c></param>
+            <param name="isLoadAndSelectIfSucceeded">Load and select new correction file into RTC if success to convert</param>
             <param name="inputCtFileName">Input correction filename</param>
             <param name="newCtFileName">Created new correction filename if succeeded</param>
             <param name="returnCode">Error code if failed</param>
@@ -10358,10 +10968,10 @@
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActSimulateStop">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActPointsCloudCalibration(SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud,SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActPointsCloudCalibration(SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud,SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.Boolean,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActPointsCloudCalibration(OpenTK.Vector3[],SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActPointsCloudCalibration(OpenTK.Vector3[],SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.Boolean,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.FindByLayerName(System.String,SpiralLab.Sirius2.Winforms.Entity.EntityLayer@)">
@@ -10439,7 +11049,7 @@
             Open document from sirius2 file
             </summary>
             <param name="fileName">Filename</param>
-            <param name="document">IDocument interface</param>
+            <param name="document"><c>IDocument</c> interface</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.SaveSirius(System.String,SpiralLab.Sirius2.Winforms.IDocument)">
@@ -10500,505 +11110,405 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.controlbase">
             <summary>
-              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.ResourceManager">
             <summary>
-              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Culture">
             <summary>
-              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
-              재정의합니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Duty_cycle_DESC">
-            <summary>
-              Laser Input Duty cycle (%) (= Pulse width / Period * 100)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Duty_cycle_DISP">
-            <summary>
-              Duty cycle과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Frequency_DESC">
-            <summary>
-              Laser Input Frequency (Hz) (= 1 / Period)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Frequency_DISP">
-            <summary>
-              Frequency과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Jump_speed_DESC">
-            <summary>
-              Scanner Jump Speed (mm/s)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Jump_speed_DISP">
-            <summary>
-              Jump speed과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Laser_C">
-            <summary>
-              Laser과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Mark_speed_DESC">
-            <summary>
-              Scanner Mark(or Arc) Speed (mm/s)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Mark_speed_DISP">
-            <summary>
-              Mark speed과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Power__Max__DESC">
-            <summary>
-              Laser Output Max. Power (W)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Power__Max__DISP">
-            <summary>
-              Power (Max)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Power_Category_DESC">
-            <summary>
-              PowerMap Category Name과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Power_Category_DISP">
-            <summary>
-              Power Category과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Power_DESC">
-            <summary>
-              Laser Output Power (W)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Power_DISP">
-            <summary>
-              Power과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Pulse_width_DESC">
-            <summary>
-              Laser Input Pulse Width (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Pulse_width_DISP">
-            <summary>
-              Pulse width과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.controlbase.Scanner_C">
-            <summary>
-              Scanner과(와) 유사한 지역화된 문자열을 찾습니다.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.pen">
             <summary>
-              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.ResourceManager">
             <summary>
-              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Culture">
             <summary>
-              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
-              재정의합니다.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Duty_cycle_DESC">
             <summary>
-              Laser Input Duty cycle (%) (= Pulse width / Period * 100)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Laser Input Duty cycle (%) (= Pulse width / Period * 100).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Duty_cycle_DISP">
             <summary>
-              Duty cycle과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Duty cycle.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Frequency_DESC">
             <summary>
-              Laser Input Frequency (Hz) (= 1 / Period)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Laser Input Frequency (Hz) (= 1 / Period).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Frequency_DISP">
             <summary>
-              Frequency과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Frequency.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Jump_speed_DESC">
             <summary>
-              Scanner Jump Speed (mm/s)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Scanner Jump Speed (mm/s).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Jump_speed_DISP">
             <summary>
-              Jump speed과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Jump speed.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Laser_C">
             <summary>
-              Laser과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Laser.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Mark_speed_DESC">
             <summary>
-              Scanner Mark(or Arc) Speed (mm/s)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Scanner Mark(or Arc) Speed (mm/s).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Mark_speed_DISP">
             <summary>
-              Mark speed과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Mark speed.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power____DESC">
             <summary>
-              Laser Output Power (%)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Laser Output Power (%).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power____DISP">
             <summary>
-              Power (%)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_Category_DESC">
-            <summary>
-              PowerMap Category Name과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_Category_DISP">
-            <summary>
-              Power Category과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Power (%).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_Max__DESC">
             <summary>
-              Laser Output Max. Power (W)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Laser Max. Output Power (W).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_Max__DISP">
             <summary>
-              Power (Max)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Power (Max).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_W__DESC">
             <summary>
-              Laser Output Power (W)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Laser Output Power (W).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_W__DISP">
             <summary>
-              Power (W)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Power (W).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_width_DESC">
             <summary>
-              Laser Input Pulse Width (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Laser Input Pulse Width (usec).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_width_DISP">
             <summary>
-              Pulse width과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Pulse width.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Scanner_C">
             <summary>
-              Scanner과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Scanner.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.penrtc">
             <summary>
-              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.ResourceManager">
             <summary>
-              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Culture">
             <summary>
-              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
-              재정의합니다.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Angular_limit_DESC">
             <summary>
-              Sky Writing Mode 3 Angular Limit (°)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Sky Writing Mode 3 Angular Limit (°).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Angular_limit_DISP">
             <summary>
-              Angular limit과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Angular limit.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.FPK_DESC">
             <summary>
-              Laser First Pulse Killer (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Laser First Pulse Killer (usec).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.FPK_DISP">
             <summary>
-              FPK과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to FPK.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Jump_delay_DESC">
             <summary>
-              Scanner Jump Delay (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Scanner Jump Delay (usec).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Jump_delay_DISP">
             <summary>
-              Jump delay과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Jump delay.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Laser_C">
             <summary>
-              Laser과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Laser.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Laser_on_shift_DESC">
             <summary>
-              Sky Writing Laser On Shift (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Sky Writing Laser On Shift (usec).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Laser_on_shift_DISP">
             <summary>
-              Laser on shift과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Laser on shift.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Mark_delay_DESC">
             <summary>
-              Scanner Mark Delay (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Scanner Mark Delay (usec).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Mark_delay_DISP">
             <summary>
-              Mark delay과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Mark delay.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Off_delay_DESC">
             <summary>
-              Laser Off Delay (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Laser Off Delay (usec).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Off_delay_DISP">
             <summary>
-              Off delay과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Off delay.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.On_delay_DESC">
             <summary>
-              Laser On Delay (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Laser On Delay (usec).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.On_delay_DISP">
             <summary>
-              On delay과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to On delay.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Parallel_DESC">
             <summary>
-              Wobbel Parallel/Longitudinal Size (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Wobbel Parallel/Longitudinal Size (mm).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Parallel_DISP">
             <summary>
-              Parallel과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Parallel.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Perpendicular_DESC">
             <summary>
-              Wobbel Perpendicular/Tansversal Size (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Wobbel Perpendicular/Tansversal Size (mm).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Perpendicular_DISP">
             <summary>
-              Perpendicular과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Perpendicular.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Polygon_delay_DESC">
             <summary>
-              Scanner Polygon Delay (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Scanner Polygon Delay (usec).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Polygon_delay_DISP">
             <summary>
-              Polygon delay과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Polygon delay.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Polygon_edge_level_DESC">
             <summary>
-              Scanner Polygon Variable Polygon Delay Edge Level (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Scanner Polygon Variable Polygon Delay Edge Level (usec).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Polygon_edge_level_DISP">
             <summary>
-              Polygon edge level과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Polygon edge level.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Post_DESC">
             <summary>
-              Sky Writing Post (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Sky Writing Post (usec).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Post_DISP">
             <summary>
-              Post과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Post.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Prev_DESC">
             <summary>
-              Sky Writing Prev (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Sky Writing Prev (usec).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Prev_DISP">
             <summary>
-              Prev과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Prev.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Q_switch_delay_DESC">
             <summary>
-              Laser Q Switch Delay (usec). Used with YAG5 Laser Mode과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Laser Q Switch Delay (usec). Used with YAG5 Laser Mode.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Q_switch_delay_DISP">
             <summary>
-              Q switch delay과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Q switch delay.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Scanner__Variable__C">
             <summary>
-              Scanner (Variable)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Scanner (Variable).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Scanner_C">
             <summary>
-              Scanner과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Scanner.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Sky_writing_C">
             <summary>
-              Sky Writing과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Sky Writing.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Sky_writing_enable_DESC">
             <summary>
-              Enable/Disable Sky Wring과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Enable/Disable Sky Wring.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Sky_writing_enable_DISP">
             <summary>
-              SW Enable과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to SW Enable.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Sky_writing_mode_DESC">
             <summary>
-              Sky Wring Mode 1,2,3과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Sky Wring Mode 1,2 or 3.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Sky_writing_mode_DISP">
             <summary>
-              Sky writing mode과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Sky writing mode.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Time_lag_DESC">
             <summary>
-              Sky Writing Time Lag (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Sky Writing Time Lag (usec).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Time_lag_DISP">
             <summary>
-              Time lag과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Time lag.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Variable_jump_delay_DESC">
             <summary>
-              Enable/Disable Scanner Variable Jump Delay과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Enable/Disable Scanner Variable Jump Delay.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Variable_jump_delay_DISP">
             <summary>
-              Variable jump delay과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Variable jump delay.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Variable_jump_delay_length_DESC">
             <summary>
-              Scanner Variable Jump Limit Length (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Scanner Variable Jump Limit Length (mm).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Variable_jump_delay_length_DISP">
             <summary>
-              Variable jump delay length과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Variable jump delay length.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Variable_jump_delay_min__time_DESC">
             <summary>
-              Scanner Variable Min. Jump Delay (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Scanner Variable Min. Jump Delay (usec).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Variable_jump_delay_min__time_DISP">
             <summary>
-              Variable jump delay min. time과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Variable jump delay min. time.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Variable_polygon_delay_DESC">
             <summary>
-              Enable/Disable Scanner Variable Polygon Delay By Angle (Scale(°) = 1 – Cos(°))과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Enable/Disable Scanner Variable Polygon Delay By Angle (Scale(°) = 1 – Cos(°)).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Variable_polygon_delay_DISP">
             <summary>
-              Variable polygon delay과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Variable polygon delay.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Wobbel_C">
             <summary>
-              Wobbel과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Wobbel.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Wobbel_enable_DESC">
             <summary>
-              Enable/Disable Wobbel Shape과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Enable/Disable Wobbel Shape.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Wobbel_enable_DISP">
             <summary>
-              Wobbel enable과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Wobbel enable.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Wobbel_frequency_DESC">
             <summary>
-              Wobbel Frequency (Hz) (&gt;0 ClockWise, &lt;0.1/TrackingErr)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Wobbel Frequency (Hz) (&gt;0 ClockWise, &lt;0.1/TrackingErr).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Wobbel_frequency_DISP">
             <summary>
-              Wobbel frequency과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Wobbel frequency.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Wobbel_shape_DESC">
             <summary>
-              Wobbel Shape과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Wobbel Shape.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Wobbel_shape_DISP">
             <summary>
-              Wobbel shape과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Wobbel shape.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.pensyncaxis">
@@ -11064,490 +11574,183 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.entitybase">
             <summary>
-              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.ResourceManager">
             <summary>
-              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Culture">
             <summary>
-              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
-              재정의합니다.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Align_DESC">
             <summary>
-              Translate for Alignment (mm) (Align * Scale * Rotate * Transit)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Translate for Align (mm).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Align_DISP">
             <summary>
-              Mode Align과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Mode Align.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Alignment_DESC">
             <summary>
-              Model X,Y,Z Alignment (mm) (Align * Scale * Rotate * Transit)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Alignments.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Alignment_DISP">
             <summary>
-              Alignment과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Alignment.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Basic_C">
             <summary>
-              Basic과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Basic.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Color_DESC">
             <summary>
-              Color of Entity과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Color of Entity (Used with Pen Color).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Color_DISP">
             <summary>
-              Color과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Color.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Description_DESC">
             <summary>
-              Description of Entity과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Description of Entity.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Description_DISP">
             <summary>
-              Description과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Description.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Entity_ID_DESC">
             <summary>
-              Entity ID과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Unique Entity ID.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.HitTest_DESC">
             <summary>
-              Is Hittest or Not과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Is Allow Hittest or Not.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.HitTest_DISP">
             <summary>
-              HitTest과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to HitTest.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.ID_DISP">
             <summary>
-              ID과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to ID.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Items_DESC">
             <summary>
-              Counts of Child Entities과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Counts of Child Entities.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Items_DISP">
             <summary>
-              Items과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Items.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Mark_DESC">
             <summary>
-              Is Mark or Not과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Is Allow Mark or Not.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Mark_DISP">
             <summary>
-              Mark과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Mark.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Matrix_C">
             <summary>
-              Matrix과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Matrix.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Model_DESC">
             <summary>
-              Model 4x4 Matrix (Align * Scale * Rotate * Transit)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Model 4x4 Matrix.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Model_DISP">
             <summary>
-              Model Matrix과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Model Matrix.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Name_DESC">
             <summary>
-              Name of Entity과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Name of Entity.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Name_DISP">
             <summary>
-              Name과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Name.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Render_DESC">
             <summary>
-              Is Render or Not과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Is Allow to Render or Not.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Render_DISP">
             <summary>
-              Render과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Render.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Rotate_DESC">
             <summary>
-              Model Rotate X,Y,Z Angle (Degree) (Align * Scale * Rotate * Transit)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Rotate X,Y,Z Angle (°) .
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Rotate_DISP">
             <summary>
-              Model Rotate과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Model Rotate.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Scale_DESC">
             <summary>
-              Model Scale X,Y,Z (Default: 1) (Align * Scale * Rotate * Transit)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Scale X,Y,Z (Default: 1, Should be &gt; 0).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Scale_DISP">
             <summary>
-              Model Scale과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Model Scale.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Selected_DESC">
             <summary>
-              Is Selected or Not과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Is Selected or Not.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Selected_DISP">
             <summary>
-              Selected과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Selected.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Status_C">
             <summary>
-              Status과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Status.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Translate_DESC">
             <summary>
-              Model Translate Position X,Y,Z (mm) (Align * Scale * Rotate * Transit)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Translate Position X,Y,Z (mm) .
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Translate_DISP">
             <summary>
-              Model Translate과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.marker.markerbase">
-            <summary>
-              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ResourceManager">
-            <summary>
-              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Culture">
-            <summary>
-              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
-              재정의합니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.AccumulatedMarks_DESC">
-            <summary>
-              Accumulated Mark Counts과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.AccumulatedMarks_DISP">
-            <summary>
-              Marks과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Basic_C">
-            <summary>
-              Basic과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Busy_DESC">
-            <summary>
-              Busy Status과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Busy_DISP">
-            <summary>
-              Busy과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Data_C">
-            <summary>
-              Data과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Entity_DESC">
-            <summary>
-              Current or Working Entity과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Entity_DISP">
-            <summary>
-              Entity과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Entity_Index_DESC">
-            <summary>
-              Current or Working Entity과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Entity_Index_DISP">
-            <summary>
-              Entity Index과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Error_DESC">
-            <summary>
-              Error Status과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Error_DISP">
-            <summary>
-              Error과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Index_DESC">
-            <summary>
-              Index과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Index_DISP">
-            <summary>
-              Index과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Jump_Origin_DESC">
-            <summary>
-              Jump to Origin Location After Finish to Mark과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Jump_Origin_DISP">
-            <summary>
-              Jump Origin과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Layer_DESC">
-            <summary>
-              Current or Working Layer과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Layer_DISP">
-            <summary>
-              Layer과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Layer_Index_DESC">
-            <summary>
-              Current or Working Layer Index과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Layer_Index_DISP">
-            <summary>
-              Layer Index과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.MarkTime_DESC">
-            <summary>
-              Mark Time Span (Start and End Mark Time)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.MarkTime_DISP">
-            <summary>
-              Mark Time과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Name_DESC">
-            <summary>
-              Name과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Name_DISP">
-            <summary>
-              Name과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offset_Index_DESC">
-            <summary>
-              Current or Working Offset Index과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offset_Index_DISP">
-            <summary>
-              Offset Index과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offsets_DESC">
-            <summary>
-              Array of Offset (Dx, Dy, Dz and Angle)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offsets_DISP">
-            <summary>
-              Offsets과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Pen_Color_DESC">
-            <summary>
-              Current or Working Pen Color과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Pen_Color_DISP">
-            <summary>
-              Pen Color과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Ready_DESC">
-            <summary>
-              Ready Status과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Ready_DISP">
-            <summary>
-              Ready과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Status_C">
-            <summary>
-              Status과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Target_DESC">
-            <summary>
-              Mark Target과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Target_DISP">
-            <summary>
-              Target과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Working_C">
-            <summary>
-              Working과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.marker.markerrtc">
-            <summary>
-              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.ResourceManager">
-            <summary>
-              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Culture">
-            <summary>
-              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
-              재정의합니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Check_C">
-            <summary>
-              Check과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Data_C">
-            <summary>
-              Data과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.External__START_DESC">
-            <summary>
-              Enable/Disable External /START Trigger과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.External__START_DISP">
-            <summary>
-              External /START과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.List_type_DESC">
-            <summary>
-              RTC List Type. Single buffer or Auto(or Double) buffer과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.List_type_DISP">
-            <summary>
-              List type과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.MaxMeasureTime_DESC">
-            <summary>
-              Max. Time to Measurement (sec)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.MaxMeasureTime_DISP">
-            <summary>
-              Time과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Measurement_C">
-            <summary>
-              Measurement과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Plot_DESC">
-            <summary>
-              Plot as Graph After Finish to Mark. Create Measurement Begin, End Entities과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Plot_DISP">
-            <summary>
-              Plot과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Position_DESC">
-            <summary>
-              Check Scanner Position Acknowledge Status Before Start Mark과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Position_DISP">
-            <summary>
-              Position Ack과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Power_DESC">
-            <summary>
-              Check Scanner Power Ok Status Before Start Mark과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Power_DISP">
-            <summary>
-              Power Supply과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Session_DESC">
-            <summary>
-              Entity(MeasurementBegin) for Measurement Session과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Session_DISP">
-            <summary>
-              Session과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Temp_DESC">
-            <summary>
-              Check Scanner Temperature Ok Status Before Start Mark과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Temp_DISP">
-            <summary>
-              Temperature과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Model Translate.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Properties.Resources">

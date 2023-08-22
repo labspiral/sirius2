@@ -16,7 +16,7 @@
  *               `---`            `---'                                                        `----'   
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : MoF(Marking on the Fly) with Rotate(Angualr)
+ * Description : MoF(Marking on the Fly) with Rotate (Angualr)
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -118,7 +118,7 @@ namespace Demos
                         rtcMoF.CtlMofEncoderReset();
                         break;
                     case ConsoleKey.S:
-                        Console.Write("encoder angular speed (deg/s): ");
+                        Console.Write("encoder angular speed (°/s): ");
                         double speedAngular = Convert.ToDouble(Console.ReadLine());
                         rtcMoF.CtlMofEncoderAngularSpeed(speedAngular);
                         break;

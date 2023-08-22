@@ -40,10 +40,8 @@ namespace Demos
     {
 
         static readonly int InstanceCounts = 4;
-
         static readonly IRtc[] RtcArray = new IRtc[InstanceCounts];
         static readonly ILaser[] LaserArray = new ILaser[InstanceCounts];
-
 
         [STAThread]
         static void Main(string[] args)

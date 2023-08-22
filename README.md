@@ -69,7 +69,7 @@
     - config "config_syncaxis.ini" for XL-SCAN
  - Demo 'editor_marker' winforms project for custom marker
  - Demo 'editor_ui' winforms project for custom ui
- - Demo 'editor_remote' winforms project control by remotely 
+ - Demo 'editor_remote' winforms project for control by remotely 
  - Demo 'editor_multiple' winforms project for multiple instances
 
 
@@ -81,8 +81,8 @@
  * Per instance
    - Option1: MoF 
    - Option2: 3D 
- * Even if not purchase license, everything is fully functional during 30 mins (evaluation mode activated)
- * Evaluation mode is supported only 1 instance
+ * Even if without license, everything is fully functional during 30 mins 
+   - Only 1 instance is useable at evaluation mode 
  
  
 ----
@@ -100,6 +100,22 @@
 
 
 **8. Version history**
+
+* 2023.8.22 v.0.9.5
+  - added) support compressed file format by optional
+     - Config.IsCompressedFileFormat
+  - fixed) EntityPointsCloud
+     - added) event OnPointsCloudCalibrated 
+     - added) IArrayOfOffset interface (for multiple 3d models)
+     - added) configurable z order when extract vertices
+     - added) support load and select 3d correction table by optional
+  - fixed) bugs
+     - invalid pen color at propertygrid by double-click
+     - background color at DIO winforms
+     - options at path optimizer winforms
+     - wrong z positon with alignment 
+     - invalid category names at propertygrid
+     - invalid with OnResize 
 
 * 2023.8.16 v.0.9.3
   - added) editor_multiple demo
@@ -212,7 +228,7 @@
 ----
 
 
-**8. Known Issues**
+**9. Known Issues**
 
 * General
   - ActDivide is not supported yet
