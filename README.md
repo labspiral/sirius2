@@ -81,8 +81,7 @@
  * Per instance
    - Option1: MoF 
    - Option2: 3D 
- * Even if without license, everything is fully functional during 30 mins 
-   - Only 1 instance is useable at evaluation mode 
+ * Everything is fully functional during 30 mins
  
  
 ----
@@ -100,6 +99,12 @@
 
 
 **8. Version history**
+
+* 2023.8.25 v.0.9.6
+  - added) EntityWriteDataExt16Cond entity
+  - added) EntityWaitDataExt16Cond entity
+  - added) ManualUserControl winforms
+  - fixed) config.ini for support 2nd head
 
 * 2023.8.22 v.0.9.5
   - added) support compressed file format by optional

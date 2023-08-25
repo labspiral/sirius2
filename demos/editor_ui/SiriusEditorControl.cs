@@ -16,7 +16,7 @@
  *               `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Custom SiriusEditor usercontrol
+ * Description : SiriusEditor usercontrol
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -43,11 +43,6 @@ using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Common;
 using SpiralLab.Sirius2.Winforms.UI;
 using OpenTK;
-#if NETFRAMEWORK
-using OpenTK;
-#elif NET
-using OpenTK.Mathematics;
-#endif
 
 namespace Demos
 {
@@ -55,7 +50,7 @@ namespace Demos
     /// SiriusEditorUserControl
     /// </summary>
     /// <remarks>
-    /// User can insert(or create) usercontrol at own winforms
+    /// User can insert(or create) usercontrol at own winforms. <br/>
     /// </remarks>
     public partial class SiriusEditorUserControl : Form
     {
@@ -69,12 +64,56 @@ namespace Demos
         }
 
         /// <summary>
+        /// Disable UI controls for edit or not
+        /// </summary>
+        /// <remarks>
+        /// To do not allow user operations. <br/>
+        /// </remarks>
+        public bool IsDisableControl
+        {
+            get { return isDisableControl; }
+            set
+            {
+                isDisableControl = value;
+                if (isDisableControl)
+                {
+                    TreeViewCtrl.Enabled = false;
+                    TreeViewBlockCtrl.Enabled = false;
+                    PropertyGridCtrl.Enabled = false;
+                    EditorCtrl.Enabled = false;
+                    //PenCtrl.Enabled = false;
+                    LaserCtrl.Enabled = false;
+                    //MarkerCtrl.Enabled = false;
+                    OffsetCtrl.Enabled = false;
+                    RtcDICtrl.Enabled = false;
+                    RtcDOCtrl.Enabled = false;
+                    ManualCtrl.Enabled = false;
+                }
+                else
+                {
+                    TreeViewCtrl.Enabled = true;
+                    TreeViewBlockCtrl.Enabled = true;
+                    PropertyGridCtrl.Enabled = true;
+                    EditorCtrl.Enabled = true;
+                    //PenCtrl.Enabled = false;
+                    LaserCtrl.Enabled = true;
+                    //MarkerCtrl.Enabled = true;
+                    OffsetCtrl.Enabled = true;
+                    RtcDICtrl.Enabled = true;
+                    RtcDOCtrl.Enabled = true;
+                    ManualCtrl.Enabled = true;
+                }
+            }
+        }
+        private bool isDisableControl;
+
+        /// <summary>
         /// <c>IDocument</c>
         /// </summary>
         public IDocument Document
         {
             get { return document; }
-            protected set
+            protected set 
             {
                 if (document == value)
                     return;
@@ -110,7 +149,7 @@ namespace Demos
                 }
                 PropertyGridCtrl.SelecteObject = null;
             }
-        }
+        }  
         private IDocument document;
 
         /// <summary>
@@ -122,7 +161,7 @@ namespace Demos
             set
             {
                 if (rtc == value)
-                    return;
+                    return;                
                 if (rtc != null)
                 {
                     if (rtc is IRtcMoF mof)
@@ -141,11 +180,12 @@ namespace Demos
                     myDOExt2 = null;
                     myDOLaserPort = null;
                 }
-
+                
                 rtc = value;
                 rtcControl1.Rtc = rtc;
                 rtcDIUserControl1.Rtc = rtc;
                 rtcDOUserControl1.Rtc = rtc;
+                manualUserControl1.Rtc = rtc;
                 EditorCtrl.Rtc = rtc;
                 TreeViewCtrl.Rtc = rtc;
                 TreeViewBlockCtrl.Rtc = rtc;
@@ -175,7 +215,7 @@ namespace Demos
                     rtcDIUserControl1.DILaserPort = myDILaserPort;
                     rtcDIUserControl1.UpdateExtension1PortNames(Config.DIN_RtcExtension1Port);
                     rtcDIUserControl1.UpdateLaserPortNames(Config.DIN_RtcLaserPort);
-
+                    
                     rtcDOUserControl1.DOExt1 = myDOExt1;
                     rtcDOUserControl1.DOExt2 = myDOExt2;
                     rtcDOUserControl1.DOLaserPort = myDOLaserPort;
@@ -206,6 +246,7 @@ namespace Demos
                     return;
                 laser = value;
                 laserControl1.Laser = laser;
+                manualUserControl1.Laser = laser;
                 if (null != laser)
                 {
                     EntityPen.PropertyVisibility(laser);
@@ -262,8 +303,8 @@ namespace Demos
         /// Usercontrol for Treeview
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl TreeViewCtrl
-        {
-            get { return treeViewControl1; }
+        { 
+            get { return treeViewControl1; } 
         }
         /// <summary>
         /// Usercontrol for Treeview with block
@@ -336,6 +377,14 @@ namespace Demos
             get { return rtcDOUserControl1; }
         }
         /// <summary>
+        /// Usercontrol for manual
+        /// </summary>
+        public SpiralLab.Sirius2.Winforms.UI.ManualUserControl ManualCtrl
+        {
+            get { return manualUserControl1; }
+        }
+
+        /// <summary>
         /// Usercontrol for log
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.LogUserControl LogCtrl
@@ -344,7 +393,7 @@ namespace Demos
         }
 
         System.Windows.Forms.Timer timerProgress = new System.Windows.Forms.Timer();
-        System.Windows.Forms.Timer timerStatus = new System.Windows.Forms.Timer();
+        System.Windows.Forms.Timer timerStatus  = new System.Windows.Forms.Timer();
         Stopwatch timerProgressStopwatch = new Stopwatch();
 
         /// <summary>
@@ -419,6 +468,8 @@ namespace Demos
 
             mnuWriteData.Click += MnuWriteData_Click;
             mnuWriteDataExt16.Click += MnuWriteDataExt16_Click;
+            mnuWriteDataExt16Cond.Click += MnuWriteDataExt16Cond_Click;
+            mnuWaitDataExt16Cond.Click += MnuWaitDataExt16Cond_Click;
 
             // Create one by default
             this.Document = new DocumentBase();
@@ -438,7 +489,7 @@ namespace Demos
             TreeViewBlockCtrl.View = EditorCtrl.View;
             PropertyGridCtrl.View = EditorCtrl.View;
 
-
+     
         }
         private void SiriusEditorUserControl_VisibleChanged(object sender, EventArgs e)
         {
@@ -459,7 +510,7 @@ namespace Demos
 
         private void BtnCircularText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateCircularText(Config.DefaultFont, "POWERED BY SIRIUS2 0123456789", FontStyle.Regular, 2, TextCircularDirections.ClockWise, 5, 180);
+            var entity = EntityFactory.CreateCircularText(Config.DefaultFont, "POWERED BY SIRIUS2 0123456789", FontStyle.Regular, 2,  TextCircularDirections.ClockWise, 5, 180);
             document.ActAdd(entity);
         }
 
@@ -474,19 +525,26 @@ namespace Demos
             var entity = EntityFactory.CreateQRCode("SIRIUS2", BarcodeCells.Dots, 5, 2, 2);
             document.ActAdd(entity);
         }
-
         private void MnuDataMatrix_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateDataMatrix("SIRIUS2", BarcodeCells.Dots, 5, 2, 2);
             document.ActAdd(entity);
         }
-
         private void MnuWriteDataExt16_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateWriteDataExt16(0, false);
             document.ActAdd(entity);
         }
-
+        private void MnuWriteDataExt16Cond_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateWriteDataExt16Cond("0000 0000 0000 0000", "0000 0000 0000 0000", "0000 0000 0000 0000", false);
+            document.ActAdd(entity);
+        }
+        private void MnuWaitDataExt16Cond_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateWaitDataExt16Cond("0000 0000 0000 0000", "0000 0000 0000 0000");
+            document.ActAdd(entity);
+        }
         private void MnuWriteData_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateWriteData(ExtensionChannel.ExtAO2, 0);
@@ -533,6 +591,9 @@ namespace Demos
                     mnuMeasurementBeginEnd.Enabled = false;
                     mnuMoF.Enabled = false;
                     mnuZDefocus.Enabled = false;
+                    mnuWriteDataExt16Cond.Enabled = false;
+                    mnuWaitDataExt16Cond.Enabled = false;
+
                     lblEncoder.Visible = false;
                     btnCharacterSetText.Enabled = false;
                     btnSiriusCharacterSetText.Enabled = false;
@@ -550,8 +611,10 @@ namespace Demos
 
         private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (null == Document)
+                return;
             Document.ActSelectClear();
-            switch (tabControl1.SelectedIndex)
+            switch(tabControl1.SelectedIndex)
             {
                 case 0:
                     EditorCtrl.View.ViewMode = ViewModes.Entity;
@@ -647,7 +710,7 @@ namespace Demos
             {
                 var entity = EntityFactory.CreateMoFEnd(Vector2.Zero);
                 document.ActAdd(entity);
-
+                
             }
             {
                 var entity = EntityFactory.CreateMoFBegin(RtcEncoderType.Angular);
@@ -715,7 +778,7 @@ namespace Demos
             //Cursor.Current = Cursors.WaitCursor;
             //Document.ActImport(dlg.FileName, out var entity);
             //Cursor.Current = Cursors.Default;
-
+            
             // or preview import winform
             var form = new SpiralLab.Sirius2.Winforms.UI.ImportForm();
             DialogResult dialogResult = form.ShowDialog(this);
@@ -741,7 +804,7 @@ namespace Demos
 
         private void BtnRectangle_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateRectangle(Vector2.Zero, 10, 10);
+            var entity = EntityFactory.CreateRectangle(Vector2.Zero, 10,10);
             document.ActAdd(entity);
         }
 
@@ -875,7 +938,7 @@ namespace Demos
                         }
                         break;
                     case RtcEncoderType.Angular:
-                        {
+                        { 
                             rtcMoF.CtlMofGetAngularEncoder(out var x, out var angle);
                             lblEncoder.Text = $"ENC X,0: {x} [{angle:F3}˚]";
                         }
@@ -991,15 +1054,17 @@ namespace Demos
 
         private void EnableDisableControlByMarking(bool enable)
         {
-            TreeViewCtrl.Enabled = enable;
-            TreeViewBlockCtrl.Enabled = enable;
-            EditorCtrl.Enabled = enable;
-            PenCtrl.Enabled = enable;
-            LaserCtrl.Enabled = enable;
-            RtcCtrl.Enabled = enable;
-            OffsetCtrl.Enabled = enable;
-            PropertyGridCtrl.Enabled = enable;
-
+            if (!IsDisableControl)
+            {
+                TreeViewCtrl.Enabled = enable;
+                TreeViewBlockCtrl.Enabled = enable;
+                EditorCtrl.Enabled = enable;
+                PenCtrl.Enabled = enable;
+                LaserCtrl.Enabled = enable;
+                RtcCtrl.Enabled = enable;
+                OffsetCtrl.Enabled = enable;
+                PropertyGridCtrl.Enabled = enable;
+            }
             DoRender();
         }
 
@@ -1065,20 +1130,19 @@ namespace Demos
         }
         private void Marker_OnStarted(IMarker marker)
         {
+            timerProgressStopwatch.Restart();
+            timerProgress.Start();
             this.Invoke(new MethodInvoker(delegate ()
             {
                 EnableDisableControlByMarking(false);
-                timerProgressStopwatch.Restart();
-                timerProgress.Start();
-
             }));
         }
         private void Marker_OnEnded(IMarker marker, bool success, TimeSpan ts)
         {
+            timerProgressStopwatch.Stop();
+            timerProgress.Stop();
             this.Invoke(new MethodInvoker(delegate ()
             {
-                timerProgressStopwatch.Stop();
-                timerProgress.Stop();
                 if (success)
                 {
                     lblProcessTime.ForeColor = statusStrip1.ForeColor;
