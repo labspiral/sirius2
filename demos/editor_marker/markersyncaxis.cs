@@ -279,9 +279,16 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             }
             // Shallow copy for cross-thread issue
             layers = new List<EntityLayer>(Document.InternalData.Layers);
-
             AccumulatedMarks++;
-            this.thread = new Thread(this.MarkerThread);
+            switch (MarkProcedure)
+            {
+                default:
+                    this.thread = new Thread(this.MarkerThreadLayerFirst);
+                    break;
+                case MarkProcedures.OffsetFirst:
+                    this.thread = new Thread(this.MarkerThreadOffsetFirst);
+                    break;
+            }
             this.thread.Name = $"MyMarker [{Index}]: {this.Name}";
             this.thread.Start();
             return true;
@@ -331,9 +338,13 @@ namespace SpiralLab.Sirius2.Winforms.Marker
         }
 
         /// <summary>
-        /// Marker thread for marking
+        /// Marker thread #1
         /// </summary>
-        protected virtual void MarkerThread()
+        /// <remarks>
+        /// <c>MarkProc.LayerFirst</c> <br/>
+        /// Move offset1 and Mark layers -> Move offset2 and Mark layers , ... <br/>
+        /// </remarks>
+        protected virtual void MarkerThreadLayerFirst()
         {
             var rtc = this.Rtc;
             var laser = this.Laser;
@@ -343,11 +354,11 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             Debug.Assert(laser != null);
             Debug.Assert(document != null);
             Debug.Assert(null != rtcSyncAxis);
-            
+
             this.isInternalBusy = true;
             this.NotifyStarted();
             var dtStarted = DateTime.Now;
-            bool success = true;     
+            bool success = true;
             var oldMatrixStack = (IMatrixStack<System.Numerics.Matrix4x4>)rtc.MatrixStack.Clone();
 
             for (int i = 0; i < Offsets.Length; i++)
@@ -361,7 +372,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                     success &= NotifyBeforeLayer(layer);
                     if (!success)
                     {
-                        Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer by before event handler"); ;
+                        Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer at before event handler"); ;
                         break;
                     }
 
@@ -394,7 +405,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                     success &= NotifyAfterLayer(layer);
                     if (!success)
                     {
-                        Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer by after event handler"); 
+                        Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer at after event handler");
                         break;
                     }
                     if (success)
@@ -409,7 +420,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                         }
                     }
                 }
-                rtc.MatrixStack.Pop(); 
+                rtc.MatrixStack.Pop();
                 if (!success)
                     break;
             }
@@ -420,12 +431,117 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             this.NotifyEnded(success);
             if (success)
             {
-                Logger.Log(Logger.Type.Debug, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
+                Logger.Log(Logger.Type.Info, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
             }
             else
             {
                 Logger.Log(Logger.Type.Error, $"marker [{Index}]: mark has failed with {this.TimeSpan.TotalSeconds:F3}s");
             }
-        }        
+        }
+
+        /// <summary>
+        /// Marker thread #2
+        /// </summary>
+        /// <remarks>
+        /// <c>MarkProc.OffsetFirst</c> <br/>
+        /// Mark layer1 with offset1 and offset2, ... -> Mark layer2 with offset1 and offset2, ... <br/>
+        /// </remarks>
+        protected virtual void MarkerThreadOffsetFirst()
+        {
+            var rtc = this.Rtc;
+            var laser = this.Laser;
+            var document = this.Document;
+            var rtcSyncAxis = rtc as IRtcSyncAxis;
+            Debug.Assert(rtc != null);
+            Debug.Assert(laser != null);
+            Debug.Assert(document != null);
+            Debug.Assert(null != rtcSyncAxis);
+
+            this.isInternalBusy = true;
+            this.NotifyStarted();
+            var dtStarted = DateTime.Now;
+            bool success = true;
+            var oldMatrixStack = (IMatrixStack<System.Numerics.Matrix4x4>)rtc.MatrixStack.Clone();
+
+            foreach (var layer in layers)
+            {
+                if (!layer.IsMarkerable)
+                    continue;
+                success &= NotifyBeforeLayer(layer);
+                if (!success)
+                {
+                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer at before event handler"); ;
+                    break;
+                }
+
+                switch (layer.MotionType)
+                {
+                    case MotionType.StageOnly:
+                        success &= rtcSyncAxis.CtlMotionType(MotionType.StageOnly);
+                        break;
+                    case MotionType.ScannerOnly:
+                        success &= rtcSyncAxis.CtlMotionType(MotionType.ScannerOnly);
+                        break;
+                    case MotionType.StageAndScanner:
+                        success &= rtcSyncAxis.CtlMotionType(MotionType.StageAndScanner);
+                        success &= rtcSyncAxis.CtlBandWidth(layer.BandWidth);
+                        break;
+                }
+                success &= laser.ListBegin();
+                success &= rtcSyncAxis.ListBegin(layer.MotionType);
+
+                for (int i = 0; i < Offsets.Length; i++)
+                {
+                    Logger.Log(Logger.Type.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
+                    rtc.MatrixStack.Push(Offsets[i].ToMatrix);
+                    success &= LayerWork(i, layer, Offsets[i]);
+                    rtc.MatrixStack.Pop();
+                    if (!success)
+                        break;
+                }
+                if (IsJumpToOriginAfterFinished)
+                    success &= rtc.ListJumpTo(System.Numerics.Vector2.Zero);
+                success &= laser.ListEnd();
+                success &= rtc.ListEnd();
+                if (success)
+                    success &= rtc.ListExecute(true);
+                if (!success)
+                    break;
+
+                success &= NotifyAfterLayer(layer);
+                if (!success)
+                {
+                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer at after event handler");
+                    break;
+                }
+                if (success)
+                {
+                    if (this.IsMeasurementPlot)
+                    {
+                        if (rtcSyncAxis.IsSimulationMode)
+                        {
+                            string simulatedFileName = Path.Combine(SpiralLab.Sirius2.Config.SyncAxisSimulateFilePath, rtcSyncAxis.SimulationFileName);
+                            SyncAxisViewerHelper.Plot(simulatedFileName);
+                        }
+                    }
+                }
+
+                if (!success)
+                    break;
+            }
+
+            rtc.MatrixStack = oldMatrixStack;
+            this.TimeSpan = DateTime.Now - dtStarted;
+            this.isInternalBusy = false;
+            this.NotifyEnded(success);
+            if (success)
+            {
+                Logger.Log(Logger.Type.Info, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
+            }
+            else
+            {
+                Logger.Log(Logger.Type.Error, $"marker [{Index}]: mark has failed with {this.TimeSpan.TotalSeconds:F3}s");
+            }
+        }
     }
 }

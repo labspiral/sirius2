@@ -40,8 +40,9 @@ namespace Demos
     public partial class Form1 : Form
     {
         public Form1()
-        {
+        {           
             InitializeComponent();
+
             // Initialize sirius2 library
             SpiralLab.Sirius2.Core.Initialize();
 

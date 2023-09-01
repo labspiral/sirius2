@@ -51,6 +51,9 @@ namespace Demos
     {
         public Form1()
         {
+            // Set language
+            EditorHelper.SetLanguage();
+
             InitializeComponent();
 
             this.Load += Form1_Load;
@@ -58,7 +61,7 @@ namespace Demos
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
+        {   
             // Initialize sirius2 library
             EditorHelper.Initialize();
 
@@ -80,7 +83,7 @@ namespace Demos
             // Create entities for test
             EditorHelper.CreateTestEntities(rtc, view, document);
 
-            // Assign custom converter for ITextConvertible entities
+            // Assign event handlers at Config
             EditorHelper.AttachEventHandlers();
 
             // Assign Document, View, Rtc, Laser into marker

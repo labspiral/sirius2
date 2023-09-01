@@ -406,7 +406,15 @@ namespace Demos
             else
                 Logger.Log(Logger.Type.Warn, $"marker [{Index}]: trying to start mark with {this.Offsets.Length} offsets");
 
-            this.thread = new Thread(this.MarkerThread);
+            switch (MarkProcedure)
+            {
+                default:
+                    this.thread = new Thread(this.MarkerThreadLayerFirst);
+                    break;
+                case MarkProcedures.OffsetFirst:
+                    this.thread = new Thread(this.MarkerThreadOffsetFirst);
+                    break;
+            }
             this.thread.Name = $"Marker: {this.Name}";
             this.thread.Start();
             return true;
@@ -476,9 +484,13 @@ namespace Demos
         }
 
         /// <summary>
-        /// Marker thread
+        /// Marker thread #1
         /// </summary>
-        protected virtual void MarkerThread()
+        /// <remarks>
+        /// <c>MarkProc.LayerFirst</c> <br/>
+        /// Move offset1 and Mark layers -> Move offset2 and Mark layers , ... <br/>
+        /// </remarks>
+        protected virtual void MarkerThreadLayerFirst()
         {
             var rtc = this.Rtc;
             var laser = this.Laser;
@@ -500,15 +512,10 @@ namespace Demos
 
             this.isInternalBusy = true;
             var oldMatrixStack = (IMatrixStack<System.Numerics.Matrix4x4>)rtc.MatrixStack.Clone();
-            if (null != rtcMoF)
+            if (null != rtcMoF && rtc.IsMoF)
             {
-                if (rtc.IsMoF)
-                    rtcMoF.CtlMofOverflowClear();
-            }
-            if (null != rtc3D)
-            {
-                if (rtc.Is3D)
-                    rtc3D.ZDefocus = 0;
+                rtcMoF.CtlMofOverflowClear();
+                //rtcMoF.MofAngularCenter = System.Numerics.Vector2.Zero;
             }
 
             for (int i = 0; i < Offsets.Length; i++)
@@ -549,7 +556,18 @@ namespace Demos
                     if (success)
                     {
                         if (IsJumpToOriginAfterFinished)
-                            success &= rtc3D.ListJumpTo(System.Numerics.Vector3.Zero);
+                        {
+                            if (rtc.Is3D)
+                            {
+                                success &= rtc3D.ListZDefocus(0);
+                                success &= rtc3D.ListJumpTo(System.Numerics.Vector3.Zero);
+                            }
+                            else
+                            {
+                                success &= rtc.ListJumpTo(System.Numerics.Vector2.Zero);
+                            }
+                        }
+
                         success &= laser.ListEnd();
                         success &= rtc.ListEnd();
                         if (success && !IsExternalStart)
@@ -603,11 +621,189 @@ namespace Demos
                 }
             }
 
-            //if (null != rtc3D)
-            //{
-            //    if (rtc.Is3D && this.IsZDefocusOrigin)
-            //        rtc3D.ZDefocus = 0;
-            //}
+            rtc.MatrixStack = oldMatrixStack;
+            this.TimeSpan = DateTime.Now - dtStarted;
+            this.isInternalBusy = false;
+            if (!IsExternalStart)
+            {
+                this.NotifyEnded(success);
+                if (success)
+                {
+                    Logger.Log(Logger.Type.Info, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
+                    if (this.IsMeasurementPlot)
+                        this.NotifyPlot();
+                }
+                else
+                {
+                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: mark has failed with {this.TimeSpan.TotalSeconds:F3}s");
+                }
+            }
+            else
+            {
+                if (rtc is Rtc5)
+                {
+                    var extMode = Rtc5ExternalControlMode.Empty;
+                    extMode.Add(Rtc5ExternalControlMode.Bit.ExternalStart);
+                    extMode.Add(Rtc5ExternalControlMode.Bit.ExternalStartAgain);
+                    extMode.Add(Rtc5ExternalControlMode.Bit.ExternalStop);
+                    //extMode.Add(Rtc5ExternalControlMode.Bit.EncoderReset);
+                    extMode.Add(Rtc5ExternalControlMode.Bit.TrackDelay);
+                    success &= rtcExtension.CtlExternalControl(extMode);
+                }
+                else if (rtc is Rtc6)
+                {
+                    var extMode = Rtc6ExternalControlMode.Empty;
+                    extMode.Add(Rtc6ExternalControlMode.Bit.ExternalStart);
+                    extMode.Add(Rtc6ExternalControlMode.Bit.ExternalStartAgain);
+                    extMode.Add(Rtc6ExternalControlMode.Bit.ExternalStop);
+                    //extMode.Add(Rtc6ExternalControlMode.Bit.EncoderReset);
+                    extMode.Add(Rtc6ExternalControlMode.Bit.TrackDelay);
+                    success &= rtcExtension.CtlExternalControl(extMode);
+                }
+                Logger.Log(Logger.Type.Warn, $"marker [{Index}]: waiting for /START trigger");
+            }
+        }
+        /// <summary>
+        /// Marker thread #2
+        /// </summary>
+        /// <remarks>
+        /// <c>MarkProc.OffsetFirst</c> <br/>
+        /// Mark layer1 with offset1 and offset2, ... -> Mark layer2 with offset1 and offset2, ... <br/>
+        /// </remarks>
+        protected virtual void MarkerThreadOffsetFirst()
+        {
+            var rtc = this.Rtc;
+            var laser = this.Laser;
+            var document = this.Document;
+            var rtc3D = rtc as IRtc3D;
+            var rtc2ndHead = rtc as IRtc2ndHead;
+            var rtcExtension = rtc as IRtcExtension;
+            var rtcAlc = rtc as IRtcAutoLaserControl;
+            var rtcMoF = rtc as IRtcMoF;
+            var rtcSyncAxis = rtc as IRtcSyncAxis;
+            Debug.Assert(rtc != null);
+            Debug.Assert(laser != null);
+            Debug.Assert(document != null);
+            Debug.Assert(null == rtcSyncAxis);
+
+            this.NotifyStarted();
+            var dtStarted = DateTime.Now;
+            bool success = true;
+
+            this.isInternalBusy = true;
+            var oldMatrixStack = (IMatrixStack<System.Numerics.Matrix4x4>)rtc.MatrixStack.Clone();
+            if (null != rtcMoF && rtc.IsMoF)
+            {
+                rtcMoF.CtlMofOverflowClear();
+                //rtcMoF.MofAngularCenter = System.Numerics.Vector2.Zero;
+            }
+
+            foreach (var layer in layers)
+            {
+                if (!layer.IsMarkerable)
+                    continue;
+                success &= NotifyBeforeLayer(layer);
+                if (!success)
+                {
+                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer at before event handler"); ;
+                    break;
+                }
+                if (null != rtcAlc && layer.IsALC)
+                {
+                    success &= rtcAlc.CtlAutoLaserControlByPositionTable(layer.AlcByPositionTable);
+                    switch (layer.AlcSignal)
+                    {
+                        case AutoLaserControlSignal.ExtDO16:
+                        case AutoLaserControlSignal.ExtDO8:
+                            success &= rtcAlc.CtlAutoLaserControl<uint>(layer.AlcSignal, layer.AlcMode, (uint)layer.AlcPercentage100, (uint)layer.AlcMinValue, (uint)layer.AlcMaxValue);
+                            break;
+                        default:
+                            success &= rtcAlc.CtlAutoLaserControl<double>(layer.AlcSignal, layer.AlcMode, layer.AlcPercentage100, layer.AlcMinValue, layer.AlcMaxValue);
+                            break;
+                    }
+                }
+                success &= laser.ListBegin();
+                success &= rtc.ListBegin(ListType);
+
+                for (int i = 0; i < Offsets.Length; i++)
+                {
+                    try
+                    {
+                        rtc.MatrixStack.Push(Offsets[i].ToMatrix);
+                        CurrentOffsetIndex = i;
+                        Logger.Log(Logger.Type.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
+                        success &= LayerWork(i, layer, Offsets[i]);
+                        if (!success)
+                            break;
+                    }
+                    finally
+                    {
+                        // Pop offset matrix
+                        rtc.MatrixStack.Pop();
+                    }
+                }
+
+                if (success)
+                {
+                    if (IsJumpToOriginAfterFinished)
+                    {
+                        if (rtc.Is3D)
+                        {
+                            success &= rtc3D.ListZDefocus(0);
+                            success &= rtc3D.ListJumpTo(System.Numerics.Vector3.Zero);
+                        }
+                        else
+                        {
+                            success &= rtc.ListJumpTo(System.Numerics.Vector2.Zero);
+                        }
+                    }
+                    success &= laser.ListEnd();
+                    success &= rtc.ListEnd();
+                    if (success && !IsExternalStart)
+                        success &= rtc.ListExecute(true);
+                    if (success && !IsExternalStart)
+                    {
+                        if (null != CurrentSession && !CurrentSession.IsEmpty)
+                        {
+                            if (CurrentSession.Save(this.Rtc as IRtcMeasurement))
+                            {
+                                sessionQueue.Enqueue(CurrentSession);
+                            }
+                        }
+                    }
+                }
+
+                if (null != rtcAlc && layer.IsALC && !IsExternalStart)
+                {
+                    success &= rtcAlc.CtlAutoLaserControlByPositionTable(null);
+                    success &= rtcAlc.CtlAutoLaserControl<uint>(AutoLaserControlSignal.Disabled, AutoLaserControlMode.Disabled, 0, 0, 0);
+                }
+                if (!success)
+                    break;
+                success &= NotifyAfterLayer(layer);
+                if (!success)
+                {
+                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer at after event handler");
+                    break;
+                }
+            }
+
+            if (null != rtcMoF)
+            {
+                if (rtc.CtlGetStatus(RtcStatus.MofOutOfRange))
+                {
+                    if (rtc is Rtc5 rtc5)
+                    {
+                        var info = rtc5.MarkingInfo;
+                        Logger.Log(Logger.Type.Warn, $"marker [{Index}]: mof out of range. markinfg info= {info.Value}");
+                    }
+                    else if (rtc is Rtc6 rtc6)
+                    {
+                        var info = rtc6.MarkingInfo;
+                        Logger.Log(Logger.Type.Warn, $"marker [{Index}]: mof out of range. markinfg info= {info.Value}");
+                    }
+                }
+            }
 
             rtc.MatrixStack = oldMatrixStack;
             this.TimeSpan = DateTime.Now - dtStarted;

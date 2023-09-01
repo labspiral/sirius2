@@ -28,6 +28,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -58,13 +59,15 @@ namespace Demos
         /// Your config ini file
         /// </summary>
         public static string ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.ini");
-        // Or
-        // Used this config file if using XL-SCAN (syncAXIS)
+        // Config file for XL-SCAN (syncAXIS)
         //public static string ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config_syncaxis.ini");
 
         /// <summary>
         /// Initialize sirius2 library
         /// </summary>
+        /// <remarks>
+        /// Select config file as "config.ini" or "config_syncaxis.ini"
+        /// </remarks>
         /// <returns></returns>
         public static bool Initialize()
         {
@@ -73,6 +76,15 @@ namespace Demos
 
             // Initialize sirius2 library
             return SpiralLab.Sirius2.Core.Initialize();
+        }
+        /// <summary>
+        /// Set language
+        /// </summary>
+        public static void SetLanguage()
+        {
+            // language
+            var lang = NativeMethods.ReadIni(ConfigFileName, $"GLOBAL", "LANGUAGE", "en-US");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
         }
         /// <summary>
         /// Create devices (like as <c>IRtc</c>, <c>ILaser</c>, ...)
@@ -630,9 +642,6 @@ namespace Demos
         /// </summary>
         public static void AttachEventHandlers()
         {
-            // Event will be fired when trying to convert with ITextConvertible entity
-            SpiralLab.Sirius2.Winforms.Config.OnTextConvert += Text_OnTextConvert;
-
             // Event will be fired when select scanner field correction 2d at popup-menu
             SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DShow += Config_OnScannerFieldCorrection2DShow;
 
@@ -652,19 +661,7 @@ namespace Demos
             laser.Dispose();
             rtc.Dispose();
         }
-
-        private static string Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
-        {
-            var entity = textConvertible as IEntity;
-            switch (entity.Name)
-            {
-                case "MyText1":
-                    // For example, convert to DateTime format. link: https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
-                    // Like as "yyyyMMdd HH:mm:ss"
-                    return DateTime.Now.ToString(textConvertible.SourceText);
-            }
-            return textConvertible.SourceText;
-        }
+        
         private static RtcCorrection2D Config_OnScannerFieldCorrection2DShow(IRtc rtc)
         {
             // For example, 7x7 grids 

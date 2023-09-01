@@ -14,6 +14,9 @@ namespace Demos
     {
         public Form1()
         {
+            // Set language
+            EditorHelper.SetLanguage();
+
             InitializeComponent();
 
             this.Load += Form1_Load;
@@ -30,7 +33,6 @@ namespace Demos
             for (int i = 0; i < tabControl1.TabCount; i++)
                 tabControl1.SelectedIndex = i;
             tabControl1.SelectedIndex = 0;
-
 
             // index 0 
             int index = 0;
@@ -71,7 +73,7 @@ namespace Demos
             // Assign Document, View, Rtc, Laser into marker at index 1
             marker1.Ready(document1, view1, rtc1, laser1);
 
-            // Assign custom converter for ITextConvertible entities
+            // Assign event handlers at Config
             EditorHelper.AttachEventHandlers();
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

@@ -33,11 +33,14 @@ namespace Demos
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Initialize sirius2 library
-            EditorHelper.Initialize();
+            // Set language
+            EditorHelper.SetLanguage();
 
             // Create main form
             EditorForm = new SiriusEditorUserControl();
+
+            // Initialize sirius2 library
+            EditorHelper.Initialize();
 
             // To do something after form has shown
             EditorForm.Shown += EditorForm_Shown;

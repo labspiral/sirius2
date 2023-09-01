@@ -458,6 +458,7 @@ namespace Demos
             mnuMofXYWait.Click += MnuMofXYWait_Click;
             mnuMofAngularBeginEnd.Click += MnuMofAngularBeginEnd_Click;
             mnuMofAngularWait.Click += MnuMofAngularWait_Click;
+            mnuZDelta.Click += MnuZDelta_Click;
             mnuZDefocus.Click += MnuZDefocus_Click;
 
             mnuMarginLeft.Click += MnuMarginLeft_Click;
@@ -590,6 +591,7 @@ namespace Demos
                     btnImageText.Enabled = false;
                     mnuMeasurementBeginEnd.Enabled = false;
                     mnuMoF.Enabled = false;
+                    mnuZDelta.Enabled = false;                         
                     mnuZDefocus.Enabled = false;
                     mnuWriteDataExt16Cond.Enabled = false;
                     mnuWaitDataExt16Cond.Enabled = false;
@@ -626,32 +628,6 @@ namespace Demos
             EditorCtrl.View.Render();
         }
 
-        ///// <summary>
-        ///// Short cut keys for F5, CTRL+F5, F6
-        ///// </summary>
-        ///// <param name="msg"></param>
-        ///// <param name="keyData"></param>
-        ///// <returns>ProcessCmdKey return</returns>
-        //protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        //{
-        //    if (keyData == (Keys.F5))
-        //    {
-        //        MarkerCtrl.BtnStart_Click(this, EventArgs.Empty);
-        //        return true;
-        //    }
-        //    else if (keyData == (Keys.Control | Keys.F5))
-        //    {
-        //        MarkerCtrl.BtnStop_Click(this, EventArgs.Empty);
-        //        return true;
-        //    }
-        //    else if (keyData == (Keys.F6))
-        //    {
-        //        MarkerCtrl.BtnReset_Click(this, EventArgs.Empty);
-        //        return true;
-        //    }
-
-        //    return base.ProcessCmdKey(ref msg, keyData);
-        //}
 
         private void MnuMarginBottom_Click(object sender, EventArgs e)
         {
@@ -675,6 +651,12 @@ namespace Demos
         {
             document.ActAlign(document.Selected, MarginAlignments.Left);
             DoRender();
+        }
+
+        private void MnuZDelta_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateZDelta(0);
+            document.ActAdd(entity);
         }
 
         private void MnuZDefocus_Click(object sender, EventArgs e)
@@ -850,7 +832,11 @@ namespace Demos
         private void BtnZoomFit_Click(object sender, EventArgs e)
         {
             if (0 == Document.Selected.Length)
-                EditorCtrl.View.Camera.Reset();
+            {
+                var bbox = BoundingBox.RealBoundingBox(Document.InternalData.Layers.ToArray());
+                EditorCtrl.View.Camera.ZoomFit(bbox);
+                //EditorCtrl.View.Camera.Reset();
+            }
             else
             {
                 var bbox = BoundingBox.RealBoundingBox(Document.Selected);
@@ -904,6 +890,9 @@ namespace Demos
         private void Document_OnOpened(IDocument document, string fileName)
         {
             lblFileName.Text = fileName;
+            if (null != Laser)
+                foreach (var pen in document.InternalData.Pens)
+                    pen.PowerMax = Laser.MaxPowerWatt;
         }
         private void Document_OnSaved(IDocument document, string fileName)
         {

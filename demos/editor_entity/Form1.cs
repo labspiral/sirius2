@@ -28,6 +28,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -52,6 +53,9 @@ namespace Demos
     {
         public Form1()
         {
+            // Set language
+            EditorHelper.SetLanguage();
+
             InitializeComponent();
 
             this.Load += Form1_Load;
@@ -81,7 +85,7 @@ namespace Demos
             // Create entities for test
             EditorHelper.CreateTestEntities(rtc, view, document);
 
-            // Assign custom converter for ITextConvertible entities
+            // Assign event handlers at Config
             EditorHelper.AttachEventHandlers();
 
             // Assign Document, View, Rtc, Laser into marker

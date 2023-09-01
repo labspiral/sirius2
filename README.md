@@ -68,8 +68,9 @@
     - config "config.ini" for RTC5 or RTC6
     - config "config_syncaxis.ini" for XL-SCAN
  - Demo 'editor_marker' winforms project for custom marker
- - Demo 'editor_ui' winforms project for custom ui
  - Demo 'editor_remote' winforms project for control by remotely 
+ - Demo 'editor_barcode' winforms project for mark individual barcode entities
+ - Demo 'editor_ui' winforms project for custom ui
  - Demo 'editor_multiple' winforms project for multiple instances
 
 
@@ -81,7 +82,7 @@
  * Per instance
    - Option1: MoF 
    - Option2: 3D 
- * Everything is fully functional during 30 mins
+ * Evaluation mode would be activated during 30 mins without license
  
  
 ----
@@ -99,6 +100,14 @@
 
 
 **8. Version history**
+
+* 2023.9.1 v.0.9.8
+  - added) entity_barcode demo project
+     - fixed) OnTextConvert events
+  - added) MarkProcedures at IMarker
+  - added) ICalibration3D interface
+     - fixed) extract pointscloud bugs
+  - added) EntityZDelta entity
 
 * 2023.8.25 v.0.9.6
   - added) EntityWriteDataExt16Cond entity
@@ -224,7 +233,6 @@
       - added) pen, measurement entities
       - added) marker (seperated marker rtc, syncaxis)
       - added) user controls (log, pen, editor, dio, rtc, laser, ...)
-      - added) multi languages
 
 * 2023.4.8 v0.1
    - first commit 
@@ -236,6 +244,5 @@
 **9. Known Issues**
 
 * General
-  - ActDivide is not supported yet
-  - Multi-languages are not supported yet
+  - ActDivide is not supported yet  
   

@@ -1769,12 +1769,6 @@
         <member name="P:SpiralLab.Sirius2.Laser.LaserBase.LaserType">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Laser.LaserBase.MaxPowerWatt">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.Laser.LaserBase.LastPowerWatt">
-            <inheritdoc/>  
-        </member>
         <member name="P:SpiralLab.Sirius2.Laser.LaserBase.IsReady">
             <inheritdoc/>  
         </member>
@@ -1800,6 +1794,12 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.LaserBase.Scanner">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.LaserBase.MaxPowerWatt">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.LaserBase.LastPowerWatt">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.LaserBase.IsPowerControl">
@@ -2099,7 +2099,7 @@
             <c>IScanner</c> interface
             </summary>
             <remarks>
-            External control laser source (like as SCANLAB's RTC products)
+            External scanner controller (like as SCANLAB's RTC product)
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.ILaser.IsPowerControl">
@@ -2114,7 +2114,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.ILaser.PowerControlDelayTime">
             <summary>
-            Delay time for vary laser power if <c>IsPowerControl</c> is <c>True</c>
+            Delay time (msec) for vary output power if <c>IsPowerControl</c> is <c>True</c>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.ILaser.Tag">
@@ -2126,7 +2126,7 @@
             <summary>
             Initialize
             <code>
-            float maxWatt = 20;
+            double maxWatt = 20;
             int analogCh = 1; //or 2
             var laser = LaserFactory.CreateVirtualAnalog(0, maxWatt, analogCh);
             laser.Rtc = rtc;
@@ -2180,7 +2180,7 @@
             Control by user-defined communications
             </summary>
             <remarks>
-            User should be implement customized program
+            User should be implement customized program. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.PowerControlMethod.Frequency">
@@ -2188,8 +2188,8 @@
             Control by frequency modulation
             </summary>
             <remarks>
-            User should be set values <c>MinFrequency</c> and <c>MaxFrequency</c><br/>
-            <c>IRtc.Frequency</c> value is ignored.
+            User should be set values <c>MinFrequency</c> and <c>MaxFrequency</c>. <br/>
+            <c>IRtc.Frequency</c> value is ignored. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.PowerControlMethod.DutyCycle">
@@ -2197,8 +2197,8 @@
             Control by duty cycle modulation 
             </summary>
             <remarks>
-            User should be set values <c>MinDutyCycle</c>, <c>MaxDutyCycle</c> <br/>
-            <c>IRtc.PulseWidth</c> value is ignored. 
+            User should be set values <c>MinDutyCycle</c>, <c>MaxDutyCycle</c>. <br/>
+            <c>IRtc.PulseWidth</c> value is ignored. <br/> 
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.PowerControlMethod.Analog">
@@ -2206,7 +2206,7 @@
             Control by analog voltage output
             </summary>
             <remarks>
-            User should be set values <c>MinVoltage</c> ~ <c>MaxVoltage</c>
+            User should be set values <c>MinVoltage</c> ~ <c>MaxVoltage</c>. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.PowerControlMethod.DigitalBits">
@@ -2214,7 +2214,7 @@
             Control by digital outputs
             </summary>
             <remarks>
-            If 8bits, DO value/255 * 100 or If 16 bits DO value/65535 * 100 ratio are outputted
+            If 8bits, DO value/255 * 100 or If 16 bits DO value/65535 * 100 ratio are outputted. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.PowerControlMethod.Rs232">
@@ -2222,8 +2222,9 @@
             Control by specific protocol commands (RS-232)
             </summary>
             <remarks>
-            User should be set values <c>Rs232StringFormat</c><br/>
-            Output: string.Format(Rs232StringFormat, percentage)
+            User should be set values <c>Rs232StringFormat</c>. <br/>
+            Output: string.Format(Rs232StringFormat, percentage). <br/>
+            (Warning) Internal RTC's RS-232 port is used. <br/>
             </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.ILaserPowerControl">
@@ -2268,6 +2269,268 @@
             </summary>
             <param name="targetWatt">Target watt (W)</param>
             <returns>Success or failed (if return failed, marker would be stopped(or aborted) immediately)</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.src.laser.impl.laserbase">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Basic_C">
+            <summary>
+              Looks up a localized string similar to Basic.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Busy_DESC">
+            <summary>
+              Looks up a localized string similar to Busy Status.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Busy_DISP">
+            <summary>
+              Looks up a localized string similar to Busy.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Delay_DESC">
+            <summary>
+              Looks up a localized string similar to Power Control Delay Time (msec).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Delay_DISP">
+            <summary>
+              Looks up a localized string similar to Delay.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Error_DESC">
+            <summary>
+              Looks up a localized string similar to Error Status.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Error_DISP">
+            <summary>
+              Looks up a localized string similar to Error.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Index_DESC">
+            <summary>
+              Looks up a localized string similar to Identifier.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Index_DISP">
+            <summary>
+              Looks up a localized string similar to Index.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.IsPowerControl_DESC">
+            <summary>
+              Looks up a localized string similar to Enable(or Disable) Laser Power Control.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.IsPowerControl_DISP">
+            <summary>
+              Looks up a localized string similar to Enable.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Method_DESC">
+            <summary>
+              Looks up a localized string similar to Laser Power Control Method.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Method_DISP">
+            <summary>
+              Looks up a localized string similar to Method.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Name_DESC">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Name_DISP">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Power_Last__DESC">
+            <summary>
+              Looks up a localized string similar to Last Commanded Power (W).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Power_Last__DISP">
+            <summary>
+              Looks up a localized string similar to Power (Last).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Power_Max__DESC">
+            <summary>
+              Looks up a localized string similar to Max Power (W).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Power_Max__DISP">
+            <summary>
+              Looks up a localized string similar to Power (Max).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.PowerControl_C">
+            <summary>
+              Looks up a localized string similar to Power Control.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Ready_DESC">
+            <summary>
+              Looks up a localized string similar to Reasy Status.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Ready_DISP">
+            <summary>
+              Looks up a localized string similar to Ready.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Status_C">
+            <summary>
+              Looks up a localized string similar to Status.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Type_DESC">
+            <summary>
+              Looks up a localized string similar to Type.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Type_DISP">
+            <summary>
+              Looks up a localized string similar to Type.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.src.laser.impl.laservirtual">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Control__DigitalBits__C">
+            <summary>
+              Looks up a localized string similar to Control (DigitalBits).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Control__Duty_Cycle__C">
+            <summary>
+              Looks up a localized string similar to Control (Duty Cycle).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Control__Frequency__C">
+            <summary>
+              Looks up a localized string similar to Control (Frequency).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Control__RS_232__C">
+            <summary>
+              Looks up a localized string similar to Control (RS-232).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Extension_Port_DESC">
+            <summary>
+              Looks up a localized string similar to RTC Extension Port (1,2).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Extension_Port_DISP">
+            <summary>
+              Looks up a localized string similar to Extension Port.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Format_DESC">
+            <summary>
+              Looks up a localized string similar to Data Format (Must be connected with RS-232 Pin out at RTC card).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Format_DISP">
+            <summary>
+              Looks up a localized string similar to Format.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Max_Bit_DESC">
+            <summary>
+              Looks up a localized string similar to Max Bit Value.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Max_Bit_DISP">
+            <summary>
+              Looks up a localized string similar to Max Bit.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Max_Duty_Cycle_DESC">
+            <summary>
+              Looks up a localized string similar to Max Duty Cycle (%).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Max_Duty_Cycle_DISP">
+            <summary>
+              Looks up a localized string similar to Max Duty Cycle.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Max_Frequency_DESC">
+            <summary>
+              Looks up a localized string similar to Max Frequency (Hz).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Max_Frequency_DISP">
+            <summary>
+              Looks up a localized string similar to Max Frequency.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Min_Bit_DESC">
+            <summary>
+              Looks up a localized string similar to Min Bit Value.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Min_Bit_DISP">
+            <summary>
+              Looks up a localized string similar to Min Bit.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Min_Duty_Cycle_DESC">
+            <summary>
+              Looks up a localized string similar to Min Duty Cycle (%).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Min_Duty_Cycle_DISP">
+            <summary>
+              Looks up a localized string similar to Min Duty Cycle.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Min_Frequency_DESC">
+            <summary>
+              Looks up a localized string similar to Min Frequency (Hz).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Min_Frequency_DISP">
+            <summary>
+              Looks up a localized string similar to Min Frequency.
+            </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.LicenseInfo">
             <summary>
@@ -8314,7 +8577,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.CalibrationFactor(System.String,System.UInt32@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
             <summary>
-            Get calibration factor (k-factor) from assigned correction file
+            (Experimental) Get calibration factor (k-factor) from assigned correction file
             </summary>
             <param name="inputCtFileName">Source(Input) correction file</param>
             <param name="kFactor">K-factor (bits/mm)</param>
@@ -8323,14 +8586,13 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.PointsCloudCalibration(System.Numerics.Vector3[],System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
             <summary>
-            Recalculates a 3D-Correction file for a user-defined free-form target surface that is defined by a points cloud.
+            (Experimental) Recalculates a 3D-Correction file for a user-defined free-form target surface that is defined by a points cloud.
             </summary>
             <remarks>
-            The target surface must be provided as a reference point, a direction vector, and a radius.
-            The reference point is a point on the cylinder mantle and represents the new coordinate origin of the target surface.
-            In the cylinder cross-section it is the point with the largest Z-coordinate.
-            The given direction is the direction of the cylinder axis, which will represent the X-coordinate in the new coordinate system.
-            The new Y-coordinate is the arc length distance on the cylinder mantle from the axis parallel to the cylinder direction going through the reference point.
+            The target surface must be provided as a a series of points in 3d space. <br/>
+            The function will interpolate between these points and adjust the Correction table so that the laser spot is always in focus on the given surface. <br/>
+            The user later needs to only command 2d positions to the RTC and the focal shift is automatically adjusted. <br/>
+            The coordinate system after the correction uses top view projection, meaning that X and Y are exactly the same as before. <br/>
             </remarks>
             <param name="pointsCloud">Array of points cloud (mm)</param>
             <param name="inputCtFileName">Source(Input) correction file</param>
@@ -8345,10 +8607,10 @@
             <code>
                          Y+   
                          |  
-                         |       .............Reference...........       
+                         |       .................................
                          |     .   .                           .   .     
                          |    .     .                         .     .    
-                         |    .     .                         .     .   ---> Direction
+                         |    .     + Reference               .     .   ---> Direction
                          |    .     .                         .     .   
                          |     .   .                           .   .
                          |       .................................
@@ -8361,17 +8623,26 @@
                    Z+
             </code>
             <remarks>
-            The target surface must be provided as a reference point, a direction vector, and a radius.
-            The reference point is a point on the cylinder mantle and represents the new coordinate origin of the target surface.
-            In the cylinder cross-section it is the point with the largest Z-coordinate.
-            The given direction is the direction of the cylinder axis, which will represent the X-coordinate in the new coordinate system.
-            The new Y-coordinate is the arc length distance on the cylinder mantle from the axis parallel to the cylinder direction going through the reference point.
-            The new file should not be used for points outside the provided target surface.
+            The target surface must be provided as a reference point, a direction vector, and a radius. <br/>
+            The new file should not be used for points outside the provided target surface. <br/>
             </remarks>
             </summary>
-            <param name="reference">Reference point on the cylinder (mm)</param>
-            <param name="direction">Direction of the cylinder axis</param>
-            <param name="radius">Rradius of the cylinder (mm)</param>
+            <param name="reference">Reference point on the cylinder (x,y,z)
+            <para>
+            The reference point is a point on the cylinder mantle and represents the new coordinate origin of the target surface. <br/>
+            In the cylinder cross-section it is the point with the largest Z-coordinate. <br/>
+            </para>
+            </param>
+            <param name="direction">Direction of the cylinder axis
+            <para>
+            The given direction is the direction of the cylinder axis, which will represent the X-coordinate in the new coordinate system. <br/>
+            </para>
+            </param>
+            <param name="radius">Radius of the cylinder (mm)
+            <para>
+            The new Y-coordinate is the arc length distance on the cylinder mantle from the axis parallel to the cylinder direction going through the reference point. <br/>
+            </para>
+            </param>
             <param name="inputCtFileName">Source(Input) correction file</param>
             <param name="inputCtReadMeFileName">README file of source(input) correction file (ctbName_ReadMe.txt or ct5Name_ct5_ReadMe.txt)</param>
             <param name="outputCtFileName">Target(Output) correction file</param>
@@ -8387,7 +8658,7 @@
                          |       . 
                          |     .   .  .       
                          |    .     .      .   
-                         |    .     .            .        ---> Direction
+                         |    .     +Ref        .   ---> Direction
                          |    .     .      .   
                          |     .   .  .       
                          |       .
@@ -8401,19 +8672,31 @@
             
             </code>
             <remarks>
-            The target surface must be provided as a reference point, a direction vector, the radius at the reference point and the inclination angle of the cone.
-            The reference point is a point on the lateral surface of the cone and represents the new coordinate origin of the target surface.
-            In the cross-section of the cone that is perpendicular to the direction of the cone it is the point with the largest Z-coordinate.
-            The given direction is the direction of the cone axis, which will represent the X-coordinate in the new coordinate system.
-            The new Y-coordinate is the angular offset from the surface line going through the reference point multiplied by the radius of the cone at the reference point.
-            This means that the same y-coordinate describes a shorter distance at a more narrow part of the cone and a larger distance at a wider part of the cone.
-            The inclination angle is provided in radians and must positive if the cone widens for larger values of X, and negative if it becomes more narrow.
+            The target surface must be provided as a reference point, a direction vector, the radius at the reference point and the inclination angle of the cone. <br/>
             </remarks>
             </summary>
-            <param name="reference">Reference point on the cone (mm)</param>
-            <param name="direction">Direction of the cone axis</param>
-            <param name="radius">Radius of the cone at the reference point (mm)</param>
-            <param name="inclinationAngle">Inclination angle of the cone (°)</param>
+            <param name="reference">Reference point on the cone (x,y,z)
+            <para>
+            The reference point is a point on the lateral surface of the cone and represents the new coordinate origin of the target surface. <br/>
+            In the cross-section of the cone that is perpendicular to the direction of the cone it is the point with the largest Z-coordinate. <br/>
+            </para>
+            </param>
+            <param name="direction">Direction of the cone axis
+            <para>
+            The given direction is the direction of the cone axis, which will represent the X-coordinate in the new coordinate system. <br/>
+            The new Y-coordinate is the angular offset from the surface line going through the reference point multiplied by the radius of the cone at the reference point. <br/>
+            </para>
+            </param>
+            <param name="radius">Radius of the cone at the reference point (mm)
+            <para>
+            This means that the same y-coordinate describes a shorter distance at a more narrow part of the cone and a larger distance at a wider part of the cone.<br/>
+            </para>
+            </param>
+            <param name="inclinationRadian">Inclination angle of the cone (radian)
+            <para>
+            The inclination angle is provided in radians and must positive if the cone widens for larger values of X, and negative if it becomes more narrow. <br/>
+            </para>
+            </param>
             <param name="inputCtFileName">Source(Input) correction file</param>
             <param name="inputCtReadMeFileName">README file of source(input) correction file (ctbName_ReadMe.txt or ct5Name_ct5_ReadMe.txt)</param>
             <param name="outputCtFileName">Target(Output) correction file</param>
@@ -8424,35 +8707,42 @@
             <summary>
             (Experimental) Recalculates a 3D-Correction table for a new user-defined target plane that may be shifted, tilted, and rotated.
             <code>
-                         Y+   
                          |  
                          |
-                         |                   Normal
+                         |                   Dir Y
                          |                     .
                          |                    /|\
                          |                     |
                          |         /-----------|--------------/
-                         |        /            .             /
-                         |       /                          /
-                         +------/........................../----------  X+
+                         |        /            |             /  
+                         |       /             + Reference  /  ---> Dir X
+                         +------/........................../------  
                         /      /__________________________/
                        /      
                       /
                      / 
-                   Z+     
             </code>
             </summary>
             <remarks>
-            The new target plane must be provided in parameter form with a reference point and two direction vectors.
-            The reference point represents the new origin of the target plane, while the direction vectors represent the new X- and Y- directions in the target plane.
-            The direction vectors must be perpendicular.
-            Depending on how much shifted and tilted the new target plane is compared to the original target plane, 
-            the Correction file may not be useful anymore for 3d-points that are not in the target plane.
-            This cannot be remedied through further 3d-correction.
+            The new target plane must be provided in parameter form with a reference point and two direction vectors. <br/>
+            Depending on how much shifted and tilted the new target plane is compared to the original target plane, the Correction file may not be useful anymore for 3d-points that are not in the target plane. <br/>
+            This cannot be remedied through further 3d-correction. <br/>
             </remarks>
-            <param name="reference">Reference point on the plane (mm)</param>
-            <param name="directionX">X direction of the target plane</param>
-            <param name="directionY">Y direction of the target plane</param>
+            <param name="reference">Reference point on the plane (x,y,z)
+            <para>
+            The reference point represents the new origin of the target plane, while the direction vectors represent the new X- and Y- directions in the target plane. <br/>
+            </para>
+            </param>
+            <param name="directionX">X direction of the target plane
+            <para>
+            The direction vectors must be perpendicular. 
+            </para>
+            </param>
+            <param name="directionY">Y direction of the target plane
+            <para>
+            The direction vectors must be perpendicular. 
+            </para>
+            </param>
             <param name="inputCtFileName">Source(Input) correction file</param>
             <param name="inputCtReadMeFileName">README file of source(input) correction file (ctbName_ReadMe.txt or ct5Name_ct5_ReadMe.txt)</param>
             <param name="outputCtFileName">Target(Output) correction file</param>
@@ -10135,6 +10425,9 @@
             <summary>
             Last Frequency (Hz)
             </summary>
+            <remarks>
+            Do not set 'set' operation. its used by internally. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.PulseWidth">
             <summary>
@@ -24859,6 +25152,74 @@
             <summary>
              void regulation3(uint Fmax, uint Fmin);
             </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.PropertyGridLocalizationAttribute">
+            <summary>
+            i17n (aka multi-languages)
+            </summary>
+            <remarks>
+            Programmed by Toughman from <seealso href="http://www.youngsoft.co.kr/">(c)Youngsoft</seealso> <br/>
+            </remarks>
+        </member>
+        <member name="T:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedCategoryAttribute">
+            <summary>
+            Category attribute
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedCategoryAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            _C
+            </summary>
+            <param name="key"></param>
+            <param name="classType"></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedCategoryAttribute.GetString(System.String,System.Type)">
+            <summary>
+            Get string (_C)
+            </summary>
+            <param name="key"></param>
+            <param name="classType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDisplayNameAttribute">
+            <summary>
+            Display name attribute
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDisplayNameAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            _DISP
+            </summary>
+            <param name="key"></param>
+            <param name="classType"></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDisplayNameAttribute.GetString(System.String,System.Type)">
+            <summary>
+            Get string (_DISP)
+            </summary>
+            <param name="key"></param>
+            <param name="classType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDescriptionAttribute">
+            <summary>
+            Description attribute
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDescriptionAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            _DESC
+            </summary>
+            <param name="key"></param>
+            <param name="classType"></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDescriptionAttribute.GetString(System.String,System.Type)">
+            <summary>
+            Get string (_DESC)
+            </summary>
+            <param name="key"></param>
+            <param name="classType"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

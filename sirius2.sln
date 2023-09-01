@@ -56,6 +56,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_remote", "demos\edit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_multiple", "demos\editor_multiple\editor_multiple.csproj", "{36FA62B3-28B2-4B1C-A7C2-EB12CA6AAD72}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_barcode", "demos\editor_barcode\editor_barcode.csproj", "{C120DDFE-48AF-4B71-BAF8-47EA50A61866}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -158,6 +160,10 @@ Global
 		{36FA62B3-28B2-4B1C-A7C2-EB12CA6AAD72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36FA62B3-28B2-4B1C-A7C2-EB12CA6AAD72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36FA62B3-28B2-4B1C-A7C2-EB12CA6AAD72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C120DDFE-48AF-4B71-BAF8-47EA50A61866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C120DDFE-48AF-4B71-BAF8-47EA50A61866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C120DDFE-48AF-4B71-BAF8-47EA50A61866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C120DDFE-48AF-4B71-BAF8-47EA50A61866}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -52,6 +52,9 @@ namespace Demos
     {
         public Form1()
         {
+            // Set language
+            EditorHelper.SetLanguage();
+
             InitializeComponent();
 
             this.Load += Form1_Load;
