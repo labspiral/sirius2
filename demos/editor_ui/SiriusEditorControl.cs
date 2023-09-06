@@ -1127,28 +1127,31 @@ namespace Demos
         int timerProgressColorCounts = 0;
         private void TimerProgress_Tick(object sender, EventArgs e)
         {
-            if (0 == timerProgressColorCounts++ % 2)
-                lblProcessTime.ForeColor = statusStrip1.ForeColor;
-            else
-                lblProcessTime.ForeColor = Color.Red;
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                if (0 == timerProgressColorCounts++ % 2)
+                    lblProcessTime.ForeColor = statusStrip1.ForeColor;
+                else
+                    lblProcessTime.ForeColor = Color.Red;
 
-            lblProcessTime.Text = $"Marking: {timerProgressStopwatch.ElapsedMilliseconds / 1000.0:F1} sec";
+                lblProcessTime.Text = $"Marking: {timerProgressStopwatch.ElapsedMilliseconds / 1000.0:F1} sec";
+            }));
         }
         private void Marker_OnStarted(IMarker marker)
         {
-            timerProgressStopwatch.Restart();
-            timerProgress.Start();
             this.Invoke(new MethodInvoker(delegate ()
             {
+                timerProgressStopwatch.Restart();
+                timerProgress.Start();
                 EnableDisableControlByMarking(false);
             }));
         }
         private void Marker_OnEnded(IMarker marker, bool success, TimeSpan ts)
         {
-            timerProgressStopwatch.Stop();
-            timerProgress.Stop();
             this.Invoke(new MethodInvoker(delegate ()
             {
+                timerProgressStopwatch.Stop();
+                timerProgress.Stop();
                 if (success)
                 {
                     lblProcessTime.ForeColor = statusStrip1.ForeColor;
@@ -1167,8 +1170,11 @@ namespace Demos
         /// </summary>
         public void DoRender()
         {
-            EditorCtrl.View.Render();
-            lblRenderTime.Text = $"Render: {EditorCtrl.View.RenderTime} ms";
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                EditorCtrl.View.Render();
+                lblRenderTime.Text = $"Render: {EditorCtrl.View.RenderTime} ms";
+            }));
         }
     }
 }
