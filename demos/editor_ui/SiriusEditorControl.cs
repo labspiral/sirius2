@@ -223,8 +223,8 @@ namespace Demos
                     rtcDOUserControl1.UpdateExtension2PortNames(Config.DOut_RtcExtension2Port);
                     rtcDOUserControl1.UpdateLaserPortNames(Config.DOut_RtcLaserPort);
 
-                    EntityVisibility(rtc);
-                    MenuVisibility(rtc);
+                    EntityVisibility();
+                    MenuVisibility();
                     if (rtc is IRtcMoF mof)
                     {
                         mof.OnEncoderChanged += Mof_OnEncoderChanged;
@@ -401,7 +401,7 @@ namespace Demos
         /// </summary>
         /// <remarks>
         /// Create devices likes as <c>IRtc</c>, <c>ILaser</c> and <c>IMarker</c> and assign. <br/>
-        /// DIO devices likes as <c>DInput</c>s, <c>DInput</c>s are created when assign <c>IRtc</c> by automatically. <br/>
+        /// Digital I/O devices likes as <c>DInput</c>s, <c>DInput</c>s are created when assign <c>IRtc</c> by automatically. <br/>
         /// Create <c>IMarker</c> and assign. <br/>
         /// <c>IDocument</c> is created by automatically. <br/>
         /// </remarks>
@@ -438,6 +438,7 @@ namespace Demos
             btnPoint.Click += BtnPoint_Click;
             btnPoints.Click += BtnPoints_Click;
             btnRectangle.Click += BtnRectangle_Click;
+            btnArc.Click += BtnArc_Click;
             btnCircle.Click += BtnCircle_Click;
             btnSpiral.Click += BtnSpiral_Click;
             btnText.Click += BtnText_Click;
@@ -450,6 +451,7 @@ namespace Demos
             btnImportFile.Click += BtnImportFile_Click;
             mnuDataMatrix.Click += MnuDataMatrix_Click;
             mnuQRCode.Click += MnuQRCode_Click;
+            mnuBarcode1D.Click += MnuBarcode1D_Click;
 
             mnuMeasurementBeginEnd.Click += BtnMeasurementBeginEnd_Click;
             mnuTimer.Click += BtnTimer_Click;
@@ -477,6 +479,9 @@ namespace Demos
             // New document by default
             Document.ActNew();
         }
+
+
+
 
         /// <inheritdoc/>
         protected override void OnLoad(EventArgs e)
@@ -509,6 +514,7 @@ namespace Demos
             document.ActAdd(entity);
         }
 
+      
         private void BtnCircularText_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateCircularText(Config.DefaultFont, "POWERED BY SIRIUS2 0123456789", FontStyle.Regular, 2,  TextCircularDirections.ClockWise, 5, 180);
@@ -523,14 +529,20 @@ namespace Demos
 
         private void MnuQRCode_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateQRCode("SIRIUS2", BarcodeCells.Dots, 5, 2, 2);
+            var entity = EntityFactory.CreateQRCode("SIRIUS2", Barcode2DCells.Dots, 5, 2, 2);
             document.ActAdd(entity);
         }
         private void MnuDataMatrix_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateDataMatrix("SIRIUS2", BarcodeCells.Dots, 5, 2, 2);
+            var entity = EntityFactory.CreateDataMatrix("SIRIUS2", Barcode2DCells.Dots, 5, 2, 2);
             document.ActAdd(entity);
         }
+        private void MnuBarcode1D_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateBarcode("1234567890", Barcode1DFormats.Code128, 3, 5, 2);
+            document.ActAdd(entity);
+        }
+
         private void MnuWriteDataExt16_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateWriteDataExt16(0, false);
@@ -572,7 +584,7 @@ namespace Demos
             timerProgress.Tick -= TimerProgress_Tick;
         }
 
-        private void MenuVisibility(IRtc rtc)
+        private void MenuVisibility()
         {
             Debug.Assert(rtc != null);
             if (null == rtc)
@@ -599,14 +611,14 @@ namespace Demos
                     lblEncoder.Visible = false;
                     btnCharacterSetText.Enabled = false;
                     btnSiriusCharacterSetText.Enabled = false;
-                    //also, need to visibility for barcode cell with dots set to false
                     break;
             }
         }
 
-        private void EntityVisibility(IRtc rtc)
+        private void EntityVisibility()
         {
             EntityPen.PropertyVisibility(rtc);
+            EntityPen.PropertyVisibility(laser);
             EntityLayer.PropertyVisibility(rtc);
             EntityPoints.PropertyVisibility(rtc);
         }
@@ -813,8 +825,8 @@ namespace Demos
 
         private void BtnDivide_Click(object sender, EventArgs e)
         {
-            if (document.Selected.Length > 0)
-                Document.ActDivide(document.Selected, null);
+            //if (document.Selected.Length > 0)
+            //    Document.ActDivide(document.Selected, null);
         }
 
         private void BtnZoomIn_Click(object sender, EventArgs e)
@@ -835,7 +847,6 @@ namespace Demos
             {
                 var bbox = BoundingBox.RealBoundingBox(Document.InternalData.Layers.ToArray());
                 EditorCtrl.View.Camera.ZoomFit(bbox);
-                //EditorCtrl.View.Camera.Reset();
             }
             else
             {
@@ -987,6 +998,12 @@ namespace Demos
             Cursor.Current = Cursors.WaitCursor;
             document.ActSave(dlg.FileName);
             Cursor.Current = Cursors.Default;
+        }
+
+        private void BtnArc_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateArc(Vector2.Zero, 10, 0, 180);
+            document.ActAdd(entity);
         }
 
         private void BtnCircle_Click(object sender, EventArgs e)

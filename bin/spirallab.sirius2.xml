@@ -256,6 +256,29 @@
             Package assembly filename
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Config.Languages">
+            <summary>
+            Languages
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Config.Languages.enUS">
+            <summary>
+            en-US
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Config.Languages.koKR">
+            <summary>
+            Ko-KR
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Config.Language">
+            <summary>
+            Language for library
+            </summary>
+            <remarks>
+            Should be configured before <c>InitializeComponent</c> at <c>Form</c>. <br/>
+            </remarks>
+        </member>
         <member name="M:SpiralLab.Sirius2.Config.AssemblyVersion(System.String)">
             <summary>
             Get version of assembly file
@@ -3673,6 +3696,19 @@
             </summary>
             <param name="propertyName">Property name</param>
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.NotifyJob(SpiralLab.Sirius2.Scanner.IJob)">
+            <summary>
+            Notify job status
+            </summary>
+            <param name="job"><c>IJob</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.NotifyEncoderChanged(System.Int32,System.Int32)">
+            <summary>
+            Nofity encoder value has changed
+            </summary>
+            <param name="encX">Encoder x</param>
+            <param name="encY">Encoder y</param>
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.Count">
             <summary>
             Count of instance(s)
@@ -4358,13 +4394,6 @@
             <param name="yBits"></param>
             <param name="zBits"></param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.NotifyEncoderChanged(System.Int32,System.Int32)">
-            <summary>
-            Nofity encoder value has changed
-            </summary>
-            <param name="encX">Encoder x</param>
-            <param name="encY">Encoder y</param>
-        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlMofEncoderReset(System.Double,System.Double)">
             <inheritdoc/>  
         </member>
@@ -5006,6 +5035,19 @@
             </summary>
             <param name="propertyName">Property name</param>
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.NotifyJob(SpiralLab.Sirius2.Scanner.IJob)">
+            <summary>
+            Notify job status
+            </summary>
+            <param name="job"><c>IJob</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.NotifyEncoderChanged(System.Int32,System.Int32)">
+            <summary>
+            Nofity encoder value has changed
+            </summary>
+            <param name="encX">Encoder x</param>
+            <param name="encY">Encoder y</param>
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.Count">
             <summary>
             Count of instance(s)
@@ -5240,7 +5282,7 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsActivateAutoDelays">
             <summary>
             Activated auto delays 
-            <para>Only for SCANahead option </para>
+            <para>Only for SCANa option </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ScanAheadLineParamsCornerScale">
@@ -5570,7 +5612,7 @@
             <param name="laserOffShift">Laser off shift (usec)</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlDelayScanAheadByAuto(System.Boolean)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlDelayAutoByScanAhead(System.Boolean)">
             <summary>
             Auto laser delays (only for SCANAhread)
             </summary>
@@ -5922,13 +5964,6 @@
             <param name="xBits"></param>
             <param name="yBits"></param>
             <param name="zBits"></param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.NotifyEncoderChanged(System.Int32,System.Int32)">
-            <summary>
-            Nofity encoder value has changed
-            </summary>
-            <param name="encX">Encoder x</param>
-            <param name="encY">Encoder y</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlMofEncoderReset(System.Double,System.Double)">
             <inheritdoc/>  
@@ -9867,6 +9902,31 @@
             <para>LASERON: On</para>
             <para>LASER1: Q Switch Frequency and Pulse Width [with Pulse Completion]</para>
             <para>LASER2: Standby Frequency and Pulse Width with Phase Shift</para>
+            <code>
+            
+                                    | ON DELAY |                 | OFF DELAY |
+                                               ._____________________________.
+                                               |                             | 
+                                               |                             | 
+            LASER ON:  ________________________|                             |________...
+            
+                                               | PW |  
+                         |&lt;-STANDBY-&gt;|         |&lt;- 1/ FREQ -&gt;|                  |&lt;-STANDBY-&gt;|
+                         .__.        .__.      .____.        .____.        ._.  .__.
+                         |  |        |  |      |    |        |    |        | |  |  |
+                         |  |        |  |      |    |        |    |        | |  |  |
+            LASER  1:  __|  |___.____|  |______|    |___.____|    |________| |__|  |___...
+                         .      .                       .
+                         .      .                       | PW |  
+                         .      |&lt;-STANDBY-&gt;|           |&lt;- 1/ FREQ -&gt;|                  |&lt;-STANDBY-&gt;|
+                         .      .__.        .__.        .____.        .____.             .__.
+                         .      |  |        |  |        |    |        |    |             |  |
+                         .      |  |        |  |        |    |        |    |             |  |
+            LASER  2:  __.______|  |________|  |________|    |________|    |_____________|  |___...
+                         .      .
+                         |PHASE |
+                         | SHIFT|
+            </code>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.LaserMode.Yag1">
@@ -9875,6 +9935,27 @@
             <para>LASERON: On</para>
             <para>LASER1: Q Switch Frequency and Pulse Width + Standby Frequency (LASERON is not overlapped)</para>
             <para>LASER2: FPK (Q Switch is overlapped)</para>
+            <code>
+            
+                                    | ON DELAY |                 | OFF DELAY |
+                                               ._____________________________.
+                                               |                             | 
+                                               |                             | 
+            LASER ON:  ________________________|                             |________...
+            
+                                               | PW |  
+                         |&lt;-STANDBY-&gt;|         |&lt;- 1/ FREQ -&gt;|                  |&lt;-STANDBY-&gt;|
+                         .__.        .__.      .____.        .____.        ._.  .__.
+                         |  |        |  |      |    |        |    |        | |  |  |
+                         |  |        |  |      |    |        |    |        | |  |  |
+            LASER  1:  __|  |________|  |______|    |________|    |________| |__|  |___...
+             
+                                               |&lt;-FPK-&gt;|
+                                               ._______. 
+                                               |       | 
+                                               |       | 
+            LASER  2:  ________________________|       |_______________________________...
+            </code>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.LaserMode.Yag2">
@@ -9883,6 +9964,27 @@
             <para>LASERON: On</para>
             <para>LASER1: Q Switch Frequency and Pulse Width + Standby Frequency (LASERON is not overlapped)</para>
             <para>LASER2: FPK (Q Switch is not overlapped)</para>
+            <code>
+            
+                                    | ON DELAY |                 | OFF DELAY |
+                                               ._____________________________.
+                                               |                             | 
+                                               |                             | 
+            LASER ON:  ________________________|                             |________...
+                                               .
+                                               .       | PW |  
+                         |&lt;-STANDBY-&gt;|         .       |&lt;- 1/ FREQ -&gt;|  
+                         .__.        .__.      .       .____.        .____.        .__.
+                         |  |        |  |      .       |    |        |    |        |  |
+                         |  |        |  |      .       |    |        |    |        |  |
+            LASER  1:  __|  |________|  |______._______|    |________|    |________|  |_...
+             
+                                               |&lt;-FPK-&gt;|
+                                               ._______. 
+                                               |       | 
+                                               |       | 
+            LASER  2:  ________________________|       |_______________________________...
+            </code>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.LaserMode.Yag3">
@@ -9891,13 +9993,34 @@
             <para>LASERON: On</para>
             <para>LASER1: Q Switch Frequency and Pulse Width with Pulse Completion + Standby Frequency (LASERON is not overlapped)</para>
             <para>LASER2: FPK (Delayed 10 usec and overlapped with Q Switch)</para>
+            <code>
+            
+                                    | ON DELAY |                 | OFF DELAY |
+                                               ._____________________________.
+                                               |                             | 
+                                               |                             | 
+            LASER ON:  ________________________|                             |________...
+                                               .
+                                               .      | PW |  
+                         |&lt;-STANDBY-&gt;|         |10usec|&lt;- 1/ FREQ -&gt;|             |&lt;-STANDBY-&gt;|
+                         .__.        .__.      .      .____.        .____.        .__.
+                         |  |        |  |      .      |    |        |    |        |  |
+                         |  |        |  |      .      |    |        |    |        |  |
+            LASER  1:  __|  |________|  |______.______|    |________|    |________|  |___...
+             
+                                               |&lt;-FPK-&gt;|
+                                               ._______. 
+                                               |       | 
+                                               |       | 
+            LASER  2:  ________________________|       |_______________________________...
+            </code>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.LaserMode.Mode4">
             <summary>
             MODE4
             <para>LASERON: On</para>
-            <para>LASER1: Standby Frequency and Pulse Width </para>
+            <para>LASER1: Standby Frequency and 2x Half Period Duation</para>
             <para>LASER2: FPK (Standby Frequency is overlapped)</para>
             </summary>
         </member>
@@ -9908,6 +10031,27 @@
             <para>LASER1: Q Switch Frequency and Pulse Width (Configurable Q Switch delay and with Pulse Completion) + + Standby Frequency (LASERON is not overlapped</para>
             <para>LASER2: FPK (Q Switch is overlapped)</para>
             <para>above RTC5</para>
+            <code>
+            
+                                    | ON DELAY |                 | OFF DELAY |
+                                               ._____________________________.
+                                               |                             | 
+                                               |                             | 
+            LASER ON:  ________________________|                             |__________...
+                                               .
+                                               .      | PW |  
+                         |&lt;-STANDBY-&gt;|         |Qdelay|&lt;- 1/ FREQ -&gt;|             |&lt;-STANDBY-&gt;|
+                         .__.        .__.      .      .____.        .____.        .__.
+                         |  |        |  |      .      |    |        |    |        |  |
+                         |  |        |  |      .      |    |        |    |        |  |
+            LASER  1:  __|  |________|  |______.______|    |________|    |________|  |___...
+             
+                                               |&lt;-FPK-&gt;|
+                                               ._______. 
+                                               |       | 
+                                               |       | 
+            LASER  2:  ________________________|       |_________________________________...
+            </code>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.LaserMode.Mode6">
@@ -10420,6 +10564,9 @@
             <summary>
             First pulse killer (usec)
             </summary>
+            <remarks>
+            Used with <c>LaserMode.Yag1</c>, <c>LaserMode.Yag2</c>, <c>LaserMode.Yag3</c>, <c>LaserMode.Mode4</c> and <c>LaserMode.Yag5</c> only. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.Frequency">
             <summary>

@@ -95,320 +95,491 @@
               Looks up a localized string similar to Sweep angle.
             </summary>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.entity.barcodebase">
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.blockinsert">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.ResourceManager">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.blockinsert.ResourceManager">
             <summary>
               Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Culture">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.blockinsert.Culture">
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Angle_DESC">
-            <summary>
-              Looks up a localized string similar to Hatch Angle (For Line) (°).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Angle_DISP">
-            <summary>
-              Looks up a localized string similar to Angle.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Angle2_DESC">
-            <summary>
-              Looks up a localized string similar to Hatch 2nd Angle (For Cross Line) (°).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Angle2_DISP">
-            <summary>
-              Looks up a localized string similar to Angle2.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Array_DESC">
-            <summary>
-              Looks up a localized string similar to Array of Cell (1x1, 2x2, 3x3, ...).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Array_DISP">
-            <summary>
-              Looks up a localized string similar to Array.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Cell_C">
-            <summary>
-              Looks up a localized string similar to Cell.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Cell_circles_DESC">
-            <summary>
-              Looks up a localized string similar to Circle Cell.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Cell_circles_DISP">
-            <summary>
-              Looks up a localized string similar to Cell (Circles).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Cell_DESC">
-            <summary>
-              Looks up a localized string similar to Cell Type.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Cell_DISP">
-            <summary>
-              Looks up a localized string similar to Cell.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Cell_dots_DESC">
-            <summary>
-              Looks up a localized string similar to Dot Cell for Raster(Bitmap) Operation.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Cell_dots_DISP">
-            <summary>
-              Looks up a localized string similar to Cell (Dots).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Cell_hatches_DESC">
-            <summary>
-              Looks up a localized string similar to Hatch Cell.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Cell_hatches_DISP">
-            <summary>
-              Looks up a localized string similar to Cell (Hatches).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Cell_lines_DESC">
-            <summary>
-              Looks up a localized string similar to Line Cell.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Cell_lines_DISP">
-            <summary>
-              Looks up a localized string similar to Cell (Lines).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Cell_outline_DESC">
-            <summary>
-              Looks up a localized string similar to Outline Cell.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Cell_outline_DISP">
-            <summary>
-              Looks up a localized string similar to Cell (Outline).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Circle_C">
-            <summary>
-              Looks up a localized string similar to Circle.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Closed_DESC">
-            <summary>
-              Looks up a localized string similar to Closed Loop.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Closed_DISP">
-            <summary>
-              Looks up a localized string similar to Closed.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Convertible_DESC">
-            <summary>
-              Looks up a localized string similar to Enable(or Disable) Convert Text Data.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Convertible_DISP">
-            <summary>
-              Looks up a localized string similar to Convertible.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Data_C">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.blockinsert.Data_C">
             <summary>
               Looks up a localized string similar to Data.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Dots_C">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.blockinsert.Master_DESC">
             <summary>
-              Looks up a localized string similar to Dots.
+              Looks up a localized string similar to Master Block Name.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Exclude_DESC">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.blockinsert.Master_DISP">
             <summary>
-              Looks up a localized string similar to Hatch Exclude (mm).
+              Looks up a localized string similar to Master.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Exclude_DISP">
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.cellline">
             <summary>
-              Looks up a localized string similar to Exclude.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Extension_channel_DESC">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellline.ResourceManager">
             <summary>
-              Looks up a localized string similar to Pixel Output Extension Channel (Analog 1 or 2).
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Extension_channel_DISP">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellline.Culture">
             <summary>
-              Looks up a localized string similar to Extension channel.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Hatch_C">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellline.Array_DESC">
             <summary>
-              Looks up a localized string similar to Hatch.
+              Looks up a localized string similar to Array of Cell (1x1, 2x2, 3x3, ...).
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Height_DESC">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellline.Array_DISP">
             <summary>
-              Looks up a localized string similar to Height (mm).
+              Looks up a localized string similar to Array.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Height_DISP">
-            <summary>
-              Looks up a localized string similar to Height.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Interval_DESC">
-            <summary>
-              Looks up a localized string similar to Hatch Interval (mm).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Interval_DISP">
-            <summary>
-              Looks up a localized string similar to Interval.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Invert_cell_DESC">
-            <summary>
-              Looks up a localized string similar to Invert Cells or Not.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Invert_cell_DISP">
-            <summary>
-              Looks up a localized string similar to Invert cell.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Line_C">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellline.Line_C">
             <summary>
               Looks up a localized string similar to Line.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Mode_DESC">
-            <summary>
-              Looks up a localized string similar to Hatch Mode.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Mode_DISP">
-            <summary>
-              Looks up a localized string similar to Mode.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Outline_DESC">
-            <summary>
-              Looks up a localized string similar to Include Outline.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Outline_DISP">
-            <summary>
-              Looks up a localized string similar to Outline.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Outline_first_DESC">
-            <summary>
-              Looks up a localized string similar to Outline First.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Outline_first_DISP">
-            <summary>
-              Looks up a localized string similar to Outline first.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Pixel_period_DESC">
-            <summary>
-              Looks up a localized string similar to Pixel Period (usec) (Time for Pixel Frequency).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Pixel_period_DISP">
-            <summary>
-              Looks up a localized string similar to Pixel period.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Pixel_time_DESC">
-            <summary>
-              Looks up a localized string similar to Pixel Time (usec) (Time for Pixel Pulse Width. Should be &lt; Pixel Period).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Pixel_time_DISP">
-            <summary>
-              Looks up a localized string similar to Pixel time.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Radius_factor_DESC">
-            <summary>
-              Looks up a localized string similar to Radius Factor (&lt; 1.0).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Radius_factor_DISP">
-            <summary>
-              Looks up a localized string similar to Radius factor.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Shift_DESC">
-            <summary>
-              Looks up a localized string similar to Hatch Shift (mm).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Shift_DISP">
-            <summary>
-              Looks up a localized string similar to Shift.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Text_converted_DESC">
-            <summary>
-              Looks up a localized string similar to Text (Converted).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Text_converted_DISP">
-            <summary>
-              Looks up a localized string similar to Text (converted).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Text_DESC">
-            <summary>
-              Looks up a localized string similar to Text Data.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Text_DISP">
-            <summary>
-              Looks up a localized string similar to Text.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Width_DESC">
-            <summary>
-              Looks up a localized string similar to Width (mm).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Width_DISP">
-            <summary>
-              Looks up a localized string similar to Width.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Zigzag_DESC">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellline.Zigzag_DESC">
             <summary>
               Looks up a localized string similar to Zig Zag or Not.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcodebase.Zigzag_DISP">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellline.Zigzag_DISP">
             <summary>
               Looks up a localized string similar to Zigzg.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.celloutline">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celloutline.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celloutline.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.cellhatch">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Angle_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch Angle (For Line) (°).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Angle_DISP">
+            <summary>
+              Looks up a localized string similar to Angle.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Angle2_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch 2nd Angle (For Cross Line) (°).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Angle2_DISP">
+            <summary>
+              Looks up a localized string similar to Angle2.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Array_DESC">
+            <summary>
+              Looks up a localized string similar to Array of Cell (1x1, 2x2, 3x3, ...).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Array_DISP">
+            <summary>
+              Looks up a localized string similar to Array.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Exclude_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch Exclude (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Exclude_DISP">
+            <summary>
+              Looks up a localized string similar to Exclude.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Hatch_C">
+            <summary>
+              Looks up a localized string similar to Hatch.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Interval_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch Interval (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Interval_DISP">
+            <summary>
+              Looks up a localized string similar to Interval.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Mode_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch Mode.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Mode_DISP">
+            <summary>
+              Looks up a localized string similar to Mode.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Outline_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch Include Outline.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Outline_DISP">
+            <summary>
+              Looks up a localized string similar to Outline.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Outline_first_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch Outline First.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Outline_first_DISP">
+            <summary>
+              Looks up a localized string similar to Outline first.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Shift_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch Shift (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Shift_DISP">
+            <summary>
+              Looks up a localized string similar to Shift.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Zigzag_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch Zig Zag or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Zigzag_DISP">
+            <summary>
+              Looks up a localized string similar to Zigzg.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.cellcircle">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellcircle.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellcircle.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellcircle.Array_DESC">
+            <summary>
+              Looks up a localized string similar to Array of Cell (1x1, 2x2, 3x3, ...).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellcircle.Array_DISP">
+            <summary>
+              Looks up a localized string similar to Array.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellcircle.Circle_C">
+            <summary>
+              Looks up a localized string similar to Circle.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellcircle.Radius_factor_DESC">
+            <summary>
+              Looks up a localized string similar to Radius Factor (&lt; 1.0).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellcircle.Radius_factor_DISP">
+            <summary>
+              Looks up a localized string similar to Radius factor.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellcircle.Zigzag_DESC">
+            <summary>
+              Looks up a localized string similar to Zig Zag or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellcircle.Zigzag_DISP">
+            <summary>
+              Looks up a localized string similar to Zigzg.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.celldot">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Array_DESC">
+            <summary>
+              Looks up a localized string similar to Array of Cell (1x1, 2x2, 3x3, ...).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Array_DISP">
+            <summary>
+              Looks up a localized string similar to Array.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Dots_C">
+            <summary>
+              Looks up a localized string similar to Dots.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Extension_channel_DESC">
+            <summary>
+              Looks up a localized string similar to Pixel Output Extension Channel (Analog 1 or 2).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Extension_channel_DISP">
+            <summary>
+              Looks up a localized string similar to Extension channel.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Pixel_period_DESC">
+            <summary>
+              Looks up a localized string similar to Pixel Period (usec) (1/Pixel Frequency).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Pixel_period_DISP">
+            <summary>
+              Looks up a localized string similar to Pixel period.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Pixel_time_DESC">
+            <summary>
+              Looks up a localized string similar to Pixel Time (usec) (Time for Pixel Pulse Width. Should be &lt; Pixel Period).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Pixel_time_DISP">
+            <summary>
+              Looks up a localized string similar to Pixel time.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Zigzag_DESC">
+            <summary>
+              Looks up a localized string similar to Zig Zag or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Zigzag_DISP">
+            <summary>
+              Looks up a localized string similar to Zigzg.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.barcode2dbase">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Cell_C">
+            <summary>
+              Looks up a localized string similar to Cell.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Cell_circles_DESC">
+            <summary>
+              Looks up a localized string similar to Circle Cell.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Cell_circles_DISP">
+            <summary>
+              Looks up a localized string similar to Cell (Circles).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Cell_DESC">
+            <summary>
+              Looks up a localized string similar to Cell Type.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Cell_DISP">
+            <summary>
+              Looks up a localized string similar to Cell.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Cell_dots_DESC">
+            <summary>
+              Looks up a localized string similar to Dot Cell for Raster(Bitmap) Operation.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Cell_dots_DISP">
+            <summary>
+              Looks up a localized string similar to Cell (Dots).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Cell_hatches_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch Cell.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Cell_hatches_DISP">
+            <summary>
+              Looks up a localized string similar to Cell (Hatches).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Cell_lines_DESC">
+            <summary>
+              Looks up a localized string similar to Line Cell.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Cell_lines_DISP">
+            <summary>
+              Looks up a localized string similar to Cell (Lines).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Cell_outline_DESC">
+            <summary>
+              Looks up a localized string similar to Outline Cell.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Cell_outline_DISP">
+            <summary>
+              Looks up a localized string similar to Cell (Outline).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Closed_DESC">
+            <summary>
+              Looks up a localized string similar to Closed Loop.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Closed_DISP">
+            <summary>
+              Looks up a localized string similar to Closed.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Convertible_DESC">
+            <summary>
+              Looks up a localized string similar to Enable(or Disable) Convert Text Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Convertible_DISP">
+            <summary>
+              Looks up a localized string similar to Convertible.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Height_DESC">
+            <summary>
+              Looks up a localized string similar to Height (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Height_DISP">
+            <summary>
+              Looks up a localized string similar to Height.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Invert_cell_DESC">
+            <summary>
+              Looks up a localized string similar to Invert Cells or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Invert_cell_DISP">
+            <summary>
+              Looks up a localized string similar to Invert cell.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Text_converted_DESC">
+            <summary>
+              Looks up a localized string similar to Text (Converted).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Text_converted_DISP">
+            <summary>
+              Looks up a localized string similar to Text (converted).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Text_DESC">
+            <summary>
+              Looks up a localized string similar to Text Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Text_DISP">
+            <summary>
+              Looks up a localized string similar to Text.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Width_DESC">
+            <summary>
+              Looks up a localized string similar to Width (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Width_DISP">
+            <summary>
+              Looks up a localized string similar to Width.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.boundingbox">
@@ -540,6 +711,395 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.boundingbox.Width_DISP">
             <summary>
               Looks up a localized string similar to Width.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.charactersetbase">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersetbase.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersetbase.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersetbase.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersetbase.Date_format_DESC">
+            <summary>
+              Looks up a localized string similar to Date Format.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersetbase.Date_format_DISP">
+            <summary>
+              Looks up a localized string similar to Date format.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersetbase.Digits_DESC">
+            <summary>
+              Looks up a localized string similar to Digits.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersetbase.Digits_DISP">
+            <summary>
+              Looks up a localized string similar to Digits.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersetbase.Leading_with_zero_DESC">
+            <summary>
+              Looks up a localized string similar to Leading with 0.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersetbase.Leading_with_zero_DISP">
+            <summary>
+              Looks up a localized string similar to Leading with 0.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersetbase.Serial_format_DESC">
+            <summary>
+              Looks up a localized string similar to Serial No Format.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersetbase.Serial_format_DISP">
+            <summary>
+              Looks up a localized string similar to Serial format.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersetbase.Time_format_DESC">
+            <summary>
+              Looks up a localized string similar to Time Format.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersetbase.Time_format_DISP">
+            <summary>
+              Looks up a localized string similar to Time format.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.charactersettext">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Alignment_horizontal_DESC">
+            <summary>
+              Looks up a localized string similar to Horizontal Alignment.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Alignment_horizontal_DISP">
+            <summary>
+              Looks up a localized string similar to Alignment (horizontal).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Alignment_vertical_DESC">
+            <summary>
+              Looks up a localized string similar to Vertical Alignment.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Alignment_vertical_DISP">
+            <summary>
+              Looks up a localized string similar to Alignment (vertical).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.CharacterSet_format_DESC">
+            <summary>
+              Looks up a localized string similar to CharacterSet Format.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.CharacterSet_format_DISP">
+            <summary>
+              Looks up a localized string similar to CharacterSet format.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Convertible_DESC">
+            <summary>
+              Looks up a localized string similar to Enable(or Disable) Convert Text Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Convertible_DISP">
+            <summary>
+              Looks up a localized string similar to Convertible.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Font_DESC">
+            <summary>
+              Looks up a localized string similar to Font Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Font_DISP">
+            <summary>
+              Looks up a localized string similar to Font.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Format_C">
+            <summary>
+              Looks up a localized string similar to CharacterSet format.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Format_date_DESC">
+            <summary>
+              Looks up a localized string similar to Date Format.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Format_date_DISP">
+            <summary>
+              Looks up a localized string similar to Format (date).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Format_serial_DESC">
+            <summary>
+              Looks up a localized string similar to Serial No Format.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Format_serial_DISP">
+            <summary>
+              Looks up a localized string similar to Format (serial).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Format_time_DESC">
+            <summary>
+              Looks up a localized string similar to Time Format.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Format_time_DISP">
+            <summary>
+              Looks up a localized string similar to Format (time).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Height_DESC">
+            <summary>
+              Looks up a localized string similar to Height (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Height_DISP">
+            <summary>
+              Looks up a localized string similar to Height.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Style_DESC">
+            <summary>
+              Looks up a localized string similar to Font Style.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Style_DISP">
+            <summary>
+              Looks up a localized string similar to Style.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Text_converted_DESC">
+            <summary>
+              Looks up a localized string similar to Text (Converted).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Text_converted_DISP">
+            <summary>
+              Looks up a localized string similar to Text (converted).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Text_DESC">
+            <summary>
+              Looks up a localized string similar to Text Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Text_DISP">
+            <summary>
+              Looks up a localized string similar to Text.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Width_DESC">
+            <summary>
+              Looks up a localized string similar to Width (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Width_DISP">
+            <summary>
+              Looks up a localized string similar to Width.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.curve">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Control1_DESC">
+            <summary>
+              Looks up a localized string similar to Control1 X,Y (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Control1_DISP">
+            <summary>
+              Looks up a localized string similar to Control1.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Control2_DESC">
+            <summary>
+              Looks up a localized string similar to Control2 X,Y (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Control2_DISP">
+            <summary>
+              Looks up a localized string similar to Control2.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Degree_DESC">
+            <summary>
+              Looks up a localized string similar to Degree of Curve (Conic: 2, Cubic: 3).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Degree_DISP">
+            <summary>
+              Looks up a localized string similar to Degree.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.End_DESC">
+            <summary>
+              Looks up a localized string similar to End X,Y (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.End_DISP">
+            <summary>
+              Looks up a localized string similar to End.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Start_DESC">
+            <summary>
+              Looks up a localized string similar to Start X,Y (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Start_DISP">
+            <summary>
+              Looks up a localized string similar to Start.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.datamatrix">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.C40_DESC">
+            <summary>
+              Looks up a localized string similar to C40 (Disable Compact Encoding if Enabled).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.C40_DISP">
+            <summary>
+              Looks up a localized string similar to C40.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Compact_DESC">
+            <summary>
+              Looks up a localized string similar to Compact Encoding. Supports the encoding of characters that are not in the ISO-8859-1 character set via ECIs. (Disable C40 If Enabled).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Compact_DISP">
+            <summary>
+              Looks up a localized string similar to Compact.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.GS1_DESC">
+            <summary>
+              Looks up a localized string similar to GS1 Format or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.GS1_DISP">
+            <summary>
+              Looks up a localized string similar to GS1.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Min__height_DESC">
+            <summary>
+              Looks up a localized string similar to Y Pixels: (10~144).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Min__height_DISP">
+            <summary>
+              Looks up a localized string similar to Min. height (pixel).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Min__width_DESC">
+            <summary>
+              Looks up a localized string similar to X Pixels: (10~144).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Min__width_DISP">
+            <summary>
+              Looks up a localized string similar to Min. width (pixel).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Quite_zone_DESP">
+            <summary>
+              Looks up a localized string similar to Quite Zone Size.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Quite_zone_DISP">
+            <summary>
+              Looks up a localized string similar to Quite zone.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Square_DESC">
+            <summary>
+              Looks up a localized string similar to Square(or Rectangle) Shape.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Square_DISP">
+            <summary>
+              Looks up a localized string similar to Square.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.alcvectorbegin">
@@ -1563,6 +2123,147 @@
               SyncAxis과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.entityhatchbase">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Angle_DESC">
+            <summary>
+              Looks up a localized string similar to Angle(1st) for Line Mode (°).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Angle_DISP">
+            <summary>
+              Looks up a localized string similar to Angle.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Angle2_DESC">
+            <summary>
+              Looks up a localized string similar to Angle(2nd) for CrossLine Mode (°).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Angle2_DISP">
+            <summary>
+              Looks up a localized string similar to Angle2.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Exclude_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch Exclude Distance (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Exclude_DISP">
+            <summary>
+              Looks up a localized string similar to Exclude.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Hatch_C">
+            <summary>
+              Looks up a localized string similar to Hatch.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Hatch_DESC">
+            <summary>
+              Looks up a localized string similar to Enable(or Disable) Hatch.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Hatch_DISP">
+            <summary>
+              Looks up a localized string similar to Enable.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Interval_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch Interval (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Interval_DISP">
+            <summary>
+              Looks up a localized string similar to Interval.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Joint_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch Joint.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Joint_DISP">
+            <summary>
+              Looks up a localized string similar to Joint.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Mode_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch Mode.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Mode_DISP">
+            <summary>
+              Looks up a localized string similar to Mode.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Outline_DESC">
+            <summary>
+              Looks up a localized string similar to Include Outline(or Mark Outline) or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Outline_DISP">
+            <summary>
+              Looks up a localized string similar to Outline.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Outline_first_DESC">
+            <summary>
+              Looks up a localized string similar to Mark Outline at First or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Outline_first_DISP">
+            <summary>
+              Looks up a localized string similar to Outline first.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Repeat_DESC">
+            <summary>
+              Looks up a localized string similar to Repeat Mark Count(s) for Hatch (Default: 1).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Repeat_DISP">
+            <summary>
+              Looks up a localized string similar to Repeat.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Shift_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch Shift(or Offset) Distance (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Shift_DISP">
+            <summary>
+              Looks up a localized string similar to Shift.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Zigzag_DESC">
+            <summary>
+              Looks up a localized string similar to ZigZag Hatch Order or not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Zigzag_DISP">
+            <summary>
+              Looks up a localized string similar to Zigzag.
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.group">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -1765,6 +2466,137 @@
               Looks up a localized string similar to Width.
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.imagetext">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Alignment_horizontal_DESC">
+            <summary>
+              Looks up a localized string similar to Horizontal Alignment.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Alignment_horizontal_DISP">
+            <summary>
+              Looks up a localized string similar to Alignment (horizontal).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Convertible_DESC">
+            <summary>
+              Looks up a localized string similar to Enable(or Disable) Convert Text Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Convertible_DISP">
+            <summary>
+              Looks up a localized string similar to Convertible.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Fill_DESC">
+            <summary>
+              Looks up a localized string similar to Fill or (Outline).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Fill_DISP">
+            <summary>
+              Looks up a localized string similar to Fill.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Font_DESC">
+            <summary>
+              Looks up a localized string similar to Font Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Font_DISP">
+            <summary>
+              Looks up a localized string similar to Font.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Height_DESC">
+            <summary>
+              Looks up a localized string similar to Height (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Height_DISP">
+            <summary>
+              Looks up a localized string similar to Height.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Height_pixel_DESC">
+            <summary>
+              Looks up a localized string similar to Pixel Height Size (&gt;= 6 pixels).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Height_pixel_DISP">
+            <summary>
+              Looks up a localized string similar to Height (pixel).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Outline_size_DESC">
+            <summary>
+              Looks up a localized string similar to Outline Size (pixel).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Outline_size_DISP">
+            <summary>
+              Looks up a localized string similar to Outline size.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Style_DESC">
+            <summary>
+              Looks up a localized string similar to Font Style.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Style_DISP">
+            <summary>
+              Looks up a localized string similar to Style.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Text_converted_DESC">
+            <summary>
+              Looks up a localized string similar to Text (Converted).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Text_converted_DISP">
+            <summary>
+              Looks up a localized string similar to Text (converted).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Text_DESC">
+            <summary>
+              Looks up a localized string similar to Text Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Text_DISP">
+            <summary>
+              Looks up a localized string similar to Text.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Width_DESC">
+            <summary>
+              Looks up a localized string similar to Width (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Width_DISP">
+            <summary>
+              Looks up a localized string similar to Width.
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.layerrtc">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -1895,6 +2727,137 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layersyncaxis.SyncAxis_C">
             <summary>
               Looks up a localized string similar to SyncAxis.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.barcode1d">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Array_DESC">
+            <summary>
+              Looks up a localized string similar to Array of Cell (1x1, 2x2, 3x3, ...).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Array_DISP">
+            <summary>
+              Looks up a localized string similar to Array.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Convertible_DESC">
+            <summary>
+              Looks up a localized string similar to Enable(or Disable) Convert Text Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Convertible_DISP">
+            <summary>
+              Looks up a localized string similar to Convertible.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Format_DESC">
+            <summary>
+              Looks up a localized string similar to Barcode Format.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Format_DISP">
+            <summary>
+              Looks up a localized string similar to Format.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.GS1_DESC">
+            <summary>
+              Looks up a localized string similar to GS1 Format or not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.GS1_DISP">
+            <summary>
+              Looks up a localized string similar to GS1.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Height_DESC">
+            <summary>
+              Looks up a localized string similar to Height (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Height_DISP">
+            <summary>
+              Looks up a localized string similar to Height.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Invert_cell_DESC">
+            <summary>
+              Looks up a localized string similar to Invert Cells or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Invert_cell_DISP">
+            <summary>
+              Looks up a localized string similar to Invert cell.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Line_pitch_DESC">
+            <summary>
+              Looks up a localized string similar to Line Pitch X (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Line_pitch_DISP">
+            <summary>
+              Looks up a localized string similar to Line pitch.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Text_converted_DESC">
+            <summary>
+              Looks up a localized string similar to Text (Converted).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Text_converted_DISP">
+            <summary>
+              Looks up a localized string similar to Text (converted).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Text_DESC">
+            <summary>
+              Looks up a localized string similar to Text Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Text_DISP">
+            <summary>
+              Looks up a localized string similar to Text.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Width_DESC">
+            <summary>
+              Looks up a localized string similar to Width (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Width_DISP">
+            <summary>
+              Looks up a localized string similar to Width.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Zigzag_DESC">
+            <summary>
+              Looks up a localized string similar to Zig Zag or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Zigzag_DISP">
+            <summary>
+              Looks up a localized string similar to Zigzg.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.line">
@@ -2092,78 +3055,68 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.plane">
             <summary>
-              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.ResourceManager">
             <summary>
-              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Culture">
             <summary>
-              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
-              재정의합니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Array_offset_DESC">
-            <summary>
-              Array Of Offset (Should be &gt; 0)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Array_offset_DISP">
-            <summary>
-              Array offset과(와) 유사한 지역화된 문자열을 찾습니다.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Basic_C">
             <summary>
-              Basic과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Basic.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Data_C">
             <summary>
-              Data과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Data.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.File_DESC">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Direction_x_DESC">
             <summary>
-              File Name과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to New Directional X (Default: 1,0,0).
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.File_DISP">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Direction_x_DISP">
             <summary>
-              File과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Direction x.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Polygon_mode_DESC">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Direction_y_DESC">
             <summary>
-              Polygon Render Mode과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to New Directional Y (Default: 0,1,0).
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Polygon_mode_DISP">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Direction_y_DISP">
             <summary>
-              Polygon mode과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Direction y.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Z_order_DESC">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Reference_DESC">
             <summary>
-              Z Sort Order When Extract과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to New Reference X,Y,Z Position (Default: 0,0,0).
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Z_order_DISP">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Reference_DISP">
             <summary>
-              Z order과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Reference.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Z_scale_DESC">
             <summary>
-              Z Scale Factor (-, +). Calculated When Convert New 3D Correction File (Default 1:1)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Z Scale Factor (-, +). Calculated When Convert New 3D Correction File (Default 1:1).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.plane.Z_scale_DISP">
             <summary>
-              Z scale과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Z scale.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.pointscloud">
@@ -2271,6 +3224,77 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.polyline2d.Data_C">
             <summary>
               Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.qrcode">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.Encoding_DESC">
+            <summary>
+              Looks up a localized string similar to Encoding (ASCII, ISO-8859-1, UTF-8, UTF-16, ...).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.Encoding_DISP">
+            <summary>
+              Looks up a localized string similar to Encoding.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.GS1_DESC">
+            <summary>
+              Looks up a localized string similar to GS1 Format or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.GS1_DISP">
+            <summary>
+              Looks up a localized string similar to GS1.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.Height_pixel_DESC">
+            <summary>
+              Looks up a localized string similar to Height(Y) Pixels.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.Height_pixel_DISP">
+            <summary>
+              Looks up a localized string similar to Height (pixel).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.Quite_zone_DESP">
+            <summary>
+              Looks up a localized string similar to Quite Zone Size.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.Quite_zone_DISP">
+            <summary>
+              Looks up a localized string similar to Quite zone.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.Width_pixel_DESC">
+            <summary>
+              Looks up a localized string similar to Width(X) Pixels.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.Width_pixel_DISP">
+            <summary>
+              Looks up a localized string similar to Width (pixel).
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.rectangle">
@@ -2743,231 +3767,489 @@
               Looks up a localized string similar to Width.
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.vertex">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.vertex.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.vertex.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.vertex.Bulge_DESC">
+            <summary>
+              Looks up a localized string similar to Bulge (Atan/4).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.vertex.Bulge_DISP">
+            <summary>
+              Looks up a localized string similar to Bulge.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.vertex.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.vertex.Ramp_DESC">
+            <summary>
+              Looks up a localized string similar to Ramp Factor (Default: 1.0).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.vertex.Ramp_DISP">
+            <summary>
+              Looks up a localized string similar to Ramp.
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.entitybase">
             <summary>
-              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.ResourceManager">
             <summary>
-              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Culture">
             <summary>
-              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
-              재정의합니다.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Align_DESC">
             <summary>
-              Translate for Align (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Translate for Align (mm).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Align_DISP">
             <summary>
-              Mode align과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Mode align.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Alignment_DESC">
             <summary>
-              Alignments과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Alignments.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Alignment_DISP">
             <summary>
-              Alignment과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Alignment.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Basic_C">
             <summary>
-              Basic과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Basic.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Bound_DESC">
             <summary>
-              Bouding Box과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Bouding Box (WxHxD: Width, Height, Depth).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Bound_DISP">
             <summary>
-              Bound과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Bound box.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Color_DESC">
             <summary>
-              Color of Entity (Used with Pen Color)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Color of Entity (Used with Pen Color).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Color_DISP">
             <summary>
-              Color과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Color.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Description_DESC">
             <summary>
-              Description of Entity과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Description of Entity.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Description_DISP">
             <summary>
-              Description과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Description.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Entity_ID_DESC">
             <summary>
-              Unique Entity ID과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Unique Entity ID.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.HitTest_DESC">
             <summary>
-              Is Allow Hittest or Not과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Is Allow Hittest or Not.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.HitTest_DISP">
             <summary>
-              HitTest과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to HitTest.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.ID_DISP">
             <summary>
-              ID과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to ID.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.In_DESC">
             <summary>
-              In(Start) Location과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to In(Start) Location.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.In_DISP">
             <summary>
-              In과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to In.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Items_DESC">
             <summary>
-              Counts of Child Entities과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Counts of Child Entities.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Items_DISP">
             <summary>
-              Items과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Items.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Mark_C">
             <summary>
-              Mark과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Mark.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Mark_DESC">
             <summary>
-              Is Allow Mark or Not과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Is Allow Mark or Not.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Mark_DISP">
             <summary>
-              Mark과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Mark.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Matrix_C">
             <summary>
-              Matrix과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Matrix.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Model_DESC">
             <summary>
-              Model 4x4 Matrix과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Model 4x4 Matrix.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Model_DISP">
             <summary>
-              Model matrix과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Model matrix.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Name_DESC">
             <summary>
-              Name of Entity과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Name of Entity.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Name_DISP">
             <summary>
-              Name과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Name.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Out_DESC">
             <summary>
-              Out(End) Location과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Out(End) Location.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Out_DISP">
             <summary>
-              Out과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Out.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Render_DESC">
             <summary>
-              Is Allow to Render or Not과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Is Allow to Render or Not.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Render_DISP">
             <summary>
-              Render과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Render.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Repeats_DESC">
             <summary>
-              Repeat Counts (Default: 1)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Repeat Counts (Default: 1).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Repeats_DISP">
             <summary>
-              Repeats과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Repeats.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Rotate_DESC">
             <summary>
-              Rotate X,Y,Z Angle (°) 과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Rotate X,Y,Z Angle (°) .
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Rotate_DISP">
             <summary>
-              Model rotate과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Model rotate.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Scale_DESC">
             <summary>
-              Scale X,Y,Z (Default: 1, Should be &gt; 0)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Scale X,Y,Z (Default: 1, Should be &gt; 0).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Scale_DISP">
             <summary>
-              Model scale과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Model scale.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Selected_DESC">
             <summary>
-              Is Selected or Not과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Is Selected or Not.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Selected_DISP">
             <summary>
-              Selected과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Selected.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Status_C">
             <summary>
-              Status과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Status.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Translate_DESC">
             <summary>
-              Translate Position X,Y,Z (mm) 과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Translate Position X,Y,Z (mm) .
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Translate_DISP">
             <summary>
-              Model translate과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Model translate.
             </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.CellLine">
+            <summary>
+            CellLine
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellLine.DotFactor">
+            <summary>
+            Dot factor of cell (1x1, 2x2, 3x3,...)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellLine.IsZigZag">
+            <summary>
+            ZigZag
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellLine.#ctor(SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bcd"><c>EntityBarcode2DBase</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellLine.ToString">
+            <summary>
+            Represent <c>DotFactor</c> as string
+            </summary>
+            <returns><c>DotFactor</c> as string</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellLine.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.CellOutLine">
+            <summary>
+            CellOutLine
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellOutLine.#ctor(SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bcd"><c>EntityBarcode2DBase</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellOutLine.ToString">
+            <summary>
+            Represent <c>DotFactor</c> as string
+            </summary>
+            <returns><c>DotFactor</c> as string</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellOutLine.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.CellHatch">
+            <summary>
+            CellHatch
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.DotFactor">
+            <summary>
+            Dot factor of cell (1x1, 2x2, 3x3,...)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.HatchMode">
+            <summary>
+            HatchModes
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.IsZigZag">
+            <summary>
+            ZigZag
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.HatchAngle">
+            <summary>
+            Hatch 1st Angle (for Line)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.HatchAngle2">
+            <summary>
+            Hatch 2nd Angle (for Cross Line)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.HatchInterval">
+            <summary>
+            Hatch interval (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.HatchShift">
+            <summary>
+            Hatch shift (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.HatchExclude">
+            <summary>
+            Hatch exculde (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.IsHatchOutline">
+            <summary>
+            Hatch include outline
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.IsHatchOutlineFirst">
+            <summary>
+            외곽 가공을 우선할지 여부
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellHatch.#ctor(SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bcd"><c>EntityBarcode2DBase</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellHatch.ToString">
+            <summary>
+            Represent <c>DotFactor</c> as string
+            </summary>
+            <returns><c>DotFactor</c> as string</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellHatch.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.CellCircle">
+            <summary>
+            CellCircle
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellCircle.DotFactor">
+            <summary>
+            Dot factor of cell (1x1, 2x2, 3x3,...)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.CellCircle.dotFactor">
+            <summary>
+            Dot factor (1,2,3,...)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellCircle.IsZigZag">
+            <summary>
+            ZigZag
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellCircle.RadiusFactor">
+            <summary>
+            Radius scale factor
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.CellCircle.radiusFactor">
+            <summary>
+            Radius factor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellCircle.#ctor(SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bcd"><c>EntityBarcode2DBase</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellCircle.ToString">
+            <summary>
+            Represent <c>DotFactor</c> as string
+            </summary>
+            <returns><c>DotFactor</c> as string</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellCircle.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.CellDot">
+            <summary>
+            CellDot
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.DotFactor">
+            <summary>
+            Dot factor of cell (1x1, 2x2, 3x3,...)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.IsZigZag">
+            <summary>
+            ZigZag
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelPeriod">
+            <summary>
+            Pixel Period (usec)
+            </summary>
+            <remarks>
+            Laser ON signal is activated during output pixels.
+            Laser Pulse width is modulated by each output pixel time.
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelTime">
+            <summary>
+            Pixel Time (usec)
+            </summary>
+            <remarks>
+            Pixel output time works like as output pulse width. should be lower than <c>PixelPeriod</c>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelChannel">
+            <summary>
+            Pixel Output Extension Channel 
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellDot.#ctor(SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bcd"><c>EntityBarcode2DBase</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellDot.ToString">
+            <summary>
+            Represent <c>DotFactor</c> as string
+            </summary>
+            <returns><c>DotFactor</c> as string</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellDot.Clone">
+            <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.CharacterSetFormats">
             <summary>
@@ -3086,6 +4368,115 @@
             <returns><c>CharacterSetSerialNo</c> as string</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.CharacterSetSerialNo.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase">
+            <summary>
+            EntityHatchBase
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">
+            <summary>
+            Enable(or Disable) Hatch 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchMode">
+            <summary>
+            Hatch Mode
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchJoint">
+            <summary>
+            Hatch Joint
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchZigZag">
+            <summary>
+            Hatch with ZigZag
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchAngle">
+            <summary>
+            Hatch Angle(1st)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchAngle2">
+            <summary>
+            Hatch Angle(2nd)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchInterval">
+            <summary>
+            Hatch Interval (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchExclude">
+            <summary>
+            Hatch Exclude (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchShift">
+            <summary>
+            Hatch Shift (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchRepeat">
+            <summary>
+            Hatch Repeats
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchIncludeOutline">
+            <summary>
+            Mark Outline with Hatch or not
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchOutlineFirst">
+            <summary>
+            Mark Outline at First or not
+            </summary>
+            <remarks>
+            Used when <c>IsHatchOutline</c> is <c>True</c> only. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.hatchedGroup">
+            <summary>
+            Hatched <c>EntityGroup</c> entity 
+            </summary>
+            <remarks>
+            Valid when <c>IsHatchOutline</c> is <c>True</c>. <br/>
+            <c>null</c> when <c>IsHatchOutline</c> is <c>False</c>. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.InternalClone(SpiralLab.Sirius2.Winforms.Entity.EntityBase)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.RegenHatch">
+            <summary>
+            Regen internal hatch if <c>IsHatchable</c> is <c>True</c>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.Translate(OpenTK.Vector3)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.Translate(OpenTK.Vector2)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.Translate(System.Double,System.Double,System.Double)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.RotateX(System.Double)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.RotateY(System.Double)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.RotateZ(System.Double)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.Rotate(System.Double,System.Double,System.Double)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.Scale(System.Double)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityRampEnd">
@@ -3568,12 +4959,12 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCurve.Reverse">
             <inheritdoc/>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.BarcodeCells">
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.Barcode2DCells">
             <summary>
             BarcodeCells
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.BarcodeCells.Dots">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.Barcode2DCells.Dots">
             <summary>
             Dots
             </summary>
@@ -3582,426 +4973,209 @@
             Because <c>Rtc6SyncAxis</c> is not supported <c>IRtcRaster</c> interface. <br/>
             </remarks>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.BarcodeCells.Lines">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.Barcode2DCells.Lines">
             <summary>
             Lines
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.BarcodeCells.Outline">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.Barcode2DCells.Outline">
             <summary>
             Outline only
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.BarcodeCells.Circles">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.Barcode2DCells.Circles">
             <summary>
             Circles
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.BarcodeCells.Hatch">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.Barcode2DCells.Hatch">
             <summary>
             Hatch
             </summary>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.CellDot">
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase">
             <summary>
-            CellDot
+            EntityBarcode2DBase
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.DotFactor">
-            <summary>
-            Dot factor of cell (1x1, 2x2, 3x3,...)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.IsZigZag">
-            <summary>
-            ZigZag
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelPeriod">
-            <summary>
-            Pixel Period (usec)
-            </summary>
-            <remarks>
-            Laser ON signal is activated during output pixels.
-            Laser Pulse width is modulated by each output pixel time.
-            </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelTime">
-            <summary>
-            Pixel Time (usec)
-            </summary>
-            <remarks>
-            Pixel output time works like as output pulse width. should be lower than <c>PixelPeriod</c>
-            </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelChannel">
-            <summary>
-            Pixel Output Extension Channel 
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellDot.#ctor(SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="bcd"><c>EntityBarcodeBase</c></param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellDot.ToString">
-            <summary>
-            Represent <c>DotFactor</c> as string
-            </summary>
-            <returns><c>DotFactor</c> as string</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellDot.Clone">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.CellLine">
-            <summary>
-            CellLine
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellLine.DotFactor">
-            <summary>
-            Dot factor of cell (1x1, 2x2, 3x3,...)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellLine.IsZigZag">
-            <summary>
-            ZigZag
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellLine.#ctor(SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="bcd"><c>EntityBarcodeBase</c></param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellLine.ToString">
-            <summary>
-            Represent <c>DotFactor</c> as string
-            </summary>
-            <returns><c>DotFactor</c> as string</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellLine.Clone">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.CellOutLine">
-            <summary>
-            CellOutLine
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellOutLine.#ctor(SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="bcd"><c>EntityBarcodeBase</c></param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellOutLine.ToString">
-            <summary>
-            Represent <c>DotFactor</c> as string
-            </summary>
-            <returns><c>DotFactor</c> as string</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellOutLine.Clone">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.CellHatch">
-            <summary>
-            CellHatch
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.DotFactor">
-            <summary>
-            Dot factor of cell (1x1, 2x2, 3x3,...)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.HatchMode">
-            <summary>
-            HatchModes
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.IsZigZag">
-            <summary>
-            ZigZag
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.HatchAngle">
-            <summary>
-            Hatch 1st Angle (for Line)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.HatchAngle2">
-            <summary>
-            Hatch 2nd Angle (for Cross Line)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.HatchInterval">
-            <summary>
-            Hatch interval (mm)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.HatchShift">
-            <summary>
-            Hatch shift (mm)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.HatchExclude">
-            <summary>
-            Hatch exculde (mm)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.IsHatchOutline">
-            <summary>
-            Hatch include outline
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.IsHatchOutlineFirst">
-            <summary>
-            외곽 가공을 우선할지 여부
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellHatch.#ctor(SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="bcd"><c>EntityBarcodeBase</c></param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellHatch.ToString">
-            <summary>
-            Represent <c>DotFactor</c> as string
-            </summary>
-            <returns><c>DotFactor</c> as string</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellHatch.Clone">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.CellCircle">
-            <summary>
-            CellCircle
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellCircle.DotFactor">
-            <summary>
-            Dot factor of cell (1x1, 2x2, 3x3,...)
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.CellCircle.dotFactor">
-            <summary>
-            Dot factor (1,2,3,...)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellCircle.IsZigZag">
-            <summary>
-            ZigZag
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellCircle.RadiusFactor">
-            <summary>
-            Radius scale factor
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.CellCircle.radiusFactor">
-            <summary>
-            Radius factor
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellCircle.#ctor(SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="bcd"><c>EntityBarcodeBase</c></param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellCircle.ToString">
-            <summary>
-            Represent <c>DotFactor</c> as string
-            </summary>
-            <returns><c>DotFactor</c> as string</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellCircle.Clone">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase">
-            <summary>
-            BarcodeBase
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.IsInvertCell">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.IsInvertCell">
             <summary>
             Invert Cell 
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.isInvertCell">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.isInvertCell">
             <summary>
              Invert cell
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.Cell">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.Cell">
             <summary>
             <c>BarcodeCells</c>
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.cell">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.cell">
             <summary>
             <c>BarcodeCells</c>
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.CellDot">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.CellDot">
             <summary>
             <c>CellDot</c>
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.CellLine">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.CellLine">
             <summary>
             <c>CellLine</c>
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.CellOutLine">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.CellOutLine">
             <summary>
             <c>CellOutLine</c>
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.CellCircle">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.CellCircle">
             <summary>
             <c>CellCircle</c>
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.CellHatch">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.CellHatch">
             <summary>
             <c>CellHatch</c>
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.Width">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.Width">
             <summary>
             Width (mm)
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.width">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.width">
             <summary>
             Width (mm)
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.Height">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.Height">
             <summary>
             Height (mm)
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.height">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.height">
             <summary>
             Height (mm)
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.SourceText">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.SourceText">
             <inheritdoc/>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.sourceText">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.sourceText">
             <summary>
             Source text
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.IsConvertedText">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.IsConvertedText">
             <inheritdoc/>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.isConvertedText">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.isConvertedText">
             <summary>
             Enable(or disable) converted text data 
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.ConvertedText">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.ConvertedText">
             <inheritdoc/>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.IsClosed">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.IsClosed">
             <inheritdoc/>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase._SourceText">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase._SourceText">
             <summary>
             Used by internally (Do NOT edit)
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase._ConvertedText">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase._ConvertedText">
             <summary>
             Used by internally (Do NOT edit)
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.glBufferDot">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.glBufferDot">
             <summary>
             GLBuffer for CellDot
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.entityOutline">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.entityOutline">
             <summary>
             Array of <c>EntityPolyline2D</c> for CellOutline
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.entityLines">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.entityLines">
             <summary>
             Array of <c>EntityLine</c> for CellLine
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.entityHatch">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.entityHatch">
             <summary>
             <c>EntityGroup</c> for CellHatch
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.#ctor">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.#ctor">
             <summary>
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.Finalize">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.Finalize">
             <summary>
             Finalizer
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.Dispose(System.Boolean)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.Dispose(System.Boolean)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.Regen">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.Regen">
             <inheritdoc/>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.dotMatrix">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.dotMatrix">
             <summary>
             2x2 dot matrix of barcode
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.RegenEncode">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.RegenEncode">
             <summary>
             Regen(or encode) bit matrix of barcode
             </summary>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.RegenCellOutline">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.RegenCellOutline">
             <summary>
             Regen cell for outline
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.RegenCellLine">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.RegenCellLine">
             <summary>
             Regen cell for line
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.RegenCellHatch">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.RegenCellHatch">
             <summary>
             Regen cell for hatch
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.RegenInOut">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.RegenInOut">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.Render(SpiralLab.Sirius2.Winforms.IView)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.Render(SpiralLab.Sirius2.Winforms.IView)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.ToPolylines">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.ToPolylines">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcodeBase.PropertyVisibility(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.PropertyVisibility(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
             <summary>
             Property visibility for <c>IRtc</c>
             </summary>
@@ -4297,7 +5471,7 @@
             Square joint
             </summary>
             <remarks>
-            Squaring is applied uniformally at all convex edge joins.
+            Squaring is applied uniformally at all convex edge joins. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchJoints.Round">
@@ -4305,7 +5479,7 @@
             Square round
             </summary>
             <remarks>
-            While flattened paths can never perfectly trace an arc, they are approximated by a series of arc chords.
+            While flattened paths can never perfectly trace an arc, they are approximated by a series of arc chords.<br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchJoints.Miter">
@@ -4313,7 +5487,7 @@
             Square miter
             </summary>
             <remarks>
-            For any given edge join, when miter offsetting would exceed that maximum distance, 'square' joining is applied.
+            For any given edge join, when miter offsetting would exceed that maximum distance, 'square' joining is applied.<br/>
             </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.IHatchable">
@@ -4451,7 +5625,7 @@
             For example: Plane, Cone, Cylinder, PointsCloud and so on. <br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D.Calibration3D(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.Boolean,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D.Calibration3D(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
             <summary>
             Convert 3D scanner field correction 
             </summary>
@@ -4460,11 +5634,232 @@
             Output correction file: If calibration had succeeded, correction table has load and selected by automatically at last table location. <br/>
             </remarks>
             <param name="rtc"><c>IRtc</c></param>
-            <param name="isLoadAndSelectIfSucceeded">Load and select new correction file into RTC if success to convert</param>
             <param name="inputCtFileName">Input correction filename</param>
             <param name="newCtFileName">Created new correction filename if succeeded</param>
             <param name="returnCode">Error code if failed</param>
             <returns>Success or failed</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.Barcode1DFormats">
+            <summary>
+            Barcode1DFormats
+            </summary>
+            <remarks>
+            For 1-dimensional barcode
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.Barcode1DFormats.CODABAR">
+            <summary>
+            CODABAR 1D format
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.Barcode1DFormats.Code39">
+            <summary>
+            Code 39 1D format
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.Barcode1DFormats.Code93">
+            <summary>
+            Code 93 1D format
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.Barcode1DFormats.Code128">
+            <summary>
+            Code 128 1D format
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.Barcode1DFormats.EAN8">
+            <summary>
+            EAN-8 1D format
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.Barcode1DFormats.EAN13">
+            <summary>
+            EAN-13 1D format
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.Barcode1DFormats.UPCA">
+            <summary>
+            UPC-A 1D format
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.Barcode1DFormats.UPCE">
+            <summary>
+            UPC-E 1D format
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.Barcode1DFormats.UPCEAN_EXT">
+            <summary>
+            UPC/EAN extension format. Not a stand-alone format
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D">
+            <summary>
+            EntityBarcode entity
+            </summary>
+            <remarks>
+            1D barcode
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Format">
+            <summary>
+            Barcode format
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.DotFactor">
+            <summary>
+            Dot factor
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.dotFactor">
+            <summary>
+            Dot factor
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.IsInvertCell">
+            <summary>
+            Invert Cell 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.isInvertCell">
+            <summary>
+             Invert cell
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.IsTextDataGS1">
+            <summary>
+            GS1 format or not
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.isTextDataGS1">
+            <summary>
+            GS1 format or not
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.IsZigZag">
+            <summary>
+            ZigZag
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.isZigZag">
+            <summary>
+            ZigZag
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Width">
+            <summary>
+            Width (mm)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.width">
+            <summary>
+            Width (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Height">
+            <summary>
+            Height (mm)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.height">
+            <summary>
+            Height (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.LinePitch">
+            <summary>
+            Line Pitch (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.SourceText">
+            <inheritdoc/>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.sourceText">
+            <summary>
+            Source text
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.IsConvertedText">
+            <inheritdoc/>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.isConvertedText">
+            <summary>
+            Enable(or disable) converted text data 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.ConvertedText">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D._SourceText">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D._ConvertedText">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.entityLines">
+            <summary>
+            Array of <c>EntityLine</c> for CellLine
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.#ctor(System.String,SpiralLab.Sirius2.Winforms.Entity.Barcode1DFormats,System.Int32,System.Double,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="text">Text</param>
+             <param name="format"><c>Barcode1DFormats</c></param>
+            <param name="dotFactor">Cell dot factor (1*1, 2*2, ...)</param>
+            <param name="width">Width (mm)</param>
+            <param name="height">Height (mm)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Regen">
+            <inheritdoc/>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.dotMatrix">
+            <summary>
+            2x2 dot matrix of barcode
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.RegenEncode">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.RegenCellLine">
+            <summary>
+            Regen cell for line
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.RegenInOut">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Render(SpiralLab.Sirius2.Winforms.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityPlane">
             <summary>
@@ -4499,6 +5894,16 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPlane.DirectionY">
             <summary>
             Y direction of the target plane
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPlane.Width">
+            <summary>
+            Width (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPlane.Height">
+            <summary>
+            Height (mm)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPlane.ZScale">
@@ -4566,7 +5971,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPlane.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPlane.Calibration3D(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.Boolean,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPlane.Calibration3D(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityQRCode">
@@ -4616,7 +6021,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityQRCode.Px">
             <summary>
-            X Pixels
+            Width(X) Pixels
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityQRCode.px">
@@ -4626,7 +6031,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityQRCode.Py">
             <summary>
-            Y Pixels
+            Height(Y) Pixels
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityQRCode.py">
@@ -4639,7 +6044,7 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityQRCode.#ctor(System.String,SpiralLab.Sirius2.Winforms.Entity.BarcodeCells,System.Int32,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityQRCode.#ctor(System.String,SpiralLab.Sirius2.Winforms.Entity.Barcode2DCells,System.Int32,System.Double,System.Double)">
             <summary>
             Constructor
             </summary>
@@ -4723,7 +6128,7 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityDataMatrix.#ctor(System.String,SpiralLab.Sirius2.Winforms.Entity.BarcodeCells,System.Int32,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityDataMatrix.#ctor(System.String,SpiralLab.Sirius2.Winforms.Entity.Barcode2DCells,System.Int32,System.Double,System.Double)">
             <summary>
             Constructor
             </summary>
@@ -5996,10 +7401,10 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud.Calibration3D(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.Boolean,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud.Calibration3D(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud.ActPointsCloudCalibration(OpenTK.Vector3[],SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.Boolean,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud.ActPointsCloudCalibration(OpenTK.Vector3[],SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
             <summary>
             Convert 3D scanner field correction by array of vertices.
             </summary>
@@ -6013,7 +7418,6 @@
             </remarks>
             <param name="vertices">Array of x,y,z vertex</param>
             <param name="rtc"><c>IRtc</c></param>
-            <param name="isLoadAndSelectIfSucceeded">Load and select new correction file into RTC if success to convert</param>
             <param name="inputCtFileName">Input correction filename</param>
             <param name="newCtFileName">Created new correction filename if succeeded</param>
             <param name="returnCode">Error code if failed</param>
@@ -7305,6 +8709,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Repeats">
             <inheritdoc/>
         </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBase.repeats">
+            <summary>
+            Repeat counts
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase.In">
             <inheritdoc/>
         </member>
@@ -7347,7 +8756,7 @@
             Used by internally (Do NOT edit)
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase._IsDocumentDeserialzing">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase._IsDocumentDeserializing">
             <summary>
             Document is deserializing flag (used by internally)
             <para>To prevent invalid property value set when deserialize document</para>
@@ -9231,7 +10640,7 @@
             <param name="blockName">Master block name</param>
             <returns> <c>EntityBlockInsert</c> </returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateDataMatrix(System.String,SpiralLab.Sirius2.Winforms.Entity.BarcodeCells,System.Int32,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateDataMatrix(System.String,SpiralLab.Sirius2.Winforms.Entity.Barcode2DCells,System.Int32,System.Double,System.Double)">
             <summary>
             Create <c>EntityDataMatrix</c> entity
             <code>
@@ -9249,7 +10658,7 @@
             <param name="height">Height (mm)</param>
             <returns><c>EntityDataMatrix</c> </returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateQRCode(System.String,SpiralLab.Sirius2.Winforms.Entity.BarcodeCells,System.Int32,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateQRCode(System.String,SpiralLab.Sirius2.Winforms.Entity.Barcode2DCells,System.Int32,System.Double,System.Double)">
             <summary>
             Create <c>EntityQRCode</c> entity
             <code>
@@ -9267,6 +10676,24 @@
             <param name="text">Text</param>
             <param name="cell"><c>Barcode2DCells</c></param>
             <param name="dotFactor">Cell dot factor (1*1, 2*2, ...)</param>
+            <param name="width">Width (mm)</param>
+            <param name="height">Height (mm)</param>
+            <returns><c>EntityQRCode</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateBarcode(System.String,SpiralLab.Sirius2.Winforms.Entity.Barcode1DFormats,System.Int32,System.Double,System.Double)">
+            <summary>
+            Create <c>EntityBarcode1D</c> entity
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var bcd = EntityFactory.EntityBarcode1D("0123456789", Barcode1DFormats.Code128, 3, 4, 4);
+            bcd.Translate(-2, 2);
+            document.ActAdd(bcd);
+            </code>
+            </summary>
+            <param name="text">Text</param>
+            <param name="format"><c>Barcode1DFormats</c></param>
+            <param name="dotFactor">Cell dot factor (1, 2, ...)</param>
             <param name="width">Width (mm)</param>
             <param name="height">Height (mm)</param>
             <returns><c>EntityQRCode</c></returns>
@@ -11165,10 +12592,15 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.MarkTarget">
             <inheritdoc/>
         </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.markTarget">
+            <summary>
+            <c>MarkTargets</c>
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.MarkProcedure">
             <inheritdoc/>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.markTarget">
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.markProcedure">
             <summary>
             <c>MarkTargets</c>
             </summary>
@@ -12838,6 +14270,7 @@
             If user event handler is not attahced, used <c>SourceText</c> value. <br/>
             <c>IMarker</c> value can be <c>NULL</c> while <c>IEntity.Regen</c>. <br/>
             <c>IMarker.CurrentOffsetIndex</c> values are useful when marks at multiple offset positions. <br/>
+            <c>IMarker</c> can be <c>MarkerVirtual</c> if do simulate laser path. <br/>
             Consider as its working within async threads. <br/>
             </remarks>        
         </member>
@@ -12849,7 +14282,7 @@
             It works with <c>ITextConvertable.IsConvertText</c> is <c>True</c> only. <br/>
             Try to convert every do <c>IMarkerable.Mark</c>. <br/>
             </remarks>
-            <param name="marker"><c>IMarker</c></param>
+            <param name="marker"><c>IMarker</c> (Can be <c>MarkerVirtual</c> if do simulate laser path)</param>
             <param name="textConvertible"><c>ITextConvertible</c></param>
             <returns>Converted text data (if failed, <c>SourceText</c> has returned)</returns>
         </member>
@@ -12919,10 +14352,18 @@
             <param name="dir">Directional normal vector</param>
             <returns><c>EntityPointsCloud</c> (null, if failed)</returns>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config.IsRemoveWhenExtractPointCloud">
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.IsRemoveEntityAfterPointCloudExtracted">
             <summary>
             Remove(or delete) source <c>EntityStl</c> after extract(or create) <c>EntityPointsCloud</c> or not
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.RoundUpPositionWithCalibration3D">
+            <summary>
+            Round up position when do <c>ICalibration3D.Calibration3D</c> to convert 3D scanner field correction 
+            </summary>
+            <remarks>
+            Default: 2
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.TreeviewWarningNodeCounts">
             <summary>
@@ -13121,7 +14562,7 @@
             </summary>
             <remarks>
             Rotate yaw, pitch camera by holding mouse right button. <br/>
-            Default: 0.004 <br/>
+            Default: 0.005 <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.CamereaLookAtSteps">
@@ -13361,6 +14802,7 @@
             </code>
             <remarks>
             User can register event handler for apply scanner field correction 2d at winforms. <br/>
+            Target correction table is <c>PrimaryHeadTable</c>. <br/>
             Event will be fired when apply scanner field correction 2D at winforms. <br/>
             If user event handler is not attahced, nothing has changed. <br/>
             </remarks>
@@ -13376,6 +14818,8 @@
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply">
             <summary>
             Event for apply scanner field correction 3D by <c>RtcCorrection3DForm</c> winforms
+            <c>Config.OnScannerFieldCorrection3DApply</c> is for create new 3D correction file (with new stretch factors). <br/>
+            <c>Config.OnCalibration3D</c> is for create new 3D correction file (with new z depth table). <br/>
             <code>
             SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply += Config_OnScannerFieldCorrection3DApply;
             void Config_OnScannerFieldCorrection3DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection3DForm form)
@@ -13390,6 +14834,7 @@
             </code>
             <remarks>
             User can register event handler for apply scanner field correction 3d at winforms. <br/>
+            Target correction table is <c>PrimaryHeadTable</c>. <br/>
             Event will be fired when apply scanner field correction 3D at winforms. <br/>
             If user event handler is not attahced, nothing has changed. <br/>
             </remarks>
@@ -13405,19 +14850,26 @@
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnCalibration3D">
             <summary>
             Event for <c>ICalibration3D</c> has done (or success to convert)
+            <para>
+            <c>Config.OnScannerFieldCorrection3DApply</c> is for create new 3D correction file (with new stretch factors). <br/>
+            <c>Config.OnCalibration3D</c> is for create new 3D correction file (with new z depth table). <br/>
+            </para>
             </summary>
             <remarks>
             User can register event handler for <c>ICalibration3D</c> has succeeded. <br/>
-            Event will be fired when success to convert <c>ICalibration3D</c>. <br/>
+            Event will be fired when success to convert new scanner 3D field correction file by <c>ICalibration3D</c>. <br/>
+            Both(Primary and secondary head) target correction table are <c>Table4</c> if RTC5. <br/>
+            Both(Primary and secondary head) target correction table are <c>Table8</c> if RTC6. <br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyCalibration3D(SpiralLab.Sirius2.Winforms.Entity.ICalibration3D,SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String,System.String)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyCalibration3D(SpiralLab.Sirius2.Winforms.Entity.ICalibration3D,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTableIndex,System.String,System.String)">
             <summary>
             Notify pointscloud calibration when sucess to convert
             </summary>
             <param name="calibration3D"><c>ICalibration3D</c></param>
             <param name="rtc"><c>IRtc</c></param>
             <param name="inputCtFileName">Input correction filename</param>
+            <param name="tableIndex"><c>CorrectionTableIndex</c></param>
             <param name="newCtFileName">Created new correction filename</param>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.PathOptimizerBasePosition">
@@ -13714,6 +15166,12 @@
             <param name="fileName">Filename</param>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActRegen">
+            <summary>
+            Regenerate whole <c>EntityLayer</c> at <c>IDocument.InternalData</c> by manually
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActAdd(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
             <summary>
             Add <c>IEntity</c> into <c>IDocument.InternalData</c> and notify <c>OnAdd</c> event 
@@ -13842,17 +15300,6 @@
             Used with inherited <c>IEntity</c> from <c>IReversable</c>. <br/>
             </remarks>
             <param name="entity">Target <c>IEntity</c></param>
-            <returns>Success or failed</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActDivide(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.Entity.BoundingBox[])">
-            <summary>
-            Divide array of <c>IEntity</c> at <c>IDocument.InternalData</c> and notify <c>OnAdd</c> if succeed.
-            </summary>
-            <remarks>
-            Not implemented(or supported) yet
-            </remarks>
-            <param name="entities">Target array of <c>IEntity</c> to divide</param>
-            <param name="rects">Array of <c>BoundingBox</c> to divide</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActCopy">
@@ -14127,7 +15574,7 @@
             Used by internally (Do NOT edit)
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.DocumentData._Descriptio">
+        <member name="P:SpiralLab.Sirius2.Winforms.DocumentData._Description">
             <summary>
             Used by internally (Do NOT edit)
             </summary>
@@ -14235,6 +15682,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActSave(System.String)">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActRegen">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActSetParentRecursively(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
             <summary>
             Set entity parent (recursively)
@@ -14269,9 +15719,6 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActExplode(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActDivide(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.Entity.BoundingBox[])">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActHatch(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
@@ -15955,7 +17402,7 @@
             </summary>
             <remarks>
             Create devices likes as <c>IRtc</c>, <c>ILaser</c> and <c>IMarker</c> and assign. <br/>
-            DIO devices likes as <c>DInput</c>s, <c>DInput</c>s are created when assign <c>IRtc</c> by automatically. <br/>
+            Digital I/O devices likes as <c>DInput</c>s, <c>DInput</c>s are created when assign <c>IRtc</c> by automatically. <br/>
             Create <c>IMarker</c> and assign. <br/>
             <c>IDocument</c> is created by automatically. <br/>
             </remarks>

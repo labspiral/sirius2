@@ -84,21 +84,45 @@ namespace Demos
             var document = siriusEditorUserControl1.Document;
             var view = siriusEditorUserControl1.View;
 
+            // Color of index '0' is White
+            Color penColor = SpiralLab.Sirius2.Winforms.Config.PensColor[0];
+
             // Create entities for test. for example: Datamatrix barcode entity
-            var dataMatrix = EntityFactory.CreateDataMatrix("SIRIUS2", BarcodeCells.Circles, 3, 4, 4);
+            var dataMatrix = EntityFactory.CreateDataMatrix("SIRIUS2", Barcode2DCells.Circles, 3, 4, 4);
             dataMatrix.Name = "MyBarcode1";
+            dataMatrix.Color = penColor;
             dataMatrix.IsConvertedText = true;
             document.ActAdd(dataMatrix);
 
             // Create entities for test. for example: text entity
             var text = EntityFactory.CreateText("Arial", $"SIRIUS2", FontStyle.Bold, 1);
             text.Name = "MyText1";
+            text.Color = penColor;
             text.IsConvertedText = true;
             text.Translate(0, -1);
             document.ActAdd(text);
 
-            // Attach event handler for convert barcode text data 
-            // Event will be fired when trying to convert with ITextConvertible entity
+            // Create entities for test. for example: 1D barcode entity
+            var bcd1 = EntityFactory.CreateBarcode("1234567890", Barcode1DFormats.Code128, 3, 6, 2);
+            bcd1.Name = "MyBarcode1";
+            bcd1.Color = penColor;
+            bcd1.IsConvertedText = true;
+            bcd1.Translate(0, -3.2);
+            document.ActAdd(bcd1);
+
+            // Zoom to fit by manually
+            var bbox = BoundingBox.RealBoundingBox(document.ActiveLayer);
+            siriusEditorUserControl1.View.Camera.ZoomFit(bbox);
+
+            // Set pen parameters by manually
+            bool founded = document.FindByPenColor(penColor, out var pen);
+            Debug.Assert(founded);
+            pen.JumpSpeed = 1000;
+            pen.MarkSpeed = 1000;
+            pen.Power = pen.PowerMax * 0.5; // 50% power
+
+            // Attach event handler for convert barcode and text data 
+            // Event will be fired every do mark
             SpiralLab.Sirius2.Winforms.Config.OnTextConvert += Text_OnTextConvert;
 
             // Assign Document, View, Rtc, Laser into marker
@@ -116,7 +140,7 @@ namespace Demos
             };
             marker.Offsets = offsets.ToArray();
 
-            // Do mark with offsets at first
+            // Do mark procedure as offset first
             marker.MarkProcedure = MarkProcedures.OffsetFirst;
         }
 

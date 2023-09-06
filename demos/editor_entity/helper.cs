@@ -83,8 +83,17 @@ namespace Demos
         public static void SetLanguage()
         {
             // language
-            var lang = NativeMethods.ReadIni(ConfigFileName, $"GLOBAL", "LANGUAGE", "en-US");
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
+            var lang = NativeMethods.ReadIni(ConfigFileName, $"GLOBAL", "LANGUAGE", "en");
+            switch(lang)
+            {
+                default:
+                case "en":
+                    SpiralLab.Sirius2.Config.Language = SpiralLab.Sirius2.Config.Languages.enUS;
+                    break;
+                case "ko":
+                    SpiralLab.Sirius2.Config.Language = SpiralLab.Sirius2.Config.Languages.koKR;
+                    break;
+            }
         }
         /// <summary>
         /// Create devices (like as <c>IRtc</c>, <c>ILaser</c>, ...)
@@ -600,29 +609,29 @@ namespace Demos
                 case RtcType.Rtc6SyncAxis:
                     break;
                 default:
-                    var dataMatrix1 = EntityFactory.CreateDataMatrix("0123456789", BarcodeCells.Dots, 3, 4, 4);
+                    var dataMatrix1 = EntityFactory.CreateDataMatrix("0123456789", Barcode2DCells.Dots, 3, 4, 4);
                     dataMatrix1.Translate(-23, 2);
                     success &= document.ActAdd(dataMatrix1);
                     break;
             }
 
             // Datamatrix barcode cell by lines
-            var dataMatrix2 = EntityFactory.CreateDataMatrix("SIRIUS2", BarcodeCells.Lines, 4, 4, 4);
+            var dataMatrix2 = EntityFactory.CreateDataMatrix("SIRIUS2", Barcode2DCells.Lines, 4, 4, 4);
             dataMatrix2.Translate(-23, 7);
             success &= document.ActAdd(dataMatrix2);
 
             // Datamatrix barcode cell by circles
-            var dataMatrix3 = EntityFactory.CreateDataMatrix("ABCDEFGHIJKLMNOPQRSTUVWXYZ", BarcodeCells.Circles, 3, 4, 4);
+            var dataMatrix3 = EntityFactory.CreateDataMatrix("ABCDEFGHIJKLMNOPQRSTUVWXYZ", Barcode2DCells.Circles, 3, 4, 4);
             dataMatrix3.Translate(-28, 2);
             success &= document.ActAdd(dataMatrix3);
 
             // Datamatrix barcode cell by outline
-            var dataMatrix4 = EntityFactory.CreateDataMatrix("abcdefghijklmnopqrstuvwxyz", BarcodeCells.Outline, 2, 4, 4);
+            var dataMatrix4 = EntityFactory.CreateDataMatrix("abcdefghijklmnopqrstuvwxyz", Barcode2DCells.Outline, 2, 4, 4);
             dataMatrix4.Translate(-28, 7);
             success &= document.ActAdd(dataMatrix4);
 
             // QRcode barcode cell by hatch
-            var qr1 = EntityFactory.CreateQRCode("0123456789", BarcodeCells.Hatch, 3, 4, 4);
+            var qr1 = EntityFactory.CreateQRCode("0123456789", Barcode2DCells.Hatch, 3, 4, 4);
             qr1.CellHatch.HatchMode = HatchModes.CrossLine;
             qr1.CellHatch.HatchInterval = 0.05f;
             qr1.CellHatch.HatchAngle = 100;
@@ -631,9 +640,19 @@ namespace Demos
             success &= document.ActAdd(qr1);
 
             // QRcode barcode cell by outline
-            var qr2 = EntityFactory.CreateQRCode("abcdefghijklmnopqrstuvwxyz", BarcodeCells.Outline, 3, 4, 4);
+            var qr2 = EntityFactory.CreateQRCode("abcdefghijklmnopqrstuvwxyz", Barcode2DCells.Outline, 3, 4, 4);
             qr2.Translate(-28, 12);
             success &= document.ActAdd(qr2);
+
+            // 1D barcode
+            var bcd1 = EntityFactory.CreateBarcode("1234567890", Barcode1DFormats.Code128, 5, 5, 2);
+            bcd1.Translate(-28, 19);
+            success &= document.ActAdd(bcd1);
+
+            // 1D barcode
+            var bcd2 = EntityFactory.CreateBarcode("1234567890", Barcode1DFormats.CODABAR, 3, 5, 2);
+            bcd2.Translate(-22, 19);
+            success &= document.ActAdd(bcd2);
 
             return success;
         }

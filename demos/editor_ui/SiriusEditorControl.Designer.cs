@@ -156,6 +156,8 @@
             this.penControl1 = new SpiralLab.Sirius2.Winforms.UI.PenUserControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.treeViewBlockControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuBarcode1D = new System.Windows.Forms.ToolStripMenuItem();
             this.tlsTop2.SuspendLayout();
             this.tlsTop.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -410,7 +412,9 @@
             this.ddbBarcode.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.ddbBarcode.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuDataMatrix,
-            this.mnuQRCode});
+            this.mnuQRCode,
+            this.toolStripMenuItem2,
+            this.mnuBarcode1D});
             this.ddbBarcode.Image = ((System.Drawing.Image)(resources.GetObject("ddbBarcode.Image")));
             this.ddbBarcode.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ddbBarcode.Name = "ddbBarcode";
@@ -422,7 +426,7 @@
             // 
             this.mnuDataMatrix.Image = ((System.Drawing.Image)(resources.GetObject("mnuDataMatrix.Image")));
             this.mnuDataMatrix.Name = "mnuDataMatrix";
-            this.mnuDataMatrix.Size = new System.Drawing.Size(196, 34);
+            this.mnuDataMatrix.Size = new System.Drawing.Size(270, 34);
             this.mnuDataMatrix.Text = "DataMatrix";
             this.mnuDataMatrix.ToolTipText = "DataMatrix";
             // 
@@ -430,7 +434,7 @@
             // 
             this.mnuQRCode.Image = ((System.Drawing.Image)(resources.GetObject("mnuQRCode.Image")));
             this.mnuQRCode.Name = "mnuQRCode";
-            this.mnuQRCode.Size = new System.Drawing.Size(196, 34);
+            this.mnuQRCode.Size = new System.Drawing.Size(270, 34);
             this.mnuQRCode.Text = "QR Code";
             this.mnuQRCode.ToolTipText = "QR Code";
             // 
@@ -879,7 +883,7 @@
             this.toolStripStatusLabel11,
             this.toolStripStatusLabel3});
             this.statusStrip1.Location = new System.Drawing.Point(0, 1169);
-            this.statusStrip1.Margin = new System.Windows.Forms.Padding(8);
+            this.statusStrip1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
             this.statusStrip1.Size = new System.Drawing.Size(1920, 31);
@@ -1091,7 +1095,7 @@
             this.splitter3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.splitter3.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter3.Location = new System.Drawing.Point(0, 66);
-            this.splitter3.Margin = new System.Windows.Forms.Padding(4);
+            this.splitter3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitter3.Name = "splitter3";
             this.splitter3.Size = new System.Drawing.Size(1920, 2);
             this.splitter3.TabIndex = 33;
@@ -1106,7 +1110,7 @@
             this.panBody.Controls.Add(this.tabControl1);
             this.panBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panBody.Location = new System.Drawing.Point(0, 68);
-            this.panBody.Margin = new System.Windows.Forms.Padding(4);
+            this.panBody.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panBody.Name = "panBody";
             this.panBody.Size = new System.Drawing.Size(1920, 1101);
             this.panBody.TabIndex = 34;
@@ -1115,7 +1119,7 @@
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer3.Location = new System.Drawing.Point(423, 0);
-            this.splitContainer3.Margin = new System.Windows.Forms.Padding(4);
+            this.splitContainer3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1128,7 +1132,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.logControl1);
             this.splitContainer3.Panel2MinSize = 80;
             this.splitContainer3.Size = new System.Drawing.Size(1074, 1101);
-            this.splitContainer3.SplitterDistance = 885;
+            this.splitContainer3.SplitterDistance = 884;
             this.splitContainer3.SplitterWidth = 2;
             this.splitContainer3.TabIndex = 35;
             // 
@@ -1146,7 +1150,7 @@
             this.tabControl3.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(1074, 885);
+            this.tabControl3.Size = new System.Drawing.Size(1074, 884);
             this.tabControl3.TabIndex = 35;
             this.tabControl3.TabStop = false;
             // 
@@ -1155,10 +1159,10 @@
             this.tabPage6.Controls.Add(this.editorControl1);
             this.tabPage6.ImageIndex = 17;
             this.tabPage6.Location = new System.Drawing.Point(4, 36);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage6.Size = new System.Drawing.Size(1066, 845);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage6.Size = new System.Drawing.Size(1066, 844);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = " Editor ";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1173,7 +1177,7 @@
             this.editorControl1.Margin = new System.Windows.Forms.Padding(0);
             this.editorControl1.Name = "editorControl1";
             this.editorControl1.Rtc = null;
-            this.editorControl1.Size = new System.Drawing.Size(1058, 837);
+            this.editorControl1.Size = new System.Drawing.Size(1058, 836);
             this.editorControl1.TabIndex = 26;
             // 
             // tabPage8
@@ -1181,10 +1185,10 @@
             this.tabPage8.Controls.Add(this.splitContainer2);
             this.tabPage8.ImageIndex = 25;
             this.tabPage8.Location = new System.Drawing.Point(4, 36);
-            this.tabPage8.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage8.Size = new System.Drawing.Size(1066, 845);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage8.Size = new System.Drawing.Size(1066, 810);
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = " Laser ";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1193,7 +1197,7 @@
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(4, 4);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -1204,7 +1208,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.laserControl1);
-            this.splitContainer2.Size = new System.Drawing.Size(1058, 837);
+            this.splitContainer2.Size = new System.Drawing.Size(1058, 802);
             this.splitContainer2.SplitterDistance = 527;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 3;
@@ -1217,7 +1221,7 @@
             this.rtcControl1.Margin = new System.Windows.Forms.Padding(0);
             this.rtcControl1.Name = "rtcControl1";
             this.rtcControl1.Rtc = null;
-            this.rtcControl1.Size = new System.Drawing.Size(527, 837);
+            this.rtcControl1.Size = new System.Drawing.Size(527, 802);
             this.rtcControl1.TabIndex = 3;
             // 
             // laserControl1
@@ -1228,7 +1232,7 @@
             this.laserControl1.Location = new System.Drawing.Point(0, 0);
             this.laserControl1.Margin = new System.Windows.Forms.Padding(0);
             this.laserControl1.Name = "laserControl1";
-            this.laserControl1.Size = new System.Drawing.Size(528, 837);
+            this.laserControl1.Size = new System.Drawing.Size(528, 802);
             this.laserControl1.TabIndex = 6;
             // 
             // tabPage5
@@ -1236,10 +1240,10 @@
             this.tabPage5.Controls.Add(this.splitContainer1);
             this.tabPage5.ImageIndex = 24;
             this.tabPage5.Location = new System.Drawing.Point(4, 36);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage5.Size = new System.Drawing.Size(1066, 845);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Size = new System.Drawing.Size(1066, 810);
             this.tabPage5.TabIndex = 3;
             this.tabPage5.Text = " Marker ";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1248,7 +1252,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(4, 4);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -1259,8 +1263,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.markerControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(1058, 837);
-            this.splitContainer1.SplitterDistance = 418;
+            this.splitContainer1.Size = new System.Drawing.Size(1058, 802);
+            this.splitContainer1.SplitterDistance = 417;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -1272,7 +1276,7 @@
             this.offsetControl1.Margin = new System.Windows.Forms.Padding(0);
             this.offsetControl1.Marker = null;
             this.offsetControl1.Name = "offsetControl1";
-            this.offsetControl1.Size = new System.Drawing.Size(418, 837);
+            this.offsetControl1.Size = new System.Drawing.Size(417, 802);
             this.offsetControl1.TabIndex = 0;
             // 
             // markerControl1
@@ -1283,7 +1287,7 @@
             this.markerControl1.Margin = new System.Windows.Forms.Padding(0);
             this.markerControl1.Marker = null;
             this.markerControl1.Name = "markerControl1";
-            this.markerControl1.Size = new System.Drawing.Size(637, 837);
+            this.markerControl1.Size = new System.Drawing.Size(638, 802);
             this.markerControl1.TabIndex = 2;
             // 
             // tabPage9
@@ -1291,10 +1295,10 @@
             this.tabPage9.Controls.Add(this.splitContainer4);
             this.tabPage9.ImageIndex = 12;
             this.tabPage9.Location = new System.Drawing.Point(4, 36);
-            this.tabPage9.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage9.Size = new System.Drawing.Size(1066, 845);
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage9.Size = new System.Drawing.Size(1066, 810);
             this.tabPage9.TabIndex = 4;
             this.tabPage9.Text = "DIO";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -1303,7 +1307,7 @@
             // 
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer4.Location = new System.Drawing.Point(4, 4);
-            this.splitContainer4.Margin = new System.Windows.Forms.Padding(4);
+            this.splitContainer4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer4.Name = "splitContainer4";
             // 
             // splitContainer4.Panel1
@@ -1314,8 +1318,8 @@
             // 
             this.splitContainer4.Panel2.Controls.Add(this.rtcDOUserControl1);
             this.splitContainer4.Panel2MinSize = 250;
-            this.splitContainer4.Size = new System.Drawing.Size(1058, 837);
-            this.splitContainer4.SplitterDistance = 500;
+            this.splitContainer4.Size = new System.Drawing.Size(1058, 802);
+            this.splitContainer4.SplitterDistance = 498;
             this.splitContainer4.SplitterWidth = 3;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -1329,7 +1333,7 @@
             this.rtcDIUserControl1.Margin = new System.Windows.Forms.Padding(0);
             this.rtcDIUserControl1.Name = "rtcDIUserControl1";
             this.rtcDIUserControl1.Rtc = null;
-            this.rtcDIUserControl1.Size = new System.Drawing.Size(500, 837);
+            this.rtcDIUserControl1.Size = new System.Drawing.Size(498, 802);
             this.rtcDIUserControl1.TabIndex = 0;
             // 
             // rtcDOUserControl1
@@ -1343,7 +1347,7 @@
             this.rtcDOUserControl1.Margin = new System.Windows.Forms.Padding(0);
             this.rtcDOUserControl1.Name = "rtcDOUserControl1";
             this.rtcDOUserControl1.Rtc = null;
-            this.rtcDOUserControl1.Size = new System.Drawing.Size(555, 837);
+            this.rtcDOUserControl1.Size = new System.Drawing.Size(557, 802);
             this.rtcDOUserControl1.TabIndex = 0;
             // 
             // tabPage3
@@ -1351,9 +1355,9 @@
             this.tabPage3.Controls.Add(this.manualUserControl1);
             this.tabPage3.ImageIndex = 26;
             this.tabPage3.Location = new System.Drawing.Point(4, 36);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1066, 845);
+            this.tabPage3.Size = new System.Drawing.Size(1066, 810);
             this.tabPage3.TabIndex = 5;
             this.tabPage3.Text = "Manual";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1367,7 +1371,7 @@
             this.manualUserControl1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.manualUserControl1.Name = "manualUserControl1";
             this.manualUserControl1.Rtc = null;
-            this.manualUserControl1.Size = new System.Drawing.Size(1066, 845);
+            this.manualUserControl1.Size = new System.Drawing.Size(1066, 810);
             this.manualUserControl1.TabIndex = 1;
             // 
             // logControl1
@@ -1378,7 +1382,7 @@
             this.logControl1.Location = new System.Drawing.Point(0, 0);
             this.logControl1.Margin = new System.Windows.Forms.Padding(0);
             this.logControl1.Name = "logControl1";
-            this.logControl1.Size = new System.Drawing.Size(1074, 214);
+            this.logControl1.Size = new System.Drawing.Size(1074, 215);
             this.logControl1.TabIndex = 0;
             // 
             // splitter2
@@ -1386,7 +1390,7 @@
             this.splitter2.BackColor = System.Drawing.SystemColors.Control;
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Right;
             this.splitter2.Location = new System.Drawing.Point(1497, 0);
-            this.splitter2.Margin = new System.Windows.Forms.Padding(4);
+            this.splitter2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitter2.Name = "splitter2";
             this.splitter2.Size = new System.Drawing.Size(3, 1101);
             this.splitter2.TabIndex = 32;
@@ -1411,9 +1415,9 @@
             this.tabPage4.Controls.Add(this.propertyGridControl1);
             this.tabPage4.ImageIndex = 16;
             this.tabPage4.Location = new System.Drawing.Point(4, 36);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage4.Size = new System.Drawing.Size(412, 1061);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = " Property ";
@@ -1436,7 +1440,7 @@
             // 
             this.splitter1.BackColor = System.Drawing.SystemColors.Control;
             this.splitter1.Location = new System.Drawing.Point(420, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(4);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(3, 1101);
             this.splitter1.TabIndex = 30;
@@ -1462,9 +1466,9 @@
             this.tabPage1.Controls.Add(this.splitContainer5);
             this.tabPage1.ImageIndex = 10;
             this.tabPage1.Location = new System.Drawing.Point(4, 36);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Size = new System.Drawing.Size(412, 1061);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = " Layer ";
@@ -1474,7 +1478,7 @@
             // 
             this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer5.Location = new System.Drawing.Point(4, 4);
-            this.splitContainer5.Margin = new System.Windows.Forms.Padding(4);
+            this.splitContainer5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer5.Name = "splitContainer5";
             this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1488,7 +1492,7 @@
             this.splitContainer5.Panel2.Controls.Add(this.penControl1);
             this.splitContainer5.Panel2MinSize = 150;
             this.splitContainer5.Size = new System.Drawing.Size(404, 1053);
-            this.splitContainer5.SplitterDistance = 793;
+            this.splitContainer5.SplitterDistance = 792;
             this.splitContainer5.SplitterWidth = 3;
             this.splitContainer5.TabIndex = 25;
             // 
@@ -1502,7 +1506,7 @@
             this.treeViewControl1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.treeViewControl1.Name = "treeViewControl1";
             this.treeViewControl1.Rtc = null;
-            this.treeViewControl1.Size = new System.Drawing.Size(404, 793);
+            this.treeViewControl1.Size = new System.Drawing.Size(404, 792);
             this.treeViewControl1.TabIndex = 25;
             this.treeViewControl1.View = null;
             // 
@@ -1515,7 +1519,7 @@
             this.penControl1.Location = new System.Drawing.Point(0, 0);
             this.penControl1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.penControl1.Name = "penControl1";
-            this.penControl1.Size = new System.Drawing.Size(404, 257);
+            this.penControl1.Size = new System.Drawing.Size(404, 258);
             this.penControl1.TabIndex = 2;
             // 
             // tabPage2
@@ -1524,10 +1528,10 @@
             this.tabPage2.Controls.Add(this.treeViewBlockControl1);
             this.tabPage2.ImageIndex = 11;
             this.tabPage2.Location = new System.Drawing.Point(4, 36);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(412, 1061);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(412, 1019);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = " Block ";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1541,9 +1545,22 @@
             this.treeViewBlockControl1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.treeViewBlockControl1.Name = "treeViewBlockControl1";
             this.treeViewBlockControl1.Rtc = null;
-            this.treeViewBlockControl1.Size = new System.Drawing.Size(400, 1049);
+            this.treeViewBlockControl1.Size = new System.Drawing.Size(400, 1007);
             this.treeViewBlockControl1.TabIndex = 1;
             this.treeViewBlockControl1.View = null;
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(267, 6);
+            // 
+            // mnuBarcode1D
+            // 
+            this.mnuBarcode1D.Image = ((System.Drawing.Image)(resources.GetObject("mnuBarcode1D.Image")));
+            this.mnuBarcode1D.Name = "mnuBarcode1D";
+            this.mnuBarcode1D.Size = new System.Drawing.Size(270, 34);
+            this.mnuBarcode1D.Text = "Barcode 1D";
+            this.mnuBarcode1D.ToolTipText = "Barcode 1D";
             // 
             // SiriusEditorUserControl
             // 
@@ -1728,5 +1745,7 @@
         private System.Windows.Forms.TabPage tabPage3;
         private SpiralLab.Sirius2.Winforms.UI.ManualUserControl manualUserControl1;
         private System.Windows.Forms.ToolStripMenuItem mnuZDelta;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem mnuBarcode1D;
     }
 }

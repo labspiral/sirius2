@@ -101,6 +101,13 @@
 
 **8. Version history**
 
+* 2023.9.6 v.1.0.720 (Release Candidate Version)
+  - added) 1D barcode entity
+  - added) 3D calibration by plane
+  - added) hatch within entity
+  - added) multi-languages
+  - fixed) renamed EntityBarcodeBase to EntityBarcode2DBase
+
 * 2023.9.1 v.0.9.8
   - added) entity_barcode demo project
      - fixed) OnTextConvert events
@@ -194,7 +201,7 @@
   - added) import file with preview
   - added) extract hatches 
 
-* 2023.7.1 v0.6 (developer preview version) 
+* 2023.7.1 v0.6 (Developer Preview Version) 
   - added) text entity 
   - added) write data, write data ext16 entity
   - added) ramp factor at line, polyline for automatic laser control by defined vector
