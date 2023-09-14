@@ -424,6 +424,7 @@ namespace Demos
             btnAbout.Click += BtnAbout_Click;
             btnNew.Click += BtnNew_Click;
             btnOpen.Click += BtnOpen_Click;
+            btnImportFile.Click += BtnImportFile_Click;
             btnSave.Click += BtnSave_Click;
             btnCopy.Click += BtnCopy_Click;
             btnCut.Click += BtnCut_Click;
@@ -440,6 +441,7 @@ namespace Demos
             btnRectangle.Click += BtnRectangle_Click;
             btnArc.Click += BtnArc_Click;
             btnCircle.Click += BtnCircle_Click;
+            btnTrepan.Click += BtnTrepan_Click;
             btnSpiral.Click += BtnSpiral_Click;
             btnText.Click += BtnText_Click;
             btnImageText.Click += BtnImageText_Click;
@@ -448,13 +450,12 @@ namespace Demos
             btnSiriusText.Click += BtnSiriusText_Click;
             btnSiriusCharacterSetText.Click += BtnSiriusCharacterSetText_Click;
 
-            btnImportFile.Click += BtnImportFile_Click;
             mnuDataMatrix.Click += MnuDataMatrix_Click;
             mnuQRCode.Click += MnuQRCode_Click;
             mnuBarcode1D.Click += MnuBarcode1D_Click;
-
-            mnuMeasurementBeginEnd.Click += BtnMeasurementBeginEnd_Click;
-            mnuTimer.Click += BtnTimer_Click;
+            mnuMeasurementBeginEnd.Click += MnuMeasurementBeginEnd_Click;
+            mnuTimer.Click += MnuTimer_Click;
+            mnuJumpTo.Click += MnuJumpTo_Click;
 
             mnuMofXYBeginEnd.Click += MnuMofXYBeginEnd_Click;
             mnuMofXYWait.Click += MnuMofXYWait_Click;
@@ -480,9 +481,6 @@ namespace Demos
             Document.ActNew();
         }
 
-
-
-
         /// <inheritdoc/>
         protected override void OnLoad(EventArgs e)
         {
@@ -507,20 +505,16 @@ namespace Demos
             var entity = EntityFactory.CreateSiriusCharacterSetText(Config.DefaultSiriusFont, CharacterSetFormats.Date, 5);
             document.ActAdd(entity);
         }
-
         private void BtnCharacterSetText_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateCharacterSetText(Config.DefaultFont, CharacterSetFormats.Date, 5);
             document.ActAdd(entity);
-        }
-
-      
+        }     
         private void BtnCircularText_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateCircularText(Config.DefaultFont, "POWERED BY SIRIUS2 0123456789", FontStyle.Regular, 2,  TextCircularDirections.ClockWise, 5, 180);
             document.ActAdd(entity);
         }
-
         private void BtnSiriusText_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateSiriusText(Config.DefaultSiriusFont, "SIRIUS2", 2.5);
@@ -542,7 +536,6 @@ namespace Demos
             var entity = EntityFactory.CreateBarcode("1234567890", Barcode1DFormats.Code128, 3, 5, 2);
             document.ActAdd(entity);
         }
-
         private void MnuWriteDataExt16_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateWriteDataExt16(0, false);
@@ -563,7 +556,6 @@ namespace Demos
             var entity = EntityFactory.CreateWriteData(ExtensionChannel.ExtAO2, 0);
             document.ActAdd(entity);
         }
-
         private void MnuAlcDefinedVector_Click(object sender, EventArgs e)
         {
             {
@@ -614,13 +606,13 @@ namespace Demos
                     break;
             }
         }
-
         private void EntityVisibility()
         {
             EntityPen.PropertyVisibility(rtc);
             EntityPen.PropertyVisibility(laser);
             EntityLayer.PropertyVisibility(rtc);
             EntityPoints.PropertyVisibility(rtc);
+            EntityRampBegin.PropertyVisibility(rtc);
         }
 
         private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -759,7 +751,6 @@ namespace Demos
             document.ActAdd(entity);
         }
 
-
         private void BtnImportFile_Click(object sender, EventArgs e)
         {
             //var dlg = new OpenFileDialog();
@@ -802,9 +793,14 @@ namespace Demos
             document.ActAdd(entity);
         }
 
-        private void BtnTimer_Click(object sender, EventArgs e)
+        private void MnuTimer_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateTimer(1);
+            document.ActAdd(entity);
+        }
+        private void MnuJumpTo_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateJumpTo(Vector3.Zero);
             document.ActAdd(entity);
         }
 
@@ -835,7 +831,6 @@ namespace Demos
             EditorCtrl.View.Camera.ZoomIn(Point.Empty);
             DoRender();
         }
-
         private void BtnZoomOut_Click(object sender, EventArgs e)
         {
             EditorCtrl.View.Camera.ZoomOut(Point.Empty);
@@ -1005,7 +1000,6 @@ namespace Demos
             var entity = EntityFactory.CreateArc(Vector2.Zero, 10, 0, 180);
             document.ActAdd(entity);
         }
-
         private void BtnCircle_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateArc(Vector2.Zero, 10, 0, 360);
@@ -1016,8 +1010,13 @@ namespace Demos
             var entity = EntityFactory.CreateSpiral(Vector2.Zero, 1, 5, 0, 10, true);
             document.ActAdd(entity);
         }
+        private void BtnTrepan_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateTrepan(Vector2.Zero, 1, 5, 10);
+            document.ActAdd(entity);
+        }
 
-        private void BtnMeasurementBeginEnd_Click(object sender, EventArgs e)
+        private void MnuMeasurementBeginEnd_Click(object sender, EventArgs e)
         {
             if (rtc is Rtc5)
             {

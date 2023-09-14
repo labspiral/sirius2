@@ -284,7 +284,7 @@
             Get version of assembly file
             </summary>
             <param name="fileName">Assembly filename</param>
-            <returns>Represent string for version information</returns>
+            <returns>Represent string (major.minor.builds) for version information</returns>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.CorrectionPath">
             <summary>
@@ -389,20 +389,20 @@
         <member name="P:SpiralLab.Sirius2.Config.MergeDistanceThreshold">
             <summary>
             Threshold distance between jump and mark list commands that merged (mm)
-            <para>Default: 0.001 mm</para>
             </summary>
             <remarks>
-            Marks or jumps for same positions are cause unexpected poor(likes as burn-in effect) quality. <br/>
-            So supress(or eliminate) jumps for same positions for higher quality. <br/>
+            Default: 0.001 mm <br/>
+            Marks or jumps for same positions are cause unexpected poor(likes as burn-in effect) laser quality. <br/>
+            So suppress(or eliminate) jumps for same positions for higher laser quality. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.JumpModeLimitLength">
             <summary>
-            Jump mode limit length (mm)
-            <para>Used with <c>RtcJumpMode</c></para>
-            <para>Default: 0 mm</para>
+            Limit distance for jump mode (mm)
             </summary>
             <remarks>
+            Default: 0 mm <br/>
+            Used with <c>RtcJumpMode</c> <br/>
             At the end of the 2D jump, a jump-length dependent Jump Delay occurs. <br/>
             This Jump Delay can be specified for the corresponding jump length by load_jump_table_offset or set_jump_table.<br/>
             <c>CtlDelay</c> is not taken into account.<br/>
@@ -411,12 +411,12 @@
         <member name="P:SpiralLab.Sirius2.Config.DivideArcToLinesDistance">
             <summary>
             Step distance for divide arc into lines
-            <para>Default: 0.5 mm</para>
             </summary>
             <remarks>
+            Default: 0.5 mm <br/>
             <list type="case study">
-            <item><description>When draw arc at screen, it will be splitted into lines.</description></item>
-            <item><description>If center of arc is out of range, it will be splitted into lines.</description></item>
+            <item><description>When draw(or render) arc at screen, it will be splitted into lines.</description></item>
+            <item><description>If center of arc is out of range when marking, it will be splitted into lines.</description></item>
             <item><description>Curve(or spline) are splitted into lines.</description></item>
             <item><description>Spiral are splitted into lines.</description></item>
             <item><description>DXF ellipse is splitted into lines.</description></item>
@@ -440,8 +440,7 @@
             </summary>
             <remarks>
             Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "gnuplot", "gnuplot.exe")</c> <br/>
-            Copy gnuplot program into gnuplot directory. <br/>
-            <seealso href="http://tmacchant33.starfree.jp/gnuplot_bin.html">gnuplot download link</seealso>
+            Copy gnuplot program into gnuplot directory from <seealso href="http://tmacchant33.starfree.jp/gnuplot_bin.html">Download link</seealso>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.MeasurementLaserOnFactor">
@@ -449,8 +448,8 @@
             Laser ON scale factor when convert measurement data 
             </summary>
             <remarks>
+            Default: 1 <br/>
             Measurement channel: <c>MeasurementChannel.LaserOn</c> <br/>
-            Default: 1<br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Config.DIOBitMask">
@@ -8693,7 +8692,7 @@
                          |       . 
                          |     .   .  .       
                          |    .     .      .   
-                         |    .     +Ref        .   ---> Direction
+                         |    .     +Ref       .   ---> Direction
                          |    .     .      .   
                          |     .   .  .       
                          |       .

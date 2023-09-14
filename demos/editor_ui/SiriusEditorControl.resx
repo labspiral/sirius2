@@ -319,10 +319,10 @@
   </data>
   <data name="mnuBarcode1D.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAT0lEQVRYR+2OQQoAIQwD+zSf
-        5s98mmvAQC5eVw8zECw1hSl4jRlpMYux4n3fs17hXt6onz3/aX/ExwoCCCCAAAIIIIAAAggggMAVAfiZ
-        qg/JhNjw+pryFAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAABPSURBVFhH7Y5BCgAhDAP7NJ/mz3yaa8BALl5XDzMQ
+        LDWFKXiNGWkxi7Hifd+zXuFe3qifPf9pf8THCgIIIIAAAggggAACCCCAwBUB+JmqD8mE2PD6mvIUAAAA
+        AElFTkSuQmCC
 </value>
   </data>
   <data name="ddbBarcode.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -341,6 +341,16 @@
         JgymGm1hjhxrwjxM6nIk1oS5mX4dODnWnGJUJMVc9EVSzQEzHpIKME7tXuZ0ri9JKdKbE6O0Irqm3PXW
         iLHeyKlrKpN7jbYwR+5VoyAYIEG383dY6fNuWoP2Veu3tHkXOkSPOPDDRAqw58JLKR+aGoB1mLEiLQAA
         AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="mnuJumpTo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAD2SURBVFhH7Y7BDcIwAAO7ajfpaN0MDCZSVc4uPFB51NJ9nFyc6cqVfdZ1vX3DPM/YN15THBIa
+        UrBveCmEhIYU7BteCiGhIQX7wbIsb52XQvaXj5CC/eC0DzyG94wzL4VsH/kEKdgPtsMDL4XsLx8hBfvB
+        6R8gvBRCQkMK9g0vhZDQkIJ9w0shJDSkYN/wUs7z0R+TQz9uSMG+4aUQEhpSsG94KYSEhhTsG14KIaEh
+        BfuGl0JIaEjBvuGlEBIaUrBveCmEhIYU7BteCiGhIQX7hpdCSGhIwb7hpRASGlKwb3gphISGFOwbXgoh
+        oSEF+4aXrvxFpukOdeJ5XPlDz8UAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="mnuMeasurementBeginEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -753,7 +763,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAo
-        NQAAAk1TRnQBSQFMAgEBGwEAAQgBAwEIAQMBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        NQAAAk1TRnQBSQFMAgEBGwEAARgBAwEYAQMBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABYAMAAagDAAEBAQABCAYAAT8YAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA

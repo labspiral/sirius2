@@ -533,11 +533,11 @@ namespace Demos
             success &= document.ActAdd(block);
 
             // BlockInsert entity
-            var insert1 = EntityFactory.CreateBlockInsert(block.Name);
+            var insert1 = EntityFactory.CreateBlockInsert(block.Name, Vector3.Zero);
             success &= document.ActAdd(insert1);
 
             // BlockInsert entity
-            var insert2 = EntityFactory.CreateBlockInsert(block.Name);
+            var insert2 = EntityFactory.CreateBlockInsert(block.Name, Vector3.Zero);
             insert2.Scale(1.5);
             insert2.RotateZ(30);
             insert2.Translate(-1, 2, 0);

@@ -46,8 +46,10 @@
 **4. Modules**
 
  - spirallab.sirius2.dll
+    - Target frameworks: .NET standard 2.0, .NET 6.0 or .NET Framework 4.7.2
+    - Target platforms: Windows (x64) only
  - spirallab.sirius2.winforms.dll
-    - Target frameworks: NET Framework 4.7.2
+    - Target frameworks: .NET Framework 4.7.2 only
     - Target platforms: Windows (x64) only
  - dependencies
     - SCANLAB RTC5 (2022.11.11)
@@ -80,8 +82,8 @@
 **6. License**
 
  * Per instance
-   - Option1: MoF 
-   - Option2: 3D 
+   - Option1: MoF (For xy or angular)
+   - Option2: 3D (For 3d calibration)
  * Evaluation mode would be activated during 30 mins without license
  
  
@@ -90,16 +92,26 @@
 
 **7. Author**
  
- - 2023 Copyright to (c)SpiralLAB.
- - All rights reserved. 
+ - 2023 Copyright to (c)SpiralLAB. All rights reserved. 
  - Homepage: http://spirallab.co.kr
- - Email: hcchoi@spirallab.co.kr
+ - Email: <a href="mailto:hcchoi@spirallab.co.kr">hcchoi@spirallab.co.kr</a> 
  
 
 ----
 
 
 **8. Version history**
+
+* 2023.9.15 v.1.1.740
+  - added) editor_3d demo project 
+  - added) trepan entity
+  - added) jump to entity
+  - fixed) 3D calibration
+     - updated) SCANLAB's calibration library to v1.4.1.1
+     - fixed) duplicated vertices bug at pointscloud
+     - fixed) fixed invalid directional vector at plane
+  - fixed) invalid rubber banding when out of view control  
+  - fixed) support EntityRampBegin/End at syncAXIS
 
 * 2023.9.6 v.1.0.720 (Release Candidate Version)
   - added) 1D barcode entity
