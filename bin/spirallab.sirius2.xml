@@ -2292,268 +2292,6 @@
             <param name="targetWatt">Target watt (W)</param>
             <returns>Success or failed (if return failed, marker would be stopped(or aborted) immediately)</returns>
         </member>
-        <member name="T:SpiralLab.Sirius2.src.laser.impl.laserbase">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Basic_C">
-            <summary>
-              Looks up a localized string similar to Basic.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Busy_DESC">
-            <summary>
-              Looks up a localized string similar to Busy Status.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Busy_DISP">
-            <summary>
-              Looks up a localized string similar to Busy.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Data_C">
-            <summary>
-              Looks up a localized string similar to Data.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Delay_DESC">
-            <summary>
-              Looks up a localized string similar to Power Control Delay Time (msec).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Delay_DISP">
-            <summary>
-              Looks up a localized string similar to Delay.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Error_DESC">
-            <summary>
-              Looks up a localized string similar to Error Status.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Error_DISP">
-            <summary>
-              Looks up a localized string similar to Error.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Index_DESC">
-            <summary>
-              Looks up a localized string similar to Identifier.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Index_DISP">
-            <summary>
-              Looks up a localized string similar to Index.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.IsPowerControl_DESC">
-            <summary>
-              Looks up a localized string similar to Enable(or Disable) Laser Power Control.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.IsPowerControl_DISP">
-            <summary>
-              Looks up a localized string similar to Enable.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Method_DESC">
-            <summary>
-              Looks up a localized string similar to Laser Power Control Method.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Method_DISP">
-            <summary>
-              Looks up a localized string similar to Method.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Name_DESC">
-            <summary>
-              Looks up a localized string similar to Name.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Name_DISP">
-            <summary>
-              Looks up a localized string similar to Name.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Power_Last__DESC">
-            <summary>
-              Looks up a localized string similar to Last Commanded Power (W).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Power_Last__DISP">
-            <summary>
-              Looks up a localized string similar to Power (Last).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Power_Max__DESC">
-            <summary>
-              Looks up a localized string similar to Max Power (W).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Power_Max__DISP">
-            <summary>
-              Looks up a localized string similar to Power (Max).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.PowerControl_C">
-            <summary>
-              Looks up a localized string similar to Power Control.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Ready_DESC">
-            <summary>
-              Looks up a localized string similar to Reasy Status.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Ready_DISP">
-            <summary>
-              Looks up a localized string similar to Ready.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Status_C">
-            <summary>
-              Looks up a localized string similar to Status.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Type_DESC">
-            <summary>
-              Looks up a localized string similar to Type.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Type_DISP">
-            <summary>
-              Looks up a localized string similar to Type.
-            </summary>
-        </member>
-        <member name="T:SpiralLab.Sirius2.src.laser.impl.laservirtual">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Control__DigitalBits__C">
-            <summary>
-              Looks up a localized string similar to Control (DigitalBits).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Control__Duty_Cycle__C">
-            <summary>
-              Looks up a localized string similar to Control (Duty Cycle).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Control__Frequency__C">
-            <summary>
-              Looks up a localized string similar to Control (Frequency).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Control__RS_232__C">
-            <summary>
-              Looks up a localized string similar to Control (RS-232).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Extension_Port_DESC">
-            <summary>
-              Looks up a localized string similar to RTC Extension Port (1,2).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Extension_Port_DISP">
-            <summary>
-              Looks up a localized string similar to Extension Port.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Format_DESC">
-            <summary>
-              Looks up a localized string similar to Data Format (Must be connected with RS-232 Pin out at RTC card).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Format_DISP">
-            <summary>
-              Looks up a localized string similar to Format.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Max_Bit_DESC">
-            <summary>
-              Looks up a localized string similar to Max Bit Value.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Max_Bit_DISP">
-            <summary>
-              Looks up a localized string similar to Max Bit.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Max_Duty_Cycle_DESC">
-            <summary>
-              Looks up a localized string similar to Max Duty Cycle (%).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Max_Duty_Cycle_DISP">
-            <summary>
-              Looks up a localized string similar to Max Duty Cycle.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Max_Frequency_DESC">
-            <summary>
-              Looks up a localized string similar to Max Frequency (Hz).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Max_Frequency_DISP">
-            <summary>
-              Looks up a localized string similar to Max Frequency.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Min_Bit_DESC">
-            <summary>
-              Looks up a localized string similar to Min Bit Value.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Min_Bit_DISP">
-            <summary>
-              Looks up a localized string similar to Min Bit.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Min_Duty_Cycle_DESC">
-            <summary>
-              Looks up a localized string similar to Min Duty Cycle (%).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Min_Duty_Cycle_DISP">
-            <summary>
-              Looks up a localized string similar to Min Duty Cycle.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Min_Frequency_DESC">
-            <summary>
-              Looks up a localized string similar to Min Frequency (Hz).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.src.laser.impl.laservirtual.Min_Frequency_DISP">
-            <summary>
-              Looks up a localized string similar to Min Frequency.
-            </summary>
-        </member>
         <member name="T:SpiralLab.Sirius2.LicenseInfo">
             <summary>
             LicenseInfo for <c>SpiralLab.Sirius2</c> library
@@ -10776,11 +10514,8 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListBegin(SpiralLab.Sirius2.Scanner.Rtc.ListType)">
             <summary>
             List begin
+            <para>Default: <c>ListType.Auto</c> </para>
             </summary>
-            <remarks>
-            Default: <c>ListType.Auto</c> <br/>
-            Whole list commands are must exist between <c>ListBegin</c> and <c>ListEnd</c>. <br/>
-            </remarks>
             <param name="listType"><c>ListType</c></param>
             <returns>Success or failed</returns>
         </member>
@@ -10803,10 +10538,8 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListDelay(System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
             List scanner and Laser delays
-            <remarks>
-            Scanner delays: to compensate scanner's tracking error. <br/>
-            Laser delays: to compensate laser's latency. <br/>
-            </remarks>
+            <para>Scanner delays: to compensate scanner's tracking error</para>
+            <para>Laser delays: to compensate laser's latency</para>
             </summary>
             <param name="laserOn">Laser on delay (usec)</param>
             <param name="laserOff">Laser off delay (usec)</param>
@@ -10875,13 +10608,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListExecute(System.Boolean)">
             <summary>
             List execute
+            <para>Don't call this function to execute by external /START trigger and use <c>IRtcExtension.CtlExternalControl</c></para>
             </summary>
-            <remarks>
-            Whole list commands are must exist between <c>ListBegin</c> and <c>ListEnd</c>. <br/>
-            Do NOT call this function to execute by external /START trigger. <br/>
-            To use external /START trigger must be configured by <c>IRtcExtension.CtlExternalControl</c>. <br/>
-            </remarks>
-            <param name="busyWait">Wait until list commands had finished. (Same effect with <c>CtlBusyWait</c>)</param>
+            <param name="busyWait"><c>CtlBusyWait</c></param>
             <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead">
@@ -13059,12 +12788,12 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncCountsPerRevolution">
             <summary>
             Encoder X(or 0) counts/rev
+            <para>Must be > 100</para>
             <code>
                                        counts 
             EncCountsPerRevolution = -----------
                                          ˚ 
             </code>
-            <para>Must be > 100</para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncSimulatedAngularSpeed">
@@ -13139,7 +12868,7 @@
             Compensate tracking error with MoF.
             </summary>
             <remarks>
-            EC = E + (E – EP) * TrackingError <br/>
+            EC = E + (E – EP) * TrackingError<br/>
             E is the current encoder value. <br/>
             EP is that of the previous cycle. <br/> 
             EC is the compensated encoder value(used for Processing-on-the-fly correction). <br/>
@@ -13216,7 +12945,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofEncoderAngularSpeed(System.Double)">
             <summary>
-            Enable(or disable) simulated angular encoder (x/0)
+            Enable( or disable) simulated angular encoder (x/0)
             </summary>
             <param name="encSimulatedSpeed">Angular speed (˚/s)</param>
             <returns>Success or failed</returns>
