@@ -10776,8 +10776,11 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListBegin(SpiralLab.Sirius2.Scanner.Rtc.ListType)">
             <summary>
             List begin
-            <para>Default: <c>ListType.Auto</c> </para>
             </summary>
+            <remarks>
+            Default: <c>ListType.Auto</c> <br/>
+            Whole list commands are must exist between <c>ListBegin</c> and <c>ListEnd</c>. <br/>
+            </remarks>
             <param name="listType"><c>ListType</c></param>
             <returns>Success or failed</returns>
         </member>
@@ -10800,8 +10803,10 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListDelay(System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
             List scanner and Laser delays
-            <para>Scanner delays: to compensate scanner's tracking error</para>
-            <para>Laser delays: to compensate laser's latency</para>
+            <remarks>
+            Scanner delays: to compensate scanner's tracking error. <br/>
+            Laser delays: to compensate laser's latency. <br/>
+            </remarks>
             </summary>
             <param name="laserOn">Laser on delay (usec)</param>
             <param name="laserOff">Laser off delay (usec)</param>
@@ -10870,9 +10875,13 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListExecute(System.Boolean)">
             <summary>
             List execute
-            <para>Don't call this function to execute by external /START trigger and use <c>IRtcExtension.CtlExternalControl</c></para>
             </summary>
-            <param name="busyWait"><c>CtlBusyWait</c></param>
+            <remarks>
+            Whole list commands are must exist between <c>ListBegin</c> and <c>ListEnd</c>. <br/>
+            Do NOT call this function to execute by external /START trigger. <br/>
+            To use external /START trigger must be configured by <c>IRtcExtension.CtlExternalControl</c>. <br/>
+            </remarks>
+            <param name="busyWait">Wait until list commands had finished. (Same effect with <c>CtlBusyWait</c>)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead">
@@ -13050,12 +13059,12 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncCountsPerRevolution">
             <summary>
             Encoder X(or 0) counts/rev
-            <para>Must be > 100</para>
             <code>
                                        counts 
             EncCountsPerRevolution = -----------
                                          ˚ 
             </code>
+            <para>Must be > 100</para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncSimulatedAngularSpeed">
@@ -13130,7 +13139,7 @@
             Compensate tracking error with MoF.
             </summary>
             <remarks>
-            EC = E + (E – EP) * TrackingError<br/>
+            EC = E + (E – EP) * TrackingError <br/>
             E is the current encoder value. <br/>
             EP is that of the previous cycle. <br/> 
             EC is the compensated encoder value(used for Processing-on-the-fly correction). <br/>
@@ -13207,7 +13216,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofEncoderAngularSpeed(System.Double)">
             <summary>
-            Enable( or disable) simulated angular encoder (x/0)
+            Enable(or disable) simulated angular encoder (x/0)
             </summary>
             <param name="encSimulatedSpeed">Angular speed (˚/s)</param>
             <returns>Success or failed</returns>

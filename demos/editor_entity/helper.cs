@@ -567,13 +567,23 @@ namespace Demos
             Debug.Assert(document.ActiveLayer == layer1);
 
             // STL entity
-            if (EntityFactory.CreateStereoLithography(Path.Combine("sample", "Nefertiti_face.stl"), out var stl))
+            if (EntityFactory.CreateStereoLithography(Path.Combine("sample", "Nefertiti_face.stl"), out var stl1))
             {
-                stl.Alignment = Alignments.MiddleCenter;
-                stl.Scale(0.2);
-                stl.Translate(30, 10);
-                stl.RotateZ(-90);
-                success &= document.ActAdd(stl);
+                stl1.Alignment = Alignments.MiddleCenter;
+                stl1.Scale(0.2);
+                stl1.RotateZ(-90);
+                stl1.Translate(30, 10);
+                success &= document.ActAdd(stl1);
+            }
+
+            // STL entity
+            if (EntityFactory.CreateStereoLithography(Path.Combine("sample", "v2_Bolt_Cap.stl"), out var stl2))
+            {
+                stl2.Alignment = Alignments.MiddleCenter;
+                stl2.Scale(0.5);
+                stl2.Rotate(30, 10, 0);
+                stl2.Translate(8, -35, 0);
+                success &= document.ActAdd(stl2);
             }
 
             // Dxf entity
