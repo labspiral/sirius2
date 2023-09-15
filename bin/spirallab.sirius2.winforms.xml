@@ -14867,6 +14867,14 @@
             Package assembly filename
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.AssemblyVersion">
+            <summary>
+            Package assembly version
+            </summary>
+            <remarks>
+            string (major.minor.builds) for version information. <br/>
+            </remarks>
+        </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.FileExtension">
             <summary>
             Default file extension
