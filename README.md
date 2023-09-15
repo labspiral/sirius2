@@ -106,7 +106,7 @@
   - added) editor_3d demo project 
   - added) trepan entity
   - added) jump to entity
-  - added) language resource for korean(koKR)
+  - added) korean language resources (koKR)
   - fixed) 3D calibration
      - updated) SCANLAB's calibration library to v1.4.1.1
      - fixed) duplicated vertices bug at pointscloud

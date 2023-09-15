@@ -1113,7 +1113,7 @@
               Looks up a localized string similar to Min. width (pixel).
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Quite_zone_DESP">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Quite_zone_DESC">
             <summary>
               Looks up a localized string similar to Quite Zone Size.
             </summary>
@@ -1853,16 +1853,6 @@
               Looks up a localized string similar to Laser.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Laser_on_shift_DESC">
-            <summary>
-              Looks up a localized string similar to Sky Writing Laser On Shift (usec).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Laser_on_shift_DISP">
-            <summary>
-              Looks up a localized string similar to Laser on shift.
-            </summary>
-        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Mark_delay_DESC">
             <summary>
               Looks up a localized string similar to Scanner Mark Delay (usec).
@@ -1956,6 +1946,16 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Sky_writing_enable_DISP">
             <summary>
               Looks up a localized string similar to SW Enable.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Sky_writing_laser_on_shift_DESC">
+            <summary>
+              Looks up a localized string similar to Sky Writing Laser On Shift (usec).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Sky_writing_laser_on_shift_DISP">
+            <summary>
+              Looks up a localized string similar to Laser on shift.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Sky_writing_mode_DESC">
@@ -3404,7 +3404,7 @@
               Looks up a localized string similar to Height (pixel).
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.Quite_zone_DESP">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.Quite_zone_DESC">
             <summary>
               Looks up a localized string similar to Quite Zone Size.
             </summary>
@@ -3718,7 +3718,7 @@
               Looks up a localized string similar to End diameter.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.spiral.Heigh_DESC">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.spiral.Height_DESC">
             <summary>
               Looks up a localized string similar to Height (mm) (+: Upper, -: Lower).
             </summary>
