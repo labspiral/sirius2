@@ -12527,186 +12527,283 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.LaserOn">
             <summary>
-            LASERON signal (1 = laser signal on, 0 = laser signal off
+            LASERON signal (1 = laser signal on, 0 = laser signal off)
             </summary>
+            <remarks>
+            Converted(or multipled) by <c>Config.MeasurementLaserOnFactor</c> scale value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.StatusAX">
             <summary>
             StatusAX (X-axis status signal of the primary scan head connector)
             </summary>
+            <remarks>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.StatusAY">
             <summary>
             StatusAY (Y-axis status signal of the primary scan head connector)
             </summary>
+            <remarks>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.StatusBX">
             <summary>
             StatusBX (X-axis status signal of the secondary scan head connector)
             </summary>
+            <remarks>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.StatusBY">
             <summary>
             StatusBY (Y-axis status signal of the secondary scan head connector)
             </summary>
+            <remarks>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleX">
             <summary>
             SampleX (X-axis cartesian control value)
             </summary>
+            <remarks>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleY">
             <summary>
             SampleY (Y-axis cartesian control value)
             </summary>
+            <remarks>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleZ">
             <summary>
             SampleZ (Z-axis cartesian control value)
             </summary>
+            <remarks>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleAX_Coor">
             <summary>
             SampleAX_Corr (corrected X-axis control value for the primary scan head connector)
             </summary>
+            <remarks>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleAY_Coor">
             <summary>
             SampleAY_Corr (corrected Y-axis control value for the primary scan head connector)
             </summary>
+            <remarks>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleAZ_Coor">
             <summary>
             SampleAZ_Corr (corrected Z-axis control value, if XY are connected to the primary scan head connector; identical to the effective output value for the Z axis)
             </summary>
+            <remarks>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleBX_Coor">
             <summary>
             SampleBX_Corr (corrected X-axis control value for the secondary scan head connector)
             </summary>
+            <remarks>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleBY_Coor">
             <summary>
             SampleBY_Corr (corrected Y-axis control value for the secondary scan head connector)
             </summary>
+            <remarks>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleBZ_Coor">
             <summary>
             SampleBZ_Corr (corrected Z-axis control value, if XY are connected to the secondary scan head connector; identical to the effective output value for the Z axis)
             </summary>
+            <remarks>
+            
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleAX_Out">
             <summary>
             SampleAX_Out (effective X-axis output value for the primary scan head connector; if applicable incl. any scanner offset and gain compensation, see comments; not usable for measuring Z-axis output values)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleAY_Out">
             <summary>
             SampleAY_Out (effective Y-axis output value for the primary scan head connector; not usable for measuring Z-axis output values)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleBX_Out">
             <summary>
             SampleBX_Out (effective X-axis output value for the secondary scan head connector; not usable for measuring Z-axis output values)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleBY_Out">
             <summary>
             SampleBY_Out (effective Y-axis output value for the secondary scan head connector; not usable for measuring Z-axis output values)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.AutomaticLaserControlParam">
             <summary>
             Laser control parameter of automatic laser control (see set_auto_laser_control)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleAX_Trans">
             <summary>
             SampleAX_Trans (transformed X-axis control value for the primary scan head connector)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleAY_Trans">
             <summary>
             SampleAY_Trans (transformed Y-axis control value for the primary scan head connector)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleAZ_Trans">
             <summary>
             SampleAZ_Trans (transformed Z-axis control value, if XY are connected to the primary scan head connector)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleBX_Trans">
             <summary>
             SampleBX_Trans (transformed X-axis control value for the secondary scan head connector)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleBY_Trans">
             <summary>
             SampleBY_Trans (transformed Y-axis control value for the secondary scan head connector)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleBZ_Trans">
             <summary>
             SampleBZ_Trans (transformed Z-axis control value, if XY are connected to the secondary scan head connector)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.AutomaticLaserControlByVectorParam">
             <summary>
             Laser control parameter of vector-defined laser control (see set_vector_control)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.FocusShift">
             <summary>
             Focus shift (see set_vector_control, set_defocus, set_defocus_list)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into mm value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.ExtAO1">
             <summary>
             12-bit output value at the ANALOG OUT1 output port (see set_auto_laser_control, set_vector_control and chapter 9.1.4 ”12- Bit Analog Output Ports”)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into voltage (0~10) value.  <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.ExtAO2">
             <summary>
             12-bit output value at the ANALOG OUT2 output port (see set_auto_laser_control, set_vector_control and chapter 9.1.4 ”12- Bit Analog Output Ports”) 
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into voltage (0~10) value.  <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.ExtDO16">
             <summary>
             Output value at the 16-bit digital output port (see set_auto_laser_control, set_vector_control and chapter 9.1.1 ”16- Bit Digital Output Port”)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into digital (0~65535) value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.ExtDO8">
             <summary>
             Output value at the 8-bit digital output port (see set_auto_laser_control, set_vector_control and chapter 9.1.2 ”8- Bit Digital Output Port”)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into digital (0~255) value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.PulseLength">
             <summary>
             Pulse length (PulseLength) of the LASER1 and LASER2 laser signals (see set_auto_laser_control, set_vector_control)
             </summary>
+            <remarks>
+            Converted into pulse width(usec) value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.OutputPeriod">
             <summary>
             Output period (HalfPeriod) of the LASER1 and LASER2 laser signals (see set_auto_laser_control, set_vector_control)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into frequency(Hz) value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.FreeVariable0">
             <summary>
@@ -12731,32 +12828,45 @@
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.Enc0Counter">
             <summary>
             Counter value of encoder counter Encoder0
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted into mm(if X/Y) or degree(if Angular) value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.Enc1Counter">
             <summary>
             Counter value of encoder counter Encoder1
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted into mm(if X/Y) or degree(if Angular) value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.MarkSpeed">
             <summary>
             Marking speed (from set_mark_speed, set_mark_speed_ctrl)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5 
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.ExtDI16">
             <summary>
             16-bit digital input (EXTENSION 1)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into digital (0~65535) value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.ZoomValueForIntelliWeld">
             <summary>
             Zoom value (only for intelliWELD II)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5 
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.FreeVariable4">
             <summary>
@@ -12780,39 +12890,52 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.TimeStampCounter">
             <summary>
-            Time stamp counter (see chapter 8.13 ”Time Measurements”, page 231)
-            above RTC5
+            Time stamp counter 
             </summary>
+            <remarks>
+            above RTC5 
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.WobbelAmplitude">
             <summary>
-            Wobbel amplitude (see set_wobbel, set_wobbel_mode and chapter 8.4 ”Wobbel Mode”, page 189)
-            above RTC5
+            Wobbel amplitude (see set_wobbel, set_wobbel_mode)
             </summary>
+            <remarks>
+            above RTC5 
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.ExtAI">
             <summary>
             ReadAnalogIn (see read_analog_in)
-            above RTC5
             </summary>
+            <remarks>
+            above RTC5. <br/>
+            Converted bits into analog (0~10) value. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.ScaledEncoderX">
             <summary>
-            Scaled encoder value for X. (RTC6 only)
-            above RTC6 
+            Scaled encoder value for X.
             </summary>
+            <remarks>
+            above RTC6
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.ScaledEncoderY">
             <summary>
-            Scaled encoder value for Y. (RTC6 only)
-            above RTC6 
+            Scaled encoder value for Y.
             </summary>
+            <remarks>
+            above RTC6
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.ScaledEncoderZ">
             <summary>
-            Scaled encoder value for Z. (RTC6 only)
-            above RTC6 
+            Scaled encoder value for Z.
             </summary>
+            <remarks>
+            above RTC6
+            </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement">
             <summary>

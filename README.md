@@ -106,13 +106,14 @@
   - added) editor_3d demo project 
   - added) trepan entity
   - added) jump to entity
-  - added) korean language resources (koKR)
+  - added) korean language resources (koKR) 
   - fixed) 3D calibration
      - updated) SCANLAB's calibration library to v1.4.1.1
      - fixed) duplicated vertices bug at pointscloud
      - fixed) fixed invalid directional vector at plane
   - fixed) invalid rubber banding when out of view control  
-  - fixed) support EntityRampBegin/End at syncAXIS
+  - fixed) kz-scale bug at RTC6
+  - added) support EntityRampBegin/End at syncAXIS
 
 * 2023.9.6 v.1.0.720 (Release Candidate Version)
   - added) 1D barcode entity

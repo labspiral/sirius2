@@ -3404,6 +3404,16 @@
               Looks up a localized string similar to Height (pixel).
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.QR_version_DESC">
+            <summary>
+              Looks up a localized string similar to QR Version (1~40).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.QR_version_DISP">
+            <summary>
+              Looks up a localized string similar to Version.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.Quite_zone_DESC">
             <summary>
               Looks up a localized string similar to Quite Zone Size.

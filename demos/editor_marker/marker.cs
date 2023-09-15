@@ -483,6 +483,7 @@ namespace Demos
             return success;
         }
 
+
         /// <summary>
         /// Marker thread #1
         /// </summary>
@@ -555,19 +556,6 @@ namespace Demos
                         break;
                     if (success)
                     {
-                        if (IsJumpToOriginAfterFinished)
-                        {
-                            if (rtc.Is3D)
-                            {
-                                success &= rtc3D.ListZDefocus(0);
-                                success &= rtc3D.ListJumpTo(System.Numerics.Vector3.Zero);
-                            }
-                            else
-                            {
-                                success &= rtc.ListJumpTo(System.Numerics.Vector2.Zero);
-                            }
-                        }
-
                         success &= laser.ListEnd();
                         success &= rtc.ListEnd();
                         if (success && !IsExternalStart)
@@ -620,7 +608,18 @@ namespace Demos
                     }
                 }
             }
-
+            if (IsJumpToOriginAfterFinished)
+            {
+                if (rtc.Is3D)
+                {
+                    success &= rtc3D.CtlZDefocus(0);
+                    success &= rtc3D.CtlMoveTo(System.Numerics.Vector3.Zero);
+                }
+                else
+                {
+                    success &= rtc.CtlMoveTo(System.Numerics.Vector2.Zero);
+                }
+            }
             rtc.MatrixStack = oldMatrixStack;
             this.TimeSpan = DateTime.Now - dtStarted;
             this.isInternalBusy = false;
