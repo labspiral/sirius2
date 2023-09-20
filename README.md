@@ -19,9 +19,12 @@
  - Support 2D,3D scanner field correction.
  - Support powerful 4x4 matrix with stack operations.
  - Support processing unlimited list data by automatically.
- - Support MoF(Marking on the Fly), 2nd head, 3D, Ramp(Automatic Laser Control) and Sky writing.
+ - Support MoF(Marking on the Fly), 2nd head, 3D and Sky writing.
+ - Support Ramp(Automatic Laser Control) by position dependent, velocity dependent and defined-vector.
+ - Support SCANahead control, SDC(Spot Distance Control) with RTC6.
  - Support measure and profile scanner trajectory with output signals by plotted graph.
  - Support many kinds of laser source control by frequency, duty cycle, analog, digital output signals.
+ - Open sourced code with editor, marker, laser and pen control for customization.
  - Support many kinds of executable demo programs.
 
 
@@ -30,20 +33,22 @@
 
 **3. What's major changes in Sirius2**
 
-|                       |                         Sirius2                       |      Sirius(Old)       |
-| :--------------------:|:------------------------------------------------------|:-----------------------|
-| Matrix operation      |4x4 (3D)                                               |3x3 (2D)                |
-| Camera                |Perspective                                            |Orthogonal              |
-| Editor                |3D                                                     |2D                      |
-| Render engine         |OpenTK (with shaders)                                  |SharpGL                 |
-| Render speed          |Faster                                                 |Acceptable              |
-| Customization         |Expandable                                             |Acceptable              |
+|                       |                         Sirius2                       |       Sirius(Old)       |
+|:---------------------:|:------------------------------------------------------|:------------------------|
+| Matrix operation      |4x4 (3D)                                               |3x3 (2D)                 |
+| Camera                |Perspective                                            |Orthogonal               |
+| Editor                |3D                                                     |2D                       |
+| Render engine         |OpenTK (with shaders)                                  |SharpGL                  |
+| Render speed          |Faster                                                 |Acceptable               |
+| Field correction      |correXionPro and CalibrationTool                       |correXionPro             |
+| Font                  |Windows fonts and cxf, lff format                      |ttf, cxf                 | 
+| Customization         |Expandable                                             |Acceptable               |
 
 
 ----
 
 
-**4. Modules**
+**4. Libraries**
 
  - spirallab.sirius2.dll
     - Target frameworks: .NET standard 2.0, .NET 6.0 or .NET Framework 4.7.2
@@ -51,7 +56,7 @@
  - spirallab.sirius2.winforms.dll
     - Target frameworks: .NET Framework 4.7.2 only
     - Target platforms: Windows (x64) only
- - dependencies
+ - Dependencies
     - SCANLAB RTC5 (2022.11.11)
     - SCANLAB RTC6 v.1.15.4 (2023.01.23)
     - SCANLAB syncAXIS v.1.8.2 (2023.3.9)
@@ -90,7 +95,7 @@
 ----
 
 
-**7. Author**
+**7. Copyright**
  
  - 2023 Copyright to (c)SpiralLAB. All rights reserved. 
  - Homepage: http://spirallab.co.kr
@@ -101,6 +106,16 @@
 
 
 **8. Version history**
+
+* 2023.9.21 v.1.2.760
+  - added) raster modes
+     - modes: jump and shoot or micro-vector
+     - support raster mode at image and barcode entity
+  - added) OnMarkPen event 
+  - added) repeat list buffer at marker
+  - added) ListLaserPower at rtc6
+  - added) list pause or restart at RtcExtension
+  - fixed) rename automatic laser control to alc
 
 * 2023.9.15 v.1.1.740
   - added) editor_3d demo project 

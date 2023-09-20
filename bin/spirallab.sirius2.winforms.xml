@@ -388,7 +388,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Extension_channel_DESC">
             <summary>
-              Looks up a localized string similar to Pixel Output Extension Channel (Analog 1 or 2).
+              Looks up a localized string similar to Pixel Output Extension Channel (Analog 1 or 2) (Micro-Vector only).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Extension_channel_DISP">
@@ -398,7 +398,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Pixel_period_DESC">
             <summary>
-              Looks up a localized string similar to Pixel Period (usec) (1/Pixel Frequency).
+              Looks up a localized string similar to Pixel Period (usec) (1/Pixel Frequency) (Micro-Vector only).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Pixel_period_DISP">
@@ -408,12 +408,22 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Pixel_time_DESC">
             <summary>
-              Looks up a localized string similar to Pixel Time (usec) (Time for Pixel Pulse Width. Should be &lt; Pixel Period).
+              Looks up a localized string similar to Pixel Duration Time (usec) (Time for Pixel Pulse Width. Should be &lt; Pixel Period).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Pixel_time_DISP">
             <summary>
               Looks up a localized string similar to Pixel time.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Raster_mode_DESC">
+            <summary>
+              Looks up a localized string similar to Raster Mode (Jump and Shoot, Micro-Vector).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Raster_mode_DISP">
+            <summary>
+              Looks up a localized string similar to Raster mode.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Zigzag_DESC">
@@ -820,16 +830,6 @@
               Looks up a localized string similar to Alignment (vertical).
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.CharacterSet_format_DESC">
-            <summary>
-              Looks up a localized string similar to CharacterSet Format.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.CharacterSet_format_DISP">
-            <summary>
-              Looks up a localized string similar to CharacterSet format.
-            </summary>
-        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Convertible_DESC">
             <summary>
               Looks up a localized string similar to Enable(or Disable) Convert Text Data.
@@ -857,7 +857,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Format_C">
             <summary>
-              Looks up a localized string similar to CharacterSet format.
+              Looks up a localized string similar to Format.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Format_date_DESC">
@@ -868,6 +868,16 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Format_date_DISP">
             <summary>
               Looks up a localized string similar to Format (date).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Format_DESC">
+            <summary>
+              Looks up a localized string similar to CharacterSet Format.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Format_DISP">
+            <summary>
+              Looks up a localized string similar to Format.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Format_serial_DESC">
@@ -2364,7 +2374,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Extension_channel_DESC">
             <summary>
-              Looks up a localized string similar to Pixel Output Extension Channel (Analog 1 or 2).
+              Looks up a localized string similar to Pixel Output Extension Channel (Analog 1 or 2) (Micro-Vector only).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Extension_channel_DISP">
@@ -2434,7 +2444,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Pixel_period_DESC">
             <summary>
-              Looks up a localized string similar to Pixel Period (usec) (Time for Pixel Frequency).
+              Looks up a localized string similar to Pixel Period (usec) (1/Pixel Frequency) (Micro-Vector only).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Pixel_period_DISP">
@@ -2454,7 +2464,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Pixel_time_DESC">
             <summary>
-              Looks up a localized string similar to Max. Pixel Time (usec) (Time for Pixel Pulse Width. Should be &lt; Pixel Period).
+              Looks up a localized string similar to Max. Pixel Dration Time (usec) (Time for Pixel Pulse Width. Should be &lt; Pixel Period).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Pixel_time_DISP">
@@ -2485,6 +2495,16 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Raster_C">
             <summary>
               Looks up a localized string similar to Raster.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Raster_mode_DESC">
+            <summary>
+              Looks up a localized string similar to Raster Mode (Jump and Shoot, Micro-Vector).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Raster_mode_DISP">
+            <summary>
+              Looks up a localized string similar to Raster mode.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Width_DESC">
@@ -2646,12 +2666,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc._100__signal_value_DESC">
             <summary>
-              Looks up a localized string similar to 100% signal value.
+              Looks up a localized string similar to 100% Output Value (Analog: ~10V, Digital: ~255 or ~65535, Pulsewidth: us, Frequency: Hz, SpotDistance: mm).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc._100__signal_value_DISP">
             <summary>
-              Looks up a localized string similar to 100% Output value (Analog: ~10V, Digital: ~255 or ~65535, Pulsewidth: us, Frequency: Hz).
+              Looks up a localized string similar to 100% signal value.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc.Control_mode_DESC">
@@ -2686,22 +2706,22 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc.Max_signal_value_DESC">
             <summary>
-              Looks up a localized string similar to Max Output value (Analog: ~10V, Digital: ~255 or ~65535, Pulsewidth: us, Frequency: Hz).
+              Looks up a localized string similar to Max. Output value (Analog: ~10V, Digital: ~255 or ~65535, Pulsewidth: us, Frequency: Hz).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc.Max_signal_value_DISP">
             <summary>
-              Looks up a localized string similar to Max signal value.
+              Looks up a localized string similar to Max. signal value.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc.Min_signal_value_DESC">
             <summary>
-              Looks up a localized string similar to Min Output value (Analog: ~10V, Digital: ~255 or ~65535, Pulsewidth: us, Frequency: Hz).
+              Looks up a localized string similar to Min. Output value (Analog: ~10V, Digital: ~255 or ~65535, Pulsewidth: us, Frequency: Hz).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc.Min_signal_value_DISP">
             <summary>
-              Looks up a localized string similar to Min signal value.
+              Looks up a localized string similar to Min. signal value.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc.PoD_C">
@@ -4402,18 +4422,23 @@
             ZigZag
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.RasterMode">
+            <summary>
+            Raster mode
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelPeriod">
             <summary>
-            Pixel Period (usec)
+            Pixel period (usec)
             </summary>
             <remarks>
-            Laser ON signal is activated during output pixels.
-            Laser Pulse width is modulated by each output pixel time.
+            If <c>RasterModes.JumpAndShoot</c>, pixel period is not used. <br/>
+            If <c>RasterModes.MicroVector</c>, pixel speed = pixel pitch(mm) / pixel period(s). <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelTime">
             <summary>
-            Pixel Time (usec)
+            Pixel duration time (usec)
             </summary>
             <remarks>
             Pixel output time works like as output pulse width. should be lower than <c>PixelPeriod</c>
@@ -4421,7 +4446,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelChannel">
             <summary>
-            Pixel Output Extension Channel 
+            Pixel output extension channel 
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellDot.#ctor(SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase)">
@@ -5205,8 +5230,11 @@
             Dots
             </summary>
             <remarks>
-            <c>Rtc6SyncAxis</c> is not supported <c>Dots</c> cell type. <br/>
-            Because <c>Rtc6SyncAxis</c> is not supported <c>IRtcRaster</c> interface. <br/>
+            Usable with <c>IRtcMoF</c>. <br/>
+            Not usable with <c>IRtcAutoLaserControl</c>, <c>IRtcWobbel</c> or <c>IRtcSkywriting</c>. <br/>
+            Activated LASER ON signal during rastering and modulated output pulse width by each pixels time. <br/>
+            Pixel pulses (at the LASER1 port) directly by the PulseLength parameter, not the LASERON signal. <br/>
+            <c>Rtc6SyncAxis</c> is not supported <c>Dots</c> cell type. Because <c>Rtc6SyncAxis</c> is not supported <c>IRtcRaster</c> interface. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.Barcode2DCells.Lines">
@@ -7904,13 +7932,23 @@
             Py
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.RasterMode">
+            <summary>
+            Raster mode
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImage.rasterMode">
+            <summary>
+            Raster mode
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.PixelPeriod">
             <summary>
-            Pixel Period (usec)
+            Pixel period (usec)
             </summary>
             <remarks>
-            Laser ON signal is activated during output pixels.
-            Laser Pulse width is modulated by each output pixel time.
+            If <c>RasterModes.JumpAndShoot</c>, pixel period is not used. <br/>
+            If <c>RasterModes.MicroVector</c>, pixel speed = pixel pitch(mm) / pixel period(s). <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImage.pixelPeriod">
@@ -7920,7 +7958,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.PixelTime">
             <summary>
-            Pixel Time (usec)
+            Pixel duration time (usec)
             </summary>
             <remarks>
             Pixel output time works like as output pulse width. should be lower than <c>PixelPeriod</c>
@@ -9870,22 +9908,17 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerSyncAxis.MotionType">
             <summary>
-            SyncAxis: Motion type
+            SyncAxis motion type
             </summary>
+            <remarks>
+            <c>MotionType</c>
+            </remarks>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityLayerSyncAxis.motionType">
-            <summary>
-            SyncAxis: <c>MotionType</c>
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerSyncAxis.BandWidth">
-            <summary>
-            SyncAxis: Bandwidth (Hz)
-            </summary>
-        </member>
+        <!-- Badly formed XML comment ignored for member "F:SpiralLab.Sirius2.Winforms.Entity.EntityLayerSyncAxis.motionType" -->
+        <!-- Badly formed XML comment ignored for member "P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerSyncAxis.BandWidth" -->
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityLayerSyncAxis.bandWidth">
             <summary>
-            SyncAxis: Bandwidth (Hz)
+            SyncAxis band width (Hz)
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityLayerSyncAxis.#ctor">
@@ -9906,40 +9939,74 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.IsALC">
             <summary>
-            Enable/Disable ALC (Automatic Laser Control) 
+            Enable(or disable) ALC (Automatic Laser Control) 
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcSignal">
             <summary>
-            ALC (Automatic Laser Control) Control signal
+            ALC (Automatic Laser Control) signal
+            </summary>
+            <remarks>
             <c>AutoLaserControlSignal</c>
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcPercentage100">
-            <summary>
-            ALC (Automatic Laser Control) 100% Output value
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcMinValue">
-            <summary>
-            ALC (Automatic Laser Control) Min Output value
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcMaxValue">
-            <summary>
-            ALC (Automatic Laser Control) Max Output value
-            </summary>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcMode">
             <summary>
-            ALC (Automatic Laser Control) Control Mode 
-            <c>AutoLaserControlMode</c>
+            ALC (Automatic Laser Control) mode 
             </summary>
+            <remarks>
+            <c>AutoLaserControlMode</c>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcPercentage100">
+            <summary>
+            ALC (Automatic Laser Control) 100% output value
+            </summary>
+            <remarks>
+            If <c>AutoLaserControlSignal.Analog1</c>, analog voltage. <br/>
+            If <c>AutoLaserControlSignal.Analog2</c>, analog voltage. <br/>
+            If <c>AutoLaserControlSignal.ExtDO8</c>, 8bits (0~255). <br/>
+            If <c>AutoLaserControlSignal.ExtDO16</c>, 16bits (0~65535). <br/>
+            If <c>AutoLaserControlSignal.PulseWidth</c>, usec. <br/>
+            If <c>AutoLaserControlSignal.Frequency</c>, Hz. <br/>
+            If <c>AutoLaserControlSignal.SpotDistance</c>, spot distance (mm). <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcMinValue">
+            <summary>
+            ALC (Automatic Laser Control) min. output value
+            </summary>
+            <remarks>
+            If <c>AutoLaserControlSignal.Analog1</c>, analog voltage. <br/>
+            If <c>AutoLaserControlSignal.Analog2</c>, analog voltage. <br/>
+            If <c>AutoLaserControlSignal.ExtDO8</c>, 8bits (0~255). <br/>
+            If <c>AutoLaserControlSignal.ExtDO16</c>, 16bits (0~65535). <br/>
+            If <c>AutoLaserControlSignal.PulseWidth</c>, usec. <br/>
+            If <c>AutoLaserControlSignal.Frequency</c>, Hz. <br/>
+            If <c>AutoLaserControlSignal.SpotDistance</c>, not used <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcMaxValue">
+            <summary>
+            ALC (Automatic Laser Control) max. output value
+            </summary>
+            <remarks>
+            If <c>AutoLaserControlSignal.Analog1</c>, analog voltage. <br/>
+            If <c>AutoLaserControlSignal.Analog2</c>, analog voltage. <br/>
+            If <c>AutoLaserControlSignal.ExtDO8</c>, 8bits (0~255). <br/>
+            If <c>AutoLaserControlSignal.ExtDO16</c>, 16bits (0~65535). <br/>
+            If <c>AutoLaserControlSignal.PulseWidth</c>, usec. <br/>
+            If <c>AutoLaserControlSignal.Frequency</c>, Hz. <br/>
+            If <c>AutoLaserControlSignal.SpotDistance</c>, not used. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcByPositionTable">
             <summary>
-            ALC (Automatic Laser Control) + Position Dependent Compensate Table
+            ALC (Automatic Laser Control) with Position Dependent Compensate Table
             </summary>
+            <remarks>
+            Key/value pair: distance(or radius) (mm), scale (0~4) <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.#ctor">
             <summary>
@@ -9955,8 +10022,10 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityLayer">
             <summary>
             EntityLayer entity
-            <para>Inherited from <c>EntityLayerSyncAxis</c> -> <c>EntityLayerRtc</c> -> <c>EntityBase</c></para>
             </summary>
+            <remarks>
+            Inherited from <c>IEntity</c> &lt;- <c>EntityBase</c> &lt;- <c>EntityLayerRtc</c> &lt;- <c>EntityLayerSyncAxis</c> &lt;- <c>EntityLayer</c> <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayer.Color">
             <inheritdoc/>
@@ -10026,10 +10095,11 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">
             <summary>
             EntityPen entity
-            <para>Inherited from <c>EntityPen</c> -> <c>EntityPenSyncAxis</c> -> <c>EntityPenRtc</c> -> <c>EntityControlBase</c> -> <c>EntityBase</c> </para>
             </summary>
             <remarks>
-            When <c>IDocument</c> has created, <c>EntityPen</c> are created by <c>Config.OnCreatePen</c> event also.
+            Inherited from <c>IEntity</c> &lt;- <c>EntityBase</c> &lt;- <c>EntityControlBase</c> &lt;- <c>EntityPenRtc</c> &lt;- <c>EntityPenSyncAxis</c> &lt;- <c>EntityPen</c> <br/>
+            When <c>IDocument</c> has created, <c>EntityPen</c> are created by <c>Config.OnCreatePen</c> event also. <br/>
+            User can override do mark handler at <c>EntityPen</c> by <c>Config.OnMarkPen</c> event. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.Power">
@@ -10149,6 +10219,14 @@
             Property visibility for <c>ILaser</c>
             </summary>
             <param name="laser"><c>ILaser</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPen.InternalMark(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityPen)">
+            <summary>
+            Internal do mark for <c>EntityPen</c>
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="pen"><c>EntityPen</c></param>
+            <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral">
             <summary>
@@ -12196,6 +12274,74 @@
             <param name="entityPointsColud">Created <c>EntityPointCloud</c> if succeeded</param>
             <returns>Success or failed</returns>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.PropertyGridLocalizationAttribute">
+            <summary>
+            i17n (aka multi-languages)
+            </summary>
+            <remarks>
+            Programmed by Toughman from <seealso href="http://www.youngsoft.co.kr/">(c)Youngsoft</seealso> <br/>
+            </remarks>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.PropertyGridLocalizationAttribute.LocalizedCategoryAttribute">
+            <summary>
+            Category attribute
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PropertyGridLocalizationAttribute.LocalizedCategoryAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            _C
+            </summary>
+            <param name="key"></param>
+            <param name="classType"></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PropertyGridLocalizationAttribute.LocalizedCategoryAttribute.GetString(System.String,System.Type)">
+            <summary>
+            Get string (_C)
+            </summary>
+            <param name="key"></param>
+            <param name="classType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.PropertyGridLocalizationAttribute.LocalizedDisplayNameAttribute">
+            <summary>
+            Display name attribute
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PropertyGridLocalizationAttribute.LocalizedDisplayNameAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            _DISP
+            </summary>
+            <param name="key"></param>
+            <param name="classType"></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PropertyGridLocalizationAttribute.LocalizedDisplayNameAttribute.GetString(System.String,System.Type)">
+            <summary>
+            Get string (_DISP)
+            </summary>
+            <param name="key"></param>
+            <param name="classType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.PropertyGridLocalizationAttribute.LocalizedDescriptionAttribute">
+            <summary>
+            Description attribute
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PropertyGridLocalizationAttribute.LocalizedDescriptionAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            _DESC
+            </summary>
+            <param name="key"></param>
+            <param name="classType"></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PropertyGridLocalizationAttribute.LocalizedDescriptionAttribute.GetString(System.String,System.Type)">
+            <summary>
+            Get string (_DESC)
+            </summary>
+            <param name="key"></param>
+            <param name="classType"></param>
+            <returns></returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.TextRegisterHelper">
             <summary>
             TextRegisterHelper
@@ -13045,9 +13191,11 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.MarkProc_DESC">
-            <summary>
-              Looks up a localized string similar to Mark Procedure (Layer First, Offset First).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Mark Procedure (Layer First, Offset First)
+            Layer First: Move offset1 and Mark layers -&gt; Move offset2 and Mark layers , ...
+            Offset First: Mark layer1 with offset1 and offset2, ... -&gt; Mark layer2 with offset1 and offset2, ....
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.MarkProc_DISP">
             <summary>
@@ -13056,7 +13204,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.MarkTarget_DESC">
             <summary>
-              Looks up a localized string similar to Mark Target.
+              Looks up a localized string similar to Mark Target for Entity (All or Selected).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.MarkTarget_DISP">
@@ -13066,12 +13214,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.MarkTime_DESC">
             <summary>
-              Looks up a localized string similar to Mark SpanTime (Start and End Time).
+              Looks up a localized string similar to Mark Time (Start and End Time).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.MarkTime_DISP">
             <summary>
-              Looks up a localized string similar to Mark time.
+              Looks up a localized string similar to Time.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Name_DESC">
@@ -13096,7 +13244,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offsets_DESC">
             <summary>
-              Looks up a localized string similar to Array of Offset (Dx, Dy, Dz and Angle).
+              Looks up a localized string similar to Array of Offset (Dx, Dy, Dz and Angle Z).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offsets_DISP">
@@ -13162,7 +13310,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.External__START_DESC">
             <summary>
-              Looks up a localized string similar to Enable/Disable External /START Trigger.
+              Looks up a localized string similar to Enable/Disable External /START Trigger. (Used with ListType.Single only).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.External__START_DISP">
@@ -13212,7 +13360,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Position_DISP">
             <summary>
-              Looks up a localized string similar to Position Ack.
+              Looks up a localized string similar to Position ack.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Power_DESC">
@@ -13222,7 +13370,17 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Power_DISP">
             <summary>
-              Looks up a localized string similar to Power Supply.
+              Looks up a localized string similar to Power supply.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Repeat_list_DESC">
+            <summary>
+              Looks up a localized string similar to Repeat List Bufffer by Jump to Begin of List Infinitely (Used with ListType.Single and MarkProcedures.OffsetFirst only).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Repeat_list_DISP">
+            <summary>
+              Looks up a localized string similar to Repeat list.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Session_DESC">
@@ -13420,9 +13578,6 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Laser">
             <inheritdoc/>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.AccumulatedMarks">
-            <inheritdoc/>
-        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.MarkTarget">
             <inheritdoc/>
         </member>
@@ -13523,6 +13678,9 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.TimeSpan">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.AccumulatedMarks">
             <inheritdoc/>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.timeSpan">
@@ -13813,6 +13971,14 @@
             <summary>
             Enable/Disable External /START trigger
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.IsRepeatList">
+            <summary>
+            Enable/Disable Repeat List Bufffer by Jump to Begin of List Infinitely
+            </summary>
+            <remarks>
+            Used with <c>ListType.Single</c> and <c>MarkProcedures.OffsetFirst only</c>. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.ListType">
             <summary>
@@ -14950,7 +15116,7 @@
             <remarks>
             User can register event handler for open sirius file. <br/>
             Event will be fired when user has click 'Open' menu at <c>SiriusEditorUserControl</c>. <br/>
-            If user event handler is not attahced, default routine has executed. <br/>
+            If user event handler is not attached, default routine has executed. <br/>
             If returned 'False', default routine would be executed. <br/>
             </remarks>
         </member>
@@ -14968,7 +15134,7 @@
             <remarks>
             User can register event handler for save sirius file. <br/>
             Event will be fired when user has click 'Save' menu at <c>SiriusEditorUserControl</c>. <br/>
-            If user event handler is not attahced, default routine has executed. <br/>
+            If user event handler is not attached, default routine has executed. <br/>
             If returned 'False', default routine would be executed. <br/>
             </remarks>
         </member>
@@ -14999,7 +15165,7 @@
             <remarks>
             User can register event handler to override configure pen entity. <br/>
             Event will be fired when creating <c>EntityPen</c> entity. <br/>
-            If user event handler is not attahced, default routine has executed. <br/>
+            If user event handler is not attached, default routine has executed. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyCreatePen(System.Drawing.Color)">
@@ -15020,6 +15186,64 @@
             <param name="color"><c>System.Drawing.Color</c></param>
             <param name="pen"><c>EntityPen</c></param>
             <returns>Success or failed</returns>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnMarkPen">
+             <summary>
+             Event for mark <c>EntityPen</c>
+             <code>
+             SpiralLab.Sirius2.Winforms.Config.OnMarkPen += Config_OnMarkPen;
+             bool Config_OnMarkPen(IMarker marker, EntityPen pen)
+             {
+                var rtc = marker.Rtc;
+                var laser = marker.Laser;
+                var rtcExtension = rtc as IRtcExtension;
+                var rtcSkywriting = rtc as IRtcSkyWriting;
+                var rtcWobbel = rtc as IRtcWobbel;
+                var rtcSyncAxis = rtc as IRtcSyncAxis;
+                bool success = true;
+            
+                if (laser is ILaserPowerControl laserPowerControl)
+                    success &amp;= laserPowerControl.ListPower(pen.Power);
+            
+                success &amp;= rtc.ListFrequency(pen.Frequency, pen.PulseWidth);
+                success &amp;= rtc.ListDelay(pen.LaserOnDelay, pen.LaserOffDelay, pen.ScannerJumpDelay, pen.ScannerMarkDelay, pen.ScannerPolygonDelay);
+                if (null != rtcExtension)
+                {
+                    if (pen.IsScannerVariablePolygonDelay || pen.IsScannerVariableJumpDelay)
+                        success &amp;= rtcExtension.ListDelayVariable(pen.IsScannerVariablePolygonDelay, pen.ScannerVariablePolygonDelayEdgeLevel, pen.IsScannerVariableJumpDelay, pen.ScannerVariableJumpDelayMin, pen.ScannerVariableJumpLength);
+                    else
+                        success &amp;= rtcExtension.ListDelayVariable(false, 0, false, 0, 0);
+                }
+                success &amp;= rtc.ListSpeed(pen.JumpSpeed, pen.MarkSpeed);
+            
+                if (null != rtcExtension)
+                {
+                    success &amp;= rtcExtension.ListFirstPulseKiller(pen.LaserFpk);
+                    success &amp;= rtcExtension.ListQSwitchDelay(pen.LaserQSwitchDelay);
+                }
+                if (null != rtcWobbel)
+                {
+                    if (pen.IsWobbelEnabled)
+                        success &amp;= rtcWobbel.ListWobbelBegin(pen.WobbelParallel, pen.WobbelPerpendicular, pen.WobbelFrequency, pen.WobbelShape);
+                    else
+                        success &amp;= rtcWobbel.ListWobbelEnd();
+                }
+                if (null != rtcSyncAxis)
+                {
+                    if (pen.MinMarkSpeed > 0)
+                        success &amp;= rtcSyncAxis.ListSpeedMinMark(pen.MinMarkSpeed);
+                    if (pen.ApproxBlendLimit > 0)
+                        success &amp;= rtcSyncAxis.ListApproxBlendLimit(pen.ApproxBlendLimit);
+                }
+                return success;
+             }
+             </code>
+             </summary>
+             <remarks>
+             User can register event handler to override mark <c>EntityPen</c>. <br/>
+             Event will be fired when do mark <c>EntityPen</c>. <br/>
+             If user event handler is not attached, default routine has executed. <br/>
+             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.InstalledFontNames">
             <summary>
@@ -15110,7 +15334,7 @@
             User can register event handler to convert data of <c>ITextConvertible</c>. <br/>
             Event will be fired when <c>ITextConvertable.IsConvertText</c> is <c>True</c> only. <br/>
             Event will be fired whenever do <c>IMarkerable.Mark</c> or <c>IEntity.Regen</c>. <br/>
-            If user event handler is not attahced, used <c>SourceText</c> value. <br/>
+            If user event handler is not attached, used <c>SourceText</c> value. <br/>
             <c>IMarker</c> value can be <c>NULL</c> while <c>IEntity.Regen</c>. <br/>
             <c>IMarker.CurrentOffsetIndex</c> values are useful when marks at multiple offset positions. <br/>
             <c>IMarker</c> can be <c>MarkerVirtual</c> if do simulate laser path. <br/>
@@ -15184,7 +15408,7 @@
             <remarks>
             User can register event handler for extract points cloud from 3D model. <br/>
             Event will be fired when user select extract points cloud menu at <c>SiriusEditorUserControl</c>. <br/>
-            If user event handler is not attahced, default routine has executed. <br/>
+            If user event handler is not attached, default routine has executed. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyExtractPointsCloud(SpiralLab.Sirius2.Winforms.Entity.EntityStl,OpenTK.Vector3)">
@@ -15243,7 +15467,7 @@
             <remarks>
             User can register event handler for override <c>EntityBlockInsert</c> entity. <br/>
             Event will be fired when user select blockinsert menu at <c>SiriusEditorUserControl</c>. <br/>
-            If user event handler is not attahced, default routine has executed. <br/>
+            If user event handler is not attached, default routine has executed. <br/>
             If returned array of <c>EntityBlockInsert</c> (not <c>null</c>), values are inserted. <br/>
             </remarks>        
         </member>
@@ -15573,7 +15797,7 @@
             <remarks>
             User can register event handler for open(or show) scanner field correction 2d winforms. <br/>
             Event will be fired when select scanner field correction 2D menu at <c>SiriusEditorUserControl</c>. <br/>
-            If user event handler is not attahced, default routine has executed. <br/>
+            If user event handler is not attached, default routine has executed. <br/>
             If user event handler is attached, it should be create <c>RtcCorrection2D</c> and return it. <br/>
             </remarks>
         </member>
@@ -15623,7 +15847,7 @@
             <remarks>
             User can register event handler for open(or show) scanner field correction 3d winforms. <br/>
             Event will be fired when select scanner field correction 3D menu at <c>SiriusEditorUserControl</c>. <br/>
-            If user event handler is not attahced, default routine has executed. <br/>
+            If user event handler is not attached, default routine has executed. <br/>
             If user event handler is attached, it should be create <c>RtcCorrection3D</c> and return it. <br/>
             </remarks>
         </member>
@@ -15653,7 +15877,7 @@
             User can register event handler for apply scanner field correction 2d at winforms. <br/>
             Target correction table is <c>PrimaryHeadTable</c>. <br/>
             Event will be fired when apply scanner field correction 2D at winforms. <br/>
-            If user event handler is not attahced, nothing has changed. <br/>
+            If user event handler is not attached, nothing has changed. <br/>
             </remarks>
             </summary>
         </member>
@@ -15685,7 +15909,7 @@
             User can register event handler for apply scanner field correction 3d at winforms. <br/>
             Target correction table is <c>PrimaryHeadTable</c>. <br/>
             Event will be fired when apply scanner field correction 3D at winforms. <br/>
-            If user event handler is not attahced, nothing has changed. <br/>
+            If user event handler is not attached, nothing has changed. <br/>
             </remarks>
             </summary>
         </member>
@@ -15736,8 +15960,8 @@
             <remarks>
             User can register event handler for optimize path winforms. <br/>
             Event will be fired when select path optimizer menu at <c>SiriusEditorUserControl</c>. <br/>
-            If user event handler is not attahced, default routine has executed. Extracted base-points by <c>Config.PathOptimizerBasePosition</c> and popup optimizer winforms. <br/>
-            If user event handler is attahced, user should be return values with array of sorted orders. <br/>
+            If user event handler is not attached, default routine has executed. Extracted base-points by <c>Config.PathOptimizerBasePosition</c> and popup optimizer winforms. <br/>
+            If user event handler is attached, user should be return values with array of sorted orders. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyOptimizePath(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
@@ -15869,48 +16093,80 @@
             <summary>
             Event for new file
             </summary>
+            <remarks>
+            User can register event handler for new document. <br/>
+            Event will be fired when <c>ActNew</c> has called. <br/>
+            </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnOpened">
             <summary>
             Event for open file (filename)
             </summary>
+            <remarks>
+            User can register event handler for open document. <br/>
+            Event will be fired when <c>ActOpen</c> has called. <br/>
+            </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnSaved">
             <summary>
             Event for save file (filename)
             </summary>
+            <remarks>
+            User can register event handler for save document. <br/>
+            Event will be fired when <c>ActSave</c> has called. <br/>
+            </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnAdd">
             <summary>
             Event for add entities (<c>IEntity</c>)
             </summary>
+            <remarks>
+            User can register event handler for add entities. <br/>
+            Event will be fired when <c>ActAdd</c> has called. <br/>
+            </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnInsert">
             <summary>
             Event for insert entity (source <c>IEntity</c>, parent <c>IEntity</c>, target index)
             </summary>
+            <remarks>
+            User can register event handler for insert entities. <br/>
+            Event will be fired when <c>ActInsert</c> has called. <br/>
+            </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnRemove">
             <summary>
             Event for remove entities (array of <c>IEntity</c>)
             </summary>
+            <remarks>
+            User can register event handler for remove entities. <br/>
+            Event will be fired when <c>ActRemove</c> has called. <br/>
+            </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnSelected">
             <summary>
             Event for selected entities (array of <c>IEntity</c>)
             </summary>
+            <remarks>
+            User can register event handler for select entities. <br/>
+            Event will be fired when <c>ActSelect</c> or <c>ActSelectClear</c> has called. <br/>
+            </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnPropertyChanged">
             <summary>
             Event for entity property value has changed 
             </summary>
+            <remarks>
+            User can register event handler for property value had been changed.  <br/>
+            Event will be fired when property value of entity had been changed. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">
             <summary>
             Internal <c>IDocumentData</c> data 
             </summary>
             <remarks>
-            Internal document data for open and save
+            Internal document data for open and save. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocument.Selected">
@@ -15963,7 +16219,7 @@
             Ready status
             </summary>
             <remarks>
-            <c>IsReady</c> status goes to <c>False</c>.<br/> when opening or saving <c>IDocumentData</c> <br/>
+            <c>IsReady</c> status goes to <c>False</c> when opening or saving <c>IDocumentData</c> <br/>
             Used by internally (Do NOT edit) <br/>
             </remarks>
         </member>
@@ -15980,8 +16236,9 @@
             Whole <c>IEntity</c> at <c>IDocumentData.Layers</c> has cleared and create a <c>EntityLayer</c> with name '0' by default. <br/>
             Whole <c>EntityBlock</c> at <c>IDocumentData.Blocks</c> has cleared. <br/>
             Whole <c>EntityPen</c> at <c>IDocumentData.Pens</c> has NOT changed. <br/>
-            <c>EntityDic</c> has cleared.<br/>
-            <c>Clipboard</c> has cleared.<br/>
+            <c>EntityDic</c> has cleared. <br/>
+            <c>Clipboard</c> has cleared. <br/>
+            <c>EntityLayer</c> will be created with name '0' by default. <br/>
             </remarks>
             <returns>Success or failed</returns>
         </member>
@@ -15990,7 +16247,7 @@
             Opened <c>IDocumentData.InternalData</c> and notify <c>OnOpened</c> event 
             </summary>
             <remarks>
-            Supported file types are dxf, sirius2 <br/>
+            Supported file formats are 'dxf', 'sirius2' <br/>
             </remarks>
             <param name="fileName">Filename</param>
             <returns>Success or failed</returns>
@@ -16761,7 +17018,7 @@
             Imported by <c>EntityGroup</c> entity
             </remarks>
             <param name="fileName">Filename</param>
-            <param name="pltEntity"><c>EntityGroup</c></param>
+            <param name="hpglEntity"><c>EntityGroup</c></param>
             <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Properties.Resources">
@@ -18467,8 +18724,8 @@
             </code>
             </summary>
             <remarks>
-            User can write custom routines by <c>OpenTK.GLControl</c> <br/>
-            Event handler would be called just before <c>SwapBuffers</c> at every <c>Render</c>. <br/>
+            User can write custom routines with <c>OpenTK.GLControl</c> <br/>
+            Event will be fired just before <c>SwapBuffers</c> at every <c>Render</c> scene. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IView.Name">

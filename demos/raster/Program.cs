@@ -91,10 +91,11 @@ namespace Demos
             do
             {
                 Console.WriteLine("Testcase for raster operation");
-                Console.WriteLine("'1' : draw raster line");
-                Console.WriteLine("'2' : darw raster accurate line");
-                Console.WriteLine("'3' : darw raster rectangle");
-                Console.WriteLine("'4' : draw raster bitmap");
+                Console.WriteLine("'1' : draw raster line by jump and shoot");
+                Console.WriteLine("'2' : draw raster line by micro-vector");
+                Console.WriteLine("'3' : draw raster accurate line");
+                Console.WriteLine("'4' : draw raster rectangle");
+                Console.WriteLine("'5' : draw raster bitmap");
                 Console.WriteLine("'Q' : quit");
                 Console.Write("Select your target : ");
                 key = Console.ReadKey(false);
@@ -105,15 +106,18 @@ namespace Demos
                 switch (key.Key)
                 {
                     case ConsoleKey.D1:
-                        DrawRasterLine(laser, rtc);
+                        DrawRasterLine1(laser, rtc);
                         break;
                     case ConsoleKey.D2:
-                        DrawRasterMoreAccuratePitch(laser, rtc);
+                        DrawRasterLine2(laser, rtc);
                         break;
                     case ConsoleKey.D3:
-                        DrawRasterRectangle(laser, rtc);
+                        DrawRasterMoreAccuratePitch(laser, rtc);
                         break;
                     case ConsoleKey.D4:
+                        DrawRasterRectangle(laser, rtc);
+                        break;
+                    case ConsoleKey.D5:
                         DrawRasterBitmap(laser, rtc);
                         break;
                 }
@@ -123,7 +127,7 @@ namespace Demos
             laser.Dispose();
         }
 
-        private static bool DrawRasterLine(ILaser laser, IRtc rtc)
+        private static bool DrawRasterLine1(ILaser laser, IRtc rtc)
         {
             bool success = true;
             var rtcRaster = rtc as IRtcRaster;
@@ -141,10 +145,46 @@ namespace Demos
             // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
             uint counts = 1000;
             // Prepare raster horizontal line
-            success &= rtcRaster.ListRasterLine(period, new Vector2(dx, 0), counts);
+            success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, period, new Vector2(dx, 0), counts);
             for (int i = 0; i < counts; i++)
             {
-                // laser on during 10 usec
+                // laser on during duration time
+                success &= rtcRaster.ListRasterPixel(duration);
+                if (!success)
+                    break;
+            }
+
+            if (success)
+            {
+                // End of list
+                success &= rtc.ListEnd();
+                // Execute list
+                success &= rtc.ListExecute(true);
+            }
+            return success;
+        }
+        private static bool DrawRasterLine2(ILaser laser, IRtc rtc)
+        {
+            bool success = true;
+            var rtcRaster = rtc as IRtcRaster;
+            // Start list
+            success &= rtc.ListBegin();
+            // Jump to start
+            success &= rtc.ListJumpTo(new Vector2(-10, 0));
+
+            // Pixel period: 100 usec (0.0001 s)
+            double period = 100;
+            // Pixel duration: 10 usec
+            double duration = 10;
+            // Distance = 0.1 mm
+            float dx = 0.1f;
+            // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
+            uint counts = 1000;
+            // Prepare raster horizontal line
+            success &= rtcRaster.ListRasterLine(RasterModes.MicroVector, period, new Vector2(dx, 0), counts);
+            for (int i = 0; i < counts; i++)
+            {
+                // laser on during duration time
                 success &= rtcRaster.ListRasterPixel(duration);
                 if (!success)
                     break;
@@ -193,7 +233,7 @@ namespace Demos
             // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
             uint counts = 1000;
             // Prepare raster horizontal line
-            success &= rtcRaster.ListRasterLine(period, new Vector2(dx, 0), counts);
+            success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, period, new Vector2(dx, 0), counts);
             for (int i = 0; i < counts; i++)
             {
                 // laser on during 10 usec
@@ -237,7 +277,7 @@ namespace Demos
                 // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
                 uint counts = 1000;
                 // Prepare raster horizontal line
-                success &= rtcRaster.ListRasterLine(period, new Vector2(dx, 0), counts);
+                success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, period, new Vector2(dx, 0), counts);
                 for (int i = 0; i < counts; i++)
                 {
                     // Laser on during 10 usec
@@ -255,7 +295,6 @@ namespace Demos
             }
             return success;
         }
-
         private static bool DrawRasterBitmap(ILaser laser, IRtc rtc)
         {
             bool success = true;
@@ -284,15 +323,18 @@ namespace Demos
             Debug.Assert(bitmap != null);
             int px = bitmap.Width;
             int py = bitmap.Height;
-            // pixel pitch = 10um
-            float pitch = 0.01f;
-            //float dy = 0.01f;
 
-            // Pixel period: 50 usec (0.00005 s)
-            double pixelPeriod = 50;
-            // Max. pixel time: 20 usec (0.00002 s)
-            double pixelTime = 20;
-            // Invert black and white color
+            // Pixel period: 100 usec (0.0001 s)
+            double pixelPeriod = 100;
+
+            //Max. pixel duration: 50 usec (0.00005 s)
+            double pixelTime = 50;
+
+            // pixel pitch 
+            float pitch = 0.01f; // 10um
+            var xPitch = new Vector2(pitch, 0);
+
+            // Invert black and white color or not
             bool inverted = false;
 
             float max = 30; // 30mm
@@ -314,32 +356,26 @@ namespace Demos
                  MeasurementChannel.PulseLength, //usec
                  MeasurementChannel.LaserOn, //Gate signal 0/1
             };
-            //Must be higher than pixel period (50usec = 20KHz) time
             double sampleRateHz = 100 * 1000; //100KHz
             Stopwatch sw = Stopwatch.StartNew();
-
-            var xPitch = new Vector2(pitch, 0);
-
+            
             // Start list
             success &= rtc.ListBegin();
-            
+            // Start measurement
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             for (int y = 0; y < py; y++)
             {
                 // Starting from 0,0
-                success &= rtc.ListJumpTo(new Vector2(0, py * pitch));
+                success &= rtc.ListJumpTo(new Vector2(0, y * pitch));
                 // Prepare raster horizontal line
-                success &= rtcRaster.ListRasterLine(pixelPeriod, xPitch, (uint)px);
+                success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, pixelPeriod, xPitch, (uint)px);
                 for (int x = 0; x < px; x++)
                 {
                     var color = bitmap.GetPixel(x, py - y - 1);
-                    // RGB to gray scale: https://stackoverflow.com/questions/2265910/convert-an-image-to-grayscale
-                    double grayRatio = 1.0 - (0.3 * color.R + 0.59 * color.G + 0.11 * color.B) / 255.0;
+                    double grayScale = 1.0 - (0.3 * color.R + 0.59 * color.G + 0.11 * color.B) / 255.0;
                     if (inverted)
-                        grayRatio = 1.0f - grayRatio;
-                    // Mark each raster pixels
-                    // Activated Laser ON signal during rastering, but vary pulse width by each pixel time
-                    success &= rtcRaster.ListRasterPixel(pixelTime * grayRatio);
+                        grayScale = 1.0f - grayScale;
+                    success &= rtcRaster.ListRasterPixel(pixelTime * grayScale);
                     if (!success)
                         break;
                 }
@@ -348,6 +384,7 @@ namespace Demos
             }
             if (success)
             {
+                // End of measurement
                 success &= rtcMeasurement.ListMeasurementEnd();
                 // End of list
                 success &= rtc.ListEnd();

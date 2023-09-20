@@ -92,7 +92,7 @@ namespace Demos
                         targetInstance = 3;
                         break;
                     case ConsoleKey.A:
-                        DrawCircle(targetInstance);
+                        DrawRasterLine(targetInstance);
                         break;
                     case ConsoleKey.B:
                         DrawCircleWithMeasurement(targetInstance);
@@ -158,7 +158,7 @@ namespace Demos
             return success;
         }
 
-        private static bool DrawCircle(int index)
+        private static bool DrawRasterLine(int index)
         {
             var rtc = RtcArray[index];
             var laser = LaserArray[index];
@@ -179,7 +179,7 @@ namespace Demos
             // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
             uint counts = 1000;
             // Prepare raster horizontal line
-            success &= rtcRaster.ListRasterLine(period, new Vector2(dx, 0), counts);
+            success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, period, new Vector2(dx, 0), counts);
             for (int i = 0; i < counts; i++)
             {
                 // laser on during 10 usec

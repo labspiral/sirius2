@@ -536,15 +536,15 @@ namespace Demos
                     }
                     if (null != rtcAlc && layer.IsALC)
                     {
-                        success &= rtcAlc.CtlAutoLaserControlByPositionTable(layer.AlcByPositionTable);
+                        success &= rtcAlc.CtlAlcByPositionTable(layer.AlcByPositionTable);
                         switch (layer.AlcSignal)
                         {
                             case AutoLaserControlSignal.ExtDO16:
                             case AutoLaserControlSignal.ExtDO8:
-                                success &= rtcAlc.CtlAutoLaserControl<uint>(layer.AlcSignal, layer.AlcMode, (uint)layer.AlcPercentage100, (uint)layer.AlcMinValue, (uint)layer.AlcMaxValue);
+                                success &= rtcAlc.CtlAlc<uint>(layer.AlcSignal, layer.AlcMode, (uint)layer.AlcPercentage100, (uint)layer.AlcMinValue, (uint)layer.AlcMaxValue);
                                 break;
                             default:
-                                success &= rtcAlc.CtlAutoLaserControl<double>(layer.AlcSignal, layer.AlcMode, layer.AlcPercentage100, layer.AlcMinValue, layer.AlcMaxValue);
+                                success &= rtcAlc.CtlAlc<double>(layer.AlcSignal, layer.AlcMode, layer.AlcPercentage100, layer.AlcMinValue, layer.AlcMaxValue);
                                 break;
                         }
                     }
@@ -574,8 +574,8 @@ namespace Demos
 
                     if (null != rtcAlc && layer.IsALC && !IsExternalStart)
                     {
-                        success &= rtcAlc.CtlAutoLaserControlByPositionTable(null);
-                        success &= rtcAlc.CtlAutoLaserControl<uint>(AutoLaserControlSignal.Disabled, AutoLaserControlMode.Disabled, 0, 0, 0);
+                        success &= rtcAlc.CtlAlcByPositionTable(null);
+                        success &= rtcAlc.CtlAlc<uint>(AutoLaserControlSignal.Disabled, AutoLaserControlMode.Disabled, 0, 0, 0);
                     }
                     if (!success)
                         break;
@@ -709,15 +709,15 @@ namespace Demos
                 }
                 if (null != rtcAlc && layer.IsALC)
                 {
-                    success &= rtcAlc.CtlAutoLaserControlByPositionTable(layer.AlcByPositionTable);
+                    success &= rtcAlc.CtlAlcByPositionTable(layer.AlcByPositionTable);
                     switch (layer.AlcSignal)
                     {
                         case AutoLaserControlSignal.ExtDO16:
                         case AutoLaserControlSignal.ExtDO8:
-                            success &= rtcAlc.CtlAutoLaserControl<uint>(layer.AlcSignal, layer.AlcMode, (uint)layer.AlcPercentage100, (uint)layer.AlcMinValue, (uint)layer.AlcMaxValue);
+                            success &= rtcAlc.CtlAlc<uint>(layer.AlcSignal, layer.AlcMode, (uint)layer.AlcPercentage100, (uint)layer.AlcMinValue, (uint)layer.AlcMaxValue);
                             break;
                         default:
-                            success &= rtcAlc.CtlAutoLaserControl<double>(layer.AlcSignal, layer.AlcMode, layer.AlcPercentage100, layer.AlcMinValue, layer.AlcMaxValue);
+                            success &= rtcAlc.CtlAlc<double>(layer.AlcSignal, layer.AlcMode, layer.AlcPercentage100, layer.AlcMinValue, layer.AlcMaxValue);
                             break;
                     }
                 }
@@ -774,8 +774,8 @@ namespace Demos
 
                 if (null != rtcAlc && layer.IsALC && !IsExternalStart)
                 {
-                    success &= rtcAlc.CtlAutoLaserControlByPositionTable(null);
-                    success &= rtcAlc.CtlAutoLaserControl<uint>(AutoLaserControlSignal.Disabled, AutoLaserControlMode.Disabled, 0, 0, 0);
+                    success &= rtcAlc.CtlAlcByPositionTable(null);
+                    success &= rtcAlc.CtlAlc<uint>(AutoLaserControlSignal.Disabled, AutoLaserControlMode.Disabled, 0, 0, 0);
                 }
                 if (!success)
                     break;
