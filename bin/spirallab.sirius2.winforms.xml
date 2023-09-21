@@ -9914,8 +9914,21 @@
             <c>MotionType</c>
             </remarks>
         </member>
-        <!-- Badly formed XML comment ignored for member "F:SpiralLab.Sirius2.Winforms.Entity.EntityLayerSyncAxis.motionType" -->
-        <!-- Badly formed XML comment ignored for member "P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerSyncAxis.BandWidth" -->
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityLayerSyncAxis.motionType">
+            <summary>
+            SyncAxis motion type
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerSyncAxis.BandWidth">
+            <summary>
+            SyncAxis band width (Hz)
+            </summary>
+            <remarks>
+            Higher value: Increase work load at stage.<br/>
+            Lower value: Increase work load at scanner. <br/>
+            Lower than 0.23 are not allowed. <br/>
+            </remarks>
+        </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityLayerSyncAxis.bandWidth">
             <summary>
             SyncAxis band width (Hz)

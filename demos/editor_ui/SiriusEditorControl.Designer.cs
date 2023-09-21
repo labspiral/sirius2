@@ -130,33 +130,33 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.editorControl1 = new SpiralLab.Sirius2.Winforms.UI.EditorUserControl();
             this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.rtcControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcUserControl();
-            this.laserControl1 = new SpiralLab.Sirius2.Winforms.UI.LaserUserControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.offsetControl1 = new SpiralLab.Sirius2.Winforms.UI.OffsetUserControl();
-            this.markerControl1 = new SpiralLab.Sirius2.Winforms.UI.MarkerUserControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.rtcDIUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl();
-            this.rtcDOUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.manualUserControl1 = new SpiralLab.Sirius2.Winforms.UI.ManualUserControl();
-            this.logControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.propertyGridControl1 = new SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.editorControl1 = new SpiralLab.Sirius2.Winforms.UI.EditorUserControl();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.rtcControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcUserControl();
+            this.laserControl1 = new SpiralLab.Sirius2.Winforms.UI.LaserUserControl();
+            this.offsetControl1 = new SpiralLab.Sirius2.Winforms.UI.OffsetUserControl();
+            this.markerControl1 = new SpiralLab.Sirius2.Winforms.UI.MarkerUserControl();
+            this.rtcDIUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl();
+            this.rtcDOUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl();
+            this.manualUserControl1 = new SpiralLab.Sirius2.Winforms.UI.ManualUserControl();
+            this.logControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
+            this.propertyGridControl1 = new SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl();
             this.treeViewControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl();
             this.penControl1 = new SpiralLab.Sirius2.Winforms.UI.PenUserControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.treeViewBlockControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl();
             this.tlsTop2.SuspendLayout();
             this.tlsTop.SuspendLayout();
@@ -169,10 +169,6 @@
             this.tabControl3.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -193,6 +189,10 @@
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlsTop2
@@ -220,7 +220,7 @@
             this.tlsTop2.Location = new System.Drawing.Point(0, 31);
             this.tlsTop2.Name = "tlsTop2";
             this.tlsTop2.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.tlsTop2.Size = new System.Drawing.Size(1269, 31);
+            this.tlsTop2.Size = new System.Drawing.Size(1264, 31);
             this.tlsTop2.TabIndex = 19;
             this.tlsTop2.Text = "toolStrip2";
             // 
@@ -673,7 +673,7 @@
             this.tlsTop.Location = new System.Drawing.Point(0, 0);
             this.tlsTop.Name = "tlsTop";
             this.tlsTop.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.tlsTop.Size = new System.Drawing.Size(1269, 31);
+            this.tlsTop.Size = new System.Drawing.Size(1264, 31);
             this.tlsTop.TabIndex = 18;
             this.tlsTop.Text = "toolStrip1";
             // 
@@ -903,10 +903,10 @@
             this.toolStripStatusLabel6,
             this.toolStripStatusLabel11,
             this.toolStripStatusLabel3});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 743);
-            this.statusStrip1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 830);
+            this.statusStrip1.Margin = new System.Windows.Forms.Padding(5);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1269, 31);
+            this.statusStrip1.Size = new System.Drawing.Size(1264, 31);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 29;
             this.statusStrip1.Text = "statusStrip1";
@@ -947,7 +947,7 @@
             // toolStripStatusLabel10
             // 
             this.toolStripStatusLabel10.Name = "toolStripStatusLabel10";
-            this.toolStripStatusLabel10.Size = new System.Drawing.Size(262, 26);
+            this.toolStripStatusLabel10.Size = new System.Drawing.Size(257, 26);
             this.toolStripStatusLabel10.Spring = true;
             // 
             // lblPos
@@ -1116,7 +1116,7 @@
             this.splitter3.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter3.Location = new System.Drawing.Point(0, 62);
             this.splitter3.Name = "splitter3";
-            this.splitter3.Size = new System.Drawing.Size(1269, 1);
+            this.splitter3.Size = new System.Drawing.Size(1264, 1);
             this.splitter3.TabIndex = 33;
             this.splitter3.TabStop = false;
             // 
@@ -1130,7 +1130,7 @@
             this.panBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panBody.Location = new System.Drawing.Point(0, 63);
             this.panBody.Name = "panBody";
-            this.panBody.Size = new System.Drawing.Size(1269, 680);
+            this.panBody.Size = new System.Drawing.Size(1264, 767);
             this.panBody.TabIndex = 34;
             // 
             // splitContainer3
@@ -1148,8 +1148,8 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.logControl1);
             this.splitContainer3.Panel2MinSize = 80;
-            this.splitContainer3.Size = new System.Drawing.Size(705, 680);
-            this.splitContainer3.SplitterDistance = 545;
+            this.splitContainer3.Size = new System.Drawing.Size(700, 767);
+            this.splitContainer3.SplitterDistance = 614;
             this.splitContainer3.SplitterWidth = 1;
             this.splitContainer3.TabIndex = 35;
             // 
@@ -1167,7 +1167,7 @@
             this.tabControl3.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(705, 545);
+            this.tabControl3.Size = new System.Drawing.Size(700, 614);
             this.tabControl3.TabIndex = 35;
             this.tabControl3.TabStop = false;
             // 
@@ -1177,24 +1177,11 @@
             this.tabPage6.ImageIndex = 17;
             this.tabPage6.Location = new System.Drawing.Point(4, 36);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(697, 505);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = " Editor ";
             this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // editorControl1
-            // 
-            this.editorControl1.AllowDrop = true;
-            this.editorControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.editorControl1.Document = null;
-            this.editorControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editorControl1.Location = new System.Drawing.Point(3, 3);
-            this.editorControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.editorControl1.Name = "editorControl1";
-            this.editorControl1.Rtc = null;
-            this.editorControl1.Size = new System.Drawing.Size(691, 499);
-            this.editorControl1.TabIndex = 26;
             // 
             // tabPage8
             // 
@@ -1202,52 +1189,11 @@
             this.tabPage8.ImageIndex = 25;
             this.tabPage8.Location = new System.Drawing.Point(4, 36);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage8.Size = new System.Drawing.Size(697, 505);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(692, 574);
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = " Laser ";
             this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.rtcControl1);
-            this.splitContainer2.Panel1MinSize = 350;
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.laserControl1);
-            this.splitContainer2.Size = new System.Drawing.Size(691, 499);
-            this.splitContainer2.SplitterDistance = 350;
-            this.splitContainer2.SplitterWidth = 2;
-            this.splitContainer2.TabIndex = 3;
-            // 
-            // rtcControl1
-            // 
-            this.rtcControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtcControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtcControl1.Location = new System.Drawing.Point(0, 0);
-            this.rtcControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.rtcControl1.Name = "rtcControl1";
-            this.rtcControl1.Rtc = null;
-            this.rtcControl1.Size = new System.Drawing.Size(350, 499);
-            this.rtcControl1.TabIndex = 3;
-            // 
-            // laserControl1
-            // 
-            this.laserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.laserControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.laserControl1.Laser = null;
-            this.laserControl1.Location = new System.Drawing.Point(0, 0);
-            this.laserControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.laserControl1.Name = "laserControl1";
-            this.laserControl1.Size = new System.Drawing.Size(339, 499);
-            this.laserControl1.TabIndex = 6;
             // 
             // tabPage5
             // 
@@ -1255,7 +1201,7 @@
             this.tabPage5.ImageIndex = 24;
             this.tabPage5.Location = new System.Drawing.Point(4, 36);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(697, 505);
             this.tabPage5.TabIndex = 3;
             this.tabPage5.Text = " Marker ";
@@ -1280,35 +1226,13 @@
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 1;
             // 
-            // offsetControl1
-            // 
-            this.offsetControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.offsetControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offsetControl1.Location = new System.Drawing.Point(0, 0);
-            this.offsetControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.offsetControl1.Marker = null;
-            this.offsetControl1.Name = "offsetControl1";
-            this.offsetControl1.Size = new System.Drawing.Size(271, 499);
-            this.offsetControl1.TabIndex = 0;
-            // 
-            // markerControl1
-            // 
-            this.markerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.markerControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.markerControl1.Location = new System.Drawing.Point(0, 0);
-            this.markerControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.markerControl1.Marker = null;
-            this.markerControl1.Name = "markerControl1";
-            this.markerControl1.Size = new System.Drawing.Size(418, 499);
-            this.markerControl1.TabIndex = 2;
-            // 
             // tabPage9
             // 
             this.tabPage9.Controls.Add(this.splitContainer4);
             this.tabPage9.ImageIndex = 12;
             this.tabPage9.Location = new System.Drawing.Point(4, 36);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage9.Size = new System.Drawing.Size(697, 505);
             this.tabPage9.TabIndex = 4;
             this.tabPage9.Text = "DIO";
@@ -1332,6 +1256,199 @@
             this.splitContainer4.SplitterDistance = 324;
             this.splitContainer4.SplitterWidth = 2;
             this.splitContainer4.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.manualUserControl1);
+            this.tabPage3.ImageIndex = 26;
+            this.tabPage3.Location = new System.Drawing.Point(4, 36);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(697, 505);
+            this.tabPage3.TabIndex = 5;
+            this.tabPage3.Text = "Manual";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // splitter2
+            // 
+            this.splitter2.BackColor = System.Drawing.SystemColors.Control;
+            this.splitter2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter2.Location = new System.Drawing.Point(982, 0);
+            this.splitter2.Name = "splitter2";
+            this.splitter2.Size = new System.Drawing.Size(2, 767);
+            this.splitter2.TabIndex = 32;
+            this.splitter2.TabStop = false;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tabControl2.ImageList = this.imageList1;
+            this.tabControl2.ItemSize = new System.Drawing.Size(80, 32);
+            this.tabControl2.Location = new System.Drawing.Point(984, 0);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(0);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(280, 767);
+            this.tabControl2.TabIndex = 31;
+            this.tabControl2.TabStop = false;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.propertyGridControl1);
+            this.tabPage4.ImageIndex = 16;
+            this.tabPage4.Location = new System.Drawing.Point(4, 36);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(272, 727);
+            this.tabPage4.TabIndex = 0;
+            this.tabPage4.Text = " Property ";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // splitter1
+            // 
+            this.splitter1.BackColor = System.Drawing.SystemColors.Control;
+            this.splitter1.Location = new System.Drawing.Point(280, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(2, 767);
+            this.splitter1.TabIndex = 30;
+            this.splitter1.TabStop = false;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tabControl1.ImageList = this.imageList1;
+            this.tabControl1.ItemSize = new System.Drawing.Size(60, 32);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(280, 767);
+            this.tabControl1.TabIndex = 29;
+            this.tabControl1.TabStop = false;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.splitContainer5);
+            this.tabPage1.ImageIndex = 10;
+            this.tabPage1.Location = new System.Drawing.Point(4, 36);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(272, 727);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = " Layer ";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer5
+            // 
+            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer5.Name = "splitContainer5";
+            this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer5.Panel1
+            // 
+            this.splitContainer5.Panel1.Controls.Add(this.treeViewControl1);
+            this.splitContainer5.Panel1MinSize = 450;
+            // 
+            // splitContainer5.Panel2
+            // 
+            this.splitContainer5.Panel2.Controls.Add(this.penControl1);
+            this.splitContainer5.Panel2MinSize = 150;
+            this.splitContainer5.Size = new System.Drawing.Size(266, 721);
+            this.splitContainer5.SplitterDistance = 541;
+            this.splitContainer5.SplitterWidth = 2;
+            this.splitContainer5.TabIndex = 25;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage2.Controls.Add(this.treeViewBlockControl1);
+            this.tabPage2.ImageIndex = 11;
+            this.tabPage2.Location = new System.Drawing.Point(4, 36);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(272, 640);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = " Block ";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // editorControl1
+            // 
+            this.editorControl1.AllowDrop = true;
+            this.editorControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editorControl1.Document = null;
+            this.editorControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editorControl1.Location = new System.Drawing.Point(3, 3);
+            this.editorControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.editorControl1.Name = "editorControl1";
+            this.editorControl1.Rtc = null;
+            this.editorControl1.Size = new System.Drawing.Size(691, 499);
+            this.editorControl1.TabIndex = 26;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.rtcControl1);
+            this.splitContainer2.Panel1MinSize = 350;
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.laserControl1);
+            this.splitContainer2.Size = new System.Drawing.Size(686, 568);
+            this.splitContainer2.SplitterDistance = 350;
+            this.splitContainer2.SplitterWidth = 2;
+            this.splitContainer2.TabIndex = 3;
+            // 
+            // rtcControl1
+            // 
+            this.rtcControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtcControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtcControl1.Location = new System.Drawing.Point(0, 0);
+            this.rtcControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.rtcControl1.Name = "rtcControl1";
+            this.rtcControl1.Rtc = null;
+            this.rtcControl1.Size = new System.Drawing.Size(350, 568);
+            this.rtcControl1.TabIndex = 3;
+            // 
+            // laserControl1
+            // 
+            this.laserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.laserControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.laserControl1.Laser = null;
+            this.laserControl1.Location = new System.Drawing.Point(0, 0);
+            this.laserControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.laserControl1.Name = "laserControl1";
+            this.laserControl1.Size = new System.Drawing.Size(334, 568);
+            this.laserControl1.TabIndex = 6;
+            // 
+            // offsetControl1
+            // 
+            this.offsetControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.offsetControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.offsetControl1.Location = new System.Drawing.Point(0, 0);
+            this.offsetControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.offsetControl1.Marker = null;
+            this.offsetControl1.Name = "offsetControl1";
+            this.offsetControl1.Size = new System.Drawing.Size(271, 499);
+            this.offsetControl1.TabIndex = 0;
+            // 
+            // markerControl1
+            // 
+            this.markerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.markerControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.markerControl1.Location = new System.Drawing.Point(0, 0);
+            this.markerControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.markerControl1.Marker = null;
+            this.markerControl1.Name = "markerControl1";
+            this.markerControl1.Size = new System.Drawing.Size(418, 499);
+            this.markerControl1.TabIndex = 2;
             // 
             // rtcDIUserControl1
             // 
@@ -1360,17 +1477,6 @@
             this.rtcDOUserControl1.Size = new System.Drawing.Size(365, 499);
             this.rtcDOUserControl1.TabIndex = 0;
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.manualUserControl1);
-            this.tabPage3.ImageIndex = 26;
-            this.tabPage3.Location = new System.Drawing.Point(4, 36);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(697, 505);
-            this.tabPage3.TabIndex = 5;
-            this.tabPage3.Text = "Manual";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
             // manualUserControl1
             // 
             this.manualUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1391,44 +1497,8 @@
             this.logControl1.Location = new System.Drawing.Point(0, 0);
             this.logControl1.Margin = new System.Windows.Forms.Padding(0);
             this.logControl1.Name = "logControl1";
-            this.logControl1.Size = new System.Drawing.Size(705, 134);
+            this.logControl1.Size = new System.Drawing.Size(700, 152);
             this.logControl1.TabIndex = 0;
-            // 
-            // splitter2
-            // 
-            this.splitter2.BackColor = System.Drawing.SystemColors.Control;
-            this.splitter2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter2.Location = new System.Drawing.Point(987, 0);
-            this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(2, 680);
-            this.splitter2.TabIndex = 32;
-            this.splitter2.TabStop = false;
-            // 
-            // tabControl2
-            // 
-            this.tabControl2.Controls.Add(this.tabPage4);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tabControl2.ImageList = this.imageList1;
-            this.tabControl2.ItemSize = new System.Drawing.Size(80, 32);
-            this.tabControl2.Location = new System.Drawing.Point(989, 0);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(0);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(280, 680);
-            this.tabControl2.TabIndex = 31;
-            this.tabControl2.TabStop = false;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.propertyGridControl1);
-            this.tabPage4.ImageIndex = 16;
-            this.tabPage4.Location = new System.Drawing.Point(4, 36);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage4.Size = new System.Drawing.Size(272, 640);
-            this.tabPage4.TabIndex = 0;
-            this.tabPage4.Text = " Property ";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // propertyGridControl1
             // 
@@ -1439,66 +1509,9 @@
             this.propertyGridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.propertyGridControl1.Name = "propertyGridControl1";
             this.propertyGridControl1.SelecteObject = null;
-            this.propertyGridControl1.Size = new System.Drawing.Size(266, 634);
+            this.propertyGridControl1.Size = new System.Drawing.Size(266, 721);
             this.propertyGridControl1.TabIndex = 27;
             this.propertyGridControl1.View = null;
-            // 
-            // splitter1
-            // 
-            this.splitter1.BackColor = System.Drawing.SystemColors.Control;
-            this.splitter1.Location = new System.Drawing.Point(280, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(2, 680);
-            this.splitter1.TabIndex = 30;
-            this.splitter1.TabStop = false;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tabControl1.ImageList = this.imageList1;
-            this.tabControl1.ItemSize = new System.Drawing.Size(60, 32);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(280, 680);
-            this.tabControl1.TabIndex = 29;
-            this.tabControl1.TabStop = false;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.splitContainer5);
-            this.tabPage1.ImageIndex = 10;
-            this.tabPage1.Location = new System.Drawing.Point(4, 36);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(272, 640);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = " Layer ";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer5
-            // 
-            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer5.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer5.Name = "splitContainer5";
-            this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer5.Panel1
-            // 
-            this.splitContainer5.Panel1.Controls.Add(this.treeViewControl1);
-            this.splitContainer5.Panel1MinSize = 450;
-            // 
-            // splitContainer5.Panel2
-            // 
-            this.splitContainer5.Panel2.Controls.Add(this.penControl1);
-            this.splitContainer5.Panel2MinSize = 150;
-            this.splitContainer5.Size = new System.Drawing.Size(266, 634);
-            this.splitContainer5.SplitterDistance = 476;
-            this.splitContainer5.SplitterWidth = 2;
-            this.splitContainer5.TabIndex = 25;
             // 
             // treeViewControl1
             // 
@@ -1510,7 +1523,7 @@
             this.treeViewControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.treeViewControl1.Name = "treeViewControl1";
             this.treeViewControl1.Rtc = null;
-            this.treeViewControl1.Size = new System.Drawing.Size(266, 476);
+            this.treeViewControl1.Size = new System.Drawing.Size(266, 541);
             this.treeViewControl1.TabIndex = 25;
             this.treeViewControl1.View = null;
             // 
@@ -1523,21 +1536,8 @@
             this.penControl1.Location = new System.Drawing.Point(0, 0);
             this.penControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.penControl1.Name = "penControl1";
-            this.penControl1.Size = new System.Drawing.Size(266, 156);
+            this.penControl1.Size = new System.Drawing.Size(266, 178);
             this.penControl1.TabIndex = 2;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage2.Controls.Add(this.treeViewBlockControl1);
-            this.tabPage2.ImageIndex = 11;
-            this.tabPage2.Location = new System.Drawing.Point(4, 36);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(272, 694);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = " Block ";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // treeViewBlockControl1
             // 
@@ -1548,7 +1548,7 @@
             this.treeViewBlockControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.treeViewBlockControl1.Name = "treeViewBlockControl1";
             this.treeViewBlockControl1.Rtc = null;
-            this.treeViewBlockControl1.Size = new System.Drawing.Size(262, 684);
+            this.treeViewBlockControl1.Size = new System.Drawing.Size(262, 630);
             this.treeViewBlockControl1.TabIndex = 1;
             this.treeViewBlockControl1.View = null;
             // 
@@ -1556,7 +1556,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1269, 774);
+            this.ClientSize = new System.Drawing.Size(1264, 861);
             this.Controls.Add(this.panBody);
             this.Controls.Add(this.splitter3);
             this.Controls.Add(this.statusStrip1);
@@ -1579,10 +1579,6 @@
             this.tabControl3.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.tabPage8.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -1603,6 +1599,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

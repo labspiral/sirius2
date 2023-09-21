@@ -42,15 +42,15 @@
             this.siriusEditorUserControl1.Marker = null;
             this.siriusEditorUserControl1.Name = "siriusEditorUserControl1";
             this.siriusEditorUserControl1.Rtc = null;
-            this.siriusEditorUserControl1.Size = new System.Drawing.Size(1896, 1292);
+            this.siriusEditorUserControl1.Size = new System.Drawing.Size(1264, 861);
             this.siriusEditorUserControl1.TabIndex = 1;
             this.siriusEditorUserControl1.TitleName = "NoName";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1896, 1292);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1264, 861);
             this.Controls.Add(this.siriusEditorUserControl1);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
