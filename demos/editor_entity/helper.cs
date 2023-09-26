@@ -567,23 +567,13 @@ namespace Demos
             Debug.Assert(document.ActiveLayer == layer1);
 
             // STL entity
-            if (EntityFactory.CreateStereoLithography(Path.Combine("sample", "Nefertiti_face.stl"), out var stl1))
+            if (EntityFactory.CreateStereoLithography(Path.Combine("sample", "Nefertiti_face.stl"), out var stl))
             {
-                stl1.Alignment = Alignments.MiddleCenter;
-                stl1.Scale(0.2);
-                stl1.RotateZ(-90);
-                stl1.Translate(30, 10);
-                success &= document.ActAdd(stl1);
-            }
-
-            // STL entity
-            if (EntityFactory.CreateStereoLithography(Path.Combine("sample", "v2_Bolt_Cap.stl"), out var stl2))
-            {
-                stl2.Alignment = Alignments.MiddleCenter;
-                stl2.Scale(0.5);
-                stl2.Rotate(30, 10, 0);
-                stl2.Translate(8, -35, 0);
-                success &= document.ActAdd(stl2);
+                stl.Alignment = Alignments.MiddleCenter;
+                stl.Scale(0.2);
+                stl.Translate(30, 10);
+                stl.RotateZ(-90);
+                success &= document.ActAdd(stl);
             }
 
             // Dxf entity
@@ -620,6 +610,11 @@ namespace Demos
                     break;
                 default:
                     var dataMatrix1 = EntityFactory.CreateDataMatrix("0123456789", Barcode2DCells.Dots, 3, 4, 4);
+                    dataMatrix1.CellDot.RasterMode = RasterModes.JumpAndShoot;
+                    dataMatrix1.CellDot.PixelChannel = ExtensionChannel.ExtAO2;
+                    dataMatrix1.CellDot.PixelPeriod = 1000;
+                    dataMatrix1.CellDot.PixelPeriod = 100;
+                    dataMatrix1.CellDot.IsZigZag = false;
                     dataMatrix1.Translate(-23, 2);
                     success &= document.ActAdd(dataMatrix1);
                     break;
@@ -627,11 +622,15 @@ namespace Demos
 
             // Datamatrix barcode cell by lines
             var dataMatrix2 = EntityFactory.CreateDataMatrix("SIRIUS2", Barcode2DCells.Lines, 4, 4, 4);
+            dataMatrix2.CellLine.IsZigZag = false;
+            dataMatrix2.CellLine.Direction = LineDirections.Horizontal;
             dataMatrix2.Translate(-23, 7);
             success &= document.ActAdd(dataMatrix2);
 
             // Datamatrix barcode cell by circles
             var dataMatrix3 = EntityFactory.CreateDataMatrix("ABCDEFGHIJKLMNOPQRSTUVWXYZ", Barcode2DCells.Circles, 3, 4, 4);
+            dataMatrix3.CellCircle.RadiusFactor = 0.9;
+            dataMatrix3.CellCircle.IsZigZag = false;
             dataMatrix3.Translate(-28, 2);
             success &= document.ActAdd(dataMatrix3);
 
@@ -653,6 +652,13 @@ namespace Demos
             var qr2 = EntityFactory.CreateQRCode("abcdefghijklmnopqrstuvwxyz", Barcode2DCells.Outline, 3, 4, 4);
             qr2.Translate(-28, 12);
             success &= document.ActAdd(qr2);
+
+            // PDF417 barcode cell by lines
+            var pdf417 = EntityFactory.CreatePDF417("abcdefghijklmnopqrstuvwxyz", Barcode2DCells.Lines, 3, 4 * 3.75, 4);
+            pdf417.CellLine.IsZigZag = false;
+            pdf417.CellLine.Direction = LineDirections.Vertical;
+            pdf417.Translate(-45, 12);
+            success &= document.ActAdd(pdf417);
 
             // 1D barcode
             var bcd1 = EntityFactory.CreateBarcode("1234567890", Barcode1DFormats.Code128, 5, 5, 2);

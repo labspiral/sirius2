@@ -60,6 +60,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_barcode", "demos\edi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_3d", "demos\editor_3d\editor_3d.csproj", "{36CBB126-1BA5-4EEF-9A68-735BACEC6757}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scanahead", "demos\scanahead\scanahead.csproj", "{9814BC6A-37EF-4EAE-9BD9-D334F04462AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "optimize", "demos\optimize\optimize.csproj", "{10E88521-8DB0-4379-B8E8-EC9768C245B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -170,6 +174,14 @@ Global
 		{36CBB126-1BA5-4EEF-9A68-735BACEC6757}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36CBB126-1BA5-4EEF-9A68-735BACEC6757}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36CBB126-1BA5-4EEF-9A68-735BACEC6757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9814BC6A-37EF-4EAE-9BD9-D334F04462AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9814BC6A-37EF-4EAE-9BD9-D334F04462AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9814BC6A-37EF-4EAE-9BD9-D334F04462AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9814BC6A-37EF-4EAE-9BD9-D334F04462AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10E88521-8DB0-4379-B8E8-EC9768C245B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10E88521-8DB0-4379-B8E8-EC9768C245B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10E88521-8DB0-4379-B8E8-EC9768C245B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10E88521-8DB0-4379-B8E8-EC9768C245B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

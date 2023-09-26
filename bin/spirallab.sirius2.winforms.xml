@@ -381,6 +381,16 @@
               Looks up a localized string similar to Array.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Direction_DESC">
+            <summary>
+              Looks up a localized string similar to Pixel Direction.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Direction_DISP">
+            <summary>
+              Looks up a localized string similar to Direction.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Dots_C">
             <summary>
               Looks up a localized string similar to Dots.
@@ -540,6 +550,16 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Data_C">
             <summary>
               Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Fixed_aspect_ratio_DESC">
+            <summary>
+              Looks up a localized string similar to Fixed Aspect Ratio or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Fixed_aspect_ratio_DISP">
+            <summary>
+              Looks up a localized string similar to Fixed aspect ratio.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Height_DESC">
@@ -3078,6 +3098,87 @@
               Looks up a localized string similar to Z scale.
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.pdf417">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.Compact_DESC">
+            <summary>
+              Looks up a localized string similar to Compact Format or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.Compact_DISP">
+            <summary>
+              Looks up a localized string similar to Compact.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.Encoding_DESC">
+            <summary>
+              Looks up a localized string similar to Encoding (ASCII, ISO-8859-1, UTF-8, UTF-16, ...).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.Encoding_DISP">
+            <summary>
+              Looks up a localized string similar to Encoding.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.GS1_DESC">
+            <summary>
+              Looks up a localized string similar to GS1 Format or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.GS1_DISP">
+            <summary>
+              Looks up a localized string similar to GS1.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.Px_DESC">
+            <summary>
+              Looks up a localized string similar to Pixel X Counts.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.Px_DISP">
+            <summary>
+              Looks up a localized string similar to Px.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.Py_DESC">
+            <summary>
+              Looks up a localized string similar to Pixel Y Counts.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.Py_DISP">
+            <summary>
+              Looks up a localized string similar to Py.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.Quite_zone_DESC">
+            <summary>
+              Looks up a localized string similar to Quite Zone Size.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.Quite_zone_DISP">
+            <summary>
+              Looks up a localized string similar to Quite zone.
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.point">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -4242,6 +4343,21 @@
               Looks up a localized string similar to Model translate.
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.LineDirections">
+            <summary>
+            Line directions
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.LineDirections.Horizontal">
+            <summary>
+            Horizontal lines
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.LineDirections.Vertical">
+            <summary>
+            Vertical lines
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.CellLine">
             <summary>
             CellLine
@@ -4250,6 +4366,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellLine.DotFactor">
             <summary>
             Dot factor of cell (1x1, 2x2, 3x3,...)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellLine.Direction">
+            <summary>
+            <c>LineDirections</c>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellLine.IsZigZag">
@@ -4407,6 +4528,21 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.CellCircle.Clone">
             <inheritdoc/>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.DotDirections">
+            <summary>
+            Dot directions
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.DotDirections.Horizontal">
+            <summary>
+            Horizontal dots
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.DotDirections.Vertical">
+            <summary>
+            Vertical dots
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.CellDot">
             <summary>
             CellDot
@@ -4415,6 +4551,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.DotFactor">
             <summary>
             Dot factor of cell (1x1, 2x2, 3x3,...)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.Direction">
+            <summary>
+            <c>DotDirections</c>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.IsZigZag">
@@ -5327,6 +5468,16 @@
             Height (mm)
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.IsFixedAspectRatio">
+            <summary>
+            Fixed Aspect Ratio
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.isFixedAspectRatio">
+            <summary>
+            Fixed Aspect Ratio
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.SourceText">
             <inheritdoc/>
         </member>
@@ -6224,6 +6375,85 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCone.Calibration3D(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417">
+            <summary>
+            EntityPDF417 entity
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.QuiteZone">
+            <summary>
+            Quite Zone
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.quiteZone">
+            <summary>
+            Quite zone
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.IsTextDataGS1">
+            <summary>
+            GS1 format or not
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.isTextDataGS1">
+            <summary>
+            GS1 format or not
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.Encoding">
+            <summary>
+            Encoding (Default: UTF-8)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.encoding">
+            <summary>
+            Encoding
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.IsCompact">
+            <summary>
+            Compact format or not
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.isCompact">
+            <summary>
+            Compact format or not
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.Px">
+            <summary>
+            X Pixels
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.Py">
+            <summary>
+            Y Pixels
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.#ctor(System.String,SpiralLab.Sirius2.Winforms.Entity.Barcode2DCells,System.Int32,System.Double,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="text">Text</param>
+            <param name="cell"><c>Barcode2DCells</c></param>
+            <param name="dotFactor">Cell dot factor (1*1, 2*2, ...)</param>
+            <param name="width">Width (mm)</param>
+            <param name="height">Height (mm)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.RegenEncode">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityPlane">
@@ -7909,7 +8139,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.IsFixedAspectRatio">
             <summary>
-            Fixed Aspect Ratio"
+            Fixed Aspect Ratio
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.PixelChannel">
@@ -8428,19 +8658,25 @@
             <summary>
             Real. Width (mm)
             </summary>
-            <remarks>Value has applied parent model matrix</remarks>
+            <remarks>
+            Used value for scaling of parent model matrix 
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.RealHeight">
             <summary>
             Real. Height (mm)
             </summary>
-            <remarks>Value has applied parent model matrix</remarks>
+            <remarks>
+            Used value for scaling of parent model matrix 
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.RealDepth">
             <summary>
             Real. Depth (mm)
             </summary>
-            <remarks>Value has applied parent model matrix</remarks>
+            <remarks>
+            Used value for scaling of parent model matrix 
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.Parent">
             <summary>
@@ -9379,7 +9615,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.Alignments.None">
             <summary>
-            None
+            None (or baseline alignment)
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.Alignments.Custom">
@@ -11519,11 +11755,15 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateDataMatrix(System.String,SpiralLab.Sirius2.Winforms.Entity.Barcode2DCells,System.Int32,System.Double,System.Double)">
             <summary>
             Create <c>EntityDataMatrix</c> entity
-            <para><c>Barcode2DCells.Dot</c> is used with RTC5,6 only (not syncAXIS)</para>
             <code>
             var document = siriusEditorUserControl1.Document;
             ...
             var dm = EntityFactory.CreateDataMatrix("0123456789", BarcodeCells.Dots, 3, 4, 4);
+            dm.CellDot.RasterMode = RasterModes.JumpAndShoot;
+            dm.CellDot.PixelChannel = ExtensionChannel.ExtAO2;
+            dm.CellDot.PixelPeriod = 1000;
+            dm.CellDot.PixelPeriod = 100;
+            dm.CellDot.IsZigZag = false;
             dm.Translate(-2, 2);
             document.ActAdd(dm);
             </code>
@@ -11538,7 +11778,6 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateQRCode(System.String,SpiralLab.Sirius2.Winforms.Entity.Barcode2DCells,System.Int32,System.Double,System.Double)">
             <summary>
             Create <c>EntityQRCode</c> entity
-            <para><c>Barcode2DCells.Dot</c> is used with RTC5,6 only (not syncAXIS)</para>
             <code>
             var document = siriusEditorUserControl1.Document;
             ...
@@ -11557,6 +11796,24 @@
             <param name="width">Width (mm)</param>
             <param name="height">Height (mm)</param>
             <returns><c>EntityQRCode</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePDF417(System.String,SpiralLab.Sirius2.Winforms.Entity.Barcode2DCells,System.Int32,System.Double,System.Double)">
+            <summary>
+            Create <c>EntityPDF417</c> entity
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var qr = EntityFactory.EntityPDF417("0123456789", BarcodeCells.Hatch, 3, 4);
+            qr.Translate(-2, 2);
+            document.ActAdd(qr);
+            </code>
+            </summary>
+            <param name="text">Text data</param>
+            <param name="cell"><c>Barcode2DCells</c></param>
+            <param name="dotFactor">Cell dot factor (1*1, 2*2, ...)</param>
+            <param name="width">Width (mm)</param>
+            <param name="height">Height (mm)</param>
+            <returns><c>EntityPDF417</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateBarcode(System.String,SpiralLab.Sirius2.Winforms.Entity.Barcode1DFormats,System.Int32,System.Double,System.Double)">
             <summary>

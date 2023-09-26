@@ -35,6 +35,40 @@ namespace Demos
 {
     internal class Program
     {
+        /// <summary>
+        /// Fied of view : 60mm
+        /// </summary>
+        static double fov = 60.0;
+        /// <summary>
+        /// Default scanner  jump speed (mm/s)
+        /// </summary>
+        static double jumpSpeed = 500;
+        /// <summary>
+        /// Default scanner mark speed (mm/s)
+        /// </summary>
+        static double markSpeed = 500;
+        /// <summary>
+        /// Scanner jump delay (usec)
+        /// </summary>
+        static double jumpDelay = 200;
+        /// <summary>
+        /// Scanner mark delay (usec)
+        /// </summary>
+        static double markDelay = 200;
+        /// <summary>
+        /// Scanner polygon delay (usec)
+        /// </summary>
+        static double polygonDelay = 0;
+        /// <summary>
+        /// Laser on delay (usec)
+        /// </summary>
+        static double laserOnDelay = 10;
+        /// <summary>
+        /// Laser off delay (usec)
+        /// </summary>
+        static double laserOffDelay = 10;
+
+
         [STAThread]
         static void Main(string[] args)
         {
@@ -45,8 +79,7 @@ namespace Demos
             Console.WriteLine($"License: {license.ToString()}");
 
             bool success = true;
-            // Fied of view : 60mm
-            var fov = 60.0;
+        
             // RTC5,6 using 20bits resolution
             var kfactor = Math.Pow(2, 20) / fov;
 
@@ -65,28 +98,29 @@ namespace Demos
 
             // Initialize RTC controller
             success &= rtc.Initialize();
-            // 50KHz, 2 usec
-            success &= rtc.CtlFrequency(50 * 1000, 2);
-            // 500 mm/s
-            success &= rtc.CtlSpeed(500, 500);
-            // Basic delays
-            success &= rtc.CtlDelay(10, 100, 200, 200, 0);
-            Debug.Assert(success);
 
             // Create virtual laser source with max 20W
             var laser = LaserFactory.CreateVirtual(0, 20);
-
             // Assign RTC into laser
             laser.Scanner = rtc;
             // Initialize laser
             success &= laser.Initialize();
-            // Default power as 2W
-            success &= laser.CtlPower(2);
             Debug.Assert(success);
 
             ConsoleKeyInfo key;
             do
             {
+                // 50KHz, 2 usec
+                success &= rtc.CtlFrequency(50 * 1000, 2);
+                // 500 mm/s
+                success &= rtc.CtlSpeed(jumpSpeed, markSpeed);
+                // Basic delays
+                success &= rtc.CtlDelay(laserOnDelay, laserOffDelay, jumpDelay, markDelay, polygonDelay);
+                // Default power as 2W
+                success &= laser.CtlPower(2);
+
+                Debug.Assert(success);
+
                 Console.WriteLine("Testcase for initialize and mark simple shapes");
                 Console.WriteLine("'F1' : draw rectangle");
                 Console.WriteLine("'F2' : draw circles");
@@ -111,7 +145,7 @@ namespace Demos
                         Logger.Log( Logger.Type.Debug, $"Processing time: {sw.Elapsed.TotalSeconds:F3} sec");
                         break;
                     case ConsoleKey.F3:
-                        DrawCircleWithMeasurement(rtc, laser);
+                        DrawCircleWithMeasurement(rtc, laser, 5);
                         Logger.Log(Logger.Type.Debug, $"Processing time: {sw.Elapsed.TotalSeconds:F3} sec");
                         break;
                     case ConsoleKey.F4:

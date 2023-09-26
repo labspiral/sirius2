@@ -1043,7 +1043,8 @@
             </code>
             </summary>
             <remarks>
-            Digital Input at RTC Extension Port1 (<c>ExtensionChannel.ExtDI16</c>)
+            Digital input at RTC extension port 1. <br/>
+            Used with <c>ExtensionChannel.ExtDI16</c>. <br/>
             </remarks>
             <param name="rtc"><c>IRtc</c></param>
             <returns><c>RtcDInputExtension1Port</c></returns>
@@ -1067,7 +1068,8 @@
             </summary>
             <param name="rtc"><c>IRtc</c></param>
             <remarks>
-            Digital Input at RTC Laser Port 2Pin (<c>ExtensionChannel.ExtDI2</c>)
+            Digital input at RTC laser port.
+            Used with <c>ExtensionChannel.ExtDI2</c>. <br/>
             </remarks>
             <returns><c>RtcDInputLaserPort</c></returns>
         </member>
@@ -1116,7 +1118,8 @@
             </summary>
             <param name="rtc"><c>IRtc</c></param>
             <remarks>
-            Digital Output at RTC Extension Port1 (<c>ExtensionChannel.ExtDO16</c>)
+            Digital output at RTC extension port 1. <br/>
+            Used with <c>ExtensionChannel.ExtDO16</c>. <br/>
             </remarks>
             <returns><c>RtcDOutputExtension1Port</c></returns>
         </member>
@@ -1142,7 +1145,8 @@
             </summary>
             <param name="rtc"><c>IRtc</c></param>
             <remarks>
-            Digital Output at RTC Extension Port2 (<c>ExtensionChannel.ExtDO8</c>)
+            Digital output at RTC extension port 2.
+            Used with <c>ExtensionChannel.ExtDO8</c>. <br/>
             </remarks>
             <returns><c>RtcDOutputExtension2Port</c></returns>
         </member>
@@ -1168,7 +1172,8 @@
             </summary>
             <param name="rtc"><c>IRtc</c></param>
             <remarks>
-            Digital Output at RTC Laser Port 2Pin (<c>ExtensionChannel.ExtDO2</c>)
+            Digital output at RTC laser port. <br/>
+            Used with <c>ExtensionChannel.ExtDO2</c>. <br/>
             </remarks>
             <returns><c>RtcDOutputLaserPort</c></returns>
         </member>
@@ -2296,6 +2301,9 @@
             <summary>
             Delay time to wait until output power value has applied (msec)
             </summary>
+            <remarks>
+            Min. time resolution: 10 usec <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.CtlPower(System.Double)">
             <summary>
@@ -2324,6 +2332,152 @@
             </summary>
             <param name="targetWatt">Target watt (W)</param>
             <returns>Success or failed (if return failed, marker would be stopped(or aborted) immediately)</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.src.laser.impl.laserbase">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Basic_C">
+            <summary>
+              Looks up a localized string similar to Basic.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Busy_DESC">
+            <summary>
+              Looks up a localized string similar to Busy Status.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Busy_DISP">
+            <summary>
+              Looks up a localized string similar to Busy.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Delay_DESC">
+            <summary>
+              Looks up a localized string similar to Power Control Delay Time (msec).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Delay_DISP">
+            <summary>
+              Looks up a localized string similar to Delay.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Error_DESC">
+            <summary>
+              Looks up a localized string similar to Error Status.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Error_DISP">
+            <summary>
+              Looks up a localized string similar to Error.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Index_DESC">
+            <summary>
+              Looks up a localized string similar to Identifier.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Index_DISP">
+            <summary>
+              Looks up a localized string similar to Index.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.IsPowerControl_DESC">
+            <summary>
+              Looks up a localized string similar to Enable(or Disable) Laser Power Control.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.IsPowerControl_DISP">
+            <summary>
+              Looks up a localized string similar to Enable.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Method_DESC">
+            <summary>
+              Looks up a localized string similar to Laser Power Control Method.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Method_DISP">
+            <summary>
+              Looks up a localized string similar to Method.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Name_DESC">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Name_DISP">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Power_Last__DESC">
+            <summary>
+              Looks up a localized string similar to Last Commanded Power (W).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Power_Last__DISP">
+            <summary>
+              Looks up a localized string similar to Power (Last).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Power_Max__DESC">
+            <summary>
+              Looks up a localized string similar to Max Power (W).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Power_Max__DISP">
+            <summary>
+              Looks up a localized string similar to Power (Max).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.PowerControl_C">
+            <summary>
+              Looks up a localized string similar to Power Control.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Ready_DESC">
+            <summary>
+              Looks up a localized string similar to Reasy Status.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Ready_DISP">
+            <summary>
+              Looks up a localized string similar to Ready.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Status_C">
+            <summary>
+              Looks up a localized string similar to Status.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Type_DESC">
+            <summary>
+              Looks up a localized string similar to Type.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Type_DISP">
+            <summary>
+              Looks up a localized string similar to Type.
+            </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.LicenseInfo">
             <summary>
@@ -5058,15 +5212,19 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsActivateAutoDelays">
             <summary>
             Activated auto delays 
-            <para>Only for SCANa option </para>
             </summary>
+            <remarks>
+            Only for SCANahead option. <br/> 
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ScanAheadLineParamsCornerScale">
             <summary>
-            Corner Scale (0~100)
-            <para>Only for SCANahead option </para>
-            <para>Use <c>CtlDelayScanAheadByAuto</c> at first</para>
+            Corner scale (0~100)
             </summary>
+            <remarks>
+            Only for SCANahead option. <br/>
+            Use <c>CtlDelayScanAheadByAuto</c> at first. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.scanAheadLineParamsCornerScale">
             <summary>
@@ -5075,10 +5233,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ScanAheadLineParamsEndScale">
             <summary>
-            End Scale (0~100)
-            <para>Only for SCANahead option </para>
-            <para>Use <c>CtlDelayScanAheadByAuto</c> at first</para>
+            End scale (0~100)
             </summary>
+            <remarks>
+            Only for SCANahead option. <br/>
+            Use <c>CtlDelayScanAheadByAuto</c> at first. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.scanAheadLineParamsEndScale">
             <summary>
@@ -5087,14 +5247,16 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ScanAheadLineParamsAccScale">
             <summary>
-            Acc Scale (0~100)
-            <para>Only for SCANahead option </para>
-            <para>Use <c>CtlDelayScanAheadByAuto</c> at first</para>
+            Acc scale (0~100)
             </summary>
+            <remarks>
+            Only for SCANahead option. <br/>
+            Use <c>CtlDelayScanAheadByAuto</c> at first. <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.scanAheadLineParamsAccScale">
             <summary>
-            Acc Scale (0~100)
+            Acc scale (0~100)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CorrectionFiles">
@@ -5110,7 +5272,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.primaryHeadTable">
             <summary>
-            <c>CorrectionTableIndex</c> at Primary head
+            <c>CorrectionTableIndex</c> at primary head
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.SecondaryHeadTable">
@@ -5118,7 +5280,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.secondaryHeadTable">
             <summary>
-            <c>CorrectionTableIndex</c> at Secondary head
+            <c>CorrectionTableIndex</c> at secondary head
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.DistanceToSecondaryHead">
@@ -5126,7 +5288,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.distanceToSecondaryHead">
             <summary>
-            Distance Primary To Secondary Head"
+            Distance primary to secondary head
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.PrimaryHeadBaseOffset">
@@ -6464,11 +6626,11 @@
             <summary>
             Not used
             <remarks>
-            Replaced by <c>ScannerOnly</c> mode by automatically.<br/>
-            Used <c>ListBegin(MotionType)</c> instead.<br/>
+            Replaced by <c>ScannerOnly</c> mode by automatically. <br/>
+            Used <c>ListBegin(MotionType)</c> instead. <br/>
             </remarks>
             </summary>
-            <param name="listType"><c>ListType</c></param>
+            <param name="listType"><c>ListType</c> is not used. Replaced into <c>MotionType.ScannerOnly</c></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListBegin(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionType)">
@@ -6592,6 +6754,15 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListExecute(System.Boolean)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector2,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannel)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector3,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannel)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListRasterPixel(System.Double,System.Double)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.IsDuplicated(System.Numerics.Vector3)">
             <summary>
             Check for duplicated position x,y,z to merge
@@ -6607,7 +6778,6 @@
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionType.Unknown">
             <summary>
             Unknown
-            <para>Unknown</para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionType.ScannerOnly">
@@ -6624,6 +6794,9 @@
             <summary>
             Stage and scanner
             </summary>
+            <remarks>
+            Used with <c>IRtcSyncAxis.BandWidth</c> value also. <br/>
+            </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionMode">
             <summary>
@@ -6637,12 +6810,12 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionMode.Unfollow">
             <summary>
-            UnFollow mode
+            UnFollow motion mode
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionMode.Follow">
             <summary>
-            Follow mode
+            Follow motion mode
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ScanDevice">
@@ -6652,22 +6825,22 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ScanDevice.ScanDevice1">
             <summary>
-            Scan Device 1
+            Scan device 1
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ScanDevice.ScanDevice2">
             <summary>
-            Scan Device 2
+            Scan device 2
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ScanDevice.ScanDevice3">
             <summary>
-            Scan Device 3
+            Scan device 3
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ScanDevice.ScanDevice4">
             <summary>
-            Scan Device 4
+            Scan device 4
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Stage">
@@ -7809,7 +7982,7 @@
             <para>
             Higher value: Increase work load at stage.<br/>
             Lower value: Increase work load at scanner. <br/>
-            Lower than 0.23 are not allowed.  <br/>
+            Lower than 0.23 are not allowed. <br/>
             </para>
             </summary>
             <remarks>
@@ -8180,7 +8353,7 @@
             View simulation output data by syncAXIS viewer
             </summary>
             <remarks>
-            Used with <c>Config.SyncAxisViewerProgramPath</c>. <br/>
+            Used with <c>SpiralLab.Sirius2.Config.SyncAxisViewerProgramPath</c>. <br/>
             Used with <c>SpiralLab.Sirius2.Config.SyncAxisSimulateFilePath</c>. <br/>
             </remarks>
             <param name="filename">Simulated output filename</param>
@@ -10298,10 +10471,12 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CorrectionFiles">
             <summary>
             Array of scanner field correction files
-            <para>RTC4: 2 Tables (0,1)</para>
-            <para>RTC5: 4 Tables (0,1,2,3)</para>
-            <para>RTC6: 8 Tables (0,1,2,3,4,5,6,7)</para>
             </summary>
+            <remarks>
+            RTC4: 2 Tables (0,1) <br/>
+            RTC5: 4 Tables (0,1,2,3) <br/>
+            RTC6: 8 Tables (0,1,2,3,4,5,6,7) <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.PrimaryHeadTable">
             <summary>
@@ -10363,6 +10538,7 @@
             </summary>
             <remarks>
             Used with <c>LaserMode.Yag1</c>, <c>LaserMode.Yag2</c>, <c>LaserMode.Yag3</c>, <c>LaserMode.Mode4</c> and <c>LaserMode.Yag5</c> only. <br/>
+            Min. time resolution: * 10usec <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.Frequency">
@@ -10371,6 +10547,7 @@
             </summary>
             <remarks>
             Do not set 'set' operation. its used by internally. <br/>
+            Min. time resolution: 1/128(= 0.0078125) usec <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.PulseWidth">
@@ -10379,32 +10556,50 @@
             </summary>
             <remarks>
             Do not set 'set' operation. its used by internally. <br/>
+            Min. time resolution: 1/64(= 0.01562) usec <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.DelayOn">
             <summary>
             Last Laser on delay (usec)
             </summary>
+            <remarks>
+            RTC5: Min. time resolution: 1/2(= 0.5) usec <br/>
+            RTC6: Min. time resolution: 1/64(= 0.01562) usec <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.DelayOff">
             <summary>
             Last Laser off delay (usec)
             </summary>
+            <remarks>
+            RTC5: Min. time resolution: 1/2(= 0.5) usec <br/>
+            RTC6: Min. time resolution: 1/64(= 0.01562) usec <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.DelayJump">
             <summary>
             Last Scanner jump delay (usec)
             </summary>
+            <remarks>
+            Min. time resolution: 10 usec <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.DelayMark">
             <summary>
             Last Scanner mark delay (usec)
             </summary>
+            <remarks>
+            Min. time resolution: 10 usec <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.DelayPolygon">
             <summary>
             Last Scanner polygon delay (usec)
             </summary>
+            <remarks>
+            Min. time resolution: 10 usec <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.SpeedJump">
             <summary>
@@ -10494,8 +10689,8 @@
             <summary>
             Frequency and pulse width
             </summary>
-            <param name="frequency">Frequency (Hz)</param>
-            <param name="pulseWidth">Pulse width (usec)</param>
+            <param name="frequency">Frequency (Hz)<br/>Min. time resolution: 1/128(= 0.0078125) usec</param>
+            <param name="pulseWidth">Pulse width (usec)<br/>Min. time resolution: 1/64(= 0.01562) usec</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlDelay(System.Double,System.Double,System.Double,System.Double,System.Double)">
@@ -10506,11 +10701,11 @@
             Scanner delays: Compensate inertia of scanner's dynamics (aka. tracking error)<br/>
             Laser delays: Compensate latency for laser source's optical output <br/>
             </remarks>
-            <param name="laserOn">Laser on delay (usec)</param>
-            <param name="laserOff">Laser off delay (usec)</param>
-            <param name="scannerJump">Scanner jump delay (usec)</param>
-            <param name="scannerMark">Scanner mark/arc delay (usec)</param>
-            <param name="scannerPolygon">Scanner polygon(corner) delay (usec)</param>
+            <param name="laserOn">Laser on delay (usec)<br/>RTC5: Min. time resolution: 1/2(= 0.5) usec<br/>RTC6: Min. time resolution: 1/64(= 0.01562) usec<br/></param>
+            <param name="laserOff">Laser off delay (usec)<br/>RTC5: Min. time resolution: 1/2(= 0.5) usec<br/>RTC6: Min. time resolution: 1/64(= 0.01562) usec<br/></param>
+            <param name="scannerJump">Scanner jump delay (usec)<br/>Min. time resolution: 10 usec</param>
+            <param name="scannerMark">Scanner mark(or arc) delay (usec)<br/>Min. time resolution: 10 usec</param>
+            <param name="scannerPolygon">Scanner polygon(or corner) delay (usec)<br/>Min. time resolution: 10 usec</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlSpeed(System.Double,System.Double)">
@@ -10603,15 +10798,17 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListDelay(System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
-            List scanner and Laser delays
-            <para>Scanner delays: to compensate scanner's tracking error</para>
-            <para>Laser delays: to compensate laser's latency</para>
+            List laser and scanner delays
             </summary>
-            <param name="laserOn">Laser on delay (usec)</param>
-            <param name="laserOff">Laser off delay (usec)</param>
-            <param name="scannerJump">Scanner jump delay (usec)</param>
-            <param name="scannerMark">Scanner mark/arc delay (usec)</param>
-            <param name="scannerPolygon">Scanner polygon(corner) delay (usec)</param>
+            <remarks>
+            Laser delays: To compensate laser on/off latency. <br/>
+            Scanner delays: To compensate scanner's tracking error. <br/>
+            </remarks>
+            <param name="laserOn">Laser on delay (usec)<br/>RTC5: Min. time resolution: 1/2(= 0.5) usec<br/>RTC6: Min. time resolution: 1/64(= 0.01562) usec<br/></param>
+            <param name="laserOff">Laser off delay (usec)<br/>RTC5: Min. time resolution: 1/2(= 0.5) usec<br/>RTC6: Min. time resolution: 1/64(= 0.01562) usec<br/></param>
+            <param name="scannerJump">Scanner jump delay (usec)<br/>Min. time resolution: 10 usec</param>
+            <param name="scannerMark">Scanner mark(or arc) delay (usec)<br/>Min. time resolution: 10 usec</param>
+            <param name="scannerPolygon">Scanner polygon(or corner) delay (usec)<br/>Min. time resolution: 10 usec</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListSpeed(System.Double,System.Double)">
@@ -10626,14 +10823,14 @@
             <summary>
             List wait during specific time
             </summary>
-            <param name="msec">msec</param>
+            <param name="msec">msec (Min. time resolution: 10 usec)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListLaserOn(System.Double)">
             <summary>
             List laser on during specific time
             </summary>
-            <param name="msec">msec</param>
+            <param name="msec">msec (Min. time resolution: 10 usec)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListLaserOn">
@@ -10763,7 +10960,7 @@
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc3D">
             <summary>
             IRtc3D interface
-            <para>For VarioScan, VarioScan II, excelliSHIFT products</para>
+            <para>Used with VarioScan, VarioScan II, excelliSHIFT products</para>
             </summary>
             <remarks>
             <img src="images/rtc6pciex.png"/><br/>
@@ -10775,8 +10972,8 @@
             DirectMove3D
             </summary>
             <remarks>
-            If Disabled, the z output is changed to its end-value in such a way that the focus is kept in one plane during the entire jump.<br/>
-            If Enabled, The z output is changed directly (linearly) to its end value during a jump.<br/>
+            If Disabled, the z output is changed to its end-value in such a way that the focus is kept in one plane during the entire jump. <br/>
+            If Enabled, The z output is changed directly (linearly) to its end value during a jump. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc3D.ZOffset">
@@ -10874,7 +11071,7 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlMode">
             <summary>
-            Automatic laser control modes
+            Automatic laser control modes (aka. Ramp mode)
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlMode.Disabled">
@@ -10908,7 +11105,7 @@
             Actual velocity + Encoder speed
             </summary>
             <remarks>
-            Used with iDRIVE scanner products only. <br/>
+            Used with iDRIVE scanner products only. (like as intelliSCAN series) <br/>
             Used with <c>IRtcMoF</c> <br/>
             </remarks>
         </member>
@@ -10917,13 +11114,13 @@
             Actual velocity + SCANAhead + EncoderSpeed 
             </summary>
             <remarks>
-            Used with SCANAhead scanner products only like as ExcelliSCAN or intelliSCAN IV. <br/>
-            Used with <c>Rtc6</c> only <br/>
+            Used with SCANAhead scanner products only. (like as ExcelliSCAN or intelliSCAN IV) <br/>
+            Used with <c>Rtc6</c> + SCANahead option only. <br/>
             </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignal">
             <summary>
-            Automatic laser control signal
+            Automatic laser control signal (aka. Ramp signal)
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignal.Disabled">
@@ -10982,10 +11179,13 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl">
             <summary>
-            IRtcAutoLaserControl interface    
-            <para>Automatic laser control = Vary output laser signal </para>
+            IRtcAutoLaserControl interface 
             </summary>
             <remarks>
+            Automatic laser control(aka. Ramp) by control output signals. <br/>
+            1. Position-dependent. <br/>
+            2. Speed-dependent. <br/>
+            3. Defined-vector. <br/>
             <img src="images/ramp.png"/><br/>
             </remarks>
         </member>
@@ -11036,19 +11236,71 @@
             If <c>AutoLaserControlSignal.SpotDistance</c>, not used. <br/>
             </remarks>
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.CtlAlcByPositionTable(System.Collections.Generic.KeyValuePair{System.Double,System.Double}[])">
+            <summary>
+            Position dependent ALC(Automatic Laser Control) table
+            <code>
+                                      ████████████                        
+                               ██████░░░░░░░░░░░░██████                  
+                           ████░░░░░░░░░░░░░░░░░░░░░░░░████              
+                         ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██            
+                       ██░░░░░░      ░░░░░░░░░░░░░░░░░░░░░░░░██          
+                     ██░░░░░░          ░░░░░░░░░░░░░░░░░░░░░░░░██        
+                   ██░░░░░░░░          ░░░░░░░░░░░░░░░░░░░░░░▒▒░░██      
+                 ██░░░░░░░░░░          ░░░░░░░░░░░░░░░░░░░░░░░░▒▒░░██    
+                 ██░░░░░░░░░░░░      ░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒░░██    
+               ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒░░██  
+               ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░.░░░░░░░░░░░░░░▒▒▒▒░░██  
+               ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░/░░░░░░░░░░░░░░░▒▒▒▒░░██  
+             ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░/░░░░░░░░░░░░░░░░▒▒▒▒▒▒░░██
+             ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░Radius░░░░░░░░░░░░▒▒▒▒▒▒░░██
+             ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░/░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒░░██
+             ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░+░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒░░██
+             ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒░░██
+             ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒░░██
+               ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒░░██  
+               ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░██  
+               ██░░▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░██  
+                 ██░░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░██    
+                 ██░░▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░██    
+                   ██░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░██      
+                     ██░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░██        
+                       ██░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░██          
+                         ██░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░██            
+                           ████░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░████              
+                               ██████░░░░░░░░░░░░██████                  
+                                     ████████████
+            
+            // distance(or radius) (mm), scale (0~4)
+            var kvList = new List&lt;KeyValuePair&lt;double, double&gt;&gt;();
+            kvList.Add(new KeyValuePair&lt;double, double&gt;(5, 0.9));
+            kvList.Add(new KeyValuePair&lt;double, double&gt;(10, 1));
+            kvList.Add(new KeyValuePair&lt;double, double&gt;(15, 1.1));
+            rtcAlc.CtlAlcByPositionTable(kvList.ToArray());
+            //or clear
+            rtcAlc.CtlAlcByPositionTable(null);
+            </code>
+            </summary>
+            <remarks>
+            Radius is distance from origin of scanner to target location. <br/>
+            </remarks>
+            <param name="kvList">Array of radius(mm), scale(0~4)</param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.CtlAlc``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignal,SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlMode,``0,``0,``0)">
             <summary>
-            Output automatic laser control values
+            Velocity dependent ALC(Automatic Laser Control)
             <code>
-            var rtcMeasurement = rtc as IRtcMeasurement;
             var rtcAlc = rtc as IRtcAutoLaserControl;
-            // Analog1: 5V (Min: 4V, Max: 6V)
+            
+            // Set velocity with analog1: 5V (100%: 5V, Min: 4V, Max: 6V)
             rtcAlc.CtlAlc&lt;double&gt;(AutoLaserControlSignal.Analog1, AutoLaserControlMode.SetVelocity, 5, 4, 6);
-            // or 
-            // Target frequency: 50KHz, lower: 40KHz, upper: 60KHz
+            // or Actual velocity with frequency: 50KHz (100%: 50KHz, Min: 40KHz, Max: 60KHz)
             rtcAlc.CtlAlc&lt;double&gt;(AutoLaserControlSignal.Frequency, AutoLaserControlMode.ActualVelocity, 50 * 1000, 40 * 1000, 60 * 1000);
-            // or (SDC for RTC6 + SCANahead only)
-            double distance = 0.1;
+            // or Encoder speed with pulse width: 50usec (100%: 50usec, Min: 25usecKHz, Max: 75KHz)
+            rtcAlc.CtlAlc&lt;double&gt;(AutoLaserControlSignal.PulseWidth, AutoLaserControlMode.EncoderSpeed, 50, 25, 75);
+            // or Spot distance control (100%: 0.1mm) (RTC6 + SCANahead only)
+            double distance = 0.1; 
             rtcAlc.CtlAlc&lt;double&gt;(AutoLaserControlSignal.SpotDistance, AutoLaserControlMode.ActualVelocityWithSCANAhead, distance);
             </code>
             </summary>
@@ -11060,56 +11312,13 @@
             <param name="max">Max value</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.CtlAlcByPositionTable(System.Collections.Generic.KeyValuePair{System.Double,System.Double}[])">
-            <summary>
-            Position dependent ALC(Automatic Laser Control) table
-            <code>
-            var rtcMeasurement = rtc as IRtcMeasurement;
-            // distance(or radius) (mm), scale (0~4)
-            var kvList = new List&lt;KeyValuePair&lt;double, double&gt;&gt;();
-            kvList.Add(new KeyValuePair&lt;double, double&gt;(5, 0.9));
-            kvList.Add(new KeyValuePair&lt;double, double&gt;(10, 1));
-            kvList.Add(new KeyValuePair&lt;double, double&gt;(15, 1.1));
-            rtcAlc.CtlAlcByPositionTable(kvList.ToArray());
-            //or clear
-            rtcAlc.CtlAlcByPositionTable(null);
-            </code>
-            </summary>
-            <param name="kvList">Array of radius(mm), scale(0~4)</param>
-            <returns>Success or failed</returns>
-        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAutoLaserControl``1(``0,``0,``0)">
             <summary>
-            List output automatic laser control values
-            <code>
-            var rtcAlc = rtc as IRtcAutoLaserControl;
-            rtcAlc.CtlAutoLaserControl&lt;double&gt;(AutoLaserControlSignal.Analog1, AutoLaserControlMode.SetVelocity, 5, 4, 6); // 5V (Min: 4V, Max: 6V)
-            float x1 = 0;
-            float y1 = 0;
-            float x2 = 10;
-            float y2 = 0;
-            rtc.ListBegin();
-            rtc.ListJumpTo(new Vector2(x1, y1));
-            rtc.ListMarkTo(new Vector2(x2, y2));
-            rtc.ListJumpTo(Vector2.Zero);
-            rtc.ListEnd();
-            rtc.ListExecute(true);
-            </code>
-            <code>
-            var rtcAlc = rtc as IRtcAutoLaserControl;
-            rtcAlc.CtlAutoLaserControl&lt;double&gt;(AutoLaserControlSignal.Frequency, AutoLaserControlMode.ActualVelocity, 50 * 1000, 40 * 1000, 60 * 1000); // 50KHz (Min: 40KHz, Max: 60KHz)
-            float x1 = 0;
-            float y1 = 0;
-            float x2 = 10;
-            float y2 = 0;
-            rtc.ListBegin();
-            rtc.ListJumpTo(new Vector2(x1, y1));
-            rtc.ListMarkTo(new Vector2(x2, y2));
-            rtc.ListJumpTo(Vector2.Zero);
-            rtc.ListEnd();
-            rtc.ListExecute(true);
-            </code>
+            List velocity dependent ALC(Automatic Laser Control)
             </summary>
+            <remarks>
+            See also. <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.CtlAlc``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignal,SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlMode,``0,``0,``0)"><c>CtlAlc</c></see> function. <br/>
+            </remarks>
             <typeparam name="T"><c>uint</c> or <c>double</c></typeparam>
             <param name="percentage100">100% value</param>
             <param name="min">Min value</param>
@@ -11118,7 +11327,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignal,``0)">
             <summary>
-            List vector defined ALC(Automatic Laser Control) begin.
+            List defined-vector by ALC(Automatic Laser Control) control begin.
             <code>
             var rtcAlc = rtc as IRtcAutoLaserControl;
             float x1 = 0;
@@ -11137,12 +11346,12 @@
             </summary>
             <typeparam name="T"><c>uint</c> or <c>double</c></typeparam>
             <param name="ctrl"><c>AutoLaserControlSignal</c></param>
-            <param name="startingValue">Starting value of <c>T</c></param>
+            <param name="startingValue">Starting value of <c>AutoLaserControlSignal</c></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorEnd">
             <summary>
-            List vector defined ALC(Automatic Laser Control) end
+            List defined-vector by ALC(Automatic Laser Control) end
             </summary>
             <returns>Success or failed</returns>
         </member>
@@ -11150,6 +11359,9 @@
             <summary>
             Character sets (aka. Font family)
             </summary>
+            <remarks>
+            Character sets are registered(or downloaded) into RTC buffer memory (list3). <br/>
+            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.CharacterSet.Unknown">
             <summary>
@@ -11461,7 +11673,7 @@
             rtc.ListExecute(true);
             </code>
             </summary>
-            <param name="numOfDigits">Num of digits (max 15)</param>
+            <param name="numOfDigits">Num of digits<br/>Max digit: 15<br/></param>
             <param name="serialFormat"><c>SerialFormat</c></param>
             <param name="characterSet"><c>CharacterSet</c></param>
             <returns>Success or failed</returns>
@@ -11557,10 +11769,10 @@
             <summary>
             Absoulte X, Y data from left/top to right/top order
             <code>
-            Example 
-            1[R:0,C:0] 2[R:0,C:1] 3[R:0,C:2]
-            4[R:1,C:0] 5[R:1,C:1] 6[R:1,C:2]
-            7[R:2,C:0] 8[R:2,C:1] 9[R:2,C:2]
+            Index No [Row,Col]
+            1 [R:0,C:0] 2 [R:0,C:1] 3 [R:0,C:2]
+            4 [R:1,C:0] 5 [R:1,C:1] 6 [R:1,C:2]
+            7 [R:2,C:0] 8 [R:2,C:1] 9 [R:2,C:2]
             </code>
             </summary>
             <param name="row">Row</param>
@@ -11573,10 +11785,10 @@
             <summary>
             Relative dX, dY data from left/top to right/top order
             <code>
-            Example 
-            1[R:0,C:0] 2[R:0,C:1] 3[R:0,C:2]
-            4[R:1,C:0] 5[R:1,C:1] 6[R:1,C:2]
-            7[R:2,C:0] 8[R:2,C:1] 9[R:2,C:2]
+            Index No [Row,Col] 
+            1 [R:0,C:0] 2 [R:0,C:1] 3 [R:0,C:2]
+            4 [R:1,C:0] 5 [R:1,C:1] 6 [R:1,C:2]
+            7 [R:2,C:0] 8 [R:2,C:1] 9 [R:2,C:2]
             </code>
             </summary>
             <param name="row">Row</param>
@@ -11725,10 +11937,10 @@
             <summary>
             Absoulte X, Y data from left/top to right/top order
             <code>
-            Example 
-            1[R:0,C:0] 2[R:0,C:1] 3[R:0,C:2]
-            4[R:1,C:0] 5[R:1,C:1] 6[R:1,C:2]
-            7[R:2,C:0] 8[R:2,C:1] 9[R:2,C:2]
+            Index No [Row,Col]
+            1 [R:0,C:0] 2 [R:0,C:1] 3 [R:0,C:2]
+            4 [R:1,C:0] 5 [R:1,C:1] 6 [R:1,C:2]
+            7 [R:2,C:0] 8 [R:2,C:1] 9 [R:2,C:2]
             </code>
             </summary>
             <param name="row">Row</param>
@@ -11741,10 +11953,10 @@
             <summary>
             Relative dX, dY data from left/top to right/top order
             <code>
-            Example 
-            1[R:0,C:0] 2[R:0,C:1] 3[R:0,C:2]
-            4[R:1,C:0] 5[R:1,C:1] 6[R:1,C:2]
-            7[R:2,C:0] 8[R:2,C:1] 9[R:2,C:2]
+            Index No [Row,Col]
+            1 [R:0,C:0] 2 [R:0,C:1] 3 [R:0,C:2]
+            4 [R:1,C:0] 5 [R:1,C:1] 6 [R:1,C:2]
+            7 [R:2,C:0] 8 [R:2,C:1] 9 [R:2,C:2]
             </code>
             </summary>
             <param name="row">Row</param>
@@ -11934,27 +12146,31 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.InitLaser12SignalLevel">
             <summary>
             Signal level Laser1(Pin1), Laser2(Pin9) at LASER Port 
-            <para>Default: <c>RtcSignalLevel.ActiveHigh</c></para>
-            <para>Assign signal level before <c>Initialize</c> has called</para>
             </summary>
+            <remarks>
+            Default: <c>RtcSignalLevel.ActiveHigh</c>. <br/>
+            Assign signal level before <c>Initialize</c> has called at first. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.InitLaserOnSignalLevel">
             <summary>
             Signal level LaserOn(Pin2) at LASER Port 
-            <para>Default: <c>RtcSignalLevel.ActiveHigh</c></para>
-            <para>Assign signal level before <c>Initialize</c> has called</para>
             </summary>
+            <remarks>
+            Default: <c>RtcSignalLevel.ActiveHigh</c>. <br/>
+            Assign signal level before <c>Initialize</c> has called at firist . <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.QSwitchDelay">
             <summary>
             Q switch delay (usec)
-            <remarks>
-            LaserMode.Yag1: 0<br/>
-            LaserMode.Yag2: by FPK value<br/>
-            LaserMode.Yag3: 10 usec fixed<br/>
-            LaserMode.Yag5: By this value<br/>
-            </remarks>
             </summary>
+            <remarks>
+            <c>LaserMode.Yag1</c>: 0<br/>
+            <c>LaserMode.Yag2</c>: by FPK value<br/>
+            <c>LaserMode.Yag3</c>: 10 usec fixed<br/>
+            <c>LaserMode.Yag5</c>: by this value<br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlStandBy(System.Double,System.Double)">
             <summary>
@@ -11963,28 +12179,28 @@
             <remarks>
             Used with <c>LaserMode.Co2</c> <br/>
             </remarks>
-            <param name="frequency">Stanby frequency (Hz)</param>
-            <param name="pulseWidth">Stanby pulse width (usec)</param>
+            <param name="frequency">Stanby frequency (Hz)<br/>Min. time resolution: 1/128(= 0.0078125) usec <br/></param>
+            <param name="pulseWidth">Stanby pulse width (usec)<br/>Min. time resolution: 1/64(= 0.01562) usec <br/></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlFirstPulseKiller(System.Double)">
             <summary>
             First pulse killer (usec)
             </summary>
-            <param name="usec">usec</param>
+            <param name="usec">Time (usec)<br/>Min. time resolution: 1/64(= 0.01562) usec <br/></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlQSwitchDelay(System.Double)">
             <summary>
             Q switch delay (usec)
+            </summary>
             <remarks>
             <c>LaserMode.Yag1</c>: 0<br/>
-            <c>LaserMode.Yag2</c>: FPK <br/>
+            <c>LaserMode.Yag2</c>: by FPK value<br/>
             <c>LaserMode.Yag3</c>: 10 usec fixed<br/>
-            <c>LaserMode.Yag5</c>: By this function<br/>
+            <c>LaserMode.Yag5</c>: by this value<br/>
             </remarks>
-            </summary>
-            <param name="usec">usec</param>
+            <param name="usec">Time (usec)<br/> Min. time resolution: 1/64(= 0.01562) usec <br/></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlLaserControlSignal(SpiralLab.Sirius2.Scanner.Rtc.ILaserControlSignal)">
@@ -12147,7 +12363,7 @@
             <summary>
             List first pulse killer (usec)
             </summary>
-            <param name="usec">usec</param>
+            <param name="usec">Time (usec)<br/>Min. time resolution: 1/64(= 0.01562) usec <br/></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.ListQSwitchDelay(System.Double)">
@@ -12155,12 +12371,12 @@
             List Q switch delay (usec)
             </summary>
             <remarks>
-            LaserMode.Yag1: 0<br/>
-            LaserMode.Yag2: by FPK value<br/>
-            LaserMode.Yag3: 10 usec fixed<br/>
-            LaserMode.Yag5: By this value<br/>
+            <c>LaserMode.Yag1</c>: 0<br/>
+            <c>LaserMode.Yag2</c>: by FPK value<br/>
+            <c>LaserMode.Yag3</c>: 10 usec fixed<br/>
+            <c>LaserMode.Yag5</c>: by this value<br/>
             </remarks>
-            <param name="usec">usec</param>
+            <param name="usec">Time (usec)<br/> Min. time resolution: 1/64(= 0.01562) usec <br/></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.ListDelayVariable(System.Boolean,System.Double,System.Boolean,System.Double,System.Double)">
@@ -12231,12 +12447,13 @@
             For scan systems equipped with one or several Jump tunings, you can also activate Jump Mode(and hereby tuning autoswitching) for 2D jumps. <br/>
             The default set start behavior is that the scan system starts with tuning number 0 upon power-up or after a reset. <br/>
             Vector(default) jump mode : <br/>
-            The jump length gets subdivided into individually executable Microsteps in accordance with the current jump speed.<br/>
+            The jump length gets subdivided into individually executable Microsteps in accordance with the current jump speed. <br/>
             If the scan system is only equipped with a Jump tuning, then the Microsteps execute using this tuning. <br/>
             A Jump Delay defined by set_scanner_delays is executed before a subsequent list command. <br/>
             <br/>
             Hard jump mode :<br/>
-            The entire jump length of the 2D jump is controlled as a “Hard jump” over a time dimensioned jump of 10 µ duration.The target position is executed without Microstepping. <br/>
+            The entire jump length of the 2D jump is controlled as a “Hard jump” over a time dimensioned jump of 10 µ duration.<br/>
+            The target position is executed without Microstepping. <br/>
             At the end of the 2D jump, the RTC5/6 PCI Board automatically switches to a Vector tuning (if the scan system is equipped with one and if a corresponding setting has been made by set_jump_mode) <br/>
             </remarks>
         </member>
@@ -12251,8 +12468,8 @@
             </summary>
             <remarks>
             At the end of the 2D jump, a jump-length dependent Jump Delay occurs. <br/>
-            This Jump Delay can be specified for the corresponding jump length by load_jump_table_offset or set_jump_table.<br/>
-            <c>CtlDelay</c> is not taken into account.<br/>
+            This Jump Delay can be specified for the corresponding jump length by load_jump_table_offset or set_jump_table. <br/>
+            <c>CtlDelay</c> is not taken into account. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcJumpMode.VectorTuningPrimaryX">
@@ -12352,15 +12569,11 @@
             List hard jump
             </summary>
             <remarks>
-            Moves the output point (of the laser focus) by a “Hard jump” (without split-up into Microsteps) directly from the current position to the specified position(absolute coordinate values) within a 2D Image field.
-            <para>
-            By LasOn >= 0 and LasOff >= 0, you can set a new LaserOn Delay or LaserOff Delay for each individual Microvector. 
-            Each delay thereby gets set at the end of the clock cycle in which the new position actually gets outputted(this output clock cycle is delayed by a preceding scanner delay).
-            </para>
-            <para>
-            Negative values (LasOn &lt; 0 and LasOff &lt; 0) do not affect Laser Delays.
-            Hereby, the laser can remain on or off across multiple clock cycles (mark and jump simulation).
-            </para>
+            Moves the output point (of the laser focus) by a “Hard jump” (without split-up into Microsteps) directly from the current position to the specified position(absolute coordinate values) within a 2D Image field.<br/>
+            By LasOn >= 0 and LasOff >= 0, you can set a new LaserOn Delay or LaserOff Delay for each individual Microvector. <br/>
+            Each delay thereby gets set at the end of the clock cycle in which the new position actually gets outputted(this output clock cycle is delayed by a preceding scanner delay).<br/>
+            Negative values (LasOn &lt; 0 and LasOff &lt; 0) do not affect Laser Delays. <br/>
+            Hereby, the laser can remain on or off across multiple clock cycles (mark and jump simulation).<br/>
             </remarks>
             <param name="vPosition">X, Y (mm)</param>
             <param name="laserOn">Laser on delay (usec)</param>
@@ -12372,15 +12585,11 @@
             List hard jump - 3d
             </summary>
             <remarks>
-            Moves the output point (of the laser focus) by a “Hard jump” (without split-up into Microsteps) directly from the current position to the specified position(absolute coordinate values) within a 2D Image field.
-            <para>
-            By LasOn >= 0 and LasOff >= 0, you can set a new LaserOn Delay or LaserOff Delay for each individual Microvector. 
-            Each delay thereby gets set at the end of the clock cycle in which the new position actually gets outputted(this output clock cycle is delayed by a preceding scanner delay).
-            </para>
-            <para>
-            Negative values (LasOn &lt; 0 and LasOff &lt; 0) do not affect Laser Delays.
-            Hereby, the laser can remain on or off across multiple clock cycles (mark and jump simulation).
-            </para>
+            Moves the output point (of the laser focus) by a “Hard jump” (without split-up into Microsteps) directly from the current position to the specified position(absolute coordinate values) within a 2D Image field. <br/>
+            By LasOn >= 0 and LasOff >= 0, you can set a new LaserOn Delay or LaserOff Delay for each individual Microvector. <br/>
+            Each delay thereby gets set at the end of the clock cycle in which the new position actually gets outputted(this output clock cycle is delayed by a preceding scanner delay).<br/>
+            Negative values (LasOn &lt; 0 and LasOff &lt; 0) do not affect Laser Delays.<br/>
+            Hereby, the laser can remain on or off across multiple clock cycles (mark and jump simulation).<br/>
             </remarks>
             <param name="vPosition">X, Y (mm)</param>
             <param name="laserOn">Laser on delay (usec)</param>
@@ -12390,8 +12599,10 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcJumpMode.ListJumpAndDrill(System.Numerics.Vector2,System.Double)">
             <summary>
             (Experimental) List jump and drills
-            <para>Above RTC5 and iDRIVE(intelliSCAN, intellicube, intelliWELD or intelliDRILL) scan system only</para>
             </summary>
+            <remarks>
+            Above RTC5 and iDRIVE(intelliSCAN, intellicube, intelliWELD or intelliDRILL) scan system only. <br/>
+            </remarks>
             <param name="vPosition">X, Y (mm)</param>
             <param name="drillTime">Drill time (usec) (x0.5 usec)</param>
             <returns>Success or failed</returns>
@@ -12483,7 +12694,8 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleAZ_Coor">
             <summary>
-            SampleAZ_Corr (corrected Z-axis control value, if XY are connected to the primary scan head connector; identical to the effective output value for the Z axis)
+            SampleAZ_Corr (corrected Z-axis control value, if XY are connected to the primary scan head connector <br/>
+            Identical to the effective output value for the Z axis) <br/>
             </summary>
             <remarks>
             Converted bits into mm value. <br/>
@@ -12507,7 +12719,8 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel.SampleBZ_Coor">
             <summary>
-            SampleBZ_Corr (corrected Z-axis control value, if XY are connected to the secondary scan head connector; identical to the effective output value for the Z axis)
+            SampleBZ_Corr (corrected Z-axis control value, if XY are connected to the secondary scan head connector<br/>
+            Identical to the effective output value for the Z axis)<br/>
             </summary>
             <remarks>
             
@@ -12888,7 +13101,7 @@
             RtcMeasurementHelper.Plot(measurementFile, "Test Run"); // Plot as a graph
             </code>
             </summary>
-            <param name="frequency">Sampling frequency (Hz) (~100KHz)</param>
+            <param name="frequency">Sampling frequency (Hz)<br/>Max. frequency: ~100KHz <br/>Min. time resolution: 10 usec<br/></param>
             <param name="channels">Array of <c>MeasurementChannel</c></param>
             <returns>Success or failed</returns>
         </member>
@@ -13128,6 +13341,9 @@
             <summary>
             Enable(or disable) simulated encoders
             </summary>
+            <remarks>
+            <c>EncXSimulatedSpeed</c> or <c>EncYSimulatedSpeed</c> value should be assigned at first. <br/>
+            </remarks>
             <param name="encXSimulatedSpeed">Simulated X(0) encoder speed (mm/s)</param>
             <param name="encYSimulatedSpeed">Simulated Y(1) encoder speed (mm/s)</param>
             <returns>Success or failed</returns>
@@ -13144,8 +13360,8 @@
             <br/>
             To avoid step-like galvanometer scanner movements, the used encoders should have a sufficiently high resolution (counts per 10 µs cycle)<br/>
             </remarks>
-            <param name="xUsec">X tracking error time (usec)</param>
-            <param name="yUsec">Y tracking error time (usec)</param>
+            <param name="xUsec">X tracking error time (usec)<br/>Min. time resolution: 10 usec<br/></param>
+            <param name="yUsec">Y tracking error time (usec)<br/>Min. time resolution: 10 usec<br/></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofCompensateTable(System.Collections.Generic.KeyValuePair{System.Numerics.Vector2,System.Numerics.Vector2}[])">
@@ -13216,6 +13432,9 @@
             <summary>
             Enable( or disable) simulated angular encoder (x/0)
             </summary>
+            <remarks>
+            <c>EncSimulatedAngularSpeed</c> value should be assigned at first. <br/>
+            </remarks>
             <param name="encSimulatedSpeed">Angular speed (˚/s)</param>
             <returns>Success or failed</returns>
         </member>
@@ -13414,12 +13633,14 @@
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">
             <summary>
             Move scanner with by micro-vectors. (fast but in-accurate) <br/>
+            Used with <c>IRtcRaster</c> only. <br/>
+            <c>IRtcSyncAxis</c> is not supported. <br/>
             Pixel period used for calculate pixel speed = pixel pitch(mm) / pixel period(s). <br/>
             Pixel output during pixel duration time. (LASER1 pulse length will be varied by pixel duration time) <br/>
             Output analog(1 or 2) voltage at <c>ExtensionChannel</c>. <br/>
             LASER ON signal will be keep on. <br/>
             <code>
-                           |..| -> pulse length at each pixel
+                           |..| -> pulse length during pixel duration time 
                            .__.        .__.        .__.        .__.        .__.        .__.  
                            |  |        |  |        |  |        |  |        |  |        |  |  
                            |  |        |  |        |  |        |  |        |  |        |  |  
@@ -13439,7 +13660,7 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster">
             <summary>
-            IRtcRaster interface
+            IRtcRaster interface (aka. Bitmap or pixel operation)
             </summary>
             <remarks>
             <img src="images/raster.png"/><br/>
@@ -13480,7 +13701,7 @@
             Activated LASER ON signal during rastering and modulated output pulse width by each pixels time. <br/>
             </remarks>
             <param name="mode"><c>RasterModes</c></param>
-            <param name="usec">Pixel period (usec) (Used with <c>RasterModes.MicroVector</c> only)</param>
+            <param name="usec">Pixel period (usec)<br/>Used with <c>RasterModes.MicroVector</c> only<br/></param>
             <param name="vPitch">Pixel pitch (dx, dy) (mm)</param>
             <param name="pixelCount">Pixel counts per line</param>
             <param name="ext">Output analog channel (1 or 2) (Used with <c>RasterModes.MicroVector</c> only)</param>
@@ -13495,8 +13716,8 @@
             If <c>RasterModes.JumpAndShoot</c>, jump to move with jump delay and activate LASER signal with on and off. <br/>
             If <c>RasterModes.MicroVector</c>, move with pixel period speed and activate LASER ON signal during rastering with modulated pulse length. <br/>
             </remarks>
-            <param name="usec">Pixel duration (usec) (Should be &lt;= 'pixel period' from <c>ListRasterLine</c>)</param>
-            <param name="analogValue">Output analog voltage value at <c>ExtensionChannel</c> (Used with <c>RasterModes.MicroVector</c> only)</param>
+            <param name="usec">Pixel duration (usec)<br/>Should be &lt;= 'pixel period' from <c>ListRasterLine</c><br/>Min. time resolution: 1/128(= 0.0078125) usec<br/></param>
+            <param name="analogValue">Output analog voltage value at <c>ExtensionChannel</c><br/>Used with <c>RasterModes.MicroVector</c> only<br/>Min. ADC resolution: 12 bits<br/></param>
             <returns>Success or failed</returns>   
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector3,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannel)">
@@ -13511,7 +13732,7 @@
             Pixel pulses (at the LASER1 port) directly by the PulseLength parameter, not the LASERON signal. <br/>
             </remarks>
             <param name="mode"><c>RasterModes</c></param>
-            <param name="usec">Pixel period (usec)</param>
+            <param name="usec">Pixel period (usec)<br/>Min. time resolution: 1/128(= 0.0078125) usec <br/>Used with <c>RasterModes.MicroVector</c> only<br/></param>
             <param name="vPitch">Pixel pitch (dx, dy, dz) (mm)</param>
             <param name="pixelCount">Pixel counts per line</param>
             <param name="ext">Output analog channel (1 or 2) (Used with <c>RasterModes.MicroVector</c> only)</param>
@@ -13600,8 +13821,8 @@
             Mode1
             </summary>
             <remarks>
-            In the run-in phase, the vector/arc is preceded by a “forerun” movement performed by the galvanometer scanners at mark speed, <br/>
-             After the vector/arc has been processed at mark speed, it is gets a short deceleration and retrace movement of the galvanometer scanners (at mark speed) appended in the run-out phase.<br/>
+            In the run-in phase, the vector/arc is preceded by a “forerun” movement performed by the galvanometer scanners at mark speed. <br/>
+            After the vector/arc has been processed at mark speed, it is gets a short deceleration and retrace movement of the galvanometer scanners (at mark speed) appended in the run-out phase. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SkyWritingMode.Mode2">
@@ -13611,7 +13832,7 @@
             <remarks>
             Each to-be-executed vector/arc gets preceded and appended with a run-in motion and a run-out motion in extension of the vector/arc at mark speed. <br/>
             Within a Sky Writing Mode 2 marking sequence, however, neither forerun motions (in the run-in phase) nor retrace motions (in the run-out phase) of the galvanometer scanners occur. <br/>
-            Instead, the RTC5/6 Board executes Sky Writing jumps (at the currently specified jump speed) from jump vector startpoints to run-in startpoints, from run-out endpoints to run-in startpoints, and from run-out endpoints to jump vector endpoints.<br/>
+            Instead, the RTC5/6 Board executes Sky Writing jumps (at the currently specified jump speed) from jump vector startpoints to run-in startpoints, from run-out endpoints to run-in startpoints, and from run-out endpoints to jump vector endpoints. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SkyWritingMode.Mode3">
@@ -13620,7 +13841,7 @@
             </summary>
             <remarks>
             The time cost of Sky Writing motions for vectors and arcs having only small directional changes within a Polyline is probably disproportionately high for the gained accuracy. <br/>
-            Only for larger angle deviations (Cos(φ) &lt; Limit) between successive Mark commands of a Polyline a Sky Writing motions is executed as in SkyWriting Mode2.<br/>
+            Only for larger angle deviations (Cos(φ) &lt; Limit) between successive Mark commands of a Polyline a Sky Writing motions is executed as in <c>SkyWritingMode.Mode2</c>. <br/>
             </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcSkyWriting">
@@ -13651,11 +13872,11 @@
             <para>Not usable with <c>IRtcAutoLaserControl</c></para>
             </summary>
             <param name="mode"><c>SkyWritingMode</c></param>
-            <param name="laserOnShift">Shift ( >0: Delay) of the point of time, where the are switched on (usec)</param>
-            <param name="timeLag">Tracking error (usec)</param>
-            <param name="prev">Time duration of the run-in phase (usec)</param>
-            <param name="post">Time duration of the run-out phase (usec)</param>
-            <param name="cosineLimit">Cosine of the angular limit (-1 ~ +1). (<c>SkyWritingMode.Mode3</c> only)
+            <param name="laserOnShift">Shift ( >0: Delay) of the point of time, where the are switched on (usec)<br/>Min. time resolution: 1/64 usec<br/></param>
+            <param name="timeLag">Tracking error (usec)<br/>Min. time resolution: 1/64 usec<br/></param>
+            <param name="prev">Time duration of the run-in phase (usec)<br/>Min. time resolution: 10 usec<br/></param>
+            <param name="post">Time duration of the run-out phase (usec)<br/>Min. time resolution: 10 usec<br/></param>
+            <param name="cosineLimit">Cosine of the angular limit (-1 ~ +1)<br/>
             <code>
                                        | 1
                                     ,--|--.
@@ -13672,8 +13893,8 @@
              ....,-'                   |                   `-.....   
              .--'                      | -1                   `--.
             </code>
-            Activated limit degree range at <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.SkyWritingMode.Mode3">SkyWritingMode.Mode3</see>. <br/>
-            Cosine(φ) &lt; Limit(= 0). <br/>
+            Used with <c>SkyWritingMode.Mode3</c> only<br/>
+            Cosine(φ) &lt; Limit(= 0) <br/>
             </param>
             <returns>Success or failed</returns>
         </member>
@@ -13736,8 +13957,9 @@
             <code>
             var rtcWobbel = rtc as IRtcWobbel;
             float radius = 5;
+            float wobbelFrequency = 50;
             rtc.ListBegin();
-            rtcWobbel.ListWobbelBegin(0.5, 0.5, WobbelFrequency, WobbelShape.Ellipse);
+            rtcWobbel.ListWobbelBegin(0.5, 0.5, wobbelFrequency, WobbelShape.Ellipse);
             rtc.ListJumpTo(new Vector2(radius, 0));
             rtc.ListArcTo(Vector2.Zero, 360);
             rtc.ListJumpTo(Vector2.Zero);
@@ -13750,19 +13972,12 @@
             Otherwise, an overheating and even a permanent DAMAGE of the system may occur !!! 
             </para>
             <para>
-            Max. Wobbel frequency (Hz): Must be lower than 1/(Tracking error * 10)
-            </para>
-            <code>
-            BasicCube 10: Tracking Error 0.14ms -> Hz 1/1.4ms = 1/0.0014s = 714 Hz
-            IntelliSCAN III 10: Tracking Error 0.11ms -> 1/1.1ms = 1/0.0011s = 909 Hz
-            </code>
-            <para>
             Not usable with <c>IRtcRaster</c>, <c>IRtcSkywriting</c>
             </para>
             </summary>
             <param name="longitudinal">Longitudinal (parallel movement) (mm)</param>
             <param name="transverse">Transverse (perpendicular movement) (mm)</param>
-            <param name="frequencyHz">Frequency (Hz)</param>
+            <param name="frequencyHz">Frequency (Hz)<br/>Max. Wobbel frequency (Hz): Must be lower than 1/(Tracking error * 10)<br/>Ex. BasicCube 10: Tracking Error 0.14ms -> Hz 1/1.4ms = 1/0.0014s = 714 Hz<br/>Ex. IntelliSCAN III 10: Tracking Error 0.11ms -> 1/1.1ms = 1/0.0011s = 909 Hz<br/></param>
             <param name="wobbelShape"><c>WobbelShape</c></param>
             <returns>Success or failed</returns>
         </member>
