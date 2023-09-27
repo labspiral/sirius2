@@ -9846,11 +9846,23 @@
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevels.ActiveHigh">
             <summary>
             Active High
+            <code>
+                          .-----------------------.  
+            LASER  1:     |                       | 
+            LASER  2:     |                       | 
+            LASER ON:   __|.......................|__
+            </code>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevels.ActiveLow">
             <summary>
             Active Low
+            <code>
+                        __.........................__
+            LASER  1:     |                       | 
+            LASER  2:     |                       | 
+            LASER ON:     |_______________________|  
+            </code>
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.ListType">
@@ -9895,8 +9907,8 @@
             <summary>
             CO2
             <para>LASERON: On</para>
-            <para>LASER1: Q Switch Frequency and Pulse Width [with Pulse Completion]</para>
-            <para>LASER2: Standby Frequency and Pulse Width with Phase Shift</para>
+            <para>LASER1: Q switch frequency and pulse width (with pulse completion)</para>
+            <para>LASER2: Standby frequency and pulse width with phase shift</para>
             <code>
             
                                     | ON DELAY |                 | OFF DELAY |
@@ -9928,8 +9940,8 @@
             <summary>
             YAG1
             <para>LASERON: On</para>
-            <para>LASER1: Q Switch Frequency and Pulse Width + Standby Frequency (LASERON is not overlapped)</para>
-            <para>LASER2: FPK (Q Switch is overlapped)</para>
+            <para>LASER1: Q switch frequency and pulse width + standby frequency (LASERON is not overlapped)</para>
+            <para>LASER2: FPK (Q switch is overlapped)</para>
             <code>
             
                                     | ON DELAY |                 | OFF DELAY |
@@ -9957,8 +9969,8 @@
             <summary>
             YAG2
             <para>LASERON: On</para>
-            <para>LASER1: Q Switch Frequency and Pulse Width + Standby Frequency (LASERON is not overlapped)</para>
-            <para>LASER2: FPK (Q Switch is not overlapped)</para>
+            <para>LASER1: Q switch frequency and pulse width + standby frequency (LASERON is not overlapped)</para>
+            <para>LASER2: FPK (Q wwitch is not overlapped)</para>
             <code>
             
                                     | ON DELAY |                 | OFF DELAY |
@@ -9986,8 +9998,8 @@
             <summary>
             YAG3 
             <para>LASERON: On</para>
-            <para>LASER1: Q Switch Frequency and Pulse Width with Pulse Completion + Standby Frequency (LASERON is not overlapped)</para>
-            <para>LASER2: FPK (Delayed 10 usec and overlapped with Q Switch)</para>
+            <para>LASER1: Q switch frequency and pulse width with pulse completion + standby frequency (LASERON is not overlapped)</para>
+            <para>LASER2: FPK (Delayed 10 usec and overlapped with Q switch)</para>
             <code>
             
                                     | ON DELAY |                 | OFF DELAY |
@@ -10015,16 +10027,16 @@
             <summary>
             MODE4
             <para>LASERON: On</para>
-            <para>LASER1: Standby Frequency and 2x Half Period Duation</para>
-            <para>LASER2: FPK (Standby Frequency is overlapped)</para>
+            <para>LASER1: Standby frequency and 2x half period duation</para>
+            <para>LASER2: FPK (Standby frequency is overlapped)</para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.LaserModes.Yag5">
             <summary>
             YAG5 
             <para>LASERON: On</para>
-            <para>LASER1: Q Switch Frequency and Pulse Width (Configurable Q Switch delay and with Pulse Completion) + + Standby Frequency (LASERON is not overlapped</para>
-            <para>LASER2: FPK (Q Switch is overlapped)</para>
+            <para>LASER1: Q switch frequency and pulse width (Configurable Q switch delay and with pulse completion) + standby frequency (LASERON is not overlapped)</para>
+            <para>LASER2: FPK (Q switch is overlapped)</para>
             <para>above RTC5</para>
             <code>
             
@@ -10052,9 +10064,9 @@
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.LaserModes.Mode6">
             <summary>
             MODE6
-            <para>LASERON: On with Pulse Completion</para>
-            <para>LASER1: Standby Frequency and Pulse Width </para>
-            <para>LASER2: FPK (Stanby Frequency is overlapped)</para>
+            <para>LASERON: On with pulse completion</para>
+            <para>LASER1: Standby frequency and pulse width </para>
+            <para>LASER2: FPK (Stanby frequency is overlapped)</para>
             <para>above RTC5 </para>
             </summary>
         </member>
