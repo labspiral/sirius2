@@ -141,19 +141,19 @@ namespace Demos
                         rtc.CtlSimulationMode(false);
                         break;
                     case ConsoleKey.F:
-                        rtc.CtlMotionMode(MotionMode.Follow);
+                        rtc.CtlMotionMode(MotionModes.Follow);
                         break;
                     case ConsoleKey.U:
-                        rtc.CtlMotionMode(MotionMode.Unfollow);
+                        rtc.CtlMotionMode(MotionModes.Unfollow);
                         break;
                     case ConsoleKey.V:
                         SyncAxisViewer(rtc);
                         break;
                     case ConsoleKey.F1:
-                        DrawSquare(rtc, laser, MotionType.ScannerOnly);
+                        DrawSquare(rtc, laser, MotionTypes.ScannerOnly);
                         break;
                     case ConsoleKey.F2:
-                        DrawSquare(rtc, laser, MotionType.StageOnly);
+                        DrawSquare(rtc, laser, MotionTypes.StageOnly);
                         break;
                     case ConsoleKey.F3:
                         //rtc.BandWidth = 2.0f;
@@ -161,13 +161,13 @@ namespace Demos
                         //rtc.Head2Offset = 
                         //rtc.Head3Offset = 
                         //rtc.Head4Offset = 
-                        DrawSquare(rtc, laser, MotionType.StageAndScanner);
+                        DrawSquare(rtc, laser, MotionTypes.StageAndScanner);
                         break;
                     case ConsoleKey.F4:
-                        DrawCircle(rtc, laser, MotionType.ScannerOnly);
+                        DrawCircle(rtc, laser, MotionTypes.ScannerOnly);
                         break;
                     case ConsoleKey.F5:
-                        DrawCircle(rtc, laser, MotionType.StageOnly);
+                        DrawCircle(rtc, laser, MotionTypes.StageOnly);
                         break;
                     case ConsoleKey.F6:
                         //rtc.BandWidth = 2.0f;
@@ -175,7 +175,7 @@ namespace Demos
                         //rtc.Head2Offset = 
                         //rtc.Head3Offset = 
                         //rtc.Head4Offset = 
-                        DrawCircle(rtc, laser, MotionType.StageAndScanner);
+                        DrawCircle(rtc, laser, MotionTypes.StageAndScanner);
                         break;
                     case ConsoleKey.F7:
                         DrawScannerCalibration(rtc, laser);
@@ -205,7 +205,7 @@ namespace Demos
         /// <param name="motionType"></param>
         /// <param name="size"></param>
         /// <returns></returns>
-        static bool DrawSquare(IRtc rtc, ILaser laser, MotionType motionType, float size = 40)
+        static bool DrawSquare(IRtc rtc, ILaser laser, MotionTypes motionType, float size = 40)
         {
             bool success = true;
             var rtcSyncAxis = rtc as IRtcSyncAxis;
@@ -233,7 +233,7 @@ namespace Demos
         /// <param name="motionType"></param>
         /// <param name="radius"></param>
         /// <returns></returns>
-        static bool DrawCircle(IRtc rtc, ILaser laser, MotionType motionType, float radius = 20)
+        static bool DrawCircle(IRtc rtc, ILaser laser, MotionTypes motionType, float radius = 20)
         {
             bool success = true;
             var rtcSyncAxis = rtc as IRtcSyncAxis;
@@ -274,7 +274,7 @@ namespace Demos
             var oldMode = rtcSyncAxis.MotionMode;
 
             // draw 'o' by scanner
-            success &= rtcSyncAxis.ListBegin(MotionType.ScannerOnly);
+            success &= rtcSyncAxis.ListBegin(MotionTypes.ScannerOnly);
             success &= rtc.ListSpeed(velocity, velocity);
             for (int row = 0; row < grids; row++)
             {
@@ -367,7 +367,7 @@ namespace Demos
                     newTrajectory.Mark.LaserPreTriggerTime = (y * incrementPreTrigger + startPreTrigger);
                     success &= rtcSyncAxis.CtlSetTrajectory(newTrajectory);
 
-                    success &= rtcSyncAxis.ListBegin(MotionType.ScannerOnly);
+                    success &= rtcSyncAxis.ListBegin(MotionTypes.ScannerOnly);
                     offset = new Vector2(offset.X, gridFactor * size * y + offsetInitial.Y);
                     /*
                      *  +
@@ -441,7 +441,7 @@ namespace Demos
             var oldMode = rtcSyncAxis.MotionMode;
 
             // draw '+' by stage
-            success &= rtcSyncAxis.ListBegin(MotionType.StageOnly);
+            success &= rtcSyncAxis.ListBegin(MotionTypes.StageOnly);
             success &= rtc.ListSpeed(vStage, vStage);
             // -  -  -  -  -
             // -  -  -  -  -
@@ -485,7 +485,7 @@ namespace Demos
                 return false;
 
             // draw 'o' by scanner
-            success &= rtcSyncAxis.ListBegin(MotionType.ScannerOnly);
+            success &= rtcSyncAxis.ListBegin(MotionTypes.ScannerOnly);
             //success &= rtc.ListSpeed(velocity*5, velocity*5);
             for (int row = 0; row < grids; row++)
             {
@@ -593,7 +593,7 @@ namespace Demos
             success &= rtcSyncAxis.CtlSetTrajectory(newTrajectory);
             float offsetY = 0;
             offsetY = 5 * lineLength - 2 * lineLength;
-            success &= rtcSyncAxis.ListBegin(MotionType.StageAndScanner);
+            success &= rtcSyncAxis.ListBegin(MotionTypes.StageAndScanner);
             for (int i = 0; i < 4; ++i)
             {
                 //arrow
@@ -641,7 +641,7 @@ namespace Demos
             offsetY = 5 * lineLength;
             const int totalNumberOfLines = 20;
             const float increment = 1;
-            success &= rtcSyncAxis.ListBegin( MotionType.StageAndScanner);
+            success &= rtcSyncAxis.ListBegin( MotionTypes.StageAndScanner);
             for (int i = 0; i < 4; ++i)
             {
                 //line block
@@ -740,7 +740,7 @@ namespace Demos
                     }
                     catch (Exception ex)
                     {
-                        Logger.Log(Logger.Type.Error, ex.Message);
+                        Logger.Log(Logger.Types.Error, ex.Message);
                     }
                 });
             }

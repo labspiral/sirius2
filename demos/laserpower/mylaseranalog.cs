@@ -83,7 +83,7 @@ namespace Demos
 
         /// <inheritdoc/>  
         [Browsable(false)]
-        public virtual LaserType LaserType { get { return LaserType.UserDefined2; } }
+        public virtual LaserTypes LaserType { get { return LaserTypes.UserDefined2; } }
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
@@ -154,7 +154,7 @@ namespace Demos
                     this.NotifyPropertyChanged();
                     if (isError)
                     {
-                        Logger.Log(Logger.Type.Info, $"laser [{this.Index}]: error occurs");
+                        Logger.Log(Logger.Types.Info, $"laser [{this.Index}]: error occurs");
                     }
                 }
             }
@@ -187,7 +187,7 @@ namespace Demos
         [Category("Control")]
         [DisplayName("Power Control Method")]
         [Description("Power Control Method")]
-        public virtual PowerControlMethod PowerControlMethod { get; set; }
+        public virtual PowerControlMethods PowerControlMethod { get; set; }
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
@@ -317,7 +317,7 @@ namespace Demos
             this.Name = "My Laser";
             this.IsPowerControl = true;
             // RTC ANALOG1 Port Output 
-            this.PowerControlMethod = PowerControlMethod.Analog;
+            this.PowerControlMethod = PowerControlMethods.Analog;
             this.PowerControlDelayTime = 1;
             this.IsCommControl = false;
             this.IsShutterControl = false;
@@ -429,21 +429,21 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Type.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
                         return false;
-                    case PowerControlMethod.Analog:
-                        double dataVoltage = percentage / 100.0 * (this.MaxVoltage - this.MinVoltage) + this.MinVoltage;
+                    case PowerControlMethods.Analog:
+                        double dataVoltage = this.MinVoltage + (this.MaxVoltage - this.MinVoltage) * percentage / 100.0;
                         if (1 == this.AnalogPortNo)
-                            success &= rtc.CtlWriteData<double>(ExtensionChannel.ExtAO1, dataVoltage);
+                            success &= rtc.CtlWriteData<double>(ExtensionChannels.ExtAO1, dataVoltage);
                         else if (2 == this.AnalogPortNo)
-                            success &= rtc.CtlWriteData<double>(ExtensionChannel.ExtAO2, dataVoltage);
+                            success &= rtc.CtlWriteData<double>(ExtensionChannels.ExtAO2, dataVoltage);
                         break;
                 }
                 Thread.Sleep((int)this.PowerControlDelayTime);
                 if (success)
                 {
                     LastPowerWatt = watt;
-                    Logger.Log(Logger.Type.Warn, $"laser [{this.Index}]: power: {watt:F3} / {MaxPowerWatt:F3}W");
+                    Logger.Log(Logger.Types.Warn, $"laser [{this.Index}]: power: {watt:F3} / {MaxPowerWatt:F3}W");
                 }
                 return success;
             }
@@ -479,14 +479,14 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Type.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
                         return false;
-                    case PowerControlMethod.Analog:
+                    case PowerControlMethods.Analog:
                         double dataVoltage = percentage / 100.0 * (this.MaxVoltage - this.MinVoltage) + this.MinVoltage;
                         if (1 == this.AnalogPortNo)
-                            success &= rtc.ListWriteData<double>(ExtensionChannel.ExtAO1, dataVoltage);
+                            success &= rtc.ListWriteData<double>(ExtensionChannels.ExtAO1, dataVoltage);
                         else
-                            success &= rtc.ListWriteData<double>(ExtensionChannel.ExtAO2, dataVoltage);
+                            success &= rtc.ListWriteData<double>(ExtensionChannels.ExtAO2, dataVoltage);
                         success &= rtc.ListWait(this.PowerControlDelayTime);
                         break;
                 }

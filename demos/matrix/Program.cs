@@ -55,11 +55,11 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
-            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
             // Initialize RTC controller
             success &= rtc.Initialize();
@@ -136,12 +136,12 @@ namespace Demos
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannel[4]
+            var channels = new MeasurementChannels[4]
             {
-                 MeasurementChannel.SampleX, //X commanded
-                 MeasurementChannel.SampleY, //Y commanded
-                 MeasurementChannel.LaserOn, //Gate signal 0/1
-                 MeasurementChannel.OutputPeriod, //KHz
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
+                 MeasurementChannels.OutputPeriod, //KHz
             };
 
             bool success = true;
@@ -217,12 +217,12 @@ namespace Demos
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannel[4]
+            var channels = new MeasurementChannels[4]
             {
-                 MeasurementChannel.SampleX, //X commanded
-                 MeasurementChannel.SampleY, //Y commanded
-                 MeasurementChannel.LaserOn, //Gate signal 0/1
-                 MeasurementChannel.OutputPeriod, //KHz
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
+                 MeasurementChannels.OutputPeriod, //KHz
             };
 
             bool success = true;
@@ -298,12 +298,12 @@ namespace Demos
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannel[4]
+            var channels = new MeasurementChannels[4]
             {
-                 MeasurementChannel.SampleX, //X commanded
-                 MeasurementChannel.SampleY, //Y commanded
-                 MeasurementChannel.LaserOn, //Gate signal 0/1
-                 MeasurementChannel.OutputPeriod, //KHz
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
+                 MeasurementChannels.OutputPeriod, //KHz
             };
 
             bool success = true;
@@ -382,12 +382,12 @@ namespace Demos
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannel[4]
+            var channels = new MeasurementChannels[4]
             {
-                 MeasurementChannel.SampleX, //X commanded
-                 MeasurementChannel.SampleY, //Y commanded
-                 MeasurementChannel.LaserOn, //Gate signal 0/1
-                 MeasurementChannel.OutputPeriod, //KHz
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
+                 MeasurementChannels.OutputPeriod, //KHz
             };
 
             var m1 = Matrix4x4.CreateScale(scale);

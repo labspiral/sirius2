@@ -107,12 +107,13 @@
 
 **8. Version history**
 
-* 2023.9.26 v.1.3.770
+* 2023.9.27 v.1.3.770
   - added) pdf417 barcode entity  
   - added) SCANahead demo project
   - added) optimize demo project
   - added) IRtcRaster at Rtc6SyncAxis
   - fixed) barcode 2d with fixed aspect ratio
+  - fixed) renamed enum types
 
 * 2023.9.21 v.1.2.760
   - added) raster modes

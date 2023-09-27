@@ -553,7 +553,7 @@ namespace Demos
         }
         private void MnuWriteData_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateWriteData(ExtensionChannel.ExtAO2, 0);
+            var entity = EntityFactory.CreateWriteData(ExtensionChannels.ExtAO2, 0);
             document.ActAdd(entity);
         }
         private void MnuAlcDefinedVector_Click(object sender, EventArgs e)
@@ -563,7 +563,7 @@ namespace Demos
                 document.ActAdd(entity);
             }
             {
-                var entity = EntityFactory.CreateRampBegin(AutoLaserControlSignal.Frequency, 50 * 1000);
+                var entity = EntityFactory.CreateRampBegin(AutoLaserControlSignals.Frequency, 50 * 1000);
                 document.ActInsert(entity, document.ActiveLayer, 0);
             }
         }
@@ -584,14 +584,14 @@ namespace Demos
 
             switch (rtc.RtcType)
             {
-                case RtcType.RtcVirtual:
+                case RtcTypes.RtcVirtual:
                     break;
-                case RtcType.Rtc4:
-                case RtcType.Rtc5:
-                case RtcType.Rtc6:
-                case RtcType.Rtc6e:
+                case RtcTypes.Rtc4:
+                case RtcTypes.Rtc5:
+                case RtcTypes.Rtc6:
+                case RtcTypes.Rtc6e:
                     break;
-                case RtcType.Rtc6SyncAxis:
+                case RtcTypes.Rtc6SyncAxis:
                     btnImageText.Enabled = false;
                     mnuMeasurementBeginEnd.Enabled = false;
                     mnuMoF.Enabled = false;
@@ -687,7 +687,7 @@ namespace Demos
 
         private void MnuMofAngularWait_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateMoFWait(RtcEncoderWaitCondition.Over, 90);
+            var entity = EntityFactory.CreateMoFWait(RtcEncoderWaitConditions.Over, 90);
             document.ActAdd(entity);
         }
 
@@ -699,14 +699,14 @@ namespace Demos
                 
             }
             {
-                var entity = EntityFactory.CreateMoFBegin(RtcEncoderType.Angular);
+                var entity = EntityFactory.CreateMoFBegin(RtcEncoderTypes.Angular);
                 document.ActInsert(entity, document.ActiveLayer, 0);
             }
         }
 
         private void MnuMofXYWait_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateMoFWait(RtcEncoder.EncX, RtcEncoderWaitCondition.Over, 10);
+            var entity = EntityFactory.CreateMoFWait(RtcEncoders.EncX, RtcEncoderWaitConditions.Over, 10);
             document.ActAdd(entity);
         }
 
@@ -717,7 +717,7 @@ namespace Demos
                 document.ActAdd(entity);
             }
             {
-                var entity = EntityFactory.CreateMoFBegin(RtcEncoderType.XY);
+                var entity = EntityFactory.CreateMoFBegin(RtcEncoderTypes.XY);
                 document.ActInsert(entity, document.ActiveLayer, 0);
             }
         }
@@ -926,13 +926,13 @@ namespace Demos
                 switch (rtcMoF.EncoderType)
                 {
                     default:
-                    case RtcEncoderType.XY:
+                    case RtcEncoderTypes.XY:
                         {
                             rtcMoF.CtlMofGetEncoder(out var x, out var y, out var xMm, out var yMm);
                             lblEncoder.Text = $"ENC XY: {x}, {y} [{xMm:F3}, {yMm:F3}]";
                         }
                         break;
-                    case RtcEncoderType.Angular:
+                    case RtcEncoderTypes.Angular:
                         { 
                             rtcMoF.CtlMofGetAngularEncoder(out var x, out var angle);
                             lblEncoder.Text = $"ENC X,0: {x} [{angle:F3}˚]";
@@ -1022,12 +1022,12 @@ namespace Demos
             {
                 var entity1 = EntityFactory.CreateMeasurementEnd();
                 document.ActAdd(entity1);
-                var channels = new MeasurementChannel[4]
+                var channels = new MeasurementChannels[4]
                 {
-                    MeasurementChannel.SampleX,
-                    MeasurementChannel.SampleY,
-                    MeasurementChannel.SampleZ,
-                    MeasurementChannel.LaserOn,
+                    MeasurementChannels.SampleX,
+                    MeasurementChannels.SampleY,
+                    MeasurementChannels.SampleZ,
+                    MeasurementChannels.LaserOn,
                 };
                 var entity2 = EntityFactory.CreateMeasurementBegin(5 * 1000, channels);
                 document.ActInsert(entity2, document.ActiveLayer, 0);
@@ -1036,16 +1036,16 @@ namespace Demos
             {
                 var entity1 = EntityFactory.CreateMeasurementEnd();
                 document.ActAdd(entity1);
-                var channels = new MeasurementChannel[8]
+                var channels = new MeasurementChannels[8]
                 {
-                    MeasurementChannel.SampleX,
-                    MeasurementChannel.SampleY,
-                    MeasurementChannel.SampleZ,
-                    MeasurementChannel.LaserOn,
-                    MeasurementChannel.OutputPeriod,
-                    MeasurementChannel.PulseLength,
-                    MeasurementChannel.Enc0Counter,
-                    MeasurementChannel.Enc1Counter,
+                    MeasurementChannels.SampleX,
+                    MeasurementChannels.SampleY,
+                    MeasurementChannels.SampleZ,
+                    MeasurementChannels.LaserOn,
+                    MeasurementChannels.OutputPeriod,
+                    MeasurementChannels.PulseLength,
+                    MeasurementChannels.Enc0Counter,
+                    MeasurementChannels.Enc1Counter,
                 };
                 var entity2 = EntityFactory.CreateMeasurementBegin(5 * 1000, channels);
                 document.ActInsert(entity2, document.ActiveLayer, 0);

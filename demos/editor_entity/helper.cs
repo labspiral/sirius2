@@ -120,11 +120,11 @@ namespace Demos
             //var correctionFile = Path.Combine(Config.CorrectionPath, "cor_1to1.ct5");
             var correctionFile = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "CORRECTION", "cor_1to1.ct5");
             var correctionPath = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, correctionFile);
-            var signalLevelLaser12 = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "SIGNALLEVEL_LASER12", "High") == "High" ? RtcSignalLevel.ActiveHigh : RtcSignalLevel.ActiveLow;
-            var signalLevelLaserOn = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "SIGNALLEVEL_LASERON", "High") == "High" ? RtcSignalLevel.ActiveHigh : RtcSignalLevel.ActiveLow;
+            var signalLevelLaser12 = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "SIGNALLEVEL_LASER12", "High") == "High" ? RtcSignalLevels.ActiveHigh : RtcSignalLevels.ActiveLow;
+            var signalLevelLaserOn = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "SIGNALLEVEL_LASERON", "High") == "High" ? RtcSignalLevels.ActiveHigh : RtcSignalLevels.ActiveLow;
             var rtcType = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "TYPE", "Rtc5");
             var sLaserMode = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "LASERMODE", "Yag5");
-            var laserMode = (LaserMode)Enum.Parse(typeof(LaserMode), sLaserMode);
+            var laserMode = (LaserModes)Enum.Parse(typeof(LaserModes), sLaserMode);
             switch (rtcType.Trim().ToLower())
             {
                 case "virtual":
@@ -175,8 +175,8 @@ namespace Demos
             { 
                 var secondaryCorrectionFileName = NativeMethods.ReadIni<string>(ConfigFileName, $"RTC{index}", "SECONDARY_CORRECTION");
                 var secondaryCorrectionFullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "correction", secondaryCorrectionFileName);
-                success &= rtc.CtlLoadCorrectionFile(CorrectionTableIndex.Table2, secondaryCorrectionFullPath);
-                success &= rtc.CtlSelectCorrection(rtc.PrimaryHeadTable, CorrectionTableIndex.Table2);
+                success &= rtc.CtlLoadCorrectionFile(CorrectionTables.Table2, secondaryCorrectionFullPath);
+                success &= rtc.CtlSelectCorrection(rtc.PrimaryHeadTable, CorrectionTables.Table2);
 
                 float distX = NativeMethods.ReadIni<float>(ConfigFileName, $"RTC{index}", "PRIMARY_TO_SECONDARY_DISTANCE_X");
                 float distY = NativeMethods.ReadIni<float>(ConfigFileName, $"RTC{index}", "PRIMARY_TO_SECONDARY_DISTANCE_Y");
@@ -396,7 +396,7 @@ namespace Demos
 
             switch (rtc.RtcType)
             {
-                case RtcType.Rtc6SyncAxis:
+                case RtcTypes.Rtc6SyncAxis:
                     break;
                 default:
                     // Image entity
@@ -439,7 +439,7 @@ namespace Demos
             // Sirius text entity
             switch (rtc.RtcType)
             {
-                case RtcType.Rtc6SyncAxis:
+                case RtcTypes.Rtc6SyncAxis:
                     break;
                 default:
                     var text2 = EntityFactory.CreateSiriusText("romans2.cxf", $"12345 67890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", 2);
@@ -452,13 +452,13 @@ namespace Demos
             // Registerable text characterset
             switch (rtc.RtcType)
             {
-                case RtcType.Rtc6SyncAxis:
+                case RtcTypes.Rtc6SyncAxis:
                     break;
                 default:
                     // Text
                     var textCharacterSet1 = EntityFactory.CreateCharacterSetText("Arial", CharacterSetFormats.Time, 2);
                     textCharacterSet1.Name = "MyTextCharacterset";
-                    textCharacterSet1.CharacterSetTime.TimeFormat = TimeFormat.Hours24;
+                    textCharacterSet1.CharacterSetTime.TimeFormat = TimeFormats.Hours24;
                     textCharacterSet1.CharacterSetTime.IsLeadingWithZero = true;
                     textCharacterSet1.Translate(24, -22);
                     success &= document.ActAdd(textCharacterSet1);
@@ -466,7 +466,7 @@ namespace Demos
                     var textSiriusCharacterSet1 = EntityFactory.CreateSiriusCharacterSetText("romans2.cxf", CharacterSetFormats.SerialNo, 2);
                     textSiriusCharacterSet1.Name = "MySiriusTextCharacterset";
                     textSiriusCharacterSet1.CharacterSetSerialNo.NumOfDigits = 4;
-                    textSiriusCharacterSet1.CharacterSetSerialNo.SerialFormat = SerialNoFormat.LeadingWithZero;
+                    textSiriusCharacterSet1.CharacterSetSerialNo.SerialFormat = SerialNoFormats.LeadingWithZero;
                     textSiriusCharacterSet1.Translate(24, -25);
                     success &= document.ActAdd(textSiriusCharacterSet1);
                     break;
@@ -606,12 +606,12 @@ namespace Demos
             // Datamatrix barcode cell by dots
             switch (rtc.RtcType)
             {
-                case RtcType.Rtc6SyncAxis:
+                case RtcTypes.Rtc6SyncAxis:
                     break;
                 default:
                     var dataMatrix1 = EntityFactory.CreateDataMatrix("0123456789", Barcode2DCells.Dots, 3, 4, 4);
                     dataMatrix1.CellDot.RasterMode = RasterModes.JumpAndShoot;
-                    dataMatrix1.CellDot.PixelChannel = ExtensionChannel.ExtAO2;
+                    dataMatrix1.CellDot.PixelChannel = ExtensionChannels.ExtAO2;
                     dataMatrix1.CellDot.PixelPeriod = 1000;
                     dataMatrix1.CellDot.PixelPeriod = 100;
                     dataMatrix1.CellDot.IsZigZag = false;

@@ -56,11 +56,11 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
-            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
             // Initialize RTC controller
             success &= rtc.Initialize();
@@ -137,24 +137,24 @@ namespace Demos
             // 50KHz Sample rate (max 100KHz)
             double sampleRateHz = 50 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannel[4]
+            var channels = new MeasurementChannels[4]
             {
-                 MeasurementChannel.SampleX, //X commanded
-                 MeasurementChannel.SampleY, //Y commanded
-                 MeasurementChannel.LaserOn, //Gate signal 0/1
-                 MeasurementChannel.OutputPeriod, //Hz
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
+                 MeasurementChannels.OutputPeriod, //Hz
             };
             // Max 8 channels at RTC6
             //var channels = new MeasurementChannel[8]
             //{
-            //     MeasurementChannel.SampleX, //X commanded
-            //     MeasurementChannel.SampleY, //Y commanded
-            //     MeasurementChannel.LaserOn, //Gate signal 0/1
-            //     MeasurementChannel.Enc0Counter, 
-            //     MeasurementChannel.Enc1Counter,
-            //     MeasurementChannel.OutputPeriod,
-            //     MeasurementChannel.PulseLength,
-            //     MeasurementChannel.ExtAO1,
+            //     MeasurementChannels.SampleX, //X commanded
+            //     MeasurementChannels.SampleY, //Y commanded
+            //     MeasurementChannels.LaserOn, //Gate signal 0/1
+            //     MeasurementChannels.Enc0Counter, 
+            //     MeasurementChannels.Enc1Counter,
+            //     MeasurementChannels.OutputPeriod,
+            //     MeasurementChannels.PulseLength,
+            //     MeasurementChannels.ExtAO1,
             //};
 
             bool success = true;

@@ -75,11 +75,11 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
-            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
             // Initialize RTC controller
             success &= rtc.Initialize();
@@ -150,13 +150,13 @@ namespace Demos
                         ConvertFieldCorrection3DByWinforms(rtc);
                         break;
                     case ConsoleKey.F1:
-                        rtc.CtlSelectCorrection(CorrectionTableIndex.Table1);
+                        rtc.CtlSelectCorrection(CorrectionTables.Table1);
                         break;
                     case ConsoleKey.F2:
-                        rtc.CtlSelectCorrection(CorrectionTableIndex.Table2);
+                        rtc.CtlSelectCorrection(CorrectionTables.Table2);
                         break;
                     case ConsoleKey.F4:
-                        rtc.CtlSelectCorrection(CorrectionTableIndex.Table4, CorrectionTableIndex.Table4);
+                        rtc.CtlSelectCorrection(CorrectionTables.Table4, CorrectionTables.Table4);
                         break;
                 }
             } while (true);
@@ -232,8 +232,8 @@ namespace Demos
             if (success)
             {
                 Console.WriteLine($"Success to convert {targetFile} 2d file. so load by Table2");
-                success &= rtc.CtlLoadCorrectionFile(CorrectionTableIndex.Table2, targetFile);
-                success &= rtc.CtlSelectCorrection(CorrectionTableIndex.Table2);
+                success &= rtc.CtlLoadCorrectionFile(CorrectionTables.Table2, targetFile);
+                success &= rtc.CtlSelectCorrection(CorrectionTables.Table2);
             }
             return success;
         }
@@ -270,8 +270,8 @@ namespace Demos
             if (success)
             {
                 Console.WriteLine($"Success to convert {targetFile} 3d file. so load by Table4");
-                success &= rtc.CtlLoadCorrectionFile(CorrectionTableIndex.Table4, targetFile);
-                success &= rtc.CtlSelectCorrection(CorrectionTableIndex.Table4, CorrectionTableIndex.Table4);
+                success &= rtc.CtlLoadCorrectionFile(CorrectionTables.Table4, targetFile);
+                success &= rtc.CtlSelectCorrection(CorrectionTables.Table4, CorrectionTables.Table4);
             }
             return success;
         }
@@ -297,8 +297,8 @@ namespace Demos
             if (success)
             {
                 Console.WriteLine($"Success to convert {targetFile} 2d file. so load by Table2");
-                success &= rtc.CtlLoadCorrectionFile(CorrectionTableIndex.Table2, targetFile);
-                success &= rtc.CtlSelectCorrection(CorrectionTableIndex.Table2);
+                success &= rtc.CtlLoadCorrectionFile(CorrectionTables.Table2, targetFile);
+                success &= rtc.CtlSelectCorrection(CorrectionTables.Table2);
             }
             return success;
         }

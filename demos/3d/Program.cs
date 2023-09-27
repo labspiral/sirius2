@@ -57,11 +57,11 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
-            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
             // Initialize RTC controller
             success &= rtc.Initialize();
@@ -256,14 +256,14 @@ namespace Demos
                             //    success &= rtc.CtlSelectCorrection(CorrectionTableIndex.Table1);
                             //    break;
                             default:
-                            case RtcType.Rtc5:
-                                success &= rtc.CtlSelectCorrection(CorrectionTableIndex.Table1);
+                            case RtcTypes.Rtc5:
+                                success &= rtc.CtlSelectCorrection(CorrectionTables.Table1);
                                 break;
-                            case RtcType.Rtc6:
-                                success &= rtc.CtlSelectCorrection(CorrectionTableIndex.Table1);
+                            case RtcTypes.Rtc6:
+                                success &= rtc.CtlSelectCorrection(CorrectionTables.Table1);
                                 break;
                         }
-                        Logger.Log(Logger.Type.Info, $"3D calibration has reset as original correction table");
+                        Logger.Log(Logger.Types.Info, $"3D calibration has reset as original correction table");
                         break;
                     case ConsoleKey.F9:
                         {
@@ -375,30 +375,30 @@ namespace Demos
         private static bool LoadAndSelectCorrectionFile(IRtc rtc, string newCtFileName)
         {
             bool success = true;
-            CorrectionTableIndex targetTable = CorrectionTableIndex.None;
+            CorrectionTables targetTable = CorrectionTables.None;
             switch (rtc.RtcType)
             {
                 default:
-                case RtcType.Rtc4:
-                    targetTable = CorrectionTableIndex.Table2;
+                case RtcTypes.Rtc4:
+                    targetTable = CorrectionTables.Table2;
                     success &= rtc.CtlLoadCorrectionFile(targetTable, newCtFileName);
                     success &= rtc.CtlSelectCorrection(targetTable);
                     break;
-                case RtcType.Rtc5:
-                    targetTable = CorrectionTableIndex.Table4;
+                case RtcTypes.Rtc5:
+                    targetTable = CorrectionTables.Table4;
                     success &= rtc.CtlLoadCorrectionFile(targetTable, newCtFileName);
                     success &= rtc.CtlSelectCorrection(targetTable);
                     break;
-                case RtcType.Rtc6:
-                    targetTable = CorrectionTableIndex.Table8;
+                case RtcTypes.Rtc6:
+                    targetTable = CorrectionTables.Table8;
                     success &= rtc.CtlLoadCorrectionFile(targetTable, newCtFileName);
                     success &= rtc.CtlSelectCorrection(targetTable);
                     break;
             }
             if (success)
-                Logger.Log(Logger.Type.Info, $"new 3D calibration has applied: {newCtFileName} at {targetTable}");
+                Logger.Log(Logger.Types.Info, $"new 3D calibration has applied: {newCtFileName} at {targetTable}");
             else
-                Logger.Log(Logger.Type.Error, $"fail to load and select 3D calibration: {newCtFileName} at {targetTable}");
+                Logger.Log(Logger.Types.Error, $"fail to load and select 3D calibration: {newCtFileName} at {targetTable}");
             return success;
         }
     }

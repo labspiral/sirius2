@@ -35,6 +35,7 @@ using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
 using SpiralLab.Sirius2.Scanner.Rtc;
+using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
 
 namespace Demos
 {
@@ -83,7 +84,7 @@ namespace Demos
 
         /// <inheritdoc/>  
         [Browsable(false)]
-        public virtual LaserType LaserType { get { return LaserType.UserDefined1; } }
+        public virtual LaserTypes LaserType { get { return LaserTypes.UserDefined1; } }
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
@@ -154,7 +155,7 @@ namespace Demos
                     this.NotifyPropertyChanged();
                     if (isError)
                     {
-                        Logger.Log(Logger.Type.Info, $"laser [{this.Index}]: error occurs");
+                        Logger.Log(Logger.Types.Info, $"laser [{this.Index}]: error occurs");
                     }
                 }
             }
@@ -187,7 +188,7 @@ namespace Demos
         [Category("Control")]
         [DisplayName("Power Control Method")]
         [Description("Power Control Method")]
-        public virtual PowerControlMethod PowerControlMethod { get; set; }
+        public virtual PowerControlMethods PowerControlMethod { get; set; }
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
@@ -242,7 +243,7 @@ namespace Demos
             this.SyncRoot = new object();
             this.Name = "MyLaser";
             this.IsPowerControl = true;
-            this.PowerControlMethod = PowerControlMethod.Custom;
+            this.PowerControlMethod = PowerControlMethods.Custom;
             this.PowerControlDelayTime = 1000;
             this.IsCommControl = false;
             this.IsShutterControl = false;
@@ -353,9 +354,9 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Type.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
                         return false;
-                    case PowerControlMethod.Custom:
+                    case PowerControlMethods.Custom:
                         // do something you want to vary output laser power
                         break;
                 }
@@ -363,7 +364,7 @@ namespace Demos
                 if (success)
                 {
                     LastPowerWatt = watt;
-                    Logger.Log(Logger.Type.Warn, $"laser [{this.Index}]: power: {watt:F3} / {MaxPowerWatt:F3}W");
+                    Logger.Log(Logger.Types.Warn, $"laser [{this.Index}]: power: {watt:F3} / {MaxPowerWatt:F3}W");
                 }
                 return success;
             }
@@ -399,20 +400,21 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Type.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
                         return false;
-                    case PowerControlMethod.Custom:
-                        // do something you want to vary output laser power
-                        // for example
+                    case PowerControlMethods.Custom:
+                        // Do something you want to vary output laser power
+                        // For example if RTC5,6 (Rtc6SyncAXIS is not applicable)
+                        Debug.Assert(!(rtc is IRtcSyncAxis));
                         success &= rtc.ListEnd();
                         success &= rtc.ListExecute(true);
-                        // vary laser output power 
-                        // it takes some time
+                        // Vary laser output power 
                         // ...
+                        // And it takes some time
                         Thread.Sleep((int)this.PowerControlDelayTime);
-                        //
-                        // and then restart list buffer
+                        // Restart list buffer
                         success &= rtc.ListBegin(rtc.ListType);
+
                         break;
                 }
                 if (success)

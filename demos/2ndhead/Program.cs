@@ -57,11 +57,11 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
-            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
             // Initialize RTC controller
             success &= rtc.Initialize();
@@ -80,10 +80,10 @@ namespace Demos
             Debug.Assert(rtc.Is2ndHead);
 
             var correctionFile2 = Path.Combine(Config.CorrectionPath, "cor_1to1.ct5");
-            rtc.CtlLoadCorrectionFile(CorrectionTableIndex.Table2, correctionFile2);
+            rtc.CtlLoadCorrectionFile(CorrectionTables.Table2, correctionFile2);
             // primary(1st) scan head : Table1
             // secondary(2nd) scan head : Table2
-            rtc.CtlSelectCorrection(CorrectionTableIndex.Table1, CorrectionTableIndex.Table2);
+            rtc.CtlSelectCorrection(CorrectionTables.Table1, CorrectionTables.Table2);
 
             // Distance bewteen primary and secondary head
             //
@@ -217,8 +217,8 @@ namespace Demos
             // Start list
             success &= rtc.ListBegin();
             // Rotate and translate each heads
-            success &= rtc2ndHead.ListHeadOffset(ScannerHead.Primary, new Offset(5, 0, 0, 0));
-            success &= rtc2ndHead.ListHeadOffset(ScannerHead.Secondary, new Offset(-5, 0, 0, 0));
+            success &= rtc2ndHead.ListHeadOffset(ScannerHeads.Primary, new Offset(5, 0, 0, 0));
+            success &= rtc2ndHead.ListHeadOffset(ScannerHeads.Secondary, new Offset(-5, 0, 0, 0));
             for (int i = 0; i < 10; i++)
             {
                 // Draw line
@@ -231,8 +231,8 @@ namespace Demos
                     break;
             }
             // Revert
-            success &= rtc2ndHead.ListHeadOffset(ScannerHead.Primary, Offset.Zero);
-            success &= rtc2ndHead.ListHeadOffset(ScannerHead.Secondary, Offset.Zero);
+            success &= rtc2ndHead.ListHeadOffset(ScannerHeads.Primary, Offset.Zero);
+            success &= rtc2ndHead.ListHeadOffset(ScannerHeads.Secondary, Offset.Zero);
             if (success)
             {
                 success &= rtc.ListEnd();

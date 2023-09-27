@@ -56,9 +56,9 @@ namespace Demos
             var correctionFile = Path.Combine(Config.CorrectionPath, "cor_1to1.ct5");
 
             // Create RTC6 controller
-            var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
-            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
             // Initialize RTC controller
             success &= rtc.Initialize();
@@ -79,7 +79,7 @@ namespace Demos
             success &= rtc.CtlDelayScanAhead(10, 100);
 
             // excelliSCAN scan head must be connected and load pre-stored parameter from excelliSCAN head.
-            success &= rtc.CtlAutoDelayParams(AutoDelayParamMode.Load, ScannerHead.Primary, CorrectionTableIndex.Table1);
+            success &= rtc.CtlAutoDelayParams(AutoDelayParamModes.Load, ScannerHeads.Primary, CorrectionTables.Table1);
 
             Debug.Assert(success);
 
@@ -136,11 +136,11 @@ namespace Demos
                     case ConsoleKey.D1:
                         // SDC on
                         double sdcDistance = 0.1;
-                        success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignal.SpotDistance, AutoLaserControlMode.ActualVelocityWithSCANAhead, sdcDistance);
+                        success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignals.SpotDistance, AutoLaserControlModes.ActualVelocityWithSCANAhead, sdcDistance);
                         break;
                     case ConsoleKey.D2:
                         // SDC off
-                        success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignal.Disabled, AutoLaserControlMode.Disabled);
+                        success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignals.Disabled, AutoLaserControlModes.Disabled);
                         break;
                     case ConsoleKey.D3:
                         // Line quality scale factor
@@ -309,7 +309,7 @@ namespace Demos
                 // Jump to start position 
                 success &= rtc.ListJumpTo(new System.Numerics.Vector2(0, i * gap));
                 // Mark raster(or dots) at line
-                success &= rtcRaster.ListRasterLine( RasterModes.JumpAndShoot, period, delta, (uint)counts, ExtensionChannel.ExtAO2);
+                success &= rtcRaster.ListRasterLine( RasterModes.JumpAndShoot, period, delta, (uint)counts, ExtensionChannels.ExtAO2);
                 for (int j = 0; j < counts; j++)
                     success &= rtcRaster.ListRasterPixel(50, 0.5f); // each pixel with 50usec, 5V
                 if (!success)

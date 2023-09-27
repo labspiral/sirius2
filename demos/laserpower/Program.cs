@@ -64,11 +64,11 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
-            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
             // Initialize RTC controller
             success &= rtc.Initialize();
@@ -95,31 +95,31 @@ namespace Demos
                 default:
                 case 1:
                     var myLaserDOut8 = new MyLaserDOut(0, "My DOut 8Bits Laser", maxWatt, 0, 255);
-                    myLaserDOut8.PowerControlMethod = PowerControlMethod.DigitalBits;
+                    myLaserDOut8.PowerControlMethod = PowerControlMethods.DigitalBits;
                     myLaserDOut8.DigitalBitsPortNo = 2; //RTC EXTENSION PORT 2 (8bits)
                     laser = myLaserDOut8;
                     break;
                 case 2:
                     var myLaserDOut16 = new MyLaserDOut(0, "My DOut 16Bits Laser", maxWatt, 0, 65535);
-                    myLaserDOut16.PowerControlMethod = PowerControlMethod.DigitalBits;
+                    myLaserDOut16.PowerControlMethod = PowerControlMethods.DigitalBits;
                     myLaserDOut16.DigitalBitsPortNo = 1; //RTC EXTENSION PORT 1 (16bits)
                     laser = myLaserDOut16;
                     break;
                 case 3:
                     var myLaserAnalog1 = new MyLaserAnalog(0, "My Analog1 Laser", maxWatt);
-                    myLaserAnalog1.PowerControlMethod = PowerControlMethod.Analog;
+                    myLaserAnalog1.PowerControlMethod = PowerControlMethods.Analog;
                     myLaserAnalog1.AnalogPortNo = 1;
                     laser = myLaserAnalog1;
                     break;
                 case 4:
                     var myLaserAnalog2 = new MyLaserAnalog(0, "My Analog2 Laser", maxWatt);
-                    myLaserAnalog2.PowerControlMethod = PowerControlMethod.Analog;
+                    myLaserAnalog2.PowerControlMethod = PowerControlMethods.Analog;
                     myLaserAnalog2.AnalogPortNo = 2;
                     laser = myLaserAnalog2;
                     break;
                 case 5:
                     var myLaserPulseWidth = new MyDutyCycle(0, "My DutyCycle Laser", maxWatt);
-                    myLaserPulseWidth.PowerControlMethod = PowerControlMethod.DutyCycle;
+                    myLaserPulseWidth.PowerControlMethod = PowerControlMethods.DutyCycle;
                     laser = myLaserPulseWidth;
                     break;
                 case 6:
@@ -171,25 +171,25 @@ namespace Demos
                 switch (key.Key)
                 {
                     case ConsoleKey.F1:
-                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannel.ExtDO8, watt);
+                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.ExtDO8, watt);
                         break;
                     case ConsoleKey.F2:
-                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannel.ExtDO16, watt);
+                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.ExtDO16, watt);
                         break;
                     case ConsoleKey.F3:
-                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannel.ExtAO1, watt);
+                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.ExtAO1, watt);
                         break;
                     case ConsoleKey.F4:
-                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannel.ExtAO2, watt);
+                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.ExtAO2, watt);
                         break;
                     case ConsoleKey.F5:
-                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannel.PulseLength, watt);
+                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.PulseLength, watt);
                         break;
                     case ConsoleKey.F6:
-                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannel.FreeVariable0, watt);
+                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.FreeVariable0, watt);
                         break;
                     case ConsoleKey.F7:
-                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannel.FreeVariable1, watt);                        
+                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.FreeVariable1, watt);                        
                         break;
                     case ConsoleKey.D1:
                         rtc.CtlMoveTo(Vector2.Zero);
@@ -199,7 +199,7 @@ namespace Demos
                         rtc.CtlLaserOff();
                         break;
                 }
-                Logger.Log(Logger.Type.Info, $"Processing time: {sw.Elapsed.TotalSeconds:F3} sec");
+                Logger.Log(Logger.Types.Info, $"Processing time: {sw.Elapsed.TotalSeconds:F3} sec");
             } while (true);
 
             rtc.Dispose();
@@ -221,7 +221,7 @@ namespace Demos
         /// <param name="watt"></param>
         /// <param name="radius"></param>
         /// <returns></returns>
-        private static bool DrawCircleWithMeasurement(IRtc rtc, ILaser laser, MeasurementChannel channel, double watt, double radius = 10)
+        private static bool DrawCircleWithMeasurement(IRtc rtc, ILaser laser, MeasurementChannels channel, double watt, double radius = 10)
         {
             var rtcMeasurement = rtc as IRtcMeasurement;
             Debug.Assert(rtcMeasurement != null);
@@ -231,11 +231,11 @@ namespace Demos
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannel[4]
+            var channels = new MeasurementChannels[4]
             {
-                 MeasurementChannel.SampleX, //X commanded
-                 MeasurementChannel.SampleY, //Y commanded
-                 MeasurementChannel.LaserOn, //Gate signal 0/1
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
                  channel, 
             };
 

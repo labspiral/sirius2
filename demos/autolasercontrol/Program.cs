@@ -58,11 +58,11 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
-            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
             // Initialize RTC controller
             success &= rtc.Initialize();
@@ -151,18 +151,18 @@ namespace Demos
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannel[4]
+            var channels = new MeasurementChannels[4]
             {
-                 MeasurementChannel.SampleX, //X commanded
-                 MeasurementChannel.SampleY, //Y commanded
-                 MeasurementChannel.LaserOn, //Gate signal 0/1
-                 MeasurementChannel.ExtAO1, 
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
+                 MeasurementChannels.ExtAO1, 
             };
 
             // Position dependent ALC off
             rtcAlc.CtlAlcByPositionTable(null);
             // Analog1: 5V (Min: 4V, Max: 6V)
-            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignal.Analog1, AutoLaserControlMode.SetVelocity, 5, 4, 6);
+            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignals.Analog1, AutoLaserControlModes.SetVelocity, 5, 4, 6);
             success &= rtc.ListBegin();
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             success &= rtc.ListJumpTo(new Vector2(x1, y1));
@@ -174,7 +174,7 @@ namespace Demos
                 success &= rtc.ListEnd();
                 success &= rtc.ListExecute(true);
             }
-            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignal.Disabled, AutoLaserControlMode.Disabled);
+            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignals.Disabled, AutoLaserControlModes.Disabled);
             if (success)
             {
                 // Temporary measurement file
@@ -201,12 +201,12 @@ namespace Demos
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannel[4]
+            var channels = new MeasurementChannels[4]
             {
-                 MeasurementChannel.SampleX, //X commanded
-                 MeasurementChannel.SampleY, //Y commanded
-                 MeasurementChannel.LaserOn, //Gate signal 0/1
-                 MeasurementChannel.ExtAO1,
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
+                 MeasurementChannels.ExtAO1,
             };
 
             // Distance(or radius) (mm), scale (0~4)
@@ -217,7 +217,7 @@ namespace Demos
             // Position dependent ALC on
             success &= rtcAlc.CtlAlcByPositionTable(kvList.ToArray());
             // Analog1: 5V (Min: 4V, Max: 6V)
-            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignal.Analog1, AutoLaserControlMode.SetVelocity, 5, 0, 10);
+            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignals.Analog1, AutoLaserControlModes.SetVelocity, 5, 0, 10);
             success &= rtc.ListBegin();
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             success &= rtc.ListJumpTo(new Vector2(x1, y1));
@@ -229,7 +229,7 @@ namespace Demos
                 success &= rtc.ListEnd();
                 success &= rtc.ListExecute(true);
             }
-            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignal.Disabled, AutoLaserControlMode.Disabled);
+            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignals.Disabled, AutoLaserControlModes.Disabled);
             if (success)
             {
                 // Temporary measurement file
@@ -259,18 +259,18 @@ namespace Demos
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannel[4]
+            var channels = new MeasurementChannels[4]
             {
-                 MeasurementChannel.SampleX, //X commanded
-                 MeasurementChannel.SampleY, //Y commanded
-                 MeasurementChannel.LaserOn, //Gate signal 0/1
-                 MeasurementChannel.OutputPeriod, // Converted Raw Data to Frequency(Hz) 
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
+                 MeasurementChannels.OutputPeriod, // Converted Raw Data to Frequency(Hz) 
             };
 
             // Target frequency : 50KHz
             // Lower cut off frequency : 40KHz
             // Upper cut off frequency : 60KHz
-            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignal.Frequency, AutoLaserControlMode.ActualVelocity, 50 * 1000, 40 * 1000, 60 * 1000);
+            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignals.Frequency, AutoLaserControlModes.ActualVelocity, 50 * 1000, 40 * 1000, 60 * 1000);
             success &= rtc.ListBegin();
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             success &= rtc.ListJumpTo(new Vector2(x1, y1));
@@ -282,7 +282,7 @@ namespace Demos
                 success &= rtc.ListEnd();
                 success &= rtc.ListExecute(true);
             }
-            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignal.Disabled, AutoLaserControlMode.Disabled);
+            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignals.Disabled, AutoLaserControlModes.Disabled);
             if (success)
             {
                 // Temporary measurement file
@@ -310,12 +310,12 @@ namespace Demos
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannel[4]
+            var channels = new MeasurementChannels[4]
             {
-                 MeasurementChannel.SampleX, //X commanded
-                 MeasurementChannel.SampleY, //Y commanded
-                 MeasurementChannel.LaserOn, //Gate signal 0/1
-                 MeasurementChannel.ExtAO1,
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
+                 MeasurementChannels.ExtAO1,
             };
 
             // Position dependent ALC off
@@ -325,7 +325,7 @@ namespace Demos
             // Analog1 voltage : 5V
             // Jump ramp with 0.5 : 5 * 0.5 = 2.5V
             // Mark ramp with 1.5 : 5 * 1.5 = 7.5V
-            success &= rtcAlc.ListAlcByVectorBegin<double>(AutoLaserControlSignal.Analog1, 5); 
+            success &= rtcAlc.ListAlcByVectorBegin<double>(AutoLaserControlSignals.Analog1, 5); 
             success &= rtc.ListJumpTo(new Vector2(x1, y1), 0.5F); 
             success &= rtc.ListMarkTo(new Vector2(x2, y2), 1.5F); 
             success &= rtcAlc.ListAlcByVectorEnd();
@@ -336,7 +336,7 @@ namespace Demos
                 success &= rtc.ListEnd();
                 success &= rtc.ListExecute(true);
             }
-            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignal.Disabled, AutoLaserControlMode.Disabled);
+            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignals.Disabled, AutoLaserControlModes.Disabled);
             if (success)
             {
                 // Temporary measurement file
@@ -368,19 +368,19 @@ namespace Demos
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
             
-            var channels = new MeasurementChannel[4]
+            var channels = new MeasurementChannels[4]
             {
-                 MeasurementChannel.SampleX, //X commanded
-                 MeasurementChannel.SampleY, //Y commanded
-                 MeasurementChannel.LaserOn, //Gate signal 0/1
-                 MeasurementChannel.OutputPeriod,
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
+                 MeasurementChannels.OutputPeriod,
             };
 
             // Position dependent ALC off
             success &= rtcAlc.CtlAlcByPositionTable(null);
             // SDC with distance : 0.1mm
             double distance = 0.1;
-            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignal.SpotDistance, AutoLaserControlMode.ActualVelocityWithSCANAhead, distance);
+            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignals.SpotDistance, AutoLaserControlModes.ActualVelocityWithSCANAhead, distance);
             success &= rtc.ListBegin();
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             success &= rtc.ListJumpTo(new Vector2(x1, y1));
@@ -392,7 +392,7 @@ namespace Demos
                 success &= rtc.ListEnd();
                 success &= rtc.ListExecute(true);
             }
-            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignal.Disabled, AutoLaserControlMode.Disabled);
+            success &= rtcAlc.CtlAlc<double>(AutoLaserControlSignals.Disabled, AutoLaserControlModes.Disabled);
             if (success)
             {
                 // Temporary measurement file

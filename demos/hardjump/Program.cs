@@ -58,11 +58,11 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
-            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
             // Initialize RTC controller
             success &= rtc.Initialize();
@@ -124,7 +124,7 @@ namespace Demos
                         {
                             // Configure vector tuning mode at primary scan head
                             var jumpMode = RtcJumpMode.Empty;
-                            jumpMode.Flag = JumpModeFlag.Disable;
+                            jumpMode.Flag = JumpModeFlags.Disable;
                             success &= rtcJumpMode.CtlJumpMode(jumpMode);
                         }
                         break;
@@ -132,7 +132,7 @@ namespace Demos
                         {
                             // Configure jump tuning mode at primary scan head
                             var jumpMode = RtcJumpMode.Empty;
-                            jumpMode.Flag = JumpModeFlag.EnabledButDeactivated;
+                            jumpMode.Flag = JumpModeFlags.EnabledButDeactivated;
                             jumpMode.JumpTuningPrimaryX = 1;
                             jumpMode.JumpTuningPrimaryY = 1;
                             jumpMode.LimitLength = 0;
@@ -165,12 +165,12 @@ namespace Demos
             // 20KHz Sample rate (max 100KHz)
             double sampleRateHz = 20 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannel[4]
+            var channels = new MeasurementChannels[4]
             {
-                 MeasurementChannel.SampleX, //X commanded
-                 MeasurementChannel.SampleY, //Y commanded
-                 MeasurementChannel.LaserOn, //Gate signal 0/1
-                 MeasurementChannel.OutputPeriod, //Converted to mm
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
+                 MeasurementChannels.OutputPeriod, //Converted to mm
             };
 
             bool success = true;
@@ -183,7 +183,7 @@ namespace Demos
             {
                 if (1 != hardJumpIfOne)
                 {
-                    success &= rtcJumpMode.ListJumpMode(JumpModeFlag.EnabledAndActivated);
+                    success &= rtcJumpMode.ListJumpMode(JumpModeFlags.EnabledAndActivated);
                     success &= rtc.ListJumpTo(new Vector2(x, 0));
                 }
                 else
@@ -220,19 +220,19 @@ namespace Demos
             // 20KHz Sample rate (max 100KHz)
             double sampleRateHz = 20 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannel[4]
+            var channels = new MeasurementChannels[4]
             {
-                 MeasurementChannel.SampleX, //X commanded
-                 MeasurementChannel.SampleY, //Y commanded
-                 MeasurementChannel.LaserOn, //Gate signal 0/1
-                 MeasurementChannel.OutputPeriod, //Converted to mm
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
+                 MeasurementChannels.OutputPeriod, //Converted to mm
             };
 
             bool success = true;
             // Start list buffer
             success &= rtc.ListBegin(ListType.Single);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
-            success &= rtcJumpMode.ListJumpMode(JumpModeFlag.EnabledAndActivated);
+            success &= rtcJumpMode.ListJumpMode(JumpModeFlags.EnabledAndActivated);
 
             // Each dx = 1 mm
             for (float x = -10; x <= 10; x += 1)

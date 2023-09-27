@@ -53,11 +53,11 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
-            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
             // Initialize RTC controller
             success &= rtc.Initialize();
@@ -154,7 +154,7 @@ namespace Demos
             Debug.Assert(rtcCharacterSet != null);
 
             // Begin to download character 9 (downloaded into list buffer 3)
-            rtcCharacterSet.CtlCharacterSetBegin(CharacterSet._0);
+            rtcCharacterSet.CtlCharacterSetBegin(CharacterSets._0);
 
             // Sample characterset
             // 0~9 (Digits)
@@ -342,9 +342,9 @@ namespace Demos
 
             success &= rtc.ListBegin(ListType.Single);
             success &= rtc.ListJumpTo(new Vector2(-10, 0));
-            success &= rtcCharacterSet.ListDate(DateFormat.Month, true);
+            success &= rtcCharacterSet.ListDate(DateFormats.Month, true);
             success &= rtc.ListJumpTo(new Vector2(10, 0));
-            success &= rtcCharacterSet.ListDate(DateFormat.Day, true);
+            success &= rtcCharacterSet.ListDate(DateFormats.Day, true);
             if (success)
             {
                 success &= rtc.ListEnd();
@@ -367,11 +367,11 @@ namespace Demos
 
             success &= rtc.ListBegin( ListType.Single);
             success &= rtc.ListJumpTo(new Vector2(-10, 0));
-            success &= rtcCharacterSet.ListTime(TimeFormat.Hours24, true);
+            success &= rtcCharacterSet.ListTime(TimeFormats.Hours24, true);
             success &= rtc.ListJumpTo(new Vector2(10, 0));
-            success &= rtcCharacterSet.ListTime(TimeFormat.Minutes, true);
+            success &= rtcCharacterSet.ListTime(TimeFormats.Minutes, true);
             success &= rtc.ListJumpTo(new Vector2(30, 0));
-            success &= rtcCharacterSet.ListTime(TimeFormat.Seconds, true);
+            success &= rtcCharacterSet.ListTime(TimeFormats.Seconds, true);
             if (success)
             {
                 success &= rtc.ListEnd();
@@ -397,11 +397,11 @@ namespace Demos
 
             success &= rtc.ListBegin(ListType.Single);
             success &= rtc.ListJumpTo(new Vector2(-10, -20));
-            success &= rtcCharacterSet.ListSerialNo(4, SerialNoFormat.LeadingWithZero);
+            success &= rtcCharacterSet.ListSerialNo(4, SerialNoFormats.LeadingWithZero);
             success &= rtc.ListJumpTo(new Vector2(-10, 0));
-            success &= rtcCharacterSet.ListSerialNo(4, SerialNoFormat.LeadingWithZero);
+            success &= rtcCharacterSet.ListSerialNo(4, SerialNoFormats.LeadingWithZero);
             success &= rtc.ListJumpTo(new Vector2(-10, 20));
-            success &= rtcCharacterSet.ListSerialNo(4, SerialNoFormat.LeadingWithZero);
+            success &= rtcCharacterSet.ListSerialNo(4, SerialNoFormats.LeadingWithZero);
             if (success)
             {
                 success &= rtc.ListEnd();

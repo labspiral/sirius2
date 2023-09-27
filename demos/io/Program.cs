@@ -57,11 +57,11 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
-            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserMode.Yag5, RtcSignalLevel.ActiveHigh, RtcSignalLevel.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
             // Initialize RTC controller
             success &= rtc.Initialize();
@@ -128,7 +128,7 @@ namespace Demos
             var rtcMeasurement = rtc as IRtcMeasurement;
             Debug.Assert(rtcMeasurement != null);
             bool success = true;
-            success &= rtc.CtlReadData<uint>(ExtensionChannel.ExtDI16, out uint bits16);
+            success &= rtc.CtlReadData<uint>(ExtensionChannels.ExtDI16, out uint bits16);
             Debug.WriteLine($"EXTENTION1 PORT DIN= {bits16:X}");
             return true;
         }
@@ -137,7 +137,7 @@ namespace Demos
             var rtcMeasurement = rtc as IRtcMeasurement;
             Debug.Assert(rtcMeasurement != null);
             bool success = true;
-            success &= rtc.CtlWriteData<uint>(ExtensionChannel.ExtDO16, bits16);
+            success &= rtc.CtlWriteData<uint>(ExtensionChannels.ExtDO16, bits16);
             Debug.WriteLine($"EXTENTION1 PORT DOUT= {bits16:X}");
             return true;
         }
@@ -148,12 +148,12 @@ namespace Demos
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannel[4]
+            var channels = new MeasurementChannels[4]
             {
-                 MeasurementChannel.SampleX, //X commanded
-                 MeasurementChannel.SampleY, //Y commanded
-                 MeasurementChannel.LaserOn, //Gate signal 0/1
-                 MeasurementChannel.ExtDO16, //0~65535
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
+                 MeasurementChannels.ExtDO16, //0~65535
             };
 
             bool success = true;
@@ -163,10 +163,10 @@ namespace Demos
             // 16 bits incremental counter
             for (uint i=0; i<65536; i++)
             {
-                success &= rtc.ListWriteData<uint>(ExtensionChannel.ExtDO16, i);
+                success &= rtc.ListWriteData<uint>(ExtensionChannels.ExtDO16, i);
                 success &= rtc.ListWait(0.1);
             }
-            success &= rtc.ListWriteData<uint>(ExtensionChannel.ExtDO16, 0x0000);
+            success &= rtc.ListWriteData<uint>(ExtensionChannels.ExtDO16, 0x0000);
             success &= rtcMeasurement.ListMeasurementEnd();
             if (success)
             {

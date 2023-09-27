@@ -83,7 +83,7 @@ namespace Demos
 
         /// <inheritdoc/>  
         [Browsable(false)]
-        public virtual LaserType LaserType { get { return LaserType.UserDefined1; } }
+        public virtual LaserTypes LaserType { get { return LaserTypes.UserDefined1; } }
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
@@ -154,7 +154,7 @@ namespace Demos
                     this.NotifyPropertyChanged();
                     if (isError)
                     {
-                        Logger.Log(Logger.Type.Info, $"laser [{this.Index}]: error occurs");
+                        Logger.Log(Logger.Types.Info, $"laser [{this.Index}]: error occurs");
                     }
                 }
             }
@@ -187,7 +187,7 @@ namespace Demos
         [Category("Control")]
         [DisplayName("Power Control Method")]
         [Description("Power Control Method")]
-        public virtual PowerControlMethod PowerControlMethod { get; set; }
+        public virtual PowerControlMethods PowerControlMethod { get; set; }
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
@@ -289,7 +289,7 @@ namespace Demos
             this.SyncRoot = new object();
             this.Name = "MyLaser";
             this.IsPowerControl = true;
-            this.PowerControlMethod = PowerControlMethod.DigitalBits;
+            this.PowerControlMethod = PowerControlMethods.DigitalBits;
             this.PowerControlDelayTime = 1;
             this.IsCommControl = false;
             this.IsShutterControl = false;
@@ -404,17 +404,17 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Type.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
                         return false;
-                    case PowerControlMethod.DigitalBits:
+                    case PowerControlMethods.DigitalBits:
                         double dataBits = this.DigitalBitMinValue + (this.DigitalBitMaxValue - this.DigitalBitMinValue) * percentage / 100.0;
                         if (1 == this.DigitalBitsPortNo)
                         {
-                            success &= rtc.CtlWriteData<uint>(ExtensionChannel.ExtDO16, (uint)dataBits);
+                            success &= rtc.CtlWriteData<uint>(ExtensionChannels.ExtDO16, (uint)dataBits);
                         }
                         else if (2 == this.DigitalBitsPortNo)
                         {
-                            success &= rtc.CtlWriteData<uint>(ExtensionChannel.ExtDO8, (uint)dataBits);
+                            success &= rtc.CtlWriteData<uint>(ExtensionChannels.ExtDO8, (uint)dataBits);
                         }
                         break;
                 }
@@ -422,7 +422,7 @@ namespace Demos
                 if (success)
                 {
                     LastPowerWatt = watt;
-                    Logger.Log(Logger.Type.Warn, $"laser [{this.Index}]: power: {watt:F3} / {MaxPowerWatt:F3}W");
+                    Logger.Log(Logger.Types.Warn, $"laser [{this.Index}]: power: {watt:F3} / {MaxPowerWatt:F3}W");
                 }
                 return success;
             }
@@ -458,17 +458,17 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Type.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
                         return false;
-                    case PowerControlMethod.DigitalBits:
+                    case PowerControlMethods.DigitalBits:
                         double dataBits = this.DigitalBitMinValue + (this.DigitalBitMaxValue - this.DigitalBitMinValue) * percentage / 100.0;
                         if (1 == this.DigitalBitsPortNo)
                         {
-                            success &= rtc.ListWriteData<uint>(ExtensionChannel.ExtDO16, (uint)dataBits);
+                            success &= rtc.ListWriteData<uint>(ExtensionChannels.ExtDO16, (uint)dataBits);
                         }
                         else if (2 == this.DigitalBitsPortNo)
                         {
-                            success &= rtc.ListWriteData<uint>(ExtensionChannel.ExtDO8, (uint)dataBits);
+                            success &= rtc.ListWriteData<uint>(ExtensionChannels.ExtDO8, (uint)dataBits);
                         }
                         success &= rtc.ListWait(this.PowerControlDelayTime);
                         break;

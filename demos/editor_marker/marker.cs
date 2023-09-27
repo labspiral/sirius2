@@ -71,7 +71,7 @@ namespace Demos
             set {
                 if (this.IsBusy)
                 {
-                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to set external start during busy");
+                    Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to set external start during busy");
                     return;
                 }
                 isExternalStart = value;
@@ -102,7 +102,7 @@ namespace Demos
             set {
                 if (this.IsBusy)
                 {
-                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to set list type during busy");
+                    Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to set list type during busy");
                     return;
                 }
                 listType = value;
@@ -236,7 +236,7 @@ namespace Demos
         /// <inheritdoc/>
         public override bool Initialize()
         {
-            Logger.Log(Logger.Type.Info, $"marker [{Index}]: initialized");
+            Logger.Log(Logger.Types.Info, $"marker [{Index}]: initialized");
             return true;
         }
         /// <inheritdoc/>
@@ -244,7 +244,7 @@ namespace Demos
         {
             if (this.IsBusy)
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to ready. marker status is busy");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to ready. marker status is busy");
                 return false;
             }
 
@@ -256,7 +256,7 @@ namespace Demos
             if (rtc is IRtcSyncAxis rtcSyncAxis)
             {
                 this.Rtc = null;
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: assigned invalid RTC instance");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: assigned invalid RTC instance");
                 return false;
             }
             // Clear registered characterset when ready
@@ -299,22 +299,22 @@ namespace Demos
         {
             if (Document == null || Rtc == null || Laser == null)
             {
-                Logger.Log(Logger.Type.Warn, $"marker [{Index}]: ready at first");
+                Logger.Log(Logger.Types.Warn, $"marker [{Index}]: ready at first");
                 return false;
             }
             if (this.IsBusy)
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: busy now !");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: busy now !");
                 return false;
             }
             if (this.IsError)
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: has a error. reset at first");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: has a error. reset at first");
                 return false;
             }
             if (!this.IsReady)
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: is not ready yet");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: is not ready yet");
                 return false;
             }
 
@@ -324,33 +324,33 @@ namespace Demos
 
             if (rtc.CtlGetStatus(RtcStatus.Busy))
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: busy now !");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: busy now !");
                 return false;
             }
             if (!rtc.CtlGetStatus(RtcStatus.NoError))
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: rtc has a internal error. reset at first");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: rtc has a internal error. reset at first");
                 return false;
             }
             if (laser.IsError)
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: laser has a error status. reset at first");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: laser has a error status. reset at first");
                 return false;
             }
 
             if (IsCheckTempOk && !rtc.CtlGetStatus(RtcStatus.TempOK))
             {
-                Logger.Log(Logger.Type.Error, $"marker: {this.Name} scanner temp is no ok");
+                Logger.Log(Logger.Types.Error, $"marker: {this.Name} scanner temp is no ok");
                 return false;
             }
             if (IsCheckPowerOk && !rtc.CtlGetStatus(RtcStatus.PowerOK))
             {
-                Logger.Log(Logger.Type.Error, $"marker: {this.Name} scanner power is not ok !");
+                Logger.Log(Logger.Types.Error, $"marker: {this.Name} scanner power is not ok !");
                 return false;
             }
             if (IsCheckPositionAck && !rtc.CtlGetStatus(RtcStatus.PositionAckOK))
             {
-                Logger.Log(Logger.Type.Error, $"marker: {this.Name} scanner position is not acked");
+                Logger.Log(Logger.Types.Error, $"marker: {this.Name} scanner position is not acked");
                 return false;
             }
 
@@ -358,7 +358,7 @@ namespace Demos
             {
                 if (!this.thread.Join(500))
                 {
-                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: previous works has not finished yet");
+                    Logger.Log(Logger.Types.Error, $"marker [{Index}]: previous works has not finished yet");
                     return false;
                 }
             }
@@ -368,7 +368,7 @@ namespace Demos
                 // Should be exist only single layer for External /START 
                 if (Document.InternalData.Layers.Count != 1)
                 {
-                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: should be single layer only for external /START");
+                    Logger.Log(Logger.Types.Error, $"marker [{Index}]: should be single layer only for external /START");
                     return false;
                 }
                 // list type to single for external /START by forcily 
@@ -402,9 +402,9 @@ namespace Demos
             AccumulatedMarks++;
 
             if (IsExternalStart)
-                Logger.Log(Logger.Type.Warn, $"marker [{Index}]: trying to start mark by external trigger with {this.Offsets.Length} offsets");
+                Logger.Log(Logger.Types.Warn, $"marker [{Index}]: trying to start mark by external trigger with {this.Offsets.Length} offsets");
             else
-                Logger.Log(Logger.Type.Warn, $"marker [{Index}]: trying to start mark with {this.Offsets.Length} offsets");
+                Logger.Log(Logger.Types.Warn, $"marker [{Index}]: trying to start mark with {this.Offsets.Length} offsets");
 
             switch (MarkProcedure)
             {
@@ -443,7 +443,7 @@ namespace Demos
                     if (sw.ElapsedMilliseconds > 500)
                     {
                         success = false;
-                        Logger.Log(Logger.Type.Error, $"marker [{Index}]: waiting for stop but timed out");
+                        Logger.Log(Logger.Types.Error, $"marker [{Index}]: waiting for stop but timed out");
                         // Timed out
                         break;
                     }
@@ -521,7 +521,7 @@ namespace Demos
 
             for (int i = 0; i < Offsets.Length; i++)
             {
-                Logger.Log(Logger.Type.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
+                Logger.Log(Logger.Types.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
                 rtc.MatrixStack.Push(Offsets[i].ToMatrix);
                 CurrentOffsetIndex = i;
                 foreach (var layer in layers)
@@ -531,7 +531,7 @@ namespace Demos
                     success &= NotifyBeforeLayer(layer);
                     if (!success)
                     {
-                        Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer at before event handler"); ;
+                        Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at before event handler"); ;
                         break;
                     }
                     if (null != rtcAlc && layer.IsALC)
@@ -539,8 +539,8 @@ namespace Demos
                         success &= rtcAlc.CtlAlcByPositionTable(layer.AlcByPositionTable);
                         switch (layer.AlcSignal)
                         {
-                            case AutoLaserControlSignal.ExtDO16:
-                            case AutoLaserControlSignal.ExtDO8:
+                            case AutoLaserControlSignals.ExtDO16:
+                            case AutoLaserControlSignals.ExtDO8:
                                 success &= rtcAlc.CtlAlc<uint>(layer.AlcSignal, layer.AlcMode, (uint)layer.AlcPercentage100, (uint)layer.AlcMinValue, (uint)layer.AlcMaxValue);
                                 break;
                             default:
@@ -575,14 +575,14 @@ namespace Demos
                     if (null != rtcAlc && layer.IsALC && !IsExternalStart)
                     {
                         success &= rtcAlc.CtlAlcByPositionTable(null);
-                        success &= rtcAlc.CtlAlc<uint>(AutoLaserControlSignal.Disabled, AutoLaserControlMode.Disabled, 0, 0, 0);
+                        success &= rtcAlc.CtlAlc<uint>(AutoLaserControlSignals.Disabled, AutoLaserControlModes.Disabled, 0, 0, 0);
                     }
                     if (!success)
                         break;
                     success &= NotifyAfterLayer(layer);
                     if (!success)
                     {
-                        Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer at after event handler"); ;
+                        Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at after event handler"); ;
                         break;
                     }
                 }
@@ -599,12 +599,12 @@ namespace Demos
                     if (rtc is Rtc5 rtc5)
                     {
                         var info = rtc5.MarkingInfo;
-                        Logger.Log(Logger.Type.Warn, $"marker [{Index}]: mof out of range. markinfg info= {info.Value}");
+                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. markinfg info= {info.Value}");
                     }
                     else if (rtc is Rtc6 rtc6)
                     {
                         var info = rtc6.MarkingInfo;
-                        Logger.Log(Logger.Type.Warn, $"marker [{Index}]: mof out of range. markinfg info= {info.Value}");
+                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. markinfg info= {info.Value}");
                     }
                 }
             }
@@ -628,13 +628,13 @@ namespace Demos
                 this.NotifyEnded(success);
                 if (success)
                 {
-                    Logger.Log(Logger.Type.Info, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
+                    Logger.Log(Logger.Types.Info, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
                     if (this.IsMeasurementPlot)
                         this.NotifyPlot();
                 }
                 else
                 {
-                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: mark has failed with {this.TimeSpan.TotalSeconds:F3}s");
+                    Logger.Log(Logger.Types.Error, $"marker [{Index}]: mark has failed with {this.TimeSpan.TotalSeconds:F3}s");
                 }
             }
             else
@@ -659,7 +659,7 @@ namespace Demos
                     extMode.Add(Rtc6ExternalControlMode.Bit.TrackDelay);
                     success &= rtcExtension.CtlExternalControl(extMode);
                 }
-                Logger.Log(Logger.Type.Warn, $"marker [{Index}]: waiting for /START trigger");
+                Logger.Log(Logger.Types.Warn, $"marker [{Index}]: waiting for /START trigger");
             }
         }
         /// <summary>
@@ -704,7 +704,7 @@ namespace Demos
                 success &= NotifyBeforeLayer(layer);
                 if (!success)
                 {
-                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer at before event handler"); ;
+                    Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at before event handler"); ;
                     break;
                 }
                 if (null != rtcAlc && layer.IsALC)
@@ -712,8 +712,8 @@ namespace Demos
                     success &= rtcAlc.CtlAlcByPositionTable(layer.AlcByPositionTable);
                     switch (layer.AlcSignal)
                     {
-                        case AutoLaserControlSignal.ExtDO16:
-                        case AutoLaserControlSignal.ExtDO8:
+                        case AutoLaserControlSignals.ExtDO16:
+                        case AutoLaserControlSignals.ExtDO8:
                             success &= rtcAlc.CtlAlc<uint>(layer.AlcSignal, layer.AlcMode, (uint)layer.AlcPercentage100, (uint)layer.AlcMinValue, (uint)layer.AlcMaxValue);
                             break;
                         default:
@@ -730,7 +730,7 @@ namespace Demos
                     {
                         rtc.MatrixStack.Push(Offsets[i].ToMatrix);
                         CurrentOffsetIndex = i;
-                        Logger.Log(Logger.Type.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
+                        Logger.Log(Logger.Types.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
                         success &= LayerWork(i, layer, Offsets[i]);
                         if (!success)
                             break;
@@ -775,14 +775,14 @@ namespace Demos
                 if (null != rtcAlc && layer.IsALC && !IsExternalStart)
                 {
                     success &= rtcAlc.CtlAlcByPositionTable(null);
-                    success &= rtcAlc.CtlAlc<uint>(AutoLaserControlSignal.Disabled, AutoLaserControlMode.Disabled, 0, 0, 0);
+                    success &= rtcAlc.CtlAlc<uint>(AutoLaserControlSignals.Disabled, AutoLaserControlModes.Disabled, 0, 0, 0);
                 }
                 if (!success)
                     break;
                 success &= NotifyAfterLayer(layer);
                 if (!success)
                 {
-                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer at after event handler");
+                    Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at after event handler");
                     break;
                 }
             }
@@ -794,12 +794,12 @@ namespace Demos
                     if (rtc is Rtc5 rtc5)
                     {
                         var info = rtc5.MarkingInfo;
-                        Logger.Log(Logger.Type.Warn, $"marker [{Index}]: mof out of range. markinfg info= {info.Value}");
+                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. markinfg info= {info.Value}");
                     }
                     else if (rtc is Rtc6 rtc6)
                     {
                         var info = rtc6.MarkingInfo;
-                        Logger.Log(Logger.Type.Warn, $"marker [{Index}]: mof out of range. markinfg info= {info.Value}");
+                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. markinfg info= {info.Value}");
                     }
                 }
             }
@@ -812,13 +812,13 @@ namespace Demos
                 this.NotifyEnded(success);
                 if (success)
                 {
-                    Logger.Log(Logger.Type.Info, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
+                    Logger.Log(Logger.Types.Info, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
                     if (this.IsMeasurementPlot)
                         this.NotifyPlot();
                 }
                 else
                 {
-                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: mark has failed with {this.TimeSpan.TotalSeconds:F3}s");
+                    Logger.Log(Logger.Types.Error, $"marker [{Index}]: mark has failed with {this.TimeSpan.TotalSeconds:F3}s");
                 }
             }
             else
@@ -843,7 +843,7 @@ namespace Demos
                     extMode.Add(Rtc6ExternalControlMode.Bit.TrackDelay);
                     success &= rtcExtension.CtlExternalControl(extMode);
                 }
-                Logger.Log(Logger.Type.Warn, $"marker [{Index}]: waiting for /START trigger");
+                Logger.Log(Logger.Types.Warn, $"marker [{Index}]: waiting for /START trigger");
             }
         }
 

@@ -4880,7 +4880,7 @@
             EntityRampEnd entity
             </summary>
             <remarks>
-            aka. Automatica Laser Control by Defined Vector
+            aka. Automatic laser control by defined vector
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRampEnd.#ctor">
@@ -4902,7 +4902,7 @@
             EntityRampBegin entity
             </summary>
             <remarks>
-            aka. Automatica Laser Control by Defined Vector
+            aka. Automatic laser control by defined vector
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRampBegin.Signal">
@@ -4924,7 +4924,7 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRampBegin.#ctor(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignal,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRampBegin.#ctor(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,System.Double)">
             <summary>
             Constructor
             </summary>
@@ -5162,7 +5162,7 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWriteData.#ctor(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannel,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWriteData.#ctor(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels,System.Double)">
             <summary>
             Constructor
             </summary>
@@ -5918,7 +5918,7 @@
             </code>
             </summary>    
             <remarks>
-            Hatchable means, possible to hatch (like as line, ...) within closed shapes. <br/>
+            Possible to hatch within closed shapes only. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IHatchable.IsClosed">
@@ -5981,8 +5981,8 @@
             <remarks>
             To convert source(or input) text by user, should be add <c>Config.OnTextConvert</c> event handler at first. <br/>
             <c>Config.OnTextConvert</c> event would be fired before do mark by <c>IMarkerable.Mark</c> at <c>IMarker</c>. <br/>
-            Used with <c>EntityCircularText</c>, <c>EntityImageText</c>, <c>EntityDataMatrix</c>, <c>EntityQRCode</c> entities. <br/>
-            Used with <c>EntityText</c>, <c>EntitySiriusText</c> if <c>CharacterSetFormats.Normal</c> has configured. <br/>
+            Used with <c>EntityCircularText</c>, <c>EntityImageText</c>, <c>EntityDataMatrix</c>, <c>EntityQRCode</c>, <c>EntityPDF417</c> entities. <br/>
+            Used with <c>EntityText</c>, <c>EntitySiriusText</c> also if <c>CharacterSetFormats.Normal</c> has configured. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.SourceText">
@@ -5991,8 +5991,8 @@
             </summary>
             <remarks>
             If <c>IsConvertedText</c> is <c>False</c>, then <c>ConvertedText</c> value set as <c>SourceText</c>. <br/>
-            Used with <c>EntityCircularText</c>, <c>EntityImageText</c>, <c>EntityDataMatrix</c>, <c>EntityQRCode</c> entities. <br/>        
-            Used with <c>EntityText</c>, <c>EntitySiriusText</c> if <c>CharacterSetFormats.Normal</c> has configured. <br/>
+            Used with <c>EntityCircularText</c>, <c>EntityImageText</c>, <c>EntityDataMatrix</c>, <c>EntityQRCode</c>, <c>EntityPDF417</c> entities. <br/>        
+            Used with <c>EntityText</c>, <c>EntitySiriusText</c> also if <c>CharacterSetFormats.Normal</c> has configured. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.ConvertedText">
@@ -6001,8 +6001,8 @@
             </summary>
             <remarks>
             If <c>IsConvertedText</c> is <c>True</c>, event <c>Config.OnTextConvert</c> will be fired and modified <c>ConvertedText</c> as returned value when do <c>IMarkerable.Mark</c>. <br/>
-            Used with <c>EntityCircularText</c>, <c>EntityImageText</c>, <c>EntityDataMatrix</c>, <c>EntityQRCode</c> entities. <br/>
-            Used with <c>EntityText</c>, <c>EntitySiriusText</c> if <c>CharacterSetFormats.Normal</c> has configured. <br/>
+            Used with <c>EntityCircularText</c>, <c>EntityImageText</c>, <c>EntityDataMatrix</c>, <c>EntityQRCode</c>, <c>EntityPDF417</c> entities. <br/>
+            Used with <c>EntityText</c>, <c>EntitySiriusText</c> also if <c>CharacterSetFormats.Normal</c> has configured. <br/>
             </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.ITextRegisterable">
@@ -6017,14 +6017,15 @@
             Recommended to use with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> by external /START trigger. <br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.ITextRegisterable.Register(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.ITextRegisterable.Register(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
             <summary>
             Register(or download) text characterset into RTC
             </summary>
             <remarks>
             If <see cref="T:SpiralLab.Sirius2.Winforms.Entity.ITextRegisterable">ITextRegisterable</see> entity has regened(or modified), it should do re-registered. <br/>
-            Used with RTC5, RTC6 only. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet">IRtcCharacterSet</see>. <br/>
+            Used with <c>EntityCharacterSetText</c>, <c>EntitySiriusCharacterSetText</c> entities. <br/>
+            Used with RTC5, RTC6 only. <br/>
             Characterset buffer at RTC would be overwritten. <br/>
             </remarks>
             <param name="marker"><c>IMarker</c></param>
@@ -6037,7 +6038,7 @@
             </summary>
             <remarks>
             Do 3D scanner field correction by SCANLAB's calibration tool. <br/>
-            For example: Plane, Cone, Cylinder, PointsCloud and so on. <br/>
+            Used with <c>EntityCone</c>, <c>EntityCylinder</c>, <c>EntityPointsCloud</c> entities. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D.Calibration3D(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
@@ -6878,7 +6879,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.Register(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.Register(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.LetterSpaces">
@@ -7286,7 +7287,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.Register(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.Register(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityTrepan">
@@ -7685,7 +7686,7 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.#ctor(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoder,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitCondition,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.#ctor(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double)">
             <summary>
             Constructor (MoF XY)
             </summary>
@@ -7693,7 +7694,7 @@
             <param name="condition"><c>EncoderWaitCondition</c></param>
             <param name="position">Wait position (mm)</param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.#ctor(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitCondition,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.#ctor(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double)">
             <summary>
             Constructor (MoF Angular)
             </summary>
@@ -7778,7 +7779,7 @@
             </summary>
             <remarks>
             X,Y Distance From Scanner Head to Rotate Center. <br/>
-            Used with <c>RtcEncoderType.Angular</c> only. <br/>
+            Used with <c>RtcEncoderTypes.Angular</c> only. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMoFBegin._AngularCenter">
@@ -7791,7 +7792,7 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFBegin.#ctor(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderType)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFBegin.#ctor(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderTypes)">
             <summary>
             Constructor
             </summary>
@@ -7954,25 +7955,25 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.ZSortOrder">
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.ZSortOrders">
             <summary>
-            Z sort order
+            Z sort orders
             </summary>
             <remarks>
             Used with <c>EntityPointsCloud</c>. <br/>
             </remarks>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.ZSortOrder.None">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.ZSortOrders.None">
             <summary>
             None
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.ZSortOrder.Ascending">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.ZSortOrders.Ascending">
             <summary>
             Ascending (From Z- to Z+)
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.ZSortOrder.Descending">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.ZSortOrders.Descending">
             <summary>
             Descending (From Z+ to Z-)
             </summary>
@@ -8920,7 +8921,7 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementBegin.#ctor(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel[])">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementBegin.#ctor(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels[])">
             <summary>
             Constructor
             </summary>
@@ -9048,7 +9049,7 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.LaserQSwitchDelay">
             <summary>
             Q switch delay (usec)
-            <para>Used with <c>LaserMode.YAG5</c> </para>
+            <para>Used with <c>LaserModes.YAG5</c> </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.laserQSwitchDelay">
@@ -11631,11 +11632,11 @@
             var document = siriusEditorUserControl1.Document;
             ...
             var textHour = EntityFactory.CreateCharacterSetText("Arial", CharacterSetFormats.Time, 5);
-            textHour.CharacterSetTime.TimeFormat = TimeFormat.Hours24;
+            textHour.CharacterSetTime.TimeFormat = TimeFormats.Hours24;
             var textMin = EntityFactory.CreateCharacterSetText("Arial", CharacterSetFormats.Time, 5);
-            textMin.CharacterSetTime.TimeFormat = TimeFormat.Minutes;
+            textMin.CharacterSetTime.TimeFormat = TimeFormats.Minutes;
             var textSec = EntityFactory.CreateCharacterSetText("Arial", CharacterSetFormats.Time, 5);
-            textSec.CharacterSetTime.TimeFormat = TimeFormat.Seconds;
+            textSec.CharacterSetTime.TimeFormat = TimeFormats.Seconds;
             document.ActAdd(textHour);
             document.ActAdd(textMin);
             document.ActAdd(textSec);
@@ -11670,7 +11671,7 @@
             ...
             var textSerial = EntityFactory.CreateSiriusCharacterSetText("romans2.cxf", CharacterSetFormats.Time, 5);
             textSerial.CharacterSetSerialNo.NumOfDigits = 4;
-            textSerial.CharacterSetSerialNo.SerialFormat = SerialNoFormat.LeadingWithZero;
+            textSerial.CharacterSetSerialNo.SerialFormat = SerialNoFormats.LeadingWithZero;
             document.ActAdd(textSerial);
             ...
             var rtcCharacterSet = rtc as IRtcCharacterSet;
@@ -11887,7 +11888,7 @@
             <param name="z">Jump z location (mm)</param>
             <returns><c>EntityJumpTo</c> </returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannel[])">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels[])">
             <summary>
             Create <c>EntityMeasurementBegin</c> entity
             <para>Used with RTC5,6 only (not syncAXIS)</para>
@@ -11897,10 +11898,10 @@
             var begin = EntityFactory.CreateMeasurementBegin(10*1000);
             begin.Channels = new MeasurementChannel[]
             {
-                MeasurementChannel.SampleX,
-                MeasurementChannel.SampleY,
-                MeasurementChannel.SampleZ,
-                MeasurementChannel.LaserOn,
+                MeasurementChannels.SampleX,
+                MeasurementChannels.SampleY,
+                MeasurementChannels.SampleZ,
+                MeasurementChannels.LaserOn,
             };
             var end = EntityFactory.CreateMeasurementEnd();
             document.ActInsert(begin, document.ActiveLayer, 0);
@@ -11918,14 +11919,14 @@
             </summary>
             <returns><c>EntityMeasurementEnd</c> </returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFBegin(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderType)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFBegin(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderTypes)">
             <summary>
             Create <c>EntityMoFBegin</c> entity
             <para>Used with RTC5,6 only (not syncAXIS)</para>
             <code>
             var document = siriusEditorUserControl1.Document;
             ...
-            var begin = EntityFactory.CreateMoFBegin(RtcEncoderType.XY);
+            var begin = EntityFactory.CreateMoFBegin(RtcEncoderTypes.XY);
             var end = EntityFactory.CreateMoFEnd(Vector2.Zero);
             document.ActInsert(begin, document.ActiveLayer, 0);
             document.ActAdd(end);
@@ -11934,33 +11935,33 @@
             <param name="type"><c>MoFEncoderType</c></param>
             <returns><c>EntityMoFBegin</c> </returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoder,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitCondition,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double)">
             <summary>
             Create <c>EntityMoFWait</c> Wait for X/Y
             <para>Used with RTC5,6 only (not syncAXIS)</para>
             <code>
             var document = siriusEditorUserControl1.Document;
             ...
-            var entity = EntityFactory.CreateMoFWait(RtcEncoder.EncX, RtcEncoderWaitCondition.Over, 10);
+            var entity = EntityFactory.CreateMoFWait(RtcEncoders.EncX, RtcEncoderWaitConditions.Over, 10);
             document.ActAdd(entity);
             </code>
             </summary>
             <remarks>
             Used with <c>IRtcMoF.ListMofBegin</c> <br/>
             </remarks>
-            <param name="encoder"><c>RtcEncoder</c></param>
-            <param name="condition"><c>EncoderWaitCondition</c></param>
+            <param name="encoder"><c>RtcEncoders</c></param>
+            <param name="condition"><c>EncoderWaitConditions</c></param>
             <param name="position">Wait position (mm)</param>
             <returns><c>EntityMoFWait</c> </returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitCondition,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double)">
             <summary>
             Create <c>EntityMoFWait</c> Wait for Angular
             <para>Used with RTC5,6 only (not syncAXIS)</para>
             <code>
             var document = siriusEditorUserControl1.Document;
             ...
-            var entity = EntityFactory.CreateMoFWait(RtcEncoderWaitCondition.Over, 90);
+            var entity = EntityFactory.CreateMoFWait(RtcEncoderWaitConditions.Over, 90);
             document.ActAdd(entity);
             </code>
             </summary>
@@ -12016,7 +12017,7 @@
             <param name="zDelta">Z delta (mm)</param>
             <returns><c>EntityZDelta</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateRampBegin(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignal,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateRampBegin(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,System.Double)">
             <summary>
             Create <c>EntityRampBegin</c> entity 
             <code>
@@ -12047,7 +12048,7 @@
             </remarks>
             <returns><c>EntityRampEnd</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWriteData(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannel,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWriteData(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels,System.Double)">
             <summary>
             Create <c>EntityWriteData</c> entity 
             <code>
@@ -12367,102 +12368,102 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityVertex3D.Render(SpiralLab.Sirius2.Winforms.IView)">
             <inheritdoc/>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.STLMode">
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.STLModes">
             <summary>
             STL polygon modes
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLMode.Fill">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLModes.Fill">
             <summary>
             Fill (solid)
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLMode.Wireframe">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLModes.Wireframe">
             <summary>
             Wiretframe (lines)
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLMode.Points">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLModes.Points">
             <summary>
             Points (vertices)
             </summary>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.STLMaterialFaceMode">
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.STLMaterialFaceModes">
             <summary>
-            <c>STLMaterialFaceMode</c>
+            <c>STLMaterialFaceModes</c>
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLMaterialFaceMode.Front">
-            <summary>
-            Front
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLMaterialFaceMode.Back">
-            <summary>
-            Back
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLMaterialFaceMode.FrontAndBack">
-            <summary>
-            Front and back
-            </summary>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.STLCullFaceMode">
-            <summary>
-            STL cull face mode
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLCullFaceMode.Front">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLMaterialFaceModes.Front">
             <summary>
             Front
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLCullFaceMode.Back">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLMaterialFaceModes.Back">
             <summary>
             Back
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLCullFaceMode.FrontAndBack">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLMaterialFaceModes.FrontAndBack">
             <summary>
             Front and back
             </summary>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.STLFrontFaceDirection">
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.STLCullFaceModes">
             <summary>
-            STL front face direction
+            STL cull face modes
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLFrontFaceDirection.Cw">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLCullFaceModes.Front">
+            <summary>
+            Front
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLCullFaceModes.Back">
+            <summary>
+            Back
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLCullFaceModes.FrontAndBack">
+            <summary>
+            Front and back
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.STLFrontFaceDirections">
+            <summary>
+            STL front face directions
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLFrontFaceDirections.Cw">
             <summary>
             Clock wise
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLFrontFaceDirection.Ccw">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLFrontFaceDirections.Ccw">
             <summary>
             Counter clock wise
             </summary>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.STLAlignZ">
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.STLZAligns">
             <summary>
-            STL z align
+            STL z aligns
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLAlignZ.None">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLZAligns.None">
             <summary>
             None
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLAlignZ.Bottom">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLZAligns.Bottom">
             <summary>
             Align to bottom
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLAlignZ.Center">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLZAligns.Center">
             <summary>
             Align to center
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLAlignZ.Top">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLZAligns.Top">
             <summary>
             Align to top
             </summary>
@@ -12644,7 +12645,7 @@
             <param name="textRegisterable"><c>ITextRegisterable</c></param>
             <returns>Registered or not</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Common.TextRegisterHelper.Register(SpiralLab.Sirius2.Winforms.Entity.ITextRegisterable,SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Scanner.Rtc.CharacterSet@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.TextRegisterHelper.Register(SpiralLab.Sirius2.Winforms.Entity.ITextRegisterable,SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets@)">
             <summary>
             Register(or download) text characterset into RTC
             </summary>
@@ -14150,6 +14151,9 @@
             <summary>
             MarkerSyncAxis
             </summary>
+            <remarks>
+            Used with Rtc6SyncAxis
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.OperationStatusColor">
             <summary>
@@ -14234,7 +14238,7 @@
             MarkerRtc
             </summary>
             <remarks>
-            Used with RTC4,5,6,6e
+            Used with RTC5,6,6e
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.IsExternalStart">
@@ -14409,20 +14413,62 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.LayerFirst">
             <summary>
-            Do marks with move offset1 and mark layers -> move offset2 and mark layers , ...
+            Order of marks are move offset1 and mark layers -> move offset2 and mark layers , ...
             </summary>
-            <remarks>
-            Default
-            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.OffsetFirst">
             <summary>
-            Do marks with mark layer1 with offset1 and offset2, ... -> mark layer2 with offset1 and offset2, ... 
+            Order of marks are mark layer1 with offset1 and offset2, ... -> mark layer2 with offset1 and offset2, ... 
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.UserDefined">
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.UserDefined1">
             <summary>
-            User defined laser procedure routine
+            User defined1 procedure routine
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.UserDefined2">
+            <summary>
+            User defined2 procedure routine
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.UserDefined3">
+            <summary>
+            User defined3 procedure routine
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.UserDefined4">
+            <summary>
+            User defined4 procedure routine
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.UserDefined5">
+            <summary>
+            User defined5 procedure routine
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.UserDefined6">
+            <summary>
+            User defined6 procedure routine
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.UserDefined7">
+            <summary>
+            User defined7 procedure routine
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.UserDefined8">
+            <summary>
+            User defined8 procedure routine
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.UserDefined9">
+            <summary>
+            User defined9 procedure routine
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.UserDefined10">
+            <summary>
+            User defined10 procedure routine
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">
@@ -14545,7 +14591,7 @@
             Mark procedure
             </summary>
             <remarks>
-            Default: <c>MarkProcs.LayerFirst</c>
+            Default: <c>MarkProcedures.LayerFirst</c>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Offsets">
@@ -15132,11 +15178,6 @@
         <member name="T:SpiralLab.Sirius2.Winforms.OpenGL.ShaderFactory">
             <summary>
             ShaderFactory
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.ShaderFactory.#ctor">
-            <summary>
-            Constructor
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.ShaderFactory.CreateShader2D">
@@ -16205,7 +16246,7 @@
             Both(Primary and secondary head) target correction table are <c>Table8</c> if RTC6. <br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyCalibration3D(SpiralLab.Sirius2.Winforms.Entity.ICalibration3D,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTableIndex,System.String,System.String)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyCalibration3D(SpiralLab.Sirius2.Winforms.Entity.ICalibration3D,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,System.String,System.String)">
             <summary>
             Notify pointscloud calibration when sucess to convert
             </summary>
@@ -16334,22 +16375,22 @@
             Top
             </summary>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.SimulationSpeed">
+        <member name="T:SpiralLab.Sirius2.Winforms.SimulationSpeeds">
             <summary>
-            Simulation speed
+            Simulation speeds
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.SimulationSpeed.Slow">
+        <member name="F:SpiralLab.Sirius2.Winforms.SimulationSpeeds.Slow">
             <summary>
             Slow
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.SimulationSpeed.Normal">
+        <member name="F:SpiralLab.Sirius2.Winforms.SimulationSpeeds.Normal">
             <summary>
             Normal
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.SimulationSpeed.Fast">
+        <member name="F:SpiralLab.Sirius2.Winforms.SimulationSpeeds.Fast">
             <summary>
             Fast
             </summary>
@@ -16794,7 +16835,7 @@
             <param name="targetIndex">Target index</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActSimulateStart(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Winforms.SimulationSpeed)">
+        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActSimulateStart(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Winforms.SimulationSpeeds)">
             <summary>
             Simulation start for array of <c>IEntity</c>
             </summary>
@@ -17149,7 +17190,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActEntityDragMove(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.IEntity,System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActSimulateStart(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Winforms.SimulationSpeed)">
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActSimulateStart(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Winforms.SimulationSpeeds)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActSimulateStop">
@@ -18060,7 +18101,7 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.UI.LogUserControl.OnLogged(SpiralLab.Sirius2.Logger.Type,System.String)">
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.LogUserControl.OnLogged(SpiralLab.Sirius2.Logger.Types,System.String)">
             <summary>
             Log event callback
             </summary>

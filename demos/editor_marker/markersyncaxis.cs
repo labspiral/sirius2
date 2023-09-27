@@ -192,7 +192,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
         /// <inheritdoc/>
         public override bool Initialize()
         {
-            Logger.Log(Logger.Type.Info, $"marker [{Index}]: initialized");
+            Logger.Log(Logger.Types.Info, $"marker [{Index}]: initialized");
             return true;
         }
         /// <inheritdoc/>
@@ -200,7 +200,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
         {
             if (this.IsBusy)
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to ready. marker status is busy");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to ready. marker status is busy");
                 return false;
             }
 
@@ -212,7 +212,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             if (rtc is Rtc5 || rtc is Rtc6)
             {
                 this.Rtc = null;
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: assigned invalid RTC instance");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: assigned invalid RTC instance");
                 return false;
             }
             return true;
@@ -222,22 +222,22 @@ namespace SpiralLab.Sirius2.Winforms.Marker
         {
             if (Document == null || Rtc == null || Laser == null)
             {
-                Logger.Log(Logger.Type.Warn, $"marker [{Index}]: ready at first");
+                Logger.Log(Logger.Types.Warn, $"marker [{Index}]: ready at first");
                 return false;
             }
             if (this.IsBusy)
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: busy now !");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: busy now !");
                 return false;
             }
             if (this.IsError)
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: has a error. reset at first");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: has a error. reset at first");
                 return false;
             }
             if (!this.IsReady)
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: is not ready yet");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: is not ready yet");
                 return false;
             }
 
@@ -247,18 +247,18 @@ namespace SpiralLab.Sirius2.Winforms.Marker
 
             if (rtc.CtlGetStatus(RtcStatus.Busy))
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: busy now !");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: busy now !");
                 return false;
             }
             if (!rtc.CtlGetStatus(RtcStatus.NoError))
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: rtc has a internal error. reset at first");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: rtc has a internal error. reset at first");
                 return false;
             }
 
             if (laser.IsError)
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: laser has a error status. reset at first");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: laser has a error status. reset at first");
                 return false;
             }
 
@@ -268,12 +268,12 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             // Reset to start
             this.CurrentPenColor = Color.Transparent;
 
-            Logger.Log(Logger.Type.Warn, $"marker [{Index}]: trying to start mark with {this.Offsets.Length} offsets");
+            Logger.Log(Logger.Types.Warn, $"marker [{Index}]: trying to start mark with {this.Offsets.Length} offsets");
             if (null != thread)
             {
                 if (!this.thread.Join(500))
                 {
-                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: previous works has not finished yet");
+                    Logger.Log(Logger.Types.Error, $"marker [{Index}]: previous works has not finished yet");
                     return false;
                 }
             }
@@ -316,7 +316,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                     if (sw.ElapsedMilliseconds > 500)
                     {
                         success = false;
-                        Logger.Log(Logger.Type.Error, $"marker [{Index}]: waiting for stop but timed out");
+                        Logger.Log(Logger.Types.Error, $"marker [{Index}]: waiting for stop but timed out");
                         break; // Timed out
                     }
                 }
@@ -363,7 +363,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
 
             for (int i = 0; i < Offsets.Length; i++)
             {
-                Logger.Log(Logger.Type.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
+                Logger.Log(Logger.Types.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
                 rtc.MatrixStack.Push(Offsets[i].ToMatrix);
                 foreach (var layer in layers)
                 {
@@ -372,20 +372,20 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                     success &= NotifyBeforeLayer(layer);
                     if (!success)
                     {
-                        Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer at before event handler"); ;
+                        Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at before event handler"); ;
                         break;
                     }
 
                     switch (layer.MotionType)
                     {
-                        case MotionType.StageOnly:
-                            success &= rtcSyncAxis.CtlMotionType(MotionType.StageOnly);
+                        case MotionTypes.StageOnly:
+                            success &= rtcSyncAxis.CtlMotionType(MotionTypes.StageOnly);
                             break;
-                        case MotionType.ScannerOnly:
-                            success &= rtcSyncAxis.CtlMotionType(MotionType.ScannerOnly);
+                        case MotionTypes.ScannerOnly:
+                            success &= rtcSyncAxis.CtlMotionType(MotionTypes.ScannerOnly);
                             break;
-                        case MotionType.StageAndScanner:
-                            success &= rtcSyncAxis.CtlMotionType(MotionType.StageAndScanner);
+                        case MotionTypes.StageAndScanner:
+                            success &= rtcSyncAxis.CtlMotionType(MotionTypes.StageAndScanner);
                             success &= rtcSyncAxis.CtlBandWidth(layer.BandWidth);
                             break;
                     }
@@ -405,7 +405,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                     success &= NotifyAfterLayer(layer);
                     if (!success)
                     {
-                        Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer at after event handler");
+                        Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at after event handler");
                         break;
                     }
                     if (success)
@@ -431,11 +431,11 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             this.NotifyEnded(success);
             if (success)
             {
-                Logger.Log(Logger.Type.Info, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
+                Logger.Log(Logger.Types.Info, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
             }
             else
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: mark has failed with {this.TimeSpan.TotalSeconds:F3}s");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: mark has failed with {this.TimeSpan.TotalSeconds:F3}s");
             }
         }
 
@@ -470,20 +470,20 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                 success &= NotifyBeforeLayer(layer);
                 if (!success)
                 {
-                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer at before event handler"); ;
+                    Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at before event handler"); ;
                     break;
                 }
 
                 switch (layer.MotionType)
                 {
-                    case MotionType.StageOnly:
-                        success &= rtcSyncAxis.CtlMotionType(MotionType.StageOnly);
+                    case MotionTypes.StageOnly:
+                        success &= rtcSyncAxis.CtlMotionType(MotionTypes.StageOnly);
                         break;
-                    case MotionType.ScannerOnly:
-                        success &= rtcSyncAxis.CtlMotionType(MotionType.ScannerOnly);
+                    case MotionTypes.ScannerOnly:
+                        success &= rtcSyncAxis.CtlMotionType(MotionTypes.ScannerOnly);
                         break;
-                    case MotionType.StageAndScanner:
-                        success &= rtcSyncAxis.CtlMotionType(MotionType.StageAndScanner);
+                    case MotionTypes.StageAndScanner:
+                        success &= rtcSyncAxis.CtlMotionType(MotionTypes.StageAndScanner);
                         success &= rtcSyncAxis.CtlBandWidth(layer.BandWidth);
                         break;
                 }
@@ -492,7 +492,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
 
                 for (int i = 0; i < Offsets.Length; i++)
                 {
-                    Logger.Log(Logger.Type.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
+                    Logger.Log(Logger.Types.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
                     rtc.MatrixStack.Push(Offsets[i].ToMatrix);
                     success &= LayerWork(i, layer, Offsets[i]);
                     rtc.MatrixStack.Pop();
@@ -511,7 +511,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                 success &= NotifyAfterLayer(layer);
                 if (!success)
                 {
-                    Logger.Log(Logger.Type.Error, $"marker [{Index}]: fail to mark layer at after event handler");
+                    Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at after event handler");
                     break;
                 }
                 if (success)
@@ -536,11 +536,11 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             this.NotifyEnded(success);
             if (success)
             {
-                Logger.Log(Logger.Type.Info, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
+                Logger.Log(Logger.Types.Info, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
             }
             else
             {
-                Logger.Log(Logger.Type.Error, $"marker [{Index}]: mark has failed with {this.TimeSpan.TotalSeconds:F3}s");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: mark has failed with {this.TimeSpan.TotalSeconds:F3}s");
             }
         }
     }

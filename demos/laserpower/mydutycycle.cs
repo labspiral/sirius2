@@ -83,7 +83,7 @@ namespace Demos
 
         /// <inheritdoc/>  
         [Browsable(false)]
-        public virtual LaserType LaserType { get { return LaserType.UserDefined3; } }
+        public virtual LaserTypes LaserType { get { return LaserTypes.UserDefined3; } }
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
@@ -154,7 +154,7 @@ namespace Demos
                     this.NotifyPropertyChanged();
                     if (isError)
                     {
-                        Logger.Log(Logger.Type.Info, $"laser [{this.Index}]: error occurs");
+                        Logger.Log(Logger.Types.Info, $"laser [{this.Index}]: error occurs");
                     }
                 }
             }
@@ -187,7 +187,7 @@ namespace Demos
         [Category("Control")]
         [DisplayName("Power Control Method")]
         [Description("Power Control Method")]
-        public virtual PowerControlMethod PowerControlMethod { get; set; }
+        public virtual PowerControlMethods PowerControlMethod { get; set; }
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
@@ -267,7 +267,7 @@ namespace Demos
             this.Name = "My Laser";
             this.IsPowerControl = true;
             // RTC ANALOG1 Port Output 
-            this.PowerControlMethod = PowerControlMethod.DutyCycle;
+            this.PowerControlMethod = PowerControlMethods.DutyCycle;
             this.PowerControlDelayTime = 1;
             this.IsCommControl = false;
             this.IsShutterControl = false;
@@ -379,9 +379,9 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Type.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
                         return false;
-                    case PowerControlMethod.DutyCycle:
+                    case PowerControlMethods.DutyCycle:
                         double dutyCycle = this.MinDutyCycle + (this.MaxDutyCycle - this.MinDutyCycle) * percentage / 100.0;
                         double period = 1.0 / rtc.Frequency * (double)1.0e6; //usec
                         double tempPulseWidth = period * dutyCycle / 100.0;
@@ -392,7 +392,7 @@ namespace Demos
                 if (success)
                 {
                     LastPowerWatt = watt;
-                    Logger.Log(Logger.Type.Warn, $"laser [{this.Index}]: power: {watt:F3} / {MaxPowerWatt:F3}W");
+                    Logger.Log(Logger.Types.Warn, $"laser [{this.Index}]: power: {watt:F3} / {MaxPowerWatt:F3}W");
                 }
                 return success;
             }
@@ -428,9 +428,9 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Type.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
                         return false;
-                    case PowerControlMethod.DutyCycle:
+                    case PowerControlMethods.DutyCycle:
                         double dutyCycle = this.MinDutyCycle + (this.MaxDutyCycle - this.MinDutyCycle) * percentage / 100.0;
                         double period = 1.0 / rtc.Frequency * (double)1.0e6; //usec
                         double tempPulseWidth = period * dutyCycle / 100.0;

@@ -55,7 +55,7 @@ namespace Demos
         [Category("Basic")]
         [DisplayName("Type")]
         [Description("Type")]
-        public override LaserType LaserType { get { return LaserType.UserDefined1; } }
+        public override LaserTypes LaserType { get { return LaserTypes.UserDefined1; } }
 
         #region Control by analog
         /// <summary>
@@ -139,7 +139,7 @@ namespace Demos
         {
             this.Name = "MyLaser";
             this.IsPowerControl = true;
-            this.PowerControlMethod = PowerControlMethod.Custom;
+            this.PowerControlMethod = PowerControlMethods.Custom;
             this.PowerControlDelayTime = 0;
         }
         /// <summary>
@@ -228,15 +228,15 @@ namespace Demos
 
                 double dataVoltage = percentage / 100.0 * (this.MaxVoltage - this.MinVoltage) + this.MinVoltage;
                 if (1 == this.AnalogPortNo)
-                    success &= rtc.CtlWriteData<double>(ExtensionChannel.ExtAO1, dataVoltage);
+                    success &= rtc.CtlWriteData<double>(ExtensionChannels.ExtAO1, dataVoltage);
                 else if (2 == this.AnalogPortNo)
-                    success &= rtc.CtlWriteData<double>(ExtensionChannel.ExtAO2, dataVoltage);
+                    success &= rtc.CtlWriteData<double>(ExtensionChannels.ExtAO2, dataVoltage);
 
                 Thread.Sleep((int)this.PowerControlDelayTime);
                 if (success)
                 {
                     LastPowerWatt = watt;
-                    Logger.Log(Logger.Type.Warn, $"laser [{this.Index}]: power: {watt:F3} / {MaxPowerWatt:F3}W");
+                    Logger.Log(Logger.Types.Warn, $"laser [{this.Index}]: power: {watt:F3} / {MaxPowerWatt:F3}W");
                 }
                 return success;
             }
@@ -269,9 +269,9 @@ namespace Demos
 
                 double dataVoltage = percentage / 100.0 * (this.MaxVoltage - this.MinVoltage) + this.MinVoltage;
                 if (1 == this.AnalogPortNo)
-                    success &= rtc.ListWriteData<double>(ExtensionChannel.ExtAO1, dataVoltage);
+                    success &= rtc.ListWriteData<double>(ExtensionChannels.ExtAO1, dataVoltage);
                 else
-                    success &= rtc.ListWriteData<double>(ExtensionChannel.ExtAO2, dataVoltage);
+                    success &= rtc.ListWriteData<double>(ExtensionChannels.ExtAO2, dataVoltage);
                 success &= rtc.ListWait(this.PowerControlDelayTime);
                        
                 if (success)

@@ -84,7 +84,7 @@ namespace Demos
 
         /// <inheritdoc/>  
         [Browsable(false)]
-        public virtual LaserType LaserType { get { return LaserType.UserDefined1; } }
+        public virtual LaserTypes LaserType { get { return LaserTypes.UserDefined1; } }
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
@@ -155,7 +155,7 @@ namespace Demos
                     this.NotifyPropertyChanged();
                     if (isError)
                     {
-                        Logger.Log(Logger.Type.Info, $"laser [{this.Index}]: error occurs");
+                        Logger.Log(Logger.Types.Info, $"laser [{this.Index}]: error occurs");
                     }
                 }
             }
@@ -184,7 +184,7 @@ namespace Demos
         [Category("Control")]
         [DisplayName("Power Control Method")]
         [Description("Power Control Method")]
-        public virtual PowerControlMethod PowerControlMethod { get; set; }
+        public virtual PowerControlMethods PowerControlMethod { get; set; }
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
@@ -264,7 +264,7 @@ namespace Demos
             this.Name = "MyLaser";
             this.IsPowerControl = true;
             // RTC RS232 Port
-            this.PowerControlMethod = PowerControlMethod.Rs232;
+            this.PowerControlMethod = PowerControlMethods.Rs232;
             this.PowerControlDelayTime = 200;
             this.IsCommControl = true;
             this.IsShutterControl = false;
@@ -372,6 +372,7 @@ namespace Demos
             Debug.Assert(this.MaxPowerWatt > 0);
             var rtc = Scanner as IRtc;
             Debug.Assert(rtc != null);
+            Debug.Assert(rtc is IRtcSerialComm);
             bool success = true;
             if (watt > this.MaxPowerWatt)
                 watt = this.MaxPowerWatt;
@@ -384,9 +385,9 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Type.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
                         return false;
-                    case PowerControlMethod.Rs232:
+                    case PowerControlMethods.Rs232:
                         if (rtc is IRtcSerialComm rtcSerialComm)
                         {
                             //to cleanup recv buffer
@@ -402,7 +403,7 @@ namespace Demos
                 if (success)
                 {
                     LastPowerWatt = watt;
-                    Logger.Log(Logger.Type.Warn, $"laser [{this.Index}]: power: {watt:F3} / {MaxPowerWatt:F3}W");
+                    Logger.Log(Logger.Types.Warn, $"laser [{this.Index}]: power: {watt:F3} / {MaxPowerWatt:F3}W");
                 }
                 return success;
             }
@@ -426,6 +427,7 @@ namespace Demos
             Debug.Assert(this.MaxPowerWatt > 0);
             var rtc = Scanner as IRtc;
             Debug.Assert(rtc != null);
+            Debug.Assert(rtc is IRtcSerialComm);
             if (watt > this.MaxPowerWatt)
                 watt = this.MaxPowerWatt;
             lock (SyncRoot)
@@ -438,17 +440,17 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Type.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
                         return false;
-                case PowerControlMethod.Rs232:
-                    if (rtc is IRtcSerialComm rtcSerialComm)
-                    {
-                        string text = string.Format(rs232StringFormat, percentage);
-                        success &= rtcSerialComm.ListSerialWrite(text);
-                        //byte[] bytes = Encoding.UTF8.GetBytes(text);
-                        //success &= rtcSerialComm.ListSerialWrite(bytes);
-                        success &= rtc.ListWait(this.PowerControlDelayTime);
-                    }
+                    case PowerControlMethods.Rs232:
+                        if (rtc is IRtcSerialComm rtcSerialComm)
+                        {
+                            string text = string.Format(rs232StringFormat, percentage);
+                            success &= rtcSerialComm.ListSerialWrite(text);
+                            //byte[] bytes = Encoding.UTF8.GetBytes(text);
+                            //success &= rtcSerialComm.ListSerialWrite(bytes);
+                            success &= rtc.ListWait(this.PowerControlDelayTime);
+                        }
                     break;
                 }
                 if (success)
