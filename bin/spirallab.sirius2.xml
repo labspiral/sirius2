@@ -84,7 +84,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.IsRtcSyncAxisLicensed">
             <summary>
-            license syncAXIS
+            license for syncAXIS
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.RtcSyncAxisLicenseMax">
@@ -94,57 +94,57 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.IsMoFLicensed">
             <summary>
-            license MoF
+            license for MoF
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.Is3DLicensed">
             <summary>
-            license 3D
+            license for 3D
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.IsLaserLicensed">
             <summary>
-            license Laser
+            license for Laser
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.IsGridCheckerLicensed">
             <summary>
-            license Grid checker
+            license for Grid checker
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.IsPathOptimizerLicensed">
             <summary>
-            license Path optimizer
+            license for Path optimizer
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.Is2ndHeadLicensed">
             <summary>
-            license 2nd Head
+            license for 2nd Head
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.IsDIOLicensed">
             <summary>
-            license DIO
+            license for DIO
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.IsMotorLicensed">
             <summary>
-            license Motion control
+            license for Motion control
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.IsPowerMeterLicensed">
             <summary>
-            license Powermeter
+            license for Powermeter
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.IsVisionLicensed">
             <summary>
-            license MachineVision
+            license for MachineVision
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.ExtensionLicenseText">
             <summary>
-            license Extension
+            license for Extension feature
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Common.Rockey4ND.#ctor">
@@ -505,7 +505,7 @@
             <remarks>
             When initializing, configuring path, starting log service and verifying licenses. <br/>
             Created <c>Config.LogPath</c>, <c>Config.SyncAxisSimulateFilePath</c>, <c>Config.MeasurementPath</c> pathes if not exist. <br/>
-            Output logged file is <c>Config.LogPath</c>\date.txt with max 90 days. <br/>
+            Output logged file is <c>Config.LogPath</c>\'date'.txt with max 90 days. <br/>
             Output logged file is <c>Config.LogPath</c>\errors.txt with max 90 days and error only. <br/>
             Without license key, would be activated evalution mode during 30 mins. <br/>
             </remarks>
@@ -1647,7 +1647,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtual(System.Int32,System.Double,SpiralLab.Sirius2.Laser.PowerControlMethods)">
             <summary>
-            Create virtual laser source
+            Create virtual laser source with specific <c>PowerControlMethods</c>
             <code>
             var rtc = ScannerFactory.Create...
             ...
@@ -1657,6 +1657,7 @@
             bool success = true;
             success &amp;= laser.Initialize();
             success &amp;= laser.CtlPower(2);
+            Debug.Assert(success);
             </code>
             </summary>
             <param name="index">Identifier (0,1,2,...)</param>
@@ -1666,7 +1667,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualAnalog(System.Int32,System.Double,System.Int32,System.Double,System.Double)">
             <summary>
-            Create laser source by analog voltage output
+            Create laser source with control analog voltage output power
             <code>
             var rtc = ScannerFactory.Create...
             ...
@@ -1680,6 +1681,7 @@
             bool success = true;
             success &amp;= laser.Initialize();
             success &amp;= laser.CtlPower(2);
+            Debug.Assert(success);
             </code>
             </summary>
             <remarks>
@@ -1694,7 +1696,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualFrequency(System.Int32,System.Double,System.Double,System.Double)">
             <summary>
-            Create laser source by frequency output 
+            Create laser source with control frequency output power
             <code>
             var rtc = ScannerFactory.Create...
             ...
@@ -1707,6 +1709,7 @@
             bool success = true;
             success &amp;= laser.Initialize();
             success &amp;= laser.CtlPower(2);
+            Debug.Assert(success);
             </code>
             </summary>
             <remarks>
@@ -1720,7 +1723,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualDutyCycle(System.Int32,System.Double,System.Double,System.Double)">
             <summary>
-            Create laser source by pulse width output
+            Create laser source with control pulse width output power
             <code>
             var rtc = ScannerFactory.Create...
             ...
@@ -1734,6 +1737,7 @@
             bool success = true;
             success &amp;= laser.Initialize();
             success &amp;= laser.CtlPower(2);
+            Debug.Assert(success);
             </code>
             </summary>
             <remarks>
@@ -1747,7 +1751,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualDO16Bits(System.Int32,System.Double,System.UInt16,System.UInt16)">
             <summary>
-            Create laser source by extension1 port with digital 16bits output
+            Create laser source with extension1 port with digital 16bits output power
             <code>
             var rtc = ScannerFactory.Create...
             ...
@@ -1760,6 +1764,7 @@
             bool success = true;
             success &amp;= laser.Initialize();
             success &amp;= laser.CtlPower(2);
+            Debug.Assert(success);
             </code>
             </summary>
             <remarks>
@@ -1774,7 +1779,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualDO8Bits(System.Int32,System.Double,System.UInt16,System.UInt16)">
             <summary>
-            Create laser source by extension2 port with digital 8bits output
+            Create laser source with extension2 port with digital 8bits output power
             <code>
             var rtc = ScannerFactory.Create...
             ...
@@ -1787,6 +1792,7 @@
             bool success = true;
             success &amp;= laser.Initialize();
             success &amp;= laser.CtlPower(2);
+            Debug.Assert(success);
             </code>
             </summary>
             <remarks>
@@ -1801,7 +1807,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualRS232(System.Int32,System.Double,System.String)">
             <summary>
-            Create laser source by RS232 communication at RTC card
+            Create laser source with control RS232 communication at RTC card output power
             <code>
             var rtc = ScannerFactory.Create...
             ...
@@ -1813,6 +1819,7 @@
             bool success = true;
             success &amp;= laser.Initialize();
             success &amp;= laser.CtlPower(2);
+            Debug.Assert(success);
             </code>
             </summary>
             <remarks>
@@ -1826,10 +1833,37 @@
             <param name="format">Formatted string</param>
             <returns><c>LaserVirtual</c></returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualCustom(System.Int32,System.Double)">
+            <summary>
+            Create laser source with control custom output power
+            <code>
+            var rtc = ScannerFactory.Create...
+            ...
+            float maxPowerWatt = 20;
+            string format = "{0:F3}";
+            var laser = LaserFactory.CreateVirtualCustom(0, maxPowerWatt);
+            laser.Scanner = rtc;
+            bool success = true;
+            success &amp;= laser.Initialize();
+            success &amp;= laser.CtlPower(2);
+            Debug.Assert(success);
+            </code>
+            </summary>
+            <remarks>
+            Fixed with <c>PowerControlMethods.Custom</c> <br/>
+            Recommened that create your own laser instance that inherited <c>LaserBase</c> <br/>
+            </remarks>
+            <param name="index">Identifier (0,1,2,...)</param>
+            <param name="maxPowerWatt">Max power (W)</param>
+            <returns><c>LaserVirtual</c></returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Laser.LaserBase">
             <summary>
             LaserBase
             </summary>
+            <remarks>
+            Inherited from <c>ILaser</c> &lt;- <c>LaserBase</c> <br/>
+            </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Laser.LaserBase.PropertyChanged">
             <inheritdoc/>
@@ -1941,6 +1975,10 @@
             Laser Virtual
             <para>Select <c>PowerControlMethod</c> to vary laser output power</para>
             </summary>
+            <remarks>
+            Inherited from <c>ILaser</c> &lt;- <c>LaserBase</c> &lt;- <c>LaserVirtual</c> <br/>
+            Inherited from <c>ILaserPowerControl</c> &lt;- <c>LaserVirtual</c> <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.LaserVirtual.LaserType">
             <inheritdoc/>  
@@ -2075,47 +2113,52 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.LaserTypes.UserDefined1">
             <summary>
-            User defined laser
+            User defined1 laser
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.LaserTypes.UserDefined2">
             <summary>
-            User defined laser
+            User defined2 laser
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.LaserTypes.UserDefined3">
             <summary>
-            User defined laser
+            User defined3 laser
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.LaserTypes.UserDefined4">
             <summary>
-            User defined laser
+            User defined4 laser
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.LaserTypes.UserDefined5">
             <summary>
-            User defined laser
+            User defined5 laser
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.LaserTypes.UserDefined6">
             <summary>
-            User defined laser
+            User defined6 laser
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.LaserTypes.UserDefined7">
             <summary>
-            User defined laser
+            User defined7 laser
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.LaserTypes.UserDefined8">
             <summary>
-            User defined laser
+            User defined8 laser
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.LaserTypes.UserDefined9">
             <summary>
-            User defined laser
+            User defined9 laser
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.LaserTypes.UserDefined10">
+            <summary>
+            User defined10 laser
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.ILaser">
@@ -2209,17 +2252,15 @@
             <summary>
             Initialize
             <code>
+            bool success = true;
             double maxWatt = 20;
             int analogCh = 1; //or 2
             var laser = LaserFactory.CreateVirtualAnalog(0, maxWatt, analogCh);
             laser.Rtc = rtc;
-            laser.Initialize();
+            success &amp;=laser.Initialize();
             if (laser is ILaserPowerControl powerControl)
-                powerControl.CtlPower(laser.MaxPowerWatt * 0.1); // 10% (= 1V)
-            ...
-            rtc.CtlLaserOn();
-            ...
-            rtc.CtlLaserOff();
+                success &amp;= powerControl.CtlPower(laser.MaxPowerWatt * 0.1); // 10% (= 1V)
+            Debug.Assert(success);
             </code>
             </summary>
             <returns>Success or failed</returns>
@@ -2239,14 +2280,46 @@
         <member name="M:SpiralLab.Sirius2.Laser.ILaser.ListBegin">
             <summary>
             List begin
+            <code>
+            bool success = true;
+            success &amp;= rtc.ListBegin();
+            success &amp;= laser.ListBegin();
+            success &amp;= laser.ListPower(5); // output power to 5W
+            success &amp;= rtc.ListJumpTo(new Vector2(radius, 0));
+            success &amp;= rtc.ListArcTo(Vector2.Zero, 360); // 1st circle
+            success &amp;= laser.ListPower(10); // output power to 10W
+            success &amp;= rtc.ListJumpTo(new Vector2(-radius, 0)); // 2nd circle
+            success &amp;= rtc.ListArcTo(Vector2.Zero, 360);
+            success &amp;= rtc.ListJumpTo(Vector2.Zero);
+            success &amp;= laser.ListEnd();
+            success &amp;= rtc.ListEnd();
+            if (success)
+                success &amp;= rtc.ListExecute(true);
+            </code>
             </summary>
-            <returns>Success or failed (if return failed, marker would be stopped(or aborted) immediately)</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.ILaser.ListEnd">
             <summary>
             List end
+            <code>
+            bool success = true;
+            success &amp;= rtc.ListBegin();
+            success &amp;= laser.ListBegin();
+            success &amp;= laser.ListPower(5); // output power to 5W
+            success &amp;= rtc.ListJumpTo(new Vector2(radius, 0));
+            success &amp;= rtc.ListArcTo(Vector2.Zero, 360); // 1st circle
+            success &amp;= laser.ListPower(10); // output power to 10W
+            success &amp;= rtc.ListJumpTo(new Vector2(-radius, 0)); // 2nd circle
+            success &amp;= rtc.ListArcTo(Vector2.Zero, 360);
+            success &amp;= rtc.ListJumpTo(Vector2.Zero);
+            success &amp;= laser.ListEnd();
+            success &amp;= rtc.ListEnd();
+            if (success)
+                success &amp;= rtc.ListExecute(true);
+            </code>
             </summary>
-            <returns>Success or failed (if return failed, marker would be stopped(or aborted) immediately)</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.PowerControlMethods">
             <summary>
@@ -2260,7 +2333,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.PowerControlMethods.Custom">
             <summary>
-            Control by user-defined communications
+            Control by user-defined method 
             </summary>
             <remarks>
             User should be implement customized program. <br/>
@@ -2339,22 +2412,24 @@
             <summary>
             List vary laser output power
             <code>
-            rtc.ListBegin();
-            laser.ListBegin();
-            laser.ListPower(5); // output power to 5W
-            rtc.ListJumpTo(new Vector2(radius, 0));
-            rtc.ListArcTo(Vector2.Zero, 360); // 1st circle
-            laser.ListPower(10); // output power to 10W
-            rtc.ListJumpTo(new Vector2(-radius, 0)); // 2nd circle
-            rtc.ListArcTo(Vector2.Zero, 360);
-            rtc.ListJumpTo(Vector2.Zero);
-            laser.ListEnd();
-            rtc.ListEnd();
-            rtc.ListExecute(true);
+            bool success = true;
+            success &amp;= rtc.ListBegin();
+            success &amp;= laser.ListBegin();
+            success &amp;= laser.ListPower(5); // output power to 5W
+            success &amp;= rtc.ListJumpTo(new Vector2(radius, 0));
+            success &amp;= rtc.ListArcTo(Vector2.Zero, 360); // 1st circle
+            success &amp;= laser.ListPower(10); // output power to 10W
+            success &amp;= rtc.ListJumpTo(new Vector2(-radius, 0)); // 2nd circle
+            success &amp;= rtc.ListArcTo(Vector2.Zero, 360);
+            success &amp;= rtc.ListJumpTo(Vector2.Zero);
+            success &amp;= laser.ListEnd();
+            success &amp;= rtc.ListEnd();
+            if (success)
+                success &amp;= rtc.ListExecute(true);
             </code>
             </summary>
             <param name="targetWatt">Target watt (W)</param>
-            <returns>Success or failed (if return failed, marker would be stopped(or aborted) immediately)</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.src.laser.impl.laserbase">
             <summary>
@@ -2549,7 +2624,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.LicenseInfo.ExtendedLicense">
             <summary>
-            Option for Extended license
+            Option for Extended feature
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.LicenseInfo.#ctor">
@@ -8254,7 +8329,7 @@
             Used list buffer mode to <c>slsc_ListHandlingMode_RepeatWhileBufferFull</c> by forcily.
             </remarks>
             <param name="motionType"><c>MotionType</c></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListMatrix(System.Numerics.Matrix3x2)">
             <summary>
@@ -8264,15 +8339,15 @@
             Calculates the new target points according to = (transformation matrix × target point) + offset <br/>
             The change applies as of the insert position but only until the end of the currently running Job.<br/>
             </remarks>
-            <param name="matrix">2x2 matrix and offset</param>
-            <returns>Success or failed</returns>
+            <param name="matrix">3x3 matrix with offset</param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListSpeedMinMark(System.Double)">
             <summary>
             List min. mark speed
             </summary>
             <param name="mark">Min. mark speed (mm/s)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListApproxBlendLimit(System.Double)">
             <summary>
@@ -8282,15 +8357,15 @@
             Maximum tolerable mathematical distance of the blending curve to the corner point. <br/>
             </remarks>
             <param name="approxBlendLimit">Approx. blend limit (mm)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListContourDependentSpeed(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ContourDependentSpeedDirections,System.Double)">
-             <summary>
-             List contour dependent speed calculation
-             </summary>
-             <param name="direction"><c>ContourDependentSpeedDirection</c></param>
-             <param name="spotRadius">Radius of the laser spot in the working plane (mm). specifies how far to the right or left of the curve mid-line the speeds are determined.</param>
-            <returns>Success or failed</returns>
+            <summary>
+            List contour dependent speed calculation
+            </summary>
+            <param name="direction"><c>ContourDependentSpeedDirection</c></param>
+            <param name="spotRadius">Radius of the laser spot in the working plane (mm). specifies how far to the right or left of the curve mid-line the speeds are determined.</param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListSpotDistanceControl(System.Boolean,System.Double)">
             <summary>
@@ -8298,20 +8373,20 @@
             </summary>
             <param name="suppress">Supress or not. should be activated <c>SpotDistance</c> at <c>ActiveChannel</c></param>
             <param name="timeDelay">Time delay (sec)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListAlcBegin(System.Double)">
             <summary>
             List start ramping (aka. Automatic laser control)
             </summary>
             <param name="startingAlcScaleFactor">Starting ramp factor (default: 1)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListAlcEnd">
             <summary>
             List end ramping (aka. Automatic laser control)
             </summary>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListJumpCalculationDynamics(System.Double,System.Double)">
             <summary>
@@ -8319,7 +8394,7 @@
             </summary>
             <param name="angularAcc">Angular acc<br/>excelliSCAN14: 1.1314e5<br/>excelliSCAN20: 5.6e4<br/></param>
             <param name="angularJerk">Angualr jerk<br/>excelliSCAN14: 4e9<br/>excelliSCAN20: 1e9<br/></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListMarkCalculationDynamics(System.Double,System.Double)">
             <summary>
@@ -8327,7 +8402,7 @@
             </summary>
             <param name="angularAcc">Angular acc<br/>excelliSCAN14: 1.1314e5<br/>excelliSCAN20: 5.6e4<br/></param>
             <param name="angularJerk">Angualr jerk<br/>excelliSCAN14: 4e9<br/>excelliSCAN20: 1e9<br/></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListDashedMarkTo(System.Numerics.Vector3,System.Double[],System.Double)">
             <summary>
@@ -8346,7 +8421,7 @@
             <param name="vPosition">X, Y position (mm)</param>
             <param name="laserSwitches">Array of line length with laser switches (mm)<br/>Distance is not applied matrix transformation<br/>(</param>
             <param name="alcScaleFactor">Ramp factor if <c>ListAlcByVectorBegin</c> has enabled</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListDashedArcTo(System.Numerics.Vector3,System.Double,System.Double[],System.Double)">
             <summary>
@@ -8366,7 +8441,7 @@
             <param name="sweepAngleZ">Sweep angle (°) (+: CCW, -: CW)</param>
             <param name="laserSwitches">Array of arc length with laser switches (mm) (distance is not applied by matrix stack)</param>
             <param name="alcScaleFactor">(Unsupported!) Ramp factor if <c>ListAlcByVectorBegin</c> has enabled</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.SyncAxisViewerHelper">
             <summary>
@@ -10662,17 +10737,19 @@
             var kfactor = Math.Pow(2, 20) / fov;
             var correctionFile = Path.Combine(Config.CorrectionPath, "cor_1to1.ct5");
             var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
-            rtc.Initialize();
-            rtc.CtlFrequency(50 * 1000, 2); // 50 KHz, 2 usec
-            rtc.CtlSpeed(100, 100); // 100 mm/s
-            rtc.CtlDelay(10, 100, 200, 200, 0); // Delays (usec)
+            bool success = true;
+            success &amp;= rtc.Initialize();
+            success &amp;= rtc.CtlFrequency(50 * 1000, 2); // 50 KHz, 2 usec
+            success &amp;= rtc.CtlSpeed(100, 100); // 100 mm/s
+            success &amp;= rtc.CtlDelay(10, 100, 200, 200, 0); // Delays (usec)
             ...
-            rtc.CtlSetStagePosition(Vector2.Zero);
-            rtc.ListBegin();
-            rtc.ListJumpTo(Vector2.Zero);
-            rtc.ListMarkTo(new Vector2(10, 0));
-            rtc.ListEnd();
-            rtc.ListExecute(true);
+            success &amp;= rtc.CtlSetStagePosition(Vector2.Zero);
+            success &amp;= rtc.ListBegin();
+            success &amp;= rtc.ListJumpTo(Vector2.Zero);
+            success &amp;= rtc.ListMarkTo(new Vector2(10, 0));
+            success &amp;= rtc.ListEnd();
+            if (success)
+                success &amp;= rtc.ListExecute(true);
             ...
             </code>
             </summary>
@@ -10816,7 +10893,7 @@
             <para>Default: <c>ListType.Auto</c> </para>
             </summary>
             <param name="listType"><c>ListType</c></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListSelectCorrection(SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables)">
             <summary>
@@ -10824,7 +10901,7 @@
             </summary>
             <param name="primaryHeadTableIndex"><c>CorrectionTableIndex</c> at primary scan head</param>
             <param name="secondaryHeadTableIndex"><c>CorrectionTableIndex</c> at secondary scan head</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListFrequency(System.Double,System.Double)">
             <summary>
@@ -10832,7 +10909,7 @@
             </summary>
             <param name="frequency">Frequency (Hz)<br/>Min. time resolution: 1/128(= 0.0078125) usec<br/>Max. 128MHz<br/></param>
             <param name="pulseWidth">Pulse width (usec)<br/>Min. time resolution: 1/64(= 0.01562) usec</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListDelay(System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
@@ -10847,7 +10924,7 @@
             <param name="scannerJump">Scanner jump delay (usec)<br/>Min. time resolution: 10 usec</param>
             <param name="scannerMark">Scanner mark(or arc) delay (usec)<br/>Min. time resolution: 10 usec</param>
             <param name="scannerPolygon">Scanner polygon(or corner) delay (usec)<br/>Min. time resolution: 10 usec</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListSpeed(System.Double,System.Double)">
             <summary>
@@ -10855,33 +10932,33 @@
             </summary>
             <param name="jump">Scanner jump speed (mm/s)</param>
             <param name="mark">Scanner mark/arc speed (mm/s)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListWait(System.Double)">
             <summary>
             List wait during specific time
             </summary>
             <param name="msec">Time (msec)<br/>Min. time resolution: 10 usec<br/></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListLaserOn(System.Double)">
             <summary>
             List laser on during specific time
             </summary>
             <param name="msec">Time (msec)<br/>Min. time resolution: 10 usec<br/></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListLaserOn">
             <summary>
             List laser on by manually
             </summary>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListLaserOff">
             <summary>
             Laser laser off by manually
             </summary>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListWriteData``1(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels,``0)">
             <summary>
@@ -10890,7 +10967,7 @@
             <typeparam name="T"><c>uint</c> or <c>double</c></typeparam>
             <param name="ch"><c>ExtensionChannel</c></param>
             <param name="data">Write data</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListWriteExtDO16(System.UInt16,System.Boolean)">
             <summary>
@@ -10898,13 +10975,13 @@
             </summary>
             <param name="bitPosition">0~15</param>
             <param name="onOff">On/Off</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListEnd">
             <summary>
             List end
             </summary>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListExecute(System.Boolean)">
             <summary>
@@ -10912,7 +10989,7 @@
             <para>Don't call this function to execute by external /START trigger and use <c>IRtcExtension.CtlExternalControl</c></para>
             </summary>
             <param name="busyWait"><c>CtlBusyWait</c></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead">
             <summary>
@@ -10993,7 +11070,7 @@
             </summary>
             <param name="head"><c>ScannerHead</c></param>
             <param name="offset">Dx(mm), Dy(mm), Dz(mm) and Angle(°)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc3D">
             <summary>
@@ -11118,7 +11195,7 @@
             A positive value increases the focal length of the Dynamic focusing unit and shifts the focus position. <br/>
             </remarks>
             <param name="zDefocus">Z defocus (mm)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlModes">
             <summary>
@@ -11374,7 +11451,7 @@
             <param name="percentage100">100% value</param>
             <param name="min">Min value</param>
             <param name="max">Max value</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">
             <summary>
@@ -11398,13 +11475,13 @@
             <typeparam name="T"><c>uint</c> or <c>double</c></typeparam>
             <param name="ctrl"><c>AutoLaserControlSignal</c></param>
             <param name="startingValue">Starting value of <c>AutoLaserControlSignal</c></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorEnd">
             <summary>
             List defined-vector by ALC(Automatic Laser Control) end
             </summary>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.CharacterSets">
             <summary>
@@ -11631,7 +11708,7 @@
             </summary>
             <param name="text">text</param>
             <param name="characterSet"><c>CharacterSet</c></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.ListDate(SpiralLab.Sirius2.Scanner.Rtc.DateFormats,System.Boolean,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
             <summary>
@@ -11650,7 +11727,7 @@
             <param name="dateFormat"><c>DateFormat</c></param>
             <param name="leadingWithZero">Leading with 0</param>
             <param name="characterSet"><c>CharacterSet</c></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.ListTime(SpiralLab.Sirius2.Scanner.Rtc.TimeFormats,System.Boolean,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
             <summary>
@@ -11671,7 +11748,7 @@
             <param name="timeFormat"><c>TimeFormat</c></param>
             <param name="leadingWithZero">Leading with 0</param>
             <param name="characterSet"><c>CharacterSet</c></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.ListSerialNo(System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.SerialNoFormats,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
             <summary>
@@ -11690,7 +11767,7 @@
             <param name="numOfDigits">Num of digits<br/>Max digits: 15<br/></param>
             <param name="serialFormat"><c>SerialFormat</c></param>
             <param name="characterSet"><c>CharacterSet</c></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData2D">
             <summary>
@@ -12384,7 +12461,7 @@
             List first pulse killer (usec)
             </summary>
             <param name="usec">Time (usec)<br/>Min. time resolution: 1/64(= 0.01562) usec <br/></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.ListQSwitchDelay(System.Double)">
             <summary>
@@ -12397,7 +12474,7 @@
             <c>LaserModes.Yag5</c>: by this value<br/>
             </remarks>
             <param name="usec">Time (usec)<br/> Min. time resolution: 1/64(= 0.01562) usec <br/></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.ListDelayVariable(System.Boolean,System.Double,System.Boolean,System.Double,System.Double)">
             <summary>
@@ -12408,7 +12485,7 @@
             <param name="variableScannerJumpDelay">Enable(or disable) variable scanner jump delay</param>
             <param name="scannerJumpDelayMin">Variable scanner jump delay min time (usec)</param>
             <param name="scannerJumpDelayLimitLength">Variable scanner jump delay limit length (mm)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.ListWriteExtDO16If(System.UInt32,System.UInt32,System.UInt32,System.Boolean)">
             <summary>
@@ -12419,7 +12496,7 @@
             <param name="inputLowBitMask">Input Low BitMask: 1= Care, 0= Don't Care</param>
             <param name="outputBitMask">Output BitMask: 1= Care, 0= Don't Care</param>
             <param name="onOff">Output Bit Level: 1= Set, 0= Clear</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.ListReadExtDI16WaitUntil(System.UInt32,System.UInt32)">
             <summary>
@@ -12428,7 +12505,7 @@
             </summary>
             <param name="inputHighBitMask">Input High BitMask: 1= Care, 0= Don't Care</param>
             <param name="inputLowBitMask">Input Low BitMask: 1= Care, 0= Don't Care</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.ListRepeatCall(System.UInt32,System.UInt32)">
             <summary>
@@ -12437,7 +12514,7 @@
             </summary>
             <param name="listPosition">Index of list buffer</param>
             <param name="repeats">Repeats (0: infinitely, > 0: assigned value)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.JumpModeFlags">
             <summary>
@@ -12582,7 +12659,7 @@
             <para>Configure jump mode by <c>CtlJumpMode</c> at first</para>
             </summary>
             <param name="jumpModeFlag"><c>JumpModeFlag</c></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcJumpMode.ListJumpHard(System.Numerics.Vector2,System.Double,System.Double)">
             <summary>
@@ -12598,7 +12675,7 @@
             <param name="vPosition">X, Y (mm)</param>
             <param name="laserOn">Laser on delay (usec)</param>
             <param name="laserOff">Laser off delay (usec)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcJumpMode.ListJumpHard(System.Numerics.Vector3,System.Double,System.Double)">
             <summary>
@@ -12614,7 +12691,7 @@
             <param name="vPosition">X, Y (mm)</param>
             <param name="laserOn">Laser on delay (usec)</param>
             <param name="laserOff">Laser off delay (usec)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcJumpMode.ListJumpAndDrill(System.Numerics.Vector2,System.Double)">
             <summary>
@@ -12625,7 +12702,7 @@
             </remarks>
             <param name="vPosition">X, Y (mm)</param>
             <param name="drillTime">Drill time (usec) (x0.5 usec)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels">
             <summary>
@@ -13123,13 +13200,13 @@
             </summary>
             <param name="frequency">Sampling frequency (Hz)<br/>Max. frequency: ~100KHz <br/>Min. time resolution: 10 usec<br/></param>
             <param name="channels">Array of <c>MeasurementChannel</c></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.ListMeasurementEnd">
             <summary>
             List measurement end
             </summary>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcMeasurementHelper">
             <summary>
@@ -13482,7 +13559,7 @@
             Scanner movements are affected by accumulate encoder values. <br/>
             </remarks>
             <param name="encoderReset">Reset encoders(</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofAngularBegin(System.Numerics.Vector2,System.Boolean)">
             <summary>
@@ -13541,13 +13618,13 @@
             </summary>
             <param name="vCenter">Rotate center x,y position (mm)</param>
             <param name="encoderReset">Reset encoder</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofOverflowClear">
             <summary>
             List clear overflow warnings
             </summary>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofExternalControlDelay(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double)">
             <summary>
@@ -13555,7 +13632,7 @@
             </summary>
             <param name="enc"><c>RtcEncoder</c></param>
             <param name="distance">Delay distance (mm)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofLimitIf(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderRangeConditions)">
             <summary>
@@ -13566,7 +13643,7 @@
             </remarks>
             <param name="enc"><c>RtcEncoder</c></param>
             <param name="cond"><c>EncoderRangeCondition</c></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions)">
             <summary>
@@ -13578,7 +13655,7 @@
             <param name="enc"><c>RtcEncoder</c></param>
             <param name="position">Position (mm)</param>
             <param name="cond"><c>EncoderWaitCondition</c></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofAngularWait(System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions)">
             <summary>
@@ -13589,7 +13666,7 @@
             </remarks>
             <param name="angle">Angle (°)</param>
             <param name="cond"><c>EncoderWaitCondition</c></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofWaitRange(System.Double,System.Double,System.Double,System.Double)">
             <summary>
@@ -13602,7 +13679,7 @@
             <param name="rangeX">X range (mm)</param>
             <param name="positionY">Y position (mm)</param>
             <param name="rangeY">Y range (mm)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofLimits(System.Numerics.Vector2,System.Numerics.Vector2)">
             <summary>
@@ -13610,14 +13687,14 @@
             </summary>
             <param name="xRange">X range (mm)</param>
             <param name="yRange">Y range (mm)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofEnd(System.Numerics.Vector2)">
             <summary>
             <para>List x,y (or rotate) MoF end</para>
             </summary>
             <param name="vJumpPosition">Jump x,y position (mm)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RasterModes">
             <summary>
@@ -13719,7 +13796,7 @@
             <param name="vPitch">Pixel pitch (dx, dy) (mm)</param>
             <param name="pixelCount">Pixel counts per line</param>
             <param name="ext">Output analog channel (1 or 2) (Used with <c>RasterModes.MicroVector</c> only)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster.ListRasterPixel(System.Double,System.Double)">
             <summary>
@@ -13732,7 +13809,7 @@
             </remarks>
             <param name="usec">Pixel duration (usec)<br/>Should be &lt;= 'pixel period' from <c>ListRasterLine</c><br/>Min. time resolution: 1/128(= 0.0078125) usec<br/></param>
             <param name="analogValue">Output analog voltage value at <c>ExtensionChannel</c><br/>Used with <c>RasterModes.MicroVector</c> only<br/>Min. ADC resolution: 12 bits<br/></param>
-            <returns>Success or failed</returns>   
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector3,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
             <summary>
@@ -13750,7 +13827,7 @@
             <param name="vPitch">Pixel pitch (dx, dy, dz) (mm)</param>
             <param name="pixelCount">Pixel counts per line</param>
             <param name="ext">Output analog channel (1 or 2) (Used with <c>RasterModes.MicroVector</c> only)</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcSerialComm">
             <summary>
@@ -13808,14 +13885,14 @@
             List write data by array of bytes
             </summary>
             <param name="bytes">Array of bytes</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcSerialComm.ListSerialWrite(System.String)">
             <summary>
             List Write data by string
             </summary>
             <param name="text">text data</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.SkyWritingMode">
             <summary>
@@ -13910,13 +13987,13 @@
             Used with <c>SkyWritingMode.Mode3</c> only<br/>
             Cosine(φ) &lt; Limit(= 0) <br/>
             </param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcSkyWriting.ListSkyWritingEnd">
             <summary>
             List sky writing end
             </summary>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.WobbelShapes">
             <summary>
@@ -13963,7 +14040,7 @@
             </remarks>
             <param name="kvList">X(Transverse) (mm), Y(Longitudinal) (mm) and Period (counts)</param>
             <param name="powerFactor">Power scale factor (-1 ~ +1). if ALC(Automatic Laser Control) used</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcWobbel.ListWobbelBegin(System.Double,System.Double,System.Double,SpiralLab.Sirius2.Scanner.Rtc.WobbelShapes)">
             <summary>
@@ -13993,13 +14070,13 @@
             <param name="transverse">Transverse (perpendicular movement) (mm)</param>
             <param name="frequencyHz">Frequency (Hz)<br/>Max. Wobbel frequency (Hz): Must be lower than 1/(Tracking error * 10)<br/>Ex. BasicCube 10: Tracking Error 0.14ms -> 1/1.4ms = 1/0.0014s = 714 Hz<br/>Ex. IntelliSCAN III 10: Tracking Error 0.11ms -> 1/1.1ms = 1/0.0011s = 909 Hz<br/></param>
             <param name="wobbelShape"><c>WobbelShape</c></param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcWobbel.ListWobbelEnd">
             <summary>
             List wobbel end
             </summary>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.JobResults">
             <summary>
@@ -14102,7 +14179,7 @@
             </summary>
             <param name="vPosition">X, Y position (mm)</param>
             <param name="alcScaleFactor">Ramp factor if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.IScanner.ListMarkTo(System.Numerics.Vector2,System.Double)">
             <summary>
@@ -14110,16 +14187,16 @@
             </summary>
             <param name="vPosition">X, Y position (mm)</param>
             <param name="alcScaleFactor">Ramp factor if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.IScanner.ListArcTo(System.Numerics.Vector2,System.Double,System.Double)">
-             <summary>
-             List arc at center
-             </summary>
-             <param name="vCenter">Center X, Y (mm)</param>
-             <param name="sweepAngleZ">Sweep angle (°) (+: CCW, -: CW)</param>
-             <param name="alcScaleFactor">(Unsupported!) Ramp factor if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
-            <returns>Success or failed</returns>
+            <summary>
+            List arc at center
+            </summary>
+            <param name="vCenter">Center X, Y (mm)</param>
+            <param name="sweepAngleZ">Sweep angle (°) (+: CCW, -: CW)</param>
+            <param name="alcScaleFactor">(Unsupported!) Ramp factor if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.IScanner.ListMarksTo(System.Numerics.Vector2[],System.Double[])">
             <summary>
@@ -14127,7 +14204,7 @@
             </summary>
             <param name="vPositions">Array of X, Y positions (mm)</param>
             <param name="alcScaleFactors">Array of ramp factors if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.IScanner3D">
             <summary>
@@ -14147,7 +14224,7 @@
             </summary>
             <param name="vPosition">x,y,z (mm) position</param>
             <param name="alcScaleFactor">Ramp factor if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.IScanner3D.ListMarkTo(System.Numerics.Vector3,System.Double)">
             <summary>
@@ -14155,7 +14232,7 @@
             </summary>
             <param name="vPosition">x,y,z (mm) position</param>
             <param name="alcScaleFactor">Ramp factor if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.IScanner3D.ListArcTo(System.Numerics.Vector3,System.Double,System.Double)">
             <summary>
@@ -14165,7 +14242,7 @@
             <param name="vCenter">Center x,y,z (mm)</param>
             <param name="sweepAngleZ">Sweep angle (°) (+: CCW, -: CW)</param>
             <param name="alcScaleFactor">(Unsupported!) Ramp factor if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.IScanner3D.ListMarksTo(System.Numerics.Vector3[],System.Double[])">
             <summary>
@@ -14173,7 +14250,7 @@
             </summary>
             <param name="vPositions">Array of x,y,z positions (mm)</param>
             <param name="alcScaleFactors">Array of ramp factors if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
-            <returns>Success or failed</returns>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.RTC4Wrap">
             <summary>

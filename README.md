@@ -4,9 +4,14 @@
 
  SuperEasy Library for Control Scanner and Laser
 
-[![SIRIUS2 DEMO](http://img.youtube.com/vi/wTNeATLo2HQ/0.jpg)](https://youtu.be/wTNeATLo2HQ "SIRIUS2 DEMO")
 
-[![SIRIUS2 DEMO](http://img.youtube.com/vi/3MlErOf4cc8/0.jpg)](https://youtu.be/3MlErOf4cc8 "SIRIUS2 DEMO")
+![sirius2_ex1](https://user-images.githubusercontent.com/58460570/271742677-780f1905-9248-4873-b457-685cb2b45292.png)
+
+![sirius2_ex2](https://user-images.githubusercontent.com/58460570/271741908-eb3df067-329c-483f-a983-073b6e32e95c.png)
+
+![sirius2_ex3](https://user-images.githubusercontent.com/58460570/271741915-1b836b5d-f386-47f1-aca5-f0c24b1536ee.png)
+
+![sirius2_ex4](https://user-images.githubusercontent.com/58460570/271742410-2527b985-e64b-4146-97cb-273522a01b99.png)
 
 
 ----
@@ -51,8 +56,6 @@
 **4. Libraries**
 
  - spirallab.sirius2.dll
-    - Target frameworks: .NET standard 2.0, .NET 6.0 or .NET Framework 4.7.2
-    - Target platforms: Windows (x64) only
  - spirallab.sirius2.winforms.dll
     - Target frameworks: .NET Framework 4.7.2 only
     - Target platforms: Windows (x64) only
@@ -85,10 +88,11 @@
 
   
 **6. License**
-
- * Per instance
-   - Option1: MoF (For xy or angular)
-   - Option2: 3D (For 3d calibration)
+ * license (per instance)
+   - RTC (RTC5, RTC6,...)
+      - Option1: MoF (For xy or angular)
+      - Option2: 3D (For 3d calibration) 
+   - syncAXIS (XL-SCAN)   
  * Evaluation mode would be activated during 30 mins without license
  
  
