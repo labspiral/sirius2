@@ -452,6 +452,7 @@ namespace Demos
 
             mnuDataMatrix.Click += MnuDataMatrix_Click;
             mnuQRCode.Click += MnuQRCode_Click;
+            mnuPDF417.Click += MnuPDF417_Click;
             mnuBarcode1D.Click += MnuBarcode1D_Click;
             mnuMeasurementBeginEnd.Click += MnuMeasurementBeginEnd_Click;
             mnuTimer.Click += MnuTimer_Click;
@@ -523,12 +524,18 @@ namespace Demos
 
         private void MnuQRCode_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateQRCode("SIRIUS2", Barcode2DCells.Dots, 5, 2, 2);
+            var entity = EntityFactory.CreateQRCode("SIRIUS2", Barcode2DCells.Dots, 3, 2, 2);
             document.ActAdd(entity);
         }
         private void MnuDataMatrix_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateDataMatrix("SIRIUS2", Barcode2DCells.Dots, 5, 2, 2);
+            var entity = EntityFactory.CreateDataMatrix("SIRIUS2", Barcode2DCells.Dots, 3, 2, 2);
+            document.ActAdd(entity);
+        }
+        private void MnuPDF417_Click(object sender, EventArgs e)
+        {
+            double height = 2;
+            var entity = EntityFactory.CreatePDF417("SIRIUS2", Barcode2DCells.Dots, 3, height * 3.75, height);
             document.ActAdd(entity);
         }
         private void MnuBarcode1D_Click(object sender, EventArgs e)

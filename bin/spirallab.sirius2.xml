@@ -3079,6 +3079,22 @@
             Transformation order: Rotate by angle and then translate dx, dy, dz <br/>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Mathematics.Offset.ToXyz">
+            <summary>
+            Get x,y,z offset by <c>System.Numerics.Vector3</c>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Mathematics.Offset.#ctor(System.Double,System.Double,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <remarks>
+            Transformation order: Rotate by angle and then translate dx, dy <br/>
+            </remarks>
+            <param name="dx">Dx (mm)</param>
+            <param name="dy">Dy (mm)</param>
+            <param name="angleZ">Angle Z (°)</param>
+        </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.Offset.#ctor(System.Double,System.Double,System.Double,System.Double)">
             <summary>
             Constructor
@@ -3089,6 +3105,28 @@
             <param name="dx">Dx (mm)</param>
             <param name="dy">Dy (mm)</param>
             <param name="dz">Dz (mm)</param>
+            <param name="angleZ">Angle Z (°)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Mathematics.Offset.#ctor(System.Numerics.Vector2,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <remarks>
+            Offset by tranlate dx, dy <br/>
+            Transformation order: Rotate by angle and then translate dx, dy, dz <br/>
+            </remarks>
+            <param name="offsetXy">Dx, Dy (mm)</param>
+            <param name="angleZ">Angle Z (°)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Mathematics.Offset.#ctor(System.Numerics.Vector3,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <remarks>
+            Offset by tranlate dx, dy, dz <br/>
+            Transformation order: Rotate by angle and then translate dx, dy, dz <br/>
+            </remarks>
+            <param name="offsetXyz">Dx, Dy, Dz (mm)</param>
             <param name="angleZ">Angle Z (°)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.Offset.ToString">
@@ -3233,6 +3271,9 @@
             bool success = rtc.Initialize();
             </code>
             </summary>
+            <remarks>
+            Supported x64 runtime only <br/>
+            </remarks>
             <param name="index">SyncAxis instance index (0,1,2,3, ...)</param>
             <param name="configXMLFile">Config XML filename</param>
             <returns><c>Rtc6SyncAxis</c></returns>
@@ -7959,7 +8000,7 @@
             XML config filename
             </summary>
             <remarks>
-            Config xml file at first by syncAXIS_Configurator.ext program
+            Do <c>IRtcSyncAxis.Initialize()</c> to change xml file at first. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.IsSimulationMode">
@@ -7967,7 +8008,7 @@
             Enable(or disable) simulation mode 
             </summary>
             <remarks>
-            Automatically created output log files for syncAXIS viewer at simulation mode 
+            Edit config xml file at first to enable simulation mode. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.SimulationFileName">

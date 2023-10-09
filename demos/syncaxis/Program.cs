@@ -48,6 +48,8 @@ namespace Demos
             // XML configuration file
             string configXmlFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "syncaxis", "syncAXISConfig.xml");
 
+            // Rtc6SyncAxis support x64 runtime only !
+            Debug.Assert(SpiralLab.Sirius2.Core.IsRunningPlatform64);
             // Create syncAXIS(XL-SCAN) controller
             var rtc = ScannerFactory.CreateRtc6SyncAxis(0, configXmlFileName);
 

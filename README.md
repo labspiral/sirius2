@@ -21,7 +21,7 @@
  
  - Support SCANLAB's RTC5, RTC6 and RTC6ethernet controllers.
  - Support SCANLAB's XL-SCAN (syncAxis) controllers.
- - Support 2D,3D scanner field correction.
+ - Support 2D, 3D scanner field correction.
  - Support powerful 4x4 matrix with stack operations.
  - Support processing unlimited list data by automatically.
  - Support MoF(Marking on the Fly), 2nd head, 3D and Sky writing.
@@ -55,16 +55,17 @@
 
 **4. Libraries**
 
- - spirallab.sirius2.dll
- - spirallab.sirius2.winforms.dll
-    - Target frameworks: .NET Framework 4.7.2 only
-    - Target platforms: Windows (x64) only
+ - Spirallab.sirius2.dll
+ - Spirallab.sirius2.winforms.dll
+    - Target frameworks: .NET Framework 4.7.2
+    - Target platforms: Windows 
+    - Target runtime: x64 (64-bit)
  - Dependencies
-    - SCANLAB RTC5 (2022.11.11)
-    - SCANLAB RTC6 v.1.15.4 (2023.01.23)
-    - SCANLAB syncAXIS v.1.8.2 (2023.3.9)
-    - OpenTK v3.3.3 (https://www.nuget.org/packages/OpenTK/3.3.3)
-    - OpenTK.GLControl v3.3.3 (https://www.nuget.org/packages/OpenTK.GLControl/)
+    - SCANLAB RTC5: 2022.11.11
+    - SCANLAB RTC6: v.1.15.4 (2023.01.23)
+    - SCANLAB syncAXIS: v.1.8.2 (2023.3.9)
+    - OpenTK: v3.3.3 (https://www.nuget.org/packages/OpenTK/3.3.3)
+    - OpenTK.GLControl: v3.3.3 (https://www.nuget.org/packages/OpenTK.GLControl/)
 
 
 ----
@@ -110,6 +111,9 @@
 
 
 **8. Version history**
+
+* 2023.10.10 v.1.4.780
+  - added) 3d calibration by cone(or cylinder) 
 
 * 2023.9.27 v.1.3.770
   - added) pdf417 barcode entity  

@@ -43,6 +43,8 @@ namespace Demos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            if (args.Length == 1)
+                EditorHelper.ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, args[0]);
             Application.Run(new Form1());
         }
     }

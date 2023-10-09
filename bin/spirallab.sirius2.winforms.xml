@@ -1827,6 +1827,16 @@
               Looks up a localized string similar to Pulse period.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_pitch_DESC">
+            <summary>
+              Looks up a localized string similar to Estimated Pulse pitch (um) (Mark Speed * 1000 / Frequency).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_pitch_DISP">
+            <summary>
+              Looks up a localized string similar to Pulse pitch.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_width_DESC">
             <summary>
               Looks up a localized string similar to Laser Pulse Width (usec).
@@ -3050,7 +3060,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Direction_DESC">
             <summary>
-              Looks up a localized string similar to New Directional (Default: 0,0,1).
+              Looks up a localized string similar to New Directional (Default: 1,0,0).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Direction_DISP">
@@ -3058,29 +3068,49 @@
               Looks up a localized string similar to Direction.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Height_DESC">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Length_DESC">
             <summary>
-              Looks up a localized string similar to Height Size (mm).
+              Looks up a localized string similar to Height (or Distance) From Reference To End Location (mm).
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Height_DISP">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Length_DISP">
             <summary>
               Looks up a localized string similar to Height.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Radius_DESC">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.RadiusEnd_DESC">
             <summary>
-              Looks up a localized string similar to Radius (mm).
+              Looks up a localized string similar to Radius at End Location (mm).
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Radius_DISP">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.RadiusEnd_DISP">
             <summary>
-              Looks up a localized string similar to Radius.
+              Looks up a localized string similar to Radius (End).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.RadiusReference_DESC">
+            <summary>
+              Looks up a localized string similar to Radius at Reference Location (mm) .
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.RadiusReference_DISP">
+            <summary>
+              Looks up a localized string similar to Radius (Reference).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.RadiusStart_DESC">
+            <summary>
+              Looks up a localized string similar to Radius at Start Location (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.RadiusStart_DISP">
+            <summary>
+              Looks up a localized string similar to Radius (Start).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Reference_DESC">
             <summary>
-              Looks up a localized string similar to New Reference X,Y,Z Position (Default: 0,0,0).
+              Looks up a localized string similar to New Reference X,Y,Z Location (Default: 0,0,0).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Reference_DISP">
@@ -6038,7 +6068,7 @@
             </summary>
             <remarks>
             Do 3D scanner field correction by SCANLAB's calibration tool. <br/>
-            Used with <c>EntityCone</c>, <c>EntityCylinder</c>, <c>EntityPointsCloud</c> entities. <br/>
+            Used with <c>EntityPlane</c>, <c>EntityCone</c>, <c>EntityPointsCloud</c> entities. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D.Calibration3D(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
@@ -6047,7 +6077,7 @@
             </summary>
             <remarks>
             Input correction file: Used source correction file at <c>Rtc.CorrectionFiles[0].FileName</c>. <br/>
-            Output correction file: If calibration had succeeded, correction table has load and selected by automatically at last table location. <br/>
+            Output correction file: If calibration had succeeded, converted correction table has load and selected by automatically at last table location. <br/>
             </remarks>
             <param name="rtc"><c>IRtc</c></param>
             <param name="inputCtFileName">Input correction filename</param>
@@ -6282,6 +6312,7 @@
             EntityCone entity
             </summary>
             <remarks>
+            If <c>RadiusReference</c> and <c>RadiusEnd</c> are equals, assumed as cylinderic shape. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone.Repeats">
@@ -6300,31 +6331,46 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone.Reference">
             <summary>
-            >Reference point on the cone (x,y,z)
+            Reference(or surface) point on the cone/cylinder (x,y,z) 
             </summary>
+            <remarks>
+            The reference point is a point on the cylinder mantle(or lateral surface of the cone) and represents the new coordinate origin of the target surface.
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone.Direction">
             <summary>
-            Direction vector of the cone axis
+            Direction vector of the cone/cylinder axis
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone.Radius">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone.RadiusReference">
             <summary>
-            Radius of the cone at the reference point (mm)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone.Height">
-            <summary>
-            Height (mm)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone.ZScale">
-            <summary>
-            Z scale factor (-, +)
+            Radius of the cone/cylinder at the reference point (mm)
             </summary>
             <remarks>
-            Z scale factor calculated when <c>Calibration3D</c> has called. <br/>
+            If <c>RadiusReference</c> and <c>RadiusEnd</c> are not equals, assumed as cone shape. <br/>
+            If <c>RadiusReference</c> and <c>RadiusEnd</c> are equals, assumed as cylinderic shape. <br/>
             </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone.RadiusEnd">
+            <summary>
+            Radius of the cone/cylinder at the end point (mm)
+            </summary>
+            <remarks>
+            If <c>RadiusReference</c> and <c>RadiusEnd</c> are not equals, assumed as cone shape. <br/>
+            If <c>RadiusReference</c> and <c>RadiusEnd</c> are equals, assumed as cylinderic shape. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone.RadiusStart">
+            <summary>
+            Radius of the cone/cylinder at the start point (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone.Length">
+            <summary>
+            Length (mm)
+            </summary>
+            If <c>RadiusReference</c> and <c>RadiusEnd</c> are not equals, assumed as cone shape. <br/>
+            If <c>RadiusReference</c> and <c>RadiusEnd</c> are equals, assumed as cylinderic shape. and generated negative(or parallel) <c>Length</c> area by automatically. <br/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone._Reference">
             <summary>
@@ -6336,21 +6382,26 @@
             Used by internally (Do NOT edit)
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone._ZScale">
-            <summary>
-            Used by internally (Do NOT edit)
-            </summary>
-        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCone.#ctor">
             <summary>
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCone.#ctor(OpenTK.Vector3)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCone.#ctor(System.Double,System.Double,System.Double)">
             <summary>
             Constructor
+            <code>
+            
+            
+            
+            </code>
             </summary>
-            <param name="reference">The reference point represents the new origin of the target plane, while the direction vectors represent the new X- and Y- directions in the target plane</param>
+            <remarks>
+            If <c>RadiusReference</c> and <c>RadiusEnd</c> are equals, assumed as cylinderic shape. 
+            </remarks>
+            <param name="radiusReference">Radius at reference location (mm)</param>
+            <param name="radiusEnd">Radius at end location (mm)</param>
+            <param name="length">Length (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCone.Finalize">
             <summary>
@@ -10010,7 +10061,7 @@
             <summary>
             Constructor
             </summary>
-            <param name="vertices">Face = 6 vertices ((= Vector1,Normal1, Vector2,Normal2, Vector3,Normal3)</param>
+            <param name="vertices">Face is composite of 6 vertices (= Vector1,Normal1, Vector2,Normal2, Vector3,Normal3)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFace.Clone">
             <inheritdoc/>
@@ -10397,6 +10448,14 @@
             <summary>
             Pulse period (usec)
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.PulsePitch">
+            <summary>
+            Estimated. pulse pitch (um)
+            </summary>
+            <remarks>
+            Pulse pitch (um) = Mark speed(mm/s) * 1000 / Frequency(Hz)
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.PulseDutyCycle">
             <summary>
@@ -12120,6 +12179,40 @@
             <param name="inputLowBitMask">Input low bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <param name="inputHightBitMask">Input high bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePointsCloud(OpenTK.Vector3[])">
+            <summary>
+            Create <c>EntityPointsCloud</c> for 3D calibration
+            </summary>
+            <remarks>
+            3D calibration entities are support convert new 3D correction file by <seealso cref="T:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D"/>. <br/>
+            </remarks>
+            <param name="vertices">Array of x,y,z vertex</param>
+            <returns><c>EntityPointsCloud</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePlane(OpenTK.Vector3)">
+            <summary>
+            Create <c>EntityPlane</c> for 3D calibration
+            </summary>
+            <remarks>
+            3D calibration entities are support convert new 3D correction file by <seealso cref="T:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D"/>. <br/>
+            </remarks>
+            <param name="reference">New reference(or origin) location at surface</param>
+            <returns><c>EntityPlane</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateCone(System.Double,System.Double,System.Double)">
+            <summary>
+            Create <c>EntityCone</c> for 3D calibration
+            </summary>
+            <remarks>
+            If <c>RadiusReference</c> and <c>RadiusEnd</c> are not equals, assumed as conic shape. <br/>
+            If <c>RadiusReference</c> and <c>RadiusEnd</c> are equals, assumed as cylinderic shape. <br/>
+            3D calibration entities are support convert new 3D correction file by <seealso cref="T:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D"/>. <br/>
+            </remarks>
+            <param name="radiusReference">Radius(mm) at reference(or origin) location</param>
+            <param name="radiusEnd">Radius(mm) at end location</param>
+            <param name="length"></param>
+            <returns><c>EntityCone</c></returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityVertex2D">
             <summary>
             EntityVertex2D entity
@@ -13298,6 +13391,13 @@
             <summary>
             STLHelper
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.STLHelper.FacesToV3N3(SpiralLab.Sirius2.Winforms.Entity.EntityFace[],OpenTK.Vector3[]@)">
+            <summary>
+            V1+N1, V2+N2, ...
+            </summary>
+            <param name="faces"></param>
+            <param name="vertexAndNormals">Array of V1+N1, V2+N2, ...</param>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.marker.markersyncaxis">
             <summary>
@@ -14778,14 +14878,14 @@
             GLVertex3Normal3Buffer
             </summary>
             <remarks>
-            (Float X,Y,Z + Normal X,Y,Z) * N
+            Array of (X1,N1,Y1,N1,Z1,N1, ...)
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLVertex3Normal3Buffer.#ctor(OpenTK.Vector3[])">
             <summary>
-            Array of (X,Y,Z vertex + X,Y,Z normal)
+            Array of (X1,N1,Y1,N1,Z1,N1, ...)
             </summary>
-            <param name="vertexAndNormal">Array of Vertex 1, Normal 1, Vertex2, Normal2, ...</param>
+            <param name="vertexAndNormal">Array of vertex and normal (X1,N1,Y1,N1,Z1,N1, ...)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLVertex3Normal3Buffer.Render(OpenTK.Graphics.OpenGL.PrimitiveType)">
             <inheritdoc/>
@@ -15815,7 +15915,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ColorFov">
             <summary>
-            Color of FOV(or virtual image field) rectangle
+            Color of FoV(Field of view) rectangle
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.ColorVif">
+            <summary>
+            Color of Vif(Virtual image field) rectangle
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ColorAxisX">
@@ -17624,7 +17729,8 @@
             Path Optimizer Base Positions
             </summary>
             <remarks>
-            Configured <c>Config.PathOptimizerBasePosition</c> 
+            Configured <c>Config.PathOptimizerBasePosition</c> <br/>
+            Supported x64 runtime only for heuristic algorithm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.PathOptimizerBasePositions.Center">
