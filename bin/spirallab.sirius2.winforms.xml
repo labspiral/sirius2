@@ -4373,6 +4373,16 @@
               Looks up a localized string similar to Model translate.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Type_DESC">
+            <summary>
+              Looks up a localized string similar to Entity Type Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Type_DISP">
+            <summary>
+              Looks up a localized string similar to Type.
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.LineDirections">
             <summary>
             Line directions
@@ -9350,6 +9360,9 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Id">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase.TypeName">
+            <inheritdoc/>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Color">
             <inheritdoc/>
         </member>
@@ -9744,6 +9757,11 @@
             Automatically assigned (and increased) value at runtime. <br/>
             Not saved.<br/>
             </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.TypeName">
+            <summary>
+            Name of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> type
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Color">
             <summary>

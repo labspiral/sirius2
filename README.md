@@ -13,6 +13,8 @@
 
 ![sirius2_ex4](https://user-images.githubusercontent.com/58460570/271742410-2527b985-e64b-4146-97cb-273522a01b99.png)
 
+![sirius2_ex5](https://user-images.githubusercontent.com/58460570/273743004-802904d1-4142-4eda-9282-f810a3b5bf11.png)
+
 
 ----
 
@@ -22,6 +24,7 @@
  - Support SCANLAB's RTC5, RTC6 and RTC6ethernet controllers.
  - Support SCANLAB's XL-SCAN (syncAxis) controllers.
  - Support 2D, 3D scanner field correction.
+ - Support 3D field correction at plane, cone, cylinder surface by calibration tool
  - Support powerful 4x4 matrix with stack operations.
  - Support processing unlimited list data by automatically.
  - Support MoF(Marking on the Fly), 2nd head, 3D and Sky writing.
@@ -46,7 +49,7 @@
 | Render engine         |OpenTK (with shaders)                                  |SharpGL                  |
 | Render speed          |Faster                                                 |Acceptable               |
 | Field correction      |correXionPro and CalibrationTool                       |correXionPro             |
-| Font                  |Windows fonts and cxf, lff format                      |ttf, cxf                 | 
+| Font                  |cxf, lff format and Windows fonts                      |ttf, cxf format          | 
 | Customization         |Expandable                                             |Acceptable               |
 
 
@@ -59,7 +62,6 @@
  - Spirallab.sirius2.winforms.dll
     - Target frameworks: .NET Framework 4.7.2
     - Target platforms: Windows 
-    - Target runtime: x64 (64-bit)
  - Dependencies
     - SCANLAB RTC5: 2022.11.11
     - SCANLAB RTC6: v.1.15.4 (2023.01.23)
@@ -75,9 +77,9 @@
 
  - Demo 'init' console project for beginner
  - Demo 'editor_basic' winforms project for beginner
- - Demo 'editor_entity' winforms project for create entities
     - config "config.ini" for RTC5 or RTC6
     - config "config_syncaxis.ini" for XL-SCAN
+ - Demo 'editor_entity' winforms project for create entities
  - Demo 'editor_marker' winforms project for custom marker
  - Demo 'editor_remote' winforms project for control by remotely 
  - Demo 'editor_barcode' winforms project for mark individual barcode entities
