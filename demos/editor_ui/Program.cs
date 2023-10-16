@@ -28,10 +28,13 @@ namespace Demos
         public static SiriusEditorUserControl EditorForm { get; set; }
 
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            if (args.Length == 1)
+                EditorHelper.ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, args[0]);
 
             // Set language
             EditorHelper.SetLanguage();
@@ -52,35 +55,27 @@ namespace Demos
             var rtc = EditorForm.Rtc;
             var laser = EditorForm.Laser;
             var marker = EditorForm.Marker;
+
             EditorHelper.DestroyDevices(rtc, laser, marker);
         }
 
         private static void EditorForm_Shown(object sender, EventArgs e)
         {
             // Create devices 
-            EditorHelper.CreateDevices(out var rtc, out var laser);
+            EditorHelper.CreateDevices(out var rtc, out var laser, out var marker);
 
             // Assign devices into usercontrol
             EditorForm.Rtc = rtc;
             EditorForm.Laser = laser;
-
-            // Create marker
-            EditorHelper.CreateMarker(out var marker);
-
-            // Assign marker to user control
-            EditorForm.Marker = marker;
+            EditorForm.Marker = marker;                     
 
             var document = EditorForm.Document;
             var view = EditorForm.View;
             // Create entities for test
             EditorHelper.CreateTestEntities(rtc, view, document);
 
-            // Assign marker to user control
-            EditorForm.Marker = marker;
-
             // Assign Document, View, Rtc, Laser into marker
             marker.Ready(document, view, rtc, laser);
         }
-
     }
 }

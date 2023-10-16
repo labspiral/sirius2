@@ -22,7 +22,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.arc.Closed_DESC">
             <summary>
-              Looks up a localized string similar to Closed Path or Not.
+              Looks up a localized string similar to Is Closed Path or Not.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.arc.Closed_DISP">
@@ -2353,7 +2353,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.group.Closed_DESC">
             <summary>
-              Looks up a localized string similar to Closed Path or Not.
+              Looks up a localized string similar to Is Closed Path or Not.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.group.Closed_DISP">
@@ -2400,6 +2400,26 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Direction_DISP">
             <summary>
               Looks up a localized string similar to Direction.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.image.DpiX_DESC">
+            <summary>
+              Looks up a localized string similar to DPI (Pixel X / Inch).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.image.DpiX_DISP">
+            <summary>
+              Looks up a localized string similar to Dpi x.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.image.DpiY_DESC">
+            <summary>
+              Looks up a localized string similar to DPI (Pixel Y / Inch).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.image.DpiY_DISP">
+            <summary>
+              Looks up a localized string similar to Dpi y.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Extension_channel_DESC">
@@ -3491,7 +3511,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.polyline2d.Closed_DESC">
             <summary>
-              Looks up a localized string similar to Closed Loop.
+              Looks up a localized string similar to Is Closed Path or Not.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.polyline2d.Closed_DISP">
@@ -3603,7 +3623,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.rectangle.Closed_DESC">
             <summary>
-              Looks up a localized string similar to Closed Loop.
+              Looks up a localized string similar to Is Closed Path or Not.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.rectangle.Closed_DISP">
@@ -3856,7 +3876,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.spiral.Closed_DESC">
             <summary>
-              Looks up a localized string similar to Closed Path or Not.
+              Looks up a localized string similar to Is Closed Path or Not.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.spiral.Closed_DISP">
@@ -4265,7 +4285,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Mark_DESC">
             <summary>
-              Looks up a localized string similar to Is Allow Mark or Not.
+              Looks up a localized string similar to Is Allow to Mark or Not.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Mark_DISP">
@@ -4320,7 +4340,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Repeats_DESC">
             <summary>
-              Looks up a localized string similar to Repeat Counts (Default: 1).
+              Looks up a localized string similar to Mark Repeat Counts (Default: 1).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Repeats_DISP">
@@ -8105,7 +8125,7 @@
             <summary>
             Constructor
             </summary>
-            <param name="vertices">Array of <c>Vector3</c> (like as v1,n1, v2,n2,...)</param>
+            <param name="vertices">Array of vertices (x, nx, y, yn, zn)<br/>X1,Normal, Y1,Normal, Z1,Normal, X2,Normal, Y2,Normal, Z2,Normal,... <br/></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud.Finalize">
             <summary>
@@ -8269,6 +8289,16 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.PitchY">
             <summary>
             Pitch y (mm/pixel)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.DpiX">
+            <summary>
+            DPI x (dots/inch)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.DpiY">
+            <summary>
+            DPI y (dots/inch)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.PixelSpeed">
@@ -10051,7 +10081,7 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityFace">
             <summary>
             EntityFace
-            <para>Triangles + Normals</para>
+            <para>Triangle with normals (= x,nx,y,ny,z,nx)</para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityFace.Color">
@@ -10059,10 +10089,10 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityFace.Vertices">
             <summary>
-            Face (Triangle)
+            Vertices for triangle and normal
             </summary>
             <remarks>
-            6 Vertices (= Vector1,Normal1, Vector2,Normal2, Vector3,Normal3) <br/>
+            6 Vertices (= x,nx,y,ny,z,nx) <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityFace._Vertices">
@@ -10079,7 +10109,7 @@
             <summary>
             Constructor
             </summary>
-            <param name="vertices">Face is composite of 6 vertices (= Vector1,Normal1, Vector2,Normal2, Vector3,Normal3)</param>
+            <param name="vertices">Should be 6 vertices for x,nx,y,ny,z,nx</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFace.Clone">
             <inheritdoc/>
@@ -12204,7 +12234,7 @@
             <remarks>
             3D calibration entities are support convert new 3D correction file by <seealso cref="T:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D"/>. <br/>
             </remarks>
-            <param name="vertices">Array of x,y,z vertex</param>
+            <param name="vertices">Array of vertices (x, nx, y, yn, zn)<br/>X1,Normal, Y1,Normal, Z1,Normal, X2,Normal, Y2,Normal, Z2,Normal,... <br/></param>
             <returns><c>EntityPointsCloud</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePlane(OpenTK.Vector3)">
@@ -13409,6 +13439,12 @@
             <summary>
             STLHelper
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.STLHelper.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="fileName">Filename</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.STLHelper.FacesToV3N3(SpiralLab.Sirius2.Winforms.Entity.EntityFace[],OpenTK.Vector3[]@)">
             <summary>
@@ -14838,31 +14874,40 @@
             GLBufferFactory
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLBufferFactory.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLBufferFactory.CreateVertex3(OpenTK.Vector3[])">
             <summary>
-            Array of X,Y,Z vertex
+            Array of vertex
             </summary>
-            <param name="vertices">Array of <c>Vector3</c></param>
+            <param name="vertices">Array of x,y,z</param>
             <returns><c>GLVertex3Buffer</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLBufferFactory.CreateVertexNormal3(OpenTK.Vector3[])">
             <summary>
-            Array of X,Y,Z vertex
+            Array of vertex and normal
             </summary>
-            <param name="vertexAndNormal">Array of X,Y,Z vertex + X,Y,Z normal</param>
+            <param name="vertexAndNormal">Array of x,nx,y,ny,z,nz</param>
             <returns><c>GLVertex3Normal3Buffer</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLBufferFactory.CreateTexture(System.Drawing.Bitmap)">
+            <summary>
+            Array of vertex and normal
+            </summary>
+            <param name="bitmap">Texture <c>Bitmap</c></param>
+            <returns><c>GLVertex3T2Buffer</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLBufferFactory.CreateTexture(System.String)">
+            <summary>
+            Array of vertex and normal
+            </summary>
+            <param name="imageFileName">Texture image filename</param>
+            <returns><c>GLVertex3T2Buffer</c></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.OpenGL.GLVertex3T2Buffer">
             <summary>
             GLVertex3Buffer
             </summary>
             <remarks>
-            (Float X,Y,Z + Texture X,Y) * 4
+            Array of vertex and texture
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.OpenGL.GLVertex3T2Buffer.Texture">
@@ -14874,13 +14919,13 @@
             <summary>
             GLVertex3T2Buffer
             </summary>
-            <param name="imageFileName">Image filename</param>
+            <param name="imageFileName">Texture image filename</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLVertex3T2Buffer.#ctor(System.Drawing.Bitmap)">
             <summary>
             GLVertex3T2Buffer
             </summary>
-            <param name="bitmap">Bitmap</param>
+            <param name="bitmap">Texture <c>Bitmap</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLVertex3T2Buffer.Dispose(System.Boolean)">
             <inheritdoc/>
@@ -14896,14 +14941,14 @@
             GLVertex3Normal3Buffer
             </summary>
             <remarks>
-            Array of (X1,N1,Y1,N1,Z1,N1, ...)
+            Array of vertex and normal
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLVertex3Normal3Buffer.#ctor(OpenTK.Vector3[])">
             <summary>
-            Array of (X1,N1,Y1,N1,Z1,N1, ...)
+            Array of vertex and normal
             </summary>
-            <param name="vertexAndNormal">Array of vertex and normal (X1,N1,Y1,N1,Z1,N1, ...)</param>
+            <param name="vertexAndNormal">Array of x,nx,y,ny,z,nz</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLVertex3Normal3Buffer.Render(OpenTK.Graphics.OpenGL.PrimitiveType)">
             <inheritdoc/>
@@ -14918,9 +14963,9 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLVertex3Buffer.#ctor(OpenTK.Vector3[])">
             <summary>
-            Array of X,Y,Z vertex
+            Array of vertex
             </summary>
-            <param name="vertices">Array of <c>Vector3</c></param>
+            <param name="vertices">Array of x,y,z</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLVertex3Buffer.Render(OpenTK.Graphics.OpenGL.PrimitiveType)">
             <inheritdoc/>
@@ -15582,6 +15627,14 @@
             Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sample")</c> <br/>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.RecipePath">
+            <summary>
+            Recipe file path (.sirius2)
+            </summary>
+            <remarks>
+            Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "recipe")</c> <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.PensColor">
             <summary>
             Array of <c>EntityPen</c> colors
@@ -16104,12 +16157,43 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardHelpMessage">
             <summary>
-            Help messages at editor
+            Help message for shortcut key bindings
             </summary>
+            <remarks>
+            Copy : CTRL + C <br/>
+            Cut : CTRL + X <br/>
+            Paste : CTRL + V <br/>
+            Delete : CTRL + Delete <br/>
+            Align to center : CTRL + H <br/>
+            Camera zoom to fit : CTRL + F <br/>
+            Camera reset : CTRL + R <br/>
+            Camera -X : Left <br/>
+            Camera +X : Right <br/>
+            Camera -Y : Down <br/>
+            Camera +Y : Up <br/>
+            Rotate CCW (90°) : CTRL + [ <br/>
+            Rotate CCW (10°) : CTRL + ALT + [ <br/>
+            Rotate CCW (1°) : CTRL + SHIFT + ALT + [ <br/>
+            Rotate CW (90°) : CTRL + ] <br/>
+            Rotate CW (10°) : CTRL + ALT + ] <br/>
+            Rotate CW (1°) : CTRL + SHIFT + ALT + ] <br/>
+            Transit -X (1mm) : CTRL + Left <br/>
+            Transit -X (0.1mm) : CTRL + ALT + Left <br/>
+            Transit -X (0.01mm) : CTRL + SHIFT + ALT + Left <br/>
+            Transit +X (1mm) : CTRL + Right <br/>
+            Transit +X (0.1mm) : CTRL + ALT + Right <br/>
+            Transit +X (0.01mm) : CTRL + SHIFT + ALT + Right <br/>
+            Transit -Y (1mm) : CTRL + Down <br/>
+            Transit -Y (0.1mm) : CTRL + ALT + Down <br/>
+            Transit -Y (0.01mm) : CTRL + SHIFT + ALT + Down <br/>
+            Transit +Y (1mm) : CTRL + Up <br/>
+            Transit +Y (0.1mm) : CTRL + ALT + Up <br/>
+            Transit +Y (0.01mm) : CTRL + SHIFT + ALT + Up <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardTransitXYCtrl">
             <summary>
-            Move distance when press keyboard: CTRL
+            Move distance when press keyboard: CTRL + (Left,Right,Up,Down)
             </summary>
             <remarks>
             Default: 1 mm <br/>
@@ -16117,7 +16201,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardTransitXYCtrlAlt">
             <summary>
-            Move distance when press keyboard: CTRL + ALT
+            Move distance when press keyboard: CTRL + ALT + (Left,Right,Up,Down)
             </summary>
             <remarks>
             Default: 0.1 mm <br/>
@@ -16125,7 +16209,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardTransitXYCtrlAltShift">
             <summary>
-            Move distance when press keyboard: CTRL + ALT + SHIFT
+            Move distance when press keyboard: CTRL + ALT + SHIFT + (Left,Right,Up,Down)
             </summary>
             <remarks>
             Default: 0.01 mm <br/>
@@ -16133,7 +16217,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardRotateCtrl">
             <summary>
-            Rotate angle when press keyboard: CTRL
+            Rotate angle when press keyboard: CTRL + ([,])
             </summary>
             <remarks>
             Default: 90 deg <br/>
@@ -16141,7 +16225,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardRotateCtrlAlt">
             <summary>
-            Rotate angle when press keyboard: CTRL + ALT
+            Rotate angle when press keyboard: CTRL + ALT + ([,])
             </summary>
             <remarks>
             Default: 10 deg <br/>
@@ -16149,7 +16233,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.KeyboardRotateCtrlAltShift">
             <summary>
-            Rotate angle when press keyboard: CTRL + ALT+ SHIFT
+            Rotate angle when press keyboard: CTRL + ALT+ SHIFT + ([,])
             </summary>
             <remarks>
             Default: 1 deg <br/>
@@ -16430,6 +16514,57 @@
             Calculate and applied when importing hpgl(plt) or dxf file. <br/>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.RemoteSeparator">
+            <summary>
+            Remote communication
+            </summary>
+            <remarks>
+            Default separator: ',' <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.RemoteTerminator">
+            <summary>
+            Remote communication
+            </summary>
+            <remarks>
+            Default terminator: ';' <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.RemoteOk">
+            <summary>
+            OK
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.RemoteNG">
+            <summary>
+            NG
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.RemoteReady">
+            <summary>
+            Ready
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.RemoteNotReady">
+            <summary>
+            Not ready
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.RemoteBusy">
+            <summary>
+            Busy
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.RemoteError">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.RemoteEnd">
+            <summary>
+            End
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.IDocumentData">
             <summary>
             IDocumentData interface
@@ -16594,6 +16729,11 @@
             User can register event handler for property value had been changed.  <br/>
             Event will be fired when property value of entity had been changed. <br/>
             </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.IDocument.FileName">
+            <summary>
+            Opened file name
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">
             <summary>
@@ -16992,6 +17132,14 @@
             <param name="pen">Founded <c>EntityPen</c></param>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.FindByPenName(System.String,SpiralLab.Sirius2.Winforms.Entity.EntityPen@)">
+            <summary>
+            Find <c>EntityPen</c> entity by name at <c>IDocument</c> 
+            </summary>
+            <param name="penName">Pen name</param>
+            <param name="pen">Founded <c>EntityPen</c></param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.FindById(System.UInt32,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <summary>
             Find <c>IEntity</c> entity by <c>EntityBase.ID</c> at <c>IDocument</c> 
@@ -17169,6 +17317,9 @@
         <member name="E:SpiralLab.Sirius2.Winforms.DocumentBase.OnPropertyChanged">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.DocumentBase.FileName">
+            <inheritdoc/>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.DocumentBase.InternalData">
             <inheritdoc/>
         </member>
@@ -17325,6 +17476,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.FindByPenColor(System.Drawing.Color,SpiralLab.Sirius2.Winforms.Entity.EntityPen@)">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.FindByPenName(System.String,SpiralLab.Sirius2.Winforms.Entity.EntityPen@)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.FindById(System.UInt32,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
@@ -17470,6 +17624,333 @@
               이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
               재정의합니다.
             </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.RemoteFactory">
+            <summary>
+            Factory for remote communication 
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteFactory.CreateTcpServer(SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32)">
+            <summary>
+            Create <c>RemoteTcpServer</c>
+            </summary>
+            <remarks>
+            Create TCP/IP server socket. <br/>
+            </remarks>
+            <param name="editorControl"><c>SiriusEditorUserControl</c></param>
+            <param name="portNo">TCP server listening port</param>
+            <returns><c>IRemote</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteFactory.CreateSerial(SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32,System.Int32)">
+            <summary>
+            Create <c>RemoteSerial</c>
+            </summary>
+            <remarks>
+            Create Serial(RS-232) port with Data: 8bit, Stop: 1bit, Parity: none<br/>
+            </remarks>
+            <param name="editorControl"><c>SiriusEditorUserControl</c></param>
+            <param name="portNo">COM port</param>
+            <param name="baudRate">Baudrate</param>
+            <returns><c>IRemote</c></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.ControlModes">
+            <summary>
+            <c>ControlModes</c> 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.ControlModes.Local">
+            <summary>
+            Local control
+            </summary>
+            <remarks>
+            Prevent control commands. <br/>
+            Allowed query commands only. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.ControlModes.Remote">
+            <summary>
+            Remote control
+            </summary>
+            <remarks>
+            Allowed control commands. <br/>
+            Allowed query commands. <br/>
+            Default mode. <br/>
+            </remarks>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.IRemote">
+            <summary>
+            IRemote abstract 
+            <code>
+            var remote = RemoteFactory.CreateTcpServer(siriusEditorUserControl1, 5001);
+            //or 
+            var remote = RemoteFactory.CreateSerial(siriusEditorUserControl1, 1, 57600);
+            siriusEditorUserControl1.Remote = remote;
+            remote.Start();
+            </code>
+            </summary>
+            <remarks>
+            Communication for TCP/IP or Serial 
+            </remarks>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.IRemote.OnConnected">
+            <summary>
+            Event for communication has connected
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.IRemote.OnDisconnected">
+            <summary>
+            Event for communication has disconnected
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.IRemote.IsConnected">
+            <summary>
+            Is communication has connected or not
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.IRemote.ControlMode">
+            <summary>
+            Current <c>RemoteControls</c> mode
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.NotifyConnected">
+            <summary>
+            Notify communication has connected
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.NotifyDisconnected">
+            <summary>
+            Notify communication has disconnected
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.IRemote.SyncRoot">
+            <summary>
+            Synchronization object for send and receive 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.IRemote.EditorControl">
+            <summary>
+            Assigned <c>SiriusEditorUserControl</c>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.Start">
+            <summary>
+            Start
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.Stop">
+            <summary>
+            Stop
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.Send(System.Byte[])">
+            <summary>
+            Send bytes data
+            </summary>
+            <param name="bytes">Array of byte</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.Send(System.String)">
+            <summary>
+            Send string data
+            </summary>
+            <param name="text">Text</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.Receive(System.String@)">
+            <summary>
+            Receive string data
+            </summary>
+            <param name="text">Text</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.Receive(System.Byte[]@)">
+            <summary>
+            Receive bytes data
+            </summary>
+            <param name="data">Array of byte</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.Parse(System.String)">
+            <summary>
+            Parse received data
+            </summary>
+            <param name="text">Text</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.RecipeParse(System.String)">
+            <summary>
+            Change recipe file
+            </summary>
+            <param name="fileName">Filename</param>
+            <returns></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.OffsetParse(System.String[])">
+            <summary>
+            Change array of <c>Offset</c> at <c>IMarker</c>
+            </summary>
+            <param name="cmd">Counts, dx,dy,dz,dAngle,...</param>
+            <returns></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.ControlParse(System.String,System.String[])">
+            <summary>
+            Control commands
+            </summary>
+            <param name="cmd">Commands like as start, stop, reset </param>
+            <param name="param">Array of param</param>
+            <returns>Success of faileds</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.StatusParse">
+            <summary>
+            Query status
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.FieldCorrectionParse(System.String[])">
+            <summary>
+            Scanner field correction 2D
+            </summary>
+            <param name="cmd">Row,Col,interval, ErrX1, ErrY1, ErrX2, ErrY2, ...</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.EntityParse(System.String,System.String,System.String[])">
+            <summary>
+            Edit entity property
+            </summary>
+            <param name="entityName">Name of <c>IEntity</c></param>
+            <param name="propName">Name of property</param>
+            <param name="param">Array of property param</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.PenParse(System.String,System.String,System.String[])">
+            <summary>
+            Edit pen entity property
+            </summary>
+            <param name="penName">Name of pen entity</param>
+            <param name="propName">Name of propert</param>
+            <param name="param">Array of property param</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.RemoteTcpServer">
+            <summary>
+            Remote communication by TCP server
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteTcpServer.#ctor(SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="editorControl">Target <c>SiriusEditorUserControl</c></param>
+            <param name="portNo">TCP server listening port no</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteTcpServer.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteTcpServer.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteTcpServer.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteTcpServer.Start">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteTcpServer.Stop">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteTcpServer.Send(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteTcpServer.Send(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteTcpServer.Receive(System.String@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteTcpServer.Receive(System.Byte[]@)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.RemoteSerial">
+            <summary>
+            Remote communication by Serial 
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteSerial.#ctor(SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="editorControl">Target <c>SiriusEditorUserControl</c></param>
+            <param name="portNo">COM port no</param>
+            <param name="baudRate">Baudrate</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteSerial.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteSerial.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteSerial.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteSerial.Start">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteSerial.Stop">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteSerial.Send(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteSerial.Send(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteSerial.Receive(System.String@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteSerial.Receive(System.Byte[]@)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.RemoteHelper">
+            <summary>
+            RemoteHelper
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteHelper.EntityProperties(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
+            <summary>
+            Query property list from <c>IEntity</c> 
+            </summary>
+            <remarks>
+            Target properties are [Browasable] attribute is <c>True</c> only <br/>
+            </remarks>
+            <param name="entity">Target <c>IEntity</c></param>
+            <returns><c>Dictionary&lt;string, object&gt;</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteHelper.EntityReadPropertyValue(SpiralLab.Sirius2.Winforms.Entity.IEntity,System.Reflection.PropertyInfo,System.String)">
+            <summary>
+            Read property value at <c>IEntity</c> 
+            </summary>
+            <param name="entity">Target <c>IEntity</c></param>
+            <param name="propInfo"><c>PropertyInfo</c></param>
+            <param name="propName">Property name</param>
+            <returns>Property value as string</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteHelper.EntityWritePropertyValue(SpiralLab.Sirius2.Winforms.Entity.IEntity,System.Reflection.PropertyInfo,System.String,System.String[])">
+            <summary>
+            Write property value at <c>IEntity</c> 
+            </summary>
+            <param name="entity">Target <c>IEntity</c></param>
+            <param name="propInfo"><c>PropertyInfo</c></param>
+            <param name="propName">Property name</param>
+            <param name="propValues">Property value</param>
+            <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.UI.AboutForm">
             <summary>
@@ -18139,6 +18620,9 @@
             Constructor
             </summary>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.OffsetUserControl.Refresh">
+            <inheritdoc/>
+        </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.OffsetUserControl.components">
             <summary>
             Required designer variable.
@@ -18173,6 +18657,9 @@
             <summary>
             Constructor
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.MarkerUserControl.Refresh">
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.MarkerUserControl.BtnStart_Click(System.Object,System.EventArgs)">
             <summary>
@@ -18267,6 +18754,9 @@
             Constructor
             </summary>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.RtcUserControl.Refresh">
+            <inheritdoc/>
+        </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.RtcUserControl.components">
             <summary>
             Required designer variable.
@@ -18336,6 +18826,9 @@
             <summary>
             Constructor
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.LaserUserControl.Refresh">
+            <inheritdoc/>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.LaserUserControl.components">
             <summary>
@@ -18661,6 +19154,9 @@
             Constructor
             </summary>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl.Refresh">
+            <inheritdoc/>
+        </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl.components">
             <summary>
             Required designer variable.
@@ -18799,6 +19295,9 @@
             <summary>
             <c>IRtc</c>
             </summary>
+            <remarks>
+            Created by <c>ScannerFactory</c> <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.EditorUserControl.Renderer">
             <summary>
@@ -18842,7 +19341,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.IsDisableControl">
             <summary>
-            Disable UI controls for edit or not
+            Disable UI controls or not
             </summary>
             <remarks>
             To do not allow user operations. <br/>
@@ -18852,26 +19351,49 @@
             <summary>
             <c>IDocument</c>
             </summary>
+            <remarks>
+            Created by automatically <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.Rtc">
             <summary>
             <c>IRtc</c>
             </summary>
+            <remarks>
+            Created by <c>ScannerFactory</c> <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.Laser">
             <summary>
             <c>ILaser</c>
             </summary>
+            <remarks>
+            Created by <c>LaserFactory</c> <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.Marker">
             <summary>
             <c>IMarker</c>
             </summary>
+            <remarks>
+            Created by <c>MarkerFactory</c> <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.View">
             <summary>
             <c>IView</c>
             </summary>
+            <remarks>
+            Created by automatically <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.Remote">
+            <summary>
+            <c>IRemote</c>
+            </summary>
+            <remarks>
+            Created by <c>RemoteFactory</c> <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.TreeViewCtrl">
             <summary>

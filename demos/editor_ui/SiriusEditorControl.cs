@@ -293,6 +293,14 @@ namespace Demos
             get { return EditorCtrl.View; }
         }
 
+        /// <summary>
+        /// <c>IRemote</c>
+        /// </summary>
+        /// <remarks>
+        /// Created by <c>RemoteFactory</c> <br/>
+        /// </remarks>
+        public IRemote Remote { get; set; }
+
         IDInput myDIExt1;
         IDInput myDILaserPort;
         IDOutput myDOExt1;

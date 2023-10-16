@@ -38,18 +38,17 @@ namespace Demos
             int index = 0;
 
             // Create index 0 devices 
-            EditorHelper.CreateDevices(out var rtc0, out var laser0, index);
+            EditorHelper.CreateDevices(out var rtc0, out var laser0, out var marker0, index);
             // Assign index 0 devices into usercontrol
             siriusEditorUserControl1.Rtc = rtc0;
             siriusEditorUserControl1.Laser = laser0;
-            // Create index 0 marker
-            EditorHelper.CreateMarker(out var marker0, index);
-            // Assign index 0 marker to user control
             siriusEditorUserControl1.Marker = marker0;
+            EditorHelper.CreateRemote(siriusEditorUserControl1, out var remote0, index);
+            siriusEditorUserControl1.Remote = remote0;
             siriusEditorUserControl1.TitleName = $"Laser1";
             var document0 = siriusEditorUserControl1.Document;
             var view0 = siriusEditorUserControl1.View;
-            // Create index 0 entities for test
+
             EditorHelper.CreateTestEntities(rtc0, view0, document0);
             // Assign Document, View, Rtc, Laser into marker at index 0
             marker0.Ready(document0, view0, rtc0, laser0);
@@ -57,14 +56,13 @@ namespace Demos
             // index 1
             index = 1;
             // Create index 1 devices
-            EditorHelper.CreateDevices(out var rtc1, out var laser1, index);
+            EditorHelper.CreateDevices(out var rtc1, out var laser1, out var marker1, index);
             // Assign index 1 devices into usercontrol
             siriusEditorUserControl2.Rtc = rtc1;
             siriusEditorUserControl2.Laser = laser1;
-            // Create index 1 marker
-            EditorHelper.CreateMarker(out var marker1, index);
-            // Assign index 1 marker to user control
             siriusEditorUserControl2.Marker = marker1;
+            EditorHelper.CreateRemote(siriusEditorUserControl2, out var remote1, index);
+            siriusEditorUserControl2.Remote = remote1;
             siriusEditorUserControl2.TitleName = $"Laser2";
             var document1 = siriusEditorUserControl2.Document;
             var view1 = siriusEditorUserControl2.View;
@@ -79,6 +77,10 @@ namespace Demos
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             // destory index 0 devices
+            var remote0 = siriusEditorUserControl1.Remote;
+            remote0?.Stop();
+            remote0?.Dispose();
+            siriusEditorUserControl1.Remote = null;
             var document0 = siriusEditorUserControl1.Document;
             var marker0 = siriusEditorUserControl1.Marker;
             var laser0 = siriusEditorUserControl1.Laser;
@@ -89,6 +91,10 @@ namespace Demos
             siriusEditorUserControl1.Marker = null;
 
             // destory index 1 devices
+            var remote1 = siriusEditorUserControl2.Remote;
+            remote1?.Stop();
+            remote1?.Dispose();
+            siriusEditorUserControl2.Remote = null;
             var document1 = siriusEditorUserControl2.Document;
             var marker1 = siriusEditorUserControl2.Marker;
             var laser1 = siriusEditorUserControl2.Laser;

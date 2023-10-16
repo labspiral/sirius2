@@ -67,16 +67,11 @@ namespace Demos
             EditorHelper.Initialize();
 
             // Create devices 
-            EditorHelper.CreateDevices(out var rtc, out var laser);
+            EditorHelper.CreateDevices(out var rtc, out var laser, out var marker);
 
             // Assign devices into usercontrol
             siriusEditorUserControl1.Rtc = rtc;
             siriusEditorUserControl1.Laser = laser;
-
-            // Create custom marker
-            CreateCustomMarker(out IMarker marker);
-
-            // Assign custom marker to user control
             siriusEditorUserControl1.Marker = marker;
 
             // Assign marker event handler
@@ -99,6 +94,8 @@ namespace Demos
             var marker = siriusEditorUserControl1.Marker;
             var laser = siriusEditorUserControl1.Laser;
             var rtc = siriusEditorUserControl1.Rtc;
+            var remote = siriusEditorUserControl1.Remote;
+
             if (document.IsModified)
             {
                 var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to exit without save ?", "Warning", MessageBoxButtons.YesNo);
@@ -123,6 +120,9 @@ namespace Demos
 
             if (e.Cancel == false)
             {
+                remote?.Stop();
+                remote?.Dispose();
+                siriusEditorUserControl1.Remote = null;
                 EditorHelper.DestroyDevices(rtc, laser, marker);
                 siriusEditorUserControl1.Rtc = null;
                 siriusEditorUserControl1.Laser = null;

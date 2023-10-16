@@ -66,15 +66,11 @@ namespace Demos
         /// Initialize sirius2 library
         /// </summary>
         /// <remarks>
-        /// Select config file as "config.ini" or "config_syncaxis.ini"
+        /// Edit <c>ConfigFileName</c> as "config.ini" or "config_syncaxis.ini" before execute
         /// </remarks>
-        /// <returns></returns>
+        /// <returns>Success or failed</returns>
         public static bool Initialize()
         {
-            // To turn off output console logs
-            //SpiralLab.Sirius2.Config.IsLogToConsole = false;
-
-            // Initialize sirius2 library
             return SpiralLab.Sirius2.Core.Initialize();
         }
         /// <summary>
@@ -82,7 +78,6 @@ namespace Demos
         /// </summary>
         public static void SetLanguage()
         {
-            // language
             var lang = NativeMethods.ReadIni(ConfigFileName, $"GLOBAL", "LANGUAGE", "en");
             switch(lang)
             {
@@ -100,12 +95,15 @@ namespace Demos
         /// </summary>
         /// <param name="rtc"><c>IRtc</c></param>
         /// <param name="laser"><c>ILaser</c></param>
+        /// <param name="marker"><c>IMarker</c></param>
+        /// <param name="remote"><c>IRemote</c></param>
         /// <param name="index">Index (assign value if using multiple devices)</param>
         /// <returns>Success or failed</returns>
-        public static bool CreateDevices(out IRtc rtc, out ILaser laser, int index = 0)
+        public static bool CreateDevices(out IRtc rtc, out ILaser laser, out IMarker marker, int index = 0)
         {
             rtc = null;
             laser = null;
+            marker = null;
 
             bool success = true;
 
@@ -128,7 +126,7 @@ namespace Demos
             switch (rtcType.Trim().ToLower())
             {
                 case "virtual":
-                    rtc = ScannerFactory.CreateVirtual(index, kfactor, correctionFile);
+                    rtc = ScannerFactory.CreateVirtual(index, kfactor, correctionPath);
                     break;
                 case "rtc5":
                     rtc = ScannerFactory.CreateRtc5(index, kfactor, laserMode, signalLevelLaser12, signalLevelLaserOn, correctionPath);
@@ -158,12 +156,12 @@ namespace Demos
             {
                 if (rtc is Rtc5 rtc5)
                 {
-                    //2^24
+                    //2^24 bits = 2^20 + 2^4
                     SpiralLab.Sirius2.Winforms.Config.DocumentDefaultViewVirtualImageSize = new SizeF(fov * (float)Math.Pow(2, 4), fov * (float)Math.Pow(2, 4));
                 }
                 else if (rtc is Rtc6 rtc6)
                 {
-                    //2^29
+                    //2^29 bits = 2^20 + 2^9
                     SpiralLab.Sirius2.Winforms.Config.DocumentDefaultViewVirtualImageSize = new SizeF(fov * (float)Math.Pow(2, 9), fov * (float)Math.Pow(2, 9));
                 }
             }
@@ -288,20 +286,6 @@ namespace Demos
                 powerControl.PowerControlDelayTime = laserPowerControlDelay;
                 success &= powerControl.CtlPower(laserDefaultPower);
             }
-            return success;
-            #endregion
-        }
-        /// <summary>
-        /// Create marker
-        /// </summary>
-        /// <param name="marker"><c>IMarker</c></param>
-        /// <param name="index">Index (assign value if using multiple devices)</param>
-        /// <returns>Success or failed</returns>
-        public static bool CreateMarker(out IMarker marker, int index = 0)
-        {
-            marker = null;
-            bool success = true;
-            var rtcType = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "TYPE", "Rtc5");
             switch (rtcType.Trim().ToLower())
             {
                 case "virtual":
@@ -320,6 +304,39 @@ namespace Demos
                 default:
                     success &= false;
                     break;
+            }
+            #endregion
+           
+            return success;
+        }
+        /// <summary>
+        /// Create remote control 
+        /// </summary>
+        /// <param name="siriusEditorUserControl"><c>SiriusEditorUserControl</c></param>
+        /// <param name="remote"><c>IRemote</c></param>
+        /// <param name="index">Index (assign value if using multiple devices)</param>
+        /// <returns>Success or failed</returns>
+        public static bool CreateRemote(SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl siriusEditorUserControl, out IRemote remote, int index = 0)
+        {
+            remote = null;
+            bool success = true;
+            var enableRemote = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", "ENABLE", 0);
+            if (0 != enableRemote)
+            {
+                string protocol = NativeMethods.ReadIni<string>(ConfigFileName, $"REMOTE{index}", $"PROTOCOL", "tcpip");
+                switch (protocol.ToLower().Trim())
+                {
+                    case "tcp":
+                        int tcpPort = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"TCP_PORT", 5001);
+                        remote = RemoteFactory.CreateTcpServer(siriusEditorUserControl, tcpPort);
+                        break;
+                    case "serial":
+                        int serialPort = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"SERIAL_PORT", 2);
+                        int serialBaudRate = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"SERIAL_BAUDRATE=", 57600);
+                        remote = RemoteFactory.CreateSerial(siriusEditorUserControl, serialPort, serialBaudRate);
+                        break;
+                }
+                success &= remote.Start();
             }
             return success;
         }
@@ -394,28 +411,24 @@ namespace Demos
             spiral1.Translate(-35, 0);
             success &= document.ActAdd(spiral1);
 
-            switch (rtc.RtcType)
-            {
-                case RtcTypes.Rtc6SyncAxis:
-                    break;
-                default:
-                    // Image entity
-                    var filename1 = Path.Combine("sample", "lena.bmp");
-                    var image1 = EntityFactory.CreateImage(filename1, 10, 10);
-                    image1.Translate(-30, -15);
-                    success &= document.ActAdd(image1);
+            // Image entity
+            var filename1 = Path.Combine("sample", "lena.bmp");
+            var image1 = EntityFactory.CreateImage(filename1, 10, 10);
+            image1.RasterMode = RasterModes.JumpAndShoot;
+            image1.Translate(-30, -15);
+            success &= document.ActAdd(image1);
 
-                    // Image entity 
-                    var filename2 = Path.Combine("sample", "checkerboard.bmp");
-                    var image2 = EntityFactory.CreateImage(filename2, 10);
-                    image2.Translate(-30, 25);
-                    success &= document.ActAdd(image2);
-                    break;
-            }
+            // Image entity 
+            var filename2 = Path.Combine("sample", "checkerboard.bmp");
+            var image2 = EntityFactory.CreateImage(filename2, 10);
+            image2.RasterMode = RasterModes.JumpAndShoot;
+            image2.Translate(-30, 25);
+            success &= document.ActAdd(image2);
 
             // ImageText entity
             var imagetext1 = EntityFactory.CreateImageText("Arial", $"12345 67890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", FontStyle.Regular, false, 3, 64, 10);
             imagetext1.Name = "MyText1";
+            imagetext1.RasterMode = RasterModes.JumpAndShoot;
             imagetext1.Translate(-30, -30);
             success &= document.ActAdd(imagetext1);
 
@@ -604,21 +617,15 @@ namespace Demos
             }
 
             // Datamatrix barcode cell by dots
-            switch (rtc.RtcType)
-            {
-                case RtcTypes.Rtc6SyncAxis:
-                    break;
-                default:
-                    var dataMatrix1 = EntityFactory.CreateDataMatrix("0123456789", Barcode2DCells.Dots, 3, 4, 4);
-                    dataMatrix1.CellDot.RasterMode = RasterModes.JumpAndShoot;
-                    dataMatrix1.CellDot.PixelChannel = ExtensionChannels.ExtAO2;
-                    dataMatrix1.CellDot.PixelPeriod = 1000;
-                    dataMatrix1.CellDot.PixelPeriod = 100;
-                    dataMatrix1.CellDot.IsZigZag = false;
-                    dataMatrix1.Translate(-23, 2);
-                    success &= document.ActAdd(dataMatrix1);
-                    break;
-            }
+            var dataMatrix1 = EntityFactory.CreateDataMatrix("0123456789", Barcode2DCells.Dots, 3, 4, 4);
+            dataMatrix1.CellDot.RasterMode = RasterModes.JumpAndShoot;
+            dataMatrix1.CellDot.PixelChannel = ExtensionChannels.ExtAO2;
+            dataMatrix1.CellDot.PixelPeriod = 1000;
+            dataMatrix1.CellDot.PixelPeriod = 100;
+            dataMatrix1.CellDot.IsZigZag = false;
+            dataMatrix1.Translate(-23, 2);
+            success &= document.ActAdd(dataMatrix1);
+                 
 
             // Datamatrix barcode cell by lines
             var dataMatrix2 = EntityFactory.CreateDataMatrix("SIRIUS2", Barcode2DCells.Lines, 4, 4, 4);
@@ -684,19 +691,24 @@ namespace Demos
             SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DApply += Config_OnScannerFieldCorrection2DApply;
         }
         /// <summary>
-        /// Dispose resources (like as <c>IRtc</c>, <c>ILaser</c>, <c>IMarker</c>, ...)
+        /// Dispose resources (like as <c>IRtc</c>, <c>ILaser</c>, <c>IMarker</c>, <c>IRemote</c> ...)
         /// </summary>
         /// <param name="rtc"><c>IRtc</c></param>
         /// <param name="laser"><c>ILaser</c></param>
         /// <param name="marker"><c>IMarker</c></param>
         public static void DestroyDevices(IRtc rtc, ILaser laser, IMarker marker)
         {
-            marker.Stop();
-            marker.Dispose();
-            laser.Dispose();
-            rtc.Dispose();
+            marker?.Stop();
+            marker?.Dispose();
+            laser?.Dispose();
+            rtc?.Dispose();
         }
-        
+
+        /// <summary>
+        /// Popup scanner field correction 2d winforms
+        /// </summary>
+        /// <param name="rtc"><c>IRtc</c></param>
+        /// <returns><c>RtcCorrection2D</c></returns>
         private static RtcCorrection2D Config_OnScannerFieldCorrection2DShow(IRtc rtc)
         {
             // For example, 7x7 grids 
@@ -721,6 +733,11 @@ namespace Demos
             }
             return rtcCorrection2D;
         }
+        /// <summary>
+        /// When press 'apply' button at scanner field correction 2d winforms
+        /// </summary>
+        /// <param name="form"><c>RtcCorrection2DForm</c></param>
+        /// <returns>Success or failed</returns>
         private static bool Config_OnScannerFieldCorrection2DApply(RtcCorrection2DForm form)
         {
             var ctFullFileName = form.RtcCorrection.TargetCorrectionFile;

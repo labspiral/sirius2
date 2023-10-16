@@ -21,7 +21,7 @@
 
 **2. Features**
  
- - Support SCANLAB's RTC5, RTC6 and RTC6ethernet controllers.
+ - Support SCANLAB's RTC5, RTC6 and RTC6e controllers.
  - Support SCANLAB's XL-SCAN (syncAxis) controllers.
  - Support 2D, 3D scanner field correction.
  - Support 3D field correction at plane, cone, cylinder surface by calibration tool
@@ -91,7 +91,6 @@
 
   
 **6. License**
- * license (per instance)
    - RTC (RTC5, RTC6,...)
       - Option1: MoF (For xy or angular)
       - Option2: 3D (For 3d calibration) 
@@ -113,6 +112,9 @@
 
 
 **8. Version history**
+
+* 2023.10.18 v.1.5.800
+  - added) remote communication 
 
 * 2023.10.10 v.1.4.780
   - added) 3d calibration by cone(or cylinder) 

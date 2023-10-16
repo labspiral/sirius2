@@ -68,17 +68,17 @@ namespace Demos
             EditorHelper.Initialize();
 
             // Create devices 
-            EditorHelper.CreateDevices(out var rtc, out var laser);
+            EditorHelper.CreateDevices(out var rtc, out var laser, out var marker);
 
             // Assign devices into usercontrol
             siriusEditorUserControl1.Rtc = rtc;
             siriusEditorUserControl1.Laser = laser;
-
-            // Create marker
-            EditorHelper.CreateMarker(out var marker);
-
-            // Assign marker to user control
             siriusEditorUserControl1.Marker = marker;
+
+            // Create remote control 
+            EditorHelper.CreateRemote(siriusEditorUserControl1, out var remote);
+            // Assign remote control into usercontrol
+            siriusEditorUserControl1.Remote = remote;
 
             var document = siriusEditorUserControl1.Document;
             var view = siriusEditorUserControl1.View;
@@ -97,6 +97,7 @@ namespace Demos
             var marker = siriusEditorUserControl1.Marker;
             var laser = siriusEditorUserControl1.Laser;
             var rtc = siriusEditorUserControl1.Rtc;
+            var remote = siriusEditorUserControl1.Remote;
 
             if (document.IsModified)
             {
@@ -122,6 +123,9 @@ namespace Demos
 
             if (e.Cancel == false)
             {
+                remote?.Stop();
+                remote?.Dispose();
+                siriusEditorUserControl1.Remote = null;
                 EditorHelper.DestroyDevices(rtc, laser, marker);
                 siriusEditorUserControl1.Rtc = null;
                 siriusEditorUserControl1.Laser = null;
