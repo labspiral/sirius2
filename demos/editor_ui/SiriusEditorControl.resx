@@ -722,7 +722,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAo
-        NQAAAk1TRnQBSQFMAgEBGwEAAYwBAwGMAQMBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        NQAAAk1TRnQBSQFMAgEBGwEAAZQBAwGUAQMBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABYAMAAagDAAEBAQABCAYAAT8YAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -2559,7 +2559,7 @@
     <value>(NoName)</value>
   </data>
   <data name="toolStripStatusLabel10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 26</value>
+    <value>276, 26</value>
   </data>
   <data name="lblPos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2705,14 +2705,14 @@
   <data name="toolStripStatusLabel6.Size" type="System.Drawing.Size, System.Drawing">
     <value>4, 26</value>
   </data>
-  <data name="toolStripStatusLabel11.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblComm.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 8.25pt, style=Bold</value>
   </data>
-  <data name="toolStripStatusLabel11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 26</value>
+  <data name="lblComm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 26</value>
   </data>
-  <data name="toolStripStatusLabel11.Text" xml:space="preserve">
-    <value>  CONNECTED  </value>
+  <data name="lblComm.Text" xml:space="preserve">
+    <value> COMM </value>
   </data>
   <data name="toolStripStatusLabel3.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2949,7 +2949,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="treeViewBlockControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 684</value>
+    <value>262, 656</value>
   </data>
   <data name="treeViewBlockControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2976,7 +2976,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 694</value>
+    <value>272, 666</value>
   </data>
   <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3617,10 +3617,10 @@
   <data name="&gt;&gt;toolStripStatusLabel6.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripStatusLabel11.Name" xml:space="preserve">
-    <value>toolStripStatusLabel11</value>
+  <data name="&gt;&gt;lblComm.Name" xml:space="preserve">
+    <value>lblComm</value>
   </data>
-  <data name="&gt;&gt;toolStripStatusLabel11.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblComm.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripStatusLabel3.Name" xml:space="preserve">

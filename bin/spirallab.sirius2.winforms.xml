@@ -17121,7 +17121,7 @@
             Find <c>EntityLayer</c> entity by name at <c>IDocument</c> 
             </summary>
             <param name="layerName">Layer name</param>
-            <param name="layer">Founded <c>EntityLayer</c></param>
+            <param name="foundedLayer">Founded <c>EntityLayer</c></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.FindByPenColor(System.Drawing.Color,SpiralLab.Sirius2.Winforms.Entity.EntityPen@)">
@@ -17129,7 +17129,7 @@
             Find <c>EntityPen</c> entity by <c>System.Drawing.Color</c> at <c>IDocument</c> 
             </summary>
             <param name="color">Pen color</param>
-            <param name="pen">Founded <c>EntityPen</c></param>
+            <param name="foundedPen">Founded <c>EntityPen</c></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.FindByPenName(System.String,SpiralLab.Sirius2.Winforms.Entity.EntityPen@)">
@@ -17137,7 +17137,7 @@
             Find <c>EntityPen</c> entity by name at <c>IDocument</c> 
             </summary>
             <param name="penName">Pen name</param>
-            <param name="pen">Founded <c>EntityPen</c></param>
+            <param name="foundedPen">Founded <c>EntityPen</c></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.FindById(System.UInt32,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
@@ -17161,7 +17161,7 @@
             Find <c>EntityBlock</c> entity by name
             </summary>
             <param name="blockName">Block name</param>
-            <param name="block">Founded <c>EntityBlock</c></param>
+            <param name="foundedBlock">Founded <c>EntityBlock</c></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.FindByType(System.Type,SpiralLab.Sirius2.Winforms.Entity.IEntity[]@)">
@@ -17633,6 +17633,14 @@
         <member name="M:SpiralLab.Sirius2.Winforms.RemoteFactory.CreateTcpServer(SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32)">
             <summary>
             Create <c>RemoteTcpServer</c>
+            <code>
+            var remote = RemoteFactory.CreateTcpServer(siriusEditorUserControl, 5001);
+            remote.Start();
+            ...
+            //Must be stopped when terminating(or disposing)
+            remote.Stop();
+            remote.Dispose();
+            </code>
             </summary>
             <remarks>
             Create TCP/IP server socket. <br/>
@@ -17644,9 +17652,20 @@
         <member name="M:SpiralLab.Sirius2.Winforms.RemoteFactory.CreateSerial(SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32,System.Int32)">
             <summary>
             Create <c>RemoteSerial</c>
+            <code>
+            var remote = RemoteFactory.CreateSerial(siriusEditorUserControl, 1, 57600);
+            remote.Start();
+            ...
+            //Must be stopped when terminating(or disposing)
+            remote.Stop();
+            remote.Dispose();
+            </code>
             </summary>
             <remarks>
-            Create Serial(RS-232) port with Data: 8bit, Stop: 1bit, Parity: none<br/>
+            Create Serial(RS-232) com port <br/>
+            Data: 8-Bit <br/>
+            Stop: 1-Bit <br/> 
+            Parity: None <br/>
             </remarks>
             <param name="editorControl"><c>SiriusEditorUserControl</c></param>
             <param name="portNo">COM port</param>
@@ -17709,8 +17728,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IRemote.ControlMode">
             <summary>
-            Current <c>RemoteControls</c> mode
+            <c>RemoteControls</c> 
             </summary>
+            <remarks>
+            <c>ControlModes.Local</c> is allowed query commands only but control commands. <br/>
+            <c>ControlModes.Remote</c> is allowed query and control commands. <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IRemote.NotifyConnected">
             <summary>

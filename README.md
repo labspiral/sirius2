@@ -81,10 +81,9 @@
     - config "config_syncaxis.ini" for XL-SCAN
  - Demo 'editor_entity' winforms project for create entities
  - Demo 'editor_marker' winforms project for custom marker
- - Demo 'editor_remote' winforms project for control by remotely 
  - Demo 'editor_barcode' winforms project for mark individual barcode entities
- - Demo 'editor_ui' winforms project for custom ui
  - Demo 'editor_multiple' winforms project for multiple instances
+ - Demo 'editor_ui' winforms project for custom ui
 
 
 ----
@@ -113,8 +112,9 @@
 
 **8. Version history**
 
-* 2023.10.18 v.1.5.800
+* 2023.10.18 v.1.5.830
   - added) remote communication 
+  - removed) useless remote demo project
 
 * 2023.10.10 v.1.4.780
   - added) 3d calibration by cone(or cylinder) 

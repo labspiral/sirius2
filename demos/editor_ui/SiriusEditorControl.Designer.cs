@@ -147,7 +147,7 @@
             this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblError = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel11 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblComm = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitter3 = new System.Windows.Forms.Splitter();
             this.panBody = new System.Windows.Forms.Panel();
@@ -912,7 +912,7 @@
             this.toolStripStatusLabel9,
             this.lblError,
             this.toolStripStatusLabel6,
-            this.toolStripStatusLabel11,
+            this.lblComm,
             this.toolStripStatusLabel3});
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.SizingGrip = false;
@@ -1036,13 +1036,13 @@
             resources.ApplyResources(this.toolStripStatusLabel6, "toolStripStatusLabel6");
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
             // 
-            // toolStripStatusLabel11
+            // lblComm
             // 
-            this.toolStripStatusLabel11.ActiveLinkColor = System.Drawing.Color.Red;
-            this.toolStripStatusLabel11.BackColor = System.Drawing.Color.Maroon;
-            resources.ApplyResources(this.toolStripStatusLabel11, "toolStripStatusLabel11");
-            this.toolStripStatusLabel11.ForeColor = System.Drawing.Color.White;
-            this.toolStripStatusLabel11.Name = "toolStripStatusLabel11";
+            this.lblComm.ActiveLinkColor = System.Drawing.Color.Red;
+            this.lblComm.BackColor = System.Drawing.Color.Maroon;
+            resources.ApplyResources(this.lblComm, "lblComm");
+            this.lblComm.ForeColor = System.Drawing.Color.White;
+            this.lblComm.Name = "lblComm";
             // 
             // toolStripStatusLabel3
             // 
@@ -1242,7 +1242,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel8;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel11;
+        private System.Windows.Forms.ToolStripStatusLabel lblComm;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel13;
         private System.Windows.Forms.ToolStripStatusLabel lblHelp;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;

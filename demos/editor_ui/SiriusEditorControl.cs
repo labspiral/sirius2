@@ -64,7 +64,7 @@ namespace Demos
         }
 
         /// <summary>
-        /// Disable UI controls for edit or not
+        /// Disable UI controls or not
         /// </summary>
         /// <remarks>
         /// To do not allow user operations. <br/>
@@ -110,6 +110,9 @@ namespace Demos
         /// <summary>
         /// <c>IDocument</c>
         /// </summary>
+        /// <remarks>
+        /// Created by automatically <br/>
+        /// </remarks>
         public IDocument Document
         {
             get { return document; }
@@ -155,6 +158,9 @@ namespace Demos
         /// <summary>
         /// <c>IRtc</c>
         /// </summary>
+        /// <remarks>
+        /// Created by <c>ScannerFactory</c> <br/>
+        /// </remarks>
         public IRtc Rtc
         {
             get { return rtc; }
@@ -237,6 +243,9 @@ namespace Demos
         /// <summary>
         /// <c>ILaser</c>
         /// </summary>
+        /// <remarks>
+        /// Created by <c>LaserFactory</c> <br/>
+        /// </remarks>
         public ILaser Laser
         {
             get { return laser; }
@@ -260,6 +269,9 @@ namespace Demos
         /// <summary>
         /// <c>IMarker</c>
         /// </summary>
+        /// <remarks>
+        /// Created by <c>MarkerFactory</c> <br/>
+        /// </remarks>
         public IMarker Marker
         {
             get { return marker; }
@@ -288,6 +300,9 @@ namespace Demos
         /// <summary>
         /// <c>IView</c>
         /// </summary>
+        /// <remarks>
+        /// Created by automatically <br/>
+        /// </remarks>
         public IView View
         {
             get { return EditorCtrl.View; }
@@ -1134,6 +1149,29 @@ namespace Demos
                 lblError.ForeColor = Color.White;
                 lblError.BackColor = Color.Maroon;
             }
+            if (null == this.Remote || !Remote.IsConnected)
+            {
+                lblComm.ForeColor = Color.White;
+                lblComm.BackColor = Color.Maroon;
+                lblComm.Text = " COMM ";
+            }
+            else
+            {
+                lblComm.ForeColor = Color.Black;
+         
+                switch(Remote.ControlMode)
+                {
+                    case ControlModes.Local:
+                        lblComm.Text = " COMM / LOCAL ";
+                        lblComm.BackColor = Color.Yellow;
+                        break;
+                    case ControlModes.Remote:
+                        lblComm.Text = " COMM / REMOTE ";
+                        lblComm.BackColor = Color.Lime;
+                        break;
+                }
+            }
+
             if (null != EditorCtrl.View)
                 lblRenderTime.Text = $"Render: {EditorCtrl.View.RenderTime} ms";
         }
