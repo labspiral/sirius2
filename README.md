@@ -52,7 +52,7 @@
 | Field correction      |correXionPro and CalibrationTool                       |correXionPro             |
 | Font                  |cxf, lff format and Windows fonts                      |ttf, cxf format          |
 | Remote control        |Supported (TCP/IP, Serial)                             |None                     |
-| Multi-langulage       |Supported                                              |None                     |
+| Multi-language        |Supported                                              |None                     |
 | Customization         |Expandable                                             |Acceptable               |
 
 
