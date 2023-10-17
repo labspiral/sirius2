@@ -32,6 +32,7 @@
  - Support SCANahead control, SDC(Spot Distance Control) with RTC6.
  - Support measure and profile scanner trajectory with output signals by plotted graph.
  - Support many kinds of laser source control by frequency, duty cycle, analog, digital output signals.
+ - Support remote controls by TCP/IP or serial(RS-232) communication.
  - Open sourced code with editor, marker, laser and pen control for customization.
  - Support many kinds of executable demo programs.
 
@@ -49,7 +50,9 @@
 | Render engine         |OpenTK (with shaders)                                  |SharpGL                  |
 | Render speed          |Faster                                                 |Acceptable               |
 | Field correction      |correXionPro and CalibrationTool                       |correXionPro             |
-| Font                  |cxf, lff format and Windows fonts                      |ttf, cxf format          | 
+| Font                  |cxf, lff format and Windows fonts                      |ttf, cxf format          |
+| Remote control        |Supported (TCP/IP, Serial)                             |None                     |
+| Multi-langulage       |Supported                                              |None                     |
 | Customization         |Expandable                                             |Acceptable               |
 
 
