@@ -286,6 +286,7 @@ namespace Demos
                 marker = value;
                 markerControl1.Marker = marker;
                 offsetControl1.Marker = marker;
+                remoteUserControl1.Marker = marker;
                 //marker browsable
 
                 if (marker != null)
@@ -314,7 +315,23 @@ namespace Demos
         /// <remarks>
         /// Created by <c>RemoteFactory</c> <br/>
         /// </remarks>
-        public IRemote Remote { get; set; }
+        public IRemote Remote 
+        {
+            get { return remote; }
+            set
+            {
+                if (remote != null)
+                {
+                }
+
+                remote = value;
+                remoteUserControl1.Remote = remote;
+                if (marker != null)
+                {
+                }
+            }
+        }
+        private IRemote remote;
 
         IDInput myDIExt1;
         IDInput myDILaserPort;
@@ -406,6 +423,13 @@ namespace Demos
         {
             get { return manualUserControl1; }
         }
+        /// <summary>
+        /// Usercontrol for remote
+        /// </summary>
+        public SpiralLab.Sirius2.Winforms.UI.RemoteUserControl RemoteCtrl
+        {
+            get { return remoteUserControl1; }
+        }
 
         /// <summary>
         /// Usercontrol for log
@@ -418,6 +442,7 @@ namespace Demos
         System.Windows.Forms.Timer timerProgress = new System.Windows.Forms.Timer();
         System.Windows.Forms.Timer timerStatus  = new System.Windows.Forms.Timer();
         Stopwatch timerProgressStopwatch = new Stopwatch();
+
 
         /// <summary>
         /// Constructor
@@ -523,7 +548,6 @@ namespace Demos
         {
             timerStatus.Enabled = Visible;
         }
-
         private void BtnSiriusCharacterSetText_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateSiriusCharacterSetText(Config.DefaultSiriusFont, CharacterSetFormats.Date, 5);
@@ -661,7 +685,6 @@ namespace Demos
             }
             EditorCtrl.View.Render();
         }
-
 
         private void MnuMarginBottom_Click(object sender, EventArgs e)
         {
@@ -1151,23 +1174,22 @@ namespace Demos
             }
             if (null == this.Remote || !Remote.IsConnected)
             {
-                lblComm.ForeColor = Color.White;
-                lblComm.BackColor = Color.Maroon;
-                lblComm.Text = " COMM ";
+                lblConnect.Text = " CONNECT ";
+                lblConnect.ForeColor = Color.White;
+                lblConnect.BackColor = Color.Maroon;
             }
             else
             {
-                lblComm.ForeColor = Color.Black;
-         
+                lblConnect.ForeColor = Color.Black;
                 switch(Remote.ControlMode)
                 {
                     case ControlModes.Local:
-                        lblComm.Text = " COMM / LOCAL ";
-                        lblComm.BackColor = Color.Yellow;
+                        lblConnect.Text = " CONNECT /LOCAL ";
+                        lblConnect.BackColor = Color.Yellow;
                         break;
                     case ControlModes.Remote:
-                        lblComm.Text = " COMM / REMOTE ";
-                        lblComm.BackColor = Color.Lime;
+                        lblConnect.Text = " CONNECT /REMOTE ";
+                        lblConnect.BackColor = Color.Lime;
                         break;
                 }
             }

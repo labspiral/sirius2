@@ -48,6 +48,8 @@
             this.rtcDOUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.manualUserControl1 = new SpiralLab.Sirius2.Winforms.UI.ManualUserControl();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.remoteUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RemoteUserControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.logControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
@@ -65,21 +67,6 @@
             this.btnPolyline = new System.Windows.Forms.ToolStripButton();
             this.btnSpiral = new System.Windows.Forms.ToolStripButton();
             this.btnImportFile = new System.Windows.Forms.ToolStripButton();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.btnText = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnImageText = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnCircularText = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnCharacterSetText = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnSiriusText = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSiriusCharacterSetText = new System.Windows.Forms.ToolStripMenuItem();
-            this.ddbBarcode = new System.Windows.Forms.ToolStripDropDownButton();
-            this.mnuDataMatrix = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuQRCode = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPDF417 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuBarcode1D = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.mnuTimer = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuJumpTo = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,6 +88,21 @@
             this.mnuWriteDataExt16 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuWriteDataExt16Cond = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuWaitDataExt16Cond = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnText = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnImageText = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCircularText = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCharacterSetText = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSiriusText = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSiriusCharacterSetText = new System.Windows.Forms.ToolStripMenuItem();
+            this.ddbBarcode = new System.Windows.Forms.ToolStripDropDownButton();
+            this.mnuDataMatrix = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuQRCode = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPDF417 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuBarcode1D = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tlsTop = new System.Windows.Forms.ToolStrip();
             this.btnAbout = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -147,7 +149,7 @@
             this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblError = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblComm = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblConnect = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitter3 = new System.Windows.Forms.Splitter();
             this.panBody = new System.Windows.Forms.Panel();
@@ -182,6 +184,7 @@
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
@@ -217,7 +220,9 @@
             this.tabControl3.Controls.Add(this.tabPage5);
             this.tabControl3.Controls.Add(this.tabPage9);
             this.tabControl3.Controls.Add(this.tabPage3);
+            this.tabControl3.Controls.Add(this.tabPage7);
             resources.ApplyResources(this.tabControl3, "tabControl3");
+            this.tabControl3.HotTrack = true;
             this.tabControl3.ImageList = this.imageList1;
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
@@ -353,6 +358,20 @@
             this.manualUserControl1.Name = "manualUserControl1";
             this.manualUserControl1.Rtc = null;
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.remoteUserControl1);
+            resources.ApplyResources(this.tabPage7, "tabPage7");
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // remoteUserControl1
+            // 
+            resources.ApplyResources(this.remoteUserControl1, "remoteUserControl1");
+            this.remoteUserControl1.Marker = null;
+            this.remoteUserControl1.Name = "remoteUserControl1";
+            this.remoteUserControl1.Remote = null;
+            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -384,6 +403,8 @@
             this.imageList1.Images.SetKeyName(24, "Design.png");
             this.imageList1.Images.SetKeyName(25, "Video Card.png");
             this.imageList1.Images.SetKeyName(26, "light_on_24px.png");
+            this.imageList1.Images.SetKeyName(27, "Broadcasting.png");
+            this.imageList1.Images.SetKeyName(28, "RS-232 Male.png");
             // 
             // logControl1
             // 
@@ -438,10 +459,10 @@
             this.btnPolyline,
             this.btnSpiral,
             this.btnImportFile,
+            this.toolStripDropDownButton3,
             this.toolStripDropDownButton1,
             this.ddbBarcode,
-            this.toolStripSeparator3,
-            this.toolStripDropDownButton3});
+            this.toolStripSeparator3});
             this.tlsTop2.Name = "tlsTop2";
             // 
             // btnPoint
@@ -509,97 +530,6 @@
             this.btnImportFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.btnImportFile, "btnImportFile");
             this.btnImportFile.Name = "btnImportFile";
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnText,
-            this.btnImageText,
-            this.btnCircularText,
-            this.btnCharacterSetText,
-            this.toolStripMenuItem1,
-            this.btnSiriusText,
-            this.btnSiriusCharacterSetText});
-            resources.ApplyResources(this.toolStripDropDownButton1, "toolStripDropDownButton1");
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            // 
-            // btnText
-            // 
-            resources.ApplyResources(this.btnText, "btnText");
-            this.btnText.Name = "btnText";
-            // 
-            // btnImageText
-            // 
-            resources.ApplyResources(this.btnImageText, "btnImageText");
-            this.btnImageText.Name = "btnImageText";
-            // 
-            // btnCircularText
-            // 
-            resources.ApplyResources(this.btnCircularText, "btnCircularText");
-            this.btnCircularText.Name = "btnCircularText";
-            // 
-            // btnCharacterSetText
-            // 
-            resources.ApplyResources(this.btnCharacterSetText, "btnCharacterSetText");
-            this.btnCharacterSetText.Name = "btnCharacterSetText";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
-            // 
-            // btnSiriusText
-            // 
-            resources.ApplyResources(this.btnSiriusText, "btnSiriusText");
-            this.btnSiriusText.Name = "btnSiriusText";
-            // 
-            // btnSiriusCharacterSetText
-            // 
-            resources.ApplyResources(this.btnSiriusCharacterSetText, "btnSiriusCharacterSetText");
-            this.btnSiriusCharacterSetText.Name = "btnSiriusCharacterSetText";
-            // 
-            // ddbBarcode
-            // 
-            this.ddbBarcode.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ddbBarcode.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuDataMatrix,
-            this.mnuQRCode,
-            this.mnuPDF417,
-            this.toolStripMenuItem2,
-            this.mnuBarcode1D});
-            resources.ApplyResources(this.ddbBarcode, "ddbBarcode");
-            this.ddbBarcode.Name = "ddbBarcode";
-            // 
-            // mnuDataMatrix
-            // 
-            resources.ApplyResources(this.mnuDataMatrix, "mnuDataMatrix");
-            this.mnuDataMatrix.Name = "mnuDataMatrix";
-            // 
-            // mnuQRCode
-            // 
-            resources.ApplyResources(this.mnuQRCode, "mnuQRCode");
-            this.mnuQRCode.Name = "mnuQRCode";
-            // 
-            // mnuPDF417
-            // 
-            resources.ApplyResources(this.mnuPDF417, "mnuPDF417");
-            this.mnuPDF417.Name = "mnuPDF417";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
-            // 
-            // mnuBarcode1D
-            // 
-            resources.ApplyResources(this.mnuBarcode1D, "mnuBarcode1D");
-            this.mnuBarcode1D.Name = "mnuBarcode1D";
-            // 
-            // toolStripSeparator3
-            // 
-            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
             // 
             // toolStripDropDownButton3
             // 
@@ -729,6 +659,97 @@
             // 
             resources.ApplyResources(this.mnuWaitDataExt16Cond, "mnuWaitDataExt16Cond");
             this.mnuWaitDataExt16Cond.Name = "mnuWaitDataExt16Cond";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnText,
+            this.btnImageText,
+            this.btnCircularText,
+            this.btnCharacterSetText,
+            this.toolStripMenuItem1,
+            this.btnSiriusText,
+            this.btnSiriusCharacterSetText});
+            resources.ApplyResources(this.toolStripDropDownButton1, "toolStripDropDownButton1");
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            // 
+            // btnText
+            // 
+            resources.ApplyResources(this.btnText, "btnText");
+            this.btnText.Name = "btnText";
+            // 
+            // btnImageText
+            // 
+            resources.ApplyResources(this.btnImageText, "btnImageText");
+            this.btnImageText.Name = "btnImageText";
+            // 
+            // btnCircularText
+            // 
+            resources.ApplyResources(this.btnCircularText, "btnCircularText");
+            this.btnCircularText.Name = "btnCircularText";
+            // 
+            // btnCharacterSetText
+            // 
+            resources.ApplyResources(this.btnCharacterSetText, "btnCharacterSetText");
+            this.btnCharacterSetText.Name = "btnCharacterSetText";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+            // 
+            // btnSiriusText
+            // 
+            resources.ApplyResources(this.btnSiriusText, "btnSiriusText");
+            this.btnSiriusText.Name = "btnSiriusText";
+            // 
+            // btnSiriusCharacterSetText
+            // 
+            resources.ApplyResources(this.btnSiriusCharacterSetText, "btnSiriusCharacterSetText");
+            this.btnSiriusCharacterSetText.Name = "btnSiriusCharacterSetText";
+            // 
+            // ddbBarcode
+            // 
+            this.ddbBarcode.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ddbBarcode.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuDataMatrix,
+            this.mnuQRCode,
+            this.mnuPDF417,
+            this.toolStripMenuItem2,
+            this.mnuBarcode1D});
+            resources.ApplyResources(this.ddbBarcode, "ddbBarcode");
+            this.ddbBarcode.Name = "ddbBarcode";
+            // 
+            // mnuDataMatrix
+            // 
+            resources.ApplyResources(this.mnuDataMatrix, "mnuDataMatrix");
+            this.mnuDataMatrix.Name = "mnuDataMatrix";
+            // 
+            // mnuQRCode
+            // 
+            resources.ApplyResources(this.mnuQRCode, "mnuQRCode");
+            this.mnuQRCode.Name = "mnuQRCode";
+            // 
+            // mnuPDF417
+            // 
+            resources.ApplyResources(this.mnuPDF417, "mnuPDF417");
+            this.mnuPDF417.Name = "mnuPDF417";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+            // 
+            // mnuBarcode1D
+            // 
+            resources.ApplyResources(this.mnuBarcode1D, "mnuBarcode1D");
+            this.mnuBarcode1D.Name = "mnuBarcode1D";
+            // 
+            // toolStripSeparator3
+            // 
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
             // 
             // tlsTop
             // 
@@ -912,7 +933,7 @@
             this.toolStripStatusLabel9,
             this.lblError,
             this.toolStripStatusLabel6,
-            this.lblComm,
+            this.lblConnect,
             this.toolStripStatusLabel3});
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.SizingGrip = false;
@@ -1036,13 +1057,13 @@
             resources.ApplyResources(this.toolStripStatusLabel6, "toolStripStatusLabel6");
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
             // 
-            // lblComm
+            // lblConnect
             // 
-            this.lblComm.ActiveLinkColor = System.Drawing.Color.Red;
-            this.lblComm.BackColor = System.Drawing.Color.Maroon;
-            resources.ApplyResources(this.lblComm, "lblComm");
-            this.lblComm.ForeColor = System.Drawing.Color.White;
-            this.lblComm.Name = "lblComm";
+            this.lblConnect.ActiveLinkColor = System.Drawing.Color.Red;
+            this.lblConnect.BackColor = System.Drawing.Color.Maroon;
+            resources.ApplyResources(this.lblConnect, "lblConnect");
+            this.lblConnect.ForeColor = System.Drawing.Color.White;
+            this.lblConnect.Name = "lblConnect";
             // 
             // toolStripStatusLabel3
             // 
@@ -1051,7 +1072,7 @@
             // 
             // splitter3
             // 
-            this.splitter3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.splitter3.BackColor = System.Drawing.SystemColors.ScrollBar;
             resources.ApplyResources(this.splitter3, "splitter3");
             this.splitter3.Name = "splitter3";
             this.splitter3.TabStop = false;
@@ -1169,6 +1190,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
             this.splitContainer5.Panel1.ResumeLayout(false);
             this.splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
@@ -1242,7 +1264,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel8;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
-        private System.Windows.Forms.ToolStripStatusLabel lblComm;
+        private System.Windows.Forms.ToolStripStatusLabel lblConnect;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel13;
         private System.Windows.Forms.ToolStripStatusLabel lblHelp;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
@@ -1321,5 +1343,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuBarcode1D;
         private System.Windows.Forms.ToolStripMenuItem mnuJumpTo;
         private System.Windows.Forms.ToolStripMenuItem mnuPDF417;
+        private System.Windows.Forms.TabPage tabPage7;
+        private SpiralLab.Sirius2.Winforms.UI.RemoteUserControl remoteUserControl1;
     }
 }

@@ -18206,6 +18206,46 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl">
+            <summary>
+            RemoteUserControl
+            </summary>
+            <remarks>
+            User can insert(or create) usercontrol at own winforms. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl.Marker">
+            <summary>
+            <c>IMarker</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl.Remote">
+            <summary>
+            <c>IRemote</c>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.UI.ManualUserControl">
             <summary>
             ManualUserControl
@@ -19476,6 +19516,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.ManualCtrl">
             <summary>
             Usercontrol for manual
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.RemoteCtrl">
+            <summary>
+            Usercontrol for remote
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.LogCtrl">
