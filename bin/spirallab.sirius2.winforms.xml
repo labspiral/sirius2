@@ -970,197 +970,45 @@
               Looks up a localized string similar to Width.
             </summary>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.entity.jumpto">
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.control.mofextstartdelay">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.jumpto.ResourceManager">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofextstartdelay.ResourceManager">
             <summary>
               Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.jumpto.Culture">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofextstartdelay.Culture">
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.jumpto.Data_C">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofextstartdelay.Distance_DESC">
             <summary>
-              Looks up a localized string similar to Data.
+              Looks up a localized string similar to Distance for External Start Delay (mm) ) (&gt;= 0).
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.jumpto.Jump_DESC">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofextstartdelay.Distance_DISP">
             <summary>
-              Looks up a localized string similar to Jump to Location .
+              Looks up a localized string similar to Distance.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.jumpto.Jump_DISP">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofextstartdelay.Encoder_DESC">
             <summary>
-              Looks up a localized string similar to Jump to.
+              Looks up a localized string similar to Target Encoder for External Start Delay.
             </summary>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.entity.curve">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofextstartdelay.Encoder_DISP">
             <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
+              Looks up a localized string similar to Encoder.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.ResourceManager">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofextstartdelay.MoF_C">
             <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Control1_DESC">
-            <summary>
-              Looks up a localized string similar to Control1 X,Y (mm).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Control1_DISP">
-            <summary>
-              Looks up a localized string similar to Control1.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Control2_DESC">
-            <summary>
-              Looks up a localized string similar to Control2 X,Y (mm).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Control2_DISP">
-            <summary>
-              Looks up a localized string similar to Control2.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Data_C">
-            <summary>
-              Looks up a localized string similar to Data.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Degree_DESC">
-            <summary>
-              Looks up a localized string similar to Degree of Curve (Conic: 2, Cubic: 3).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Degree_DISP">
-            <summary>
-              Looks up a localized string similar to Degree.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.End_DESC">
-            <summary>
-              Looks up a localized string similar to End X,Y (mm).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.End_DISP">
-            <summary>
-              Looks up a localized string similar to End.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Start_DESC">
-            <summary>
-              Looks up a localized string similar to Start X,Y (mm).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Start_DISP">
-            <summary>
-              Looks up a localized string similar to Start.
-            </summary>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.entity.datamatrix">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.C40_DESC">
-            <summary>
-              Looks up a localized string similar to C40 (Disable Compact Encoding if Enabled).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.C40_DISP">
-            <summary>
-              Looks up a localized string similar to C40.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Compact_DESC">
-            <summary>
-              Looks up a localized string similar to Compact Encoding. Supports the encoding of characters that are not in the ISO-8859-1 character set via ECIs. (Disable C40 If Enabled).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Compact_DISP">
-            <summary>
-              Looks up a localized string similar to Compact.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Data_C">
-            <summary>
-              Looks up a localized string similar to Data.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.GS1_DESC">
-            <summary>
-              Looks up a localized string similar to GS1 Format or Not.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.GS1_DISP">
-            <summary>
-              Looks up a localized string similar to GS1.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Min__height_DESC">
-            <summary>
-              Looks up a localized string similar to Y Pixels: (10~144).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Min__height_DISP">
-            <summary>
-              Looks up a localized string similar to Min. height (pixel).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Min__width_DESC">
-            <summary>
-              Looks up a localized string similar to X Pixels: (10~144).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Min__width_DISP">
-            <summary>
-              Looks up a localized string similar to Min. width (pixel).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Quite_zone_DESC">
-            <summary>
-              Looks up a localized string similar to Quite Zone Size.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Quite_zone_DISP">
-            <summary>
-              Looks up a localized string similar to Quite zone.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Square_DESC">
-            <summary>
-              Looks up a localized string similar to Square(or Rectangle) Shape.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Square_DISP">
-            <summary>
-              Looks up a localized string similar to Square.
+              Looks up a localized string similar to MoF.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.alcvectorbegin">
@@ -2192,6 +2040,199 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pensyncaxis.SyncAxis_C">
             <summary>
               SyncAxis과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.jumpto">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.jumpto.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.jumpto.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.jumpto.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.jumpto.Jump_DESC">
+            <summary>
+              Looks up a localized string similar to Jump to Location .
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.jumpto.Jump_DISP">
+            <summary>
+              Looks up a localized string similar to Jump to.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.curve">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Control1_DESC">
+            <summary>
+              Looks up a localized string similar to Control1 X,Y (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Control1_DISP">
+            <summary>
+              Looks up a localized string similar to Control1.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Control2_DESC">
+            <summary>
+              Looks up a localized string similar to Control2 X,Y (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Control2_DISP">
+            <summary>
+              Looks up a localized string similar to Control2.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Degree_DESC">
+            <summary>
+              Looks up a localized string similar to Degree of Curve (Conic: 2, Cubic: 3).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Degree_DISP">
+            <summary>
+              Looks up a localized string similar to Degree.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.End_DESC">
+            <summary>
+              Looks up a localized string similar to End X,Y (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.End_DISP">
+            <summary>
+              Looks up a localized string similar to End.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Start_DESC">
+            <summary>
+              Looks up a localized string similar to Start X,Y (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.curve.Start_DISP">
+            <summary>
+              Looks up a localized string similar to Start.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.datamatrix">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.C40_DESC">
+            <summary>
+              Looks up a localized string similar to C40 (Disable Compact Encoding if Enabled).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.C40_DISP">
+            <summary>
+              Looks up a localized string similar to C40.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Compact_DESC">
+            <summary>
+              Looks up a localized string similar to Compact Encoding. Supports the encoding of characters that are not in the ISO-8859-1 character set via ECIs. (Disable C40 If Enabled).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Compact_DISP">
+            <summary>
+              Looks up a localized string similar to Compact.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.GS1_DESC">
+            <summary>
+              Looks up a localized string similar to GS1 Format or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.GS1_DISP">
+            <summary>
+              Looks up a localized string similar to GS1.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Min__height_DESC">
+            <summary>
+              Looks up a localized string similar to Y Pixels: (10~144).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Min__height_DISP">
+            <summary>
+              Looks up a localized string similar to Min. height (pixel).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Min__width_DESC">
+            <summary>
+              Looks up a localized string similar to X Pixels: (10~144).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Min__width_DISP">
+            <summary>
+              Looks up a localized string similar to Min. width (pixel).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Quite_zone_DESC">
+            <summary>
+              Looks up a localized string similar to Quite Zone Size.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Quite_zone_DISP">
+            <summary>
+              Looks up a localized string similar to Quite zone.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Square_DESC">
+            <summary>
+              Looks up a localized string similar to Square(or Rectangle) Shape.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Square_DISP">
+            <summary>
+              Looks up a localized string similar to Square.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.entityhatchbase">
@@ -4782,6 +4823,49 @@
             <returns><c>CharacterSetSerialNo</c> as string</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.CharacterSetSerialNo.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFExtStartDelay">
+            <summary>
+            EntityMoFExtStartDelay entity
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMoFExtStartDelay.Encoder">
+            <summary>
+            Encoder  
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMoFExtStartDelay.Distance">
+            <summary>
+            Distance
+            </summary>
+            <remarks>
+            Distance for delay (mm) <br/>
+            If '0', then disabled external start delay  <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFExtStartDelay.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFExtStartDelay.#ctor(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="encoder"><c>RtcEncoders</c></param>
+            <param name="distance">Distance for delay (mm)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFExtStartDelay.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFExtStartDelay.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFExtStartDelay.Regen">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFExtStartDelay.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityJumpTo">
@@ -12042,6 +12126,25 @@
             <param name="type"><c>MoFEncoderType</c></param>
             <returns><c>EntityMoFBegin</c> </returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFExternalStartDelay(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double)">
+            <summary>
+            Create <c>EntityMoFExtStartDelay</c> entity
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var extStartDelay = EntityFactory.EntityMoFExtStartDelay(RtcEncoders.EncX);
+            document.ActAdd(extStartDelay);
+            </code>
+            </summary>
+            <remarks>
+            Used with if <c>MarkerRtc.IsExternalStart</c> is <c>True</c>. <br/>
+            Used with if <c>Marker.ListType</c> is <c>ListType.Single</c>. <br/>
+            Used with if <c>Document.Layers.Count</c> is 1. <br/>
+            </remarks>
+            <param name="encoder"><c>RtcEncoders</c></param>
+            <param name="distance">Distance (mm)</param>
+            <returns><c>EntityMoFExtStartDelay</c></returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double)">
             <summary>
             Create <c>EntityMoFWait</c> Wait for X/Y
@@ -17630,7 +17733,7 @@
             Factory for remote communication 
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.RemoteFactory.CreateTcpServer(SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteFactory.CreateTcpServer(System.Int32,SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32)">
             <summary>
             Create <c>RemoteTcpServer</c>
             <code>
@@ -17645,11 +17748,12 @@
             <remarks>
             Create TCP/IP server socket. <br/>
             </remarks>
+            <param name="index">Identifier (0,1,2,...)</param>
             <param name="editorControl"><c>SiriusEditorUserControl</c></param>
             <param name="portNo">TCP server listening port</param>
             <returns><c>IRemote</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.RemoteFactory.CreateSerial(SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteFactory.CreateSerial(System.Int32,SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32,System.Int32)">
             <summary>
             Create <c>RemoteSerial</c>
             <code>
@@ -17667,6 +17771,7 @@
             Stop: 1-Bit <br/> 
             Parity: None <br/>
             </remarks>
+            <param name="index">Identifier (0,1,2,...)</param>
             <param name="editorControl"><c>SiriusEditorUserControl</c></param>
             <param name="portNo">COM port</param>
             <param name="baudRate">Baudrate</param>
@@ -17721,6 +17826,11 @@
             Event for communication has disconnected
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.IRemote.Index">
+            <summary>
+            Identifier
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IRemote.IsConnected">
             <summary>
             Is communication has connected or not
@@ -17754,6 +17864,7 @@
             <summary>
             Assigned <c>SiriusEditorUserControl</c>
             </summary>
+               [Browsable(false)]
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IRemote.Dispose">
             <inheritdoc/>
@@ -17810,14 +17921,14 @@
             Change recipe file
             </summary>
             <param name="fileName">Filename</param>
-            <returns></returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IRemote.OffsetParse(System.String[])">
             <summary>
             Change array of <c>Offset</c> at <c>IMarker</c>
             </summary>
-            <param name="cmd">Counts, dx,dy,dz,dAngle,...</param>
-            <returns></returns>
+            <param name="param">Counts, dx,dy,dz,dAngle,...</param>
+             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IRemote.ControlParse(System.String,System.String[])">
             <summary>
@@ -17837,12 +17948,28 @@
             <summary>
             Scanner field correction 2D
             </summary>
-            <param name="cmd">Row,Col,interval, ErrX1, ErrY1, ErrX2, ErrY2, ...</param>
+            <param name="param">Row,Col,interval, ErrX1, ErrY1, ErrX2, ErrY2, ...</param>
             <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.SelectParse(System.String[])">
+            <summary>
+            Select/deselect
+            </summary>
+            <param name="param">Array of param</param>
+            <returns></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.LayerParse(System.String,System.String,System.String[])">
+            <summary>
+            Read/Write <c>EntityLayer</c> property
+            </summary>
+            <param name="layerName"></param>
+            <param name="propName"></param>
+            <param name="param"></param>
+            <returns></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IRemote.EntityParse(System.String,System.String,System.String[])">
             <summary>
-            Edit entity property
+            Read/Write <c>IEntity</c> property
             </summary>
             <param name="entityName">Name of <c>IEntity</c></param>
             <param name="propName">Name of property</param>
@@ -17851,7 +17978,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IRemote.PenParse(System.String,System.String,System.String[])">
             <summary>
-            Edit pen entity property
+            Read/Write <c>EntityPen</c> property
             </summary>
             <param name="penName">Name of pen entity</param>
             <param name="propName">Name of propert</param>
@@ -17863,10 +17990,11 @@
             Remote communication by TCP server
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.RemoteTcpServer.#ctor(SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteTcpServer.#ctor(System.Int32,SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32)">
             <summary>
             Constructor
             </summary>
+            <param name="index">Identifier (0,1,2,...)</param>
             <param name="editorControl">Target <c>SiriusEditorUserControl</c></param>
             <param name="portNo">TCP server listening port no</param>
         </member>
@@ -17904,10 +18032,11 @@
             Remote communication by Serial 
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.RemoteSerial.#ctor(SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteSerial.#ctor(System.Int32,SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32,System.Int32)">
             <summary>
             Constructor
             </summary>
+            <param name="index">Identifier (0,1,2,...)</param>
             <param name="editorControl">Target <c>SiriusEditorUserControl</c></param>
             <param name="portNo">COM port no</param>
             <param name="baudRate">Baudrate</param>

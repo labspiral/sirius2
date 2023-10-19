@@ -83,9 +83,10 @@
     - config "config.ini" for RTC5 or RTC6
     - config "config_syncaxis.ini" for XL-SCAN
  - Demo 'editor_entity' winforms project for create entities
- - Demo 'editor_marker' winforms project for custom marker
  - Demo 'editor_barcode' winforms project for mark individual barcode entities
  - Demo 'editor_multiple' winforms project for multiple instances
+ - Demo 'editor_marker' winforms project for custom marker
+ - Demo 'editor_remote' winforms project for custom remote control
  - Demo 'editor_ui' winforms project for custom ui
 
 
@@ -115,6 +116,11 @@
 
 **8. Version history**
 
+* 2023.10.19 v.1.6.840
+  - hot fixed) laser power value has not applied 
+  - added) external start delay entity
+  - added) more remote commands
+  
 * 2023.10.18 v.1.5.830
   - added) remote communication 
   - removed) useless remote demo project

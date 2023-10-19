@@ -328,12 +328,12 @@ namespace Demos
                 {
                     case "tcp":
                         int tcpPort = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"TCP_PORT", 5001);
-                        remote = RemoteFactory.CreateTcpServer(siriusEditorUserControl, tcpPort);
+                        remote = RemoteFactory.CreateTcpServer(index, siriusEditorUserControl, tcpPort);
                         break;
                     case "serial":
-                        int serialPort = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"SERIAL_PORT", 2);
+                        int serialPort = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"SERIAL_PORT", 1);
                         int serialBaudRate = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"SERIAL_BAUDRATE=", 57600);
-                        remote = RemoteFactory.CreateSerial(siriusEditorUserControl, serialPort, serialBaudRate);
+                        remote = RemoteFactory.CreateSerial(index, siriusEditorUserControl, serialPort, serialBaudRate);
                         break;
                 }
                 success &= remote.Start();
