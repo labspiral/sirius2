@@ -1910,9 +1910,6 @@
             Error status
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Laser.LaserBase.Scanner">
-            <inheritdoc/>  
-        </member>
         <member name="P:SpiralLab.Sirius2.Laser.LaserBase.MaxPowerWatt">
             <inheritdoc/>  
         </member>
@@ -1931,6 +1928,12 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.LaserBase.PowerControlDelayTime">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.LaserBase.IsGuideControl">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.LaserBase.Scanner">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.LaserBase.Tag">
@@ -1981,6 +1984,9 @@
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.LaserVirtual.LaserType">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.LaserVirtual.IsGuideOn">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.LaserVirtual.CustomNothing">
@@ -2082,6 +2088,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserVirtual.CtlReset">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.LaserVirtual.CtlGuide(System.Boolean)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserVirtual.CtlPower(System.Double)">
@@ -2232,6 +2241,9 @@
             <summary>
             Enabled <c>ILaserPowerControl</c> or not
             </summary>
+            <remarks>
+            Also, meaning with inherited from <c>ILaserPowerControl</c> or not. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.ILaser.PowerControlMethod">
             <summary>
@@ -2242,6 +2254,14 @@
             <summary>
             Delay time (msec) for vary output power if <c>IsPowerControl</c> is <c>True</c>
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.ILaser.IsGuideControl">
+            <summary>
+            Enabled <c>ILaserGuideControl</c> or not
+            </summary>
+            <remarks>
+            Also, meaning with inherited from <c>ILaserGuideControl</c> or not. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.ILaser.Tag">
             <summary>
@@ -2260,6 +2280,8 @@
             success &amp;=laser.Initialize();
             if (laser is ILaserPowerControl powerControl)
                 success &amp;= powerControl.CtlPower(laser.MaxPowerWatt * 0.1); // 10% (= 1V)
+            if (laser is ILaserGuideControl guideControl)
+                success &amp;= guideControl.CtlGuide(true); // To turn guide laser beam on
             Debug.Assert(success);
             </code>
             </summary>
@@ -2320,6 +2342,27 @@
             </code>
             </summary>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.ILaserGuideControl">
+            <summary>
+            ILaserGuideControl interface
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.ILaserGuideControl.IsGuideOn">
+            <summary>
+            Status of guided laser beam is on or not
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.ILaserGuideControl.CtlGuide(System.Boolean)">
+            <summary>
+            Enable(or disable) guided laser beam
+            </summary>
+            <remarks>
+            If <c>False</c>, also <c>IRtc.CtlLaserSignal(False)</c> would be called. <br/>
+            If <c>True</c>, also <c>IRtc.CtlLaserSignal(True)</c> would be called. <br/>
+            </remarks>
+            <param name="onOff">On(or off)</param>
+            <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.PowerControlMethods">
             <summary>
@@ -2387,19 +2430,6 @@
             <summary>
             ILaserPowerControl interface
             </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Laser.ILaserPowerControl.PowerControlMethod">
-            <summary>
-            <c>PowerControlMethod</c>
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Laser.ILaserPowerControl.PowerControlDelayTime">
-            <summary>
-            Delay time to wait until output power value has applied (msec)
-            </summary>
-            <remarks>
-            Min. time resolution: 10 usec <br/>
-            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.CtlPower(System.Double)">
             <summary>

@@ -16,7 +16,7 @@
  *                `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Laser Source (RS-232 communication power control)
+ * Description : Laser Source (8bit digital output power control + guide laser beam control)
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -39,12 +39,12 @@ using SpiralLab.Sirius2.Scanner.Rtc;
 namespace Demos
 {
     /// <summary>
-    /// RS232 communication to power control
+    /// 8bit digital output power control + guide laser control
     /// </summary>
-    /// <remarks>Used with RS232 port at RTC card</remarks>
-    public class MyLaserRS232
+    public class MyLaserDOut2
         : ILaser
         , ILaserPowerControl
+        , ILaserGuideControl
     {
         /// <inheritdoc/>
         public virtual event PropertyChangedEventHandler PropertyChanged;
@@ -85,6 +85,15 @@ namespace Demos
         /// <inheritdoc/>  
         [Browsable(false)]
         public virtual LaserTypes LaserType { get { return LaserTypes.UserDefined1; } }
+
+        /// <inheritdoc/>  
+        [RefreshProperties(RefreshProperties.All)]
+        [Browsable(true)]
+        [ReadOnly(true)]
+        [Category("Power Control")]
+        [DisplayName("Power (max)")]
+        [Description("Max Power (W)")]
+        public virtual double MaxPowerWatt { get; set; }
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
@@ -165,14 +174,22 @@ namespace Demos
         [Browsable(false)]
         public virtual bool IsGuideControl { get; protected set; }
 
+        [RefreshProperties(RefreshProperties.All)]
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Power Control")]
+        [DisplayName("Method")]
+        [Description("Laser Power Control Method")]
+        public virtual PowerControlMethods PowerControlMethod { get; set; }
+
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
-        [ReadOnly(true)]
+        [ReadOnly(false)]
         [Category("Power Control")]
-        [DisplayName("Power (max)")]
-        [Description("Max Power (W)")]
-        public virtual double MaxPowerWatt { get; set; }
+        [DisplayName("Delay")]
+        [Description("Power Control Delay Time (msec)")]
+        public virtual double PowerControlDelayTime { get; set; }
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
@@ -195,42 +212,90 @@ namespace Demos
         }
         protected double laserPowerWatt;
 
-        [RefreshProperties(RefreshProperties.All)]
-        [Browsable(true)]
-        [ReadOnly(false)]
-        [Category("Power Control")]
-        [DisplayName("Method")]
-        [Description("Laser Power Control Method")]
-        public virtual PowerControlMethods PowerControlMethod { get; set; }
-
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
         [ReadOnly(false)]
-        [Category("Power Control")]
-        [DisplayName("Delay")]
-        [Description("Power Control Delay Time (msec)")]
-        public virtual double PowerControlDelayTime { get; set; }
+        [Category("Guide Control")]
+        [DisplayName("Status")]
+        [Description("Guide Laser Beam Status")]
+        public virtual bool IsGuideOn
+        {
+            get { return isGuideOn; }
+            set
+            {
+                var oldGuideOnOff = isGuideOn;
+                isGuideOn = value;
+                if (oldGuideOnOff != isGuideOn)
+                {
+                    if (isGuideOn)
+                    {
+                        if (null != Scanner && Scanner is IRtc rtc)
+                        {
+                            rtc.CtlLaserSignal(false);
+                        }
+                        Logger.Log(Logger.Types.Info, $"laser [{this.Index}]: guide laser has on");
+                    }
+                    else
+                    {
+                        if (null != Scanner && Scanner is IRtc rtc)
+                        {
+                            rtc.CtlLaserSignal(true);
+                        }
+                        Logger.Log(Logger.Types.Info, $"laser [{this.Index}]: guide laser has off");
+                    }
+                }
+            }
+        }
+        private bool isGuideOn;
 
+        #region Control by DigitalBits
         /// <summary>
-        /// Data format for RS-232 communication
-        /// <para>string.Format</para>
+        /// EXTENSION Port for DigitalBits
+        /// <para>Default: 2(8bits) (1: 16bits)</para>
         /// </summary>
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
         [ReadOnly(false)]
-        [Category("Control (RS-232)")]
-        [DisplayName("Format")]
-        [Description("Data Format")]
-        public virtual string Rs232StringFormat
+        [Category("Control (digitalbits)")]
+        [DisplayName("Extension port")]
+        [Description("RTC Extension Port (1,2)")]
+        public virtual int DigitalBitsPortNo
         {
-            get { return rs232StringFormat; }
+            get { return digitalBitsPortNo; }
             set
             {
-                rs232StringFormat = value;
+                if (value <= 0)
+                    return;
+                if (value > 2)
+                    return;
+                digitalBitsPortNo = value;
             }
         }
-        protected string rs232StringFormat = "Current={0:F3}";
+        protected int digitalBitsPortNo = 1;
+        /// <summary>
+        /// Min bit value for DigitalBits
+        /// <para>Default: 0</para>
+        /// </summary>
+        [RefreshProperties(RefreshProperties.All)]
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Control (digitalbits)")]
+        [DisplayName("Min bit")]
+        [Description("Min Bit Value")]
+        public virtual ushort DigitalBitMinValue { get; set; } = 0;
+        /// <summary>
+        /// Max bit value for DigitalBits
+        /// <para>Default: 255(or 65535)</para>
+        /// </summary>
+        [RefreshProperties(RefreshProperties.All)]
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Control (DigitalBits)")]
+        [DisplayName("Max Bit")]
+        [Description("Max Bit Value")]
+        public virtual ushort DigitalBitMaxValue { get; set; } = 65535;
+        #endregion
 
         /// <inheritdoc/>  
         [Browsable(false)]
@@ -241,14 +306,14 @@ namespace Demos
         /// <summary>
         /// Constructor
         /// </summary>
-        public MyLaserRS232()
+        public MyLaserDOut2()
         {
             this.SyncRoot = new object();
             this.Name = "MyLaser";
             this.IsPowerControl = true;
-            // RTC RS232 Port
-            this.PowerControlMethod = PowerControlMethods.Rs232;
-            this.PowerControlDelayTime = 200;
+            this.PowerControlMethod = PowerControlMethods.DigitalBits;
+            this.PowerControlDelayTime = 1;
+            this.IsGuideControl = true;
         }
         /// <summary>
         /// Constructor
@@ -256,17 +321,21 @@ namespace Demos
         /// <param name="index">Identifier</param>
         /// <param name="name">Name</param>
         /// <param name="maxPowerWatt">Max power (W)</param>
-        public MyLaserRS232(int index, string name, double maxPowerWatt)
+        /// <param name="minBitValue">Min bit value (For example: 0)</param>
+        /// <param name="maxBitValue">Max bit value (For example: 255 or 65535)</param>
+        public MyLaserDOut2(int index, string name, double maxPowerWatt, ushort minBitValue, ushort maxBitValue)
             : this()
         {
             this.Index = index;
             this.Name = name;
             this.MaxPowerWatt = maxPowerWatt;
+            this.DigitalBitMinValue = minBitValue;
+            this.DigitalBitMaxValue = maxBitValue;
         }
         /// <summary>
         /// Finalizer
         /// </summary>
-        ~MyLaserRS232()
+        ~MyLaserDOut2()
         {
             this.Dispose(false);
         }
@@ -311,17 +380,8 @@ namespace Demos
         /// <inheritdoc/>  
         public bool Initialize()
         {
-            var rtc = Scanner as IRtc;
-            Debug.Assert(rtc != null);
-            var rtcSerialComm = rtc as IRtcSerialComm;
-            Debug.Assert(null != rtcSerialComm);
-            //config baudrate
-            bool success = rtcSerialComm.CtlSerialConfig(9600);
-
-            Debug.Assert(success);
-
             LastPowerWatt = 0;
-            return success;
+            return true;
         }
         /// <inheritdoc/>  
         public virtual bool CtlAbort()
@@ -343,6 +403,38 @@ namespace Demos
             }
         }
 
+        #region ILaserGuideControl impl
+        /// <inheritdoc/>  
+        public virtual bool CtlGuide(bool onOff)
+        {
+            var oldGuideOnOff = IsGuideOn;
+            bool success = true;
+            if (oldGuideOnOff != onOff)
+            {
+                if (onOff)
+                {
+                    // do something
+                    if (null != Scanner && Scanner is IRtc rtc)
+                    {
+                        success &= rtc.CtlLaserSignal(false);
+                    }
+                    Logger.Log(Logger.Types.Info, $"laser [{this.Index}]: guide laser has on");
+                }
+                else
+                {
+                    // do something
+                    if (null != Scanner && Scanner is IRtc rtc)
+                    {
+                        success &= rtc.CtlLaserSignal(true);
+                    }
+                    Logger.Log(Logger.Types.Info, $"laser [{this.Index}]: guide laser has off");
+                }
+                IsGuideOn = onOff;
+            }
+            return success;
+        }
+        #endregion
+
         #region ILaserPowerControl impl
         /// <inheritdoc/>  
         public virtual bool CtlPower(double watt)
@@ -352,7 +444,6 @@ namespace Demos
             Debug.Assert(this.MaxPowerWatt > 0);
             var rtc = Scanner as IRtc;
             Debug.Assert(rtc != null);
-            Debug.Assert(rtc is IRtcSerialComm);
             bool success = true;
             if (watt > this.MaxPowerWatt)
                 watt = this.MaxPowerWatt;
@@ -367,15 +458,15 @@ namespace Demos
                     default:
                         Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
                         return false;
-                    case PowerControlMethods.Rs232:
-                        if (rtc is IRtcSerialComm rtcSerialComm)
+                    case PowerControlMethods.DigitalBits:
+                        double dataBits = this.DigitalBitMinValue + (this.DigitalBitMaxValue - this.DigitalBitMinValue) * percentage / 100.0;
+                        if (1 == this.DigitalBitsPortNo)
                         {
-                            //to cleanup recv buffer
-                            rtcSerialComm.CtlSerialRead(out byte[] dummy);
-                            string text = string.Format(rs232StringFormat, percentage);
-                            success &= rtcSerialComm.CtlSerialWrite(text);
-                            //byte[] bytes = Encoding.UTF8.GetBytes(text);
-                            //success &= rtcSerialComm.CtlSerialWrite(bytes);
+                            success &= rtc.CtlWriteData<uint>(ExtensionChannels.ExtDO16, (uint)dataBits);
+                        }
+                        else if (2 == this.DigitalBitsPortNo)
+                        {
+                            success &= rtc.CtlWriteData<uint>(ExtensionChannels.ExtDO8, (uint)dataBits);
                         }
                         break;
                 }
@@ -407,7 +498,6 @@ namespace Demos
             Debug.Assert(this.MaxPowerWatt > 0);
             var rtc = Scanner as IRtc;
             Debug.Assert(rtc != null);
-            Debug.Assert(rtc is IRtcSerialComm);
             if (watt > this.MaxPowerWatt)
                 watt = this.MaxPowerWatt;
             lock (SyncRoot)
@@ -422,16 +512,18 @@ namespace Demos
                     default:
                         Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
                         return false;
-                    case PowerControlMethods.Rs232:
-                        if (rtc is IRtcSerialComm rtcSerialComm)
+                    case PowerControlMethods.DigitalBits:
+                        double dataBits = this.DigitalBitMinValue + (this.DigitalBitMaxValue - this.DigitalBitMinValue) * percentage / 100.0;
+                        if (1 == this.DigitalBitsPortNo)
                         {
-                            string text = string.Format(rs232StringFormat, percentage);
-                            success &= rtcSerialComm.ListSerialWrite(text);
-                            //byte[] bytes = Encoding.UTF8.GetBytes(text);
-                            //success &= rtcSerialComm.ListSerialWrite(bytes);
-                            success &= rtc.ListWait(this.PowerControlDelayTime);
+                            success &= rtc.ListWriteData<uint>(ExtensionChannels.ExtDO16, (uint)dataBits);
                         }
-                    break;
+                        else if (2 == this.DigitalBitsPortNo)
+                        {
+                            success &= rtc.ListWriteData<uint>(ExtensionChannels.ExtDO8, (uint)dataBits);
+                        }
+                        success &= rtc.ListWait(this.PowerControlDelayTime);
+                        break;
                 }
                 if (success)
                     LastPowerWatt = watt;

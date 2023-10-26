@@ -16,7 +16,7 @@
  *                `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : MyLaser3 Source (Duty cycle/pulse-width power control)
+ * Description : Laser Source (Duty cycle/pulse-width power control)
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -89,8 +89,8 @@ namespace Demos
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
         [ReadOnly(true)]
-        [Category("Basic")]
-        [DisplayName("Max Power")]
+        [Category("Power Control")]
+        [DisplayName("Power (max)")]
         [Description("Max Power (W)")]
         public virtual double MaxPowerWatt { get; set; }
 
@@ -161,17 +161,6 @@ namespace Demos
         }
         protected bool isError;
 
-        /// <inheritdoc/>  
-        [Browsable(false)]
-        public virtual bool IsCommControl { get; protected set; }
-
-        /// <inheritdoc/>
-        [Browsable(false)]
-        public virtual bool IsTimedOut { get; protected set; }
-
-        /// <inheritdoc/>
-        [Browsable(false)]
-        public virtual bool IsProtocolError { get; protected set; }
 
         /// <inheritdoc/>  
         [Browsable(false)]
@@ -179,22 +168,26 @@ namespace Demos
 
         /// <inheritdoc/>  
         [Browsable(false)]
-        public virtual bool IsPowerControl { get; set; }
+        public virtual bool IsPowerControl { get; protected set; }
+
+        /// <inheritdoc/>  
+        [Browsable(false)]
+        public virtual bool IsGuideControl { get; protected set; }
 
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
         [ReadOnly(false)]
-        [Category("Control")]
-        [DisplayName("Power Control Method")]
-        [Description("Power Control Method")]
+        [Category("Power Control")]
+        [DisplayName("Method")]
+        [Description("Laser Power Control Method")]
         public virtual PowerControlMethods PowerControlMethod { get; set; }
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
         [ReadOnly(false)]
-        [Category("Control")]
-        [DisplayName("Power Control Delay")]
+        [Category("Power Control")]
+        [DisplayName("Delay")]
         [Description("Power Control Delay Time (msec)")]
         public virtual double PowerControlDelayTime { get; set; }
 
@@ -202,9 +195,9 @@ namespace Demos
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
         [ReadOnly(false)]
-        [Category("Control")]
-        [DisplayName("Last Power (W)")]
-        [Description("Commanded Last Output Power (W)")]
+        [Category("Power Control")]
+        [DisplayName("Power (last)")]
+        [Description("Last Commanded Power (W)")]
         public virtual double LastPowerWatt
         {
             get { return laserPowerWatt; }
@@ -219,14 +212,6 @@ namespace Demos
         }
         protected double laserPowerWatt;
 
-        /// <inheritdoc/>  
-        [Browsable(false)]
-        public virtual bool IsShutterControl { get; protected set; }
-
-        /// <inheritdoc/>  
-        [Browsable(false)]
-        public virtual bool IsGuideControl { get; protected set; }
-
         /// <summary>
         /// Min Duty Cycle Duty (%)
         /// <para>Default: 1</para>
@@ -234,10 +219,10 @@ namespace Demos
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
         [ReadOnly(false)]
-        [Category("Control (Duty)")]
-        [DisplayName("Min Duty Cycle")]
+        [Category("Control (duty cycle)")]
+        [DisplayName("Min duty cycle")]
         [Description("Min Duty Cycle (%)")]
-        public virtual double MinDutyCycle { get; set; } = 0;
+        public virtual double MinDutyCycle { get; set; } = 1;
 
         /// <summary>
         /// Max Duty Cycle Duty (%)
@@ -246,8 +231,8 @@ namespace Demos
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
         [ReadOnly(false)]
-        [Category("Control (Duty)")]
-        [DisplayName("Max Duty Cycle")]
+        [Category("Control (duty cycle)")]
+        [DisplayName("Max duty cycle")]
         [Description("Max Duty Cycle (%)")]
         public virtual double MaxDutyCycle { get; set; } = 100;
 
@@ -269,9 +254,6 @@ namespace Demos
             // RTC ANALOG1 Port Output 
             this.PowerControlMethod = PowerControlMethods.DutyCycle;
             this.PowerControlDelayTime = 1;
-            this.IsCommControl = false;
-            this.IsShutterControl = false;
-            this.IsGuideControl = false;
         }
         /// <summary>
         /// Constructor

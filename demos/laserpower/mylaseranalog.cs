@@ -16,7 +16,7 @@
  *                `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : MyLaser2 Source (10V analog output power control)
+ * Description : Laser Source (10V analog output power control)
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -88,15 +88,6 @@ namespace Demos
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
-        [ReadOnly(true)]
-        [Category("Basic")]
-        [DisplayName("Max Power")]
-        [Description("Max Power (W)")]
-        public virtual double MaxPowerWatt { get; set; }
-
-        /// <inheritdoc/>  
-        [RefreshProperties(RefreshProperties.All)]
-        [Browsable(true)]
         [ReadOnly(false)]
         [Category("Status")]
         [DisplayName("Ready")]
@@ -163,48 +154,32 @@ namespace Demos
 
         /// <inheritdoc/>  
         [Browsable(false)]
-        public virtual bool IsCommControl { get; protected set; }
-
-        /// <inheritdoc/>
-        [Browsable(false)]
-        public virtual bool IsTimedOut { get; protected set; }
-
-        /// <inheritdoc/>
-        [Browsable(false)]
-        public virtual bool IsProtocolError { get; protected set; }
-
-        /// <inheritdoc/>  
-        [Browsable(false)]
         public virtual IScanner Scanner { get; set; }
 
         /// <inheritdoc/>  
         [Browsable(false)]
-        public virtual bool IsPowerControl { get; set; }
+        public virtual bool IsPowerControl { get; protected set; }
 
+        /// <inheritdoc/>  
+        [Browsable(false)]
+        public virtual bool IsGuideControl { get; protected set; }
+
+        /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
-        [ReadOnly(false)]
-        [Category("Control")]
-        [DisplayName("Power Control Method")]
-        [Description("Power Control Method")]
-        public virtual PowerControlMethods PowerControlMethod { get; set; }
+        [ReadOnly(true)]
+        [Category("Power Control")]
+        [DisplayName("Power (max)")]
+        [Description("Max Power (W)")]
+        public virtual double MaxPowerWatt { get; set; }
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
         [ReadOnly(false)]
-        [Category("Control")]
-        [DisplayName("Power Control Delay")]
-        [Description("Power Control Delay Time (msec)")]
-        public virtual double PowerControlDelayTime { get; set; }
-
-        /// <inheritdoc/>  
-        [RefreshProperties(RefreshProperties.All)]
-        [Browsable(true)]
-        [ReadOnly(false)]
-        [Category("Control")]
-        [DisplayName("Last Power (W)")]
-        [Description("Commanded Last Output Power (W)")]
+        [Category("Power Control")]
+        [DisplayName("Power (last)")]
+        [Description("Last Commanded Power (W)")]
         public virtual double LastPowerWatt
         {
             get { return laserPowerWatt; }
@@ -219,13 +194,22 @@ namespace Demos
         }
         protected double laserPowerWatt;
 
-        /// <inheritdoc/>  
-        [Browsable(false)]
-        public virtual bool IsShutterControl { get; protected set; }
+        [RefreshProperties(RefreshProperties.All)]
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Power Control")]
+        [DisplayName("Method")]
+        [Description("Laser Power Control Method")]
+        public virtual PowerControlMethods PowerControlMethod { get; set; }
 
         /// <inheritdoc/>  
-        [Browsable(false)]
-        public virtual bool IsGuideControl { get; protected set; }
+        [RefreshProperties(RefreshProperties.All)]
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Power Control")]
+        [DisplayName("Delay")]
+        [Description("Power Control Delay Time (msec)")]
+        public virtual double PowerControlDelayTime { get; set; }
 
 
         #region Control by analog
@@ -236,8 +220,8 @@ namespace Demos
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
         [ReadOnly(false)]
-        [Category("Control (Analog)")]
-        [DisplayName("Min Voltage")]
+        [Category("Control (analog)")]
+        [DisplayName("Min voltage")]
         [Description("Min Voltage (V)")]
         public virtual double MinVoltage
         {
@@ -261,8 +245,8 @@ namespace Demos
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
         [ReadOnly(false)]
-        [Category("Control (Analog)")]
-        [DisplayName("Max Voltage")]
+        [Category("Control (analog)")]
+        [DisplayName("Max voltage")]
         [Description("Max Voltage (V)")]
         public virtual double MaxVoltage
         {
@@ -284,8 +268,8 @@ namespace Demos
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
         [ReadOnly(false)]
-        [Category("Control (Analog)")]
-        [DisplayName("Port")]
+        [Category("Control (analog)")]
+        [DisplayName("Anglog port")]
         [Description("RTC Analog Port (1,2)")]
         public virtual int AnalogPortNo
         {
@@ -319,9 +303,6 @@ namespace Demos
             // RTC ANALOG1 Port Output 
             this.PowerControlMethod = PowerControlMethods.Analog;
             this.PowerControlDelayTime = 1;
-            this.IsCommControl = false;
-            this.IsShutterControl = false;
-            this.IsGuideControl = false;
         }
         /// <summary>
         /// Constructor

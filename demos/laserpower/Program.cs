@@ -81,7 +81,7 @@ namespace Demos
             Debug.Assert(success);
 
             int laserType = 1;
-            Console.Write("select laser (1: D.Out8bits, 2: D.Out16bits, 3: Analog1, 4: Analog2, 5: Pulse width, 6: RS232, 7: Custom) (Default= 1) : ");
+            Console.Write("select laser (1: D.Out8bits, 2: D.Out16bits, 3: Analog1, 4: Analog2, 5: Pulse width, 6: RS232, 7: Custom, 8: D.Out8bits+Guide) (Default= 1) : ");
             try {
                 laserType = Convert.ToInt32(Console.ReadLine());
             }
@@ -130,6 +130,12 @@ namespace Demos
                     var myLaserCustom = new MyLaserCustom(0, "Custom Communication Laser", maxWatt);
                     laser = myLaserCustom;
                     break;
+                case 8:
+                    var myLaserDOut82 = new MyLaserDOut2(0, "My DOut 8Bits Laser", maxWatt, 0, 255);
+                    myLaserDOut82.PowerControlMethod = PowerControlMethods.DigitalBits;
+                    myLaserDOut82.DigitalBitsPortNo = 2; //RTC EXTENSION PORT 2 (8bits)
+                    laser = myLaserDOut82;
+                    break;
             }
             // Assign RTC into laser
             laser.Scanner = rtc;
@@ -152,8 +158,10 @@ namespace Demos
                 Console.WriteLine("'F5' : draw circles (by duty cycle output)");
                 Console.WriteLine("'F6' : draw circles (by rs232 communication)");
                 Console.WriteLine("'F7' : draw circles (by custom control)");
-                Console.WriteLine("'1' : laser signal on");
-                Console.WriteLine("'0' : laser signal off");
+                Console.WriteLine("'0' : laser off");
+                Console.WriteLine("'1' : laser on (warning !!!)");
+                Console.WriteLine("'2' : guide laser on");
+                Console.WriteLine("'3' : guide laser off");
                 Console.WriteLine("'Q'  : quit");
                 Console.Write("Select your target : ");
                 key = Console.ReadKey(false);
@@ -191,12 +199,24 @@ namespace Demos
                     case ConsoleKey.F7:
                         DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.FreeVariable1, watt);                        
                         break;
+                    case ConsoleKey.D0:
+                        rtc.CtlLaserOff();
+                        break;
                     case ConsoleKey.D1:
                         rtc.CtlMoveTo(Vector2.Zero);
                         rtc.CtlLaserOn();
                         break;
-                    case ConsoleKey.D0:
-                        rtc.CtlLaserOff();
+                    case ConsoleKey.D2:
+                        {
+                            if (laser is ILaserGuideControl laserGuideControl)
+                                laserGuideControl.CtlGuide(true);
+                        }
+                        break;
+                    case ConsoleKey.D3:
+                        {
+                            if (laser is ILaserGuideControl laserGuideControl)
+                                laserGuideControl.CtlGuide(false);
+                        }
                         break;
                 }
                 Logger.Log(Logger.Types.Info, $"Processing time: {sw.Elapsed.TotalSeconds:F3} sec");

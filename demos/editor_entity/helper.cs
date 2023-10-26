@@ -283,7 +283,7 @@ namespace Demos
             if (laser is ILaserPowerControl powerControl)
             {
                 var laserPowerControlDelay = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "POWERCONTROL_DELAY", 0);
-                powerControl.PowerControlDelayTime = laserPowerControlDelay;
+                laser.PowerControlDelayTime = laserPowerControlDelay;
                 success &= powerControl.CtlPower(laserDefaultPower);
             }
             switch (rtcType.Trim().ToLower())
@@ -431,6 +431,16 @@ namespace Demos
             imagetext1.RasterMode = RasterModes.JumpAndShoot;
             imagetext1.Translate(-30, -30);
             success &= document.ActAdd(imagetext1);
+
+            // Raster entity 
+            var raster1 = EntityFactory.CreateRaster(5, filename1);
+            raster1.Name = "Raster1";
+            raster1.RasterMode = RasterModes.MicroVector;
+            raster1.PixelPeriod = 100;
+            raster1.PixelTime = 100;
+            raster1.Direction = RasterDirections.LeftToRight;
+            raster1.Translate(-36, -10);
+            success &= document.ActAdd(raster1);
 
             // Text entity
             var text1 = EntityFactory.CreateText("Arial", $"12345 67890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", FontStyle.Bold, 2.5);

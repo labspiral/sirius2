@@ -2042,6 +2042,197 @@
               SyncAxis과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.raster">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Basic_C">
+            <summary>
+              Looks up a localized string similar to Basic.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Direction_DESC">
+            <summary>
+              Looks up a localized string similar to Raster Direction.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Direction_DISP">
+            <summary>
+              Looks up a localized string similar to Direction.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.DpiX_DESC">
+            <summary>
+              Looks up a localized string similar to DPI (Pixel X / Inch).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.DpiX_DISP">
+            <summary>
+              Looks up a localized string similar to Dpi x.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.DpiY_DESC">
+            <summary>
+              Looks up a localized string similar to DPI (Pixel Y / Inch).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.DpiY_DISP">
+            <summary>
+              Looks up a localized string similar to Dpi y.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Extension_channel_DESC">
+            <summary>
+              Looks up a localized string similar to Pixel Output Extension Channel (Analog 1 or 2) (Micro-Vector only).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Extension_channel_DISP">
+            <summary>
+              Looks up a localized string similar to Extension channel.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Height_DESC">
+            <summary>
+              Looks up a localized string similar to Height (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Height_DISP">
+            <summary>
+              Looks up a localized string similar to Height.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Invert_color_DESC">
+            <summary>
+              Looks up a localized string similar to Invert Output Pixel Color.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Invert_color_DISP">
+            <summary>
+              Looks up a localized string similar to Invert color.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Pitch_x_DESC">
+            <summary>
+              Looks up a localized string similar to Pitch X (mm/pixel).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Pitch_x_DISP">
+            <summary>
+              Looks up a localized string similar to Pitch x.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Pitch_y_DESC">
+            <summary>
+              Looks up a localized string similar to Pitch Y (mm/pixel).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Pitch_y_DISP">
+            <summary>
+              Looks up a localized string similar to Pitch y.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Pixel_period_DESC">
+            <summary>
+              Looks up a localized string similar to Pixel Period (usec) (1/Pixel Frequency) (Micro-Vector only).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Pixel_period_DISP">
+            <summary>
+              Looks up a localized string similar to Pixel period.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Pixel_speed_DESC">
+            <summary>
+              Looks up a localized string similar to Approx. Pixel Speed (mm/s).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Pixel_speed_DISP">
+            <summary>
+              Looks up a localized string similar to Pixel speed.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Pixel_time_DESC">
+            <summary>
+              Looks up a localized string similar to Max. Pixel Dration Time (usec) (Time for Pixel Pulse Width. Should be &lt; Pixel Period).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Pixel_time_DISP">
+            <summary>
+              Looks up a localized string similar to Pixel time.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Pixels_DESC">
+            <summary>
+              Looks up a localized string similar to 2D Array of Pixels for Weight.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Pixels_DISP">
+            <summary>
+              Looks up a localized string similar to Pixels.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Px_DESC">
+            <summary>
+              Looks up a localized string similar to Pixel Width Counts (Pixels).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Px_DISP">
+            <summary>
+              Looks up a localized string similar to Px.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Py_DESC">
+            <summary>
+              Looks up a localized string similar to Pixel Height Counts (Pixels).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Py_DISP">
+            <summary>
+              Looks up a localized string similar to Py.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Raster_C">
+            <summary>
+              Looks up a localized string similar to Raster.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Raster_mode_DESC">
+            <summary>
+              Looks up a localized string similar to Raster Mode (Jump and Shoot, Micro-Vector).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Raster_mode_DISP">
+            <summary>
+              Looks up a localized string similar to Raster mode.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Width_DESC">
+            <summary>
+              Looks up a localized string similar to Width (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.raster.Width_DISP">
+            <summary>
+              Looks up a localized string similar to Width.
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.jumpto">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -2822,7 +3013,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc.Position_table_DESC">
             <summary>
-              Looks up a localized string similar to Position Dependent Compensate Table. Distance(mm), Scale(0~4).
+              Looks up a localized string similar to Position Dependent Compensate Table. Distance or Radius (mm), Scale (0~4).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc.Position_table_DISP">
@@ -4284,6 +4475,16 @@
               Looks up a localized string similar to Unique Entity ID.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Entity_type_DESC">
+            <summary>
+              Looks up a localized string similar to Entity Type by Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Entity_type_DISP">
+            <summary>
+              Looks up a localized string similar to Type.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.HitTest_DESC">
             <summary>
               Looks up a localized string similar to Is Allow Hittest or Not.
@@ -4432,16 +4633,6 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Translate_DISP">
             <summary>
               Looks up a localized string similar to Model translate.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Type_DESC">
-            <summary>
-              Looks up a localized string similar to Entity Type Name.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Type_DISP">
-            <summary>
-              Looks up a localized string similar to Type.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.LineDirections">
@@ -4867,6 +5058,224 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFExtStartDelay.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityRaster">
+            <summary>
+            EntityRaster entity
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.Width">
+            <summary>
+            Width (mm)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.width">
+            <summary>
+            Width (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.Height">
+            <summary>
+            Height (mm)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.height">
+            <summary>
+            Height (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.PixelChannel">
+            <summary>
+            Pixel Output Extension Channel 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.pixelChannel">
+            <summary>
+            Pixel Output Extension Channel 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.Px">
+            <summary>
+            Px
+            </summary>
+            <remarks>
+            Used by internally (Do NOT edit)
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.Py">
+            <summary>
+            Py
+            </summary>
+            <remarks>
+            Used by internally (Do NOT edit)
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.RasterMode">
+            <summary>
+            Raster mode
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.rasterMode">
+            <summary>
+            Raster mode
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.PixelPeriod">
+            <summary>
+            Pixel period (usec)
+            </summary>
+            <remarks>
+            If <c>RasterModes.JumpAndShoot</c>, pixel period is not used. <br/>
+            If <c>RasterModes.MicroVector</c>, pixel speed = pixel pitch(mm) / pixel period(s). <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.pixelPeriod">
+            <summary>
+            Pixel Period (usec)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.PixelTime">
+            <summary>
+            Pixel duration time (usec)
+            </summary>
+            <remarks>
+            Pixel output time works like as output pulse width. should be lower than <c>PixelPeriod</c>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.pixelTime">
+            <summary>
+            Pixel Time (usec)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.PitchX">
+            <summary>
+            Pitch x (mm/pixel)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.PitchY">
+            <summary>
+            Pitch y (mm/pixel)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.DpiX">
+            <summary>
+            DPI x (dots/inch)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.DpiY">
+            <summary>
+            DPI y (dots/inch)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.PixelSpeed">
+            <summary>
+            Pixel Speed (mm/s)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.IsInvertColor">
+            <summary>
+            Invert Pixel Color
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.Direction">
+            <summary>
+            Raster Direction
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.Pixels">
+            <summary>
+            Array of x,y pixels 
+            </summary>
+            <remarks>
+            Weight values from 0 ~ 1 <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster._Pixels">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.glBuffer">
+            <summary>
+            GLBuffer 
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.#ctor(System.Double,System.Double,System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="height">Height (mm)</param>
+            <param name="width">Width (mm)</param>
+            <param name="px">Pixel x counts</param>
+            <param name="py">Pixel y counts</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.#ctor(System.Double,System.Double,System.Double[0:,0:])">
+            <summary>
+            Constructor
+            </summary>
+            <param name="height">Height (mm)</param>
+            <param name="width">Width (mm)</param>
+            <param name="weights">Array of x, y weight values from 0 ~ 1<br/>Origin from left bottom <br/></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.#ctor(System.Double,System.String,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="height">Height (mm)</param>
+            <param name="imageFileName">Image filename</param>
+            <param name="isInverted">Invert weight values or not</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.Regen">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.RegenInOut">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.Render(SpiralLab.Sirius2.Winforms.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.MarkVerticalLine(System.Int32,System.Boolean,SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <summary>
+            Mark vertical line 
+            </summary>
+            <param name="px">Index of x line</param>
+            <param name="btmToTop"></param>
+            <param name="marker"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.MarkHorizontalLine(System.Int32,System.Boolean,SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <summary>
+            Mark horizozntal line
+            </summary>
+            <param name="py">Index of y line</param>
+            <param name="leftToRight"></param>
+            <param name="marker"></param>
+            <returns></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityJumpTo">
             <summary>
@@ -8273,6 +8682,31 @@
             <param name="vertices">Created array of <c>Vector3</c> if succeeded</param>
             <returns>Success or failed</returns>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.RasterDirections">
+            <summary>
+            RasterDirections
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.RasterDirections.LeftToRight">
+            <summary>
+            Left to right 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.RasterDirections.RightToLeft">
+            <summary>
+            Right to left
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.RasterDirections.TopToBottom">
+            <summary>
+            Top to bottom
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.RasterDirections.BottomToTop">
+            <summary>
+            Bottom to top
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityImage">
             <summary>
             EntityImage entity
@@ -8393,31 +8827,6 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.IsInvertColor">
             <summary>
             Invert Pixel Color
-            </summary>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityImage.RasterDirection">
-            <summary>
-            RasterDirection
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImage.RasterDirection.LeftToRight">
-            <summary>
-            Left to right 
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImage.RasterDirection.RightToLeft">
-            <summary>
-            Right to left
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImage.RasterDirection.TopToBottom">
-            <summary>
-            Top to bottom
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImage.RasterDirection.BottomToTop">
-            <summary>
-            Bottom to top
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.Direction">
@@ -9604,6 +10013,11 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase.ModelMatrix">
             <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase.IsDisposed">
+            <summary>
+            Is disposed or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase._Name">
             <summary>
@@ -11759,6 +12173,54 @@
             <param name="width">Width (mm) (If width is 0, aspect-ratio will be calculated by automatically)</param>
             <returns><c>EntityImage</c> </returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateRaster(System.Double,System.String,System.Boolean)">
+            <summary>
+            Create <c>EntityRaster</c> entity
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var fileName = Path.Combine("sample", "lena.bmp");
+            var raster = EntityFactory.CreateRaster(2, fileName);
+            raster.RasterMode = RasterModes.MicroVector;
+            raster.PixelPeriod = 1000;
+            raster.PixelTime = 100;
+            raster.Direction = RasterDirections.LeftToRight;
+            document.ActAdd(raster);
+            </code>
+            </summary>
+            <remarks>
+            Extract x,y array of weights from image. <br/>
+            </remarks>
+            <param name="height">Height (mm)</param>
+            <param name="imageFileName">Image filename (extract array of x, y weight values from 0 ~ 1)</param>
+            <param name="isInverted">Invert weight values or not</param>
+            <returns><c>EntityRaster</c> </returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateRaster(System.Double,System.Double,System.Double[0:,0:])">
+            <summary>
+            Create <c>EntityRaster</c> entity
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            // 2D array of weights from 0 ~ 1
+            var weights = new float[100,100];
+            ...
+            var raster = EntityFactory.CreateRaster(2, 2, weights);
+            raster.RasterMode = RasterModes.MicroVector;
+            raster.PixelPeriod = 1000;
+            raster.PixelTime = 100;
+            raster.Direction = RasterDirections.LeftToRight;
+            document.ActAdd(raster);
+            </code>
+            </summary>
+            <remarks>
+            x, y  pixels by array of x,y <br/>
+            </remarks>
+            <param name="width">Width (mm)</param>
+            <param name="height">Height (mm)</param>
+            <param name="weights">Array of x, y weight values from 0 ~ 1<br/>Origin from left bottom <br/></param>
+            <returns><c>EntityRaster</c> </returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateImageText(System.String,System.String,System.Drawing.FontStyle,System.Boolean,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Create <c>EntityImageText</c> entity
@@ -13138,7 +13600,7 @@
             RGB to gray
             </summary>
             <param name="color"><c>Color</c></param>
-            <returns>Gray level from 0 ~ 1</returns>
+            <returns>Gray weight from 0 ~ 1</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.ToStream(System.Drawing.Image,System.Drawing.Imaging.ImageFormat)">
             <summary>
@@ -14670,12 +15132,50 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.LayerFirst">
             <summary>
-            Order of marks are move offset1 and mark layers -> move offset2 and mark layers , ...
+            Order of marks: Mark Layers at Offset1 -> Mark layers at Offset2, ...
+            <code>
+            //Pseudo codes
+            for (int i = 0; i &lt; Offsets.Length; i++)
+            {
+                foreach (var layer in Layers)
+                {
+                    Laser.ListBegin();
+                    Rtc.ListBegin();
+                    ...
+                    LayerWork(i, layer, Offsets[i]);
+                    ...
+                    Laser.ListEnd();
+                    Rtc.ListEnd();
+                    Rtc.ListExecute(true);
+                    ...
+                }
+            }
+            </code>
+            <remarks>
+            Default: <c>MarkProcedures.LayerFirst</c>
+            </remarks>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.OffsetFirst">
             <summary>
-            Order of marks are mark layer1 with offset1 and offset2, ... -> mark layer2 with offset1 and offset2, ... 
+            Order of marks: Mark Layer1 at Offsets -> Mark Layer2 at Offsets, ... 
+            <code>
+            //Pseudo codes
+            foreach (var layer in Layers)
+            {
+                Laser.ListBegin();
+                Rtc.ListBegin();        
+                for (int i = 0; i &lt; Offsets.Length; i++)
+                {
+                    ...
+                    LayerWork(i, layer, Offsets[i]);
+                    ...
+                }
+                Laser.ListEnd();
+                Rtc.ListEnd();
+                Rtc.ListExecute(true);
+            }
+            </code>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.UserDefined1">
@@ -15786,11 +16286,27 @@
                 var rtcWobbel = rtc as IRtcWobbel;
                 var rtcSyncAxis = rtc as IRtcSyncAxis;
                 bool success = true;
-            
+                bool isModifiedFrequency = false;
                 if (laser is ILaserPowerControl laserPowerControl)
-                    success &amp;= laserPowerControl.ListPower(pen.Power);
-            
-                success &amp;= rtc.ListFrequency(pen.Frequency, pen.PulseWidth);
+                {
+                     switch (laserPowerControl.PowerControlMethod)
+                     {
+                         case PowerControlMethods.Frequency:
+                             rtc.PulseWidth = pen.PulseWidth;
+                             isModifiedFrequency = true;
+                             break;
+                         case PowerControlMethods.DutyCycle:
+                             rtc.Frequency = pen.Frequency;
+                             success &amp;= laserPowerControl.ListPower(pen.Power);
+                             isModifiedFrequency = true;
+                             break;
+                         default:
+                         success &amp;= laserPowerControl.ListPower(pen.Power);
+                         break;
+                     }
+                }
+                if (!isModifiedFrequency)
+                     success &amp;= rtc.ListFrequency(pen.Frequency, pen.PulseWidth);
                 success &amp;= rtc.ListDelay(pen.LaserOnDelay, pen.LaserOffDelay, pen.ScannerJumpDelay, pen.ScannerMarkDelay, pen.ScannerPolygonDelay);
                 if (null != rtcExtension)
                 {
@@ -15805,6 +16321,14 @@
                 {
                     success &amp;= rtcExtension.ListFirstPulseKiller(pen.LaserFpk);
                     success &amp;= rtcExtension.ListQSwitchDelay(pen.LaserQSwitchDelay);
+                }
+                if (null != rtcSkywriting)
+                {
+                     double cosineLimit = Math.Cos(Mathematics.MathHelper.DegToRad(pen.AngularLimit));
+                     if (pen.IsSkyWritingEnabled)
+                         success &amp;= rtcSkywriting.ListSkyWritingBegin(pen.SkyWritingMode, pen.LaserOnShift, pen.TimeLag, pen.Prev, pen.Post, cosineLimit);
+                     else
+                         success &amp;= rtcSkywriting.ListSkyWritingEnd();
                 }
                 if (null != rtcWobbel)
                 {
@@ -16085,6 +16609,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ColorLight">
             <summary>
             Color of light
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.LightPosition">
+            <summary>
+            Position of light
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ColorFov">
@@ -19668,6 +20197,9 @@
             <c>IDocument</c> is created by automatically. <br/>
             </remarks>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.OnLoad(System.EventArgs)">
             <inheritdoc/>
         </member>
@@ -19897,6 +20429,11 @@
             <c>ViewModes</c>
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.IView.Marker">
+            <summary>
+            <c>IMarker</c> interface
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IView.Renderer">
             <summary>
             <c>OpenTK.GLControl</c>
@@ -20083,6 +20620,9 @@
             <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ViewBase.Document">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ViewBase.Marker">
             <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ViewBase.ViewMode">
