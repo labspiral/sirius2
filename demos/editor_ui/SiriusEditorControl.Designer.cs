@@ -1,5 +1,5 @@
 ﻿namespace Demos
-{
+{ 
     partial class SiriusEditorUserControl
     {
         /// <summary> 
@@ -66,28 +66,6 @@
             this.btnRectangle = new System.Windows.Forms.ToolStripButton();
             this.btnPolyline = new System.Windows.Forms.ToolStripButton();
             this.btnSpiral = new System.Windows.Forms.ToolStripButton();
-            this.btnImportFile = new System.Windows.Forms.ToolStripButton();
-            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.mnuTimer = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuJumpTo = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMeasurementBeginEnd = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMoF = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMofXYBeginEnd = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMofXYWait = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuMofAngularBeginEnd = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMofAngularWait = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem26 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem27 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuAlcDefinedVector = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuZDelta = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuZDefocus = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuData = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuWriteData = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuWriteDataExt16 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuWriteDataExt16Cond = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuWaitDataExt16Cond = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnText = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImageText = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,7 +80,29 @@
             this.mnuPDF417 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuBarcode1D = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnImportFile = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.mnuTimer = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuJumpTo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMeasurementBeginEnd = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMoF = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMoFXYBeginEnd = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMoFXYWait = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMoFAngularBeginEnd = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMoFAngularWait = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMoFExternalStartDelay = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMoFRepeat = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAlcDefinedVector = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuZDelta = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuZDefocus = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuData = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuWriteData = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuWriteDataExt16 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuWriteDataExt16Cond = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuWaitDataExt16Cond = new System.Windows.Forms.ToolStripMenuItem();
             this.tlsTop = new System.Windows.Forms.ToolStrip();
             this.btnAbout = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -458,11 +458,11 @@
             this.btnRectangle,
             this.btnPolyline,
             this.btnSpiral,
-            this.btnImportFile,
-            this.toolStripDropDownButton3,
             this.toolStripDropDownButton1,
             this.ddbBarcode,
-            this.toolStripSeparator3});
+            this.btnImportFile,
+            this.toolStripSeparator3,
+            this.toolStripDropDownButton3});
             this.tlsTop2.Name = "tlsTop2";
             // 
             // btnPoint
@@ -524,141 +524,6 @@
             this.btnSpiral.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.btnSpiral, "btnSpiral");
             this.btnSpiral.Name = "btnSpiral";
-            // 
-            // btnImportFile
-            // 
-            this.btnImportFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.btnImportFile, "btnImportFile");
-            this.btnImportFile.Name = "btnImportFile";
-            // 
-            // toolStripDropDownButton3
-            // 
-            this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuTimer,
-            this.mnuJumpTo,
-            this.mnuMeasurementBeginEnd,
-            this.mnuMoF,
-            this.mnuAlcDefinedVector,
-            this.mnuZDelta,
-            this.mnuZDefocus,
-            this.mnuData});
-            resources.ApplyResources(this.toolStripDropDownButton3, "toolStripDropDownButton3");
-            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
-            // 
-            // mnuTimer
-            // 
-            resources.ApplyResources(this.mnuTimer, "mnuTimer");
-            this.mnuTimer.Name = "mnuTimer";
-            // 
-            // mnuJumpTo
-            // 
-            resources.ApplyResources(this.mnuJumpTo, "mnuJumpTo");
-            this.mnuJumpTo.Name = "mnuJumpTo";
-            // 
-            // mnuMeasurementBeginEnd
-            // 
-            resources.ApplyResources(this.mnuMeasurementBeginEnd, "mnuMeasurementBeginEnd");
-            this.mnuMeasurementBeginEnd.Name = "mnuMeasurementBeginEnd";
-            // 
-            // mnuMoF
-            // 
-            this.mnuMoF.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuMofXYBeginEnd,
-            this.mnuMofXYWait,
-            this.toolStripSeparator8,
-            this.mnuMofAngularBeginEnd,
-            this.mnuMofAngularWait,
-            this.toolStripSeparator11,
-            this.toolStripMenuItem26,
-            this.toolStripMenuItem27});
-            resources.ApplyResources(this.mnuMoF, "mnuMoF");
-            this.mnuMoF.Name = "mnuMoF";
-            // 
-            // mnuMofXYBeginEnd
-            // 
-            resources.ApplyResources(this.mnuMofXYBeginEnd, "mnuMofXYBeginEnd");
-            this.mnuMofXYBeginEnd.Name = "mnuMofXYBeginEnd";
-            // 
-            // mnuMofXYWait
-            // 
-            resources.ApplyResources(this.mnuMofXYWait, "mnuMofXYWait");
-            this.mnuMofXYWait.Name = "mnuMofXYWait";
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
-            // 
-            // mnuMofAngularBeginEnd
-            // 
-            resources.ApplyResources(this.mnuMofAngularBeginEnd, "mnuMofAngularBeginEnd");
-            this.mnuMofAngularBeginEnd.Name = "mnuMofAngularBeginEnd";
-            // 
-            // mnuMofAngularWait
-            // 
-            resources.ApplyResources(this.mnuMofAngularWait, "mnuMofAngularWait");
-            this.mnuMofAngularWait.Name = "mnuMofAngularWait";
-            // 
-            // toolStripSeparator11
-            // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
-            // 
-            // toolStripMenuItem26
-            // 
-            resources.ApplyResources(this.toolStripMenuItem26, "toolStripMenuItem26");
-            this.toolStripMenuItem26.Name = "toolStripMenuItem26";
-            // 
-            // toolStripMenuItem27
-            // 
-            resources.ApplyResources(this.toolStripMenuItem27, "toolStripMenuItem27");
-            this.toolStripMenuItem27.Name = "toolStripMenuItem27";
-            // 
-            // mnuAlcDefinedVector
-            // 
-            resources.ApplyResources(this.mnuAlcDefinedVector, "mnuAlcDefinedVector");
-            this.mnuAlcDefinedVector.Name = "mnuAlcDefinedVector";
-            // 
-            // mnuZDelta
-            // 
-            resources.ApplyResources(this.mnuZDelta, "mnuZDelta");
-            this.mnuZDelta.Name = "mnuZDelta";
-            // 
-            // mnuZDefocus
-            // 
-            resources.ApplyResources(this.mnuZDefocus, "mnuZDefocus");
-            this.mnuZDefocus.Name = "mnuZDefocus";
-            // 
-            // mnuData
-            // 
-            this.mnuData.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuWriteData,
-            this.mnuWriteDataExt16,
-            this.mnuWriteDataExt16Cond,
-            this.mnuWaitDataExt16Cond});
-            resources.ApplyResources(this.mnuData, "mnuData");
-            this.mnuData.Name = "mnuData";
-            // 
-            // mnuWriteData
-            // 
-            resources.ApplyResources(this.mnuWriteData, "mnuWriteData");
-            this.mnuWriteData.Name = "mnuWriteData";
-            // 
-            // mnuWriteDataExt16
-            // 
-            resources.ApplyResources(this.mnuWriteDataExt16, "mnuWriteDataExt16");
-            this.mnuWriteDataExt16.Name = "mnuWriteDataExt16";
-            // 
-            // mnuWriteDataExt16Cond
-            // 
-            resources.ApplyResources(this.mnuWriteDataExt16Cond, "mnuWriteDataExt16Cond");
-            this.mnuWriteDataExt16Cond.Name = "mnuWriteDataExt16Cond";
-            // 
-            // mnuWaitDataExt16Cond
-            // 
-            resources.ApplyResources(this.mnuWaitDataExt16Cond, "mnuWaitDataExt16Cond");
-            this.mnuWaitDataExt16Cond.Name = "mnuWaitDataExt16Cond";
             // 
             // toolStripDropDownButton1
             // 
@@ -746,10 +611,145 @@
             resources.ApplyResources(this.mnuBarcode1D, "mnuBarcode1D");
             this.mnuBarcode1D.Name = "mnuBarcode1D";
             // 
+            // btnImportFile
+            // 
+            this.btnImportFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.btnImportFile, "btnImportFile");
+            this.btnImportFile.Name = "btnImportFile";
+            // 
             // toolStripSeparator3
             // 
             resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             this.toolStripSeparator3.Name = "toolStripSeparator3";
+            // 
+            // toolStripDropDownButton3
+            // 
+            this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuTimer,
+            this.mnuJumpTo,
+            this.mnuMeasurementBeginEnd,
+            this.mnuMoF,
+            this.mnuAlcDefinedVector,
+            this.mnuZDelta,
+            this.mnuZDefocus,
+            this.mnuData});
+            resources.ApplyResources(this.toolStripDropDownButton3, "toolStripDropDownButton3");
+            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
+            // 
+            // mnuTimer
+            // 
+            resources.ApplyResources(this.mnuTimer, "mnuTimer");
+            this.mnuTimer.Name = "mnuTimer";
+            // 
+            // mnuJumpTo
+            // 
+            resources.ApplyResources(this.mnuJumpTo, "mnuJumpTo");
+            this.mnuJumpTo.Name = "mnuJumpTo";
+            // 
+            // mnuMeasurementBeginEnd
+            // 
+            resources.ApplyResources(this.mnuMeasurementBeginEnd, "mnuMeasurementBeginEnd");
+            this.mnuMeasurementBeginEnd.Name = "mnuMeasurementBeginEnd";
+            // 
+            // mnuMoF
+            // 
+            this.mnuMoF.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMoFXYBeginEnd,
+            this.mnuMoFXYWait,
+            this.toolStripSeparator8,
+            this.mnuMoFAngularBeginEnd,
+            this.mnuMoFAngularWait,
+            this.toolStripSeparator11,
+            this.mnuMoFExternalStartDelay,
+            this.mnuMoFRepeat});
+            resources.ApplyResources(this.mnuMoF, "mnuMoF");
+            this.mnuMoF.Name = "mnuMoF";
+            // 
+            // mnuMoFXYBeginEnd
+            // 
+            resources.ApplyResources(this.mnuMoFXYBeginEnd, "mnuMoFXYBeginEnd");
+            this.mnuMoFXYBeginEnd.Name = "mnuMoFXYBeginEnd";
+            // 
+            // mnuMoFXYWait
+            // 
+            resources.ApplyResources(this.mnuMoFXYWait, "mnuMoFXYWait");
+            this.mnuMoFXYWait.Name = "mnuMoFXYWait";
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
+            // 
+            // mnuMoFAngularBeginEnd
+            // 
+            resources.ApplyResources(this.mnuMoFAngularBeginEnd, "mnuMoFAngularBeginEnd");
+            this.mnuMoFAngularBeginEnd.Name = "mnuMoFAngularBeginEnd";
+            // 
+            // mnuMoFAngularWait
+            // 
+            resources.ApplyResources(this.mnuMoFAngularWait, "mnuMoFAngularWait");
+            this.mnuMoFAngularWait.Name = "mnuMoFAngularWait";
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
+            // 
+            // mnuMoFExternalStartDelay
+            // 
+            resources.ApplyResources(this.mnuMoFExternalStartDelay, "mnuMoFExternalStartDelay");
+            this.mnuMoFExternalStartDelay.Name = "mnuMoFExternalStartDelay";
+            // 
+            // mnuMoFRepeat
+            // 
+            resources.ApplyResources(this.mnuMoFRepeat, "mnuMoFRepeat");
+            this.mnuMoFRepeat.Name = "mnuMoFRepeat";
+            // 
+            // mnuAlcDefinedVector
+            // 
+            resources.ApplyResources(this.mnuAlcDefinedVector, "mnuAlcDefinedVector");
+            this.mnuAlcDefinedVector.Name = "mnuAlcDefinedVector";
+            // 
+            // mnuZDelta
+            // 
+            resources.ApplyResources(this.mnuZDelta, "mnuZDelta");
+            this.mnuZDelta.Name = "mnuZDelta";
+            // 
+            // mnuZDefocus
+            // 
+            resources.ApplyResources(this.mnuZDefocus, "mnuZDefocus");
+            this.mnuZDefocus.Name = "mnuZDefocus";
+            // 
+            // mnuData
+            // 
+            this.mnuData.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuWriteData,
+            this.mnuWriteDataExt16,
+            this.mnuWriteDataExt16Cond,
+            this.mnuWaitDataExt16Cond});
+            resources.ApplyResources(this.mnuData, "mnuData");
+            this.mnuData.Name = "mnuData";
+            // 
+            // mnuWriteData
+            // 
+            resources.ApplyResources(this.mnuWriteData, "mnuWriteData");
+            this.mnuWriteData.Name = "mnuWriteData";
+            // 
+            // mnuWriteDataExt16
+            // 
+            resources.ApplyResources(this.mnuWriteDataExt16, "mnuWriteDataExt16");
+            this.mnuWriteDataExt16.Name = "mnuWriteDataExt16";
+            // 
+            // mnuWriteDataExt16Cond
+            // 
+            resources.ApplyResources(this.mnuWriteDataExt16Cond, "mnuWriteDataExt16Cond");
+            this.mnuWriteDataExt16Cond.Name = "mnuWriteDataExt16Cond";
+            // 
+            // mnuWaitDataExt16Cond
+            // 
+            resources.ApplyResources(this.mnuWaitDataExt16Cond, "mnuWaitDataExt16Cond");
+            this.mnuWaitDataExt16Cond.Name = "mnuWaitDataExt16Cond";
             // 
             // tlsTop
             // 
@@ -936,6 +936,7 @@
             this.lblConnect,
             this.toolStripStatusLabel3});
             this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.ShowItemToolTips = true;
             this.statusStrip1.SizingGrip = false;
             // 
             // lblName
@@ -1274,14 +1275,14 @@
         private System.Windows.Forms.ToolStripMenuItem mnuWriteDataExt16Cond;
         private System.Windows.Forms.ToolStripMenuItem mnuWaitDataExt16Cond;
         private System.Windows.Forms.ToolStripMenuItem mnuMoF;
-        private System.Windows.Forms.ToolStripMenuItem mnuMofXYBeginEnd;
-        private System.Windows.Forms.ToolStripMenuItem mnuMofXYWait;
+        private System.Windows.Forms.ToolStripMenuItem mnuMoFXYBeginEnd;
+        private System.Windows.Forms.ToolStripMenuItem mnuMoFXYWait;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ToolStripMenuItem mnuMofAngularBeginEnd;
-        private System.Windows.Forms.ToolStripMenuItem mnuMofAngularWait;
+        private System.Windows.Forms.ToolStripMenuItem mnuMoFAngularBeginEnd;
+        private System.Windows.Forms.ToolStripMenuItem mnuMoFAngularWait;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem26;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem27;
+        private System.Windows.Forms.ToolStripMenuItem mnuMoFExternalStartDelay;
+        private System.Windows.Forms.ToolStripMenuItem mnuMoFRepeat;
         private System.Windows.Forms.ToolStripMenuItem mnuTimer;
         private System.Windows.Forms.ToolStripMenuItem mnuMeasurementBeginEnd;
         private System.Windows.Forms.ToolStripButton btnImportFile;

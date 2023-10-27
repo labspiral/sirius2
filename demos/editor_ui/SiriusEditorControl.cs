@@ -42,6 +42,7 @@ using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Common;
 using SpiralLab.Sirius2.Winforms.UI;
+using System.IO;
 using OpenTK;
 
 namespace Demos
@@ -294,6 +295,8 @@ namespace Demos
                     marker.OnStarted += Marker_OnStarted;
                     marker.OnEnded += Marker_OnEnded;
                 }
+
+                EditorCtrl.View.Marker = marker;
             }
         }
         private IMarker marker;
@@ -457,8 +460,9 @@ namespace Demos
         {
             InitializeComponent();
 
-            Disposed += SiriusEditorUserControl_Disposed;
+        
             VisibleChanged += SiriusEditorUserControl_VisibleChanged;
+            Disposed += SiriusEditorUserControl_Disposed;
 
             tabControl1.SelectedIndexChanged += TabControl1_SelectedIndexChanged;
             timerProgress.Interval = 100;
@@ -493,6 +497,7 @@ namespace Demos
             btnSpiral.Click += BtnSpiral_Click;
             btnText.Click += BtnText_Click;
             btnImageText.Click += BtnImageText_Click;
+            btnRaster.Click += BtnRaster_Click;
             btnCircularText.Click += BtnCircularText_Click;
             btnCharacterSetText.Click += BtnCharacterSetText_Click;
             btnSiriusText.Click += BtnSiriusText_Click;
@@ -506,10 +511,12 @@ namespace Demos
             mnuTimer.Click += MnuTimer_Click;
             mnuJumpTo.Click += MnuJumpTo_Click;
 
-            mnuMofXYBeginEnd.Click += MnuMofXYBeginEnd_Click;
-            mnuMofXYWait.Click += MnuMofXYWait_Click;
-            mnuMofAngularBeginEnd.Click += MnuMofAngularBeginEnd_Click;
-            mnuMofAngularWait.Click += MnuMofAngularWait_Click;
+            mnuMoFXYBeginEnd.Click += MnuMofXYBeginEnd_Click;
+            mnuMoFXYWait.Click += MnuMofXYWait_Click;
+            mnuMoFAngularBeginEnd.Click += MnuMofAngularBeginEnd_Click;
+            mnuMoFAngularWait.Click += MnuMofAngularWait_Click;
+            mnuMoFExternalStartDelay.Click += MnuMoFExternalStartDelay_Click;
+
             mnuZDelta.Click += MnuZDelta_Click;
             mnuZDefocus.Click += MnuZDefocus_Click;
 
@@ -531,6 +538,44 @@ namespace Demos
         }
 
         /// <inheritdoc/>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.F5))
+            {
+                if (null != Marker)
+                {
+                    Marker.Stop();
+                    return true;
+                }
+            }
+            else if (keyData == (Keys.F5))
+            {
+                if (null != Marker)
+                {
+                    if (!Marker.IsBusy)
+                    {
+                        var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to start mark ?{Environment.NewLine}Target: {Marker.MarkTarget}, Procedure: {Marker.MarkProcedure}{Environment.NewLine}Offset(s): {Marker.Offsets.Length}", "Warning", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = form.ShowDialog(this);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            Marker.Start();
+                            return true;
+                        }
+                    }
+                }
+            }
+            else if (keyData == (Keys.F6))
+            {
+                if (null != Marker)
+                {
+                    Marker.Reset();
+                    return true;
+                }
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        /// <inheritdoc/>
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -542,7 +587,7 @@ namespace Demos
             TreeViewBlockCtrl.View = EditorCtrl.View;
             PropertyGridCtrl.View = EditorCtrl.View;
 
-     
+
         }
         private void SiriusEditorUserControl_VisibleChanged(object sender, EventArgs e)
         {
@@ -774,6 +819,11 @@ namespace Demos
                 document.ActInsert(entity, document.ActiveLayer, 0);
             }
         }
+        private void MnuMoFExternalStartDelay_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateMoFExternalStartDelay( RtcEncoders.EncX, 0);
+            document.ActAdd(entity);
+        }
 
         private void BtnPoints_Click(object sender, EventArgs e)
         {
@@ -871,7 +921,22 @@ namespace Demos
             var entity = EntityFactory.CreateImageText(form.FontName, form.ImageText, form.Style, form.IsFill, form.OutlinePixel, form.HeightPixel, 5, 10);
             Document.ActAdd(entity);
         }
+        private void BtnRaster_Click(object sender, EventArgs e)
+        {
+            //var entity = new EntityRaster(2, 2, 100, 100);
+            //Document.ActAdd(entity);
+            var dlg = new OpenFileDialog();
+            dlg.Filter = Config.FileImportImageFilters;
+            dlg.InitialDirectory = Config.SamplePath;
+            dlg.Title = "Open Image File";
 
+            DialogResult result = dlg.ShowDialog();
+            if (result != DialogResult.OK)
+                return;
+          
+            var entity = new EntityRaster(2, dlg.FileName);
+            Document.ActAdd(entity);
+        }
         private void BtnDivide_Click(object sender, EventArgs e)
         {
             //if (document.Selected.Length > 0)
@@ -1114,6 +1179,8 @@ namespace Demos
         {
             if (!IsDisableControl)
             {
+                tlsTop.Enabled = enable;
+                tlsTop2.Enabled = enable;
                 TreeViewCtrl.Enabled = enable;
                 TreeViewBlockCtrl.Enabled = enable;
                 EditorCtrl.Enabled = enable;
@@ -1237,8 +1304,10 @@ namespace Demos
                     lblProcessTime.Text = $"Failed: {ts.TotalSeconds:F1} sec";
                 }
                 EnableDisableControlByMarking(true);
+                EditorCtrl.Focus();
             }));
         }
+
         /// <summary>
         /// Do <c>IView</c> render
         /// </summary>
