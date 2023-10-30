@@ -158,7 +158,7 @@ namespace Demos
 
             bool success = true;
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListType.Auto);
+            success &= rtc.ListBegin(ListTypes.Auto);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             // 16 bits incremental counter
             for (uint i=0; i<65536; i++)
@@ -194,7 +194,7 @@ namespace Demos
             int circleRepeats = 10;
             bool success = true;
             // List buffer with double buffered 
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
 
             // Wait until EXTENSTION1 PORT DIN0 goes to HIGH 
             success &= rtcExtension.ListReadExtDI16WaitUntil((uint)(0x01 << bitPos), 0x00);

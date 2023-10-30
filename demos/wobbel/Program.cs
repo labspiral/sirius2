@@ -182,7 +182,7 @@ namespace Demos
 
             bool success = true;
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             for (int i = 0; i < repeats; i++)
             {
@@ -242,7 +242,7 @@ namespace Demos
 
             bool success = true;
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             success &= rtcWobbel.ListWobbelBegin(0.5, 0.5, WobbelFrequency, WobbelShapes.Ellipse);
             for (int i = 0; i < repeats; i++)
@@ -292,7 +292,7 @@ namespace Demos
 
             bool success = true;
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             success &= rtcWobbel.ListWobbelBegin(1, 5, WobbelFrequency, WobbelShapes.Ellipse);
             for (int i = 0; i < repeats; i++)
@@ -342,7 +342,7 @@ namespace Demos
 
             bool success = true;
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             success &= rtcWobbel.ListWobbelBegin(0.5, 0.5, WobbelFrequency, WobbelShapes.Perpendicular8); // WobbelShapes.Parallel8
             for (int i = 0; i < repeats; i++)
@@ -391,7 +391,7 @@ namespace Demos
 
             bool success = true;
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             for (int i = 0; i < repeats; i++)
             {
@@ -442,7 +442,7 @@ namespace Demos
 
             bool success = true;
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             success &= rtcWobbel.ListWobbelBegin(0.5, 0.5, WobbelFrequency, WobbelShapes.Ellipse);
             for (int i = 0; i < repeats; i++)
@@ -495,7 +495,7 @@ namespace Demos
 
             bool success = true;
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             success &= rtcWobbel.ListWobbelBegin(0.5, 1.0, WobbelFrequency, WobbelShapes.Ellipse);
             for (int i = 0; i < repeats; i++)
@@ -548,7 +548,7 @@ namespace Demos
 
             bool success = true;
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             success &= rtcWobbel.ListWobbelBegin(0.5, 0.5, WobbelFrequency, WobbelShapes.Perpendicular8); // WobbelShapes.Parallel8
             for (int i = 0; i < repeats; i++)
@@ -601,7 +601,7 @@ namespace Demos
 
             bool success = true;
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
 
             var list = new List<KeyValuePair<Vector2, uint>>();

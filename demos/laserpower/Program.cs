@@ -261,7 +261,7 @@ namespace Demos
 
             bool success = true;
             // List begin with double buffered list
-            success &= rtc.ListBegin(ListType.Auto);
+            success &= rtc.ListBegin(ListTypes.Auto);
             success &= laser.ListBegin();
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);            
             success &= laserPowerControl.ListPower(watt);

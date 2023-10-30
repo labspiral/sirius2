@@ -159,7 +159,7 @@ namespace Demos
 
             bool success = true;
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
 
             success &= rtcSkywriting.ListSkyWritingBegin(mode, 500, 200, 200 * 0.15, 200 * 0.1, CosineLimit);

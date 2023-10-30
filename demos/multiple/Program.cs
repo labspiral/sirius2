@@ -230,7 +230,7 @@ namespace Demos
 
             bool success = true;
             // List begin with double buffered list
-            success &= rtc.ListBegin(ListType.Auto);
+            success &= rtc.ListBegin(ListTypes.Auto);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             success &= rtc.ListJumpTo(new Vector2(radius, 0));
             success &= rtc.ListArcTo(Vector2.Zero, 360);

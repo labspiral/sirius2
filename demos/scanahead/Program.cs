@@ -343,7 +343,7 @@ namespace Demos
 
             Console.WriteLine("WARNING !!! LASER IS BUSY... DoHeavyWork thread");
             // Auto list buffer (doubled) 
-            success &= rtc.ListBegin(ListType.Auto);
+            success &= rtc.ListBegin(ListTypes.Auto);
             success &= rtc.ListJumpTo(new System.Numerics.Vector2(-width / 2, height / 2));
             for (int i = 0; i < 1000 * 1000 * 10; i++)
             {

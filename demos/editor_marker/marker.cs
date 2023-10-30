@@ -77,12 +77,12 @@ namespace Demos
                 isExternalStart = value;
                 if (isExternalStart)
                 {
-                    listType = ListType.Single;
+                    listType = ListTypes.Single;
                     if (1 != this.Document.InternalData.Layers.Count)
                         MessageBox.Show($"Should be single layer only to use external /START", "Warning", MessageBoxButtons.OK);
                 }
                 else
-                    listType = ListType.Auto;
+                    listType = ListTypes.Auto;
             }
         }
         private bool isExternalStart = false;
@@ -96,7 +96,7 @@ namespace Demos
         [Category("Data")]
         [DisplayName("List type")]
         [Description("List type")]
-        public virtual ListType ListType
+        public virtual ListTypes ListType
         {
             get { return listType; }
             set {
@@ -108,7 +108,7 @@ namespace Demos
                 listType = value;
             }
         }
-        private ListType listType;
+        private ListTypes listType;
 
         /// <summary>
         /// EntityMeasurementBegin (if executed)
@@ -195,7 +195,7 @@ namespace Demos
             : base()
         {
             IsExternalStart = false;
-            ListType = ListType.Auto;
+            ListType = ListTypes.Auto;
             isMeasurementPlot = false;
 
             // set 'True' if check scanner status
@@ -372,7 +372,7 @@ namespace Demos
                     return false;
                 }
                 // list type to single for external /START by forcily 
-                listType = ListType.Single;
+                listType = ListTypes.Single;
             }
 
             if (null == Offsets || 0 == Offsets.Length)

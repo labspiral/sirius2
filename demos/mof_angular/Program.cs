@@ -162,7 +162,7 @@ namespace Demos
 
             bool success = true;
             // Start list buffer
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             var rotateCenter = new Vector2(-50, 0);
 
             /* global coordinate system
@@ -298,7 +298,7 @@ namespace Demos
 
             bool success = true;
             // Start list buffer
-            success &= rtc.ListBegin( ListType.Single);
+            success &= rtc.ListBegin( ListTypes.Single);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
 
             // Draw line

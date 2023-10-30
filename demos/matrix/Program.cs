@@ -145,7 +145,7 @@ namespace Demos
             };
 
             bool success = true;
-            success &= rtc.ListBegin(ListType.Auto);
+            success &= rtc.ListBegin(ListTypes.Auto);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             for (float angle = 0; angle < 360; angle += 10)
             {
@@ -227,7 +227,7 @@ namespace Demos
 
             bool success = true;
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListType.Auto);
+            success &= rtc.ListBegin(ListTypes.Auto);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             for (float angle = 0; angle < 360; angle +=10)
             {
@@ -308,7 +308,7 @@ namespace Demos
 
             bool success = true;
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListType.Auto);
+            success &= rtc.ListBegin(ListTypes.Auto);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             for (float angle = 0; angle < 360; angle += 10)
             {
@@ -405,7 +405,7 @@ namespace Demos
 
             bool success = true;
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListType.Auto);
+            success &= rtc.ListBegin(ListTypes.Auto);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
            
             // With tranform by matrix

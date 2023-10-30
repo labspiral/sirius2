@@ -176,7 +176,7 @@ namespace Demos
             rtc2ndHead.PrimaryHeadBaseOffset = offset;            
 
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
 
             float bottom = -interval * (int)(rows / 2);
             float top = -bottom;

@@ -175,7 +175,7 @@ namespace Demos
 
             bool success = true;
             // Start list buffer
-            success &= rtc.ListBegin( ListType.Single);
+            success &= rtc.ListBegin( ListTypes.Single);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
 
             // Each dx = 1 mm
@@ -230,7 +230,7 @@ namespace Demos
 
             bool success = true;
             // Start list buffer
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             success &= rtcJumpMode.ListJumpMode(JumpModeFlags.EnabledAndActivated);
 

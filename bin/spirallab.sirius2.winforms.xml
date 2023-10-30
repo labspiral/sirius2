@@ -4417,7 +4417,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Align_DESC">
             <summary>
-              Looks up a localized string similar to Translate for Align (mm).
+              Looks up a localized string similar to Translate for Align (mm) (Used when Alignment has configured).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Align_DISP">
@@ -4427,7 +4427,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Alignment_DESC">
             <summary>
-              Looks up a localized string similar to Alignments.
+              Looks up a localized string similar to Alignments (ModelMatrix = ModelAlign * ModelScale * ModelRotate * ModelTranslate).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Alignment_DISP">
@@ -4442,7 +4442,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Bound_DESC">
             <summary>
-              Looks up a localized string similar to Bouding Box (WxHxD: Width, Height, Depth).
+              Looks up a localized string similar to Bouding Box (WxHxD: Width, Heigh and Depth).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Bound_DISP">
@@ -4470,9 +4470,14 @@
               Looks up a localized string similar to Description.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Entity_ID_DESC">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Entity_id_DESC">
             <summary>
               Looks up a localized string similar to Unique Entity ID.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Entity_id_DISP">
+            <summary>
+              Looks up a localized string similar to ID.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Entity_type_DESC">
@@ -4493,11 +4498,6 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.HitTest_DISP">
             <summary>
               Looks up a localized string similar to HitTest.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.ID_DISP">
-            <summary>
-              Looks up a localized string similar to ID.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.In_DESC">
@@ -4542,7 +4542,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Model_DESC">
             <summary>
-              Looks up a localized string similar to Model 4x4 Matrix.
+              Looks up a localized string similar to Model 4x4 Matrix (ModelMatrix = ModelAlign * ModelScale * ModelRotate * ModelTranslate).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Model_DISP">
@@ -4592,7 +4592,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Rotate_DESC">
             <summary>
-              Looks up a localized string similar to Rotate X,Y,Z Angle (°) .
+              Looks up a localized string similar to Model Rotate X,Y,Z Angle (°) .
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Rotate_DISP">
@@ -4602,7 +4602,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Scale_DESC">
             <summary>
-              Looks up a localized string similar to Scale X,Y,Z (Default: 1, Should be &gt; 0).
+              Looks up a localized string similar to Model Scale X,Y,Z (Default: 1, Should be &gt; 0).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Scale_DISP">
@@ -4627,7 +4627,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Translate_DESC">
             <summary>
-              Looks up a localized string similar to Translate Position X,Y,Z (mm) .
+              Looks up a localized string similar to Model Translate Position X,Y,Z (mm) .
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Translate_DISP">
@@ -8264,15 +8264,15 @@
             <summary>
             Constructor (MoF XY)
             </summary>
-            <param name="encoder"><c>RtcEncoder</c></param>
-            <param name="condition"><c>EncoderWaitCondition</c></param>
+            <param name="encoder"><c>RtcEncoders</c></param>
+            <param name="condition"><c>EncoderWaitConditions</c></param>
             <param name="position">Wait position (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.#ctor(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double)">
             <summary>
             Constructor (MoF Angular)
             </summary>
-            <param name="condition"><c>EncoderWaitCondition</c></param>
+            <param name="condition"><c>EncoderWaitConditions</c></param>
             <param name="angle">Wait degree (angle)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.ToString">
@@ -10464,7 +10464,7 @@
             </summary>
             <remarks>
             4x4 matrix for transformation. <br/>
-            <c>ModelMatrix</c> = <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelAlign">ModelAlign</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelRotate</see> 
+            <c>ModelMatrix</c> = <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelAlign">ModelAlign</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelTranslate</see> 
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Node">
@@ -10810,13 +10810,13 @@
             ALC (Automatic Laser Control) 100% output value
             </summary>
             <remarks>
-            If <c>AutoLaserControlSignal.Analog1</c>, analog voltage. <br/>
-            If <c>AutoLaserControlSignal.Analog2</c>, analog voltage. <br/>
-            If <c>AutoLaserControlSignal.ExtDO8</c>, 8bits (0~255). <br/>
-            If <c>AutoLaserControlSignal.ExtDO16</c>, 16bits (0~65535). <br/>
-            If <c>AutoLaserControlSignal.PulseWidth</c>, usec. <br/>
-            If <c>AutoLaserControlSignal.Frequency</c>, Hz. <br/>
-            If <c>AutoLaserControlSignal.SpotDistance</c>, spot distance (mm). <br/>
+            If <c>AutoLaserControlSignals.Analog1</c>, analog voltage. <br/>
+            If <c>AutoLaserControlSignals.Analog2</c>, analog voltage. <br/>
+            If <c>AutoLaserControlSignals.ExtDO8</c>, 8bits (0~255). <br/>
+            If <c>AutoLaserControlSignals.ExtDO16</c>, 16bits (0~65535). <br/>
+            If <c>AutoLaserControlSignals.PulseWidth</c>, usec. <br/>
+            If <c>AutoLaserControlSignals.Frequency</c>, Hz. <br/>
+            If <c>AutoLaserControlSignals.SpotDistance</c>, spot distance (mm). <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcMinValue">
@@ -10824,13 +10824,13 @@
             ALC (Automatic Laser Control) min. output value
             </summary>
             <remarks>
-            If <c>AutoLaserControlSignal.Analog1</c>, analog voltage. <br/>
-            If <c>AutoLaserControlSignal.Analog2</c>, analog voltage. <br/>
-            If <c>AutoLaserControlSignal.ExtDO8</c>, 8bits (0~255). <br/>
-            If <c>AutoLaserControlSignal.ExtDO16</c>, 16bits (0~65535). <br/>
-            If <c>AutoLaserControlSignal.PulseWidth</c>, usec. <br/>
-            If <c>AutoLaserControlSignal.Frequency</c>, Hz. <br/>
-            If <c>AutoLaserControlSignal.SpotDistance</c>, not used <br/>
+            If <c>AutoLaserControlSignals.Analog1</c>, analog voltage. <br/>
+            If <c>AutoLaserControlSignals.Analog2</c>, analog voltage. <br/>
+            If <c>AutoLaserControlSignals.ExtDO8</c>, 8bits (0~255). <br/>
+            If <c>AutoLaserControlSignals.ExtDO16</c>, 16bits (0~65535). <br/>
+            If <c>AutoLaserControlSignals.PulseWidth</c>, usec. <br/>
+            If <c>AutoLaserControlSignals.Frequency</c>, Hz. <br/>
+            If <c>AutoLaserControlSignals.SpotDistance</c>, not used <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcMaxValue">
@@ -10838,13 +10838,13 @@
             ALC (Automatic Laser Control) max. output value
             </summary>
             <remarks>
-            If <c>AutoLaserControlSignal.Analog1</c>, analog voltage. <br/>
-            If <c>AutoLaserControlSignal.Analog2</c>, analog voltage. <br/>
-            If <c>AutoLaserControlSignal.ExtDO8</c>, 8bits (0~255). <br/>
-            If <c>AutoLaserControlSignal.ExtDO16</c>, 16bits (0~65535). <br/>
-            If <c>AutoLaserControlSignal.PulseWidth</c>, usec. <br/>
-            If <c>AutoLaserControlSignal.Frequency</c>, Hz. <br/>
-            If <c>AutoLaserControlSignal.SpotDistance</c>, not used. <br/>
+            If <c>AutoLaserControlSignals.Analog1</c>, analog voltage. <br/>
+            If <c>AutoLaserControlSignals.Analog2</c>, analog voltage. <br/>
+            If <c>AutoLaserControlSignals.ExtDO8</c>, 8bits (0~255). <br/>
+            If <c>AutoLaserControlSignals.ExtDO16</c>, 16bits (0~65535). <br/>
+            If <c>AutoLaserControlSignals.PulseWidth</c>, usec. <br/>
+            If <c>AutoLaserControlSignals.Frequency</c>, Hz. <br/>
+            If <c>AutoLaserControlSignals.SpotDistance</c>, not used. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcByPositionTable">
@@ -10852,7 +10852,8 @@
             ALC (Automatic Laser Control) with Position Dependent Compensate Table
             </summary>
             <remarks>
-            Key/value pair: distance(or radius) (mm), scale (0~4) <br/>
+            Key: Distance(or radius) (mm) <br/>
+            Value: Scale (0~4) <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.#ctor">
@@ -12414,7 +12415,7 @@
             ...
             var dm = EntityFactory.CreateDataMatrix("0123456789", BarcodeCells.Dots, 3, 4, 4);
             dm.CellDot.RasterMode = RasterModes.JumpAndShoot;
-            dm.CellDot.PixelChannel = ExtensionChannel.ExtAO2;
+            dm.CellDot.PixelChannel = ExtensionChannels.ExtAO2;
             dm.CellDot.PixelPeriod = 1000;
             dm.CellDot.PixelPeriod = 100;
             dm.CellDot.IsZigZag = false;
@@ -12600,7 +12601,7 @@
             </summary>
             <remarks>
             Used with if <c>MarkerRtc.IsExternalStart</c> is <c>True</c>. <br/>
-            Used with if <c>Marker.ListType</c> is <c>ListType.Single</c>. <br/>
+            Used with if <c>Marker.ListType</c> is <c>ListTypes.Single</c>. <br/>
             Used with if <c>Document.Layers.Count</c> is 1. <br/>
             </remarks>
             <param name="encoder"><c>RtcEncoders</c></param>
@@ -12640,7 +12641,7 @@
             <remarks>
             Used with <c>IRtcMoF.ListMofAngularBegin</c> <br/>
             </remarks>
-            <param name="condition"><c>EncoderWaitCondition</c></param>
+            <param name="condition"><c>EncoderWaitConditions</c></param>
             <param name="angle">Wait degree (angle)</param>
             <returns><c>EntityMoFWait</c> </returns>
         </member>
@@ -12695,7 +12696,7 @@
             <code>
             var document = siriusEditorUserControl1.Document;
             ...
-            var begin = EntityFactory.CreateRampBegin(AutoLaserControlSignal.Frequency, 50 * 1000);
+            var begin = EntityFactory.CreateRampBegin(AutoLaserControlSignals.Frequency, 50 * 1000);
             var end = EntityFactory.CreateRampEnd();
             document.ActInsert(begin, document.ActiveLayer, 0);
             document.ActAdd(end);
@@ -12726,7 +12727,7 @@
             <code>
             var document = siriusEditorUserControl1.Document;
             ...
-            var entity = EntityFactory.CreateWriteData(ExtensionChannel.ExtAO2, 2);
+            var entity = EntityFactory.CreateWriteData(ExtensionChannels.ExtAO2, 2);
             document.ActAdd(entity);
             </code>
             </summary>
@@ -14300,7 +14301,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.External__START_DESC">
             <summary>
-              Looks up a localized string similar to Enable/Disable External /START Trigger. (Used with ListType.Single only).
+              Looks up a localized string similar to Enable/Disable External /START Trigger. (Used with ListTypes.Single only).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.External__START_DISP">
@@ -14365,7 +14366,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Repeat_list_DESC">
             <summary>
-              Looks up a localized string similar to Repeat List Bufffer by Jump to Begin of List Infinitely (Used with ListType.Single and MarkProcedures.OffsetFirst only).
+              Looks up a localized string similar to Repeat List Bufffer by Jump to Begin of List Infinitely (Used with ListTypes.Single and MarkProcedures.OffsetFirst only).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Repeat_list_DISP">
@@ -14673,6 +14674,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.AccumulatedMarks">
             <inheritdoc/>
         </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.accumulatedMarks">
+            <summary>
+            Accumulated counts of mark
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.timeSpan">
             <summary>
             TimeSpan
@@ -14970,7 +14976,7 @@
             Enable/Disable Repeat List Bufffer by Jump to Begin of List Infinitely
             </summary>
             <remarks>
-            Used with <c>ListType.Single</c> and <c>MarkProcedures.OffsetFirst only</c>. <br/>
+            Used with <c>ListTypes.Single</c> and <c>MarkProcedures.OffsetFirst only</c>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.ListType">
@@ -15132,7 +15138,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.LayerFirst">
             <summary>
-            Order of marks: Mark Layers at Offset1 -> Mark layers at Offset2, ...
+            Order of marks: Mark Layer(s) at Offset1 -> Mark Layer(s) at Offset2, ...
             <code>
             //Pseudo codes
             for (int i = 0; i &lt; Offsets.Length; i++)
@@ -15158,7 +15164,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkProcedures.OffsetFirst">
             <summary>
-            Order of marks: Mark Layer1 at Offsets -> Mark Layer2 at Offsets, ... 
+            Order of marks: Mark Layer1 at Offset(s) -> Mark Layer2 at Offset(s), ... 
             <code>
             //Pseudo codes
             foreach (var layer in Layers)

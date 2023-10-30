@@ -316,7 +316,7 @@ namespace Demos
             var rtcCharacterSet = rtc as IRtcCharacterSet;
             Debug.Assert(rtcCharacterSet != null);
 
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             success &= rtc.ListJumpTo(new Vector2(-10, 0));
             success &= rtcCharacterSet.ListText("123 456");
             if (success)
@@ -340,7 +340,7 @@ namespace Demos
             var rtcCharacterSet = rtc as IRtcCharacterSet;
             Debug.Assert(rtcCharacterSet != null);
 
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             success &= rtc.ListJumpTo(new Vector2(-10, 0));
             success &= rtcCharacterSet.ListDate(DateFormats.Month, true);
             success &= rtc.ListJumpTo(new Vector2(10, 0));
@@ -365,7 +365,7 @@ namespace Demos
             var rtcCharacterSet = rtc as IRtcCharacterSet;
             Debug.Assert(rtcCharacterSet != null);
 
-            success &= rtc.ListBegin( ListType.Single);
+            success &= rtc.ListBegin( ListTypes.Single);
             success &= rtc.ListJumpTo(new Vector2(-10, 0));
             success &= rtcCharacterSet.ListTime(TimeFormats.Hours24, true);
             success &= rtc.ListJumpTo(new Vector2(10, 0));
@@ -395,7 +395,7 @@ namespace Demos
             //Reset serial no as 1000 with + 1
             rtcCharacterSet.CtlSerialNoReset(1000, 1);
 
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             success &= rtc.ListJumpTo(new Vector2(-10, -20));
             success &= rtcCharacterSet.ListSerialNo(4, SerialNoFormats.LeadingWithZero);
             success &= rtc.ListJumpTo(new Vector2(-10, 0));

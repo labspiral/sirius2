@@ -388,7 +388,7 @@ namespace Demos
                         Debug.Assert(!(rtc is IRtcSyncAxis));
                         success &= rtc.ListEnd();
                         success &= rtc.ListExecute(true);
-                        // Vary laser output power 
+                        // Vary output laser power 
                         // ...
                         // And it takes some time
                         Thread.Sleep((int)this.PowerControlDelayTime);

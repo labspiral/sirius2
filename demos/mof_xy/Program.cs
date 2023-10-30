@@ -190,7 +190,7 @@ namespace Demos
 
             bool success = true;
             // Start list buffer
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             // MoF begin 
             success &= rtcMof.ListMofBegin(true);
             // Goes to origin
@@ -266,7 +266,7 @@ namespace Demos
 
             bool success = true;
             // Start list buffer
-            success &= rtc.ListBegin( ListType.Single);
+            success &= rtc.ListBegin( ListTypes.Single);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             // Draw line
             success &= rtc.ListJumpTo(new Vector2(0, 0));
@@ -357,7 +357,7 @@ namespace Demos
 
             bool success = true;
             // Start list buffer
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
 
             //                             |                                   
@@ -470,7 +470,7 @@ namespace Demos
             //success &= rtcMof.CtlMofCompensateTable(null); 
 
             // Start list buffer
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             // MoF begin 
             success &= rtcMof.ListMofBegin(true);
             // Goes to 20,0

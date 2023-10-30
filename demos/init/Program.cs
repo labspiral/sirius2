@@ -167,7 +167,7 @@ namespace Demos
         {
             bool success = true;
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListType.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
             success &= rtc.ListJumpTo(new Vector2(-width / 2, height / 2));
             success &= rtc.ListMarkTo(new Vector2(width / 2, height / 2));
             success &= rtc.ListMarkTo(new Vector2(width / 2, -height / 2));
@@ -187,7 +187,7 @@ namespace Demos
             int circleRepeats = 10;
             bool success = true;
             // List buffer with double buffered 
-            success &= rtc.ListBegin(ListType.Auto);
+            success &= rtc.ListBegin(ListTypes.Auto);
             success &= rtc.ListJumpTo(new Vector2(radius, 0));
             success &= rtc.ListArcTo(Vector2.Zero, 360 * circleRepeats);
             success &= rtc.ListJumpTo(Vector2.Zero);
@@ -216,7 +216,7 @@ namespace Demos
 
             bool success = true;
             // List begin with double buffered list
-            success &= rtc.ListBegin(ListType.Auto);
+            success &= rtc.ListBegin(ListTypes.Auto);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels); 
             success &= rtc.ListJumpTo(new Vector2(radius, 0));
             success &= rtc.ListArcTo(Vector2.Zero, 360);
@@ -256,7 +256,7 @@ namespace Demos
 
             bool success = true;
             // List begin with double buffered list
-            success &= rtc.ListBegin(ListType.Auto);
+            success &= rtc.ListBegin(ListTypes.Auto);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             for (double angle = 0; angle < 360; angle += 45)
             {
@@ -308,7 +308,7 @@ namespace Demos
             bool success = true;
 
             // List begin with double buffered list
-            success &= rtc.ListBegin(ListType.Auto);
+            success &= rtc.ListBegin(ListTypes.Auto);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             // 500 mm/s
             success &= rtc.ListSpeed(500, 500);
