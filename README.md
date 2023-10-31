@@ -116,13 +116,19 @@
 
 **8. Version history**
 
+* 2023.11.3 v.1.8.865
+  - added) editor_alc demo
+  - added) editor_mof demo
+  - fixed) frequency scale bug at ramp 
+  - fixed) ray color of simulation bug
+
 * 2023.10.27 v.1.7.850
   - added) raster entity
   - added) ILaserGuideControl interface at ILaser
   - added) shortcuts
-     - F5 : start marker
+     - F5: start marker
      - CTRL + F5: stop marker
-     - F6 : reset marker
+     - F6: reset marker
 
 * 2023.10.19 v.1.6.840
   - hot fixed) laser power value has not applied 

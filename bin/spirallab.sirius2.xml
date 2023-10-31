@@ -11440,6 +11440,11 @@
             min, max value is not used. <br/>
             </remarks>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals.FocusShift">
+            <summary>
+            Focus shift (aka. Defocus)
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl">
             <summary>
             IRtcAutoLaserControl interface 
@@ -11618,18 +11623,6 @@
             </summary>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
-        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcRamp">
-            <summary>
-            IRtcRamp interface 
-            </summary>
-            <remarks>
-            Automatic laser control(aka. Ramp) by control output signals. <br/>
-            1. Position-dependent. <br/>
-            2. Speed-dependent. <br/>
-            3. Defined-vector. <br/>
-            <img src="images/ramp.png"/><br/>
-            </remarks>
-        </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.CharacterSets">
             <summary>
             Character sets (aka. Font family)
@@ -11799,7 +11792,47 @@
             Accumulated external /START trigger counts
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSets,System.Object)" -->
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSets,System.Object)">
+            <summary>
+            Begin register(or download) character set into RTC 
+            <code>
+            var rtcCharSet = rtc as IRtcCharacterSet;
+            rtcCharSet.CtlCharacterSetBegin(CharacterSets._0) 
+            rtcCharSet.CtlCharacterBegin('0'); // '0'
+            rtc.ListJumpTo(new Vector2(5, 10));
+            rtc.ListMarkTo(new Vector2(5 + 0, 10 - 5));
+            rtc.ListMarkTo(new Vector2(5 + 0 + 0, 10 - 5 - 5));
+            rtc.ListMarkTo(new Vector2(5 + 0 + 0 - 5, 10 - 5 - 5));
+            rtc.ListMarkTo(new Vector2(5 + 0 + 0 - 5, 10 - 5 - 5 + 5));
+            rtc.ListMarkTo(new Vector2(5 + 0 + 0 - 5 + 0, 10 - 5 - 5 + 5 + 5));
+            rtc.ListMarkTo(new Vector2(5 + 0 + 0 - 5 + 0 + 5, 10 - 5 - 5 + 5 + 5 + 0));
+            rtc.ListJumpTo(new Vector2(5 + 0 + 0 - 5 + 0 + 5 + 5, 10 - 5 - 5 + 5 + 5 + 0 - 10));
+            rtcCharSet.CtlCharacterEnd();
+            rtcCharSet.CtlCharacterBegin('1'); // '1'
+            rtc.ListJumpTo(new Vector2(5, 0));
+            rtc.ListMarkTo(new Vector2(5 + 0, 0 + 10));
+            rtc.ListJumpTo(new Vector2(5 + 0 + 5, 0 + 10 - 10));
+            rtcCharSet.CtlCharacterEnd();
+            //Download more font data 
+            // for 2,3,4, ...
+            // for A,B,C, ...
+            // for a,b,c ...
+            // for !,@,#, ...
+            rtcCharSet.CtlCharacterBegin(' '); // ' '
+            rtc.ListJumpTo(new Vector2(5, 0));
+            rtcCharSet.CtlCharacterEnd();
+            rtcCharSet.CtlCharacterSetEnd();
+            </code>
+            <remarks>
+            Used with internal List3 buffer. <br/>
+            RTC5: Max buffer size <c>RTC5_LIST3_BUFFER_SIZE</c><br/>
+            RTC6: Max buffer size <c>RTC6_LIST3_BUFFER_SIZE</c><br/>
+            </remarks>
+            </summary>
+            <param name="characterSet"><c>CharacterSet</c></param>
+            <param name="userData">User data</param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterBegin(System.UInt32)">
             <summary>
             Begin register(or download) single glyph(or character) into RTC 
@@ -12862,7 +12895,7 @@
             LASERON signal (1 = laser signal on, 0 = laser signal off)
             </summary>
             <remarks>
-            Converted(or multipled) by <c>Config.MeasurementLaserOnFactor</c> scale value. <br/>
+            Converted(or multipled) by <see cref="P:SpiralLab.Sirius2.Config.MeasurementLaserOnFactor">Config.MeasurementLaserOnFactor</see> scale value. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.StatusAX">
