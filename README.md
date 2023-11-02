@@ -15,6 +15,8 @@
 
 ![sirius2_ex5](https://user-images.githubusercontent.com/58460570/273743004-802904d1-4142-4eda-9282-f810a3b5bf11.png)
 
+![sirius2_ex6](https://user-images.githubusercontent.com/58460570/279851007-10e24e50-c205-4c68-a62f-2410af495d2d.png)
+
 
 ----
 
