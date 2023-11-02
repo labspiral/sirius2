@@ -87,20 +87,23 @@ namespace Demos
             // Field correction file path: \correction\cor_1to1.ct5
             var correctionFile = Path.Combine(Config.CorrectionPath, "cor_1to1.ct5");
 
-            // Create virtual RTC controller (without valid RTC controller)
+            // Create RTC controller 
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
-            // Create RTC5 controller
             var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
-            // Create RTC6 controller
             //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
-            // Create RTC6 Ethernet controller
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6SyncAxis(0, "your config xml file");
 
             // Initialize RTC controller
             success &= rtc.Initialize();
 
             // Create virtual laser source with max 20W
             var laser = LaserFactory.CreateVirtual(0, 20);
+            //var laser = LaserFactory.CreateVirtualAnalog(0, 20, 1);
+            //var laser = LaserFactory.CreateVirtualDO16Bits(0, 20);
+            //var laser = LaserFactory.CreateVirtualDO8Bits(0, 20);
+            //var laser = LaserFactory.CreateVirtualDutyCycle(0, 20);
+
             // Assign RTC into laser
             laser.Scanner = rtc;
             // Initialize laser

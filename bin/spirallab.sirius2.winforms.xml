@@ -7347,7 +7347,12 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.ConvertedText">
-            <inheritdoc/>
+            <summary>
+            Converted text data
+            </summary>
+            <remarks>
+            <c>ConvertedText</c> is affected by <c>CharacterSetFormat</c> and set by internally. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusCharacterSetText.Height">
             <summary>
@@ -7760,7 +7765,12 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.ConvertedText">
-            <inheritdoc/>
+            <summary>
+            Converted text data
+            </summary>
+            <remarks>
+            <c>ConvertedText</c> is affected by <c>CharacterSetFormat</c> and set by internally. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCharacterSetText.Height">
             <summary>
@@ -12773,6 +12783,7 @@
             <param name="inputHightBitMask">Input high bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <param name="outputBitMask">Output bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <param name="outputLevel">Output level when condition has matched. True(on), False(off)</param>
+            <returns><c>EntityWriteDataExt16Cond</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWaitDataExt16Cond(System.String,System.String)">
             <summary>
@@ -12792,6 +12803,7 @@
             </remarks>
             <param name="inputLowBitMask">Input low bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <param name="inputHightBitMask">Input high bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
+            <returns><c>EntityWaitDataExt16Cond</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePointsCloud(OpenTK.Vector3[])">
             <summary>
@@ -16208,7 +16220,7 @@
             Notify open sirius file
             </summary>
             <param name="sender">Sender like as <c>SiriusEditorUserControl</c></param>
-            <returns></returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnSaveSirius">
             <summary>
@@ -16226,7 +16238,7 @@
             Notify save sirius file
             </summary>
             <param name="sender">Sender like as <c>SiriusEditorUserControl</c></param>
-            <returns></returns>
+            <returns>Success or failed</returns>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.SamplePath">
             <summary>

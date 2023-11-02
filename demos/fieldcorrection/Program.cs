@@ -38,21 +38,21 @@ namespace Demos
 {
     class Program1
     {
-        static float fov = 60.0f;
+        /// <summary>
+        /// Field size
+        /// </summary>
+        static readonly float fov = 60.0f;
 
         /// <summary>
         /// RTC5,6
         /// </summary>
-        static double kfactor20bits = Math.Pow(2, 20) / fov;
-        /// <summary>
-        /// RTC4
-        /// </summary>
-        static double kfactor16bits = Math.Pow(2, 16) / fov;
-        static int rows = 3;
-        static int cols = 3;
-        static float interval = 20;
-        static string sourceFile = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, "D3_2982.ct5");
-        static string targetFile = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, "D3_2982_new.ct5");
+        static readonly double kfactor20bits = Math.Pow(2, 20) / fov;
+
+        static readonly int rows = 3;
+        static readonly int cols = 3;
+        static readonly float interval = 20;
+        static readonly string sourceFile = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, "D3_2982.ct5");
+        static readonly string targetFile = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, "D3_2982_new.ct5");
 
         [STAThread]
         static void Main(string[] args)
@@ -72,13 +72,10 @@ namespace Demos
 
             var correctionFile = sourceFile;
 
-            // Create virtual RTC controller (without valid RTC controller)
+            // Create RTC controller 
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
-            // Create RTC5 controller
             //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
-            // Create RTC6 controller
             var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
-            // Create RTC6 Ethernet controller
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
             // Initialize RTC controller
@@ -132,7 +129,7 @@ namespace Demos
                         catch(Exception ){
                             zOffset = 0;
                         }
-                        DrawGrids(rtc, laser, zOffset);
+                        DrawGrids(rtc, laser, (float)zOffset);
                         break;
                     case ConsoleKey.D2:
                         ConvertFieldCorrection2DAndSelect(rtc);
@@ -162,19 +159,15 @@ namespace Demos
             laser.Dispose();
         }
 
-        private static bool DrawGrids(IRtc rtc, ILaser laser, double z = 0)
+        private static bool DrawGrids(IRtc rtc, ILaser laser, float z = 0)
         {
             Debug.Assert(rtc.Is3D);
             Console.Write("WARNING !!! Press any key to mark grids ... ");
             Console.ReadKey();
 
             bool success = true;
-            var rtc2ndHead = rtc as IRtc2ndHead;
-            var offset = rtc2ndHead.PrimaryHeadBaseOffset;
-            offset.Dz = z;
-            rtc2ndHead.PrimaryHeadBaseOffset = offset;            
+            var rtc3D = rtc as IRtc3D;
 
-            // List buffer with single buffered
             success &= rtc.ListBegin();
 
             float bottom = -interval * (int)(rows / 2);
@@ -189,7 +182,7 @@ namespace Demos
             //___________
             for (int row = 0; row < rows; row++)
             {
-                rtc.MatrixStack.Push(Matrix4x4.CreateTranslation(0, bottom + row * interval, 0));
+                rtc.MatrixStack.Push(Matrix4x4.CreateTranslation(0, bottom + row * interval, z));
                 success &= rtc.ListJumpTo(new Vector2(left, 0));
                 success &= rtc.ListMarkTo(new Vector2(right, 0));
                 rtc.MatrixStack.Pop();
@@ -201,19 +194,20 @@ namespace Demos
             // |  |  |  |
             for (int col = 0; col < cols; col++)
             {
-                rtc.MatrixStack.Push(Matrix4x4.CreateTranslation(left + col * interval, 0, 0));
+                rtc.MatrixStack.Push(Matrix4x4.CreateTranslation(left + col * interval, 0, z));
                 success &= rtc.ListJumpTo(new Vector2(0, bottom));
                 success &= rtc.ListMarkTo(new Vector2(0, top));
                 rtc.MatrixStack.Pop();
             }
 
-            success &= rtc.ListJumpTo(Vector2.Zero);
+            if (null == rtc3D)
+                success &= rtc.ListJumpTo(Vector2.Zero);
+            else
+                success &= rtc3D.ListJumpTo(Vector3.Zero);
             success &= rtc.ListEnd();
             if (success)
                 success &= rtc.ListExecute(true);
 
-            offset.Dz = 0;
-            rtc2ndHead.PrimaryHeadBaseOffset = offset;
             return success;
         }
 
@@ -244,34 +238,34 @@ namespace Demos
             }
             return success;
         }
-        private static bool ConvertFieldCorrection3DAndSelect(IRtc rtc)
+        private static bool ConvertFieldCorrection3DAndSelect(IRtc rtc, float zLower = 0, float zUpper = 5)
         {
             // 9 points: 3x3
             // Interval: 20 mm
             var correction = new RtcCorrection3D(kfactor20bits, rows, cols, interval, 5, 0, sourceFile, targetFile);
 
             // Data for 3x3 with 20mm interval
-            // Z= 5mm (upper)
-            correction.AddRelative(0, 0, new Vector3(-20, 20, 5), new Vector3(0.02f, -0.03f, 0));
-            correction.AddRelative(0, 1, new Vector3(0, 20, 5), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(0, 2, new Vector3(20, 20, 5), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(1, 0, new Vector3(-20, 0, 5), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(1, 1, new Vector3(0, 0, 5), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(1, 2, new Vector3(20, 0, 5), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(2, 0, new Vector3(-20, -20, 5), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(2, 1, new Vector3(0, -20, 5), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(2, 2, new Vector3(20, -20, 5), new Vector3(0.02f, 0.025f, 0));
+            // Z upper
+            correction.AddRelative(0, 0, new Vector3(-20, 20, zUpper), new Vector3(0.02f, -0.03f, 0));
+            correction.AddRelative(0, 1, new Vector3(0, 20, zUpper), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(0, 2, new Vector3(20, 20, zUpper), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(1, 0, new Vector3(-20, 0, zUpper), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(1, 1, new Vector3(0, 0, zUpper), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(1, 2, new Vector3(20, 0, zUpper), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(2, 0, new Vector3(-20, -20, zUpper), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(2, 1, new Vector3(0, -20, zUpper), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(2, 2, new Vector3(20, -20, zUpper), new Vector3(0.02f, 0.025f, 0));
 
-            // Z= 0mm (lower)
-            correction.AddRelative(0, 0, new Vector3(-20, 20, 0), new Vector3(0.01f, -0.02f, 0));
-            correction.AddRelative(0, 1, new Vector3(0, 20, 0), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(0, 2, new Vector3(20, 20, 05), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(1, 0, new Vector3(-20, 0, 0), new Vector3(-0.01f, 0.01f, 0));
-            correction.AddRelative(1, 1, new Vector3(0, 0, 0), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(1, 2, new Vector3(20, 0, 0), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(2, 0, new Vector3(-20, -20, 0), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(2, 1, new Vector3(0, -20, 0), new Vector3(0.01f, -0.01f, 0));
-            correction.AddRelative(2, 2, new Vector3(20, -20, 0), new Vector3(0.01f, 0.01f, 0));
+            // Z lower
+            correction.AddRelative(0, 0, new Vector3(-20, 20, zLower), new Vector3(0.01f, -0.02f, 0));
+            correction.AddRelative(0, 1, new Vector3(0, 20, zLower), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(0, 2, new Vector3(20, 20, zLower), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(1, 0, new Vector3(-20, 0, zLower), new Vector3(-0.01f, 0.01f, 0));
+            correction.AddRelative(1, 1, new Vector3(0, 0, zLower), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(1, 2, new Vector3(20, 0, zLower), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(2, 0, new Vector3(-20, -20, zLower), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(2, 1, new Vector3(0, -20, zLower), new Vector3(0.01f, -0.01f, 0));
+            correction.AddRelative(2, 2, new Vector3(20, -20, zLower), new Vector3(0.01f, 0.01f, 0));
 
             bool success = correction.Convert();
             if (success)
@@ -347,34 +341,34 @@ namespace Demos
             Debug.Assert(success);
             return true;
         }
-        private static bool ConvertFieldCorrection3DByWinforms(IRtc rtc)
+        private static bool ConvertFieldCorrection3DByWinforms(IRtc rtc, float zLower = 0, float zUpper = 5)
         {
             // 9 points: 3x3
             // Interval: 20 mm
             var correction = new RtcCorrection3D(kfactor20bits, rows, cols, interval, 5, 0, sourceFile, targetFile);
 
             // Data for 3x3 with 20mm interval
-            // Z= 5mm (upper)
-            correction.AddRelative(0, 0, new Vector3(-20, 20, 5), new Vector3(0.02f, -0.03f, 0));
-            correction.AddRelative(0, 1, new Vector3(0, 20, 5), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(0, 2, new Vector3(20, 20, 5), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(1, 0, new Vector3(-20, 0, 5), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(1, 1, new Vector3(0, 0, 5), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(1, 2, new Vector3(20, 0, 5), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(2, 0, new Vector3(-20, -20, 5), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(2, 1, new Vector3(0, -20, 5), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(2, 2, new Vector3(20, -20, 5), new Vector3(0.02f, 0.025f, 0));
+            // Z upper
+            correction.AddRelative(0, 0, new Vector3(-20, 20, zUpper), new Vector3(0.02f, -0.03f, 0));
+            correction.AddRelative(0, 1, new Vector3(0, 20, zUpper), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(0, 2, new Vector3(20, 20, zUpper), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(1, 0, new Vector3(-20, 0, zUpper), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(1, 1, new Vector3(0, 0, zUpper), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(1, 2, new Vector3(20, 0, zUpper), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(2, 0, new Vector3(-20, -20, zUpper), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(2, 1, new Vector3(0, -20, zUpper), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(2, 2, new Vector3(20, -20, zUpper), new Vector3(0.02f, 0.025f, 0));
 
-            // Z= 0mm (lower)
-            correction.AddRelative(0, 0, new Vector3(-20, 20, 0), new Vector3(0.01f, -0.02f, 0));
-            correction.AddRelative(0, 1, new Vector3(0, 20, 0), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(0, 2, new Vector3(20, 20, 05), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(1, 0, new Vector3(-20, 0, 0), new Vector3(-0.01f, 0.01f, 0));
-            correction.AddRelative(1, 1, new Vector3(0, 0, 0), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(1, 2, new Vector3(20, 0, 0), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(2, 0, new Vector3(-20, -20, 0), new Vector3(0.01f, 0.01f, 0));
-            correction.AddRelative(2, 1, new Vector3(0, -20, 0), new Vector3(0.01f, -0.01f, 0));
-            correction.AddRelative(2, 2, new Vector3(20, -20, 0), new Vector3(0.01f, 0.01f, 0));
+            // Z lower
+            correction.AddRelative(0, 0, new Vector3(-20, 20, zLower), new Vector3(0.01f, -0.02f, 0));
+            correction.AddRelative(0, 1, new Vector3(0, 20, zLower), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(0, 2, new Vector3(20, 20, zLower), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(1, 0, new Vector3(-20, 0, zLower), new Vector3(-0.01f, 0.01f, 0));
+            correction.AddRelative(1, 1, new Vector3(0, 0, zLower), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(1, 2, new Vector3(20, 0, zLower), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(2, 0, new Vector3(-20, -20, zLower), new Vector3(0.01f, 0.01f, 0));
+            correction.AddRelative(2, 1, new Vector3(0, -20, zLower), new Vector3(0.01f, -0.01f, 0));
+            correction.AddRelative(2, 2, new Vector3(20, -20, zLower), new Vector3(0.01f, 0.01f, 0));
 
             var form = new RtcCorrection3DForm(rtc, correction);
             SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply += Config_OnScannerFieldCorrection3DApply;
