@@ -117,12 +117,12 @@
 **8. Version history**
 
 * 2023.11.3 v.1.8.865
-  - added) grid checker to extract position of patterrns at scanner field correction
+  - added) grid checker (extract positions of pattern at image of field correction)
   - added) editor_alc demo
   - added) editor_mof demo
   - fixed) frequency scale bug with automatic laser control
-  - fixed) simulated ray of color bug
-  - fixed) fieldcorrection demo codes
+  - fixed) simulated color of ray bug
+  - fixed) fieldcorrection demo 
 
 * 2023.10.27 v.1.7.850
   - added) raster entity
