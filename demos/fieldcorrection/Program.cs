@@ -75,9 +75,9 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
@@ -105,16 +105,16 @@ namespace Demos
             ConsoleKeyInfo key;
             do
             {
+                Console.WriteLine("");
                 Console.WriteLine("Testcase for scanner field correction");
                 Console.WriteLine("'G' : draw grids");
-                Console.WriteLine("'C' : convert field correction file for 2D");
-                Console.WriteLine("'D' : convert field correction file for 3D");
-                Console.WriteLine("'L' : convert field correction file by callib for 2D");
-                Console.WriteLine("'W' : convert field correction file for 2D with winforms");
-                Console.WriteLine("'X' : convert field correction file for 3D with winforms");
-                Console.WriteLine("'F1' : select old correction (Table1)");
-                Console.WriteLine("'F2' : select new 2d correction (Table2)");
-                Console.WriteLine("'F4' : select new 3d correction (Table4)");
+                Console.WriteLine("'2' : convert field correction file for 2D");
+                Console.WriteLine("'3' : convert field correction file for 3D");
+                Console.WriteLine("'X' : convert field correction file for 2D (by calibratitonlib)");
+                Console.WriteLine("'F2' : convert field correction file for 2D by winforms");
+                Console.WriteLine("'F3' : convert field correction file for 3D by winforms");
+                Console.WriteLine("'Home' : select old(or original) correction (Table1)");
+                Console.WriteLine("'End' : select new(or converted) correction (Table2)");
                 Console.WriteLine("'Q' : quit");
                 Console.Write("select your target : ");
                 key = Console.ReadKey(false);
@@ -134,29 +134,26 @@ namespace Demos
                         }
                         DrawGrids(rtc, laser, zOffset);
                         break;
-                    case ConsoleKey.C:
+                    case ConsoleKey.D2:
                         ConvertFieldCorrection2DAndSelect(rtc);
                         break;
-                    case ConsoleKey.D:
+                    case ConsoleKey.D3:
                         ConvertFieldCorrection3DAndSelect(rtc);
                         break;
-                    case ConsoleKey.L:
+                    case ConsoleKey.X:
                         ConvertFieldCorrection2DByCalLibAndSelect(rtc);
                         break;
-                    case ConsoleKey.W:
+                    case ConsoleKey.F1:
                         ConvertFieldCorrection2DByWinforms(rtc);
                         break;
-                    case ConsoleKey.X:
+                    case ConsoleKey.F2:
                         ConvertFieldCorrection3DByWinforms(rtc);
                         break;
-                    case ConsoleKey.F1:
+                    case ConsoleKey.Home:
                         rtc.CtlSelectCorrection(CorrectionTables.Table1);
                         break;
-                    case ConsoleKey.F2:
+                    case ConsoleKey.End:
                         rtc.CtlSelectCorrection(CorrectionTables.Table2);
-                        break;
-                    case ConsoleKey.F4:
-                        rtc.CtlSelectCorrection(CorrectionTables.Table4, CorrectionTables.Table4);
                         break;
                 }
             } while (true);
@@ -168,15 +165,17 @@ namespace Demos
         private static bool DrawGrids(IRtc rtc, ILaser laser, double z = 0)
         {
             Debug.Assert(rtc.Is3D);
+            Console.Write("WARNING !!! Press any key to mark grids ... ");
+            Console.ReadKey();
+
             bool success = true;
-            
             var rtc2ndHead = rtc as IRtc2ndHead;
             var offset = rtc2ndHead.PrimaryHeadBaseOffset;
             offset.Dz = z;
             rtc2ndHead.PrimaryHeadBaseOffset = offset;            
 
             // List buffer with single buffered
-            success &= rtc.ListBegin(ListTypes.Single);
+            success &= rtc.ListBegin();
 
             float bottom = -interval * (int)(rows / 2);
             float top = -bottom;
@@ -184,17 +183,25 @@ namespace Demos
             float right = -left;
 
             // Draw horizontal lines
+            //___________
+            //___________
+            //___________   
+            //___________
             for (int row = 0; row < rows; row++)
             {
-                rtc.MatrixStack.Push(Matrix4x4.CreateTranslation(0, row * interval, 0));
+                rtc.MatrixStack.Push(Matrix4x4.CreateTranslation(0, bottom + row * interval, 0));
                 success &= rtc.ListJumpTo(new Vector2(left, 0));
                 success &= rtc.ListMarkTo(new Vector2(right, 0));
                 rtc.MatrixStack.Pop();
             }
             // Draw vertical lines
+            // |  |  |  |
+            // |  |  |  |
+            // |  |  |  |
+            // |  |  |  |
             for (int col = 0; col < cols; col++)
             {
-                rtc.MatrixStack.Push(Matrix4x4.CreateTranslation(col * interval, 0, 0));
+                rtc.MatrixStack.Push(Matrix4x4.CreateTranslation(left + col * interval, 0, 0));
                 success &= rtc.ListJumpTo(new Vector2(0, bottom));
                 success &= rtc.ListMarkTo(new Vector2(0, top));
                 rtc.MatrixStack.Pop();
@@ -269,12 +276,14 @@ namespace Demos
             bool success = correction.Convert();
             if (success)
             {
-                Console.WriteLine($"Success to convert {targetFile} 3d file. so load by Table4");
-                success &= rtc.CtlLoadCorrectionFile(CorrectionTables.Table4, targetFile);
-                success &= rtc.CtlSelectCorrection(CorrectionTables.Table4, CorrectionTables.Table4);
+                var targetTable = CorrectionTables.Table2;
+                Console.WriteLine($"Success to convert {targetFile} 3d file and loaded at {targetTable}");
+                success &= rtc.CtlLoadCorrectionFile(targetTable, targetFile);
+                success &= rtc.CtlSelectCorrection(targetTable, targetTable);
             }
             return success;
         }
+
         private static bool ConvertFieldCorrection2DByCalLibAndSelect(IRtc rtc)
         {
             // 9 points: 3x3
@@ -296,9 +305,10 @@ namespace Demos
             bool success = correction.Convert();
             if (success)
             {
-                Console.WriteLine($"Success to convert {targetFile} 2d file. so load by Table2");
-                success &= rtc.CtlLoadCorrectionFile(CorrectionTables.Table2, targetFile);
-                success &= rtc.CtlSelectCorrection(CorrectionTables.Table2);
+                var targetTable = CorrectionTables.Table2;
+                Console.WriteLine($"Success to convert {targetFile} 2d file and loaded at {targetTable}");
+                success &= rtc.CtlLoadCorrectionFile(targetTable, targetFile);
+                success &= rtc.CtlSelectCorrection(targetTable);
             }
             return success;
         }
@@ -320,19 +330,20 @@ namespace Demos
             correction.AddRelative(2, 2, new Vector2(20, -20), new Vector2(0.025f, 0.02f));
 
             var form = new RtcCorrection2DForm(rtc, correction);
-            //SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DApply += Config_OnScannerFieldCorrection2DApply;
+            SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DApply += Config_OnScannerFieldCorrection2DApply;
             form.ShowDialog();
-            //SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DApply -= Config_OnScannerFieldCorrection2DApply;
+            SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DApply -= Config_OnScannerFieldCorrection2DApply;
             return true;
         }
+
         private static bool Config_OnScannerFieldCorrection2DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm form)
         {
             var ctFullFileName = form.RtcCorrection.TargetCorrectionFile;
             Debug.Assert(File.Exists(ctFullFileName));
             bool success = true;
-            var currentTable = form.Rtc.PrimaryHeadTable;
-            success &= form.Rtc.CtlLoadCorrectionFile(currentTable, ctFullFileName);
-            success &= form.Rtc.CtlSelectCorrection(currentTable);
+            var targetTable = CorrectionTables.Table2;
+            success &= form.Rtc.CtlLoadCorrectionFile(targetTable, ctFullFileName);
+            success &= form.Rtc.CtlSelectCorrection(targetTable);
             Debug.Assert(success);
             return true;
         }
@@ -366,9 +377,9 @@ namespace Demos
             correction.AddRelative(2, 2, new Vector3(20, -20, 0), new Vector3(0.01f, 0.01f, 0));
 
             var form = new RtcCorrection3DForm(rtc, correction);
-            //SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply += Config_OnScannerFieldCorrection3DApply;
+            SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply += Config_OnScannerFieldCorrection3DApply;
             form.ShowDialog();
-            //SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply -= Config_OnScannerFieldCorrection3DApply;
+            SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply -= Config_OnScannerFieldCorrection3DApply;
             return true;
         }
         private static bool Config_OnScannerFieldCorrection3DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection3DForm form)
@@ -376,9 +387,9 @@ namespace Demos
             var ctFullFileName = form.RtcCorrection.TargetCorrectionFile;
             Debug.Assert(File.Exists(ctFullFileName));
             bool success = true;
-            var currentTable = form.Rtc.PrimaryHeadTable;
-            success &= form.Rtc.CtlLoadCorrectionFile(currentTable, ctFullFileName);
-            success &= form.Rtc.CtlSelectCorrection(currentTable, currentTable);
+            var targetTable = CorrectionTables.Table2;
+            success &= form.Rtc.CtlLoadCorrectionFile(targetTable, ctFullFileName);
+            success &= form.Rtc.CtlSelectCorrection(targetTable, targetTable);
             Debug.Assert(success);
             return true;
         }

@@ -11427,6 +11427,16 @@
             <para>uint: 16 bits (0~65535)</para>
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals.FocusShift">
+            <summary>
+            Focus shift (aka. Defocus)
+            <para>double: mm</para>
+            </summary>
+            <remarks>
+            Focus shift controlled by z movement with 3D. <br/>
+            Used with automatic laser control by defined vector only. (= used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">IRtcAutoLaserControl.ListAlcByVectorBegin</see>). <br/>
+            </remarks>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals.SpotDistance">
             <summary>
             Spot distance
@@ -11434,16 +11444,11 @@
             <para>above RTC6 + SCANAhead</para>
             </summary>
             <remarks>
-            Used with <c>AutoLaserControlModes.ActualVelocityWithSCANAhead</c> only <br/>
-            Automatically spot distance controlled to the current mark speed. <br/>
-            100% value = spot distance (mm). <br/>
-            min, max value is not used. <br/>
+            Spot distance controlled to the current mark speed by automatically. <br/>
+            Used with <c>AutoLaserControlModes.ActualVelocityWithSCANAhead</c> only. <br/>
+            Not used with automatic laser control by defined vector. (= not used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">IRtcAutoLaserControl.ListAlcByVectorBegin</see>) <br/>
+            Spot distance is configured by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.Alc100PercentageValue">Alc100PercentageValue</see> (<see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.AlcMinValue">AlcMinValue</see>, <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.AlcMaxValue">AlcMaxValue</see> are not used.) <br/>
             </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals.FocusShift">
-            <summary>
-            Focus shift (aka. Defocus)
-            </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl">
             <summary>
