@@ -119,7 +119,7 @@
 **8. Version history**
 
 * 2023.11.3 v.1.8.865
-  - added) grid checker (extract positions of pattern at image of field correction)
+  - added) grid checker (extract positions of pattern from image file)
   - added) editor_alc demo
   - added) editor_mof demo
   - fixed) frequency scale bug with automatic laser control
