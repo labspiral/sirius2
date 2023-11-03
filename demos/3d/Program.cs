@@ -52,14 +52,14 @@ namespace Demos
 
             // Default (1:1) correction file
             // Field correction file path: \correction\cor_1to1.ct5
-            var correctionFile = Path.Combine(Config.CorrectionPath, "cor_1to1.ct5");
+            var correctionFile = Path.Combine(Config.CorrectionPath, "D3_2982.ct5");
 
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
@@ -109,10 +109,10 @@ namespace Demos
                 Console.WriteLine("'F4' : mark helix shape");
                 Console.WriteLine("-------------------------------------------------------");
                 Console.WriteLine("'C' : reset/revert correction file");
-                Console.WriteLine("'F9' : convert correction file by cylinder");
-                Console.WriteLine("'F10' : convert correction file by cone");
-                Console.WriteLine("'F11' : convert correction file by plane");
-                Console.WriteLine("'F12' : convert correction file by points cloud");
+                Console.WriteLine("'F5' : convert correction file by cylinder");
+                Console.WriteLine("'F6' : convert correction file by cone");
+                Console.WriteLine("'F7' : convert correction file by plane");
+                Console.WriteLine("'F8' : convert correction file by points cloud");
                 Console.WriteLine("'Q' : quit");
                 Console.Write("Select your target : ");
                 key = Console.ReadKey(false);
@@ -135,11 +135,12 @@ namespace Demos
                         break;
                     case ConsoleKey.R:
                         {
+                          
                             // Reset z offset
-                            var offset = rtc2ndHead.PrimaryHeadUserOffset;
-                            offset.Dz = 0;
-                            rtc2ndHead.PrimaryHeadUserOffset = offset;
-
+                            var oldOffset = rtc2ndHead.PrimaryHeadUserOffset;
+                            var newOffset = new SpiralLab.Sirius2.Mathematics.Offset(oldOffset.Dz, oldOffset.Dy, 0);
+                            rtc2ndHead.PrimaryHeadUserOffset = newOffset;
+                            // z defocus to 0
                             rtc3D.ZDefocus = 0;
                             rtc.CtlReset();
                         }
@@ -152,9 +153,9 @@ namespace Demos
                             // Set z offset
                             Console.Write("Z offset (mm) = ");
                             float zOffset = float.Parse(Console.ReadLine());
-                            var offset = rtc2ndHead.PrimaryHeadUserOffset;
-                            offset.Dz = zOffset;
-                            rtc2ndHead.PrimaryHeadUserOffset = offset;
+                            var oldOffset = rtc2ndHead.PrimaryHeadUserOffset;
+                            var newOffset = new SpiralLab.Sirius2.Mathematics.Offset(oldOffset.Dz, oldOffset.Dy, zOffset);
+                            rtc2ndHead.PrimaryHeadUserOffset = newOffset;
                         }
                         break;
                     case ConsoleKey.D:
@@ -197,7 +198,7 @@ namespace Demos
                         {
                             Console.Write("Z height starting from (mm) = ");
                             float zHeightStart = float.Parse(Console.ReadLine());
-                            Console.Write("Z height end (mm) (increase +1) = ");
+                            Console.Write("Z height end (mm) (increase step: 1mm) = ");
                             float zHeightEnd = float.Parse(Console.ReadLine());
                             Debug.Assert(zHeightStart <= zHeightEnd);
                             float halfSquareSize = 10;
@@ -222,7 +223,7 @@ namespace Demos
                         break;
                     case ConsoleKey.F4:
                         // helix height per revolution (mm) 
-                        float helixHeightPitchPerRev = 1.0f;
+                        float helixHeightPitchPerRev = 0.1f;
                         // helix revolutions
                         int heliRevolutions = 5;
                         // helix radius (mm)
@@ -231,11 +232,11 @@ namespace Demos
                         for (int i = 0; i < heliRevolutions; i++)
                         {
                             success &= rtc3D.ListJumpTo(new Vector3(helixRadius, 0, i * helixHeightPitchPerRev));
-                            for (float angle = 10; angle < 360; angle += 10)
+                            for (float angle = 10; angle <= 360; angle += 10)
                             {
-                                double x = helixRadius * Math.Sin(angle * Math.PI / 180.0);
-                                double y = helixRadius * Math.Cos(angle * Math.PI / 180.0);
-                                success &= rtc3D.ListMarkTo(new Vector3((float)x, (float)y, i * helixHeightPitchPerRev / (angle / 360.0f)));
+                                double x = helixRadius * Math.Cos(angle * Math.PI / 180.0);
+                                double y = helixRadius * Math.Sin(angle * Math.PI / 180.0);
+                                success &= rtc3D.ListMarkTo(new Vector3((float)x, (float)y, i * helixHeightPitchPerRev * (angle / 360.0f)));
                                 if (!success)
                                     break;
                             }
@@ -250,22 +251,21 @@ namespace Demos
                         }
                         break;
                     case ConsoleKey.C:
+                        //revert(or reset) correction table by default
                         switch (rtc.RtcType)
                         {
-                            //case RtcType.Rtc4:
-                            //    success &= rtc.CtlSelectCorrection(CorrectionTableIndex.Table1);
-                            //    break;
-                            default:
                             case RtcTypes.Rtc5:
                                 success &= rtc.CtlSelectCorrection(CorrectionTables.Table1);
                                 break;
                             case RtcTypes.Rtc6:
                                 success &= rtc.CtlSelectCorrection(CorrectionTables.Table1);
                                 break;
+                            default:
+                                throw new InvalidOperationException();
                         }
-                        Logger.Log(Logger.Types.Info, $"3D calibration has reset as original correction table");
+                        Logger.Log(Logger.Types.Info, $"3D calibration has reset to original(or default) correction table");
                         break;
-                    case ConsoleKey.F9:
+                    case ConsoleKey.F5:
                         {
                             // Cylinder
                             var inputCtFileName = rtc.CorrectionFiles[(int)rtc.PrimaryHeadTable].FileName;
@@ -273,25 +273,22 @@ namespace Demos
                             string ext = Path.GetExtension(inputCtFileName);
                             switch (ext.ToLower())
                             {
-                                //case ".ctb":
-                                //    newCtFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "correction",
-                                //        Path.GetFileNameWithoutExtension(inputCtFileName)) + "_cylinder.ctb";
-                                //    break;
                                 case ".ct5":
-                                default:
                                     newCtFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "correction",
                                         Path.GetFileNameWithoutExtension(inputCtFileName)) + "_cylinder.ct5";
                                     break;
+                                default:
+                                    throw new InvalidOperationException();
                             }
                             if (File.Exists(newCtFileName))
                                 File.Delete(newCtFileName);
-                            if (RtcCalibrationLibrary.CylinderCalibration(Vector3.Zero, Vector3.UnitX, 10, inputCtFileName, null, newCtFileName, out var returnCode))
+                            if (RtcCalibrationLibrary.CylinderCalibration(Vector3.Zero, Vector3.UnitX, 20, inputCtFileName, null, newCtFileName, out var returnCode))
                             {
                                 LoadAndSelectCorrectionFile(rtc, newCtFileName);
                             }
                         }
                         break;
-                    case ConsoleKey.F10:
+                    case ConsoleKey.F6:
                         {
                             // Cone
                             var inputCtFileName = rtc.CorrectionFiles[(int)rtc.PrimaryHeadTable].FileName;
@@ -299,25 +296,23 @@ namespace Demos
                             string ext = Path.GetExtension(inputCtFileName);
                             switch (ext.ToLower())
                             {
-                                case ".ctb":
-                                    newCtFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "correction",
-                                        Path.GetFileNameWithoutExtension(inputCtFileName)) + "_cone.ctb";
-                                    break;
                                 case ".ct5":
-                                default:
                                     newCtFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "correction",
                                         Path.GetFileNameWithoutExtension(inputCtFileName)) + "_cone.ct5";
                                     break;
+                                default:
+                                    throw new InvalidOperationException();
                             }
                             if (File.Exists(newCtFileName))
                                 File.Delete(newCtFileName);
-                            if (RtcCalibrationLibrary.ConeCalibration(Vector3.Zero, Vector3.UnitX, 20, 45, inputCtFileName, null, newCtFileName, out var returnCode))
+                            float radian1 = (float)(-10.0 * (Math.PI / 180.0));
+                            if (RtcCalibrationLibrary.ConeCalibration(Vector3.Zero, Vector3.UnitX, 20, radian1, inputCtFileName, null, newCtFileName, out var returnCode))
                             {
                                 LoadAndSelectCorrectionFile(rtc, newCtFileName);
                             }
                         }
                         break;
-                    case ConsoleKey.F11:
+                    case ConsoleKey.F7:
                         {
                             // Plane
                             var inputCtFileName = rtc.CorrectionFiles[(int)rtc.PrimaryHeadTable].FileName;
@@ -325,42 +320,43 @@ namespace Demos
                             string ext = Path.GetExtension(inputCtFileName);
                             switch (ext.ToLower())
                             {
-                                case ".ctb":
-                                    newCtFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "correction",
-                                        Path.GetFileNameWithoutExtension(inputCtFileName)) + "_plane.ctb";
-                                    break;
                                 case ".ct5":
-                                default:
                                     newCtFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "correction",
                                         Path.GetFileNameWithoutExtension(inputCtFileName)) + "_plane.ct5";
                                     break;
+                                default:
+                                    throw new InvalidOperationException();
                             }
                             if (File.Exists(newCtFileName))
                                 File.Delete(newCtFileName);
                             // Rotated 10 degree at x,y axis
-                            float radian = (float)(10.0 * (Math.PI / 180.0));
+                            float radian2 = (float)(10.0 * (Math.PI / 180.0));
                             // Rotate x,y normal vector
-                            var dirX = Vector3.Transform(Vector3.UnitX, Matrix4x4.CreateRotationX(radian));
-                            var dirY = Vector3.Transform(Vector3.UnitY, Matrix4x4.CreateRotationX(radian));
+                            var dirX = Vector3.Transform(Vector3.UnitX, Matrix4x4.CreateRotationX(radian2));
+                            var dirY = Vector3.Transform(Vector3.UnitY, Matrix4x4.CreateRotationX(radian2));
                             if (RtcCalibrationLibrary.PlaneCalibration(Vector3.Zero, Vector3.Normalize(dirX), Vector3.Normalize(dirY), inputCtFileName, null, newCtFileName, out var returnCode))
                             {
                                 LoadAndSelectCorrectionFile(rtc, newCtFileName);
                             }
                         }
                         break;
-                    case ConsoleKey.F12:
+                    case ConsoleKey.F8:
                         {
                             // Extract points cloud (X,Y,Z surface data) data from 3D model
-                            List<Vector3> pointsClouds = new List<Vector3>();
-                            // You need to add more points cloud
-                            //pointsClouds.Add( ... );
-                            //
+                            List<Vector3> pointsCloud = new List<Vector3>();
+                            // You must add more points cloud by pointsClouds.Add( ... );
+                            // For example
+                            pointsCloud.Add(new Vector3(-20, -20, -5));
+                            pointsCloud.Add(new Vector3(-20, 20, -1));
+                            pointsCloud.Add(new Vector3(0, 0, 0));
+                            pointsCloud.Add(new Vector3(20, 20, 1));
+                            pointsCloud.Add(new Vector3(20, -20, 5));
 
                             var inputCtFileName = rtc.CorrectionFiles[(int)rtc.PrimaryHeadTable].FileName;
                             string dirName = Path.GetDirectoryName(inputCtFileName);
                             string fileName = Path.GetFileNameWithoutExtension(inputCtFileName);
                             var newCtFileName = Path.Combine(dirName, $"{fileName}_PointsCloud.ct5");
-                            if (RtcCalibrationLibrary.PointsCloudCalibration(pointsClouds.ToArray(), inputCtFileName, null, newCtFileName, out var returnCode))
+                            if (RtcCalibrationLibrary.PointsCloudCalibration(pointsCloud.ToArray(), inputCtFileName, null, newCtFileName, out var returnCode))
                             {
                                 LoadAndSelectCorrectionFile(rtc, newCtFileName);
                             }
@@ -378,22 +374,20 @@ namespace Demos
             CorrectionTables targetTable = CorrectionTables.None;
             switch (rtc.RtcType)
             {
-                default:
-                case RtcTypes.Rtc4:
-                    targetTable = CorrectionTables.Table2;
-                    success &= rtc.CtlLoadCorrectionFile(targetTable, newCtFileName);
-                    success &= rtc.CtlSelectCorrection(targetTable);
-                    break;
                 case RtcTypes.Rtc5:
                     targetTable = CorrectionTables.Table4;
                     success &= rtc.CtlLoadCorrectionFile(targetTable, newCtFileName);
-                    success &= rtc.CtlSelectCorrection(targetTable);
+                    // select new correction table at primary/secondary head
+                    success &= rtc.CtlSelectCorrection(targetTable, targetTable);
                     break;
                 case RtcTypes.Rtc6:
                     targetTable = CorrectionTables.Table8;
                     success &= rtc.CtlLoadCorrectionFile(targetTable, newCtFileName);
-                    success &= rtc.CtlSelectCorrection(targetTable);
+                    // select new correction table at primary/secondary head
+                    success &= rtc.CtlSelectCorrection(targetTable, targetTable);
                     break;
+                default:
+                    throw new InvalidOperationException();
             }
             if (success)
                 Logger.Log(Logger.Types.Info, $"new 3D calibration has applied: {newCtFileName} at {targetTable}");

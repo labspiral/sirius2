@@ -57,9 +57,9 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
@@ -111,7 +111,7 @@ namespace Demos
                         WriteDIOCounter(rtc, laser);
                         break;
                     case ConsoleKey.D4:
-                        DrawCircleByTrigger(rtc, laser, 10, 1);
+                        DrawCircleByTrigger(rtc, laser, 10, 0);
                         break;
                     case ConsoleKey.D5:
                         EasyToUseDIO(rtc, laser);
@@ -129,7 +129,7 @@ namespace Demos
             Debug.Assert(rtcMeasurement != null);
             bool success = true;
             success &= rtc.CtlReadData<uint>(ExtensionChannels.ExtDI16, out uint bits16);
-            Debug.WriteLine($"EXTENTION1 PORT DIN= {bits16:X}");
+            Console.WriteLine($"EXTENTION1 PORT DIN= {bits16:X}");
             return true;
         }
         private static bool WriteDIO(IRtc rtc, ILaser laser, uint bits16 = 0xFFFF)
@@ -138,7 +138,7 @@ namespace Demos
             Debug.Assert(rtcMeasurement != null);
             bool success = true;
             success &= rtc.CtlWriteData<uint>(ExtensionChannels.ExtDO16, bits16);
-            Debug.WriteLine($"EXTENTION1 PORT DOUT= {bits16:X}");
+            Console.WriteLine($"EXTENTION1 PORT DOUT= {bits16:X}");
             return true;
         }
         private static bool WriteDIOCounter(IRtc rtc, ILaser laser)
@@ -161,7 +161,7 @@ namespace Demos
             success &= rtc.ListBegin(ListTypes.Auto);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             // 16 bits incremental counter
-            for (uint i=0; i<65536; i++)
+            for (uint i = 0; i <= 65535; i++)
             {
                 success &= rtc.ListWriteData<uint>(ExtensionChannels.ExtDO16, i);
                 success &= rtc.ListWait(0.1);

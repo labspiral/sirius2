@@ -89,8 +89,8 @@ namespace Demos
 
             // Create RTC controller 
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             //var rtc = ScannerFactory.CreateRtc6SyncAxis(0, "your config xml file");
 
@@ -214,7 +214,7 @@ namespace Demos
                  MeasurementChannels.SampleX, //X commanded
                  MeasurementChannels.SampleY, //Y commanded
                  MeasurementChannels.LaserOn, //Gate signal 0/1
-                 MeasurementChannels.OutputPeriod, //KHz
+                 MeasurementChannels.OutputPeriod, //Converted Raw Data to Frequency(KHz)
             };
 
             bool success = true;
@@ -254,7 +254,7 @@ namespace Demos
                  MeasurementChannels.SampleX, //X commanded
                  MeasurementChannels.SampleY, //Y commanded
                  MeasurementChannels.LaserOn, //Gate signal 0/1
-                 MeasurementChannels.OutputPeriod, //KHz
+                 MeasurementChannels.OutputPeriod, //Converted Raw Data to Frequency(KHz)
             };
 
             bool success = true;
@@ -313,12 +313,12 @@ namespace Demos
             // List begin with double buffered list
             success &= rtc.ListBegin(ListTypes.Auto);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
-            // 500 mm/s
-            success &= rtc.ListSpeed(500, 500);
+            // 100 mm/s
+            success &= rtc.ListSpeed(100, 100);
             success &= rtc.ListJumpTo(new Vector2(radius, 0));
             success &= rtc.ListArcTo(Vector2.Zero, 360);
-            // 1000 mm/s
-            success &= rtc.ListSpeed(1000, 1000);
+            // 600 mm/s
+            success &= rtc.ListSpeed(600, 600);
             success &= rtc.ListJumpTo(new Vector2(radius, 0));
             success &= rtc.ListArcTo(Vector2.Zero, 360);
             // 2000 mm/s

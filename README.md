@@ -122,9 +122,8 @@
   - added) grid checker (extract positions of pattern from image file)
   - added) editor_alc demo
   - added) editor_mof demo
-  - fixed) frequency scale bug with automatic laser control
-  - fixed) simulated color of ray bug
-  - fixed) fieldcorrection demo 
+  - added) serial no reset entity
+  - fixed) many kinds of bugs at runtime 
 
 * 2023.10.27 v.1.7.850
   - added) raster entity

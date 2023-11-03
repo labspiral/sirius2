@@ -64,9 +64,9 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
@@ -81,7 +81,7 @@ namespace Demos
             Debug.Assert(success);
 
             int laserType = 1;
-            Console.Write("select laser (1: D.Out8bits, 2: D.Out16bits, 3: Analog1, 4: Analog2, 5: Pulse width, 6: RS232, 7: Custom, 8: D.Out8bits+Guide) (Default= 1) : ");
+            Console.Write("Select laser (1: D.Out8bits, 2: D.Out16bits, 3: Analog1, 4: Analog2, 5: Pulse width, 6: RS232, 7: Custom, 8: D.Out8bits+Guide) (Default= 1) : ");
             try {
                 laserType = Convert.ToInt32(Console.ReadLine());
             }
@@ -169,7 +169,7 @@ namespace Demos
                     break;
                 Console.WriteLine($"{Environment.NewLine}");
                 double watt = maxWatt / 10; // default: 10 %
-                Console.Write($"power (W) (default= {watt}, max= {laser.MaxPowerWatt}): ");
+                Console.Write($"Power (W) (Default= {watt}, Max= {laser.MaxPowerWatt}): ");
                 try {
                     watt = Convert.ToDouble(Console.ReadLine());
                 }

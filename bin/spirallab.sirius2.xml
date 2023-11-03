@@ -2383,8 +2383,9 @@
             Enable(or disable) guided laser beam
             </summary>
             <remarks>
-            If <c>False</c>, also <c>IRtc.CtlLaserSignal(False)</c> would be called by automatically. <br/>
-            If <c>True</c>, also <c>IRtc.CtlLaserSignal(True)</c> would be called by automatically. <br/>
+            User should be implement its own codes to control guide(or pilot) laser beam. <br/>
+            Additionally if <c>False</c>, also <c>IRtc.CtlLaserSignal(False)</c> would be called by automatically. <br/>
+            Additionally if <c>True</c>, also <c>IRtc.CtlLaserSignal(True)</c> would be called by automatically. <br/>
             </remarks>
             <param name="onOff">On(or off)</param>
             <returns>Success or failed</returns>
@@ -2683,11 +2684,6 @@
             <remarks>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary">RtcCalibrationLibrary</see> <br/>
             </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.LicenseInfo.IsGridCheckerLicensed">
-            <summary>
-            Option for Grid checker or not
-            </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.LicenseInfo.ExtendedLicense">
             <summary>
@@ -3131,6 +3127,9 @@
             <summary>
             Rotate z (°)
             </summary>
+            <remarks>
+            Positive(+) value is CCW direction. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.Offset.Tag">
             <summary>
@@ -3159,7 +3158,7 @@
             </remarks>
             <param name="dx">Dx (mm)</param>
             <param name="dy">Dy (mm)</param>
-            <param name="angleZ">Angle Z (°)</param>
+            <param name="angleZ">Angle Z (°).<br/>Positive(+) value is CCW direction. <br/></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.Offset.#ctor(System.Double,System.Double,System.Double,System.Double)">
             <summary>
@@ -3171,7 +3170,7 @@
             <param name="dx">Dx (mm)</param>
             <param name="dy">Dy (mm)</param>
             <param name="dz">Dz (mm)</param>
-            <param name="angleZ">Angle Z (°)</param>
+            <param name="angleZ">Angle Z (°).<br/>Positive(+) value is CCW direction. <br/></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.Offset.#ctor(System.Numerics.Vector2,System.Double)">
             <summary>
@@ -3182,7 +3181,7 @@
             Transformation order: Rotate by angle and then translate dx, dy, dz <br/>
             </remarks>
             <param name="offsetXy">Dx, Dy (mm)</param>
-            <param name="angleZ">Angle Z (°)</param>
+            <param name="angleZ">Angle Z (°).<br/>Positive(+) value is CCW direction. <br/></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.Offset.#ctor(System.Numerics.Vector3,System.Double)">
             <summary>
@@ -3193,7 +3192,7 @@
             Transformation order: Rotate by angle and then translate dx, dy, dz <br/>
             </remarks>
             <param name="offsetXyz">Dx, Dy, Dz (mm)</param>
-            <param name="angleZ">Angle Z (°)</param>
+            <param name="angleZ">Angle Z (°).<br/>Positive(+) value is CCW direction. <br/></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.Offset.ToString">
             <inheritdoc/>
@@ -3941,9 +3940,6 @@
             Jump Mode
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ExternalCounts">
-            <inheritdoc/>  
-        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.Job">
             <inheritdoc/>  
         </member>
@@ -4127,6 +4123,9 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.SerialIncrementStep">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.SerialCurrentNo">
             <inheritdoc/>  
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.cardId">
@@ -4646,6 +4645,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListSerialNo(System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.SerialNoFormats,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListSerialNoReset(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlSerialConfig(System.UInt32)">
@@ -5326,9 +5328,6 @@
             <c>RtcJumpMode</c>
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ExternalCounts">
-            <inheritdoc/>  
-        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.Job">
             <inheritdoc/>  
         </member>
@@ -5673,6 +5672,9 @@
             <summary>
             Serial No Increment Step
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.SerialCurrentNo">
+            <inheritdoc/>  
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.cardId">
             <summary>
@@ -6240,6 +6242,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListSerialNo(System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.SerialNoFormats,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListSerialNoReset(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlSerialConfig(System.UInt32)">
@@ -9332,9 +9337,6 @@
             Jump Mode
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ExternalCounts">
-            <inheritdoc/>  
-        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.Job">
             <inheritdoc/>  
         </member>
@@ -9518,6 +9520,9 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.SerialIncrementStep">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.SerialCurrentNo">
             <inheritdoc/>  
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.cardId">
@@ -9997,6 +10002,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListSerialNo(System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.SerialNoFormats,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListSerialNoReset(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlSerialConfig(System.UInt32)">
@@ -11792,9 +11800,9 @@
             Increment step of serial no
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.ExternalCounts">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.SerialCurrentNo">
             <summary>
-            Accumulated external /START trigger counts
+            Current serial no
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSets,System.Object)">
@@ -11953,6 +11961,14 @@
             <param name="numOfDigits">Num of digits<br/>Max digits: 15<br/></param>
             <param name="serialFormat"><c>SerialFormat</c></param>
             <param name="characterSet"><c>CharacterSet</c></param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.ListSerialNoReset(System.UInt32,System.UInt32)">
+            <summary>
+            List reset serial no
+            </summary>
+            <param name="startingNo">Starting number</param>
+            <param name="incrementStep">Increment step</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData2D">
@@ -13362,7 +13378,7 @@
                 MeasurementChannels.SampleX, // X commanded
                 MeasurementChannels.SampleY, // Y commanded
                 MeasurementChannels.LaserOn, // Laser ON
-                MeasurementChannels.OutputPeriod, // KHz
+                MeasurementChannels.OutputPeriod, // Converted Raw Data to Frequency(KHz)
             };
             rtc.ListBegin();
             rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels); 

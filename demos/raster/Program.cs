@@ -57,9 +57,9 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
@@ -134,16 +134,16 @@ namespace Demos
             // Start list
             success &= rtc.ListBegin();
             // Jump to start
-            success &= rtc.ListJumpTo(new Vector2(-10, 0));
+            success &= rtc.ListJumpTo(new Vector2(-25, 0));
             
             // Pixel period: 100 usec (0.0001 s)
             double period = 100;
             // Pixel duration: 10 usec
             double duration = 10;
-            // Distance = 0.1 mm
-            float dx = 0.1f;
+            // Distance = 0.01 mm
+            float dx = 0.01f;
             // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
-            uint counts = 1000;
+            uint counts = 5000;
             // Prepare raster horizontal line
             success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, period, new Vector2(dx, 0), counts);
             for (int i = 0; i < counts; i++)
@@ -170,16 +170,16 @@ namespace Demos
             // Start list
             success &= rtc.ListBegin();
             // Jump to start
-            success &= rtc.ListJumpTo(new Vector2(-10, 0));
+            success &= rtc.ListJumpTo(new Vector2(-25, 0));
 
             // Pixel period: 100 usec (0.0001 s)
             double period = 100;
             // Pixel duration: 10 usec
             double duration = 10;
-            // Distance = 0.1 mm
-            float dx = 0.1f;
+            // Distance = 0.01 mm
+            float dx = 0.01f;
             // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
-            uint counts = 1000;
+            uint counts = 5000;
             // Prepare raster horizontal line
             success &= rtcRaster.ListRasterLine(RasterModes.MicroVector, period, new Vector2(dx, 0), counts);
             for (int i = 0; i < counts; i++)
@@ -222,16 +222,16 @@ namespace Demos
             // Start list
             success &= rtc.ListBegin();
             // Jump to start
-            success &= rtc.ListJumpTo(new Vector2(-10, 0));
+            success &= rtc.ListJumpTo(new Vector2(-25, 0));
 
             // Pixel period: 100 usec (0.0001 s)
             double period = 100;
             // Pixel duration: 10 usec
             double duration = 10;
-            // Distance = 0.1 mm
-            float dx = 0.1f;
+            // Distance = 0.01 mm
+            float dx = 0.01f;
             // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
-            uint counts = 1000;
+            uint counts = 5000;
             // Prepare raster horizontal line
             success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, period, new Vector2(dx, 0), counts);
             for (int i = 0; i < counts; i++)
@@ -261,10 +261,10 @@ namespace Demos
             success &= rtc.ListBegin();
 
             int rows = 10;
-            // X pitch = 0.1 mm
-            float dx = 0.1f;
-            // Y pitch = 0.2 mm
-            float dy = 0.2f;
+            // X pitch = 0.01 mm
+            float dx = 0.01f;
+            // Y pitch = 1 mm
+            float dy = 1;
             // Pixel period: 100 usec (0.0001 s)
             double period = 100;
             // Pixel duration: 10 usec
@@ -273,9 +273,9 @@ namespace Demos
             for (int row = 0; row < rows; row++)
             {
                 // Jump to start
-                success &= rtc.ListJumpTo(new Vector2(-10, dy + row));
+                success &= rtc.ListJumpTo(new Vector2(-25, -rows/2 + row));
                 // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
-                uint counts = 1000;
+                uint counts = 5000;
                 // Prepare raster horizontal line
                 success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, period, new Vector2(dx, 0), counts);
                 for (int i = 0; i < counts; i++)

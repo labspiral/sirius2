@@ -268,8 +268,8 @@ namespace Demos
             success &= rtc.ListBegin();
             for (float angle = 0; angle < 360; angle += 1)
             {
-                double x = radius * Math.Sin(angle * Math.PI / 180.0);
-                double y = radius * Math.Cos(angle * Math.PI / 180.0);
+                double x = radius * Math.Cos(angle * Math.PI / 180.0);
+                double y = radius * Math.Sin(angle * Math.PI / 180.0);
                 success &= rtc.ListJumpTo(new System.Numerics.Vector2((float)x, (float)y));
                 //laser signal on during specific time
                 success &= rtc.ListLaserOn(durationMsec);

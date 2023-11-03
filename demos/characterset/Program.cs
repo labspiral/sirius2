@@ -53,9 +53,9 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
@@ -64,7 +64,7 @@ namespace Demos
             // 50KHz, 2 usec
             success &= rtc.CtlFrequency(50 * 1000, 2);
             // 500 mm/s
-            success &= rtc.CtlSpeed(500, 500);
+            success &= rtc.CtlSpeed(100, 5);
             // Basic delays
             success &= rtc.CtlDelay(10, 100, 200, 200, 0);
             Debug.Assert(success);
@@ -91,10 +91,11 @@ namespace Demos
                 Console.WriteLine("'B' : delete character set");
                 Console.WriteLine("'T' : mark to text");
                 Console.WriteLine("'D' : mark to date");
+                Console.WriteLine("'I' : mark to time");
                 Console.WriteLine("'F1' : datetime offset");
                 Console.WriteLine("'F2' : datetime reset");
-                Console.WriteLine("'S' : mark to serial number");
                 Console.WriteLine("'R' : reset serial number");
+                Console.WriteLine("'S' : mark to serial number");
                 Console.WriteLine("'Q' : quit");
                 Console.Write("Select your target : ");
                 key = Console.ReadKey(false);
@@ -122,19 +123,24 @@ namespace Demos
                     case ConsoleKey.F1:
                         // Datetime offset
                         rtcCharacterSet.DateTimeOffsetDays = 0;
-                        rtcCharacterSet.DateTimeOffsetHours = 1;
-                        rtcCharacterSet.DateTimeOffsetMinutes = -30;
+                        rtcCharacterSet.DateTimeOffsetHours = -1;
+                        rtcCharacterSet.DateTimeOffsetMinutes = 0;
+                        rtcCharacterSet.DateTimeOffsetSeconds = 0;
                         rtcCharacterSet.IsDateTimeOffset = true;
                         break;
                     case ConsoleKey.F2:
+                        rtcCharacterSet.DateTimeOffsetDays = 0;
+                        rtcCharacterSet.DateTimeOffsetHours = 0;
+                        rtcCharacterSet.DateTimeOffsetMinutes = 0;
+                        rtcCharacterSet.DateTimeOffsetSeconds = 0;
                         rtcCharacterSet.IsDateTimeOffset = false;
-                        break;
-                    case ConsoleKey.S:
-                        MarkToSerial(laser, rtc);
                         break;
                     case ConsoleKey.R:
                         // Reset serial no
-                        rtcCharacterSet.CtlSerialNoReset(100, 5);
+                        rtcCharacterSet.CtlSerialNoReset(10, 1);
+                        break;
+                    case ConsoleKey.S:
+                        MarkToSerial(laser, rtc);
                         break;
                 }                
             } while (true);
@@ -317,8 +323,8 @@ namespace Demos
             Debug.Assert(rtcCharacterSet != null);
 
             success &= rtc.ListBegin(ListTypes.Single);
-            success &= rtc.ListJumpTo(new Vector2(-10, 0));
-            success &= rtcCharacterSet.ListText("123 456");
+            success &= rtc.ListJumpTo(new Vector2(-25, 0));
+            success &= rtcCharacterSet.ListText("123 45");
             if (success)
             {
                 success &= rtc.ListEnd();
@@ -341,9 +347,9 @@ namespace Demos
             Debug.Assert(rtcCharacterSet != null);
 
             success &= rtc.ListBegin(ListTypes.Single);
-            success &= rtc.ListJumpTo(new Vector2(-10, 0));
+            success &= rtc.ListJumpTo(new Vector2(-25, 0));
             success &= rtcCharacterSet.ListDate(DateFormats.Month, true);
-            success &= rtc.ListJumpTo(new Vector2(10, 0));
+            success &= rtc.ListJumpTo(new Vector2(0, 0));
             success &= rtcCharacterSet.ListDate(DateFormats.Day, true);
             if (success)
             {
@@ -366,11 +372,11 @@ namespace Demos
             Debug.Assert(rtcCharacterSet != null);
 
             success &= rtc.ListBegin( ListTypes.Single);
-            success &= rtc.ListJumpTo(new Vector2(-10, 0));
+            success &= rtc.ListJumpTo(new Vector2(-25, 0));
             success &= rtcCharacterSet.ListTime(TimeFormats.Hours24, true);
-            success &= rtc.ListJumpTo(new Vector2(10, 0));
+            success &= rtc.ListJumpTo(new Vector2(-5, 0));
             success &= rtcCharacterSet.ListTime(TimeFormats.Minutes, true);
-            success &= rtc.ListJumpTo(new Vector2(30, 0));
+            success &= rtc.ListJumpTo(new Vector2(15, 0));
             success &= rtcCharacterSet.ListTime(TimeFormats.Seconds, true);
             if (success)
             {
@@ -392,16 +398,24 @@ namespace Demos
             var rtcCharacterSet = rtc as IRtcCharacterSet;
             Debug.Assert(rtcCharacterSet != null);
 
-            //Reset serial no as 1000 with + 1
-            rtcCharacterSet.CtlSerialNoReset(1000, 1);
-
+            // List begin 
             success &= rtc.ListBegin(ListTypes.Single);
-            success &= rtc.ListJumpTo(new Vector2(-10, -20));
-            success &= rtcCharacterSet.ListSerialNo(4, SerialNoFormats.LeadingWithZero);
-            success &= rtc.ListJumpTo(new Vector2(-10, 0));
-            success &= rtcCharacterSet.ListSerialNo(4, SerialNoFormats.LeadingWithZero);
-            success &= rtc.ListJumpTo(new Vector2(-10, 20));
-            success &= rtcCharacterSet.ListSerialNo(4, SerialNoFormats.LeadingWithZero);
+
+            // If you want to reset serial no by list command
+            //success &= rtcCharacterSet.ListSerialNoReset(12, 1);
+
+            // Supposed to 1000 marked
+            success &= rtc.ListJumpTo(new Vector2(-25, 0));
+            success &= rtcCharacterSet.ListSerialNo(2, SerialNoFormats.LeadingWithZero);
+
+            // Supposed to 1001 marked
+            success &= rtc.ListJumpTo(new Vector2(-5, 0));
+            success &= rtcCharacterSet.ListSerialNo(2, SerialNoFormats.LeadingWithZero);
+
+            // Supposed to 1002 marked
+            success &= rtc.ListJumpTo(new Vector2(15, 0));
+            success &= rtcCharacterSet.ListSerialNo(2, SerialNoFormats.LeadingWithZero);
+
             if (success)
             {
                 success &= rtc.ListEnd();

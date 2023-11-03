@@ -56,9 +56,9 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
@@ -77,7 +77,7 @@ namespace Demos
             int laserType = 0;
             int laserId = 0;
             float maxWatt = 20;
-            Console.Write("select laser (0~17) : ");
+            Console.Write("select laser (0~5) : ");
             try
             {
                 laserType = Convert.ToInt32(Console.ReadLine());
@@ -144,8 +144,11 @@ namespace Demos
                     case ConsoleKey.D1 :
                         DrawCircle(laser, rtc);
                         break;
+                    case ConsoleKey.D2:
+                        DrawCircle2(laser, rtc);
+                        break;
                     case ConsoleKey.P:
-                        Console.Write($"target power (W) (max= {laser.MaxPowerWatt}): ");
+                        Console.Write($"Target power (Max.{laser.MaxPowerWatt}W): ");
                         try
                         {
                             double watt = Convert.ToDouble(Console.ReadLine());
@@ -156,11 +159,8 @@ namespace Demos
                         {
                         }
                         break;
-                    case ConsoleKey.D2:
-                        DrawCircle2(laser, rtc);
-                        break;
-
                 }
+                Debug.Assert(success);
             } while (true);
 
             rtc.Dispose();

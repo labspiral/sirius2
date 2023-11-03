@@ -4,6 +4,18 @@
         <name>spirallab.sirius2.winforms</name>
     </assembly>
     <members>
+        <member name="T:SpiralLab.Sirius2.Winforms.DocumentFactory">
+            <summary>
+            Factory for document
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentFactory.CreateDefault(System.String)">
+            <summary>
+            Create default document
+            </summary>
+            <param name="name">Name</param>
+            <returns><c>IDocument</c></returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.arc">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -968,6 +980,47 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.charactersettext.Width_DISP">
             <summary>
               Looks up a localized string similar to Width.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.control.serialnoreset">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.serialnoreset.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.serialnoreset.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.serialnoreset.Increment_DESC">
+            <summary>
+              Looks up a localized string similar to Serial Increment Step.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.serialnoreset.Increment_DISP">
+            <summary>
+              Looks up a localized string similar to Increment.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.serialnoreset.SerialNo_C">
+            <summary>
+              Looks up a localized string similar to Serial No.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.serialnoreset.Starting_DESC">
+            <summary>
+              Looks up a localized string similar to Serial  Starting No.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.serialnoreset.Starting_DISP">
+            <summary>
+              Looks up a localized string similar to Starting.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.mofextstartdelay">
@@ -5014,6 +5067,45 @@
             <returns><c>CharacterSetSerialNo</c> as string</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.CharacterSetSerialNo.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntitySerialNoReset">
+            <summary>
+            EntitySerialNoReset entity
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySerialNoReset.StartingNo">
+            <summary>
+            Serial starting no
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySerialNoReset.IncrementStep">
+            <summary>
+            Serial starting no
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySerialNoReset.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySerialNoReset.#ctor(System.UInt32,System.UInt32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="startingNo">Starting no</param>
+            <param name="incrementStep">Increment step</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySerialNoReset.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySerialNoReset.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySerialNoReset.Regen">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySerialNoReset.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFExtStartDelay">
@@ -10974,12 +11066,17 @@
             <summary>
             Laser source max power (W)
             </summary>
-            <remarks>User should be assign max laser power (W) at first</remarks>
+            <remarks>
+            Should be assigned <c>ILaser.MaxPowerWatt</c> at first. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.PowerPercentage">
             <summary>
-            Max power (W) (by laser source)
+            Output power (%)
             </summary>
+            <remarks>
+            Should be assigned <c>PowerMax</c> at first. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.Frequency">
             <summary>
@@ -12243,7 +12340,7 @@
             document.ActAdd(imagetext);
             </code>
             </summary>
-            <param name="fontName">Font family name. Should be one of <c>Config.InstalledFontNames</c>.</param>
+            <param name="fontName">Font family name.<br/>Should be one of <see cref="P:SpiralLab.Sirius2.Winforms.Config.InstalledFontNames">Config.InstalledFontNames</see>.</param>
             <param name="text">Text data</param>
             <param name="style"><c>System.Drawing.FontStyle</c></param>
             <param name="isFill">Fill (or outline)</param>
@@ -12263,7 +12360,7 @@
             document.ActAdd(text);
             </code>
             </summary>
-            <param name="fontName">Font family name. Should be one of <c>Config.InstalledFontNames</c>.</param>
+            <param name="fontName">Font family name.<br/>Should be one of <see cref="P:SpiralLab.Sirius2.Winforms.Config.InstalledFontNames">Config.InstalledFontNames</see>.</param>
             <param name="text">Text data</param>
             <param name="style"><c>System.Drawing.FontStyle</c></param>
             <param name="height">Height (mm)</param>        
@@ -12279,7 +12376,7 @@
             document.ActAdd(text);
             </code>
             </summary>
-            <param name="fontName">Font family name. Should be one of <c>Config.InstalledFontNames</c>.</param>
+            <param name="fontName">Font family name.<br/>Should be one of <see cref="P:SpiralLab.Sirius2.Winforms.Config.InstalledFontNames">Config.InstalledFontNames</see>.</param>
             <param name="text">Text data</param>
             <param name="style"><c>System.Drawing.FontStyle</c></param>
             <param name="height">Height (mm)</param>       
@@ -12306,7 +12403,7 @@
             document.ActAdd(textSec);
             </code>
             </summary>
-            <param name="fontName">Font family name. Should be one of <c>Config.InstalledFontNames</c>.</param>
+            <param name="fontName">Font family name.<br/>Should be one of <see cref="P:SpiralLab.Sirius2.Winforms.Config.InstalledFontNames">Config.InstalledFontNames</see>.</param>
             <param name="format"><c>CharacterSetFormats</c></param>
             <param name="height">Height (mm)</param>
             <returns><c>EntityCharacterSetText</c></returns>
@@ -12804,6 +12901,24 @@
             <param name="inputLowBitMask">Input low bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <param name="inputHightBitMask">Input high bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <returns><c>EntityWaitDataExt16Cond</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateSerialNoReset(System.UInt32,System.UInt32)">
+            <summary>
+            Create <c>EntitySerialNoReset</c> entity 
+            <para>Used with RTC5,6 only (not syncAXIS)</para>
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var entity = EntityFactory.CreateSerialNoReset(1000, 1);
+            document.ActAdd(entity);
+            </code>
+            </summary>
+            <remarks>
+            Used with <c>IRtcCharacterSet</c> interface only. <br/>
+            </remarks>
+            <param name="startingNo">Starting no</param>
+            <param name="incrementStep">Increment step</param>
+            <returns><c>EntitySerialNoReset</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePointsCloud(OpenTK.Vector3[])">
             <summary>
@@ -20410,6 +20525,19 @@
             Expand/collapse when +- icon has clicked
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.ViewFactory">
+            <summary>
+            Factory for view
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.ViewFactory.CreateDefault(System.String,OpenTK.GLControl)">
+            <summary>
+            Create default view
+            </summary>
+            <param name="name">Name</param>
+            <param name="glControl"><c> OpenTK.GLControl </c></param>
+            <returns><c>IView</c></returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.ViewModes">
             <summary>
             ViewModes
@@ -20523,6 +20651,12 @@
             <summary>
             User data
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IView.Initialize">
+            <summary>
+            Initialize
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IView.MakeCurrent">
             <summary>
@@ -20749,6 +20883,9 @@
             Represent for <c>IView</c>
             </summary>
             <returns>Description for <c>IView</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.ViewBase.Initialize">
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.ViewBase.Dp2Lp(System.Drawing.Point,System.Double@,System.Double@)">
             <inheritdoc/>

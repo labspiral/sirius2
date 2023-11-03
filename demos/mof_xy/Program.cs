@@ -58,9 +58,9 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
@@ -104,7 +104,7 @@ namespace Demos
                 Console.WriteLine("'A' : enable simulate encoder x/y");
                 Console.WriteLine("'D' : disable simulate encoder x/y");
                 Console.WriteLine("'C' : compensate tracking error");
-                Console.WriteLine("'F' : following only");
+                Console.WriteLine("'F' : following during 10s");
                 Console.WriteLine("'W' : draw circle + wait encoder + measurement");
                 Console.WriteLine("'Z' : draw zigzag + wait encoder + measurement");
                 Console.WriteLine("'T' : draw circle + encoder compensate table");
@@ -196,10 +196,10 @@ namespace Demos
             // Goes to origin
             success &= rtc.ListJumpTo(Vector2.Zero);
             
-            // Laser on during 60 s (comment for safety issue)
-            //success &= rtc.ListLaserOn(1000 * 60);
-            // or Waiting 60 secs
-            success &= rtc.ListWait(1000 * 60);
+            // Laser on during 10s (comment for safety issue)
+            //success &= rtc.ListLaserOn(1000 * 10);
+            // or Waiting 10 secs
+            success &= rtc.ListWait(1000 * 10);
 
             // MoF end 
             success &= rtcMof.ListMofEnd(Vector2.Zero);

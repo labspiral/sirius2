@@ -55,9 +55,9 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
@@ -129,7 +129,7 @@ namespace Demos
         /// <param name="width"></param>
         /// <param name="height"></param>
         /// <returns></returns>
-        private static bool DrawRectangle1(IRtc rtc, ILaser laser, float radius = 10, float width = 1, float height = 1)
+        private static bool DrawRectangle1(IRtc rtc, ILaser laser, float radius = 10, float width = 5, float height = 5)
         {
             var rtcMeasurement = rtc as IRtcMeasurement;
             Debug.Assert(rtcMeasurement != null);
@@ -141,7 +141,7 @@ namespace Demos
                  MeasurementChannels.SampleX, //X commanded
                  MeasurementChannels.SampleY, //Y commanded
                  MeasurementChannels.LaserOn, //Gate signal 0/1
-                 MeasurementChannels.OutputPeriod, //KHz
+                 MeasurementChannels.OutputPeriod, //Converted Raw Data to Frequency(KHz)
             };
 
             bool success = true;
@@ -210,7 +210,7 @@ namespace Demos
         /// <param name="width"></param>
         /// <param name="heigth"></param>
         /// <returns></returns>
-        private static bool DrawRectangle2(IRtc rtc, ILaser laser, float radius = 10, float width = 1, float heigth = 1)
+        private static bool DrawRectangle2(IRtc rtc, ILaser laser, float radius = 10, float width = 5, float heigth = 5)
         {
             var rtcMeasurement = rtc as IRtcMeasurement;
             Debug.Assert(rtcMeasurement != null);
@@ -222,7 +222,7 @@ namespace Demos
                  MeasurementChannels.SampleX, //X commanded
                  MeasurementChannels.SampleY, //Y commanded
                  MeasurementChannels.LaserOn, //Gate signal 0/1
-                 MeasurementChannels.OutputPeriod, //KHz
+                 MeasurementChannels.OutputPeriod, //Converted Raw Data to Frequency(KHz)
             };
 
             bool success = true;
@@ -287,11 +287,10 @@ namespace Demos
         /// <param name="rtc"></param>
         /// <param name="laser"></param>
         /// <param name="radius"></param>
-        /// <param name="scale"></param>
         /// <param name="width"></param>
         /// <param name="heigth"></param>
         /// <returns></returns>
-        private static bool DrawRectangle3(IRtc rtc, ILaser laser, float radius = 10, float scale = 1, float width = 1, float heigth = 1)
+        private static bool DrawRectangle3(IRtc rtc, ILaser laser, float radius = 10, float width = 5, float heigth = 5)
         {
             var rtcMeasurement = rtc as IRtcMeasurement;
             Debug.Assert(rtcMeasurement != null);
@@ -303,8 +302,9 @@ namespace Demos
                  MeasurementChannels.SampleX, //X commanded
                  MeasurementChannels.SampleY, //Y commanded
                  MeasurementChannels.LaserOn, //Gate signal 0/1
-                 MeasurementChannels.OutputPeriod, //KHz
+                 MeasurementChannels.OutputPeriod, //Converted Raw Data to Frequency(KHz)
             };
+            Random random = new Random();
 
             bool success = true;
             // List buffer with single buffered
@@ -318,7 +318,8 @@ namespace Demos
                 // 2. translate
                 rtc.MatrixStack.Push(Matrix4x4.CreateTranslation(radius, 0, 0));
                 // 1. scale
-                rtc.MatrixStack.Push(Matrix4x4.CreateScale(scale));
+                var scale = random.NextDouble() * (2 - 0.5) + 0.5;
+                rtc.MatrixStack.Push(Matrix4x4.CreateScale((float)scale));
                 //                        |  
                 //                        |  
                 //                  .     |     . 
@@ -375,7 +376,7 @@ namespace Demos
         /// <param name="width"></param>
         /// <param name="height"></param>
         /// <returns></returns>
-        private static bool DrawRectangle4(IRtc rtc, ILaser laser, Vector3 dXyz, float angleZ, float scale, float width = 1, float height = 1)
+        private static bool DrawRectangle4(IRtc rtc, ILaser laser, Vector3 dXyz, float angleZ, float scale, float width = 5, float height = 5)
         {
             var rtcMeasurement = rtc as IRtcMeasurement;
             Debug.Assert(rtcMeasurement != null);
@@ -387,7 +388,7 @@ namespace Demos
                  MeasurementChannels.SampleX, //X commanded
                  MeasurementChannels.SampleY, //Y commanded
                  MeasurementChannels.LaserOn, //Gate signal 0/1
-                 MeasurementChannels.OutputPeriod, //KHz
+                 MeasurementChannels.OutputPeriod, //Converted Raw Data to Frequency(KHz)
             };
 
             var m1 = Matrix4x4.CreateScale(scale);

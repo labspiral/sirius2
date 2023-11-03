@@ -57,9 +57,9 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
@@ -114,7 +114,7 @@ namespace Demos
             float overlapped = 10;
             rtc.DistanceToSecondaryHead = new Vector2((float)fov - overlapped, 0);
 
-            // Tobal offset = base offset + user offset
+            // Total offset = base offset + user offset
             // Reset each head's base offset
             rtc.PrimaryHeadBaseOffset = Offset.Zero;
             rtc.SecondaryHeadBaseOffset = Offset.Zero;
@@ -159,14 +159,14 @@ namespace Demos
                         break;
                     case ConsoleKey.D2:
                         // Base offset 
-                        // Tobal offset = base offset + user offset
+                        // Total offset = base offset + user offset
                         rtc2ndHead.PrimaryHeadBaseOffset = new Offset(10, 0, 0, 0.1f);
                         rtc2ndHead.SecondaryHeadBaseOffset = new Offset(-10, 0, 0, 0.1f);
                         DrawCircle(laser, rtc);
                         break;
                     case ConsoleKey.D3:
                         // User offset
-                        // Tobal offset = base offset + user offset
+                        // Total offset = base offset + user offset
                         rtc2ndHead.PrimaryHeadUserOffset = new Offset(-5, 0, 0, 0);
                         rtc2ndHead.SecondaryHeadUserOffset = new Offset(5, 0, 0, 0);
                         DrawCircle(laser, rtc);
