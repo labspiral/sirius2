@@ -262,13 +262,6 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                 return false;
             }
 
-            if (null == Offsets || 0 == Offsets.Length)
-                this.Offsets = new Offset[1] { Offset.Zero };
-
-            // Reset to start
-            this.CurrentPenColor = Color.Transparent;
-
-            Logger.Log(Logger.Types.Warn, $"marker [{Index}]: trying to start mark with {this.Offsets.Length} offsets");
             if (null != thread)
             {
                 if (!this.thread.Join(500))
@@ -277,9 +270,25 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                     return false;
                 }
             }
+
+            if (null == Offsets || 0 == Offsets.Length)
+                this.Offsets = new Offset[1] { Offset.Zero };
+
+            Logger.Log(Logger.Types.Warn, $"marker [{Index}]: trying to start mark with {this.Offsets.Length} offsets");
+
             // Shallow copy for cross-thread issue
             layers = new List<EntityLayer>(Document.InternalData.Layers);
+
+            // Reset to start
+            this.CurrentPenColor = Color.Transparent;
+            CurrentOffset = Offset.Zero;
+            CurrentOffsetIndex = 0;
+            CurrentLayer = null;
+            CurrentLayerIndex = 0;
+            CurrentEntity = null;
+            CurrentEntityIndex = 0;
             AccumulatedMarks++;
+
             switch (MarkProcedure)
             {
                 default:
@@ -363,8 +372,10 @@ namespace SpiralLab.Sirius2.Winforms.Marker
 
             for (int i = 0; i < Offsets.Length; i++)
             {
-                Logger.Log(Logger.Types.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
+                CurrentOffset = Offsets[i];
+                CurrentOffsetIndex = i;
                 rtc.MatrixStack.Push(Offsets[i].ToMatrix);
+                Logger.Log(Logger.Types.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
                 foreach (var layer in layers)
                 {
                     if (!layer.IsMarkerable)
@@ -492,8 +503,10 @@ namespace SpiralLab.Sirius2.Winforms.Marker
 
                 for (int i = 0; i < Offsets.Length; i++)
                 {
-                    Logger.Log(Logger.Types.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
+                    CurrentOffsetIndex = i;
+                    CurrentOffset = Offsets[i];
                     rtc.MatrixStack.Push(Offsets[i].ToMatrix);
+                    Logger.Log(Logger.Types.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
                     success &= LayerWork(i, layer, Offsets[i]);
                     rtc.MatrixStack.Pop();
                     if (!success)

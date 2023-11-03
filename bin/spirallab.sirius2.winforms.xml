@@ -14235,6 +14235,16 @@
               Looks up a localized string similar to Name.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offset_DESC">
+            <summary>
+              Looks up a localized string similar to Current(Working) Offset.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offset_DISP">
+            <summary>
+              Looks up a localized string similar to Offset.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offset_Index_DESC">
             <summary>
               Looks up a localized string similar to Current(Working) Offset Index.
@@ -14612,6 +14622,14 @@
             <inheritdoc/>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.currentOffsetIndex">
+            <summary>
+            Current offset index
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.CurrentOffset">
+            <inheritdoc/>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.currentOffset">
             <summary>
             Current offset index
             </summary>
@@ -15389,6 +15407,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.CurrentOffsetIndex">
             <summary>
             Current working(or marking) offset index
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.CurrentOffset">
+            <summary>
+            Current working(or marking) offset 
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.CurrentLayerIndex">

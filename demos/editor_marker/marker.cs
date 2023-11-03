@@ -68,7 +68,8 @@ namespace Demos
         public virtual bool IsExternalStart
         {
             get { return isExternalStart; }
-            set {
+            set
+            {
                 if (this.IsBusy)
                 {
                     Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to set external start during busy");
@@ -81,8 +82,6 @@ namespace Demos
                     if (1 != this.Document.InternalData.Layers.Count)
                         MessageBox.Show($"Should be single layer only to use external /START", "Warning", MessageBoxButtons.OK);
                 }
-                else
-                    listType = ListTypes.Auto;
             }
         }
         private bool isExternalStart = false;
@@ -198,7 +197,6 @@ namespace Demos
             ListType = ListTypes.Auto;
             isMeasurementPlot = false;
 
-            // set 'True' if check scanner status
             IsCheckTempOk = false;
             IsCheckPowerOk = false;
             IsCheckPositionAck = false;
@@ -394,11 +392,12 @@ namespace Demos
             // Shallow copy for cross-thread issue
             layers = new List<EntityLayer>(Document.InternalData.Layers);
 
+            CurrentOffset = Offset.Zero;
             CurrentOffsetIndex = 0;
-            CurrentLayerIndex = 0;
             CurrentLayer = null;
-            CurrentEntityIndex = 0;
+            CurrentLayerIndex = 0;
             CurrentEntity = null;
+            CurrentEntityIndex = 0;
             AccumulatedMarks++;
 
             if (IsExternalStart)
@@ -406,6 +405,7 @@ namespace Demos
             else
                 Logger.Log(Logger.Types.Warn, $"marker [{Index}]: trying to start mark with {this.Offsets.Length} offsets");
 
+            Logger.Log(Logger.Types.Warn, $"marker [{Index}]: trying to start mark with target= {MarkTarget}, proc= {MarkProcedure}, offset(s)= {this.Offsets.Length}");
             switch (MarkProcedure)
             {
                 default:
@@ -521,9 +521,10 @@ namespace Demos
 
             for (int i = 0; i < Offsets.Length; i++)
             {
-                Logger.Log(Logger.Types.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
-                rtc.MatrixStack.Push(Offsets[i].ToMatrix);
+                CurrentOffset = Offsets[i];
                 CurrentOffsetIndex = i;
+                rtc.MatrixStack.Push(Offsets[i].ToMatrix);
+                Logger.Log(Logger.Types.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
                 foreach (var layer in layers)
                 {
                     if (!layer.IsMarkerable)
@@ -548,6 +549,8 @@ namespace Demos
                                 break;
                         }
                     }
+                    if (!success)
+                        break;
                     success &= laser.ListBegin();
                     success &= rtc.ListBegin(ListType);
 
@@ -728,8 +731,9 @@ namespace Demos
                 {
                     try
                     {
-                        rtc.MatrixStack.Push(Offsets[i].ToMatrix);
+                        CurrentOffset = Offsets[i];
                         CurrentOffsetIndex = i;
+                        rtc.MatrixStack.Push(Offsets[i].ToMatrix);
                         Logger.Log(Logger.Types.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
                         success &= LayerWork(i, layer, Offsets[i]);
                         if (!success)

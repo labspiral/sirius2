@@ -146,13 +146,20 @@ namespace Demos
 
         private string Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
         {
-            var entity = textConvertible as IEntity;            
-            switch (entity.Name)
+            var currentLayer = marker.CurrentLayer;
+            var currentLayerIndex = marker.CurrentLayerIndex;
+            //var currentEntity = textConvertible as IEntity;
+            var currentEntity = marker.CurrentEntity;
+            var currentEntityIndex = marker.CurrentEntityIndex;
+            var currentOffset = marker.CurrentOffset;
+            var currentOffsetIndex = marker.CurrentOffsetIndex;
+
+            switch (currentEntity.Name)
             {
                 case "MyBarcode1":
-                    return $"SIRIUS2 {marker.CurrentOffsetIndex}";
+                    return $"SIRIUS2 {currentOffsetIndex}";
                 case "MyText1":
-                    return $"SIRIUS2 {DateTime.Now.ToString("HH:mm:ss")} {marker.CurrentOffsetIndex}";
+                    return $"SIRIUS2 {DateTime.Now.ToString("HH:mm:ss")} {currentOffsetIndex}";
                 default:
                     return textConvertible.SourceText;
             }
