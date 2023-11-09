@@ -86,6 +86,7 @@
     - config "config_syncaxis.ini" for XL-SCAN
  - Demo 'editor_entity' winforms project for create entities
  - Demo 'editor_barcode' winforms project for mark individual barcode entities
+ - Demo 'editor_mof' winforms project for encoder based MoF
  - Demo 'editor_multiple' winforms project for multiple instances
  - Demo 'editor_marker' winforms project for custom marker
  - Demo 'editor_remote' winforms project for custom remote control
@@ -123,7 +124,7 @@
      - IRtcStartStopInfo 
      - CtlSimulatedExternalStart 
      - SerialMaxNo at IRtcCharacterSet
-  - udpated) RTC6_Software_Package_Rev.1.15.5
+  - updated) RTC6_Software_Package_Rev.1.15.5
   - fixed) ImageText render bug 
   - fixed) ITextRegisterable
      - download character set if modified
