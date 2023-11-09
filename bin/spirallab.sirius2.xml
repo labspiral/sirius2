@@ -3027,6 +3027,22 @@
             <param name="values">Array of value</param>
             <returns>Min value</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Mathematics.MathHelper.CreateFromYawPitchRoll(System.Single,System.Single,System.Single)">
+            <summary>
+            Create Quaternion by yaw, pitch and roll
+            </summary>
+            <param name="yaw"></param>
+            <param name="pitch"></param>
+            <param name="roll"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Mathematics.MathHelper.ToEulerAngles(System.Numerics.Quaternion)">
+            <summary>
+            Quaternion to Vector3
+            </summary>
+            <param name="q"></param>
+            <returns></returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Mathematics.IMatrixStack`1">
             <summary>
             IMatrixStack interface 
@@ -3600,6 +3616,244 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.ToString">
             <inheritdoc/>
         </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo">
+            <summary>
+            Rtc5StartStopInfo
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit">
+            <summary>
+            Bit flags
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.InternalStartExecuted">
+            <summary>
+            An internal start has been executed (by execute_list or similar) since the last call of get_startstop_info.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ExternalStartExecuted">
+            <summary>
+            An External Start has been executed (by /START, /START2, /SlaveSTART, simulate_ext_start or simulate_ext_start_ctrl) since the last call of get_startstop_info. 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.InternalStopExecuted">
+            <summary>
+            An internal stop has been executed (by stop_execution) since the last call of get_startstop_info.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ExternalStopExecuted">
+            <summary>
+            An External Stop has been executed (by /STOP, /STOP2, /Slave-STOP or simulate_ext_stop) since the last call of get_startstop_info. 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ExtStopStatus">
+            <summary>
+            Ext-stop status (= logical AND operation of the signals /STOP, /STOP2, /SlaveSTOP and simulate_ext_stop, see Figure 68):
+            </summary>
+            <remarks>
+            1: No stop signals are currently present at the input ports or the input ports are not connected. <br/>
+            0: There is a stop signal at least at one of the input ports. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.LaserControlSignalsGlobalEnabled">
+            <summary>
+            The laser control signals are globally enabled, see Chapter 7.4.1 ”Enabling, Activating and Switching Laser Control Signals”, page 183. See also set_laser_control. 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.Laser12SignalsActiveLow">
+            <summary>
+            The TTL laser control signals at the LASER1 and LASER2 output ports are active-LOW (the signal level can be defined by set_laser_control).
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ExternalStartFailed">
+            <summary>
+            Since the last call of get_startstop_info, at least one External Start has failed (more External Starts were triggered than could be simultaneously held in the 8-start wait loop).
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ExtStartStatus">
+            <summary>
+            Ext-Start status (= logical AND operation of the signals /START, /START2 and /Slave-START, see Figure 68): 
+            </summary>
+            <remarks>
+            1: No start signals are currently present at the input ports or the input ports are not connected. <br/>
+            0: A start signal is present at least at one of the input ports. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.LaserOnSignalsActiveLow">
+            <summary>
+             The TTL laser control signal at the LASERON output port is active-LOW (the signal level can be defined by set_laser_control).
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.LaserControlSignalsEnabled">
+            <summary>
+            The laser control signals are enabled 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits16">
+            <summary>
+            The error 16 bits (for first scan head connector)
+            </summary>
+            <remarks>
+            Incorrect number of frames within a data block.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits17">
+            <summary>
+            The error 17 bits (for first scan head connector)
+            </summary>
+            <remarks>
+            Incorrect pulse length of signal received from scan system, maybe no scan system is connected
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits18">
+            <summary>
+            The error 18 bits (for first scan head connector)
+            </summary>
+            <remarks>
+            Preamble sequence incorrect.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits19">
+            <summary>
+            The error 19 bits (for first scan head connector)
+            </summary>
+            <remarks>
+            Bit count within a subframe incorrect.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits20">
+            <summary>
+            The error 20 bits (for first scan head connector)
+            </summary>
+            <remarks>
+            Parity error when reading data received from scan system.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits21">
+            <summary>
+            The error 21 bits (for first scan head connector)
+            </summary>
+            <remarks>
+            The present data is invalid (old).
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits22">
+            <summary>
+            The error 22 bits (for first scan head connector)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits23">
+            <summary>
+            The error 23 bits (for first scan head connector)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits24">
+            <summary>
+            The error 24 bits (for second scan head connector)
+            </summary>
+            <remarks>
+            Incorrect number of frames within a data block.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits25">
+            <summary>
+            The error 25 bits (for second scan head connector)
+            </summary>
+            <remarks>
+            Incorrect pulse length of signal received from scan system, maybe no scan system is connected
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits26">
+            <summary>
+            The error 26 bits (for second scan head connector)
+            </summary>
+            <remarks>
+            Preamble sequence incorrect.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits27">
+            <summary>
+            The error 27 bits (for second scan head connector)
+            </summary>
+            <remarks>
+            Bit count within a subframe incorrect.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits28">
+            <summary>
+            The error 28 bits (for second scan head connector)
+            </summary>
+            <remarks>
+            Parity error when reading data received from scan system.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits29">
+            <summary>
+            The error 29 bits (for second scan head connector)
+            </summary>
+            <remarks>
+            The present data is invalid (old).
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits30">
+            <summary>
+            The error 30 bits (for second scan head connector)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits31">
+            <summary>
+            The error 31 bits (for second scan head connector)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Value">
+            <summary>
+            Bit value
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Add(SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit)">
+            <summary>
+            Add <c>Bit</c> flag
+            </summary>
+            <param name="flag"><c>Bit</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Remove(SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit)">
+            <summary>
+            Remove <c>Bit</c> flag
+            </summary>
+            <param name="flag"><c>Bit</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Contains(SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit)">
+            <summary>
+            Check <c>Bit</c> flag is exist ornot
+            </summary>
+            <param name="flag"><c>Bit</c></param>
+            <returns><c>Bit</c> is exist or not</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.ToUInt">
+            <summary>
+            Conver to uint
+            </summary>
+            <returns>uint</returns>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Empty">
+            <summary>
+            Create empty <c>Rtc5ExternalControlMode</c> instance
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.#ctor(SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bit"><c>Bit</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.ToString">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5MarkingInfo">
             <summary>
             Rtc5MarkingInfo
@@ -3877,7 +4131,7 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.DoubleBufferMaxSize">
             <summary>
             Double buffer max size
-            <para>Default: 5000 (Min: 100, Max: 2^18)</para>
+            <para>Default: 5000 (Min: 100, Max: 2^18 - <c>List3BufferMaxSize</c>)</para>
             <para>Used with <c>ListTypes.Auto</c></para>
             </summary>
         </member>
@@ -3933,6 +4187,11 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.MarkingInfo">
             <summary>
             Rtc5MarkingInfo
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.StartStopInfo">
+            <summary>
+            Rtc5StartStopInfo
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.JumpMode">
@@ -4122,11 +4381,29 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.SerialStartNo">
             <inheritdoc/>  
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.serialStartNo">
+            <summary>
+            Starting Serial No 
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.SerialIncrementStep">
             <inheritdoc/>  
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.serialIncrementStep">
+            <summary>
+            Serial No Increment Step
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.SerialCurrentNo">
             <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.SerialMaxNo">
+            <inheritdoc/>  
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.serialMaxNo">
+            <summary>
+            Max serial no
+            </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.cardId">
             <summary>
@@ -4357,6 +4634,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlExternalControl(SpiralLab.Sirius2.Scanner.Rtc.IRtcExternalControlMode,System.UInt32)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlSimulatedExternalStart">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlExternalStartCounts(System.UInt32@)">
             <inheritdoc/>  
         </member>
@@ -4373,6 +4653,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlMarkingInfo(SpiralLab.Sirius2.Scanner.Rtc.IRtcMarkingInfo@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlStartStopInfo(SpiralLab.Sirius2.Scanner.Rtc.IRtcStartStopInfo@)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlTrackingError(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Double,System.Double)">
@@ -4604,10 +4887,7 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.MaxCharacterSetCount">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CharacterSets">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSets,System.Object)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlCharacterBegin(System.UInt32)">
@@ -4628,13 +4908,6 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlSerialNoReset(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListMatrixAndOffset(System.Numerics.Matrix4x4)">
-            <summary>
-            List matrix and offset (2x2 matrix + offset + angle at each scanhead)
-            </summary>
-            <param name="matrix">4x4 matrix</param>
-            <returns>Success or failed</returns>
-        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListText(System.String,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
             <inheritdoc/>  
         </member>
@@ -4645,9 +4918,6 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListSerialNo(System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.SerialNoFormats,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListSerialNoReset(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlSerialConfig(System.UInt32)">
@@ -4859,6 +5129,11 @@
             </para>
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.DisableSimulateExtCtrl">
+            <summary>
+            Disables simulate_ext_start_ctrl. 
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.EncoderReset">
             <summary>
             Encoder Reset
@@ -4909,7 +5184,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Empty">
             <summary>
-            Create empty <c>Rtc5MarkingInfo</c> instance
+            Create empty <c>Rtc6MarkingInfo</c> instance
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.#ctor">
@@ -4924,6 +5199,254 @@
             <param name="bit"><c>Bit</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo">
+            <summary>
+            Rtc6StartStopInfo
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit">
+            <summary>
+            Bit flags
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.InternalStartExecuted">
+            <summary>
+            An internal start has been executed (by execute_list or similar) since the last call of get_startstop_info.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ExternalStartExecuted">
+            <summary>
+            An External Start has been executed (by /START, /START2, /SlaveSTART, simulate_ext_start or simulate_ext_start_ctrl) since the last call of get_startstop_info. 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.InternalStopExecuted">
+            <summary>
+            An internal stop has been executed (by stop_execution) since the last call of get_startstop_info.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ExternalStopExecuted">
+            <summary>
+            An External Stop has been executed (by /STOP, /STOP2, /Slave-STOP or simulate_ext_stop) since the last call of get_startstop_info. 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ExtStopStatus">
+            <summary>
+            Ext-stop status (= logical AND operation of the signals /STOP, /STOP2, /SlaveSTOP and simulate_ext_stop, see Figure 68):
+            </summary>
+            <remarks>
+            1: No stop signals are currently present at the input ports or the input ports are not connected. <br/>
+            0: There is a stop signal at least at one of the input ports. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.TimeOut">
+            <summary>
+            The timeout with wait_for_timestamp_counter_mode and wait_for_timestamp_counter_long. 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.LaserControlSignalsGlobalEnabled">
+            <summary>
+            The laser control signals are globally enabled, see Chapter 7.4.1 ”Enabling, Activating and Switching Laser Control Signals”, page 183. See also set_laser_control. 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.Laser12SignalsActiveLow">
+            <summary>
+            The TTL laser control signals at the LASER1 and LASER2 output ports are active-LOW (the signal level can be defined by set_laser_control).
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ExternalStartFailed">
+            <summary>
+            Since the last call of get_startstop_info, at least one External Start has failed (more External Starts were triggered than could be simultaneously held in the 8-start wait loop).
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ExtStartStatus">
+            <summary>
+            Ext-Start status (= logical AND operation of the signals /START, /START2 and /Slave-START, see Figure 68): 
+            </summary>
+            <remarks>
+            1: No start signals are currently present at the input ports or the input ports are not connected. <br/>
+            0: A start signal is present at least at one of the input ports. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.LaserOnSignalsActiveLow">
+            <summary>
+             The TTL laser control signal at the LASERON output port is active-LOW (the signal level can be defined by set_laser_control).
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.LaserControlSignalsEnabled">
+            <summary>
+            The laser control signals are enabled 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.EthernetLinkLoss">
+            <summary>
+            If previously activated by eth_configure_link_loss: An Ethernet Link Loss has been detected since the last call of get_startstop_info. 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ErrorBits16">
+            <summary>
+            The error 16 bits (for first scan head connector)
+            </summary>
+            <remarks>
+            Incorrect number of frames within a data block.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ErrorBits17">
+            <summary>
+            The error 17 bits (for first scan head connector)
+            </summary>
+            <remarks>
+            Incorrect pulse length of signal received from scan system, maybe no scan system is connected
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ErrorBits18">
+            <summary>
+            The error 18 bits (for first scan head connector)
+            </summary>
+            <remarks>
+            Preamble sequence incorrect.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ErrorBits19">
+            <summary>
+            The error 19 bits (for first scan head connector)
+            </summary>
+            <remarks>
+            Bit count within a subframe incorrect.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ErrorBits20">
+            <summary>
+            The error 20 bits (for first scan head connector)
+            </summary>
+            <remarks>
+            Parity error when reading data received from scan system.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ErrorBits21">
+            <summary>
+            The error 21 bits (for first scan head connector)
+            </summary>
+            <remarks>
+            The present data is invalid (old).
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ErrorBits22">
+            <summary>
+            The error 22 bits (for first scan head connector)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ErrorBits23">
+            <summary>
+            The error 23 bits (for first scan head connector)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ErrorBits24">
+            <summary>
+            The error 24 bits (for second scan head connector)
+            </summary>
+            <remarks>
+            Incorrect number of frames within a data block.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ErrorBits25">
+            <summary>
+            The error 25 bits (for second scan head connector)
+            </summary>
+            <remarks>
+            Incorrect pulse length of signal received from scan system, maybe no scan system is connected
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ErrorBits26">
+            <summary>
+            The error 26 bits (for second scan head connector)
+            </summary>
+            <remarks>
+            Preamble sequence incorrect.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ErrorBits27">
+            <summary>
+            The error 27 bits (for second scan head connector)
+            </summary>
+            <remarks>
+            Bit count within a subframe incorrect.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ErrorBits28">
+            <summary>
+            The error 28 bits (for second scan head connector)
+            </summary>
+            <remarks>
+            Parity error when reading data received from scan system.
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ErrorBits29">
+            <summary>
+            The error 29 bits (for second scan head connector)
+            </summary>
+            <remarks>
+            The present data is invalid (old).
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ErrorBits30">
+            <summary>
+            The error 30 bits (for second scan head connector)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.ErrorBits31">
+            <summary>
+            The error 31 bits (for second scan head connector)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Value">
+            <summary>
+            Bit value
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Add(SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit)">
+            <summary>
+            Add <c>Bit</c> flag
+            </summary>
+            <param name="flag"><c>Bit</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Remove(SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit)">
+            <summary>
+            Remove <c>Bit</c> flag
+            </summary>
+            <param name="flag"><c>Bit</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Contains(SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit)">
+            <summary>
+            Check <c>Bit</c> flag is exist ornot
+            </summary>
+            <param name="flag"><c>Bit</c></param>
+            <returns><c>Bit</c> is exist or not</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.ToUInt">
+            <summary>
+            Conver to uint
+            </summary>
+            <returns>uint</returns>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Empty">
+            <summary>
+            Create empty <c>Rtc6ExternalControlMode</c> instance
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.#ctor(SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bit"><c>Bit</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.ToString">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6MarkingInfo">
@@ -5235,7 +5758,7 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.DoubleBufferMaxSize">
             <summary>
             Double buffer max size
-            <para>Default: 5000 (Min: 100, Max: 2^21)</para>
+            <para>Default: 5000 (Min: 100, Max: 2^21 - <c>List3BufferMaxSize</c>)</para>
             <para>Used with <c>ListTypes.Auto</c></para>
             </summary>
         </member>
@@ -5316,6 +5839,11 @@
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.markingInfo">
             <summary>
             <c>Rtc6MarkingInfo</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.StartStopInfo">
+            <summary>
+            Rtc6StartStopInfo
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.JumpMode">
@@ -5676,6 +6204,14 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.SerialCurrentNo">
             <inheritdoc/>  
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.SerialMaxNo">
+            <inheritdoc/>  
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.serialMaxNo">
+            <summary>
+            Max serial no
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.cardId">
             <summary>
             RTC card's identifier no (for multiple cards)
@@ -5945,6 +6481,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlExternalControl(SpiralLab.Sirius2.Scanner.Rtc.IRtcExternalControlMode,System.UInt32)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlSimulatedExternalStart">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlExternalStartCounts(System.UInt32@)">
             <inheritdoc/>  
         </member>
@@ -5961,6 +6500,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlMarkingInfo(SpiralLab.Sirius2.Scanner.Rtc.IRtcMarkingInfo@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlStartStopInfo(SpiralLab.Sirius2.Scanner.Rtc.IRtcStartStopInfo@)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlTrackingError(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Double,System.Double)">
@@ -6201,10 +6743,7 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.MaxCharacterSetCount">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CharacterSets">
-            <inheritdoc/> 
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSets,System.Object)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlCharacterBegin(System.UInt32)">
@@ -6225,13 +6764,6 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlSerialNoReset(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMatrixAndOffset(System.Numerics.Matrix4x4)">
-            <summary>
-            List matrix and offset (2x2 matrix + offset + angle at each scanhead)
-            </summary>
-            <param name="matrix">4x4 matrix</param>
-            <returns>Success or failed</returns>
-        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListText(System.String,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
             <inheritdoc/>  
         </member>
@@ -6242,9 +6774,6 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListSerialNo(System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.SerialNoFormats,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListSerialNoReset(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlSerialConfig(System.UInt32)">
@@ -8572,145 +9101,145 @@
             <param name="filename">Simulated output filename</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes">
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes">
             <summary>
             Error codes for CalibrationLibrary function calls
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.NO_ERROR">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.NO_ERROR">
             <summary>
             Success
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.ACTIVATION_CODE_INVALID">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.ACTIVATION_CODE_INVALID">
             <summary>
             slcl_activate was called with the wrong password
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.LIB_ACCESS_DENIED">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.LIB_ACCESS_DENIED">
             <summary>
             slcl_activate was never successfully called, access denied. 
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.WRONG_FILE_EXTENSION">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.WRONG_FILE_EXTENSION">
             <summary>
             filename has neither .ctb nor .ct5 extension. 
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.COULD_NOT_OPEN_CORR_FILE">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.COULD_NOT_OPEN_CORR_FILE">
             <summary>
             file could not be opened, possibly because it does not exist.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.WRONG_FILE_SIZE">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.WRONG_FILE_SIZE">
             <summary>
             file does not have the correct size.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.CHECKSUM_INVALID">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.CHECKSUM_INVALID">
             <summary>
             file does not have a valid checksum.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.BAD_HANDLE">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.BAD_HANDLE">
             <summary>
              The provided handle is zero.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.WRONG_TABLETYPE">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.WRONG_TABLETYPE">
             <summary>
             The provided handle is Ctb when Ct5 was expected or vice versa.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.TABLE_NOT_3D">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.TABLE_NOT_3D">
             <summary>
             The provided handle is a 2d correction table when 3d was expected.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.CALCULATION_FAILED">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.CALCULATION_FAILED">
             <summary>
             Calculation failed for miscellaneous reasons.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.MISSING_README_PARAMS">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.MISSING_README_PARAMS">
             <summary>
             Parameters from the readme file are missing, likely because a wrong path was provided during initialization.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.INSUFFICIENT_MEMORY">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.INSUFFICIENT_MEMORY">
             <summary>
             Not enough memory for calculation.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.INTERPOLATION_FAILED">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.INTERPOLATION_FAILED">
             <summary>
             XY calibration interpolation failed.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.SPLINE_INVERSION_FAILED">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.SPLINE_INVERSION_FAILED">
             <summary>
             XY calibration spline inversion failed.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.BAD_DIRECTION_VECTOR">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.BAD_DIRECTION_VECTOR">
             <summary>
             Direction vectors are either not perpendicular, or one has no x- and y-component.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.RADIUS_TOO_SMALL">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.RADIUS_TOO_SMALL">
             <summary>
             Radius provided for cylinder or cone calibration is not positive.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.FUNCTION_CALL_NOT_ALLOWED">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.FUNCTION_CALL_NOT_ALLOWED">
             <summary>
             The provided password does not authorize the use of this function.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes.ANGLE_OUT_OF_BOUNDS">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes.ANGLE_OUT_OF_BOUNDS">
             <summary>
             Angle provided for cone calibration is either zero or not between +/- Pi/3. 
             </summary>
         </member>
-        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.slcl_xy_calibration_options">
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.SlscXyCalibrationOptions">
             <summary>
             Boolean options for XY calibration to be used in a bit field
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_xy_calibration_options.RESTRICT_CORRECTION_FILE">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscXyCalibrationOptions.RESTRICT_CORRECTION_FILE">
             <summary>
             If set: Resulting correction file will be restricted to a certain area given by the measured points.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_xy_calibration_options.USE_POLYGON_RESTRICTION">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscXyCalibrationOptions.USE_POLYGON_RESTRICTION">
             <summary>
             If set: Restricted area will be a convex polygon around measured points, otherwise a rectangle.
             Irrelevant if RESTRICT_CORRECTION_FILE is not set
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_xy_calibration_options.DO_AUTOMATIC_CALIBRATION_TO_RESTRICTION">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscXyCalibrationOptions.DO_AUTOMATIC_CALIBRATION_TO_RESTRICTION">
             <summary>
              If set: Calibration Factor is automatically set so that the maximum bit control value corresponds to the edge of the restricted area.
             Irrelevant if RESTRICT_CORRECTION_FILE is not set.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_xy_calibration_options.SET_CENTER_OFFSET_TO_ZERO">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscXyCalibrationOptions.SET_CENTER_OFFSET_TO_ZERO">
             <summary>
             If set: Values at x=0, y=0 are unchanged for all calculated tables.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_xy_calibration_options.USE_IMPROVE_OLD_FILE_MODE">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscXyCalibrationOptions.USE_IMPROVE_OLD_FILE_MODE">
             <summary>
             If set: New table is calculated by improving the old table, otherwise table is calculated from scratch.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_xy_calibration_options.SET_MANUAL_CALIBRATION">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscXyCalibrationOptions.SET_MANUAL_CALIBRATION">
             <summary>
             If set: Calibration factor is set to value provided under NewCalibrationFactor, otherwise the previous calibration factor is used.
             Careful: This is overridden if DO_AUTOMATIC_CALIBRATION_TO_RESTRICTION and RESTRICT_CORRECTION_FILE are set to true!
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.slcl_xy_calibration_options.USE_AUTO_TOLERANCE">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SlscXyCalibrationOptions.USE_AUTO_TOLERANCE">
             <summary>
             If set: XY calibration will automatically determine the quality of the measurements and adjust the fit tolerance accordingly.
             </summary>
@@ -8787,7 +9316,7 @@
             </summary>
             <param name="success">Success or fail</param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.CalibrationFactor(System.String,System.UInt32@,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.CalibrationFactor(System.String,System.UInt32@,SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes@)">
             <summary>
             (Experimental) Get calibration factor (k-factor) from assigned correction file
             </summary>
@@ -8796,7 +9325,7 @@
             <param name="returnCode">Error code if failed</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.PointsCloudCalibration(System.Numerics.Vector3[],System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.PointsCloudCalibration(System.Numerics.Vector3[],System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes@)">
             <summary>
             (Experimental) Recalculates a 3D-Correction file for a user-defined free-form target surface that is defined by a points cloud.
             </summary>
@@ -8813,7 +9342,7 @@
             <param name="returnCode">Error code if failed</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.CylinderCalibration(System.Numerics.Vector3,System.Numerics.Vector3,System.Double,System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.CylinderCalibration(System.Numerics.Vector3,System.Numerics.Vector3,System.Double,System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes@)">
             <summary>
             (Experimental) Recalculates a 3D-Correction file for a user-defined cylindrical target surface that can be shifted, tilted, and rotated.
             <code>
@@ -8861,7 +9390,7 @@
             <param name="returnCode">Error code if failed</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.ConeCalibration(System.Numerics.Vector3,System.Numerics.Vector3,System.Double,System.Double,System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.ConeCalibration(System.Numerics.Vector3,System.Numerics.Vector3,System.Double,System.Double,System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes@)">
             <summary>
             (Experimental) Recalculates a 3D-Correction file for a user-defined cone target surface that can be shifted, tilted, and rotated.
             <code>
@@ -8915,7 +9444,7 @@
             <param name="returnCode">Error code if failed</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.PlaneCalibration(System.Numerics.Vector3,System.Numerics.Vector3,System.Numerics.Vector3,System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.PlaneCalibration(System.Numerics.Vector3,System.Numerics.Vector3,System.Numerics.Vector3,System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes@)">
             <summary>
             (Experimental) Recalculates a 3D-Correction table for a new user-defined target plane that may be shifted, tilted, and rotated.
             <code>
@@ -8961,7 +9490,7 @@
             <param name="returnCode">Error code if failed</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.FocusCalibration(System.Collections.Generic.KeyValuePair{System.Numerics.Vector2,System.Double}[],System.String,System.String,System.Double,System.String,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.FocusCalibration(System.Collections.Generic.KeyValuePair{System.Numerics.Vector2,System.Double}[],System.String,System.String,System.Double,System.String,SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes@)">
             <summary>
             (Experimental) Re-adjusts the 3d calibration based on measurements in the Z=0 plane.
             <code>
@@ -8990,7 +9519,7 @@
             <param name="returnCode">Error code if failed</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.CoefABCCalibration(System.Collections.Generic.KeyValuePair{System.Double,System.Double}[],System.String,System.String,System.Double,System.String,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.CoefABCCalibration(System.Collections.Generic.KeyValuePair{System.Double,System.Double}[],System.String,System.String,System.Double,System.String,SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes@)">
             <summary>
             (Experimental) Calculates the ABC coefficients for the selected table for a given set of measurements for the focal length and the Z-control bit.
             </summary>
@@ -9005,7 +9534,7 @@
             <param name="returnCode">Error code if failed</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.BeamTiltCalibration(System.String,System.String,System.String,System.Double,System.Double,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.BeamTiltCalibration(System.String,System.String,System.String,System.Double,System.Double,SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes@)">
             <summary>
             (Experimental) Recalculates the Correction table using offset values measured for galvanometer scanner angles of 0
             </summary>
@@ -9112,7 +9641,7 @@
             </summary>
             <param name="success">Success or fail</param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection2D.BeamTiltCalibration(System.Double,System.Double,System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.slcl_error_codes@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection2D.BeamTiltCalibration(System.Double,System.Double,System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes@)">
             <summary>
             Recalculates the Correction table using offset values measured for galvanometer scanner angles of 0
             </summary>
@@ -9332,6 +9861,11 @@
             IRtcMarkingInfo
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.StartStopInfo">
+            <summary>
+            IRtcStartStopInfo
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.JumpMode">
             <summary>
             Jump Mode
@@ -9525,6 +10059,9 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.SerialCurrentNo">
             <inheritdoc/>  
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.SerialMaxNo">
+            <inheritdoc/>  
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.cardId">
             <summary>
             RTC card's identifier no (for multiple cards)
@@ -9714,6 +10251,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlExternalControl(SpiralLab.Sirius2.Scanner.Rtc.IRtcExternalControlMode,System.UInt32)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlSimulatedExternalStart">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlExternalStartCounts(System.UInt32@)">
             <inheritdoc/>  
         </member>
@@ -9730,6 +10270,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlMarkingInfo(SpiralLab.Sirius2.Scanner.Rtc.IRtcMarkingInfo@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlStartStopInfo(SpiralLab.Sirius2.Scanner.Rtc.IRtcStartStopInfo@)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlTrackingError(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Double,System.Double)">
@@ -9968,10 +10511,7 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.MaxCharacterSetCount">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CharacterSets">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSets,System.Object)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlCharacterBegin(System.UInt32)">
@@ -10002,9 +10542,6 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListSerialNo(System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.SerialNoFormats,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListSerialNoReset(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlSerialConfig(System.UInt32)">
@@ -10537,10 +11074,11 @@
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.ILaserControlSignal">
             <summary>
             RTC laser control signal
-            <para>RTC4: User must do soldering</para>
-            <para>RTC5: <c>Rtc5LaserControlSignal</c></para>
-            <para>RTC6: <c>Rtc6LaserControlSignal</c></para>
             </summary>
+            <remarks>
+            RTC5: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal">Rtc5LaserControlSignal</see> <br/>
+            RTC6: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal">Rtc6LaserControlSignal</see> <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.ILaserControlSignal.ToUInt">
             <summary>
@@ -10551,12 +11089,28 @@
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcExternalControlMode">
             <summary>
             RTC external control mode
-            <para>RTC4: <c>Rtc4ExternalControlMode</c></para>
-            <para>RTC5: <c>Rtc5ExternalControlMode</c></para>
-            <para>RTC6: <c>Rtc6ExternalControlMode</c></para> 
             </summary>
+            <remarks>
+            RTC5: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode">Rtc5ExternalControlMode</see> <br/>
+            RTC6: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode">Rtc6ExternalControlMode</see> <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExternalControlMode.ToUInt">
+            <summary>
+            <para>32bits uint data</para>
+            </summary>
+            <returns>uint</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcStartStopInfo">
+            <summary>
+            RTC start stop info
+            </summary>
+            <remarks>
+            RTC5: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo">Rtc5StartStopInfo</see> <br/>
+            RTC6: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo">Rtc6StartStopInfo</see> <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcStartStopInfo.ToUInt">
             <summary>
             <para>32bits uint data</para>
             </summary>
@@ -11744,7 +12298,7 @@
             IRtcCharacterSet interface
             </summary>
             <remarks>
-            Used with  <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ListTypes.Single">ListTypes.Single</see> only. <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ListTypes.Single">ListTypes.Single</see> only. <br/>
             Used RTC list3 buffer. <br/>
             Above RTC5. <br/>
             </remarks>
@@ -11752,11 +12306,6 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.MaxCharacterSetCount">
             <summary>
             Max. character set counts
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CharacterSets">
-            <summary>
-            Registered list of charactersets
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.IsDateTimeOffset">
@@ -11787,25 +12336,47 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.DateTimeOrigin">
             <summary>
             Origin datetime
-            <para>Updated when <c>ListBegin</c> has called</para>
             </summary>
+            <remarks>
+            Reset when <c>ListBegin</c> has called by automatically. 
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.SerialStartNo">
             <summary>
             Starting serial no
             </summary>
+            <remarks>
+            Default: 0. <br/>
+            </remarks>   
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.SerialIncrementStep">
             <summary>
             Increment step of serial no
             </summary>
+            <remarks>
+            Default: 1. <br/>
+            </remarks>       
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.SerialCurrentNo">
             <summary>
-            Current serial no
+            Current(or next target) serial no
             </summary>
+            <remarks>
+            Default: 0. <br/>
+            Current serial number will be marked at next mark. <br/>
+            </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSets,System.Object)">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.SerialMaxNo">
+            <summary>
+            Max serial no
+            </summary>
+            <remarks>
+            Default: 0. <br/>
+            Deactivated if value is 0. <br/>
+            After mark serial no and has reached to <c>SerialMaxNo</c>, it will be reset as <c>SerialStartNo</c> with <c>SerialIncrementStep</c>. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterSetBegin(SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
             <summary>
             Begin register(or download) character set into RTC 
             <code>
@@ -11842,15 +12413,14 @@
             RTC6: Max buffer size <c>RTC6_LIST3_BUFFER_SIZE</c><br/>
             </remarks>
             </summary>
-            <param name="characterSet"><c>CharacterSet</c></param>
-            <param name="userData">User data</param>
+            <param name="characterSet"><c>CharacterSets</c></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterBegin(System.UInt32)">
             <summary>
             Begin register(or download) single glyph(or character) into RTC 
             </summary>
-            <param name="asciiCode">ASCII code (0~255)</param>
+            <param name="asciiCode">Code value (ASCII: 0~255, Max: ~1024)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterEnd">
@@ -11869,7 +12439,7 @@
             <summary>
             Check single glyph(or character) is exist at character set or not
             </summary>
-            <param name="asciiCode">ASCII code (0~255)</param>
+            <param name="asciiCode">Code value (ASCII: 0~255, Max: ~1024)</param>
             <param name="characterSet"><c>CharacterSet</c></param>
             <returns>Success or failed</returns>
         </member>
@@ -11900,8 +12470,12 @@
             rtc.ListExecute(true);
             </code>
             </summary>
+            <remarks>
+            <c>IRtc.MatrixStack</c> is not applied. <br/>
+            When registering character set, final transformed positions should be calculated and downloaded from <c>CtlCharacterBegin</c> ~ <c>CtlCharacterEnd</c> <br/>
+            </remarks>
             <param name="text">text</param>
-            <param name="characterSet"><c>CharacterSet</c></param>
+            <param name="characterSet"><c>CharacterSets</c></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.ListDate(SpiralLab.Sirius2.Scanner.Rtc.DateFormats,System.Boolean,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
@@ -11918,9 +12492,13 @@
             rtc.ListExecute(true);
             </code>
             </summary>
-            <param name="dateFormat"><c>DateFormat</c></param>
-            <param name="leadingWithZero">Leading with 0</param>
-            <param name="characterSet"><c>CharacterSet</c></param>
+            <remarks>
+            <c>IRtc.MatrixStack</c> is not applied. <br/>
+            When registering character set, final transformed positions should be calculated and downloaded from <c>CtlCharacterBegin</c> ~ <c>CtlCharacterEnd</c> <br/>
+            </remarks>
+            <param name="dateFormat"><c>DateFormats</c></param>
+            <param name="leadingWithZero">Leading with 0 or rnot</param>
+            <param name="characterSet"><c>CharacterSets</c></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.ListTime(SpiralLab.Sirius2.Scanner.Rtc.TimeFormats,System.Boolean,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
@@ -11939,9 +12517,13 @@
             rtc.ListExecute(true);
             </code>
             </summary>
-            <param name="timeFormat"><c>TimeFormat</c></param>
-            <param name="leadingWithZero">Leading with 0</param>
-            <param name="characterSet"><c>CharacterSet</c></param>
+            <remarks>
+            <c>IRtc.MatrixStack</c> is not applied. <br/>
+            When registering character set, final transformed positions should be calculated and downloaded from <c>CtlCharacterBegin</c> ~ <c>CtlCharacterEnd</c> <br/>
+            </remarks>
+            <param name="timeFormat"><c>TimeFormatㄴ</c></param>
+            <param name="leadingWithZero">Leading with 0 or not</param>
+            <param name="characterSet"><c>CharacterSets</c></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.ListSerialNo(System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.SerialNoFormats,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
@@ -11958,17 +12540,13 @@
             rtc.ListExecute(true);
             </code>
             </summary>
-            <param name="numOfDigits">Num of digits<br/>Max digits: 15<br/></param>
-            <param name="serialFormat"><c>SerialFormat</c></param>
-            <param name="characterSet"><c>CharacterSet</c></param>
-            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.ListSerialNoReset(System.UInt32,System.UInt32)">
-            <summary>
-            List reset serial no
-            </summary>
-            <param name="startingNo">Starting number</param>
-            <param name="incrementStep">Increment step</param>
+            <remarks>
+            <c>IRtc.MatrixStack</c> is not applied. <br/>
+            When registering character set, final transformed positions should be calculated and downloaded from <c>CtlCharacterBegin</c> ~ <c>CtlCharacterEnd</c> <br/>
+            </remarks>
+            <param name="numOfDigits">Num of digits<br/>Max digits: 12<br/></param>
+            <param name="serialFormat"><c>SerialFormats</c></param>
+            <param name="characterSet"><c>CharacterSets</c></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData2D">
@@ -12504,7 +13082,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlLaserControlSignal(SpiralLab.Sirius2.Scanner.Rtc.ILaserControlSignal)">
             <summary>
-            ILaserControlSignal 
+            Laser control signal by <c>ILaserControlSignal</c>
             </summary>
             <remarks>
             RTC5: <c>Rtc5LaserControlSignal</c> <br/>
@@ -12516,14 +13094,24 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlExternalControl(SpiralLab.Sirius2.Scanner.Rtc.IRtcExternalControlMode,System.UInt32)">
             <summary>
-            IRtcExternalControlMode
+            External control by <c>IRtcExternalControlMode</c>
             </summary>
             <remarks>
             RTC5: <c>Rtc5ExternalControlMode</c> <br/>
             RTC6: <c>Rtc6ExternalControlMode</c> <br/>
             </remarks>
             <param name="mode"><c>IRtcExternalControlMode</c></param>
-            <param name="maxStartCounts">Max /START external trigger counts</param>
+            <param name="maxStartCounts">Max /START external trigger counts (0 is unlimited)</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlSimulatedExternalStart">
+            <summary>
+            Causes a simulated external /START trigger
+            </summary>
+            <remarks>
+            Used with if <c>Rtc5ExternalControlMode.DisableSimulateExtCtrl</c> is <c>True</c>. <br/>
+            Used with if <c>Rtc6ExternalControlMode.DisableSimulateExtCtrl</c> is <c>True</c>. <br/>
+            </remarks>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlExternalStartCounts(System.UInt32@)">
@@ -12577,6 +13165,17 @@
             RTC6: <c>Rtc6MarkingInfo</c> <br/>
             </remarks>
             <param name="info"><c>IRtcMarkingInfo</c></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlStartStopInfo(SpiralLab.Sirius2.Scanner.Rtc.IRtcStartStopInfo@)">
+            <summary>
+            IRtcStartStopInfo
+            </summary>
+            <remarks>
+            RTC5: <c>Rtc5StartStopInfo</c> <br/>
+            RTC6: <c>Rtc6StartStopInfo</c> <br/>
+            </remarks>
+            <param name="info"><c>IRtcStartStopInfo</c></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlTrackingError(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Double,System.Double)">
@@ -13635,11 +14234,8 @@
             <summary>
             Enable(or disable) simulated encoders
             </summary>
-            <remarks>
-            <c>EncXSimulatedSpeed</c> or <c>EncYSimulatedSpeed</c> value should be assigned at first. <br/>
-            </remarks>
-            <param name="encXSimulatedSpeed">Simulated X(0) encoder speed (mm/s)</param>
-            <param name="encYSimulatedSpeed">Simulated Y(1) encoder speed (mm/s)</param>
+            <param name="encXSimulatedSpeed">Simulated X(0) encoder speed (mm/s) (negative direction is not supported)</param>
+            <param name="encYSimulatedSpeed">Simulated Y(1) encoder speed (mm/s) (negative direction is not supported)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofTrackingError(System.Double,System.Double)">
@@ -13728,7 +14324,7 @@
             <remarks>
             <c>EncSimulatedAngularSpeed</c> value should be assigned at first. <br/>
             </remarks>
-            <param name="encSimulatedSpeed">Angular speed (˚/s)</param>
+            <param name="encSimulatedSpeed">Angular speed (˚/s) (negative direction is not supported)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofOverflowClear">

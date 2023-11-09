@@ -87,7 +87,7 @@ namespace Demos
         private bool isExternalStart = false;
 
         /// <summary>
-        /// <c>ListType</c>
+        /// <c>ListTypes</c>
         /// </summary>
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
@@ -262,10 +262,11 @@ namespace Demos
             return true;
         }
         /// <summary>
-        /// Register (or download) character set (font glyph) into RTC controller if <c>ITextRegisterable</c> has modified. <br/>
+        /// Register (or download) character set (font glyph) into RTC controller if <c>ITextRegisterable</c> has exist. <br/>
         /// </summary>
         /// <remarks>
-        /// If <c>ITextRegisterable</c> entity has modified, it should be re-registered. <br/>
+        /// If <c>ITextRegisterable</c> entity has exist and modifed, it should be registered(or downloaded). <br/>
+        /// Re-registering(or downloading) takes time. <br/>
         /// </remarks>
         /// <returns>Success or failed</returns>
         public virtual bool RegisterCharacterSet()
@@ -273,22 +274,26 @@ namespace Demos
             bool success = true;
             if (Document.FindByType(typeof(ITextRegisterable), out IEntity[] entities))
             {
-                foreach (var entity in entities)
+                IsTextRegistering = true;
+                switch (this.MarkTarget)
                 {
-                    if (entity is ITextRegisterable textRegisterable)
-                    {
-                        switch (this.MarkTarget)
+                    case MarkTargets.All:
                         {
-                            case MarkTargets.All:
-                                success &= TextRegisterHelper.Register(textRegisterable, this, out var dummy1);
-                                break;
-                            case MarkTargets.Selected:
-                                if (entity.IsSelected)
-                                    success &= TextRegisterHelper.Register(textRegisterable, this, out var dummy2);
-                                break;
+                            ITextRegisterable[] textRegisterables = Array.ConvertAll(entities, item => (ITextRegisterable)item);
+                            success &= TextRegisterHelper.Register(textRegisterables, this);
                         }
-                    }
+                        break;
+                    case MarkTargets.Selected:
+                        {
+                            List<ITextRegisterable> textRegisterables = new List<ITextRegisterable>(4);
+                            foreach (var entity in entities)
+                                if (entity.IsSelected)
+                                    textRegisterables.Add(entity as ITextRegisterable);
+                            success &= TextRegisterHelper.Register(textRegisterables.ToArray(), this);
+                        }
+                        break;
                 }
+                IsTextRegistering = false;
             }
             return success;
         }

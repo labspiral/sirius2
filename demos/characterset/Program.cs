@@ -138,6 +138,8 @@ namespace Demos
                     case ConsoleKey.R:
                         // Reset serial no
                         rtcCharacterSet.CtlSerialNoReset(10, 1);
+                        // Set max serial no (if reach to max value, it will be reset as starting 10 with increment 1 again)
+                        //rtcCharacterSet.SerialMaxNo = 20;
                         break;
                     case ConsoleKey.S:
                         MarkToSerial(laser, rtc);

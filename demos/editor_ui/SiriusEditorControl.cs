@@ -650,6 +650,7 @@ namespace Demos
             var entity = EntityFactory.CreateWaitDataExt16Cond("0000 0000 0000 0000", "0000 0000 0000 0000");
             document.ActAdd(entity);
         }
+
         private void MnuWriteData_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateWriteData(ExtensionChannels.ExtAO2, 0);

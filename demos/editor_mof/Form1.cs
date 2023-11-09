@@ -83,43 +83,85 @@ namespace Demos
             var document = siriusEditorUserControl1.Document;
             var view = siriusEditorUserControl1.View;
 
-            // Create entities for test
-            var mofBegin = EntityFactory.CreateMoFBegin(RtcEncoderTypes.XY);
+            // Create entities for XY MoF test
+            var mofBegin = EntityFactory.CreateMoFBegin(RtcEncoderTypes.XY, true);
             document.ActAdd(mofBegin);
 
-            double x1 = 1;
-            var mofWait1 = EntityFactory.CreateMoFWait(RtcEncoders.EncX, RtcEncoderWaitConditions.Over, x1);
+            /*      
+             *                     |
+             *                     |
+             *                     |
+             *                     |
+             *     . .             |
+             *      .        |     |
+             *       .       | |   |
+             *     .         | | | |
+             *  ----.--▯--@--|-|-|-+-------------------    => ENC +
+             *       .       | | | |                       => MOVING DIRECTION 
+             *     .         | |   |
+             *      .        |     |
+             *        .            |
+             *      .              |
+             *                     |
+             *                     |
+             *                     |
+             */
+
+            double x1 = -1;
+            var mofWait1 = EntityFactory.CreateMoFWait(RtcEncoders.EncX, RtcEncoderWaitConditions.Over, -x1);
             document.ActAdd(mofWait1);
             var line1 = EntityFactory.CreateLine(x1, 10, x1, -10);
             document.ActAdd(line1);
 
-            double x2 = 2;
-            var mofWait2 = EntityFactory.CreateMoFWait(RtcEncoders.EncX, RtcEncoderWaitConditions.Over, x2);
+            double x2 = -5;
+            var mofWait2 = EntityFactory.CreateMoFWait(RtcEncoders.EncX, RtcEncoderWaitConditions.Over, -x2);
             document.ActAdd(mofWait2);
             var line2 = EntityFactory.CreateLine(x2, 15, x2, -15);
             document.ActAdd(line2);
 
-            double x3 = 3;
-            var mofWait3 = EntityFactory.CreateMoFWait(RtcEncoders.EncX, RtcEncoderWaitConditions.Over, x3);
+            double x3 = -10;
+            var mofWait3 = EntityFactory.CreateMoFWait(RtcEncoders.EncX, RtcEncoderWaitConditions.Over, -x3);
             document.ActAdd(mofWait3);
             var line3 = EntityFactory.CreateLine(x3, 20, x3, -20);
             document.ActAdd(line3);
 
-            double x4 = 6;
-            var mofWait4 = EntityFactory.CreateMoFWait(RtcEncoders.EncX, RtcEncoderWaitConditions.Over, x4);
+            double x4 = -15;
+            var mofWait4 = EntityFactory.CreateMoFWait(RtcEncoders.EncX, RtcEncoderWaitConditions.Over, -x4);
             document.ActAdd(mofWait4);
             var spiral = EntityFactory.CreateSpiral(x4, 0, 2, 4, 0, 5, true);
             document.ActAdd(spiral);
 
-            double x5 = 11;
-            var mofWait5 = EntityFactory.CreateMoFWait(RtcEncoders.EncX, RtcEncoderWaitConditions.Over, x5);
+            double x5 = -20;
+            var mofWait5 = EntityFactory.CreateMoFWait(RtcEncoders.EncX, RtcEncoderWaitConditions.Over, -x5);
             document.ActAdd(mofWait5);
             var dataMatrix = EntityFactory.CreateDataMatrix("SIRIUS2", Barcode2DCells.Outline, 3, 4, 4);
+            dataMatrix.RotateZ(90);
             dataMatrix.Name = "MyBarcode1";
-            dataMatrix.Alignment = Alignments.MiddleCenter;
-            dataMatrix.Translate(x5, 0);
+            dataMatrix.Translate(x5, -10);
             document.ActAdd(dataMatrix);
 
+            var text = EntityFactory.CreateText(SpiralLab.Sirius2.Winforms.Config.InstalledFontNames[0], "SIRIUS2", FontStyle.Bold, 4);
+            text.RotateZ(90);
+            text.Translate(x5, 10);
+            document.ActAdd(text);
+
+            double x6 = -40;
+            var mofWait6 = EntityFactory.CreateMoFWait(RtcEncoders.EncX, RtcEncoderWaitConditions.Over, -x6);
+            document.ActAdd(mofWait6);
+            var mofAndPointsList = new List<IEntity>(100);
+            double xRange = 2;
+            double yRange = 30;
+            var rnd = new Random();
+            for (int i = 0; i < 20; i++)
+            {
+                double x = x6 + rnd.NextDouble() * (xRange + xRange) - xRange;
+                double y = rnd.NextDouble() * (yRange + yRange) - yRange;
+                var point = EntityFactory.CreatePoint(new Vector2((float)x, (float)y), 20);
+                mofAndPointsList.Add(point);
+            }
+            var group = EntityFactory.CreateGroup("20 Points", mofAndPointsList.ToArray());
+            document.ActAdd(group);            
+            
             var mofEnd = EntityFactory.CreateMoFEnd(Vector2.Zero);
             document.ActAdd(mofEnd);
 
@@ -129,15 +171,14 @@ namespace Demos
             Debug.Assert(rtc.IsMoF);
             var rtcMoF = rtc as IRtcMoF;
             Debug.Assert(rtcMoF != null);
-            Debug.Assert(rtcMoF.EncXCountsPerMm != 0);            
+            Debug.Assert(rtcMoF.EncXCountsPerMm != 0);
 
-            // Reset encoder values
-            // (or double click encoder values at bottom label)
-            rtcMoF.CtlMofEncoderReset(0, 0);
-
-            // Start simulated encoders as x=0.5, y=0 mm/s
-            // (or edit 'Simulated x/y speed at MoF' at propertygrid of Laser tab)
-            //rtcMoF.CtlMofEncoderSpeed(0.5, 0);
+            // Start simulated encoders as x= 1, y=0 mm/s by rtcMoF.CtlMofEncoderSpeed(1, 0);
+            rtcMoF.CtlMofEncoderSpeed(1, 0);
+            // or
+            // Edit 'Simulated x speed at MoF = 1' at propertygrid of Laser page
+            // and
+            // Marker.Start
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {

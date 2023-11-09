@@ -1,5 +1,5 @@
 ﻿namespace Demos
-{ 
+{
     partial class SiriusEditorUserControl
     {
         /// <summary> 
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SiriusEditorUserControl));
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.tabControl3 = new System.Windows.Forms.TabControl();
@@ -50,7 +49,7 @@
             this.manualUserControl1 = new SpiralLab.Sirius2.Winforms.UI.ManualUserControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.remoteUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RemoteUserControl();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.logControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.treeViewControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl();
@@ -68,11 +67,12 @@
             this.btnSpiral = new System.Windows.Forms.ToolStripButton();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnText = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSiriusText = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnImageText = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCircularText = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCharacterSetText = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnSiriusText = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSiriusCharacterSetText = new System.Windows.Forms.ToolStripMenuItem();
             this.ddbBarcode = new System.Windows.Forms.ToolStripDropDownButton();
             this.mnuDataMatrix = new System.Windows.Forms.ToolStripMenuItem();
@@ -530,11 +530,12 @@
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnText,
+            this.btnSiriusText,
+            this.toolStripMenuItem1,
             this.btnImageText,
             this.btnCircularText,
+            this.toolStripMenuItem4,
             this.btnCharacterSetText,
-            this.toolStripMenuItem1,
-            this.btnSiriusText,
             this.btnSiriusCharacterSetText});
             resources.ApplyResources(this.toolStripDropDownButton1, "toolStripDropDownButton1");
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -543,6 +544,16 @@
             // 
             resources.ApplyResources(this.btnText, "btnText");
             this.btnText.Name = "btnText";
+            // 
+            // btnSiriusText
+            // 
+            resources.ApplyResources(this.btnSiriusText, "btnSiriusText");
+            this.btnSiriusText.Name = "btnSiriusText";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             // 
             // btnImageText
             // 
@@ -554,20 +565,15 @@
             resources.ApplyResources(this.btnCircularText, "btnCircularText");
             this.btnCircularText.Name = "btnCircularText";
             // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
+            // 
             // btnCharacterSetText
             // 
             resources.ApplyResources(this.btnCharacterSetText, "btnCharacterSetText");
             this.btnCharacterSetText.Name = "btnCharacterSetText";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
-            // 
-            // btnSiriusText
-            // 
-            resources.ApplyResources(this.btnSiriusText, "btnSiriusText");
-            this.btnSiriusText.Name = "btnSiriusText";
             // 
             // btnSiriusCharacterSetText
             // 
@@ -1331,7 +1337,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuAlcDefinedVector;
         private System.Windows.Forms.ToolStripStatusLabel lblSelected;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel12;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem btnSiriusText;
         private System.Windows.Forms.ToolStripMenuItem btnCircularText;
         private System.Windows.Forms.ToolStripMenuItem btnCharacterSetText;
@@ -1346,5 +1351,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuPDF417;
         private System.Windows.Forms.TabPage tabPage7;
         private SpiralLab.Sirius2.Winforms.UI.RemoteUserControl remoteUserControl1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
     }
 }

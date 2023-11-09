@@ -161,6 +161,7 @@ namespace Demos
                 case "MyText1":
                     return $"SIRIUS2 {DateTime.Now.ToString("HH:mm:ss")} {currentOffsetIndex}";
                 default:
+                    //its not changed(or modified)
                     return textConvertible.SourceText;
             }
         }

@@ -69,7 +69,7 @@
     - Target platforms: Windows 
  - Dependencies
     - SCANLAB RTC5: 2022.11.11
-    - SCANLAB RTC6: v.1.15.4 (2023.01.23)
+    - SCANLAB RTC6: v.1.15.5 (version for SPIRALLAB only)
     - SCANLAB syncAXIS: v.1.8.2 (2023.3.9)
     - OpenTK: v3.3.3 (https://www.nuget.org/packages/OpenTK/3.3.3)
     - OpenTK.GLControl: v3.3.3 (https://www.nuget.org/packages/OpenTK.GLControl/)
@@ -117,6 +117,20 @@
 
 
 **8. Version history**
+
+* 2023.11.9 v.1.9.890
+  - added) RTC functions
+     - IRtcStartStopInfo 
+     - CtlSimulatedExternalStart 
+     - SerialMaxNo at IRtcCharacterSet
+  - udpated) RTC6_Software_Package_Rev.1.15.5
+  - fixed) ImageText render bug 
+  - fixed) ITextRegisterable
+     - download character set if modified
+     - works with matrix (rotate z and scale)
+     - support letter space 
+     - apply pen parameters bug 
+     - mark repeat counts bug
 
 * 2023.11.3 v.1.8.865
   - added) grid checker (extract positions of pattern from image file)

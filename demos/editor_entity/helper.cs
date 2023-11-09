@@ -217,8 +217,8 @@ namespace Demos
 
             // Default frequency and pulse width: 50KHz, 2 usec 
             success &= rtc.CtlFrequency(50 * 1000, 2);
-            // Default jump and mark speed: 50 mm/s
-            success &= rtc.CtlSpeed(50, 50);
+            // Default jump and mark speed: 500 mm/s
+            success &= rtc.CtlSpeed(500, 500);
             #endregion
 
             #region Initialize Laser source
