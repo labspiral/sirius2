@@ -2104,52 +2104,52 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.TargetCrystal1Temperature">
             <summary>
-            Target Crystal1 Temperature
+            Target Crystal1 Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.TargetCrystal2Temperature">
             <summary>
-            Target Crystal2 Temperature
-            </summary>
+            Target Crystal2 Temperature (°C)
+            </summary> 
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.TargetCrystal3Temperature">
             <summary>
-            Target Crystal3 Temperature
+            Target Crystal3 Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.TargetCrystal4Temperature">
             <summary>
-            Target Crystal4 Temperature
+            Target Crystal4 Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.ActualCrystal1Temperature">
             <summary>
-            Actual Crystal1 Temperature
+            Actual Crystal1 Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.ActualCrystal2Temperature">
             <summary>
-            Actual Crystal2 Temperature
+            Actual Crystal2 Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.ActualCrystal3Temperature">
             <summary>
-            Actual Crystal3 Temperature
+            Actual Crystal3 Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.ActualCrystal4Temperature">
             <summary>
-            Actual Crystal4 Temperature
+            Actual Crystal4 Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.ActualLaserHeadTemperature">
             <summary>
-            Laser Head Actual Temperature
+            Laser Head Actual Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.EnvironmentalTemperature">
             <summary>
-            Environmental Temperature
+            Environmental Temperature (°C)
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.AlarmCodes">
@@ -2203,10 +2203,14 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.IsTimedOut">
-            <inheritdoc/>
+            <summary>
+            Communication timed out or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.IsProtocolError">
-            <inheritdoc/>
+            <summary>
+            Communication protocol error or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.ComPort">
             <summary>
@@ -2233,13 +2237,106 @@
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.Dispose(System.Boolean)">
-            <summary>
-            Dispose internal resource
-            </summary>
-            <param name="disposing"></param>
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.Initialize">
             <inheritdoc/>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.CRLF">
+            <summary>
+            Terminator
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.step">
+            <summary>
+            Cycle step counts within worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.OnThread">
+            <summary>
+            Worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.Send(System.String)">
+            <summary>
+            Send string data by <c>SerialPort</c>
+            </summary>
+            <param name="data">Data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.ReceiveParse(System.IO.Ports.SerialPort,System.Int32@)">
+            <summary>
+            Receive data from  <c>SerialPort</c>
+            </summary>
+            <param name="serialPort"><c>SerialPort</c> instance</param>
+            <param name="data">Return and converted integer data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.QueryAlarmCode">
+            <summary>
+            Query alarm code
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.QueryCrystal1TargetTemp">
+            <summary>
+            Query crystal1 target temp
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.QueryCrystal2TargetTemp">
+            <summary>
+            Query crystal2 target temp
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.QueryCrystal3TargetTemp">
+            <summary>
+            Query crystal3 target temp
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.QueryCrystal4TargetTemp">
+            <summary>
+            Query crystal4 target temp
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.QueryAcutalCrystal1Temp">
+            <summary>
+            Query actual crystal1 temp
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.QueryAcutalCrystal2Temp">
+            <summary>
+            Query actual crystal2 temp
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.QueryAcutalCrystal3Temp">
+            <summary>
+            Query actual crystal3 temp
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.QueryAcutalCrystal4Temp">
+            <summary>
+            Query actual crystal4 temp
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.QueryUser">
+            <summary>
+            Query by user override or implemented function
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.CmdCrystal1TargetTemp">
+            <summary>
+            Command crystal1 target temp
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.CmdUser">
             <summary>
@@ -2248,13 +2345,22 @@
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.CheckErrors">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsError</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.CheckReady">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsReady</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.CheckBusy">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsBusy</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.CtlAbort">
             <inheritdoc/>  
@@ -2335,9 +2441,54 @@
             Pulse output mode
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.TargetCrystal2Temperature">
+            <summary>
+            Not used
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.TargetCrystal3Temperature">
+            <summary>
+            Not used
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.TargetCrystal4Temperature">
+            <summary>
+            Not used
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.ActualCrystal2Temperature">
+            <summary>
+            Not used
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.ActualCrystal3Temperature">
+            <summary>
+            Not used
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.ActualCrystal4Temperature">
+            <summary>
+            Not used
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.ActualLaserHeadTemperature">
+            <summary>
+            Not used
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.EnvironmentalTemperature">
+            <summary>
+            Not used
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.Hours">
             <summary>
             Lifetime
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.AlarmCode">
+            <summary>
+            Not used
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.#ctor">
@@ -2360,6 +2511,39 @@
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.QueryUser">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.QueryAlarmCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.QueryCrystal1TargetTemp">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.QueryCrystal2TargetTemp">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.QueryCrystal3TargetTemp">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.QueryCrystal4TargetTemp">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.QueryAcutalCrystal1Temp">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.QueryAcutalCrystal2Temp">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.QueryAcutalCrystal3Temp">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.QueryAcutalCrystal4Temp">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.CmdUser">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.CmdCrystal1TargetTemp">
@@ -2477,37 +2661,37 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.TargetCrystal1Temperature">
             <summary>
-            Crystal 1 Target Temperature
+            Crystal 1 Target Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.TargetCrystal2Temperature">
             <summary>
-            Crystal 2 Target Temperature
+            Crystal 2 Target Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.ActualCrystal1Temperature">
             <summary>
-            Crystal 1 Actual Temperature
+            Crystal 1 Actual Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.ActualCrystal2Temperature">
             <summary>
-            Crystal 2 Actual Temperature
+            Crystal 2 Actual Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.ActualLaserHeadTemperature">
             <summary>
-            Laser Head Actual Temperature
+            Laser Head Actual Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.ActualDiodeTemperature">
             <summary>
-            Diode Actual Temperature (C)
+            Diode Actual Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.EnvironmentalTemperature">
             <summary>
-            Environment Temperature
+            Environment Temperature (°C)
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.AlarmCodes">
@@ -2561,10 +2745,14 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.IsTimedOut">
-            <inheritdoc/>  
+            <summary>
+            Communication timed out or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.IsProtocolError">
-            <inheritdoc/>  
+            <summary>
+            Communication protocol error or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.IsGuideOn">
             <inheritdoc/> 
@@ -2602,14 +2790,65 @@
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.Initialize">
             <inheritdoc/>
         </member>
+        <member name="F:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.CRLF">
+            <summary>
+            Terminator
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.step">
+            <summary>
+            Cycle step counts within worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.OnThread">
+            <summary>
+            Worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.Send(System.String)">
+            <summary>
+            Send string data by <c>SerialPort</c>
+            </summary>
+            <param name="data">Data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.ReceiveParse(System.IO.Ports.SerialPort,System.Int32@)">
+            <summary>
+            Receive data from  <c>SerialPort</c>
+            </summary>
+            <param name="serialPort"><c>SerialPort</c> instance</param>
+            <param name="data">Return and converted integer data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.QueryUser">
+            <summary>
+            Query by user override or implemented function
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.CmdUser">
+            <summary>
+            User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.CheckErrors">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsError</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.CheckReady">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsReady</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.CheckBusy">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsBusy</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.CtlAbort">
             <inheritdoc/>  
@@ -2655,32 +2894,32 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.DiodeTemperature">
             <summary>
-            Diode Temperature (C)
+            Diode Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.BasePlateTemperature">
             <summary>
-            Diode Temperature (C)
+            Diode Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.SHGTemperature">
             <summary>
-            SHG Temperature (C)
+            SHG Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.THGTemperature">
             <summary>
-            THG Temperature (C)
+            THG Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.ModuleTemperature">
             <summary>
-            Module Temperature (C)
+            Module Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.Rod1Temperature">
             <summary>
-            ROD1 Temperature (C)
+            ROD1 Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.NextCrystalWarningHrs">
@@ -2715,7 +2954,7 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.CoherentAviaLX.FaultCodes">
             <summary>
-            Fault code
+            Fault codes
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.DiodeCurrent">
@@ -2767,10 +3006,14 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.IsTimedOut">
-            <inheritdoc/>
+            <summary>
+            Communication timed out or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.IsProtocolError">
-            <inheritdoc/>
+            <summary>
+            Communication protocol error or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.ComPort">
             <summary>
@@ -2797,22 +3040,75 @@
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.Dispose(System.Boolean)">
-            <summary>
-            Dispose internal resource
-            </summary>
-            <param name="disposing"></param>
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.Initialize">
             <inheritdoc/>
         </member>
+        <member name="F:SpiralLab.Sirius2.Laser.CoherentAviaLX.CRLF">
+            <summary>
+            Terminator for send
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.CoherentAviaLX.LF">
+            <summary>
+            Terminator for receive
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.CoherentAviaLX.step">
+            <summary>
+            Cycle step counts within worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.OnThread">
+            <summary>
+            Worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.Send(System.String)">
+            <summary>
+            Send string data by <c>SerialPort</c>
+            </summary>
+            <param name="data">Data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.ReceiveParse(System.IO.Ports.SerialPort,System.String@)">
+            <summary>
+            Receive data from <c>SerialPort</c>
+            </summary>
+            <param name="serialPort"><c>SerialPort</c> instance</param>
+            <param name="data">Return and converted string data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.QueryUser">
+            <summary>
+            Query by user override or implemented function
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.CmdUser">
+            <summary>
+            User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.CheckErrors">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsError</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.CheckReady">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsReady</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.CheckBusy">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsBusy</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.CtlAbort">
             <inheritdoc/>  
@@ -2842,15 +3138,6 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.LaserType">
             <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.IsShutterOpen">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.IsTimedOut">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.IsProtocolError">
-            <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.MinDutyCycle">
             <summary>
@@ -2887,9 +3174,6 @@
             PIN7 Control Enable
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.PowerControlDelayTime">
-            <inheritdoc/>  
-        </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.#ctor">
             <summary>
             Constructor
@@ -2917,14 +3201,28 @@
         <member name="M:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.Initialize">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.OnThread">
+            <summary>
+            Worker thread
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.CheckErrors">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsError</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.CheckReady">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsReady</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.CheckBusy">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsBusy</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.CtlAbort">
             <inheritdoc/>  
@@ -2956,10 +3254,27 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.Serial">
-            <inheritdoc/>  
+            <summary>
+            SerialPort instance
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPN.DeviceStatus">
+            <summary>
+            Device status
+            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.DeviceStatus.ToString">
             <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.StatusBit">
+            <summary>
+            DeviceStatus.Bit
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPN.OperationMode">
+            <summary>
+            Operation Mode
+            </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.IPGYLPN.OperationMode.Bit.EmissionModulationControlByDB25">
             <summary>
@@ -2974,6 +3289,16 @@
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.OpMode">
             <summary>
             OP Mode 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.OperationModeBit">
+            <summary>
+            OperationMode.Bit
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPN.Options">
+            <summary>
+            Options
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.IPGYLPN.Options.Bit.ParallelIOControlInterface">
@@ -2991,9 +3316,34 @@
             always 1
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.Option">
+            <summary>
+            Options
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.OptionBit">
+            <summary>
+            Options.Bit
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPN.DeviceExtendedStatus">
+            <summary>
+            DeviceExtendedStatus
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.ExtendedStatus">
             <summary>
             Device Extended Status (16bits)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.ExtendedStatusBit">
+            <summary>
+            DeviceExtendedStatus.Bit
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPN.ParallelIOInterface">
+            <summary>
+            ParallelIOInterface
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.DigitalInterface">
@@ -3001,26 +3351,60 @@
             Digital Interface DB-25 
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.DigitalInterfaceBits">
+            <summary>
+            ParallelIOInterface.Bit
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.DeviceId">
+            <summary>
+            Devicd id
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.DeviceSN">
+            <summary>
+            Device serial no
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.FirmwareRev">
+            <summary>
+            Firmware revision
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.Vendor">
+            <summary>
+            Vendor code
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.DeviceTemperature">
+            <summary>
+            Device temperature
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.PulseRepRateMin">
             <summary>
-            KHz
+            Frequency Min (KHz)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.PulseRepRateMax">
             <summary>
-            KHz
+            Frequency Max (KHz)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.PulseRepRate">
             <summary>
-            KHz
+            Frequency (KHz)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.IsTimedOut">
-            <inheritdoc/>
+            <summary>
+            Communication timed out or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.IsProtocolError">
-            <inheritdoc/>
+            <summary>
+            Communication protocol error or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.OperatingPower">
             <summary>
@@ -3071,7 +3455,7 @@
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
             <param name="maxPowerWatt">Max power (W)</param>
-            <param name="analogPortNo">RTC analog port no (1 or 2)</param>
+            <param name="analogPort">RTC analog port no (1 or 2)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.Finalize">
             <summary>
@@ -3086,6 +3470,21 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.Initialize">
             <inheritdoc/>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.IPGYLPN.PREAMBLE">
+            <summary>
+            Preamble
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.IPGYLPN.CR">
+            <summary>
+            Terminator
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPN.Queries">
+            <summary>
+            Queries
+            </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.IPGYLPN.Queries.DeviceStatus">
             <summary>
@@ -3215,6 +3614,11 @@
             4 – alarm counter of the Temperature alarm
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPN.Commands">
+            <summary>
+            Commands
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Laser.IPGYLPN.Commands.Operating_Mode">
             <summary>
             /16 bit. set active control interface operating mode
@@ -3272,56 +3676,82 @@
             reset alarms
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Laser.IPGYLPN.step">
+            <summary>
+            Cycle step counts within worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.OnThread">
+            <summary>
+            Worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.Send(System.String)">
+            <summary>
+            Send string data by <c>SerialPort</c>
+            </summary>
+            <param name="data">Data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.ReceiveParse(System.IO.Ports.SerialPort,System.String@,System.String@)">
+            <summary>
+            Receive data from <c>SerialPort</c>
+            </summary>
+            <param name="serialPort"><c>SerialPort</c> instance</param>
+            <param name="data1">1st return and converted integer data</param>
+            <param name="data2">2nd return and converted integer data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.QueryUser">
+            <summary>
+            Query by user override or implemented function
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.CmdUser">
+            <summary>
+            User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.CheckErrors">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsError</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.CheckReady">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsReady</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.CheckBusy">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsBusy</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.CtlAbort">
-            <summary>
-            강제 출사 정지
-            </summary>
-            <returns></returns>
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.CtlReset">
-            <summary>
-            리셋 (에러 상태 해제 시도)
-            </summary>
-            <returns></returns>
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.CtlGuide(System.Boolean)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.CtlPower(System.Double)">
-            <summary>
-            파워 변경
-            </summary>
-            <param name="targetWatt">파워 (W)</param>
-            <returns></returns>
+            <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.ListBegin">
-            <summary>
-            리스트 시작 통지용
-            (가공 시작시 출력 파워를 초기값등으로 전환하는 용도)
-            </summary>
-            <returns></returns>
+            <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.ListEnd">
-            <summary>
-            리스트 명령 끝 통지용
-            </summary>
-            <returns></returns>
+            <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.ListPower(System.Double)">
-            <summary>
-            파워 변경 (RTC의 리스트 명령으로 처리시)
-            </summary>
-            <param name="targetWatt">파워 (W)</param>
-            <returns></returns>
+            <inheritdoc/>  
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.IPGYLPTypeD">
             <summary>
@@ -3335,14 +3765,41 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.Serial">
-            <inheritdoc/>  
+            <summary>
+            SerialPort instance
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPTypeD.DeviceStatus">
+            <summary>
+            DeviceStatus
+            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.DeviceStatus.ToString">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.StatusBit">
+            <summary>
+            DeviceStatus.Bit
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPTypeD.DeviceExtendedStatus">
+            <summary>
+            DeviceExtendedStatus
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.ExtendedStatus">
             <summary>
             Extended Status (16bits)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.ExtendedStatusBit">
+            <summary>
+            DeviceExtendedStatus.Bit
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPTypeD.DeviceDigitalInterface">
+            <summary>
+            DeviceDigitalInterface
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.DigitalInterface">
@@ -3350,26 +3807,60 @@
             Device Digital DB-25 Interface 
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.DigitalInterfaceBits">
+            <summary>
+            DeviceDigitalInterface.Bit
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.DeviceId">
+            <summary>
+            DeviceId
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.DeviceSN">
+            <summary>
+            Serial no
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.FirmwareRev">
+            <summary>
+            Firmware revision
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.Vendor">
+            <summary>
+            Vendor code
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.DeviceTemperature">
+            <summary>
+            Device temperature (°C)
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.PulseRepRateMin">
             <summary>
-            KHz
+            Frequency Min (KHz)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.PulseRepRateMax">
             <summary>
-            KHz
+            Frequency Max (KHz)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.PulseRepRate">
             <summary>
-            KHz
+            Frequency (KHz)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.IsTimedOut">
-            <inheritdoc/>
+            <summary>
+            Communication timed out or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.IsProtocolError">
-            <inheritdoc/>
+            <summary>
+            Communication protocol error or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.OperatingPower">
             <summary>
@@ -3409,13 +3900,25 @@
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.Dispose(System.Boolean)">
-            <summary>
-            Dispose internal resource
-            </summary>
-            <param name="disposing"></param>
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.Initialize">
             <inheritdoc/>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.IPGYLPTypeD.PREAMBLE">
+            <summary>
+            Preamble
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.IPGYLPTypeD.CR">
+            <summary>
+            Terminator
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPTypeD.Queries">
+            <summary>
+            Queries
+            </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.IPGYLPTypeD.Queries.Device_Status">
             <summary>
@@ -3528,6 +4031,11 @@
             KHz
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPTypeD.Commands">
+            <summary>
+            Commands
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Laser.IPGYLPTypeD.Commands.Operating_Mode">
             <summary>
             /16 bit. set active control interface operating mode
@@ -3573,14 +4081,61 @@
             reset alarms
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Laser.IPGYLPTypeD.step">
+            <summary>
+            Cycle step counts within worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.OnThread">
+            <summary>
+            Worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.Send(System.String)">
+            <summary>
+            Send string data by <c>SerialPort</c>
+            </summary>
+            <param name="data">Data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.ReceiveParse(System.IO.Ports.SerialPort,System.String@,System.String@)">
+            <summary>
+            Receive data from <c>SerialPort</c>
+            </summary>
+            <param name="serialPort"><c>SerialPort</c> instance</param>
+            <param name="data1">1st return and converted integer data</param>
+            <param name="data2">2nd return and converted integer data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.QueryUser">
+            <summary>
+            Query by user override or implemented function
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.CmdUser">
+            <summary>
+            User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.CheckErrors">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsError</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.CheckReady">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsReady</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.CheckBusy">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsBusy</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.CtlAbort">
             <inheritdoc/>
@@ -3615,10 +4170,27 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.Serial">
-            <inheritdoc/>  
+            <summary>
+            SerialPort instance
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPTypeE.DeviceStatus">
+            <summary>
+            DeviceStatus
+            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.DeviceStatus.ToString">
             <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.StatusBit">
+            <summary>
+            DeviceStatus.Bit
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPTypeE.OperationMode">
+            <summary>
+            OperationMode
+            </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.IPGYLPTypeE.OperationMode.Bit.PowerControlD0D7ByDB25">
             <summary>
@@ -3644,31 +4216,95 @@
             0 : RS-232
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.OperationModeBit">
+            <summary>
+            OperationMode.Bit
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPTypeE.Options">
+            <summary>
+            Options
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.OptionBit">
+            <summary>
+            Options.Bit
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPTypeE.DeviceExtendedStatus">
+            <summary>
+            DeviceExtendedStatus
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.ExtendedStatus">
             <summary>
             Device Extended Status 
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.ExtendedStatusBit">
+            <summary>
+            DeviceExtendedStatus.Bit
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPTypeE.DeviceDigitalInterface">
+            <summary>
+            DeviceDigitalInterface
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.DigitalInterfaceBits">
+            <summary>
+            DeviceDigitalInterface.Bit
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.DeviceId">
+            <summary>
+            Device ID
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.DeviceSN">
+            <summary>
+            Serial No
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.FirmwareRev">
+            <summary>
+            Firware revision
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.Vendor">
+            <summary>
+            Vendor code
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.DeviceTemperature">
+            <summary>
+            Device temperature
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.PulseRepRateMin">
             <summary>
-            KHz
+            Frequency Min (KHz
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.PulseRepRateMax">
             <summary>
-            KHz
+            Frequency Max (KHz)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.PulseRepRate">
             <summary>
-            KHz
+            Frequency (KHz)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.IsTimedOut">
-            <inheritdoc/>
+            <summary>
+            Communication timed out or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.IsProtocolError">
-            <inheritdoc/>
+            <summary>
+            Communication protocol error or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.OperatingPower">
             <summary>
@@ -3708,13 +4344,25 @@
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.Dispose(System.Boolean)">
-            <summary>
-            Dispose internal resource
-            </summary>
-            <param name="disposing"></param>
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.Initialize">
             <inheritdoc/>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.IPGYLPTypeE.PREAMBLE">
+            <summary>
+            Preamble
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.IPGYLPTypeE.CR">
+            <summary>
+            Terminator
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPTypeE.Queries">
+            <summary>
+            Queries
+            </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.IPGYLPTypeE.Queries.Device_Status">
             <summary>
@@ -3827,6 +4475,11 @@
             KHz
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPTypeE.Commands">
+            <summary>
+            Commands
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Laser.IPGYLPTypeE.Commands.Operating_Mode">
             <summary>
             /16 bit. set active control interface operating mode
@@ -3872,14 +4525,61 @@
             reset alarms
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Laser.IPGYLPTypeE.step">
+            <summary>
+            Cycle step counts within worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.OnThread">
+            <summary>
+            Worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.Send(System.String)">
+            <summary>
+            Send string data by <c>SerialPort</c>
+            </summary>
+            <param name="data">Data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.ReceiveParse(System.IO.Ports.SerialPort,System.String@,System.String@)">
+            <summary>
+            Receive data from <c>SerialPort</c>
+            </summary>
+            <param name="serialPort"><c>SerialPort</c> instance</param>
+            <param name="data1">1st return and converted integer data</param>
+            <param name="data2">2nd return and converted integer data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.QueryUser">
+            <summary>
+            Query by user override or implemented function
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.CmdUser">
+            <summary>
+            User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.CheckErrors">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsError</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.CheckReady">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsReady</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.CheckBusy">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsBusy</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.CtlAbort">
             <inheritdoc/>
@@ -3904,7 +4604,7 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.IPGYLPULPN">
             <summary>
-            IPG YLP ULPN
+            IPG YLP ULP N
             </summary>
             <remarks>
             Vary <c>SetPoint</c> value by custom(external) RS-232 communication. <br/>
@@ -3914,13 +4614,24 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.Serial">
-            <inheritdoc/>  
+            <summary>
+            SerialPort instance
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.IsTimedOut">
-            <inheritdoc/>
+            <summary>
+            Communication timed out or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.IsProtocolError">
-            <inheritdoc/>
+            <summary>
+            Communication protocol error or not
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.IPGYLPULPN.DeviceStatus">
+            <summary>
+            DeviceStatus
+            </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.IPGYLPULPN.DeviceStatus.Bit.EmissionOn">
             <summary>
@@ -3991,6 +4702,41 @@
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.DeviceStatus.ToString">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.StatusBit">
+            <summary>
+            DeviceStatus.Bit
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.FirmwareRev">
+            <summary>
+            Firmware Revision
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.LowerDeckTemperature">
+            <summary>
+            Lower Deck Temperature
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.CaseTemperature">
+            <summary>
+            Case Temperature
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.HeadTemperature">
+            <summary>
+            Head Temperature
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.BackReflection">
+            <summary>
+            Back Reflection Level (%)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.SetPoint">
+            <summary>
+            Set Point (%)
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Laser.IPGYLPULPN.TriggerModes">
             <summary>
             Trigger modes
@@ -4013,12 +4759,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.PulseRepRateInt">
             <summary>
-            Hz
+            Frequency (Internal) (Hz
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.PulseRepRateExt">
             <summary>
-            Hz
+            Frequency (External) (Hz)
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.IPGYLPULPN.ModulationModes">
@@ -4122,14 +4868,66 @@
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.Initialize">
             <inheritdoc/>
         </member>
+        <member name="F:SpiralLab.Sirius2.Laser.IPGYLPULPN.CR">
+            <summary>
+            Terminator
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.IPGYLPULPN.step">
+            <summary>
+            Cycle step counts within worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.OnThread">
+            <summary>
+            Worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.Send(System.String)">
+            <summary>
+            Send string data by <c>SerialPort</c>
+            </summary>
+            <param name="data">Data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.ReceiveParse(System.IO.Ports.SerialPort,System.String@,System.String@)">
+            <summary>
+            Receive data from <c>SerialPort</c>
+            </summary>
+            <param name="serialPort"><c>SerialPort</c> instance</param>
+            <param name="data1">1st return and converted integer data</param>
+            <param name="data2">2nd return and converted integer data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.QueryUser">
+            <summary>
+            Query by user override or implemented function
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.CmdUser">
+            <summary>
+            User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.CheckErrors">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsError</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.CheckReady">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsReady</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.CheckBusy">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsBusy</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.CtlAbort">
             <inheritdoc/>
@@ -4164,7 +4962,9 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.Serial">
-            <inheritdoc/>  
+            <summary>
+            SerialPort instance
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.OperatingPower">
             <summary>
@@ -4195,19 +4995,73 @@
             <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.IsTimedOut">
-            <inheritdoc/>
+            <summary>
+            Communication timed out or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.IsProtocolError">
-            <inheritdoc/>
+            <summary>
+            Communication protocol error or not
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.JPTTypeE.JPTStatus">
+            <summary>
+            JPTStatus
+            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.JPTStatus.ToString">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.StatusBit">
+            <summary>
+            JPTStatus.Bit
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.JPTTypeE.JPTControlMode">
+            <summary>
+            JPTControlMode
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.JPTControlMode.ToString">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.ControlModeBit">
+            <summary>
+            JPTControlMode.Bit
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.CircuitTemperature">
+            <summary>
+            Circuit Temperature
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.LightPathTemperature">
+            <summary>
+            Light Path Temperature
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.SeedSourceTECTemperature">
+            <summary>
+            Seed Source TEC Temperature
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.ClassIICurrent">
+            <summary>
+            Class II current (A)
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.JPTTypeE.JPTAlarm">
+            <summary>
+            JPTAlarm
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.JPTAlarm.ToString">
             <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.AlarmBit">
+            <summary>
+            JPTAlarm.Bit
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.ComPort">
             <summary>
@@ -4234,22 +5088,77 @@
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.Dispose(System.Boolean)">
-            <summary>
-            Dispose internal resource
-            </summary>
-            <param name="disposing"></param>
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.Initialize">
             <inheritdoc/>
         </member>
+        <member name="F:SpiralLab.Sirius2.Laser.JPTTypeE.PREAMBLE">
+            <summary>
+            Preamble
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.JPTTypeE.POSTAMBLE">
+            <summary>
+            PostAmble
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.JPTTypeE.Queries">
+            <summary>
+            Queries
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.JPTTypeE.Commands">
+            <summary>
+            Commands
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.JPTTypeE.step">
+            <summary>
+            Cycle step counts within worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.OnThread">
+            <summary>
+            Worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.Send(System.Byte[])">
+            <summary>
+            Send string data by <c>SerialPort</c>
+            </summary>
+            <param name="data">Array of bytes</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.QueryUser">
+            <summary>
+            Query by user override or implemented function
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.CmdUser">
+            <summary>
+            User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.CheckErrors">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsError</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.CheckReady">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsReady</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.CheckBusy">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsBusy</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.CtlAbort">
             <inheritdoc/>
@@ -4533,10 +5442,14 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.Serial">
-            <inheritdoc/>  
+            <summary>
+            SerialPort instance
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.IsShutterOpen">
-            <inheritdoc/>  
+            <summary>
+            Shutter Open/Close
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.IsLDDEnable">
             <summary>
@@ -4609,18 +5522,52 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.IsTimedOut">
-            <inheritdoc/>  
+            <summary>
+            Communication timed out or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.IsProtocolError">
-            <inheritdoc/>  
+            <summary>
+            Communication protocol error or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.ComPort">
             <summary>
             COM port no
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.PIDXStatus">
+            <summary>
+            PIDXStatus
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.PIDXStatus.ToString">
             <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.Status1Bit">
+            <summary>
+            PIDXStatus.Bit1
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.Status2Bit">
+            <summary>
+            PIDXStatus.Bit2
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.Status3Bit">
+            <summary>
+            PIDXStatus.Bit3
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.Status4Bit">
+            <summary>
+            PIDXStatus.Bit4
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.Status5Bit">
+            <summary>
+            PIDXStatus.Bit5
+            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.#ctor">
             <summary>
@@ -4642,22 +5589,75 @@
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.Dispose(System.Boolean)">
-            <summary>
-            Dispose internal resource
-            </summary>
-            <param name="disposing"></param>
+            <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.Initialize">
             <inheritdoc/>
         </member>
+        <member name="F:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.CR">
+            <summary>
+            Terminator
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.Queries">
+            <summary>
+            Queries
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.Commands">
+            <summary>
+            Commands
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.step">
+            <summary>
+            Cycle step counts within worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.OnThread">
+            <summary>
+            Worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.Send(System.Byte[])">
+            <summary>
+            Send string data by <c>SerialPort</c>
+            </summary>
+            <param name="data">Array of bytes</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.ReceiveParse(System.IO.Ports.SerialPort,System.Byte[]@)">
+            <summary>
+            Receive data from  <c>SerialPort</c>
+            </summary>
+            <param name="serialPort"><c>SerialPort</c> instance</param>
+            <param name="bytes">Returned array of bytes</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.QueryUser">
+            <summary>
+            Query by user override or implemented function
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.CmdUser">
+            <summary>
+            User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.CheckErrors">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsError</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.CheckReady">
-            <inheritdoc/>
-        </member>
+        <!-- Badly formed XML comment ignored for member "M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.CheckReady" -->
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.CheckBusy">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsBusy</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.CtlAbort">
             <inheritdoc/>
@@ -4690,7 +5690,9 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.Serial">
-            <inheritdoc/>  
+            <summary>
+            SerialPort instance
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.IsSeedShutterOpen">
             <summary>
@@ -4903,24 +5905,78 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.IsTimedOut">
-            <inheritdoc/>  
+            <summary>
+            Communication timed out or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.IsProtocolError">
-            <inheritdoc/>  
+            <summary>
+            Communication protocol error or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.ComPort">
             <summary>
             COM port no
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.PIRGHAIOSoftFault">
+            <summary>
+            PIRGHAIOSoftFault
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.PIRGHAIOSoftFault.ToString">
             <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.SoftFaultBit2">
+            <summary>
+            PIRGHAIOSoftFault.Bit2
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.PIRGHAIOBoardFault">
+            <summary>
+            PIRGHAIOBoardFault
+            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.PIRGHAIOBoardFault.ToString">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.BoardFaultBit2">
+            <summary>
+            PIRGHAIOBoardFault.Bit2
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.PIRGHAIOStatus">
+            <summary>
+            PIRGHAIOStatus
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.PIRGHAIOStatus.ToString">
             <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.Status1Bit">
+            <summary>
+            PIRGHAIOStatus.Bit1
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.Status2Bit">
+            <summary>
+            PIRGHAIOStatus.Bit2
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.Status3Bit">
+            <summary>
+            PIRGHAIOStatus.Bit3
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.Status4Bit">
+            <summary>
+            PIRGHAIOStatus.Bit4
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.Status5Bit">
+            <summary>
+            PIRGHAIOStatus.Bit5
+            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.#ctor">
             <summary>
@@ -4950,14 +6006,70 @@
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.Initialize">
             <inheritdoc/>
         </member>
+        <member name="F:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.CR">
+            <summary>
+            Terminator
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.Queries">
+            <summary>
+            Queries
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.Commands">
+            <summary>
+            Commands
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.step">
+            <summary>
+            Cycle step counts within worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.OnThread">
+            <summary>
+            Worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.Send(System.Byte[])">
+            <summary>
+            Send string data by <c>SerialPort</c>
+            </summary>
+            <param name="data">Array of bytes</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.ReceiveParse(System.IO.Ports.SerialPort,System.Byte[]@)">
+            <summary>
+            Receive data from  <c>SerialPort</c>
+            </summary>
+            <param name="serialPort"><c>SerialPort</c> instance</param>
+            <param name="bytes">Returned array of bytes</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.QueryUser">
+            <summary>
+            Query by user override or implemented function
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.CmdUser">
+            <summary>
+            User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.CheckErrors">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsError</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.CheckReady">
-            <inheritdoc/>
-        </member>
+        <!-- Badly formed XML comment ignored for member "M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.CheckReady" -->
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.CheckBusy">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsBusy</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.CtlAbort">
             <inheritdoc/>
@@ -4992,7 +6104,9 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.Serial">
-            <inheritdoc/>  
+            <summary>
+            SerialPort instance
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.StatusMessage">
             <summary>
@@ -5078,7 +6192,9 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.IsShutterOpen">
-            <inheritdoc/> 
+            <summary>
+            Shutter open/close
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.Frequency">
             <summary>
@@ -5146,10 +6262,14 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.IsTimedOut">
-            <inheritdoc/>
+            <summary>
+            Communication timed out or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.IsProtocolError">
-            <inheritdoc/>
+            <summary>
+            Communication protocol error or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.ComPort">
             <summary>
@@ -5176,28 +6296,86 @@
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.Dispose(System.Boolean)">
-            <summary>
-            Dispose internal resource
-            </summary>
-            <param name="disposing"></param>
+            <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.Initialize">
             <inheritdoc/>
         </member>
+        <member name="F:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.CR">
+            <summary>
+            Terminator (send)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.CRLF">
+            <summary>
+            Terminator (receive)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.step">
+            <summary>
+            Cycle step counts within worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.OnThread">
+            <summary>
+            Worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.Send(System.String)">
+            <summary>
+            Send string data by <c>SerialPort</c>
+            </summary>
+            <param name="data">Data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.ReceiveParse(System.IO.Ports.SerialPort,System.String@)">
+            <summary>
+            Receive data from  <c>SerialPort</c>
+            </summary>
+            <param name="serialPort"><c>SerialPort</c> instance</param>
+            <param name="data">Returned string data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.QueryUser">
+            <summary>
+            Query by user override or implemented function
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.CmdUser">
+            <summary>
+            User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.CheckErrors">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsError</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.CheckReady">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsReady</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.CheckBusy">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsBusy</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.CtlAbort">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.CtlReset">
             <inheritdoc/>  
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.EventCodes">
+            <summary>
+            EventCodes
+            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.CtlPower(System.Double)">
             <inheritdoc/>  
@@ -5223,7 +6401,9 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SPIG4.Serial">
-            <inheritdoc/>  
+            <summary>
+            SerialPort instance
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SPIG4.SimmerPowerWatt">
             <summary>
@@ -5266,10 +6446,14 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SPIG4.IsTimedOut">
-            <inheritdoc/>
+            <summary>
+            Communication timed out or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SPIG4.IsProtocolError">
-            <inheritdoc/>
+            <summary>
+            Communication protocol error or not
+            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SPIG4.#ctor">
             <summary>
@@ -5291,22 +6475,75 @@
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SPIG4.Dispose(System.Boolean)">
-            <summary>
-            Dispose internal resource
-            </summary>
-            <param name="disposing"></param>
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SPIG4.Initialize">
             <inheritdoc/>
         </member>
+        <member name="F:SpiralLab.Sirius2.Laser.SPIG4.step">
+            <summary>
+            Cycle step counts within worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SPIG4.OnThread">
+            <summary>
+            Worker thread
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.SPIG4.LF">
+            <summary>
+            Terminator (receive)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.SPIG4.CRLF">
+            <summary>
+            Terminator (query)
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SPIG4.Send(System.String)">
+            <summary>
+            Send string data by <c>SerialPort</c>
+            </summary>
+            <param name="data">Data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SPIG4.ReceiveParse(System.IO.Ports.SerialPort,System.String@)">
+            <summary>
+            Receive data from  <c>SerialPort</c>
+            </summary>
+            <param name="serialPort"><c>SerialPort</c> instance</param>
+            <param name="data">Returned string data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SPIG4.QueryUser">
+            <summary>
+            Query by user override or implemented function
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SPIG4.CmdUser">
+            <summary>
+            User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.SPIG4.CheckErrors">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsError</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SPIG4.CheckReady">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsReady</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SPIG4.CheckBusy">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsBusy</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SPIG4.CtlAbort">
             <inheritdoc/>
@@ -5351,7 +6588,9 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.Serial">
-            <inheritdoc/>  
+            <summary>
+            SerialPort instance
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.Manufacturer">
             <summary>
@@ -5379,7 +6618,9 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.IsShutterOpen">
-            <inheritdoc/> 
+            <summary>
+            Shutter open/close
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.DiodeCurrent">
             <summary>
@@ -5478,8 +6719,53 @@
             QMode
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.TalonStatus">
+            <summary>
+            TalonStatus
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.TalonStatus.ToString">
             <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.StatusBit">
+            <summary>
+            TalonStatus.Bit
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.DiodeTemperature">
+            <summary>
+            Diode Temperature
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.SHGActualTemperature">
+            <summary>
+            SHG Acutal Temperature
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.THGActualTemperature">
+            <summary>
+            THG Acutal Temperature
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.DiodeOperationHrs">
+            <summary>
+            Diode Operation (Hrs)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.THGOperationHrs">
+            <summary>
+            THG Operation (Hrs)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.THGAccumulatedHrs">
+            <summary>
+            Accumulated THG (Hrs)
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.AlarmCodes">
+            <summary>
+            AlarmCodes
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.AlarmCode">
             <summary>
@@ -5487,10 +6773,14 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.IsTimedOut">
-            <inheritdoc/>
+            <summary>
+            Communication timed out or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.IsProtocolError">
-            <inheritdoc/>
+            <summary>
+            Communication protocol error or not
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.IsGuideOn">
             <inheritdoc/>
@@ -5520,22 +6810,75 @@
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.Dispose(System.Boolean)">
-            <summary>
-            Dispose internal resource
-            </summary>
-            <param name="disposing"></param>
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.Initialize">
             <inheritdoc/>
         </member>
+        <member name="F:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.step">
+            <summary>
+            Cycle step counts within worker thread
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.OnThread">
+            <summary>
+            Worker thread
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.CR">
+            <summary>
+            Terminator (receive)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.CRLF">
+            <summary>
+            Terminator (query)
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.Send(System.String)">
+            <summary>
+            Send string data by <c>SerialPort</c>
+            </summary>
+            <param name="data">Data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.ReceiveParse(System.IO.Ports.SerialPort,System.String@)">
+            <summary>
+            Receive data from  <c>SerialPort</c>
+            </summary>
+            <param name="serialPort"><c>SerialPort</c> instance</param>
+            <param name="data">Returned string data</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.QueryUser">
+            <summary>
+            Query by user override or implemented function
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.CmdUser">
+            <summary>
+            User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.CheckErrors">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsError</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.CheckReady">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsReady</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.CheckBusy">
-            <inheritdoc/>
+            <summary>
+            Check <c>IsBusy</c> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.CtlAbort">
             <inheritdoc/>
