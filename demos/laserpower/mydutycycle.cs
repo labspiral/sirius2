@@ -341,7 +341,7 @@ namespace Demos
 
         #region ILaserPowerControl impl
         /// <inheritdoc/>  
-        public virtual bool CtlPower(double watt)
+        public virtual bool CtlPower(double targetWatt)
         {
             if (!this.IsPowerControl)
                 return true;
@@ -349,12 +349,11 @@ namespace Demos
             var rtc = Scanner as IRtc;
             Debug.Assert(rtc != null);
             bool success = true;
-            if (watt > this.MaxPowerWatt)
-                watt = this.MaxPowerWatt;
-            double compensatedWatt = watt;
+            if (targetWatt > this.MaxPowerWatt)
+                targetWatt = this.MaxPowerWatt;
             lock (SyncRoot)
             {
-                double percentage = watt / this.MaxPowerWatt * 100.0;
+                double percentage = targetWatt / this.MaxPowerWatt * 100.0;
                 if (percentage > 100)
                     percentage = 100;
 
@@ -370,14 +369,14 @@ namespace Demos
                         success &= rtc.CtlFrequency(rtc.Frequency, (double)tempPulseWidth);
                         break;
                 }
-                Thread.Sleep((int)this.PowerControlDelayTime);
-                if (success)
-                {
-                    LastPowerWatt = watt;
-                    Logger.Log(Logger.Types.Warn, $"laser [{this.Index}]: power: {watt:F3} / {MaxPowerWatt:F3}W");
-                }
-                return success;
             }
+            Thread.Sleep((int)this.PowerControlDelayTime);
+            if (success)
+            {
+                LastPowerWatt = targetWatt;
+                Logger.Log(Logger.Types.Warn, $"laser [{this.Index}]: power: {targetWatt:F3} / {MaxPowerWatt:F3}W");
+            }
+            return success;
         }
 
         /// <inheritdoc/>  
@@ -391,19 +390,19 @@ namespace Demos
             return true;
         }
         /// <inheritdoc/>  
-        public virtual bool ListPower(double watt)
+        public virtual bool ListPower(double targetWatt)
         {
             if (!this.IsPowerControl)
                 return true;
             Debug.Assert(this.MaxPowerWatt > 0);
             var rtc = Scanner as IRtc;
             Debug.Assert(rtc != null);
-            if (watt > this.MaxPowerWatt)
-                watt = this.MaxPowerWatt;
+            if (targetWatt > this.MaxPowerWatt)
+                targetWatt = this.MaxPowerWatt;
+            bool success = true;
             lock (SyncRoot)
             {
-                bool success = true;
-                double percentage = watt / this.MaxPowerWatt * 100.0;
+                double percentage = targetWatt / this.MaxPowerWatt * 100.0;
                 if (percentage > 100)
                     percentage = 100;
 
@@ -420,12 +419,12 @@ namespace Demos
                         success &= rtc.ListWait(this.PowerControlDelayTime);
                         break;
                 }
-                if (success)
-                {
-                    LastPowerWatt = watt;
-                }
-                return success;
             }
+            if (success)
+            {
+                LastPowerWatt = targetWatt;
+            }
+            return success;
         }
         #endregion
     }

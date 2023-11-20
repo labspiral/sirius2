@@ -23,18 +23,58 @@
 
 **2. Features**
  
- - Support SCANLAB's RTC5, RTC6 and RTC6e controllers.
+ - Support SCANLAB's RTC controllers.
+    - RTC5
+    - RTC6 
+    - RTC6e 
  - Support SCANLAB's XL-SCAN (syncAxis) controllers.
  - Support 2D, 3D scanner field correction.
- - Support 3D field correction at plane, cone, cylinder surface by calibration tool
+ - Support calibration tool for 3D surfaces.
+    - Plane 
+    - Cone 
+    - Cylinder 
+    - Points cloud  
  - Support powerful 4x4 matrix with stack operations.
  - Support processing unlimited list data by automatically.
- - Support MoF(Marking on the Fly), 2nd head, 3D and Sky writing.
- - Support Ramp(Automatic Laser Control) by position dependent, velocity dependent and defined-vector.
+ - Support powerful options.
+    - MoF(Marking on the Fly)
+    - 2nd head
+    - 3D 
+    - Sky writing
+ - Support Ramp(Automatic Laser Control) controls.
+    - Position dependent
+    - Velocity dependent 
+    - Defined-vector
  - Support SCANahead control, SDC(Spot Distance Control) with RTC6.
  - Support measure and profile scanner trajectory with output signals by plotted graph.
- - Support many kinds of laser source control by frequency, duty cycle, analog, digital output signals.
- - Support remote controls by TCP/IP or serial(RS-232) communication.
+ - Support many kinds of laser source controls
+    - Frequency
+    - Duty cycle
+    - Analog output
+    - Digital output 
+ - Support specific laser sources
+    - AdvancedOptoWave 
+       - AOPico
+       - AOPico Precision,
+       - Fotia
+    - Coherent
+       - Avia LX
+       - Diamond C-Series
+    - IPG 
+       - YLP N
+       - YLP Type D
+       - YLP Type E
+       - YLP ULP N
+    - JPT Type E
+    - Photonics Industry
+       - DX
+       - RGH AIO
+    - Spectra Physics
+       - Hippo
+       - Talon
+ - Support remote controls.
+    - TCP/IP communication
+    - Serial(RS-232) communication
  - Open sourced code with editor, marker, laser and pen control for customization.
  - Support many kinds of executable demo programs.
 
@@ -89,7 +129,6 @@
  - Demo 'editor_mof' winforms project for encoder based MoF
  - Demo 'editor_multiple' winforms project for multiple instances
  - Demo 'editor_marker' winforms project for custom marker
- - Demo 'editor_remote' winforms project for custom remote control
  - Demo 'editor_ui' winforms project for custom ui
 
 
@@ -118,6 +157,18 @@
 
 
 **8. Version history**
+
+* 2023.11.20 v.1.10.910
+  - added) support various laser sources
+     - Advanced OptoWave
+     - Coherent
+     - IPG
+     - JPT
+     - Photonics Industry
+     - Spectra Physics
+  - added) support load correction file at RTC propertygrid 
+  - added) laser power slider at manual tab
+  - fixed) 3D and MoF options are available with evaluation copy mode
 
 * 2023.11.9 v.1.9.890
   - added) RTC functions

@@ -113,8 +113,17 @@ namespace Demos
                     // 8bits (0~255)
                     laser = LaserFactory.CreateVirtualDO8Bits(laserId, maxWatt, 0, 255);
                     break;
-           
             }
+            // or
+            // You can create specific vendor's laser source instance 
+            //laser = LaserFactory.CreateAdvancedOptoWaveFotia()
+            //laser = LaserFactory.CreateCoherentAviaLX()
+            //laser = LaserFactory.CreateIPGYLPN();
+            //laser = LaserFactory.CreatePhotonicsIndustryDX();
+            //laser = LaserFactory.CreateSpectraPhysicsTalon();
+            //laser = LaserFactory.CreateSPIG4();
+            // and more at LaserFactory ...
+
             Console.WriteLine($"laser source [{laserType}]: {laser.Name} has created");
 
             // Assign RTC into laser

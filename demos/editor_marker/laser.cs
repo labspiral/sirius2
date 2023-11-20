@@ -245,6 +245,7 @@ namespace Demos
         /// <inheritdoc/>  
         public override bool ListBegin()
         {
+            //this.LastPowerWatt = 0;
             return true;
         }
         /// <inheritdoc/>  

@@ -17584,6 +17584,9 @@
             <summary>
             Current(or working, activated) <c>EntityLayer</c> entity
             </summary>
+            <remarks>
+            Default layer by name '0' would be created when do <c>ActNew</c>. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocument.IsModified">
             <summary>

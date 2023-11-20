@@ -143,6 +143,8 @@ namespace Demos
                     string configXmlFileName = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "CONFIG_XML", string.Empty);
                     rtc = ScannerFactory.CreateRtc6SyncAxis(index, configXmlFileName);
                     break;
+                default:
+                    throw new InvalidProgramException($"Not supported rtc type: {rtcType}");
             }
 
             // Initialize RTC controller
@@ -223,13 +225,16 @@ namespace Demos
 
             #region Initialize Laser source
             var laserType = NativeMethods.ReadIni(ConfigFileName, $"LASER{index}", "TYPE", "Virtual");
-            var laserPowerControl = NativeMethods.ReadIni(ConfigFileName, $"LASER{index}", "POWERCONTROL", "Unknown");
+            var virtuaLaserPowerControl = NativeMethods.ReadIni(ConfigFileName, $"LASER{index}", "POWERCONTROL", "Unknown");
             var laserMaxPower = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "MAXPOWER", 10);
             var laserDefaultPower = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "DEFAULT_POWER", 1);
+            var laserComPort = NativeMethods.ReadIni<int>(ConfigFileName, $"LASER{index}", "COM_PORT", 1);
+            var laserIPaddress = NativeMethods.ReadIni<string>(ConfigFileName, $"LASER{index}", "IP_ADDRESS", string.Empty);
+            var rtcAnalogPort = NativeMethods.ReadIni<int>(ConfigFileName, $"LASER{index}", "ANALOG_PORT", 1);
             switch (laserType.Trim().ToLower())
             {
                 case "virtual":
-                    switch (laserPowerControl.Trim().ToLower())
+                    switch (virtuaLaserPowerControl.Trim().ToLower())
                     {
                         default:
                         case "unknown":
@@ -271,6 +276,50 @@ namespace Demos
                             break;
                     }
                     break;
+                case "advancedooptowaveaopico":
+                    laser = LaserFactory.CreateAdvancedOptoWaveAOPico(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    break;
+                case "advancedooptowaveaopicoprecision":
+                    laser = LaserFactory.CreateAdvancedOptoWaveAOPicoPrecision(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    break;
+                case "coherentavialx":
+                    laser = LaserFactory.CreateCoherentAviaLX(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    break;
+                case "coherentdiamondcseries":
+                    laser = LaserFactory.CreateCoherentDiamondCSeries(index, $"LASER{index}", laserMaxPower);
+                    break;
+                case "ipgylptyped":
+                    laser = LaserFactory.CreateIPGYLPTypeD(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    break;
+                case "ipgylptypee":
+                    laser = LaserFactory.CreateIPGYLPTypeE(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    break;
+                case "ipgylpulpn":
+                    laser = LaserFactory.CreateIPGYLPULPN(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    break;
+                case "ipgylpn":
+                    laser = LaserFactory.CreateIPGYLPN(index, $"LASER{index}", laserComPort, laserMaxPower, rtcAnalogPort);
+                    break;
+                case "jpttypee":
+                    laser = LaserFactory.CreateJPTTypeE(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    break;
+                case "photonicsindustrydx":
+                    laser = LaserFactory.CreatePhotonicsIndustryDX(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    break;
+                case "photonicsindustryrghaio":
+                    laser = LaserFactory.CreatePhotonicsIndustryRGHAIO(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    break;
+                case "spectraphysicshippo":
+                    laser = LaserFactory.CreateSpectraPhysicsHippo(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    break;
+                case "spectraphysicstalon":
+                    laser = LaserFactory.CreateSpectraPhysicsTalon(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    break;
+                case "spig4":
+                    laser = LaserFactory.CreateSPIG4(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    break;
+                default:
+                    throw new InvalidProgramException($"Not supported laser source type: {laserType}");
             }
 
             // Assign RTC into laser source
