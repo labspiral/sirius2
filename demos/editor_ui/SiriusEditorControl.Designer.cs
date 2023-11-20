@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SiriusEditorUserControl));
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.editorControl1 = new SpiralLab.Sirius2.Winforms.UI.EditorUserControl();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
             this.rtcControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcUserControl();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
             this.laserControl1 = new SpiralLab.Sirius2.Winforms.UI.LaserUserControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -49,7 +50,7 @@
             this.manualUserControl1 = new SpiralLab.Sirius2.Winforms.UI.ManualUserControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.remoteUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RemoteUserControl();
-            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.logControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.treeViewControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl();
@@ -141,8 +142,8 @@
             this.toolStripStatusLabel12 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRenderTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblHelp = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel13 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblHelp = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblReady = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblBusy = new System.Windows.Forms.ToolStripStatusLabel();
@@ -168,11 +169,8 @@
             this.splitContainer3.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tabPage10.SuspendLayout();
             this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -216,6 +214,7 @@
             // tabControl3
             // 
             this.tabControl3.Controls.Add(this.tabPage6);
+            this.tabControl3.Controls.Add(this.tabPage10);
             this.tabControl3.Controls.Add(this.tabPage8);
             this.tabControl3.Controls.Add(this.tabPage5);
             this.tabControl3.Controls.Add(this.tabPage9);
@@ -243,31 +242,25 @@
             this.editorControl1.Name = "editorControl1";
             this.editorControl1.Rtc = null;
             // 
-            // tabPage8
+            // tabPage10
             // 
-            this.tabPage8.Controls.Add(this.splitContainer2);
-            resources.ApplyResources(this.tabPage8, "tabPage8");
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer2
-            // 
-            resources.ApplyResources(this.splitContainer2, "splitContainer2");
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.rtcControl1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.laserControl1);
+            this.tabPage10.Controls.Add(this.rtcControl1);
+            resources.ApplyResources(this.tabPage10, "tabPage10");
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.UseVisualStyleBackColor = true;
             // 
             // rtcControl1
             // 
             resources.ApplyResources(this.rtcControl1, "rtcControl1");
             this.rtcControl1.Name = "rtcControl1";
             this.rtcControl1.Rtc = null;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.laserControl1);
+            resources.ApplyResources(this.tabPage8, "tabPage8");
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // laserControl1
             // 
@@ -1016,16 +1009,16 @@
             resources.ApplyResources(this.toolStripStatusLabel4, "toolStripStatusLabel4");
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
             // 
+            // toolStripStatusLabel13
+            // 
+            resources.ApplyResources(this.toolStripStatusLabel13, "toolStripStatusLabel13");
+            this.toolStripStatusLabel13.Name = "toolStripStatusLabel13";
+            // 
             // lblHelp
             // 
             this.lblHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.lblHelp, "lblHelp");
             this.lblHelp.Name = "lblHelp";
-            // 
-            // toolStripStatusLabel13
-            // 
-            resources.ApplyResources(this.toolStripStatusLabel13, "toolStripStatusLabel13");
-            this.toolStripStatusLabel13.Name = "toolStripStatusLabel13";
             // 
             // lblReady
             // 
@@ -1181,11 +1174,8 @@
             this.splitContainer3.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
+            this.tabPage10.ResumeLayout(false);
             this.tabPage8.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -1300,9 +1290,6 @@
         private System.Windows.Forms.TabPage tabPage6;
         private SpiralLab.Sirius2.Winforms.UI.EditorUserControl editorControl1;
         private System.Windows.Forms.TabPage tabPage8;
-        private System.Windows.Forms.SplitContainer splitContainer2;
-        private SpiralLab.Sirius2.Winforms.UI.RtcUserControl rtcControl1;
-        private SpiralLab.Sirius2.Winforms.UI.LaserUserControl laserControl1;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private SpiralLab.Sirius2.Winforms.UI.OffsetUserControl offsetControl1;
@@ -1353,5 +1340,8 @@
         private SpiralLab.Sirius2.Winforms.UI.RemoteUserControl remoteUserControl1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+        private System.Windows.Forms.TabPage tabPage10;
+        private SpiralLab.Sirius2.Winforms.UI.RtcUserControl rtcControl1;
+        private SpiralLab.Sirius2.Winforms.UI.LaserUserControl laserControl1;
     }
 }

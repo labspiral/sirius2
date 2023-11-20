@@ -18578,6 +18578,1517 @@
             <param name="alcScaleFactors">Array of ramp factor<br/>Used if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.RTC4Wrap">
+            <summary>
+            Static RTC4 Wrapper class.
+            Notice that the construction of the RTC4Wrap object or an initial
+            call of any RTC4Wrap method may throw a TypeInitializationException
+            exception, which indicates that the required DLL is missing or the
+            import of a particular DLL function failed. In order to analyze and
+            properly handle such an error condition you need to catch that
+            TypeInitializationException type exception.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_waveform">
+            <summary>
+             void n_get_waveform(ushort n, ushort channel, ushort istop, short[] memptr);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_waveform">
+            <summary>
+             void get_waveform(ushort channel, ushort istop, short[] memptr);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_measurement_status">
+            <summary>
+             void n_measurement_status(ushort n, out ushort busy, out ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.measurement_status">
+            <summary>
+             void measurement_status(out ushort busy, out ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_trigger">
+            <summary>
+             void n_set_trigger(ushort n, ushort sampleperiod, ushort channel1, ushort channel2);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_trigger">
+            <summary>
+             void set_trigger(ushort sampleperiod, ushort signal1, ushort signal2);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_value">
+            <summary>
+             short n_get_value(ushort n, ushort signal);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_value">
+            <summary>
+             short get_value(ushort signal);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_io_bit">
+            <summary>
+             void n_set_io_bit(ushort n, ushort mask1);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_io_bit">
+            <summary>
+             void set_io_bit(ushort mask1);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_clear_io_bit">
+            <summary>
+             void n_clear_io_bit(ushort n, ushort mask0);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.clear_io_bit">
+            <summary>
+             void clear_io_bit(ushort mask0);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_move_to">
+            <summary>
+             void n_move_to(ushort n, ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.move_to">
+            <summary>
+             void move_to(ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_control_command">
+            <summary>
+             void n_control_command(ushort n, ushort head, ushort axis, ushort data);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.control_command">
+            <summary>
+             void control_command(ushort head, ushort axis, ushort data);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_arc_rel">
+            <summary>
+             void n_arc_rel(ushort n, short dx, short dy, double angle);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.arc_rel">
+            <summary>
+             void arc_rel(short dx, short dy, double angle);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_arc_abs">
+            <summary>
+             void n_arc_abs(ushort n, short x, short y, double angle);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.arc_abs">
+            <summary>
+             void arc_abs(short x, short y, double angle);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.drilling">
+            <summary>
+             void drilling(short pulsewidth, short relencoderdelay);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.regulation">
+            <summary>
+             void regulation();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.flyline">
+            <summary>
+             void flyline(short encoderdelay);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_duty_cycle_table">
+            <summary>
+             void set_duty_cycle_table(ushort index, ushort dutycycle);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_load_varpolydelay">
+            <summary>
+             short n_load_varpolydelay(ushort n, string stbfilename, ushort tableno);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.load_varpolydelay">
+            <summary>
+             short load_varpolydelay(string stbfilename, ushort tableno);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_load_program_file">
+            <summary>
+             short n_load_program_file(ushort n, string name);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.load_program_file">
+            <summary>
+             short load_program_file(string name);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_load_correction_file">
+            <summary>
+             short n_load_correction_file(ushort n, string filename, short cortable, double kx, double ky, double phi, double xoffset, double yoffset);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.load_correction_file">
+            <summary>
+             short load_correction_file(string filename, short cortable, double kx, double ky, double phi, double xoffset, double yoffset);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_load_z_table">
+            <summary>
+             short n_load_z_table(ushort n, double a, double b, double c);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.load_z_table">
+            <summary>
+             short load_z_table(double a, double b, double c);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_list_nop">
+            <summary>
+             void n_list_nop(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.list_nop">
+            <summary>
+             void list_nop();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_end_of_list">
+            <summary>
+             void n_set_end_of_list(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_end_of_list">
+            <summary>
+             void set_end_of_list();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_jump_abs_3d">
+            <summary>
+             void n_jump_abs_3d(ushort n, short x, short y, short z);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.jump_abs_3d">
+            <summary>
+             void jump_abs_3d(short x, short y, short z);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_jump_abs">
+            <summary>
+             void n_jump_abs(ushort n, short x, short y);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.jump_abs">
+            <summary>
+             void jump_abs(short x, short y);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_mark_abs_3d">
+            <summary>
+             void n_mark_abs_3d(ushort n, short x, short y, short z);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.mark_abs_3d">
+            <summary>
+             void mark_abs_3d(short x, short y, short z);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_mark_abs">
+            <summary>
+             void n_mark_abs(ushort n, short x, short y);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.mark_abs">
+            <summary>
+             void mark_abs(short x, short y);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_jump_rel_3d">
+            <summary>
+             void n_jump_rel_3d(ushort n, short dx, short dy, short dz);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.jump_rel_3d">
+            <summary>
+             void jump_rel_3d(short dx, short dy, short dz);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_jump_rel">
+            <summary>
+             void n_jump_rel(ushort n, short dx, short dy);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.jump_rel">
+            <summary>
+             void jump_rel(short dx, short dy);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_mark_rel_3d">
+            <summary>
+             void n_mark_rel_3d(ushort n, short dx, short dy, short dz);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.mark_rel_3d">
+            <summary>
+             void mark_rel_3d(short dx, short dy, short dz);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_mark_rel">
+            <summary>
+             void n_mark_rel(ushort n, short dx, short dy);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.mark_rel">
+            <summary>
+             void mark_rel(short dx, short dy);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_write_8bit_port_list">
+            <summary>
+             void n_write_8bit_port_list(ushort n, ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.write_8bit_port_list">
+            <summary>
+             void write_8bit_port_list(ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_write_da_1_list">
+            <summary>
+             void n_write_da_1_list(ushort n, ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.write_da_1_list">
+            <summary>
+             void write_da_1_list(ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_write_da_2_list">
+            <summary>
+             void n_write_da_2_list(ushort n, ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.write_da_2_list">
+            <summary>
+             void write_da_2_list(ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_matrix_list">
+            <summary>
+             void n_set_matrix_list(ushort n, ushort i, ushort j, double mij);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_matrix_list">
+            <summary>
+             void set_matrix_list(ushort i, ushort j, double mij);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_offset_list">
+            <summary>
+             void n_set_offset_list(ushort n, short xoffset, short yoffset);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_offset_list">
+            <summary>
+             void set_offset_list(short xoffset, short yoffset);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_defocus_list">
+            <summary>
+             void n_set_defocus_list(ushort n, short value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_defocus_list">
+            <summary>
+             void set_defocus_list(short value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_defocus">
+            <summary>
+             void n_set_defocus(ushort n, short value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_defocus">
+            <summary>
+             void set_defocus(short value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_softstart_mode">
+            <summary>
+             void n_set_softstart_mode(ushort n, ushort mode, ushort number, ushort restartdelay);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_softstart_mode">
+            <summary>
+             void set_softstart_mode(ushort mode, ushort number, ushort resetdelay);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_softstart_level">
+            <summary>
+             void n_set_softstart_level(ushort n, ushort index, ushort level);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_softstart_level">
+            <summary>
+             void set_softstart_level(ushort index, ushort level);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_control_mode_list">
+            <summary>
+             void n_set_control_mode_list(ushort n, ushort mode);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_control_mode_list">
+            <summary>
+             void set_control_mode_list(ushort mode);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_control_mode">
+            <summary>
+             void n_set_control_mode(ushort n, ushort mode);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_control_mode">
+            <summary>
+             void set_control_mode(ushort mode);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_long_delay">
+            <summary>
+             void n_long_delay(ushort n, ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.long_delay">
+            <summary>
+             void long_delay(ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_laser_on_list">
+            <summary>
+             void n_laser_on_list(ushort n, ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.laser_on_list">
+            <summary>
+             void laser_on_list(ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_jump_speed">
+            <summary>
+             void n_set_jump_speed(ushort n, double speed);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_jump_speed">
+            <summary>
+             void set_jump_speed(double speed);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_mark_speed">
+            <summary>
+             void n_set_mark_speed(ushort n, double speed);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_mark_speed">
+            <summary>
+             void set_mark_speed(double speed);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_laser_delays">
+            <summary>
+             void n_set_laser_delays(ushort n, short ondelay, short offdelay);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_laser_delays">
+            <summary>
+             void set_laser_delays(short ondelay, short offdelay);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_scanner_delays">
+            <summary>
+             void n_set_scanner_delays(ushort n, ushort jumpdelay, ushort markdelay, ushort polydelay);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_scanner_delays">
+            <summary>
+             void set_scanner_delays(ushort jumpdelay, ushort markdelay, ushort polydelay);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_list_jump">
+            <summary>
+             void n_set_list_jump(ushort n, ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_list_jump">
+            <summary>
+             void set_list_jump(ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_input_pointer">
+            <summary>
+             void n_set_input_pointer(ushort n, ushort pointer);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_input_pointer">
+            <summary>
+             void set_input_pointer(ushort pointer);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_list_call">
+            <summary>
+             void n_list_call(ushort n, ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.list_call">
+            <summary>
+             void list_call(ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_list_return">
+            <summary>
+             void n_list_return(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.list_return">
+            <summary>
+             void list_return();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_z_out_list">
+            <summary>
+             void n_z_out_list(ushort n, short z);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.z_out_list">
+            <summary>
+             void z_out_list(short z);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_standby_list">
+            <summary>
+             void n_set_standby_list(ushort n, ushort half_period, ushort pulse);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_standby_list">
+            <summary>
+             void set_standby_list(ushort half_period, ushort pulse);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_timed_jump_abs">
+            <summary>
+             void n_timed_jump_abs(ushort n, short x, short y, double time);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.timed_jump_abs">
+            <summary>
+             void timed_jump_abs(short x, short y, double time);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_timed_mark_abs">
+            <summary>
+             void n_timed_mark_abs(ushort n, short x, short y, double time);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.timed_mark_abs">
+            <summary>
+             void timed_mark_abs(short x, short y, double time);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_timed_jump_rel">
+            <summary>
+             void n_timed_jump_rel(ushort n, short dx, short dy, double time);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.timed_jump_rel">
+            <summary>
+             void timed_jump_rel(short dx, short dy, double time);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_timed_mark_rel">
+            <summary>
+             void n_timed_mark_rel(ushort n, short dx, short dy, double time);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.timed_mark_rel">
+            <summary>
+             void timed_mark_rel(short dx, short dy, double time);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_laser_timing">
+            <summary>
+             void n_set_laser_timing(ushort n, ushort halfperiod, ushort pulse1, ushort pulse2, ushort timebase);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_laser_timing">
+            <summary>
+             void set_laser_timing(ushort halfperiod, ushort pulse1, ushort pulse2, ushort timebase);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_wobbel">
+            <summary>
+             void n_set_wobbel(ushort n, ushort amplitude, double frequency);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_wobbel">
+            <summary>
+             void set_wobbel(ushort amplitude, double frequency);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_wobbel_xy">
+            <summary>
+             void n_set_wobbel_xy(ushort n, ushort long_wob, ushort trans_wob, double frequency);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_wobbel_xy">
+            <summary>
+             void set_wobbel_xy(ushort long_wob, ushort trans_wob, double frequency);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_fly_x">
+            <summary>
+             void n_set_fly_x(ushort n, double kx);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_fly_x">
+            <summary>
+             void set_fly_x(double kx);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_fly_y">
+            <summary>
+             void n_set_fly_y(ushort n, double ky);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_fly_y">
+            <summary>
+             void set_fly_y(double ky);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_fly_rot">
+            <summary>
+             void n_set_fly_rot(ushort n, double resolution);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_fly_rot">
+            <summary>
+             void set_fly_rot(double resolution);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_fly_return">
+            <summary>
+             void n_fly_return(ushort n, short x, short y);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.fly_return">
+            <summary>
+             void fly_return(short x, short y);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_calculate_fly">
+            <summary>
+             void n_calculate_fly(ushort n, ushort direction, double distance);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.calculate_fly">
+            <summary>
+             void calculate_fly(ushort direction, double distance);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_write_io_port_list">
+            <summary>
+             void n_write_io_port_list(ushort n, ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.write_io_port_list">
+            <summary>
+             void write_io_port_list(ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_select_cor_table_list">
+            <summary>
+             void n_select_cor_table_list(ushort n, ushort heada, ushort headb);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.select_cor_table_list">
+            <summary>
+             void select_cor_table_list(ushort heada, ushort headb);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_wait">
+            <summary>
+             void n_set_wait(ushort n, ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_wait">
+            <summary>
+             void set_wait(ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_simulate_ext_start">
+            <summary>
+             void n_simulate_ext_start(ushort n, short delay, short encoder);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.simulate_ext_start">
+            <summary>
+             void simulate_ext_start(short delay, short encoder);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_write_da_x_list">
+            <summary>
+             void n_write_da_x_list(ushort n, ushort x, ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.write_da_x_list">
+            <summary>
+             void write_da_x_list(ushort x, ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_pixel_line">
+            <summary>
+             void n_set_pixel_line(ushort n, ushort pixelmode, ushort pixelperiod, double dx, double dy);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_pixel_line">
+            <summary>
+             void set_pixel_line(ushort pixelmode, ushort pixelperiod, double dx, double dy);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_pixel">
+            <summary>
+             void n_set_pixel(ushort n, ushort pulswidth, ushort davalue, ushort adchannel);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_pixel">
+            <summary>
+             void set_pixel(ushort pulswidth, ushort davalue, ushort adchannel);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_extstartpos_list">
+            <summary>
+             void n_set_extstartpos_list(ushort n, ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_extstartpos_list">
+            <summary>
+             void set_extstartpos_list(ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_laser_signal_on_list">
+            <summary>
+             void n_laser_signal_on_list(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.laser_signal_on_list">
+            <summary>
+             void laser_signal_on_list();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_laser_signal_off_list">
+            <summary>
+             void n_laser_signal_off_list(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.laser_signal_off_list">
+            <summary>
+             void laser_signal_off_list();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_firstpulse_killer_list">
+            <summary>
+             void n_set_firstpulse_killer_list(ushort n, ushort fpk);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_firstpulse_killer_list">
+            <summary>
+             void set_firstpulse_killer_list(ushort fpk);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_io_cond_list">
+            <summary>
+             void n_set_io_cond_list(ushort n, ushort mask_1, ushort mask_0, ushort mask_set);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_io_cond_list">
+            <summary>
+             void set_io_cond_list(ushort mask_1, ushort mask_0, ushort mask_set);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_clear_io_cond_list">
+            <summary>
+             void n_clear_io_cond_list(ushort n, ushort mask_1, ushort mask_0, ushort mask_clear);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.clear_io_cond_list">
+            <summary>
+             void clear_io_cond_list(ushort mask_1, ushort mask_0, ushort mask_clear);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_list_jump_cond">
+            <summary>
+             void n_list_jump_cond(ushort n, ushort mask_1, ushort mask_0, ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.list_jump_cond">
+            <summary>
+             void list_jump_cond(ushort mask_1, ushort mask_0, ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_list_call_cond">
+            <summary>
+             void n_list_call_cond(ushort n, ushort mask_1, ushort mask_0, ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.list_call_cond">
+            <summary>
+             void list_call_cond(ushort mask_1, ushort mask_0, ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_input_pointer">
+            <summary>
+             ushort n_get_input_pointer(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_input_pointer">
+            <summary>
+             ushort get_input_pointer();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.select_rtc">
+            <summary>
+             void select_rtc(ushort cardno);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.rtc4_count_cards">
+            <summary>
+             ushort rtc4_count_cards();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_status">
+            <summary>
+             void n_get_status(ushort n, out ushort busy, out ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_status">
+            <summary>
+             void get_status(out ushort busy, out ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_read_status">
+            <summary>
+             ushort n_read_status(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.read_status">
+            <summary>
+             ushort read_status();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_startstop_info">
+            <summary>
+             ushort n_get_startstop_info(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_startstop_info">
+            <summary>
+             ushort get_startstop_info();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_marking_info">
+            <summary>
+             ushort n_get_marking_info(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_marking_info">
+            <summary>
+             ushort get_marking_info();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_dll_version">
+            <summary>
+             ushort get_dll_version();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_start_list_1">
+            <summary>
+             void n_set_start_list_1(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_start_list_1">
+            <summary>
+             void set_start_list_1();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_start_list_2">
+            <summary>
+             void n_set_start_list_2(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_start_list_2">
+            <summary>
+             void set_start_list_2();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_start_list">
+            <summary>
+             void n_set_start_list(ushort n, ushort listno);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_start_list">
+            <summary>
+             void set_start_list(ushort listno);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_execute_list_1">
+            <summary>
+             void n_execute_list_1(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.execute_list_1">
+            <summary>
+             void execute_list_1();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_execute_list_2">
+            <summary>
+             void n_execute_list_2(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.execute_list_2">
+            <summary>
+             void execute_list_2();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_execute_list">
+            <summary>
+             void n_execute_list(ushort n, ushort listno);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.execute_list">
+            <summary>
+             void execute_list(ushort listno);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_write_8bit_port">
+            <summary>
+             void n_write_8bit_port(ushort n, ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.write_8bit_port">
+            <summary>
+             void write_8bit_port(ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_write_io_port">
+            <summary>
+             void n_write_io_port(ushort n, ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.write_io_port">
+            <summary>
+             void write_io_port(ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_auto_change">
+            <summary>
+             void n_auto_change(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.auto_change">
+            <summary>
+             void auto_change();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_auto_change_pos">
+            <summary>
+             void n_auto_change_pos(ushort n, ushort start);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.auto_change_pos">
+            <summary>
+             void auto_change_pos(ushort start);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.aut_change">
+            <summary>
+             void aut_change();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_start_loop">
+            <summary>
+             void n_start_loop(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.start_loop">
+            <summary>
+             void start_loop();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_quit_loop">
+            <summary>
+             void n_quit_loop(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.quit_loop">
+            <summary>
+             void quit_loop();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_stop_execution">
+            <summary>
+             void n_stop_execution(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.stop_execution">
+            <summary>
+             void stop_execution();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_read_io_port">
+            <summary>
+             ushort n_read_io_port(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.read_io_port">
+            <summary>
+             ushort read_io_port();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_write_da_1">
+            <summary>
+             void n_write_da_1(ushort n, ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.write_da_1">
+            <summary>
+             void write_da_1(ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_write_da_2">
+            <summary>
+             void n_write_da_2(ushort n, ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.write_da_2">
+            <summary>
+             void write_da_2(ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_max_counts">
+            <summary>
+             void n_set_max_counts(ushort n, int counts);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_max_counts">
+            <summary>
+             void set_max_counts(int counts);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_counts">
+            <summary>
+             int n_get_counts(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_counts">
+            <summary>
+             int get_counts();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_matrix">
+            <summary>
+             void n_set_matrix(ushort n, double m11, double m12, double m21, double m22);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_matrix">
+            <summary>
+             void set_matrix(double m11, double m12, double m21, double m22);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_offset">
+            <summary>
+             void n_set_offset(ushort n, short xoffset, short yoffset);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_offset">
+            <summary>
+             void set_offset(short xoffset, short yoffset);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_goto_xyz">
+            <summary>
+             void n_goto_xyz(ushort n, short x, short y, short z);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.goto_xyz">
+            <summary>
+             void goto_xyz(short x, short y, short z);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_goto_xy">
+            <summary>
+             void n_goto_xy(ushort n, short x, short y);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.goto_xy">
+            <summary>
+             void goto_xy(short x, short y);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_hex_version">
+            <summary>
+             ushort n_get_hex_version(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_hex_version">
+            <summary>
+             ushort get_hex_version();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_disable_laser">
+            <summary>
+             void n_disable_laser(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.disable_laser">
+            <summary>
+             void disable_laser();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_enable_laser">
+            <summary>
+             void n_enable_laser(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.enable_laser">
+            <summary>
+             void enable_laser();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_stop_list">
+            <summary>
+             void n_stop_list(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.stop_list">
+            <summary>
+             void stop_list();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_restart_list">
+            <summary>
+             void n_restart_list(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.restart_list">
+            <summary>
+             void restart_list();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_xyz_pos">
+            <summary>
+             void n_get_xyz_pos(ushort n, out short x, out short y, out short z);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_xyz_pos">
+            <summary>
+             void get_xyz_pos(out short x, out short y, out short z);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_xy_pos">
+            <summary>
+             void n_get_xy_pos(ushort n, out short x, out short y);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_xy_pos">
+            <summary>
+             void get_xy_pos(out short x, out short y);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_select_list">
+            <summary>
+             void n_select_list(ushort n, ushort list_2);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.select_list">
+            <summary>
+             void select_list(ushort list_2);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_z_out">
+            <summary>
+             void n_z_out(ushort n, short z);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.z_out">
+            <summary>
+             void z_out(short z);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_firstpulse_killer">
+            <summary>
+             void n_set_firstpulse_killer(ushort n, ushort fpk);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_firstpulse_killer">
+            <summary>
+             void set_firstpulse_killer(ushort fpk);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_standby">
+            <summary>
+             void n_set_standby(ushort n, ushort half_period, ushort pulse);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_standby">
+            <summary>
+             void set_standby(ushort half_period, ushort pulse);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_laser_signal_on">
+            <summary>
+             void n_laser_signal_on(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.laser_signal_on">
+            <summary>
+             void laser_signal_on();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_laser_signal_off">
+            <summary>
+             void n_laser_signal_off(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.laser_signal_off">
+            <summary>
+             void laser_signal_off();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_delay_mode">
+            <summary>
+             void n_set_delay_mode(ushort n, ushort varpoly, ushort directmove3d, ushort edgelevel, ushort minjumpdelay, ushort jumplengthlimit);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_delay_mode">
+            <summary>
+             void set_delay_mode(ushort varpoly, ushort directmove3d, ushort edgelevel, ushort minjumpdelay, ushort jumplengthlimit);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_piso_control">
+            <summary>
+             void n_set_piso_control(ushort n, ushort l1, ushort l2);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_piso_control">
+            <summary>
+             void set_piso_control(ushort l1, ushort l2);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_select_status">
+            <summary>
+             void n_select_status(ushort n, ushort mode);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.select_status">
+            <summary>
+             void select_status(ushort mode);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_encoder">
+            <summary>
+             void n_get_encoder(ushort n, out short zx, out short zy);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_encoder">
+            <summary>
+             void get_encoder(out short zx, out short zy);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_select_cor_table">
+            <summary>
+             void n_select_cor_table(ushort n, ushort heada, ushort headb);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.select_cor_table">
+            <summary>
+             void select_cor_table(ushort heada, ushort headb);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_execute_at_pointer">
+            <summary>
+             void n_execute_at_pointer(ushort n, ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.execute_at_pointer">
+            <summary>
+             void execute_at_pointer(ushort position);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_head_status">
+            <summary>
+             ushort n_get_head_status(ushort n, ushort head);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_head_status">
+            <summary>
+             ushort get_head_status(ushort head);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_simulate_encoder">
+            <summary>
+             void n_simulate_encoder(ushort n, ushort channel);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.simulate_encoder">
+            <summary>
+             void simulate_encoder(ushort channel);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_release_wait">
+            <summary>
+             void n_release_wait(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.release_wait">
+            <summary>
+             void release_wait();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_wait_status">
+            <summary>
+             ushort n_get_wait_status(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_wait_status">
+            <summary>
+             ushort get_wait_status();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_laser_mode">
+            <summary>
+             void n_set_laser_mode(ushort n, ushort mode);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_laser_mode">
+            <summary>
+             void set_laser_mode(ushort mode);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_ext_start_delay">
+            <summary>
+             void n_set_ext_start_delay(ushort n, short delay, short encoder);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_ext_start_delay">
+            <summary>
+             void set_ext_start_delay(short delay, short encoder);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_home_position">
+            <summary>
+             void n_home_position(ushort n, short xhome, short yhome);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.home_position">
+            <summary>
+             void home_position(short xhome, short yhome);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_rot_center">
+            <summary>
+             void n_set_rot_center(ushort n, int center_x, int center_y);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_rot_center">
+            <summary>
+             void set_rot_center(int center_x, int center_y);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_dsp_start">
+            <summary>
+             void n_dsp_start(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.dsp_start">
+            <summary>
+             void dsp_start();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_write_da_x">
+            <summary>
+             void n_write_da_x(ushort n, ushort x, ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.write_da_x">
+            <summary>
+             void write_da_x(ushort x, ushort value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_read_ad_x">
+            <summary>
+             ushort n_read_ad_x(ushort n, ushort x);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.read_ad_x">
+            <summary>
+             ushort read_ad_x(ushort x);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_read_pixel_ad">
+            <summary>
+             ushort n_read_pixel_ad(ushort n, ushort pos);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.read_pixel_ad">
+            <summary>
+             ushort read_pixel_ad(ushort pos);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_z_distance">
+            <summary>
+             short n_get_z_distance(ushort n, short x, short y, short z);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_z_distance">
+            <summary>
+             short get_z_distance(short x, short y, short z);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_io_status">
+            <summary>
+             ushort n_get_io_status(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_io_status">
+            <summary>
+             ushort get_io_status();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.load_cor">
+            <summary>
+             short load_cor(string filename);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.load_pro">
+            <summary>
+             short load_pro(string filename);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_serial_number">
+            <summary>
+             ushort n_get_serial_number(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_serial_number">
+            <summary>
+             ushort get_serial_number();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_serial_number_32">
+            <summary>
+             int n_get_serial_number_32(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_serial_number_32">
+            <summary>
+             int get_serial_number_32();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_rtc_version">
+            <summary>
+             ushort n_get_rtc_version(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_rtc_version">
+            <summary>
+             ushort get_rtc_version();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_auto_cal">
+            <summary>
+             short n_auto_cal(ushort n, ushort head, ushort command);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.auto_cal">
+            <summary>
+             short auto_cal(ushort head, ushort command);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_hi">
+            <summary>
+             void n_set_hi(ushort n, double galvogainx, double galvogainy, short galvooffsetx, short galvooffsety, short head);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_hi">
+            <summary>
+             void set_hi(double galvogainx, double galvogainy, short galvooffsetx, short galvooffsety, short head);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_list_mode">
+            <summary>
+             void n_set_list_mode(ushort n, ushort mode);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_list_mode">
+            <summary>
+             void set_list_mode(ushort mode);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_list_space">
+            <summary>
+             ushort n_get_list_space(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_list_space">
+            <summary>
+             ushort get_list_space();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_save_and_restart_timer">
+            <summary>
+             void n_save_and_restart_timer(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.save_and_restart_timer">
+            <summary>
+             void save_and_restart_timer();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_set_ext_start_delay_list">
+            <summary>
+             void n_set_ext_start_delay_list(ushort n, short delay, short encoder);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.set_ext_start_delay_list">
+            <summary>
+             void set_ext_start_delay_list(short delay, short encoder);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.n_get_time">
+            <summary>
+             double n_get_time(ushort n);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_time">
+            <summary>
+             double get_time();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.get_hi_data">
+            <summary>
+             void get_hi_data(out ushort x1, out ushort x2, out ushort y1, out ushort y2);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC4Wrap.teachin">
+            <summary>
+             short teachin(string filename, short xin, short yin, short zin, double ll0, out short xout, out short yout, out short zout);
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Scanner.RTC5Wrap">
             <summary>
             Notice that the construction of the RTC5Import object or an initial
@@ -28540,1517 +30051,6 @@
             <param name="key"></param>
             <param name="classType"></param>
             <returns></returns>
-        </member>
-        <member name="T:RTC4Import.RTC4Wrap">
-            <summary>
-            Static RTC4 Wrapper class.
-            Notice that the construction of the RTC4Wrap object or an initial
-            call of any RTC4Wrap method may throw a TypeInitializationException
-            exception, which indicates that the required DLL is missing or the
-            import of a particular DLL function failed. In order to analyze and
-            properly handle such an error condition you need to catch that
-            TypeInitializationException type exception.
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_waveform">
-            <summary>
-             void n_get_waveform(ushort n, ushort channel, ushort istop, short[] memptr);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_waveform">
-            <summary>
-             void get_waveform(ushort channel, ushort istop, short[] memptr);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_measurement_status">
-            <summary>
-             void n_measurement_status(ushort n, out ushort busy, out ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.measurement_status">
-            <summary>
-             void measurement_status(out ushort busy, out ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_trigger">
-            <summary>
-             void n_set_trigger(ushort n, ushort sampleperiod, ushort channel1, ushort channel2);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_trigger">
-            <summary>
-             void set_trigger(ushort sampleperiod, ushort signal1, ushort signal2);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_value">
-            <summary>
-             short n_get_value(ushort n, ushort signal);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_value">
-            <summary>
-             short get_value(ushort signal);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_io_bit">
-            <summary>
-             void n_set_io_bit(ushort n, ushort mask1);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_io_bit">
-            <summary>
-             void set_io_bit(ushort mask1);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_clear_io_bit">
-            <summary>
-             void n_clear_io_bit(ushort n, ushort mask0);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.clear_io_bit">
-            <summary>
-             void clear_io_bit(ushort mask0);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_move_to">
-            <summary>
-             void n_move_to(ushort n, ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.move_to">
-            <summary>
-             void move_to(ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_control_command">
-            <summary>
-             void n_control_command(ushort n, ushort head, ushort axis, ushort data);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.control_command">
-            <summary>
-             void control_command(ushort head, ushort axis, ushort data);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_arc_rel">
-            <summary>
-             void n_arc_rel(ushort n, short dx, short dy, double angle);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.arc_rel">
-            <summary>
-             void arc_rel(short dx, short dy, double angle);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_arc_abs">
-            <summary>
-             void n_arc_abs(ushort n, short x, short y, double angle);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.arc_abs">
-            <summary>
-             void arc_abs(short x, short y, double angle);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.drilling">
-            <summary>
-             void drilling(short pulsewidth, short relencoderdelay);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.regulation">
-            <summary>
-             void regulation();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.flyline">
-            <summary>
-             void flyline(short encoderdelay);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_duty_cycle_table">
-            <summary>
-             void set_duty_cycle_table(ushort index, ushort dutycycle);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_load_varpolydelay">
-            <summary>
-             short n_load_varpolydelay(ushort n, string stbfilename, ushort tableno);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.load_varpolydelay">
-            <summary>
-             short load_varpolydelay(string stbfilename, ushort tableno);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_load_program_file">
-            <summary>
-             short n_load_program_file(ushort n, string name);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.load_program_file">
-            <summary>
-             short load_program_file(string name);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_load_correction_file">
-            <summary>
-             short n_load_correction_file(ushort n, string filename, short cortable, double kx, double ky, double phi, double xoffset, double yoffset);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.load_correction_file">
-            <summary>
-             short load_correction_file(string filename, short cortable, double kx, double ky, double phi, double xoffset, double yoffset);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_load_z_table">
-            <summary>
-             short n_load_z_table(ushort n, double a, double b, double c);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.load_z_table">
-            <summary>
-             short load_z_table(double a, double b, double c);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_list_nop">
-            <summary>
-             void n_list_nop(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.list_nop">
-            <summary>
-             void list_nop();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_end_of_list">
-            <summary>
-             void n_set_end_of_list(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_end_of_list">
-            <summary>
-             void set_end_of_list();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_jump_abs_3d">
-            <summary>
-             void n_jump_abs_3d(ushort n, short x, short y, short z);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.jump_abs_3d">
-            <summary>
-             void jump_abs_3d(short x, short y, short z);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_jump_abs">
-            <summary>
-             void n_jump_abs(ushort n, short x, short y);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.jump_abs">
-            <summary>
-             void jump_abs(short x, short y);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_mark_abs_3d">
-            <summary>
-             void n_mark_abs_3d(ushort n, short x, short y, short z);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.mark_abs_3d">
-            <summary>
-             void mark_abs_3d(short x, short y, short z);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_mark_abs">
-            <summary>
-             void n_mark_abs(ushort n, short x, short y);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.mark_abs">
-            <summary>
-             void mark_abs(short x, short y);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_jump_rel_3d">
-            <summary>
-             void n_jump_rel_3d(ushort n, short dx, short dy, short dz);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.jump_rel_3d">
-            <summary>
-             void jump_rel_3d(short dx, short dy, short dz);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_jump_rel">
-            <summary>
-             void n_jump_rel(ushort n, short dx, short dy);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.jump_rel">
-            <summary>
-             void jump_rel(short dx, short dy);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_mark_rel_3d">
-            <summary>
-             void n_mark_rel_3d(ushort n, short dx, short dy, short dz);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.mark_rel_3d">
-            <summary>
-             void mark_rel_3d(short dx, short dy, short dz);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_mark_rel">
-            <summary>
-             void n_mark_rel(ushort n, short dx, short dy);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.mark_rel">
-            <summary>
-             void mark_rel(short dx, short dy);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_write_8bit_port_list">
-            <summary>
-             void n_write_8bit_port_list(ushort n, ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.write_8bit_port_list">
-            <summary>
-             void write_8bit_port_list(ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_write_da_1_list">
-            <summary>
-             void n_write_da_1_list(ushort n, ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.write_da_1_list">
-            <summary>
-             void write_da_1_list(ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_write_da_2_list">
-            <summary>
-             void n_write_da_2_list(ushort n, ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.write_da_2_list">
-            <summary>
-             void write_da_2_list(ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_matrix_list">
-            <summary>
-             void n_set_matrix_list(ushort n, ushort i, ushort j, double mij);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_matrix_list">
-            <summary>
-             void set_matrix_list(ushort i, ushort j, double mij);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_offset_list">
-            <summary>
-             void n_set_offset_list(ushort n, short xoffset, short yoffset);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_offset_list">
-            <summary>
-             void set_offset_list(short xoffset, short yoffset);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_defocus_list">
-            <summary>
-             void n_set_defocus_list(ushort n, short value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_defocus_list">
-            <summary>
-             void set_defocus_list(short value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_defocus">
-            <summary>
-             void n_set_defocus(ushort n, short value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_defocus">
-            <summary>
-             void set_defocus(short value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_softstart_mode">
-            <summary>
-             void n_set_softstart_mode(ushort n, ushort mode, ushort number, ushort restartdelay);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_softstart_mode">
-            <summary>
-             void set_softstart_mode(ushort mode, ushort number, ushort resetdelay);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_softstart_level">
-            <summary>
-             void n_set_softstart_level(ushort n, ushort index, ushort level);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_softstart_level">
-            <summary>
-             void set_softstart_level(ushort index, ushort level);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_control_mode_list">
-            <summary>
-             void n_set_control_mode_list(ushort n, ushort mode);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_control_mode_list">
-            <summary>
-             void set_control_mode_list(ushort mode);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_control_mode">
-            <summary>
-             void n_set_control_mode(ushort n, ushort mode);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_control_mode">
-            <summary>
-             void set_control_mode(ushort mode);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_long_delay">
-            <summary>
-             void n_long_delay(ushort n, ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.long_delay">
-            <summary>
-             void long_delay(ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_laser_on_list">
-            <summary>
-             void n_laser_on_list(ushort n, ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.laser_on_list">
-            <summary>
-             void laser_on_list(ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_jump_speed">
-            <summary>
-             void n_set_jump_speed(ushort n, double speed);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_jump_speed">
-            <summary>
-             void set_jump_speed(double speed);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_mark_speed">
-            <summary>
-             void n_set_mark_speed(ushort n, double speed);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_mark_speed">
-            <summary>
-             void set_mark_speed(double speed);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_laser_delays">
-            <summary>
-             void n_set_laser_delays(ushort n, short ondelay, short offdelay);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_laser_delays">
-            <summary>
-             void set_laser_delays(short ondelay, short offdelay);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_scanner_delays">
-            <summary>
-             void n_set_scanner_delays(ushort n, ushort jumpdelay, ushort markdelay, ushort polydelay);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_scanner_delays">
-            <summary>
-             void set_scanner_delays(ushort jumpdelay, ushort markdelay, ushort polydelay);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_list_jump">
-            <summary>
-             void n_set_list_jump(ushort n, ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_list_jump">
-            <summary>
-             void set_list_jump(ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_input_pointer">
-            <summary>
-             void n_set_input_pointer(ushort n, ushort pointer);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_input_pointer">
-            <summary>
-             void set_input_pointer(ushort pointer);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_list_call">
-            <summary>
-             void n_list_call(ushort n, ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.list_call">
-            <summary>
-             void list_call(ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_list_return">
-            <summary>
-             void n_list_return(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.list_return">
-            <summary>
-             void list_return();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_z_out_list">
-            <summary>
-             void n_z_out_list(ushort n, short z);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.z_out_list">
-            <summary>
-             void z_out_list(short z);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_standby_list">
-            <summary>
-             void n_set_standby_list(ushort n, ushort half_period, ushort pulse);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_standby_list">
-            <summary>
-             void set_standby_list(ushort half_period, ushort pulse);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_timed_jump_abs">
-            <summary>
-             void n_timed_jump_abs(ushort n, short x, short y, double time);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.timed_jump_abs">
-            <summary>
-             void timed_jump_abs(short x, short y, double time);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_timed_mark_abs">
-            <summary>
-             void n_timed_mark_abs(ushort n, short x, short y, double time);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.timed_mark_abs">
-            <summary>
-             void timed_mark_abs(short x, short y, double time);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_timed_jump_rel">
-            <summary>
-             void n_timed_jump_rel(ushort n, short dx, short dy, double time);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.timed_jump_rel">
-            <summary>
-             void timed_jump_rel(short dx, short dy, double time);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_timed_mark_rel">
-            <summary>
-             void n_timed_mark_rel(ushort n, short dx, short dy, double time);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.timed_mark_rel">
-            <summary>
-             void timed_mark_rel(short dx, short dy, double time);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_laser_timing">
-            <summary>
-             void n_set_laser_timing(ushort n, ushort halfperiod, ushort pulse1, ushort pulse2, ushort timebase);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_laser_timing">
-            <summary>
-             void set_laser_timing(ushort halfperiod, ushort pulse1, ushort pulse2, ushort timebase);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_wobbel">
-            <summary>
-             void n_set_wobbel(ushort n, ushort amplitude, double frequency);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_wobbel">
-            <summary>
-             void set_wobbel(ushort amplitude, double frequency);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_wobbel_xy">
-            <summary>
-             void n_set_wobbel_xy(ushort n, ushort long_wob, ushort trans_wob, double frequency);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_wobbel_xy">
-            <summary>
-             void set_wobbel_xy(ushort long_wob, ushort trans_wob, double frequency);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_fly_x">
-            <summary>
-             void n_set_fly_x(ushort n, double kx);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_fly_x">
-            <summary>
-             void set_fly_x(double kx);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_fly_y">
-            <summary>
-             void n_set_fly_y(ushort n, double ky);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_fly_y">
-            <summary>
-             void set_fly_y(double ky);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_fly_rot">
-            <summary>
-             void n_set_fly_rot(ushort n, double resolution);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_fly_rot">
-            <summary>
-             void set_fly_rot(double resolution);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_fly_return">
-            <summary>
-             void n_fly_return(ushort n, short x, short y);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.fly_return">
-            <summary>
-             void fly_return(short x, short y);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_calculate_fly">
-            <summary>
-             void n_calculate_fly(ushort n, ushort direction, double distance);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.calculate_fly">
-            <summary>
-             void calculate_fly(ushort direction, double distance);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_write_io_port_list">
-            <summary>
-             void n_write_io_port_list(ushort n, ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.write_io_port_list">
-            <summary>
-             void write_io_port_list(ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_select_cor_table_list">
-            <summary>
-             void n_select_cor_table_list(ushort n, ushort heada, ushort headb);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.select_cor_table_list">
-            <summary>
-             void select_cor_table_list(ushort heada, ushort headb);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_wait">
-            <summary>
-             void n_set_wait(ushort n, ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_wait">
-            <summary>
-             void set_wait(ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_simulate_ext_start">
-            <summary>
-             void n_simulate_ext_start(ushort n, short delay, short encoder);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.simulate_ext_start">
-            <summary>
-             void simulate_ext_start(short delay, short encoder);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_write_da_x_list">
-            <summary>
-             void n_write_da_x_list(ushort n, ushort x, ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.write_da_x_list">
-            <summary>
-             void write_da_x_list(ushort x, ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_pixel_line">
-            <summary>
-             void n_set_pixel_line(ushort n, ushort pixelmode, ushort pixelperiod, double dx, double dy);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_pixel_line">
-            <summary>
-             void set_pixel_line(ushort pixelmode, ushort pixelperiod, double dx, double dy);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_pixel">
-            <summary>
-             void n_set_pixel(ushort n, ushort pulswidth, ushort davalue, ushort adchannel);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_pixel">
-            <summary>
-             void set_pixel(ushort pulswidth, ushort davalue, ushort adchannel);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_extstartpos_list">
-            <summary>
-             void n_set_extstartpos_list(ushort n, ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_extstartpos_list">
-            <summary>
-             void set_extstartpos_list(ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_laser_signal_on_list">
-            <summary>
-             void n_laser_signal_on_list(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.laser_signal_on_list">
-            <summary>
-             void laser_signal_on_list();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_laser_signal_off_list">
-            <summary>
-             void n_laser_signal_off_list(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.laser_signal_off_list">
-            <summary>
-             void laser_signal_off_list();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_firstpulse_killer_list">
-            <summary>
-             void n_set_firstpulse_killer_list(ushort n, ushort fpk);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_firstpulse_killer_list">
-            <summary>
-             void set_firstpulse_killer_list(ushort fpk);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_io_cond_list">
-            <summary>
-             void n_set_io_cond_list(ushort n, ushort mask_1, ushort mask_0, ushort mask_set);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_io_cond_list">
-            <summary>
-             void set_io_cond_list(ushort mask_1, ushort mask_0, ushort mask_set);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_clear_io_cond_list">
-            <summary>
-             void n_clear_io_cond_list(ushort n, ushort mask_1, ushort mask_0, ushort mask_clear);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.clear_io_cond_list">
-            <summary>
-             void clear_io_cond_list(ushort mask_1, ushort mask_0, ushort mask_clear);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_list_jump_cond">
-            <summary>
-             void n_list_jump_cond(ushort n, ushort mask_1, ushort mask_0, ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.list_jump_cond">
-            <summary>
-             void list_jump_cond(ushort mask_1, ushort mask_0, ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_list_call_cond">
-            <summary>
-             void n_list_call_cond(ushort n, ushort mask_1, ushort mask_0, ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.list_call_cond">
-            <summary>
-             void list_call_cond(ushort mask_1, ushort mask_0, ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_input_pointer">
-            <summary>
-             ushort n_get_input_pointer(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_input_pointer">
-            <summary>
-             ushort get_input_pointer();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.select_rtc">
-            <summary>
-             void select_rtc(ushort cardno);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.rtc4_count_cards">
-            <summary>
-             ushort rtc4_count_cards();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_status">
-            <summary>
-             void n_get_status(ushort n, out ushort busy, out ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_status">
-            <summary>
-             void get_status(out ushort busy, out ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_read_status">
-            <summary>
-             ushort n_read_status(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.read_status">
-            <summary>
-             ushort read_status();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_startstop_info">
-            <summary>
-             ushort n_get_startstop_info(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_startstop_info">
-            <summary>
-             ushort get_startstop_info();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_marking_info">
-            <summary>
-             ushort n_get_marking_info(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_marking_info">
-            <summary>
-             ushort get_marking_info();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_dll_version">
-            <summary>
-             ushort get_dll_version();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_start_list_1">
-            <summary>
-             void n_set_start_list_1(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_start_list_1">
-            <summary>
-             void set_start_list_1();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_start_list_2">
-            <summary>
-             void n_set_start_list_2(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_start_list_2">
-            <summary>
-             void set_start_list_2();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_start_list">
-            <summary>
-             void n_set_start_list(ushort n, ushort listno);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_start_list">
-            <summary>
-             void set_start_list(ushort listno);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_execute_list_1">
-            <summary>
-             void n_execute_list_1(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.execute_list_1">
-            <summary>
-             void execute_list_1();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_execute_list_2">
-            <summary>
-             void n_execute_list_2(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.execute_list_2">
-            <summary>
-             void execute_list_2();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_execute_list">
-            <summary>
-             void n_execute_list(ushort n, ushort listno);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.execute_list">
-            <summary>
-             void execute_list(ushort listno);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_write_8bit_port">
-            <summary>
-             void n_write_8bit_port(ushort n, ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.write_8bit_port">
-            <summary>
-             void write_8bit_port(ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_write_io_port">
-            <summary>
-             void n_write_io_port(ushort n, ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.write_io_port">
-            <summary>
-             void write_io_port(ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_auto_change">
-            <summary>
-             void n_auto_change(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.auto_change">
-            <summary>
-             void auto_change();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_auto_change_pos">
-            <summary>
-             void n_auto_change_pos(ushort n, ushort start);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.auto_change_pos">
-            <summary>
-             void auto_change_pos(ushort start);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.aut_change">
-            <summary>
-             void aut_change();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_start_loop">
-            <summary>
-             void n_start_loop(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.start_loop">
-            <summary>
-             void start_loop();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_quit_loop">
-            <summary>
-             void n_quit_loop(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.quit_loop">
-            <summary>
-             void quit_loop();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_stop_execution">
-            <summary>
-             void n_stop_execution(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.stop_execution">
-            <summary>
-             void stop_execution();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_read_io_port">
-            <summary>
-             ushort n_read_io_port(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.read_io_port">
-            <summary>
-             ushort read_io_port();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_write_da_1">
-            <summary>
-             void n_write_da_1(ushort n, ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.write_da_1">
-            <summary>
-             void write_da_1(ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_write_da_2">
-            <summary>
-             void n_write_da_2(ushort n, ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.write_da_2">
-            <summary>
-             void write_da_2(ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_max_counts">
-            <summary>
-             void n_set_max_counts(ushort n, int counts);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_max_counts">
-            <summary>
-             void set_max_counts(int counts);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_counts">
-            <summary>
-             int n_get_counts(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_counts">
-            <summary>
-             int get_counts();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_matrix">
-            <summary>
-             void n_set_matrix(ushort n, double m11, double m12, double m21, double m22);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_matrix">
-            <summary>
-             void set_matrix(double m11, double m12, double m21, double m22);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_offset">
-            <summary>
-             void n_set_offset(ushort n, short xoffset, short yoffset);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_offset">
-            <summary>
-             void set_offset(short xoffset, short yoffset);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_goto_xyz">
-            <summary>
-             void n_goto_xyz(ushort n, short x, short y, short z);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.goto_xyz">
-            <summary>
-             void goto_xyz(short x, short y, short z);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_goto_xy">
-            <summary>
-             void n_goto_xy(ushort n, short x, short y);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.goto_xy">
-            <summary>
-             void goto_xy(short x, short y);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_hex_version">
-            <summary>
-             ushort n_get_hex_version(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_hex_version">
-            <summary>
-             ushort get_hex_version();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_disable_laser">
-            <summary>
-             void n_disable_laser(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.disable_laser">
-            <summary>
-             void disable_laser();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_enable_laser">
-            <summary>
-             void n_enable_laser(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.enable_laser">
-            <summary>
-             void enable_laser();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_stop_list">
-            <summary>
-             void n_stop_list(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.stop_list">
-            <summary>
-             void stop_list();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_restart_list">
-            <summary>
-             void n_restart_list(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.restart_list">
-            <summary>
-             void restart_list();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_xyz_pos">
-            <summary>
-             void n_get_xyz_pos(ushort n, out short x, out short y, out short z);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_xyz_pos">
-            <summary>
-             void get_xyz_pos(out short x, out short y, out short z);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_xy_pos">
-            <summary>
-             void n_get_xy_pos(ushort n, out short x, out short y);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_xy_pos">
-            <summary>
-             void get_xy_pos(out short x, out short y);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_select_list">
-            <summary>
-             void n_select_list(ushort n, ushort list_2);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.select_list">
-            <summary>
-             void select_list(ushort list_2);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_z_out">
-            <summary>
-             void n_z_out(ushort n, short z);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.z_out">
-            <summary>
-             void z_out(short z);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_firstpulse_killer">
-            <summary>
-             void n_set_firstpulse_killer(ushort n, ushort fpk);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_firstpulse_killer">
-            <summary>
-             void set_firstpulse_killer(ushort fpk);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_standby">
-            <summary>
-             void n_set_standby(ushort n, ushort half_period, ushort pulse);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_standby">
-            <summary>
-             void set_standby(ushort half_period, ushort pulse);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_laser_signal_on">
-            <summary>
-             void n_laser_signal_on(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.laser_signal_on">
-            <summary>
-             void laser_signal_on();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_laser_signal_off">
-            <summary>
-             void n_laser_signal_off(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.laser_signal_off">
-            <summary>
-             void laser_signal_off();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_delay_mode">
-            <summary>
-             void n_set_delay_mode(ushort n, ushort varpoly, ushort directmove3d, ushort edgelevel, ushort minjumpdelay, ushort jumplengthlimit);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_delay_mode">
-            <summary>
-             void set_delay_mode(ushort varpoly, ushort directmove3d, ushort edgelevel, ushort minjumpdelay, ushort jumplengthlimit);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_piso_control">
-            <summary>
-             void n_set_piso_control(ushort n, ushort l1, ushort l2);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_piso_control">
-            <summary>
-             void set_piso_control(ushort l1, ushort l2);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_select_status">
-            <summary>
-             void n_select_status(ushort n, ushort mode);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.select_status">
-            <summary>
-             void select_status(ushort mode);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_encoder">
-            <summary>
-             void n_get_encoder(ushort n, out short zx, out short zy);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_encoder">
-            <summary>
-             void get_encoder(out short zx, out short zy);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_select_cor_table">
-            <summary>
-             void n_select_cor_table(ushort n, ushort heada, ushort headb);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.select_cor_table">
-            <summary>
-             void select_cor_table(ushort heada, ushort headb);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_execute_at_pointer">
-            <summary>
-             void n_execute_at_pointer(ushort n, ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.execute_at_pointer">
-            <summary>
-             void execute_at_pointer(ushort position);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_head_status">
-            <summary>
-             ushort n_get_head_status(ushort n, ushort head);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_head_status">
-            <summary>
-             ushort get_head_status(ushort head);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_simulate_encoder">
-            <summary>
-             void n_simulate_encoder(ushort n, ushort channel);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.simulate_encoder">
-            <summary>
-             void simulate_encoder(ushort channel);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_release_wait">
-            <summary>
-             void n_release_wait(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.release_wait">
-            <summary>
-             void release_wait();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_wait_status">
-            <summary>
-             ushort n_get_wait_status(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_wait_status">
-            <summary>
-             ushort get_wait_status();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_laser_mode">
-            <summary>
-             void n_set_laser_mode(ushort n, ushort mode);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_laser_mode">
-            <summary>
-             void set_laser_mode(ushort mode);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_ext_start_delay">
-            <summary>
-             void n_set_ext_start_delay(ushort n, short delay, short encoder);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_ext_start_delay">
-            <summary>
-             void set_ext_start_delay(short delay, short encoder);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_home_position">
-            <summary>
-             void n_home_position(ushort n, short xhome, short yhome);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.home_position">
-            <summary>
-             void home_position(short xhome, short yhome);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_rot_center">
-            <summary>
-             void n_set_rot_center(ushort n, int center_x, int center_y);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_rot_center">
-            <summary>
-             void set_rot_center(int center_x, int center_y);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_dsp_start">
-            <summary>
-             void n_dsp_start(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.dsp_start">
-            <summary>
-             void dsp_start();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_write_da_x">
-            <summary>
-             void n_write_da_x(ushort n, ushort x, ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.write_da_x">
-            <summary>
-             void write_da_x(ushort x, ushort value);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_read_ad_x">
-            <summary>
-             ushort n_read_ad_x(ushort n, ushort x);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.read_ad_x">
-            <summary>
-             ushort read_ad_x(ushort x);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_read_pixel_ad">
-            <summary>
-             ushort n_read_pixel_ad(ushort n, ushort pos);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.read_pixel_ad">
-            <summary>
-             ushort read_pixel_ad(ushort pos);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_z_distance">
-            <summary>
-             short n_get_z_distance(ushort n, short x, short y, short z);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_z_distance">
-            <summary>
-             short get_z_distance(short x, short y, short z);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_io_status">
-            <summary>
-             ushort n_get_io_status(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_io_status">
-            <summary>
-             ushort get_io_status();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.load_cor">
-            <summary>
-             short load_cor(string filename);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.load_pro">
-            <summary>
-             short load_pro(string filename);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_serial_number">
-            <summary>
-             ushort n_get_serial_number(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_serial_number">
-            <summary>
-             ushort get_serial_number();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_serial_number_32">
-            <summary>
-             int n_get_serial_number_32(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_serial_number_32">
-            <summary>
-             int get_serial_number_32();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_rtc_version">
-            <summary>
-             ushort n_get_rtc_version(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_rtc_version">
-            <summary>
-             ushort get_rtc_version();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_auto_cal">
-            <summary>
-             short n_auto_cal(ushort n, ushort head, ushort command);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.auto_cal">
-            <summary>
-             short auto_cal(ushort head, ushort command);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_hi">
-            <summary>
-             void n_set_hi(ushort n, double galvogainx, double galvogainy, short galvooffsetx, short galvooffsety, short head);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_hi">
-            <summary>
-             void set_hi(double galvogainx, double galvogainy, short galvooffsetx, short galvooffsety, short head);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_list_mode">
-            <summary>
-             void n_set_list_mode(ushort n, ushort mode);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_list_mode">
-            <summary>
-             void set_list_mode(ushort mode);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_list_space">
-            <summary>
-             ushort n_get_list_space(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_list_space">
-            <summary>
-             ushort get_list_space();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_save_and_restart_timer">
-            <summary>
-             void n_save_and_restart_timer(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.save_and_restart_timer">
-            <summary>
-             void save_and_restart_timer();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_set_ext_start_delay_list">
-            <summary>
-             void n_set_ext_start_delay_list(ushort n, short delay, short encoder);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.set_ext_start_delay_list">
-            <summary>
-             void set_ext_start_delay_list(short delay, short encoder);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.n_get_time">
-            <summary>
-             double n_get_time(ushort n);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_time">
-            <summary>
-             double get_time();
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.get_hi_data">
-            <summary>
-             void get_hi_data(out ushort x1, out ushort x2, out ushort y1, out ushort y2);
-            </summary>
-        </member>
-        <member name="F:RTC4Import.RTC4Wrap.teachin">
-            <summary>
-             short teachin(string filename, short xin, short yin, short zin, double ll0, out short xout, out short yout, out short zout);
-            </summary>
         </member>
     </members>
 </doc>
