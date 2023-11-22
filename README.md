@@ -137,28 +137,18 @@
 ----
 
   
-**6. License**
-   - RTC (RTC5, RTC6,...)
-      - Option1: MoF (For xy or angular)
-      - Option2: 3D (For 3d calibration) 
-   - syncAXIS (XL-SCAN)   
- * Evaluation mode would be activated during 30 mins without license
- 
- 
-----
-
-
-**7. Copyright**
+**6. Copyrights**
  
  - 2023 Copyright to (c)SpiralLAB. All rights reserved. 
  - Homepage: http://spirallab.co.kr
  - Email: <a href="mailto:hcchoi@spirallab.co.kr">hcchoi@spirallab.co.kr</a> 
+ - Evaluation copy mode would be activated during 30 mins without license
  
 
 ----
 
 
-**8. Version history**
+**7. Version history**
 
 * 2023.11.23 v.1.11.920
   - added) support various powermeters
@@ -392,13 +382,4 @@
 
 * 2023.4.8 v0.1
    - first commit 
-  
-
-----
-
-
-**9. Known Issues**
-
-* General
-  - ActDivide is not supported yet  
   

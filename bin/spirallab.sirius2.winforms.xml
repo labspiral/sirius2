@@ -20428,10 +20428,13 @@
             <c>IDocument</c> is created by automatically. <br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)">
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.OnLoad(System.EventArgs)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.OnLoad(System.EventArgs)">
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.Refresh">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DoRender">

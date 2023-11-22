@@ -4737,6 +4737,11 @@
             Trigger modes
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Laser.IPGYLPULPN.TriggerModes.Unknown">
+            <summary>
+            Unknown
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Laser.IPGYLPULPN.TriggerModes.External">
             <summary>
             External 
@@ -4767,6 +4772,11 @@
             Modulation modes
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Laser.IPGYLPULPN.ModulationModes.Unknown">
+            <summary>
+            Unknown
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Laser.IPGYLPULPN.ModulationModes.External">
             <summary>
             External 
@@ -4787,6 +4797,11 @@
             PowerControl modes
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Laser.IPGYLPULPN.PowerControlModes.Unknown">
+            <summary>
+            Unknown
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Laser.IPGYLPULPN.PowerControlModes.External">
             <summary>
             External 
@@ -4805,6 +4820,11 @@
         <member name="T:SpiralLab.Sirius2.Laser.IPGYLPULPN.EmissionControlModes">
             <summary>
             Emission control modes
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.IPGYLPULPN.EmissionControlModes.Unknown">
+            <summary>
+            Unknown
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.IPGYLPULPN.EmissionControlModes.External">
@@ -6438,6 +6458,11 @@
         <member name="P:SpiralLab.Sirius2.Laser.SPIG4.Status">
             <summary>
             Status Code
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.SPIG4.StatusBit">
+            <summary>
+            Status.Bit
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SPIG4.IsTimedOut">
@@ -8165,6 +8190,81 @@
             <param name="index">Identifier (0,1,2,3, ...)</param>
             <param name="serialNo">Serial no</param>
         </member>
+        <member name="T:SpiralLab.Sirius2.PowerMeter.PowerMeterTypes">
+            <summary>
+            Powermeter types 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterTypes.Virtual">
+            <summary>
+            Virtual
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterTypes.CoherentPowerMax">
+            <summary>
+            Coherent PowerMax USB/RS Series
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterTypes.OphirPhotonicsStarLab">
+            <summary>
+            Ophir Photonics StarLab
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterTypes.Thorlabs">
+            <summary>
+            Optical Power Monitor (OPM)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterTypes.UserDefined1">
+            <summary>
+            User defined1 laser
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterTypes.UserDefined2">
+            <summary>
+            User defined2 laser
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterTypes.UserDefined3">
+            <summary>
+            User defined3 laser
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterTypes.UserDefined4">
+            <summary>
+            User defined4 laser
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterTypes.UserDefined5">
+            <summary>
+            User defined5 laser
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterTypes.UserDefined6">
+            <summary>
+            User defined6 laser
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterTypes.UserDefined7">
+            <summary>
+            User defined7 laser
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterTypes.UserDefined8">
+            <summary>
+            User defined8 laser
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterTypes.UserDefined9">
+            <summary>
+            User defined9 laser
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterTypes.UserDefined10">
+            <summary>
+            User defined10 laser
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">
             <summary>
             IPowerMeter interface
@@ -8185,11 +8285,6 @@
             Event handler for stop
             </summary>
         </member>
-        <member name="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnFinished">
-            <summary>
-            Event handler for finish
-            </summary>
-        </member>
         <member name="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnCleared">
             <summary>
             Event handler for clear 
@@ -8208,6 +8303,11 @@
         <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.Name">
             <summary>
             Name
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.PowerMeterType">
+            <summary>
+            Powermeter type
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.Category">
@@ -8285,29 +8385,24 @@
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.NotifyStarted">
             <summary>
-            Notify started
+            Notify started measuring
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.NotifyMeasure(System.DateTime,System.Double)">
             <summary>
-            Notify measured
+            Notify measuring
             </summary>
             <param name="dt"><c>DateTime</c></param>
-            <param name="detectedPower">Detected Power (W)</param>
+            <param name="detectedPower">Detected power (W)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.NotifyStopped">
             <summary>
-            Notify stopped
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.NotifyFinished">
-            <summary>
-            Notify finished
+            Notify stopped measuring
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.NotifyCleared">
             <summary>
-            Notify data cleared
+            Notify measured data has cleared
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.PowerMeter.PowerMeterBase">
@@ -8330,9 +8425,6 @@
         <member name="E:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.OnStopped">
             <inheritdoc/>  
         </member>
-        <member name="E:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.OnFinished">
-            <inheritdoc/>  
-        </member>
         <member name="E:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.OnCleared">
             <inheritdoc/>  
         </member>
@@ -8343,6 +8435,9 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.Name">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.PowerMeterType">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.Category">
@@ -8424,9 +8519,6 @@
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.NotifyStopped">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.NotifyFinished">
-            <inheritdoc/>  
-        </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.NotifyCleared">
             <inheritdoc/>  
         </member>
@@ -8434,6 +8526,9 @@
             <summary>
             PowerMeter Coherent PowerMax USB/RS Series
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.PowerMeterType">
+            <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.Model">
             <summary>
@@ -8500,6 +8595,9 @@
             Used <c>OphirLMMeasurementLib</c> COM object internally. <br/>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.PowerMeterType">
+            <inheritdoc/>  
+        </member>
         <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.SerialNo">
             <summary>
             Serial no
@@ -8522,6 +8620,11 @@
         <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.HeadSerialNo">
             <summary>
             Head serial no
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.Status">
+            <summary>
+            Status 
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.#ctor">
@@ -8569,6 +8672,9 @@
             Link: https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM <br/>
             Used <c>TLPM</c> Interop object internally. <br/>
             </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.PowerMeterType">
+            <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.SerialNo">
             <summary>
