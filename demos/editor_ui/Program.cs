@@ -55,19 +55,23 @@ namespace Demos
             var rtc = EditorForm.Rtc;
             var laser = EditorForm.Laser;
             var marker = EditorForm.Marker;
+            var powerMeter = EditorForm.PowerMeter;
+            var remote = EditorForm.Remote;
 
-            EditorHelper.DestroyDevices(rtc, laser, marker);
+            EditorHelper.DestroyDevices(rtc, laser, powerMeter, marker, remote);
         }
 
         private static void EditorForm_Shown(object sender, EventArgs e)
         {
             // Create devices 
-            EditorHelper.CreateDevices(out var rtc, out var laser, out var marker);
+            EditorHelper.CreateDevices(out var rtc, out var laser, out var powerMeter, out var marker, out var remote);
 
             // Assign devices into usercontrol
             EditorForm.Rtc = rtc;
             EditorForm.Laser = laser;
-            EditorForm.Marker = marker;                     
+            EditorForm.PowerMeter = powerMeter;
+            EditorForm.Marker = marker;
+            EditorForm.Remote = remote;
 
             var document = EditorForm.Document;
             var view = EditorForm.View;
@@ -75,7 +79,7 @@ namespace Demos
             EditorHelper.CreateTestEntities(rtc, view, document);
 
             // Assign Document, View, Rtc, Laser into marker
-            marker.Ready(document, view, rtc, laser);
+            marker.Ready(document, view, rtc, laser, powerMeter);
         }
     }
 }

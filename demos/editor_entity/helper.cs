@@ -41,6 +41,7 @@ using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
+using SpiralLab.Sirius2.PowerMeter;
 using SpiralLab.Sirius2.Scanner;
 using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Winforms;
@@ -95,15 +96,18 @@ namespace Demos
         /// </summary>
         /// <param name="rtc"><c>IRtc</c></param>
         /// <param name="laser"><c>ILaser</c></param>
+        /// <param name="powerMeter"><c>IPowerMeter</c></param>
         /// <param name="marker"><c>IMarker</c></param>
         /// <param name="remote"><c>IRemote</c></param>
         /// <param name="index">Index (assign value if using multiple devices)</param>
         /// <returns>Success or failed</returns>
-        public static bool CreateDevices(out IRtc rtc, out ILaser laser, out IMarker marker, int index = 0)
+        public static bool CreateDevices(out IRtc rtc, out ILaser laser, out IPowerMeter powerMeter, out IMarker marker, out IRemote remote, int index = 0)
         {
             rtc = null;
             laser = null;
+            powerMeter = null;
             marker = null;
+            remote = null;
 
             bool success = true;
 
@@ -335,6 +339,39 @@ namespace Demos
                 laser.PowerControlDelayTime = laserPowerControlDelay;
                 success &= powerControl.CtlPower(laserDefaultPower);
             }
+            #endregion
+
+            #region Initialize Powermeter
+            var enablePowerMeter = NativeMethods.ReadIni<int>(ConfigFileName, $"POWERMETER{index}", "ENABLE", 0);
+            if (0 != enablePowerMeter)
+            {
+                var powerMeterType = NativeMethods.ReadIni(ConfigFileName, $"POWERMETER{index}", "TYPE", "Virtual");
+                var powerMeterSerialNo = NativeMethods.ReadIni(ConfigFileName, $"POWERMETER{index}", "SERIAL_NO", string.Empty);
+                var powerMeterSerialPort = NativeMethods.ReadIni<int>(ConfigFileName, $"POWERMETER{index}", "SERIAL_PORT", 0);
+                switch (powerMeterType.Trim().ToLower())
+                {
+                    case "virtual":
+                        powerMeter = PowerMeterFactory.CreateVirtual(index, laser.MaxPowerWatt);
+                        break;
+                    case "ophirphotonics":
+                        powerMeter = PowerMeterFactory.CreateOphirPhotonics(index, powerMeterSerialNo);
+                        break;
+                    case "coherentpowermax":
+                        powerMeter = PowerMeterFactory.CreateCoherentPowerMax(index, powerMeterSerialPort);
+                        break;
+                    case "thorolabs":
+                        powerMeter = PowerMeterFactory.CreateThorlabs(index, powerMeterSerialNo);
+                        break;
+                    default:
+                        throw new InvalidProgramException($"Not supported powermeter type: {powerMeterType}");
+                }
+                success &= powerMeter.Initialize();
+                // auto start ?
+                //success &= powerMeter.CtlStart();
+            }
+            #endregion
+
+            #region Marker
             switch (rtcType.Trim().ToLower())
             {
                 case "virtual":
@@ -351,24 +388,11 @@ namespace Demos
                     marker = MarkerFactory.CreateSyncAxis(index);
                     break;
                 default:
-                    success &= false;
-                    break;
+                    throw new InvalidProgramException($"Not supported rtc type for marker: {rtcType}");
             }
             #endregion
-           
-            return success;
-        }
-        /// <summary>
-        /// Create remote control 
-        /// </summary>
-        /// <param name="siriusEditorUserControl"><c>SiriusEditorUserControl</c></param>
-        /// <param name="remote"><c>IRemote</c></param>
-        /// <param name="index">Index (assign value if using multiple devices)</param>
-        /// <returns>Success or failed</returns>
-        public static bool CreateRemote(SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl siriusEditorUserControl, out IRemote remote, int index = 0)
-        {
-            remote = null;
-            bool success = true;
+
+            #region Remote
             var enableRemote = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", "ENABLE", 0);
             if (0 != enableRemote)
             {
@@ -377,16 +401,20 @@ namespace Demos
                 {
                     case "tcp":
                         int tcpPort = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"TCP_PORT", 5001);
-                        remote = RemoteFactory.CreateTcpServer(index, siriusEditorUserControl, tcpPort);
+                        remote = RemoteFactory.CreateTcpServer(index, marker, tcpPort);
                         break;
                     case "serial":
                         int serialPort = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"SERIAL_PORT", 1);
                         int serialBaudRate = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"SERIAL_BAUDRATE=", 57600);
-                        remote = RemoteFactory.CreateSerial(index, siriusEditorUserControl, serialPort, serialBaudRate);
+                        remote = RemoteFactory.CreateSerial(index, marker, serialPort, serialBaudRate);
                         break;
+                    default:
+                        throw new InvalidProgramException($"Not supported remote protocol: {protocol}");
                 }
                 success &= remote.Start();
             }
+            #endregion
+
             return success;
         }
         /// <summary>
@@ -750,15 +778,18 @@ namespace Demos
             SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DApply += Config_OnScannerFieldCorrection2DApply;
         }
         /// <summary>
-        /// Dispose resources (like as <c>IRtc</c>, <c>ILaser</c>, <c>IMarker</c>, <c>IRemote</c> ...)
+        /// Dispose resources (like as <c>IRtc</c>, <c>ILaser</c>, <c>IMarker</c>,<c>IPowerMeter</c>, <c>IRemote</c> ...)
         /// </summary>
         /// <param name="rtc"><c>IRtc</c></param>
         /// <param name="laser"><c>ILaser</c></param>
+        /// <param name="powerMeter"><c>IPowerMeter</c></param>
         /// <param name="marker"><c>IMarker</c></param>
-        public static void DestroyDevices(IRtc rtc, ILaser laser, IMarker marker)
+        /// <param name="remote"><c>IRemote</c></param>
+        public static void DestroyDevices(IRtc rtc, ILaser laser, IPowerMeter powerMeter, IMarker marker, IRemote remote)
         {
-            marker?.Stop();
+            remote?.Dispose();
             marker?.Dispose();
+            powerMeter?.Dispose();
             laser?.Dispose();
             rtc?.Dispose();
         }

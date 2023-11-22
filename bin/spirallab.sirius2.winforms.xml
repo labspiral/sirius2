@@ -14702,6 +14702,9 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Laser">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.PowerMeter">
+            <inheritdoc/>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.MarkTarget">
             <inheritdoc/>
         </member>
@@ -14858,7 +14861,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Initialize">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Start">
@@ -15001,7 +15004,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual.Initialize">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual.Start">
@@ -15074,7 +15077,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.Initialize">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.Start">
@@ -15218,7 +15221,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.Initialize">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.RegisterCharacterSet">
@@ -15474,6 +15477,11 @@
             <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see> interface
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.PowerMeter">
+            <summary>
+            <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see> interface
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.MarkTarget">
             <summary>
             Target entities to mark
@@ -15605,7 +15613,7 @@
             </summary>
             <returns>Success or not</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter)">
             <summary>
             Ready
             </summary>
@@ -15616,6 +15624,7 @@
             <param name="view"><c>IView</c></param>
             <param name="rtc"><c>IRtc</c></param>
             <param name="laser"><c>ILaser</c></param>
+            <param name="powerMeter"><c>IPowerMeter</c></param>
             <returns>Success or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Start">
@@ -18435,11 +18444,11 @@
             Factory for remote communication 
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.RemoteFactory.CreateTcpServer(System.Int32,SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteFactory.CreateTcpServer(System.Int32,SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32)">
             <summary>
             Create <c>RemoteTcpServer</c>
             <code>
-            var remote = RemoteFactory.CreateTcpServer(siriusEditorUserControl, 5001);
+            var remote = RemoteFactory.CreateTcpServer(0, marker, 5001);
             remote.Start();
             ...
             //Must be stopped when terminating(or disposing)
@@ -18451,15 +18460,15 @@
             Create TCP/IP server socket. <br/>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="editorControl"><c>SiriusEditorUserControl</c></param>
+            <param name="marker"><c>IMarker</c></param>
             <param name="portNo">TCP server listening port</param>
             <returns><c>IRemote</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.RemoteFactory.CreateSerial(System.Int32,SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteFactory.CreateSerial(System.Int32,SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32,System.Int32)">
             <summary>
             Create <c>RemoteSerial</c>
             <code>
-            var remote = RemoteFactory.CreateSerial(siriusEditorUserControl, 1, 57600);
+            var remote = RemoteFactory.CreateSerial(0, marker, 1, 57600);
             remote.Start();
             ...
             //Must be stopped when terminating(or disposing)
@@ -18474,7 +18483,7 @@
             Parity: None <br/>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="editorControl"><c>SiriusEditorUserControl</c></param>
+             <param name="marker"><c>IMarker</c></param>
             <param name="portNo">COM port</param>
             <param name="baudRate">Baudrate</param>
             <returns><c>IRemote</c></returns>
@@ -18562,11 +18571,10 @@
             Synchronization object for send and receive 
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.IRemote.EditorControl">
+        <member name="P:SpiralLab.Sirius2.Winforms.IRemote.Marker">
             <summary>
-            Assigned <c>SiriusEditorUserControl</c>
+            Assigned <c>IMarker</c>
             </summary>
-               [Browsable(false)]
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IRemote.Dispose">
             <inheritdoc/>
@@ -18692,12 +18700,12 @@
             Remote communication by TCP server
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.RemoteTcpServer.#ctor(System.Int32,SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteTcpServer.#ctor(System.Int32,SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32)">
             <summary>
             Constructor
             </summary>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="editorControl">Target <c>SiriusEditorUserControl</c></param>
+            <param name="marker">Target <c>IMarker</c> (Try to send 'Status,End' notification message at remote communication by automatically. <br/></param>
             <param name="portNo">TCP server listening port no</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.RemoteTcpServer.Finalize">
@@ -18734,12 +18742,12 @@
             Remote communication by Serial 
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.RemoteSerial.#ctor(System.Int32,SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Winforms.RemoteSerial.#ctor(System.Int32,SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32,System.Int32)">
             <summary>
             Constructor
             </summary>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="editorControl">Target <c>SiriusEditorUserControl</c></param>
+            <param name="marker">Target <c>IMarker</c> (Try to send 'Status,End' notification message at remote communication by automatically. <br/></param>
             <param name="portNo">COM port no</param>
             <param name="baudRate">Baudrate</param>
         </member>
@@ -19035,6 +19043,43 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.UI.PowerMeterControl">
+            <summary>
+            PowerMeterControl
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMeterControl.PowerMeter">
+            <summary>
+            IPowerMeter interface
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMeterControl.Laser">
+            <summary>
+            ILaser interface
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMeterControl.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.PowerMeterControl.components">
+            <summary> 
+            필수 디자이너 변수입니다.
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMeterControl.Dispose(System.Boolean)">
+            <summary> 
+            사용 중인 모든 리소스를 정리합니다.
+            </summary>
+            <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMeterControl.InitializeComponent">
+            <summary> 
+            디자이너 지원에 필요한 메서드입니다. 
+            이 메서드의 내용을 코드 편집기로 수정하지 마세요.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl">
@@ -20289,6 +20334,14 @@
             Created by <c>RemoteFactory</c> <br/>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.PowerMeter">
+            <summary>
+            <c>IPowerMeter</c>
+            </summary>
+            <remarks>
+            Created by <c>PowerMeterFactory</c> <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.TreeViewCtrl">
             <summary>
             Usercontrol for Treeview
@@ -20352,6 +20405,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.RemoteCtrl">
             <summary>
             Usercontrol for remote
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.PowerMeterCtrl">
+            <summary>
+            Usercontrol for powermeter
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.LogCtrl">

@@ -47,6 +47,7 @@ using SpiralLab.Sirius2.Winforms.OpenGL;
 using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
 using SpiralLab.Sirius2.Winforms.Common;
+using SpiralLab.Sirius2.PowerMeter;
 
 namespace Demos
 {
@@ -238,7 +239,7 @@ namespace Demos
             return true;
         }
         /// <inheritdoc/>
-        public override bool Ready(IDocument document, IView view, IRtc rtc, ILaser laser)
+        public override bool Ready(IDocument document, IView view, IRtc rtc, ILaser laser, IPowerMeter powerMeter)
         {
             if (this.IsBusy)
             {
@@ -246,10 +247,11 @@ namespace Demos
                 return false;
             }
 
-            this.Document = document;
-            this.View = view;
-            this.Rtc = rtc;
-            this.Laser = laser;
+            base.Document = document;
+            base.View = view;
+            base.Rtc = rtc;
+            base.Laser = laser;
+            base.PowerMeter = powerMeter;
 
             if (rtc is IRtcSyncAxis rtcSyncAxis)
             {

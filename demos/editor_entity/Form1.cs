@@ -68,16 +68,13 @@ namespace Demos
             EditorHelper.Initialize();
 
             // Create devices 
-            EditorHelper.CreateDevices(out var rtc, out var laser, out var marker);
+            EditorHelper.CreateDevices(out var rtc, out var laser, out var powerMeter, out var marker, out var remote);
 
             // Assign devices into usercontrol
             siriusEditorUserControl1.Rtc = rtc;
             siriusEditorUserControl1.Laser = laser;
             siriusEditorUserControl1.Marker = marker;
-
-            // Create remote control 
-            EditorHelper.CreateRemote(siriusEditorUserControl1, out var remote);
-            // Assign remote control into usercontrol
+            siriusEditorUserControl1.PowerMeter = powerMeter;
             siriusEditorUserControl1.Remote = remote;
 
             var document = siriusEditorUserControl1.Document;
@@ -89,7 +86,7 @@ namespace Demos
             EditorHelper.AttachEventHandlers();
 
             // Assign Document, View, Rtc, Laser into marker
-            marker.Ready(document, view, rtc, laser);
+            marker.Ready(document, view, rtc, laser, powerMeter);
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -97,6 +94,7 @@ namespace Demos
             var marker = siriusEditorUserControl1.Marker;
             var laser = siriusEditorUserControl1.Laser;
             var rtc = siriusEditorUserControl1.Rtc;
+            var powerMeter = siriusEditorUserControl1.PowerMeter;
             var remote = siriusEditorUserControl1.Remote;
 
             if (document.IsModified)
@@ -123,13 +121,12 @@ namespace Demos
 
             if (e.Cancel == false)
             {
-                remote?.Stop();
-                remote?.Dispose();
                 siriusEditorUserControl1.Remote = null;
-                EditorHelper.DestroyDevices(rtc, laser, marker);
+                siriusEditorUserControl1.PowerMeter = null;
+                siriusEditorUserControl1.Marker = null;
                 siriusEditorUserControl1.Rtc = null;
                 siriusEditorUserControl1.Laser = null;
-                siriusEditorUserControl1.Marker = null;
+                EditorHelper.DestroyDevices(rtc, laser, powerMeter, marker, remote);
             }
         }
     }

@@ -27,32 +27,30 @@
     - RTC5
     - RTC6 
     - RTC6e 
- - Support SCANLAB's XL-SCAN (syncAxis) controllers.
+    - XL-SCAN (aka. syncAxis) by RTC6 + ACS 
  - Support 2D, 3D scanner field correction.
  - Support calibration tool for 3D surfaces.
     - Plane 
     - Cone 
     - Cylinder 
     - Points cloud  
- - Support powerful 4x4 matrix with stack operations.
- - Support processing unlimited list data by automatically.
  - Support powerful options.
     - MoF(Marking on the Fly)
     - 2nd head
     - 3D 
     - Sky writing
- - Support Ramp(Automatic Laser Control) controls.
+ - Support ramp(Automatic Laser Control) controls.
     - Position dependent
     - Velocity dependent 
     - Defined-vector
  - Support SCANahead control, SDC(Spot Distance Control) with RTC6.
  - Support measure and profile scanner trajectory with output signals by plotted graph.
- - Support many kinds of laser source controls
+ - Support many kinds of laser source controls.
     - Frequency
     - Duty cycle
     - Analog output
     - Digital output 
- - Support specific laser sources
+ - Support specific laser source vendors.
     - AdvancedOptoWave 
        - AOPico
        - AOPico Precision,
@@ -72,6 +70,10 @@
     - Spectra Physics
        - Hippo
        - Talon
+ - Support many kinds of powermeters.
+    - Coherent PowerMax
+    - Thorlabs (by OPM)
+    - Ophir (by StarLab)
  - Support remote controls.
     - TCP/IP communication
     - Serial(RS-232) communication
@@ -157,6 +159,12 @@
 
 
 **8. Version history**
+
+* 2023.11.23 v.1.11.920
+  - added) support various powermeters
+    - Coherent PowerMax
+    - Thorlabs (by OPM)
+    - Ophir (by StarLab)
 
 * 2023.11.20 v.1.10.910
   - added) support various laser sources

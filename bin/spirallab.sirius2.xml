@@ -2644,11 +2644,6 @@
             Diode 1 Current High Limit (A)
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.Diode2CurrentHightLimitAmp">
-            <summary>
-            Diode 2 Current High Limit (A)
-            </summary>
-        </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.LaserTime">
             <summary>
             Lifetime (Hrs)
@@ -8127,6 +8122,551 @@
             <param name="left"><c>Offset</c></param>
             <param name="right"><c>Offset</c></param>
             <returns>True(Not equal), False(Equal)</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.PowerMeter.PowerMeterFactory">
+            <summary>
+            PowerMeter factory
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterFactory.CreateVirtual(System.Int32,System.Double)">
+            <summary>
+            Create virtual powermeter controller
+            </summary>
+            <param name="index">Identifier (0,1,2,3, ...)</param>
+            <param name="maxWatt">Max watt (W)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterFactory.CreateOphirPhotonics(System.Int32,System.String)">
+            <summary>
+            Create Ophir Photonics powermeter controller 
+            </summary>
+            <remarks>
+            Supported Ophir devices: Ariel, Centauri, StarBright, StarLite, Juno, Juno+, Vega, Nova II, Pulsar <br/>
+            Install the Visual Studio 2019 Visual C++ redistributable, available at https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist. <br/>
+            Install StarLab 3.8, available at https://www.ophiropt.com/en/g/com-object. <br/>
+            </remarks>
+            <param name="index">Identifier (0,1,2,3, ...)</param>
+            <param name="serialNo">Serial no</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterFactory.CreateCoherentPowerMax(System.Int32,System.Int32)">
+            <summary>
+            Create Coherent PowerMax USB/RS powermeter controller 
+            </summary>
+            <param name="index">Identifier (0,1,2,3, ...)</param>
+            <param name="comPort">COM port</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterFactory.CreateThorlabs(System.Int32,System.String)">
+            <summary>
+            Create Thorlabs PowerMeter controller (PM100A, PM100D, PM400, PM5020, PM100USB, PM101 Series, PM102 Series, PM103 Series, PM16 Series, PM160 Series, PM200, SPCNT, ...)
+            </summary>
+            <remarks>
+            Install Optical Power Monitor (OPM) v5.0 Software package at first. <br/>
+            Link: https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM <br/>
+            </remarks>
+            <param name="index">Identifier (0,1,2,3, ...)</param>
+            <param name="serialNo">Serial no</param>
+        </member>
+        <member name="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">
+            <summary>
+            IPowerMeter interface
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnStarted">
+            <summary>
+            Event handler for started
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnMeasured">
+            <summary>
+            Event handler for measure with DateTime, Detected power (W)
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnStopped">
+            <summary>
+            Event handler for stop
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnFinished">
+            <summary>
+            Event handler for finish
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnCleared">
+            <summary>
+            Event handler for clear 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.SyncRoot">
+            <summary>
+            Synchronization object
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.Index">
+            <summary>
+            Identifier
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.Category">
+            <summary>
+            Category(or Series) name
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.DetectedPower">
+            <summary>
+            Detected last power (W)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.SamplingRateHz">
+            <summary>
+            Sampling rate (Hz)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.Data">
+            <summary>
+            Measured data queue
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.MaxQueueSize">
+            <summary>
+            Max data queue size
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.IsReady">
+            <summary>
+            Ready status
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.IsBusy">
+            <summary>
+            Busy status
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.IsError">
+            <summary>
+            Error status
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.Tag">
+            <summary>
+            User data
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.Initialize">
+            <summary>
+            Initialize device(s)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.CtlStart">
+            <summary>
+            Start
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.CtlStop">
+            <summary>
+            Stop
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.CtlClear">
+            <summary>
+            Clear data
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.CtlReset">
+            <summary>
+            <para>Reset</para>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.NotifyStarted">
+            <summary>
+            Notify started
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.NotifyMeasure(System.DateTime,System.Double)">
+            <summary>
+            Notify measured
+            </summary>
+            <param name="dt"><c>DateTime</c></param>
+            <param name="detectedPower">Detected Power (W)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.NotifyStopped">
+            <summary>
+            Notify stopped
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.NotifyFinished">
+            <summary>
+            Notify finished
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.NotifyCleared">
+            <summary>
+            Notify data cleared
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.PowerMeter.PowerMeterBase">
+            <summary>
+            PowerMeterBase
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.PropertyChanged">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.NotifyPropertyChanged(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.OnStarted">
+            <inheritdoc/>  
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.OnMeasured">
+            <inheritdoc/>  
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.OnStopped">
+            <inheritdoc/>  
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.OnFinished">
+            <inheritdoc/>  
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.OnCleared">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.SyncRoot">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.Index">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.Name">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.Category">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.DetectedPower">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.SamplingRateHz">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.Data">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.MaxQueueSize">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.IsReady">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.IsBusy">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.IsError">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.Tag">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.#ctor(System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="maxBufferCounts">Max buffer queue size</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.#ctor(System.Int32,System.String,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Identifier</param>
+            <param name="name">Name</param>
+            <param name="maxBufferCounts">Max buffer queue size</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.Dispose">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.Dispose(System.Boolean)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.Initialize">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.CtlStart">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.CtlStop">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.CtlClear">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.CtlReset">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.NotifyStarted">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.NotifyMeasure(System.DateTime,System.Double)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.NotifyStopped">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.NotifyFinished">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.NotifyCleared">
+            <inheritdoc/>  
+        </member>
+        <member name="T:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax">
+            <summary>
+            PowerMeter Coherent PowerMax USB/RS Series
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.Model">
+            <summary>
+            Model name
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.SerialNo">
+            <summary>
+            Serial no
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.ComPort">
+            <summary>
+            COM port
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.Serial">
+            <summary>
+            SerialPort
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.#ctor(System.Int32,System.String,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Identifier</param>
+            <param name="name">Name</param>
+            <param name="comPort">COM port</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.Dispose(System.Boolean)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.Initialize">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.CtlStart">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.CtlStop">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.CtlClear">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.CtlReset">
+            <inheritdoc/>  
+        </member>
+        <member name="T:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir">
+            <summary>
+            PowerMeter Ophir Photonics
+            </summary>
+            <remarks>
+            Install Ophir Photonics StarLab v3.8 at first. <br/>
+            Used <c>OphirLMMeasurementLib</c> COM object internally. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.SerialNo">
+            <summary>
+            Serial no
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.Channel">
+            <summary>
+            Active channel (0,1,2,3)
+            </summary>
+            <remarks>
+            Used with multiple channels only. <br/>
+            Like as USBI product. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.HeadCounts">
+            <summary>
+            Head count(s)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.HeadSerialNo">
+            <summary>
+            Head serial no
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Identifier</param>
+            <param name="name">Name</param>
+            <param name="serialNo">Serial no</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.Dispose(System.Boolean)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.Initialize">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.CtlStart">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.CtlStop">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.CtlClear">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.CtlReset">
+            <inheritdoc/>  
+        </member>
+        <member name="T:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs">
+            <summary>
+            PowerMeterThorLabsPMSeries
+            </summary>
+            <remarks>
+            Install Optical Power Monitor (OPM) v5.0 Software package at first. <br/>
+            Link: https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM <br/>
+            Used <c>TLPM</c> Interop object internally. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.SerialNo">
+            <summary>
+            Serial no
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.PowerDensity">
+            <summary>
+            Power density
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.PowerEnergy">
+            <summary>
+            Power energy
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.PowerCurrent">
+            <summary>
+            Power current
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Identifier</param>
+            <param name="name">Name</param>
+            <param name="serialNo">Serial no</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.Dispose(System.Boolean)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.Initialize">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.CtlStart">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.CtlStop">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.CtlClear">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.CtlReset">
+            <inheritdoc/>  
+        </member>
+        <member name="T:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual">
+            <summary>
+            PowerMeter Virtual
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual.#ctor(System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="maxWatt">Max power (W)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual.#ctor(System.Int32,System.String,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Identifier</param>
+            <param name="name">Name</param>
+            <param name="maxWatt">Max power (W)<br/>Used max range for generate random power values. <br/></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual.Dispose(System.Boolean)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual.Initialize">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual.CtlStart">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual.CtlStop">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual.CtlClear">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual.CtlReset">
+            <inheritdoc/>  
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.ScannerFactory">
             <summary>

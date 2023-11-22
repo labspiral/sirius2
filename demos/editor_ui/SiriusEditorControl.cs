@@ -43,6 +43,8 @@ using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Common;
 using SpiralLab.Sirius2.Winforms.UI;
 using System.IO;
+using SpiralLab.Sirius2.PowerMeter;
+using System.Runtime.InteropServices;
 using OpenTK;
 
 namespace Demos
@@ -257,6 +259,7 @@ namespace Demos
                 laser = value;
                 laserControl1.Laser = laser;
                 manualUserControl1.Laser = laser;
+                powerMeterControl1.Laser = laser;
                 if (null != laser)
                 {
                     EntityPen.PropertyVisibility(laser);
@@ -278,6 +281,8 @@ namespace Demos
             get { return marker; }
             set
             {
+                if (marker == value)
+                    return;
                 if (marker != null)
                 {
                     marker.OnStarted -= Marker_OnStarted;
@@ -323,6 +328,8 @@ namespace Demos
             get { return remote; }
             set
             {
+                if (remote == value)
+                    return;
                 if (remote != null)
                 {
                 }
@@ -335,6 +342,43 @@ namespace Demos
             }
         }
         private IRemote remote;
+
+        /// <summary>
+        /// <c>IPowerMeter</c>
+        /// </summary>
+        /// <remarks>
+        /// Created by <c>PowerMeterFactory</c> <br/>
+        /// </remarks>
+        public IPowerMeter PowerMeter
+        {
+            get { return powerMeter; }
+            set
+            {
+                if (powerMeter == value)
+                    return;
+                if (powerMeter != null)
+                {
+                    powerMeter.OnStarted -= PowerMeter_OnStarted;
+                    powerMeter.OnStopped -= PowerMeter_OnStopped;
+                    powerMeter.OnMeasured -= PowerMeter_OnMeasured;
+                    powerMeter.OnCleared -= PowerMeter_OnCleared;
+                }
+                powerMeter = value;
+                if (powerMeter != null)
+                {
+                    lblPowerWatt.Text = "0.0 W";
+                    pgbPower.Value = 0;
+                    pgbPower.ToolTipText = string.Empty;
+                    powerMeter.OnStarted += PowerMeter_OnStarted;
+                    powerMeter.OnStopped += PowerMeter_OnStopped;
+                    powerMeter.OnMeasured += PowerMeter_OnMeasured;
+                    powerMeter.OnCleared += PowerMeter_OnCleared;
+                }
+                PowerMeterCtrl.PowerMeter = powerMeter;                
+            }
+        }
+
+        private IPowerMeter powerMeter;
 
         IDInput myDIExt1;
         IDInput myDILaserPort;
@@ -433,7 +477,13 @@ namespace Demos
         {
             get { return remoteUserControl1; }
         }
-
+        /// <summary>
+        /// Usercontrol for powermeter
+        /// </summary>
+        public SpiralLab.Sirius2.Winforms.UI.PowerMeterControl PowerMeterCtrl
+        {
+            get { return powerMeterControl1; }
+        }
         /// <summary>
         /// Usercontrol for log
         /// </summary>
@@ -536,8 +586,20 @@ namespace Demos
             // New document by default
             Document.ActNew();
         }
+        /// <inheritdoc/>
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            InternalOnLoad(e);
+        }
+        /// <inheritdoc/>
+        public override void Refresh()
+        {
+            base.Refresh();
 
-
+            PropertyGridCtrl.Refresh();
+            OffsetCtrl.Refresh();
+        }
 
         /// <inheritdoc/>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -577,12 +639,6 @@ namespace Demos
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        /// <inheritdoc/>
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-            InternalOnLoad(e);
-        }
         private void InternalOnLoad(EventArgs e)
         {
             TreeViewCtrl.View = EditorCtrl.View;
@@ -1213,7 +1269,8 @@ namespace Demos
 
             if (this.Marker.IsBusy)
             {
-                if (0 == timerStatusColorCounts++ % 2)
+                timerStatusColorCounts = checked(timerStatusColorCounts + 1);
+                if (0 == timerStatusColorCounts % 2)
                 {
                     lblBusy.BackColor = Color.Red;
                     lblBusy.ForeColor = Color.White;
@@ -1277,7 +1334,7 @@ namespace Demos
                 else
                     lblProcessTime.ForeColor = Color.Red;
 
-                lblProcessTime.Text = $"Marking: {timerProgressStopwatch.ElapsedMilliseconds / 1000.0:F1} sec";
+                lblProcessTime.Text = $"{timerProgressStopwatch.ElapsedMilliseconds / 1000.0:F1} sec";
             }));
         }
         private void Marker_OnStarted(IMarker marker)
@@ -1298,15 +1355,55 @@ namespace Demos
                 if (success)
                 {
                     lblProcessTime.ForeColor = statusStrip1.ForeColor;
-                    lblProcessTime.Text = $"Marked: {ts.TotalSeconds:F1} sec";
+                    lblProcessTime.Text = $"{ts.TotalSeconds:F1} sec";
                 }
                 else
                 {
                     lblProcessTime.ForeColor = Color.Red;
-                    lblProcessTime.Text = $"Failed: {ts.TotalSeconds:F1} sec";
+                    lblProcessTime.Text = $"{ts.TotalSeconds:F1} sec";
                 }
                 EnableDisableControlByMarking(true);
                 EditorCtrl.Focus();
+            }));
+        }
+        private void PowerMeter_OnCleared(IPowerMeter obj)
+        {
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                lblPowerWatt.Text = $"(Empty)";
+                pgbPower.Value = 0;
+                pgbPower.ToolTipText = $"Cleared";
+            }));
+        }
+
+        private void PowerMeter_OnStarted(IPowerMeter obj)
+        {
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                lblPowerWatt.Text = $"0.0 W";
+                pgbPower.Value = 0;
+                pgbPower.ToolTipText = $"Started";
+            }));
+        }
+        private void PowerMeter_OnStopped(IPowerMeter obj)
+        {
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                //lblPowerWatt.Text = $"0.0 W";
+                pgbPower.Value = 0;
+                pgbPower.ToolTipText = $"Stopped";
+            }));
+        }
+        private void PowerMeter_OnMeasured(IPowerMeter arg1, DateTime dt, double watt)
+        {
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                lblPowerWatt.Text = $"{watt:F1} W";
+                double ratio = watt / Laser.MaxPowerWatt;
+                if (ratio > 1)
+                    ratio = 1;
+                pgbPower.Value = (int)((double)pgbPower.Maximum * ratio);
+                pgbPower.ToolTipText = $"{watt:F1} W";
             }));
         }
 
