@@ -9639,6 +9639,15 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.LaserMode">
             <inheritdoc/>  
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.IsReady">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.IsBusy">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.IsError">
+            <inheritdoc/>  
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.DoubleBufferMaxSize">
             <summary>
             Double buffer max size
@@ -11266,6 +11275,15 @@
             <c>LaserMode</c>
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsReady">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsBusy">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsError">
+            <inheritdoc/>  
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.DoubleBufferMaxSize">
             <summary>
             Double buffer max size
@@ -12604,6 +12622,15 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.StageMoveTimeOut">
             <inheritdoc/>         
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.IsReady">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.IsBusy">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.IsError">
+            <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.BandWidth">
             <inheritdoc/>  
@@ -15350,6 +15377,15 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.LaserMode">
             <inheritdoc/>  
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.IsReady">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.IsBusy">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.IsError">
+            <inheritdoc/>  
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.InitLaser12SignalLevel">
             <inheritdoc/>
         </member>
@@ -16441,9 +16477,10 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcStatus.Aborted">
             <summary>
-            Aborted (Stopped)
+            Aborted (Stopped) 
             </summary>
             <remarks>
+            Also, error status. <br/>
             Need to reset by <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlReset">CtlReset</see>. <br/>
             </remarks>
         </member>
@@ -16931,6 +16968,30 @@
             <summary>
             Last List type
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.IsReady">
+            <summary>
+            Ready status
+            </summary>
+            <remarks>
+            Same result with <c>CtlGetStatus(RtcStatus.NoError) </c> <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.IsBusy">
+            <summary>
+            Busy status
+            </summary>
+            <remarks>
+            Same result with <c>CtlGetStatus(RtcStatus.Busy) </c> <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.IsError">
+            <summary>
+            Error status
+            </summary>
+            <remarks>
+            Same result with <c>CtlGetStatus(RtcStatus.Aborted) </c> <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.Initialize">
             <summary>

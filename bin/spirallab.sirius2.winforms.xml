@@ -18576,6 +18576,14 @@
             Assigned <c>IMarker</c>
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.IRemote.EditorControl">
+            <summary>
+            Assigned <c>SiriusEditorUserControl</c>
+            </summary>
+            <remarks>
+            If assigned this value, used for refresh propertygrids. <br/>
+            </remarks>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IRemote.Dispose">
             <inheritdoc/>
         </member>
@@ -18640,9 +18648,9 @@
             <param name="param">Counts, dx,dy,dz,dAngle,...</param>
              <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.ControlParse(System.String,System.String[])">
+        <member name="M:SpiralLab.Sirius2.Winforms.IRemote.MarkerParse(System.String,System.String[])">
             <summary>
-            Control commands
+            marker commands
             </summary>
             <param name="cmd">Commands like as start, stop, reset </param>
             <param name="param">Array of param</param>

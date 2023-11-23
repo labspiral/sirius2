@@ -142,7 +142,7 @@
  - 2023 Copyright to (c)SpiralLAB. All rights reserved. 
  - Homepage: http://spirallab.co.kr
  - Email: <a href="mailto:hcchoi@spirallab.co.kr">hcchoi@spirallab.co.kr</a> 
- - Evaluation copy mode would be activated during 30 mins without license
+ - Evaluation copy mode would be activated during 30mins without license
  
 
 ----
@@ -155,6 +155,8 @@
     - Coherent PowerMax
     - Thorlabs (by OPM)
     - Ophir (by StarLab)
+  - added) powermeter demo project
+  - fixed) remote commands
 
 * 2023.11.20 v.1.10.910
   - added) support various laser sources
