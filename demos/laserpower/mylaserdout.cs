@@ -395,19 +395,16 @@ namespace Demos
             var rtc = Scanner as IRtc;
             Debug.Assert(rtc != null);
             bool success = true;
-            if (targetWatt > this.MaxPowerWatt)
-                targetWatt = this.MaxPowerWatt;
+            double compensatedWatt = targetWatt;
             if (null != PowerMap && IsCompensated && !string.IsNullOrEmpty(category))
             {
-                success &= PowerMap.Compensate(category, targetWatt, out var compensatedWatt);
-                if (success)
-                    targetWatt = compensatedWatt;
-                else
+                success &= PowerMap.Compensate(category, targetWatt, out compensatedWatt);
+                if (!success)
                     return false;
             }
             lock (SyncRoot)
             {
-                double percentage = targetWatt / this.MaxPowerWatt * 100.0;
+                double percentage = compensatedWatt / this.MaxPowerWatt * 100.0;
                 if (percentage > 100)
                     percentage = 100;
                 if (percentage < 0)
@@ -434,7 +431,11 @@ namespace Demos
             if (success)
             {
                 LastPowerWatt = targetWatt;
-                Logger.Log(Logger.Types.Warn, $"laser [{this.Index}]: power: {targetWatt:F3} / {MaxPowerWatt:F3}W");
+                Logger.Log(Logger.Types.Warn, $"laser [{this.Index}]: power(W): {targetWatt:F3} [{compensatedWatt:F3}]");
+            }
+            else
+            {
+                Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: fail to set power(W): {targetWatt:F3}");
             }
             return success;
         }
@@ -457,20 +458,17 @@ namespace Demos
             Debug.Assert(this.MaxPowerWatt > 0);
             var rtc = Scanner as IRtc;
             Debug.Assert(rtc != null);
-            if (targetWatt > this.MaxPowerWatt)
-                targetWatt = this.MaxPowerWatt;
+            double compensatedWatt = targetWatt;
             bool success = true;
             if (null != PowerMap && IsCompensated && !string.IsNullOrEmpty(category))
             {
-                success &= PowerMap.Compensate(category, targetWatt, out var compensatedWatt);
-                if (success)
-                    targetWatt = compensatedWatt;
-                else
+                success &= PowerMap.Compensate(category, targetWatt, out compensatedWatt);
+                if (!success)
                     return false;
             }
             lock (SyncRoot)
             {
-                double percentage = targetWatt / this.MaxPowerWatt * 100.0;
+                double percentage = compensatedWatt / this.MaxPowerWatt * 100.0;
                 if (percentage > 100)
                     percentage = 100;
                 if (percentage < 0)
