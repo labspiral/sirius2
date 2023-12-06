@@ -38,7 +38,7 @@ namespace Demos
             int index = 0;
 
             // Create index 0 devices 
-            EditorHelper.CreateDevices(out var rtc0, out var laser0, out var powerMeter0, out var marker0, out var remote0, index);
+            EditorHelper.CreateDevices(out var rtc0, out var laser0, out var powerMeter0, out var marker0, out var remote0, this.siriusEditorUserControl1, index);
             // Assign index 0 devices into usercontrol
             siriusEditorUserControl1.Rtc = rtc0;
             siriusEditorUserControl1.Laser = laser0;
@@ -56,7 +56,7 @@ namespace Demos
             // index 1
             index = 1;
             // Create index 1 devices
-            EditorHelper.CreateDevices(out var rtc1, out var laser1, out var powerMeter1, out var marker1, out var remote1, index);
+            EditorHelper.CreateDevices(out var rtc1, out var laser1, out var powerMeter1, out var marker1, out var remote1, this.siriusEditorUserControl2, index);
             // Assign index 1 devices into usercontrol
             siriusEditorUserControl2.Rtc = rtc1;
             siriusEditorUserControl2.Laser = laser1;
@@ -84,6 +84,7 @@ namespace Demos
             var laser0 = siriusEditorUserControl1.Laser;
             var rtc0 = siriusEditorUserControl1.Rtc;
             var powerMeter0 = siriusEditorUserControl1.PowerMeter;
+
             siriusEditorUserControl1.Remote = null;
             siriusEditorUserControl1.PowerMeter = null;
             siriusEditorUserControl1.Marker = null;
@@ -98,6 +99,7 @@ namespace Demos
             var laser1 = siriusEditorUserControl2.Laser;
             var rtc1 = siriusEditorUserControl2.Rtc;
             var powerMeter1 = siriusEditorUserControl2.PowerMeter;
+
             siriusEditorUserControl2.Remote = null;
             siriusEditorUserControl2.PowerMeter = null;
             siriusEditorUserControl2.Rtc = null;

@@ -11107,6 +11107,21 @@
             Should be assigned <c>PowerMax</c> at first. <br/>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.PowerMapCategory">
+            <summary>
+            Power category
+            </summary>
+            <remarks>
+            Used with <c>IPowerMap</c> <br/>
+            Should be assigned by one of categories at <c>IPowerMap.Categories</c>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.PowerMap">
+            <summary>
+            Assigned <c>IPowerMap</c> instance by automatically. <br/>
+            Used by internally. Do NOT edit. <br/>
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.Frequency">
             <summary>
             Pulse frequency (Hz)
@@ -13946,6 +13961,11 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Common.PenColorEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
             <inheritdoc/>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.PowerMapCategoryEditor">
+            <summary>
+            PowerMapCategoryEditor
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.AlignmentEditor">
             <summary>
             Alignment editor  by trackbar
@@ -16473,12 +16493,12 @@
                              break;
                          case PowerControlMethods.DutyCycle:
                              rtc.Frequency = pen.Frequency;
-                             success &amp;= laserPowerControl.ListPower(pen.Power);
+                             success &amp;= laserPowerControl.ListPower(pen.Power, pen.PowerMapCategory);
                              isModifiedFrequency = true;
                              break;
                          default:
-                         success &amp;= laserPowerControl.ListPower(pen.Power);
-                         break;
+                             success &amp;= laserPowerControl.ListPower(pen.Power, pen.PowerMapCategory);
+                             break;
                      }
                 }
                 if (!isModifiedFrequency)
@@ -18524,7 +18544,7 @@
             </code>
             </summary>
             <remarks>
-            Communication for TCP/IP or Serial 
+            Remote communication control by TCP/IP or Serial. <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.IRemote.OnConnected">
@@ -19053,6 +19073,221 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm">
+            <summary>
+            PowerMapCategoriesForm
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm.CategoryValue">
+            <summary>
+            Category value
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm.CategoryValue.Category">
+            <summary>
+            Category (or series)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm.CategoryValue.IsEnable">
+            <summary>
+            Enable(or Disable)
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm.CategoryValue.#ctor(System.String,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="category">Category</param>
+            <param name="enable">Enable(or disable)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm.CategoryValue.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm.Categories">
+            <summary>
+            Array of categories
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm.MinWatt">
+            <summary>
+            Min (W)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm.MaxWatt">
+            <summary>
+            Max (W)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm.Steps">
+            <summary>
+            Counts of steps
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.UI.PowerMapControl">
+             <summary>
+            PowerMapControl
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMapControl.PowerMap">
+            <summary>
+            <c>IPowerMap</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMapControl.Document">
+            <summary>
+            <c>IDocument</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMapControl.Rtc">
+            <summary>
+            <c>IRtc</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMapControl.Laser">
+            <summary>
+            <c>ILaser</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMapControl.PowerMeter">
+            <summary>
+            <c>IPowerMeter</c>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapControl.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapControl.RefreshChart">
+            <summary>
+            Refresh chart
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.PowerMapControl.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapControl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapControl.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.UI.PowerMapCompensateForm">
+            <summary>
+            PowerMapCompensateForm
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapCompensateForm.CategoryWattValue.#ctor(System.String,System.Double,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="category">Category(or series)</param>
+            <param name="watt">Target power (W)</param>
+            <param name="enable">Enable(or disable)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapCompensateForm.CategoryWattValue.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMapCompensateForm.CategoryWatts">
+            <summary>
+            List for binding
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapCompensateForm.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.PowerMapCompensateForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapCompensateForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapCompensateForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.UI.PowerMapVerifyForm">
+            <summary>
+            PowerMapVerifyForm
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapVerifyForm.CategoryWattValue.#ctor(System.String,System.Double,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="category">Category(or series)</param>
+            <param name="watt">Target power (W)</param>
+            <param name="enable">Enable(or disable)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapVerifyForm.CategoryWattValue.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMapVerifyForm.CategoryWatts">
+            <summary>
+            List for binding
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapVerifyForm.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.PowerMapVerifyForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapVerifyForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerMapVerifyForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.UI.PowerMeterControl">
             <summary>
             PowerMeterControl
@@ -19152,6 +19387,9 @@
             <summary>
             Constructor
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.ManualUserControl.ProcessDialogKey(System.Windows.Forms.Keys)">
+            <inheritdoc/>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.ManualUserControl.components">
             <summary> 
@@ -20418,6 +20656,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.PowerMeterCtrl">
             <summary>
             Usercontrol for powermeter
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.PowerMapCtrl">
+            <summary>
+            Usercontrol for powermap
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.LogCtrl">

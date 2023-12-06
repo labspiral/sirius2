@@ -41,6 +41,7 @@ using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
+using SpiralLab.Sirius2.PowerMap;
 using SpiralLab.Sirius2.PowerMeter;
 using SpiralLab.Sirius2.Scanner;
 using SpiralLab.Sirius2.Scanner.Rtc;
@@ -97,11 +98,13 @@ namespace Demos
         /// <param name="rtc"><c>IRtc</c></param>
         /// <param name="laser"><c>ILaser</c></param>
         /// <param name="powerMeter"><c>IPowerMeter</c></param>
+        /// <param name="powerMap"><c>IPowerMap</c></param>
         /// <param name="marker"><c>IMarker</c></param>
         /// <param name="remote"><c>IRemote</c></param>
+        /// <param name="editorUserControl">Target <c>SiriusEditorUserControl</c></param>
         /// <param name="index">Index (assign value if using multiple devices)</param>
         /// <returns>Success or failed</returns>
-        public static bool CreateDevices(out IRtc rtc, out ILaser laser, out IPowerMeter powerMeter, out IMarker marker, out IRemote remote, int index = 0)
+        public static bool CreateDevices(out IRtc rtc, out ILaser laser, out IPowerMeter powerMeter, out IMarker marker, out IRemote remote, SiriusEditorUserControl editorUserControl, int index = 0)
         {
             rtc = null;
             laser = null;
@@ -227,14 +230,44 @@ namespace Demos
             success &= rtc.CtlSpeed(500, 500);
             #endregion
 
+            #region Initialize Powermeter
+            var enablePowerMeter = NativeMethods.ReadIni<int>(ConfigFileName, $"POWERMETER{index}", "ENABLE", 0);
+            if (0 != enablePowerMeter)
+            {
+                var powerMeterType = NativeMethods.ReadIni(ConfigFileName, $"POWERMETER{index}", "TYPE", "Virtual");
+                var powerMeterSerialNo = NativeMethods.ReadIni(ConfigFileName, $"POWERMETER{index}", "SERIAL_NO", string.Empty);
+                var powerMeterSerialPort = NativeMethods.ReadIni<int>(ConfigFileName, $"POWERMETER{index}", "SERIAL_PORT", 0);
+                switch (powerMeterType.Trim().ToLower())
+                {
+                    case "virtual":
+                        var laserVirtualMaxPower = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "MAXPOWER", 10);
+                        powerMeter = PowerMeterFactory.CreateVirtual(index, laserVirtualMaxPower);
+                        break;
+                    case "ophirphotonics":
+                        powerMeter = PowerMeterFactory.CreateOphirPhotonics(index, powerMeterSerialNo);
+                        break;
+                    case "coherentpowermax":
+                        powerMeter = PowerMeterFactory.CreateCoherentPowerMax(index, powerMeterSerialPort);
+                        break;
+                    case "thorolabs":
+                        powerMeter = PowerMeterFactory.CreateThorlabs(index, powerMeterSerialNo);
+                        break;
+                    default:
+                        throw new InvalidProgramException($"Not supported powermeter type: {powerMeterType}");
+                }
+                success &= powerMeter.Initialize();
+                // un-comment auto start if you want
+                //success &= powerMeter.CtlStart();
+            }
+            #endregion
+
             #region Initialize Laser source
             var laserType = NativeMethods.ReadIni(ConfigFileName, $"LASER{index}", "TYPE", "Virtual");
-            var virtuaLaserPowerControl = NativeMethods.ReadIni(ConfigFileName, $"LASER{index}", "POWERCONTROL", "Unknown");
             var laserMaxPower = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "MAXPOWER", 10);
-            var laserDefaultPower = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "DEFAULT_POWER", 1);
             var laserComPort = NativeMethods.ReadIni<int>(ConfigFileName, $"LASER{index}", "COM_PORT", 1);
             var laserIPaddress = NativeMethods.ReadIni<string>(ConfigFileName, $"LASER{index}", "IP_ADDRESS", string.Empty);
             var rtcAnalogPort = NativeMethods.ReadIni<int>(ConfigFileName, $"LASER{index}", "ANALOG_PORT", 1);
+            var virtuaLaserPowerControl = NativeMethods.ReadIni(ConfigFileName, $"LASER{index}", "POWERCONTROL", "Unknown");
             switch (laserType.Trim().ToLower())
             {
                 case "virtual":
@@ -325,50 +358,44 @@ namespace Demos
                 default:
                     throw new InvalidProgramException($"Not supported laser source type: {laserType}");
             }
+            if (powerMeter != null)
+            {
+                if (powerMeter is PowerMeterVirtual powerMeterVirtual)
+                {
+                    powerMeterVirtual.Laser = laser;
+                }
+            }
+            var laserPowerControlDelay = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "POWERCONTROL_DELAY", 0);
+            laser.PowerControlDelayTime = laserPowerControlDelay;
+            var powerControl = laser as ILaserPowerControl;
 
+            // Initialize PowerMap 
+            var enablePowerMap = NativeMethods.ReadIni<int>(ConfigFileName, $"LASER{index}", "POWERMAP_ENABLE", 0);
+            if (0 != enablePowerMap)
+            {
+                var powerMap = PowerMapFactory.CreatePowerMapDefault(index, $"MAP{index}");
+                powerMap.OnOpened += PowerMap_OnMappingOpened;
+                powerMap.OnSaved += PowerMap_OnMappingSaved;
+                var powerMapFile = NativeMethods.ReadIni<string>(ConfigFileName, $"LASER{index}", "POWERMAP_FILE", string.Empty);
+                var powerMapFullPath = Path.Combine(SpiralLab.Sirius2.Config.PowerMapPath, powerMapFile);
+                if (File.Exists(powerMapFullPath))
+                    success &= PowerMapSerializer.Open(powerMapFullPath, powerMap);
+                if (null != powerControl)
+                {
+                    powerControl.PowerMap = powerMap;
+                    // Enable compensated output power by automatically
+                    //powerControl.IsCompensated = true;
+                }
+            }
             // Assign RTC into laser source
             laser.Scanner = rtc;
-
             // Initialize laser source
             success &= laser.Initialize();
 
-            // Default power 
-            if (laser is ILaserPowerControl powerControl)
-            {
-                var laserPowerControlDelay = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "POWERCONTROL_DELAY", 0);
-                laser.PowerControlDelayTime = laserPowerControlDelay;
-                success &= powerControl.CtlPower(laserDefaultPower);
-            }
-            #endregion
-
-            #region Initialize Powermeter
-            var enablePowerMeter = NativeMethods.ReadIni<int>(ConfigFileName, $"POWERMETER{index}", "ENABLE", 0);
-            if (0 != enablePowerMeter)
-            {
-                var powerMeterType = NativeMethods.ReadIni(ConfigFileName, $"POWERMETER{index}", "TYPE", "Virtual");
-                var powerMeterSerialNo = NativeMethods.ReadIni(ConfigFileName, $"POWERMETER{index}", "SERIAL_NO", string.Empty);
-                var powerMeterSerialPort = NativeMethods.ReadIni<int>(ConfigFileName, $"POWERMETER{index}", "SERIAL_PORT", 0);
-                switch (powerMeterType.Trim().ToLower())
-                {
-                    case "virtual":
-                        powerMeter = PowerMeterFactory.CreateVirtual(index, laser.MaxPowerWatt);
-                        break;
-                    case "ophirphotonics":
-                        powerMeter = PowerMeterFactory.CreateOphirPhotonics(index, powerMeterSerialNo);
-                        break;
-                    case "coherentpowermax":
-                        powerMeter = PowerMeterFactory.CreateCoherentPowerMax(index, powerMeterSerialPort);
-                        break;
-                    case "thorolabs":
-                        powerMeter = PowerMeterFactory.CreateThorlabs(index, powerMeterSerialNo);
-                        break;
-                    default:
-                        throw new InvalidProgramException($"Not supported powermeter type: {powerMeterType}");
-                }
-                success &= powerMeter.Initialize();
-                // auto start ?
-                //success &= powerMeter.CtlStart();
-            }
+            // Set Default Power
+            var laserDefaultPower = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "DEFAULT_POWER", 1);
+            if (laser is ILaserPowerControl powerControl2)
+                success &= powerControl2.CtlPower(laserDefaultPower);
             #endregion
 
             #region Marker
@@ -411,12 +438,28 @@ namespace Demos
                     default:
                         throw new InvalidProgramException($"Not supported remote protocol: {protocol}");
                 }
+                remote.EditorControl = editorUserControl;
                 success &= remote.Start();
             }
             #endregion
 
             return success;
         }
+        private static void PowerMap_OnMappingOpened(IPowerMap powerMap, string fileName)
+        {
+            //var index = powerMap.Index;
+            //var name = Path.GetFileName(fileName);
+            //NativeMethods.WriteIni<string>(ConfigFileName, $"LASER{index}", "POWERMAP_FILE", name);
+
+        }
+        private static void PowerMap_OnMappingSaved(IPowerMap powerMap, string fileName)
+        {
+            var index = powerMap.Index;
+            // File path should be in "bin\powermap"
+            var fileNameOnly = Path.GetFileName(fileName);
+            NativeMethods.WriteIni<string>(ConfigFileName, $"LASER{index}", "POWERMAP_FILE", fileNameOnly);
+        }
+
         /// <summary>
         /// Create test entities at <c>IDocument</c>
         /// </summary>
@@ -783,12 +826,14 @@ namespace Demos
         /// <param name="rtc"><c>IRtc</c></param>
         /// <param name="laser"><c>ILaser</c></param>
         /// <param name="powerMeter"><c>IPowerMeter</c></param>
+        /// <param name="powerMap"><c>IPowerMap</c></param>
         /// <param name="marker"><c>IMarker</c></param>
         /// <param name="remote"><c>IRemote</c></param>
         public static void DestroyDevices(IRtc rtc, ILaser laser, IPowerMeter powerMeter, IMarker marker, IRemote remote)
         {
             remote?.Dispose();
             marker?.Dispose();
+            //powerMap?.Dispose();
             powerMeter?.Dispose();
             laser?.Dispose();
             rtc?.Dispose();

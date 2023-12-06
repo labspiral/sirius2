@@ -73,7 +73,7 @@ namespace Demos
             SpiralLab.Sirius2.Winforms.Config.DocumentDefaultViewFovSize = new SizeF(100, 100);
 
             // Create devices 
-            EditorHelper.CreateDevices(out var rtc, out var laser, out var powerMeter, out var marker, out var remote);
+            EditorHelper.CreateDevices(out var rtc, out var laser, out var powerMeter, out var marker, out var remote, this.siriusEditorUserControl1);
 
             // Assign devices into usercontrol
             siriusEditorUserControl1.Rtc = rtc;

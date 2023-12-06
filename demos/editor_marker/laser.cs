@@ -35,6 +35,7 @@ using System.Threading;
 using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2;
+using SpiralLab.Sirius2.PowerMap;
 
 namespace Demos
 {
@@ -56,6 +57,24 @@ namespace Demos
         [DisplayName("Type")]
         [Description("Type")]
         public override LaserTypes LaserType { get { return LaserTypes.UserDefined1; } }
+
+        /// <inheritdoc/>  
+        [RefreshProperties(RefreshProperties.All)]
+        [Browsable(true)]
+        [ReadOnly(true)]
+        [Category("Power Control")]
+        [DisplayName("Map")]
+        [Description("Assigned PowerMap")]
+        public virtual IPowerMap PowerMap { get; set; }
+
+        /// <inheritdoc/>  
+        [RefreshProperties(RefreshProperties.All)]
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Power Control")]
+        [DisplayName("Compensated")]
+        [Description("Enable(or Disable) Compensated Output Power by PowerMap")]
+        public virtual bool IsCompensated { get; set; } = false;
 
         #region Control by analog
         /// <summary>
@@ -212,17 +231,25 @@ namespace Demos
 
         #region ILaserPowerControl impl
         /// <inheritdoc/>  
-        public virtual bool CtlPower(double watt)
+        public virtual bool CtlPower(double targetWatt, string category = "")
         {
             Debug.Assert(this.MaxPowerWatt > 0);
             var rtc = Scanner as IRtc;
             Debug.Assert(rtc != null);
             bool success = true;
-            if (watt > this.MaxPowerWatt)
-                watt = this.MaxPowerWatt;
+            if (targetWatt > this.MaxPowerWatt)
+                targetWatt = this.MaxPowerWatt;
+            if (null != PowerMap && IsCompensated && !string.IsNullOrEmpty(category))
+            {
+                success &= PowerMap.Compensate(category, targetWatt, out var compensatedWatt);
+                if (success)
+                    targetWatt = compensatedWatt;
+                else
+                    return false;
+            }
             lock (SyncRoot)
             {
-                double percentage = watt / this.MaxPowerWatt * 100.0;
+                double percentage = targetWatt / this.MaxPowerWatt * 100.0;
                 if (percentage > 100)
                     percentage = 100;
 
@@ -235,8 +262,8 @@ namespace Demos
                 Thread.Sleep((int)this.PowerControlDelayTime);
                 if (success)
                 {
-                    LastPowerWatt = watt;
-                    Logger.Log(Logger.Types.Warn, $"laser [{this.Index}]: power: {watt:F3} / {MaxPowerWatt:F3}W");
+                    LastPowerWatt = targetWatt;
+                    Logger.Log(Logger.Types.Warn, $"laser [{this.Index}]: power: {targetWatt:F3} / {MaxPowerWatt:F3}W");
                 }
                 return success;
             }
@@ -254,17 +281,25 @@ namespace Demos
             return true;
         }
         /// <inheritdoc/>  
-        public virtual bool ListPower(double watt)
+        public virtual bool ListPower(double targetWatt, string category = "")
         {
             Debug.Assert(this.MaxPowerWatt > 0);
             var rtc = Scanner as IRtc;
             Debug.Assert(rtc != null);
-            if (watt > this.MaxPowerWatt)
-                watt = this.MaxPowerWatt;
+            if (targetWatt > this.MaxPowerWatt)
+                targetWatt = this.MaxPowerWatt;
+            bool success = true;
+            if (null != PowerMap && IsCompensated && !string.IsNullOrEmpty(category))
+            {
+                success &= PowerMap.Compensate(category, targetWatt, out var compensatedWatt);
+                if (success)
+                    targetWatt = compensatedWatt;
+                else
+                    return false;
+            }
             lock (SyncRoot)
             {
-                bool success = true;
-                double percentage = watt / this.MaxPowerWatt * 100.0;
+                double percentage = targetWatt / this.MaxPowerWatt * 100.0;
                 if (percentage > 100)
                     percentage = 100;
 
@@ -276,7 +311,7 @@ namespace Demos
                 success &= rtc.ListWait(this.PowerControlDelayTime);
                        
                 if (success)
-                    LastPowerWatt = watt;
+                    LastPowerWatt = targetWatt;
                 return success;
             }
         }

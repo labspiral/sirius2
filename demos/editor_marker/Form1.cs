@@ -67,7 +67,7 @@ namespace Demos
             EditorHelper.Initialize();
 
             // Create devices 
-            EditorHelper.CreateDevices(out var rtc, out var laser, out var powerMeter, out var marker, out var remote);
+            EditorHelper.CreateDevices(out var rtc, out var laser, out var powerMeter, out var marker, out var remote, this.siriusEditorUserControl1);
 
             // Assign devices into usercontrol
             siriusEditorUserControl1.Rtc = rtc;
@@ -109,9 +109,7 @@ namespace Demos
                     e.Cancel = true;
             }
 
-            if (rtc.CtlGetStatus(RtcStatus.Busy) ||
-                laser.IsBusy ||
-                marker.IsBusy)
+            if (marker.IsBusy)
             {
                 var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to exit during working on progressing... ?", "Warning", MessageBoxButtons.YesNo);
                 DialogResult dialogResult = form.ShowDialog(this);

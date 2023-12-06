@@ -33,6 +33,7 @@ using System.Text;
 using System.Threading;
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
+using SpiralLab.Sirius2.PowerMap;
 using SpiralLab.Sirius2.Scanner;
 using SpiralLab.Sirius2.Scanner.Rtc;
 
@@ -84,6 +85,24 @@ namespace Demos
         /// <inheritdoc/>  
         [Browsable(false)]
         public virtual LaserTypes LaserType { get { return LaserTypes.UserDefined2; } }
+
+        /// <inheritdoc/>  
+        [RefreshProperties(RefreshProperties.All)]
+        [Browsable(true)]
+        [ReadOnly(true)]
+        [Category("Power Control")]
+        [DisplayName("Map")]
+        [Description("Assigned PowerMap")]
+        public virtual IPowerMap PowerMap { get; set; }
+
+        /// <inheritdoc/>  
+        [RefreshProperties(RefreshProperties.All)]
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Power Control")]
+        [DisplayName("Compensated")]
+        [Description("Enable(or Disable) Compensated Output Power by PowerMap")]
+        public virtual bool IsCompensated { get; set; } = false;
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
@@ -390,7 +409,7 @@ namespace Demos
 
         #region ILaserPowerControl impl
         /// <inheritdoc/>  
-        public virtual bool CtlPower(double targetWatt)
+        public virtual bool CtlPower(double targetWatt, string category = "")
         {
             if (!this.IsPowerControl)
                 return true;
@@ -400,12 +419,21 @@ namespace Demos
             bool success = true;
             if (targetWatt > this.MaxPowerWatt)
                 targetWatt = this.MaxPowerWatt;
+            if (null != PowerMap && IsCompensated && !string.IsNullOrEmpty(category))
+            {
+                success &= PowerMap.Compensate(category, targetWatt, out var compensatedWatt);
+                if (success)
+                    targetWatt = compensatedWatt;
+                else
+                    return false;
+            }
             lock (SyncRoot)
             {             
                 double percentage = targetWatt / this.MaxPowerWatt * 100.0;
                 if (percentage > 100)
                     percentage = 100;
-
+                if (percentage < 0)
+                    percentage = 0;
                 switch (this.PowerControlMethod)
                 {
                     default:
@@ -440,7 +468,7 @@ namespace Demos
             return true;
         }
         /// <inheritdoc/>  
-        public virtual bool ListPower(double targetWatt)
+        public virtual bool ListPower(double targetWatt, string category = "")
         {
             if (!this.IsPowerControl)
                 return true;
@@ -449,13 +477,22 @@ namespace Demos
             Debug.Assert(rtc != null);
             if (targetWatt > this.MaxPowerWatt)
                 targetWatt = this.MaxPowerWatt;
-            bool success = true;                
+            bool success = true;
+            if (null != PowerMap && IsCompensated && !string.IsNullOrEmpty(category))
+            {
+                success &= PowerMap.Compensate(category, targetWatt, out var compensatedWatt);
+                if (success)
+                    targetWatt = compensatedWatt;
+                else
+                    return false;
+            }
             lock (SyncRoot)
             {
                 double percentage = targetWatt / this.MaxPowerWatt * 100.0;
                 if (percentage > 100)
                     percentage = 100;
-
+                if (percentage < 0)
+                    percentage = 0;
                 switch (this.PowerControlMethod)
                 {
                     default:

@@ -33,18 +33,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.IO;
+using System.Runtime.InteropServices;
+using SpiralLab.Sirius2.Winforms;
+using SpiralLab.Sirius2.Winforms.UI;
 using SpiralLab.Sirius2.IO;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
-using SpiralLab.Sirius2.Winforms;
 using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Common;
-using SpiralLab.Sirius2.Winforms.UI;
-using System.IO;
 using SpiralLab.Sirius2.PowerMeter;
-using System.Runtime.InteropServices;
+using SpiralLab.Sirius2.PowerMap;
 using OpenTK;
 
 namespace Demos
@@ -191,13 +192,14 @@ namespace Demos
                 }
                 
                 rtc = value;
-                rtcControl1.Rtc = rtc;
-                rtcDIUserControl1.Rtc = rtc;
-                rtcDOUserControl1.Rtc = rtc;
-                manualUserControl1.Rtc = rtc;
+                RtcCtrl.Rtc = rtc;
+                RtcDICtrl.Rtc = rtc;
+                RtcDOCtrl.Rtc = rtc;
+                ManualCtrl.Rtc = rtc;
                 EditorCtrl.Rtc = rtc;
                 TreeViewCtrl.Rtc = rtc;
                 TreeViewBlockCtrl.Rtc = rtc;
+                PowerMapCtrl.Rtc = rtc;
 
                 if (rtc != null)
                 {
@@ -257,14 +259,22 @@ namespace Demos
                 if (laser == value)
                     return;
                 laser = value;
-                laserControl1.Laser = laser;
-                manualUserControl1.Laser = laser;
-                powerMeterControl1.Laser = laser;
+                LaserCtrl.Laser = laser;
+                ManualCtrl.Laser = laser;
+                PowerMeterCtrl.Laser = laser;
+                PowerMapCtrl.Laser = laser;
                 if (null != laser)
                 {
                     EntityPen.PropertyVisibility(laser);
+                    var powerControl = laser as ILaserPowerControl;
                     foreach (var pen in document.InternalData.Pens)
+                    {
                         pen.PowerMax = laser.MaxPowerWatt;
+                        if (null != powerControl)
+                            pen.PowerMap = powerControl.PowerMap;
+                        else
+                            pen.PowerMap = null;
+                    }
                 }
             }
         }
@@ -288,20 +298,17 @@ namespace Demos
                     marker.OnStarted -= Marker_OnStarted;
                     marker.OnEnded -= Marker_OnEnded;
                 }
-
                 marker = value;
                 markerControl1.Marker = marker;
                 offsetControl1.Marker = marker;
                 remoteUserControl1.Marker = marker;
+                EditorCtrl.View.Marker = marker;
                 //marker browsable
-
                 if (marker != null)
                 {
                     marker.OnStarted += Marker_OnStarted;
                     marker.OnEnded += Marker_OnEnded;
                 }
-
-                EditorCtrl.View.Marker = marker;
             }
         }
         private IMarker marker;
@@ -364,21 +371,20 @@ namespace Demos
                     powerMeter.OnCleared -= PowerMeter_OnCleared;
                 }
                 powerMeter = value;
+                PowerMeterCtrl.PowerMeter = powerMeter;
+                PowerMapCtrl.PowerMeter = powerMeter;
                 if (powerMeter != null)
                 {
                     lblPowerWatt.Text = "0.0 W";
-                    pgbPower.Value = 0;
-                    pgbPower.ToolTipText = string.Empty;
                     powerMeter.OnStarted += PowerMeter_OnStarted;
                     powerMeter.OnStopped += PowerMeter_OnStopped;
                     powerMeter.OnMeasured += PowerMeter_OnMeasured;
                     powerMeter.OnCleared += PowerMeter_OnCleared;
-                }
-                PowerMeterCtrl.PowerMeter = powerMeter;                
+                }     
             }
         }
-
         private IPowerMeter powerMeter;
+            
 
         IDInput myDIExt1;
         IDInput myDILaserPort;
@@ -485,6 +491,13 @@ namespace Demos
             get { return powerMeterControl1; }
         }
         /// <summary>
+        /// Usercontrol for powermap
+        /// </summary>
+        public SpiralLab.Sirius2.Winforms.UI.PowerMapControl PowerMapCtrl
+        {
+            get { return powerMapControl1; }
+        }
+        /// <summary>
         /// Usercontrol for log
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.LogUserControl LogCtrl
@@ -580,11 +593,6 @@ namespace Demos
             mnuWriteDataExt16.Click += MnuWriteDataExt16_Click;
             mnuWriteDataExt16Cond.Click += MnuWriteDataExt16Cond_Click;
             mnuWaitDataExt16Cond.Click += MnuWaitDataExt16Cond_Click;
-
-            // Create one by default
-            this.Document = new DocumentBase();
-            // New document by default
-            Document.ActNew();
         }
         /// <inheritdoc/>
         protected override void OnLoad(EventArgs e)
@@ -596,9 +604,9 @@ namespace Demos
         public override void Refresh()
         {
             base.Refresh();
-
             PropertyGridCtrl.Refresh();
             OffsetCtrl.Refresh();
+            EditorCtrl.View.Render();
         }
 
         /// <inheritdoc/>
@@ -645,7 +653,12 @@ namespace Demos
             TreeViewBlockCtrl.View = EditorCtrl.View;
             PropertyGridCtrl.View = EditorCtrl.View;
 
+            // Create one by default
+            this.Document = new DocumentBase();
+            // New document by default
+            Document.ActNew();
 
+            PowerMapCtrl.Document = this.Document;
         }
         private void SiriusEditorUserControl_VisibleChanged(object sender, EventArgs e)
         {
@@ -1071,18 +1084,34 @@ namespace Demos
 
         private void Document_OnOpened(IDocument document, string fileName)
         {
-            lblFileName.Text = fileName;
-            if (null != Laser)
-                foreach (var pen in document.InternalData.Pens)
-                    pen.PowerMax = Laser.MaxPowerWatt;
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                lblFileName.Text = fileName;
+                if (null != Laser)
+                    foreach (var pen in document.InternalData.Pens)
+                        pen.PowerMax = Laser.MaxPowerWatt;
+                PropertyGridCtrl.Refresh();
+            }));
         }
         private void Document_OnSaved(IDocument document, string fileName)
         {
-            lblFileName.Text = fileName;
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                lblFileName.Text = fileName;
+            }));
         }
         private void Document_OnSelected(IDocument document, IEntity[] entities)
         {
-            lblSelected.Text = $"Selected: {entities.Length}";
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                lblSelected.Text = $"Selected: {entities.Length}";
+            }));
         }
 
         private void Renderer_Paint(object sender, PaintEventArgs e)
@@ -1097,6 +1126,8 @@ namespace Demos
         }
         private void Mof_OnEncoderChanged(IRtcMoF rtcMoF, int encX, int encY)
         {
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
             this.Invoke(new MethodInvoker(delegate ()
             {
                 switch (rtcMoF.EncoderType)
@@ -1235,6 +1266,8 @@ namespace Demos
 
         private void EnableDisableControlByMarking(bool enable)
         {
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
             if (!IsDisableControl)
             {
                 tlsTop.Enabled = enable;
@@ -1327,6 +1360,8 @@ namespace Demos
         int timerProgressColorCounts = 0;
         private void TimerProgress_Tick(object sender, EventArgs e)
         {
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
             this.Invoke(new MethodInvoker(delegate ()
             {
                 if (0 == timerProgressColorCounts++ % 2)
@@ -1339,6 +1374,8 @@ namespace Demos
         }
         private void Marker_OnStarted(IMarker marker)
         {
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
             this.Invoke(new MethodInvoker(delegate ()
             {
                 timerProgressStopwatch.Restart();
@@ -1348,6 +1385,8 @@ namespace Demos
         }
         private void Marker_OnEnded(IMarker marker, bool success, TimeSpan ts)
         {
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
             this.Invoke(new MethodInvoker(delegate ()
             {
                 timerProgressStopwatch.Stop();
@@ -1368,42 +1407,38 @@ namespace Demos
         }
         private void PowerMeter_OnCleared(IPowerMeter obj)
         {
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
             this.Invoke(new MethodInvoker(delegate ()
             {
                 lblPowerWatt.Text = $"(Empty)";
-                pgbPower.Value = 0;
-                pgbPower.ToolTipText = $"Cleared";
             }));
         }
-
         private void PowerMeter_OnStarted(IPowerMeter obj)
         {
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
             this.Invoke(new MethodInvoker(delegate ()
             {
                 lblPowerWatt.Text = $"0.0 W";
-                pgbPower.Value = 0;
-                pgbPower.ToolTipText = $"Started";
             }));
         }
         private void PowerMeter_OnStopped(IPowerMeter obj)
         {
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
             this.Invoke(new MethodInvoker(delegate ()
             {
                 //lblPowerWatt.Text = $"0.0 W";
-                pgbPower.Value = 0;
-                pgbPower.ToolTipText = $"Stopped";
             }));
         }
         private void PowerMeter_OnMeasured(IPowerMeter arg1, DateTime dt, double watt)
         {
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
             this.Invoke(new MethodInvoker(delegate ()
             {
-                lblPowerWatt.Text = $"{watt:F1} W";
-                double ratio = watt / Laser.MaxPowerWatt;
-                if (ratio > 1)
-                    ratio = 1;
-                pgbPower.Value = (int)((double)pgbPower.Maximum * ratio);
-                pgbPower.ToolTipText = $"{watt:F1} W";
+                lblPowerWatt.Text = $"{watt:F3} W";
             }));
         }
 
@@ -1412,6 +1447,8 @@ namespace Demos
         /// </summary>
         public void DoRender()
         {
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
             this.Invoke(new MethodInvoker(delegate ()
             {
                 EditorCtrl.View.Render();

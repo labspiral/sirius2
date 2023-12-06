@@ -33,17 +33,32 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.editorControl1 = new SpiralLab.Sirius2.Winforms.UI.EditorUserControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.rtcControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcUserControl();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.laserControl1 = new SpiralLab.Sirius2.Winforms.UI.LaserUserControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.offsetControl1 = new SpiralLab.Sirius2.Winforms.UI.OffsetUserControl();
+            this.markerControl1 = new SpiralLab.Sirius2.Winforms.UI.MarkerUserControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.rtcDIUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl();
+            this.rtcDOUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.manualUserControl1 = new SpiralLab.Sirius2.Winforms.UI.ManualUserControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.remoteUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RemoteUserControl();
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.powerMeterControl1 = new SpiralLab.Sirius2.Winforms.UI.PowerMeterControl();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.powerMapControl1 = new SpiralLab.Sirius2.Winforms.UI.PowerMapControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.logControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.treeViewControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl();
+            this.penControl1 = new SpiralLab.Sirius2.Winforms.UI.PenUserControl();
             this.tlsTop2 = new System.Windows.Forms.ToolStrip();
             this.btnPoint = new System.Windows.Forms.ToolStripButton();
             this.btnPoints = new System.Windows.Forms.ToolStripButton();
@@ -121,7 +136,6 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblProcessTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.pgbPower = new System.Windows.Forms.ToolStripProgressBar();
             this.lblPowerWatt = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel11 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblFileName = new System.Windows.Forms.ToolStripStatusLabel();
@@ -149,24 +163,11 @@
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.propertyGridControl1 = new SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.editorControl1 = new SpiralLab.Sirius2.Winforms.UI.EditorUserControl();
-            this.rtcControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcUserControl();
-            this.laserControl1 = new SpiralLab.Sirius2.Winforms.UI.LaserUserControl();
-            this.offsetControl1 = new SpiralLab.Sirius2.Winforms.UI.OffsetUserControl();
-            this.markerControl1 = new SpiralLab.Sirius2.Winforms.UI.MarkerUserControl();
-            this.rtcDIUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl();
-            this.rtcDOUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl();
-            this.manualUserControl1 = new SpiralLab.Sirius2.Winforms.UI.ManualUserControl();
-            this.remoteUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RemoteUserControl();
-            this.powerMeterControl1 = new SpiralLab.Sirius2.Winforms.UI.PowerMeterControl();
-            this.logControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
-            this.treeViewControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl();
-            this.penControl1 = new SpiralLab.Sirius2.Winforms.UI.PenUserControl();
-            this.propertyGridControl1 = new SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl();
             this.treeViewBlockControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
@@ -189,6 +190,7 @@
             this.tabPage3.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage11.SuspendLayout();
+            this.tabPage12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
@@ -227,6 +229,7 @@
             this.tabControl3.Controls.Add(this.tabPage3);
             this.tabControl3.Controls.Add(this.tabPage7);
             this.tabControl3.Controls.Add(this.tabPage11);
+            this.tabControl3.Controls.Add(this.tabPage12);
             resources.ApplyResources(this.tabControl3, "tabControl3");
             this.tabControl3.HotTrack = true;
             this.tabControl3.ImageList = this.imageList1;
@@ -241,6 +244,14 @@
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // editorControl1
+            // 
+            this.editorControl1.AllowDrop = true;
+            resources.ApplyResources(this.editorControl1, "editorControl1");
+            this.editorControl1.Document = null;
+            this.editorControl1.Name = "editorControl1";
+            this.editorControl1.Rtc = null;
+            // 
             // tabPage10
             // 
             this.tabPage10.Controls.Add(this.rtcControl1);
@@ -248,12 +259,24 @@
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
+            // rtcControl1
+            // 
+            resources.ApplyResources(this.rtcControl1, "rtcControl1");
+            this.rtcControl1.Name = "rtcControl1";
+            this.rtcControl1.Rtc = null;
+            // 
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.laserControl1);
             resources.ApplyResources(this.tabPage8, "tabPage8");
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // laserControl1
+            // 
+            resources.ApplyResources(this.laserControl1, "laserControl1");
+            this.laserControl1.Laser = null;
+            this.laserControl1.Name = "laserControl1";
             // 
             // tabPage5
             // 
@@ -275,6 +298,18 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.markerControl1);
             // 
+            // offsetControl1
+            // 
+            resources.ApplyResources(this.offsetControl1, "offsetControl1");
+            this.offsetControl1.Marker = null;
+            this.offsetControl1.Name = "offsetControl1";
+            // 
+            // markerControl1
+            // 
+            resources.ApplyResources(this.markerControl1, "markerControl1");
+            this.markerControl1.Marker = null;
+            this.markerControl1.Name = "markerControl1";
+            // 
             // tabPage9
             // 
             this.tabPage9.Controls.Add(this.splitContainer4);
@@ -295,12 +330,36 @@
             // 
             this.splitContainer4.Panel2.Controls.Add(this.rtcDOUserControl1);
             // 
+            // rtcDIUserControl1
+            // 
+            this.rtcDIUserControl1.DIExt1 = null;
+            this.rtcDIUserControl1.DILaserPort = null;
+            resources.ApplyResources(this.rtcDIUserControl1, "rtcDIUserControl1");
+            this.rtcDIUserControl1.Name = "rtcDIUserControl1";
+            this.rtcDIUserControl1.Rtc = null;
+            // 
+            // rtcDOUserControl1
+            // 
+            resources.ApplyResources(this.rtcDOUserControl1, "rtcDOUserControl1");
+            this.rtcDOUserControl1.DOExt1 = null;
+            this.rtcDOUserControl1.DOExt2 = null;
+            this.rtcDOUserControl1.DOLaserPort = null;
+            this.rtcDOUserControl1.Name = "rtcDOUserControl1";
+            this.rtcDOUserControl1.Rtc = null;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.manualUserControl1);
             resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // manualUserControl1
+            // 
+            resources.ApplyResources(this.manualUserControl1, "manualUserControl1");
+            this.manualUserControl1.Laser = null;
+            this.manualUserControl1.Name = "manualUserControl1";
+            this.manualUserControl1.Rtc = null;
             // 
             // tabPage7
             // 
@@ -309,12 +368,42 @@
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // remoteUserControl1
+            // 
+            resources.ApplyResources(this.remoteUserControl1, "remoteUserControl1");
+            this.remoteUserControl1.Marker = null;
+            this.remoteUserControl1.Name = "remoteUserControl1";
+            this.remoteUserControl1.Remote = null;
+            // 
             // tabPage11
             // 
             this.tabPage11.Controls.Add(this.powerMeterControl1);
             resources.ApplyResources(this.tabPage11, "tabPage11");
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // powerMeterControl1
+            // 
+            resources.ApplyResources(this.powerMeterControl1, "powerMeterControl1");
+            this.powerMeterControl1.Laser = null;
+            this.powerMeterControl1.Name = "powerMeterControl1";
+            this.powerMeterControl1.PowerMeter = null;
+            // 
+            // tabPage12
+            // 
+            this.tabPage12.Controls.Add(this.powerMapControl1);
+            resources.ApplyResources(this.tabPage12, "tabPage12");
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // powerMapControl1
+            // 
+            this.powerMapControl1.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.powerMapControl1, "powerMapControl1");
+            this.powerMapControl1.Laser = null;
+            this.powerMapControl1.Name = "powerMapControl1";
+            this.powerMapControl1.PowerMeter = null;
+            this.powerMapControl1.Rtc = null;
             // 
             // imageList1
             // 
@@ -351,6 +440,17 @@
             this.imageList1.Images.SetKeyName(28, "RS-232 Male.png");
             this.imageList1.Images.SetKeyName(29, "bar_chart_30px.png");
             this.imageList1.Images.SetKeyName(30, "Graph2.png");
+            this.imageList1.Images.SetKeyName(31, "Graph.png");
+            this.imageList1.Images.SetKeyName(32, "line_chart_24px.png");
+            this.imageList1.Images.SetKeyName(33, "line_chart_26px.png");
+            this.imageList1.Images.SetKeyName(34, "stocks_24px.png");
+            this.imageList1.Images.SetKeyName(35, "stocks_32px.png");
+            // 
+            // logControl1
+            // 
+            this.logControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.logControl1, "logControl1");
+            this.logControl1.Name = "logControl1";
             // 
             // splitContainer5
             // 
@@ -364,6 +464,22 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.penControl1);
+            // 
+            // treeViewControl1
+            // 
+            this.treeViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.treeViewControl1, "treeViewControl1");
+            this.treeViewControl1.Document = null;
+            this.treeViewControl1.Name = "treeViewControl1";
+            this.treeViewControl1.Rtc = null;
+            this.treeViewControl1.View = null;
+            // 
+            // penControl1
+            // 
+            this.penControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.penControl1, "penControl1");
+            this.penControl1.Document = null;
+            this.penControl1.Name = "penControl1";
             // 
             // tlsTop2
             // 
@@ -845,7 +961,6 @@
             this.toolStripStatusLabel2,
             this.lblProcessTime,
             this.toolStripStatusLabel5,
-            this.pgbPower,
             this.lblPowerWatt,
             this.toolStripStatusLabel11,
             this.lblFileName,
@@ -892,16 +1007,9 @@
             resources.ApplyResources(this.toolStripStatusLabel5, "toolStripStatusLabel5");
             this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
             // 
-            // pgbPower
-            // 
-            this.pgbPower.AutoToolTip = true;
-            this.pgbPower.Maximum = 50;
-            this.pgbPower.Name = "pgbPower";
-            resources.ApplyResources(this.pgbPower, "pgbPower");
-            this.pgbPower.Step = 1;
-            // 
             // lblPowerWatt
             // 
+            this.lblPowerWatt.AutoToolTip = true;
             resources.ApplyResources(this.lblPowerWatt, "lblPowerWatt");
             this.lblPowerWatt.Name = "lblPowerWatt";
             // 
@@ -1062,6 +1170,14 @@
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // propertyGridControl1
+            // 
+            resources.ApplyResources(this.propertyGridControl1, "propertyGridControl1");
+            this.propertyGridControl1.Document = null;
+            this.propertyGridControl1.Name = "propertyGridControl1";
+            this.propertyGridControl1.SelecteObject = null;
+            this.propertyGridControl1.View = null;
+            // 
             // splitter1
             // 
             this.splitter1.BackColor = System.Drawing.SystemColors.Control;
@@ -1093,106 +1209,6 @@
             resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // editorControl1
-            // 
-            this.editorControl1.AllowDrop = true;
-            resources.ApplyResources(this.editorControl1, "editorControl1");
-            this.editorControl1.Document = null;
-            this.editorControl1.Name = "editorControl1";
-            this.editorControl1.Rtc = null;
-            // 
-            // rtcControl1
-            // 
-            resources.ApplyResources(this.rtcControl1, "rtcControl1");
-            this.rtcControl1.Name = "rtcControl1";
-            this.rtcControl1.Rtc = null;
-            // 
-            // laserControl1
-            // 
-            resources.ApplyResources(this.laserControl1, "laserControl1");
-            this.laserControl1.Laser = null;
-            this.laserControl1.Name = "laserControl1";
-            // 
-            // offsetControl1
-            // 
-            resources.ApplyResources(this.offsetControl1, "offsetControl1");
-            this.offsetControl1.Marker = null;
-            this.offsetControl1.Name = "offsetControl1";
-            // 
-            // markerControl1
-            // 
-            resources.ApplyResources(this.markerControl1, "markerControl1");
-            this.markerControl1.Marker = null;
-            this.markerControl1.Name = "markerControl1";
-            // 
-            // rtcDIUserControl1
-            // 
-            this.rtcDIUserControl1.DIExt1 = null;
-            this.rtcDIUserControl1.DILaserPort = null;
-            resources.ApplyResources(this.rtcDIUserControl1, "rtcDIUserControl1");
-            this.rtcDIUserControl1.Name = "rtcDIUserControl1";
-            this.rtcDIUserControl1.Rtc = null;
-            // 
-            // rtcDOUserControl1
-            // 
-            resources.ApplyResources(this.rtcDOUserControl1, "rtcDOUserControl1");
-            this.rtcDOUserControl1.DOExt1 = null;
-            this.rtcDOUserControl1.DOExt2 = null;
-            this.rtcDOUserControl1.DOLaserPort = null;
-            this.rtcDOUserControl1.Name = "rtcDOUserControl1";
-            this.rtcDOUserControl1.Rtc = null;
-            // 
-            // manualUserControl1
-            // 
-            resources.ApplyResources(this.manualUserControl1, "manualUserControl1");
-            this.manualUserControl1.Laser = null;
-            this.manualUserControl1.Name = "manualUserControl1";
-            this.manualUserControl1.Rtc = null;
-            // 
-            // remoteUserControl1
-            // 
-            resources.ApplyResources(this.remoteUserControl1, "remoteUserControl1");
-            this.remoteUserControl1.Marker = null;
-            this.remoteUserControl1.Name = "remoteUserControl1";
-            this.remoteUserControl1.Remote = null;
-            // 
-            // powerMeterControl1
-            // 
-            resources.ApplyResources(this.powerMeterControl1, "powerMeterControl1");
-            this.powerMeterControl1.Laser = null;
-            this.powerMeterControl1.Name = "powerMeterControl1";
-            this.powerMeterControl1.PowerMeter = null;
-            // 
-            // logControl1
-            // 
-            this.logControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.logControl1, "logControl1");
-            this.logControl1.Name = "logControl1";
-            // 
-            // treeViewControl1
-            // 
-            this.treeViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.treeViewControl1, "treeViewControl1");
-            this.treeViewControl1.Document = null;
-            this.treeViewControl1.Name = "treeViewControl1";
-            this.treeViewControl1.Rtc = null;
-            this.treeViewControl1.View = null;
-            // 
-            // penControl1
-            // 
-            this.penControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.penControl1, "penControl1");
-            this.penControl1.Document = null;
-            this.penControl1.Name = "penControl1";
-            // 
-            // propertyGridControl1
-            // 
-            resources.ApplyResources(this.propertyGridControl1, "propertyGridControl1");
-            this.propertyGridControl1.Document = null;
-            this.propertyGridControl1.Name = "propertyGridControl1";
-            this.propertyGridControl1.SelecteObject = null;
-            this.propertyGridControl1.View = null;
             // 
             // treeViewBlockControl1
             // 
@@ -1233,6 +1249,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.tabPage11.ResumeLayout(false);
+            this.tabPage12.ResumeLayout(false);
             this.splitContainer5.Panel1.ResumeLayout(false);
             this.splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
@@ -1392,6 +1409,7 @@
         private SpiralLab.Sirius2.Winforms.UI.PowerMeterControl powerMeterControl1;
         private System.Windows.Forms.ToolStripStatusLabel lblPowerWatt;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel11;
-        private System.Windows.Forms.ToolStripProgressBar pgbPower;
+        private System.Windows.Forms.TabPage tabPage12;
+        private SpiralLab.Sirius2.Winforms.UI.PowerMapControl powerMapControl1;
     }
 }

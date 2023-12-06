@@ -74,6 +74,7 @@
     - Coherent PowerMax
     - Thorlabs (by OPM)
     - Ophir (by StarLab)
+ - Support powermap table for compensate output laser power.
  - Support remote controls.
     - TCP/IP communication
     - Serial(RS-232) communication
@@ -142,13 +143,18 @@
  - 2023 Copyright to (c)SpiralLAB. All rights reserved. 
  - Homepage: http://spirallab.co.kr
  - Email: <a href="mailto:hcchoi@spirallab.co.kr">hcchoi@spirallab.co.kr</a> 
- - Evaluation copy mode would be activated during 30mins without license
+ - Evaluation copy mode would be activated during 30 mins without license
  
 
 ----
 
 
 **7. Version history**
+
+* 2023.12.6 v.1.12.945
+  - added) power map with mapping, verify, compensate
+  - added) power map demo project
+  - fixed) ILaserPowerControl interface for powermap
 
 * 2023.11.23 v.1.11.920
   - added) support various powermeters

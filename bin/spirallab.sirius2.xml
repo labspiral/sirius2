@@ -321,6 +321,14 @@
             Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "correction") <br/>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Config.PowerMapPath">
+            <summary>
+            Powermap path
+            </summary>
+            <remarks>
+            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "powermap") <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Config.IsLogEnable">
             <summary>
             Enable(or disable) logging
@@ -485,6 +493,25 @@
             <remarks>
             Default: 1 <br/>
             Used with <c>MeasurementChannels.LaserOn</c> channel <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Config.PowerMapHoldTimeMs">
+            <summary>
+            Hold time (msec) for power mapping/verification/compensation
+            </summary>
+            <remarks>
+            Used last measured laser output power after this time period. <br/>
+            Default: 5000ms (5secs) <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Config.PowerMapThreshold">
+            <summary>
+            Threshold percentage(%) for power mapping/verification/compensation
+            </summary>
+            <remarks>
+            Error power(W) = Target power - measured power <br/>
+            Range: 0~100% <br/>
+            Default: 5% <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Config.DIOBitMask">
@@ -2077,6 +2104,12 @@
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.LaserType">
             <inheritdoc/>  
         </member>
+        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.PowerMap">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.IsCompensated">
+            <inheritdoc/>  
+        </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.Serial">
             <summary>
             SerialPort instance
@@ -2368,7 +2401,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.CtlReset">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.CtlPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.CtlPower(System.Double,System.String)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.ListBegin">
@@ -2377,7 +2410,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.ListEnd">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.ListPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.ListPower(System.Double,System.String)">
             <inheritdoc/>  
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision">
@@ -2561,6 +2594,12 @@
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.LaserType">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.PowerMap">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.Serial">
@@ -2854,7 +2893,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.CtlGuide(System.Boolean)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.CtlPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.CtlPower(System.Double,System.String)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.ListBegin">
@@ -2863,7 +2902,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.ListEnd">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.ListPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.ListPower(System.Double,System.String)">
             <inheritdoc/>  
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.CoherentAviaLX">
@@ -2875,6 +2914,12 @@
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.LaserType">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.PowerMap">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.Serial">
@@ -3111,7 +3156,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.CtlReset">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.CtlPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.CtlPower(System.Double,System.String)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.ListBegin">
@@ -3120,7 +3165,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.ListEnd">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.ListPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.ListPower(System.Double,System.String)">
             <inheritdoc/>  
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries">
@@ -3132,6 +3177,12 @@
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.LaserType">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.PowerMap">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.MinDutyCycle">
@@ -3225,7 +3276,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.CtlReset">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.CtlPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.CtlPower(System.Double,System.String)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.ListBegin">
@@ -3234,7 +3285,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.ListEnd">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.ListPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.ListPower(System.Double,System.String)">
             <inheritdoc/>  
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.IPGYLPN">
@@ -3246,6 +3297,12 @@
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.LaserType">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.PowerMap">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.Serial">
@@ -3736,7 +3793,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.CtlGuide(System.Boolean)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.CtlPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.CtlPower(System.Double,System.String)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.ListBegin">
@@ -3745,7 +3802,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.ListEnd">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.ListPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.ListPower(System.Double,System.String)">
             <inheritdoc/>  
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.IPGYLPTypeD">
@@ -3757,6 +3814,12 @@
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.LaserType">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.PowerMap">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.Serial">
@@ -4141,7 +4204,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.CtlGuide(System.Boolean)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.CtlPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.CtlPower(System.Double,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.ListBegin">
@@ -4150,7 +4213,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.ListEnd">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.ListPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.ListPower(System.Double,System.String)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.IPGYLPTypeE">
@@ -4162,6 +4225,12 @@
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.LaserType">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.PowerMap">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.Serial">
@@ -4585,7 +4654,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.CtlGuide(System.Boolean)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.CtlPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.CtlPower(System.Double,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.ListBegin">
@@ -4594,7 +4663,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.ListEnd">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.ListPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.ListPower(System.Double,System.String)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.IPGYLPULPN">
@@ -4606,6 +4675,12 @@
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.LaserType">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.PowerMap">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.Serial">
@@ -4953,7 +5028,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.CtlGuide(System.Boolean)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.CtlPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.CtlPower(System.Double,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.ListBegin">
@@ -4962,7 +5037,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.ListEnd">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.ListPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.ListPower(System.Double,System.String)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.JPTTypeE">
@@ -4974,6 +5049,12 @@
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.LaserType">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.PowerMap">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.Serial">
@@ -5184,7 +5265,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.CtlGuide(System.Boolean)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.CtlPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.CtlPower(System.Double,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.ListBegin">
@@ -5193,7 +5274,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.ListEnd">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.ListPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.ListPower(System.Double,System.String)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.LaserBase">
@@ -5325,6 +5406,12 @@
         <member name="P:SpiralLab.Sirius2.Laser.LaserVirtual.LaserType">
             <inheritdoc/>  
         </member>
+        <member name="P:SpiralLab.Sirius2.Laser.LaserVirtual.PowerMap">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.LaserVirtual.IsCompensated">
+            <inheritdoc/>  
+        </member>
         <member name="P:SpiralLab.Sirius2.Laser.LaserVirtual.IsGuideOn">
             <inheritdoc/>  
         </member>
@@ -5432,7 +5519,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.LaserVirtual.CtlGuide(System.Boolean)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.LaserVirtual.CtlPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.LaserVirtual.CtlPower(System.Double,System.String)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserVirtual.ListBegin">
@@ -5441,7 +5528,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.LaserVirtual.ListEnd">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.LaserVirtual.ListPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.LaserVirtual.ListPower(System.Double,System.String)">
             <inheritdoc/>  
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX">
@@ -5454,6 +5541,12 @@
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.LaserType">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.PowerMap">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.Serial">
@@ -5683,7 +5776,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.CtlGuide(System.Boolean)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.CtlPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.CtlPower(System.Double,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.ListBegin">
@@ -5692,7 +5785,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.ListEnd">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.ListPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.ListPower(System.Double,System.String)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO">
@@ -5702,6 +5795,12 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.LaserType">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.PowerMap">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.Serial">
@@ -6095,7 +6194,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.CtlGuide(System.Boolean)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.CtlPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.CtlPower(System.Double,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.ListBegin">
@@ -6104,7 +6203,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.ListEnd">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.ListPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.ListPower(System.Double,System.String)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo">
@@ -6116,6 +6215,12 @@
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.LaserType">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.PowerMap">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.Serial">
@@ -6392,7 +6497,7 @@
             EventCodes
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.CtlPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.CtlPower(System.Double,System.String)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.ListBegin">
@@ -6401,7 +6506,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.ListEnd">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.ListPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.ListPower(System.Double,System.String)">
             <inheritdoc/>  
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.SPIG4">
@@ -6413,6 +6518,12 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SPIG4.LaserType">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.SPIG4.PowerMap">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.SPIG4.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SPIG4.Serial">
@@ -6584,7 +6695,7 @@
             <param name="code"></param>
             <returns></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.SPIG4.CtlPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.SPIG4.CtlPower(System.Double,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SPIG4.ListBegin">
@@ -6593,7 +6704,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.SPIG4.ListEnd">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.SPIG4.ListPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.SPIG4.ListPower(System.Double,System.String)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon">
@@ -6605,6 +6716,12 @@
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.LaserType">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.PowerMap">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.Serial">
@@ -6909,7 +7026,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.CtlGuide(System.Boolean)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.CtlPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.CtlPower(System.Double,System.String)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.ListBegin">
@@ -6918,7 +7035,7 @@
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.ListEnd">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.ListPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.ListPower(System.Double,System.String)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.LaserTypes">
@@ -7345,16 +7462,69 @@
             Used with control output laser power within laser source
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.CtlPower(System.Double)">
+        <member name="P:SpiralLab.Sirius2.Laser.ILaserPowerControl.PowerMap">
+            <summary>
+            Assigned <c>IPowerMap</c> for compensated output power
+            </summary>
+            <remarks>
+            If <c>IsCompensated</c> is <c>True</c>, every target output power (W) by <c>CtlPower</c>, <c>ListPower</c> are compensated. <br/>
+            Tried to find target category and x watt by <c>IPowerMap.Compensate</c>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.ILaserPowerControl.IsCompensated">
+            <summary>
+            Enable(or disable) compensated output or not
+            </summary>
+            <remarks>
+            If <c>IsCompensated</c> is <c>True</c>, every target output power (W) by <c>CtlPower</c>, <c>ListPower</c> are compensated. <br/>
+            Tried to find target category and x watt by <c>IPowerMap.Compensate</c>. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.CtlPower(System.Double,System.String)">
             <summary>
             Vary output laser power at immediately
+            <code>
+            var laser = LaserFactory.Create...
+            laser.Initialize();
+            ...
+            var powerMap = PowerMapFactory.CreateMapDefault...
+            powerMap.Update("50000", 2, 1);
+            powerMap.Update("50000", 4, 3.1);
+            powerMap.Update("50000", 6, 5.2);
+            powerMap.Update("50000", 8, 7.4);
+            powerMap.Update("50000", 10, 9.5);
+            //or PowerMapSerializer.Open("filename", powerMap);
+            ...
+            laser.PowerMap = powerMap;
+            laser.IsCompensated = true;
+            ...
+            laser.CtlPower(xWatt, "50000");
+            </code>
             </summary>
-            <param name="targetWatt">Target watt (W)</param>
+            <param name="targetWatt">Target x watt (W)</param>
+            <param name="category">Target category name.<br/>Used with <c>IPowerMap</c> to search compensated y value if <c>IsCompensated</c> is <c>True</c> only.<br/></param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.ListPower(System.Double)">
+        <member name="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.ListPower(System.Double,System.String)">
             <summary>
             List vary output laser power
+            <code>
+            var laser = LaserFactory.Create...
+            laser.Initialize();
+            ...
+            var powerMap = PowerMapFactory.CreateMapDefault...
+            powerMap.Update("50000", 2, 1);
+            powerMap.Update("50000", 4, 3.1);
+            powerMap.Update("50000", 6, 5.2);
+            powerMap.Update("50000", 8, 7.4);
+            powerMap.Update("50000", 10, 9.5);
+            //or PowerMapSerializer.Open("filename", powerMap);
+            ...
+            laser.PowerMap = powerMap;
+            laser.IsCompensated = true;
+            ...
+            laser.ListPower(xWatt, "50000");
+            </code>
             <code>
             bool success = true;
             success &amp;= rtc.ListBegin();
@@ -7375,7 +7545,8 @@
             <remarks>
             Consider as its working within async threads. <br/>
             </remarks>
-            <param name="targetWatt">Target watt (W)</param>
+            <param name="targetWatt">Target x watt (W)</param>
+            <param name="category">Target category name.<br/>Used with <c>IPowerMap</c> to search compensated y value if <c>IsCompensated</c> is <c>True</c> only.<br/></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.src.laser.impl.laserbase">
@@ -8148,6 +8319,692 @@
             <param name="right"><c>Offset</c></param>
             <returns>True(Not equal), False(Equal)</returns>
         </member>
+        <member name="T:SpiralLab.Sirius2.PowerMap.PowerMapFactory">
+            <summary>
+            PowerMapFactory
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapFactory.CreatePowerMapDefault(System.Int32,System.String)">
+            <summary>
+            Create PowerMap (default version)
+            </summary>
+            <param name="index">Index (0,1,2,...)</param>
+            <param name="name">Name</param>
+            <returns><c>IPowerMap</c></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.PowerMap.IPowerMap">
+            <summary>
+            IPowerMap interface
+            <code>
+            var rtc = ScannerFactory.CreateRtc6(0, ...);
+            rtc.Initialize();
+            var laser = LaserFactor.CreateVirtualAnalog(0, 10, 1);
+            laser.Scanner = rtc; 
+            laser.Initialize();
+            var powerMeter = PowerMeterFactory.CreateOphirPhotonics(0, "SERIALNO");
+            powerMeter.Initialize();
+            var powerMap = PowerMapFactory.CreateMap();
+            powerMap.Update("50000", 2, 1);
+            powerMap.Update("50000", 4, 3.1);
+            powerMap.Update("50000", 6, 5.2);
+            powerMap.Update("50000", 8, 7.4);
+            powerMap.Update("50000", 10, 9.5);
+            //or powerMapControl.CtlMapping( new string[] { "50000" }, 0, 10, 5, 5000, 5);
+            ...
+            powerMap.Interpolate("50000", 5, var out xWatt);
+            Laser.CtlPower(xWatt);
+            ...
+            </code>
+            <code>
+            X(input watt), Y(output or measured watt) table for power map
+                |
+             Y  |         __________
+                |       _/ Category \_...
+             P  |      /
+             o  |    _/            _...
+             w  |       __________/ 
+             e  |      / Category
+             r  |     /
+            (W) |   _/
+                |__________________________
+                       X Power (W)
+            </code>
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnOpened">
+            <summary>
+            Event for power mapping file has opened
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnSaved">
+            <summary>
+            Event for power mapping file has saved
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnMappingStarted">
+            <summary>
+            Event for power mapping has started
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnMappingProgress">
+            <summary>
+            Event for power mapping is progressing
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnMappingFailed">
+            <summary>
+            Event for power mapping has failed
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnMappingFinished">
+            <summary>
+            Event for power mapping has finished
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnVerifyStarted">
+            <summary>
+            Event for power verify has started
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnVerifyProgress">
+            <summary>
+            Event for power verify is progressing
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnVerifyFailed">
+            <summary>
+            Event for power verify has failed
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnVerifyFinished">
+            <summary>
+            Event for power verify has finished
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnCompensateStarted">
+            <summary>
+            Event for power compensate has started
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnCompensateProgress">
+            <summary>
+            Event for power compensate is progressing
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnCompensateFailed">
+            <summary>
+            Event for power compensate has failed
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnCompensateFinished">
+            <summary>
+            Event for power compensate has finished
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.Index">
+            <summary>
+            Indentifier
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.SyncRoot">
+            <summary>
+            Object for synchronization
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.FileName">
+            <summary>
+            FileName
+            </summary>
+            <remarks>
+            Used by internally. Do Not edit. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.PowerMeter">
+            <summary>
+            Assigned <c>IPowerMeter</c>
+            </summary>
+            <remarks>
+            To open powermap, try <c>PowerMapSerializer.Open("filename", powerMap)</c> <br/>
+            To save powermap, try <c>PowerMapSerializer.Save("filename", powerMap)</c> <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.Laser">
+            <summary>
+            Assigned <c>ILaser</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.Rtc">
+            <summary>
+            Assigned <c>IRtc</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsReady">
+            <summary>
+            Ready status
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsBusy">
+            <summary>
+            Busy (or progressing) status
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsError">
+            <summary>
+            Error status
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.InternalData">
+            <summary>
+            Internal data
+            </summary>
+            <remarks>
+            Key: Category <br/>
+            Value: (Key: X-watt, Value: Y-watt) <br/>
+            Opened by <c>PowerMapSerializer.Open(fileName, this)</c> <br/>
+            Saved by <c>PowerMapSerializer.Save(fileName, this)</c> <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.Tag">
+            <summary>
+            User data
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.Categories(System.String[]@)">
+            <summary>
+            Query categories
+            </summary>
+            <param name="categories">Array of categories</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.Clear(System.String)">
+            <summary>
+            Clear category
+            </summary>
+            <param name="category">Category (clear all by default)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.Reset1to1(System.String,System.Double)">
+            <summary>
+            Reset category as 1:1 map table
+            <code>
+                |                  .
+             Y  |                .
+                |              .
+             P  |            .
+             o  |          .   
+             w  |        .
+             e  |      .
+             r  |    .
+            (W) |  .
+                |._____________________
+                       X Power (W)
+            </code>
+            </summary>
+            <param name="category">Category</param>
+            <param name="maxXWatt">Max x power (W)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.Update(System.String,System.Double,System.Double)">
+            <summary>
+            Update lookup table data (category, x value, y (or measured) value)
+            </summary>
+            <param name="category">Category</param>
+            <param name="xWatt">X watt (W)</param>
+            <param name="yWatt">Y(or measured) power (W)</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.Query(System.String,System.Double,System.Double@)">
+            <summary>
+            Query lookup table (category, x watt, y watt)
+            </summary>
+            <param name="category">Category</param>
+            <param name="xWatt">X watt (W)</param>
+            <param name="yWatt">Y(or measured) power (W)</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.MinMaxY(System.String,System.Double@,System.Double@)">
+            <summary>
+            Query max y (or measured) power (W)
+            </summary>
+            <param name="category">Category</param>
+            <param name="minYWatt">Min y(or measured) power (W)</param>
+            <param name="maxYWatt">Max y(or measured) power (W)</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.MinMaxX(System.String,System.Double@,System.Double@)">
+            <summary>
+            Query min, max x watt value
+            </summary>
+            <param name="category">Category</param>
+            <param name="minXWatt">Min. x watt (W)</param>
+            <param name="maxXWatt">Max. x watt (W)</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.Compensate(System.String,System.Double,System.Double@)">
+            <summary>
+            Query compensated(or calculated) x value by target y value at specific category
+            </summary>
+            <param name="category">Category</param>
+            <param name="targetYWatt">Target y watt (W)</param>
+            <param name="xWatt">Compensated x watt (W)</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.CtlMapping(System.String[],System.Double[])">
+            <summary>
+            Start power mapping
+            <code>
+                |                   Category
+             Y  |                   _____
+                |                  /
+             P  |             ____/
+             o  |           _/     
+             w  |        __/
+             e  |       /
+             r  |     _/
+            (W) |  __/
+                |_/________________________
+                       X Power (W)
+            </code>
+            </summary>
+            <remarks>
+            Do laser on by each watt (x: input) and measure output power (y: output). <br/>
+            Consider as its working within async threads. <br/>
+            Update measured output power value(W) into <c>IPowerMap</c>. <br/>
+            Used with <c>IPowerMeter</c>, <c>ILaser</c>, <c>IRtc</c>. Assign these values before start. <br/>
+            Used with <c>Config.PowerMapHoldTimeMs</c>, <c>Config.PowerMapThreshold</c> values. <br/>
+            </remarks>
+            <param name="categories"></param>
+            <param name="xWatts">Array of x watts (W)</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.CtlVerify(System.Collections.Generic.KeyValuePair{System.String,System.Double}[])">
+            <summary>
+            Start power verification
+            <code>
+                |                   Category
+             Y  |                   _____
+                |                  /
+             P  |             ____/
+             o  |           _/     
+             w  >........__.
+             e  |       /  . 
+             r  |     _/   .
+            (W) |  __/     . 
+                |_/________v________________
+                       X Power (W)
+            </code>
+            </summary>
+            <remarks>
+            Do laser on and measure output power by each category and target watt (y). <br/>
+            Consider as its working within async threads. <br/>
+            Passed(or succeeded) if measured laser output power value(W) in range of threshold percent. <br/>
+            Used with <c>IPowerMeter</c>, <c>ILaser</c>, <c>IRtc</c>. Assign these values before start. <br/>
+            Used with <c>Config.PowerMapHoldTimeMs</c>, <c>Config.PowerMapThreshold</c> values. <br/>
+            </remarks>
+            <param name="categoryAndYWatts">Array of category and target y watt(W)</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.CtlCompensate(System.Collections.Generic.KeyValuePair{System.String,System.Double}[])">
+            <summary>
+            Start power compensation
+            <code>
+                |                   Category
+             Y  |          |        _____
+                |          |       /
+             P  |          v  ____/
+             o  |           _/     
+             w  >........__.  &lt;---- Compensate 
+             e  |       /  . 
+             r  |     _/   .
+            (W) |  __/     . 
+                |_/________v________________
+                       X Power (W)
+            </code>
+            </summary>
+            <remarks>
+            Do laser on and measure output power each category and watts. <br/>
+            Consider as its working within async threads. <br/>
+            Passed(or succeeded) if measured laser output power value(W) in range of threshold percent. <br/>
+            Failed(or out of range threshold percent), then retry(update <c>IPowerMap</c> again) 2nd run with whether in-range power or not. <br/>
+            Used with <c>IPowerMeter</c>, <c>ILaser</c>, <c>IRtc</c>. Assign these values before start. <br/>
+            Used with <c>Config.PowerMapHoldTimeMs</c>, <c>Config.PowerMapThreshold</c> values. <br/>
+            </remarks>
+            <param name="categoryAndYWatts">Array of category and target y watt(W)</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.CtlStop">
+            <summary>
+            Stop (power mapping/veriification/ compensation)
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.CtlReset">
+            <summary>
+            Reset error status
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyMappingOpened">
+            <summary>
+            Notify power mapping file has opened
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyMappingSaved">
+            <summary>
+            Notify power mapping file has saved
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyMappingStarted">
+            <summary>
+            Notify power mapping has started
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyMappingProgress">
+            <summary>
+            Notify power mapping is progressing
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyMappingFailed">
+            <summary>
+            Notify power mapping has failied
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyMappingFinished">
+            <summary>
+            Notify power mapping has finished
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyVerifyStarted">
+            <summary>
+            Notify power verify has started
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyVerifyProgress">
+            <summary>
+            Notify power verify is progressing
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyVerifyFailed">
+            <summary>
+            Notify power verify has failed
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyVerifyFinished">
+            <summary>
+            Notify power verify has finished
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyCompensateStarted">
+            <summary>
+            Notify power compensate has started
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyCompensateProgress">
+            <summary>
+            Notify power compensate is progressing
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyCompensateFailed">
+            <summary>
+            Notify power compensate has failed
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyCompensateFinished">
+            <summary>
+            Notify power compensate has finished
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.PowerMap.PowerMapBase">
+            <summary>
+            PowerMap Base  
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.PowerMapBase.OnOpened">
+            <inheritdoc/>          
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.PowerMapBase.OnSaved">
+            <inheritdoc/>          
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.PowerMapBase.OnMappingStarted">
+            <inheritdoc/>          
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.PowerMapBase.OnMappingProgress">
+            <inheritdoc/>  
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.PowerMapBase.OnMappingFailed">
+            <inheritdoc/>  
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.PowerMapBase.OnMappingFinished">
+            <inheritdoc/>  
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.PowerMapBase.OnVerifyStarted">
+            <inheritdoc/>  
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.PowerMapBase.OnVerifyProgress">
+            <inheritdoc/>  
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.PowerMapBase.OnVerifyFailed">
+            <inheritdoc/>  
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.PowerMapBase.OnVerifyFinished">
+            <inheritdoc/>  
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.PowerMapBase.OnCompensateStarted">
+            <inheritdoc/>  
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.PowerMapBase.OnCompensateProgress">
+            <inheritdoc/>  
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.PowerMapBase.OnCompensateFailed">
+            <inheritdoc/>  
+        </member>
+        <member name="E:SpiralLab.Sirius2.PowerMap.PowerMapBase.OnCompensateFinished">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.SyncRoot">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.Index">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.Name">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.FileName">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.PowerMeter">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.Laser">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.Rtc">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.IsReady">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.IsBusy">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.IsError">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.InternalData">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.Location">
+            <summary>
+            Scanner x,y location 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.Tag">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.#ctor(System.Int32,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Index (0,1,2,...)</param>
+            <param name="name">Name</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.Categories(System.String[]@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.Clear(System.String)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.Reset1to1(System.String,System.Double)">
+            <inheritdoc/> 
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.Update(System.String,System.Double,System.Double)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.Query(System.String,System.Double,System.Double@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.MinMaxY(System.String,System.Double@,System.Double@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.MinMaxX(System.String,System.Double@,System.Double@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.Compensate(System.String,System.Double,System.Double@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.CtlMapping(System.String[],System.Double[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.CtlVerify(System.Collections.Generic.KeyValuePair{System.String,System.Double}[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.CtlCompensate(System.Collections.Generic.KeyValuePair{System.String,System.Double}[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.CtlStop">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.CtlReset">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyMappingOpened">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyMappingSaved">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyMappingStarted">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyMappingProgress">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyMappingFailed">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyMappingFinished">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyVerifyStarted">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyVerifyProgress">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyVerifyFailed">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyVerifyFinished">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyCompensateStarted">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyCompensateProgress">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyCompensateFailed">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyCompensateFinished">
+            <inheritdoc/>  
+        </member>
+        <member name="T:SpiralLab.Sirius2.PowerMap.PowerMapDefault">
+            <summary>
+            PowerMapDefault  
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapDefault.#ctor(System.Int32,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Index (0,1,2,...)</param>
+            <param name="name">Name</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapDefault.CtlMapping(System.String[],System.Double[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapDefault.DoPowerMapping(System.String[],System.Double[])">
+            <summary>
+            Routine for power mapping
+            </summary>
+            <param name="categories"></param>
+            <param name="xWatts">Array of x watt(W)</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapDefault.CtlVerify(System.Collections.Generic.KeyValuePair{System.String,System.Double}[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapDefault.DoPowerVerify(System.Collections.Generic.KeyValuePair{System.String,System.Double}[])">
+            <summary>
+            Routine for power verification
+            </summary>
+            <param name="categoryAndYWatts">Array of key(category) and value(target watt(W))</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapDefault.CtlCompensate(System.Collections.Generic.KeyValuePair{System.String,System.Double}[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapDefault.DoPowerCompensate(System.Collections.Generic.KeyValuePair{System.String,System.Double}[])">
+            <summary>
+            Routine for power compensation
+            </summary>
+            <param name="categoryAndYWatts">Array of key(category) and value(target watt(W))</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapDefault.CtlStop">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapDefault.CtlReset">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.PowerMap.PowerMapSerializer">
+            <summary>
+            Powermap serializer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapSerializer.Open(System.String,SpiralLab.Sirius2.PowerMap.IPowerMap)">
+            <summary>
+            Open <c>IPowerMap</c> from file
+            </summary>
+            <param name="mapFileName">Powermap filename</param>
+            <param name="powerMap"><c>IPowerMap</c> interface.<br/><c>IPowerMap.InternalData</c> would be replaced(or opened).</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapSerializer.Save(System.String,SpiralLab.Sirius2.PowerMap.IPowerMap)">
+            <summary>
+            Save <c>IPowerMap</c> into file
+            </summary>
+            <param name="mapFileName">Powermap filename</param>
+            <param name="powerMap"><c>IPowerMap</c> interface.<br/><c>IPowerMap.InternalData</c> would be saved.</param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.PowerMeter.PowerMeterFactory">
             <summary>
             PowerMeter factory
@@ -8268,7 +9125,14 @@
         <member name="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">
             <summary>
             IPowerMeter interface
+            <code>
+            var powerMeter = PowerMeterFactory.CreateOphirPhotonics(0, "SERIALNO");
+            powerMeter.Initialize();
+            </code>
             </summary>
+            <remarks>
+            Measuring(or monitoring) device for output laser power. <br/>
+            </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnStarted">
             <summary>
@@ -8277,7 +9141,7 @@
         </member>
         <member name="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnMeasured">
             <summary>
-            Event handler for measure with DateTime, Detected power (W)
+            Event handler for measure with DateTime, Measured power (W)
             </summary>
         </member>
         <member name="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnStopped">
@@ -8314,10 +9178,14 @@
             <summary>
             Category(or Series) name
             </summary>
+            <remarks>
+            It can be configured when <c>CtlStart</c> has called. <br/>
+            Set to 'Unknown' when <c>CtlClear</c> has called. <br/>
+            </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.DetectedPower">
+        <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.MeasuredPower">
             <summary>
-            Detected last power (W)
+            Measured last power (W)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.SamplingRateHz">
@@ -8361,10 +9229,11 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.CtlStart">
+        <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.CtlStart(System.String)">
             <summary>
             Start
             </summary>
+            <param name="category">Target(or current) category(or series)</param>
             <returns></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.CtlStop">
@@ -8393,7 +9262,7 @@
             Notify measuring
             </summary>
             <param name="dt"><c>DateTime</c></param>
-            <param name="detectedPower">Detected power (W)</param>
+            <param name="measuredPower">Measured power (W)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.NotifyStopped">
             <summary>
@@ -8443,7 +9312,7 @@
         <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.Category">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.DetectedPower">
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.MeasuredPower">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.SamplingRateHz">
@@ -8498,7 +9367,7 @@
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.Initialize">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.CtlStart">
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.CtlStart(System.String)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.CtlStop">
@@ -8574,7 +9443,7 @@
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.Initialize">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.CtlStart">
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.CtlStart(System.String)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterCoherentPowerMax.CtlStop">
@@ -8651,7 +9520,7 @@
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.Initialize">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.CtlStart">
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.CtlStart(System.String)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.CtlStop">
@@ -8720,7 +9589,7 @@
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.Initialize">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.CtlStart">
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.CtlStart(System.String)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.CtlStop">
@@ -8735,6 +9604,11 @@
         <member name="T:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual">
             <summary>
             PowerMeter Virtual
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual.Laser">
+            <summary>
+            <c>ILaser</c>
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual.#ctor(System.Double)">
@@ -8762,7 +9636,7 @@
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual.Initialize">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual.CtlStart">
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual.CtlStart(System.String)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual.CtlStop">

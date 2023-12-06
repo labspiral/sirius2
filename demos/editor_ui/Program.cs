@@ -64,7 +64,7 @@ namespace Demos
         private static void EditorForm_Shown(object sender, EventArgs e)
         {
             // Create devices 
-            EditorHelper.CreateDevices(out var rtc, out var laser, out var powerMeter, out var marker, out var remote);
+            EditorHelper.CreateDevices(out var rtc, out var laser, out var powerMeter, out var marker, out var remote, null);
 
             // Assign devices into usercontrol
             EditorForm.Rtc = rtc;
