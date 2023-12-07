@@ -87,6 +87,7 @@ namespace Demos
             }
             foreach (var category in categories)
             {
+                // For example, consider category as frequency
                 if (!double.TryParse(category, out double hz))
                 {
                     this.IsError = true;
@@ -168,9 +169,9 @@ namespace Demos
                     Logger.Log(Logger.Types.Warn, $"powermap [{this.Index}]: trying to start mapping power at target category: {category}");
                     this.Clear(category);
                     success &= PowerMeter.CtlStart(category);
+                    // For example, consider category as frequency
                     var hz = double.Parse(category);
                     success &= Rtc.CtlFrequency(hz, 2);
-
                     var sw = Stopwatch.StartNew();
                     foreach (var targetWatt in xWatts)
                     {
@@ -200,14 +201,11 @@ namespace Demos
                         double thresholdWatt = targetWatt * Config.PowerMapThreshold / 100.0f;
                         if (thresholdWatt > 0)
                         {
-                            //if (detectedWatt < targetWatt) // 출력이 더 나오는건 ㅇㅋ?
+                            if (Math.Abs(targetWatt - detectedWatt) > thresholdWatt)
                             {
-                                if (Math.Abs(targetWatt - detectedWatt) > thresholdWatt)
-                                {
-                                    Logger.Log(Logger.Types.Error, $"powermap [{this.Index}]: mapping out of range threshold: {Config.PowerMapThreshold:F1}%, target: {targetWatt:F3}W, detected: {detectedWatt:F3}W at category: {category}");
-                                    success &= false;
-                                    break;
-                                }
+                                Logger.Log(Logger.Types.Error, $"powermap [{this.Index}]: mapping out of range threshold: {Config.PowerMapThreshold:F1}%, target: {targetWatt:F3}W, detected: {detectedWatt:F3}W at category: {category}");
+                                success &= false;
+                                break;
                             }
                         }
                         success &= this.Update(category, targetWatt, detectedWatt);
@@ -269,6 +267,7 @@ namespace Demos
             }
             foreach (var kv in categoryAndYWatts)
             {
+                // For example, consider category as frequency
                 if (!double.TryParse(kv.Key, out double hz))
                 {
                     this.IsError = true;
@@ -343,15 +342,12 @@ namespace Demos
                     sw.Restart();
                     string category = kv.Key;
                     success &= PowerMeter.CtlStart(category);
-
-                    double hz = double.Parse(category);
                     double targetWatt = kv.Value;
                     double detectedWatt = 0;
-                    success &= this.Compensate(category, targetWatt, out double xWatt);
-                    if (!success)
-                        break;
-                    success &= Rtc.CtlFrequency(hz, 2); //?
-                    if (powerControl.CtlPower(xWatt, category))
+                    // For example, consider category as frequency
+                    double hz = double.Parse(category);
+                    success &= Rtc.CtlFrequency(hz, 2);
+                    if (powerControl.CtlPower(targetWatt, category))
                     {
                         success &= Rtc.CtlLaserOn();
                         do
@@ -366,7 +362,6 @@ namespace Demos
                         if (success)
                         {
                             detectedWatt = PowerMeter.MeasuredPower;
-
                             double thresholdWatt = targetWatt * Config.PowerMapThreshold / 100.0f;
                             if (Math.Abs(targetWatt - detectedWatt) < thresholdWatt)
                             {
@@ -438,6 +433,7 @@ namespace Demos
             }
             foreach (var kv in categoryAndYWatts)
             {
+                // For example, consider category as frequency
                 if (!double.TryParse(kv.Key, out double hz))
                 {
                     this.IsError = true;
@@ -503,24 +499,22 @@ namespace Demos
                 Thread.Sleep(100);
                 PowerMeter.CtlClear();
                 var sw = Stopwatch.StartNew();
-
                 var oldIsCompensated = powerControl.IsCompensated;
                 powerControl.IsCompensated = true;
+                int retryCounts = 0;
                 foreach (var kv in categoryAndYWatts)
                 {
-                    Logger.Log(Logger.Types.Warn, $"powermap ctrl[{this.Index}]: trying to start power compensate. target category: {kv.Key}");
+                    Logger.Log(Logger.Types.Warn, $"powermap [{this.Index}]: trying to start power compensate. target category: {kv.Key}");
                     sw.Restart();
                     string category = kv.Key;
                     success &= PowerMeter.CtlStart(category);
-                    double hz = double.Parse(category);
                     double targetWatt = kv.Value;
                     double detectedWatt = 0;
-                    double xWatt = 0;
-                    success &= this.Compensate(category, targetWatt, out xWatt);
-                    if (!success)
-                        break;
-                    success &= Rtc.CtlFrequency(hz, 2); //?
-                    if (powerControl.CtlPower(xWatt, category))
+                    // For example, consider category as frequency
+                    double hz = double.Parse(category);
+                    success &= Rtc.CtlFrequency(hz, 2);
+                    success &= powerControl.CtlPower(targetWatt, category);
+                    if (success)
                     {
                         success &= Rtc.CtlLaserOn();
                         do
@@ -538,37 +532,42 @@ namespace Demos
                             double thresholdWatt = targetWatt * Config.PowerMapThreshold / 100.0f;
                             if (Math.Abs(targetWatt - detectedWatt) < thresholdWatt)
                             {
-                                Logger.Log(Logger.Types.Info, $"powermap [{this.Index}]: compensate in range target: {targetWatt:F3} - detected: {detectedWatt:F3}W < threshold: {Config.PowerMapThreshold}% at category: {category}");
-                                this.NotifyCompensateProgress();
+                                if (retryCounts >= Config.PowerMapCompensateRetryCounts)
+                                {
+                                    Logger.Log(Logger.Types.Info, $"powermap [{this.Index}]: compensating but failed to retry target: {targetWatt:F3} - detected: {detectedWatt:F3}W < threshold: {Config.PowerMapThreshold}% at category: {category}");
+                                    success &= false;
+                                }
+                                else
+                                {
+                                    retryCounts = 0;
+                                    Logger.Log(Logger.Types.Info, $"powermap [{this.Index}]: compensate in range target: {targetWatt:F3} - detected: {detectedWatt:F3}W < threshold: {Config.PowerMapThreshold}% at category: {category}");
+                                    this.NotifyCompensateProgress();
+                                }
                             }
                             else
                             {
-                                success &= this.Update(category, targetWatt, detectedWatt);
-                                //retry compensate map
-                                success &= this.Compensate(category, targetWatt, out xWatt);
-                                success &= powerControl.CtlPower(xWatt, category);
-                                var sw2 = Stopwatch.StartNew();
-                                do
-                                {
-                                    if (Rtc.CtlGetStatus(RtcStatus.Aborted))
-                                    {
-                                        success &= false;
-                                        break;
-                                    }
-                                    Thread.Sleep(10);
-                                } while (sw2.ElapsedMilliseconds < Config.PowerMapHoldTimeMs);
+                                retryCounts++;
+                                Logger.Log(Logger.Types.Warn, $"powermap [{this.Index}: compensate out of range so retry. target: {targetWatt:F3} - detected: {detectedWatt}W < threshold: {Config.PowerMapThreshold}% at category: {category}");
+                                success &= powerControl.PowerMap.Compensate(category, targetWatt, out var xWatt);
                                 if (success)
                                 {
-                                    detectedWatt = PowerMeter.MeasuredPower;
-                                    if (Math.Abs(targetWatt - detectedWatt) < thresholdWatt)
+                                    success &= powerControl.CtlPower(xWatt, string.Empty);
+                                    if (success)
                                     {
-                                        Logger.Log(Logger.Types.Info, $"powermap [{this.Index}]: compensate in range target: {targetWatt:F3} - detected: {detectedWatt:F3}W < threshold: {Config.PowerMapThreshold}% by 2nd step at category: {category}");
-                                        //this.NotifyVerifyProgress(arg);
+                                        do
+                                        {
+                                            if (Rtc.CtlGetStatus(RtcStatus.Aborted))
+                                            {
+                                                success &= false;
+                                                break;
+                                            }
+                                            Thread.Sleep(10);
+                                        } while (sw.ElapsedMilliseconds < Config.PowerMapHoldTimeMs);
                                     }
-                                    else
+                                    if (success)
                                     {
-                                        Logger.Log(Logger.Types.Error, $"powermap [{this.Index}]: compensate out of range threshold: {Config.PowerMapThreshold:F1}%, target: {targetWatt:F3}W, detected: {detectedWatt:F3}W at category: {category}");
-                                        success &= false;
+                                        double retryDetectedWatt = PowerMeter.MeasuredPower;
+                                        success &= powerControl.PowerMap.Update(category, xWatt, retryDetectedWatt);
                                     }
                                 }
                             }

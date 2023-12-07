@@ -500,6 +500,7 @@
             Hold time (msec) for power mapping/verification/compensation
             </summary>
             <remarks>
+            Used with <c>IPowerMap.CtlMapping</c>, <c>IPowerMap.CtlVerify</c>, <c>IPowerMap.CtlCompensate</c> <br/>
             Used last measured laser output power after this time period. <br/>
             Default: 5000ms (5secs) <br/>
             </remarks>
@@ -509,9 +510,18 @@
             Threshold percentage(%) for power mapping/verification/compensation
             </summary>
             <remarks>
+            Used with <c>IPowerMap.CtlMapping</c>, <c>IPowerMap.CtlVerify</c>, <c>IPowerMap.CtlCompensate</c> <br/>
             Error power(W) = Target power - measured power <br/>
             Range: 0~100% <br/>
             Default: 5% <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Config.PowerMapCompensateRetryCounts">
+            <summary>
+            Retry counts for power compensation
+            </summary>
+            <remarks>
+            Used with <c>IPowerMap.CtlCompensate</c> <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Config.DIOBitMask">
