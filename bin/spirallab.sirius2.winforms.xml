@@ -13944,6 +13944,14 @@
             <param name="decimals"></param>
             <returns><c>Vector3</c></returns>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.ScriptFileBrowser">
+            <summary>
+            CorrectionFileBrowser
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.ScriptFileBrowser.InitializeDialog(System.Windows.Forms.OpenFileDialog)">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.PenColorEditor">
             <summary>
             Pen color editor
@@ -16636,6 +16644,7 @@
             </code>
             </summary>
             <remarks>
+            User can used <c>Config.OnTextConvertScriptFile</c> script file instead.
             User can register event handler to convert data of <c>ITextConvertible</c>. <br/>
             Event will be fired when <c>ITextConvertable.IsConvertText</c> is <c>True</c> only. <br/>
             Event will be fired whenever do <c>IMarkerable.Mark</c> or <c>IEntity.Regen</c>. <br/>
@@ -16645,6 +16654,94 @@
             <c>IMarker</c> can be <c>MarkerVirtual</c> if do simulate laser path. <br/>
             Consider as its working within async threads. <br/>
             </remarks>        
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.ScriptPath">
+            <summary>
+            Script file path
+            </summary>
+            <remarks>
+            C sharp(.cs) file. <br/>
+            Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "script")</c> <br/>
+            </remarks>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnScriptFileOpened">
+            <summary>
+            Event for open script file
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnScriptFileSaved">
+            <summary>
+            Event for save script file
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScriptOpen(System.String)">
+            <summary>
+            Notify script file has opened
+            </summary>
+            <param name="fileName">Opened script file name</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScriptSaved(System.String)">
+            <summary>
+            Notify script file has saved
+            </summary>
+            <param name="fileName">Saved script file name</param>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.OnTextConvertScriptFile">
+            <summary>
+            External script file
+            <para>Used with <c>ITextConvertible</c> interface only</para>
+            <code>
+            SpiralLab.Sirius2.Winforms.Config.OnTextConvertScriptFile = "demo1.cs";
+            //or to disable external script file
+            SpiralLab.Sirius2.Winforms.Config.OnTextConvertScriptFile = string.Empty;
+            </code>
+            </summary>
+            <remarks>
+            User can used <c>Config.OnTextConvert</c> event instead.
+            Reference script file: "demo1.cs"  <br/>
+            Name of instance must be Script.Program <br/>
+            User can register event handler to convert data of <c>ITextConvertible</c>. <br/>
+            Event will be fired when <c>ITextConvertable.IsConvertText</c> is <c>True</c> only. <br/>
+            Event will be fired whenever do <c>IMarkerable.Mark</c> or <c>IEntity.Regen</c>. <br/>
+            If user event handler is not attached, used <c>SourceText</c> value. <br/>
+            <c>IMarker</c> value can be <c>NULL</c> while <c>IEntity.Regen</c>. <br/>
+            <c>IMarker.CurrentOffsetIndex</c> values are useful when marks at multiple offset positions. <br/>
+            <c>IMarker</c> can be <c>MarkerVirtual</c> if do simulate laser path. <br/>
+            Consider as its working within async threads. <br/>
+            </remarks>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnTextConvertProperty">
+            <summary>
+            Event for property value has changed at instance of script
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.TextConvertInstance">
+            <summary>
+            Instance for created by external script
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.TextConvertTypeName">
+            <summary>
+            Script class name 
+            <code>
+            public class UserScript : SpiralLab.Sirius2.Winforms.Script.ScriptBase
+            {
+                public UserScript()
+                    : base()
+                {}
+                
+                public override string OnTextConvert(IMarker marker, ITextConvertible textConvertible)
+                {
+                    ...
+                    return textConvertible.SourceText;
+                }
+            }
+            </code>
+            </summary>
+            <remarks>
+            User script should be inherited from <c>ScriptBase</c> <br/>
+            Default: <c>UserScript</c> <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">
             <summary>
@@ -18842,6 +18939,135 @@
             <param name="propValues">Property value</param>
             <returns>Success or failed</returns>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Script.ScriptBase">
+            <summary>
+            ScriptBase
+            </summary>
+            <remarks>
+            User scripts are should be inherited from <c>ScriptBase</c>
+            </remarks>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Script.ScriptBase.PropertyChanged">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">
+            <summary>
+            Event handler for <c>SpiralLab.Sirius2.Winforms.Config.OnTextConvert</c>
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="textConvertible"><c>ITextConvertible</c> entity</param>
+            <returns></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.NotifyPropertyChanged(System.String)">
+            <summary>
+            Notify property value has change event
+            </summary>
+            <param name="propertyName">Property name</param>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Script.Script">
+            <summary>
+            Script engine by C#
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Script.Script.Provider">
+            <summary>
+            Code provider
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Script.Script.LineOfCodes">
+            <summary>
+            Lines of code
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Script.Script.ReferenceAssemblies">
+            <summary>
+            Reference assembly files (*.dll)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Script.Script.ObjectType">
+            <summary>
+            Type of object
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Script.Script.ObjectInstance">
+            <summary>
+            Instance of object
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Script.Script.compilerResult">
+            <summary>
+            Result of compile
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.Script.#ctor(System.String,SpiralLab.Sirius2.Winforms.Script.Script.Providers)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="lineOfCodes">Lines of code</param>
+            <param name="provider"><c>Providers</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.Script.Compile(System.CodeDom.Compiler.CompilerErrorCollection@)">
+            <summary>
+            Compile
+            </summary>
+            <param name="compileErrorCollection">If error occurs, returned <c>CompilerErrorCollection</c></param>
+            <returns>Success of failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.Script.Compile(System.String,System.CodeDom.Compiler.CompilerErrorCollection@)">
+            <summary>
+            Compile
+            </summary>
+            <param name="fileName">Source filename</param>
+            <param name="compileErrorCollection">If error occurs, returned <c>CompilerErrorCollection</c></param>
+            <returns></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.Script.CreateInstance(System.String,System.Object@,System.Object[])">
+            <summary>
+            Create instance
+            </summary>
+            <param name="typeName">Type name</param>
+            <param name="instance">Create instance</param>
+            <param name="args">Array of argument</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.Script.SetProperty(System.String,System.Object)">
+            <summary>
+            Set property value of instance
+            </summary>
+            <param name="propName">Property name</param>
+            <param name="value">Property value</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.Script.GetProperty(System.String,System.Object@)">
+            <summary>
+            Get property value of instance
+            </summary>
+            <param name="propName">Property name</param>
+            <param name="returnValue">Property value</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.Script.Function(System.String,System.Object[],System.Object@)">
+            <summary>
+            Call function of instance
+            </summary>
+            <param name="funcName">Function name</param>
+            <param name="args">Array of argument</param>
+            <param name="returnValue">Return value of function call</param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.UI.AboutForm">
             <summary>
             About winforms
@@ -19286,6 +19512,33 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.UI.ScriptControlControl">
+            <summary>
+            ScriptControlControl
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.ScriptControlControl.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.ScriptControlControl.components">
+            <summary> 
+            필수 디자이너 변수입니다.
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.ScriptControlControl.Dispose(System.Boolean)">
+            <summary> 
+            사용 중인 모든 리소스를 정리합니다.
+            </summary>
+            <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.ScriptControlControl.InitializeComponent">
+            <summary> 
+            디자이너 지원에 필요한 메서드입니다. 
+            이 메서드의 내용을 코드 편집기로 수정하지 마세요.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.UI.PowerMeterControl">
@@ -20661,6 +20914,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.PowerMapCtrl">
             <summary>
             Usercontrol for powermap
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.ScriptCtrl">
+            <summary>
+            Usercontrol for script 
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.LogCtrl">

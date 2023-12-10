@@ -48,6 +48,9 @@ namespace Demos
             // To do something after form has shown
             EditorForm.Shown += EditorForm_Shown;
 
+            // Assign event handlers at Config
+            EditorHelper.AttachEventHandlers();
+
             // Main form
             Application.Run(EditorForm);
 

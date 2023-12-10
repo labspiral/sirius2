@@ -118,9 +118,16 @@ namespace Demos
             pen.MarkSpeed = 1000;
             pen.Power = pen.PowerMax * 0.5; // 50% power
 
-            // Attach event handler for convert barcode and text data 
+            // Attach event handler for convert barcode text data
             // Event will be fired every do mark
-            SpiralLab.Sirius2.Winforms.Config.OnTextConvert += Text_OnTextConvert;
+            //SpiralLab.Sirius2.Winforms.Config.OnTextConvert += Text_OnTextConvert;
+
+            //OR external script file
+            SpiralLab.Sirius2.Winforms.Config.OnTextConvertScriptFile = "demo1.cs";
+            //SpiralLab.Sirius2.Winforms.Config.OnTextConvertScriptFile = "demo2.cs";
+
+            // Assign event handlers at Config
+            EditorHelper.AttachEventHandlers();
 
             // Assign Document, View, Rtc, Laser into marker
             marker.Ready(document, view, rtc, laser, powerMeter);
@@ -158,7 +165,7 @@ namespace Demos
                 case "MyText1":
                     return $"SIRIUS2 {DateTime.Now.ToString("HH:mm:ss")} {currentOffsetIndex}";
                 default:
-                    //its not changed(or modified)
+                    // Not modified
                     return textConvertible.SourceText;
             }
         }

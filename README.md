@@ -78,6 +78,7 @@
  - Support remote controls.
     - TCP/IP communication
     - Serial(RS-232) communication
+ - Support powerful external script by C# language.
  - Open sourced code with editor, marker, laser and pen control for customization.
  - Support many kinds of executable demo programs.
 
@@ -151,6 +152,9 @@
 
 **7. Version history**
 
+* 2023.12.11 v.1.13.965
+  - added) script engine for convert text data
+  
 * 2023.12.6 v.1.12.945
   - added) power map with mapping, verify, compensate
   - added) power map demo project

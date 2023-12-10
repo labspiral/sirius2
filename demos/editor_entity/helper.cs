@@ -60,9 +60,9 @@ namespace Demos
         /// <summary>
         /// Your config ini file
         /// </summary>
-        public static string ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.ini");
+        public static string ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config", "config.ini");
         // Config file for XL-SCAN (syncAXIS)
-        //public static string ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config_syncaxis.ini");
+        //public static string ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config", "config_syncaxis.ini");
 
         /// <summary>
         /// Initialize sirius2 library
@@ -819,6 +819,12 @@ namespace Demos
 
             // Event will be fired when apply scanner field correction
             SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DApply += Config_OnScannerFieldCorrection2DApply;
+
+            // Event will be fired when script file has opened
+            SpiralLab.Sirius2.Winforms.Config.OnScriptFileOpened += Config_OnScriptFileOpened;
+
+            // Event will be fired when script file has saved
+            SpiralLab.Sirius2.Winforms.Config.OnScriptFileSaved += Config_OnScriptFileSaved;
         }
         /// <summary>
         /// Dispose resources (like as <c>IRtc</c>, <c>ILaser</c>, <c>IMarker</c>,<c>IPowerMeter</c>, <c>IRemote</c> ...)
@@ -889,6 +895,16 @@ namespace Demos
             var ctFileName = ctFullFileName.Replace(SpiralLab.Sirius2.Config.CorrectionPath + "\\", "");
             NativeMethods.WriteIni<string>(ConfigFileName, $"RTC{index}", "CORRECTION", ctFileName);
             return true;
+        }
+
+        private static void Config_OnScriptFileSaved(string fileName)
+        {
+            
+        }
+
+        private static void Config_OnScriptFileOpened(string fileName)
+        {
+            NativeMethods.WriteIni<string>(ConfigFileName, $"SCRIPT", "FILENAME", Path.GetFileName(fileName));
         }
     }
 }

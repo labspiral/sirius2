@@ -133,6 +133,9 @@ namespace Demos
             dataMatrix.Translate(0, 2, zUpper);
             document.ActAdd(dataMatrix);
 
+            // Assign event handlers at Config
+            EditorHelper.AttachEventHandlers();
+
             // Assign Document, View, Rtc, Laser into marker
             marker.Ready(document, view, rtc, laser, powerMeter);
 

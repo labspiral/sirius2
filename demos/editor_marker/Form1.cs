@@ -76,11 +76,15 @@ namespace Demos
             siriusEditorUserControl1.PowerMeter = powerMeter;
             siriusEditorUserControl1.Remote = remote;
 
+            // Assign event handlers at Config
+            EditorHelper.AttachEventHandlers();
+
             // Assign marker event handler
             marker.OnStarted += Marker_OnStarted;
             marker.OnEnded += Marker_OnEnded;
             marker.OnBeforeLayer += Marker_OnBeforeLayer;
             marker.OnAfterLayer += Marker_OnAfterLayer;
+
 
             var document = siriusEditorUserControl1.Document;
             var view = siriusEditorUserControl1.View;

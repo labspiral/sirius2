@@ -46,6 +46,7 @@ using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Common;
 using SpiralLab.Sirius2.PowerMeter;
 using SpiralLab.Sirius2.PowerMap;
+using System.Text.RegularExpressions;
 using OpenTK;
 
 namespace Demos
@@ -497,6 +498,14 @@ namespace Demos
         {
             get { return powerMapControl1; }
         }
+        /// <summary>
+        /// Usercontrol for script 
+        /// </summary>
+        public SpiralLab.Sirius2.Winforms.UI.ScriptControlControl ScriptCtrl
+        {
+            get { return scriptControlControl1; }
+        }
+
         /// <summary>
         /// Usercontrol for log
         /// </summary>
@@ -1052,17 +1061,20 @@ namespace Demos
                 var form = new SpiralLab.Sirius2.Winforms.UI.ArrayForm();
                 if (DialogResult.OK != form.ShowDialog(this))
                     return;
-                foreach (var o in form.Calcuated)
+                for (int i = 0; i < form.Calcuated.Length; i++)
                 {
                     IEntity[] pastedEntities = Document.ActPaste(null);
+                    var offset = form.Calcuated[i];
                     foreach (var entity in pastedEntities)
                     {
-                        entity.Translate(o.Dx, o.Dy);
+                        entity.Translate(offset.Dx, offset.Dy);
                     }
                 }
             }
             DoRender();
         }
+
+
 
         private void BtnCopy_Click(object sender, EventArgs e)
         {

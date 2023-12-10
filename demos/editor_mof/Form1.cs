@@ -162,6 +162,9 @@ namespace Demos
             var mofEnd = EntityFactory.CreateMoFEnd(Vector2.Zero);
             document.ActAdd(mofEnd);
 
+            // Assign event handlers at Config
+            EditorHelper.AttachEventHandlers();
+
             // Assign Document, View, Rtc, Laser into marker
             marker.Ready(document, view, rtc, laser, powerMeter);
 

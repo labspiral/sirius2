@@ -147,6 +147,9 @@ namespace Demos
             var measurementEnd = EntityFactory.CreateMeasurementEnd();
             document.ActAdd(measurementEnd);
 
+            // Assign event handlers at Config
+            EditorHelper.AttachEventHandlers();
+
             // Assign Document, View, Rtc, Laser into marker
             marker.Ready(document, view, rtc, laser, powerMeter);
 
