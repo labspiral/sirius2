@@ -239,7 +239,7 @@ namespace Demos
             return true;
         }
         /// <inheritdoc/>
-        public override bool Ready(IDocument document, IView view, IRtc rtc, ILaser laser, IPowerMeter powerMeter)
+        public override bool Ready(IDocument document, IView view, IRtc rtc, ILaser laser, IPowerMeter powerMeter, IRemote remote)
         {
             if (this.IsBusy)
             {
@@ -252,6 +252,7 @@ namespace Demos
             base.Rtc = rtc;
             base.Laser = laser;
             base.PowerMeter = powerMeter;
+            base.Remote = remote;
 
             if (rtc is IRtcSyncAxis rtcSyncAxis)
             {

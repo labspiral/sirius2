@@ -154,6 +154,7 @@
 
 * 2023.12.11 v.1.13.965
   - added) script engine for convert text data
+  - fixed) OnTextConvert event at IMarker
   
 * 2023.12.6 v.1.12.945
   - added) power map with mapping, verify, compensate

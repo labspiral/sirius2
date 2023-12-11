@@ -197,7 +197,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             return true;
         }
         /// <inheritdoc/>
-        public override bool Ready(IDocument document, IView view, IRtc rtc, ILaser laser, IPowerMeter powerMeter)
+        public override bool Ready(IDocument document, IView view, IRtc rtc, ILaser laser, IPowerMeter powerMeter, IRemote remote)
         {
             if (this.IsBusy)
             {
@@ -210,6 +210,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             base.Rtc = rtc;
             base.Laser = laser;
             base.PowerMeter = powerMeter;
+            base.Remote = remote;
 
             if (rtc is Rtc5 || rtc is Rtc6)
             {

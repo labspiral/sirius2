@@ -88,7 +88,7 @@ namespace Demos
             // Assign Document, View, Rtc, Laser into marker
             var document = siriusEditorUserControl1.Document;
             var view = siriusEditorUserControl1.View;
-            marker.Ready(document, view, rtc, laser, powerMeter);
+            marker.Ready(document, view, rtc, laser, powerMeter, remote);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

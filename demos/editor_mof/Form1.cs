@@ -166,7 +166,7 @@ namespace Demos
             EditorHelper.AttachEventHandlers();
 
             // Assign Document, View, Rtc, Laser into marker
-            marker.Ready(document, view, rtc, laser, powerMeter);
+            marker.Ready(document, view, rtc, laser, powerMeter, remote);
 
             Debug.Assert(rtc.IsMoF);
             var rtcMoF = rtc as IRtcMoF;

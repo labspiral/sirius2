@@ -4,20 +4,20 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Diagnostics;
-using System.ComponentModel;
+using System.Drawing.Design;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Runtime.CompilerServices;
-using System.Numerics;
-using System.Windows.Forms;
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Mathematics;
+using SpiralLab.Sirius2.PowerMeter;
 using SpiralLab.Sirius2.Scanner;
 using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Winforms;
@@ -26,8 +26,7 @@ using SpiralLab.Sirius2.Winforms.Marker;
 
 public class UserScript 
     : SpiralLab.Sirius2.Winforms.Script.ScriptBase
-{
-    
+{    
     [RefreshProperties(RefreshProperties.All)]
     [Browsable(true)]
     [ReadOnly(false)]
@@ -61,13 +60,15 @@ public class UserScript
 	int serialNo;
 	
     
-    public UserScript()
-        : base()
+	public UserScript(IMarker marker)
+		: base(marker)
     {
+		Name = "Demo1.cs";
+		Description = "This is a sample user script";
+		
         StartSerialNo = 1000;
         SerialNo = StartSerialNo;
     }       
-
 
     public override string OnTextConvert(IMarker marker, ITextConvertible textConvertible)
     {

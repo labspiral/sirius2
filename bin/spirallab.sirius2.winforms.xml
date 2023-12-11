@@ -6608,7 +6608,7 @@
             <summary>
             Enable(or disable) converted text data 
             <code>
-            SpiralLab.Sirius2.Winforms.Config.OnTextConvert += Text_OnTextConvert;
+            IMarker.OnTextConvert += Text_OnTextConvert;
             private string Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
             {
                 var entity = textConvertible as IEntity;
@@ -6625,8 +6625,8 @@
             </code>
             </summary>
             <remarks>
-            To convert source(or input) text by user, should be add <c>Config.OnTextConvert</c> event handler at first. <br/>
-            <c>Config.OnTextConvert</c> event would be fired before do mark by <c>IMarkerable.Mark</c> at <c>IMarker</c>. <br/>
+            To convert source(or input) text by user, should be add <c>IMarker.OnTextConvert</c> event handler at first. <br/>
+            <c>IMarker.OnTextConvert</c> event would be fired before do mark by <c>IMarkerable.Mark</c> at <c>IMarker</c>. <br/>
             Used with <c>EntityCircularText</c>, <c>EntityImageText</c>, <c>EntityDataMatrix</c>, <c>EntityQRCode</c>, <c>EntityPDF417</c> entities. <br/>
             Used with <c>EntityText</c>, <c>EntitySiriusText</c> also if <c>CharacterSetFormats.Normal</c> has configured. <br/>
             </remarks>
@@ -6646,7 +6646,7 @@
             Converted text data
             </summary>
             <remarks>
-            If <c>IsConvertedText</c> is <c>True</c>, event <c>Config.OnTextConvert</c> will be fired and modified <c>ConvertedText</c> as returned value when do <c>IMarkerable.Mark</c>. <br/>
+            If <c>IsConvertedText</c> is <c>True</c>, event <c>IMarker.OnTextConvert</c> will be fired and modified <c>ConvertedText</c> as returned value when do <c>IMarkerable.Mark</c>. <br/>
             Used with <c>EntityCircularText</c>, <c>EntityImageText</c>, <c>EntityDataMatrix</c>, <c>EntityQRCode</c>, <c>EntityPDF417</c> entities. <br/>
             Used with <c>EntityText</c>, <c>EntitySiriusText</c> also if <c>CharacterSetFormats.Normal</c> has configured. <br/>
             </remarks>
@@ -14733,6 +14733,9 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.PowerMeter">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Remote">
+            <inheritdoc/>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.MarkTarget">
             <inheritdoc/>
         </member>
@@ -14856,7 +14859,16 @@
             Accumulated counts of mark
             </summary>
         </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnTextConvert">
+            <inheritdoc/>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.IsTextRegistering">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.TextConvertScriptFile">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.TextConvertScriptInstance">
             <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Tag">
@@ -14889,7 +14901,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Initialize">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.IRemote)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Start">
@@ -14994,6 +15006,9 @@
             </remarks>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual">
             <summary>
             MarkerVirtual
@@ -15032,7 +15047,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual.Initialize">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.IRemote)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual.Start">
@@ -15105,7 +15120,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.Initialize">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.IRemote)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.Start">
@@ -15249,7 +15264,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.Initialize">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.IRemote)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.RegisterCharacterSet">
@@ -15510,6 +15525,11 @@
             <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see> interface
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Remote">
+            <summary>
+            <see cref="T:SpiralLab.Sirius2.Winforms.IRemote">IRemote</see> interface
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.MarkTarget">
             <summary>
             Target entities to mark
@@ -15540,6 +15560,37 @@
             Accumulated counts of mark
             </summary>
         </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnTextConvert">
+            <summary>
+            Event for convert text data.
+            <para>Used with <c>ITextConvertible</c> interface only</para>
+            <code>
+            marker.OnTextConvert += Text_OnTextConvert;
+            ...
+            string Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
+            {
+                switch(entity.Name)
+                {
+                    case "TextEntityName1":
+                        // For example, "yyyyMMdd HH:mm:ss"
+                        return DateTime.Now.ToString(textConvertible.SourceText);
+                }
+                return textConvertible.SourceText;
+            }
+            </code>
+            </summary>
+            <remarks>
+            User can used <c>IMarker.TextConvertScriptFile</c> script file instead.
+            User can register event handler to convert data of <c>ITextConvertible</c>. <br/>
+            Event will be fired when <c>ITextConvertable.IsConvertText</c> is <c>True</c> only. <br/>
+            Event will be fired whenever do <c>IMarkerable.Mark</c> or <c>IEntity.Regen</c>. <br/>
+            If user event handler is not attached, used <c>SourceText</c> value. <br/>
+            <c>IMarker</c> value can be <c>NULL</c> while <c>IEntity.Regen</c>. <br/>
+            <c>IMarker.CurrentOffsetIndex</c> values are useful when marks at multiple offset positions. <br/>
+            <c>IMarker</c> can be <c>MarkerVirtual</c> if do simulate laser path. <br/>
+            Consider as its working within async threads. <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.IsTextRegistering">
             <summary>
             Flag for registering <c>ITextRegisterable</c> entities or not
@@ -15547,6 +15598,38 @@
             <remarks>
             Do NOT edit. Used by internally. <br/>
             Used with <c>MarkerRtc</c> only. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.TextConvertScriptFile">
+            <summary>
+            External script file
+            <para>Used with <c>ITextConvertible</c> entity only</para>
+            <code>
+            IMarker.TextConvertScriptFile = "demo1.cs";
+            //or to disable external script file
+            IMarker.TextConvertScriptFile = string.Empty;
+            </code>
+            </summary>
+            <remarks>
+            User can used <c>IMarker.OnTextConvert</c> event instead.
+            Reference script file: "demo1.cs"  <br/>
+            Name of instance must be Script.Program <br/>
+            User can register event handler to convert data of <c>ITextConvertible</c>. <br/>
+            Event will be fired when <c>ITextConvertable.IsConvertText</c> is <c>True</c> only. <br/>
+            Event will be fired whenever do <c>IMarkerable.Mark</c> or <c>IEntity.Regen</c>. <br/>
+            If user event handler is not attached, used <c>SourceText</c> value. <br/>
+            <c>IMarker</c> value can be <c>NULL</c> while <c>IEntity.Regen</c>. <br/>
+            <c>IMarker.CurrentOffsetIndex</c> values are useful when marks at multiple offset positions. <br/>
+            <c>IMarker</c> can be <c>MarkerVirtual</c> if do simulate laser path. <br/>
+            Consider as its working within async threads. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.TextConvertScriptInstance">
+            <summary>
+            Instance for created by external script
+            </summary>
+            <remarks>
+            If <c>TextConvertScriptFile</c> has assigne, <c>TextConvertInstance</c> would be set as instance. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Offsets">
@@ -15641,7 +15724,7 @@
             </summary>
             <returns>Success or not</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.IRemote)">
             <summary>
             Ready
             </summary>
@@ -15653,6 +15736,7 @@
             <param name="rtc"><c>IRtc</c></param>
             <param name="laser"><c>ILaser</c></param>
             <param name="powerMeter"><c>IPowerMeter</c></param>
+            <param name="remote"><c>IRemote</c></param>
             <returns>Success or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Start">
@@ -15675,6 +15759,18 @@
             If <c>IsError</c> is <c>True</c>, try to <c>Reset</c> for clear error status. <br/>
             </remarks>
             <returns>Success or not</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.NotifyTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">
+            <summary>
+            Notify event for <c>ITextConvertible</c> when do <c>IMarker.Mark</c>
+            </summary>
+            <remarks>
+            It works with <c>ITextConvertible.IsConvertText</c> is <c>True</c> only. <br/>
+            Try to convert every do <c>IMarkerable.Mark</c>. <br/>
+            </remarks>
+            <param name="marker"><c>IMarker</c> (Can be <c>MarkerVirtual</c> if do simulate laser path)</param>
+            <param name="textConvertible"><c>ITextConvertible</c></param>
+            <returns>Converted text data (if failed, <c>SourceText</c> has returned)</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.OpenGL.GLBufferFactory">
             <summary>
@@ -16624,37 +16720,6 @@
             Default: romans2.cxf
             </remarks>
         </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnTextConvert">
-            <summary>
-            Event for convert text data.
-            <para>Used with <c>ITextConvertible</c> interface only</para>
-            <code>
-            SpiralLab.Sirius2.Winforms.Config.OnTextConvert += Text_OnTextConvert;
-            ...
-            string Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
-            {
-                switch(entity.Name)
-                {
-                    case "TextEntityName1":
-                        // For example, "yyyyMMdd HH:mm:ss"
-                        return DateTime.Now.ToString(textConvertible.SourceText);
-                }
-                return textConvertible.SourceText;
-            }
-            </code>
-            </summary>
-            <remarks>
-            User can used <c>Config.OnTextConvertScriptFile</c> script file instead.
-            User can register event handler to convert data of <c>ITextConvertible</c>. <br/>
-            Event will be fired when <c>ITextConvertable.IsConvertText</c> is <c>True</c> only. <br/>
-            Event will be fired whenever do <c>IMarkerable.Mark</c> or <c>IEntity.Regen</c>. <br/>
-            If user event handler is not attached, used <c>SourceText</c> value. <br/>
-            <c>IMarker</c> value can be <c>NULL</c> while <c>IEntity.Regen</c>. <br/>
-            <c>IMarker.CurrentOffsetIndex</c> values are useful when marks at multiple offset positions. <br/>
-            <c>IMarker</c> can be <c>MarkerVirtual</c> if do simulate laser path. <br/>
-            Consider as its working within async threads. <br/>
-            </remarks>        
-        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ScriptPath">
             <summary>
             Script file path
@@ -16686,74 +16751,37 @@
             </summary>
             <param name="fileName">Saved script file name</param>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config.OnTextConvertScriptFile">
-            <summary>
-            External script file
-            <para>Used with <c>ITextConvertible</c> interface only</para>
-            <code>
-            SpiralLab.Sirius2.Winforms.Config.OnTextConvertScriptFile = "demo1.cs";
-            //or to disable external script file
-            SpiralLab.Sirius2.Winforms.Config.OnTextConvertScriptFile = string.Empty;
-            </code>
-            </summary>
-            <remarks>
-            User can used <c>Config.OnTextConvert</c> event instead.
-            Reference script file: "demo1.cs"  <br/>
-            Name of instance must be Script.Program <br/>
-            User can register event handler to convert data of <c>ITextConvertible</c>. <br/>
-            Event will be fired when <c>ITextConvertable.IsConvertText</c> is <c>True</c> only. <br/>
-            Event will be fired whenever do <c>IMarkerable.Mark</c> or <c>IEntity.Regen</c>. <br/>
-            If user event handler is not attached, used <c>SourceText</c> value. <br/>
-            <c>IMarker</c> value can be <c>NULL</c> while <c>IEntity.Regen</c>. <br/>
-            <c>IMarker.CurrentOffsetIndex</c> values are useful when marks at multiple offset positions. <br/>
-            <c>IMarker</c> can be <c>MarkerVirtual</c> if do simulate laser path. <br/>
-            Consider as its working within async threads. <br/>
-            </remarks>
-        </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnTextConvertProperty">
-            <summary>
-            Event for property value has changed at instance of script
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config.TextConvertInstance">
-            <summary>
-            Instance for created by external script
-            </summary>
-        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.TextConvertTypeName">
             <summary>
             Script class name 
             <code>
             public class UserScript : SpiralLab.Sirius2.Winforms.Script.ScriptBase
             {
-                public UserScript()
-                    : base()
-                {}
+                public UserScript(IMarker marker)
+                    : base(marker)
+                {
+                    Name = "MyScript";
+                    Description = "MyDescription";
+                }
                 
+                public virtual void OnMarkerStarted(IMarker marker)
+                {
+                }
                 public override string OnTextConvert(IMarker marker, ITextConvertible textConvertible)
                 {
                     ...
                     return textConvertible.SourceText;
                 }
+                public virtual void OnMarkerEnded(IMarker marker)
+                {
+                }
             }
             </code>
             </summary>
             <remarks>
-            User script should be inherited from <c>ScriptBase</c> <br/>
+            User class of script should be inherited from <c>SpiralLab.Sirius2.Winforms.Script.ScriptBase</c> <br/>
             Default: <c>UserScript</c> <br/>
             </remarks>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">
-            <summary>
-            Notify for <c>ITextConvertible</c> when do <c>IMarker.Mark</c>
-            </summary>
-            <remarks>
-            It works with <c>ITextConvertable.IsConvertText</c> is <c>True</c> only. <br/>
-            Try to convert every do <c>IMarkerable.Mark</c>. <br/>
-            </remarks>
-            <param name="marker"><c>IMarker</c> (Can be <c>MarkerVirtual</c> if do simulate laser path)</param>
-            <param name="textConvertible"><c>ITextConvertible</c></param>
-            <returns>Converted text data (if failed, <c>SourceText</c> has returned)</returns>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.DxfSplineToPolygonalCounts">
             <summary>
@@ -16875,7 +16903,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyBlockInsert(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.Entity.EntityBlock)">
             <summary>
-            Notify for TextConvert
+            Notify event for TextConvert
             </summary>
             <remarks>
             If <c>ITextConvertable.IsConvertText</c> is <c>True</c>, it would be try to convert every <c>IMarkerable.Mark</c>. <br/>
@@ -18950,7 +18978,17 @@
         <member name="E:SpiralLab.Sirius2.Winforms.Script.ScriptBase.PropertyChanged">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.#ctor">
+        <member name="P:SpiralLab.Sirius2.Winforms.Script.ScriptBase.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Script.ScriptBase.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.#ctor(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <summary>
             Constructor
             </summary>
@@ -18962,14 +19000,6 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.Dispose">
             <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">
-            <summary>
-            Event handler for <c>SpiralLab.Sirius2.Winforms.Config.OnTextConvert</c>
-            </summary>
-            <param name="marker"><c>IMarker</c></param>
-            <param name="textConvertible"><c>ITextConvertible</c> entity</param>
-            <returns></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.NotifyPropertyChanged(System.String)">
             <summary>
@@ -19517,6 +19547,11 @@
         <member name="T:SpiralLab.Sirius2.Winforms.UI.ScriptControlControl">
             <summary>
             ScriptControlControl
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.ScriptControlControl.Marker">
+            <summary>
+            <c>IMarker</c>
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.ScriptControlControl.#ctor">

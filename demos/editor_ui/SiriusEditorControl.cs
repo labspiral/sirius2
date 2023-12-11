@@ -57,7 +57,8 @@ namespace Demos
     /// <remarks>
     /// User can insert(or create) usercontrol at own winforms. <br/>
     /// </remarks>
-    public partial class SiriusEditorUserControl : Form
+	public partial class SiriusEditorUserControl : Form
+    //public partial class SiriusEditorUserControl : UserControl
     {
         /// <summary>
         /// Title name
@@ -300,10 +301,12 @@ namespace Demos
                     marker.OnEnded -= Marker_OnEnded;
                 }
                 marker = value;
-                markerControl1.Marker = marker;
-                offsetControl1.Marker = marker;
-                remoteUserControl1.Marker = marker;
+                MarkerCtrl.Marker = marker;
+                OffsetCtrl.Marker = marker;
+                RemoteCtrl.Marker = marker;
+                ScriptCtrl.Marker = marker;
                 EditorCtrl.View.Marker = marker;
+
                 //marker browsable
                 if (marker != null)
                 {

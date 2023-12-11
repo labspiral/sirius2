@@ -51,7 +51,7 @@ namespace Demos
             var view0 = siriusEditorUserControl1.View;
             EditorHelper.CreateTestEntities(rtc0, view0, document0);
             // Assign Document, View, Rtc, Laser into marker at index 0
-            marker0.Ready(document0, view0, rtc0, laser0, powerMeter0);
+            marker0.Ready(document0, view0, rtc0, laser0, powerMeter0, remote0);
 
             // index 1
             index = 1;
@@ -74,7 +74,7 @@ namespace Demos
             EditorHelper.AttachEventHandlers();
 
             // Assign Document, View, Rtc, Laser into marker at index 1
-            marker1.Ready(document1, view1, rtc1, laser1, powerMeter1);
+            marker1.Ready(document1, view1, rtc1, laser1, powerMeter1, remote1);
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {

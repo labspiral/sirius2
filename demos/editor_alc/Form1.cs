@@ -151,7 +151,7 @@ namespace Demos
             EditorHelper.AttachEventHandlers();
 
             // Assign Document, View, Rtc, Laser into marker
-            marker.Ready(document, view, rtc, laser, powerMeter);
+            marker.Ready(document, view, rtc, laser, powerMeter, remote);
 
             var rtcAlc = rtc as IRtcAutoLaserControl;
             Debug.Assert(rtcAlc != null);
