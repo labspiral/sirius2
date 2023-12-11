@@ -16729,27 +16729,10 @@
             Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "script")</c> <br/>
             </remarks>
         </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnScriptFileOpened">
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.ScriptReferenceAssemblies">
             <summary>
-            Event for open script file
+            Script reference assemblies (*.dll)
             </summary>
-        </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnScriptFileSaved">
-            <summary>
-            Event for save script file
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScriptOpen(System.String)">
-            <summary>
-            Notify script file has opened
-            </summary>
-            <param name="fileName">Opened script file name</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScriptSaved(System.String)">
-            <summary>
-            Notify script file has saved
-            </summary>
-            <param name="fileName">Saved script file name</param>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.TextConvertTypeName">
             <summary>
@@ -19020,11 +19003,6 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Script.Script.LineOfCodes">
             <summary>
             Lines of code
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Script.Script.ReferenceAssemblies">
-            <summary>
-            Reference assembly files (*.dll)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Script.Script.ObjectType">

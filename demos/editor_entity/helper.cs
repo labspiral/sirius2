@@ -820,11 +820,6 @@ namespace Demos
             // Event will be fired when apply scanner field correction
             SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection2DApply += Config_OnScannerFieldCorrection2DApply;
 
-            // Event will be fired when script file has opened
-            SpiralLab.Sirius2.Winforms.Config.OnScriptFileOpened += Config_OnScriptFileOpened;
-
-            // Event will be fired when script file has saved
-            SpiralLab.Sirius2.Winforms.Config.OnScriptFileSaved += Config_OnScriptFileSaved;
         }
         /// <summary>
         /// Dispose resources (like as <c>IRtc</c>, <c>ILaser</c>, <c>IMarker</c>,<c>IPowerMeter</c>, <c>IRemote</c> ...)
