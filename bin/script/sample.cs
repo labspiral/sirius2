@@ -25,30 +25,57 @@ using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
 
 public class UserScript 
-	: SpiralLab.Sirius2.Winforms.Script.ScriptBase
+    : SpiralLab.Sirius2.Winforms.Script.ScriptBase
 {
-	
-	public UserScript(IMarker marker)
-		: base(marker)
-	{
-		Name = "Sample.cs";
-		Description = "This is a sample user script";
-	}		
-	    
-	public override void OnMarkerStarted(IMarker marker)
-	{
-
-	}
-	public override string OnTextConvert(IMarker marker, ITextConvertible textConvertible)
-	{
-		// Not modified
-		return textConvertible.SourceText;
-	}
-
-	public override void OnMarkerEnded(IMarker marker, bool success, TimeSpan timeSpan)
-	{
-	}
-
-
-}		
+    
+    public UserScript(IMarker marker)
+        : base(marker)
+    {
+        Name = "Sample.cs";
+        Description = "This is a sample user script";
+    }   
+    
+    // Marker has started
+    public override void OnMarkerStarted(IMarker marker)
+    {
+        if (null == marker.Remote)
+            return;
+        if (!marker.Remote.IsConnected)
+            return;
+        var text = string.Format("Status{0}Started{1}", ',', ';');
+        marker.Remote.Send(text);   
+    }
+    // To convert text data
+    public override string OnTextConvert(IMarker marker, ITextConvertible textConvertible)
+    {
+        // Not modified
+        return textConvertible.SourceText;
+    }
+    public override bool OnAfterLayer(IMarker marker, EntityLayer layer)
+    {
+        return true;
+    }
+    public override bool OnBeforeLayer(IMarker marker, EntityLayer layer)
+    {
+        return true;
+    }
+    public override bool OnBeforeEntity(IMarker marker, IEntity entity)
+    {
+        return true;
+    }
+    public override bool OnAfterEntity(IMarker marker, IEntity entity)
+    {
+        return true;
+    }
+    // Marker has ended
+    public override void OnMarkerEnded(IMarker marker, bool success, TimeSpan timeSpan)
+    {
+        if (null == marker.Remote)
+            return;
+        if (!marker.Remote.IsConnected)
+            return;
+        var text = string.Format("Status{0}Ended{1}", ',', ';');
+        marker.Remote.Send(text);       
+    }
+}       
  

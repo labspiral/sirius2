@@ -15609,15 +15609,36 @@
             //or to disable external script file
             IMarker.TextConvertScriptFile = string.Empty;
             </code>
+            <code>
+            public class UserScript : SpiralLab.Sirius2.Winforms.Script.ScriptBase
+            {
+                public UserScript(IMarker marker)
+                    : base(marker)
+                {
+                    Name = "MyScript";
+                    Description = "MyDescription";
+                }
+                
+                public virtual void OnMarkerStarted(IMarker marker)
+                {
+                }
+                public override string OnTextConvert(IMarker marker, ITextConvertible textConvertible)
+                {
+                    ...
+                    return textConvertible.SourceText;
+                }
+                public virtual void OnMarkerEnded(IMarker marker)
+                {
+                }
+                ...
+            }
+            </code>
             </summary>
             <remarks>
             User can used <c>IMarker.OnTextConvert</c> event instead.
-            Reference script file: "demo1.cs"  <br/>
-            Name of instance must be Script.Program <br/>
-            User can register event handler to convert data of <c>ITextConvertible</c>. <br/>
-            Event will be fired when <c>ITextConvertable.IsConvertText</c> is <c>True</c> only. <br/>
-            Event will be fired whenever do <c>IMarkerable.Mark</c> or <c>IEntity.Regen</c>. <br/>
-            If user event handler is not attached, used <c>SourceText</c> value. <br/>
+            Reference script files are "sample.cs", "demo1.cs", "demo2.cs"  <br/>
+            OnTextConvert event will be fired when <c>ITextConvertable.IsConvertText</c> is <c>True</c> only. <br/>
+            OnTextConvert event will be fired whenever do <c>IMarkerable.Mark</c> or <c>IEntity.Regen</c>. <br/>
             <c>IMarker</c> value can be <c>NULL</c> while <c>IEntity.Regen</c>. <br/>
             <c>IMarker.CurrentOffsetIndex</c> values are useful when marks at multiple offset positions. <br/>
             <c>IMarker</c> can be <c>MarkerVirtual</c> if do simulate laser path. <br/>
@@ -15629,7 +15650,10 @@
             Instance for created by external script
             </summary>
             <remarks>
-            If <c>TextConvertScriptFile</c> has assigne, <c>TextConvertInstance</c> would be set as instance. <br/>
+            <code>
+            <c>TextConvertScriptInstance</c> = new <c>UserScript</c>(marker);
+            </code>
+            If <c>TextConvertScriptFile</c> has assigned, <c>TextConvertInstance</c> would be created with new instance. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Offsets">
@@ -16734,7 +16758,7 @@
             Script reference assemblies (*.dll)
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config.TextConvertTypeName">
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.ScriptTextConvertTypeName">
             <summary>
             Script class name 
             <code>
@@ -17497,11 +17521,6 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Config.RemoteError">
             <summary>
             Error
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config.RemoteEnd">
-            <summary>
-            End
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.IDocumentData">
@@ -18709,7 +18728,7 @@
             Assigned <c>SiriusEditorUserControl</c>
             </summary>
             <remarks>
-            If assigned this value, used for refresh propertygrids. <br/>
+            If assigned this value, used for refreshing propertygrid control. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IRemote.Dispose">

@@ -30,7 +30,7 @@ public class UserScript
 	public UserScript(IMarker marker)
 		: base(marker)
 	{	
-		Name = "Demo1.cs";
+		Name = "Demo2.cs";
 		Description = "This is a sample user script";
 	}			
 
