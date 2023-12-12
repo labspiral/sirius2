@@ -48,6 +48,7 @@ using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Winforms;
 using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
+using SpiralLab.Sirius2.Winforms.Remote;
 using SpiralLab.Sirius2.Winforms.UI;
 
 namespace Demos

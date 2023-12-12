@@ -48,6 +48,7 @@ using SpiralLab.Sirius2.PowerMeter;
 using SpiralLab.Sirius2.PowerMap;
 using System.Text.RegularExpressions;
 using OpenTK;
+using SpiralLab.Sirius2.Winforms.Remote;
 
 namespace Demos
 {

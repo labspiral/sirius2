@@ -48,6 +48,7 @@ using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
 using SpiralLab.Sirius2.Winforms.Common;
 using SpiralLab.Sirius2.PowerMeter;
+using SpiralLab.Sirius2.Winforms.Remote;
 
 namespace Demos
 {

@@ -47,6 +47,7 @@ using SpiralLab.Sirius2.Winforms.OpenGL;
 using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
 using SpiralLab.Sirius2.PowerMeter;
+using SpiralLab.Sirius2.Winforms.Remote;
 
 namespace SpiralLab.Sirius2.Winforms.Marker
 {

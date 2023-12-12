@@ -23,9 +23,10 @@ using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Winforms;
 using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
+using SpiralLab.Sirius2.Winforms.Remote;
+using SpiralLab.Sirius2.Winforms.Script;
 
-public class UserScript 
-    : SpiralLab.Sirius2.Winforms.Script.ScriptBase
+public class UserScript : ScriptBase
 {    
     [RefreshProperties(RefreshProperties.All)]
     [Browsable(true)]
@@ -48,7 +49,7 @@ public class UserScript
     [ReadOnly(false)]
     [Category("Data")]
     [DisplayName("Current")]
-    [Description("Current Serial No")]
+    [Description("Current(or Next) Serial No")]
     public int SerialNo
 	{ 
 		get { return serialNo; } 
