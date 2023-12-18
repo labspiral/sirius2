@@ -418,6 +418,8 @@ namespace Demos
                 default:
                     throw new InvalidProgramException($"Not supported rtc type for marker: {rtcType}");
             }
+            var scriptFileName = NativeMethods.ReadIni(ConfigFileName, $"MARKER{index}", "SCRIPT_FILENAME", string.Empty);
+            marker.TextConvertScriptFile = scriptFileName;
             #endregion
 
             #region Remote
@@ -429,12 +431,12 @@ namespace Demos
                 {
                     case "tcp":
                         int tcpPort = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"TCP_PORT", 5001);
-                        remote = RemoteFactory.CreateTcpServer(index, marker, tcpPort);
+                        remote = RemoteFactory.CreateTcpServer(index, "RemoteTcp", marker, tcpPort);
                         break;
                     case "serial":
                         int serialPort = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"SERIAL_PORT", 1);
                         int serialBaudRate = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"SERIAL_BAUDRATE=", 57600);
-                        remote = RemoteFactory.CreateSerial(index, marker, serialPort, serialBaudRate);
+                        remote = RemoteFactory.CreateSerial(index, "RemoteSerial", marker, serialPort, serialBaudRate);
                         break;
                     default:
                         throw new InvalidProgramException($"Not supported remote protocol: {protocol}");
@@ -893,14 +895,5 @@ namespace Demos
             return true;
         }
 
-        private static void Config_OnScriptFileSaved(string fileName)
-        {
-            
-        }
-
-        private static void Config_OnScriptFileOpened(string fileName)
-        {
-            NativeMethods.WriteIni<string>(ConfigFileName, $"SCRIPT", "FILENAME", Path.GetFileName(fileName));
-        }
     }
 }

@@ -141,15 +141,16 @@ namespace SpiralLab.Sirius2.Winforms.Marker
         /// <inheritdoc/>  
         protected override void Dispose(bool disposing)
         {
-            if (this.disposed)
-                return;
-            if (disposing)
+            if (!this.disposed)
             {
-                timerStatus.Enabled = false;
-                timerStatus.Tick -= TimerStatus_Tick;
                 this.Stop();
+                if (disposing)
+                {
+                    timerStatus.Enabled = false;
+                    timerStatus.Tick -= TimerStatus_Tick;
+                }
+                this.disposed = true;
             }
-            this.disposed = true;
             base.Dispose(disposing);
         }
 

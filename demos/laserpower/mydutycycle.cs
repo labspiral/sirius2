@@ -57,7 +57,7 @@ namespace Demos
             var receivers = this.PropertyChanged?.GetInvocationList();
             if (null != receivers)
                 foreach (PropertyChangedEventHandler receiver in receivers)
-                    receiver.BeginInvoke(this, new PropertyChangedEventArgs(propertyName), null, null);
+                    receiver.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         /// <inheritdoc/>  
@@ -306,12 +306,13 @@ namespace Demos
         /// <param name="disposing">Explicit dispose or not</param>
         protected virtual void Dispose(bool disposing)
         {
-            if (this.disposed)
-                return;
-            if (disposing)
+            if (!this.disposed)
             {
+                if (disposing)
+                {
+                }
+                this.disposed = true;
             }
-            this.disposed = true;
         }
         /// <inheritdoc/> 
         public virtual bool CheckErrors()

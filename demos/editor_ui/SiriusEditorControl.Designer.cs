@@ -48,15 +48,17 @@
             this.rtcDOUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.manualUserControl1 = new SpiralLab.Sirius2.Winforms.UI.ManualUserControl();
-            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.tabPage15 = new System.Windows.Forms.TabPage();
             this.powerMeterControl1 = new SpiralLab.Sirius2.Winforms.UI.PowerMeterControl();
-            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.tabPage16 = new System.Windows.Forms.TabPage();
             this.powerMapControl1 = new SpiralLab.Sirius2.Winforms.UI.PowerMapControl();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.remoteUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RemoteUserControl();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.scriptControlControl1 = new SpiralLab.Sirius2.Winforms.UI.ScriptControlControl();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.remoteUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RemoteUserControl();
             this.logControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.treeViewControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl();
@@ -190,10 +192,12 @@
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.tabPage11.SuspendLayout();
-            this.tabPage12.SuspendLayout();
-            this.tabPage7.SuspendLayout();
+            this.tabPage14.SuspendLayout();
+            this.tabControl4.SuspendLayout();
+            this.tabPage15.SuspendLayout();
+            this.tabPage16.SuspendLayout();
             this.tabPage13.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
@@ -228,12 +232,11 @@
             this.tabControl3.Controls.Add(this.tabPage10);
             this.tabControl3.Controls.Add(this.tabPage8);
             this.tabControl3.Controls.Add(this.tabPage5);
-            this.tabControl3.Controls.Add(this.tabPage9);
             this.tabControl3.Controls.Add(this.tabPage3);
-            this.tabControl3.Controls.Add(this.tabPage11);
-            this.tabControl3.Controls.Add(this.tabPage12);
-            this.tabControl3.Controls.Add(this.tabPage7);
+            this.tabControl3.Controls.Add(this.tabPage9);
+            this.tabControl3.Controls.Add(this.tabPage14);
             this.tabControl3.Controls.Add(this.tabPage13);
+            this.tabControl3.Controls.Add(this.tabPage7);
             resources.ApplyResources(this.tabControl3, "tabControl3");
             this.tabControl3.HotTrack = true;
             this.tabControl3.ImageList = this.imageList1;
@@ -365,12 +368,29 @@
             this.manualUserControl1.Name = "manualUserControl1";
             this.manualUserControl1.Rtc = null;
             // 
-            // tabPage11
+            // tabPage14
             // 
-            this.tabPage11.Controls.Add(this.powerMeterControl1);
-            resources.ApplyResources(this.tabPage11, "tabPage11");
-            this.tabPage11.Name = "tabPage11";
-            this.tabPage11.UseVisualStyleBackColor = true;
+            this.tabPage14.Controls.Add(this.tabControl4);
+            resources.ApplyResources(this.tabPage14, "tabPage14");
+            this.tabPage14.Name = "tabPage14";
+            this.tabPage14.UseVisualStyleBackColor = true;
+            // 
+            // tabControl4
+            // 
+            this.tabControl4.Controls.Add(this.tabPage15);
+            this.tabControl4.Controls.Add(this.tabPage16);
+            resources.ApplyResources(this.tabControl4, "tabControl4");
+            this.tabControl4.HotTrack = true;
+            this.tabControl4.ImageList = this.imageList1;
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            // 
+            // tabPage15
+            // 
+            this.tabPage15.Controls.Add(this.powerMeterControl1);
+            resources.ApplyResources(this.tabPage15, "tabPage15");
+            this.tabPage15.Name = "tabPage15";
+            this.tabPage15.UseVisualStyleBackColor = true;
             // 
             // powerMeterControl1
             // 
@@ -379,12 +399,12 @@
             this.powerMeterControl1.Name = "powerMeterControl1";
             this.powerMeterControl1.PowerMeter = null;
             // 
-            // tabPage12
+            // tabPage16
             // 
-            this.tabPage12.Controls.Add(this.powerMapControl1);
-            resources.ApplyResources(this.tabPage12, "tabPage12");
-            this.tabPage12.Name = "tabPage12";
-            this.tabPage12.UseVisualStyleBackColor = true;
+            this.tabPage16.Controls.Add(this.powerMapControl1);
+            resources.ApplyResources(this.tabPage16, "tabPage16");
+            this.tabPage16.Name = "tabPage16";
+            this.tabPage16.UseVisualStyleBackColor = true;
             // 
             // powerMapControl1
             // 
@@ -395,32 +415,6 @@
             this.powerMapControl1.Name = "powerMapControl1";
             this.powerMapControl1.PowerMeter = null;
             this.powerMapControl1.Rtc = null;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.remoteUserControl1);
-            resources.ApplyResources(this.tabPage7, "tabPage7");
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // remoteUserControl1
-            // 
-            resources.ApplyResources(this.remoteUserControl1, "remoteUserControl1");
-            this.remoteUserControl1.Marker = null;
-            this.remoteUserControl1.Name = "remoteUserControl1";
-            this.remoteUserControl1.Remote = null;
-            // 
-            // tabPage13
-            // 
-            this.tabPage13.Controls.Add(this.scriptControlControl1);
-            resources.ApplyResources(this.tabPage13, "tabPage13");
-            this.tabPage13.Name = "tabPage13";
-            this.tabPage13.UseVisualStyleBackColor = true;
-            // 
-            // scriptControlControl1
-            // 
-            resources.ApplyResources(this.scriptControlControl1, "scriptControlControl1");
-            this.scriptControlControl1.Name = "scriptControlControl1";
             // 
             // imageList1
             // 
@@ -463,6 +457,35 @@
             this.imageList1.Images.SetKeyName(34, "stocks_24px.png");
             this.imageList1.Images.SetKeyName(35, "stocks_32px.png");
             this.imageList1.Images.SetKeyName(36, "C Sharp Logo.png");
+            this.imageList1.Images.SetKeyName(37, "7077517_csharp_file_icon.png");
+            this.imageList1.Images.SetKeyName(38, "free-icon-file-and-folder-2807467.png");
+            this.imageList1.Images.SetKeyName(39, "csharp.ico");
+            // 
+            // tabPage13
+            // 
+            this.tabPage13.Controls.Add(this.scriptControlControl1);
+            resources.ApplyResources(this.tabPage13, "tabPage13");
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.UseVisualStyleBackColor = true;
+            // 
+            // scriptControlControl1
+            // 
+            resources.ApplyResources(this.scriptControlControl1, "scriptControlControl1");
+            this.scriptControlControl1.Marker = null;
+            this.scriptControlControl1.Name = "scriptControlControl1";
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.remoteUserControl1);
+            resources.ApplyResources(this.tabPage7, "tabPage7");
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // remoteUserControl1
+            // 
+            resources.ApplyResources(this.remoteUserControl1, "remoteUserControl1");
+            this.remoteUserControl1.Name = "remoteUserControl1";
+            this.remoteUserControl1.Remote = null;
             // 
             // logControl1
             // 
@@ -1265,10 +1288,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.tabPage11.ResumeLayout(false);
-            this.tabPage12.ResumeLayout(false);
-            this.tabPage7.ResumeLayout(false);
+            this.tabPage14.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
+            this.tabPage15.ResumeLayout(false);
+            this.tabPage16.ResumeLayout(false);
             this.tabPage13.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
             this.splitContainer5.Panel1.ResumeLayout(false);
             this.splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
@@ -1424,13 +1449,15 @@
         private System.Windows.Forms.TabPage tabPage10;
         private SpiralLab.Sirius2.Winforms.UI.RtcUserControl rtcControl1;
         private SpiralLab.Sirius2.Winforms.UI.LaserUserControl laserControl1;
-        private System.Windows.Forms.TabPage tabPage11;
-        private SpiralLab.Sirius2.Winforms.UI.PowerMeterControl powerMeterControl1;
         private System.Windows.Forms.ToolStripStatusLabel lblPowerWatt;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel11;
-        private System.Windows.Forms.TabPage tabPage12;
-        private SpiralLab.Sirius2.Winforms.UI.PowerMapControl powerMapControl1;
         private System.Windows.Forms.TabPage tabPage13;
         private SpiralLab.Sirius2.Winforms.UI.ScriptControlControl scriptControlControl1;
+        private System.Windows.Forms.TabPage tabPage14;
+        private System.Windows.Forms.TabControl tabControl4;
+        private System.Windows.Forms.TabPage tabPage15;
+        private SpiralLab.Sirius2.Winforms.UI.PowerMeterControl powerMeterControl1;
+        private System.Windows.Forms.TabPage tabPage16;
+        private SpiralLab.Sirius2.Winforms.UI.PowerMapControl powerMapControl1;
     }
 }

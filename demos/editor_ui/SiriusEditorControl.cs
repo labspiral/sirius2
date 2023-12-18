@@ -47,8 +47,8 @@ using SpiralLab.Sirius2.Winforms.Common;
 using SpiralLab.Sirius2.PowerMeter;
 using SpiralLab.Sirius2.PowerMap;
 using System.Text.RegularExpressions;
-using OpenTK;
 using SpiralLab.Sirius2.Winforms.Remote;
+using OpenTK;
 
 namespace Demos
 {
@@ -58,8 +58,7 @@ namespace Demos
     /// <remarks>
     /// User can insert(or create) usercontrol at own winforms. <br/>
     /// </remarks>
-	public partial class SiriusEditorUserControl : Form
-    //public partial class SiriusEditorUserControl : UserControl
+    public partial class SiriusEditorUserControl : Form
     {
         /// <summary>
         /// Title name
@@ -74,7 +73,7 @@ namespace Demos
         /// Disable UI controls or not
         /// </summary>
         /// <remarks>
-        /// To do not allow user operations. <br/>
+        /// To do not allow user operations during marker is working. <br/>
         /// </remarks>
         public bool IsDisableControl
         {
@@ -118,7 +117,7 @@ namespace Demos
         /// <c>IDocument</c>
         /// </summary>
         /// <remarks>
-        /// Created by automatically <br/>
+        /// Created by internally. Do action by <c>Act...</c> functions. <br/>
         /// </remarks>
         public IDocument Document
         {
@@ -166,7 +165,7 @@ namespace Demos
         /// <c>IRtc</c>
         /// </summary>
         /// <remarks>
-        /// Created by <c>ScannerFactory</c> <br/>
+        /// Created by <c>ScannerFactory</c>. <br/>
         /// </remarks>
         public IRtc Rtc
         {
@@ -181,17 +180,17 @@ namespace Demos
                     {
                         mof.OnEncoderChanged -= Mof_OnEncoderChanged;
                     }
-                    myDIExt1?.Dispose();
-                    myDOExt1?.Dispose();
-                    myDOExt2?.Dispose();
-                    myDILaserPort?.Dispose();
-                    myDOLaserPort?.Dispose();
+                    DIExt1?.Dispose();
+                    DOExt1?.Dispose();
+                    DOExt2?.Dispose();
+                    DILaserPort?.Dispose();
+                    DOLaserPort?.Dispose();
 
-                    myDIExt1 = null;
-                    myDILaserPort = null;
-                    myDOExt1 = null;
-                    myDOExt2 = null;
-                    myDOLaserPort = null;
+                    DIExt1 = null;
+                    DILaserPort = null;
+                    DOExt1 = null;
+                    DOExt2 = null;
+                    DOLaserPort = null;
                 }
                 
                 rtc = value;
@@ -207,32 +206,32 @@ namespace Demos
                 if (rtc != null)
                 {
                     // RTC extension DIO
-                    myDIExt1 = IOFactory.CreateInputExtension1(rtc);
-                    myDOExt1 = IOFactory.CreateOutputExtension1(rtc);
+                    DIExt1 = IOFactory.CreateInputExtension1(rtc);
+                    DOExt1 = IOFactory.CreateOutputExtension1(rtc);
                     if (rtc is IRtcSyncAxis)
                     {
                     }
                     else
                     {
-                        myDILaserPort = IOFactory.CreateInputLaserPort(rtc);
-                        myDOLaserPort = IOFactory.CreateOutputLaserPort(rtc);
-                        myDOExt2 = IOFactory.CreateOutputExtension2(rtc);
+                        DILaserPort = IOFactory.CreateInputLaserPort(rtc);
+                        DOLaserPort = IOFactory.CreateOutputLaserPort(rtc);
+                        DOExt2 = IOFactory.CreateOutputExtension2(rtc);
                     }
 
-                    myDIExt1?.Initialize();
-                    myDOExt1?.Initialize();
-                    myDOExt2?.Initialize();
-                    myDILaserPort?.Initialize();
-                    myDOLaserPort?.Initialize();
+                    DIExt1?.Initialize();
+                    DOExt1?.Initialize();
+                    DOExt2?.Initialize();
+                    DILaserPort?.Initialize();
+                    DOLaserPort?.Initialize();
 
-                    rtcDIUserControl1.DIExt1 = myDIExt1;
-                    rtcDIUserControl1.DILaserPort = myDILaserPort;
+                    rtcDIUserControl1.DIExt1 = DIExt1;
+                    rtcDIUserControl1.DILaserPort = DILaserPort;
                     rtcDIUserControl1.UpdateExtension1PortNames(Config.DIN_RtcExtension1Port);
                     rtcDIUserControl1.UpdateLaserPortNames(Config.DIN_RtcLaserPort);
                     
-                    rtcDOUserControl1.DOExt1 = myDOExt1;
-                    rtcDOUserControl1.DOExt2 = myDOExt2;
-                    rtcDOUserControl1.DOLaserPort = myDOLaserPort;
+                    rtcDOUserControl1.DOExt1 = DOExt1;
+                    rtcDOUserControl1.DOExt2 = DOExt2;
+                    rtcDOUserControl1.DOLaserPort = DOLaserPort;
                     rtcDOUserControl1.UpdateExtension1PortNames(Config.DOut_RtcExtension1Port);
                     rtcDOUserControl1.UpdateExtension2PortNames(Config.DOut_RtcExtension2Port);
                     rtcDOUserControl1.UpdateLaserPortNames(Config.DOut_RtcLaserPort);
@@ -252,7 +251,7 @@ namespace Demos
         /// <c>ILaser</c>
         /// </summary>
         /// <remarks>
-        /// Created by <c>LaserFactory</c> <br/>
+        /// Created by <c>LaserFactory</c>. <br/>
         /// </remarks>
         public ILaser Laser
         {
@@ -287,7 +286,7 @@ namespace Demos
         /// <c>IMarker</c>
         /// </summary>
         /// <remarks>
-        /// Created by <c>MarkerFactory</c> <br/>
+        /// Created by <c>MarkerFactory</c>. <br/>
         /// </remarks>
         public IMarker Marker
         {
@@ -304,7 +303,6 @@ namespace Demos
                 marker = value;
                 MarkerCtrl.Marker = marker;
                 OffsetCtrl.Marker = marker;
-                RemoteCtrl.Marker = marker;
                 ScriptCtrl.Marker = marker;
                 EditorCtrl.View.Marker = marker;
 
@@ -322,7 +320,7 @@ namespace Demos
         /// <c>IView</c>
         /// </summary>
         /// <remarks>
-        /// Created by automatically <br/>
+        /// Created by internally. <br/>
         /// </remarks>
         public IView View
         {
@@ -333,7 +331,8 @@ namespace Demos
         /// <c>IRemote</c>
         /// </summary>
         /// <remarks>
-        /// Created by <c>RemoteFactory</c> <br/>
+        /// Created by <c>RemoteFactory</c>. <br/>
+        /// To do control by remotely. <br/>
         /// </remarks>
         public IRemote Remote 
         {
@@ -359,7 +358,8 @@ namespace Demos
         /// <c>IPowerMeter</c>
         /// </summary>
         /// <remarks>
-        /// Created by <c>PowerMeterFactory</c> <br/>
+        /// Created by <c>PowerMeterFactory</c>. <br/>
+        /// To do control <c>IPowerMeter</c>. <br/>
         /// </remarks>
         public IPowerMeter PowerMeter
         {
@@ -390,128 +390,141 @@ namespace Demos
         }
         private IPowerMeter powerMeter;
             
-
-        IDInput myDIExt1;
-        IDInput myDILaserPort;
-        IDOutput myDOExt1;
-        IDOutput myDOExt2;
-        IDOutput myDOLaserPort;
+        /// <summary>
+        /// RTC DI extension1 port (16 bits)
+        /// </summary>
+        protected IDInput DIExt1;
+        /// <summary>
+        /// RTC DI laser port (2 bits)
+        /// </summary>
+        protected IDInput DILaserPort;
+        /// <summary>
+        /// RTC DO extension1 port (16 btis)
+        /// </summary>
+        protected IDOutput DOExt1;
+        /// <summary>
+        /// RTC DO extension2 port (8 bits)
+        /// </summary>
+        protected IDOutput DOExt2;
+        /// <summary>
+        /// RTC DO laser port (2 btis)
+        /// </summary>
+        protected IDOutput DOLaserPort;
 
         /// <summary>
-        /// Usercontrol for Treeview
+        /// Treeview user control for <c>EntityLayer</c> and <c>IEntity</c> nodes
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl TreeViewCtrl
         { 
             get { return treeViewControl1; } 
         }
         /// <summary>
-        /// Usercontrol for Treeview with block
+        /// Treeview user control for <c>EntityBlock</c> nodes
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl TreeViewBlockCtrl
         {
             get { return treeViewBlockControl1; }
         }
         /// <summary>
-        /// Usercontrol for propertygrid
+        /// PropertyGrid user control for properties of <c>IEntity</c>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl PropertyGridCtrl
         {
             get { return propertyGridControl1; }
         }
         /// <summary>
-        /// Usercontrol for editor
+        /// Editor(by OpenTK) user control for rendering view 
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.EditorUserControl EditorCtrl
         {
             get { return editorControl1; }
         }
         /// <summary>
-        /// Usercontrol for pen
+        /// PropertyGrid user control for properties of <c>EntityPen</c>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.PenUserControl PenCtrl
         {
             get { return penControl1; }
         }
         /// <summary>
-        /// Usercontrol for laser
+        /// PropertyGrid user control for <c>ILaser</c>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.LaserUserControl LaserCtrl
         {
             get { return laserControl1; }
         }
         /// <summary>
-        /// Usercontrol for rtc
+        /// PropertyGrid user control for <c>IRtc</c>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.RtcUserControl RtcCtrl
         {
             get { return rtcControl1; }
         }
         /// <summary>
-        /// Usercontrol for marker
+        /// PropertyGrid user control for <c>IMarer</c>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.MarkerUserControl MarkerCtrl
         {
             get { return markerControl1; }
         }
         /// <summary>
-        /// Usercontrol for offset
+        /// Editable user control for <c>IMarker.Offsets</c>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.OffsetUserControl OffsetCtrl
         {
             get { return offsetControl1; }
         }
         /// <summary>
-        /// Usercontrol for DI
+        /// User control for RTC DI (extension 1 and  laser port)
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl RtcDICtrl
         {
             get { return rtcDIUserControl1; }
         }
         /// <summary>
-        /// Usercontrol for DO
+        /// User control for RTC DO (extension 1,2 and laser port)
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl RtcDOCtrl
         {
             get { return rtcDOUserControl1; }
         }
         /// <summary>
-        /// Usercontrol for manual
+        /// User control for manual control
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.ManualUserControl ManualCtrl
         {
             get { return manualUserControl1; }
         }
         /// <summary>
-        /// Usercontrol for remote
-        /// </summary>
-        public SpiralLab.Sirius2.Winforms.UI.RemoteUserControl RemoteCtrl
-        {
-            get { return remoteUserControl1; }
-        }
-        /// <summary>
-        /// Usercontrol for powermeter
+        /// User control for <c>IPowerMeter</c>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.PowerMeterControl PowerMeterCtrl
         {
             get { return powerMeterControl1; }
         }
         /// <summary>
-        /// Usercontrol for powermap
+        ///  User control for <c>IPowerMap</c>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.PowerMapControl PowerMapCtrl
         {
             get { return powerMapControl1; }
         }
         /// <summary>
-        /// Usercontrol for script 
+        /// User control for <c>IScript</c>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.ScriptControlControl ScriptCtrl
         {
             get { return scriptControlControl1; }
         }
-
         /// <summary>
-        /// Usercontrol for log
+        /// PropertyGrid user control for <c>IRemote</c>
+        /// </summary>
+        public SpiralLab.Sirius2.Winforms.UI.RemoteUserControl RemoteCtrl
+        {
+            get { return remoteUserControl1; }
+        }
+        /// <summary>
+        /// User control for logged messages
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.LogUserControl LogCtrl
         {
@@ -750,7 +763,6 @@ namespace Demos
                 document.ActInsert(entity, document.ActiveLayer, 0);
             }
         }
-
         private void SiriusEditorUserControl_Disposed(object sender, EventArgs e)
         {
             timerStatus.Enabled = false;
@@ -758,7 +770,6 @@ namespace Demos
             timerStatus.Tick -= TimerStatus_Tick;
             timerProgress.Tick -= TimerProgress_Tick;
         }
-
         private void MenuVisibility()
         {
             Debug.Assert(rtc != null);
@@ -797,7 +808,6 @@ namespace Demos
             EntityPoints.PropertyVisibility(rtc);
             EntityRampBegin.PropertyVisibility(rtc);
         }
-
         private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (null == Document)
@@ -814,43 +824,36 @@ namespace Demos
             }
             EditorCtrl.View.Render();
         }
-
         private void MnuMarginBottom_Click(object sender, EventArgs e)
         {
             document.ActAlign(document.Selected, MarginAlignments.Bottom);
             DoRender();
         }
-
         private void MnuMarginTop_Click(object sender, EventArgs e)
         {
             document.ActAlign(document.Selected, MarginAlignments.Top);
             DoRender();
         }
-
         private void MnuMarginRight_Click(object sender, EventArgs e)
         {
             document.ActAlign(document.Selected, MarginAlignments.Right);
             DoRender();
         }
-
         private void MnuMarginLeft_Click(object sender, EventArgs e)
         {
             document.ActAlign(document.Selected, MarginAlignments.Left);
             DoRender();
         }
-
         private void MnuZDelta_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateZDelta(0);
             document.ActAdd(entity);
         }
-
         private void MnuZDefocus_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateZDefocus(0);
             document.ActAdd(entity);
         }
-
         private void LblEncoder_DoubleClick(object sender, EventArgs e)
         {
             if (null == Rtc)
@@ -866,13 +869,11 @@ namespace Demos
 
             rtcMoF.CtlMofEncoderReset();
         }
-
         private void MnuMofAngularWait_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateMoFWait(RtcEncoderWaitConditions.Over, 90);
             document.ActAdd(entity);
         }
-
         private void MnuMofAngularBeginEnd_Click(object sender, EventArgs e)
         {
             {
@@ -885,13 +886,11 @@ namespace Demos
                 document.ActInsert(entity, document.ActiveLayer, 0);
             }
         }
-
         private void MnuMofXYWait_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateMoFWait(RtcEncoders.EncX, RtcEncoderWaitConditions.Over, 10);
             document.ActAdd(entity);
         }
-
         private void MnuMofXYBeginEnd_Click(object sender, EventArgs e)
         {
             {
@@ -906,6 +905,16 @@ namespace Demos
         private void MnuMoFExternalStartDelay_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateMoFExternalStartDelay( RtcEncoders.EncX, 0);
+            document.ActAdd(entity);
+        }
+        private void MnuTimer_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateTimer(1);
+            document.ActAdd(entity);
+        }
+        private void MnuJumpTo_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateJumpTo(Vector3.Zero);
             document.ActAdd(entity);
         }
 
@@ -925,19 +934,16 @@ namespace Demos
             var entity = EntityFactory.CreatePoints(locations, 10);
             document.ActAdd(entity);
         }
-
         private void BtnPoint_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreatePoint(0, 0, 10);
             document.ActAdd(entity);
         }
-
         private void BtnLine_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateLine(-10, 0, 10, 0);
             document.ActAdd(entity);
         }
-
         private void BtnImportFile_Click(object sender, EventArgs e)
         {
             //var dlg = new OpenFileDialog();
@@ -973,30 +979,16 @@ namespace Demos
             Document.ActAdd(cloned);
             Cursor.Current = Cursors.Default;
         }
-
         private void BtnRectangle_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateRectangle(Vector2.Zero, 10,10);
             document.ActAdd(entity);
         }
-
-        private void MnuTimer_Click(object sender, EventArgs e)
-        {
-            var entity = EntityFactory.CreateTimer(1);
-            document.ActAdd(entity);
-        }
-        private void MnuJumpTo_Click(object sender, EventArgs e)
-        {
-            var entity = EntityFactory.CreateJumpTo(Vector3.Zero);
-            document.ActAdd(entity);
-        }
-
         private void BtnText_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateText(Config.DefaultFont, $"Hello{Environment.NewLine}SIRIUS2", FontStyle.Regular, 2);
             Document.ActAdd(entity);
         }
-
         private void BtnImageText_Click(object sender, EventArgs e)
         {
             var form = new SpiralLab.Sirius2.Winforms.UI.ImageTextForm();
@@ -1052,7 +1044,6 @@ namespace Demos
             }
             DoRender();
         }
-
         private void BtnPasteArray_Click(object sender, EventArgs e)
         {
             if (Document.Clipboard == null || Document.Clipboard.Length == 0)
@@ -1077,8 +1068,6 @@ namespace Demos
             }
             DoRender();
         }
-
-
 
         private void BtnCopy_Click(object sender, EventArgs e)
         {
@@ -1144,25 +1133,29 @@ namespace Demos
         {
             if (!this.IsHandleCreated || this.IsDisposed)
                 return;
-            this.Invoke(new MethodInvoker(delegate ()
+            
+            switch (rtcMoF.EncoderType)
             {
-                switch (rtcMoF.EncoderType)
-                {
-                    default:
-                    case RtcEncoderTypes.XY:
+                default:
+                case RtcEncoderTypes.XY:
+                    {
+                        rtcMoF.CtlMofGetEncoder(out var x, out var y, out var xMm, out var yMm);
+                        this.BeginInvoke(new MethodInvoker(delegate ()
                         {
-                            rtcMoF.CtlMofGetEncoder(out var x, out var y, out var xMm, out var yMm);
                             lblEncoder.Text = $"ENC XY: {x}, {y} [{xMm:F3}, {yMm:F3}]";
-                        }
-                        break;
-                    case RtcEncoderTypes.Angular:
-                        { 
-                            rtcMoF.CtlMofGetAngularEncoder(out var x, out var angle);
+                        }));
+                    }
+                    break;
+                case RtcEncoderTypes.Angular:
+                    {
+                        rtcMoF.CtlMofGetAngularEncoder(out var x, out var angle);
+                        this.BeginInvoke(new MethodInvoker(delegate ()
+                        {
                             lblEncoder.Text = $"ENC X,0: {x} [{angle:F3}˚]";
-                        }
-                        break;
-                }
-            }));
+                        }));
+                    }
+                    break;
+            }
         }
 
         private void BtnNew_Click(object sender, EventArgs e)
@@ -1201,7 +1194,6 @@ namespace Demos
             document.ActOpen(dlg.FileName);
             Cursor.Current = Cursors.Default;
         }
-
         private void BtnSave_Click(object sender, EventArgs e)
         {
             if (Config.NotifySave(this))
@@ -1385,17 +1377,17 @@ namespace Demos
                 else
                     lblProcessTime.ForeColor = Color.Red;
 
-                lblProcessTime.Text = $"{timerProgressStopwatch.ElapsedMilliseconds / 1000.0:F1} sec";
+                lblProcessTime.Text = $"{timerProgressStopwatch.ElapsedMilliseconds / 1000.0:F3} sec";
             }));
         }
         private void Marker_OnStarted(IMarker marker)
         {
             if (!this.IsHandleCreated || this.IsDisposed)
                 return;
-            this.Invoke(new MethodInvoker(delegate ()
+            timerProgressStopwatch.Restart();
+            timerProgress.Start();
+            this.BeginInvoke(new MethodInvoker(delegate ()
             {
-                timerProgressStopwatch.Restart();
-                timerProgress.Start();
                 EnableDisableControlByMarking(false);
             }));
         }
@@ -1403,19 +1395,19 @@ namespace Demos
         {
             if (!this.IsHandleCreated || this.IsDisposed)
                 return;
-            this.Invoke(new MethodInvoker(delegate ()
+            timerProgressStopwatch.Stop();
+            timerProgress.Stop();
+            this.BeginInvoke(new MethodInvoker(delegate ()
             {
-                timerProgressStopwatch.Stop();
-                timerProgress.Stop();
                 if (success)
                 {
                     lblProcessTime.ForeColor = statusStrip1.ForeColor;
-                    lblProcessTime.Text = $"{ts.TotalSeconds:F1} sec";
+                    lblProcessTime.Text = $"{ts.TotalSeconds:F3} sec";
                 }
                 else
                 {
                     lblProcessTime.ForeColor = Color.Red;
-                    lblProcessTime.Text = $"{ts.TotalSeconds:F1} sec";
+                    lblProcessTime.Text = $"{ts.TotalSeconds:F3} sec";
                 }
                 EnableDisableControlByMarking(true);
                 EditorCtrl.Focus();
@@ -1425,7 +1417,7 @@ namespace Demos
         {
             if (!this.IsHandleCreated || this.IsDisposed)
                 return;
-            this.Invoke(new MethodInvoker(delegate ()
+            this.BeginInvoke(new MethodInvoker(delegate ()
             {
                 lblPowerWatt.Text = $"(Empty)";
             }));
@@ -1434,9 +1426,9 @@ namespace Demos
         {
             if (!this.IsHandleCreated || this.IsDisposed)
                 return;
-            this.Invoke(new MethodInvoker(delegate ()
+            this.BeginInvoke(new MethodInvoker(delegate ()
             {
-                lblPowerWatt.Text = $"0.0 W";
+                lblPowerWatt.Text = $"Started...";
             }));
         }
         private void PowerMeter_OnStopped(IPowerMeter obj)
@@ -1452,7 +1444,7 @@ namespace Demos
         {
             if (!this.IsHandleCreated || this.IsDisposed)
                 return;
-            this.Invoke(new MethodInvoker(delegate ()
+            this.BeginInvoke(new MethodInvoker(delegate ()
             {
                 lblPowerWatt.Text = $"{watt:F3} W";
             }));

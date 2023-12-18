@@ -224,13 +224,14 @@ namespace Demos
         /// <inheritdoc/>  
         protected override void Dispose(bool disposing)
         {
-            if (this.disposed)
-                return;
-            if (disposing)
+            if (!this.disposed)
             {
-                this.Stop();               
+                if (disposing)
+                {
+                }
+                this.Stop();
+                this.disposed = true;
             }
-            this.disposed = true;
             base.Dispose(disposing);
         }
         /// <inheritdoc/>

@@ -152,6 +152,10 @@
 
 **7. Version history**
 
+* 2023.12.19 v.1.14.990
+  - fixed) memory leak by text entity
+  - fixed) stability issues
+  
 * 2023.12.11 v.1.13.965
   - added) script engine for convert text data
   - fixed) OnTextConvert event at IMarker

@@ -349,6 +349,14 @@
             Should be configured before <c>Core.Initialize</c> has called. <br/>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Config.LogLevel">
+            <summary>
+            Min. log level
+            </summary>
+            <remarks>
+            User must be assign <c>LogLevel</c> before do <c>Core.Initialize</c>. <br/>
+            </remarks>
+        </member>
         <member name="E:SpiralLab.Sirius2.Config.OnLogged">
             <summary>
             Event for log message
@@ -2716,11 +2724,6 @@
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.ActualCrystal1Temperature">
             <summary>
             Crystal 1 Actual Temperature (°C)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.ActualCrystal2Temperature">
-            <summary>
-            Crystal 2 Actual Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.ActualLaserHeadTemperature">
@@ -7787,32 +7790,32 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Logger.Types.Trace">
             <summary>
-            Trace
+            Most verbose level. Used for development and seldom enabled in production.
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Logger.Types.Debug">
             <summary>
-            Debug
+            Debugging the application behavior from internal events of interest.
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Logger.Types.Info">
             <summary>
-            Information
+            Information that highlights progress or application lifetime events.
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Logger.Types.Warn">
             <summary>
-            Warn
+            Warnings about validation issues or temporary failures that can be recovered.
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Logger.Types.Error">
             <summary>
-            Error
+            Errors where functionality has failed or Exception have been caught.
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Logger.Types.Fatal">
             <summary>
-            Fatal
+            Most critical level. Application is about to abort.
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Logger.Log(SpiralLab.Sirius2.Logger.Types,System.String)">
@@ -9146,22 +9149,22 @@
         </member>
         <member name="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnStarted">
             <summary>
-            Event handler for started
+            Event for powermeter has started
             </summary>
         </member>
         <member name="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnMeasured">
             <summary>
-            Event handler for measure with DateTime, Measured power (W)
+            Event for powermeter has measured data (datetime, power (W))
             </summary>
         </member>
         <member name="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnStopped">
             <summary>
-            Event handler for stop
+            Event for poweremeter has stopped
             </summary>
         </member>
         <member name="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnCleared">
             <summary>
-            Event handler for clear 
+            Event for measured data has clear 
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.SyncRoot">
@@ -10470,6 +10473,15 @@
         <member name="E:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.PropertyChanged">
             <inheritdoc/>
         </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.OnJob">
+            <inheritdoc/>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.OnCorrectionTable">
+            <inheritdoc/>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.OnEncoderChanged">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.NotifyPropertyChanged(System.String)">
             <summary>
             Nofity property value has changed
@@ -10478,9 +10490,16 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.NotifyJob(SpiralLab.Sirius2.Scanner.IJob)">
             <summary>
-            Notify job status
+            Notify job status has changed(or job has created)
             </summary>
             <param name="job"><c>IJob</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.NotifyCorrectionTable(SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,System.String)">
+            <summary>
+            Notify correction file has loaded into specific table
+            </summary>
+            <param name="table"><c>CorrectionTables</c></param>
+            <param name="fileName">Correction filename</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.NotifyEncoderChanged(System.Int32,System.Int32)">
             <summary>
@@ -10604,9 +10623,6 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.Job">
-            <inheritdoc/>  
-        </member>
-        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.OnJob">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.JobQueue">
@@ -10735,9 +10751,6 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.SamplingFrequency">
-            <inheritdoc/>  
-        </member>
-        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.OnEncoderChanged">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.EncoderType">
@@ -12096,6 +12109,15 @@
         <member name="E:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.PropertyChanged">
             <inheritdoc/>
         </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.OnJob">
+            <inheritdoc/>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.OnCorrectionTable">
+            <inheritdoc/>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.OnEncoderChanged">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.NotifyPropertyChanged(System.String)">
             <summary>
             Nofity property value has changed
@@ -12104,9 +12126,16 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.NotifyJob(SpiralLab.Sirius2.Scanner.IJob)">
             <summary>
-            Notify job status
+            Notify job status has changed(or job has created)
             </summary>
             <param name="job"><c>IJob</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.NotifyCorrectionTable(SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,System.String)">
+            <summary>
+            Notify correction file has loaded into specific table
+            </summary>
+            <param name="table"><c>CorrectionTables</c></param>
+            <param name="fileName">Correction filename</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.NotifyEncoderChanged(System.Int32,System.Int32)">
             <summary>
@@ -12270,9 +12299,6 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.Job">
-            <inheritdoc/>  
-        </member>
-        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.OnJob">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.JobQueue">
@@ -12531,9 +12557,6 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.SamplingFrequency">
-            <inheritdoc/>  
-        </member>
-        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.OnEncoderChanged">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.EncoderType">
@@ -13307,11 +13330,33 @@
         <member name="E:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.PropertyChanged">
             <inheritdoc/>
         </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.OnJob">
+            <inheritdoc/>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.OnCorrectionTable">
+            <inheritdoc/>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.OnEncoderChanged">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.NotifyPropertyChanged(System.String)">
             <summary>
             Nofity property value has changed
             </summary>
             <param name="propertyName">Property name</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.NotifyJob(SpiralLab.Sirius2.Scanner.IJob)">
+            <summary>
+            Notify job status has changed(or job has created)
+            </summary>
+            <param name="job"><c>IJob</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.NotifyCorrectionTable(SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,System.String)">
+            <summary>
+            Notify correction file has loaded into specific table
+            </summary>
+            <param name="table"><c>CorrectionTables</c></param>
+            <param name="fileName">Correction filename</param>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.Count">
             <summary>
@@ -13452,9 +13497,6 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.Job">
-            <inheritdoc/>  
-        </member>
-        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.OnJob">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.JobQueue">
@@ -15678,7 +15720,7 @@
             </para>
             </summary>
         </member>
-        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.OnResult">
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.OnConverted">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary.Rows">
@@ -15991,7 +16033,7 @@
             However, this causes a barrel-shaped distortion of the Image field, see Figure 57. <br/>
             </remarks>
         </member>
-        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection2D.OnResult">
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection2D.OnConverted">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection2D.Rows">
@@ -16088,7 +16130,7 @@
             </para>
             </summary>
         </member>
-        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection3D.OnResult">
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection3D.OnConverted">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection3D.Rows">
@@ -16204,11 +16246,14 @@
         <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.PropertyChanged">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.NotifyPropertyChanged(System.String)">
-            <summary>
-            Nofity property value has changed
-            </summary>
-            <param name="propertyName">Property name</param>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.OnJob">
+            <inheritdoc/>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.OnCorrectionTable">
+            <inheritdoc/>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.OnEncoderChanged">
+            <inheritdoc/>  
         </member>
         <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.OnJumpTo">
             <summary>
@@ -16219,6 +16264,32 @@
             <summary>
             Event handler for mark to x,y,z position with transformation
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.NotifyPropertyChanged(System.String)">
+            <summary>
+            Nofity property value has changed
+            </summary>
+            <param name="propertyName">Property name</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.NotifyJob(SpiralLab.Sirius2.Scanner.IJob)">
+            <summary>
+            Notify job status has changed(or job has created)
+            </summary>
+            <param name="job"><c>IJob</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.NotifyCorrectionTable(SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,System.String)">
+            <summary>
+            Notify correction file has loaded into specific table
+            </summary>
+            <param name="table"><c>CorrectionTables</c></param>
+            <param name="fileName">Correction filename</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.NotifyEncoderChanged(System.Int32,System.Int32)">
+            <summary>
+            Nofity encoder value has changed
+            </summary>
+            <param name="encX">Encoder x</param>
+            <param name="encY">Encoder y</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.NotifyJumpTo(System.Numerics.Vector3)">
             <summary>
@@ -16307,9 +16378,6 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.Job">
-            <inheritdoc/>  
-        </member>
-        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.OnJob">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.JobQueue">
@@ -16438,9 +16506,6 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.SamplingFrequency">
-            <inheritdoc/>  
-        </member>
-        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.OnEncoderChanged">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.EncoderType">
@@ -16865,13 +16930,6 @@
             <param name="xBits"></param>
             <param name="yBits"></param>
             <param name="zBits"></param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.NotifyEncoderChanged(System.Int32,System.Int32)">
-            <summary>
-            Nofity encoder value has changed
-            </summary>
-            <param name="encX">Encoder x</param>
-            <param name="encY">Encoder y</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlMofEncoderReset(System.Double,System.Double)">
             <inheritdoc/>  
@@ -17625,6 +17683,16 @@
             IRtc interface
             </summary>
         </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.IRtc.OnJob">
+            <summary>
+            Event for job status has changed(or job has created)
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.IRtc.OnCorrectionTable">
+            <summary>
+            Event for correction file has loaded into specific table
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.Index">
             <summary>
             Identifier (0,1,2,...)
@@ -17647,14 +17715,6 @@
             <remarks>
             <c>Rtc5</c>, <c>Rtc6</c>: <c>JobRtc</c> <br/>
             <c>Rtc6SyncAxis</c>: <c>JobSyncAxis</c> <br/>
-            </remarks>
-        </member>
-        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.IRtc.OnJob">
-            <summary>
-            Job status event handler
-            </summary>
-            <remarks>
-            Notify job status has changed
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.JobHistory">
@@ -19056,9 +19116,9 @@
             Correction 2D interface
             </summary>
         </member>
-        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection2D.OnResult">
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection2D.OnConverted">
             <summary>
-            Event handler for conversion result (with success/fail, message)
+            Event for convert result (with success/fail, message)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection2D.Rows">
@@ -19209,9 +19269,9 @@
             Correction 3D interface
             </summary>
         </member>
-        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection3D.OnResult">
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection3D.OnConverted">
             <summary>
-            Event handler for convert result (with success/fail, message)
+            Event for convert result (with success/fail, message)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection3D.Rows">
