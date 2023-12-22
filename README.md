@@ -96,8 +96,9 @@
 | Render engine         |OpenTK (with shaders)                                  |SharpGL                  |
 | Render speed          |Faster                                                 |Acceptable               |
 | Field correction      |correXionPro and CalibrationTool                       |correXionPro             |
-| Font                  |cxf, lff format and Windows fonts                      |ttf, cxf format          |
+| Font                  |cxf, lff format and Windows fonts                      |external ttf, cxf format |
 | Remote control        |Supported (TCP/IP, Serial)                             |None                     |
+| Script                |C# script                                              |None                     |
 | Multi-language        |Supported                                              |None                     |
 | Customization         |Expandable                                             |Acceptable               |
 
@@ -153,8 +154,8 @@
 **7. Version history**
 
 * 2023.12.2 v.1.15.1000
- - updated) RTC6 v1.16.3 (2023-12-19)
- - fixed) powermap 
+  - updated) RTC6 v1.16.3 (2023-12-19)
+  - fixed) powermap 
 
 * 2023.12.19 v.1.14.990
   - fixed) memory leak by text entity
