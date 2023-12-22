@@ -254,6 +254,11 @@
         <member name="M:SpiralLab.Sirius2.Common.CorrectionFileBrowser.InitializeDialog(System.Windows.Forms.OpenFileDialog)">
             <inheritdoc/>
         </member>
+        <member name="T:SpiralLab.Sirius2.Common.PowerMapFileBrowser">
+            <summary>
+            PowerMapFileBrowser
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Config">
             <summary>
             Configuration for <c>SpiralLab.Sirius2</c> library
@@ -503,6 +508,16 @@
             Used with <c>MeasurementChannels.LaserOn</c> channel <br/>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Config.PowerMapPreHeatTimeMs">
+            <summary>
+            Pre-Heat time (msec) for power mapping/verification/compensation
+            </summary>
+            <remarks>
+            Used with <c>IPowerMap.CtlMapping</c>, <c>IPowerMap.CtlVerify</c>, <c>IPowerMap.CtlCompensate</c> <br/>
+            Delay time for pre-heating. <br/>
+            Default: 10000ms (10 secs) <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Config.PowerMapHoldTimeMs">
             <summary>
             Hold time (msec) for power mapping/verification/compensation
@@ -510,18 +525,27 @@
             <remarks>
             Used with <c>IPowerMap.CtlMapping</c>, <c>IPowerMap.CtlVerify</c>, <c>IPowerMap.CtlCompensate</c> <br/>
             Used last measured laser output power after this time period. <br/>
-            Default: 5000ms (5secs) <br/>
+            Default: 5000ms (5 secs) <br/>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.Config.PowerMapThreshold">
+        <member name="P:SpiralLab.Sirius2.Config.PowerMapInRangeThreshold">
             <summary>
-            Threshold percentage(%) for power mapping/verification/compensation
+            In range threshold percentage(%) for power mapping, verification, compensation
             </summary>
             <remarks>
             Used with <c>IPowerMap.CtlMapping</c>, <c>IPowerMap.CtlVerify</c>, <c>IPowerMap.CtlCompensate</c> <br/>
-            Error power(W) = Target power - measured power <br/>
-            Range: 0~100% <br/>
-            Default: 5% <br/>
+            Threshold power(W) = Target power(W) * <c>PowerMapInRangeThreshold</c>  / 100.0 <br/>
+            Range: 0~100% and Default: 5% <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Config.PowerMapOutOfRangeThreshold">
+            <summary>
+            Out of range threshold percentage(%) for compensation
+            </summary>
+            <remarks>
+            Used with <c>IPowerMap.CtlCompensate</c> <br/>
+            Threshold power(W) = Target power(W) * <c>PowerMapOutOfRangeThreshold</c> / 100.0 <br/>
+            Range: 0~100% and Default: 20% <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.PowerMapCompensateRetryCounts">
@@ -530,6 +554,8 @@
             </summary>
             <remarks>
             Used with <c>IPowerMap.CtlCompensate</c> <br/>
+            Retry until range withing <c>PowerMapInRangeThreshold</c> <br/>
+            Default: 2 <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Config.DIOBitMask">
@@ -1720,7 +1746,7 @@
             </code>
             </summary>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <param name="powerControlMethod"><c>PowerControlMethod</c></param>
             <returns><c>LaserVirtual</c></returns>
         </member>
@@ -1747,7 +1773,7 @@
             Fixed with <see cref="F:SpiralLab.Sirius2.Laser.PowerControlMethods.Analog">PowerControlMethods.Analog</see>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <param name="analogCh">1: <c>ExtensionChannels.ExtAO1</c>, 2: <c>ExtensionChannels.ExtAO2</c></param>
             <param name="minVoltage">Min voltage (V)</param>
             <param name="maxVoltage">Max voltage (V)</param>
@@ -1775,7 +1801,7 @@
             Fixed with <see cref="F:SpiralLab.Sirius2.Laser.PowerControlMethods.Frequency">PowerControlMethods.Frequency</see>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <param name="minFrequency">Min Frequency (Hz)</param>
             <param name="maxFrequency">Max Frequency (Hz)</param>
             <returns><c>LaserVirtual</c></returns>
@@ -1803,7 +1829,7 @@
             Fixed with <see cref="F:SpiralLab.Sirius2.Laser.PowerControlMethods.DutyCycle">PowerControlMethods.DutyCycle</see>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <param name="minDutyCycle">Min Duty Cycle Duty (%)</param>
             <param name="maxDutyCycle">Max Duty Cycle Duty (%)</param>
             <returns><c>LaserVirtual</c></returns>
@@ -1831,7 +1857,7 @@
             Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDO16">ExtensionChannels.ExtDO16</see> <br/>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <param name="minBit">Min bit value (0)</param>
             <param name="maxBit">Max bit value (65535)</param>
             <returns><c>LaserVirtual</c></returns>
@@ -1859,7 +1885,7 @@
             Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDO8">ExtensionChannels.ExtDO8</see> <br/>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <param name="minBit">Min bit value (0)</param>
             <param name="maxBit">Max bit value (255)</param>
             <returns><c>LaserVirtual</c></returns>
@@ -1888,7 +1914,7 @@
             Argument value is fixed to percentage value. For example, "{0:F3}" is means "{percentage:F3}". <br/>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <param name="format">Formatted string</param>
             <returns><c>LaserVirtual</c></returns>
         </member>
@@ -1913,7 +1939,7 @@
             Recommened that create your own laser instance that inherited <see cref="T:SpiralLab.Sirius2.Laser.LaserBase">LaserBase</see> <br/>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><c>LaserVirtual</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateAdvancedOptoWaveAOPico(System.Int32,System.String,System.Int32,System.Double)">
@@ -1926,7 +1952,7 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><c>AdvancedOptoWaveAOPico</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateAdvancedOptoWaveAOPicoPrecision(System.Int32,System.String,System.Int32,System.Double)">
@@ -1939,7 +1965,7 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><c>AdvancedOptoWaveAOPicoPrecision</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateAdvancedOptoWaveFotia(System.Int32,System.String,System.Int32,System.Double)">
@@ -1952,7 +1978,7 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><c>AdvancedOptoWaveFotia</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateCoherentAviaLX(System.Int32,System.String,System.Int32,System.Double)">
@@ -1965,7 +1991,7 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><c>CoherentAviaLX</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateCoherentDiamondCSeries(System.Int32,System.String,System.Double)">
@@ -1977,7 +2003,7 @@
             </remarks>
             <param name="index">Identifier</param>
             <param name="name">Name</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><c>CoherentDiamondCSeries</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateIPGYLPN(System.Int32,System.String,System.Int32,System.Double,System.Int32)">
@@ -1990,7 +2016,7 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <param name="analogPort">RTC analog port no (1 or 2)</param>
             <returns><c>IPGYLPN</c></returns>
         </member>
@@ -2004,7 +2030,7 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><c>IPGYLPTypeD</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateIPGYLPTypeE(System.Int32,System.String,System.Int32,System.Double)">
@@ -2017,7 +2043,7 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><c>IPGYLPTypeE</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateIPGYLPULPN(System.Int32,System.String,System.Int32,System.Double)">
@@ -2030,7 +2056,7 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><c>IPGYLPULPN</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateJPTTypeE(System.Int32,System.String,System.Int32,System.Double)">
@@ -2043,7 +2069,7 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><c>JPTTypeE</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreatePhotonicsIndustryDX(System.Int32,System.String,System.Int32,System.Double)">
@@ -2056,7 +2082,7 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><c>PhotonicsIndustryDX</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreatePhotonicsIndustryRGHAIO(System.Int32,System.String,System.Int32,System.Double)">
@@ -2069,7 +2095,7 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><c>PhotonicsIndustryRGHAIO</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateSpectraPhysicsHippo(System.Int32,System.String,System.Int32,System.Double)">
@@ -2082,7 +2108,7 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><c>SpectraPhysicsHippo</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateSpectraPhysicsTalon(System.Int32,System.String,System.Int32,System.Double)">
@@ -2095,7 +2121,7 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><c>SpectraPhysicsTalon</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateSPIG4(System.Int32,System.String,System.Int32,System.Double)">
@@ -2108,7 +2134,7 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max power (W)</param>
+            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><c>SPIG4</c></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico">
@@ -2123,9 +2149,6 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.PowerMap">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.Serial">
@@ -2617,9 +2640,6 @@
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.PowerMap">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.IsCompensated">
-            <inheritdoc/>  
-        </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.Serial">
             <summary>
             SerialPort instance
@@ -2932,9 +2952,6 @@
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.PowerMap">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.IsCompensated">
-            <inheritdoc/>  
-        </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.Serial">
             <summary>
             SerialPort instance
@@ -3195,9 +3212,6 @@
         <member name="P:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.PowerMap">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.IsCompensated">
-            <inheritdoc/>  
-        </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.MinDutyCycle">
             <summary>
             Min duty cycle (%)
@@ -3313,9 +3327,6 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.PowerMap">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPN.Serial">
@@ -3832,9 +3843,6 @@
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.PowerMap">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.IsCompensated">
-            <inheritdoc/>  
-        </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.Serial">
             <summary>
             SerialPort instance
@@ -4241,9 +4249,6 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.PowerMap">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.Serial">
@@ -4693,9 +4698,6 @@
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.PowerMap">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.IsCompensated">
-            <inheritdoc/>  
-        </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.Serial">
             <summary>
             SerialPort instance
@@ -5067,9 +5069,6 @@
         <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.PowerMap">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.IsCompensated">
-            <inheritdoc/>  
-        </member>
         <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.Serial">
             <summary>
             SerialPort instance
@@ -5422,9 +5421,6 @@
         <member name="P:SpiralLab.Sirius2.Laser.LaserVirtual.PowerMap">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Laser.LaserVirtual.IsCompensated">
-            <inheritdoc/>  
-        </member>
         <member name="P:SpiralLab.Sirius2.Laser.LaserVirtual.IsGuideOn">
             <inheritdoc/>  
         </member>
@@ -5557,9 +5553,6 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.PowerMap">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.Serial">
@@ -5811,9 +5804,6 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.PowerMap">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.Serial">
@@ -6233,9 +6223,6 @@
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.PowerMap">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.IsCompensated">
-            <inheritdoc/>  
-        </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.Serial">
             <summary>
             SerialPort instance
@@ -6536,9 +6523,6 @@
         <member name="P:SpiralLab.Sirius2.Laser.SPIG4.PowerMap">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Laser.SPIG4.IsCompensated">
-            <inheritdoc/>  
-        </member>
         <member name="P:SpiralLab.Sirius2.Laser.SPIG4.Serial">
             <summary>
             SerialPort instance
@@ -6732,9 +6716,6 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.PowerMap">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.IsCompensated">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.Serial">
@@ -7227,6 +7208,10 @@
             Output power ratio (%) = --------------------- X 100
                                           Max power (W)
             </code>
+            <remarks>
+            Actual output laser power(W) but theorical. <br/> 
+            Recommended by measure output laser max power by powermeter and use it. <br/>
+            </remarks>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.ILaser.LastPowerWatt">
@@ -7477,20 +7462,10 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.ILaserPowerControl.PowerMap">
             <summary>
-            Assigned <c>IPowerMap</c> for compensated output power
+            Assigned <c>IPowerMap</c> for calculate(or compensate) output power
             </summary>
             <remarks>
-            If <c>IsCompensated</c> is <c>True</c>, every target output power (W) by <c>CtlPower</c>, <c>ListPower</c> are compensated. <br/>
-            Tried to find target category and x watt by <c>IPowerMap.Compensate</c>. <br/>
-            </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Laser.ILaserPowerControl.IsCompensated">
-            <summary>
-            Enable(or disable) compensated output or not
-            </summary>
-            <remarks>
-            If <c>IsCompensated</c> is <c>True</c>, every target output power (W) by <c>CtlPower</c>, <c>ListPower</c> are compensated. <br/>
-            Tried to find target category and x watt by <c>IPowerMap.Compensate</c>. <br/>
+            If <c>IPowerMap.IsEnableLookUp</c> is <c>True</c>, every target output power (W) by <c>CtlPower</c>, <c>ListPower</c> are calcuated. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.CtlPower(System.Double,System.String)">
@@ -7507,15 +7482,14 @@
             powerMap.Update("50000", 8, 7.4);
             powerMap.Update("50000", 10, 9.5);
             //or PowerMapSerializer.Open("filename", powerMap);
+            powerMap.IsEnableLookUp = true;
             ...
             laser.PowerMap = powerMap;
-            laser.IsCompensated = true;
-            ...
             laser.CtlPower(xWatt, "50000");
             </code>
             </summary>
             <param name="targetWatt">Target x watt (W)</param>
-            <param name="category">Target category name.<br/>Used with <c>IPowerMap</c> to search compensated y value if <c>IsCompensated</c> is <c>True</c> only.<br/></param>
+            <param name="category">Target category name.<br/>Used with <c>IPowerMap</c> to look up output y value if <c>IPowerMap.IsEnableLookUp</c> is <c>True</c> only.<br/></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.ListPower(System.Double,System.String)">
@@ -7532,10 +7506,9 @@
             powerMap.Update("50000", 8, 7.4);
             powerMap.Update("50000", 10, 9.5);
             //or PowerMapSerializer.Open("filename", powerMap);
+            powerMap.IsEnableLookUp = true;
             ...
             laser.PowerMap = powerMap;
-            laser.IsCompensated = true;
-            ...
             laser.ListPower(xWatt, "50000");
             </code>
             <code>
@@ -7559,7 +7532,7 @@
             Consider as its working within async threads. <br/>
             </remarks>
             <param name="targetWatt">Target x watt (W)</param>
-            <param name="category">Target category name.<br/>Used with <c>IPowerMap</c> to search compensated y value if <c>IsCompensated</c> is <c>True</c> only.<br/></param>
+            <param name="category">Target category name.<br/>Used with <c>IPowerMap</c> to look up output y value if <c>IPowerMap.IsEnableLookUp</c> is <c>True</c> only.<br/></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.src.laser.impl.laserbase">
@@ -8518,8 +8491,17 @@
             <remarks>
             Key: Category <br/>
             Value: (Key: X-watt, Value: Y-watt) <br/>
-            Opened by <c>PowerMapSerializer.Open(fileName, this)</c> <br/>
-            Saved by <c>PowerMapSerializer.Save(fileName, this)</c> <br/>
+            <c>InternalData</c> opened by <c>PowerMapSerializer.Open</c> <br/>
+            <c>InternalData</c> saved by <c>PowerMapSerializer.Save</c> <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsEnableLookUp">
+            <summary>
+            Enable(or disable) lookup
+            </summary>
+            <remarks>
+            If <c>IsEnableLookUp</c> is <c>True</c>, <c>LookUp</c> woulde be calculate return value to compensate. <br/>
+            If <c>IsEnableLookUp</c> is <c>False</c>, <c>LookUp</c> would be do return without calcuate. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.Tag">
@@ -8595,38 +8577,53 @@
             <param name="maxXWatt">Max. x watt (W)</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.Compensate(System.String,System.Double,System.Double@)">
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.LookUp(System.String,System.Double,System.Double@,System.Double@,System.Double@)">
             <summary>
-            Query compensated(or calculated) x value by target y value at specific category
+            Query lookup x value by target y value at specific category
+            <code>
+                |                 Category
+             Y  |                    ___
+                |                   /
+             P  |             _____/
+             o  &gt;..........._/  .  
+             w  |        __/ .  .
+             e  |       / .  .  .
+             r  |     _/  .  .  .
+            (W) |  __/    .  .  .
+                |_/______Lx__v__Rx_____
+                       X Power (W)
+            </code>
             </summary>
             <param name="category">Category</param>
             <param name="targetYWatt">Target y watt (W)</param>
-            <param name="xWatt">Compensated x watt (W)</param>
+            <param name="xWatt">Compensated x watt (W)<br/>Valid range of <c>xWatt</c> is from <c>xLeftWatt</c> to <c>xRightWatt</c></param>
+            <param name="xLeftWatt">Left x watt (W)</param>
+            <param name="xRightWatt">Right x watt (W)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.CtlMapping(System.String[],System.Double[])">
             <summary>
             Start power mapping
             <code>
-                |                   Category
-             Y  |                   _____
-                |                  /
-             P  |             ____/
-             o  |           _/     
-             w  |        __/
-             e  |       /
-             r  |     _/
-            (W) |  __/
-                |_/________________________
+                |                    Category
+             Y  |                    _____
+                |                   /
+             P  |              ____/
+             o  &lt;..........._./     
+             w  |        __/ .
+             e  |       /    .
+             r  |     _/     .
+            (W) |  __/       .
+                |_/__________^_____________
                        X Power (W)
             </code>
             </summary>
             <remarks>
             Do laser on by each watt (x: input) and measure output power (y: output). <br/>
-            Consider as its working within async threads. <br/>
             Update measured output power value(W) into <c>IPowerMap</c>. <br/>
             Used with <c>IPowerMeter</c>, <c>ILaser</c>, <c>IRtc</c>. Assign these values before start. <br/>
-            Used with <c>Config.PowerMapHoldTimeMs</c>, <c>Config.PowerMapThreshold</c> values. <br/>
+            Used with <c>PowerMapPreHeatTimeMs</c>, <c>Config.PowerMapHoldTimeMs</c>, <c>Config.PowerMapThreshold</c> values. <br/>
+            Consider as its working within async threads. <br/>
             </remarks>
             <param name="categories"></param>
             <param name="xWatts">Array of x watts (W)</param>
@@ -8651,10 +8648,10 @@
             </summary>
             <remarks>
             Do laser on and measure output power by each category and target watt (y). <br/>
-            Consider as its working within async threads. <br/>
             Passed(or succeeded) if measured laser output power value(W) in range of threshold percent. <br/>
             Used with <c>IPowerMeter</c>, <c>ILaser</c>, <c>IRtc</c>. Assign these values before start. <br/>
-            Used with <c>Config.PowerMapHoldTimeMs</c>, <c>Config.PowerMapThreshold</c> values. <br/>
+            Used with <c>PowerMapPreHeatTimeMs</c>, <c>Config.PowerMapHoldTimeMs</c>, <c>Config.PowerMapThreshold</c> values. <br/>
+            Consider as its working within async threads. <br/>
             </remarks>
             <param name="categoryAndYWatts">Array of category and target y watt(W)</param>
             <returns>Success or failed</returns>
@@ -8678,11 +8675,11 @@
             </summary>
             <remarks>
             Do laser on and measure output power each category and watts. <br/>
-            Consider as its working within async threads. <br/>
             Passed(or succeeded) if measured laser output power value(W) in range of threshold percent. <br/>
             Failed(or out of range threshold percent), then retry(update <c>IPowerMap</c> again) 2nd run with whether in-range power or not. <br/>
             Used with <c>IPowerMeter</c>, <c>ILaser</c>, <c>IRtc</c>. Assign these values before start. <br/>
-            Used with <c>Config.PowerMapHoldTimeMs</c>, <c>Config.PowerMapThreshold</c> values. <br/>
+            Used with <c>PowerMapPreHeatTimeMs</c>, <c>Config.PowerMapHoldTimeMs</c>, <c>Config.PowerMapThreshold</c> values. <br/>
+            Consider as its working within async threads. <br/>
             </remarks>
             <param name="categoryAndYWatts">Array of category and target y watt(W)</param>
             <returns>Success or failed</returns>
@@ -8714,10 +8711,12 @@
             Notify power mapping has started
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyMappingProgress">
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyMappingProgress(System.String,System.Double)">
             <summary>
             Notify power mapping is progressing
             </summary>
+            <param name="category">Target category</param>
+            <param name="xWatt">Target x watt (W)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyMappingFailed">
             <summary>
@@ -8734,10 +8733,12 @@
             Notify power verify has started
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyVerifyProgress">
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyVerifyProgress(System.String,System.Double)">
             <summary>
             Notify power verify is progressing
             </summary>
+            <param name="category">Target category</param>
+            <param name="xWatt">Target x watt (W)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyVerifyFailed">
             <summary>
@@ -8754,10 +8755,12 @@
             Notify power compensate has started
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyCompensateProgress">
+        <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyCompensateProgress(System.String,System.Double)">
             <summary>
             Notify power compensate is progressing
             </summary>
+            <param name="category">Target category</param>
+            <param name="xWatt">Target x watt (W)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.NotifyCompensateFailed">
             <summary>
@@ -8849,6 +8852,9 @@
         <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.InternalData">
             <inheritdoc/>  
         </member>
+        <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.IsEnableLookUp">
+            <inheritdoc/>  
+        </member>
         <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.Location">
             <summary>
             Scanner x,y location 
@@ -8888,7 +8894,7 @@
         <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.MinMaxX(System.String,System.Double@,System.Double@)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.Compensate(System.String,System.Double,System.Double@)">
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.LookUp(System.String,System.Double,System.Double@,System.Double@,System.Double@)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.CtlMapping(System.String[],System.Double[])">
@@ -8915,7 +8921,7 @@
         <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyMappingStarted">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyMappingProgress">
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyMappingProgress(System.String,System.Double)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyMappingFailed">
@@ -8927,7 +8933,7 @@
         <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyVerifyStarted">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyVerifyProgress">
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyVerifyProgress(System.String,System.Double)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyVerifyFailed">
@@ -8939,7 +8945,7 @@
         <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyCompensateStarted">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyCompensateProgress">
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyCompensateProgress(System.String,System.Double)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapBase.NotifyCompensateFailed">
@@ -27763,6 +27769,11 @@
              void n_eth_boot_timeout(uint CardNo, uint Timeout);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_eth_set_remote_tgm_format">
+            <summary>
+             void n_eth_set_remote_tgm_format(uint CardNo, uint Format);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_eth_boot_dcmd">
             <summary>
              void n_eth_boot_dcmd(uint CardNo);
@@ -27871,6 +27882,11 @@
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.eth_boot_timeout">
             <summary>
              void eth_boot_timeout(uint Timeout);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.eth_set_remote_tgm_format">
+            <summary>
+             void eth_set_remote_tgm_format(uint Format);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.eth_boot_dcmd">
@@ -29313,6 +29329,11 @@
              void n_clear_fly_overflow_ctrl(uint CardNo, uint Mode);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_encoder_filter_ctrl">
+            <summary>
+             void n_set_encoder_filter_ctrl(uint CardNo, uint Length, uint Mode);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_ext_start_delay">
             <summary>
              void set_ext_start_delay(int Delay, uint EncoderNo);
@@ -29436,6 +29457,11 @@
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.clear_fly_overflow_ctrl">
             <summary>
              void clear_fly_overflow_ctrl(uint Mode);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_encoder_filter_ctrl">
+            <summary>
+             void set_encoder_filter_ctrl(uint Length, uint Mode);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_get_time">
@@ -30950,12 +30976,12 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_clear_io_cond_list">
             <summary>
-             void n_clear_io_cond_list(uint CardNo, uint Mask1, uint Mask0, uint Mask);
+             void n_clear_io_cond_list(uint CardNo, uint Mask1, uint Mask0, uint MaskClear);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_io_cond_list">
             <summary>
-             void n_set_io_cond_list(uint CardNo, uint Mask1, uint Mask0, uint Mask);
+             void n_set_io_cond_list(uint CardNo, uint Mask1, uint Mask0, uint MaskSet);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_write_io_port_mask_list">
@@ -31568,6 +31594,11 @@
              void n_fly_return_3_axes(uint CardNo, int RetPosX, int RetPosY, int RetPosZ);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_init_fly_2d_list">
+            <summary>
+             void n_init_fly_2d_list(uint CardNo, int OffsetX, int OffsetY, uint No);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_wait_for_encoder">
             <summary>
              void n_wait_for_encoder(uint CardNo, int Value, uint EncoderNo);
@@ -31871,6 +31902,11 @@
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.fly_return_3_axes">
             <summary>
              void fly_return_3_axes(int RetPosX, int RetPosY, int RetPosZ);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.init_fly_2d_list">
+            <summary>
+             void init_fly_2d_list(int OffsetX, int OffsetY, uint No);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.wait_for_encoder">

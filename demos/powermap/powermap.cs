@@ -173,9 +173,9 @@ namespace Demos
                     var hz = double.Parse(category);
                     success &= Rtc.CtlFrequency(hz, 2);
                     var sw = Stopwatch.StartNew();
+                    bool isPreHeated = false;
                     foreach (var targetWatt in xWatts)
                     {
-                        sw.Restart();
                         if (this.isTerminated || Rtc.CtlGetStatus(RtcStatus.Aborted) || Laser.IsError || PowerMeter.IsError)
                         {
                             success &= false;
@@ -184,6 +184,14 @@ namespace Demos
                         success &= powerControl.CtlPower(targetWatt, string.Empty); //not mapped
                         if (!isTerminated)
                             success &= Rtc.CtlLaserOn();
+
+                        long delayTime = Config.PowerMapHoldTimeMs;
+                        if (!isPreHeated)
+                        {
+                            delayTime = Config.PowerMapPreHeatTimeMs;
+                            isPreHeated = true;
+                        }
+                        sw.Restart();
                         do
                         {
                             if (isTerminated)
@@ -192,25 +200,26 @@ namespace Demos
                                 break;
                             }
                             Thread.Sleep(50);
-                        } while (sw.ElapsedMilliseconds < Config.PowerMapHoldTimeMs); //use measured last data 
+                        } while (sw.ElapsedMilliseconds < delayTime); //use measured last data 
+                        double detectedWatt = PowerMeter.MeasuredPower;
+                        success &= Rtc.CtlLaserOff();
                         if (!success)
                             break;
                         if (isTerminated)
                             break;
-                        double detectedWatt = PowerMeter.MeasuredPower;
-                        double thresholdWatt = targetWatt * Config.PowerMapThreshold / 100.0f;
-                        if (thresholdWatt > 0)
+                        double inRangeWatt = targetWatt * Config.PowerMapInRangeThreshold / 100.0f;
+                        if (inRangeWatt > 0)
                         {
-                            if (Math.Abs(targetWatt - detectedWatt) > thresholdWatt)
+                            if (Math.Abs(targetWatt - detectedWatt) > inRangeWatt)
                             {
-                                Logger.Log(Logger.Types.Error, $"powermap [{this.Index}]: mapping out of range threshold: {Config.PowerMapThreshold:F1}%, target: {targetWatt:F3}W, detected: {detectedWatt:F3}W at category: {category}");
+                                Logger.Log(Logger.Types.Error, $"powermap [{this.Index}]: mapping out of range threshold: {Config.PowerMapInRangeThreshold:F1}%, target: {targetWatt:F3}W, detected: {detectedWatt:F3}W at category: {category}");
                                 success &= false;
                                 break;
                             }
                         }
                         success &= this.Update(category, targetWatt, detectedWatt);
                         Logger.Log(Logger.Types.Info, $"powermap [{this.Index}]: mapping target: {targetWatt:F3}W, detected: {detectedWatt:F3}W at category: {category}");
-                        NotifyMappingProgress();
+                        NotifyMappingProgress(category, targetWatt);
                         if (!success)
                             break;
                     }
@@ -334,12 +343,12 @@ namespace Demos
                 PowerMeter.CtlClear();
 
                 var sw = Stopwatch.StartNew();
-                var oldIsCompensated = powerControl.IsCompensated;
-                powerControl.IsCompensated = true;
+                var oldIsEnableLookUp = this.IsEnableLookUp;
+                this.IsEnableLookUp = true;
+                bool isPreHeated = false;
                 foreach (var kv in categoryAndYWatts)
                 {
                     Logger.Log(Logger.Types.Warn, $"powermap [{this.Index}]: trying to start power verify. target category: {kv.Key}");
-                    sw.Restart();
                     string category = kv.Key;
                     success &= PowerMeter.CtlStart(category);
                     double targetWatt = kv.Value;
@@ -350,6 +359,13 @@ namespace Demos
                     if (powerControl.CtlPower(targetWatt, category))
                     {
                         success &= Rtc.CtlLaserOn();
+                        sw.Restart();
+                        long delayTime = Config.PowerMapHoldTimeMs;
+                        if (!isPreHeated)
+                        {
+                            delayTime = Config.PowerMapPreHeatTimeMs;
+                            isPreHeated = true;
+                        }
                         do
                         {
                             if (Rtc.CtlGetStatus(RtcStatus.Aborted))
@@ -357,20 +373,21 @@ namespace Demos
                                 success &= false;
                                 break;
                             }
-                            Thread.Sleep(10);
-                        } while (sw.ElapsedMilliseconds < Config.PowerMapHoldTimeMs);
+                            Thread.Sleep(50);
+                        } while (sw.ElapsedMilliseconds < delayTime);
+                        detectedWatt = PowerMeter.MeasuredPower;
+                        success &= Rtc.CtlLaserOff();
                         if (success)
                         {
-                            detectedWatt = PowerMeter.MeasuredPower;
-                            double thresholdWatt = targetWatt * Config.PowerMapThreshold / 100.0f;
-                            if (Math.Abs(targetWatt - detectedWatt) < thresholdWatt)
+                            double inRangeWatt = targetWatt * Config.PowerMapInRangeThreshold / 100.0f;
+                            if (Math.Abs(targetWatt - detectedWatt) < inRangeWatt)
                             {
-                                Logger.Log(Logger.Types.Info, $"powermap [{this.Index}]: verify in range target: {targetWatt:F3} - detected: {detectedWatt:F3}W < threshold: {Config.PowerMapThreshold}% at category: {category}");
-                                this.NotifyVerifyProgress();
+                                Logger.Log(Logger.Types.Info, $"powermap [{this.Index}]: verify in range target: {targetWatt:F3} - detected: {detectedWatt:F3}W < threshold: {Config.PowerMapInRangeThreshold}% at category: {category}");
+                                this.NotifyVerifyProgress(category, targetWatt);
                             }
                             else
                             {
-                                Logger.Log(Logger.Types.Error, $"powermap [{this.Index}]: verify out of range threshold: {Config.PowerMapThreshold:F1}%, target: {targetWatt:F3}W, detected: {detectedWatt:F3}W at category: {category}");
+                                Logger.Log(Logger.Types.Error, $"powermap [{this.Index}]: verify out of range threshold: {Config.PowerMapInRangeThreshold:F1}%, target: {targetWatt:F3}W, detected: {detectedWatt:F3}W at category: {category}");
                                 success &= false;
                             }
                         }
@@ -388,7 +405,7 @@ namespace Demos
                 success &= Rtc.CtlLaserOff();
                 success &= PowerMeter.CtlStop();
                 Rtc.CtlMoveTo(Vector2.Zero);
-                powerControl.IsCompensated = oldIsCompensated;
+                this.IsEnableLookUp = oldIsEnableLookUp;
                 this.IsBusy = false;
                 if (success)
                 {
@@ -499,16 +516,17 @@ namespace Demos
                 Thread.Sleep(100);
                 PowerMeter.CtlClear();
                 var sw = Stopwatch.StartNew();
-                var oldIsCompensated = powerControl.IsCompensated;
-                powerControl.IsCompensated = true;
+                bool isPreHeated = false;
+                var oldIsEnableLookUp = this.IsEnableLookUp;
+                this.IsEnableLookUp = true;
                 int retryCounts = 0;
-                foreach (var kv in categoryAndYWatts)
+                for (int i = 0; i < categoryAndYWatts.Length; i++)
                 {
-                    Logger.Log(Logger.Types.Warn, $"powermap [{this.Index}]: trying to start power compensate. target category: {kv.Key}");
-                    sw.Restart();
+                    var kv = categoryAndYWatts[i];
                     string category = kv.Key;
-                    success &= PowerMeter.CtlStart(category);
                     double targetWatt = kv.Value;
+                    Logger.Log(Logger.Types.Warn, $"powermap [{this.Index}]: trying to start power compensate. target: {targetWatt:F3}W at category: {category}");
+                    success &= PowerMeter.CtlStart(category);
                     double detectedWatt = 0;
                     // For example, consider category as frequency
                     double hz = double.Parse(category);
@@ -517,6 +535,13 @@ namespace Demos
                     if (success)
                     {
                         success &= Rtc.CtlLaserOn();
+                        long delayTime = Config.PowerMapHoldTimeMs;
+                        if (!isPreHeated)
+                        {
+                            delayTime = Config.PowerMapPreHeatTimeMs;
+                            isPreHeated = true;
+                        }
+                        sw.Restart();
                         do
                         {
                             if (Rtc.CtlGetStatus(RtcStatus.Aborted))
@@ -524,36 +549,43 @@ namespace Demos
                                 success &= false;
                                 break;
                             }
-                            Thread.Sleep(10);
-                        } while (sw.ElapsedMilliseconds < Config.PowerMapHoldTimeMs);
+                            Thread.Sleep(50);
+                        } while (sw.ElapsedMilliseconds < delayTime);
+                        detectedWatt = PowerMeter.MeasuredPower;
+                        success &= Rtc.CtlLaserOff();
                         if (success)
                         {
-                            detectedWatt = PowerMeter.MeasuredPower;
-                            double thresholdWatt = targetWatt * Config.PowerMapThreshold / 100.0f;
-                            if (Math.Abs(targetWatt - detectedWatt) < thresholdWatt)
+                            double inRangeWatt = targetWatt * Config.PowerMapInRangeThreshold / 100.0f;
+                            if (Math.Abs(targetWatt - detectedWatt) <= inRangeWatt)
                             {
-                                if (retryCounts >= Config.PowerMapCompensateRetryCounts)
+                                retryCounts = 0;
+                                Logger.Log(Logger.Types.Info, $"powermap [{this.Index}]: compensate in range target: {targetWatt:F3} - detected: {detectedWatt:F3}W < threshold: {Config.PowerMapInRangeThreshold}% at category: {category}");
+                                this.NotifyCompensateProgress(category, targetWatt);
+                            }
+                            else
+                            {
+                                double outOfRangeWatt = targetWatt * Config.PowerMapOutOfRangeThreshold / 100.0f;
+                                if (outOfRangeWatt > 0 && Math.Abs(targetWatt - detectedWatt) > outOfRangeWatt)
                                 {
-                                    Logger.Log(Logger.Types.Info, $"powermap [{this.Index}]: compensating but failed to retry target: {targetWatt:F3} - detected: {detectedWatt:F3}W < threshold: {Config.PowerMapThreshold}% at category: {category}");
+                                    Logger.Log(Logger.Types.Info, $"powermap [{this.Index}]: compensate out of range target: {targetWatt:F3} - detected: {detectedWatt:F3}W < threshold: {Config.PowerMapOutOfRangeThreshold}% at category: {category}");
+                                    success &= false;
+                                }
+                                else if (retryCounts >= Config.PowerMapCompensateRetryCounts)
+                                {
+                                    Logger.Log(Logger.Types.Info, $"powermap [{this.Index}]: compensating but failed to retry target: {targetWatt:F3} - detected: {detectedWatt:F3}W < threshold: {Config.PowerMapInRangeThreshold}% at category: {category}");
                                     success &= false;
                                 }
                                 else
                                 {
-                                    retryCounts = 0;
-                                    Logger.Log(Logger.Types.Info, $"powermap [{this.Index}]: compensate in range target: {targetWatt:F3} - detected: {detectedWatt:F3}W < threshold: {Config.PowerMapThreshold}% at category: {category}");
-                                    this.NotifyCompensateProgress();
-                                }
-                            }
-                            else
-                            {
-                                retryCounts++;
-                                Logger.Log(Logger.Types.Warn, $"powermap [{this.Index}: compensate out of range so retry. target: {targetWatt:F3} - detected: {detectedWatt}W < threshold: {Config.PowerMapThreshold}% at category: {category}");
-                                success &= powerControl.PowerMap.Compensate(category, targetWatt, out var xWatt);
-                                if (success)
-                                {
-                                    success &= powerControl.CtlPower(xWatt, string.Empty);
+                                    success &= powerControl.PowerMap.LookUp(category, targetWatt, out var xWatt, out var leftXWatt, out var rightXWatt);
+                                    if (!success)
+                                        break;
+                                    Logger.Log(Logger.Types.Warn, $"powermap [{this.Index}: compensate out of range. target: {targetWatt:F3} - detected: {detectedWatt}W < threshold: {Config.PowerMapInRangeThreshold}% at category: {category} so retry {++retryCounts} times");
+                                    success &= powerControl.CtlPower(leftXWatt, string.Empty);
                                     if (success)
                                     {
+                                        success &= Rtc.CtlLaserOn();
+                                        sw.Restart();
                                         do
                                         {
                                             if (Rtc.CtlGetStatus(RtcStatus.Aborted))
@@ -561,14 +593,43 @@ namespace Demos
                                                 success &= false;
                                                 break;
                                             }
-                                            Thread.Sleep(10);
+                                            Thread.Sleep(50);
                                         } while (sw.ElapsedMilliseconds < Config.PowerMapHoldTimeMs);
+                                        var detectedLeftWatt = PowerMeter.MeasuredPower;
+                                        success &= Rtc.CtlLaserOff();
+                                        if (success)
+                                        {
+                                            Logger.Log(Logger.Types.Info, $"powermap [{this.Index}: update powermap left x: {leftXWatt:F3}, y: {detectedLeftWatt:F3}W at category: {category}");
+                                            success &= powerControl.PowerMap.Update(category, leftXWatt, detectedLeftWatt);
+                                            this.NotifyMappingProgress(category, leftXWatt);
+                                        }
                                     }
                                     if (success)
+                                        success &= powerControl.CtlPower(rightXWatt, string.Empty);
+                                    if (success)
                                     {
-                                        double retryDetectedWatt = PowerMeter.MeasuredPower;
-                                        success &= powerControl.PowerMap.Update(category, xWatt, retryDetectedWatt);
+                                        success &= Rtc.CtlLaserOn();
+                                        sw.Restart();
+                                        do
+                                        {
+                                            if (Rtc.CtlGetStatus(RtcStatus.Aborted))
+                                            {
+                                                success &= false;
+                                                break;
+                                            }
+                                            Thread.Sleep(50);
+                                        } while (sw.ElapsedMilliseconds < Config.PowerMapHoldTimeMs);
+                                        var detectedRightWatt = PowerMeter.MeasuredPower;
+                                        success &= Rtc.CtlLaserOff();
+                                        if (success)
+                                        {
+                                            Logger.Log(Logger.Types.Info, $"powermap [{this.Index}: update powermap right x: {rightXWatt:F3}, y: {detectedRightWatt:F3}W at category: {category}");
+                                            success &= powerControl.PowerMap.Update(category, rightXWatt, detectedRightWatt);
+                                            this.NotifyMappingProgress(category, rightXWatt);
+                                        }
                                     }
+                                    if (success)
+                                        i--; //to do retry target y watt again 
                                 }
                             }
                         }
@@ -587,7 +648,7 @@ namespace Demos
                 success &= PowerMeter.CtlStop();
                 Rtc.CtlMoveTo(Vector2.Zero);
                 this.IsBusy = false;
-                powerControl.IsCompensated = oldIsCompensated;
+                this.IsEnableLookUp = oldIsEnableLookUp;
                 if (success)
                 {
                     this.IsReady = true;

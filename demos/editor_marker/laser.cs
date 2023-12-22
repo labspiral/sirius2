@@ -72,9 +72,9 @@ namespace Demos
         [Browsable(true)]
         [ReadOnly(false)]
         [Category("Power Control")]
-        [DisplayName("Compensated")]
-        [Description("Enable(or Disable) Compensated Output Power by PowerMap")]
-        public virtual bool IsCompensated { get; set; } = false;
+        [DisplayName("LookUp")]
+        [Description("Enable(or Disable) Look Up PowerMap")]
+        public virtual bool IsLookUpPowerMap { get; set; } = false;
 
         #region Control by analog
         /// <summary>
@@ -239,9 +239,9 @@ namespace Demos
             Debug.Assert(rtc != null);
             bool success = true;
             double compensatedWatt = targetWatt;
-            if (null != PowerMap && IsCompensated && !string.IsNullOrEmpty(category))
+            if (null != PowerMap && IsLookUpPowerMap && !string.IsNullOrEmpty(category))
             {
-                success &= PowerMap.Compensate(category, targetWatt, out compensatedWatt);
+                success &= PowerMap.LookUp(category, targetWatt, out compensatedWatt, out double x1, out double x2);
                 if (!success)
                     return false;
             }
@@ -292,9 +292,9 @@ namespace Demos
                 targetWatt = this.MaxPowerWatt;
             bool success = true;
             double compensatedWatt = targetWatt;
-            if (null != PowerMap && IsCompensated && !string.IsNullOrEmpty(category))
+            if (null != PowerMap && IsLookUpPowerMap && !string.IsNullOrEmpty(category))
             {
-                success &= PowerMap.Compensate(category, targetWatt, out compensatedWatt);
+                success &= PowerMap.LookUp(category, targetWatt, out compensatedWatt, out double x1, out double x2);
                 if (!success)
                     return false;
             }

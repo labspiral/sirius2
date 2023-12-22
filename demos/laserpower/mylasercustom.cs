@@ -94,16 +94,8 @@ namespace Demos
         [Category("Power Control")]
         [DisplayName("Map")]
         [Description("Assigned PowerMap")]
+        [TypeConverter(typeof(ExpandableObjectConverter))]
         public virtual IPowerMap PowerMap { get; set; }
-
-        /// <inheritdoc/>  
-        [RefreshProperties(RefreshProperties.All)]
-        [Browsable(true)]
-        [ReadOnly(false)]
-        [Category("Power Control")]
-        [DisplayName("Compensated")]
-        [Description("Enable(or Disable) Compensated Output Power by PowerMap")]
-        public virtual bool IsCompensated { get; set; } = false;
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]
@@ -344,9 +336,9 @@ namespace Demos
             Debug.Assert(rtc != null);
             bool success = true;
             double compensatedWatt = targetWatt;
-            if (null != PowerMap && IsCompensated && !string.IsNullOrEmpty(category))
+            if (null != PowerMap && !string.IsNullOrEmpty(category))
             {
-                success &= PowerMap.Compensate(category, targetWatt, out compensatedWatt);
+                success &= PowerMap.LookUp(category, targetWatt, out compensatedWatt, out double x1, out double x2);
                 if (!success)
                     return false;
             }
@@ -400,9 +392,9 @@ namespace Demos
             Debug.Assert(rtc != null);
             double compensatedWatt = targetWatt;
             bool success = true;
-            if (null != PowerMap && IsCompensated && !string.IsNullOrEmpty(category))
+            if (null != PowerMap && !string.IsNullOrEmpty(category))
             {
-                success &= PowerMap.Compensate(category, targetWatt, out compensatedWatt);
+                success &= PowerMap.LookUp(category, targetWatt, out compensatedWatt, out double x1, out double x2);
                 if (!success)
                     return false;
             }

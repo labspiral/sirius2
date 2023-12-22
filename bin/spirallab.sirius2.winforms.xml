@@ -6,14 +6,13 @@
     <members>
         <member name="T:SpiralLab.Sirius2.Winforms.DocumentFactory">
             <summary>
-            Factory for document
+            Factory for <c>IDocument</c>
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.DocumentFactory.CreateDefault(System.String)">
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentFactory.CreateDefault">
             <summary>
             Create default document
             </summary>
-            <param name="name">Name</param>
             <returns><c>IDocument</c></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.arc">
@@ -5489,6 +5488,9 @@
             <c>null</c> when <c>IsHatchOutline</c> is <c>False</c>. <br/>
             </remarks>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.InternalClone(SpiralLab.Sirius2.Winforms.Entity.EntityBase)">
             <inheritdoc/>
         </member>
@@ -7015,11 +7017,6 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCone.#ctor(System.Double,System.Double,System.Double)">
             <summary>
             Constructor
-            <code>
-            
-            
-            
-            </code>
             </summary>
             <remarks>
             If <c>RadiusReference</c> and <c>RadiusEnd</c> are equals, assumed as cylinderic shape. 
@@ -7814,14 +7811,6 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.ToString">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.Finalize">
-            <summary>
-            Finalizer
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.Dispose(System.Boolean)">
-            <inheritdoc/>
-        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.Clone">
             <inheritdoc/>
         </member>
@@ -8232,7 +8221,7 @@
             <summary>
             Constructor
             </summary>
-            <param name="vertices">Array of <c>Vertex2D</c></param>
+            <param name="vertices">Array of <c>EntityVertex3D</c></param>
             <param name="isClosed">Closed path or not</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline3D.Finalize">
@@ -10766,8 +10755,9 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.Color">
             <summary>
-            <c>EntityGroup</c> is not used its own color
+            <c>EntityGroup</c> is not used its own <c>Color</c>
             <code>
+            // Set Color at child entities instead
             foreach(var item in group.Children)
                 item.Color = System.Drawing.Color.Yellow;
             </code>
@@ -11644,7 +11634,7 @@
             <summary>
             Constructor
             </summary>
-            <param name="vertices">Array of <c>Vertex2D</c></param>
+            <param name="vertices">Array of <c>EntityVertex2D</c><br/></param>
             <param name="isClosed">Closed path or not</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.Finalize">
@@ -14424,6 +14414,31 @@
               Looks up a localized string similar to Ready.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Script_C">
+            <summary>
+              Looks up a localized string similar to Script.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptFile_DESC">
+            <summary>
+              Looks up a localized string similar to Script File.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptFile_DISP">
+            <summary>
+              Looks up a localized string similar to Script file.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptInstance_DESC">
+            <summary>
+              Looks up a localized string similar to Script instance.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptInstance_DISP">
+            <summary>
+              Looks up a localized string similar to Script instance.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Status_C">
             <summary>
               Looks up a localized string similar to Status.
@@ -15434,7 +15449,7 @@
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnStarted">
             <summary>
-            OnStarted event handler
+            Event for marker has started
             </summary>
             <remarks>
             Consider as its working within async threads. <br/>
@@ -15442,7 +15457,7 @@
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnEnded">
             <summary>
-            OnEnded event handler
+            Event for marker has ended
             </summary>
             <remarks>
             Consider as its working within async threads. <br/>
@@ -15452,7 +15467,7 @@
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnBeforeLayer">
             <summary>
-            OnBeforeLayer event handler
+            Event for before do layer works
             </summary>
             <remarks>
             Do external control works like as i/o, motion stage controls before mark layer.<br/>
@@ -15462,7 +15477,7 @@
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnAfterLayer">
             <summary>
-            OnAfterLayer event handler
+            Event for after do layer works
             </summary>
             <remarks>
             Do external control works like as i/o, motion stage controls after mark layer.<br/>
@@ -15472,7 +15487,7 @@
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnBeforeEntity">
             <summary>
-            OnBeforeEntity event handler
+            Event for before do entity works
             </summary>
             <remarks>
             Consider as within RTC list buffer is executing.<br/>
@@ -15482,7 +15497,7 @@
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnAfterEntity">
             <summary>
-            OnAfterEntity event handler
+            Event for after do layer works
             </summary>
             <remarks>
             Consider as within RTC list buffer is executing.<br/>
@@ -15562,7 +15577,7 @@
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnTextConvert">
             <summary>
-            Event for convert text data.
+            Event for convert entity's text data
             <code>
             marker.OnTextConvert += Text_OnTextConvert;
             ...
@@ -17619,7 +17634,7 @@
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnNew">
             <summary>
-            Event for new file
+            Event for new(or clear) document
             </summary>
             <remarks>
             User can register event handler for new document. <br/>
@@ -17628,7 +17643,7 @@
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnOpened">
             <summary>
-            Event for open file (filename)
+            Event for open file (filename) 
             </summary>
             <remarks>
             User can register event handler for open document. <br/>
@@ -17644,27 +17659,28 @@
             Event will be fired when <c>ActSave</c> has called. <br/>
             </remarks>
         </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnAdd">
+        <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnAdded">
             <summary>
-            Event for add entities (<c>IEntity</c>)
+            Event for added <c>IEntity</c>
             </summary>
             <remarks>
             User can register event handler for add entities. <br/>
             Event will be fired when <c>ActAdd</c> has called. <br/>
             </remarks>
         </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnInsert">
+        <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnInserted">
             <summary>
-            Event for insert entity (source <c>IEntity</c>, parent <c>IEntity</c>, target index)
+            Event for inserted <c>IEntity</c>
             </summary>
             <remarks>
             User can register event handler for insert entities. <br/>
             Event will be fired when <c>ActInsert</c> has called. <br/>
+            Arguments: source <c>IEntity</c>, parent <c>IEntity</c>, target index. <br/>
             </remarks>
         </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnRemove">
+        <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnRemoved">
             <summary>
-            Event for remove entities (array of <c>IEntity</c>)
+            Event for removed <c>IEntity</c>
             </summary>
             <remarks>
             User can register event handler for remove entities. <br/>
@@ -18243,6 +18259,17 @@
             Constructor
             </summary>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentData.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentData.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentData.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentData.Clone">
             <summary>
             Implement clone of <c>DocumentData</c> 
@@ -18264,13 +18291,13 @@
         <member name="E:SpiralLab.Sirius2.Winforms.DocumentBase.OnSaved">
             <inheritdoc/>
         </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.DocumentBase.OnAdd">
+        <member name="E:SpiralLab.Sirius2.Winforms.DocumentBase.OnAdded">
             <inheritdoc/>
         </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.DocumentBase.OnInsert">
+        <member name="E:SpiralLab.Sirius2.Winforms.DocumentBase.OnInserted">
             <inheritdoc/>
         </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.DocumentBase.OnRemove">
+        <member name="E:SpiralLab.Sirius2.Winforms.DocumentBase.OnRemoved">
             <inheritdoc/>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.DocumentBase.OnSelected">
@@ -18323,6 +18350,17 @@
             <summary>
             Constructor
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.Dispose(System.Boolean)">
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActNew">
             <inheritdoc/>
@@ -18592,11 +18630,11 @@
             Factory for remote communication 
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteFactory.CreateTcpServer(System.Int32,SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteFactory.CreateTcpServer(System.Int32,System.String,SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32)">
             <summary>
             Create <c>RemoteTcpServer</c>
             <code>
-            var remote = RemoteFactory.CreateTcpServer(0, marker, 5001);
+            var remote = RemoteFactory.CreateTcpServer(0, "RemoteTcpIp", marker, 5001);
             remote.Start();
             ...
             //Must be stopped when terminating(or disposing)
@@ -18608,15 +18646,16 @@
             Create TCP/IP server socket. <br/>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
+            <param name="name">Name</param>
             <param name="marker"><c>IMarker</c></param>
             <param name="portNo">TCP server listening port</param>
             <returns><c>IRemote</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteFactory.CreateSerial(System.Int32,SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteFactory.CreateSerial(System.Int32,System.String,SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32,System.Int32)">
             <summary>
             Create <c>RemoteSerial</c>
             <code>
-            var remote = RemoteFactory.CreateSerial(0, marker, 1, 57600);
+            var remote = RemoteFactory.CreateSerial(0, "RemoteSerial", marker, 1, 57600);
             remote.Start();
             ...
             //Must be stopped when terminating(or disposing)
@@ -18631,6 +18670,7 @@
             Parity: None <br/>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
+            <param name="name">Name</param>
              <param name="marker"><c>IMarker</c></param>
             <param name="portNo">COM port</param>
             <param name="baudRate">Baudrate</param>
@@ -18641,11 +18681,12 @@
             Remote communication by TCP server
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteTcpServer.#ctor(System.Int32,SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteTcpServer.#ctor(System.Int32,System.String,SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32)">
             <summary>
             Constructor
             </summary>
             <param name="index">Identifier (0,1,2,...)</param>
+            <param name="name">Name</param>
             <param name="marker">Target <c>IMarker</c> (Try to send 'Status,End' notification message at remote communication by automatically. <br/></param>
             <param name="portNo">TCP server listening port no</param>
         </member>
@@ -18683,11 +18724,12 @@
             Remote communication by Serial 
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteSerial.#ctor(System.Int32,SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteSerial.#ctor(System.Int32,System.String,SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32,System.Int32)">
             <summary>
             Constructor
             </summary>
             <param name="index">Identifier (0,1,2,...)</param>
+            <param name="name">Name</param>
             <param name="marker">Target <c>IMarker</c> (Try to send 'Status,End' notification message at remote communication by automatically. <br/></param>
             <param name="portNo">COM port no</param>
             <param name="baudRate">Baudrate</param>
@@ -18723,7 +18765,7 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Remote.RemoteBase">
             <summary>
-            RemoteBase abstract 
+            RemoteBase  
             <code>
             var remote = RemoteFactory.CreateTcpServer(siriusEditorUserControl1, 5001);
             //or 
@@ -18736,111 +18778,78 @@
             Remote communication control by TCP/IP or Serial. <br/>
             </remarks>
         </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.PropertyChanged">
+            <inheritdoc/>
+        </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.OnConnected">
-            <summary>
-            Event for communication has connected
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.OnDisconnected">
-            <summary>
-            Event for communication has disconnected
-            </summary>
+            <inheritdoc/>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.OnReceived">
+            <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.SyncRoot">
-            <summary>
-            Synchronization object for send and receive 
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.Index">
-            <summary>
-            Identifier
-            </summary>
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.Name">
+            <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.IsConnected">
-            <summary>
-            Is communication has connected or not
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.ControlMode">
-            <summary>
-            <c>RemoteControls</c> 
-            </summary>
-            <remarks>
-            <c>ControlModes.Local</c> is allowed query commands only but control commands. <br/>
-            <c>ControlModes.Remote</c> is allowed query and control commands. <br/>
-            </remarks>
+            <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.NotifyConnected">
+        <member name="P:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.IsAttachedParseEventHandler">
             <summary>
-            Notify communication has connected
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.NotifyDisconnected">
-            <summary>
-            Notify communication has disconnected
+            Is <c>OnParse</c> event handler has attached or not
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.Marker">
-            <summary>
-            Assigned <c>IMarker</c>
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.EditorControl">
-            <summary>
-            Assigned <c>SiriusEditorUserControl</c>
-            </summary>
-            <remarks>
-            If assigned this value, used for refreshing propertygrid control. <br/>
-            </remarks>
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.Dispose">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.Start">
-            <summary>
-            Start
-            </summary>
-            <returns>Success or failed</returns>
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.Stop">
-            <summary>
-            Stop
-            </summary>
-            <returns>Success or failed</returns>
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.Send(System.Byte[])">
-            <summary>
-            Send bytes data
-            </summary>
-            <param name="bytes">Array of byte</param>
-            <returns>Success or failed</returns>
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.Send(System.String)">
-            <summary>
-            Send string data
-            </summary>
-            <param name="text">Text</param>
-            <returns>Success or failed</returns>
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.Receive(System.String@)">
             <summary>
             Receive string data
             </summary>
-            <param name="text">Text</param>
+            <param name="text">Received data</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.Receive(System.Byte[]@)">
             <summary>
             Receive bytes data
             </summary>
-            <param name="data">Array of byte</param>
+            <param name="data">Received data</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.Parse(System.String)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.ProcessFormat(System.String)">
             <summary>
             Parse received data
             </summary>
-            <param name="text">Text</param>
+            <param name="data">Received data</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.RecipeParse(System.String)">
@@ -18912,6 +18921,31 @@
             <param name="param">Array of property param</param>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.NotifyPropertyChanged(System.String)">
+            <summary>
+            Notify property value has change event
+            </summary>
+            <param name="propertyName">Property name</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.NotifyConnected">
+            <summary>
+            Notify communication has connected
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.NotifyDisconnected">
+            <summary>
+            Notify communication has disconnected
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.NotifyParse(System.String)">
+            <summary>
+            Notify parse receive data
+            </summary>
+            <remarks>
+            To parse customized data format only. <br/>
+            User must be implement parse routines for received data. <br/>
+            </remarks>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Remote.ControlModes">
             <summary>
             <c>ControlModes</c> 
@@ -18936,25 +18970,95 @@
             Default mode. <br/>
             </remarks>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:SpiralLab.Sirius2.Winforms.Remote.IRemote" -->
+        <member name="T:SpiralLab.Sirius2.Winforms.Remote.IRemote">
+            <summary>
+            IRemote interface 
+            </summary>
+        </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Remote.IRemote.OnConnected">
             <summary>
-            Event for communication has connected
+            Event for peer(or client) has connected
             </summary>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Remote.IRemote.OnDisconnected">
             <summary>
-            Event for communication has disconnected
+            Event for peer(or client) has disconnected
             </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Remote.IRemote.OnReceived">
+            <summary>
+            Event for process receive data for customized protocol format to override
+            <code>
+            remote.OnReceived += Remote_OnReceived;
+            ...
+            bool Remote_OnReceived(IRemote remote, string data) 
+            {
+                // For default process routine
+                //return remote.ProcessFormat(data);
+                
+                var marker = remote.Marker;
+                var doc = marker.Document;
+                var view = marker.View;
+                var rtc = marker.Rtc;
+                var laser = marker.Laser;
+                var powerMeter = marker.PowerMeter;
+                var mainForm = EditorControl;
+                char[] seps = { ',' };
+                bool success = true;
+                string[] tokens = data.Split(seps);
+                switch (tokens[0].ToLower())
+                {
+                    case "recipe":
+                        if (tokens.Length >= 2)
+                        {
+                            if (marker.IsBusy)
+                            {
+                                success &amp;= false;
+                                remote.Send($"NG;");
+                            }
+                            var fileName = Path.Combine(Config.RecipePath, tokens[1]);
+                            mainForm.Invoke(new MethodInvoker(delegate ()
+                            {
+                                success &amp;= doc.ActOpen(fileName);
+                                if (success)
+                                    success &amp;= marker.Ready(doc, view, rtc, laser, powerMeter, remote);
+                            }));
+                            if (success)
+                                remote.Send($"OK;");
+                            else
+                                remote.Send($"OK;");
+                        }
+                        else
+                        {                       
+                            remote.Send($"OK;");
+                            remote.Send($"Recipe,{doc.FileName};");
+                        }
+                        break;
+                    ...
+                }
+                return success;
+            }
+            </code>
+            </summary>
+            <remarks>
+            To process customized protocol format only. <br/>
+            User must be implement process routines for received data. <br/>
+            Event handler would be called whenever <c>Config.RemoteTerminator</c> has received. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Remote.IRemote.SyncRoot">
             <summary>
-            Synchronization object for send and receive 
+            Synchronization object for communication
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Remote.IRemote.Index">
             <summary>
             Identifier
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Remote.IRemote.Name">
+            <summary>
+            Name
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Remote.IRemote.IsConnected">
@@ -19006,18 +19110,15 @@
             <param name="text">Text</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Remote.IRemote.Receive(System.String@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.IRemote.ProcessFormat(System.String)">
             <summary>
-            Receive string data
+            Process received data 
             </summary>
-            <param name="text">Text</param>
-            <returns>Success or failed</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Remote.IRemote.Receive(System.Byte[]@)">
-            <summary>
-            Receive bytes data
-            </summary>
-            <param name="data">Array of byte</param>
+            <remarks>
+            Function would be called whenever <c>Config.RemoteTerminator</c> has received. <br/>
+            User can override this function for customized protocol format. <br/>
+            </remarks>
+            <param name="data">Received data</param>
             <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper">
@@ -19071,13 +19172,16 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Script.IScript.Marker">
             <summary>
-            Assigned(or Used) with <c>IMarker</c>
+            Assigned <c>IMarker</c>
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Script.IScript.NotifyPropertyChanged(System.String)">
             <summary>
-            Notify property value has change event
+            Notify property value has change
             </summary>
+            <remarks>
+            User should be call whenever each property value has changed at inner script. <br/>
+            </remarks>
             <param name="propertyName">Property name</param>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Script.ScriptBase">
@@ -19113,6 +19217,61 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.Dispose">
             <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnMarkerStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <summary>
+            Event handler for marker has started
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">
+            <summary>
+            Event handler for text has changed
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="textConvertible"><c>ITextConvertible</c></param>
+            <returns>Converted string data</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnAfterLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">
+            <summary>
+            Event handler for after mark layer 
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="layer"><c>EntityLayer</c></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnBeforeLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">
+            <summary>
+            Event handler for before mark layer 
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="layer"><c>EntityLayer</c></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnBeforeEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">
+            <summary>
+            Event handler for before mark entity 
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="entity"><c>IEntity</c></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnAfterEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">
+            <summary>
+            Event handler for after mark entity 
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="entity"><c>IEntity</c></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnMarkerEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">
+            <summary>
+            Event handler for marker has ended
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="success">Success or failed to mark</param>
+            <param name="timeSpan"><c>TimeSpan</c></param>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.NotifyPropertyChanged(System.String)">
             <summary>
@@ -19728,11 +19887,6 @@
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
             </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl.Marker">
-            <summary>
-            <c>IMarker</c>
-            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl.Remote">
             <summary>
@@ -20925,7 +21079,7 @@
             Disable UI controls or not
             </summary>
             <remarks>
-            To do not allow user operations. <br/>
+            To do not allow user operations during marker is working. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.Document">
@@ -20933,7 +21087,7 @@
             <c>IDocument</c>
             </summary>
             <remarks>
-            Created by automatically <br/>
+            Created by internally. Do action by <c>Act...</c> functions. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.Rtc">
@@ -20941,7 +21095,7 @@
             <c>IRtc</c>
             </summary>
             <remarks>
-            Created by <c>ScannerFactory</c> <br/>
+            Created by <c>ScannerFactory</c>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.Laser">
@@ -20949,7 +21103,7 @@
             <c>ILaser</c>
             </summary>
             <remarks>
-            Created by <c>LaserFactory</c> <br/>
+            Created by <c>LaserFactory</c>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.Marker">
@@ -20957,7 +21111,7 @@
             <c>IMarker</c>
             </summary>
             <remarks>
-            Created by <c>MarkerFactory</c> <br/>
+            Created by <c>MarkerFactory</c>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.View">
@@ -20965,7 +21119,7 @@
             <c>IView</c>
             </summary>
             <remarks>
-            Created by automatically <br/>
+            Created by internally. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.Remote">
@@ -20973,7 +21127,8 @@
             <c>IRemote</c>
             </summary>
             <remarks>
-            Created by <c>RemoteFactory</c> <br/>
+            Created by <c>RemoteFactory</c>. <br/>
+            To do control by remotely. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.PowerMeter">
@@ -20981,92 +21136,118 @@
             <c>IPowerMeter</c>
             </summary>
             <remarks>
-            Created by <c>PowerMeterFactory</c> <br/>
+            Created by <c>PowerMeterFactory</c>. <br/>
+            To do control <c>IPowerMeter</c>. <br/>
             </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DIExt1">
+            <summary>
+            RTC DI extension1 port (16 bits)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DILaserPort">
+            <summary>
+            RTC DI laser port (2 bits)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DOExt1">
+            <summary>
+            RTC DO extension1 port (16 btis)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DOExt2">
+            <summary>
+            RTC DO extension2 port (8 bits)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DOLaserPort">
+            <summary>
+            RTC DO laser port (2 btis)
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.TreeViewCtrl">
             <summary>
-            Usercontrol for Treeview
+            Treeview user control for <c>EntityLayer</c> and <c>IEntity</c> nodes
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.TreeViewBlockCtrl">
             <summary>
-            Usercontrol for Treeview with block
+            Treeview user control for <c>EntityBlock</c> nodes
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.PropertyGridCtrl">
             <summary>
-            Usercontrol for propertygrid
+            PropertyGrid user control for properties of <c>IEntity</c>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.EditorCtrl">
             <summary>
-            Usercontrol for editor
+            Editor(by OpenTK) user control for rendering view 
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.PenCtrl">
             <summary>
-            Usercontrol for pen
+            PropertyGrid user control for properties of <c>EntityPen</c>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.LaserCtrl">
             <summary>
-            Usercontrol for laser
+            PropertyGrid user control for <c>ILaser</c>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.RtcCtrl">
             <summary>
-            Usercontrol for rtc
+            PropertyGrid user control for <c>IRtc</c>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.MarkerCtrl">
             <summary>
-            Usercontrol for marker
+            PropertyGrid user control for <c>IMarer</c>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.OffsetCtrl">
             <summary>
-            Usercontrol for offset
+            Editable user control for <c>IMarker.Offsets</c>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.RtcDICtrl">
             <summary>
-            Usercontrol for DI
+            User control for RTC DI (extension 1 and  laser port)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.RtcDOCtrl">
             <summary>
-            Usercontrol for DO
+            User control for RTC DO (extension 1,2 and laser port)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.ManualCtrl">
             <summary>
-            Usercontrol for manual
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.RemoteCtrl">
-            <summary>
-            Usercontrol for remote
+            User control for manual control
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.PowerMeterCtrl">
             <summary>
-            Usercontrol for powermeter
+            User control for <c>IPowerMeter</c>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.PowerMapCtrl">
             <summary>
-            Usercontrol for powermap
+             User control for <c>IPowerMap</c>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.ScriptCtrl">
             <summary>
-            Usercontrol for script 
+            User control for <c>IScript</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.RemoteCtrl">
+            <summary>
+            PropertyGrid user control for <c>IRemote</c>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.LogCtrl">
             <summary>
-            Usercontrol for log
+            User control for logged messages
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.#ctor">

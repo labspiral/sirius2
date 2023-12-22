@@ -383,9 +383,9 @@ namespace Demos
                     success &= PowerMapSerializer.Open(powerMapFullPath, powerMap);
                 if (null != powerControl)
                 {
+                    // Enable lookup powermap table 
+                    powerMap.IsEnableLookUp = true;
                     powerControl.PowerMap = powerMap;
-                    // Enable compensated output power by automatically
-                    //powerControl.IsCompensated = true;
                 }
             }
             // Assign RTC into laser source

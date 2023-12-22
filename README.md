@@ -112,8 +112,8 @@
     - Target frameworks: .NET Framework 4.7.2
     - Target platforms: Windows 
  - Dependencies
-    - SCANLAB RTC5: 2022.11.11
-    - SCANLAB RTC6: v.1.15.5 (version for SPIRALLAB only)
+    - SCANLAB RTC5: (2022.11.11)
+    - SCANLAB RTC6: v.1.16.3 (2023.12.19)
     - SCANLAB syncAXIS: v.1.8.2 (2023.3.9)
     - OpenTK: v3.3.3 (https://www.nuget.org/packages/OpenTK/3.3.3)
     - OpenTK.GLControl: v3.3.3 (https://www.nuget.org/packages/OpenTK.GLControl/)
@@ -151,6 +151,10 @@
 
 
 **7. Version history**
+
+* 2023.12.2 v.1.15.1000
+ - updated) RTC6 v1.16.3 (2023-12-19)
+ - fixed) powermap 
 
 * 2023.12.19 v.1.14.990
   - fixed) memory leak by text entity

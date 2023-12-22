@@ -188,7 +188,7 @@ namespace Demos
         {
             // Config values
             Config.PowerMapHoldTimeMs = 5000;
-            Config.PowerMapThreshold = 5;
+            Config.PowerMapInRangeThreshold = 5;
             // Category: 100 khz
             // Power range: 10 steps (0~20 W)
             return powerMap.CtlMapping(
@@ -200,7 +200,7 @@ namespace Demos
         {
             // Config values
             Config.PowerMapHoldTimeMs = 5000;
-            Config.PowerMapThreshold = 5;
+            Config.PowerMapInRangeThreshold = 5;
             // Category: 100 khz
             // Target power: 3, 5, 8 W
             return powerMap.CtlVerify(new KeyValuePair<string, double>[]
@@ -214,7 +214,8 @@ namespace Demos
         {
             // Config values
             Config.PowerMapHoldTimeMs = 5000;
-            Config.PowerMapThreshold = 5;
+            Config.PowerMapInRangeThreshold = 5;
+            Config.PowerMapOutOfRangeThreshold = 20;
             // Category: 100 khz
             // Target power: 2.5, 5.5, 7.5 W
             return powerMap.CtlCompensate(new KeyValuePair<string, double>[]
