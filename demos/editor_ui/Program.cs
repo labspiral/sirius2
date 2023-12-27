@@ -17,14 +17,7 @@ using System.Xml.Linq;
 namespace Demos
 {
     internal static class Program
-    {
-        /// <summary>
-        /// Your config ini file
-        /// </summary>
-        public static string ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.ini");
-        // Used this config file if using XL-SCAN (syncAXIS)
-        // public static string IniFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config_syncaxis.ini");
-
+    {        
         public static SiriusEditorUserControl EditorForm { get; set; }
 
         [STAThread]

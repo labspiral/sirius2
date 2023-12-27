@@ -171,7 +171,7 @@ namespace Demos
         private static void RtcMoF_OnEncoderChanged(IRtcMoF rtcMoF, int encX, int encY)
         {
             //Console.Title = $"ENC0,1= {encX}, {encY}";
-            rtcMoF.CtlMofGetEncoder(out var x, out var y, out var mmX, out var mmY);
+            rtcMoF.CtlMofGetEncoder(out var x, out var y, out var mmX, out var mmY);            
             Console.Title = $"ENC X,Y= {x}, {y}, Distance X,Y= [{mmX:F3}, {mmY:F3}]";
         }
 
@@ -266,7 +266,8 @@ namespace Demos
 
             bool success = true;
             // Start list buffer
-            success &= rtc.ListBegin( ListTypes.Single);
+            success &= rtc.ListBegin(ListTypes.Single);
+            // Measurement begin
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
             // Draw line
             success &= rtc.ListJumpTo(new Vector2(0, 0));
@@ -274,7 +275,7 @@ namespace Demos
 
             // MoF begin
             success &= rtcMof.ListMofBegin();
-            // Wait until condition has matched
+            // Wait until encoder x over 10 mm 
             success &= rtcMof.ListMofWait(RtcEncoders.EncX, 10, RtcEncoderWaitConditions.Over);
 
             // Draw circle
@@ -283,6 +284,7 @@ namespace Demos
 
             // MoF end
             success &= rtcMof.ListMofEnd(Vector2.Zero);
+            // Measurement end
             success &= rtcMeasurement.ListMeasurementEnd();
 
             if (!externalStart)
@@ -369,7 +371,7 @@ namespace Demos
             //                             |                
             //                             . . . . .       
             //                             .       . 
-            //                             .       .         Repeat 10times
+            //                             .       .         Repeat 10 times
             //                             .       .         
             // ----------------------------.-------.-------.--------
             //                             |       .       .

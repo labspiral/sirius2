@@ -39,14 +39,13 @@ using SpiralLab.Sirius2.Winforms;
 using SpiralLab.Sirius2.Winforms.UI;
 using SpiralLab.Sirius2.IO;
 using SpiralLab.Sirius2.Laser;
+using SpiralLab.Sirius2.PowerMeter;
+using SpiralLab.Sirius2.PowerMap;
 using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
 using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Common;
-using SpiralLab.Sirius2.PowerMeter;
-using SpiralLab.Sirius2.PowerMap;
-using System.Text.RegularExpressions;
 using SpiralLab.Sirius2.Winforms.Remote;
 using OpenTK;
 
@@ -114,10 +113,11 @@ namespace Demos
         private bool isDisableControl;
 
         /// <summary>
-        /// <c>IDocument</c>
+        /// <c>IDocument</c> (aka. Recipe data)
         /// </summary>
         /// <remarks>
-        /// Created by internally. Do action by <c>Act...</c> functions. <br/>
+        /// <c>Document</c> would be created by <c>OnLoad</c> event handler.<br/>
+        /// Do action by <c>IDocument.Act...</c> functions. <br/>
         /// </remarks>
         public IDocument Document
         {
@@ -128,6 +128,7 @@ namespace Demos
                     return;
                 if (document != null)
                 {
+                    PropertyGridCtrl.SelecteObject = null;
                     document.OnSelected -= Document_OnSelected;
                     document.OnSaved -= Document_OnSaved;
                     document.OnOpened -= Document_OnOpened;
@@ -143,6 +144,7 @@ namespace Demos
                 TreeViewCtrl.Document = document;
                 TreeViewBlockCtrl.Document = document;
                 EditorCtrl.Document = document;
+                PowerMapCtrl.Document = document;
                 //RtcControl
                 //LaserCOntrol
                 if (document != null)
@@ -155,8 +157,8 @@ namespace Demos
                         vb.Renderer.MouseMove += Renderer_MouseMove;
                         vb.Renderer.Paint += Renderer_Paint;
                     }
+                    PropertyGridCtrl.SelecteObject = document.Selected;
                 }
-                PropertyGridCtrl.SelecteObject = null;
             }
         }  
         private IDocument document;
@@ -236,7 +238,7 @@ namespace Demos
                     rtcDOUserControl1.UpdateExtension2PortNames(Config.DOut_RtcExtension2Port);
                     rtcDOUserControl1.UpdateLaserPortNames(Config.DOut_RtcLaserPort);
 
-                    EntityVisibility();
+                    PropertyVisibility();
                     MenuVisibility();
                     if (rtc is IRtcMoF mof)
                     {
@@ -412,7 +414,7 @@ namespace Demos
         protected IDOutput DOLaserPort;
 
         /// <summary>
-        /// Treeview user control for <c>EntityLayer</c> and <c>IEntity</c> nodes
+        /// Treeview user control for <c>IEntity</c> within <c>EntityLayer</c> nodes
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl TreeViewCtrl
         { 
@@ -440,7 +442,7 @@ namespace Demos
             get { return editorControl1; }
         }
         /// <summary>
-        /// PropertyGrid user control for properties of <c>EntityPen</c>
+        /// User control for list of <c>EntityPen</c>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.PenUserControl PenCtrl
         {
@@ -468,14 +470,14 @@ namespace Demos
             get { return markerControl1; }
         }
         /// <summary>
-        /// Editable user control for <c>IMarker.Offsets</c>
+        /// User control for list of <c>IMarker.Offsets</c>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.OffsetUserControl OffsetCtrl
         {
             get { return offsetControl1; }
         }
         /// <summary>
-        /// User control for RTC DI (extension 1 and  laser port)
+        /// User control for RTC DI (extension 1 and laser port)
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl RtcDICtrl
         {
@@ -548,7 +550,6 @@ namespace Demos
         public SiriusEditorUserControl()
         {
             InitializeComponent();
-
         
             VisibleChanged += SiriusEditorUserControl_VisibleChanged;
             Disposed += SiriusEditorUserControl_Disposed;
@@ -626,6 +627,16 @@ namespace Demos
             base.OnLoad(e);
             InternalOnLoad(e);
         }
+        private void InternalOnLoad(EventArgs e)
+        {
+            TreeViewCtrl.View = EditorCtrl.View;
+            TreeViewBlockCtrl.View = EditorCtrl.View;
+            PropertyGridCtrl.View = EditorCtrl.View;
+
+            // Create document by default 
+            this.Document = new DocumentBase();
+            Document.ActNew();
+        }
         /// <inheritdoc/>
         public override void Refresh()
         {
@@ -638,6 +649,7 @@ namespace Demos
         /// <inheritdoc/>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
+            // Stop: CTRL + F5
             if (keyData == (Keys.Control | Keys.F5))
             {
                 if (null != Marker)
@@ -646,6 +658,7 @@ namespace Demos
                     return true;
                 }
             }
+            // Start: F5
             else if (keyData == (Keys.F5))
             {
                 if (null != Marker)
@@ -662,6 +675,7 @@ namespace Demos
                     }
                 }
             }
+            // Reset: F6
             else if (keyData == (Keys.F6))
             {
                 if (null != Marker)
@@ -672,43 +686,99 @@ namespace Demos
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
-
-        private void InternalOnLoad(EventArgs e)
+        private void SiriusEditorUserControl_Disposed(object sender, EventArgs e)
         {
-            TreeViewCtrl.View = EditorCtrl.View;
-            TreeViewBlockCtrl.View = EditorCtrl.View;
-            PropertyGridCtrl.View = EditorCtrl.View;
-
-            // Create one by default
-            this.Document = new DocumentBase();
-            // New document by default
-            Document.ActNew();
-
-            PowerMapCtrl.Document = this.Document;
+            timerStatus.Enabled = false;
+            timerProgress.Enabled = false;
+            timerStatus.Tick -= TimerStatus_Tick;
+            timerProgress.Tick -= TimerProgress_Tick;
         }
         private void SiriusEditorUserControl_VisibleChanged(object sender, EventArgs e)
         {
             timerStatus.Enabled = Visible;
         }
-        private void BtnSiriusCharacterSetText_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Menu visibility
+        /// </summary>
+        private void MenuVisibility()
         {
-            var entity = EntityFactory.CreateSiriusCharacterSetText(Config.DefaultSiriusFont, CharacterSetFormats.Date, 5);
-            document.ActAdd(entity);
+            Debug.Assert(rtc != null);
+            if (null == rtc)
+                return;
+            switch (rtc.RtcType)
+            {
+                case RtcTypes.RtcVirtual:
+                    break;
+                case RtcTypes.Rtc4:
+                case RtcTypes.Rtc5:
+                case RtcTypes.Rtc6:
+                case RtcTypes.Rtc6e:
+                    break;
+                case RtcTypes.Rtc6SyncAxis:
+                    btnImageText.Enabled = false;
+                    mnuMeasurementBeginEnd.Enabled = false;
+                    mnuMoF.Enabled = false;
+                    mnuZDelta.Enabled = false;
+                    mnuZDefocus.Enabled = false;
+                    mnuWriteDataExt16Cond.Enabled = false;
+                    mnuWaitDataExt16Cond.Enabled = false;
+
+                    lblEncoder.Visible = false;
+                    btnCharacterSetText.Enabled = false;
+                    btnSiriusCharacterSetText.Enabled = false;
+                    break;
+            }
         }
-        private void BtnCharacterSetText_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Specific property visibility
+        /// </summary>
+        private void PropertyVisibility()
         {
-            var entity = EntityFactory.CreateCharacterSetText(Config.DefaultFont, CharacterSetFormats.Date, 5);
-            document.ActAdd(entity);
-        }     
-        private void BtnCircularText_Click(object sender, EventArgs e)
-        {
-            var entity = EntityFactory.CreateCircularText(Config.DefaultFont, "POWERED BY SIRIUS2 0123456789", FontStyle.Regular, 2,  TextCircularDirections.ClockWise, 5, 180);
-            document.ActAdd(entity);
+            EntityPen.PropertyVisibility(rtc);
+            EntityPen.PropertyVisibility(laser);
+            EntityLayer.PropertyVisibility(rtc);
+            EntityPoints.PropertyVisibility(rtc);
+            EntityRampBegin.PropertyVisibility(rtc);
         }
-        private void BtnSiriusText_Click(object sender, EventArgs e)
+        private void VisibilityByMarking(bool enable)
         {
-            var entity = EntityFactory.CreateSiriusText(Config.DefaultSiriusFont, "SIRIUS2", 2.5);
-            document.ActAdd(entity);
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
+            if (!IsDisableControl)
+            {
+                tlsTop.Enabled = enable;
+                tlsTop2.Enabled = enable;
+                TreeViewCtrl.Enabled = enable;
+                TreeViewBlockCtrl.Enabled = enable;
+                EditorCtrl.Enabled = enable;
+                PenCtrl.Enabled = enable;
+                LaserCtrl.Enabled = enable;
+                RtcCtrl.Enabled = enable;
+                OffsetCtrl.Enabled = enable;
+                PropertyGridCtrl.Enabled = enable;
+            }
+            DoRender();
+        }
+        /// <summary>
+        /// Switch view mode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (null == Document)
+                return;
+            Document.ActSelectClear();
+            switch (tabControl1.SelectedIndex)
+            {
+                case 0:
+                    EditorCtrl.View.ViewMode = ViewModes.Entity;
+                    break;
+                case 1:
+                    EditorCtrl.View.ViewMode = ViewModes.Block;
+                    break;
+            }
+            EditorCtrl.View.Render();
         }
 
         private void MnuQRCode_Click(object sender, EventArgs e)
@@ -763,67 +833,6 @@ namespace Demos
                 document.ActInsert(entity, document.ActiveLayer, 0);
             }
         }
-        private void SiriusEditorUserControl_Disposed(object sender, EventArgs e)
-        {
-            timerStatus.Enabled = false;
-            timerProgress.Enabled = false;
-            timerStatus.Tick -= TimerStatus_Tick;
-            timerProgress.Tick -= TimerProgress_Tick;
-        }
-        private void MenuVisibility()
-        {
-            Debug.Assert(rtc != null);
-            if (null == rtc)
-                return;
-
-            switch (rtc.RtcType)
-            {
-                case RtcTypes.RtcVirtual:
-                    break;
-                case RtcTypes.Rtc4:
-                case RtcTypes.Rtc5:
-                case RtcTypes.Rtc6:
-                case RtcTypes.Rtc6e:
-                    break;
-                case RtcTypes.Rtc6SyncAxis:
-                    btnImageText.Enabled = false;
-                    mnuMeasurementBeginEnd.Enabled = false;
-                    mnuMoF.Enabled = false;
-                    mnuZDelta.Enabled = false;                         
-                    mnuZDefocus.Enabled = false;
-                    mnuWriteDataExt16Cond.Enabled = false;
-                    mnuWaitDataExt16Cond.Enabled = false;
-
-                    lblEncoder.Visible = false;
-                    btnCharacterSetText.Enabled = false;
-                    btnSiriusCharacterSetText.Enabled = false;
-                    break;
-            }
-        }
-        private void EntityVisibility()
-        {
-            EntityPen.PropertyVisibility(rtc);
-            EntityPen.PropertyVisibility(laser);
-            EntityLayer.PropertyVisibility(rtc);
-            EntityPoints.PropertyVisibility(rtc);
-            EntityRampBegin.PropertyVisibility(rtc);
-        }
-        private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (null == Document)
-                return;
-            Document.ActSelectClear();
-            switch(tabControl1.SelectedIndex)
-            {
-                case 0:
-                    EditorCtrl.View.ViewMode = ViewModes.Entity;
-                    break;
-                case 1:
-                    EditorCtrl.View.ViewMode = ViewModes.Block;
-                    break;
-            }
-            EditorCtrl.View.Render();
-        }
         private void MnuMarginBottom_Click(object sender, EventArgs e)
         {
             document.ActAlign(document.Selected, MarginAlignments.Bottom);
@@ -853,21 +862,6 @@ namespace Demos
         {
             var entity = EntityFactory.CreateZDefocus(0);
             document.ActAdd(entity);
-        }
-        private void LblEncoder_DoubleClick(object sender, EventArgs e)
-        {
-            if (null == Rtc)
-                return;
-            var rtcMoF = Rtc as IRtcMoF;
-            if (rtcMoF == null)
-                return;
-
-            var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to reset encoder values ?", "Warning", MessageBoxButtons.YesNo);
-            DialogResult dialogResult = form.ShowDialog(this);
-            if (dialogResult != DialogResult.Yes)
-                return;
-
-            rtcMoF.CtlMofEncoderReset();
         }
         private void MnuMofAngularWait_Click(object sender, EventArgs e)
         {
@@ -917,6 +911,142 @@ namespace Demos
             var entity = EntityFactory.CreateJumpTo(Vector3.Zero);
             document.ActAdd(entity);
         }
+        private void MnuMeasurementBeginEnd_Click(object sender, EventArgs e)
+        {
+            if (rtc is Rtc5)
+            {
+                var entity1 = EntityFactory.CreateMeasurementEnd();
+                document.ActAdd(entity1);
+                var channels = new MeasurementChannels[4]
+                {
+                    MeasurementChannels.SampleX,
+                    MeasurementChannels.SampleY,
+                    MeasurementChannels.SampleZ,
+                    MeasurementChannels.LaserOn,
+                };
+                var entity2 = EntityFactory.CreateMeasurementBegin(5 * 1000, channels);
+                document.ActInsert(entity2, document.ActiveLayer, 0);
+            }
+            else if (rtc is Rtc6)
+            {
+                var entity1 = EntityFactory.CreateMeasurementEnd();
+                document.ActAdd(entity1);
+                var channels = new MeasurementChannels[8]
+                {
+                    MeasurementChannels.SampleX,
+                    MeasurementChannels.SampleY,
+                    MeasurementChannels.SampleZ,
+                    MeasurementChannels.LaserOn,
+                    MeasurementChannels.OutputPeriod,
+                    MeasurementChannels.PulseLength,
+                    MeasurementChannels.Enc0Counter,
+                    MeasurementChannels.Enc1Counter,
+                };
+                var entity2 = EntityFactory.CreateMeasurementBegin(5 * 1000, channels);
+                document.ActInsert(entity2, document.ActiveLayer, 0);
+            }
+        }
+
+        private void BtnNew_Click(object sender, EventArgs e)
+        {
+            if (document.IsModified)
+            {
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to new document without save ?", "Warning", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = form.ShowDialog(this);
+                if (dialogResult != DialogResult.Yes)
+                    return;
+            }
+            document.ActNew();
+        }
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            document.ActRemove(document.Selected);
+        }
+        private void BtnOpen_Click(object sender, EventArgs e)
+        {
+            if (Config.NotifyOpen(this))
+                return;
+            var dlg = new OpenFileDialog();
+            dlg.Filter = Config.FileOpenFilters;
+            dlg.Title = "Open File";
+            DialogResult result = dlg.ShowDialog();
+            if (result != DialogResult.OK)
+                return;
+            if (Document.IsModified)
+            {
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to open without save ?", "Warning", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = form.ShowDialog(this);
+                if (dialogResult != DialogResult.Yes)
+                    return;
+            }
+            Cursor.Current = Cursors.WaitCursor;
+            document.ActOpen(dlg.FileName);
+            Cursor.Current = Cursors.Default;
+        }
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            if (Config.NotifySave(this))
+                return;
+            var dlg = new SaveFileDialog();
+            dlg.Filter = Config.FileSaveFilters;
+            dlg.Title = "Save File";
+            dlg.OverwritePrompt = true;
+            DialogResult result = dlg.ShowDialog();
+            if (result != DialogResult.OK)
+                return;
+            Cursor.Current = Cursors.WaitCursor;
+            document.ActSave(dlg.FileName);
+            Cursor.Current = Cursors.Default;
+        }
+        private void BtnZoomIn_Click(object sender, EventArgs e)
+        {
+
+            EditorCtrl.View.Camera.ZoomIn(Point.Empty);
+            DoRender();
+        }
+        private void BtnZoomOut_Click(object sender, EventArgs e)
+        {
+            EditorCtrl.View.Camera.ZoomOut(Point.Empty);
+            DoRender();
+        }
+        private void BtnZoomFit_Click(object sender, EventArgs e)
+        {
+            if (0 == Document.Selected.Length)
+            {
+                var bbox = BoundingBox.RealBoundingBox(Document.InternalData.Layers.ToArray());
+                EditorCtrl.View.Camera.ZoomFit(bbox);
+            }
+            else
+            {
+                var bbox = BoundingBox.RealBoundingBox(Document.Selected);
+                EditorCtrl.View.Camera.ZoomFit(bbox);
+            }
+            DoRender();
+        }
+        private void BtnPasteArray_Click(object sender, EventArgs e)
+        {
+            if (Document.Clipboard == null || Document.Clipboard.Length == 0)
+            {
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Clipboard are empty. Please copy or cut at first", "Warning", MessageBoxButtons.OK);
+                form.ShowDialog(this);
+                return;
+            }
+            {
+                var form = new SpiralLab.Sirius2.Winforms.UI.ArrayForm();
+                if (DialogResult.OK != form.ShowDialog(this))
+                    return;
+                for (int i = 0; i < form.Calcuated.Length; i++)
+                {
+                    IEntity[] pastedEntities = Document.ActPaste(null);
+                    var offset = form.Calcuated[i];
+                    foreach (var entity in pastedEntities)
+                    {
+                        entity.Translate(offset.Dx, offset.Dy);
+                    }
+                }
+            }
+            DoRender();
+        }
 
         private void BtnPoints_Click(object sender, EventArgs e)
         {
@@ -942,6 +1072,26 @@ namespace Demos
         private void BtnLine_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateLine(-10, 0, 10, 0);
+            document.ActAdd(entity);
+        }
+        private void BtnArc_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateArc(Vector2.Zero, 10, 0, 180);
+            document.ActAdd(entity);
+        }
+        private void BtnCircle_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateArc(Vector2.Zero, 10, 0, 360);
+            document.ActAdd(entity);
+        }
+        private void BtnSpiral_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateSpiral(Vector2.Zero, 1, 5, 0, 10, true);
+            document.ActAdd(entity);
+        }
+        private void BtnTrepan_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateTrepan(Vector2.Zero, 1, 5, 10);
             document.ActAdd(entity);
         }
         private void BtnImportFile_Click(object sender, EventArgs e)
@@ -1018,55 +1168,25 @@ namespace Demos
             //if (document.Selected.Length > 0)
             //    Document.ActDivide(document.Selected, null);
         }
-
-        private void BtnZoomIn_Click(object sender, EventArgs e)
+        private void BtnSiriusCharacterSetText_Click(object sender, EventArgs e)
         {
-
-            EditorCtrl.View.Camera.ZoomIn(Point.Empty);
-            DoRender();
+            var entity = EntityFactory.CreateSiriusCharacterSetText(Config.DefaultSiriusFont, CharacterSetFormats.Date, 5);
+            document.ActAdd(entity);
         }
-        private void BtnZoomOut_Click(object sender, EventArgs e)
+        private void BtnCharacterSetText_Click(object sender, EventArgs e)
         {
-            EditorCtrl.View.Camera.ZoomOut(Point.Empty);
-            DoRender();
+            var entity = EntityFactory.CreateCharacterSetText(Config.DefaultFont, CharacterSetFormats.Date, 5);
+            document.ActAdd(entity);
         }
-        private void BtnZoomFit_Click(object sender, EventArgs e)
+        private void BtnCircularText_Click(object sender, EventArgs e)
         {
-            if (0 == Document.Selected.Length)
-            {
-                var bbox = BoundingBox.RealBoundingBox(Document.InternalData.Layers.ToArray());
-                EditorCtrl.View.Camera.ZoomFit(bbox);
-            }
-            else
-            {
-                var bbox = BoundingBox.RealBoundingBox(Document.Selected);
-                EditorCtrl.View.Camera.ZoomFit(bbox);
-            }
-            DoRender();
+            var entity = EntityFactory.CreateCircularText(Config.DefaultFont, "POWERED BY SIRIUS2 0123456789", FontStyle.Regular, 2, TextCircularDirections.ClockWise, 5, 180);
+            document.ActAdd(entity);
         }
-        private void BtnPasteArray_Click(object sender, EventArgs e)
+        private void BtnSiriusText_Click(object sender, EventArgs e)
         {
-            if (Document.Clipboard == null || Document.Clipboard.Length == 0)
-            {
-                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Clipboard are empty. Please copy or cut at first", "Warning", MessageBoxButtons.OK);
-                form.ShowDialog(this);
-                return;
-            }
-            {
-                var form = new SpiralLab.Sirius2.Winforms.UI.ArrayForm();
-                if (DialogResult.OK != form.ShowDialog(this))
-                    return;
-                for (int i = 0; i < form.Calcuated.Length; i++)
-                {
-                    IEntity[] pastedEntities = Document.ActPaste(null);
-                    var offset = form.Calcuated[i];
-                    foreach (var entity in pastedEntities)
-                    {
-                        entity.Translate(offset.Dx, offset.Dy);
-                    }
-                }
-            }
-            DoRender();
+            var entity = EntityFactory.CreateSiriusText(Config.DefaultSiriusFont, "SIRIUS2", 2.5);
+            document.ActAdd(entity);
         }
 
         private void BtnCopy_Click(object sender, EventArgs e)
@@ -1087,6 +1207,11 @@ namespace Demos
             form.ShowDialog();
         }
 
+        /// <summary>
+        /// Event handler for <c>Document</c> has opened
+        /// </summary>
+        /// <param name="document"><c>IDocument</c></param>
+        /// <param name="fileName">Filename</param>
         private void Document_OnOpened(IDocument document, string fileName)
         {
             if (!this.IsHandleCreated || this.IsDisposed)
@@ -1100,20 +1225,30 @@ namespace Demos
                 PropertyGridCtrl.Refresh();
             }));
         }
+        /// <summary>
+        /// Event handler for <c>Document</c> has saved
+        /// </summary>
+        /// <param name="document"><c>IDocument</c></param>
+        /// <param name="fileName">Filename</param>
         private void Document_OnSaved(IDocument document, string fileName)
         {
-            if (!this.IsHandleCreated || this.IsDisposed)
+            if (!statusStrip1.IsHandleCreated || this.IsDisposed)
                 return;
-            this.Invoke(new MethodInvoker(delegate ()
+            statusStrip1.Invoke(new MethodInvoker(delegate ()
             {
                 lblFileName.Text = fileName;
             }));
         }
+        /// <summary>
+        /// Event handler for <c>IEntity</c> has selected
+        /// </summary>
+        /// <param name="document"><c>IDocument</c></param>
+        /// <param name="entities">Selected array of <c>IEntity</c></param>
         private void Document_OnSelected(IDocument document, IEntity[] entities)
         {
-            if (!this.IsHandleCreated || this.IsDisposed)
+            if (!statusStrip1.IsHandleCreated || statusStrip1.IsDisposed)
                 return;
-            this.Invoke(new MethodInvoker(delegate ()
+            statusStrip1.Invoke(new MethodInvoker(delegate ()
             {
                 lblSelected.Text = $"Selected: {entities.Length}";
             }));
@@ -1129,167 +1264,23 @@ namespace Demos
             lblPos.Text = $"XY: {intersect.X:F3}, {intersect.Y:F3}  P: {e.Location.X}, {e.Location.Y}";
 
         }
-        private void Mof_OnEncoderChanged(IRtcMoF rtcMoF, int encX, int encY)
-        {
-            if (!this.IsHandleCreated || this.IsDisposed)
-                return;
-            
-            switch (rtcMoF.EncoderType)
-            {
-                default:
-                case RtcEncoderTypes.XY:
-                    {
-                        rtcMoF.CtlMofGetEncoder(out var x, out var y, out var xMm, out var yMm);
-                        this.BeginInvoke(new MethodInvoker(delegate ()
-                        {
-                            lblEncoder.Text = $"ENC XY: {x}, {y} [{xMm:F3}, {yMm:F3}]";
-                        }));
-                    }
-                    break;
-                case RtcEncoderTypes.Angular:
-                    {
-                        rtcMoF.CtlMofGetAngularEncoder(out var x, out var angle);
-                        this.BeginInvoke(new MethodInvoker(delegate ()
-                        {
-                            lblEncoder.Text = $"ENC X,0: {x} [{angle:F3}˚]";
-                        }));
-                    }
-                    break;
-            }
-        }
 
-        private void BtnNew_Click(object sender, EventArgs e)
-        {
-            if (document.IsModified)
-            {
-                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to new document without save ?", "Warning", MessageBoxButtons.YesNo);
-                DialogResult dialogResult = form.ShowDialog(this);
-                if (dialogResult != DialogResult.Yes)
-                    return;
-            }
-            document.ActNew();
-        }
-        private void BtnDelete_Click(object sender, EventArgs e)
-        {
-            document.ActRemove(document.Selected);
-        }
-        private void BtnOpen_Click(object sender, EventArgs e)
-        {
-            if (Config.NotifyOpen(this))
-                return;
-            var dlg = new OpenFileDialog();
-            dlg.Filter = Config.FileOpenFilters;
-            dlg.Title = "Open File";
-            DialogResult result = dlg.ShowDialog();
-            if (result != DialogResult.OK)
-                return;
-            if (Document.IsModified)
-            {
-                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to open without save ?", "Warning", MessageBoxButtons.YesNo);
-                DialogResult dialogResult = form.ShowDialog(this);
-                if (dialogResult != DialogResult.Yes)
-                    return;
-            }
-            Cursor.Current = Cursors.WaitCursor;
-            document.ActOpen(dlg.FileName);
-            Cursor.Current = Cursors.Default;
-        }
-        private void BtnSave_Click(object sender, EventArgs e)
-        {
-            if (Config.NotifySave(this))
-                return;
-            var dlg = new SaveFileDialog();
-            dlg.Filter = Config.FileSaveFilters;
-            dlg.Title = "Save File";
-            dlg.OverwritePrompt = true;
-            DialogResult result = dlg.ShowDialog();
-            if (result != DialogResult.OK)
-                return;
-            Cursor.Current = Cursors.WaitCursor;
-            document.ActSave(dlg.FileName);
-            Cursor.Current = Cursors.Default;
-        }
-
-        private void BtnArc_Click(object sender, EventArgs e)
-        {
-            var entity = EntityFactory.CreateArc(Vector2.Zero, 10, 0, 180);
-            document.ActAdd(entity);
-        }
-        private void BtnCircle_Click(object sender, EventArgs e)
-        {
-            var entity = EntityFactory.CreateArc(Vector2.Zero, 10, 0, 360);
-            document.ActAdd(entity);
-        }
-        private void BtnSpiral_Click(object sender, EventArgs e)
-        {
-            var entity = EntityFactory.CreateSpiral(Vector2.Zero, 1, 5, 0, 10, true);
-            document.ActAdd(entity);
-        }
-        private void BtnTrepan_Click(object sender, EventArgs e)
-        {
-            var entity = EntityFactory.CreateTrepan(Vector2.Zero, 1, 5, 10);
-            document.ActAdd(entity);
-        }
-
-        private void MnuMeasurementBeginEnd_Click(object sender, EventArgs e)
-        {
-            if (rtc is Rtc5)
-            {
-                var entity1 = EntityFactory.CreateMeasurementEnd();
-                document.ActAdd(entity1);
-                var channels = new MeasurementChannels[4]
-                {
-                    MeasurementChannels.SampleX,
-                    MeasurementChannels.SampleY,
-                    MeasurementChannels.SampleZ,
-                    MeasurementChannels.LaserOn,
-                };
-                var entity2 = EntityFactory.CreateMeasurementBegin(5 * 1000, channels);
-                document.ActInsert(entity2, document.ActiveLayer, 0);
-            }
-            else if (rtc is Rtc6)
-            {
-                var entity1 = EntityFactory.CreateMeasurementEnd();
-                document.ActAdd(entity1);
-                var channels = new MeasurementChannels[8]
-                {
-                    MeasurementChannels.SampleX,
-                    MeasurementChannels.SampleY,
-                    MeasurementChannels.SampleZ,
-                    MeasurementChannels.LaserOn,
-                    MeasurementChannels.OutputPeriod,
-                    MeasurementChannels.PulseLength,
-                    MeasurementChannels.Enc0Counter,
-                    MeasurementChannels.Enc1Counter,
-                };
-                var entity2 = EntityFactory.CreateMeasurementBegin(5 * 1000, channels);
-                document.ActInsert(entity2, document.ActiveLayer, 0);
-            }
-        }
         private void LblHelp_Click(object sender, EventArgs e)
         {
             var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(Config.KeyboardHelpMessage, "Help - Keyboards", MessageBoxButtons.OK);
-            DialogResult dialogResult = form.ShowDialog(this);
+            form.ShowDialog(this);
         }
-
-        private void EnableDisableControlByMarking(bool enable)
+        private void LblEncoder_DoubleClick(object sender, EventArgs e)
         {
-            if (!this.IsHandleCreated || this.IsDisposed)
+            if (null == Rtc)
                 return;
-            if (!IsDisableControl)
-            {
-                tlsTop.Enabled = enable;
-                tlsTop2.Enabled = enable;
-                TreeViewCtrl.Enabled = enable;
-                TreeViewBlockCtrl.Enabled = enable;
-                EditorCtrl.Enabled = enable;
-                PenCtrl.Enabled = enable;
-                LaserCtrl.Enabled = enable;
-                RtcCtrl.Enabled = enable;
-                OffsetCtrl.Enabled = enable;
-                PropertyGridCtrl.Enabled = enable;
-            }
-            DoRender();
+            var rtcMoF = Rtc as IRtcMoF;
+            if (rtcMoF == null)
+                return;
+            var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to reset encoder values ?", "Warning", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = form.ShowDialog(this);
+            if (dialogResult == DialogResult.Yes)
+                rtcMoF.CtlMofEncoderReset();
         }
 
         int timerStatusColorCounts = 0;
@@ -1341,7 +1332,7 @@ namespace Demos
             }
             if (null == this.Remote || !Remote.IsConnected)
             {
-                lblConnect.Text = " CONNECT ";
+                lblConnect.Text = " CONNECTED ";
                 lblConnect.ForeColor = Color.White;
                 lblConnect.BackColor = Color.Maroon;
             }
@@ -1351,11 +1342,11 @@ namespace Demos
                 switch(Remote.ControlMode)
                 {
                     case ControlModes.Local:
-                        lblConnect.Text = " CONNECT /LOCAL ";
+                        lblConnect.Text = " CONNECTED /LOCAL ";
                         lblConnect.BackColor = Color.Yellow;
                         break;
                     case ControlModes.Remote:
-                        lblConnect.Text = " CONNECT /REMOTE ";
+                        lblConnect.Text = " CONNECTED /REMOTE ";
                         lblConnect.BackColor = Color.Lime;
                         break;
                 }
@@ -1365,12 +1356,27 @@ namespace Demos
                 lblRenderTime.Text = $"Render: {EditorCtrl.View.RenderTime} ms";
         }
 
-        int timerProgressColorCounts = 0;
-        private void TimerProgress_Tick(object sender, EventArgs e)
+        /// <summary>
+        /// Event handler for <c>IMarker</c> has started
+        /// </summary>
+        /// <param name="marker"><c>IMarker</c></param>
+        private void Marker_OnStarted(IMarker marker)
         {
             if (!this.IsHandleCreated || this.IsDisposed)
                 return;
+            timerProgressStopwatch.Restart();
+            timerProgress.Start();
             this.Invoke(new MethodInvoker(delegate ()
+            {
+                VisibilityByMarking(false);
+            }));
+        }
+        int timerProgressColorCounts = 0;
+        private void TimerProgress_Tick(object sender, EventArgs e)
+        {
+            if (!statusStrip1.IsHandleCreated || this.IsDisposed)
+                return;
+            statusStrip1.Invoke(new MethodInvoker(delegate ()
             {
                 if (0 == timerProgressColorCounts++ % 2)
                     lblProcessTime.ForeColor = statusStrip1.ForeColor;
@@ -1380,84 +1386,126 @@ namespace Demos
                 lblProcessTime.Text = $"{timerProgressStopwatch.ElapsedMilliseconds / 1000.0:F3} sec";
             }));
         }
-        private void Marker_OnStarted(IMarker marker)
-        {
-            if (!this.IsHandleCreated || this.IsDisposed)
-                return;
-            timerProgressStopwatch.Restart();
-            timerProgress.Start();
-            this.BeginInvoke(new MethodInvoker(delegate ()
-            {
-                EnableDisableControlByMarking(false);
-            }));
-        }
+        /// <summary>
+        /// Event handler for <c>IMarker</c> has ended
+        /// </summary>
+        /// <param name="marker"><c>IMarker</c></param>
+        /// <param name="success">Sucess(or failed) to mark</param>
+        /// <param name="ts"><c>TimeSpan</c></param>
         private void Marker_OnEnded(IMarker marker, bool success, TimeSpan ts)
         {
             if (!this.IsHandleCreated || this.IsDisposed)
                 return;
             timerProgressStopwatch.Stop();
             timerProgress.Stop();
-            this.BeginInvoke(new MethodInvoker(delegate ()
+            this.Invoke(new MethodInvoker(delegate ()
             {
+                lblProcessTime.Text = $"{ts.TotalSeconds:F3} sec";
                 if (success)
-                {
                     lblProcessTime.ForeColor = statusStrip1.ForeColor;
-                    lblProcessTime.Text = $"{ts.TotalSeconds:F3} sec";
-                }
                 else
-                {
                     lblProcessTime.ForeColor = Color.Red;
-                    lblProcessTime.Text = $"{ts.TotalSeconds:F3} sec";
-                }
-                EnableDisableControlByMarking(true);
+                VisibilityByMarking(true);
                 EditorCtrl.Focus();
             }));
         }
-        private void PowerMeter_OnCleared(IPowerMeter obj)
+        /// <summary>
+        /// Event handler for external ENCODER values has changed
+        /// </summary>
+        /// <param name="rtcMoF"><c>IRtcMoF</c></param>
+        /// <param name="encX">ENC X(0)</param>
+        /// <param name="encY">ENC Y(1)</param>
+        private void Mof_OnEncoderChanged(IRtcMoF rtcMoF, int encX, int encY)
         {
-            if (!this.IsHandleCreated || this.IsDisposed)
+            if (!statusStrip1.IsHandleCreated || this.IsDisposed)
                 return;
-            this.BeginInvoke(new MethodInvoker(delegate ()
+            switch (rtcMoF.EncoderType)
+            {
+                default:
+                case RtcEncoderTypes.XY:
+                    {
+                        rtcMoF.CtlMofGetEncoder(out var x, out var y, out var xMm, out var yMm);
+                        statusStrip1.Invoke(new MethodInvoker(delegate ()
+                        {
+                            lblEncoder.Text = $"ENC XY: {x}, {y} [{xMm:F3}, {yMm:F3}]";
+                        }));
+                    }
+                    break;
+                case RtcEncoderTypes.Angular:
+                    {
+                        rtcMoF.CtlMofGetAngularEncoder(out var x, out var angle);
+                        statusStrip1.Invoke(new MethodInvoker(delegate ()
+                        {
+                            lblEncoder.Text = $"ENC X,0: {x} [{angle:F3}˚]";
+                        }));
+                    }
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Event handler for powermeter data has cleared
+        /// </summary>
+        /// <param name="powerMeter"><c>IPowerMeter</c></param>
+        private void PowerMeter_OnCleared(IPowerMeter powerMeter)
+        {
+            if (!statusStrip1.IsHandleCreated || this.IsDisposed)
+                return;
+            statusStrip1.Invoke(new MethodInvoker(delegate ()
             {
                 lblPowerWatt.Text = $"(Empty)";
             }));
         }
-        private void PowerMeter_OnStarted(IPowerMeter obj)
+        /// <summary>
+        /// Event handler for powermeter has started
+        /// </summary>
+        /// <param name="powerMeter"><c>IPowerMeter</c></param>
+        private void PowerMeter_OnStarted(IPowerMeter powerMeter)
         {
-            if (!this.IsHandleCreated || this.IsDisposed)
+            if (!statusStrip1.IsHandleCreated || this.IsDisposed)
                 return;
-            this.BeginInvoke(new MethodInvoker(delegate ()
+            statusStrip1.Invoke(new MethodInvoker(delegate ()
             {
                 lblPowerWatt.Text = $"Started...";
             }));
         }
-        private void PowerMeter_OnStopped(IPowerMeter obj)
+        /// <summary>
+        /// Event handler for powermeter has stopped
+        /// </summary>
+        /// <param name="powerMeter"><c>IPowerMeter</c></param>
+        private void PowerMeter_OnStopped(IPowerMeter powerMeter)
         {
-            if (!this.IsHandleCreated || this.IsDisposed)
+            if (!statusStrip1.IsHandleCreated || this.IsDisposed)
                 return;
-            this.Invoke(new MethodInvoker(delegate ()
+            statusStrip1.Invoke(new MethodInvoker(delegate ()
             {
                 //lblPowerWatt.Text = $"0.0 W";
             }));
         }
-        private void PowerMeter_OnMeasured(IPowerMeter arg1, DateTime dt, double watt)
+        /// <summary>
+        /// Event handler for powermeter has mesaured data
+        /// </summary>
+        /// <param name="powerMeter"><c>IPowerMeter</c></param>
+        /// <param name="dt"><c>DateTime</c></param>
+        /// <param name="watt">Measured data(W)</param>
+        private void PowerMeter_OnMeasured(IPowerMeter powerMeter, DateTime dt, double watt)
         {
-            if (!this.IsHandleCreated || this.IsDisposed)
+            if (!statusStrip1.IsHandleCreated || this.IsDisposed)
                 return;
-            this.BeginInvoke(new MethodInvoker(delegate ()
+            statusStrip1.Invoke(new MethodInvoker(delegate ()
             {
                 lblPowerWatt.Text = $"{watt:F3} W";
             }));
         }
 
         /// <summary>
-        /// Do <c>IView</c> render
+        /// Do <c>IView</c> render by forcily
         /// </summary>
         public void DoRender()
         {
             if (!this.IsHandleCreated || this.IsDisposed)
                 return;
-            this.Invoke(new MethodInvoker(delegate ()
+            this.BeginInvoke(new MethodInvoker(delegate ()
             {
                 EditorCtrl.View.Render();
                 lblRenderTime.Text = $"Render: {EditorCtrl.View.RenderTime} ms";

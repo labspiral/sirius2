@@ -154,7 +154,7 @@
     <value>editorControl1</value>
   </data>
   <data name="&gt;&gt;editorControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.EditorUserControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.EditorUserControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;editorControl1.Parent" xml:space="preserve">
     <value>tabPage6</value>
@@ -217,7 +217,7 @@
     <value>rtcControl1</value>
   </data>
   <data name="&gt;&gt;rtcControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RtcUserControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.RtcUserControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rtcControl1.Parent" xml:space="preserve">
     <value>tabPage10</value>
@@ -280,7 +280,7 @@
     <value>laserControl1</value>
   </data>
   <data name="&gt;&gt;laserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.LaserUserControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.LaserUserControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;laserControl1.Parent" xml:space="preserve">
     <value>tabPage8</value>
@@ -352,7 +352,7 @@
     <value>offsetControl1</value>
   </data>
   <data name="&gt;&gt;offsetControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.OffsetUserControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.OffsetUserControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;offsetControl1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -384,6 +384,9 @@
   <data name="markerControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="markerControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
   <data name="markerControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>686, 815</value>
   </data>
@@ -394,7 +397,7 @@
     <value>markerControl1</value>
   </data>
   <data name="&gt;&gt;markerControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.MarkerUserControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.MarkerUserControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;markerControl1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -496,7 +499,7 @@
     <value>manualUserControl1</value>
   </data>
   <data name="&gt;&gt;manualUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.ManualUserControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.ManualUserControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;manualUserControl1.Parent" xml:space="preserve">
     <value>tabPage3</value>
@@ -568,7 +571,7 @@
     <value>rtcDIUserControl1</value>
   </data>
   <data name="&gt;&gt;rtcDIUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rtcDIUserControl1.Parent" xml:space="preserve">
     <value>splitContainer4.Panel1</value>
@@ -613,7 +616,7 @@
     <value>rtcDOUserControl1</value>
   </data>
   <data name="&gt;&gt;rtcDOUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rtcDOUserControl1.Parent" xml:space="preserve">
     <value>splitContainer4.Panel2</value>
@@ -715,7 +718,7 @@
     <value>powerMeterControl1</value>
   </data>
   <data name="&gt;&gt;powerMeterControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PowerMeterControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.PowerMeterControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;powerMeterControl1.Parent" xml:space="preserve">
     <value>tabPage15</value>
@@ -769,7 +772,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="powerMapControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1037, 724</value>
+    <value>1042, 769</value>
   </data>
   <data name="powerMapControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -778,7 +781,7 @@
     <value>powerMapControl1</value>
   </data>
   <data name="&gt;&gt;powerMapControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PowerMapControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.PowerMapControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;powerMapControl1.Parent" xml:space="preserve">
     <value>tabPage16</value>
@@ -799,7 +802,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="tabPage16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1045, 732</value>
+    <value>1050, 777</value>
   </data>
   <data name="tabPage16.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -830,7 +833,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACa
-        SAAAAk1TRnQBSQFMAgEBKAEAAYQBBQGEAQUBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        SAAAAk1TRnQBSQFMAgEBKAEAAYwBBQGMAQUBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABYAMAAQgBAQIAAQEBAAEIBgABYxgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHc
         AcABAAHwAcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEA
         AzkBAAGAAXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEz
@@ -1211,6 +1214,9 @@
   <data name="scriptControlControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
+  <data name="scriptControlControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
   <data name="scriptControlControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1060, 815</value>
   </data>
@@ -1221,7 +1227,7 @@
     <value>scriptControlControl1</value>
   </data>
   <data name="&gt;&gt;scriptControlControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.ScriptControlControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.ScriptControlControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scriptControlControl1.Parent" xml:space="preserve">
     <value>tabPage13</value>
@@ -1284,7 +1290,7 @@
     <value>remoteUserControl1</value>
   </data>
   <data name="&gt;&gt;remoteUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RemoteUserControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.RemoteUserControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;remoteUserControl1.Parent" xml:space="preserve">
     <value>tabPage7</value>
@@ -1395,7 +1401,7 @@
     <value>logControl1</value>
   </data>
   <data name="&gt;&gt;logControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.LogUserControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.LogUserControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;logControl1.Parent" xml:space="preserve">
     <value>splitContainer3.Panel2</value>
@@ -1476,7 +1482,7 @@
     <value>treeViewControl1</value>
   </data>
   <data name="&gt;&gt;treeViewControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;treeViewControl1.Parent" xml:space="preserve">
     <value>splitContainer5.Panel1</value>
@@ -1521,7 +1527,7 @@
     <value>penControl1</value>
   </data>
   <data name="&gt;&gt;penControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PenUserControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.PenUserControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;penControl1.Parent" xml:space="preserve">
     <value>splitContainer5.Panel2</value>
@@ -2990,7 +2996,7 @@ aka. Process On The Fly</value>
     <value>FileName</value>
   </data>
   <data name="toolStripStatusLabel10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>507, 24</value>
+    <value>438, 24</value>
   </data>
   <data name="lblPos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3154,10 +3160,10 @@ aka. Process On The Fly</value>
     <value>Arial, 8.25pt, style=Bold</value>
   </data>
   <data name="lblConnect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 24</value>
+    <value>124, 24</value>
   </data>
   <data name="lblConnect.Text" xml:space="preserve">
-    <value> CONNECT </value>
+    <value> CONNECTED </value>
   </data>
   <data name="toolStripStatusLabel3.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3277,7 +3283,7 @@ aka. Process On The Fly</value>
     <value>propertyGridControl1</value>
   </data>
   <data name="&gt;&gt;propertyGridControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertyGridControl1.Parent" xml:space="preserve">
     <value>tabPage4</value>
@@ -3424,7 +3430,7 @@ aka. Process On The Fly</value>
     <value>0, 0, 0, 0</value>
   </data>
   <data name="treeViewBlockControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>400, 1002</value>
+    <value>400, 1037</value>
   </data>
   <data name="treeViewBlockControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3433,7 +3439,7 @@ aka. Process On The Fly</value>
     <value>treeViewBlockControl1</value>
   </data>
   <data name="&gt;&gt;treeViewBlockControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl, spirallab.sirius2.winforms, Version=1.14.990.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl, spirallab.sirius2.winforms, Version=1.15.1000.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;treeViewBlockControl1.Parent" xml:space="preserve">
     <value>tabPage2</value>
@@ -3445,7 +3451,7 @@ aka. Process On The Fly</value>
     <value>Login.png</value>
   </data>
   <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 32</value>
+    <value>4, 36</value>
   </data>
   <data name="tabPage2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -3454,7 +3460,7 @@ aka. Process On The Fly</value>
     <value>4, 4, 4, 4</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 1014</value>
+    <value>412, 1049</value>
   </data>
   <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

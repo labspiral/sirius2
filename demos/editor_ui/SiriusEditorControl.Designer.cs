@@ -42,12 +42,12 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.offsetControl1 = new SpiralLab.Sirius2.Winforms.UI.OffsetUserControl();
             this.markerControl1 = new SpiralLab.Sirius2.Winforms.UI.MarkerUserControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.manualUserControl1 = new SpiralLab.Sirius2.Winforms.UI.ManualUserControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.rtcDIUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl();
             this.rtcDOUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.manualUserControl1 = new SpiralLab.Sirius2.Winforms.UI.ManualUserControl();
             this.tabPage14 = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage15 = new System.Windows.Forms.TabPage();
@@ -186,12 +186,12 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.tabPage14.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.tabPage15.SuspendLayout();
@@ -317,6 +317,20 @@
             this.markerControl1.Marker = null;
             this.markerControl1.Name = "markerControl1";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.manualUserControl1);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // manualUserControl1
+            // 
+            resources.ApplyResources(this.manualUserControl1, "manualUserControl1");
+            this.manualUserControl1.Laser = null;
+            this.manualUserControl1.Name = "manualUserControl1";
+            this.manualUserControl1.Rtc = null;
+            // 
             // tabPage9
             // 
             this.tabPage9.Controls.Add(this.splitContainer4);
@@ -353,20 +367,6 @@
             this.rtcDOUserControl1.DOLaserPort = null;
             this.rtcDOUserControl1.Name = "rtcDOUserControl1";
             this.rtcDOUserControl1.Rtc = null;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.manualUserControl1);
-            resources.ApplyResources(this.tabPage3, "tabPage3");
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // manualUserControl1
-            // 
-            resources.ApplyResources(this.manualUserControl1, "manualUserControl1");
-            this.manualUserControl1.Laser = null;
-            this.manualUserControl1.Name = "manualUserControl1";
-            this.manualUserControl1.Rtc = null;
             // 
             // tabPage14
             // 
@@ -1282,12 +1282,12 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             this.tabPage14.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.tabPage15.ResumeLayout(false);
