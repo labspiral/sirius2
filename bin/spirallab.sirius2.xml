@@ -277,16 +277,6 @@
             string (major.minor.builds) for version information. <br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Config.FileVersion(System.String)">
-            <summary>
-            Get version of assembly file
-            <code>
-            var ver = Config.FileVersion(Config.AssemblyName);
-            </code>
-            </summary>
-            <param name="fileName">Assembly filename</param>
-            <returns>Represent string (major.minor.builds) for version information</returns>
-        </member>
         <member name="T:SpiralLab.Sirius2.Config.Languages">
             <summary>
             Languages
@@ -316,22 +306,6 @@
             </summary>
             <remarks>
             Should be configured before <c>InitializeComponent</c> at <c>Form</c>. <br/>
-            </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Config.CorrectionPath">
-            <summary>
-            Correction path
-            </summary>
-            <remarks>
-            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "correction") <br/>
-            </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Config.PowerMapPath">
-            <summary>
-            Powermap path
-            </summary>
-            <remarks>
-            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "powermap") <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.IsLogEnable">
@@ -387,6 +361,33 @@
             Should be configured before <c>Core.Initialize</c> has called. <br/>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Config.MeasurementPath">
+            <summary>
+            Measurement path
+            </summary>
+            <remarks>
+            Used with <c>RtcMeasurementHelper</c> <br/>
+            Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "measurement")</c> <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Config.MeasurementGNUPlotProgramPath">
+            <summary>
+            gnuplot program file path
+            </summary>
+            <remarks>
+            Used with <c>RtcMeasurementHelper</c> <br/>
+            Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "gnuplot", "gnuplot.exe")</c> <br/>
+            Copy gnuplot program into gnuplot directory from <seealso href="http://tmacchant33.starfree.jp/gnuplot_bin.html">Download link</seealso>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Config.CorrectionPath">
+            <summary>
+            Correction path
+            </summary>
+            <remarks>
+            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "correction") <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Config.CorreXionProProgramPath">
             <summary>
             SCANLAB's CorreXionPro.exe program file path
@@ -414,12 +415,12 @@
             Default path: <c>Path.Combine( CorrectionPath, "CorrectionFileConverter.exe")</c> <br/>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.Config.CalibrationLibraryActivationCode">
+        <member name="P:SpiralLab.Sirius2.Config.PowerMapPath">
             <summary>
-            SCANLAB's CalibrationLibrary activation code
+            Powermap path
             </summary>
             <remarks>
-            Please assign your activation keycode. <br/>
+            Default path: Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "powermap") <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.SyncAxisViewerProgramPath">
@@ -440,7 +441,15 @@
             Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "siriuslogs")</c> <br/>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.Config.MergeDistanceThreshold">
+        <member name="P:SpiralLab.Sirius2.Config.CalibrationLibraryActivationCode">
+            <summary>
+            SCANLAB's CalibrationLibrary activation code
+            </summary>
+            <remarks>
+            Please assign your activation keycode. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Config.MergeDistance">
             <summary>
             Threshold distance between jump and mark(or arc) list commands that merged (mm)
             </summary>
@@ -480,23 +489,13 @@
             </list>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.Config.MeasurementPath">
+        <member name="P:SpiralLab.Sirius2.Config.VirtualJumpAndMarkAccScale">
             <summary>
-            Measurement path
+            Simulation jump and mark accel scale
             </summary>
             <remarks>
-            Used with <c>RtcMeasurementHelper</c> <br/>
-            Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "measurement")</c> <br/>
-            </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Config.MeasurementGNUPlotProgramPath">
-            <summary>
-            gnuplot program file path
-            </summary>
-            <remarks>
-            Used with <c>RtcMeasurementHelper</c> <br/>
-            Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "gnuplot", "gnuplot.exe")</c> <br/>
-            Copy gnuplot program into gnuplot directory from <seealso href="http://tmacchant33.starfree.jp/gnuplot_bin.html">Download link</seealso>
+            Default: 1.2 <br/>
+            Acceleration scale for when simulate(or render) laser path with jump and mark commands. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.MeasurementLaserOnFactor">
@@ -562,15 +561,6 @@
             <summary>
             Bitmasks for bit operation
             </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Config.VirtualJumpAndMarkAccScale">
-            <summary>
-            Virtual jump and mark accel scale
-            </summary>
-            <remarks>
-            Default: 1.2 <br/>
-            Acceleration scale for when simulate(or render) laser path with jump and mark commands. <br/>
-            </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Core">
             <summary>
@@ -2734,11 +2724,6 @@
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.TargetCrystal1Temperature">
             <summary>
             Crystal 1 Target Temperature (°C)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.TargetCrystal2Temperature">
-            <summary>
-            Crystal 2 Target Temperature (°C)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.ActualCrystal1Temperature">
@@ -13318,6 +13303,17 @@
             <param name="fileName">File to read</param>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet.CtlWaveFormStreaming(System.Boolean)">
+            <summary>
+            Enable(or disable) waveform streaming for stream parser
+            </summary>
+            <remarks>
+            Turned on automatically if <c>RtcStreamParser.Start</c> had called. <br/>
+            Turned off automatically if <c>RtcStreamParser.Stop</c> had called. <br/>
+            </remarks>
+            <param name="onOff">On(or off)</param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.SyncAxisError">
             <summary>
             syncAxis error codes
@@ -16243,6 +16239,90 @@
             Notify result
             </summary>
             <param name="success">Success or fail</param>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcMeasurementHelper">
+            <summary>
+            Measurement helper
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcMeasurementHelper.Save(System.String,SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement,System.Boolean)">
+            <summary>
+            Save measurement result into file
+            </summary>
+            <param name="fileName">Filename</param>
+            <param name="rtcMeasurement"><c>IRtcMeasurement</c></param>
+            <param name="isRawData">Raw data (or human readable data)</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcMeasurementHelper.Plot(System.String,System.String)">
+            <summary>
+            Plot measurement data by gnuplot program.
+            Download <see href="http://tmacchant33.starfree.jp/gnuplot_bin.html">gnuplot</see>
+            </summary>
+            <remarks>
+            Executed program path: <c>Config.GNUPlotProgramPath</c>. <br/>
+            Copy gnuplot program into plot directory. (For example: \plot\gnuplot\gnuplot.exe) <br/>
+            </remarks>
+            <param name="fileName">Measurement filename</param>
+            <param name="title">Title</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper">
+            <summary>
+            (Experimental!) RtcStreamParserHelper
+            </summary>
+            <remarks>
+            Experimental version.<br/>
+            Used with SCANLAB StreamParser v1.1 <br/>
+            Used with <c>Rtc6Ethernet</c> only.<br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.Index">
+            <summary>
+            Index
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.IsConnected">
+            <summary>
+            Connected (or not)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.Rtc">
+            <summary>
+            Target <c>Rtc6Ethernet</c>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.#ctor(System.Int32,System.String,SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Index (0,1,2,...)</param>
+            <param name="name">Name</param>
+            <param name="rtc6e"><c>Rtc6Ethernet</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.Start">
+            <summary>
+            Start(or connect) stream 
+            </summary>
+            <remarks>
+            Used with <c>Rtc6Ethernet.CtlWaveFormStreaming</c> by internally. <br/>
+            </remarks>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.Stop(System.String)">
+            <summary>
+            Stop(or disconnect) stream
+            </summary>
+            <remarks>
+            Used with <c>Rtc6Ethernet.CtlWaveFormStreaming</c> by internally. <br/>
+            </remarks>
+            <param name="fileName">Filename (Saved into <c>Config.MeasurementPath</c>) <br/>Like as 'SimulationLog.txt'</param>
+            <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual">
             <summary>
@@ -20534,33 +20614,6 @@
             List measurement end
             </summary>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcMeasurementHelper">
-            <summary>
-            Measurement helper
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcMeasurementHelper.Save(System.String,SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement,System.Boolean)">
-            <summary>
-            Save measurement result into file
-            </summary>
-            <param name="fileName">Filename</param>
-            <param name="rtcMeasurement"><c>IRtcMeasurement</c></param>
-            <param name="isRawData">Raw data (or human readable data)</param>
-            <returns>Success or failed</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcMeasurementHelper.Plot(System.String,System.String)">
-            <summary>
-            Plot measurement data by gnuplot program.
-            Download <see href="http://tmacchant33.starfree.jp/gnuplot_bin.html">gnuplot</see>
-            </summary>
-            <remarks>
-            Executed program path: <c>Config.GNUPlotProgramPath</c>. <br/>
-            Copy gnuplot program into plot directory. (For example: \plot\gnuplot\gnuplot.exe) <br/>
-            </remarks>
-            <param name="fileName">Measurement filename</param>
-            <param name="title">Title</param>
-            <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders">
             <summary>
@@ -33013,6 +33066,14 @@
             <summary>
              void regulation3(uint Fmax, uint Fmin);
             </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.RTC6StreamParserWrap">
+            <summary>
+            RTC6StreamParserWrap
+            </summary>
+            <remarks>
+            StreamParser v1.1
+            </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.PropertyGridLocalizationAttribute">
             <summary>

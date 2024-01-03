@@ -70,7 +70,7 @@ namespace Demos
             EditorHelper.Initialize();
 
             // Set FOV area: WxH, it will be drawn as red rectangle
-            SpiralLab.Sirius2.Winforms.Config.DocumentDefaultViewFovSize = new SizeF(100, 100);
+            SpiralLab.Sirius2.Winforms.Config.ViewFovSize = new SizeF(100, 100);
 
             // Create devices 
             EditorHelper.CreateDevices(out var rtc, out var laser, out var powerMeter, out var marker, out var remote, this.siriusEditorUserControl1);

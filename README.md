@@ -45,6 +45,7 @@
     - Defined-vector
  - Support SCANahead control, SDC(Spot Distance Control) with RTC6.
  - Support measure and profile scanner trajectory with output signals by plotted graph.
+ - Support stream parser software. (https://www.scanlab.de/en/downloads/software/streamparser-software)
  - Support many kinds of laser source controls.
     - Frequency
     - Duty cycle
@@ -142,7 +143,7 @@
   
 **6. Copyrights**
  
- - 2023 Copyright to (c)SpiralLAB. All rights reserved. 
+ - 2024 Copyright to (c)SpiralLAB. All rights reserved. 
  - Homepage: http://spirallab.co.kr
  - Email: <a href="mailto:hcchoi@spirallab.co.kr">hcchoi@spirallab.co.kr</a> 
  - Evaluation copy mode would be activated during 30 mins without license
@@ -153,7 +154,14 @@
 
 **7. Version history**
 
-* 2023.12.2 v.1.15.1000
+* 2024.1.3 v.1.16.1020
+  - added) MarkerFast for fast processing
+  - fixed) IMarker for more customizable
+  - added) (experimental) RtcStreamParserHelper
+     - by SCANLAB StreamParser v1.1 
+  - fixed) config values has renamed
+
+* 2023.12.22 v.1.15.1000
   - updated) RTC6 v1.16.3 (2023-12-19)
   - fixed) powermap 
 

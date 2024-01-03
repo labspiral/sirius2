@@ -665,7 +665,7 @@ namespace Demos
                 {
                     if (!Marker.IsBusy)
                     {
-                        var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to start mark ?{Environment.NewLine}Target: {Marker.MarkTarget}, Procedure: {Marker.MarkProcedure}{Environment.NewLine}Offset(s): {Marker.Offsets.Length}", "Warning", MessageBoxButtons.YesNo);
+                        var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to start mark ?", "Warning", MessageBoxButtons.YesNo);
                         DialogResult dialogResult = form.ShowDialog(this);
                         if (dialogResult == DialogResult.Yes)
                         {
@@ -964,7 +964,7 @@ namespace Demos
         }
         private void BtnOpen_Click(object sender, EventArgs e)
         {
-            if (Config.NotifyOpen(this))
+            if (Config.NotifyOpenBefore(this))
                 return;
             var dlg = new OpenFileDialog();
             dlg.Filter = Config.FileOpenFilters;
@@ -985,7 +985,7 @@ namespace Demos
         }
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (Config.NotifySave(this))
+            if (Config.NotifySaveBefore(this))
                 return;
             var dlg = new SaveFileDialog();
             dlg.Filter = Config.FileSaveFilters;
@@ -1136,7 +1136,7 @@ namespace Demos
         }
         private void BtnText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateText(Config.DefaultFont, $"Hello{Environment.NewLine}SIRIUS2", FontStyle.Regular, 2);
+            var entity = EntityFactory.CreateText(Config.FontDefault, $"Hello{Environment.NewLine}SIRIUS2", FontStyle.Regular, 2);
             Document.ActAdd(entity);
         }
         private void BtnImageText_Click(object sender, EventArgs e)
@@ -1170,22 +1170,22 @@ namespace Demos
         }
         private void BtnSiriusCharacterSetText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateSiriusCharacterSetText(Config.DefaultSiriusFont, CharacterSetFormats.Date, 5);
+            var entity = EntityFactory.CreateSiriusCharacterSetText(Config.FontDefaultSirius, CharacterSetFormats.Date, 5);
             document.ActAdd(entity);
         }
         private void BtnCharacterSetText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateCharacterSetText(Config.DefaultFont, CharacterSetFormats.Date, 5);
+            var entity = EntityFactory.CreateCharacterSetText(Config.FontDefault, CharacterSetFormats.Date, 5);
             document.ActAdd(entity);
         }
         private void BtnCircularText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateCircularText(Config.DefaultFont, "POWERED BY SIRIUS2 0123456789", FontStyle.Regular, 2, TextCircularDirections.ClockWise, 5, 180);
+            var entity = EntityFactory.CreateCircularText(Config.FontDefault, "POWERED BY SIRIUS2 0123456789", FontStyle.Regular, 2, TextCircularDirections.ClockWise, 5, 180);
             document.ActAdd(entity);
         }
         private void BtnSiriusText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateSiriusText(Config.DefaultSiriusFont, "SIRIUS2", 2.5);
+            var entity = EntityFactory.CreateSiriusText(Config.FontDefaultSirius, "SIRIUS2", 2.5);
             document.ActAdd(entity);
         }
 

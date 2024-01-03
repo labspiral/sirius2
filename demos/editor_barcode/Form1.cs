@@ -82,7 +82,7 @@ namespace Demos
             var view = siriusEditorUserControl1.View;
 
             // Color of index '0' is White
-            Color penColor = SpiralLab.Sirius2.Winforms.Config.PensColor[0];
+            Color penColor = SpiralLab.Sirius2.Winforms.Config.PenColors[0];
 
             // Create entities for test. for example: Datamatrix barcode entity
             var dataMatrix = EntityFactory.CreateDataMatrix("SIRIUS2", Barcode2DCells.Circles, 3, 4, 4);
@@ -143,7 +143,10 @@ namespace Demos
             marker.Offsets = offsets.ToArray();
 
             // Do mark procedure as offset first
-            marker.MarkProcedure = MarkProcedures.OffsetFirst;
+            if (marker is MarkerRtc markerRtc)
+                markerRtc.MarkProcedure = MarkerRtc.MarkProcedures.OffsetFirst;
+            else if (marker is MarkerSyncAxis markerRtcSyncAxis)
+                markerRtcSyncAxis.MarkProcedure = MarkerSyncAxis.MarkProcedures.OffsetFirst;
         }
 
 private string Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)

@@ -53,11 +53,152 @@ using SpiralLab.Sirius2.Winforms.Remote;
 namespace Demos
 {
     /// <summary>
-    /// Custom marker for RTC5,6
+    /// Custom MarkerRtc
     /// </summary>
+    /// <remarks>
+    /// Used with RTC5,6,6e <br/>
+    /// Used with <c>IRtc.ListBegin</c> and <c>IRtc.ListEnd</c> at each <c>EntityLayer</c> <br/>
+    /// Supported <c>EntityLayer.IsALC</c> feature. <br/>
+    /// Supported <c>IsExternalStart</c> feature. <br/>
+    /// Supported useful features like as <c>MarkProcedures</c> and <c>MarkTargets</c> <br/>
+    /// </remarks>
     public class MyRtcMarker
         : MarkerBase
     {
+        /// <summary>
+        /// Mark targets
+        /// </summary>
+        public enum MarkTargets
+        {
+            /// <summary>
+            /// All entities
+            /// </summary>
+            All = 0,
+            /// <summary>
+            /// Selected entities
+            /// </summary>
+            Selected = 1,
+        }
+
+        /// <summary>
+        /// Mark procedures
+        /// </summary>
+        public enum MarkProcedures
+        {
+            /// <summary>
+            /// Order of marks: Mark Layer(s) at Offset1 -> Mark Layer(s) at Offset2, ...
+            /// <code>
+            /// //Pseudo codes
+            /// for (int i = 0; i &lt; Offsets.Length; i++)
+            /// {
+            ///     foreach (var layer in Layers)
+            ///     {
+            ///         Laser.ListBegin();
+            ///         Rtc.ListBegin();
+            ///         ...
+            ///         LayerWork(i, layer, Offsets[i]);
+            ///         ...
+            ///         Laser.ListEnd();
+            ///         Rtc.ListEnd();
+            ///         Rtc.ListExecute(true);
+            ///         ...
+            ///     }
+            /// }
+            /// </code>
+            /// <remarks>
+            /// Default: <c>MarkProcedures.LayerFirst</c>
+            /// </remarks>
+            /// </summary>
+            LayerFirst = 0,
+            /// <summary>
+            /// Order of marks: Mark Layer1 at Offset(s) -> Mark Layer2 at Offset(s), ... 
+            /// <code>
+            /// //Pseudo codes
+            /// foreach (var layer in Layers)
+            /// {
+            ///     Laser.ListBegin();
+            ///     Rtc.ListBegin();        
+            ///     for (int i = 0; i &lt; Offsets.Length; i++)
+            ///     {
+            ///         ...
+            ///         LayerWork(i, layer, Offsets[i]);
+            ///         ...
+            ///     }
+            ///     Laser.ListEnd();
+            ///     Rtc.ListEnd();
+            ///     Rtc.ListExecute(true);
+            /// }
+            /// </code>
+            /// </summary>
+            OffsetFirst = 1,
+        }
+
+        /// <summary>
+        /// Target entities to mark
+        /// </summary>
+        /// <remarks>
+        /// Default: <c>MarkTargets.All</c>
+        /// </remarks>
+        [RefreshProperties(RefreshProperties.All)]
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Data")]
+        [DisplayName("Mark Target")]
+        [Description("Mark Target")]
+        public virtual MarkTargets MarkTarget
+        {
+            get { return markTarget; }
+            set
+            {
+                if (this.IsBusy)
+                {
+                    Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to set mark target during busy");
+                    return;
+                }
+                var oldMarkTarget = markTarget;
+                markTarget = value;
+                if (markTarget != oldMarkTarget)
+                    this.NotifyPropertyChanged();
+            }
+        }
+        /// <summary>
+        /// Internal <c>MarkTargets</c>
+        /// </summary>
+        protected MarkTargets markTarget = MarkTargets.All;
+
+        /// <summary>
+        /// Mark procedure
+        /// </summary>
+        /// <remarks>
+        /// Default: <c>MarkProcedures.LayerFirst</c>
+        /// </remarks>
+        [RefreshProperties(RefreshProperties.All)]
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Data")]
+        [DisplayName("Mark Proc")]
+        [Description("Mark Procedure")]
+        public virtual MarkProcedures MarkProcedure
+        {
+            get { return markProcedure; }
+            set
+            {
+                if (this.IsBusy)
+                {
+                    Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to set mark procedure during busy");
+                    return;
+                }
+                var oldMarkProcedure = markProcedure;
+                markProcedure = value;
+                if (markProcedure != oldMarkProcedure)
+                    this.NotifyPropertyChanged();
+            }
+        }
+        /// <summary>
+        /// Internal <c>MarkProcedures</c>
+        /// </summary>
+        protected MarkProcedures markProcedure = MarkProcedures.LayerFirst;
+
         /// <summary>
         /// Enable/Disable External /START trigger
         /// </summary>
@@ -198,6 +339,8 @@ namespace Demos
             IsExternalStart = false;
             ListType = ListTypes.Auto;
             isMeasurementPlot = false;
+            markTarget = MarkTargets.All;
+            markProcedure = MarkProcedures.LayerFirst;
 
             IsCheckTempOk = false;
             IsCheckPowerOk = false;
@@ -425,7 +568,7 @@ namespace Demos
                     this.thread = new Thread(this.MarkerThreadOffsetFirst);
                     break;
             }
-            this.thread.Name = $"Marker: {this.Name}";
+            this.thread.Name = $"MyMarker: {this.Name}";
             this.thread.Start();
             return true;
 
@@ -492,8 +635,90 @@ namespace Demos
 
             return success;
         }
-
-
+        /// <summary>
+        /// Mark each <c>EntityLayer</c>
+        /// </summary>
+        /// <remarks>
+        /// Consider as its working within async threads. <br/>
+        /// Helpful current working sets are <c>CurrentOffsetIndex</c>, <c>CurrentOffset</c>, <c>CurrentLayerIndex</c>, <c>CurrentLayer</c>. <br/>
+        /// </remarks> 
+        /// <param name="offsetIndex">Current index of offset (0,1,2,...)</param>
+        /// <param name="layer">Current <c>EntityLayer</c></param>
+        /// <param name="offset">Current <c>Offset</c></param>
+        /// <returns>Success or failed</returns>
+        protected virtual bool LayerWork(int offsetIndex, EntityLayer layer, Offset offset)
+        {
+            bool success = true;
+            CurrentLayer = layer;
+            for (int i = 0; i < layer.Repeats; i++)
+            {
+                CurrentLayerIndex = i;
+                for (int j = 0; j < layer.Children.Count; j++)
+                {
+                    var entity = layer.Children[j];
+                    if (!entity.IsMarkerable)
+                        continue;
+                    entity.Parent = layer;
+                    if (entity is IMarkerable markerable)
+                    {
+                        CurrentEntityIndex = j;
+                        CurrentEntity = entity;
+                        switch (MarkTarget)
+                        {
+                            case MarkTargets.All:
+                                success &= EntityWork(offsetIndex, layer, j, entity);
+                                break;
+                            case MarkTargets.Selected:
+                                if (entity.IsSelected)
+                                    success &= EntityWork(offsetIndex, layer, j, entity);
+                                break;
+                        }
+                    }
+                    if (!success)
+                        break;
+                }
+                if (!success)
+                    break;
+            }
+            return success;
+        }
+        /// <summary>
+        /// Mark each <c>IEntity</c>
+        /// </summary>
+        /// <remarks>
+        /// Consider as its working within async threads. <br/>
+        /// Helpful current working sets are <c>CurrentOffsetIndex</c>, <c>CurrentOffset</c>, <c>CurrentLayerIndex</c>, <c>CurrentLayer</c>, <c>CurrentEntityIndex</c>, <c>CurrentEntity</c>. <br/>
+        /// </remarks> 
+        /// <param name="offsetIndex">Current index of offset (0,1,2,...)</param>
+        /// <param name="layer">Current <c>EntityLayer</c></param>
+        /// <param name="entityIndex">Current index of entity</param>
+        /// <param name="entity">Current <c>IEntity</c></param>
+        /// <returns>Success or failed</returns>
+        protected virtual bool EntityWork(int offsetIndex, EntityLayer layer, int entityIndex, IEntity entity)
+        {
+            bool success = true;
+            success &= NotifyBeforeEntity(entity);
+            if (!success)
+            {
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark entity at before event handler"); ;
+                return success;
+            }
+            if (entity is IMarkerable markerable)
+            {
+                // During each marks, internal entity data should be synchronized or locked
+                lock (entity.SyncRoot)
+                    success &= markerable.Mark(this);
+            }
+            if (!success)
+                return success;
+            success &= NotifyAfterEntity(entity);
+            if (!success)
+            {
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark entity at after event handler"); ;
+                return success;
+            }
+            return success;
+        }
         /// <summary>
         /// Marker thread #1
         /// </summary>
@@ -864,7 +1089,7 @@ namespace Demos
         /// <summary>
         /// Plot measurement to graph by gnuplot
         /// </summary>
-        protected void NotifyPlot()
+        protected virtual void NotifyPlot()
         {
             // Plot as a graph
             foreach (var session in sessionQueue)

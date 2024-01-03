@@ -160,19 +160,19 @@ namespace Demos
             Debug.Assert(success);
 
             // Set FOV area: WxH, it will be drawn as red rectangle
-            SpiralLab.Sirius2.Winforms.Config.DocumentDefaultViewFovSize = new SizeF(fov, fov);
+            SpiralLab.Sirius2.Winforms.Config.ViewFovSize = new SizeF(fov, fov);
             // Set Virtual image field area
             if (rtc.IsMoF)
             {
                 if (rtc is Rtc5 rtc5)
                 {
                     //2^24 bits = 2^20 + 2^4
-                    SpiralLab.Sirius2.Winforms.Config.DocumentDefaultViewVirtualImageSize = new SizeF(fov * (float)Math.Pow(2, 4), fov * (float)Math.Pow(2, 4));
+                    SpiralLab.Sirius2.Winforms.Config.ViewVirtualImageSize = new SizeF(fov * (float)Math.Pow(2, 4), fov * (float)Math.Pow(2, 4));
                 }
                 else if (rtc is Rtc6 rtc6)
                 {
                     //2^29 bits = 2^20 + 2^9
-                    SpiralLab.Sirius2.Winforms.Config.DocumentDefaultViewVirtualImageSize = new SizeF(fov * (float)Math.Pow(2, 9), fov * (float)Math.Pow(2, 9));
+                    SpiralLab.Sirius2.Winforms.Config.ViewVirtualImageSize = new SizeF(fov * (float)Math.Pow(2, 9), fov * (float)Math.Pow(2, 9));
                 }
             }
 
@@ -406,11 +406,10 @@ namespace Demos
                     marker = MarkerFactory.CreateVirtual(index);
                     break;
                 case "rtc5":
-                    marker = MarkerFactory.CreateRtc5(index);
-                    break;
                 case "rtc6":
                 case "rtc6e":
-                    marker = MarkerFactory.CreateRtc6(index);
+                    marker = MarkerFactory.CreateRtc(index);
+                    //marker = MarkerFactory.CreateRtcFast(index);
                     break;
                 case "syncaxis":
                     marker = MarkerFactory.CreateSyncAxis(index);
@@ -524,7 +523,7 @@ namespace Demos
             // Hatch with polygon within rectangle
             var rectanglehatch = rectangle1.Hatch(HatchModes.Polygon, HatchJoints.Miter, false, 0, 0, 0.2f, 0, 0);
             foreach (var hatch in rectanglehatch.Children)
-                hatch.Color = SpiralLab.Sirius2.Winforms.Config.PensColor[1];
+                hatch.Color = SpiralLab.Sirius2.Winforms.Config.PenColors[1];
             success &= document.ActAdd(rectanglehatch);
 
             // Spiral entity
@@ -633,7 +632,7 @@ namespace Demos
             var expandedPolylines = polyline1.Expand(HatchJoints.Round, 0.5);
             foreach (var expandedPolyline in expandedPolylines)
             {
-                expandedPolyline.Color = SpiralLab.Sirius2.Winforms.Config.PensColor[2];
+                expandedPolyline.Color = SpiralLab.Sirius2.Winforms.Config.PenColors[2];
                 success &= document.ActAdd(expandedPolyline);
             }
 
@@ -641,7 +640,7 @@ namespace Demos
             var shrinkedPolylines = polyline1.Expand(HatchJoints.Miter, -2);
             foreach (var shrinkedPolyline in shrinkedPolylines)
             {
-                shrinkedPolyline.Color = SpiralLab.Sirius2.Winforms.Config.PensColor[3];
+                shrinkedPolyline.Color = SpiralLab.Sirius2.Winforms.Config.PenColors[3];
                 success &= document.ActAdd(shrinkedPolyline);
             }
 
@@ -657,9 +656,9 @@ namespace Demos
 
             // Group entity has include 2 arcs and rectangle entities
             var arc_g1 = EntityFactory.CreateArc(Vector2.Zero, 1, 0, 360);
-            arc_g1.Color = SpiralLab.Sirius2.Winforms.Config.PensColor[1];
+            arc_g1.Color = SpiralLab.Sirius2.Winforms.Config.PenColors[1];
             var arc_g2 = EntityFactory.CreateArc(Vector2.Zero, 2, 0, 360);
-            arc_g2.Color = SpiralLab.Sirius2.Winforms.Config.PensColor[3];
+            arc_g2.Color = SpiralLab.Sirius2.Winforms.Config.PenColors[3];
             arc_g2.Translate(3, 2, 0);
             var rec_g3 = EntityFactory.CreateRectangle(Vector2.Zero, 5, 4);
             var group1 = EntityFactory.CreateGroup("Arcs", new IEntity[] { arc_g1, arc_g2, rec_g3 });
