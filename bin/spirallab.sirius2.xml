@@ -13303,7 +13303,23 @@
             <param name="fileName">File to read</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet.CtlWaveFormStreaming(System.Boolean)">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet.IsStreamParserWaveFormStreaming">
+            <summary>
+            Stream Parser with list dependent or not
+            </summary>
+            <remarks>
+            Default: <c>False</c> <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet.StreamParserWaveFormBufferSize">
+            <summary>
+            Stream Parser wave form buffer size
+            </summary>
+            <remarks>
+            Default: 8192
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet.CtlStreamParserWaveFormStreaming(System.Boolean)">
             <summary>
             Enable(or disable) waveform streaming for stream parser
             </summary>
@@ -13313,6 +13329,27 @@
             </remarks>
             <param name="onOff">On(or off)</param>
             <returns>Success or failed</returns>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet.IsStreamParserByListDependent">
+            <summary>
+            Stream Parser with list dependent or not
+            </summary>
+            <remarks>
+            Default: <c>True</c> <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet.CtlStreamParserByListDependent(System.Boolean)">
+            <summary>
+            Stream parser with list dependent(or indepent) 
+            </summary>
+            <param name="onOff">On(or off)</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet.ListMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels[])">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet.ListMeasurementEnd">
+            <inheritdoc/>  
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.SyncAxisError">
             <summary>
@@ -16277,6 +16314,36 @@
             Used with <c>Rtc6Ethernet</c> only.<br/>
             </remarks>
         </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.OnConnected">
+            <summary>
+            Event for client has connected
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.OnReceived">
+            <summary>
+            Event for when channel data has receive(or arrived)
+            <code>
+            
+            </code>
+            </summary>
+            <remarks>
+            With package buffer data
+            </remarks>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.OnDisconnected">
+            <summary>
+            Event for client has disconnected
+            </summary>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.OnSaveChannels">
+            <summary>
+            Event for when saving channels data at each rows
+            </summary>
+            <remarks>
+            Event will be fired when <c>StopAndSave</c> has called. <br/>
+            Event will be fired with channels data at each rows. <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.Index">
             <summary>
             Index
@@ -16305,7 +16372,21 @@
             <param name="name">Name</param>
             <param name="rtc6e"><c>Rtc6Ethernet</c></param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.Start">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.Dispose">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.Dispose(System.Boolean)">
+            <summary>
+            Dispose internal resources
+            </summary>
+            <param name="disposing">Explicit dispose or not</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.Connect">
             <summary>
             Start(or connect) stream 
             </summary>
@@ -16314,15 +16395,50 @@
             </remarks>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.Stop(System.String)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.Save(System.String,System.Boolean)">
+            <summary>
+            Save stream
+            </summary>
+            <remarks>
+            Trying to save channels data into target output file. <br/>
+            Also, <c>OnSaveChannels</c> event handler will be fired. <br/>
+            Finally, internal channel data are removed at all. <br/>
+            Saved format is not matched with <c>RtcMeasurementHelper.Save</c> <br/>
+            </remarks>
+            <param name="fileName">Filename (Saved into <c>Config.MeasurementPath</c>) <br/>Like as 'streamparser.txt'<br/></param>
+            <param name="isAppend"><c>True</c> to append data to the file.<br/><c>False</c> to overwrite the file.<br/></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.Disconnect">
             <summary>
             Stop(or disconnect) stream
             </summary>
             <remarks>
             Used with <c>Rtc6Ethernet.CtlWaveFormStreaming</c> by internally. <br/>
             </remarks>
-            <param name="fileName">Filename (Saved into <c>Config.MeasurementPath</c>) <br/>Like as 'SimulationLog.txt'</param>
             <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.NotifyConnected">
+            <summary>
+            Notify client has connected
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.NotifyDisconnected">
+            <summary>
+            Notify client has disconnected
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.NotifyReceived(System.Collections.Generic.List{System.IntPtr})">
+            <summary>
+            Notify channels data has received
+            </summary>
+            <param name="streamBuffer">Stream buffer</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.NotifySaveChannels(System.Int32[])">
+            <summary>
+            Notify channels data has saved
+            </summary>
+            <param name="channelData">Measured channel raw data</param>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual">
             <summary>

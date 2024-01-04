@@ -159,6 +159,7 @@
   - fixed) IMarker for more customizable
   - added) (experimental) RtcStreamParserHelper
      - by SCANLAB StreamParser v1.1 
+  - added) stream parser demo project
   - fixed) config values has renamed
 
 * 2023.12.22 v.1.15.1000
