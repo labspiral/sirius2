@@ -16403,9 +16403,9 @@
             Trying to save channels data into target output file. <br/>
             Also, <c>OnSaveChannels</c> event handler will be fired. <br/>
             Finally, internal channel data are removed at all. <br/>
-            Saved format is not matched with <c>RtcMeasurementHelper.Save</c> <br/>
+            Saved data format are raw data and does not matched with <c>RtcMeasurementHelper.Save</c> <br/>
             </remarks>
-            <param name="fileName">Filename (Saved into <c>Config.MeasurementPath</c>) <br/>Like as 'streamparser.txt'<br/></param>
+            <param name="fileName">Filename<br/></param>
             <param name="isAppend"><c>True</c> to append data to the file.<br/><c>False</c> to overwrite the file.<br/></param>
             <returns>Success or failed</returns>
         </member>
