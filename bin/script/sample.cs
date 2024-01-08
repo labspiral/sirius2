@@ -33,6 +33,7 @@ public class UserScript : ScriptBase
     {
         Name = "Sample.cs";
         Description = "This is a sample user script";
+		Logger.Log(Logger.Types.Trace, "script [{0}]: instance has created", Name);
     }   
     
     // Marker has started

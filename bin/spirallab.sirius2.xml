@@ -16364,6 +16364,11 @@
             Target <c>Rtc6Ethernet</c>
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.Tag">
+            <summary>
+            User data
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.#ctor(System.Int32,System.String,SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet)">
             <summary>
             Constructor
@@ -16403,9 +16408,9 @@
             Trying to save channels data into target output file. <br/>
             Also, <c>OnSaveChannels</c> event handler will be fired. <br/>
             Finally, internal channel data are removed at all. <br/>
-            Saved data format are raw data and does not matched with <c>RtcMeasurementHelper.Save</c> <br/>
+            Saved format is not matched with <c>RtcMeasurementHelper.Save</c> <br/>
             </remarks>
-            <param name="fileName">Filename<br/></param>
+            <param name="fileName">Filename (Saved into <c>Config.MeasurementPath</c>) <br/>Like as 'streamparser.txt'<br/></param>
             <param name="isAppend"><c>True</c> to append data to the file.<br/><c>False</c> to overwrite the file.<br/></param>
             <returns>Success or failed</returns>
         </member>
@@ -18169,6 +18174,9 @@
             <summary>
             Load scanner field correction file into target table
             </summary>
+            <remarks>
+            Should be called when <c>CtlGetStatus(RtcStatus.NotBusy)</c> <br/>
+            </remarks>
             <param name="tableIndex"><c>CorrectionTableIndex</c></param>
             <param name="ctFileName">Correction filename</param>
             <returns>Success or failed</returns>
@@ -18214,6 +18222,9 @@
             <summary>
             Frequency and pulse width
             </summary>
+            <remarks>
+            Should be called when <c>CtlGetStatus(RtcStatus.NotBusy)</c> <br/>
+            </remarks>
             <param name="frequency">Frequency (Hz)<br/>Min. time resolution: 1/128(= 0.0078125) usec<br/>Max. 128MHz<br/></param>
             <param name="pulseWidth">Pulse width (usec)<br/>Min. time resolution: 1/64(= 0.01562) usec</param>
             <returns>Success or failed</returns>
@@ -18225,6 +18236,7 @@
             <remarks>
             Scanner delays: Compensate inertia of scanner's dynamics (aka. tracking error)<br/>
             Laser delays: Compensate latency for laser source's optical output <br/>
+            Should be called when <c>CtlGetStatus(RtcStatus.NotBusy)</c> <br/>
             </remarks>
             <param name="laserOn">Laser on delay (usec)<br/>RTC5: Min. time resolution: 1/2(= 0.5) usec<br/>RTC6: Min. time resolution: 1/64(= 0.01562) usec<br/></param>
             <param name="laserOff">Laser off delay (usec)<br/>RTC5: Min. time resolution: 1/2(= 0.5) usec<br/>RTC6: Min. time resolution: 1/64(= 0.01562) usec<br/></param>
@@ -18840,6 +18852,7 @@
             </summary>
             <remarks>
             Radius is distance from origin of scanner to target location. <br/>
+            Should be called when <c>CtlGetStatus(RtcStatus.NotBusy)</c> <br/>
             </remarks>
             <param name="kvList">Array of radius(mm), scale(0~4)</param>
             <returns>Success or failed</returns>
@@ -19916,6 +19929,9 @@
             <summary>
             Variable scanner delays
             </summary>
+            <remarks>
+            Should be called when <c>CtlGetStatus(RtcStatus.NotBusy)</c> <br/>
+            </remarks>
             <param name="variableScannerPolygonDelay">Enable(or disable) variable scanner polygon delay.<br/>If enabled, scale(angle) = 1 – Cos(angle)<br/></param>
             <param name="variableScannerJumpDelay">Enable(or disable) variable scanner jump delay</param>
             <param name="scannerJumpDelayMin">Variable scanner jump delay min time (usec)</param>
@@ -19929,6 +19945,7 @@
             <remarks>
             Default: scale(°) = 1 – Cos(°) <br/>
             Polygon delay = input polygon delay * scale(°) <br/>
+            Should be called when <c>CtlGetStatus(RtcStatus.NotBusy)</c> <br/>
             </remarks>
             <param name="kvList">Array of angle(0~180), scale(0~2)</param>
             <returns>Success or failed</returns>
@@ -19939,6 +19956,7 @@
             </summary>
             <remarks>
             Used with <c>JumpMode</c> <br/>
+            Should be called when <c>CtlGetStatus(RtcStatus.NotBusy)</c> <br/>
             </remarks>
             <param name="kvList">Array of distance(mm), delay(usec)</param>
             <returns>Success or failed</returns>
@@ -20929,6 +20947,9 @@
             <summary>
             Enable(or disable) simulated encoders
             </summary>
+            <remarks>
+            Should be called when <c>CtlGetStatus(RtcStatus.NotBusy)</c> <br/>
+            </remarks>
             <param name="encXSimulatedSpeed">Simulated X(0) encoder speed (mm/s) (negative direction is not supported)</param>
             <param name="encYSimulatedSpeed">Simulated Y(1) encoder speed (mm/s) (negative direction is not supported)</param>
             <returns>Success or failed</returns>
@@ -21018,6 +21039,7 @@
             </summary>
             <remarks>
             <c>EncSimulatedAngularSpeed</c> value should be assigned at first. <br/>
+            Should be called when <c>CtlGetStatus(RtcStatus.NotBusy)</c> <br/>
             </remarks>
             <param name="encSimulatedSpeed">Angular speed (˚/s) (negative direction is not supported)</param>
             <returns>Success or failed</returns>

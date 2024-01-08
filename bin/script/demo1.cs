@@ -69,6 +69,8 @@ public class UserScript : ScriptBase
 		
         StartSerialNo = 1000;
         SerialNo = StartSerialNo;
+		
+		Logger.Log(Logger.Types.Trace, "script [{0}]: instance has created", Name);
     }       
 
     public override string OnTextConvert(IMarker marker, ITextConvertible textConvertible)

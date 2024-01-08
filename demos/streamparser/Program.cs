@@ -164,10 +164,11 @@ namespace Demos
                         dlg.FileName = "streamparser.txt";
                         if (dlg.ShowDialog() != DialogResult.OK)
                             return;
+                        var fileName = Path.GetFileName(dlg.FileName);
                         // Event only
                         //streamParserHelper.Save();
                         // Or Save into file and firing events
-                        streamParserHelper.Save(dlg.FileName);
+                        streamParserHelper.Save(fileName);
                         break;
                     case ConsoleKey.F4:
                         streamParserHelper.Disconnect();

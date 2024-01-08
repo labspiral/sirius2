@@ -28,7 +28,6 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -59,6 +58,58 @@ namespace Demos
     /// </remarks>
     public partial class SiriusEditorUserControl : Form
     {
+        /// <summary>
+        /// Event for before open sirius file at <c>SiriusEditorUserControl</c>
+        /// </summary>
+        /// <remarks>
+        /// User can register event handler for customized dialog-box before open sirius file. <br/>
+        /// Event will be fired when user has click 'Open' menu at <c>SiriusEditorUserControl</c>. <br/>
+        /// If user event handler is not attached, default routine has executed. <br/>
+        /// If returned 'False', default routine would be executed. <br/>
+        /// </remarks>
+        public static event Func<SiriusEditorUserControl, bool> OnOpenBefore;
+        /// <summary>
+        /// Notify before open sirius file
+        /// </summary>
+        /// <param name="sender">Sender like as <c>SiriusEditorUserControl</c></param>
+        /// <returns>Success or failed</returns>
+        bool NotifyOpenBefore()
+        {
+            var receivers = OnOpenBefore?.GetInvocationList();
+            if (null == receivers)
+                return false;
+            bool success = true;
+            foreach (Func<SiriusEditorUserControl, bool> receiver in receivers)
+                success &= receiver.Invoke(this);
+            return success;
+        }
+        /// <summary>
+        /// Event for save sirius file at <c>SiriusEditorUserControl</c>
+        /// </summary>
+        /// <remarks>
+        /// User can register event handler for customized dialog-box before save sirius file. <br/>
+        /// Event will be fired when user has click 'Save' menu at <c>SiriusEditorUserControl</c>. <br/>
+        /// If user event handler is not attached, default routine has executed. <br/>
+        /// If returned 'False', default routine would be executed. <br/>
+        /// </remarks>
+        public static event Func<SiriusEditorUserControl, bool> OnSaveBefore;
+        /// <summary>
+        /// Notify save sirius file
+        /// </summary>
+        /// <param name="sender">Sender like as <c>SiriusEditorUserControl</c></param>
+        /// <returns>Success or failed</returns>
+        bool NotifySaveBefore()
+        {
+            var receivers = OnSaveBefore?.GetInvocationList();
+            if (null == receivers)
+                return false;
+            bool success = true;
+            foreach (Func<SiriusEditorUserControl, bool> receiver in receivers)
+                success &= receiver.Invoke(this);
+            return success;
+        }
+       
+
         /// <summary>
         /// Title name
         /// </summary>
@@ -964,7 +1015,7 @@ namespace Demos
         }
         private void BtnOpen_Click(object sender, EventArgs e)
         {
-            if (Config.NotifyOpenBefore(this))
+            if (NotifyOpenBefore())
                 return;
             var dlg = new OpenFileDialog();
             dlg.Filter = Config.FileOpenFilters;
@@ -985,7 +1036,7 @@ namespace Demos
         }
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (Config.NotifySaveBefore(this))
+            if (NotifySaveBefore())
                 return;
             var dlg = new SaveFileDialog();
             dlg.Filter = Config.FileSaveFilters;
