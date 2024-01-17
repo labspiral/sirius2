@@ -55,6 +55,7 @@ namespace Demos
     /// </summary>
     /// <remarks>
     /// User can insert(or create) usercontrol at own winforms. <br/>
+    /// <img src="images/siriuseditorcontrol.png"/> <br/>
     /// </remarks>
     public partial class SiriusEditorUserControl : Form
     {
@@ -67,11 +68,10 @@ namespace Demos
         /// If user event handler is not attached, default routine has executed. <br/>
         /// If returned 'False', default routine would be executed. <br/>
         /// </remarks>
-        public static event Func<SiriusEditorUserControl, bool> OnOpenBefore;
+        public event Func<SiriusEditorUserControl, bool> OnOpenBefore;
         /// <summary>
         /// Notify before open sirius file
         /// </summary>
-        /// <param name="sender">Sender like as <c>SiriusEditorUserControl</c></param>
         /// <returns>Success or failed</returns>
         bool NotifyOpenBefore()
         {
@@ -92,11 +92,10 @@ namespace Demos
         /// If user event handler is not attached, default routine has executed. <br/>
         /// If returned 'False', default routine would be executed. <br/>
         /// </remarks>
-        public static event Func<SiriusEditorUserControl, bool> OnSaveBefore;
+        public event Func<SiriusEditorUserControl, bool> OnSaveBefore;
         /// <summary>
         /// Notify save sirius file
         /// </summary>
-        /// <param name="sender">Sender like as <c>SiriusEditorUserControl</c></param>
         /// <returns>Success or failed</returns>
         bool NotifySaveBefore()
         {
@@ -108,7 +107,6 @@ namespace Demos
                 success &= receiver.Invoke(this);
             return success;
         }
-       
 
         /// <summary>
         /// Title name
@@ -551,21 +549,21 @@ namespace Demos
         /// <summary>
         /// User control for <c>IPowerMeter</c>
         /// </summary>
-        public SpiralLab.Sirius2.Winforms.UI.PowerMeterControl PowerMeterCtrl
+        public SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl PowerMeterCtrl
         {
             get { return powerMeterControl1; }
         }
         /// <summary>
         ///  User control for <c>IPowerMap</c>
         /// </summary>
-        public SpiralLab.Sirius2.Winforms.UI.PowerMapControl PowerMapCtrl
+        public SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl PowerMapCtrl
         {
             get { return powerMapControl1; }
         }
         /// <summary>
         /// User control for <c>IScript</c>
         /// </summary>
-        public SpiralLab.Sirius2.Winforms.UI.ScriptControlControl ScriptCtrl
+        public SpiralLab.Sirius2.Winforms.UI.ScriptUserControl ScriptCtrl
         {
             get { return scriptControlControl1; }
         }
@@ -700,8 +698,8 @@ namespace Demos
         /// <inheritdoc/>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            // Stop: CTRL + F5
-            if (keyData == (Keys.Control | Keys.F5))
+            // Stop: F6
+            if (keyData == Config.KeyboardMarkerStop)
             {
                 if (null != Marker)
                 {
@@ -710,7 +708,7 @@ namespace Demos
                 }
             }
             // Start: F5
-            else if (keyData == (Keys.F5))
+            else if (keyData == Config.KeyboardMarkerStart)
             {
                 if (null != Marker)
                 {
@@ -726,14 +724,19 @@ namespace Demos
                     }
                 }
             }
-            // Reset: F6
-            else if (keyData == (Keys.F6))
+            // Reset: F8
+            else if (keyData == Config.KeyboardMarkerReset)
             {
                 if (null != Marker)
                 {
                     Marker.Reset();
                     return true;
                 }
+            }
+            // Cursor: F9
+            else if (keyData == Config.KeyboardMoveToCursor)
+            {
+                return Config.NotifyMoveToCursor(this, Document, this.lastCurrentPos);
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
@@ -1309,11 +1312,16 @@ namespace Demos
         {
             DoRender();
         }
+
+        /// <summary>
+        /// Last mouse cursor location
+        /// </summary>
+        Vector3 lastCurrentPos = Vector3.Zero;
         private void Renderer_MouseMove(object sender, MouseEventArgs e)
         {
             var intersect = OpenTKHelper.ScreenToWorldPlaneZIntersect(e.Location, Vector3.Zero, EditorCtrl.View.Camera.ViewMatrix, EditorCtrl.View.Camera.ProjectionMatrix);
+            lastCurrentPos = intersect;
             lblPos.Text = $"XY: {intersect.X:F3}, {intersect.Y:F3}  P: {e.Location.X}, {e.Location.Y}";
-
         }
 
         private void LblHelp_Click(object sender, EventArgs e)

@@ -154,6 +154,12 @@
 
 **7. Version history**
 
+* 2024.1.17 v.1.17.1050
+  - added) event for Config.OnMoveToCursor (shortcut: F9)
+  - changed) marker keyboard (shortcut: F5, F6 and F8)
+  - fixed) render issue at blockinsert entity
+  - fixed) stream parser will be saved with more detail information
+  
 * 2024.1.3 v.1.16.1020
   - added) MarkerFast for fast processing
   - fixed) IMarker for more customizable

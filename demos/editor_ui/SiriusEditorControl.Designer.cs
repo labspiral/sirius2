@@ -51,12 +51,12 @@
             this.tabPage14 = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.powerMeterControl1 = new SpiralLab.Sirius2.Winforms.UI.PowerMeterControl();
+            this.powerMeterControl1 = new SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl();
             this.tabPage16 = new System.Windows.Forms.TabPage();
-            this.powerMapControl1 = new SpiralLab.Sirius2.Winforms.UI.PowerMapControl();
+            this.powerMapControl1 = new SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabPage13 = new System.Windows.Forms.TabPage();
-            this.scriptControlControl1 = new SpiralLab.Sirius2.Winforms.UI.ScriptControlControl();
+            this.scriptControlControl1 = new SpiralLab.Sirius2.Winforms.UI.ScriptUserControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.remoteUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RemoteUserControl();
             this.logControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
@@ -1452,12 +1452,12 @@
         private System.Windows.Forms.ToolStripStatusLabel lblPowerWatt;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel11;
         private System.Windows.Forms.TabPage tabPage13;
-        private SpiralLab.Sirius2.Winforms.UI.ScriptControlControl scriptControlControl1;
+        private SpiralLab.Sirius2.Winforms.UI.ScriptUserControl scriptControlControl1;
         private System.Windows.Forms.TabPage tabPage14;
         private System.Windows.Forms.TabControl tabControl4;
         private System.Windows.Forms.TabPage tabPage15;
-        private SpiralLab.Sirius2.Winforms.UI.PowerMeterControl powerMeterControl1;
+        private SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl powerMeterControl1;
         private System.Windows.Forms.TabPage tabPage16;
-        private SpiralLab.Sirius2.Winforms.UI.PowerMapControl powerMapControl1;
+        private SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl powerMapControl1;
     }
 }
