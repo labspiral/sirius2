@@ -54,6 +54,10 @@ namespace SpiralLab.Sirius2.Winforms.Marker
     /// <summary>
     /// Custom marker for syncAXIS
     /// </summary>
+    /// <remarks>
+    /// Used with Rtc6SyncAxis <br/>
+    /// Supported useful features like as <see cref="MarkerSyncAxis.MarkProcedures">MarkProcedures</see> and <see cref="MarkerSyncAxis.MarkTargets">MarkTargets</see>. <br/>
+    /// </remarks>
     public class MySyncAxisMarker
         : MarkerBase
     {
@@ -129,7 +133,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
         /// Target entities to mark
         /// </summary>
         /// <remarks>
-        /// Default: <c>MarkTargets.All</c>
+        /// Default: <see cref="MarkTargets.All">MarkTargets.All</see> <br/>
         /// </remarks>
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
@@ -162,7 +166,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
         /// Mark procedure
         /// </summary>
         /// <remarks>
-        /// Default: <c>MarkProcedures.LayerFirst</c>
+        /// Default: <see cref="MarkProcedures.LayerFirst">MarkProcedures.LayerFirst</see> <br/>
         /// </remarks>
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
@@ -488,11 +492,11 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             return success;
         }
         /// <summary>
-        /// Mark each <c>EntityLayer</c>
+        /// Mark each <see cref="EntityLayer">EntityLayer</see> 
         /// </summary>
         /// <remarks>
+        /// Helpful current working sets are <see cref="MarkerBase.CurrentOffsetIndex">CurrentOffsetIndex</see>, <see cref="MarkerBase.CurrentOffset">CurrentOffset</see>, <see cref="MarkerBase.CurrentLayerIndex">CurrentLayerIndex</see>, <see cref="MarkerBase.CurrentLayer">CurrentLayer</see>. <br/>
         /// Consider as its working within async threads. <br/>
-        /// Helpful current working sets are <c>CurrentOffsetIndex</c>, <c>CurrentOffset</c>, <c>CurrentLayerIndex</c>, <c>CurrentLayer</c>. <br/>
         /// </remarks> 
         /// <param name="offsetIndex">Current index of offset (0,1,2,...)</param>
         /// <param name="layer">Current <c>EntityLayer</c></param>
@@ -535,11 +539,11 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             return success;
         }
         /// <summary>
-        /// Mark each <c>IEntity</c>
+        /// Mark each <see cref="IEntity">IEntity</see> 
         /// </summary>
         /// <remarks>
+        /// Helpful current working sets are <see cref="MarkerBase.CurrentOffsetIndex">CurrentOffsetIndex</see>, <see cref="MarkerBase.CurrentOffset">CurrentOffset</see>, <see cref="MarkerBase.CurrentLayerIndex">CurrentLayerIndex</see>, <see cref="MarkerBase.CurrentLayer">CurrentLayer</see>. <br/>
         /// Consider as its working within async threads. <br/>
-        /// Helpful current working sets are <c>CurrentOffsetIndex</c>, <c>CurrentOffset</c>, <c>CurrentLayerIndex</c>, <c>CurrentLayer</c>, <c>CurrentEntityIndex</c>, <c>CurrentEntity</c>. <br/>
         /// </remarks> 
         /// <param name="offsetIndex">Current index of offset (0,1,2,...)</param>
         /// <param name="layer">Current <c>EntityLayer</c></param>
@@ -575,7 +579,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
         /// Marker thread #1
         /// </summary>
         /// <remarks>
-        /// <c>MarkProc.LayerFirst</c> <br/>
+        /// <see cref="MarkProcedures.LayerFirst">LayerFirst</see> <br/>
         /// Move offset1 and Mark layers -> Move offset2 and Mark layers , ... <br/>
         /// </remarks>
         protected virtual void MarkerThreadLayerFirst()
@@ -678,7 +682,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
         /// Marker thread #2
         /// </summary>
         /// <remarks>
-        /// <c>MarkProc.OffsetFirst</c> <br/>
+        /// <see cref="MarkProcedures.OffsetFirst">OffsetFirst</see> <br/>
         /// Mark layer1 with offset1 and offset2, ... -> Mark layer2 with offset1 and offset2, ... <br/>
         /// </remarks>
         protected virtual void MarkerThreadOffsetFirst()

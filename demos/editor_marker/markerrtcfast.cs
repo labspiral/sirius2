@@ -58,8 +58,8 @@ namespace Demos
     /// </summary>
     /// <remarks>
     /// Used with RTC5,6,6e <br/>
-    /// Used with <c>IRtc.ListBegin</c> and <c>IRtc.ListEnd</c> to process whole <c>EntityLayer</c> for speed up. <br/>
-    /// Disabled <c>EntityLayer.IsALC</c> feature. <br/>
+    /// Used with <see cref="IRtc.ListBegin">IRtc.ListBegin</see> and <see cref="IRtc.ListEnd">IRtc.ListEnd</see>  to process whole <see cref="EntityLayer">EntityLayer</see>for speed up. <br/>
+    /// Disabled <see cref="EntityLayerRtc.IsALC">EntityLayer.IsALC</see> feature. <br/>
     /// Disabled <c>IsExternalStart</c> feature. <br/>
     /// </remarks>
     public class MarkerRtcFast
@@ -84,7 +84,7 @@ namespace Demos
         /// Target entities to mark
         /// </summary>
         /// <remarks>
-        /// Default: <c>MarkTargets.All</c>
+        /// Default: <see cref="MarkTargets.All">MarkTargets.All</see> <br/>
         /// </remarks>
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
@@ -137,11 +137,11 @@ namespace Demos
         private ListTypes listType;
 
         /// <summary>
-        /// Array of <c>MeasurementSession</c> <br/>
+        /// Array of <see cref="MeasurementSession">MeasurementSession</see> 
         /// </summary>
         /// <remarks>
-        /// Session = <c>EntityMeasurementBegin</c> + <c>EntityMeasurementEnd</c><br/>
-        /// Valid when <c>EntityMeasurementBegin</c> had executed<br/>
+        /// Session = <see cref="EntityMeasurementBegin">EntityMeasurementBegin</see> + <see cref="EntityMeasurementEnd">EntityMeasurementEnd</see> <br/>
+        /// Valid when <see cref="EntityMeasurementBegin">EntityMeasurementBegin</see> has executed. <br/>
         /// </remarks>
         [RefreshProperties(RefreshProperties.All)]
         [Browsable(true)]
@@ -490,8 +490,8 @@ namespace Demos
         /// Mark each <c>EntityLayer</c>
         /// </summary>
         /// <remarks>
+        /// Helpful current working sets are <see cref="MarkerBase.CurrentOffsetIndex">CurrentOffsetIndex</see>, <see cref="MarkerBase.CurrentOffset">CurrentOffset</see>, <see cref="MarkerBase.CurrentLayerIndex">CurrentLayerIndex</see>, <see cref="MarkerBase.CurrentLayer">CurrentLayer</see>. <br/>
         /// Consider as its working within async threads. <br/>
-        /// Helpful current working sets are <c>CurrentOffsetIndex</c>, <c>CurrentOffset</c>, <c>CurrentLayerIndex</c>, <c>CurrentLayer</c>. <br/>
         /// </remarks> 
         /// <param name="offsetIndex">Current index of offset (0,1,2,...)</param>
         /// <param name="layer">Current <c>EntityLayer</c></param>
@@ -537,8 +537,8 @@ namespace Demos
         /// Mark each <c>IEntity</c>
         /// </summary>
         /// <remarks>
+        /// Helpful current working sets are <see cref="MarkerBase.CurrentOffsetIndex">CurrentOffsetIndex</see>, <see cref="MarkerBase.CurrentOffset">CurrentOffset</see>, <see cref="MarkerBase.CurrentLayerIndex">CurrentLayerIndex</see>, <see cref="MarkerBase.CurrentLayer">CurrentLayer</see>. <br/>
         /// Consider as its working within async threads. <br/>
-        /// Helpful current working sets are <c>CurrentOffsetIndex</c>, <c>CurrentOffset</c>, <c>CurrentLayerIndex</c>, <c>CurrentLayer</c>, <c>CurrentEntityIndex</c>, <c>CurrentEntity</c>. <br/>
         /// </remarks> 
         /// <param name="offsetIndex">Current index of offset (0,1,2,...)</param>
         /// <param name="layer">Current <c>EntityLayer</c></param>
@@ -570,11 +570,11 @@ namespace Demos
             }
             return success;
         }
+
         /// <summary>
-        /// Marker thread #1
+        /// Marker thread
         /// </summary>
-        /// <remarks>
-        /// <c>MarkProc.LayerFirst</c> <br/>
+        /// <remarks>        
         /// Move offset1 and Mark layers -> Move offset2 and Mark layers , ... <br/>
         /// </remarks>
         protected virtual void MarkerThreadLayerFirst()
