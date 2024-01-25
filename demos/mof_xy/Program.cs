@@ -169,10 +169,11 @@ namespace Demos
         }
 
         private static void RtcMoF_OnEncoderChanged(IRtcMoF rtcMoF, int encX, int encY)
-        {
-            //Console.Title = $"ENC0,1= {encX}, {encY}";
-            rtcMoF.CtlMofGetEncoder(out var x, out var y, out var mmX, out var mmY);            
-            Console.Title = $"ENC X,Y= {x}, {y}, Distance X,Y= [{mmX:F3}, {mmY:F3}]";
+        {            
+            //rtcMoF.CtlMofGetEncoder(out var x, out var y, out var mmX, out var mmY);  
+			var mmX = encX / rtcMoF.EncXCountsPerMm;
+			var mmY = encY / rtcMoF.EncYCountsPerMm;
+            Console.Title = $"ENC X,Y= {encX}, {encY}, Distance X,Y= [{mmX:F3}, {mmY:F3}]";
         }
 
         /// <summary>
@@ -373,7 +374,7 @@ namespace Demos
             //                             .       . 
             //                             .       .         Repeat 10 times
             //                             .       .         
-            // ----------------------------.-------.-------.--------
+            // ----------------------------+-------.-------.--------
             //                             |       .       .
             //                             |       .       .
             //                             |       .       .

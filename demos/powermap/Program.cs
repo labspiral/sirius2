@@ -134,15 +134,18 @@ namespace Demos
             do
             {
                 Console.WriteLine($"{Environment.NewLine}");
-                Console.WriteLine("Testcase for spirallab.sirius. powered by hcchoi@spirallab.co.kr (http://spirallab.co.kr)");
+                Console.WriteLine("Testcase for powermap");
                 Console.WriteLine($"----------------------------------------------------------------------------------------");
-                Console.WriteLine("'M' : start power mapping");
-                Console.WriteLine("'V' : start power verifying");
-                Console.WriteLine("'C' : start power compensating");
-                Console.WriteLine("'P' : start power meter");
-                Console.WriteLine("'ESC' : stop and reset power map");
+                Console.WriteLine("'1' : laser on (warning !!!)");
+                Console.WriteLine("'2' : laser off");
+                Console.WriteLine("'F1' : start power mapping");
+                Console.WriteLine("'F2' : start power verifying");
+                Console.WriteLine("'F3' : start power compensating");
+                Console.WriteLine("'ESC' : stop powermap");
                 Console.WriteLine("'O' : open power map");
                 Console.WriteLine("'S' : save power map");
+                Console.WriteLine("'A' : start power meter");
+                Console.WriteLine("'B' : stop power meter");
                 Console.WriteLine("'Q' : quit");
                 Console.Write("Select your target : ");
                 key = Console.ReadKey(false);
@@ -151,26 +154,53 @@ namespace Demos
                     break;
                 switch (key.Key)
                 {
-                    case ConsoleKey.M:
+                    case ConsoleKey.D1:
+                        Console.WriteLine($"{Environment.NewLine}");
+                        double watt = maxPowerWatt / 10; // default: 10 %
+                        Console.Write($"Power (W) (Max= {laser.MaxPowerWatt}): ");
+                        try
+                        {
+                            watt = Convert.ToDouble(Console.ReadLine());
+                            Console.Write($"Power (Category): ");
+                            string category = Console.ReadLine();
+                            success &= laser.CtlPower(2, category);
+                            success &= rtc.CtlLaserOn();
+                        }
+                        catch (Exception)
+                        {
+                        }
+                        break;
+                    case ConsoleKey.D2:
+                        rtc.CtlLaserOff();
+                        break;
+                    case ConsoleKey.F1:
+                        powerMap.CtlReset();
                         StartPowerMap(powerMap);
                         break;
-                    case ConsoleKey.V:
+                    case ConsoleKey.F2:
+                        powerMap.CtlReset();
                         StartPowerVerify(powerMap);
                         break;
-                    case ConsoleKey.C:
+                    case ConsoleKey.F3:
+                        powerMap.CtlReset();
                         StartPowerCompensate(powerMap);
                         break;
-                    case ConsoleKey.P:
+                    case ConsoleKey.Escape:
+                        powerMap.CtlStop();                        
+                        break;
+                    case ConsoleKey.A:
+                        powerMeter.CtlReset();
                         powerMeter.CtlStart();
                         break;
-                    case ConsoleKey.Escape:
-                        powerMap.CtlStop();
-                        powerMap.CtlReset();
+                    case ConsoleKey.B:
+                        powerMeter.CtlStop();
                         break;
                     case ConsoleKey.O:
+                        // Re-open powermap from file
                         success &= PowerMapSerializer.Open(mapFile, powerMap);
                         break;                 
                     case ConsoleKey.S:
+                        // Save powermap into file
                         success &= PowerMapSerializer.Save(mapFile, powerMap);
                         break;
                 }
@@ -181,12 +211,12 @@ namespace Demos
             powerMeter.OnStopped -= PowerMeter_OnStopped;
 
             powerMeter.Dispose();
-            laser.Dispose();
             rtc.Dispose();
+            laser.Dispose();
         }
         private static bool StartPowerMap(IPowerMap powerMap)
         {
-            // Config values
+            // Override config values
             Config.PowerMapHoldTimeMs = 5000;
             Config.PowerMapInRangeThreshold = 5;
             // Category: 100 khz
@@ -198,7 +228,7 @@ namespace Demos
         }
         private static bool StartPowerVerify(IPowerMap powerMap)
         {
-            // Config values
+            // Override config values
             Config.PowerMapHoldTimeMs = 5000;
             Config.PowerMapInRangeThreshold = 5;
             // Category: 100 khz
@@ -212,7 +242,7 @@ namespace Demos
         }
         private static bool StartPowerCompensate(IPowerMap powerMap)
         {
-            // Config values
+            // Override config values
             Config.PowerMapHoldTimeMs = 5000;
             Config.PowerMapInRangeThreshold = 5;
             Config.PowerMapOutOfRangeThreshold = 20;
