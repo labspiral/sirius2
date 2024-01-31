@@ -7261,7 +7261,7 @@
             <see cref="T:SpiralLab.Sirius2.Scanner.IScanner">Scanner</see> interface
             </summary>
             <remarks>
-            External scanner controller (like as RTC cards) <br/>
+            External scanner controller (like as RTC cards). <br/>
             User can cast this reference value to like as <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>, <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis">IRtcSyncAxis</see> <br/>
             </remarks>
         </member>
@@ -7278,7 +7278,7 @@
             Laser power control method
             </summary>
             <remarks>
-            Configure valid <see cref="T:SpiralLab.Sirius2.Laser.PowerControlMethods">PowerControlMethod</see> if <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsPowerControl">IsPowerControl</see> is <c>True</c> <br/>
+            Configure valid <see cref="T:SpiralLab.Sirius2.Laser.PowerControlMethods">PowerControlMethods</see> if <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsPowerControl">IsPowerControl</see> is <c>True</c> <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.ILaser.PowerControlDelayTime">
@@ -7484,7 +7484,9 @@
             Assigned <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">IPowerMap</see> for calculate(or compensate) output power
             </summary>
             <remarks>
-            If <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsEnableLookUp">IPowerMap.IsEnableLookUp</see> is <c>True</c>, every target output power (W) by <see cref="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.CtlPower(System.Double,System.String)">CtlPower</see>, <see cref="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.ListPower(System.Double,System.String)">ListPower</see> are affected. <br/>
+            If <see cref="P:SpiralLab.Sirius2.Laser.ILaserPowerControl.PowerMap">PowerMap</see> is not <c>null</c>, output power value would be compensated by power map table. <br/>
+            If <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsEnableLookUp">IPowerMap.IsEnableLookUp</see> is <c>True</c>, every output power values (W) by <see cref="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.CtlPower(System.Double,System.String)">CtlPower</see>, <see cref="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.ListPower(System.Double,System.String)">ListPower</see> are affected(or compensated). <br/>
+            To disable <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">PowerMap</see> function, configure it as <c>null</c>. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.CtlPower(System.Double,System.String)">
@@ -7814,6 +7816,9 @@
             <summary>
             Write log message
             </summary>
+            <remarks>
+            Notify <see cref="E:SpiralLab.Sirius2.Config.OnLogged">Config.OnLogged</see> event. <br/>
+            </remarks>
             <param name="type"><see cref="T:SpiralLab.Sirius2.Logger.Types">Log types</see></param>
             <param name="message">Log message</param>
         </member>
@@ -7821,6 +7826,9 @@
             <summary>
             Write log message
             </summary>
+            <remarks>
+            Notify <see cref="E:SpiralLab.Sirius2.Config.OnLogged">Config.OnLogged</see> event. <br/>
+            </remarks>
             <param name="type"><see cref="T:SpiralLab.Sirius2.Logger.Types">Log types</see></param>
             <param name="format">String format</param>
             <param name="arg0">Argument</param>
@@ -7829,6 +7837,9 @@
             <summary>
             Write log message
             </summary>
+            <remarks>
+            Notify <see cref="E:SpiralLab.Sirius2.Config.OnLogged">Config.OnLogged</see> event. <br/>
+            </remarks>
             <param name="type"><see cref="T:SpiralLab.Sirius2.Logger.Types">Log types</see></param>
             <param name="format">Format</param>
             <param name="arg0">Argument</param>
@@ -7838,6 +7849,9 @@
             <summary>
             Write log message
             </summary>
+            <remarks>
+            Notify <see cref="E:SpiralLab.Sirius2.Config.OnLogged">Config.OnLogged</see> event. <br/>
+            </remarks>
             <param name="type"><see cref="T:SpiralLab.Sirius2.Logger.Types">Log types</see></param>
             <param name="format">Format</param>
             <param name="arg0">Argument</param>
@@ -7848,6 +7862,9 @@
             <summary>
             Write log message
             </summary>
+            <remarks>
+            Notify <see cref="E:SpiralLab.Sirius2.Config.OnLogged">Config.OnLogged</see> event. <br/>
+            </remarks>
             <param name="type"><see cref="T:SpiralLab.Sirius2.Logger.Types">Log types</see></param>
             <param name="format">Format</param>
             <param name="args">Argument array</param>
@@ -7856,6 +7873,9 @@
             <summary>
             Write log message
             </summary>
+            <remarks>
+            Notify <see cref="E:SpiralLab.Sirius2.Config.OnLogged">Config.OnLogged</see> event. <br/>
+            </remarks>
             <param name="type"><see cref="T:SpiralLab.Sirius2.Logger.Types">Log types</see></param>
             <param name="ex"><see cref="T:System.Exception">Exception</see></param>
         </member>
@@ -7863,6 +7883,9 @@
             <summary>
             Write log message
             </summary>
+            <remarks>
+            Notify <see cref="E:SpiralLab.Sirius2.Config.OnLogged">Config.OnLogged</see> event. <br/>
+            </remarks>
             <param name="type"><see cref="T:SpiralLab.Sirius2.Logger.Types">Log types</see></param>
             <param name="ex"><see cref="T:System.Exception">Exception</see></param>
             <param name="message">Message</param>
@@ -8656,6 +8679,7 @@
             Update measured output power value(W) into <c>IPowerMap</c>. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>, <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>, <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>. Assign these values before do start. <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Config.PowerMapPreHeatTimeMs">Config.PowerMapPreHeatTimeMs</see>, <see cref="P:SpiralLab.Sirius2.Config.PowerMapHoldTimeMs">Config.PowerMapHoldTimeMs</see>, <see cref="P:SpiralLab.Sirius2.Config.PowerMapInRangeThreshold">Config.PowerMapInRangeThreshold</see> values. <br/>
+            Notify <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnMappingStarted">OnMappingStarted</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnMappingProgress">OnMappingProgress</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnMappingFinished">OnMappingFinished</see> event. <br/>
             Consider as its working within async threads. <br/>
             </remarks>
             <param name="categories"></param>
@@ -8684,6 +8708,7 @@
             Passed(or succeeded) if measured laser output power value(W) in range of threshold percent. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>, <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>, <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>. Assign these values before do start. <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Config.PowerMapPreHeatTimeMs">Config.PowerMapPreHeatTimeMs</see>, <see cref="P:SpiralLab.Sirius2.Config.PowerMapHoldTimeMs">Config.PowerMapHoldTimeMs</see>, <see cref="P:SpiralLab.Sirius2.Config.PowerMapInRangeThreshold">Config.PowerMapInRangeThreshold</see> values. <br/>
+            Notify <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnVerifyStarted">OnVerifyStarted</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnVerifyProgress">OnVerifyProgress</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnVerifyFinished">OnVerifyFinished</see> event. <br/>
             Consider as its working within async threads. <br/>
             </remarks>
             <param name="categoryAndYWatts">Array of category and target y watt(W)</param>
@@ -8712,6 +8737,7 @@
             Failed(or out of range threshold percent), then retry(update <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">IPowerMap</see> again) 2nd run with whether in-range power or not. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>, <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>, <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>. Assign these values before do start. <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Config.PowerMapPreHeatTimeMs">Config.PowerMapPreHeatTimeMs</see>, <see cref="P:SpiralLab.Sirius2.Config.PowerMapHoldTimeMs">Config.PowerMapHoldTimeMs</see>, <see cref="P:SpiralLab.Sirius2.Config.PowerMapInRangeThreshold">Config.PowerMapInRangeThreshold</see>, <see cref="P:SpiralLab.Sirius2.Config.PowerMapOutOfRangeThreshold">Config.PowerMapOutOfRangeThreshold</see> and <see cref="P:SpiralLab.Sirius2.Config.PowerMapCompensateRetryCounts">Config.PowerMapCompensateRetryCounts</see> values. <br/>
+            Notify <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnCompensateStarted">OnCompensateStarted</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnCompensateProgress">OnCompensateProgress</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnCompensateFinished">OnCompensateFinished</see> event. <br/>
             Consider as its working within async threads. <br/>
             </remarks>
             <param name="categoryAndYWatts">Array of category and target y watt(W)</param>
@@ -9045,6 +9071,9 @@
             <summary>
             Open <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.InternalData">IPowerMap.InternalData</see> from file
             </summary>
+            <remarks>
+            Notify <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnOpened">IPowerMap.OnOpened</see> event. <br/>
+            </remarks>
             <param name="mapFileName">Powermap filename</param>
             <param name="powerMap"><see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.InternalData">IPowerMap.InternalData</see> would be opened(or replaced).</param>
             <returns>Success or failed</returns>
@@ -9053,6 +9082,9 @@
             <summary>
             Save <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.InternalData">IPowerMap.InternalData</see> into file
             </summary>
+            <remarks>
+            Notify <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnSaved">IPowerMap.OnSaved</see> event. <br/>
+            </remarks>
             <param name="mapFileName">Powermap filename</param>
             <param name="powerMap"><see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.InternalData">IPowerMap.InternalData</see> would be saved.</param>
             <returns>Success or failed</returns>
@@ -9289,6 +9321,9 @@
             <summary>
             Start measuring(or gathering)
             </summary>
+            <remarks>
+            Notify <see cref="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnStarted">OnStarted</see> and <see cref="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnMeasured">OnMeasured</see> event. <br/>
+            </remarks>
             <param name="category">Target(or current) category(or series)</param>
             <returns></returns>
         </member>
@@ -9296,12 +9331,18 @@
             <summary>
             Stop measuring(or gathering)
             </summary>
+            <remarks>
+            Notify <see cref="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnStopped">OnStopped</see> event. <br/>
+            </remarks>
             <returns></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.CtlClear">
             <summary>
             Clear measured(or gathered) data
             </summary>
+            <remarks>
+            Notify <see cref="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnCleared">OnCleared</see> event. <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.CtlReset">
             <summary>
@@ -16358,9 +16399,9 @@
             (Experimental!) RtcStreamParserHelper
             </summary>
             <remarks>
-            Experimental version.<br/>
+            Experimental version. <br/>
             Used with SCANLAB StreamParser v1.1 <br/>
-            Used with <c>Rtc6Ethernet</c> only.<br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet">Rtc6Ethernet</see> only. <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.OnConnected">
@@ -18247,7 +18288,8 @@
             Load scanner field correction file into target table
             </summary>
             <remarks>
-            Should be called when <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlGetStatus(SpiralLab.Sirius2.Scanner.Rtc.RtcStatus)">CtlGetStatus(RtcStatus.NotBusy)</see> <br/>
+            Should be called when <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlGetStatus(SpiralLab.Sirius2.Scanner.Rtc.RtcStatus)">CtlGetStatus(RtcStatus.NotBusy)</see>. <br/>
+            Notify <see cref="E:SpiralLab.Sirius2.Scanner.Rtc.IRtc.OnCorrectionTable">OnCorrectionTable</see> event. <br/>
             </remarks>
             <param name="tableIndex"><c>CorrectionTableIndex</c></param>
             <param name="ctFileName">Correction filename</param>
@@ -18494,6 +18536,7 @@
             If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ListTypes.Single">ListTypes.Single</see> used, list commands are ready for execution. <br/>
             Do NOT call this function to execute by external /START trigger.<br/>
             To use external /START trigger, configure <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlExternalControl(SpiralLab.Sirius2.Scanner.Rtc.IRtcExternalControlMode,System.UInt32)">IRtcExtension.CtlExternalControl</see>. <br/>
+            Notify <see cref="E:SpiralLab.Sirius2.Scanner.Rtc.IRtc.OnJob">OnJob</see> event. <br/>
             </remarks>
             <param name="busyWait">Wait until list commands has done or not.<br/>If <c>True</c>, function would be blocked until done. It also same feature with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlBusyWait">CtlBusyWait</see>.<br/>If <c>False</c>, function would be returned at immediately.<br/></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
@@ -19502,7 +19545,7 @@
             Convert
             </summary>
             <remarks>
-            After convert, <c>OnConverted</c> event are fired
+            Notify <see cref="E:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection2D.OnConverted">OnConverted</see> event. <br/>
             </remarks>
             <returns>Success or failed</returns>
         </member>
@@ -19671,7 +19714,7 @@
             Convert
             </summary>
             <remarks>
-            Event <see cref="E:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection3D.OnConverted">OnConverted</see> will be fired after do <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection3D.Convert">Convert</see>. <br/> 
+            Notify <see cref="E:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection3D.OnConverted">OnConverted</see> event. <br/>
             </remarks>
             <returns>Success or failed</returns>
         </member>
@@ -20937,6 +20980,9 @@
             <summary>
             Event handler for encoder(s) changed (enc x counts, enc y counts)
             </summary>
+            <remarks>
+            Notify when encoder values has changed and consider as its working within async threads. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncoderType">
             <summary>
