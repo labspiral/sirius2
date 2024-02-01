@@ -55,9 +55,9 @@ namespace Demos
             // Create virtual RTC controller (without valid RTC controller)
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             // Create RTC5 controller
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 controller
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             // Create RTC6 Ethernet controller
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
@@ -74,7 +74,7 @@ namespace Demos
             var rtcMoF = rtc as IRtcMoF;
             Debug.Assert(rtcMoF != null);
             // Assign encoder scale = encoder counts/revolution
-            rtcMoF.EncCountsPerRevolution = 36000;
+            rtcMoF.EncCountsPerRevolution = 3600;
 
             rtcMoF.OnEncoderChanged += RtcMoF_OnEncoderChanged;
 
@@ -105,14 +105,14 @@ namespace Demos
                 if (key.Key == ConsoleKey.Q)
                     break;
                 Console.WriteLine($"{Environment.NewLine}");
-                Console.WriteLine("WARNING !!! LASER IS BUSY ...");
+
                 var timer = Stopwatch.StartNew();
                 switch (key.Key)
                 {
                     case ConsoleKey.A:
                         // encoder scale = accumulated encoder counts / rev 
                         // Assign encoder scale = encoder counts/rev
-                        //rtcMoF.EncCountsPerRevolution = 360000;
+                        //rtcMoF.EncCountsPerRevolution = 3600;
                         break;
                     case ConsoleKey.R:
                         rtcMoF.CtlMofEncoderReset();
@@ -144,7 +144,7 @@ namespace Demos
         {
             //Console.Title = $"ENC X,Y= {encX}, {encY}";
             rtcMoF.CtlMofGetAngularEncoder(out var x, out var angle);
-            Console.Title = $"ENC X= {x}, Angle= [{angle:F3}]";
+            Console.Title = $"Angle: [{angle:F3}], ENC: {x}";
         }
 
         /// <summary>
@@ -239,7 +239,15 @@ namespace Demos
             if (!externalStart)
             {
                 // Execute now
-                rtcExtension.CtlExternalControl(Rtc5ExternalControlMode.Empty);
+                switch (rtc.RtcType)
+                {
+                    case RtcTypes.Rtc5:
+                        rtcExtension.CtlExternalControl(Rtc5ExternalControlMode.Empty);
+                        break;
+                    case RtcTypes.Rtc6:
+                        rtcExtension.CtlExternalControl(Rtc6ExternalControlMode.Empty);
+                        break;
+                }
                 if (success)
                 {
                     success &= rtc.ListEnd();
@@ -250,15 +258,26 @@ namespace Demos
             {
                 success &= rtc.ListEnd();
                 // Execute by external /START trigger 
-                var extCtrl = Rtc5ExternalControlMode.Empty;
-                extCtrl.Add(Rtc5ExternalControlMode.Bit.ExternalStart);
-                extCtrl.Add(Rtc5ExternalControlMode.Bit.ExternalStartAgain);
-                rtcExtension.CtlExternalControl(extCtrl);
+                switch (rtc.RtcType)
+                {
+                    case RtcTypes.Rtc5:
+                        var extCtrl5 = Rtc5ExternalControlMode.Empty;
+                        extCtrl5.Add(Rtc5ExternalControlMode.Bit.ExternalStart);
+                        extCtrl5.Add(Rtc5ExternalControlMode.Bit.ExternalStartAgain);
+                        rtcExtension.CtlExternalControl(extCtrl5);
+                        break;
+                    case RtcTypes.Rtc6:
+                        var extCtrl6 = Rtc6ExternalControlMode.Empty;
+                        extCtrl6.Add(Rtc6ExternalControlMode.Bit.ExternalStart);
+                        extCtrl6.Add(Rtc6ExternalControlMode.Bit.ExternalStartAgain);
+                        rtcExtension.CtlExternalControl(extCtrl6);
+                        break;
+                }
             }
             return success;
         }
         /// <summary>
-        /// Wait encoder position and draw circle
+        /// Wait encoder position and draw circle (stationary movement)
         /// </summary>
         /// <param name="laser"></param>
         /// <param name="rtc"></param>
@@ -266,6 +285,8 @@ namespace Demos
         /// <returns></returns>
         private static bool MofWithCircleAndWaitEncoder(ILaser laser, IRtc rtc, bool externalStart)
         {
+            Console.WriteLine("WARNING !!! LASER IS BUSY ...");
+
             var rtcMof = rtc as IRtcMoF;
             var rtcExtension = rtc as IRtcExtension;
             Debug.Assert(rtcMof != null);
@@ -299,6 +320,7 @@ namespace Demos
             bool success = true;
             // Start list buffer
             success &= rtc.ListBegin( ListTypes.Single);
+            // Start measurement 
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
 
             // Draw line
@@ -381,18 +403,25 @@ namespace Demos
 
             // Draw circle
             success &= rtc.ListJumpTo(rotateCenter + rotateCenter + new Vector2(10, 0));
-            success &= rtc.ListJumpTo(rotateCenter + rotateCenter, 360.0);
+            success &= rtc.ListArcTo(rotateCenter + rotateCenter, 360.0);
 
             // MoF end
             success &= rtcMof.ListMofEnd(Vector2.Zero);
+            // Measurement end
             success &= rtcMeasurement.ListMeasurementEnd();
 
             if (!externalStart)
             {
-
                 // Execute now
-                rtcExtension.CtlExternalControl(Rtc5ExternalControlMode.Empty);
-                //rtcExtension.CtlExternalControl(Rtc6ExternalControlMode.Empty);
+                switch (rtc.RtcType)
+                {
+                    case RtcTypes.Rtc5:
+                        rtcExtension.CtlExternalControl(Rtc5ExternalControlMode.Empty);
+                        break;
+                    case RtcTypes.Rtc6:
+                        rtcExtension.CtlExternalControl(Rtc6ExternalControlMode.Empty);
+                        break;
+                }
                 if (success)
                 {
                     success &= rtc.ListEnd();
@@ -412,16 +441,22 @@ namespace Demos
             {
                 success &= rtc.ListEnd();
 
-                // Execute by external /START trigger 
-                var extCtrl = Rtc5ExternalControlMode.Empty;
-                extCtrl.Add(Rtc5ExternalControlMode.Bit.ExternalStart);
-                extCtrl.Add(Rtc5ExternalControlMode.Bit.ExternalStartAgain);
-                rtcExtension.CtlExternalControl(extCtrl);
-
-                //var extCtrl = Rtc6ExternalControlMode.Empty;
-                //extCtrl.Add(Rtc6ExternalControlMode.Bit.ExternalStart);
-                //extCtrl.Add(Rtc6ExternalControlMode.Bit.ExternalStartAgain);
-                //rtcExtension.CtlExternalControl(extCtrl);
+                switch(rtc.RtcType)
+                {
+                    case RtcTypes.Rtc5:
+                        // Execute by external /START trigger 
+                        var extCtrl5 = Rtc5ExternalControlMode.Empty;
+                        extCtrl5.Add(Rtc5ExternalControlMode.Bit.ExternalStart);
+                        extCtrl5.Add(Rtc5ExternalControlMode.Bit.ExternalStartAgain);
+                        rtcExtension.CtlExternalControl(extCtrl5);
+                        break;
+                    case RtcTypes.Rtc6:
+                        var extCtrl6 = Rtc6ExternalControlMode.Empty;
+                        extCtrl6.Add(Rtc6ExternalControlMode.Bit.ExternalStart);
+                        extCtrl6.Add(Rtc6ExternalControlMode.Bit.ExternalStartAgain);
+                        rtcExtension.CtlExternalControl(extCtrl6);
+                        break;
+                }
             }
             return success;
         }        

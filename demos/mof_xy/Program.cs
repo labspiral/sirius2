@@ -114,7 +114,6 @@ namespace Demos
                 if (key.Key == ConsoleKey.Q)
                     break;
                 Console.WriteLine($"{Environment.NewLine}");
-                Console.WriteLine("WARNING !!! LASER IS BUSY ...");
                 var timer = Stopwatch.StartNew();
                 switch (key.Key)
                 {
@@ -173,7 +172,7 @@ namespace Demos
             //rtcMoF.CtlMofGetEncoder(out var x, out var y, out var mmX, out var mmY);  
 			var mmX = encX / rtcMoF.EncXCountsPerMm;
 			var mmY = encY / rtcMoF.EncYCountsPerMm;
-            Console.Title = $"ENC X,Y= {encX}, {encY}, Distance X,Y= [{mmX:F3}, {mmY:F3}]";
+            Console.Title = $"Distance XY: [{mmX:F3}, {mmY:F3}], ENC XY: {encX}, {encY}";
         }
 
         /// <summary>
@@ -206,8 +205,17 @@ namespace Demos
             success &= rtcMof.ListMofEnd(Vector2.Zero);
             if (!externalStart)
             {
-                // Execute now
-                rtcExtension.CtlExternalControl(Rtc5ExternalControlMode.Empty);
+                switch (rtc.RtcType)
+                {
+                    case RtcTypes.Rtc5:
+                        // Execute now
+                        rtcExtension.CtlExternalControl(Rtc5ExternalControlMode.Empty);
+                        break;
+                    case RtcTypes.Rtc6:
+                        rtcExtension.CtlExternalControl(Rtc6ExternalControlMode.Empty);
+                        break;
+                }
+
                 if (success)
                 {
                     success &= rtc.ListEnd();
@@ -235,6 +243,8 @@ namespace Demos
         /// <returns></returns>
         private static bool MofWithCircleAndWaitEncoder(ILaser laser, IRtc rtc, bool externalStart)
         {
+            Console.WriteLine("WARNING !!! LASER IS BUSY ...");
+
             var rtcMof = rtc as IRtcMoF;
             var rtcExtension = rtc as IRtcExtension;
             Debug.Assert(rtcMof != null);
@@ -312,10 +322,21 @@ namespace Demos
             {
                 success &= rtc.ListEnd();
                 // Execute by external /START trigger 
-                var extCtrl = Rtc5ExternalControlMode.Empty;
-                extCtrl.Add(Rtc5ExternalControlMode.Bit.ExternalStart);
-                extCtrl.Add(Rtc5ExternalControlMode.Bit.ExternalStartAgain);
-                rtcExtension.CtlExternalControl(extCtrl);
+                switch (rtc.RtcType)
+                {
+                    case RtcTypes.Rtc5:
+                        var extCtrl5 = Rtc5ExternalControlMode.Empty;
+                        extCtrl5.Add(Rtc5ExternalControlMode.Bit.ExternalStart);
+                        extCtrl5.Add(Rtc5ExternalControlMode.Bit.ExternalStartAgain);
+                        rtcExtension.CtlExternalControl(extCtrl5);
+                        break;
+                    case RtcTypes.Rtc6:
+                        var extCtrl6 = Rtc6ExternalControlMode.Empty;
+                        extCtrl6.Add(Rtc6ExternalControlMode.Bit.ExternalStart);
+                        extCtrl6.Add(Rtc6ExternalControlMode.Bit.ExternalStartAgain);
+                        rtcExtension.CtlExternalControl(extCtrl6);
+                        break;
+                }
             }
             return success;
         }
@@ -328,6 +349,8 @@ namespace Demos
         /// <returns></returns>
         private static bool MofWithZigZagAndWaitEncoder(ILaser laser, IRtc rtc, bool externalStart)
         {
+            Console.WriteLine("WARNING !!! LASER IS BUSY ...");
+
             var rtcMof = rtc as IRtcMoF;
             var rtcExtension = rtc as IRtcExtension;
             Debug.Assert(rtcMof != null);
@@ -431,11 +454,23 @@ namespace Demos
             else
             {
                 success &= rtc.ListEnd();
+
                 // Execute by external /START trigger 
-                var extCtrl = Rtc5ExternalControlMode.Empty;
-                extCtrl.Add(Rtc5ExternalControlMode.Bit.ExternalStart);
-                extCtrl.Add(Rtc5ExternalControlMode.Bit.ExternalStartAgain);
-                rtcExtension.CtlExternalControl(extCtrl);
+                switch (rtc.RtcType)
+                {
+                    case RtcTypes.Rtc5:
+                        var extCtrl5 = Rtc5ExternalControlMode.Empty;
+                        extCtrl5.Add(Rtc5ExternalControlMode.Bit.ExternalStart);
+                        extCtrl5.Add(Rtc5ExternalControlMode.Bit.ExternalStartAgain);
+                        rtcExtension.CtlExternalControl(extCtrl5);
+                        break;
+                    case RtcTypes.Rtc6:
+                        var extCtrl6 = Rtc6ExternalControlMode.Empty;
+                        extCtrl6.Add(Rtc6ExternalControlMode.Bit.ExternalStart);
+                        extCtrl6.Add(Rtc6ExternalControlMode.Bit.ExternalStartAgain);
+                        rtcExtension.CtlExternalControl(extCtrl6);
+                        break;
+                }
             }
             return success;
         }
@@ -448,6 +483,8 @@ namespace Demos
         /// <param name="externalStart"></param>
         private static bool MofWithCompensateTable(ILaser laser, IRtc rtc, bool externalStart)
         {
+            Console.WriteLine("WARNING !!! LASER IS BUSY ...");
+
             var rtcMof = rtc as IRtcMoF;
             var rtcExtension = rtc as IRtcExtension;
             Debug.Assert(rtcMof != null);
@@ -488,13 +525,19 @@ namespace Demos
             if (!externalStart)
             {
                 // Execute now
-                rtcExtension.CtlExternalControl(Rtc5ExternalControlMode.Empty);
-                //rtcExtension.CtlExternalControl(Rtc6ExternalControlMode.Empty);
+                switch (rtc.RtcType)
+                {
+                    case RtcTypes.Rtc5:
+                        rtcExtension.CtlExternalControl(Rtc5ExternalControlMode.Empty);
+                        break;
+                    case RtcTypes.Rtc6:
+                        rtcExtension.CtlExternalControl(Rtc6ExternalControlMode.Empty);
+                        break;
+                }
                 if (success)
                 {
                     success &= rtc.ListEnd();
                     success &= rtc.ListExecute();
-
                     CheckMofOverflow(rtc);
                 }
             }
@@ -503,33 +546,41 @@ namespace Demos
                 success &= rtc.ListEnd();
 
                 // Execute by external /START trigger 
-                var extCtrl = Rtc5ExternalControlMode.Empty;
-                extCtrl.Add(Rtc5ExternalControlMode.Bit.ExternalStart);
-                extCtrl.Add(Rtc5ExternalControlMode.Bit.ExternalStartAgain);
-                rtcExtension.CtlExternalControl(extCtrl);
-
-                //var extCtrl = Rtc6ExternalControlMode.Empty;
-                //extCtrl.Add(Rtc6ExternalControlMode.Bit.ExternalStart);
-                //extCtrl.Add(Rtc6ExternalControlMode.Bit.ExternalStartAgain);
-                //rtcExtension.CtlExternalControl(extCtrl);
+                switch (rtc.RtcType)
+                {
+                    case RtcTypes.Rtc5:
+                        var extCtrl5 = Rtc5ExternalControlMode.Empty;
+                        extCtrl5.Add(Rtc5ExternalControlMode.Bit.ExternalStart);
+                        extCtrl5.Add(Rtc5ExternalControlMode.Bit.ExternalStartAgain);
+                        rtcExtension.CtlExternalControl(extCtrl5);
+                        break;
+                    case RtcTypes.Rtc6:
+                        var extCtrl6 = Rtc6ExternalControlMode.Empty;
+                        extCtrl6.Add(Rtc6ExternalControlMode.Bit.ExternalStart);
+                        extCtrl6.Add(Rtc6ExternalControlMode.Bit.ExternalStartAgain);
+                        rtcExtension.CtlExternalControl(extCtrl6);
+                        break;
+                }
             }
             return success;
         }
         
-
         private static void CheckMofOverflow(IRtc rtc)
         {
             if (rtc.CtlGetStatus(RtcStatus.MofOutOfRange))
             {
-                if (rtc is Rtc5 rtc5)
+                switch (rtc.RtcType)
                 {
-                    var info = rtc5.MarkingInfo;
-                    Console.WriteLine($"MoF out of range: marking info= {info.Value}");
-                }
-                else if (rtc is Rtc6 rtc6)
-                {
-                    var info = rtc6.MarkingInfo;
-                    Console.WriteLine($"MoF out of range: marking info= {info.Value}");
+                    case RtcTypes.Rtc5:
+                        var rtc5 = rtc as Rtc5;
+                        var info5 = rtc5.MarkingInfo;
+                        Console.WriteLine($"MoF out of range: marking info= {info5.Value}");
+                        break;
+                    case RtcTypes.Rtc6:
+                        var rtc6 = rtc as Rtc6;
+                        var info6 = rtc6.MarkingInfo;
+                        Console.WriteLine($"MoF out of range: marking info= {info6.Value}");
+                        break;
                 }
             }
         }
