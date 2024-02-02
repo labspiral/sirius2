@@ -402,8 +402,8 @@ namespace Demos
             success &= rtcMof.ListMofAngularWait(180, RtcEncoderWaitConditions.Over);
 
             // Draw circle
-            success &= rtc.ListJumpTo(rotateCenter + rotateCenter + new Vector2(10, 0));
-            success &= rtc.ListArcTo(rotateCenter + rotateCenter, 360.0);
+            success &= rtc.ListJumpTo(rotateCenter + new Vector2(10, 0));
+            success &= rtc.ListArcTo(rotateCenter, 360.0);
 
             // MoF end
             success &= rtcMof.ListMofEnd(Vector2.Zero);
