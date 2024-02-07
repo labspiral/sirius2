@@ -149,27 +149,27 @@ namespace Demos
                 markerRtcSyncAxis.MarkProcedure = MarkerSyncAxis.MarkProcedures.OffsetFirst;
         }
 
-private string Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
-{
-    var currentLayer = marker.CurrentLayer;
-    var currentLayerIndex = marker.CurrentLayerIndex;
-    //var currentEntity = textConvertible as IEntity;
-    var currentEntity = marker.CurrentEntity;
-    var currentEntityIndex = marker.CurrentEntityIndex;
-    var currentOffset = marker.CurrentOffset;
-    var currentOffsetIndex = marker.CurrentOffsetIndex;
+        private string Text_OnTextConvert(IMarker marker, ITextConvertible textConvertible)
+        {
+            var currentLayer = marker.CurrentLayer;
+            var currentLayerIndex = marker.CurrentLayerIndex;
+            //var currentEntity = textConvertible as IEntity;
+            var currentEntity = marker.CurrentEntity;
+            var currentEntityIndex = marker.CurrentEntityIndex;
+            var currentOffset = marker.CurrentOffset;
+            var currentOffsetIndex = marker.CurrentOffsetIndex;
 
-    switch (currentEntity.Name)
-    {
-        case "MyBarcode1":
-            return $"SIRIUS2 {currentOffsetIndex}";
-        case "MyText1":
-            return $"SIRIUS2 {DateTime.Now.ToString("HH:mm:ss")} {currentOffsetIndex}";
-        default:
-            // Not modified
-            return textConvertible.SourceText;
-    }
-}
+            switch (currentEntity.Name)
+            {
+                case "MyBarcode1":
+                    return $"SIRIUS2 {currentOffsetIndex}";
+                case "MyText1":
+                    return $"SIRIUS2 {DateTime.Now.ToString("HH:mm:ss")} {currentOffsetIndex}";
+                default:
+                    // Not modified
+                    return textConvertible.SourceText;
+            }
+        }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {

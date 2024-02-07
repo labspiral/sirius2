@@ -16,7 +16,7 @@
  *               `---`            `---'                                                        `----'   
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : MoF(Marking on the Fly) with Rotate (Angualr)
+ * Description : Angular MoF(Marking on the Fly) 
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -92,7 +92,7 @@ namespace Demos
             ConsoleKeyInfo key;
             do
             {
-                Console.WriteLine("Testcase for processing on the fly (angular)");
+                Console.WriteLine("Testcase for processing on the fly (rotate)");
                 Console.WriteLine("'A' : reset encoder scale");
                 Console.WriteLine("'R' : encoder reset");
                 Console.WriteLine("'S' : enable simulate encoder");
@@ -110,8 +110,7 @@ namespace Demos
                 switch (key.Key)
                 {
                     case ConsoleKey.A:
-                        // encoder scale = accumulated encoder counts / rev 
-                        // Assign encoder scale = encoder counts/rev
+                        // encoder scale = encoder counts / rev 
                         //rtcMoF.EncCountsPerRevolution = 3600;
                         break;
                     case ConsoleKey.R:
@@ -142,7 +141,6 @@ namespace Demos
 
         private static void RtcMoF_OnEncoderChanged(IRtcMoF rtcMoF, int encX, int encY)
         {
-            //Console.Title = $"ENC X,Y= {encX}, {encY}";
             rtcMoF.CtlMofGetAngularEncoder(out var x, out var angle);
             Console.Title = $"Angle: [{angle:F3}], ENC: {x}";
         }
@@ -150,14 +148,14 @@ namespace Demos
         /// <summary>
         /// Scanner movements affected by accumulate encoder values
         /// </summary>
-        /// <param name="laser"></param>
-        /// <param name="rtc"></param>
-        /// <param name="externalStart"></param>
+        /// <param name="laser"><c>ILaser</c></param>
+        /// <param name="rtc"><c>IRtc</c></param>
+        /// <param name="externalStart">Enable external /START trigger or not</param>
         private static bool MofWithFollowOnly(ILaser laser, IRtc rtc, bool externalStart)
         {
-            var rtcMof = rtc as IRtcMoF;
+            var rtcMoF = rtc as IRtcMoF;
             var rtcExtension = rtc as IRtcExtension;
-            Debug.Assert(rtcMof != null);
+            Debug.Assert(rtcMoF != null);
             Debug.Assert(rtcExtension != null);
 
             bool success = true;
@@ -167,18 +165,18 @@ namespace Demos
 
             /* global coordinate system
              * 
-             *                                 |     <- Counter Clock Wise = Angle - = Enc -
-             *                                 |              .                      
-             *                                 |                 .                   
-             *                                 |                    .                
-             *                                 |                      .              
-             *                                 |                        .             
-             *                                 |                         .          
-             *                                 |                          .          
+             *                                 |     
+             *                                 |     
+             *                                 |     
+             *                                 |     
+             *                                 |     
+             *                                 |     
+             *                                 |     
+             *                                 |     
              *                                 |                 |--------|--------|                    
              *                                 |                 |        |        |
              *                                 |                 |        |        |       
-             *                                 |                 |        |        |    
+             *                                 |                 |      (Fixed)    |    
              *  ------------------------ Rotate Center --------------- Scanner ----|
              *                                 |                 |      0 , 0      |    
              *                                 |                 |        |        |      
@@ -195,22 +193,22 @@ namespace Demos
              *                          
              */
 
-            success &= rtcMof.ListMofAngularBegin(rotateCenter);
+            success &= rtcMoF.ListMofAngularBegin(rotateCenter);
 
             /* new coordinate system
              * 
-             *                                 |     <- Counter Clock Wise = Angle - = Enc -
-             *                                 |              .                      
-             *                                 |                  .                   
-             *                                 |                    .                
-             *                                 |                      .              
-             *                                 |                        .             
-             *                                 |                         .          
-             *                                 |                          .          
+             *                                 |     
+             *                                 |     
+             *                                 |     
+             *                                 |     
+             *                                 |     
+             *                                 |     
+             *                                 |     
+             *                                 |     
              *                                 |                 |--------|--------|                    
              *                                 |                 |        |        |
              *                                 |                 |        |        |       
-             *                                 |                 |        |        |    
+             *                                 |                 |     (Fixed)     |    
              *  ---------------------------- 0 , 0 --------------|---- Scanner ----|
              *                                 |                 |  RotateCenter   |    
              *                                 |                 |        |        |      
@@ -234,7 +232,7 @@ namespace Demos
             success &= rtc.ListWait(1000 * 60);
 
             // MoF end 
-            success &= rtcMof.ListMofEnd(Vector2.Zero);
+            success &= rtcMoF.ListMofEnd(Vector2.Zero);
 
             if (!externalStart)
             {
@@ -279,17 +277,17 @@ namespace Demos
         /// <summary>
         /// Wait encoder position and draw circle (stationary movement)
         /// </summary>
-        /// <param name="laser"></param>
-        /// <param name="rtc"></param>
-        /// <param name="externalStart"></param>
+        /// <param name="laser"><c>ILaser</c></param>
+        /// <param name="rtc"><c>IRtc</c></param>
+        /// <param name="externalStart">Enable external /START trigger or not</param>
         /// <returns></returns>
         private static bool MofWithCircleAndWaitEncoder(ILaser laser, IRtc rtc, bool externalStart)
         {
             Console.WriteLine("WARNING !!! LASER IS BUSY ...");
 
-            var rtcMof = rtc as IRtcMoF;
+            var rtcMoF = rtc as IRtcMoF;
             var rtcExtension = rtc as IRtcExtension;
-            Debug.Assert(rtcMof != null);
+            Debug.Assert(rtcMoF != null);
             Debug.Assert(rtcExtension != null);
 
             var rtcMeasurement = rtc as IRtcMeasurement;
@@ -297,7 +295,7 @@ namespace Demos
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannels[4]
+            var channels = new MeasurementChannels[]
             {
                  MeasurementChannels.SampleX, //X commanded
                  MeasurementChannels.SampleY, //Y commanded
@@ -305,7 +303,7 @@ namespace Demos
                  MeasurementChannels.Enc0Counter, //Converted to deg
             };
             // Max 8 channels at RTC6
-            //var channels = new MeasurementChannel[8]
+            //var channels = new MeasurementChannels[]
             //{
             //     MeasurementChannels.SampleX, //X commanded
             //     MeasurementChannels.SampleY, //Y commanded
@@ -359,7 +357,7 @@ namespace Demos
              *                          
              */
 
-            success &= rtcMof.ListMofAngularBegin(rotateCenter);
+            success &= rtcMoF.ListMofAngularBegin(rotateCenter);
 
             /* new coordinate system
              * 
@@ -392,21 +390,21 @@ namespace Demos
              */
 
             // Wait until condition has matched
-            success &= rtcMof.ListMofAngularWait(0, RtcEncoderWaitConditions.Over);
+            success &= rtcMoF.ListMofAngularWait(0, RtcEncoderWaitConditions.Over);
 
             // Draw circle
             success &= rtc.ListJumpTo(-rotateCenter + new Vector2(10, 0));
             success &= rtc.ListArcTo(-rotateCenter, 360.0f);
 
             // Wait until condition has matched
-            success &= rtcMof.ListMofAngularWait(180, RtcEncoderWaitConditions.Over);
+            success &= rtcMoF.ListMofAngularWait(180, RtcEncoderWaitConditions.Over);
 
             // Draw circle
             success &= rtc.ListJumpTo(rotateCenter + new Vector2(10, 0));
             success &= rtc.ListArcTo(rotateCenter, 360.0);
 
             // MoF end
-            success &= rtcMof.ListMofEnd(Vector2.Zero);
+            success &= rtcMoF.ListMofEnd(Vector2.Zero);
             // Measurement end
             success &= rtcMeasurement.ListMeasurementEnd();
 

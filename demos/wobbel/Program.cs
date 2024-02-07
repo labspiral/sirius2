@@ -160,7 +160,7 @@ namespace Demos
             // 50KHz Sample rate (max 100KHz)
             double sampleRateHz = 50 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannels[4]
+            var channels = new MeasurementChannels[]
             {
                  MeasurementChannels.SampleX, //X commanded
                  MeasurementChannels.SampleY, //Y commanded
@@ -168,7 +168,7 @@ namespace Demos
                  MeasurementChannels.OutputPeriod, //Converted Raw Data to Frequency(KHz)
             };
             // Max 8 channels at RTC6
-            //var channels = new MeasurementChannel[8]
+            //var channels = new MeasurementChannels[]
             //{
             //     MeasurementChannels.SampleX, //X commanded
             //     MeasurementChannels.SampleY, //Y commanded
@@ -220,7 +220,7 @@ namespace Demos
             // 50KHz Sample rate (max 100KHz)
             double sampleRateHz = 50 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannels[4]
+            var channels = new MeasurementChannels[]
             {
                  MeasurementChannels.SampleX, //X commanded
                  MeasurementChannels.SampleY, //Y commanded
@@ -228,7 +228,7 @@ namespace Demos
                  MeasurementChannels.OutputPeriod, //Converted Raw Data to Frequency(KHz)
             };
             // Max 8 channels at RTC6
-            //var channels = new MeasurementChannel[8]
+            //var channels = new MeasurementChannels[]
             //{
             //     MeasurementChannels.SampleX, //X commanded
             //     MeasurementChannels.SampleY, //Y commanded

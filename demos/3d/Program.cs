@@ -223,7 +223,7 @@ namespace Demos
                         break;
                     case ConsoleKey.F4:
                         // helix height per revolution (mm) 
-                        float helixHeightPitchPerRev = 0.1f;
+                        float helixHeightPitchPerRev = 0.5f;
                         // helix revolutions
                         int heliRevolutions = 5;
                         // helix radius (mm)
@@ -231,13 +231,15 @@ namespace Demos
                         success &= rtc.ListBegin();
                         for (int i = 0; i < heliRevolutions; i++)
                         {
-                            success &= rtc3D.ListJumpTo(new Vector3(helixRadius, 0, i * helixHeightPitchPerRev));
+                            float z = i * helixHeightPitchPerRev;
+                            success &= rtc3D.ListJumpTo(new Vector3(helixRadius, 0, z));
                             for (float angle = 10; angle <= 360; angle += 10)
                             {
                                 double x = helixRadius * Math.Cos(angle * Math.PI / 180.0);
                                 double y = helixRadius * Math.Sin(angle * Math.PI / 180.0);
-                                success &= rtc3D.ListMarkTo(new Vector3((float)x, (float)y, i * helixHeightPitchPerRev * (angle / 360.0f)));
+                                success &= rtc3D.ListMarkTo(new Vector3((float)x, (float)y, z + helixHeightPitchPerRev * (angle / 360.0f)));
                                 if (!success)
+                                    if (!success)
                                     break;
                             }
                             if (!success)

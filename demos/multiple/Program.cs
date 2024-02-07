@@ -208,15 +208,15 @@ namespace Demos
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannels[4]
+            var channels = new MeasurementChannels[]
             {
                  MeasurementChannels.SampleX, //X commanded
                  MeasurementChannels.SampleY, //Y commanded
                  MeasurementChannels.LaserOn, //Gate signal 0/1
-                 MeasurementChannels.OutputPeriod, //KHz
+                 MeasurementChannels.OutputPeriod, //Converted Raw Data to Frequency(KHz)
             };
             // Max 8 channels at RTC6
-            //var channels = new MeasurementChannel[8]
+            //var channels = new MeasurementChannels[]
             //{
             //     MeasurementChannels.SampleX, //X commanded
             //     MeasurementChannels.SampleY, //Y commanded

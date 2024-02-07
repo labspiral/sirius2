@@ -100,6 +100,8 @@
 | Font                  |cxf, lff format and Windows fonts                      |external ttf, cxf format |
 | Remote control        |Supported (TCP/IP, Serial)                             |None                     |
 | Script                |C# script                                              |None                     |
+| Processing on the fly |Classic and Fly extension                              |Classic                  |
+| Stream parser         |Supported                                              |None                     |
 | Multi-language        |Supported                                              |None                     |
 | Customization         |Expandable                                             |Acceptable               |
 
@@ -153,6 +155,11 @@
 
 
 **7. Version history**
+
+* 2024.2.7 v.1.18.1080
+  - added) IRtcMoFExtension interface for RTC6
+     - aka. Fly extension
+  - added) mof_xy_extension demo project
 
 * 2024.1.17 v.1.17.1050
   - added) event for Config.OnMoveToCursor (shortcut: F9)

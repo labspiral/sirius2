@@ -10319,7 +10319,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Empty">
             <summary>
-            Create empty <c>Rtc5ExternalControlMode</c> instance
+            Create empty <c>Rtc5StartStopInfo</c> instance
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.#ctor(SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit)">
@@ -10837,7 +10837,7 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.SamplingFrequency">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.EncoderType">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.MoFType">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.EncXCountsPerMm">
@@ -11107,7 +11107,7 @@
             <summary>
             Check for duplicated position x,y to merge
             </summary>
-            <param name="vPosition">position</param>
+            <param name="position">position</param>
             <returns>Is duplicated or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.IsListReady(System.UInt32)">
@@ -11283,21 +11283,21 @@
             <summary>
             Check for duplicated position x,y,z to merge
             </summary>
-            <param name="vPosition">position</param>
+            <param name="position">position</param>
             <returns>Is duplicated or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.IsInFov(System.Numerics.Vector2)">
             <summary>
             Check for position x,y in fov range  
             </summary>
-            <param name="vPosition"></param>
+            <param name="position"></param>
             <returns>Is in fov range or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.IsInFov(System.Numerics.Vector3)">
             <summary>
             Check for position x,y,z in fov range  
             </summary>
-            <param name="vPosition"></param>
+            <param name="position"></param>
             <returns>Is in fov range or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.AdjustBits(System.Int32@,System.Int32@)">
@@ -11366,7 +11366,7 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListMofAngularWait(System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListMofWaitRange(System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListMofWaitRange(System.Numerics.Vector2,System.Numerics.Vector2)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListMofLimits(System.Numerics.Vector2,System.Numerics.Vector2)">
@@ -11379,7 +11379,7 @@
             <summary>
             <para>List x,y (or rotate) MoF end</para>
             </summary>
-            <param name="vJumpPosition">Jump x,y,z position (mm)</param>
+            <param name="jumpPosition">Jump x,y,z position (mm)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListRepeatCall(System.UInt32,System.UInt32)">
@@ -11685,7 +11685,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Empty">
             <summary>
-            Create empty <c>Rtc6MarkingInfo</c> instance
+            Create empty <c>Rtc6ExternalControlMode</c> instance
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.#ctor">
@@ -11933,7 +11933,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Empty">
             <summary>
-            Create empty <c>Rtc6ExternalControlMode</c> instance
+            Create empty <c>Rtc6StartStopInfo</c> instance
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.#ctor(SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit)">
@@ -12643,7 +12643,7 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.SamplingFrequency">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.EncoderType">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.MoFType">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.EncXCountsPerMm">
@@ -12973,7 +12973,7 @@
             <summary>
             Check for duplicated position x,y to merge
             </summary>
-            <param name="vPosition">position</param>
+            <param name="position">position</param>
             <returns>Is duplicated or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsListReady(System.UInt32)">
@@ -13082,6 +13082,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListJumpAndDrill(System.Numerics.Vector2,System.Double)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListRepeatCall(System.UInt32,System.UInt32)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListLaserPower``1(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels,``0)">
             <summary>
             List synchronizes laser power outputs at the output ports (ANALOG OUT1, ANALOG OUT2, 8-bit digital output port, 16-bit digital output port) and Laser Delays.
@@ -13158,21 +13161,21 @@
             <summary>
             Check for duplicated position x,y.z to merge
             </summary>
-            <param name="vPosition">position</param>
+            <param name="position">position</param>
             <returns>Is duplicated or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsInFov(System.Numerics.Vector2)">
             <summary>
             Check for position x,y in fov range  
             </summary>
-            <param name="vPosition"></param>
+            <param name="position"></param>
             <returns>Is in fov range or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsInFov(System.Numerics.Vector3)">
             <summary>
             Check for position x,y,z in fov range  
             </summary>
-            <param name="vPosition"></param>
+            <param name="position"></param>
             <returns>Is in fov range or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.AdjustBits(System.Int32@,System.Int32@)">
@@ -13241,7 +13244,7 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofAngularWait(System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofWaitRange(System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofWaitRange(System.Numerics.Vector2,System.Numerics.Vector2)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofLimits(System.Numerics.Vector2,System.Numerics.Vector2)">
@@ -13254,10 +13257,25 @@
             <summary>
             <para>List x,y (or rotate) MoF end</para>
             </summary>
-            <param name="vJumpPosition">Jump x,y,z position (mm)</param>
+            <param name="jumpPosition">Jump x,y,z position (mm)</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListRepeatCall(System.UInt32,System.UInt32)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofExtBegin(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,System.Double,System.Double,System.Boolean)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofExtBegin(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofExtWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderRangeConditionsExtension,System.Boolean,System.Boolean)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofExtWaitRange(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,System.Numerics.Vector2,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,System.Numerics.Vector2,System.Boolean,System.Boolean)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofExtEnd(System.Numerics.Vector2)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofExtEnd(System.Numerics.Vector3)">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.MaxCharacterSetCount">
@@ -13819,7 +13837,7 @@
             <remarks>
             Use <c>CtlMoveScannerPosition</c> or <c>CtlMoveStagePosition</c> instead.
             </remarks>
-            <param name="vPosition">X,Y (mm)</param>
+            <param name="position">X,Y (mm)</param>
             <param name="overrideJumpSpeed">Override jump speed (mm/s) (0: No override)</param>
             <returns>Success or failed</returns>
         </member>
@@ -13827,7 +13845,7 @@
             <summary>
             Not used. Use <c>CtlMoveScannerPosition</c> or <c>CtlMoveStagePosition</c> instead
             </summary>
-            <param name="vPosition">X,Y (mm)</param>
+            <param name="position">X,Y (mm)</param>
             <param name="overrideJumpSpeed">Override jump speed (mm/s) (0: No override)</param>
             <returns>Success or failed</returns>
         </member>
@@ -14106,7 +14124,7 @@
             <summary>
             Check for duplicated position x,y,z to merge
             </summary>
-            <param name="vPosition"><c>Vector3</c></param>
+            <param name="position"><c>Vector3</c></param>
             <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionTypes">
@@ -15415,7 +15433,7 @@
             <summary>
             Move scanner position
             </summary>
-            <param name="vPosition">X,Y position (mm)</param>        
+            <param name="position">X,Y position (mm)</param>        
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlMoveStagePosition(System.Numerics.Vector2)">
@@ -15425,7 +15443,7 @@
             <remarks>
             Used with <c>StageMoveSpeed</c>, <c>StageMoveTimeOut</c> values <br/>
             </remarks>
-            <param name="vPosition">X,Y position (mm)</param>        
+            <param name="position">X,Y position (mm)</param>        
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlGetScannerPosition(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ScanDevices,System.Numerics.Vector2@)">
@@ -15657,7 +15675,7 @@
             <item><description>Time between two switchings s of similar type: 1 µs.</description></item>
             </list>
             </remarks>
-            <param name="vPosition">X, Y position (mm)</param>
+            <param name="position">X, Y position (mm)</param>
             <param name="laserSwitches">Array of line length with laser switches (mm)<br/>Distance is not applied matrix transformation<br/>(</param>
             <param name="alcScaleFactor">Ramp factor if <c>ListAlcByVectorBegin</c> has enabled</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
@@ -15676,7 +15694,7 @@
             <item><description>Time between two switchings s of similar type: 1 µs.</description></item>
             </list>
             </remarks>
-            <param name="vCenter">Center X, Y (mm)</param>
+            <param name="center">Center X, Y (mm)</param>
             <param name="sweepAngleZ">Sweep angle (°) (+: CCW, -: CW)</param>
             <param name="laserSwitches">Array of arc length with laser switches (mm) (distance is not applied by matrix stack)</param>
             <param name="alcScaleFactor">(Unsupported!) Ramp factor if <c>ListAlcByVectorBegin</c> has enabled</param>
@@ -16819,7 +16837,7 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.SamplingFrequency">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.EncoderType">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.MoFType">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.EncXCountsPerMm">
@@ -17034,7 +17052,7 @@
             <summary>
             Check for duplicated position x,y to merge
             </summary>
-            <param name="vPosition">position</param>
+            <param name="position">position</param>
             <returns>Is duplicated or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.IsListReady(System.UInt32)">
@@ -17210,21 +17228,21 @@
             <summary>
             Check for duplicated position x,y.z to merge
             </summary>
-            <param name="vPosition">x,y,z position</param>
+            <param name="position">x,y,z position</param>
             <returns>Is duplicated or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.IsInFov(System.Numerics.Vector2)">
             <summary>
             Check for position x,y in fov range  
             </summary>
-            <param name="vPosition">x,y position</param>
+            <param name="position">x,y position</param>
             <returns>Is in fov range or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.IsInFov(System.Numerics.Vector3)">
             <summary>
             Check for position x,y,z in fov range  
             </summary>
-            <param name="vPosition">x,y,z position</param>
+            <param name="position">x,y,z position</param>
             <returns>Is in fov range or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.AdjustBits(System.Int32@,System.Int32@)">
@@ -17293,7 +17311,7 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListMofAngularWait(System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListMofWaitRange(System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListMofWaitRange(System.Numerics.Vector2,System.Numerics.Vector2)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListMofLimits(System.Numerics.Vector2,System.Numerics.Vector2)">
@@ -18744,7 +18762,7 @@
             <summary>
             Get z distance from position
             </summary>
-            <param name="vPosition">X,Y,Z position</param>
+            <param name="position">X,Y,Z position</param>
             <param name="distance">Distance (mm)</param>
             <returns>Success or failed</returns>
         </member>
@@ -20102,7 +20120,7 @@
             <remarks>
             Position x,y is not applied matrix <br/>
             </remarks>
-            <param name="vPosition">X, Y (mm)</param>
+            <param name="position">X, Y (mm)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlPulseSynchronization(System.Boolean,System.Double)">
@@ -20356,7 +20374,7 @@
             Negative values (LasOn &lt; 0 and LasOff &lt; 0) do not affect Laser Delays. <br/>
             Hereby, the laser can remain on or off across multiple clock cycles (mark and jump simulation).<br/>
             </remarks>
-            <param name="vPosition">X, Y (mm)</param>
+            <param name="position">X, Y (mm)</param>
             <param name="laserOn">Laser on delay (usec)</param>
             <param name="laserOff">Laser off delay (usec)</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
@@ -20372,7 +20390,7 @@
             Negative values (LasOn &lt; 0 and LasOff &lt; 0) do not affect Laser Delays.<br/>
             Hereby, the laser can remain on or off across multiple clock cycles (mark and jump simulation).<br/>
             </remarks>
-            <param name="vPosition">X, Y (mm)</param>
+            <param name="position">X, Y (mm)</param>
             <param name="laserOn">Laser on delay (usec)</param>
             <param name="laserOff">Laser off delay (usec)</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
@@ -20384,7 +20402,7 @@
             <remarks>
             Above RTC5 and iDRIVE(intelliSCAN, intellicube, intelliWELD or intelliDRILL) scan system only. <br/>
             </remarks>
-            <param name="vPosition">X, Y (mm)</param>
+            <param name="position">X, Y (mm)</param>
             <param name="drillTime">Drill time (usec) (x0.5 usec)</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
@@ -20855,7 +20873,7 @@
             <code>
             var rtcMeasurement = rtc as IRtcMeasurement;
             double sampleRateHz = 10 * 1000; // 10KHz Sample rate (max 100KHz)
-            var channels = new MeasurementChannel[4] // Max 4 channels at RTC5
+            var channels = new MeasurementChannels[4] // Max 4 channels at RTC5
             {
                 MeasurementChannels.SampleX, // X commanded
                 MeasurementChannels.SampleY, // Y commanded
@@ -20907,22 +20925,22 @@
             Enc1(or Y)
             </summary>
         </member>
-        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderTypes">
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcMoFTypes">
             <summary>
-            Encoder types
+            Rtc MoF types
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderTypes.None">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcMoFTypes.None">
             <summary>
             None
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderTypes.XY">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcMoFTypes.XY">
             <summary>
             XY (Linear)
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderTypes.Angular">
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcMoFTypes.Angular">
             <summary>
             Angular 
             </summary>
@@ -20974,6 +20992,8 @@
             <remarks>
             <img src="images/rtc6pciex.png"/><br/>
             Used with MARKING ON THE FLY connector at Fig 3.<br/>
+            Aka. processing on the fly (classic version). <br/>
+            List commands are can't be combined with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension">IRtcMoFExtension</see> functions. <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.OnEncoderChanged">
@@ -20984,9 +21004,9 @@
             Notify when encoder values has changed and consider as its working within async threads. <br/>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncoderType">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.MoFType">
             <summary>
-            Activated(or last) encoder type
+            Activated(or last) MoF type
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncXCountsPerMm">
@@ -21024,9 +21044,9 @@
             Encoder X(or 0) counts/rev
             <para>Must be > 100</para>
             <code>
-                                       counts 
-            EncCountsPerRevolution = -----------
-                                         ˚ 
+                                        Counts
+            EncCountsPerRevolution = ------------
+                                         360˚ 
             </code>
             </summary>
         </member>
@@ -21034,13 +21054,15 @@
             <summary>
             Simulated encoder x(or 0) angular speed (˚/s)
             </summary>
+            <remarks>
+            Negative(-) value is not supported. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.MofAngularCenter">
             <summary>
             Rotate center x,y position
             <code>
             For example, rotate center at -50, 0 
-            
                                         |                                   
                                         |                                   
                                         |                                   
@@ -21052,7 +21074,7 @@
                                         |                |--------|--------|                    
                                         |                |        |        |
                                         |                |        |        |       
-                                        |                |        |        |    
+                                        |                |     (Fixed)     |    
             --------------------- Rotate+Center -------------- Scanner ----|
                                        0, 0              |      50, 0      |    
                                         |                |        |        |      
@@ -21064,10 +21086,9 @@
                                         |                     .             
                                         |                   .                
                                         |                .                   
-                                        |   /        . 
-                                        |  ---  ClockWise = Angle+ = Enc+ 
-                                        |   \
-                                        
+                                        |           . 
+                                        |    &lt;-  ClockWise = Angle+ = Enc+ 
+                                        |   
             </code>
             </summary>
         </member>
@@ -21096,8 +21117,8 @@
             <remarks>
             Should be called when <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlGetStatus(SpiralLab.Sirius2.Scanner.Rtc.RtcStatus)">CtlGetStatus(RtcStatus.NotBusy)</see> <br/>
             </remarks>
-            <param name="encXSimulatedSpeed">Simulated X(0) encoder speed (mm/s) (negative direction is not supported)</param>
-            <param name="encYSimulatedSpeed">Simulated Y(1) encoder speed (mm/s) (negative direction is not supported)</param>
+            <param name="encXSimulatedSpeed">Simulated X(0) encoder speed (mm/s).<br/>Negative(-) direction is not supported. <br/>0: Disabled. <br/></param>
+            <param name="encYSimulatedSpeed">Simulated Y(1) encoder speed (mm/s).<br/>Negative(-) direction is not supported. <br/>0: Disabled. <br/></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofTrackingError(System.Double,System.Double)">
@@ -21146,7 +21167,6 @@
             Rotate center x,y position
             <code>
             For example, rotate center at -50, 0 
-            
                                         |                                   
                                         |                                   
                                         |                                   
@@ -21158,7 +21178,7 @@
                                         |                |--------|--------|                    
                                         |                |        |        |
                                         |                |        |        |       
-                                        |                |        |        |    
+                                        |                |     (Fixed)     |    
             --------------------- Rotate+Center -------------- Scanner ----|
                                        0, 0              |      50, 0      |    
                                         |                |        |        |      
@@ -21170,13 +21190,12 @@
                                         |                     .             
                                         |                   .                
                                         |                .                   
-                                        |   /        . 
-                                        |  ---  ClockWise = Angle+ = Enc+ 
-                                        |   \
-                                        
+                                        |           . 
+                                        |    &lt;-  ClockWise = Angle+ = Enc+ 
+                                        |   
             </code>
             </summary>
-            <param name="vCenter">Rotate center x,y (mm)</param>
+            <param name="center">Rotate center x,y (mm)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofEncoderAngularSpeed(System.Double)">
@@ -21199,7 +21218,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofBegin(System.Boolean)">
             <summary>
-            List MoF x, y begin
+            List MoF x, y has begin
             <code>
             var rtcMoF = rtc as IRtcMoF;
             rtcMoF.EncXCountsPerMm = 2000;
@@ -21209,7 +21228,7 @@
             rtc.ListBegin();
             rtcMoF.ListMofBegin(true);
             rtcMoF.ListMofWait(RtcEncoders.EncX, 10, EncoderWaitConditions.Over);
-            rtc.ListJumpTo(new Vector2((float)10, 0));
+            rtc.ListJumpTo(new Vector2(10, 0));
             rtc.ListArcTo(new Vector2(0, 0), 360.0f);
             rtcMoF.ListMofEnd(Vector2.Zero);
             rtc.ListEnd();
@@ -21219,27 +21238,27 @@
             <remarks>
             Scanner movements are affected by accumulate encoder values. <br/>
             </remarks>
-            <param name="encoderReset">Reset encoders(</param>
+            <param name="encoderReset">Reset encoders or not(</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofAngularBegin(System.Numerics.Vector2,System.Boolean)">
             <summary>
-            List MoF angular begin
+            List MoF angular has begin
             <para>Scanner movements affected by accumulate encoder values</para>
             <code>
             var rtcMoF = rtc as IRtcMoF;
-            rtcMoF.EncCountsPerRevolution = 3600; // Encoder counts/revolution
+            rtcMoF.EncCountsPerRevolution = 3600; 
             ...
             rtcMoF.CtlMofEncoderReset();
             rtc.ListBegin();
             var rotateCenter = new Vector2(-50, 0);
             rtcMoF.ListMotfAngularBegin(rotateCenter);
             rtc.ListJumpTo(new Vector2(0, 0));
-            rtcMoF.ListMotfAngularWait(0, EncoderWaitCondition.Over); // Wait until rotation has over 0 degree
-            rtc.ListJumpTo(-rotateCenter + new Vector2(10, 0)); // Draw circle with radius: 10
+            rtcMoF.ListMotfAngularWait(0, EncoderWaitCondition.Over); 
+            rtc.ListJumpTo(-rotateCenter + new Vector2(10, 0));
             rtc.ListArcTo(-rotateCenter, 360.0f);
-            rtcMoF.ListMotfAngularWait(180, EncoderWaitCondition.Over); // Wait until rotation has over 180 degree
-            rtc.ListJumpTo(rotateCenter + rotateCenter + new Vector2(10, 0));  // Draw circle with radius: 10
+            rtcMoF.ListMotfAngularWait(180, EncoderWaitCondition.Over);
+            rtc.ListJumpTo(rotateCenter + rotateCenter + new Vector2(10, 0));
             rtc.ListArcTo(rotateCenter + rotateCenter, 360.0f);
             rtcMoF.ListMofEnd(Vector2.Zero);
             rtc.ListEnd();
@@ -21247,7 +21266,6 @@
             </code>
             <code>
             For example, rotate center at -50, 0 
-            
                                         |                                   
                                         |                                   
                                         |                                   
@@ -21259,7 +21277,7 @@
                                         |                |--------|--------|                    
                                         |                |        |        |
                                         |                |        |        |       
-                                        |                |        |        |    
+                                        |                |     (Fixed)     |    
             --------------------- Rotate+Center -------------- Scanner ----|
                                        0, 0              |      50, 0      |    
                                         |                |        |        |      
@@ -21271,13 +21289,12 @@
                                         |                     .             
                                         |                   .                
                                         |                .                   
-                                        |   /        . 
-                                        |  ---  ClockWise = Angle+ = Enc+ 
-                                        |   \
-                                        
+                                        |           . 
+                                        |    &lt;-  ClockWise = Angle+ = Enc+ 
+                                        |   
             </code>
             </summary>
-            <param name="vCenter">Rotate center x,y position (mm)</param>
+            <param name="center">Rotate center x,y position (mm)</param>
             <param name="encoderReset">Reset encoder</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
@@ -21320,7 +21337,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofAngularWait(System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions)">
             <summary>
-            List wait until rotate encoder condition has matched
+            List wait until angular encoder condition has matched
             </summary>
             <remarks>
             Scanner movement goes to stationary. <br/>
@@ -21329,32 +21346,267 @@
             <param name="cond"><c>EncoderWaitConditions</c></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofWaitRange(System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofWaitRange(System.Numerics.Vector2,System.Numerics.Vector2)">
             <summary>
             List wait until x,y encoders reached in-range
             </summary>
             <remarks>
             Scanner movement goes to stationary. <br/>
             </remarks>
-            <param name="positionX">X position (mm)</param>
-            <param name="rangeX">X range (mm)</param>
-            <param name="positionY">Y position (mm)</param>
-            <param name="rangeY">Y range (mm)</param>
+            <param name="rangeX">X min/max range (mm)</param>
+            <param name="rangeY">Y min/max range (mm)</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofLimits(System.Numerics.Vector2,System.Numerics.Vector2)">
             <summary>
             <para>List wait until x,y encoders reached in-range</para>
             </summary>
-            <param name="xRange">X range (mm)</param>
-            <param name="yRange">Y range (mm)</param>
+            <param name="rangeX">X range (mm)</param>
+            <param name="rangeY">Y range (mm)</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofEnd(System.Numerics.Vector2)">
             <summary>
-            <para>List x,y (or rotate) MoF end</para>
+            List MoF x,y (or angular) has end
             </summary>
-            <param name="vJumpPosition">Jump x,y position (mm)</param>
+            <param name="jumpPosition">Jump x,y position (mm)</param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderAxisExtension">
+            <summary>
+            RTC encoder axis (aka. fly extension version)
+            </summary>
+            <remarks>
+            Used with RTC6 only <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderAxisExtension.X">
+            <summary>
+            X axis
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderAxisExtension.Y">
+            <summary>
+            Y axis
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderAxisExtension.Z">
+            <summary>
+            Z axis
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderAxisExtension.Rotary">
+            <summary>
+            Rotary axis
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension">
+            <summary>
+            RTC encoder sources (aka. fly extension version)
+            </summary>
+            <remarks>
+            Used with RTC6 only. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode1">
+            <summary>
+            Encoder source: Encoder0
+            </summary>
+            <remarks>
+            Only for Processing-on-the-fly-correction. <br/>
+            Encoder counter “Encoder0”-scaled. <br/>
+            PreviewTime-corrected. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode2">
+            <summary>
+            Encoder source: Encoder1
+            </summary>
+            <remarks>
+            Only for Processing-on-the-fly-correction. <br/>
+            Encoder counter “Encoder1”-scaled. <br/>
+            PreviewTime-corrected. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode3">
+            <summary>
+            Encoder source: Encoder2
+            </summary>
+            <remarks>
+            Only for Processing-on-the-fly-correction. <br/>
+            Tied to encoder counter “Encoder0”-scaled. <br/>
+            PreviewTime-corrected. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode4">
+            <summary>
+            Encoder source: Encoder2
+            </summary>
+            <remarks>
+            Only for Processing-on-the-fly-correction. <br/>
+            Tied to encoder counter “Encoder1”-scaled. <br/>
+            PreviewTime-corrected. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">
+            <summary>
+            Encoder source: Encoder0
+            </summary>
+            <remarks>
+            Only for <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderRangeConditionsExtension,System.Boolean,System.Boolean)">ListMofExtWait</see>, <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtWaitRange(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,System.Numerics.Vector2,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,System.Numerics.Vector2,System.Boolean,System.Boolean)">ListMofExtensionWaitRange</see>. <br/>
+            Not for Processing-on-the-fly corrections. <br/>
+            Encoder counter “Encoder0”-unscaled and PreviewTime-corrected. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode18">
+            <summary>
+            Encoder source: Encoder1
+            </summary>
+            <remarks>
+            Only for <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderRangeConditionsExtension,System.Boolean,System.Boolean)">ListMofExtWait</see>, <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtWaitRange(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,System.Numerics.Vector2,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,System.Numerics.Vector2,System.Boolean,System.Boolean)">ListMofExtensionWaitRange</see>. <br/>
+            Not for Processing-on-the-fly corrections. <br/>
+            Encoder counter “Encoder1”-unscaled and PreviewTime-corrected. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode19">
+            <summary>
+            Encoder source: Encoder0
+            </summary>
+            <remarks>
+            Like <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see>, but not PreviewTime-corrected. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">
+            <summary>
+            Encoder source: Encoder1
+            </summary>
+            <remarks>
+            Like <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode18">Mode18</see>, but not PreviewTime-corrected. <br/>
+            </remarks>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderRangeConditionsExtension">
+            <summary>
+            Encoder range wait conditions (aka. fly extension version)
+            </summary>
+            <remarks>
+            Used with RTC6 only. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderRangeConditionsExtension.UnderFlow">
+            <summary>
+            UnderFlow
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderRangeConditionsExtension.Equal">
+            <summary>
+            Equal
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderRangeConditionsExtension.OverFlow">
+            <summary>
+            OverFlow
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension">
+            <summary>
+            IRtcMoFExtension (aka. fly extension version)
+            </summary>
+            <remarks>
+            <img src="images/rtc6pciex.png"/><br/>
+            Used with MARKING ON THE FLY connector at Fig 3.<br/>
+            Aka. processing on the fly (fly extension version). <br/>
+            Used with RTC6 only. <br/>
+            Above RTC6 v.1.6.1 (DLL 617, OUT 617, RBF 623) <br/>
+            List commands are can't be combined with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> functions. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtBegin(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,System.Double,System.Double,System.Boolean)">
+            <summary>
+            List MoF x, y has begin (aka. fly extension version)
+            <code>
+            var rtcMoF = rtc as IRtcMoF;
+            var rtcMofExt = rtc as IRtcMoFExtension;
+            rtcMoF.EncXCountsPerMm = 2000;
+            rtcMoF.EncYCountsPerMm = 2000;
+            rtcMoF.CtlMofEncoderReset();
+            ...
+            rtc.ListBegin();
+            rtcMofExt.ListMofExtBegin(RtcEncoderSourcesExtension.Mode1, RtcEncoderSourcesExtension.Mode2);
+            rtcMofExt.ListMofExtWait(RtcEncoderSourcesExtension.Mode19, RtcEncoderRangeConditionsExtension.Equal, 10);
+            rtc.ListJumpTo(new Vector2(10, 0));
+            rtc.ListArcTo(new Vector2(0, 0), 360.0f);
+            rtcMofExt.ListMofExtEnd(Vector2.Zero);
+            rtc.ListEnd();
+            rtc.ListExecute(true);
+            </code>
+            </summary>
+            <param name="modeX"><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode1">Mode1</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode4">Mode4</see> must not be specified. <br/>Instead <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">Mode20</see> is to be used. <br/><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode18">Mode18</see> is to be used with an scan system with SCANahead control (if waiting is yet to occur withing PreviewTime).<br/>Outside of this, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode19">Mode19</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">Mode20</see> can be used. <br/> </param>
+            <param name="modeY"><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode1">Mode1</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode4">Mode4</see> must not be specified. <br/>Instead <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">Mode20</see> is to be used. <br/><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode18">Mode18</see> is to be used with an scan system with SCANahead control (if waiting is yet to occur withing PreviewTime).<br/>Outside of this, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode19">Mode19</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">Mode20</see> can be used. <br/> </param>
+            <param name="offsetX">Offset dx (mm).<br/>Used when <c>encoderReset</c> is <c>True</c> only. <br/></param>
+            <param name="offsetY">Offset dy (mm).<br/>Used when <c>encoderReset</c> is <c>True</c> only. <br/></param>
+            <param name="encoderReset">Reset encoders (or not)</param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtBegin(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension)">
+            <summary>
+            List MoF x, y, z has begin (aka. fly extension version)
+            <code>
+            var rtcMoF = rtc as IRtcMoF;
+            var rtcMofExt = rtc as IRtcMoFExtension;
+            rtcMoF.EncXCountsPerMm = 2000;
+            rtcMoF.EncYCountsPerMm = 2000;
+            rtcMoF.CtlMofEncoderReset();
+            ...
+            rtc.ListBegin();
+            rtcMofExt.ListMofExtBegin(RtcEncoderSourcesExtension.Mode1, RtcEncoderSourcesExtension.Mode2, RtcEncoderSourcesExtension.Mode3);
+            rtcMofExt.ListMofExtWait(RtcEncoderSourcesExtension.Mode19, RtcEncoderRangeConditionsExtension.Equal, 10);
+            rtc.ListJumpTo(new Vector2(10, 0, 1));
+            rtc.ListArcTo(new Vector2(0, 0), 360.0f);
+            rtcMofExt.ListMofExtEnd(Vector3.Zero);
+            rtc.ListEnd();
+            rtc.ListExecute(true);
+            </code>
+            </summary>
+            <param name="modeX"><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode1">Mode1</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode4">Mode4</see> must not be specified. <br/>Instead <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">Mode20</see> is to be used. <br/><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode18">Mode18</see> is to be used with an scan system with SCANahead control (if waiting is yet to occur withing PreviewTime).<br/>Outside of this, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode19">Mode19</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">Mode20</see> can be used. <br/> </param>
+            <param name="modeY"><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode1">Mode1</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode4">Mode4</see> must not be specified. <br/>Instead <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">Mode20</see> is to be used. <br/><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode18">Mode18</see> is to be used with an scan system with SCANahead control (if waiting is yet to occur withing PreviewTime).<br/>Outside of this, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode19">Mode19</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">Mode20</see> can be used. <br/> </param>
+            <param name="modeZ"><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode1">Mode1</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode4">Mode4</see> must not be specified. <br/>Instead <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">Mode20</see> is to be used. <br/><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode18">Mode18</see> is to be used with an scan system with SCANahead control (if waiting is yet to occur withing PreviewTime).<br/>Outside of this, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode19">Mode19</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">Mode20</see> can be used. <br/> </param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderRangeConditionsExtension,System.Boolean,System.Boolean)">
+            <summary>
+            List wait until a encoder condition has matched (aka. fly extension version)
+            </summary>        
+            <param name="mode"><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode1">Mode1</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode4">Mode4</see> must not be specified. <br/>Instead <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">Mode20</see> is to be used. <br/><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode18">Mode18</see> is to be used with an scan system with SCANahead control (if waiting is yet to occur withing PreviewTime).<br/>Outside of this, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode19">Mode19</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">Mode20</see> can be used. <br/> </param>
+            <param name="position">Position (mm)</param>
+            <param name="cond"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderRangeConditionsExtension">RtcEncoderRangeConditionsExtension</see></param>
+            <param name="isScannerFollowing">Scanner follow the object movement (or stop)</param>
+            <param name="isLaserRemain">Laser remains unchanged (or switched off after a <c>LaserOff</c> delay)</param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtWaitRange(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,System.Numerics.Vector2,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,System.Numerics.Vector2,System.Boolean,System.Boolean)">
+            <summary>
+            List wait until x,y encoders reached in-range (aka. fly extension version)
+            </summary>
+            <param name="modeX"><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode1">Mode1</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode4">Mode4</see> must not be specified. <br/>Instead <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">Mode20</see> is to be used. <br/><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode18">Mode18</see> is to be used with an scan system with SCANahead control (if waiting is yet to occur withing PreviewTime).<br/>Outside of this, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode19">Mode19</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">Mode20</see> can be used. <br/> </param>
+            <param name="rangeX">X min/max range (mm)</param>
+            <param name="modeY"><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode1">Mode1</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode4">Mode4</see> must not be specified. <br/>Instead <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">Mode20</see> is to be used. <br/><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode17">Mode17</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode18">Mode18</see> is to be used with an scan system with SCANahead control (if waiting is yet to occur withing PreviewTime).<br/>Outside of this, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode19">Mode19</see> ~ <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension.Mode20">Mode20</see> can be used. <br/> </param>
+            <param name="rangeY">Y min/max range (mm)</param>
+            <param name="isScannerFollowing">Scanner follow the object movement (or stop)</param>
+            <param name="isLaserRemain">Laser remains unchanged (or switched off after a <c>LaserOff</c> delay)</param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtEnd(System.Numerics.Vector2)">
+            <summary>
+            List MoF x,y (or angular) has end (aka. fly extension version)
+            </summary>
+            <param name="jumpPosition">Jump x,y position (mm)</param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtEnd(System.Numerics.Vector3)">
+            <summary>
+            List MoF x,y,z has end (aka. fly extension version)
+            </summary>
+            <param name="jumpPosition">Jump x,y,z position (mm)</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RasterModes">
@@ -21835,7 +22087,7 @@
             <summary>
             Move scanner x,y position
             </summary>
-            <param name="vPosition">X, Y (mm)</param>
+            <param name="position">X, Y (mm)</param>
             <param name="overrideJumpSpeed">Override jump speed (mm/s) (0: No override)</param>
             <returns>Success or failed</returns>
         </member>
@@ -21843,7 +22095,7 @@
             <summary>
             List jump (move)
             </summary>
-            <param name="vPosition">X, Y position (mm)</param>
+            <param name="position">X, Y position (mm)</param>
             <param name="alcScaleFactor">Ramp factor<br/>Used if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
@@ -21851,7 +22103,7 @@
             <summary>
             List mark (line)
             </summary>
-            <param name="vPosition">X, Y position (mm)</param>
+            <param name="position">X, Y position (mm)</param>
             <param name="alcScaleFactor">Ramp factor<br/>Used if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
@@ -21859,7 +22111,7 @@
             <summary>
             List arc at center
             </summary>
-            <param name="vCenter">Center x, y (mm)</param>
+            <param name="center">Center x, y (mm)</param>
             <param name="sweepAngleZ">Sweep angle (°) (+: CCW, -: CW)</param>
             <param name="alcScaleFactor">(Unsupported!) Ramp factor<br/>Used if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
@@ -21868,7 +22120,7 @@
             <summary>
             List marks (lines)
             </summary>
-            <param name="vPositions">Array of x, y positions (mm)</param>
+            <param name="positions">Array of x, y positions (mm)</param>
             <param name="alcScaleFactors">Array of ramp factors<br/>Used if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
@@ -21881,7 +22133,7 @@
             <summary>
             Move scanner position to x,y,z 
             </summary>
-            <param name="vPosition">X, Y, Z (mm) position</param>
+            <param name="position">X, Y, Z (mm) position</param>
             <param name="overrideJumpSpeed">Override jump speed (mm/s) (0: No override)</param>
             <returns>Success or failed</returns>
         </member>
@@ -21889,7 +22141,7 @@
             <summary>
             List jump 3d (move 3d)
             </summary>
-            <param name="vPosition">X, Y, Z (mm) position</param>
+            <param name="position">X, Y, Z (mm) position</param>
             <param name="alcScaleFactor">Ramp factor<br/>Used if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
@@ -21897,7 +22149,7 @@
             <summary>
             List mark 3d (line 3d)
             </summary>
-            <param name="vPosition">x,y,z (mm) position</param>
+            <param name="position">x,y,z (mm) position</param>
             <param name="alcScaleFactor">Ramp factor<br/>Used if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
@@ -21906,7 +22158,7 @@
             List arc 3d at center (arc z)
             </summary>
             <remarks>Do NOT use if matrix stack has pushed rotate tranform by x or y axis. Use <c>ListMarkTo</c> or <c>ListMarksTo</c> instead. Because RTC is not support 3x3 matrix with arc movement.</remarks>
-            <param name="vCenter">Center x,y,z (mm)</param>
+            <param name="center">Center x,y,z (mm)</param>
             <param name="sweepAngleZ">Sweep angle (°) (+: CCW, -: CW)</param>
             <param name="alcScaleFactor">(Unsupported!) Ramp factor<br/>Used if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
@@ -21915,7 +22167,7 @@
             <summary>
             List marks 3d (lines 3d)
             </summary>
-            <param name="vPositions">Array of x,y,z positions (mm)</param>
+            <param name="positions">Array of x,y,z positions (mm)</param>
             <param name="alcScaleFactors">Array of ramp factor<br/>Used if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">ListAlcByVectorBegin</see> has called</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>

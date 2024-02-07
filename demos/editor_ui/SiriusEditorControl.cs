@@ -55,6 +55,7 @@ namespace Demos
     /// </summary>
     /// <remarks>
     /// User can insert(or create) usercontrol at own winforms. <br/>
+    /// <img src="images/siriuseditorcontrol.png"/> <br/>
     /// 1. <see cref="TreeViewUserControl">TreeViewUserControl</see> <br/>
     /// 2. <see cref="TreeViewBlockUserControl">TreeViewBlockUserControl</see> <br/>
     /// 3. <see cref="PenUserControl">PenUserControl</see> <br/>
@@ -188,7 +189,7 @@ namespace Demos
         public IDocument Document
         {
             get { return document; }
-            protected set
+            protected set 
             {
                 if (document == value)
                     return;
@@ -226,7 +227,7 @@ namespace Demos
                     PropertyGridCtrl.SelecteObject = document.Selected;
                 }
             }
-        }
+        }  
         private IDocument document;
 
         /// <summary>
@@ -241,7 +242,7 @@ namespace Demos
             set
             {
                 if (rtc == value)
-                    return;
+                    return;                
                 if (rtc != null)
                 {
                     if (rtc is IRtcMoF mof)
@@ -260,7 +261,7 @@ namespace Demos
                     DOExt2 = null;
                     DOLaserPort = null;
                 }
-
+                
                 rtc = value;
                 RtcCtrl.Rtc = rtc;
                 RtcDICtrl.Rtc = rtc;
@@ -296,7 +297,7 @@ namespace Demos
                     rtcDIUserControl1.DILaserPort = DILaserPort;
                     rtcDIUserControl1.UpdateExtension1PortNames(Config.DIN_RtcExtension1Port);
                     rtcDIUserControl1.UpdateLaserPortNames(Config.DIN_RtcLaserPort);
-
+                    
                     rtcDOUserControl1.DOExt1 = DOExt1;
                     rtcDOUserControl1.DOExt2 = DOExt2;
                     rtcDOUserControl1.DOLaserPort = DOLaserPort;
@@ -402,7 +403,7 @@ namespace Demos
         /// Created by <c>RemoteFactory</c>. <br/>
         /// To do control by remotely. <br/>
         /// </remarks>
-        public IRemote Remote
+        public IRemote Remote 
         {
             get { return remote; }
             set
@@ -453,11 +454,11 @@ namespace Demos
                     powerMeter.OnStopped += PowerMeter_OnStopped;
                     powerMeter.OnMeasured += PowerMeter_OnMeasured;
                     powerMeter.OnCleared += PowerMeter_OnCleared;
-                }
+                }     
             }
         }
         private IPowerMeter powerMeter;
-
+            
         /// <summary>
         /// RTC DI extension1 port (16 bits)
         /// </summary>
@@ -483,8 +484,8 @@ namespace Demos
         /// Treeview user control for <c>IEntity</c> within <c>EntityLayer</c> nodes
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl TreeViewCtrl
-        {
-            get { return treeViewControl1; }
+        { 
+            get { return treeViewControl1; } 
         }
         /// <summary>
         /// Treeview user control for <c>EntityBlock</c> nodes
@@ -600,7 +601,7 @@ namespace Demos
         }
 
         System.Windows.Forms.Timer timerProgress = new System.Windows.Forms.Timer();
-        System.Windows.Forms.Timer timerStatus = new System.Windows.Forms.Timer();
+        System.Windows.Forms.Timer timerStatus  = new System.Windows.Forms.Timer();
         Stopwatch timerProgressStopwatch = new Stopwatch();
 
 
@@ -616,7 +617,7 @@ namespace Demos
         public SiriusEditorUserControl()
         {
             InitializeComponent();
-
+        
             VisibleChanged += SiriusEditorUserControl_VisibleChanged;
             Disposed += SiriusEditorUserControl_Disposed;
 
@@ -944,10 +945,10 @@ namespace Demos
             {
                 var entity = EntityFactory.CreateMoFEnd(Vector2.Zero);
                 document.ActAdd(entity);
-
+                
             }
             {
-                var entity = EntityFactory.CreateMoFBegin(RtcEncoderTypes.Angular);
+                var entity = EntityFactory.CreateMoFBegin(RtcMoFTypes.Angular);
                 document.ActInsert(entity, document.ActiveLayer, 0);
             }
         }
@@ -963,13 +964,13 @@ namespace Demos
                 document.ActAdd(entity);
             }
             {
-                var entity = EntityFactory.CreateMoFBegin(RtcEncoderTypes.XY);
+                var entity = EntityFactory.CreateMoFBegin(RtcMoFTypes.XY);
                 document.ActInsert(entity, document.ActiveLayer, 0);
             }
         }
         private void MnuMoFExternalStartDelay_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateMoFExternalStartDelay(RtcEncoders.EncX, 0);
+            var entity = EntityFactory.CreateMoFExternalStartDelay( RtcEncoders.EncX, 0);
             document.ActAdd(entity);
         }
         private void MnuTimer_Click(object sender, EventArgs e)
@@ -988,7 +989,7 @@ namespace Demos
             {
                 var entity1 = EntityFactory.CreateMeasurementEnd();
                 document.ActAdd(entity1);
-                var channels = new MeasurementChannels[4]
+                var channels = new MeasurementChannels[]
                 {
                     MeasurementChannels.SampleX,
                     MeasurementChannels.SampleY,
@@ -1002,7 +1003,7 @@ namespace Demos
             {
                 var entity1 = EntityFactory.CreateMeasurementEnd();
                 document.ActAdd(entity1);
-                var channels = new MeasurementChannels[8]
+                var channels = new MeasurementChannels[]
                 {
                     MeasurementChannels.SampleX,
                     MeasurementChannels.SampleY,
@@ -1177,7 +1178,7 @@ namespace Demos
             //Cursor.Current = Cursors.WaitCursor;
             //Document.ActImport(dlg.FileName, out var entity);
             //Cursor.Current = Cursors.Default;
-
+            
             // or preview import winform
             var form = new SpiralLab.Sirius2.Winforms.UI.ImportForm();
             DialogResult dialogResult = form.ShowDialog(this);
@@ -1202,7 +1203,7 @@ namespace Demos
         }
         private void BtnRectangle_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateRectangle(Vector2.Zero, 10, 10);
+            var entity = EntityFactory.CreateRectangle(Vector2.Zero, 10,10);
             document.ActAdd(entity);
         }
         private void BtnText_Click(object sender, EventArgs e)
@@ -1230,7 +1231,7 @@ namespace Demos
             DialogResult result = dlg.ShowDialog();
             if (result != DialogResult.OK)
                 return;
-
+          
             var entity = new EntityRaster(2, dlg.FileName);
             Document.ActAdd(entity);
         }
@@ -1377,7 +1378,7 @@ namespace Demos
 
             if (this.Marker.IsBusy)
             {
-                timerStatusColorCounts = checked(timerStatusColorCounts + 1);
+                timerStatusColorCounts = unchecked(timerStatusColorCounts + 1);
                 if (0 == timerStatusColorCounts % 2)
                 {
                     lblBusy.BackColor = Color.Red;
@@ -1415,7 +1416,7 @@ namespace Demos
             else
             {
                 lblConnect.ForeColor = Color.Black;
-                switch (Remote.ControlMode)
+                switch(Remote.ControlMode)
                 {
                     case ControlModes.Local:
                         lblConnect.Text = " CONNECTED /LOCAL ";
@@ -1495,10 +1496,10 @@ namespace Demos
         {
             if (!statusStrip1.IsHandleCreated || this.IsDisposed)
                 return;
-            switch (rtcMoF.EncoderType)
+            switch (rtcMoF.MoFType)
             {
                 default:
-                case RtcEncoderTypes.XY:
+                case RtcMoFTypes.XY:
                     {
                         rtcMoF.CtlMofGetEncoder(out var x, out var y, out var xMm, out var yMm);
                         statusStrip1.Invoke(new MethodInvoker(delegate ()
@@ -1507,7 +1508,7 @@ namespace Demos
                         }));
                     }
                     break;
-                case RtcEncoderTypes.Angular:
+                case RtcMoFTypes.Angular:
                     {
                         rtcMoF.CtlMofGetAngularEncoder(out var x, out var angle);
                         statusStrip1.Invoke(new MethodInvoker(delegate ()

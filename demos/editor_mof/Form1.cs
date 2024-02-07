@@ -81,7 +81,7 @@ namespace Demos
             var view = siriusEditorUserControl1.View;
 
             // Create entities for XY MoF test
-            var mofBegin = EntityFactory.CreateMoFBegin(RtcEncoderTypes.XY, true);
+            var mofBegin = EntityFactory.CreateMoFBegin(RtcMoFTypes.XY, true);
             document.ActAdd(mofBegin);
 
             /*      

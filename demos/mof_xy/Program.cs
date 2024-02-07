@@ -16,7 +16,7 @@
  *               `---`            `---'                                                        `----'   
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : MoF(Marking on the Fly) with X,Y coordinates
+ * Description : XY MoF(Marking on the Fly) 
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -96,7 +96,7 @@ namespace Demos
             ConsoleKeyInfo key;
             do
             {
-                Console.WriteLine("Testcase for processing on the fly (x,y)");
+                Console.WriteLine("Testcase for processing on the fly (x, y)");
                 Console.WriteLine("'S' : reset encoder scale");
                 Console.WriteLine("'R' : encoder reset");
                 Console.WriteLine("'X' : enable simulate encoder x");
@@ -108,6 +108,7 @@ namespace Demos
                 Console.WriteLine("'W' : draw circle + wait encoder + measurement");
                 Console.WriteLine("'Z' : draw zigzag + wait encoder + measurement");
                 Console.WriteLine("'T' : draw circle + encoder compensate table");
+                Console.WriteLine("'3' : draw 3d + wait encoder + measurement");
                 Console.WriteLine("'Q' : quit");
                 Console.Write("Select your target : ");
                 key = Console.ReadKey(false);
@@ -118,7 +119,7 @@ namespace Demos
                 switch (key.Key)
                 {
                     case ConsoleKey.S:
-                        // encoder scale = accumulated encoder counts / mm 
+                        // encoder scale = encoder counts / mm 
                         //rtcMoF.EncXCountsPerMm = 1000;
                         //rtcMoF.EncYCountsPerMm = 1000;
                         break;
@@ -136,9 +137,11 @@ namespace Demos
                         rtcMoF.CtlMofEncoderSpeed(0, speedY);
                         break;
                     case ConsoleKey.A:
-                        Console.Write("encoder xy speed (mm/s): ");
-                        double speed = Convert.ToDouble(Console.ReadLine());
-                        rtcMoF.CtlMofEncoderSpeed(speed, speed);
+                        Console.Write("encoder x speed (mm/s): ");
+                        double xspeed = Convert.ToDouble(Console.ReadLine());
+                        Console.Write("encoder y speed (mm/s): ");
+                        double yspeed = Convert.ToDouble(Console.ReadLine());
+                        rtcMoF.CtlMofEncoderSpeed(xspeed, yspeed);
                         break;
                     case ConsoleKey.D:
                         rtcMoF.CtlMofEncoderSpeed(0, 0);
@@ -158,6 +161,9 @@ namespace Demos
                     case ConsoleKey.T:
                         MofWithCompensateTable(laser, rtc, false);
                         break;
+                    case ConsoleKey.D3:
+                        MofWith3DAndWaitEncoder(laser, rtc, false);
+                        break;
                 }
                 Console.WriteLine($"Processing time= {timer.ElapsedMilliseconds / 1000.0:F3}s");
             } while (true);
@@ -168,31 +174,29 @@ namespace Demos
         }
 
         private static void RtcMoF_OnEncoderChanged(IRtcMoF rtcMoF, int encX, int encY)
-        {            
-            //rtcMoF.CtlMofGetEncoder(out var x, out var y, out var mmX, out var mmY);  
-			var mmX = encX / rtcMoF.EncXCountsPerMm;
-			var mmY = encY / rtcMoF.EncYCountsPerMm;
-            Console.Title = $"Distance XY: [{mmX:F3}, {mmY:F3}], ENC XY: {encX}, {encY}";
+        {
+            rtcMoF.CtlMofGetEncoder(out var x, out var y, out var mmX, out var mmY);  
+            Console.Title = $"XY: [{mmX:F3}, {mmY:F3}], ENC: {x}, {y}";
         }
 
         /// <summary>
         /// Scanner position movement has affected by accumulate encoder values
         /// </summary>
-        /// <param name="laser"></param>
-        /// <param name="rtc"></param>
-        /// <param name="externalStart"></param>
+        /// <param name="laser"><c>ILaser</c></param>
+        /// <param name="rtc"><c>IRtc</c></param>
+        /// <param name="externalStart">Enable external /START trigger or not</param>
         private static bool MofWithFollowOnly(ILaser laser, IRtc rtc, bool externalStart)
         {
-            var rtcMof = rtc as IRtcMoF;
+            var rtcMoF = rtc as IRtcMoF;
             var rtcExtension = rtc as IRtcExtension;
-            Debug.Assert(rtcMof != null);
+            Debug.Assert(rtcMoF != null);
             Debug.Assert(rtcExtension != null);
 
             bool success = true;
             // Start list buffer
             success &= rtc.ListBegin(ListTypes.Single);
             // MoF begin 
-            success &= rtcMof.ListMofBegin(true);
+            success &= rtcMoF.ListMofBegin(true);
             // Goes to origin
             success &= rtc.ListJumpTo(Vector2.Zero);
             
@@ -202,13 +206,13 @@ namespace Demos
             success &= rtc.ListWait(1000 * 10);
 
             // MoF end 
-            success &= rtcMof.ListMofEnd(Vector2.Zero);
+            success &= rtcMoF.ListMofEnd(Vector2.Zero);
             if (!externalStart)
             {
+                // Execute now
                 switch (rtc.RtcType)
                 {
                     case RtcTypes.Rtc5:
-                        // Execute now
                         rtcExtension.CtlExternalControl(Rtc5ExternalControlMode.Empty);
                         break;
                     case RtcTypes.Rtc6:
@@ -237,9 +241,9 @@ namespace Demos
         /// <summary>
         /// Wait encoder position and draw circle
         /// </summary>
-        /// <param name="laser"></param>
-        /// <param name="rtc"></param>
-        /// <param name="externalStart"></param>
+        /// <param name="laser"><c>ILaser</c></param>
+        /// <param name="rtc"><c>IRtc</c></param>
+        /// <param name="externalStart">Enable external /START trigger or not</param>
         /// <returns></returns>
         private static bool MofWithCircleAndWaitEncoder(ILaser laser, IRtc rtc, bool externalStart)
         {
@@ -255,7 +259,7 @@ namespace Demos
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannels[4]
+            var channels = new MeasurementChannels[]
             {
                  MeasurementChannels.SampleX, //X commanded
                  MeasurementChannels.SampleY, //Y commanded
@@ -263,7 +267,7 @@ namespace Demos
                  MeasurementChannels.Enc0Counter, //Converted to mm
             };
             // Max 8 channels at RTC6
-            //var channels = new MeasurementChannel[8]
+            //var channels = new MeasurementChannels[]
             //{
             //     MeasurementChannels.SampleX, //X commanded
             //     MeasurementChannels.SampleY, //Y commanded
@@ -301,7 +305,15 @@ namespace Demos
             if (!externalStart)
             {
                 // Execute now
-                rtcExtension.CtlExternalControl(Rtc5ExternalControlMode.Empty);
+                switch (rtc.RtcType)
+                {
+                    case RtcTypes.Rtc5:
+                        rtcExtension.CtlExternalControl(Rtc5ExternalControlMode.Empty);
+                        break;
+                    case RtcTypes.Rtc6:
+                        rtcExtension.CtlExternalControl(Rtc6ExternalControlMode.Empty);
+                        break;
+                }
                 if (success)
                 {
                     success &= rtc.ListEnd();
@@ -343,17 +355,17 @@ namespace Demos
         /// <summary>
         /// Wait encoder position and draw zigZag
         /// </summary>
-        /// <param name="laser"></param>
-        /// <param name="rtc"></param>
-        /// <param name="externalStart"></param>
+        /// <param name="laser"><c>ILaser</c></param>
+        /// <param name="rtc"><c>IRtc</c></param>
+        /// <param name="externalStart">Enable external /START trigger or not</param>
         /// <returns></returns>
         private static bool MofWithZigZagAndWaitEncoder(ILaser laser, IRtc rtc, bool externalStart)
         {
             Console.WriteLine("WARNING !!! LASER IS BUSY ...");
 
-            var rtcMof = rtc as IRtcMoF;
+            var rtcMoF = rtc as IRtcMoF;
             var rtcExtension = rtc as IRtcExtension;
-            Debug.Assert(rtcMof != null);
+            Debug.Assert(rtcMoF != null);
             Debug.Assert(rtcExtension != null);
 
             var rtcMeasurement = rtc as IRtcMeasurement;
@@ -361,7 +373,7 @@ namespace Demos
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
             // Max 4 channels at RTC5
-            var channels = new MeasurementChannels[4]
+            var channels = new MeasurementChannels[]
             {
                  MeasurementChannels.SampleX, //X commanded
                  MeasurementChannels.SampleY, //Y commanded
@@ -369,7 +381,7 @@ namespace Demos
                  MeasurementChannels.Enc0Counter, //Converted to mm
             };
             // Max 8 channels at RTC6
-            //var channels = new MeasurementChannel[8]
+            //var channels = new MeasurementChannels[]
             //{
             //     MeasurementChannels.SampleX, //X commanded
             //     MeasurementChannels.SampleY, //Y commanded
@@ -389,7 +401,7 @@ namespace Demos
             //                             |                                   
             //                             |                                   
             //                             |                                   
-            //                             |            <--- ENC X-
+            //                             |            <--- MATERIAL ENC X+
             //                             |                                   
             //                             |                                   
             //                             |                
@@ -417,16 +429,16 @@ namespace Demos
             for (int i = 0; i < repeats; i++)
             {
                 // MoF begin
-                success &= rtcMof.ListMofBegin();
+                success &= rtcMoF.ListMofBegin();
                 // Wait until condition has matched
-                success &= rtcMof.ListMofWait(RtcEncoders.EncX, 0, RtcEncoderWaitConditions.Over);
+                success &= rtcMoF.ListMofWait(RtcEncoders.EncX, 0, RtcEncoderWaitConditions.Over);
                 success &= rtc.ListMarkTo(new Vector2(0, height));
                 success &= rtc.ListMarkTo(new Vector2(width, height));
                 success &= rtc.ListMarkTo(new Vector2(width, -height));
                 success &= rtc.ListMarkTo(new Vector2(width * 2, -height));
                 success &= rtc.ListMarkTo(new Vector2(width * 2, 0));
                 // MoF end
-                success &= rtcMof.ListMofEnd(Vector2.Zero);
+                success &= rtcMoF.ListMofEnd(Vector2.Zero);
             }
 
             success &= rtcMeasurement.ListMeasurementEnd();
@@ -434,7 +446,15 @@ namespace Demos
             if (!externalStart)
             {
                 // Execute now
-                rtcExtension.CtlExternalControl(Rtc5ExternalControlMode.Empty);
+                switch (rtc.RtcType)
+                {
+                    case RtcTypes.Rtc5:
+                        rtcExtension.CtlExternalControl(Rtc5ExternalControlMode.Empty);
+                        break;
+                    case RtcTypes.Rtc6:
+                        rtcExtension.CtlExternalControl(Rtc6ExternalControlMode.Empty);
+                        break;
+                }
                 if (success)
                 {
                     success &= rtc.ListEnd();
@@ -474,20 +494,19 @@ namespace Demos
             }
             return success;
         }
-
         /// <summary>
         /// Draw circle + 2d encoder compensate table
         /// </summary>
-        /// <param name="laser"></param>
-        /// <param name="rtc"></param>
-        /// <param name="externalStart"></param>
+        /// <param name="laser"><c>ILaser</c></param>
+        /// <param name="rtc"><c>IRtc</c></param>
+        /// <param name="externalStart">Enable external /START trigger or not</param>
         private static bool MofWithCompensateTable(ILaser laser, IRtc rtc, bool externalStart)
         {
             Console.WriteLine("WARNING !!! LASER IS BUSY ...");
 
-            var rtcMof = rtc as IRtcMoF;
+            var rtcMoF = rtc as IRtcMoF;
             var rtcExtension = rtc as IRtcExtension;
-            Debug.Assert(rtcMof != null);
+            Debug.Assert(rtcMoF != null);
             Debug.Assert(rtcExtension != null);
 
             bool success = true;
@@ -505,14 +524,14 @@ namespace Demos
                 new KeyValuePair<Vector2, Vector2>(new Vector2(50, -50), new Vector2(-0.009f, -0.008f)),
             };
             // Encoder compensate table
-            success &= rtcMof.CtlMofCompensateTable(encCompensate2DTable.ToArray());
+            success &= rtcMoF.CtlMofCompensateTable(encCompensate2DTable.ToArray());
             // Clear 2d compensate table
             //success &= rtcMof.CtlMofCompensateTable(null); 
 
             // Start list buffer
             success &= rtc.ListBegin(ListTypes.Single);
             // MoF begin 
-            success &= rtcMof.ListMofBegin(true);
+            success &= rtcMoF.ListMofBegin(true);
             // Goes to 20,0
             success &= rtc.ListJumpTo(new Vector2(20, 0));
 
@@ -520,7 +539,7 @@ namespace Demos
             success &= rtc.ListArcTo(new Vector2(0, 0), 360 * 10);
 
             // MoFf end
-            success &= rtcMof.ListMofEnd(Vector2.Zero);
+            success &= rtcMoF.ListMofEnd(Vector2.Zero);
 
             if (!externalStart)
             {
@@ -564,7 +583,147 @@ namespace Demos
             }
             return success;
         }
-        
+        /// <summary>
+        /// Wait encoder position and draw 3d hellix shape (xy and z)
+        /// </summary>
+        /// <param name="laser"><c>ILaser</c></param>
+        /// <param name="rtc"><c>IRtc</c></param>
+        /// <param name="externalStart">Enable external /START trigger or not</param>
+        /// <returns></returns>
+        private static bool MofWith3DAndWaitEncoder(ILaser laser, IRtc rtc, bool externalStart)
+        {
+            Console.WriteLine("WARNING !!! LASER IS BUSY ...");
+
+            var rtcMoF = rtc as IRtcMoF;
+            var rtcExtension = rtc as IRtcExtension;
+            var rtc3D = rtc as IRtc3D;
+            Debug.Assert(rtcMoF != null);
+            Debug.Assert(rtcExtension != null);
+            Debug.Assert(rtc3D != null);
+
+            var rtcMeasurement = rtc as IRtcMeasurement;
+            Debug.Assert(rtcMeasurement != null);
+
+            // 10KHz Sample rate (max 100KHz)
+            double sampleRateHz = 10 * 1000;
+            // Max 4 channels at RTC5
+            var channels = new MeasurementChannels[]
+            {
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.SampleZ, //Z commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
+                 //MeasurementChannels.Enc0Counter,
+                 //MeasurementChannels.Enc1Counter,
+            };
+            // Max 8 channels at RTC6
+            //var channels = new MeasurementChannels[]
+            //{
+            //     MeasurementChannels.SampleX, //X commanded
+            //     MeasurementChannels.SampleY, //Y commanded
+            //     MeasurementChannels.SampleZ, //Z commanded
+            //     MeasurementChannels.LaserOn, //Gate signal 0/1
+            //     MeasurementChannels.Enc0Counter,
+            //     MeasurementChannels.Enc1Counter,
+            //     //MeasurementChannels.OutputPeriod,
+            //     //MeasurementChannels.PulseLength,
+            //     //MeasurementChannels.ExtAO1,
+            //};
+
+            bool success = true;
+            // Start list buffer
+            success &= rtc.ListBegin(ListTypes.Single);
+            success &= rtc.ListJumpTo(Vector2.Zero);
+
+            success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
+
+            // MoF begin
+            success &= rtcMoF.ListMofBegin(true);
+            // Wait until x > 5 mm condition has matched
+            success &= rtcMoF.ListMofWait(RtcEncoders.EncX, 5, RtcEncoderWaitConditions.Over);                           
+
+            // draw helix shape
+            // helix height per revolution (mm) 
+            float helixHeightPitchPerRev = 0.5f;
+            // helix revolutions
+            int heliRevolutions = 5;
+            // helix radius (mm)
+            float helixRadius = 5;
+
+            for (int i = 0; i < heliRevolutions; i++)
+            {
+                float z = i * helixHeightPitchPerRev;
+                success &= rtc3D.ListJumpTo(new Vector3(helixRadius, 0, z));
+                for (float angle = 10; angle <= 360; angle += 10)
+                {
+                    double x = helixRadius * Math.Cos(angle * Math.PI / 180.0);
+                    double y = helixRadius * Math.Sin(angle * Math.PI / 180.0);
+                    success &= rtc3D.ListMarkTo(new Vector3((float)x, (float)y, z + helixHeightPitchPerRev * (angle / 360.0f)));
+                    if (!success)
+                        break;
+                }
+                if (!success)
+                    break;
+            }
+            // MoF end
+            success &= rtcMoF.ListMofEnd(Vector2.Zero);
+            success &= rtcMeasurement.ListMeasurementEnd();
+            if (success)
+            {
+                success &= rtc.ListEnd();
+                success &= rtc.ListExecute(false);
+            }
+
+            if (!externalStart)
+            {
+                // Execute now
+                switch (rtc.RtcType)
+                {
+                    case RtcTypes.Rtc5:
+                        rtcExtension.CtlExternalControl(Rtc5ExternalControlMode.Empty);
+                        break;
+                    case RtcTypes.Rtc6:
+                        rtcExtension.CtlExternalControl(Rtc6ExternalControlMode.Empty);
+                        break;
+                }
+                if (success)
+                {
+                    success &= rtc.ListEnd();
+                    success &= rtc.ListExecute();
+                    CheckMofOverflow(rtc);
+                }
+
+                // Temporary measurement file
+                var measurementFile = Path.Combine(Config.MeasurementPath, "measurement_mof_xyz.txt");
+                // Adjust laser on scale factor if need to zoom
+                Config.MeasurementLaserOnFactor = 2;
+                // Save measurement result to file
+                success &= RtcMeasurementHelper.Save(measurementFile, rtcMeasurement);
+                // Plot as a graph
+                RtcMeasurementHelper.Plot(measurementFile, "MoF XYZ 3D");
+            }
+            else
+            {
+                success &= rtc.ListEnd();
+
+                switch (rtc.RtcType)
+                {
+                    case RtcTypes.Rtc5:
+                        var extCtrl5 = Rtc5ExternalControlMode.Empty;
+                        extCtrl5.Add(Rtc5ExternalControlMode.Bit.ExternalStart);
+                        extCtrl5.Add(Rtc5ExternalControlMode.Bit.ExternalStartAgain);
+                        rtcExtension.CtlExternalControl(extCtrl5);
+                        break;
+                    case RtcTypes.Rtc6:
+                        var extCtrl6 = Rtc6ExternalControlMode.Empty;
+                        extCtrl6.Add(Rtc6ExternalControlMode.Bit.ExternalStart);
+                        extCtrl6.Add(Rtc6ExternalControlMode.Bit.ExternalStartAgain);
+                        rtcExtension.CtlExternalControl(extCtrl6);
+                        break;
+                }
+            }
+            return success;
+        }
         private static void CheckMofOverflow(IRtc rtc)
         {
             if (rtc.CtlGetStatus(RtcStatus.MofOutOfRange))
