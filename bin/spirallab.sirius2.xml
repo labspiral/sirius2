@@ -13272,6 +13272,15 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofExtWaitRange(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,System.Numerics.Vector2,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderModeExtension,System.Numerics.Vector2,System.Boolean,System.Boolean)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofExtPark(System.Numerics.Vector2,SpiralLab.Sirius2.Scanner.Rtc.RtcParkModeExtension)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofExtParkReturn">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofExtParkReturn(System.Numerics.Vector2)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofExtEnd(System.Numerics.Vector2)">
             <inheritdoc/>  
         </member>
@@ -21507,6 +21516,28 @@
             OverFlow
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcParkModeExtension">
+            <summary>
+            Park mode  (aka. fly extension version)
+            </summary>
+            <remarks>
+            Used with RTC6 only. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcParkModeExtension.RealImageField">
+            <summary>
+             Intermediate parking position. <br/>
+             Absolute coordinate in the real Image field. <br/>
+             Processing-on-the-fly is switched off at the specified axes. <br/>
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcParkModeExtension.VirtualImageField">
+            <summary>
+            Intermediate parking position. <br/>
+            Absolute coordinate in the virtual Image field. <br/>
+            Processing-on-the-fly remains switched on at the specified axes. <br/>
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension">
             <summary>
             IRtcMoFExtension (aka. fly extension version)
@@ -21593,6 +21624,27 @@
             <param name="rangeY">Y min/max range (mm)</param>
             <param name="isScannerFollowing">Scanner follow the object movement (or stop)</param>
             <param name="isLaserRemain">Laser remains unchanged (or switched off after a <c>LaserOff</c> delay)</param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtPark(System.Numerics.Vector2,SpiralLab.Sirius2.Scanner.Rtc.RtcParkModeExtension)">
+            <summary>
+            List moves the output positions for 2 Axes for intermediate parking with jump speed from the current to the specified absolute position in the 2D Image field. (aka. fly extension version)
+            </summary>
+            <param name="position">Park x, y position (mm)</param>
+            <param name="parkMode"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcParkModeExtension">RtcParkModeExtension</see></param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtParkReturn">
+            <summary>
+            List return(or disable) park. (aka. fly extension version)
+            </summary>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtParkReturn(System.Numerics.Vector2)">
+            <summary>
+            List moves the output position for 2 Axes with jump speed from the intermediate parking position to the specified absolute position in the 2D Image field. (aka. fly extension version)
+            </summary>
+            <param name="position">Jump x, y position (mm)</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtEnd(System.Numerics.Vector2)">
