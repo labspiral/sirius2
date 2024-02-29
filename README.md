@@ -128,16 +128,18 @@
 
 **5. How to use ?**
 
+ - Copy all files at 'bin' to your working directory 
+ - Add reference files ('spirallab.sirius2.dll', 'spirallab.sirius2.winforms.dll') into your project
  - Demo 'init' console project for beginner
  - Demo 'editor_basic' winforms project for beginner
-    - config "config.ini" for RTC5 or RTC6
-    - config "config_syncaxis.ini" for XL-SCAN
+    - config 'config.ini' for RTC5 or RTC6
+    - config 'config_syncaxis.ini' for XL-SCAN
  - Demo 'editor_entity' winforms project for create entities
  - Demo 'editor_barcode' winforms project for mark individual barcode entities
  - Demo 'editor_mof' winforms project for encoder based MoF
- - Demo 'editor_multiple' winforms project for multiple instances
- - Demo 'editor_marker' winforms project for custom marker
- - Demo 'editor_ui' winforms project for custom ui
+ - Demo 'editor_multiple' winforms project for multiple RTC instances
+ - Demo 'editor_marker' winforms project for customized marker
+ - Demo 'editor_ui' winforms project for customized ui
 
 
 ----
@@ -145,16 +147,24 @@
   
 **6. Copyrights**
  
- - 2024 Copyright to (c)SpiralLAB. All rights reserved. 
+ - Evaluation copy mode would be activated during 30 mins without license.
  - Homepage: http://spirallab.co.kr
  - Email: <a href="mailto:hcchoi@spirallab.co.kr">hcchoi@spirallab.co.kr</a> 
- - Evaluation copy mode would be activated during 30 mins without license
+ - All rights reserved. 2021-2024 Copyright to (c)SpiralLAB. 
+ - RTC and syncAXIS are trademarks of (c)SCANLAB GmbH.
  
 
 ----
 
 
 **7. Version history**
+
+* 2024.2.29 v.1.19.1100
+  - fixed) arithmetic exception when initializing RTC card
+  - added) (experimental) clipping(or divide) entities
+  - fixed) PoD(pulse on demand)
+     - spot distance control for SCANahead
+  - fixed) enabled mouse hot tracking by default
 
 * 2024.2.7 v.1.18.1080
   - added) IRtcMoFExtension interface for RTC6

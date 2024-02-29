@@ -263,8 +263,8 @@ namespace Demos
             int rows = 10;
             // X pitch = 0.01 mm
             float dx = 0.01f;
-            // Y pitch = 1 mm
-            float dy = 1;
+            // Y pitch = 0 mm
+            float dy = 0;
             // Pixel period: 100 usec (0.0001 s)
             double period = 100;
             // Pixel duration: 10 usec
@@ -277,7 +277,7 @@ namespace Demos
                 // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
                 uint counts = 5000;
                 // Prepare raster horizontal line
-                success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, period, new Vector2(dx, 0), counts);
+                success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, period, new Vector2(dx, dy), counts);
                 for (int i = 0; i < counts; i++)
                 {
                     // Laser on during 10 usec

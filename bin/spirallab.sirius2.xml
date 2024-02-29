@@ -486,7 +486,7 @@
             Step distance for divide arc into lines
             </summary>
             <remarks>
-            Default: 0.5 mm <br/>
+            Default: 0.3 mm <br/>
             <list type="case study">
             <item><description>When draw(or render) arc at screen, it will be splitted into lines.</description></item>
             <item><description>If center of arc is out of range when marking, it will be splitted into lines.</description></item>
@@ -18829,7 +18829,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlModes.ActualVelocityWithSCANAhead">
             <summary>
-            Actual velocity + SCANAhead + EncoderSpeed 
+            Actual velocity + EncoderSpeed + SCANahead 
             </summary>
             <remarks>
             Used with SCANAhead scanner products only. (like as ExcelliSCAN or intelliSCAN IV) <br/>
@@ -18881,16 +18881,6 @@
             Extension1 port 
             <para>uint: 16 bits (0~65535)</para>
             </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals.FocusShift">
-            <summary>
-            Focus shift (aka. Defocus)
-            <para>double: mm</para>
-            </summary>
-            <remarks>
-            Focus shift controlled by z movement with 3D. <br/>
-            Used with automatic laser control by defined vector only. (= used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">IRtcAutoLaserControl.ListAlcByVectorBegin</see>). <br/>
-            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals.SpotDistance">
             <summary>
