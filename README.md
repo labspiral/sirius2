@@ -159,12 +159,13 @@
 
 **7. Version history**
 
-* 2024.2.29 v.1.19.1100
+* 2024.3.6 v.1.19.1100
   - fixed) arithmetic exception when initializing RTC card
   - added) (experimental) clipping(or divide) entities
   - fixed) PoD(pulse on demand)
      - spot distance control for SCANahead
   - fixed) enabled mouse hot tracking by default
+  - fixed) IDOutput.OutOff arithmetic exception bug 
 
 * 2024.2.7 v.1.18.1080
   - added) IRtcMoFExtension interface for RTC6

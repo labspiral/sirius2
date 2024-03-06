@@ -13,6 +13,9 @@
             <summary>
             Create default document
             </summary>
+            <remarks>
+            Called <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActNew">IDocument.ActNew</see> by default when creation. <br/>
+            </remarks>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.arc">
@@ -20203,6 +20206,9 @@
             <param name="targetEntities"></param>
             <param name="view"></param>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.ClippingForm.CreateParams">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.ClippingForm.Redraw">
             <summary>
             Redraw bounding boxes(or rectangles) at <c>IView</c>
@@ -20248,6 +20254,9 @@
             <summary>
             Constructor
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.ExpandForm.CreateParams">
+            <inheritdoc/>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.ExpandForm.components">
             <summary>
@@ -20320,6 +20329,9 @@
             Constructor
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.HatchForm.CreateParams">
+            <inheritdoc/>
+        </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.HatchForm.components">
             <summary>
             Required designer variable.
@@ -20363,6 +20375,9 @@
             <summary>
             Constructor
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.BlockForm.CreateParams">
+            <inheritdoc/>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.BlockForm.components">
             <summary>
@@ -20484,6 +20499,9 @@
             <summary>
             Constructor
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm.CreateParams">
+            <inheritdoc/>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm.components">
             <summary>
@@ -20615,6 +20633,9 @@
             Constructor
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMapCompensateForm.CreateParams">
+            <inheritdoc/>
+        </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.PowerMapCompensateForm.components">
             <summary>
             Required designer variable.
@@ -20680,6 +20701,9 @@
             <summary>
             Constructor
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerMapVerifyForm.CreateParams">
+            <inheritdoc/>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.PowerMapVerifyForm.components">
             <summary>
@@ -21496,9 +21520,9 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
-            Used with <c>Config.DOut_RtcExtension1Port</c>. <br/>
-            Used with <c>Config.DOut_RtcExtension2Port</c>. <br/>
-            Used with <c>Config.DOut_RtcLaserPort</c>. <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcExtension1Port">Config.DOut_RtcExtension1Port</see>. <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcExtension2Port">Config.DOut_RtcExtension2Port</see>. <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcLaserPort">Config.DOut_RtcLaserPort</see>. <br/>
             <img src="images/rtcdoutput.png"/> <br/>
             </remarks>
         </member>
@@ -21577,8 +21601,8 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
-            Used with <c>Config.DIN_RtcExtension1Port</c>. <br/>
-            Used with <c>Config.DIN_RtcLaserPort</c>. <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DIN_RtcExtension1Port">Config.DIN_RtcExtension1Port</see>. <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DIN_RtcLaserPort">Config.DIN_RtcLaserPort</see>. <br/>
             <img src="images/rtcdinput.png"/> <br/>
             </remarks>
         </member>

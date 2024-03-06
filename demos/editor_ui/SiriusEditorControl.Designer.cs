@@ -726,21 +726,25 @@
             // 
             // mnuTimer
             // 
+            this.mnuTimer.AutoToolTip = true;
             resources.ApplyResources(this.mnuTimer, "mnuTimer");
             this.mnuTimer.Name = "mnuTimer";
             // 
             // mnuJumpTo
             // 
+            this.mnuJumpTo.AutoToolTip = true;
             resources.ApplyResources(this.mnuJumpTo, "mnuJumpTo");
             this.mnuJumpTo.Name = "mnuJumpTo";
             // 
             // mnuMeasurementBeginEnd
             // 
+            this.mnuMeasurementBeginEnd.AutoToolTip = true;
             resources.ApplyResources(this.mnuMeasurementBeginEnd, "mnuMeasurementBeginEnd");
             this.mnuMeasurementBeginEnd.Name = "mnuMeasurementBeginEnd";
             // 
             // mnuMoF
             // 
+            this.mnuMoF.AutoToolTip = true;
             this.mnuMoF.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuMoFXYBeginEnd,
             this.mnuMoFXYWait,
@@ -755,11 +759,13 @@
             // 
             // mnuMoFXYBeginEnd
             // 
+            this.mnuMoFXYBeginEnd.AutoToolTip = true;
             resources.ApplyResources(this.mnuMoFXYBeginEnd, "mnuMoFXYBeginEnd");
             this.mnuMoFXYBeginEnd.Name = "mnuMoFXYBeginEnd";
             // 
             // mnuMoFXYWait
             // 
+            this.mnuMoFXYWait.AutoToolTip = true;
             resources.ApplyResources(this.mnuMoFXYWait, "mnuMoFXYWait");
             this.mnuMoFXYWait.Name = "mnuMoFXYWait";
             // 
@@ -770,11 +776,13 @@
             // 
             // mnuMoFAngularBeginEnd
             // 
+            this.mnuMoFAngularBeginEnd.AutoToolTip = true;
             resources.ApplyResources(this.mnuMoFAngularBeginEnd, "mnuMoFAngularBeginEnd");
             this.mnuMoFAngularBeginEnd.Name = "mnuMoFAngularBeginEnd";
             // 
             // mnuMoFAngularWait
             // 
+            this.mnuMoFAngularWait.AutoToolTip = true;
             resources.ApplyResources(this.mnuMoFAngularWait, "mnuMoFAngularWait");
             this.mnuMoFAngularWait.Name = "mnuMoFAngularWait";
             // 
@@ -785,31 +793,37 @@
             // 
             // mnuMoFExternalStartDelay
             // 
+            this.mnuMoFExternalStartDelay.AutoToolTip = true;
             resources.ApplyResources(this.mnuMoFExternalStartDelay, "mnuMoFExternalStartDelay");
             this.mnuMoFExternalStartDelay.Name = "mnuMoFExternalStartDelay";
             // 
             // mnuMoFRepeat
             // 
+            this.mnuMoFRepeat.AutoToolTip = true;
             resources.ApplyResources(this.mnuMoFRepeat, "mnuMoFRepeat");
             this.mnuMoFRepeat.Name = "mnuMoFRepeat";
             // 
             // mnuAlcDefinedVector
             // 
+            this.mnuAlcDefinedVector.AutoToolTip = true;
             resources.ApplyResources(this.mnuAlcDefinedVector, "mnuAlcDefinedVector");
             this.mnuAlcDefinedVector.Name = "mnuAlcDefinedVector";
             // 
             // mnuZDelta
             // 
+            this.mnuZDelta.AutoToolTip = true;
             resources.ApplyResources(this.mnuZDelta, "mnuZDelta");
             this.mnuZDelta.Name = "mnuZDelta";
             // 
             // mnuZDefocus
             // 
+            this.mnuZDefocus.AutoToolTip = true;
             resources.ApplyResources(this.mnuZDefocus, "mnuZDefocus");
             this.mnuZDefocus.Name = "mnuZDefocus";
             // 
             // mnuData
             // 
+            this.mnuData.AutoToolTip = true;
             this.mnuData.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuWriteData,
             this.mnuWriteDataExt16,
@@ -820,21 +834,25 @@
             // 
             // mnuWriteData
             // 
+            this.mnuWriteData.AutoToolTip = true;
             resources.ApplyResources(this.mnuWriteData, "mnuWriteData");
             this.mnuWriteData.Name = "mnuWriteData";
             // 
             // mnuWriteDataExt16
             // 
+            this.mnuWriteDataExt16.AutoToolTip = true;
             resources.ApplyResources(this.mnuWriteDataExt16, "mnuWriteDataExt16");
             this.mnuWriteDataExt16.Name = "mnuWriteDataExt16";
             // 
             // mnuWriteDataExt16Cond
             // 
+            this.mnuWriteDataExt16Cond.AutoToolTip = true;
             resources.ApplyResources(this.mnuWriteDataExt16Cond, "mnuWriteDataExt16Cond");
             this.mnuWriteDataExt16Cond.Name = "mnuWriteDataExt16Cond";
             // 
             // mnuWaitDataExt16Cond
             // 
+            this.mnuWaitDataExt16Cond.AutoToolTip = true;
             resources.ApplyResources(this.mnuWaitDataExt16Cond, "mnuWaitDataExt16Cond");
             this.mnuWaitDataExt16Cond.Name = "mnuWaitDataExt16Cond";
             // 
@@ -975,21 +993,25 @@
             // 
             // mnuMarginLeft
             // 
+            this.mnuMarginLeft.AutoToolTip = true;
             resources.ApplyResources(this.mnuMarginLeft, "mnuMarginLeft");
             this.mnuMarginLeft.Name = "mnuMarginLeft";
             // 
             // mnuMarginRight
             // 
+            this.mnuMarginRight.AutoToolTip = true;
             resources.ApplyResources(this.mnuMarginRight, "mnuMarginRight");
             this.mnuMarginRight.Name = "mnuMarginRight";
             // 
             // mnuMarginTop
             // 
+            this.mnuMarginTop.AutoToolTip = true;
             resources.ApplyResources(this.mnuMarginTop, "mnuMarginTop");
             this.mnuMarginTop.Name = "mnuMarginTop";
             // 
             // mnuMarginBottom
             // 
+            this.mnuMarginBottom.AutoToolTip = true;
             resources.ApplyResources(this.mnuMarginBottom, "mnuMarginBottom");
             this.mnuMarginBottom.Name = "mnuMarginBottom";
             // 

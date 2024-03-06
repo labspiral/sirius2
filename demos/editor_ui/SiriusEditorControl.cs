@@ -701,8 +701,7 @@ namespace Demos
             PropertyGridCtrl.View = EditorCtrl.View;
 
             // Create document by default 
-            this.Document = new DocumentBase();
-            Document.ActNew();
+            this.Document = DocumentFactory.CreateDefault();
         }
         /// <inheritdoc/>
         public override void Refresh()
