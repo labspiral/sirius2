@@ -68,7 +68,7 @@ namespace Demos
             EditorHelper.Initialize();
 
             // Create devices 
-            EditorHelper.CreateDevices(out var rtc, out var laser, out var powerMeter, out var marker, out var remote, this.siriusEditorUserControl1);
+            EditorHelper.CreateDevices(out var rtc, out var dInExt1, out var dInLaserPort, out var dOutExt1, out var dOutExt2, out var dOutLaserPort, out var laser, out var powerMeter, out var marker, out var remote, this.siriusEditorUserControl1);
 
             // Assign devices into usercontrol
             siriusEditorUserControl1.Rtc = rtc;
@@ -76,6 +76,11 @@ namespace Demos
             siriusEditorUserControl1.Marker = marker;
             siriusEditorUserControl1.PowerMeter = powerMeter;
             siriusEditorUserControl1.Remote = remote;
+            siriusEditorUserControl1.DIExt1 = dInExt1;
+            siriusEditorUserControl1.DILaserPort = dInLaserPort;
+            siriusEditorUserControl1.DOExt1 = dOutExt1;
+            siriusEditorUserControl1.DOExt2 = dOutExt2;
+            siriusEditorUserControl1.DOLaserPort = dOutLaserPort;
 
             var document = siriusEditorUserControl1.Document;
             var view = siriusEditorUserControl1.View;

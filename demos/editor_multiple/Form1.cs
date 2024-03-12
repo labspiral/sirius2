@@ -38,13 +38,19 @@ namespace Demos
             int index = 0;
 
             // Create index 0 devices 
-            EditorHelper.CreateDevices(out var rtc0, out var laser0, out var powerMeter0, out var marker0, out var remote0, this.siriusEditorUserControl1, index);
+            EditorHelper.CreateDevices(out var rtc0, out var dInExt10, out var dInLaserPort0, out var dOutExt10, out var dOutExt20, out var dOutLaserPort0, out var laser0, out var powerMeter0, out var marker0, out var remote0, this.siriusEditorUserControl1, index);
+
             // Assign index 0 devices into usercontrol
             siriusEditorUserControl1.Rtc = rtc0;
             siriusEditorUserControl1.Laser = laser0;
             siriusEditorUserControl1.Marker = marker0;
             siriusEditorUserControl1.PowerMeter = powerMeter0;
             siriusEditorUserControl1.Remote = remote0;
+            siriusEditorUserControl1.DIExt1 = dInExt10;
+            siriusEditorUserControl1.DILaserPort = dInLaserPort0;
+            siriusEditorUserControl1.DOExt1 = dOutExt10;
+            siriusEditorUserControl1.DOExt2 = dOutExt20;
+            siriusEditorUserControl1.DOLaserPort = dOutLaserPort0;
             siriusEditorUserControl1.TitleName = $"Laser1";
         
             var document0 = siriusEditorUserControl1.Document;
@@ -56,13 +62,19 @@ namespace Demos
             // index 1
             index = 1;
             // Create index 1 devices
-            EditorHelper.CreateDevices(out var rtc1, out var laser1, out var powerMeter1, out var marker1, out var remote1, this.siriusEditorUserControl2, index);
+            EditorHelper.CreateDevices(out var rtc1, out var dInExt11, out var dInLaserPort1, out var dOutExt11, out var dOutExt21, out var dOutLaserPort1, out var laser1, out var powerMeter1, out var marker1, out var remote1, this.siriusEditorUserControl2, index);
+
             // Assign index 1 devices into usercontrol
             siriusEditorUserControl2.Rtc = rtc1;
             siriusEditorUserControl2.Laser = laser1;
             siriusEditorUserControl2.Marker = marker1;
             siriusEditorUserControl2.PowerMeter = powerMeter1;
             siriusEditorUserControl2.Remote = remote1;
+            siriusEditorUserControl2.DIExt1 = dInExt11;
+            siriusEditorUserControl2.DILaserPort = dInLaserPort1;
+            siriusEditorUserControl2.DOExt1 = dOutExt11;
+            siriusEditorUserControl2.DOExt2 = dOutExt21;
+            siriusEditorUserControl2.DOLaserPort = dOutLaserPort1;
             siriusEditorUserControl2.TitleName = $"Laser2";
 
             var document1 = siriusEditorUserControl2.Document;

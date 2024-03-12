@@ -1831,6 +1831,11 @@
               Looks up a localized string similar to Jump delay.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Laser__SCANa__C">
+            <summary>
+              Looks up a localized string similar to Laser (SCANahead).
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Laser_C">
             <summary>
               Looks up a localized string similar to Laser.
@@ -1894,6 +1899,26 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Q_switch_delay_DISP">
             <summary>
               Looks up a localized string similar to Q switch delay.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.SCANahead_off_shift_DESC">
+            <summary>
+              Looks up a localized string similar to Laser Off Shift (usec) (SCANahead only).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.SCANahead_off_shift_DISP">
+            <summary>
+              Looks up a localized string similar to Laser Off Shift.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.SCANahead_on_shift_DESC">
+            <summary>
+              Looks up a localized string similar to Laser On Shift (usec) (SCANahead only).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.SCANahead_on_shift_DISP">
+            <summary>
+              Looks up a localized string similar to Laser On Shift.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Scanner__Variable__C">
@@ -2038,7 +2063,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Wobbel_frequency_DESC">
             <summary>
-              Looks up a localized string similar to Wobbel Frequency (Hz) (&gt;0 ClockWise, &lt;0.1/TrackingErr).
+              Looks up a localized string similar to Wobbel Frequency (Hz) (&gt;0 ClockWise, &lt;0.1/TrackingError).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Wobbel_frequency_DISP">
@@ -9798,6 +9823,26 @@
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.laserOffDelay">
             <summary>
             Laser off delay (usec)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.LaserOnShiftSCANa">
+            <summary>
+            Laser on shift for SCANahead
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.laserOnShiftSCANa">
+            <summary>
+            Laser on shift for SCANahead
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.LaserOffShiftSCANa">
+            <summary>
+            Laser off shift for SCANahead
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.laserOffShiftSCANa">
+            <summary>
+            Laser off shift for SCANahead (usec)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.ScannerJumpDelay">
@@ -17912,22 +17957,21 @@
             Event for move to cursor position at <c>SiriusEditorControl</c>
             </summary>
             <remarks>
-            User can assign event handler for move(or control) external stage to specific position
+            User can assign event handler for move(or control) external stage to specific position. <br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyMoveToCursor(System.Object,SpiralLab.Sirius2.Winforms.IDocument,OpenTK.Vector3)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyMoveToCursor(SpiralLab.Sirius2.Winforms.IDocument,OpenTK.Vector3)">
             <summary>
             Notify event for move cursor position by pressing <see cref="P:SpiralLab.Sirius2.Winforms.Config.KeyboardMoveToCursor">Config.KeyboardMoveToCursor</see>
             </summary>
             <remarks>
             For example, user can implement event hander by move external stage at specific location <br/>
             </remarks>
-            <param name="sender">Sender</param>
             <param name="document"><c>IDocument</c></param>
             <param name="position">X,Y,Z position</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Config.DIN_RtcExtension1Port">
+        <member name="F:SpiralLab.Sirius2.Winforms.Config.DIn_RtcExtension1Port">
             <summary>
             List of digital input names at RTC Extension1 Port 
             </summary>
@@ -17937,7 +17981,7 @@
             Should be configured before do <see cref="M:SpiralLab.Sirius2.Core.Initialize">Core.Initialize</see>. <br/>
             </remarks>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Config.DIN_RtcLaserPort">
+        <member name="F:SpiralLab.Sirius2.Winforms.Config.DIn_RtcLaserPort">
             <summary>
             List of digital input names at RTC Laser Port 
             </summary>
@@ -18278,6 +18322,15 @@
             </summary>
             <remarks>
             Default: "Error" <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Winforms.Remote.IRemote">IRemote</see> <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.RemoteEnd">
+            <summary>
+            Reply 'end' status when marker has finished at remote communication
+            </summary>
+            <remarks>
+            Default: "End" <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Winforms.Remote.IRemote">IRemote</see> <br/>
             </remarks>
         </member>
@@ -21601,8 +21654,8 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
-            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DIN_RtcExtension1Port">Config.DIN_RtcExtension1Port</see>. <br/>
-            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DIN_RtcLaserPort">Config.DIN_RtcLaserPort</see>. <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DIn_RtcExtension1Port">Config.DIN_RtcExtension1Port</see>. <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DIn_RtcLaserPort">Config.DIN_RtcLaserPort</see>. <br/>
             <img src="images/rtcdinput.png"/> <br/>
             </remarks>
         </member>
@@ -22170,29 +22223,29 @@
             To do control <c>IPowerMeter</c>. <br/>
             </remarks>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DIExt1">
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DIExt1">
             <summary>
             RTC DI extension1 port (16 bits)
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DILaserPort">
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DILaserPort">
             <summary>
             RTC DI laser port (2 bits)
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DOExt1">
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DOExt1">
             <summary>
-            RTC DO extension1 port (16 btis)
+            RTC DO extension1 port (16 bits)
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DOExt2">
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DOExt2">
             <summary>
             RTC DO extension2 port (8 bits)
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DOLaserPort">
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.DOLaserPort">
             <summary>
-            RTC DO laser port (2 btis)
+            RTC DO laser port (2 bits)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.TreeViewCtrl">

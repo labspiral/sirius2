@@ -75,11 +75,11 @@ namespace Demos
             // Activate auto delays
             success &= rtc.CtlDelayAutoByScanAhead(true);
 
-            // Set laser delays
-            success &= rtc.CtlDelayScanAhead(10, 100);
+            // Confirm
+            Debug.Assert(rtc.IsActivateAutoDelays);
 
-            // excelliSCAN scan head must be connected and load pre-stored parameter from excelliSCAN head.
-            success &= rtc.CtlAutoDelayParams(AutoDelayParamModes.Load, ScannerHeads.Primary, CorrectionTables.Table1);
+            // Set laser on/off shift (usec)
+            success &= rtc.CtlDelayScanAhead(10, 100);
 
             Debug.Assert(success);
 
@@ -146,7 +146,7 @@ namespace Demos
                         // Line quality scale factor
                         rtc.ScanAheadLineParamsCornerScale = 100;
                         rtc.ScanAheadLineParamsEndScale = 100;
-                        rtc.ScanAheadLineParamsAccScale = 0;
+                        rtc.ScanAheadLineParamsAccScale = 50;
                         break;
                     case ConsoleKey.L:
                         // Draw line

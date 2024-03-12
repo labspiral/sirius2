@@ -40,11 +40,13 @@ using System.Windows.Forms;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using SpiralLab.Sirius2;
+using SpiralLab.Sirius2.IO;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.PowerMap;
 using SpiralLab.Sirius2.PowerMeter;
 using SpiralLab.Sirius2.Scanner;
 using SpiralLab.Sirius2.Scanner.Rtc;
+using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
 using SpiralLab.Sirius2.Winforms;
 using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
@@ -97,17 +99,26 @@ namespace Demos
         /// Create devices (like as <c>IRtc</c>, <c>ILaser</c>, ...)
         /// </summary>
         /// <param name="rtc"><c>IRtc</c></param>
+        /// <param name="dInExt1">RTC D.Input extension1 port</param>
+        /// <param name="dInLaserPort">RTC D.Input laser port</param>
+        /// <param name="dOutExt1">RTC D.Output extension1 port</param>
+        /// <param name="dOutExt2">RTC D.Output extension2 port</param>
+        /// <param name="dOutLaserPort">RTC D.Output laser port</param>
         /// <param name="laser"><c>ILaser</c></param>
         /// <param name="powerMeter"><c>IPowerMeter</c></param>
-        /// <param name="powerMap"><c>IPowerMap</c></param>
         /// <param name="marker"><c>IMarker</c></param>
         /// <param name="remote"><c>IRemote</c></param>
         /// <param name="editorUserControl">Target <c>SiriusEditorUserControl</c></param>
-        /// <param name="index">Index (assign value if using multiple devices)</param>
+        /// <param name="index">Index (assign value if using multiple devices) (0,1,2,...)</param>
         /// <returns>Success or failed</returns>
-        public static bool CreateDevices(out IRtc rtc, out ILaser laser, out IPowerMeter powerMeter, out IMarker marker, out IRemote remote, SiriusEditorUserControl editorUserControl, int index = 0)
+        public static bool CreateDevices(out IRtc rtc, out IDInput dInExt1, out IDInput dInLaserPort, out IDOutput dOutExt1, out IDOutput dOutExt2, out IDOutput dOutLaserPort, out ILaser laser, out IPowerMeter powerMeter, out IMarker marker, out IRemote remote, SiriusEditorUserControl editorUserControl, int index = 0)
         {
             rtc = null;
+            dInExt1 = null;
+            dInLaserPort = null;
+            dOutExt1 = null;
+            dOutExt2 = null;
+            dOutLaserPort = null;
             laser = null;
             powerMeter = null;
             marker = null;
@@ -158,6 +169,24 @@ namespace Demos
             // Initialize RTC controller
             success &= rtc.Initialize();
             Debug.Assert(success);
+
+            // RTC DIO
+            dInExt1 = IOFactory.CreateInputExtension1(rtc);
+            dOutExt1 = IOFactory.CreateOutputExtension1(rtc);
+            success &= dInExt1.Initialize();
+            success &= dOutExt1.Initialize();
+            if (rtc is Rtc6SyncAxis)
+            {
+            }
+            else
+            {
+                dInLaserPort = IOFactory.CreateInputLaserPort(rtc);
+                dOutLaserPort = IOFactory.CreateOutputLaserPort(rtc);
+                dOutExt2 = IOFactory.CreateOutputExtension2(rtc);
+                success &= dOutExt2.Initialize();
+                success &= dInLaserPort.Initialize();
+                success &= dOutLaserPort.Initialize();
+            }
 
             // Set FOV area: WxH, it will be drawn as red rectangle
             SpiralLab.Sirius2.Winforms.Config.ViewFovSize = new SizeF(fov, fov);
@@ -447,6 +476,8 @@ namespace Demos
 
             return success;
         }
+
+        
         private static void PowerMap_OnMappingOpened(IPowerMap powerMap, string fileName)
         {
             //var index = powerMap.Index;

@@ -159,6 +159,12 @@
 
 **7. Version history**
 
+* 2024.3.12 v.1.20.1110
+  - added) laser on/off shift with SCANahead at RTC6 
+  - fixed) create RTC DIOs by manually
+  - fixed) config RTC laser1/2 signal levels
+  - fixed) OnMoveToCursor event handler
+
 * 2024.3.6 v.1.19.1100
   - fixed) arithmetic exception when initializing RTC card
   - added) (experimental) clipping(or divide) entities

@@ -12473,6 +12473,8 @@
             </summary>
             <remarks>
             Only for SCANahead option. <br/> 
+            If <c>False</c>, should be use <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListDelay(System.Double,System.Double,System.Double,System.Double,System.Double)">ListDelay</see> to compensate scanner movement and laser output signals. <br/>
+            If <c>True</c>, should be use <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListDelayScanAhead(System.Double,System.Double)">ListDelayScanAhead</see> to compensate laser output signals. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ScanAheadLineParamsCornerScale">
@@ -12482,6 +12484,7 @@
             <remarks>
             Only for SCANahead option. <br/>
             Use <c>CtlDelayScanAheadByAuto</c> at first. <br/>
+            Polyline: 100%: max precision, 0% min execution time. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.scanAheadLineParamsCornerScale">
@@ -12496,6 +12499,7 @@
             <remarks>
             Only for SCANahead option. <br/>
             Use <c>CtlDelayScanAheadByAuto</c> at first. <br/>
+            Mark, jump: 100%: max precision, 0% min execution time. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.scanAheadLineParamsEndScale">
@@ -12510,6 +12514,8 @@
             <remarks>
             Only for SCANahead option. <br/>
             Use <c>CtlDelayScanAheadByAuto</c> at first. <br/>
+            100%: laser is on during acceleration and deceleration. <br/>
+            0%: laser is off during acceleration and deceleration. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.scanAheadLineParamsAccScale">

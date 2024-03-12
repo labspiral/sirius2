@@ -27,7 +27,7 @@ namespace Demos
             Application.SetCompatibleTextRenderingDefault(false);
 
             if (args.Length == 1)
-                EditorHelper.ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, args[0]);
+                EditorHelper.ConfigFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config", args[0]);
 
             // Set language
             EditorHelper.SetLanguage();
@@ -60,7 +60,7 @@ namespace Demos
         private static void EditorForm_Shown(object sender, EventArgs e)
         {
             // Create devices 
-            EditorHelper.CreateDevices(out var rtc, out var laser, out var powerMeter, out var marker, out var remote, null);
+            EditorHelper.CreateDevices(out var rtc, out var dInExt1, out var dInLaserPort, out var dOutExt1, out var dOutExt2, out var dOutLaserPort, out var laser, out var powerMeter, out var marker, out var remote, null);
 
             // Assign devices into usercontrol
             EditorForm.Rtc = rtc;
@@ -68,6 +68,11 @@ namespace Demos
             EditorForm.PowerMeter = powerMeter;
             EditorForm.Marker = marker;
             EditorForm.Remote = remote;
+            EditorForm.DIExt1 = dInExt1;
+            EditorForm.DILaserPort = dInLaserPort;
+            EditorForm.DOExt1 = dOutExt1;
+            EditorForm.DOExt2 = dOutExt2;
+            EditorForm.DOLaserPort = dOutLaserPort;
 
             var document = EditorForm.Document;
             var view = EditorForm.View;

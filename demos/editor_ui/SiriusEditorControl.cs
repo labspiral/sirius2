@@ -249,17 +249,6 @@ namespace Demos
                     {
                         mof.OnEncoderChanged -= Mof_OnEncoderChanged;
                     }
-                    DIExt1?.Dispose();
-                    DOExt1?.Dispose();
-                    DOExt2?.Dispose();
-                    DILaserPort?.Dispose();
-                    DOLaserPort?.Dispose();
-
-                    DIExt1 = null;
-                    DILaserPort = null;
-                    DOExt1 = null;
-                    DOExt2 = null;
-                    DOLaserPort = null;
                 }
                 
                 rtc = value;
@@ -274,37 +263,6 @@ namespace Demos
 
                 if (rtc != null)
                 {
-                    // RTC extension DIO
-                    DIExt1 = IOFactory.CreateInputExtension1(rtc);
-                    DOExt1 = IOFactory.CreateOutputExtension1(rtc);
-                    if (rtc is IRtcSyncAxis)
-                    {
-                    }
-                    else
-                    {
-                        DILaserPort = IOFactory.CreateInputLaserPort(rtc);
-                        DOLaserPort = IOFactory.CreateOutputLaserPort(rtc);
-                        DOExt2 = IOFactory.CreateOutputExtension2(rtc);
-                    }
-
-                    DIExt1?.Initialize();
-                    DOExt1?.Initialize();
-                    DOExt2?.Initialize();
-                    DILaserPort?.Initialize();
-                    DOLaserPort?.Initialize();
-
-                    rtcDIUserControl1.DIExt1 = DIExt1;
-                    rtcDIUserControl1.DILaserPort = DILaserPort;
-                    rtcDIUserControl1.UpdateExtension1PortNames(Config.DIN_RtcExtension1Port);
-                    rtcDIUserControl1.UpdateLaserPortNames(Config.DIN_RtcLaserPort);
-                    
-                    rtcDOUserControl1.DOExt1 = DOExt1;
-                    rtcDOUserControl1.DOExt2 = DOExt2;
-                    rtcDOUserControl1.DOLaserPort = DOLaserPort;
-                    rtcDOUserControl1.UpdateExtension1PortNames(Config.DOut_RtcExtension1Port);
-                    rtcDOUserControl1.UpdateExtension2PortNames(Config.DOut_RtcExtension2Port);
-                    rtcDOUserControl1.UpdateLaserPortNames(Config.DOut_RtcLaserPort);
-
                     PropertyVisibility();
                     MenuVisibility();
                     if (rtc is IRtcMoF mof)
@@ -462,23 +420,107 @@ namespace Demos
         /// <summary>
         /// RTC DI extension1 port (16 bits)
         /// </summary>
-        protected IDInput DIExt1;
+        public IDInput DIExt1 
+        { 
+            get { return dIExt1; }
+            set {
+                if (dIExt1 == value)
+                    return;
+                if (dIExt1 != null)
+                {
+                    dIExt1?.Dispose();
+                    dIExt1 = null;
+                }
+                dIExt1 = value; 
+                rtcDIUserControl1.DIExt1 = dIExt1;
+                rtcDIUserControl1.UpdateExtension1PortNames(Config.DIn_RtcExtension1Port);
+            } 
+        }
+        private IDInput dIExt1;
         /// <summary>
         /// RTC DI laser port (2 bits)
         /// </summary>
-        protected IDInput DILaserPort;
+        public IDInput DILaserPort
+        {
+            get { return dILaserPort; }
+            set
+            {
+                if (dILaserPort == value)
+                    return;
+                if (dILaserPort != null)
+                {
+                    dILaserPort?.Dispose();
+                    dILaserPort = null;
+                }
+                dILaserPort = value;
+                rtcDIUserControl1.DILaserPort = dIExt1;
+                rtcDIUserControl1.UpdateLaserPortNames(Config.DIn_RtcLaserPort);
+            }
+        }
+        private IDInput dILaserPort;
         /// <summary>
-        /// RTC DO extension1 port (16 btis)
+        /// RTC DO extension1 port (16 bits)
         /// </summary>
-        protected IDOutput DOExt1;
+        public IDOutput DOExt1
+        {
+            get { return dOExt1; }
+            set
+            {
+                if (dOExt1 == value)
+                    return;
+                if (dOExt1 != null)
+                {
+                    dOExt1?.Dispose();
+                    dOExt1 = null;
+                }
+                dOExt1 = value;
+                rtcDOUserControl1.DOExt1 = dOExt1;
+                rtcDOUserControl1.UpdateExtension1PortNames(Config.DOut_RtcExtension1Port);
+            }
+        }
+        private IDOutput dOExt1;
         /// <summary>
         /// RTC DO extension2 port (8 bits)
         /// </summary>
-        protected IDOutput DOExt2;
+        public IDOutput DOExt2
+        {
+            get { return dOExt2; }
+            set
+            {
+                if (dOExt2 == value)
+                    return;
+                if (dOExt2 != null)
+                {
+                    dOExt2?.Dispose();
+                    dOExt2 = null;
+                }
+                dOExt2 = value;
+                rtcDOUserControl1.DOExt2 = dOExt2;
+                rtcDOUserControl1.UpdateExtension2PortNames(Config.DOut_RtcExtension2Port);
+            }
+        }
+        private IDOutput dOExt2;
         /// <summary>
-        /// RTC DO laser port (2 btis)
+        /// RTC DO laser port (2 bits)
         /// </summary>
-        protected IDOutput DOLaserPort;
+        public IDOutput DOLaserPort
+        {
+            get { return dOLaserPort; }
+            set
+            {
+                if (dOLaserPort == value)
+                    return;
+                if (dOLaserPort != null)
+                {
+                    dOLaserPort?.Dispose();
+                    dOLaserPort = null;
+                }
+                dOLaserPort = value;
+                rtcDOUserControl1.DOLaserPort = dOLaserPort;
+                rtcDOUserControl1.UpdateLaserPortNames(Config.DOut_RtcLaserPort);
+            }
+        }
+        private IDOutput dOLaserPort;
 
         /// <summary>
         /// Treeview user control for <c>IEntity</c> within <c>EntityLayer</c> nodes
@@ -753,7 +795,8 @@ namespace Demos
             // Cursor: F9
             else if (keyData == Config.KeyboardMoveToCursor)
             {
-                return Config.NotifyMoveToCursor(this, Document, this.lastCurrentPos);
+                if (this.Focused)
+                    return Config.NotifyMoveToCursor(Document, this.lastCurrentPos);
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
@@ -1333,7 +1376,7 @@ namespace Demos
         /// <summary>
         /// Last mouse cursor location
         /// </summary>
-        Vector3 lastCurrentPos = Vector3.Zero;
+        OpenTK.Vector3 lastCurrentPos = OpenTK.Vector3.Zero;
         private void Renderer_MouseMove(object sender, MouseEventArgs e)
         {
             var intersect = OpenTKHelper.ScreenToWorldPlaneZIntersect(e.Location, Vector3.Zero, EditorCtrl.View.Camera.ViewMatrix, EditorCtrl.View.Camera.ProjectionMatrix);
