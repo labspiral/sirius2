@@ -257,7 +257,7 @@ namespace Demos
                 RtcDOCtrl.Rtc = rtc;
                 ManualCtrl.Rtc = rtc;
                 EditorCtrl.Rtc = rtc;
-                TreeViewCtrl.Rtc = rtc;
+                //TreeViewCtrl.Rtc = rtc;
                 TreeViewBlockCtrl.Rtc = rtc;
                 PowerMapCtrl.Rtc = rtc;
 
@@ -331,8 +331,8 @@ namespace Demos
                 MarkerCtrl.Marker = marker;
                 OffsetCtrl.Marker = marker;
                 ScriptCtrl.Marker = marker;
+                TreeViewCtrl.Marker = marker;
                 EditorCtrl.View.Marker = marker;
-
                 //marker browsable
                 if (marker != null)
                 {
@@ -729,7 +729,12 @@ namespace Demos
             mnuWriteDataExt16.Click += MnuWriteDataExt16_Click;
             mnuWriteDataExt16Cond.Click += MnuWriteDataExt16Cond_Click;
             mnuWaitDataExt16Cond.Click += MnuWaitDataExt16Cond_Click;
+            mnuWaitDataExt16EdgeCond.Click += MnuWaitDataExt16EdgeCond_Click;
+
+            lblRemote.DoubleClick += LblRemote_DoubleClick;
+            lblRemote.DoubleClickEnabled = true;
         }
+
         /// <inheritdoc/>
         protected override void OnLoad(EventArgs e)
         {
@@ -738,7 +743,7 @@ namespace Demos
         }
         private void InternalOnLoad(EventArgs e)
         {
-            TreeViewCtrl.View = EditorCtrl.View;
+            //TreeViewCtrl.View = EditorCtrl.View;
             TreeViewBlockCtrl.View = EditorCtrl.View;
             PropertyGridCtrl.View = EditorCtrl.View;
 
@@ -923,12 +928,17 @@ namespace Demos
         }
         private void MnuWriteDataExt16Cond_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateWriteDataExt16Cond("0000 0000 0000 0000", "0000 0000 0000 0000", "0000 0000 0000 0000", false);
+            var entity = EntityFactory.CreateWriteDataExt16Cond("0000 0000 0000 0000", "0000 0000 0000 0000", "0000 0000 0000 0000");
             document.ActAdd(entity);
         }
         private void MnuWaitDataExt16Cond_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateWaitDataExt16Cond("0000 0000 0000 0000", "0000 0000 0000 0000");
+            document.ActAdd(entity);
+        }
+        private void MnuWaitDataExt16EdgeCond_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateWaitDataExt16EdgeCond(0);
             document.ActAdd(entity);
         }
         private void MnuWriteData_Click(object sender, EventArgs e)
@@ -1451,22 +1461,22 @@ namespace Demos
             }
             if (null == this.Remote || !Remote.IsConnected)
             {
-                lblConnect.Text = " CONNECTED ";
-                lblConnect.ForeColor = Color.White;
-                lblConnect.BackColor = Color.Maroon;
+                lblRemote.Text = " CONNECTED ";
+                lblRemote.ForeColor = Color.White;
+                lblRemote.BackColor = Color.Maroon;
             }
             else
             {
-                lblConnect.ForeColor = Color.Black;
+                lblRemote.ForeColor = Color.Black;
                 switch(Remote.ControlMode)
                 {
                     case ControlModes.Local:
-                        lblConnect.Text = " CONNECTED /LOCAL ";
-                        lblConnect.BackColor = Color.Yellow;
+                        lblRemote.Text = " CONNECTED /LOCAL ";
+                        lblRemote.BackColor = Color.Yellow;
                         break;
                     case ControlModes.Remote:
-                        lblConnect.Text = " CONNECTED /REMOTE ";
-                        lblConnect.BackColor = Color.Lime;
+                        lblRemote.Text = " CONNECTED /REMOTE ";
+                        lblRemote.BackColor = Color.Lime;
                         break;
                 }
             }
@@ -1484,9 +1494,10 @@ namespace Demos
             if (!this.IsHandleCreated || this.IsDisposed)
                 return;
             timerProgressStopwatch.Restart();
-            timerProgress.Start();
+
             this.Invoke(new MethodInvoker(delegate ()
             {
+                timerProgress.Enabled = true;
                 VisibilityByMarking(false);
             }));
         }
@@ -1495,15 +1506,12 @@ namespace Demos
         {
             if (!statusStrip1.IsHandleCreated || this.IsDisposed)
                 return;
-            statusStrip1.Invoke(new MethodInvoker(delegate ()
-            {
-                if (0 == timerProgressColorCounts++ % 2)
-                    lblProcessTime.ForeColor = statusStrip1.ForeColor;
-                else
-                    lblProcessTime.ForeColor = Color.Red;
+            if (0 == timerProgressColorCounts++ % 2)
+                lblProcessTime.ForeColor = statusStrip1.ForeColor;
+            else
+                lblProcessTime.ForeColor = Color.Red;
 
-                lblProcessTime.Text = $"{timerProgressStopwatch.ElapsedMilliseconds / 1000.0:F3} sec";
-            }));
+            lblProcessTime.Text = $"{timerProgressStopwatch.ElapsedMilliseconds / 1000.0:F3} sec";
         }
         /// <summary>
         /// Event handler for <c>IMarker</c> has ended
@@ -1516,9 +1524,9 @@ namespace Demos
             if (!this.IsHandleCreated || this.IsDisposed)
                 return;
             timerProgressStopwatch.Stop();
-            timerProgress.Stop();
             this.Invoke(new MethodInvoker(delegate ()
             {
+                timerProgress.Enabled = false;
                 lblProcessTime.Text = $"{ts.TotalSeconds:F3} sec";
                 if (success)
                     lblProcessTime.ForeColor = statusStrip1.ForeColor;
@@ -1629,6 +1637,32 @@ namespace Demos
                 EditorCtrl.View.Render();
                 lblRenderTime.Text = $"Render: {EditorCtrl.View.RenderTime} ms";
             }));
+        }
+
+        private void LblRemote_DoubleClick(object sender, EventArgs e)
+        {
+            if (null == this.Remote || !this.Remote.IsConnected)
+                return;
+            
+            switch(this.Remote.ControlMode)
+            {
+                case ControlModes.Remote:
+                    {
+                        var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to switch 'LOCAL' mode ?", "Remote Control", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = form.ShowDialog(this);
+                        if (dialogResult == DialogResult.Yes)
+                            this.Remote.ControlMode = ControlModes.Local;
+                    }
+                    break;
+                case ControlModes.Local:
+                    {
+                        var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to switch 'REMOTE' mode  ?", "Remote Control", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = form.ShowDialog(this);
+                        if (dialogResult == DialogResult.Yes)
+                            this.Remote.ControlMode = ControlModes.Remote;
+                    }
+                    break;
+            }
         }
     }
 }

@@ -90,9 +90,10 @@ namespace Demos
                 case "en":
                     SpiralLab.Sirius2.Config.Language = SpiralLab.Sirius2.Config.Languages.enUS;
                     break;
-                case "ko":
-                    SpiralLab.Sirius2.Config.Language = SpiralLab.Sirius2.Config.Languages.koKR;
-                    break;
+                //It will be possible as soon !
+                //case "ko":
+                //    SpiralLab.Sirius2.Config.Language = SpiralLab.Sirius2.Config.Languages.koKR;
+                //    break;
             }
         }
         /// <summary>
@@ -447,7 +448,8 @@ namespace Demos
                     throw new InvalidProgramException($"Not supported rtc type for marker: {rtcType}");
             }
             var scriptFileName = NativeMethods.ReadIni(ConfigFileName, $"MARKER{index}", "SCRIPT_FILENAME", string.Empty);
-            marker.TextConvertScriptFile = scriptFileName;
+            if (!string.IsNullOrEmpty(scriptFileName))
+                marker.TextConvertScriptFile = Path.Combine(SpiralLab.Sirius2.Winforms.Config.ScriptPath, scriptFileName);
             #endregion
 
             #region Remote

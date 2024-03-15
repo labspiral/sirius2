@@ -26,9 +26,9 @@ using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Remote;
 using SpiralLab.Sirius2.Winforms.Script;
 
-public class UserScript : ScriptBase
+public class UserScript0 : ScriptBase
 {    
-    public UserScript(IMarker marker)
+    public UserScript0(IMarker marker)
         : base(marker)
     {
         Name = "Sample.cs";
@@ -37,14 +37,8 @@ public class UserScript : ScriptBase
     }   
     
     // Marker has started
-    public override void OnMarkerStarted(IMarker marker)
+    public override void OnStarted(IMarker marker)
     {
-        if (null == marker.Remote)
-            return;
-        if (!marker.Remote.IsConnected)
-            return;
-        var text = string.Format("Status{0}Started{1}", ',', ';');
-        marker.Remote.Send(text);   
     }
     // To convert text data
     public override string OnTextConvert(IMarker marker, ITextConvertible textConvertible)
@@ -52,14 +46,14 @@ public class UserScript : ScriptBase
         // Not modified
         return textConvertible.SourceText;
     }
-    public override bool OnAfterLayer(IMarker marker, EntityLayer layer)
-    {
-        return true;
-    }
     public override bool OnBeforeLayer(IMarker marker, EntityLayer layer)
     {
         return true;
     }
+    public override bool OnAfterLayer(IMarker marker, EntityLayer layer)
+    {
+        return true;
+    }	
     public override bool OnBeforeEntity(IMarker marker, IEntity entity)
     {
         return true;
@@ -69,14 +63,8 @@ public class UserScript : ScriptBase
         return true;
     }
     // Marker has ended
-    public override void OnMarkerEnded(IMarker marker, bool success, TimeSpan timeSpan)
-    {
-        if (null == marker.Remote)
-            return;
-        if (!marker.Remote.IsConnected)
-            return;
-        var text = string.Format("Status{0}Ended{1}", ',', ';');
-        marker.Remote.Send(text);       
+    public override void OnEnded(IMarker marker, bool success, TimeSpan timeSpan)
+    {   
     }
 }       
  

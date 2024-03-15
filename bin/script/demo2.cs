@@ -26,9 +26,9 @@ using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Remote;
 using SpiralLab.Sirius2.Winforms.Script;
 
-public class UserScript : ScriptBase
+public class UserScript0 : ScriptBase
 {	
-	public UserScript(IMarker marker)
+	public UserScript0(IMarker marker)
 		: base(marker)
 	{	
 		Name = "Demo2.cs";

@@ -864,6 +864,36 @@
         <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.GetChannel(System.Int32,System.UInt16@)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.OnByForcily``1(``0)">
+            <summary>
+            Bit input on by forcily for testing purpose
+            </summary>
+            <typeparam name="T"><c>Enum</c></typeparam>
+            <param name="no">Item of <c>Enum</c></param>
+             <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.OnByForcily(System.Int32)">
+            <summary>
+            Bit input on by forcily for testing purpose
+            </summary>
+            <param name="no">No</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.OffByForcily``1(``0)">
+            <summary>
+            Bit input off by forcily for testing purpose
+            </summary>
+            <typeparam name="T"><c>Enum</c></typeparam>
+            <param name="no">Item of <c>Enum</c></param>
+             <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.OffByForcily(System.Int32)">
+            <summary>
+            Bit input off by forcily for testing purpose
+            </summary>
+            <param name="no">No</param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.Update">
             <inheritdoc/>  
         </member>
@@ -11037,6 +11067,12 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlReadData``1(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels,``0@)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlWriteVariable(System.UInt32,System.UInt32)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlReadVariable(System.UInt32,System.UInt32@)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlGetStatus(SpiralLab.Sirius2.Scanner.Rtc.RtcStatus)">
             <inheritdoc/>  
         </member>
@@ -11095,6 +11131,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListWriteExtDO16(System.UInt16,System.Boolean)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListWriteVariable(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListEnd">
@@ -11202,6 +11241,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListReadExtDI16WaitUntil(System.UInt32,System.UInt32)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListReadExtDI16WaitEdgeUntil(System.UInt32,System.Boolean)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListJumpMode(SpiralLab.Sirius2.Scanner.Rtc.JumpModeFlags)">
@@ -12899,6 +12941,12 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlReadData``1(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels,``0@)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlWriteVariable(System.UInt32,System.UInt32)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlReadVariable(System.UInt32,System.UInt32@)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlGetStatus(SpiralLab.Sirius2.Scanner.Rtc.RtcStatus)">
             <inheritdoc/>  
         </member>
@@ -12967,6 +13015,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListWriteExtDO16(System.UInt16,System.Boolean)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListWriteVariable(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListEnd">
@@ -13074,6 +13125,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListReadExtDI16WaitUntil(System.UInt32,System.UInt32)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListReadExtDI16WaitEdgeUntil(System.UInt32,System.Boolean)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListJumpMode(SpiralLab.Sirius2.Scanner.Rtc.JumpModeFlags)">
@@ -13896,6 +13950,12 @@
             <param name="data">Data</param>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlWriteVariable(System.UInt32,System.UInt32)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlReadVariable(System.UInt32,System.UInt32@)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlGetErrMsg(System.UInt32)">
             <inheritdoc/>  
         </member>
@@ -14106,6 +14166,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListWriteExtDO16(System.UInt16,System.Boolean)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListWriteVariable(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListAlcBegin(System.Double)">
@@ -16997,6 +17060,12 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlReadData``1(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels,``0@)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlWriteVariable(System.UInt32,System.UInt32)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlReadVariable(System.UInt32,System.UInt32@)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlGetStatus(SpiralLab.Sirius2.Scanner.Rtc.RtcStatus)">
             <inheritdoc/>  
         </member>
@@ -17055,6 +17124,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListWriteExtDO16(System.UInt16,System.Boolean)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListWriteVariable(System.UInt32,System.UInt32)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListEnd">
@@ -17162,6 +17234,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListReadExtDI16WaitUntil(System.UInt32,System.UInt32)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListReadExtDI16WaitEdgeUntil(System.UInt32,System.Boolean)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListJumpMode(SpiralLab.Sirius2.Scanner.Rtc.JumpModeFlags)">
@@ -18426,6 +18501,22 @@
             <param name="data">Read data</param>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlWriteVariable(System.UInt32,System.UInt32)">
+            <summary>
+            Write free variable
+            </summary>
+            <param name="no">0~7</param>
+            <param name="data">Variable value</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlReadVariable(System.UInt32,System.UInt32@)">
+            <summary>
+            Read free variable
+            </summary>
+            <param name="no">0~7</param>
+            <param name="data">Variable value</param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlGetStatus(SpiralLab.Sirius2.Scanner.Rtc.RtcStatus)">
              <summary>
              Get status of RTC controller
@@ -18552,6 +18643,14 @@
             </summary>
             <param name="bitPosition">0~15</param>
             <param name="onOff">On/Off</param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListWriteVariable(System.UInt32,System.UInt32)">
+            <summary>
+            List write free variable 
+            </summary>
+            <param name="no">0~7</param>
+            <param name="data">Variable value</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListEnd">
@@ -19887,6 +19986,35 @@
             </remarks>
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.SignalEdges">
+            <summary>
+            Input/Output signal edges
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SignalEdges.Low">
+            <summary>
+            Low edge
+            <code>
+            HIGH _________
+                         |
+                         | 
+                         | 
+                         v________ LOW
+            </code>
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SignalEdges.High">
+            <summary>
+            Active Low
+            <code>
+                        _________ HIGH
+                        ^ 
+                        | 
+                        |
+            LOW ________|
+            </code>
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMarkingInfo">
             <summary>
             Marking Info 
@@ -20192,10 +20320,10 @@
             <remarks>
             EXTENSION 1 port: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDO16">ExtensionChannels.ExtDO16</see> and <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDI16">ExtensionChannels.ExtDI16</see> <br/>
             </remarks>
-            <param name="inputHighBitMask">Input High BitMask: 1: Care, 0: Don't Care</param>
-            <param name="inputLowBitMask">Input Low BitMask: 1: Care, 0: Don't Care</param>
-            <param name="outputBitMask">Output BitMask: 1: Care, 0: Don't Care</param>
-            <param name="onOff">Output Bit Level: 1: Set, 0: Clear</param>
+            <param name="inputHighBitMask">Input high bitmask: 1: care, 0: don't dare</param>
+            <param name="inputLowBitMask">Input low bitmask: 1: care, 0: don't dare</param>
+            <param name="outputBitMask">Output bitmask: 1: care, 0: don't care</param>
+            <param name="onOff">Output bit level: 1: set, 0: clear</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.ListReadExtDI16WaitUntil(System.UInt32,System.UInt32)">
@@ -20203,10 +20331,37 @@
             List wait until EXTENSION 1 port input condition has matched       
             </summary>
             <remarks>
-            EXTENSION 1 port: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDO16">ExtensionChannels.ExtDO16</see> and <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDI16">ExtensionChannels.ExtDI16</see> <br/>
+            EXTENSION 1 port: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDI16">ExtensionChannels.ExtDI16</see> <br/>
             </remarks>
             <param name="inputHighBitMask">Input High BitMask: 1: Care, 0: Don't Care</param>
             <param name="inputLowBitMask">Input Low BitMask: 1: Care, 0: Don't Care</param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.ListReadExtDI16WaitEdgeUntil(System.UInt32,System.Boolean)">
+            <summary>
+            List wait until EXTENSION 1 port input condition has matched until goes to HIGH(or LOW) edge 
+            <code>
+            High edge :
+                        _________ HIGH
+                        ^ 
+                        | (Waiting ...)
+                        |
+            LOW ________|
+            
+            
+            Low edge :
+            HIGH _________
+                         |
+                         | (Waiting ...)
+                         | 
+                         v________ LOW
+            </code>
+            </summary>
+            <remarks>
+            EXTENSION 1 port: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDI16">ExtensionChannels.ExtDI16</see> <br/>
+            </remarks>
+            <param name="inputBit">Input bit (0~15)</param>
+            <param name="isHighEdge"><c>True</c>: High edge, <c>False</c>: Low edge</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.ListRepeatCall(System.UInt32,System.UInt32)">

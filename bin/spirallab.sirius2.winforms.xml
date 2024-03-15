@@ -359,6 +359,16 @@
               Looks up a localized string similar to Radius factor.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellcircle.Reverse_DESC">
+            <summary>
+              Looks up a localized string similar to Reverse Order.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellcircle.Reverse_DISP">
+            <summary>
+              Looks up a localized string similar to Reverse.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cellcircle.Zigzag_DESC">
             <summary>
               Looks up a localized string similar to Zig Zag or Not.
@@ -448,6 +458,16 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Raster_mode_DISP">
             <summary>
               Looks up a localized string similar to Raster mode.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Reverse_DESC">
+            <summary>
+              Looks up a localized string similar to Reverse Order.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Reverse_DISP">
+            <summary>
+              Looks up a localized string similar to Reverse.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Zigzag_DESC">
@@ -1065,6 +1085,47 @@
               Looks up a localized string similar to Width.
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.control.scriptevent">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.scriptevent.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.scriptevent.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.scriptevent.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.scriptevent.No_DESC">
+            <summary>
+              Looks up a localized string similar to Free Variable No (0~7).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.scriptevent.No_DISP">
+            <summary>
+              Looks up a localized string similar to No.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.scriptevent.Value_DESC">
+            <summary>
+              Looks up a localized string similar to Value (32bits).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.scriptevent.Value_DISP">
+            <summary>
+              Looks up a localized string similar to Value.
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.mofextstartdelay">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -1104,6 +1165,98 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofextstartdelay.MoF_C">
             <summary>
               Looks up a localized string similar to MoF.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.control.freevariable">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.freevariable.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.freevariable.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.freevariable.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.freevariable.No_DESC">
+            <summary>
+              Looks up a localized string similar to Free Variable No (0~7).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.freevariable.No_DISP">
+            <summary>
+              Looks up a localized string similar to No.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.freevariable.Value_DESC">
+            <summary>
+              Looks up a localized string similar to Value (32bits).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.freevariable.Value_DISP">
+            <summary>
+              Looks up a localized string similar to Value.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.control.waitdataext16edgecond">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.waitdataext16edgecond.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.waitdataext16edgecond.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.waitdataext16edgecond.Bit_name_DESC">
+            <summary>
+              Looks up a localized string similar to Bit Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.waitdataext16edgecond.Bit_name_DISP">
+            <summary>
+              Looks up a localized string similar to Bit name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.waitdataext16edgecond.Bit_position_DESC">
+            <summary>
+              Looks up a localized string similar to Bit Position (0~15).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.waitdataext16edgecond.Bit_position_DISP">
+            <summary>
+              Looks up a localized string similar to Bit position.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.waitdataext16edgecond.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.waitdataext16edgecond.Signal_DESC">
+            <summary>
+              Looks up a localized string similar to Conditional Bit Signal Level (Low/High).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.waitdataext16edgecond.Signal_DISP">
+            <summary>
+              Looks up a localized string similar to Signal.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.alcvectorbegin">
@@ -1573,12 +1726,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.writedataext16cond.Output_bit_level_DESC">
             <summary>
-              Looks up a localized string similar to Output Bit Signal Level (On: True, Off: False).
+              Looks up a localized string similar to Output Bit Signal Level (Low/High).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.writedataext16cond.Output_bit_level_DISP">
             <summary>
-              Looks up a localized string similar to Output bit level.
+              Looks up a localized string similar to Output signal.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.writedataext16cond.Output_bit_mask_DESC">
@@ -3273,6 +3426,16 @@
               Looks up a localized string similar to Line pitch.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Reverse_DESC">
+            <summary>
+              Looks up a localized string similar to Reverse Order.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Reverse_DISP">
+            <summary>
+              Looks up a localized string similar to Reverse.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode1d.Text_converted_DESC">
             <summary>
               Looks up a localized string similar to Text (Converted).
@@ -4915,6 +5078,11 @@
             ZigZag
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellCircle.IsReverse">
+            <summary>
+            Reverse
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellCircle.RadiusFactor">
             <summary>
             Radius scale factor
@@ -4975,6 +5143,11 @@
             ZigZag
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.IsReverse">
+            <summary>
+            Reverse
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.RasterMode">
             <summary>
             Raster mode
@@ -4994,7 +5167,7 @@
             Pixel duration time (usec)
             </summary>
             <remarks>
-            Pixel output time works like as output pulse width. should be lower than <c>PixelPeriod</c>
+            Pixel output time works like as output pulse width. should be lower than <c>PixelPeriod</c>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelChannel">
@@ -5136,6 +5309,28 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.CharacterSetSerialNo.Clone">
             <inheritdoc/>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent">
+            <summary>
+            EntityScriptEvent entity
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent.Regen">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFExtStartDelay">
             <summary>
             EntityMoFExtStartDelay entity
@@ -5177,6 +5372,105 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFExtStartDelay.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityVariable">
+            <summary>
+            EntityVariable entity
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityVariable.No">
+            <summary>
+            No (0~7)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityVariable.Value">
+            <summary>
+            Data
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityVariable.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityVariable.#ctor(System.UInt32,System.UInt32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="no">0~7</param>
+            <param name="data">Variable value</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityVariable.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityVariable.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityVariable.Regen">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityVariable.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond">
+            <summary>
+            EntityWaitDataExt16EdgeCond entity
+            </summary>
+            <remarks>
+            Wait until EXTENSION 1 port input condition has matched until goes to LOW(or HIGH) edge 
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.BitPosition">
+            <summary>
+            Bit position (0~15)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.bitPosition">
+            <summary>
+            Bit position (0~15)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.BitName">
+            <summary>
+            Output bit name
+            </summary>
+            <remarks>
+            Used with <c>Config.DIn_RtcExtension1Port</c>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.SignalEdge">
+            <summary>
+            Output value
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.signalEdge">
+            <summary>
+            Output value
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.#ctor(System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.SignalEdges)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bitPosition">Bit postion: 0~15</param>
+            <param name="signalEdge"><c>SignalEdges</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.Regen">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityRaster">
@@ -5710,7 +6004,7 @@
             For example: (MSB) 0000 0000 0000 0000 (LSB) <br/>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityWriteDataExt16Cond.IsOutputBitLevel">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityWriteDataExt16Cond.OutputSignal">
             <summary>
             Output bit level
             </summary>
@@ -5723,7 +6017,7 @@
             Used with 16 bits digital input and output at EXTENSION 1 port. <br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWriteDataExt16Cond.#ctor(System.String,System.String,System.String,System.Boolean)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWriteDataExt16Cond.#ctor(System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.SignalEdges)">
             <summary>
             Constructor
             </summary>
@@ -5733,7 +6027,7 @@
             <param name="inputLowBitMask">Input low bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <param name="inputHightBitMask">Input high bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <param name="outputBitMask">Output bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
-            <param name="outputLevel">Output level when condition has matched. True(on), False(off)</param>
+            <param name="outputLevel"><c>SignalEdges</c> for output level when condition has matched.</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWriteDataExt16Cond.Clone">
             <inheritdoc/>
@@ -6865,6 +7159,16 @@
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.isZigZag">
             <summary>
             ZigZag
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.IsReverse">
+            <summary>
+            Reverse
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.isReverse">
+            <summary>
+            Reverse
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Width">
@@ -12975,13 +13279,14 @@
             </summary>
             <remarks>
             Used with 16 bits digital output at EXTENSION 1 port. <br/>
+            Used with and should be assigned one of <see cref="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcExtension1Port">Config.DOut_RtcExtension1Port</see>. <br/>
             Write digital output at RTC EXTENSION 1 port (16bits). <br/>
             </remarks>
             <param name="bitPosition">Bit position (0~15)</param>
             <param name="onOff">On(off)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityWriteDataExt16">EntityWriteDataExt16</see></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWriteDataExt16Cond(System.String,System.String,System.String,System.Boolean)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWriteDataExt16Cond(System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.SignalEdges)">
             <summary>
             Create <c>EntityWriteDataExt16Cond</c> entity 
             <para>Used with RTC5,6 only (not syncAXIS)</para>
@@ -12994,13 +13299,15 @@
             </summary>
             <remarks>
             Used with 16 bits digital input and output at EXTENSION 1 port. <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DIn_RtcExtension1Port">Config.DIn_RtcExtension1Port</see>. <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcExtension1Port">Config.DOut_RtcExtension1Port</see>. <br/>
             If masked input bits condition has matched, then write masked output bits into EXTENSION 1 port. <br/>
             Don't care bit for '0'. <br/>
             </remarks>
             <param name="inputLowBitMask">Input low bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <param name="inputHightBitMask">Input high bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <param name="outputBitMask">Output bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
-            <param name="outputLevel">Output level when condition has matched. True(on), False(off)</param>
+            <param name="outputLevel"><c>SignalEdges</c>O for output level when condition has matched.</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityWriteDataExt16Cond">EntityWriteDataExt16Cond</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWaitDataExt16Cond(System.String,System.String)">
@@ -13010,18 +13317,68 @@
             <code>
             var document = siriusEditorUserControl1.Document;
             ...
-            var entity = EntityFactory.CreateWaitDataExt16Cond("0000 0000 0000 0000", "0000 0000 0000 0000");
+            var entity = EntityFactory.CreateWaitDataExt16Cond("0000 0000 0000 0000", "0000 0000 0000 0001");
             document.ActAdd(entity);
             </code>
             </summary>
             <remarks>
             Used with 16 bits digital input and output at EXTENSION 1 port. <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DIn_RtcExtension1Port">Config.DIn_RtcExtension1Port</see>. <br/>
             Wait until if masked input bits condition has matched at EXTENSION 1 port. <br/>
             Don't care bit for '0'. <br/>
             </remarks>
             <param name="inputLowBitMask">Input low bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <param name="inputHightBitMask">Input high bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16Cond">EntityWaitDataExt16Cond</see></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWaitDataExt16EdgeCond(System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.SignalEdges)">
+            <summary>
+            Create <c>EntityWaitDataExt16CondEdge</c> entity 
+            <para>Used with RTC5,6 only (not syncAXIS)</para>
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var entity = EntityFactory.CreateWaitDataExt16EdgeCond(0, EntityWaitDataExt16CondEdge.SignalEdges.High);
+            document.ActAdd(entity);
+            </code>
+            </summary>
+            <remarks>
+            Used with 16 bits digital input at EXTENSION 1 port. <br/>
+            Used with and should be assigned one of <see cref="F:SpiralLab.Sirius2.Winforms.Config.DIn_RtcExtension1Port">Config.DIn_RtcExtension1Port</see>. <br/>
+            Wait until input bit goes to HIGH(or LOW) condition has matched at EXTENSION 1 port. <br/>
+            </remarks>
+            <param name="bitPosition">Input bit (0~15)</param>
+            <param name="signalEdge">Wait edge condition</param>
+            <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond">EntityWaitDataExt16CondEdge</see></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateVariable(System.UInt32,System.UInt32)">
+            <summary>
+            Create <c>EntityVariable</c> entity
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var freeVariable = EntityFactory.CreateVariable(0, 1000);
+            document.ActAdd(freeVariable);
+            </code>
+            <remarks>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension">IRtcExtension</see> only. <br/>
+            </remarks>        
+            </summary>
+            <param name="no">0~7</param>
+            <param name="data">Variable value</param>
+            <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityVariable">EntityVariable</see></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateScriptEvent">
+            <summary>
+            Create <c>EntityScriptEvent</c> entity
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var scriptEvent = EntityFactory.CreateScriptEvent();
+            document.ActAdd(scriptEvent);
+            </code>
+            </summary>
+            <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityVariable">EntityVariable</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePointsCloud(OpenTK.Vector3[])">
             <summary>
@@ -14237,6 +14594,20 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Common.WriteDataExt16StringConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
             <inheritdoc/>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.ReadDataExt16StringConverter">
+            <summary>
+            ReadDataExt16StringConverter
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.ReadDataExt16StringConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.ReadDataExt16StringConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.ReadDataExt16StringConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.EnumHelper">
             <summary>
             Extract string from attribute Description of Enum 
@@ -14660,6 +15031,9 @@
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnMarkPen">
             <inheritdoc/>
         </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnScriptEvent">
+            <inheritdoc/>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Index">
             <inheritdoc/>
         </member>
@@ -14803,6 +15177,12 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.TextConvertScriptInstance">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.IsScriptError">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.ScriptLineIfError">
+            <inheritdoc/>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Tag">
             <inheritdoc/>
         </member>
@@ -14934,6 +15314,18 @@
             Consider as its working within async threads. <br/>
             Used by internally. <br/>
             </remarks>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyScriptEvent(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">
+            <summary>
+            Notify event for <see cref="T:SpiralLab.Sirius2.Winforms.Script.IScript">IScript</see>
+            </summary>
+            <remarks>
+            Consider as its working within async threads. <br/>
+            Used by internally. <br/>
+            </remarks>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="entity"><c>EntityScriptEvent</c></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.PenEntityWork(SpiralLab.Sirius2.Winforms.Entity.EntityPen)">
@@ -15667,6 +16059,11 @@
              User can add event handler for override <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see> mark routines. <br/>
              </remarks>
         </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnScriptEvent">
+            <summary>
+            Event for <c>EntityScriptEvent</c> by <c>IScript</c> inherited from <c>ScriptBase</c>
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Index">
             <summary>
             Index
@@ -15747,13 +16144,14 @@
             <remarks>
             Do NOT edit. Used by internally. <br/>
             Used with <c>MarkerRtc</c> only. <br/>
+            Used with <c>IRtcCharacterSet</c>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.TextConvertScriptFile">
             <summary>
             External script file
             <code>
-            IMarker.TextConvertScriptFile = "demo1.cs";
+            IMarker.TextConvertScriptFile = Path.Combine(Config.ScriptPath, "demo1.cs");
             //or to disable external script file
             IMarker.TextConvertScriptFile = string.Empty;
             </code>
@@ -15763,11 +16161,11 @@
                 public UserScript(IMarker marker)
                     : base(marker)
                 {
-                    Name = "MyScript";
-                    Description = "MyDescription";
+                    Name = "name";
+                    Description = "description";
                 }
                 
-                public override void OnMarkerStarted(IMarker marker)
+                public override void OnStarted(IMarker marker)
                 {
                 }
                 public override string OnTextConvert(IMarker marker, ITextConvertible textConvertible)
@@ -15775,7 +16173,7 @@
                     ...
                     return textConvertible.SourceText;
                 }
-                public override void OnMarkerEnded(IMarker marker)
+                public override void OnEnded(IMarker marker)
                 {
                 }
                 ...
@@ -15785,7 +16183,7 @@
             <remarks>
             Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible">ITextConvertible</see> interface. <br/>
             User can use <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnTextConvert">IMarker.OnTextConvert</see> event instead. <br/>
-            Reference script files are "sample.cs", "demo1.cs", "demo2.cs". <br/>
+            Reference script files are "sample.cs", "demo1.cs", "demo2.cs" at <see cref="P:SpiralLab.Sirius2.Winforms.Config.ScriptPath">Config.ScriptPath</see>. <br/>
             <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnTextConvert">OnTextConvert</see> event will be fired when <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">ITextConvertible.IsConvertedText</see> is <c>True</c> only. <br/>
             <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnTextConvert">OnTextConvert</see> event will be fired whenever do <c>IMarkerable.Mark</c> or <c>IEntity.Regen</c>. <br/>
             <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see> value can be <c>NULL</c> while <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.Regen">IEntity.Regen</see>. <br/>
@@ -15804,6 +16202,20 @@
             TextConvertScriptInstance = new UserScript(marker);
             </code>
             If <c>TextConvertScriptFile</c> has assigned, <c>TextConvertInstance</c> would be created with new instance. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.IsScriptError">
+            <summary>
+            Result of compilation of script file
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ScriptLineIfError">
+            <summary>
+            Script line of code if error has occured
+            </summary>
+            <remarks>
+            Default : <br/>
+            Valid if <c>IsScriptError</c> is <c>True</c>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Offsets">
@@ -16339,6 +16751,16 @@
               Looks up a localized string similar to Script.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptError_DESC">
+            <summary>
+              Looks up a localized string similar to Script Compilation Error(s) or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptError_DISP">
+            <summary>
+              Looks up a localized string similar to Script error.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptFile_DESC">
             <summary>
               Looks up a localized string similar to Script File.
@@ -16357,6 +16779,16 @@
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptInstance_DISP">
             <summary>
               Looks up a localized string similar to Script instance.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptLineIfError_DESC">
+            <summary>
+              Looks up a localized string similar to Script Line of Code If Error.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptLineIfError_DISP">
+            <summary>
+              Looks up a localized string similar to Script line.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Status_C">
@@ -17371,13 +17803,13 @@
             Used with when compile external script file. <br/>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config.ScriptTextConvertTypeName">
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.ScriptTextConvertInstanceName">
             <summary>
-            Script class name 
+            Script class(or instance) name 
             <code>
-            public class UserScript : SpiralLab.Sirius2.Winforms.Script.ScriptBase
+            public class UserScript0 : ScriptBase
             {
-                public UserScript(IMarker marker)
+                public UserScript0(IMarker marker)
                     : base(marker)
                 {
                     Name = "MyScript";
@@ -17399,8 +17831,10 @@
             </code>
             </summary>
             <remarks>
-            Default: "UserScript" <br/>
             User class of script should be inherited from <see cref="T:SpiralLab.Sirius2.Winforms.Script.ScriptBase">ScriptBase</see> <br/>
+            Sample(or default) script file is exist at 'bin\script\default.cs' <br/>
+            Format: $"{Config.ScriptTextConvertInstanceName}{Marker.Index} <br/>
+            Default: "UserScript0" <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.DxfSplineToPolygonalCounts">
@@ -18885,7 +19319,7 @@
             <param name="targetIndex">Target index</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActSimulateStart(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Winforms.SimulationSpeeds)">
+        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActSimulateStart(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.SimulationSpeeds)">
             <summary>
             Simulation start for array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
             </summary>
@@ -18894,7 +19328,7 @@
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual">RtcVirtual</see> and <see cref="T:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual">MarkerVirtual</see> by internally. <br/>
             </remarks>
             <param name="entities">Target array of <c>IEntity</c></param>
-            <param name="view">Target <c>IView</c></param>
+            <param name="marker">Target <c>IMarker</c></param>
             <param name="simulationSpeed"><c>SimulationSpeed</c></param>
             <returns>Success or failed</returns>
         </member>
@@ -19280,7 +19714,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActEntityDragMove(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.Entity.IEntity,System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActSimulateStart(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Winforms.SimulationSpeeds)">
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActSimulateStart(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.SimulationSpeeds)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActSimulateStop">
@@ -20051,7 +20485,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.Dispose">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnMarkerStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <summary>
             Event handler for marker has started
             </summary>
@@ -20097,7 +20531,15 @@
             <param name="entity"><c>IEntity</c></param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnMarkerEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnScriptEvent(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">
+            <summary>
+            Event handler for script event entity 
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="entity"><c>EntityScriptEvent</c></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">
             <summary>
             Event handler for marker has ended
             </summary>
@@ -22557,14 +22999,9 @@
             <c>IDocument</c>
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl.Rtc">
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl.Marker">
             <summary>
-            <c>IRtc</c>
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl.View">
-            <summary>
-            <c>IView</c>
+            <c>IMarker</c>
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl.#ctor">

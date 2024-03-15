@@ -159,6 +159,13 @@
 
 **7. Version history**
 
+* 2024.3.15 v.1.21.1120
+  - added) entity_mof_barcode demo project 
+  - added) mark barcodes with reverse order
+  - added) wait extension1 io input condition 
+  - added) read/write free variable
+  - added) script event and navigate line of script code if failed
+ 
 * 2024.3.12 v.1.20.1110
   - added) laser on/off shift with SCANahead at RTC6 
   - fixed) create RTC DIOs by manually

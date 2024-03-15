@@ -194,9 +194,11 @@ namespace Demos
                         DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.PulseLength, watt);
                         break;
                     case ConsoleKey.F6:
+                        rtc.CtlWriteVariable(0, 5); //FreeVariable0 = 5
                         DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.FreeVariable0, watt);
                         break;
                     case ConsoleKey.F7:
+                        rtc.CtlWriteVariable(1, 10);//FreeVariable1 = 10
                         DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.FreeVariable1, watt);                        
                         break;
                     case ConsoleKey.D0:

@@ -26,7 +26,7 @@ using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Remote;
 using SpiralLab.Sirius2.Winforms.Script;
 
-public class UserScript : ScriptBase
+public class UserScript0 : ScriptBase
 {    
     [RefreshProperties(RefreshProperties.All)]
     [Browsable(true)]
@@ -61,7 +61,7 @@ public class UserScript : ScriptBase
 	int serialNo;
 	
     
-	public UserScript(IMarker marker)
+	public UserScript0(IMarker marker)
 		: base(marker)
     {
 		Name = "Demo1.cs";
@@ -75,7 +75,15 @@ public class UserScript : ScriptBase
 
     public override string OnTextConvert(IMarker marker, ITextConvertible textConvertible)
     {
-        var currentEntity = marker.CurrentEntity;
+		var index = marker.Index;
+		var currentLayer = marker.CurrentLayer;
+		var currentLayerIndex = marker.CurrentLayerIndex;
+		//var currentEntity = textConvertible as IEntity;
+		var currentEntity = marker.CurrentEntity;
+		var currentEntityIndex = marker.CurrentEntityIndex;
+		var currentOffset = marker.CurrentOffset;
+		var currentOffsetIndex = marker.CurrentOffsetIndex;
+		
         switch (currentEntity.Name)
         {
             case "MyBarcode1":
