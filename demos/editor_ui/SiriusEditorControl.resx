@@ -833,7 +833,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACa
-        SAAAAk1TRnQBSQFMAgEBKAEAAcwBBQHMAQUBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        SAAAAk1TRnQBSQFMAgEBKAEAAdwBBQHcAQUBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABYAMAAQgBAQIAAQEBAAEIBgABYxgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHc
         AcABAAHwAcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEA
         AzkBAAGAAXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEz
@@ -2450,6 +2450,31 @@
     <value>Read/Write Data and I/O
 (Extension1,2 and Laser Port)</value>
   </data>
+  <data name="mnuScriptEvent.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAmFJREFUWEfV
+        l7+LE0EcxYMoFv7u9EDBUhA5Qe2UINekFQL5sRtCiq1UsLAQLKI2Fv4LNjmEgyuuCVrZ6IEi13i2CopX
+        nFjeHVed+nnhGzOZ25jMbXLBB4/dnXnvzXd3Z2d3c/8t4ji+Wa1WW6L2rXnyqFQqs/A1A/92qTb1mWz8
+        iKLojM4W7rgDe1RfS1qzZUexWDxK4FOCt5yBhnFTHnktJhzNZvMAlzQhbM0LD+GaMpRlsaMB0w3MK15Y
+        Fq4o0+IHw+7zPPzlmMdFZc7X6/XTNlw/qPAUgu+OYRB3KPQt+scw5jiCD+AyHKXwbxRx0obtgbB6itjn
+        +1KpdNksu0DGLMV9TPH1EU3NLD1gvpcmdrhQKBQOm3wgpEH70vP2UWOZvIchBbzzB2f1u8iZ3Kbvjs7c
+        mjvg+BbtA9eL0AJ0X6+aLNdoNI5xvOj0d7lIxjW2r+z4KwV+ZqtC9ERtWHtwAcsm6QDdUopmF9ElUFdi
+        Sz62b5y+0Qug/aFJdNmvpGl8lsvlS7plSZIc6s54u3JP1B9UgDtj0dxN06SwjXbOCn4uL9tH8JP6gwqg
+        PTZJSAEvKPy6WwDH99n/oP7QAoJvgQZnexz9EXheXtaPGdqeqT+oADjdSQj3+hj+hOtQ/i9wG3a0oQWI
+        U12Iupz4UrxvLyMYmaUHzPv2OuZT7YQN2w+Cp/dB4oIJdgFx2zFnZVuZFj86uMRzmFe9sBCuKsPi9oZ8
+        Pn+QEH0d//DC/8V1eeS1mOyw/4Mm4X8XlBRuS5Ppf2AYarXaOQbSH5I7UbXf4hE9a7LJg0k1nZ/T8SKX
+        +wNFLGBUxr2U1gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="mnuScriptEvent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 34</value>
+  </data>
+  <data name="mnuScriptEvent.Text" xml:space="preserve">
+    <value>Script Event</value>
+  </data>
+  <data name="mnuScriptEvent.ToolTipText" xml:space="preserve">
+    <value>Script Event</value>
+  </data>
   <data name="toolStripDropDownButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -3018,7 +3043,7 @@
     <value>FileName</value>
   </data>
   <data name="toolStripStatusLabel10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>438, 24</value>
+    <value>411, 24</value>
   </data>
   <data name="lblPos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3182,10 +3207,10 @@
     <value>Arial, 8.25pt, style=Bold</value>
   </data>
   <data name="lblRemote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 24</value>
+    <value>151, 24</value>
   </data>
   <data name="lblRemote.Text" xml:space="preserve">
-    <value> CONNECTED </value>
+    <value> DISCONNECTED </value>
   </data>
   <data name="toolStripStatusLabel3.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -4167,6 +4192,12 @@
   </data>
   <data name="&gt;&gt;toolStripStatusLabel3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mnuScriptEvent.Name" xml:space="preserve">
+    <value>mnuScriptEvent</value>
+  </data>
+  <data name="&gt;&gt;mnuScriptEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SiriusEditorUserControl</value>

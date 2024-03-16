@@ -20422,6 +20422,72 @@
             <param name="propValues">Property value</param>
             <returns>Success or failed</returns>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.remote.remotebase">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.remote.remotebase.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.remote.remotebase.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.remote.remotebase.Basic_C">
+            <summary>
+              Looks up a localized string similar to Basic.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.remote.remotebase.Connected_DESC">
+            <summary>
+              Looks up a localized string similar to Client(or Peer) has Connected or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.remote.remotebase.Connected_DISP">
+            <summary>
+              Looks up a localized string similar to Connected.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.remote.remotebase.Index_DESC">
+            <summary>
+              Looks up a localized string similar to Index (0,1,2,...).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.remote.remotebase.Index_DISP">
+            <summary>
+              Looks up a localized string similar to Index.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.remote.remotebase.Mode_DESC">
+            <summary>
+              Looks up a localized string similar to Control Mode (LOCAL/REMOTE).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.remote.remotebase.Mode_DISP">
+            <summary>
+              Looks up a localized string similar to Control Mode.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.remote.remotebase.Name_DESC">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.remote.remotebase.Name_DISP">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.remote.remotebase.Status_C">
+            <summary>
+              Looks up a localized string similar to Status.
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Script.IScript">
             <summary>
             IScript interface

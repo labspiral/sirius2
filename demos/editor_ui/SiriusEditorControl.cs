@@ -730,6 +730,7 @@ namespace Demos
             mnuWriteDataExt16Cond.Click += MnuWriteDataExt16Cond_Click;
             mnuWaitDataExt16Cond.Click += MnuWaitDataExt16Cond_Click;
             mnuWaitDataExt16EdgeCond.Click += MnuWaitDataExt16EdgeCond_Click;
+            mnuScriptEvent.Click += MnuScriptEvent_Click;
 
             lblRemote.DoubleClick += LblRemote_DoubleClick;
             lblRemote.DoubleClickEnabled = true;
@@ -939,6 +940,11 @@ namespace Demos
         private void MnuWaitDataExt16EdgeCond_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateWaitDataExt16EdgeCond(0);
+            document.ActAdd(entity);
+        }
+        private void MnuScriptEvent_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateScriptEvent();
             document.ActAdd(entity);
         }
         private void MnuWriteData_Click(object sender, EventArgs e)
@@ -1461,7 +1467,7 @@ namespace Demos
             }
             if (null == this.Remote || !Remote.IsConnected)
             {
-                lblRemote.Text = " CONNECTED ";
+                lblRemote.Text = " DISCONNECTED ";
                 lblRemote.ForeColor = Color.White;
                 lblRemote.BackColor = Color.Maroon;
             }

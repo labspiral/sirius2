@@ -90,10 +90,9 @@ namespace Demos
                 case "en":
                     SpiralLab.Sirius2.Config.Language = SpiralLab.Sirius2.Config.Languages.enUS;
                     break;
-                //It will be possible as soon !
-                //case "ko":
-                //    SpiralLab.Sirius2.Config.Language = SpiralLab.Sirius2.Config.Languages.koKR;
-                //    break;
+                case "ko":
+                    SpiralLab.Sirius2.Config.Language = SpiralLab.Sirius2.Config.Languages.koKR;
+                    break;
             }
         }
         /// <summary>
