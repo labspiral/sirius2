@@ -26,7 +26,7 @@ using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Remote;
 using SpiralLab.Sirius2.Winforms.Script;
 
-public class UserScript0 : ScriptBase
+public class UserScript : MarkerScriptBase
 {    
     [RefreshProperties(RefreshProperties.All)]
     [Browsable(true)]
@@ -69,7 +69,7 @@ public class UserScript0 : ScriptBase
     uint serialNo;
      
      
-    public UserScript0(IMarker marker)
+    public UserScript(IMarker marker)
         : base(marker)
     {
         Name = "mof_barcode.cs";
@@ -109,6 +109,7 @@ public class UserScript0 : ScriptBase
                 SerialNo = StartSerialNo;
             }
         }
+        Logger.Log(Logger.Types.Trace, "serial no has changed to {0} at script event", SerialNo);
         return true;
     }   
 }       

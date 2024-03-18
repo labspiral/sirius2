@@ -26,7 +26,7 @@ using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Remote;
 using SpiralLab.Sirius2.Winforms.Script;
 
-public class UserScript0 : ScriptBase
+public class UserScript : MarkerScriptBase
 {    
     [RefreshProperties(RefreshProperties.All)]
     [Browsable(true)]
@@ -61,7 +61,7 @@ public class UserScript0 : ScriptBase
 	int serialNo;
 	
     
-	public UserScript0(IMarker marker)
+	public UserScript(IMarker marker)
 		: base(marker)
     {
 		Name = "Demo1.cs";

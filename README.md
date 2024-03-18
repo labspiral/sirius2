@@ -159,12 +159,13 @@
 
 **7. Version history**
 
-* 2024.3.16 v.1.21.1120
+* 2024.3.18 v.1.21.1120
   - added) entity_mof_barcode demo project 
   - added) mark barcodes with reverse order
   - added) wait extension1 io input condition 
   - added) read/write free variable
   - added) script event and navigate line of script code if failed
+  - added) OnChanged event at IDInput
   - fixed) crash bug when select multi-language
  
 * 2024.3.12 v.1.20.1110

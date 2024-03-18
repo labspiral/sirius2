@@ -16198,8 +16198,8 @@
             </summary>
             <remarks>
             <code>
-            //UserScript instance woule be create if TextConvertScriptFile has assigned 
-            TextConvertScriptInstance = new UserScript(marker);
+            //MarkerScriptBase instance woule be create if TextConvertScriptFile has assigned 
+            TextConvertScriptInstance = new MarkerScript(marker);
             </code>
             If <c>TextConvertScriptFile</c> has assigned, <c>TextConvertInstance</c> would be created with new instance. <br/>
             </remarks>
@@ -16778,7 +16778,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptInstance_DISP">
             <summary>
-              Looks up a localized string similar to Script instance.
+              Looks up a localized string similar to Script instance (Inherited from MarkerScriptBase).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptLineIfError_DESC">
@@ -17807,9 +17807,9 @@
             <summary>
             Script class(or instance) name 
             <code>
-            public class UserScript0 : ScriptBase
+            public class UserScript : MarkerScriptBase
             {
-                public UserScript0(IMarker marker)
+                public UserScript(IMarker marker)
                     : base(marker)
                 {
                     Name = "MyScript";
@@ -17831,10 +17831,9 @@
             </code>
             </summary>
             <remarks>
-            User class of script should be inherited from <see cref="T:SpiralLab.Sirius2.Winforms.Script.ScriptBase">ScriptBase</see> <br/>
+            User class of script should be inherited from <see cref="T:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase">MarkerScriptBase</see> <br/>
             Sample(or default) script file is exist at 'bin\script\default.cs' <br/>
-            Format: $"{Config.ScriptTextConvertInstanceName}{Marker.Index} <br/>
-            Default: "UserScript0" <br/>
+            Default: "UserScript" <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.DxfSplineToPolygonalCounts">
@@ -19949,6 +19948,20 @@
             <param name="marker">Target <c>IMarker</c> (Try to send 'Status,End' notification message at remote communication by automatically. <br/></param>
             <param name="portNo">TCP server listening port no</param>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteTcpServer.Marker_OnStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <summary>
+            Implement <c>IMarker.OnStarted</c> event to send "Status,Started;" response by remote communication
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteTcpServer.Marker_OnEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">
+            <summary>
+            Implement <c>IMarker.OnEnded</c> event to send "Status,Ended;" response by remote communication
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="success">Success(or failed) to mark</param>
+            <param name="timeSpan"><c>TimeSpan</c></param>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteTcpServer.Finalize">
             <summary>
             Finalizer
@@ -19992,6 +20005,20 @@
             <param name="marker">Target <c>IMarker</c> (Try to send 'Status,End' notification message at remote communication by automatically. <br/></param>
             <param name="portNo">COM port no</param>
             <param name="baudRate">Baudrate</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteSerial.Marker_OnStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <summary>
+            Implement <c>IMarker.OnStarted</c> event to send "Status,Started;" response by remote communication
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteSerial.Marker_OnEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">
+            <summary>
+            Implement <c>IMarker.OnEnded</c> event to send "Status,Ended;" response by remote communication
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="success">Success(or failed) to mark</param>
+            <param name="timeSpan"><c>TimeSpan</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteSerial.Finalize">
             <summary>
@@ -20517,47 +20544,47 @@
             </remarks>
             <param name="propertyName">Property name</param>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Script.ScriptBase">
+        <member name="T:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase">
             <summary>
-            ScriptBase
+            MarkerScriptBase
             </summary>
             <remarks>
-            User scripts are should be inherited from <c>ScriptBase</c> <br/>
+            User scripts are should be inherited from <c>MarkerScriptBase</c> <br/>
             </remarks>
         </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.Script.ScriptBase.PropertyChanged">
+        <member name="E:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.PropertyChanged">
             <inheritdoc/>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Script.ScriptBase.Name">
+        <member name="P:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.Name">
             <inheritdoc/>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Script.ScriptBase.Description">
+        <member name="P:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.Description">
             <inheritdoc/>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Script.ScriptBase.Marker">
+        <member name="P:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.Marker">
             <inheritdoc/> 
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.#ctor(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.#ctor(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <summary>
             Constructor
             </summary>
             <param name="marker"><c>IMarker</c></param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.Finalize">
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.Finalize">
             <summary>
             Finalizer
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.Dispose">
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.Dispose">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <summary>
             Event handler for marker has started
             </summary>
             <param name="marker"><c>IMarker</c></param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">
             <summary>
             Event handler for text has changed
             </summary>
@@ -20565,7 +20592,7 @@
             <param name="textConvertible"><c>ITextConvertible</c></param>
             <returns>Converted string data</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnAfterLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">
             <summary>
             Event handler for after mark layer 
             </summary>
@@ -20573,7 +20600,7 @@
             <param name="layer"><c>EntityLayer</c></param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnBeforeLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">
             <summary>
             Event handler for before mark layer 
             </summary>
@@ -20581,7 +20608,7 @@
             <param name="layer"><c>EntityLayer</c></param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnBeforeEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">
             <summary>
             Event handler for before mark entity 
             </summary>
@@ -20589,7 +20616,7 @@
             <param name="entity"><c>IEntity</c></param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnAfterEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">
             <summary>
             Event handler for after mark entity 
             </summary>
@@ -20597,7 +20624,7 @@
             <param name="entity"><c>IEntity</c></param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnScriptEvent(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnScriptEvent(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">
             <summary>
             Event handler for script event entity 
             </summary>
@@ -20605,7 +20632,7 @@
             <param name="entity"><c>EntityScriptEvent</c></param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.OnEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">
             <summary>
             Event handler for marker has ended
             </summary>
@@ -20614,7 +20641,7 @@
             <param name="timeSpan"><c>TimeSpan</c></param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.ScriptBase.NotifyPropertyChanged(System.String)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.NotifyPropertyChanged(System.String)">
             <summary>
             Notify property value has change event
             </summary>

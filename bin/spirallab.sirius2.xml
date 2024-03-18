@@ -627,6 +627,14 @@
             Used with digital inputs at RTC card <br/>
             </remarks>
         </member>
+        <member name="E:SpiralLab.Sirius2.IO.IDInput.OnChanged">
+            <summary>
+            Event for input bit(s) has changed
+            </summary>
+            <remarks>
+            Argument: <c>IDInput</c>, bit no (0~15) <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.IO.IDInput.SyncRoot">
             <summary>
             Synchronization object
@@ -782,120 +790,6 @@
             Update channel(s) data from input
             </summary>
             <returns>Success or failed</returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.IO.DInputVirtual">
-            <summary>
-            DInput Virtual
-            </summary>
-            <remarks>
-            Virtual digital inputs
-            </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.DInputVirtual.SyncRoot">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.DInputVirtual.Index">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.DInputVirtual.Name">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.DInputVirtual.ChannelCount">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.DInputVirtual.Channels">
-            <inheritdoc/>  
-        </member>
-        <member name="F:SpiralLab.Sirius2.IO.DInputVirtual.channels">
-            <summary>
-            Array of (ushort) 16bits 
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.DInputVirtual.Tag">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.#ctor(System.Int32)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="index">Identifier (0,1,2,3, ...)</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.Finalize">
-            <summary>
-            Finalizer
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.Dispose">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.Dispose(System.Boolean)">
-            <summary>
-            Dispose internal resources
-            </summary>
-            <param name="disposing">Explicit dispose or not</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.Initialize">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.IsAOn``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.IsAOn(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.IsAOff``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.IsAOff(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.IsBOff``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.IsBOff(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.IsBOn``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.IsBOn(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.GetChannel(System.Int32,System.UInt16@)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.OnByForcily``1(``0)">
-            <summary>
-            Bit input on by forcily for testing purpose
-            </summary>
-            <typeparam name="T"><c>Enum</c></typeparam>
-            <param name="no">Item of <c>Enum</c></param>
-             <returns>Success or failed</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.OnByForcily(System.Int32)">
-            <summary>
-            Bit input on by forcily for testing purpose
-            </summary>
-            <param name="no">No</param>
-            <returns>Success or failed</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.OffByForcily``1(``0)">
-            <summary>
-            Bit input off by forcily for testing purpose
-            </summary>
-            <typeparam name="T"><c>Enum</c></typeparam>
-            <param name="no">Item of <c>Enum</c></param>
-             <returns>Success or failed</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.OffByForcily(System.Int32)">
-            <summary>
-            Bit input off by forcily for testing purpose
-            </summary>
-            <param name="no">No</param>
-            <returns>Success or failed</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.Update">
-            <inheritdoc/>  
         </member>
         <member name="T:SpiralLab.Sirius2.IO.IDOutput">
             <summary>
@@ -1060,93 +954,6 @@
             Update channel(s) data to output
             </summary>
             <returns>Success or failed</returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.IO.DOutputVirtual">
-            <summary>
-            DOutput Virtual
-            </summary>
-            <remarks>
-            Virtual digital outputs
-            </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.DOutputVirtual.SyncRoot">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.DOutputVirtual.Index">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.DOutputVirtual.Name">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.DOutputVirtual.ChannelCount">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.DOutputVirtual.Channels">
-            <inheritdoc/>  
-        </member>
-        <member name="F:SpiralLab.Sirius2.IO.DOutputVirtual.channels">
-            <summary>
-            Array of ushort (16bits)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.DOutputVirtual.Tag">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.#ctor(System.Int32)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="index">Identifier (0,1,2,3, ...)</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.Finalize">
-            <summary>
-            Finalizer
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.Dispose">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.Dispose(System.Boolean)">
-            <summary>
-            Dispose internal resources
-            </summary>
-            <param name="disposing">Explicit dispose or not</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.Initialize">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.OutOn``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.OutOn(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.OutOff``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.OutOff(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.IsOutOn``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.IsOutOn(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.IsOutOff``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.IsOutOff(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.GetChannel(System.Int32,System.UInt16@)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.SetChannel(System.Int32,System.UInt16)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.Update">
-            <inheritdoc/>  
         </member>
         <member name="T:SpiralLab.Sirius2.IO.IOFactory">
             <summary>
@@ -1328,6 +1135,287 @@
             </remarks>
             <returns><see cref="T:SpiralLab.Sirius2.IO.RtcDOutputLaserPort">RtcDOutputLaserPort</see></returns>
         </member>
+        <member name="T:SpiralLab.Sirius2.IO.DInputBase">
+            <summary>
+            DInputBase
+            </summary>
+            <remarks>
+            Virtual digital inputs
+            </remarks>
+        </member>
+        <member name="E:SpiralLab.Sirius2.IO.DInputBase.OnChanged">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.IO.DInputBase.SyncRoot">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.IO.DInputBase.Index">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.IO.DInputBase.Name">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.IO.DInputBase.ChannelCount">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.IO.DInputBase.Channels">
+            <inheritdoc/>  
+        </member>
+        <member name="F:SpiralLab.Sirius2.IO.DInputBase.channels">
+            <summary>
+            Array of (ushort) 16bits 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.IO.DInputBase.Tag">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.#ctor(System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Identifier (0,1,2,3, ...)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.Dispose">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.Dispose(System.Boolean)">
+            <summary>
+            Dispose internal resources
+            </summary>
+            <param name="disposing">Explicit dispose or not</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.Initialize">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.IsAOn``1(``0)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.IsAOn(System.Int32)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.IsAOff``1(``0)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.IsAOff(System.Int32)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.IsBOff``1(``0)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.IsBOff(System.Int32)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.IsBOn``1(``0)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.IsBOn(System.Int32)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.GetChannel(System.Int32,System.UInt16@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.Update">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.CompareChannelAndNotifyEvent(System.Int32,System.UInt16,System.UInt16)">
+            <summary>
+            Compare input channel data and then fire event if bit has changed
+            </summary>
+            <param name="ch">channel</param>
+            <param name="oldInput">Old(or previous) input bits</param>
+            <param name="newInput">New input bits</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.NotifyChanged(System.Int32)">
+            <summary>
+            Notify input bit(s) has changed event 
+            </summary>
+            <param name="bitNo">Bit no</param>
+            <returns></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.IO.DInputVirtual">
+            <summary>
+            DInput Virtual
+            </summary>
+            <remarks>
+            Virtual digital inputs
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.#ctor(System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Identifier (0,1,2,3, ...)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.Dispose(System.Boolean)">
+            <summary>
+            Dispose internal resources
+            </summary>
+            <param name="disposing">Explicit dispose or not</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.Initialize">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.OnByForcily``1(``0)">
+            <summary>
+            Bit input on by forcily for testing purpose
+            </summary>
+            <typeparam name="T"><c>Enum</c></typeparam>
+            <param name="no">Item of <c>Enum</c></param>
+             <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.OnByForcily(System.Int32)">
+            <summary>
+            Bit input on by forcily for testing purpose
+            </summary>
+            <param name="no">No</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.OffByForcily``1(``0)">
+            <summary>
+            Bit input off by forcily for testing purpose
+            </summary>
+            <typeparam name="T"><c>Enum</c></typeparam>
+            <param name="no">Item of <c>Enum</c></param>
+             <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.OffByForcily(System.Int32)">
+            <summary>
+            Bit input off by forcily for testing purpose
+            </summary>
+            <param name="no">No</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DInputVirtual.Update">
+            <inheritdoc/>  
+        </member>
+        <member name="T:SpiralLab.Sirius2.IO.DOutputBase">
+            <summary>
+            DOutputBase
+            </summary>
+            <remarks>
+            Virtual digital outputs
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.IO.DOutputBase.SyncRoot">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.IO.DOutputBase.Index">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.IO.DOutputBase.Name">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.IO.DOutputBase.ChannelCount">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.IO.DOutputBase.Channels">
+            <inheritdoc/>  
+        </member>
+        <member name="F:SpiralLab.Sirius2.IO.DOutputBase.channels">
+            <summary>
+            Array of ushort (16bits)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.IO.DOutputBase.Tag">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputBase.#ctor(System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Identifier (0,1,2,3, ...)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputBase.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputBase.Dispose">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputBase.Dispose(System.Boolean)">
+            <summary>
+            Dispose internal resources
+            </summary>
+            <param name="disposing">Explicit dispose or not</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputBase.Initialize">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputBase.OutOn``1(``0)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputBase.OutOn(System.Int32)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputBase.OutOff``1(``0)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputBase.OutOff(System.Int32)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputBase.IsOutOn``1(``0)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputBase.IsOutOn(System.Int32)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputBase.IsOutOff``1(``0)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputBase.IsOutOff(System.Int32)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputBase.GetChannel(System.Int32,System.UInt16@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputBase.SetChannel(System.Int32,System.UInt16)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputBase.Update">
+            <inheritdoc/>  
+        </member>
+        <member name="T:SpiralLab.Sirius2.IO.DOutputVirtual">
+            <summary>
+            DOutput Virtual
+            </summary>
+            <remarks>
+            Virtual digital outputs
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.#ctor(System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Identifier (0,1,2,3, ...)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.Dispose(System.Boolean)">
+            <summary>
+            Dispose internal resources
+            </summary>
+            <param name="disposing">Explicit dispose or not</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.Initialize">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.IO.DOutputVirtual.Update">
+            <inheritdoc/>  
+        </member>
         <member name="T:SpiralLab.Sirius2.IO.RtcDInputExtension1Port">
             <summary>
             DInput RTC Extension1 Port
@@ -1337,24 +1425,6 @@
             <img src="images/rtc6pciex.png"/> <br/>
             Used with <c>ExtensionChannels.ExtDI16</c> at Fig 4.<br/>
             </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.SyncRoot">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.Index">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.Name">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.ChannelCount">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.Channels">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.Tag">
-            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.#ctor(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String)">
             <summary>
@@ -1368,9 +1438,6 @@
             Finalizer
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.Dispose">
-            <inheritdoc/>
-        </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.Dispose(System.Boolean)">
             <summary>
             Dispose internal resources
@@ -1378,33 +1445,6 @@
             <param name="disposing">Explicit dispose or not</param>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.Initialize">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.IsAOn``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.IsAOn(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.IsAOff``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.IsAOff(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.IsBOff``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.IsBOff(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.IsBOn``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.IsBOn(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.GetChannel(System.Int32,System.UInt16@)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.Update">
@@ -1420,24 +1460,6 @@
             Used with <c>ExtensionChannels.ExtDI2</c> at Fig 2.<br/>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDInputLaserPort.SyncRoot">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDInputLaserPort.Index">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDInputLaserPort.Name">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDInputLaserPort.ChannelCount">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDInputLaserPort.Channels">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDInputLaserPort.Tag">
-            <inheritdoc/>
-        </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDInputLaserPort.#ctor(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String)">
             <summary>
             Constructor
@@ -1450,9 +1472,6 @@
             Finalizer
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputLaserPort.Dispose">
-            <inheritdoc/>
-        </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDInputLaserPort.Dispose(System.Boolean)">
             <summary>
             Dispose internal resources
@@ -1460,33 +1479,6 @@
             <param name="disposing">Explicit dispose or not</param>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDInputLaserPort.Initialize">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputLaserPort.IsAOn``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputLaserPort.IsAOn(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputLaserPort.IsAOff``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputLaserPort.IsAOff(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputLaserPort.IsBOff``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputLaserPort.IsBOff(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputLaserPort.IsBOn``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputLaserPort.IsBOn(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDInputLaserPort.GetChannel(System.Int32,System.UInt16@)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDInputLaserPort.Update">
@@ -1502,24 +1494,6 @@
             Used with <c>ExtensionChannels.ExtDO16</c> at Fig 4.<br/>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.SyncRoot">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.Index">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.Name">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.ChannelCount">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.Channels">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.Tag">
-            <inheritdoc/>
-        </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.#ctor(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String)">
             <summary>
             Constructor
@@ -1532,9 +1506,6 @@
             Finalizer
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.Dispose">
-            <inheritdoc/>
-        </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.Dispose(System.Boolean)">
             <summary>
             Dispose internal resources
@@ -1542,36 +1513,6 @@
             <param name="disposing">Explicit dispose or not</param>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.Initialize">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.OutOn``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.OutOn(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.OutOff``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.OutOff(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.IsOutOn``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.IsOutOn(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.IsOutOff``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.IsOutOff(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.GetChannel(System.Int32,System.UInt16@)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.SetChannel(System.Int32,System.UInt16)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.Update">
@@ -1593,24 +1534,6 @@
             Used with <c>ExtensionChannels.ExtDO8</c> at Fig 5.<br/>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.SyncRoot">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.Index">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.Name">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.ChannelCount">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.Channels">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.Tag">
-            <inheritdoc/>
-        </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.#ctor(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String)">
             <summary>
             Constructor
@@ -1623,9 +1546,6 @@
             Finalizer
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.Dispose">
-            <inheritdoc/>
-        </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.Dispose(System.Boolean)">
             <summary>
             Dispose internal resources
@@ -1633,36 +1553,6 @@
             <param name="disposing">Explicit dispose or not</param>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.Initialize">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.OutOn``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.OutOn(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.OutOff``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.OutOff(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.IsOutOn``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.IsOutOn(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.IsOutOff``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.IsOutOff(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.GetChannel(System.Int32,System.UInt16@)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.SetChannel(System.Int32,System.UInt16)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.Update">
@@ -1684,24 +1574,6 @@
             Used with <c>ExtensionChannels.ExtDO2</c> at Fig 2.<br/>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.SyncRoot">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.Index">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.Name">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.ChannelCount">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.Channels">
-            <inheritdoc/>  
-        </member>
-        <member name="P:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.Tag">
-            <inheritdoc/>
-        </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.#ctor(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String)">
             <summary>
             Constructor
@@ -1714,9 +1586,6 @@
             Finalizer
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.Dispose">
-            <inheritdoc/>
-        </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.Dispose(System.Boolean)">
             <summary>
             Dispose internal resources
@@ -1724,36 +1593,6 @@
             <param name="disposing">Explicit dispose or not</param>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.Initialize">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.OutOn``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.OutOn(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.OutOff``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.OutOff(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.IsOutOn``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.IsOutOn(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.IsOutOff``1(``0)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.IsOutOff(System.Int32)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.GetChannel(System.Int32,System.UInt16@)">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.SetChannel(System.Int32,System.UInt16)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.Update">
