@@ -3767,7 +3767,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.point.Dwell_DESC">
             <summary>
-              Looks up a localized string similar to Dwell Time (msec).
+              Looks up a localized string similar to Dwell Time (msec) Used with Raster Mode by Jump and Shoot).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.point.Dwell_DISP">
@@ -4220,6 +4220,16 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.siriustext.Data_C">
             <summary>
               Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.siriustext.Dwell_DESC">
+            <summary>
+              Looks up a localized string similar to Dwell Time (msec) (Used with Raster Mode by Jump and Shoot).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.siriustext.Dwell_DISP">
+            <summary>
+              Looks up a localized string similar to Dwell.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.siriustext.Font_DESC">
@@ -5436,7 +5446,7 @@
             Output bit name
             </summary>
             <remarks>
-            Used with <c>Config.DIn_RtcExtension1Port</c>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DIn_RtcExtension1Port">Config.DIn_RtcExtension1Port</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.SignalEdge">
@@ -5579,11 +5589,6 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.DpiY">
             <summary>
             DPI y (dots/inch)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.PixelSpeed">
-            <summary>
-            Pixel Speed (mm/s)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.IsInvertColor">
@@ -6061,7 +6066,7 @@
             Output bit name
             </summary>
             <remarks>
-            Used with <c>Config.DOut_RtcExtension1Port</c>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcExtension1Port">Config.DOut_RtcExtension1Port</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityWriteDataExt16.OutputValue">
@@ -6859,10 +6864,10 @@
             Polygon (like as expand or shrink)
             </summary>
             <remarks>
-            Used with <c>HatchJoints</c>, <c>internal</c> values. <br/>
-            Adjust <c>Config.DivideArcToLinesDistance</c> value to reduce vertices at arc path. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">HatchJoints</see> value. <br/>
+            Adjust <see cref="P:SpiralLab.Sirius2.Config.DivideArcToLinesDistance">Config.DivideArcToLinesDistance</see> value to reduce vertices at arc path. <br/>
             Must be aware winding direction are same within polylines. <br/>
-            This hatch type leads to CPU burst. so need to consider optimized calls. <br/> 
+            This hatch type leads to CPU burst. So need to consider optimized calls. <br/> 
             </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">
@@ -7763,7 +7768,7 @@
             EntitySiriusCharacterSetText entity
             </summary>
             <remarks>
-            Allowed glyph ascii code range from: 0 ~ <c>Config.SiriusFontAsciiMax</c>. <br/>
+            Allowed glyph ascii code range from: 0 ~ <see cref="P:SpiralLab.Sirius2.Winforms.Config.SiriusFontAsciiMax">Config.SiriusFontAsciiMax</see>. <br/>
             Customizable font file format: cxf, lff <br/>
             <list type="utilities">
             <item><description>ttf2lff : https://github.com/LibreCAD/LibreCAD/tree/master/tools/ttf2lff </description></item>
@@ -7929,7 +7934,7 @@
             </summary>
             <remarks>
             Used with customizable font format: cxf, lff. <br/>
-            Allowed glyph ascii code range from: 0 ~ <c>Config.SiriusFontAsciiMax</c>. <br/>
+            Allowed glyph ascii code range from: 0 ~ <see cref="P:SpiralLab.Sirius2.Winforms.Config.SiriusFontAsciiMax">Config.SiriusFontAsciiMax</see>. <br/>
             Font converter utilities: <br/>
             <list type="utilities">
             <item><description>ttf2lff: https://github.com/LibreCAD/LibreCAD/tree/master/tools/ttf2lff </description></item>
@@ -8003,6 +8008,14 @@
             <summary>
             Line spacing (mm)
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.DwellMsec">
+            <summary>
+            Dwell time (msec)
+            </summary>
+            <remarks>
+            Used with <c>EntityPoint</c> only. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.IsReversed">
             <summary>
@@ -8986,6 +8999,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.Regen">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.Render(SpiralLab.Sirius2.Winforms.IView)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
@@ -9277,11 +9293,6 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.DpiY">
             <summary>
             DPI y (dots/inch)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.PixelSpeed">
-            <summary>
-            Pixel Speed (mm/s)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.IsInvertColor">
@@ -13920,6 +13931,11 @@
             <param name="classType"></param>
             <returns></returns>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.SEMIOcrFontHelper">
+            <summary>
+            SEMIOcrFontHelper
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.TextRegisterHelper">
             <summary>
             TextRegisterHelper
@@ -14499,6 +14515,9 @@
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.FontNameEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.FontNameEditor.PaintValue(System.Drawing.Design.PaintValueEventArgs)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.FontNameEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
@@ -16061,7 +16080,7 @@
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnScriptEvent">
             <summary>
-            Event for <c>EntityScriptEvent</c> by <c>IScript</c> inherited from <c>ScriptBase</c>
+            Event for <c>EntityScriptEvent</c> by <c>IScript</c> inherited from <c>MarkerScriptBase</c>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Index">
@@ -16773,12 +16792,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptInstance_DESC">
             <summary>
-              Looks up a localized string similar to Script instance.
+              Looks up a localized string similar to Script instance (Inherited from MarkerScriptBase).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptInstance_DISP">
             <summary>
-              Looks up a localized string similar to Script instance (Inherited from MarkerScriptBase).
+              Looks up a localized string similar to Script instance.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptLineIfError_DESC">
@@ -17891,10 +17910,10 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.PrecisionForCalibration3DPosition">
             <summary>
-            Round up position when do  <see cref="M:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D.Calibration3D(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes@)">ICalibration3D.Calibration3D</see> to convert 3D scanner field correction 
+            Round up position (mm) when do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D.Calibration3D(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes@)">ICalibration3D.Calibration3D</see> to convert 3D scanner field correction 
             </summary>
             <remarks>
-            Default: 2
+            Default: 2. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.TreeviewFontSize">
@@ -18579,8 +18598,6 @@
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply">
             <summary>
             Event for apply scanner field correction 3D by <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcCorrection3DForm">RtcCorrection3DForm</see>winforms
-            <c>Config.OnScannerFieldCorrection3DApply</c> is for create new 3D correction file (with new stretch factors). <br/>
-            <c>Config.OnCalibration3D</c> is for create new 3D correction file (with new z depth table). <br/>
             <code>
             SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply += Config_OnScannerFieldCorrection3DApply;
             void Config_OnScannerFieldCorrection3DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection3DForm form)
@@ -18594,6 +18611,8 @@
             }
             </code>
             <remarks>
+            <see cref="E:SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply">Config.OnScannerFieldCorrection3DApply</see> is for create new 3D correction file (with new stretch factors). <br/>
+            <see cref="E:SpiralLab.Sirius2.Winforms.Config.OnCalibration3D">Config.OnCalibration3D</see> is for create new 3D correction file (with new z depth table). <br/>
             User can register event handler for apply scanner field correction 3d at winforms. <br/>
             Target correction table is <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables">CorrectionTables.PrimaryHeadTable</see>. <br/>
             Event will be fired when apply scanner field correction 3D at winforms. <br/>
@@ -20515,6 +20534,46 @@
               Looks up a localized string similar to Status.
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase">
+            <summary>
+            SequenceScriptBase
+            </summary>
+            <remarks>
+            Sequence scripts are should be inherited from <c>SequenceScriptBase</c> <br/>
+            </remarks>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase.PropertyChanged">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase.Name">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase.Description">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase.Marker">
+            <inheritdoc/> 
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase.#ctor(SpiralLab.Sirius2.Winforms.Sequence.ISequence)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="sequence"><c>ISequence</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase.NotifyPropertyChanged(System.String)">
+            <summary>
+            Notify property value has change event
+            </summary>
+            <param name="propertyName">Property name</param>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Script.IScript">
             <summary>
             IScript interface
@@ -20732,6 +20791,47 @@
             <param name="args">Array of argument</param>
             <param name="returnValue">Return value of function call</param>
             <returns>Success or failed</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Sequence.ISequence">
+            <summary>
+            ISequence interface
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Sequence.ISequence.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Sequence.ISequence.SyncRoot">
+            <summary>
+            Object for synchronization
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Sequence.ISequence.Tag">
+            <summary>
+            User data
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Sequence.ISequence.Initialize">
+            <summary>
+            Initialize
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Sequence.IService">
+            <summary>
+            IService interface
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Sequence.IService.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Sequence.IService.Tag">
+            <summary>
+            User data
+            </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.UI.AboutForm">
             <summary>
@@ -21472,7 +21572,7 @@
             Path Optimizer Base Positions
             </summary>
             <remarks>
-            Configured <c>Config.PathOptimizerBasePosition</c> <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Winforms.Config.PathOptimizerBasePosition">Config.PathOptimizerBasePosition</see>. <br/>
             Supported x64 runtime only. <br/>
             </remarks>
         </member>
@@ -22144,7 +22244,7 @@
             Update DIO names
             </summary>
             <remarks>
-            Used with <c>Config.DOut_RtcExtension1Port</c>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcExtension1Port">Config.DOut_RtcExtension1Port</see>. <br/>
             </remarks>
             <param name="names">Array of names</param>
         </member>
@@ -22153,7 +22253,7 @@
             Update DIO names
             </summary>
             <remarks>
-            Used with <c>Config.DOut_RtcExtension2Port</c>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcExtension2Port">Config.DOut_RtcExtension2Port</see>. <br/>
             </remarks>
             <param name="names">Array of names</param>
         </member>
@@ -22162,7 +22262,7 @@
             Update DIO names
             </summary>
             <remarks>
-            Used with <c>Config.DOut_RtcLaserPort</c>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcLaserPort">Config.DOut_RtcLaserPort</see>. <br/>
             </remarks>
             <param name="names">Array of names</param>
         </member>
@@ -22219,7 +22319,7 @@
             Update DIO names
             </summary>
             <remarks>
-            Used with <c>Config.DIN_RtcExtension1Port</c>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DIn_RtcExtension1Port">Config.DIn_RtcExtension1Port</see>. <br/>
             </remarks>
             <param name="names">Array of names</param>
         </member>
@@ -22228,7 +22328,7 @@
             Update DIO names
             </summary>
             <remarks>
-            Used with <c>Config.DIN_RtcLaserPort</c>
+            Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DIn_RtcLaserPort">Config.DIn_RtcLaserPort</see>. <br/>
             </remarks>
             <param name="names">Array of names</param>
         </member>

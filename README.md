@@ -137,6 +137,7 @@
  - Demo 'editor_entity' winforms project for create entities
  - Demo 'editor_barcode' winforms project for mark individual barcode entities
  - Demo 'editor_mof' winforms project for encoder based MoF
+ - Demo 'editor_mof_barcode' winforms project for mark text, barcode by script with MoF
  - Demo 'editor_multiple' winforms project for multiple RTC instances
  - Demo 'editor_marker' winforms project for customized marker
  - Demo 'editor_ui' winforms project for customized ui
@@ -159,6 +160,13 @@
 
 **7. Version history**
 
+* 2024.3.22 v.1.22.1140
+  - added) semi orc font files
+     - semi_ocr_single.cxf
+     - semi_ocr_double.cxf
+  - added) mark sirius text with reverse order
+  - fixed) scaling bug at siriustext entity
+   
 * 2024.3.18 v.1.21.1120
   - added) entity_mof_barcode demo project 
   - added) mark barcodes with reverse order
