@@ -97,12 +97,12 @@
 | Render engine         |OpenTK (with shaders)                                  |SharpGL                  |
 | Render speed          |Faster                                                 |Acceptable               |
 | Field correction      |correXionPro and CalibrationTool                       |correXionPro             |
-| Font                  |cxf, lff format and Windows fonts                      |external ttf, cxf format |
-| Remote control        |Supported (TCP/IP, Serial)                             |None                     |
-| Script                |C# script                                              |None                     |
+| Font                  |cxf, lff format and Windows fonts (semi ocr also)      |external ttf, cxf format |
+| Remote control        |Supported (TCP/IP, Serial)                             |x                        |
+| Script                |C# script                                              |x                        |
 | Processing on the fly |Classic and Fly extension                              |Classic                  |
-| Stream parser         |Supported                                              |None                     |
-| Multi-language        |Supported                                              |None                     |
+| Stream parser         |Supported                                              |x                        |
+| Multi-language        |Supported                                              |x                        |
 | Customization         |Expandable                                             |Acceptable               |
 
 
@@ -160,11 +160,12 @@
 
 **7. Version history**
 
-* 2024.3.22 v.1.22.1140
+* 2024.3.21 v.1.22.1140
   - added) semi orc font files
      - semi_ocr_single.cxf
      - semi_ocr_double.cxf
   - added) mark sirius text with reverse order
+  - added) read/write script values by remote communication
   - fixed) scaling bug at siriustext entity
    
 * 2024.3.18 v.1.21.1120

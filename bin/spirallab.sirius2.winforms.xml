@@ -1883,6 +1883,16 @@
               Looks up a localized string similar to Power (%).
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_category_DESC">
+            <summary>
+              Looks up a localized string similar to Target Category(or Series) Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_category_DISP">
+            <summary>
+              Looks up a localized string similar to Power Category.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_Max__DESC">
             <summary>
               Looks up a localized string similar to Laser Max. Output Power (W).
@@ -5178,6 +5188,7 @@
             </summary>
             <remarks>
             Pixel output time works like as output pulse width. should be lower than <c>PixelPeriod</c>. <br/>
+            It means 'dwell time' also if <c>RasterModes.JumpAndShoot</c>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelChannel">
@@ -5563,7 +5574,8 @@
             Pixel duration time (usec)
             </summary>
             <remarks>
-            Pixel output time works like as output pulse width. should be lower than <c>PixelPeriod</c>
+            Pixel output time works like as output pulse width. should be lower than <c>PixelPeriod</c>. <br/>
+            It means 'dwell time' also if <c>RasterModes.JumpAndShoot</c>. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.pixelTime">
@@ -9267,7 +9279,8 @@
             Pixel duration time (usec)
             </summary>
             <remarks>
-            Pixel output time works like as output pulse width. should be lower than <c>PixelPeriod</c>
+            Pixel output time works like as output pulse width. should be lower than <c>PixelPeriod</c>. <br/>
+            It means 'dwell time' also if <c>RasterModes.JumpAndShoot</c>. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImage.pixelTime">
@@ -15357,6 +15370,24 @@
             <param name="pen"><c>EntityPen</c></param>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OpenScriptFile(System.String,System.Object@,System.Int32@)">
+            <summary>
+            Open script file
+            </summary>
+            <param name="fileName">Script filename</param>
+            <param name="scriptInstance">Created instance</param>
+            <param name="errorLine">Script line number if error has occured</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.CreateTemporaryScriptFile(System.String,System.String@,System.String@)">
+            <summary>
+            Create script file for temporary
+            </summary>
+            <param name="fileName">Source script filename</param>
+            <param name="tempFileName">Copied temporary script filename</param>
+            <param name="decoratedInstanceName">Renamed instance name</param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual">
             <summary>
             MarkerVirtual
@@ -20226,6 +20257,14 @@
             <param name="param">Array of property param</param>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.ScriptParse(System.String,System.String[])">
+            <summary>
+            Read/Write <c>IScript</c> property
+            </summary>
+            <param name="propName">Name of propert</param>
+            <param name="param">Array of property param</param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.NotifyPropertyChanged(System.String)">
             <summary>
             Notify property value has change event
@@ -20449,6 +20488,25 @@
             <param name="entity">Target <c>IEntity</c></param>
             <returns><c>Dictionary&lt;string, object&gt;</c></returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper.ScriptProperties(SpiralLab.Sirius2.Winforms.Script.IScript)">
+            <summary>
+            Query property list from <c>IScript</c> 
+            </summary>
+            <remarks>
+            Target properties are [Browasable] attribute is <c>True</c> only <br/>
+            </remarks>
+            <param name="script">Target <c>IScript</c></param>
+            <returns><c>Dictionary&lt;string, object&gt;</c></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper.EntityReadPropertyValue(SpiralLab.Sirius2.Winforms.Script.IScript,System.Reflection.PropertyInfo,System.String)">
+            <summary>
+            Read property value at <c>IScript</c> 
+            </summary>
+            <param name="script">Target <c>IScript</c></param>
+            <param name="propInfo"><c>PropertyInfo</c></param>
+            <param name="propName">Property name</param>
+            <returns>Property value as string</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper.EntityReadPropertyValue(SpiralLab.Sirius2.Winforms.Entity.IEntity,System.Reflection.PropertyInfo,System.String)">
             <summary>
             Read property value at <c>IEntity</c> 
@@ -20463,6 +20521,16 @@
             Write property value at <c>IEntity</c> 
             </summary>
             <param name="entity">Target <c>IEntity</c></param>
+            <param name="propInfo"><c>PropertyInfo</c></param>
+            <param name="propName">Property name</param>
+            <param name="propValues">Property value</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper.EntityWritePropertyValue(SpiralLab.Sirius2.Winforms.Script.IScript,System.Reflection.PropertyInfo,System.String,System.String[])">
+            <summary>
+            Write property value at <c>IScript</c> 
+            </summary>
+            <param name="script">Target <c>IScript</c></param>
             <param name="propInfo"><c>PropertyInfo</c></param>
             <param name="propName">Property name</param>
             <param name="propValues">Property value</param>
