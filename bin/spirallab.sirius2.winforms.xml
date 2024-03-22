@@ -19257,12 +19257,18 @@
             <summary>
             Copy selected <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>(or array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>) into <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.Clipboard">Clipboard</see>
             </summary>
+            <remarks>
+            Do <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActSelect(SpiralLab.Sirius2.Winforms.Entity.IEntity[])">ActSelect</see> at first. <br/>
+            </remarks>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActCut">
             <summary>
             Cut selected <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>(or array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>) into <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.Clipboard">Clipboard</see> and notify <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnRemoved">OnRemoved</see> event.
             </summary>
+            <remarks>
+            Do <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActSelect(SpiralLab.Sirius2.Winforms.Entity.IEntity[])">ActSelect</see> at first. <br/>
+            </remarks>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActPaste(System.Nullable{OpenTK.Vector3})">

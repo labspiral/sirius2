@@ -160,12 +160,13 @@
 
 **7. Version history**
 
-* 2024.3.21 v.1.22.1140
+* 2024.3.22 v.1.22.1140
   - added) semi orc font files
      - semi_ocr_single.cxf
      - semi_ocr_double.cxf
   - added) mark sirius text with reverse order
   - added) read/write script values by remote communication
+  - added) editor_tsv demo project
   - fixed) scaling bug at siriustext entity
    
 * 2024.3.18 v.1.21.1120

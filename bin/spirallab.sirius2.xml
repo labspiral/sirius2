@@ -19656,7 +19656,7 @@
             <param name="row">Row</param>
             <param name="col">Col</param>
             <param name="reference">Reference x, y, z absoulte position (mm)</param>
-            <param name="measured">Measured x, y absoulte position (mm)</param>
+            <param name="measured">Measured x, y, z absoulte position (mm)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection3D.AddRelative(System.Int32,System.Int32,System.Numerics.Vector3,System.Numerics.Vector3)">
@@ -19672,7 +19672,7 @@
             <param name="row">Row</param>
             <param name="col">Col</param>
             <param name="reference">Reference x, y, z absoulte position (mm)</param>
-            <param name="error">Error dx, dy relative position (mm)</param>
+            <param name="error">Error dx, dy, 0 relative position (mm)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection3D.Clear(SpiralLab.Sirius2.Scanner.Rtc.Planes)">
