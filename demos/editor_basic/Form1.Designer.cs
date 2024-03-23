@@ -34,7 +34,12 @@
             // 
             // siriusEditorUserControl1
             // 
+            this.siriusEditorUserControl1.DIExt1 = null;
+            this.siriusEditorUserControl1.DILaserPort = null;
             this.siriusEditorUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.siriusEditorUserControl1.DOExt1 = null;
+            this.siriusEditorUserControl1.DOExt2 = null;
+            this.siriusEditorUserControl1.DOLaserPort = null;
             this.siriusEditorUserControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.siriusEditorUserControl1.IsDisableControl = false;
             this.siriusEditorUserControl1.Laser = null;
@@ -51,11 +56,11 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1896, 1292);
             this.Controls.Add(this.siriusEditorUserControl1);
-            this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Form1";

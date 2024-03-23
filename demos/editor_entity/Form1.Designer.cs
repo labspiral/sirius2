@@ -33,26 +33,34 @@
             // 
             // siriusEditorUserControl1
             // 
+            this.siriusEditorUserControl1.DIExt1 = null;
+            this.siriusEditorUserControl1.DILaserPort = null;
             this.siriusEditorUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.siriusEditorUserControl1.DOExt1 = null;
+            this.siriusEditorUserControl1.DOExt2 = null;
+            this.siriusEditorUserControl1.DOLaserPort = null;
             this.siriusEditorUserControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siriusEditorUserControl1.IsDisableControl = false;
             this.siriusEditorUserControl1.Laser = null;
             this.siriusEditorUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.siriusEditorUserControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.siriusEditorUserControl1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.siriusEditorUserControl1.Marker = null;
             this.siriusEditorUserControl1.Name = "siriusEditorUserControl1";
+            this.siriusEditorUserControl1.PowerMeter = null;
+            this.siriusEditorUserControl1.Remote = null;
             this.siriusEditorUserControl1.Rtc = null;
-            this.siriusEditorUserControl1.Size = new System.Drawing.Size(1264, 861);
+            this.siriusEditorUserControl1.Size = new System.Drawing.Size(1896, 1292);
             this.siriusEditorUserControl1.TabIndex = 0;
             this.siriusEditorUserControl1.TitleName = "NoName";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1264, 861);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1896, 1292);
             this.Controls.Add(this.siriusEditorUserControl1);
-            this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Form1";
             this.Text = "Sirius2 Editor Demo - (c)SpiralLAB";
             this.ResumeLayout(false);

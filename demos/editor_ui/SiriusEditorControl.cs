@@ -60,20 +60,19 @@ namespace Demos
     /// 2. <see cref="TreeViewBlockUserControl">TreeViewBlockUserControl</see> <br/>
     /// 3. <see cref="PenUserControl">PenUserControl</see> <br/>
     /// 4. <see cref="EditorUserControl">EditorUserControl</see> <br/>
-    /// 5. <see cref="EditorUserControl">EditorUserControl</see> <br/>
-    /// 6. <see cref="RtcUserControl">RtcUserControl</see> <br/>
-    /// 7. <see cref="LaserUserControl">LaserUserControl</see> <br/>
-    /// 8. <see cref="MarkerUserControl">MarkerUserControl</see> <br/>
-    /// 9. <see cref="ManualUserControl">ManualUserControl</see> <br/>
-    /// 10. <see cref="RtcDIUserControl">RtcDIUserControl</see> <br/>
+    /// 5. <see cref="RtcUserControl">RtcUserControl</see> <br/>
+    /// 6. <see cref="LaserUserControl">LaserUserControl</see> <br/>
+    /// 7. <see cref="MarkerUserControl">MarkerUserControl</see> <br/>
+    /// 8. <see cref="ManualUserControl">ManualUserControl</see> <br/>
+    /// 9. <see cref="RtcDIUserControl">RtcDIUserControl</see> <br/>
+    /// 10. <see cref="RtcDOUserControl">RtcDOUserControl</see> <br/>
     /// 11. <see cref="RtcDOUserControl">RtcDOUserControl</see> <br/>
-    /// 12. <see cref="RtcDOUserControl">RtcDOUserControl</see> <br/>
-    /// 13. <see cref="PowerMeterUserControl">PowerMeterUserControl</see> <br/>
-    /// 14. <see cref="PowerMapUserControl">PowerMapUserControl</see> <br/>
-    /// 15. <see cref="ScriptUserControl">ScriptUserControl</see> <br/>
-    /// 16. <see cref="RemoteUserControl">RemoteUserControl</see> <br/>
-    /// 17. <see cref="PropertyGridUserControl">PropertyGridUserControl</see> <br/>
-    /// 18. <see cref="LogUserControl">LogUserControl</see> <br/>
+    /// 12. <see cref="PowerMeterUserControl">PowerMeterUserControl</see> <br/>
+    /// 13. <see cref="PowerMapUserControl">PowerMapUserControl</see> <br/>
+    /// 14. <see cref="ScriptUserControl">ScriptUserControl</see> <br/>
+    /// 15. <see cref="RemoteUserControl">RemoteUserControl</see> <br/>
+    /// 16. <see cref="PropertyGridUserControl">PropertyGridUserControl</see> <br/>
+    /// 17. <see cref="LogUserControl">LogUserControl</see> <br/>
     /// </remarks>
     public partial class SiriusEditorUserControl : Form
     {
@@ -433,7 +432,6 @@ namespace Demos
                 }
                 dIExt1 = value; 
                 rtcDIUserControl1.DIExt1 = dIExt1;
-                rtcDIUserControl1.UpdateExtension1PortNames(Config.DIn_RtcExtension1Port);
             } 
         }
         private IDInput dIExt1;
@@ -453,8 +451,7 @@ namespace Demos
                     dILaserPort = null;
                 }
                 dILaserPort = value;
-                rtcDIUserControl1.DILaserPort = dIExt1;
-                rtcDIUserControl1.UpdateLaserPortNames(Config.DIn_RtcLaserPort);
+                rtcDIUserControl1.DILaserPort = dILaserPort;
             }
         }
         private IDInput dILaserPort;
@@ -475,7 +472,6 @@ namespace Demos
                 }
                 dOExt1 = value;
                 rtcDOUserControl1.DOExt1 = dOExt1;
-                rtcDOUserControl1.UpdateExtension1PortNames(Config.DOut_RtcExtension1Port);
             }
         }
         private IDOutput dOExt1;
@@ -496,7 +492,6 @@ namespace Demos
                 }
                 dOExt2 = value;
                 rtcDOUserControl1.DOExt2 = dOExt2;
-                rtcDOUserControl1.UpdateExtension2PortNames(Config.DOut_RtcExtension2Port);
             }
         }
         private IDOutput dOExt2;
@@ -517,7 +512,6 @@ namespace Demos
                 }
                 dOLaserPort = value;
                 rtcDOUserControl1.DOLaserPort = dOLaserPort;
-                rtcDOUserControl1.UpdateLaserPortNames(Config.DOut_RtcLaserPort);
             }
         }
         private IDOutput dOLaserPort;
@@ -893,6 +887,8 @@ namespace Demos
             {
                 case 0:
                     EditorCtrl.View.ViewMode = ViewModes.Entity;
+                    // Regen whole document data if modified 
+                    EditorCtrl.Document.ActRegen();
                     break;
                 case 1:
                     EditorCtrl.View.ViewMode = ViewModes.Block;
@@ -1397,7 +1393,7 @@ namespace Demos
         {
             var intersect = OpenTKHelper.ScreenToWorldPlaneZIntersect(e.Location, Vector3.Zero, EditorCtrl.View.Camera.ViewMatrix, EditorCtrl.View.Camera.ProjectionMatrix);
             lastCurrentPos = intersect;
-            lblPos.Text = $"XY: {intersect.X:F3}, {intersect.Y:F3}  P: {e.Location.X}, {e.Location.Y}";
+            lblPos.Text = $"XY: {intersect.X:F3}, {intersect.Y:F3}mm [{e.Location.X}, {e.Location.Y}]";
         }
 
         private void LblHelp_Click(object sender, EventArgs e)
@@ -1560,7 +1556,7 @@ namespace Demos
                         rtcMoF.CtlMofGetEncoder(out var x, out var y, out var xMm, out var yMm);
                         statusStrip1.Invoke(new MethodInvoker(delegate ()
                         {
-                            lblEncoder.Text = $"ENC XY: {x}, {y} [{xMm:F3}, {yMm:F3}]";
+                            lblEncoder.Text = $"ENC XY: {xMm:F3}, {yMm:F3}mm [{x}, {y}]";
                         }));
                     }
                     break;
@@ -1569,7 +1565,7 @@ namespace Demos
                         rtcMoF.CtlMofGetAngularEncoder(out var x, out var angle);
                         statusStrip1.Invoke(new MethodInvoker(delegate ()
                         {
-                            lblEncoder.Text = $"ENC X,0: {x} [{angle:F3}˚]";
+                            lblEncoder.Text = $"ENC X,0: {angle:F3}˚ [{x}]";
                         }));
                     }
                     break;

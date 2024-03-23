@@ -3145,7 +3145,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Height_DESC">
             <summary>
-              Looks up a localized string similar to Height (mm).
+              Looks up a localized string similar to Total Image Height (mm).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Height_DISP">
@@ -8943,6 +8943,14 @@
             <summary>
             FontStyle
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.Height">
+            <summary>
+            Height (mm)
+            </summary>
+            <remarks>
+            Total image height
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageText.PixelHeight">
             <summary>
@@ -17952,7 +17960,7 @@
             Treeview node font size
             </summary>
             <remarks>
-            Default: 9pt <br/>
+            Default: 10pt <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.TreeviewWarningNodeCounts">
@@ -19381,6 +19389,7 @@
             <remarks>
             Used with inherited <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> from <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IMarkerable">IMarkerable</see>. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual">RtcVirtual</see> and <see cref="T:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual">MarkerVirtual</see> by internally. <br/>
+            Not applied <see cref="T:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible">ITextConvertible</see> or <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.TextConvertScriptFile">TextConvertScriptFile</see> to change(or modify) text data. <br/>
             </remarks>
             <param name="entities">Target array of <c>IEntity</c></param>
             <param name="marker">Target <c>IMarker</c></param>
@@ -20399,6 +20408,9 @@
             <summary>
             Synchronization object for communication
             </summary>
+            <remarks>
+            Used to make thread safe condition when do <c>Send</c> opertations. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Remote.IRemote.Index">
             <summary>
@@ -22810,20 +22822,19 @@
             2. <see cref="T:SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl">TreeViewBlockUserControl</see> <br/>
             3. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PenUserControl">PenUserControl</see> <br/>
             4. <see cref="T:SpiralLab.Sirius2.Winforms.UI.EditorUserControl">EditorUserControl</see> <br/>
-            5. <see cref="T:SpiralLab.Sirius2.Winforms.UI.EditorUserControl">EditorUserControl</see> <br/>
-            6. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcUserControl">RtcUserControl</see> <br/>
-            7. <see cref="T:SpiralLab.Sirius2.Winforms.UI.LaserUserControl">LaserUserControl</see> <br/>
-            8. <see cref="T:SpiralLab.Sirius2.Winforms.UI.MarkerUserControl">MarkerUserControl</see> <br/>
-            9. <see cref="T:SpiralLab.Sirius2.Winforms.UI.ManualUserControl">ManualUserControl</see> <br/>
-            10. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl">RtcDIUserControl</see> <br/>
+            5. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcUserControl">RtcUserControl</see> <br/>
+            6. <see cref="T:SpiralLab.Sirius2.Winforms.UI.LaserUserControl">LaserUserControl</see> <br/>
+            7. <see cref="T:SpiralLab.Sirius2.Winforms.UI.MarkerUserControl">MarkerUserControl</see> <br/>
+            8. <see cref="T:SpiralLab.Sirius2.Winforms.UI.ManualUserControl">ManualUserControl</see> <br/>
+            9. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl">RtcDIUserControl</see> <br/>
+            10. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl">RtcDOUserControl</see> <br/>
             11. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl">RtcDOUserControl</see> <br/>
-            12. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl">RtcDOUserControl</see> <br/>
-            13. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl">PowerMeterUserControl</see> <br/>
-            14. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl">PowerMapUserControl</see> <br/>
-            15. <see cref="T:SpiralLab.Sirius2.Winforms.UI.ScriptUserControl">ScriptUserControl</see> <br/>
-            16. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl">RemoteUserControl</see> <br/>
-            17. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl">PropertyGridUserControl</see> <br/>
-            18. <see cref="T:SpiralLab.Sirius2.Winforms.UI.LogUserControl">LogUserControl</see> <br/>
+            12. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl">PowerMeterUserControl</see> <br/>
+            13. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl">PowerMapUserControl</see> <br/>
+            14. <see cref="T:SpiralLab.Sirius2.Winforms.UI.ScriptUserControl">ScriptUserControl</see> <br/>
+            15. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl">RemoteUserControl</see> <br/>
+            16. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl">PropertyGridUserControl</see> <br/>
+            17. <see cref="T:SpiralLab.Sirius2.Winforms.UI.LogUserControl">LogUserControl</see> <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.OnOpenBefore">

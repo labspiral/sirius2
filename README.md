@@ -160,7 +160,7 @@
 
 **7. Version history**
 
-* 2024.3.22 v.1.22.1140
+* 2024.3.23 v.1.22.1140
   - added) semi orc font files
      - semi_ocr_single.cxf
      - semi_ocr_double.cxf
@@ -168,6 +168,8 @@
   - added) read/write script values by remote communication
   - added) editor_tsv demo project
   - fixed) scaling bug at siriustext entity
+  - fixed) auto scale mode to none at forms
+  - fixed) refactor DIO forms
    
 * 2024.3.18 v.1.21.1120
   - added) entity_mof_barcode demo project 
