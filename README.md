@@ -168,7 +168,7 @@
   - added) read/write script values by remote communication
   - added) editor_tsv demo project
   - fixed) scaling bug at siriustext entity
-  - fixed) auto scale mode to none at forms
+  - fixed) auto scale mode to 'font' at forms
   - fixed) refactor DIO forms
    
 * 2024.3.18 v.1.21.1120

@@ -49,15 +49,15 @@
             this.siriusEditorUserControl1.PowerMeter = null;
             this.siriusEditorUserControl1.Remote = null;
             this.siriusEditorUserControl1.Rtc = null;
-            this.siriusEditorUserControl1.Size = new System.Drawing.Size(1896, 1292);
+            this.siriusEditorUserControl1.Size = new System.Drawing.Size(1484, 1161);
             this.siriusEditorUserControl1.TabIndex = 1;
             this.siriusEditorUserControl1.TitleName = "NoName";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1896, 1292);
+            this.ClientSize = new System.Drawing.Size(1484, 1161);
             this.Controls.Add(this.siriusEditorUserControl1);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);

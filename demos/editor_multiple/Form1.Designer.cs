@@ -50,7 +50,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(2086, 1415);
+            this.tabControl1.Size = new System.Drawing.Size(1484, 1161);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -60,7 +60,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 42);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(2078, 1369);
+            this.tabPage1.Size = new System.Drawing.Size(1476, 1115);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "DEV 1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@
             this.siriusEditorUserControl1.PowerMeter = null;
             this.siriusEditorUserControl1.Remote = null;
             this.siriusEditorUserControl1.Rtc = null;
-            this.siriusEditorUserControl1.Size = new System.Drawing.Size(2070, 1358);
+            this.siriusEditorUserControl1.Size = new System.Drawing.Size(1470, 1109);
             this.siriusEditorUserControl1.TabIndex = 0;
             this.siriusEditorUserControl1.TitleName = "NoName";
             // 
@@ -117,15 +117,15 @@
             this.siriusEditorUserControl2.PowerMeter = null;
             this.siriusEditorUserControl2.Remote = null;
             this.siriusEditorUserControl2.Rtc = null;
-            this.siriusEditorUserControl2.Size = new System.Drawing.Size(2070, 1358);
+            this.siriusEditorUserControl2.Size = new System.Drawing.Size(2072, 1363);
             this.siriusEditorUserControl2.TabIndex = 0;
             this.siriusEditorUserControl2.TitleName = "NoName";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2086, 1415);
+            this.ClientSize = new System.Drawing.Size(1484, 1161);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

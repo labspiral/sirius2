@@ -181,10 +181,10 @@ namespace Demos
             else
             {
                 dInLaserPort = IOFactory.CreateInputLaserPort(rtc);
-                dOutLaserPort = IOFactory.CreateOutputLaserPort(rtc);
                 dOutExt2 = IOFactory.CreateOutputExtension2(rtc);
-                success &= dOutExt2.Initialize();
+                dOutLaserPort = IOFactory.CreateOutputLaserPort(rtc);
                 success &= dInLaserPort.Initialize();
+                success &= dOutExt2.Initialize();
                 success &= dOutLaserPort.Initialize();
             }
 

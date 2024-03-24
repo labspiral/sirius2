@@ -492,7 +492,7 @@
             // 
             // logControl1
             // 
-            this.logControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.logControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.logControl1, "logControl1");
             this.logControl1.Name = "logControl1";
             // 
@@ -511,7 +511,7 @@
             // 
             // treeViewControl1
             // 
-            this.treeViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.treeViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.treeViewControl1, "treeViewControl1");
             this.treeViewControl1.Document = null;
             this.treeViewControl1.Marker = null;
@@ -519,7 +519,7 @@
             // 
             // penControl1
             // 
-            this.penControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.penControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.penControl1, "penControl1");
             this.penControl1.Document = null;
             this.penControl1.Name = "penControl1";
@@ -1299,7 +1299,7 @@
             // 
             // SiriusEditorUserControl
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panBody);
             this.Controls.Add(this.splitter3);
             this.Controls.Add(this.statusStrip1);
