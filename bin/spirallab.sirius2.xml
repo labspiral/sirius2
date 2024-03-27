@@ -264,6 +264,15 @@
             PowerMapFileBrowser
             </summary>
         </member>
+        <member name="M:SpiralLab.Sirius2.Common.PowerMapFileBrowser.InitializeDialog(System.Windows.Forms.OpenFileDialog)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Common.PowerMapFileBrowser.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Common.PowerMapFileBrowser.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Config">
             <summary>
             Configuration for <c>SpiralLab.Sirius2</c> library
@@ -11178,18 +11187,20 @@
             <param name="position">position</param>
             <returns>Is duplicated or not</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.IsInFov(System.Numerics.Vector2)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.IsInFov(System.Numerics.Vector2,System.Boolean)">
             <summary>
             Check for position x,y in fov range  
             </summary>
             <param name="position"></param>
+            <param name="isArcCenter">Is arc center or not</param>
             <returns>Is in fov range or not</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.IsInFov(System.Numerics.Vector3)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.IsInFov(System.Numerics.Vector3,System.Boolean)">
             <summary>
             Check for position x,y,z in fov range  
             </summary>
-            <param name="position"></param>
+            <param name="position">X,Y,Z position (not applied matrix stack)</param>
+            <param name="isArcCenter">Is arc center or not</param>
             <returns>Is in fov range or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.AdjustBits(System.Int32@,System.Int32@)">
@@ -13074,26 +13085,28 @@
             <param name="position">position</param>
             <returns>Is duplicated or not</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsInFov(System.Numerics.Vector2)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsInFov(System.Numerics.Vector2,System.Boolean)">
             <summary>
             Check for position x,y in fov range  
             </summary>
             <param name="position"></param>
+            <param name="isArcCenter">Is arc center or not</param>
             <returns>Is in fov range or not</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsInFov(System.Numerics.Vector3)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsInFov(System.Numerics.Vector3,System.Boolean)">
             <summary>
             Check for position x,y,z in fov range  
             </summary>
-            <param name="position"></param>
+            <param name="position">X,Y,Z position (not applied matrix stack)</param>
+            <param name="isArcCenter">Is arc center or not</param>
             <returns>Is in fov range or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.AdjustBits(System.Int32@,System.Int32@)">
             <summary>
             Adjust x,y position bits within range
             </summary>
-            <param name="xBits"></param>
-            <param name="yBits"></param>
+            <param name="xBits">–268,435,456 ~ 268,435,455</param>
+            <param name="yBits">–268,435,456 ~ 268,435,455</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.AdjustBits(System.Int32@,System.Int32@,System.Int32@)">
             <summary>
@@ -17674,12 +17687,22 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtAO1">
             <summary>
-            ANALOG 1 port
+            ANALOG OUT1 port
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtAO2">
             <summary>
-            ANALOG 2 port
+            ANALOG OUT2 port
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtAI1">
+            <summary>
+            ANALOG IN0 at the McBSP/ANALOG socket connector
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtAI2">
+            <summary>
+            ANALOG IN1 at the McBSP/ANALOG socket connector
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcStatus">

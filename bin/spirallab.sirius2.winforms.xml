@@ -11823,6 +11823,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPoints.Reverse">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPoints.Clip(SpiralLab.Sirius2.Winforms.Entity.BoundingBox)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPoints.PropertyVisibility(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
             <summary>
             Property visibility for <c>IRtc</c>
@@ -16241,11 +16244,12 @@
             <remarks>
             Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible">ITextConvertible</see> interface. <br/>
             User can use <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnTextConvert">IMarker.OnTextConvert</see> event instead. <br/>
+            Old <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.TextConvertScriptInstance">TextConvertScriptInstance</see> would be disposed and created(or replaced) by new one. <br/>
             Reference script files are "sample.cs", "demo1.cs", "demo2.cs" at <see cref="P:SpiralLab.Sirius2.Winforms.Config.ScriptPath">Config.ScriptPath</see>. <br/>
             <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnTextConvert">OnTextConvert</see> event will be fired when <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">ITextConvertible.IsConvertedText</see> is <c>True</c> only. <br/>
-            <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnTextConvert">OnTextConvert</see> event will be fired whenever do <c>IMarkerable.Mark</c> or <c>IEntity.Regen</c>. <br/>
-            <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see> value can be <c>NULL</c> while <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.Regen">IEntity.Regen</see>. <br/>
-            <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.CurrentOffsetIndex">IMarker.CurrentOffsetIndex</see> values are useful when marks at multiple offset positions. <br/>
+            <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnTextConvert">OnTextConvert</see> event will be fired whenever do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IMarkerable.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">Mark</see> or <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.Regen">Regen</see>. <br/>
+            <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see> value can be <c>null</c> while <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.Regen">IEntity.Regen</see>. <br/>
+            <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.CurrentOffsetIndex">CurrentOffsetIndex</see> values are useful when marks at multiple <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Offsets">Offset</see> positions. <br/>
             <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see> can be set as <see cref="T:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual">MarkerVirtual</see> if do simulate laser path. <br/>
             Consider as its working within async threads. <br/>
             </remarks>
@@ -16255,25 +16259,24 @@
             Instance for created by external script
             </summary>
             <remarks>
-            <code>
-            //MarkerScriptBase instance woule be create if TextConvertScriptFile has assigned 
-            TextConvertScriptInstance = new MarkerScript(marker);
-            </code>
-            If <c>TextConvertScriptFile</c> has assigned, <c>TextConvertInstance</c> would be created with new instance. <br/>
+            Old <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.TextConvertScriptInstance">TextConvertScriptInstance</see> would be disposed and created(or replaced) by new one whenever <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.TextConvertScriptFile">TextConvertScriptFile</see> has assigned. <br/>
+            It can be <c>null</c> if <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.TextConvertScriptInstance">TextConvertScriptInstance</see> is not assgined(or cleared). <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.IsScriptError">
             <summary>
             Result of compilation of script file
             </summary>
+            <remarks>
+            If <c>False</c>, see <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ScriptLineIfError">ScriptLineIfError</see> value to resolve line of code error(s). <br/> 
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ScriptLineIfError">
             <summary>
             Script line of code if error has occured
             </summary>
             <remarks>
-            Default : <br/>
-            Valid if <c>IsScriptError</c> is <c>True</c>. <br/>
+            Erropr line of code if <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.IsScriptError">IsScriptError</see> is <c>True</c>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Offsets">
@@ -16475,6 +16478,26 @@
               Looks up a localized string similar to List type.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtcfast.MarkProc_DESC">
+            <summary>
+              Looks up a localized string similar to Mark Procedure (Layer First, Offset First).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtcfast.MarkProc_DISP">
+            <summary>
+              Looks up a localized string similar to Mark procedure.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtcfast.MarkTarget_DESC">
+            <summary>
+              Looks up a localized string similar to Mark Target for Entity (All or Selected).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtcfast.MarkTarget_DISP">
+            <summary>
+              Looks up a localized string similar to Mark target.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtcfast.MaxMeasureTime_DESC">
             <summary>
               Looks up a localized string similar to Max. Time to Measurement (sec).
@@ -16564,6 +16587,26 @@
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markersyncaxis.MarkProc_DESC">
+            <summary>
+              Looks up a localized string similar to Mark Procedure (Layer First, Offset First).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markersyncaxis.MarkProc_DISP">
+            <summary>
+              Looks up a localized string similar to Mark procedure.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markersyncaxis.MarkTarget_DESC">
+            <summary>
+              Looks up a localized string similar to Mark Target for Entity (All or Selected).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markersyncaxis.MarkTarget_DISP">
+            <summary>
+              Looks up a localized string similar to Mark target.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markersyncaxis.Measurement_C">
@@ -16905,6 +16948,26 @@
               Looks up a localized string similar to List type.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.MarkProc_DESC">
+            <summary>
+              Looks up a localized string similar to Mark Procedure (Layer First, Offset First).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.MarkProc_DISP">
+            <summary>
+              Looks up a localized string similar to Mark procedure.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.MarkTarget_DESC">
+            <summary>
+              Looks up a localized string similar to Mark Target for Entity (All or Selected).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.MarkTarget_DISP">
+            <summary>
+              Looks up a localized string similar to Mark target.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.MaxMeasureTime_DESC">
             <summary>
               Looks up a localized string similar to Max. Time to Measurement (sec).
@@ -16922,7 +16985,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Plot_DESC">
             <summary>
-              Looks up a localized string similar to Measurement Plot as Graph After Finish to Mark. (Create Measurement Begin, End entity at First.(.
+              Looks up a localized string similar to Measurement Plot as Graph After Finish to Mark. (Create Measurement Begin, End entity at First.).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerrtc.Plot_DISP">
@@ -18139,10 +18202,10 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ViewClippingBBoxColor">
             <summary>
-            Color of bounding-box cube for clipping 
+            Color of bounding-box(or rectangles) for clipping 
             </summary>
             <remarks>
-            Default: <c>Vector4(0.9f, 0.0f, 0.0f, 0.8f)</c> <br/>
+            Default: <c>Vector4(0.9f, 0.9f, 0.0f, 0.75f)</c> <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ViewRubberBandColor">
@@ -19934,18 +19997,229 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Properties.Resources">
             <summary>
-              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.ResourceManager">
             <summary>
-              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.Culture">
             <summary>
-              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
-              재정의합니다.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.Calibration3D">
+            <summary>
+              Looks up a localized string similar to Calibration 3D.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.ConvertBlock">
+            <summary>
+              Looks up a localized string similar to Convert to Block.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.DocumentClipboardEmpty">
+            <summary>
+              Looks up a localized string similar to Clipboard are empty. Please copy or cut at first..
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.DocumentEncoderReset">
+            <summary>
+              Looks up a localized string similar to Do you really want to reset encoder values ?.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.DocumentNew">
+            <summary>
+              Looks up a localized string similar to Do you really want to new document without save ?.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.DocumentOpen">
+            <summary>
+              Looks up a localized string similar to Do you really want to open without save ?.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.Error">
+            <summary>
+              Looks up a localized string similar to Error.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.Explode">
+            <summary>
+              Looks up a localized string similar to Explode.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.ExtractPointsCloudFailed">
+            <summary>
+              Looks up a localized string similar to Fail to extract points cloud from {0}..
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.ExtractPointsCloudTrying">
+            <summary>
+              Looks up a localized string similar to Do you want to extract points cloud from {0} ?.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.Group">
+            <summary>
+              Looks up a localized string similar to Group.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.HelpKeboard">
+            <summary>
+              Looks up a localized string similar to Help - Keyboards.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.HeuristicFailed">
+            <summary>
+              Looks up a localized string similar to Heuristic algorithm has failed !.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.LicenseKeyIsNotFounded">
+            <summary>
+              Looks up a localized string similar to USB license key is not founded..
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.LicenseKeyWithoutIformation">
+             <summary>
+               Looks up a localized string similar to No information within USB license key.
+            It&apos;s Empty key..
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.MarkerIsBusy">
+            <summary>
+              Looks up a localized string similar to Marker status is busy now !.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.MarkerTryingToStart">
+            <summary>
+              Looks up a localized string similar to Do you really want to start mark ?.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.MarkerWaitingExternalStart">
+            <summary>
+              Looks up a localized string similar to Waiting for external /START trigger ....
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.NoParentWhenActInsert">
+            <summary>
+              Looks up a localized string similar to Please select target parent entity to layer..
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PathOptimizer">
+            <summary>
+              Looks up a localized string similar to Path Optimizer.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PointsCloud">
+            <summary>
+              Looks up a localized string similar to Points Cloud.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PopUpOptimizedSize">
+             <summary>
+               Looks up a localized string similar to Extracted data size are {0} and base location at {1}.
+            Do you want to continue anyway ?.
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PowerCompensateStart">
+             <summary>
+               Looks up a localized string similar to Do you really want to start power compensate ?
+            Target counts: {0}.
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PowerMap">
+            <summary>
+              Looks up a localized string similar to Power Map.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PowerMapBusy">
+            <summary>
+              Looks up a localized string similar to Powermap is busy now..
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PowerMapStart">
+             <summary>
+               Looks up a localized string similar to Do you really want to start power mapping ?
+            Range: {0:F3} ~ {1:F3}W with {2} steps..
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PowerMapToReset">
+            <summary>
+              Looks up a localized string similar to Do you really want to set category: {0} as 1:1 ?.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PowerMapTryingToClear">
+            <summary>
+              Looks up a localized string similar to Do you really want to clear all categories ?.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PowerVerifyStart">
+             <summary>
+               Looks up a localized string similar to Do you really want to start power verification ?
+            Target counts: {0}.
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.RemoteControl">
+            <summary>
+              Looks up a localized string similar to Remote Control.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.RemoteToLocal">
+            <summary>
+              Looks up a localized string similar to Do you really want to switch &apos;LOCAL&apos; mode ?.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.RemoteToRemote">
+            <summary>
+              Looks up a localized string similar to Do you really want to switch &apos;REMOTE&apos; mode ?.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.Reverse">
+            <summary>
+              Looks up a localized string similar to Reverse.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.SpiralLab">
+            <summary>
+              Looks up a localized string similar to (c)SpiralLAB.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.TreeViewBlock">
+            <summary>
+              Looks up a localized string similar to Do you want to convert to block ?.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.TreeViewCalibration3D">
+            <summary>
+              Looks up a localized string similar to Do you want to create new scanner field correction file ?.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.TreeViewExplode">
+            <summary>
+              Looks up a localized string similar to Do you want to explode {0} ?.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.TreeViewGroup">
+            <summary>
+              Looks up a localized string similar to Do you want to convert to group ?.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.TreeViewReverse">
+            <summary>
+              Looks up a localized string similar to Do you want to reverse {0} ?.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.TreeViewTooManyNodes">
+             <summary>
+               Looks up a localized string similar to Do you really want to show all children nodes ?
+            Too many nodes: {0}.
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.Warning">
+            <summary>
+              Looks up a localized string similar to Warning.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Remote.RemoteFactory">
@@ -20957,6 +21231,9 @@
             <summary>
             ClippingForm
             </summary>
+            <remarks>
+            To do clipping regions by <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActClip(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.Entity.BoundingBox[])">IDocument.ActClip</see>. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.ClippingForm.BBoxes">
             <summary>
@@ -21010,7 +21287,8 @@
             Expand winforms
             </summary>
             <remarks>
-            Used with expand(or shrink) <c>EntityPolyline2D</c>. <br/>
+            Used with expand(or shrink) <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see>. <br/>
+            Expand or shrink closed figure by <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActExpand(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Double)">IDocument.ActExpand</see>. <br/>
             <img src="images/expand.png"/> <br/>
             </remarks>
         </member>
@@ -21055,6 +21333,7 @@
             </summary>
             <remarks>
             Used when extract hatch patterns. <br/>
+            To do hatch closed figured by <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActHatch(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">IDocument.ActHatch</see>. <br/>
             <img src="images/hatch.png"/> <br/>
             </remarks>
         </member>
@@ -21128,7 +21407,7 @@
             Block winforms
             </summary>
             <remarks>
-            To create <c>EntityBlockInsert</c>. <br/>
+            To create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert">EntityBlockInsert</see> entity. <br/>
             <img src="images/blockinsert.png"/> <br/>
             </remarks>
         </member>
@@ -21221,6 +21500,7 @@
             PowerMapCategoriesForm
             </summary>
             <remarks>
+            Array of powermap category are quried by <see cref="M:SpiralLab.Sirius2.PowerMap.IPowerMap.Categories(System.String[]@)">IPowerMap.Categories</see>. <br/>
             <img src="images/powermapcategory.png"/> <br/>
             </remarks>
         </member>
@@ -21300,6 +21580,9 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
+            To do power mapping by <see cref="M:SpiralLab.Sirius2.PowerMap.IPowerMap.CtlMapping(System.String[],System.Double[])">IPowerMap.CtlMapping</see>. <br/>
+            To do power verifying by <see cref="M:SpiralLab.Sirius2.PowerMap.IPowerMap.CtlVerify(System.Collections.Generic.KeyValuePair{System.String,System.Double}[])">IPowerMap.CtlVerify</see>. <br/>
+            To do power compensating by <see cref="M:SpiralLab.Sirius2.PowerMap.IPowerMap.CtlCompensate(System.Collections.Generic.KeyValuePair{System.String,System.Double}[])">IPowerMap.CtlCompensate</see>. <br/>
             <img src="images/powermap.png"/> <br/>
             </remarks>
         </member>
@@ -21363,6 +21646,7 @@
             PowerMapCompensateForm
             </summary>
             <remarks>
+            To do powermap compensate by <see cref="M:SpiralLab.Sirius2.PowerMap.IPowerMap.CtlCompensate(System.Collections.Generic.KeyValuePair{System.String,System.Double}[])">IPowerMap.CtlCompensate</see>. <br/>
             <img src="images/powermapcompensate.png"/> <br/>
             </remarks>
         </member>
@@ -21432,6 +21716,7 @@
             PowerMapVerifyForm
             </summary>
             <remarks>
+            To do powermap verification by <see cref="M:SpiralLab.Sirius2.PowerMap.IPowerMap.CtlVerify(System.Collections.Generic.KeyValuePair{System.String,System.Double}[])">IPowerMap.CtlVerify</see>. <br/>
             <img src="images/powermapverify.png"/> <br/>
             </remarks>
         </member>
@@ -21502,6 +21787,9 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
+            Inherited from <see cref="T:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase">MarkerScriptBase</see> to implement marker script. <br/>
+            Assigned marker script file by <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.TextConvertScriptFile">TextConvertScriptFile</see>. <br/>
+            Assigned marker script instance at <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.TextConvertScriptInstance">TextConvertScriptInstance</see>. <br/>
             <img src="images/script.png"/> <br/>
             </remarks>
         </member>
@@ -21538,6 +21826,7 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
+            To do control powermeter by <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>. <br/>
             <img src="images/powermeter.png"/> <br/>
             </remarks>
         </member>
@@ -21579,6 +21868,7 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
+            To communication and control with client(or peer) by <see cref="T:SpiralLab.Sirius2.Winforms.Remote.IRemote">IRemote</see>. <br/>
             <img src="images/remote.png"/> <br/>
             </remarks>
         </member>
@@ -21682,7 +21972,8 @@
             PathOptimizer winforms
             </summary>
             <remarks>
-            Extact <c>PathOptimizerBasePositions</c> position from <c>IEntity</c> and show it. <br/>
+            To do optimize internal pathes by array of x,y and extracted reference position by <see cref="T:SpiralLab.Sirius2.Winforms.UI.PathOptimizerBasePositions">PathOptimizerBasePositions</see>. <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Winforms.Config.PathOptimizerBasePosition">Config.PathOptimizerBasePosition</see>. <br/>
             Try to optimize path and show the results. <br/>
             <img src="images/pathoptimizer.png"/> <br/>
             </remarks>
@@ -21769,7 +22060,7 @@
             Array winforms
             </summary>
             <remarks>
-            Used when paste array of <c>IEntity</c> from clipboard. <br/>
+            Used when paste array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> from clipboard. <br/>
             <img src="images/array.png"/> <br/>
             </remarks>
         </member>
@@ -21843,7 +22134,7 @@
             ImageText winforms
             </summary>
             <remarks>
-            <c>ImageText</c> by bitmap image for raster(or bitmap) operations. <br/>
+            Bitmap image for raster(or bitmap) operations by <see cref="P:SpiralLab.Sirius2.Winforms.UI.ImageTextForm.ImageText">ImageText</see>. <br/>    
             <img src="images/imagetext.png"/> <br/>
             </remarks>
         </member>
@@ -21954,6 +22245,7 @@
             </summary>
             <remarks>
             Show license information. <br/>
+            Queried by <see cref="M:SpiralLab.Sirius2.Core.License(SpiralLab.Sirius2.LicenseInfo@)">Core.License</see>. <br/>
             <img src="images/license.png"/> <br/>
             </remarks>
         </member>
@@ -22043,6 +22335,7 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
+            List of marker's offset(x,y,z and angle z) for <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Offsets">IMarker.Offsets</see>. <br/>
             <img src="images/offset.png"/> <br/>
             </remarks>
         </member>
@@ -22082,6 +22375,7 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
+            Inherited from <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>. <br/>
             <img src="images/marker.png"/> <br/>
             </remarks>
         </member>
@@ -22142,6 +22436,7 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
+            Log message would be generated every function calls by <see cref="T:SpiralLab.Sirius2.Logger">Logger</see>. <br/>
             <img src="images/log.png"/> <br/>
             </remarks>
         </member>
@@ -22180,6 +22475,7 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
+            To control scanner device by <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>. <br/>
             <img src="images/rtc.png"/> <br/>
             </remarks>
         </member>
@@ -22219,6 +22515,9 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
+            10 pens would be created by <see cref="P:SpiralLab.Sirius2.Winforms.Config.PenColors">Config.PenColors</see> by default. <br/>
+            Each <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see> are exist at <see cref="P:SpiralLab.Sirius2.Winforms.IDocumentData.Pens">IDocumentData.Pens</see>. <br/>
+            User can query pen entity by <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.FindByPenColor(System.Drawing.Color,SpiralLab.Sirius2.Winforms.Entity.EntityPen@)">IDocument.FindByPenColor</see>. <br/>
             <img src="images/pen.png"/> <br/>
             </remarks>
         </member>
@@ -22255,6 +22554,7 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
+            Inherited from <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>. <br/>
             <img src="images/laser.png"/> <br/>
             </remarks>
         </member>
@@ -22294,16 +22594,12 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
+            To control digital input by <see cref="T:SpiralLab.Sirius2.IO.IDOutput">IDOutput</see>. <br/>
             Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcExtension1Port">Config.DOut_RtcExtension1Port</see>. <br/>
             Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcExtension2Port">Config.DOut_RtcExtension2Port</see>. <br/>
             Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcLaserPort">Config.DOut_RtcLaserPort</see>. <br/>
             <img src="images/rtcdoutput.png"/> <br/>
             </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl.Rtc">
-            <summary>
-            <c>IRtc</c>
-            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl.DOExt1">
             <summary>
@@ -22375,15 +22671,11 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
+            To control digital input by <see cref="T:SpiralLab.Sirius2.IO.IDInput">IDInput</see>. <br/>
             Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DIn_RtcExtension1Port">Config.DIN_RtcExtension1Port</see>. <br/>
             Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DIn_RtcLaserPort">Config.DIN_RtcLaserPort</see>. <br/>
             <img src="images/rtcdinput.png"/> <br/>
             </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl.Rtc">
-            <summary>
-            <c>IRtc</c>
-            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl.DIExt1">
             <summary>
@@ -22440,7 +22732,7 @@
             Rotate winforms
             </summary>
             <remarks>
-            Used to calculate <c>ModelRotate</c> at <c>IEntity</c>. <br/>
+            Used to calculate <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">IEntity.ModelRotate</see> at <c>IEntity</c>. <br/>
             <img src="images/rotate.png"/> <br/>
             </remarks>
         </member>
@@ -22479,7 +22771,7 @@
             Alignment winforms
             </summary>
             <remarks>
-            Set <c>Alignments</c> for <c>IEntity</c>. <br/>
+            Set <see cref="T:SpiralLab.Sirius2.Winforms.Entity.Alignments">Alignments</see> for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. <br/>
             <img src="images/alignment.png"/> <br/>
             </remarks>
         </member>
@@ -22503,7 +22795,7 @@
             Constructor
             </summary>
             <param name="entity">Target <c>IEntity</c></param>
-            <param name="alignment"><c>Alignment</c></param>
+            <param name="alignment"><c>Alignments</c></param>
             <param name="wfes"><c>IWindowsFormsEditorService</c></param>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.AlignmentForm.components">
@@ -22528,7 +22820,7 @@
             Scale winforms
             </summary>
             <remarks>
-            Used to calculate <c>ModelScale</c> at <c>IEntity</c>. <br/>
+            Used to calculate To control digital input by <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">IEntity.ModelScale</see> at <c>IEntity</c>. <br/>
             <img src="images/scale.png"/> <br/>
             </remarks>
         </member>
@@ -22741,6 +23033,7 @@
             EditorUserControl
             </summary>
             <remarks>
+            <c>OpenTK</c> editor usercontrol. <br/>
             User can insert(or create) usercontrol at own winforms. <br/>
             <img src="images/editor.png"/> <br/>
             </remarks>
@@ -23216,7 +23509,7 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
-            Used to show <c>IDocument.Blocks</c> at <c>TreeView</c>. <br/>
+            Used to show <see cref="P:SpiralLab.Sirius2.Winforms.IDocumentData.Blocks">IDocumentData.Blocks</see> at <c>TreeView</c>. <br/>
             <img src="images/treeviewblock.png"/> <br/>
             </remarks>
         </member>
@@ -23268,7 +23561,7 @@
             </summary>
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
-            Used to show <c>IDocument.Layers</c> at <c>TreeView</c>. <br/>
+            Used to show <see cref="P:SpiralLab.Sirius2.Winforms.IDocumentData.Layers">IDocumentData.Layers</see> at <c>TreeView</c>. <br/>
             <img src="images/treeview.png"/> <br/>
             </remarks>
         </member>
@@ -23337,6 +23630,37 @@
             <summary>
             For Empty Tree Node
             Expand/collapse when +- icon has clicked
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.ui.LicenseForm">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.LicenseForm.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.LicenseForm.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.LicenseForm.statusStrip1_TrayLocation">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Point similar to {X=17,Y=17}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.LicenseForm.String1">
+            <summary>
+              Looks up a localized string similar to 123.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.LicenseForm.toolTip1_TrayLocation">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Point similar to {X=133,Y=16}.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.ViewFactory">

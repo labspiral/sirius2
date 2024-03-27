@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,150 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Calibration3D" xml:space="preserve">
+    <value>Calibration 3D</value>
+  </data>
+  <data name="ConvertBlock" xml:space="preserve">
+    <value>Convert to Block</value>
+  </data>
+  <data name="DocumentClipboardEmpty" xml:space="preserve">
+    <value>Clipboard are empty. Please copy or cut at first.</value>
+  </data>
+  <data name="DocumentEncoderReset" xml:space="preserve">
+    <value>Do you really want to reset encoder values ?</value>
+  </data>
+  <data name="DocumentNew" xml:space="preserve">
+    <value>Do you really want to new document without save ?</value>
+  </data>
+  <data name="DocumentOpen" xml:space="preserve">
+    <value>Do you really want to open without save ?</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Explode" xml:space="preserve">
+    <value>Explode</value>
+  </data>
+  <data name="ExtractPointsCloudFailed" xml:space="preserve">
+    <value>Fail to extract points cloud from {0}.</value>
+  </data>
+  <data name="ExtractPointsCloudTrying" xml:space="preserve">
+    <value>Do you want to extract points cloud from {0} ?</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="HelpKeboard" xml:space="preserve">
+    <value>Help - Keyboards</value>
+  </data>
+  <data name="HeuristicFailed" xml:space="preserve">
+    <value>Heuristic algorithm has failed !</value>
+  </data>
+  <data name="LicenseKeyIsNotFounded" xml:space="preserve">
+    <value>USB license key is not founded.</value>
+  </data>
+  <data name="LicenseKeyWithoutIformation" xml:space="preserve">
+    <value>No information within USB license key.</value>
+  </data>
+  <data name="MarkerIsBusy" xml:space="preserve">
+    <value>Marker status is busy now !</value>
+  </data>
+  <data name="MarkerTryingToStart" xml:space="preserve">
+    <value>Do you really want to start mark ?</value>
+  </data>
+  <data name="MarkerWaitingExternalStart" xml:space="preserve">
+    <value>Waiting for external /START trigger ...</value>
+  </data>
+  <data name="NoParentWhenActInsert" xml:space="preserve">
+    <value>Please select target parent entity to layer.</value>
+  </data>
+  <data name="PathOptimizer" xml:space="preserve">
+    <value>Path Optimizer</value>
+  </data>
+  <data name="PointsCloud" xml:space="preserve">
+    <value>Points Cloud</value>
+  </data>
+  <data name="PopUpOptimizedSize" xml:space="preserve">
+    <value>Extracted data size are {0} and base location at {1}.</value>
+  </data>
+  <data name="PowerCompensateStart" xml:space="preserve">
+    <value>Do you really want to start power compensate ?</value>
+  </data>
+  <data name="PowerMap" xml:space="preserve">
+    <value>Power Map</value>
+  </data>
+  <data name="PowerMapBusy" xml:space="preserve">
+    <value>Powermap is busy now.</value>
+  </data>
+  <data name="PowerMapStart" xml:space="preserve">
+    <value>Do you really want to start power mapping ?</value>
+  </data>
+  <data name="PowerMapToReset" xml:space="preserve">
+    <value>Do you really want to set category: {0} as 1:1 ?</value>
+  </data>
+  <data name="PowerMapTryingToClear" xml:space="preserve">
+    <value>Do you really want to clear all categories ?</value>
+  </data>
+  <data name="PowerVerifyStart" xml:space="preserve">
+    <value>Do you really want to start power verification ?</value>
+  </data>
+  <data name="RemoteControl" xml:space="preserve">
+    <value>Remote Control</value>
+  </data>
+  <data name="RemoteToLocal" xml:space="preserve">
+    <value>Do you really want to switch 'LOCAL' mode ?</value>
+  </data>
+  <data name="RemoteToRemote" xml:space="preserve">
+    <value>Do you really want to switch 'REMOTE' mode ?</value>
+  </data>
+  <data name="Reverse" xml:space="preserve">
+    <value>Reverse</value>
+  </data>
+  <data name="SpiralLab" xml:space="preserve">
+    <value>(c)SpiralLAB</value>
+  </data>
+  <data name="String" xml:space="preserve">
+    <value>It's Empty key.</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>Do you want to continue anyway ?</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>Target counts: {0}</value>
+  </data>
+  <data name="String3" xml:space="preserve">
+    <value>Range: {0:F3} ~ {1:F3}W with {2} steps.</value>
+  </data>
+  <data name="String4" xml:space="preserve">
+    <value>Target counts: {0}</value>
+  </data>
+  <data name="String5" xml:space="preserve">
+    <value>Too many nodes: {0}</value>
+  </data>
+  <data name="TreeViewBlock" xml:space="preserve">
+    <value>Do you want to convert to block ?</value>
+  </data>
+  <data name="TreeViewCalibration3D" xml:space="preserve">
+    <value>Do you want to create new scanner field correction file ?</value>
+  </data>
+  <data name="TreeViewExplode" xml:space="preserve">
+    <value>Do you want to explode {0} ?</value>
+  </data>
+  <data name="TreeViewGroup" xml:space="preserve">
+    <value>Do you want to convert to group ?</value>
+  </data>
+  <data name="TreeViewReverse" xml:space="preserve">
+    <value>Do you want to reverse {0} ?</value>
+  </data>
+  <data name="TreeViewTooManyNodes" xml:space="preserve">
+    <value>Do you really want to show all children nodes ?</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
 </root>

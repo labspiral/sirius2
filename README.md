@@ -89,21 +89,21 @@
 
 **3. What's major changes in Sirius2**
 
-|                       |                         Sirius2                       |       Sirius(Old)       |
-|:---------------------:|:------------------------------------------------------|:------------------------|
-| Matrix operation      |4x4 (3D)                                               |3x3 (2D)                 |
-| Camera                |Perspective                                            |Orthogonal               |
-| Editor                |3D                                                     |2D                       |
-| Render engine         |OpenTK (with shaders)                                  |SharpGL                  |
-| Render speed          |Faster                                                 |Acceptable               |
-| Field correction      |correXionPro and CalibrationTool                       |correXionPro             |
-| Font                  |cxf, lff format and Windows fonts (semi ocr also)      |external ttf, cxf format |
-| Remote control        |Supported (TCP/IP, Serial)                             |x                        |
-| Script                |C# script                                              |x                        |
-| Processing on the fly |Classic and Fly extension                              |Classic                  |
-| Stream parser         |Supported                                              |x                        |
-| Multi-language        |Supported                                              |x                        |
-| Customization         |Expandable                                             |Acceptable               |
+|                       |                         Sirius2                       |       Sirius(Old)        |
+|:---------------------:|:------------------------------------------------------|:-------------------------|
+| Matrix operation      |4x4 (3D)                                               |3x3 (2D)                  |
+| Camera                |Perspective                                            |Orthogonal                |
+| Editor                |3D                                                     |2D                        |
+| Render engine         |OpenTK (with shaders)                                  |SharpGL                   |
+| Render speed          |Faster                                                 |Acceptable                |
+| Field correction      |correXionPro and CalibrationTool                       |correXionPro              |
+| Font                  |cxf, lff format and Windows fonts (semi ocr also)      |external ttf, cxf format  |
+| Remote control        |Supported (TCP/IP, Serial)                             |x                         |
+| Script                |C# script                                              |x                         |
+| Processing on the fly |Classic and Fly extension                              |Classic                   |
+| Stream parser         |Supported                                              |x                         |
+| Multi-language        |Supported                                              |x                         |
+| Customization         |Expandable                                             |Acceptable                |
 
 
 ----
@@ -159,6 +159,10 @@
 
 
 **7. Version history**
+
+* 2024.3.27 v.1.23.1170
+  - fixed) marks bug at IRtc.ListArc  
+  - fixed) display invalid category name at propertygrid
 
 * 2024.3.23 v.1.22.1140
   - added) semi orc font files

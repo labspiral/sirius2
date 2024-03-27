@@ -252,8 +252,6 @@ namespace Demos
                 
                 rtc = value;
                 RtcCtrl.Rtc = rtc;
-                RtcDICtrl.Rtc = rtc;
-                RtcDOCtrl.Rtc = rtc;
                 ManualCtrl.Rtc = rtc;
                 EditorCtrl.Rtc = rtc;
                 //TreeViewCtrl.Rtc = rtc;
@@ -653,7 +651,7 @@ namespace Demos
         public SiriusEditorUserControl()
         {
             InitializeComponent();
-        
+
             VisibleChanged += SiriusEditorUserControl_VisibleChanged;
             Disposed += SiriusEditorUserControl_Disposed;
 
@@ -773,7 +771,10 @@ namespace Demos
                 {
                     if (!Marker.IsBusy)
                     {
-                        var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to start mark ?", "Warning", MessageBoxButtons.YesNo);
+                        var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(
+                            Properties.Resources.MarkerTryingToStart,
+                            Properties.Resources.Warning,
+                            MessageBoxButtons.YesNo);
                         DialogResult dialogResult = form.ShowDialog(this);
                         if (dialogResult == DialogResult.Yes)
                         {
@@ -1077,7 +1078,10 @@ namespace Demos
         {
             if (document.IsModified)
             {
-                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to new document without save ?", "Warning", MessageBoxButtons.YesNo);
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(
+                    Properties.Resources.DocumentNew,
+                    Properties.Resources.Warning,
+                    MessageBoxButtons.YesNo);
                 DialogResult dialogResult = form.ShowDialog(this);
                 if (dialogResult != DialogResult.Yes)
                     return;
@@ -1100,7 +1104,10 @@ namespace Demos
                 return;
             if (Document.IsModified)
             {
-                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to open without save ?", "Warning", MessageBoxButtons.YesNo);
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(
+                    Properties.Resources.DocumentOpen,
+                    Properties.Resources.Warning,
+                    MessageBoxButtons.YesNo);
                 DialogResult dialogResult = form.ShowDialog(this);
                 if (dialogResult != DialogResult.Yes)
                     return;
@@ -1153,7 +1160,10 @@ namespace Demos
         {
             if (Document.Clipboard == null || Document.Clipboard.Length == 0)
             {
-                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Clipboard are empty. Please copy or cut at first", "Warning", MessageBoxButtons.OK);
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(
+                    Properties.Resources.DocumentClipboardEmpty,
+                    Properties.Resources.Warning,
+                    MessageBoxButtons.OK);
                 form.ShowDialog(this);
                 return;
             }
@@ -1398,7 +1408,10 @@ namespace Demos
 
         private void LblHelp_Click(object sender, EventArgs e)
         {
-            var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(Config.KeyboardHelpMessage, "Help - Keyboards", MessageBoxButtons.OK);
+            var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(
+                Config.KeyboardHelpMessage,
+                Properties.Resources.HelpKeboard,
+                MessageBoxButtons.OK);
             form.ShowDialog(this);
         }
         private void LblEncoder_DoubleClick(object sender, EventArgs e)
@@ -1408,7 +1421,10 @@ namespace Demos
             var rtcMoF = Rtc as IRtcMoF;
             if (rtcMoF == null)
                 return;
-            var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to reset encoder values ?", "Warning", MessageBoxButtons.YesNo);
+            var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(
+                Properties.Resources.DocumentEncoderReset,
+                Properties.Resources.Warning,
+                MessageBoxButtons.YesNo);
             DialogResult dialogResult = form.ShowDialog(this);
             if (dialogResult == DialogResult.Yes)
                 rtcMoF.CtlMofEncoderReset();
@@ -1650,7 +1666,10 @@ namespace Demos
             {
                 case ControlModes.Remote:
                     {
-                        var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to switch 'LOCAL' mode ?", "Remote Control", MessageBoxButtons.YesNo);
+                        var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(
+                            Properties.Resources.RemoteToLocal,
+                            Properties.Resources.RemoteControl,
+                            MessageBoxButtons.YesNo);
                         DialogResult dialogResult = form.ShowDialog(this);
                         if (dialogResult == DialogResult.Yes)
                             this.Remote.ControlMode = ControlModes.Local;
@@ -1658,7 +1677,10 @@ namespace Demos
                     break;
                 case ControlModes.Local:
                     {
-                        var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to switch 'REMOTE' mode  ?", "Remote Control", MessageBoxButtons.YesNo);
+                        var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(
+                            Properties.Resources.RemoteToRemote,
+                            Properties.Resources.RemoteControl,
+                            MessageBoxButtons.YesNo);
                         DialogResult dialogResult = form.ShowDialog(this);
                         if (dialogResult == DialogResult.Yes)
                             this.Remote.ControlMode = ControlModes.Remote;
