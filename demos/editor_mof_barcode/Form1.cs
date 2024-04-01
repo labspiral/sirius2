@@ -47,11 +47,14 @@ using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Winforms;
 using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
+using SpiralLab.Sirius2.Winforms.Script;
 
 namespace Demos
 {
     public partial class Form1 : Form
     {
+        System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+
         public Form1()
         {
             // Set language
@@ -99,7 +102,9 @@ namespace Demos
             // and repeat 10 times by DIN0 trigger 
 
             // Create wait extension 16 edge condition entity
-            var waitExt16Cond = EntityFactory.CreateWaitDataExt16EdgeCond(0, SignalEdges.High);
+            var waitExt16Cond = EntityFactory.CreateWaitDataExt16EdgeCond(
+                0, //D.IN0
+                SignalEdges.High); 
             document.ActAdd(waitExt16Cond);
 
             // Create mof begin entity
@@ -143,8 +148,8 @@ namespace Demos
             scriptEvent.Description = "Event for increase serial no after each marks";
             document.ActAdd(scriptEvent);
 
-            // Repeats 10 times
-            document.ActiveLayer.Repeats = 10;
+            // Repeats 100 times
+            document.ActiveLayer.Repeats = 100;
             // or infinitely
             //document.ActiveLayer.Repeats = uint.MaxValue;
 
@@ -163,6 +168,10 @@ namespace Demos
             //marker.OnTextConvert += Text_OnTextConvert;
             //OR external script file
             marker.ScriptFile = Path.Combine(SpiralLab.Sirius2.Winforms.Config.ScriptPath, "mof_barcode.cs");
+            Debug.Assert(null != marker.ScriptInstance);
+            
+            // Reset serial no as start no
+            //marker.ScriptInstance.CtlEvent();
 
             // Assign event handlers at Config
             EditorHelper.AttachEventHandlers();

@@ -161,9 +161,11 @@
 **7. Version history**
 
 * 2024.4.2 v.1.24.1190
+  - added) editor_dio demo project 
   - added) ScriptHelper 
      - user can read(or write) script property values
      - renamed) script file and instance at marker 
+  - refactor) IScript interface
   - fixed) save measurement result by raw data format
   - fixed) ko-KR language resources for IRtc, ILaser
   - fixed) exception when initialize syncaxis instance

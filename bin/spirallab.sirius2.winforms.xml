@@ -5384,6 +5384,10 @@
             <summary>
             EntityScriptEvent entity
             </summary>
+            <remarks>
+            Used with <see cref="M:SpiralLab.Sirius2.Winforms.Script.IScript.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">IScript.ListEvent</see> at <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ScriptInstance">ScriptInstance</see>. <br/>
+            User should be implement <see cref="M:SpiralLab.Sirius2.Winforms.Script.IScript.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">IScript.ListEvent</see> function by override. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent.UserData">
             <inheritdoc/>
@@ -13457,7 +13461,11 @@
             document.ActAdd(scriptEvent);
             </code>
             </summary>
-            <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityVariable">EntityVariable</see></returns>
+            <remarks>
+            Used with <see cref="M:SpiralLab.Sirius2.Winforms.Script.IScript.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">IScript.ListEvent</see> at <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ScriptInstance">ScriptInstance</see>. <br/>
+            User should be implement <see cref="M:SpiralLab.Sirius2.Winforms.Script.IScript.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">IScript.ListEvent</see> function by override. <br/>
+            </remarks>
+            <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent">EntityScriptEvent</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePointsCloud(OpenTK.Vector3[])">
             <summary>
@@ -15050,9 +15058,6 @@
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnMarkPen">
             <inheritdoc/>
         </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnScriptEvent">
-            <inheritdoc/>
-        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Index">
             <inheritdoc/>
         </member>
@@ -15333,18 +15338,6 @@
             Consider as its working within async threads. <br/>
             Used by internally. <br/>
             </remarks>
-            <returns>Success or failed</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyScriptEvent(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">
-            <summary>
-            Notify event for <see cref="T:SpiralLab.Sirius2.Winforms.Script.IScript">IScript</see>
-            </summary>
-            <remarks>
-            Consider as its working within async threads. <br/>
-            Used by internally. <br/>
-            </remarks>
-            <param name="marker"><c>IMarker</c></param>
-            <param name="entity"><c>EntityScriptEvent</c></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.PenEntityWork(SpiralLab.Sirius2.Winforms.Entity.EntityPen)">
@@ -16095,11 +16088,6 @@
              <remarks>
              User can add event handler for override <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see> mark routines. <br/>
              </remarks>
-        </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnScriptEvent">
-            <summary>
-            Event for <c>EntityScriptEvent</c> by <c>IScript</c> inherited from <c>MarkerScriptBase</c>
-            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Index">
             <summary>
@@ -20944,7 +20932,7 @@
             Get property value from script instance
             </summary>
             <remarks>
-            Used with (must be exist) <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ScriptInstance">TextConvertScriptInstance</see>. <br/>
+            Used with (must be exist) <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ScriptInstance">ScriptInstance</see>. <br/>
             Must be load script file at first by <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ScriptFile">ScriptFile</see>.  <br/>
             </remarks>
             <param name="marker"><see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see></param>
@@ -20977,46 +20965,6 @@
             <param name="dicPropValue">Dictionary for key(property name) and value(property value)</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase">
-            <summary>
-            SequenceScriptBase
-            </summary>
-            <remarks>
-            Sequence scripts are should be inherited from <c>SequenceScriptBase</c> <br/>
-            </remarks>
-        </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase.PropertyChanged">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase.Name">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase.Description">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase.Marker">
-            <inheritdoc/> 
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase.#ctor(SpiralLab.Sirius2.Winforms.Sequence.ISequence)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="sequence"><c>ISequence</c></param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase.Finalize">
-            <summary>
-            Finalizer
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase.Dispose">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.SequenceScriptBase.NotifyPropertyChanged(System.String)">
-            <summary>
-            Notify property value has change event
-            </summary>
-            <param name="propertyName">Property name</param>
-        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Script.IScript">
             <summary>
             IScript interface
@@ -21036,6 +20984,20 @@
             <summary>
             Assigned <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.IScript.CtlEvent(System.Object)">
+            <summary>
+            Control event by external user
+            </summary>
+            <param name="userData">User data</param>
+            <returns>Success or failed (<c>False</c> without overrided function)</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.IScript.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">
+            <summary>
+            List event by internal <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent">EntityScriptEvent</see> entity
+            </summary>
+            <param name="entityScriptEvent"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent">EntityScriptEvent</see></param>
+            <returns>Success or failed (<c>False</c> without overrided function)</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Script.IScript.NotifyPropertyChanged(System.String)">
             <summary>
@@ -21085,28 +21047,68 @@
             <summary>
             Event handler for marker has started
             </summary>
+            <remarks>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker)">OnStarted</see>  <br/>
+            -> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">OnBeforeLayer</see> <br/>
+            ---> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">OnBeforeEntity</see> <br/>
+            -----> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">OnTextConvert</see> if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">ITextConvertible.IsConvertedText</see> is <c>True</c>. <br/>
+            -----> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">ListEvent</see> if <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent">EntityScriptEvent</see> is used. <br/>
+            ---> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">OnAfterEntity</see>  <br/>
+            -> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">OnAfterLayer</see>   <br/>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">OnEnded</see> <br/>
+            </remarks>
             <param name="marker"><c>IMarker</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">
             <summary>
             Event handler for text has changed
             </summary>
+            <remarks>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker)">OnStarted</see>  <br/>
+            -> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">OnBeforeLayer</see> <br/>
+            ---> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">OnBeforeEntity</see> <br/>
+            -----> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">OnTextConvert</see> if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">ITextConvertible.IsConvertedText</see> is <c>True</c>. <br/>
+            -----> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">ListEvent</see> if <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent">EntityScriptEvent</see> is used. <br/>
+            ---> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">OnAfterEntity</see>  <br/>
+            -> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">OnAfterLayer</see>   <br/>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">OnEnded</see> <br/>
+            </remarks>
             <param name="marker"><c>IMarker</c></param>
             <param name="textConvertible"><c>ITextConvertible</c></param>
             <returns>Converted string data</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">
-            <summary>
-            Event handler for after mark layer 
-            </summary>
-            <param name="marker"><c>IMarker</c></param>
-            <param name="layer"><c>EntityLayer</c></param>
-            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">
             <summary>
             Event handler for before mark layer 
             </summary>
+            <remarks>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker)">OnStarted</see>  <br/>
+            -> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">OnBeforeLayer</see> <br/>
+            ---> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">OnBeforeEntity</see> <br/>
+            -----> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">OnTextConvert</see> if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">ITextConvertible.IsConvertedText</see> is <c>True</c>. <br/>
+            -----> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">ListEvent</see> if <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent">EntityScriptEvent</see> is used. <br/>
+            ---> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">OnAfterEntity</see>  <br/>
+            -> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">OnAfterLayer</see>   <br/>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">OnEnded</see> <br/>
+            </remarks>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="layer"><c>EntityLayer</c></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">
+            <summary>
+            Event handler for after mark layer 
+            </summary>
+            <remarks>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker)">OnStarted</see>  <br/>
+            -> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">OnBeforeLayer</see> <br/>
+            ---> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">OnBeforeEntity</see> <br/>
+            -----> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">OnTextConvert</see> if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">ITextConvertible.IsConvertedText</see> is <c>True</c>. <br/>
+            -----> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">ListEvent</see> if <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent">EntityScriptEvent</see> is used. <br/>
+            ---> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">OnAfterEntity</see>  <br/>
+            -> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">OnAfterLayer</see>   <br/>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">OnEnded</see> <br/>
+            </remarks>
             <param name="marker"><c>IMarker</c></param>
             <param name="layer"><c>EntityLayer</c></param>
             <returns>Success or failed</returns>
@@ -21115,30 +21117,72 @@
             <summary>
             Event handler for before mark entity 
             </summary>
+            <remarks>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker)">OnStarted</see>  <br/>
+            -> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">OnBeforeLayer</see> <br/>
+            ---> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">OnBeforeEntity</see> <br/>
+            -----> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">OnTextConvert</see> if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">ITextConvertible.IsConvertedText</see> is <c>True</c>. <br/>
+            -----> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">ListEvent</see> if <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent">EntityScriptEvent</see> is used. <br/>
+            ---> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">OnAfterEntity</see>  <br/>
+            -> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">OnAfterLayer</see>   <br/>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">OnEnded</see> <br/>
+            </remarks>
             <param name="marker"><c>IMarker</c></param>
             <param name="entity"><c>IEntity</c></param>
             <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.CtlEvent(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">
+            <summary>
+            List event by internal <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent">EntityScriptEvent</see> entity
+            </summary>
+            <remarks>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker)">OnStarted</see>  <br/>
+            -> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">OnBeforeLayer</see> <br/>
+            ---> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">OnBeforeEntity</see> <br/>
+            -----> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">OnTextConvert</see> if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">ITextConvertible.IsConvertedText</see> is <c>True</c>. <br/>
+            -----> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">ListEvent</see> if <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent">EntityScriptEvent</see> is used. <br/>
+            ---> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">OnAfterEntity</see>  <br/>
+            -> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">OnAfterLayer</see>   <br/>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">OnEnded</see> <br/>
+            </remarks>
+            <param name="entityScriptEvent"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent">EntityScriptEvent</see></param>
+            <returns>Success or failed (<c>False</c> without overrided function)</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">
             <summary>
             Event handler for after mark entity 
             </summary>
+            <remarks>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker)">OnStarted</see>  <br/>
+            -> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">OnBeforeLayer</see> <br/>
+            ---> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">OnBeforeEntity</see> <br/>
+            -----> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">OnTextConvert</see> if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">ITextConvertible.IsConvertedText</see> is <c>True</c>. <br/>
+            -----> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">ListEvent</see> if <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent">EntityScriptEvent</see> is used. <br/>
+            ---> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">OnAfterEntity</see>  <br/>
+            -> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">OnAfterLayer</see>   <br/>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">OnEnded</see> <br/>
+            </remarks>
             <param name="marker"><c>IMarker</c></param>
             <param name="entity"><c>IEntity</c></param>
-            <returns>Success or failed</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnScriptEvent(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">
-            <summary>
-            Event handler for script event entity 
-            </summary>
-            <param name="marker"><c>IMarker</c></param>
-            <param name="entity"><c>EntityScriptEvent</c></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">
             <summary>
             Event handler for marker has ended
             </summary>
+            <remarks>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker)">OnStarted</see>  <br/>
+            -> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">OnBeforeLayer</see> <br/>
+            ---> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnBeforeEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">OnBeforeEntity</see> <br/>
+            -----> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">OnTextConvert</see> if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">ITextConvertible.IsConvertedText</see> is <c>True</c>. <br/>
+            -----> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">ListEvent</see> if <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent">EntityScriptEvent</see> is used. <br/>
+            ---> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterEntity(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.IEntity)">OnAfterEntity</see>  <br/>
+            -> <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnAfterLayer(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">OnAfterLayer</see>   <br/>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">OnEnded</see> <br/>
+            </remarks>
             <param name="marker"><c>IMarker</c></param>
             <param name="success">Success or failed to mark</param>
             <param name="timeSpan"><c>TimeSpan</c></param>
@@ -21235,47 +21279,6 @@
             <param name="args">Array of argument</param>
             <param name="returnValue">Return value of function call</param>
             <returns>Success or failed</returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Sequence.ISequence">
-            <summary>
-            ISequence interface
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Sequence.ISequence.Name">
-            <summary>
-            Name
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Sequence.ISequence.SyncRoot">
-            <summary>
-            Object for synchronization
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Sequence.ISequence.Tag">
-            <summary>
-            User data
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Sequence.ISequence.Initialize">
-            <summary>
-            Initialize
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Sequence.IService">
-            <summary>
-            IService interface
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Sequence.IService.Name">
-            <summary>
-            Name
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Sequence.IService.Tag">
-            <summary>
-            User data
-            </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.UI.AboutForm">
             <summary>

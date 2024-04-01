@@ -646,7 +646,7 @@
             Event for input bit(s) has changed
             </summary>
             <remarks>
-            Argument: <c>IDInput</c>, bit no (0~15) <br/>
+            Argument: <c>IDInput</c>, bit no (0~15), <c>SignalEdges</c> <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.IO.IDInput.SyncRoot">
@@ -803,6 +803,9 @@
             <summary>
             Update channel(s) data from input
             </summary>
+            <remarks>
+            If input bit(s) had changed, <see cref="E:SpiralLab.Sirius2.IO.IDInput.OnChanged">OnChanged</see> event would be fired whenever do after <see cref="M:SpiralLab.Sirius2.IO.IDInput.Update">Update</see>. <br/>
+            </remarks>
             <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.IO.IDOutput">
@@ -1244,12 +1247,12 @@
             <param name="oldInput">Old(or previous) input bits</param>
             <param name="newInput">New input bits</param>
         </member>
-        <member name="M:SpiralLab.Sirius2.IO.DInputBase.NotifyChanged(System.Int32)">
+        <member name="M:SpiralLab.Sirius2.IO.DInputBase.NotifyChanged(System.Int32,SpiralLab.Sirius2.Scanner.Rtc.SignalEdges)">
             <summary>
             Notify input bit(s) has changed event 
             </summary>
             <param name="bitNo">Bit no</param>
-            <returns></returns>
+            <param name="edge">Signal edge</param>
         </member>
         <member name="T:SpiralLab.Sirius2.IO.DInputVirtual">
             <summary>
@@ -21680,7 +21683,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SignalEdges.Low">
             <summary>
-            Low edge
+            Low (falling edge)
             <code>
             HIGH _________
                          |
@@ -21692,7 +21695,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SignalEdges.High">
             <summary>
-            Active Low
+            High (rising edge)
             <code>
                         _________ HIGH
                         ^ 
