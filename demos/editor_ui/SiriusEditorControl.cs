@@ -1054,7 +1054,7 @@ namespace Demos
                 var entity2 = EntityFactory.CreateMeasurementBegin(5 * 1000, channels);
                 document.ActInsert(entity2, document.ActiveLayer, 0);
             }
-            else if (rtc is Rtc6)
+            else if (rtc is Rtc6 rtc6)
             {
                 var entity1 = EntityFactory.CreateMeasurementEnd();
                 document.ActAdd(entity1);
@@ -1069,6 +1069,8 @@ namespace Demos
                     MeasurementChannels.Enc0Counter,
                     MeasurementChannels.Enc1Counter,
                 };
+                if (rtc.Is3D)
+                    channels[2] = MeasurementChannels.SampleAZ_Coor;
                 var entity2 = EntityFactory.CreateMeasurementBegin(5 * 1000, channels);
                 document.ActInsert(entity2, document.ActiveLayer, 0);
             }
@@ -1386,7 +1388,7 @@ namespace Demos
                 return;
             statusStrip1.Invoke(new MethodInvoker(delegate ()
             {
-                lblSelected.Text = $"Selected: {entities.Length}";
+                lblSelected.Text = string.Format(Properties.Resources.Selected, entities.Length);
             }));
         }
 
@@ -1479,7 +1481,7 @@ namespace Demos
             }
             if (null == this.Remote || !Remote.IsConnected)
             {
-                lblRemote.Text = " DISCONNECTED ";
+                lblRemote.Text = Properties.Resources.RemoteDisconnected;
                 lblRemote.ForeColor = Color.White;
                 lblRemote.BackColor = Color.Maroon;
             }
@@ -1489,11 +1491,11 @@ namespace Demos
                 switch(Remote.ControlMode)
                 {
                     case ControlModes.Local:
-                        lblRemote.Text = " CONNECTED /LOCAL ";
+                        lblRemote.Text = Properties.Resources.RemoteConnectedLocal;
                         lblRemote.BackColor = Color.Yellow;
                         break;
                     case ControlModes.Remote:
-                        lblRemote.Text = " CONNECTED /REMOTE ";
+                        lblRemote.Text = Properties.Resources.RemoteConnectedRemote;
                         lblRemote.BackColor = Color.Lime;
                         break;
                 }
@@ -1572,7 +1574,7 @@ namespace Demos
                         rtcMoF.CtlMofGetEncoder(out var x, out var y, out var xMm, out var yMm);
                         statusStrip1.Invoke(new MethodInvoker(delegate ()
                         {
-                            lblEncoder.Text = $"ENC XY: {xMm:F3}, {yMm:F3}mm [{x}, {y}]";
+                            lblEncoder.Text = string.Format( Properties.Resources.EncoderXY, xMm, yMm, x, y);
                         }));
                     }
                     break;
@@ -1581,7 +1583,7 @@ namespace Demos
                         rtcMoF.CtlMofGetAngularEncoder(out var x, out var angle);
                         statusStrip1.Invoke(new MethodInvoker(delegate ()
                         {
-                            lblEncoder.Text = $"ENC X,0: {angle:F3}˚ [{x}]";
+                            lblEncoder.Text = string.Format(Properties.Resources.EncoderXY, angle, x);
                         }));
                     }
                     break;

@@ -78,23 +78,15 @@ namespace Demos
         {
             return SpiralLab.Sirius2.Core.Initialize();
         }
+
         /// <summary>
-        /// Set language
+        /// Support multiple languages
         /// </summary>
         public static void SetLanguage()
         {
-            var lang = NativeMethods.ReadIni(ConfigFileName, $"GLOBAL", "LANGUAGE", "en");
-            switch(lang)
-            {
-                default:
-                case "en":
-                    SpiralLab.Sirius2.Config.Language = SpiralLab.Sirius2.Config.Languages.enUS;
-                    break;
-                // it will be fixed as soon
-                //case "ko":
-                //    SpiralLab.Sirius2.Config.Language = SpiralLab.Sirius2.Config.Languages.koKR;
-                //    break;
-            }
+            string cultureInfo = NativeMethods.ReadIni<string>(ConfigFileName, $"GLOBAL", "LANGUAGE", "en-US");
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureInfo);
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(cultureInfo);
         }
         /// <summary>
         /// Create devices (like as <c>IRtc</c>, <c>ILaser</c>, ...)
@@ -161,7 +153,8 @@ namespace Demos
                     break;
                 case "syncaxis":
                     string configXmlFileName = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "CONFIG_XML", string.Empty);
-                    rtc = ScannerFactory.CreateRtc6SyncAxis(index, configXmlFileName);
+                    string configXmlFilePath = Path.Combine(SpiralLab.Sirius2.Config.SyncAxisPath, configXmlFileName);
+                    rtc = ScannerFactory.CreateRtc6SyncAxis(index, configXmlFilePath);
                     break;
                 default:
                     throw new InvalidProgramException($"Not supported rtc type: {rtcType}");
@@ -449,7 +442,7 @@ namespace Demos
             }
             var scriptFileName = NativeMethods.ReadIni(ConfigFileName, $"MARKER{index}", "SCRIPT_FILENAME", string.Empty);
             if (!string.IsNullOrEmpty(scriptFileName))
-                marker.TextConvertScriptFile = Path.Combine(SpiralLab.Sirius2.Winforms.Config.ScriptPath, scriptFileName);
+                marker.ScriptFile = Path.Combine(SpiralLab.Sirius2.Winforms.Config.ScriptPath, scriptFileName);
             #endregion
 
             #region Remote

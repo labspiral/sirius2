@@ -135,6 +135,12 @@
   <data name="DocumentOpen" xml:space="preserve">
     <value>Do you really want to open without save ?</value>
   </data>
+  <data name="EncoderAngular" xml:space="preserve">
+    <value>ENC X,0: {0:F3}˚ [{1}]</value>
+  </data>
+  <data name="EncoderXY" xml:space="preserve">
+    <value>ENC XY: {0:F3}, {1:F3}mm [{2}, {3}]</value>
+  </data>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
@@ -160,7 +166,8 @@
     <value>USB license key is not founded.</value>
   </data>
   <data name="LicenseKeyWithoutIformation" xml:space="preserve">
-    <value>No information within USB license key.</value>
+    <value>No information within USB license key.
+It's Empty key.</value>
   </data>
   <data name="MarkerIsBusy" xml:space="preserve">
     <value>Marker status is busy now !</value>
@@ -181,10 +188,12 @@
     <value>Points Cloud</value>
   </data>
   <data name="PopUpOptimizedSize" xml:space="preserve">
-    <value>Extracted data size are {0} and base location at {1}.</value>
+    <value>Extracted data size are {0} and base location at {1}.
+Do you want to continue anyway ?</value>
   </data>
   <data name="PowerCompensateStart" xml:space="preserve">
-    <value>Do you really want to start power compensate ?</value>
+    <value>Do you really want to start power compensate ?
+Target counts: {0}</value>
   </data>
   <data name="PowerMap" xml:space="preserve">
     <value>Power Map</value>
@@ -193,7 +202,8 @@
     <value>Powermap is busy now.</value>
   </data>
   <data name="PowerMapStart" xml:space="preserve">
-    <value>Do you really want to start power mapping ?</value>
+    <value>Do you really want to start power mapping ?
+Range: {0:F3} ~ {1:F3}W with {2} steps.</value>
   </data>
   <data name="PowerMapToReset" xml:space="preserve">
     <value>Do you really want to set category: {0} as 1:1 ?</value>
@@ -202,10 +212,26 @@
     <value>Do you really want to clear all categories ?</value>
   </data>
   <data name="PowerVerifyStart" xml:space="preserve">
-    <value>Do you really want to start power verification ?</value>
+    <value>Do you really want to start power verification ?
+Target counts: {0}</value>
+  </data>
+  <data name="PropertyGridBound" xml:space="preserve">
+    <value>Bound (WHD): {0}</value>
+  </data>
+  <data name="PropertyGridRealBound" xml:space="preserve">
+    <value>Real Bound (WHD). Min: {0}, Max {1}, Center: {2}</value>
+  </data>
+  <data name="RemoteConnectedLocal" xml:space="preserve">
+    <value> CONNECTED /LOCAL </value>
+  </data>
+  <data name="RemoteConnectedRemote" xml:space="preserve">
+    <value> CONNECTED /REMOTE </value>
   </data>
   <data name="RemoteControl" xml:space="preserve">
     <value>Remote Control</value>
+  </data>
+  <data name="RemoteDisconnected" xml:space="preserve">
+    <value> DISCONNECTED </value>
   </data>
   <data name="RemoteToLocal" xml:space="preserve">
     <value>Do you really want to switch 'LOCAL' mode ?</value>
@@ -216,26 +242,11 @@
   <data name="Reverse" xml:space="preserve">
     <value>Reverse</value>
   </data>
+  <data name="Selected" xml:space="preserve">
+    <value>Selected: {0}</value>
+  </data>
   <data name="SpiralLab" xml:space="preserve">
     <value>(c)SpiralLAB</value>
-  </data>
-  <data name="String" xml:space="preserve">
-    <value>It's Empty key.</value>
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value>Do you want to continue anyway ?</value>
-  </data>
-  <data name="String2" xml:space="preserve">
-    <value>Target counts: {0}</value>
-  </data>
-  <data name="String3" xml:space="preserve">
-    <value>Range: {0:F3} ~ {1:F3}W with {2} steps.</value>
-  </data>
-  <data name="String4" xml:space="preserve">
-    <value>Target counts: {0}</value>
-  </data>
-  <data name="String5" xml:space="preserve">
-    <value>Too many nodes: {0}</value>
   </data>
   <data name="TreeViewBlock" xml:space="preserve">
     <value>Do you want to convert to block ?</value>
@@ -243,17 +254,24 @@
   <data name="TreeViewCalibration3D" xml:space="preserve">
     <value>Do you want to create new scanner field correction file ?</value>
   </data>
+  <data name="TreeViewChildren" xml:space="preserve">
+    <value>Children: {0}</value>
+  </data>
   <data name="TreeViewExplode" xml:space="preserve">
     <value>Do you want to explode {0} ?</value>
   </data>
   <data name="TreeViewGroup" xml:space="preserve">
     <value>Do you want to convert to group ?</value>
   </data>
+  <data name="TreeViewID" xml:space="preserve">
+    <value>ID: {0}</value>
+  </data>
   <data name="TreeViewReverse" xml:space="preserve">
     <value>Do you want to reverse {0} ?</value>
   </data>
   <data name="TreeViewTooManyNodes" xml:space="preserve">
-    <value>Do you really want to show all children nodes ?</value>
+    <value>Do you really want to show all children nodes ?
+Too many nodes: {0}</value>
   </data>
   <data name="Warning" xml:space="preserve">
     <value>Warning</value>

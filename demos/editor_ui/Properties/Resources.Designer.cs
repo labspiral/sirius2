@@ -22,7 +22,7 @@ namespace Demos.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resources {
+    internal class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Demos.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Demos.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Demos.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Calibration 3D.
         /// </summary>
-        public static string Calibration3D {
+        internal static string Calibration3D {
             get {
                 return ResourceManager.GetString("Calibration3D", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Convert to Block.
         /// </summary>
-        public static string ConvertBlock {
+        internal static string ConvertBlock {
             get {
                 return ResourceManager.GetString("ConvertBlock", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Clipboard are empty. Please copy or cut at first..
         /// </summary>
-        public static string DocumentClipboardEmpty {
+        internal static string DocumentClipboardEmpty {
             get {
                 return ResourceManager.GetString("DocumentClipboardEmpty", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Do you really want to reset encoder values ?.
         /// </summary>
-        public static string DocumentEncoderReset {
+        internal static string DocumentEncoderReset {
             get {
                 return ResourceManager.GetString("DocumentEncoderReset", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Do you really want to new document without save ?.
         /// </summary>
-        public static string DocumentNew {
+        internal static string DocumentNew {
             get {
                 return ResourceManager.GetString("DocumentNew", resourceCulture);
             }
@@ -108,16 +108,34 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Do you really want to open without save ?.
         /// </summary>
-        public static string DocumentOpen {
+        internal static string DocumentOpen {
             get {
                 return ResourceManager.GetString("DocumentOpen", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ENC X,0: {0:F3}˚ [{1}].
+        /// </summary>
+        internal static string EncoderAngular {
+            get {
+                return ResourceManager.GetString("EncoderAngular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ENC XY: {0:F3}, {1:F3}mm [{2}, {3}].
+        /// </summary>
+        internal static string EncoderXY {
+            get {
+                return ResourceManager.GetString("EncoderXY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
-        public static string Error {
+        internal static string Error {
             get {
                 return ResourceManager.GetString("Error", resourceCulture);
             }
@@ -126,7 +144,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Explode.
         /// </summary>
-        public static string Explode {
+        internal static string Explode {
             get {
                 return ResourceManager.GetString("Explode", resourceCulture);
             }
@@ -135,7 +153,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Fail to extract points cloud from {0}..
         /// </summary>
-        public static string ExtractPointsCloudFailed {
+        internal static string ExtractPointsCloudFailed {
             get {
                 return ResourceManager.GetString("ExtractPointsCloudFailed", resourceCulture);
             }
@@ -144,7 +162,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Do you want to extract points cloud from {0} ?.
         /// </summary>
-        public static string ExtractPointsCloudTrying {
+        internal static string ExtractPointsCloudTrying {
             get {
                 return ResourceManager.GetString("ExtractPointsCloudTrying", resourceCulture);
             }
@@ -153,7 +171,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Group.
         /// </summary>
-        public static string Group {
+        internal static string Group {
             get {
                 return ResourceManager.GetString("Group", resourceCulture);
             }
@@ -162,7 +180,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Help - Keyboards.
         /// </summary>
-        public static string HelpKeboard {
+        internal static string HelpKeboard {
             get {
                 return ResourceManager.GetString("HelpKeboard", resourceCulture);
             }
@@ -171,7 +189,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Heuristic algorithm has failed !.
         /// </summary>
-        public static string HeuristicFailed {
+        internal static string HeuristicFailed {
             get {
                 return ResourceManager.GetString("HeuristicFailed", resourceCulture);
             }
@@ -180,16 +198,17 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to USB license key is not founded..
         /// </summary>
-        public static string LicenseKeyIsNotFounded {
+        internal static string LicenseKeyIsNotFounded {
             get {
                 return ResourceManager.GetString("LicenseKeyIsNotFounded", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No information within USB license key..
+        ///   Looks up a localized string similar to No information within USB license key.
+        ///It&apos;s Empty key..
         /// </summary>
-        public static string LicenseKeyWithoutIformation {
+        internal static string LicenseKeyWithoutIformation {
             get {
                 return ResourceManager.GetString("LicenseKeyWithoutIformation", resourceCulture);
             }
@@ -198,7 +217,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Marker status is busy now !.
         /// </summary>
-        public static string MarkerIsBusy {
+        internal static string MarkerIsBusy {
             get {
                 return ResourceManager.GetString("MarkerIsBusy", resourceCulture);
             }
@@ -207,7 +226,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Do you really want to start mark ?.
         /// </summary>
-        public static string MarkerTryingToStart {
+        internal static string MarkerTryingToStart {
             get {
                 return ResourceManager.GetString("MarkerTryingToStart", resourceCulture);
             }
@@ -216,7 +235,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Waiting for external /START trigger ....
         /// </summary>
-        public static string MarkerWaitingExternalStart {
+        internal static string MarkerWaitingExternalStart {
             get {
                 return ResourceManager.GetString("MarkerWaitingExternalStart", resourceCulture);
             }
@@ -225,7 +244,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Please select target parent entity to layer..
         /// </summary>
-        public static string NoParentWhenActInsert {
+        internal static string NoParentWhenActInsert {
             get {
                 return ResourceManager.GetString("NoParentWhenActInsert", resourceCulture);
             }
@@ -234,7 +253,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Path Optimizer.
         /// </summary>
-        public static string PathOptimizer {
+        internal static string PathOptimizer {
             get {
                 return ResourceManager.GetString("PathOptimizer", resourceCulture);
             }
@@ -243,25 +262,27 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Points Cloud.
         /// </summary>
-        public static string PointsCloud {
+        internal static string PointsCloud {
             get {
                 return ResourceManager.GetString("PointsCloud", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Extracted data size are {0} and base location at {1}..
+        ///   Looks up a localized string similar to Extracted data size are {0} and base location at {1}.
+        ///Do you want to continue anyway ?.
         /// </summary>
-        public static string PopUpOptimizedSize {
+        internal static string PopUpOptimizedSize {
             get {
                 return ResourceManager.GetString("PopUpOptimizedSize", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you really want to start power compensate ?.
+        ///   Looks up a localized string similar to Do you really want to start power compensate ?
+        ///Target counts: {0}.
         /// </summary>
-        public static string PowerCompensateStart {
+        internal static string PowerCompensateStart {
             get {
                 return ResourceManager.GetString("PowerCompensateStart", resourceCulture);
             }
@@ -270,7 +291,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Power Map.
         /// </summary>
-        public static string PowerMap {
+        internal static string PowerMap {
             get {
                 return ResourceManager.GetString("PowerMap", resourceCulture);
             }
@@ -279,16 +300,17 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Powermap is busy now..
         /// </summary>
-        public static string PowerMapBusy {
+        internal static string PowerMapBusy {
             get {
                 return ResourceManager.GetString("PowerMapBusy", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you really want to start power mapping ?.
+        ///   Looks up a localized string similar to Do you really want to start power mapping ?
+        ///Range: {0:F3} ~ {1:F3}W with {2} steps..
         /// </summary>
-        public static string PowerMapStart {
+        internal static string PowerMapStart {
             get {
                 return ResourceManager.GetString("PowerMapStart", resourceCulture);
             }
@@ -297,7 +319,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Do you really want to set category: {0} as 1:1 ?.
         /// </summary>
-        public static string PowerMapToReset {
+        internal static string PowerMapToReset {
             get {
                 return ResourceManager.GetString("PowerMapToReset", resourceCulture);
             }
@@ -306,34 +328,80 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Do you really want to clear all categories ?.
         /// </summary>
-        public static string PowerMapTryingToClear {
+        internal static string PowerMapTryingToClear {
             get {
                 return ResourceManager.GetString("PowerMapTryingToClear", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you really want to start power verification ?.
+        ///   Looks up a localized string similar to Do you really want to start power verification ?
+        ///Target counts: {0}.
         /// </summary>
-        public static string PowerVerifyStart {
+        internal static string PowerVerifyStart {
             get {
                 return ResourceManager.GetString("PowerVerifyStart", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bound (WHD): {0}.
+        /// </summary>
+        internal static string PropertyGridBound {
+            get {
+                return ResourceManager.GetString("PropertyGridBound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Real Bound (WHD). Min: {0}, Max {1}, Center: {2}.
+        /// </summary>
+        internal static string PropertyGridRealBound {
+            get {
+                return ResourceManager.GetString("PropertyGridRealBound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  CONNECTED /LOCAL .
+        /// </summary>
+        internal static string RemoteConnectedLocal {
+            get {
+                return ResourceManager.GetString("RemoteConnectedLocal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  CONNECTED /REMOTE .
+        /// </summary>
+        internal static string RemoteConnectedRemote {
+            get {
+                return ResourceManager.GetString("RemoteConnectedRemote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remote Control.
         /// </summary>
-        public static string RemoteControl {
+        internal static string RemoteControl {
             get {
                 return ResourceManager.GetString("RemoteControl", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  DISCONNECTED .
+        /// </summary>
+        internal static string RemoteDisconnected {
+            get {
+                return ResourceManager.GetString("RemoteDisconnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you really want to switch &apos;LOCAL&apos; mode ?.
         /// </summary>
-        public static string RemoteToLocal {
+        internal static string RemoteToLocal {
             get {
                 return ResourceManager.GetString("RemoteToLocal", resourceCulture);
             }
@@ -342,7 +410,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Do you really want to switch &apos;REMOTE&apos; mode ?.
         /// </summary>
-        public static string RemoteToRemote {
+        internal static string RemoteToRemote {
             get {
                 return ResourceManager.GetString("RemoteToRemote", resourceCulture);
             }
@@ -351,79 +419,34 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Reverse.
         /// </summary>
-        public static string Reverse {
+        internal static string Reverse {
             get {
                 return ResourceManager.GetString("Reverse", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Selected: {0}.
+        /// </summary>
+        internal static string Selected {
+            get {
+                return ResourceManager.GetString("Selected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to (c)SpiralLAB.
         /// </summary>
-        public static string SpiralLab {
+        internal static string SpiralLab {
             get {
                 return ResourceManager.GetString("SpiralLab", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to It&apos;s Empty key..
-        /// </summary>
-        public static string String {
-            get {
-                return ResourceManager.GetString("String", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Do you want to continue anyway ?.
-        /// </summary>
-        public static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Target counts: {0}.
-        /// </summary>
-        public static string String2 {
-            get {
-                return ResourceManager.GetString("String2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Range: {0:F3} ~ {1:F3}W with {2} steps..
-        /// </summary>
-        public static string String3 {
-            get {
-                return ResourceManager.GetString("String3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Target counts: {0}.
-        /// </summary>
-        public static string String4 {
-            get {
-                return ResourceManager.GetString("String4", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Too many nodes: {0}.
-        /// </summary>
-        public static string String5 {
-            get {
-                return ResourceManager.GetString("String5", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Do you want to convert to block ?.
         /// </summary>
-        public static string TreeViewBlock {
+        internal static string TreeViewBlock {
             get {
                 return ResourceManager.GetString("TreeViewBlock", resourceCulture);
             }
@@ -432,16 +455,25 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Do you want to create new scanner field correction file ?.
         /// </summary>
-        public static string TreeViewCalibration3D {
+        internal static string TreeViewCalibration3D {
             get {
                 return ResourceManager.GetString("TreeViewCalibration3D", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Children: {0}.
+        /// </summary>
+        internal static string TreeViewChildren {
+            get {
+                return ResourceManager.GetString("TreeViewChildren", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you want to explode {0} ?.
         /// </summary>
-        public static string TreeViewExplode {
+        internal static string TreeViewExplode {
             get {
                 return ResourceManager.GetString("TreeViewExplode", resourceCulture);
             }
@@ -450,25 +482,35 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Do you want to convert to group ?.
         /// </summary>
-        public static string TreeViewGroup {
+        internal static string TreeViewGroup {
             get {
                 return ResourceManager.GetString("TreeViewGroup", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ID: {0}.
+        /// </summary>
+        internal static string TreeViewID {
+            get {
+                return ResourceManager.GetString("TreeViewID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you want to reverse {0} ?.
         /// </summary>
-        public static string TreeViewReverse {
+        internal static string TreeViewReverse {
             get {
                 return ResourceManager.GetString("TreeViewReverse", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you really want to show all children nodes ?.
+        ///   Looks up a localized string similar to Do you really want to show all children nodes ?
+        ///Too many nodes: {0}.
         /// </summary>
-        public static string TreeViewTooManyNodes {
+        internal static string TreeViewTooManyNodes {
             get {
                 return ResourceManager.GetString("TreeViewTooManyNodes", resourceCulture);
             }
@@ -477,7 +519,7 @@ namespace Demos.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Warning.
         /// </summary>
-        public static string Warning {
+        internal static string Warning {
             get {
                 return ResourceManager.GetString("Warning", resourceCulture);
             }

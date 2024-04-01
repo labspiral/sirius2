@@ -126,8 +126,8 @@ namespace Demos
             // Attach event handler for convert barcode and text data (event will be fired every do mark)
             //marker.OnTextConvert += Text_OnTextConvert;
             //OR external script file
-            marker.TextConvertScriptFile = Path.Combine(SpiralLab.Sirius2.Winforms.Config.ScriptPath, "demo1.cs");
-            //marker.TextConvertScriptFile = Path.Combine(SpiralLab.Sirius2.Winforms.Config.ScriptPath, "demo2.cs");
+            marker.ScriptFile = Path.Combine(SpiralLab.Sirius2.Winforms.Config.ScriptPath, "demo1.cs");
+            //marker.sScriptFile = Path.Combine(SpiralLab.Sirius2.Winforms.Config.ScriptPath, "demo2.cs");
 
             // Assign event handlers at Config
             EditorHelper.AttachEventHandlers();

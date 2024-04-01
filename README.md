@@ -160,6 +160,14 @@
 
 **7. Version history**
 
+* 2024.4.2 v.1.24.1190
+  - added) ScriptHelper 
+     - user can read(or write) script property values
+     - renamed) script file and instance at marker 
+  - fixed) save measurement result by raw data format
+  - fixed) ko-KR language resources for IRtc, ILaser
+  - fixed) exception when initialize syncaxis instance
+
 * 2024.3.27 v.1.23.1170
   - fixed) marks bug at IRtc.ListArc  
   - fixed) display invalid category name at propertygrid
