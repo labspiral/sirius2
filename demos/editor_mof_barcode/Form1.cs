@@ -99,9 +99,12 @@ namespace Demos
             //   - text has changed by script
             //   - increase serial no after marks 
             // 4. mof end
-            // and repeat 10 times by DIN0 trigger 
+            // and repeat 100 times by watiting DIN0 trigger 
 
-            // Create wait extension 16 edge condition entity
+            // Set D.IN0 name
+            SpiralLab.Sirius2.Winforms.Config.DIn_RtcExtension1Port[0] = "TRIGGER";
+
+            // Create waiting DIN0 condition entity with rising edge
             var waitExt16Cond = EntityFactory.CreateWaitDataExt16EdgeCond(
                 0, //D.IN0
                 SignalEdges.High); 
@@ -121,6 +124,7 @@ namespace Demos
             qrCode.CellDot.PixelPeriod = 1000;
             qrCode.CellDot.PixelTime = 500;
             qrCode.CellDot.Direction = DotDirections.Vertical;
+            //qrCode.CellDot.IsReverse = true;
             document.ActAdd(qrCode);
 
             // Create text entity
@@ -128,6 +132,7 @@ namespace Demos
             text1.Name = "MyText1";
             text1.Color = penColor;
             text1.IsConvertedText = true;
+            //text1.IsReversed = true;
             text1.Translate(0, -1);
             document.ActAdd(text1);
 
@@ -136,6 +141,7 @@ namespace Demos
             text2.Name = "MyText2";
             text2.Color = penColor;
             text2.IsConvertedText = true;
+            //text2.IsReversed = true;
             text2.Translate(0, -2);
             document.ActAdd(text2);
 
@@ -144,13 +150,15 @@ namespace Demos
             document.ActAdd(mofEnd);
 
             // Create script event
+            // 'IScript.ListEvent' script function would be called whenever marker has started
+            // By external script file (marker.ScriptFile)
             var scriptEvent = EntityFactory.CreateScriptEvent();
             scriptEvent.Description = "Event for increase serial no after each marks";
             document.ActAdd(scriptEvent);
 
             // Repeats 100 times
             document.ActiveLayer.Repeats = 100;
-            // or infinitely
+            // or almost infinitely
             //document.ActiveLayer.Repeats = uint.MaxValue;
 
             // Zoom to fit by manually
@@ -160,17 +168,17 @@ namespace Demos
             // Set pen parameters by manually
             bool founded = document.FindByPenColor(penColor, out var pen);
             Debug.Assert(founded);
-            pen.JumpSpeed = 1000;
-            pen.MarkSpeed = 1000;
+            pen.JumpSpeed = 1000; // 1m/s
+            pen.MarkSpeed = 1000; // 1m/s
             pen.Power = pen.PowerMax * 0.5; // 50% power
 
-            // Attach event handler for convert barcode and text data (event will be fired every do mark)
-            //marker.OnTextConvert += Text_OnTextConvert;
-            //OR external script file
+            // Text convert by external script file
+            // Target entities should be set as IsConvertedText = true
             marker.ScriptFile = Path.Combine(SpiralLab.Sirius2.Winforms.Config.ScriptPath, "mof_barcode.cs");
             Debug.Assert(null != marker.ScriptInstance);
-            
-            // Reset serial no as start no
+
+            // User can call CtlEvent function at script 
+            // For example, reset current serial no as starting no 
             //marker.ScriptInstance.CtlEvent();
 
             // Assign event handlers at Config
@@ -184,8 +192,8 @@ namespace Demos
             Debug.Assert(rtcMoF != null);
             Debug.Assert(rtcMoF.EncXCountsPerMm != 0);
 
-            // Activated simulated encoders for test purpose
-            // x= 1, y=0 mm/s 
+            // Activated simulated encoders for test purpose (x= 1, y=0 mm/s)
+            // DO NOT set simulated encoder speed if ENC 0,1 has connected
             rtcMoF.CtlMofEncoderSpeed(1, 0);
         }
 

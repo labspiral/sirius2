@@ -99,8 +99,10 @@ public class UserScript : MarkerScriptBase
         }
     }   
   
-    public override bool OnScriptEvent(IMarker marker, EntityScriptEvent entity)
+    // Mark at EntityScriptEvent entity
+	public override bool ListEvent(EntityScriptEvent entityScriptEvent)
     {
+		//Increase serial no
         SerialNo++;
         if (MaxSerialNo > 0)
         {            
@@ -112,5 +114,14 @@ public class UserScript : MarkerScriptBase
         Logger.Log(Logger.Types.Trace, "serial no has changed to {0} at script event", SerialNo);
         return true;
     }   
+	
+	
+	// Control event for external user
+	public override bool CtlEvent(object userData)
+	{
+		//Reset serial no as start no
+		SerialNo = StartSerialNo;
+		return true;
+	}
 }       
  

@@ -58,6 +58,11 @@ public class UserScript : MarkerScriptBase
     {
         return true;
     }
+	// Mark at EntityScriptEvent entity
+	public override bool ListEvent(EntityScriptEvent entityScriptEvent)
+	{
+		return true;
+	}	
     public override bool OnAfterEntity(IMarker marker, IEntity entity)
     {
         return true;
@@ -65,6 +70,11 @@ public class UserScript : MarkerScriptBase
     // Marker has ended
     public override void OnEnded(IMarker marker, bool success, TimeSpan timeSpan)
     {   
-    }
+    }	
+	// Control event for external user
+	public override bool CtlEvent(object userData)
+	{
+		return true;
+	}
 }       
  
