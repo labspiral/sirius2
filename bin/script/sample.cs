@@ -72,7 +72,7 @@ public class UserScript : MarkerScriptBase
     {   
     }	
 	// Control event for external user
-	public override bool CtlEvent(object userData)
+	public override bool CtlEvent(object userData = null)
 	{
 		return true;
 	}
