@@ -80,7 +80,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_mof_barcode", "demos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_tsv", "demos\editor_tsv\editor_tsv.csproj", "{7D1F16AC-B17C-4D4A-96E9-FE8F44E7C8F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_dio", "..\sirius2lib\demos\editor_dio\editor_dio.csproj", "{9FDB331E-0F09-4A36-9DE8-34EC310CEF89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_dio", "demos\editor_dio\editor_dio.csproj", "{9FDB331E-0F09-4A36-9DE8-34EC310CEF89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
