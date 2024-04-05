@@ -7955,6 +7955,36 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.ApproxAngular_DESC">
+            <summary>
+              Looks up a localized string similar to Approx. Encoder X(or Angular) Speed (˚/sec).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.ApproxAngular_DISP">
+            <summary>
+              Looks up a localized string similar to Approx. angular.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.ApproxX_DESC">
+            <summary>
+              Looks up a localized string similar to Approx. Encoder X Speed (mm/s).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.ApproxX_DISP">
+            <summary>
+              Looks up a localized string similar to Approx. x.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.ApproxY_DESC">
+            <summary>
+              Looks up a localized string similar to Approx. Encoder Y Speed (mm/s).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.ApproxY_DISP">
+            <summary>
+              Looks up a localized string similar to Approx. y.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Basic_C">
             <summary>
               Looks up a localized string similar to Basic.
@@ -8070,7 +8100,8 @@
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Currentno_DESC">
              <summary>
-               Looks up a localized string similar to Current(or Next) Serial No (If Max &gt; 0, range from Start ~ Max)
+               Looks up a localized string similar to Current(or Next) Serial No 
+            If Max &gt; 0, range from Start ~ Max.
             Used with CharacterSet font only..
              </summary>
         </member>
@@ -8116,9 +8147,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Days_DESC">
-            <summary>
-              Looks up a localized string similar to Offset for Days (d).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Offset for Days (d)
+            Used with CharacterSet Font only..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Days_DISP">
             <summary>
@@ -8204,9 +8236,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Hours_DESC">
-            <summary>
-              Looks up a localized string similar to Offset for Hours (hrs).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Offset for Hours (Hrs)
+            Used with CharacterSet Font only..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Hours_DISP">
             <summary>
@@ -8301,7 +8334,8 @@
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.KZscale_DESC">
              <summary>
-               Looks up a localized string similar to KZ Scale (For Z-, Z+ Range)
+               Looks up a localized string similar to KZ Scale 
+            For Z-, Z+ Range.
             Default: 1:1.
              </summary>
         </member>
@@ -8321,9 +8355,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Limitfieldsize_DESC">
-            <summary>
-              Looks up a localized string similar to Limit Field Size (mm) (WxH) (Overflow Range Check If Assigned).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Limit Field Size (mm) (WxH) 
+            Overflow Range Check If Assigned..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Limitfieldsize_DISP">
             <summary>
@@ -8334,6 +8369,7 @@
              <summary>
                Looks up a localized string similar to List3 Buffer Size
             Default: 2^17.
+            Used with CharacterSet Font only..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.List3buffersize_DISP">
@@ -8363,7 +8399,9 @@
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Maxno_DESC">
              <summary>
-               Looks up a localized string similar to Max. Serial No (0: Deactivated) (Reset as Start when exceed Max)
+               Looks up a localized string similar to Max. Serial No 
+            0: Deactivated
+            Reset as Start when exceed Max.
             Used with CharacterSet font only..
              </summary>
         </member>
@@ -8373,9 +8411,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Minutes_DESC">
-            <summary>
-              Looks up a localized string similar to Offset for Minutes (m).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Offset for Minutes (m)
+            Used with CharacterSet Font only..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Minutes_DISP">
             <summary>
@@ -8428,9 +8467,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Origintime_DESC">
-            <summary>
-              Looks up a localized string similar to Origin Time for DateTime Offset.
-            </summary>
+             <summary>
+               Looks up a localized string similar to Origin Time for DateTime Offset
+            Used with CharacterSet Font only..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Origintime_DISP">
             <summary>
@@ -9466,8 +9506,11 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Mathematics.MatrixStack4">
             <summary>
-            4x4 matrix stack
+            4x4 Matrix Stack
             </summary>
+            <remarks>
+            By <c>System.Numerics.Matrix4x4</c>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.MatrixStack4.ToResult">
             <inheritdoc/>  
@@ -9777,17 +9820,20 @@
             </code>
             </summary>
             <param name="matrix">4x4 matrix<br/>Used with <see cref="T:System.Numerics.Matrix4x4">System.Numerics.Matrix4x4</see></param>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.Pop(`0@)">
             <summary>
             Pop matrix from stack at top
             </summary>
             <param name="matrix">Popped 4x4 matrix<br/>Used with <see cref="T:System.Numerics.Matrix4x4">System.Numerics.Matrix4x4</see></param>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.Pop">
             <summary>
             Pop matrix from stack at top
             </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Mathematics.Offset">
             <summary>
@@ -11845,6 +11891,12 @@
             Simulated Encoder Y Speed (mm/s)
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.EncXApproxSpeed">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.EncYApproxSpeed">
+            <inheritdoc/>  
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.EncCountsPerRevolution">
             <inheritdoc/>  
         </member>
@@ -11855,6 +11907,9 @@
             <summary>
             Simulated Encoder Angular Speed (˚/sec)
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.EncAngularApproxSpeed">
+            <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.MofAngularCenter">
             <inheritdoc/>  
@@ -12333,6 +12388,16 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlMofGetEncoder(System.Int32@,System.Int32@,System.Double@,System.Double@)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlMofEncoderConvert(System.Int32,System.Int32,System.Double@,System.Double@)">
+            <summary>
+            Calculate encoder counts to approx. speed (mm/s)
+            </summary>
+            <param name="encX"></param>
+            <param name="encY"></param>
+            <param name="encXmm"></param>
+            <param name="encYmm"></param>
+            <returns></returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlMofEncoderSpeed(System.Double,System.Double)">
             <inheritdoc/>  
         </member>
@@ -12347,6 +12412,14 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlMofGetAngularEncoder(System.Int32@,System.Double@)">
             <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlMofEncoderConvert(System.Int32,System.Double@)">
+            <summary>
+            Calculate encoder counts to approx. angular speed (mm/s)
+            </summary>
+            <param name="enc"></param>
+            <param name="angle"></param>
+            <returns></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlMofAngularCenter(System.Numerics.Vector2)">
             <inheritdoc/>  
@@ -13655,6 +13728,12 @@
             Simulated Encoder Y Speed (mm/s)
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.EncXApproxSpeed">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.EncYApproxSpeed">
+            <inheritdoc/>  
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.EncCountsPerRevolution">
             <inheritdoc/>  
         </member>
@@ -13665,6 +13744,9 @@
             <summary>
             Simulated Encoder Angular Speed (˚/sec)
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.EncAngularApproxSpeed">
+            <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.MofAngularCenter">
             <inheritdoc/>  
@@ -14195,6 +14277,16 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlMofGetEncoder(System.Int32@,System.Int32@,System.Double@,System.Double@)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlMofEncoderConvert(System.Int32,System.Int32,System.Double@,System.Double@)">
+            <summary>
+            Calculate encoder counts to approx. speed (mm/s)
+            </summary>
+            <param name="encX"></param>
+            <param name="encY"></param>
+            <param name="encXmm"></param>
+            <param name="encYmm"></param>
+            <returns></returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlMofEncoderSpeed(System.Double,System.Double)">
             <inheritdoc/>  
         </member>
@@ -14209,6 +14301,14 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlMofGetAngularEncoder(System.Int32@,System.Double@)">
             <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlMofEncoderConvert(System.Int32,System.Double@)">
+            <summary>
+            Calculate encoder counts to approx. angular speed (mm/s)
+            </summary>
+            <param name="enc"></param>
+            <param name="angle"></param>
+            <returns></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlMofAngularCenter(System.Numerics.Vector2)">
             <inheritdoc/>  
@@ -18678,10 +18778,19 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.EncYSimulatedSpeed">
             <inheritdoc/>  
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.EncXApproxSpeed">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.EncYApproxSpeed">
+            <inheritdoc/>  
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.EncCountsPerRevolution">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.EncSimulatedAngularSpeed">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.EncAngularApproxSpeed">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.MofAngularCenter">
@@ -22888,6 +22997,16 @@
             Simulated encoder y(or 1) speed (mm/s)
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncXApproxSpeed">
+            <summary>
+            Approx. encoder x(or 0) speed (mm/s)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncYApproxSpeed">
+            <summary>
+            Approx. encoder y(or 1) speed (mm/s)
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncCountsPerRevolution">
             <summary>
             Encoder X(or 0) counts/rev
@@ -22906,6 +23025,11 @@
             <remarks>
             Negative(-) value is not supported. <br/>
             </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncAngularApproxSpeed">
+            <summary>
+            Approx. encoder x(or 0) angular speed (˚/s)
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.MofAngularCenter">
             <summary>

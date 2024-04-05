@@ -298,6 +298,20 @@ namespace Demos
                 Logger.Log(Logger.Types.Error, $"marker [{Index}]: assigned invalid RTC instance");
                 return false;
             }
+            Logger.Log(Logger.Types.Debug, $"marker [{Index}]: ready with doc= {document?.FileName}, view= {view?.Name}, rtc= {rtc?.Name}, laser= {laser?.Name}, pm= {powerMeter?.Name}, remote= {remote?.Name}");
+            return true;
+        }
+        /// <inheritdoc/>
+        public override bool Ready(IDocument document)
+        {
+            if (this.IsBusy)
+            {
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to ready. marker status is busy");
+                return false;
+            }
+
+            base.Document = document;
+            Logger.Log(Logger.Types.Debug, $"marker [{Index}]: ready with doc= {document?.FileName}");
             return true;
         }
         /// <summary>

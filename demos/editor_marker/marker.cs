@@ -409,6 +409,18 @@ namespace Demos
             TextRegisterHelper.Unregister(this);
             return true;
         }
+        /// <inheritdoc/>
+        public override bool Ready(IDocument document)
+        {
+            if (this.IsBusy)
+            {
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to ready. marker status is busy");
+                return false;
+            }
+
+            base.Document = document;          
+            return true;
+        }
         /// <summary>
         /// Register (or download) character set (font glyph) into RTC controller if <c>ITextRegisterable</c> has exist. <br/>
         /// </summary>

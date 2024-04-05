@@ -205,6 +205,7 @@ namespace Demos
                     }
                 }
                 document = value;
+                MarkerCtrl.Document = document;
                 PropertyGridCtrl.Document = document;
                 PenCtrl.Document = document;
                 TreeViewCtrl.Document = document;
@@ -212,7 +213,9 @@ namespace Demos
                 EditorCtrl.Document = document;
                 PowerMapCtrl.Document = document;
                 //RtcControl
-                //LaserCOntrol
+                //LaserControl
+                MarkerCtrl.View = EditorCtrl.View;
+
                 if (document != null)
                 {
                     document.OnSelected += Document_OnSelected;
@@ -252,6 +255,7 @@ namespace Demos
                 
                 rtc = value;
                 RtcCtrl.Rtc = rtc;
+                MarkerCtrl.Rtc = rtc;
                 ManualCtrl.Rtc = rtc;
                 EditorCtrl.Rtc = rtc;
                 //TreeViewCtrl.Rtc = rtc;
@@ -286,6 +290,7 @@ namespace Demos
                     return;
                 laser = value;
                 LaserCtrl.Laser = laser;
+                MarkerCtrl.Laser = laser;
                 ManualCtrl.Laser = laser;
                 PowerMeterCtrl.Laser = laser;
                 PowerMapCtrl.Laser = laser;
@@ -326,8 +331,11 @@ namespace Demos
                 }
                 marker = value;
                 MarkerCtrl.Marker = marker;
+                ManualCtrl.Marker = marker;
+                RtcDOCtrl.Marker = marker;
                 OffsetCtrl.Marker = marker;
                 ScriptCtrl.Marker = marker;
+                RemoteCtrl.Marker = marker;
                 TreeViewCtrl.Marker = marker;
                 EditorCtrl.View.Marker = marker;
                 //marker browsable
@@ -348,7 +356,8 @@ namespace Demos
         /// </remarks>
         public IView View
         {
-            get { return EditorCtrl.View; }
+            get {                 
+                return EditorCtrl.View; }
         }
 
         /// <summary>
@@ -371,6 +380,7 @@ namespace Demos
 
                 remote = value;
                 remoteUserControl1.Remote = remote;
+                MarkerCtrl.Remote = remote;
                 if (marker != null)
                 {
                 }
@@ -402,6 +412,7 @@ namespace Demos
                 powerMeter = value;
                 PowerMeterCtrl.PowerMeter = powerMeter;
                 PowerMapCtrl.PowerMeter = powerMeter;
+                MarkerCtrl.PowerMeter = powerMeter;
                 if (powerMeter != null)
                 {
                     lblPowerWatt.Text = "0.0 W";
@@ -708,6 +719,8 @@ namespace Demos
             mnuMoFAngularWait.Click += MnuMofAngularWait_Click;
             mnuMoFExternalStartDelay.Click += MnuMoFExternalStartDelay_Click;
 
+            mnuSelectCorrectionTable.Click += MnuSelectCorrectionTable_Click;
+
             mnuZDelta.Click += MnuZDelta_Click;
             mnuZDefocus.Click += MnuZDefocus_Click;
 
@@ -727,6 +740,8 @@ namespace Demos
             lblRemote.DoubleClick += LblRemote_DoubleClick;
             lblRemote.DoubleClickEnabled = true;
         }
+
+
 
         /// <inheritdoc/>
         protected override void OnLoad(EventArgs e)
@@ -778,6 +793,7 @@ namespace Demos
                         DialogResult dialogResult = form.ShowDialog(this);
                         if (dialogResult == DialogResult.Yes)
                         {
+                            Marker.Ready(Marker.Document, Marker.View, Marker.Rtc, Marker.Laser, Marker.PowerMeter, Marker.Remote);
                             Marker.Start();
                             return true;
                         }
@@ -837,6 +853,7 @@ namespace Demos
                     mnuZDefocus.Enabled = false;
                     mnuWriteDataExt16Cond.Enabled = false;
                     mnuWaitDataExt16Cond.Enabled = false;
+                    mnuSelectCorrectionTable.Enabled = false;
 
                     lblEncoder.Visible = false;
                     btnCharacterSetText.Enabled = false;
@@ -863,7 +880,6 @@ namespace Demos
             {
                 tlsTop.Enabled = enable;
                 tlsTop2.Enabled = enable;
-                TreeViewCtrl.Enabled = enable;
                 TreeViewBlockCtrl.Enabled = enable;
                 EditorCtrl.Enabled = enable;
                 PenCtrl.Enabled = enable;
@@ -871,6 +887,8 @@ namespace Demos
                 RtcCtrl.Enabled = enable;
                 OffsetCtrl.Enabled = enable;
                 PropertyGridCtrl.Enabled = enable;
+                //RtcDOCtrl.Enabled = enable;
+                //RemoteCtrl.Enabled = enable;
             }
             DoRender();
         }
@@ -1075,6 +1093,11 @@ namespace Demos
                 document.ActInsert(entity2, document.ActiveLayer, 0);
             }
         }
+        private void MnuSelectCorrectionTable_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateSelectCorrectionTable();
+            document.ActAdd(entity);
+        }
 
         private void BtnNew_Click(object sender, EventArgs e)
         {
@@ -1101,6 +1124,7 @@ namespace Demos
             var dlg = new OpenFileDialog();
             dlg.Filter = Config.FileOpenFilters;
             dlg.Title = "Open File";
+            dlg.InitialDirectory = Config.RecipePath;
             DialogResult result = dlg.ShowDialog();
             if (result != DialogResult.OK)
                 return;
@@ -1125,6 +1149,7 @@ namespace Demos
             var dlg = new SaveFileDialog();
             dlg.Filter = Config.FileSaveFilters;
             dlg.Title = "Save File";
+            dlg.InitialDirectory = Config.RecipePath;
             dlg.OverwritePrompt = true;
             DialogResult result = dlg.ShowDialog();
             if (result != DialogResult.OK)
@@ -1574,7 +1599,9 @@ namespace Demos
                         rtcMoF.CtlMofGetEncoder(out var x, out var y, out var xMm, out var yMm);
                         statusStrip1.Invoke(new MethodInvoker(delegate ()
                         {
-                            lblEncoder.Text = string.Format( Properties.Resources.EncoderXY, xMm, yMm, x, y);
+                            lblEncoder.Text = string.Format(Properties.Resources.EncoderXY, xMm, yMm, x, y);
+                            //lblEncoder.
+
                         }));
                     }
                     break;

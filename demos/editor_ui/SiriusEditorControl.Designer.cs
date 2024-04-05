@@ -30,7 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SiriusEditorUserControl));
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.tabPage16 = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tlsTop2 = new System.Windows.Forms.ToolStrip();
             this.btnPoint = new System.Windows.Forms.ToolStripButton();
             this.btnPoints = new System.Windows.Forms.ToolStripButton();
@@ -71,7 +87,7 @@
             this.mnuMoFAngularWait = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuMoFExternalStartDelay = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMoFRepeat = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSelectCorrectionTable = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAlcDefinedVector = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuZDelta = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuZDefocus = new System.Windows.Forms.ToolStripMenuItem();
@@ -142,52 +158,23 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.editorControl1 = new SpiralLab.Sirius2.Winforms.UI.EditorUserControl();
-            this.tabPage10 = new System.Windows.Forms.TabPage();
             this.rtcControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcUserControl();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
             this.laserControl1 = new SpiralLab.Sirius2.Winforms.UI.LaserUserControl();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.offsetControl1 = new SpiralLab.Sirius2.Winforms.UI.OffsetUserControl();
+            this.markerControl1 = new SpiralLab.Sirius2.Winforms.UI.MarkerUserControl();
             this.manualUserControl1 = new SpiralLab.Sirius2.Winforms.UI.ManualUserControl();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.rtcDIUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl();
             this.rtcDOUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl();
-            this.tabPage14 = new System.Windows.Forms.TabPage();
-            this.tabControl4 = new System.Windows.Forms.TabControl();
-            this.tabPage15 = new System.Windows.Forms.TabPage();
             this.powerMeterControl1 = new SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl();
-            this.tabPage16 = new System.Windows.Forms.TabPage();
             this.powerMapControl1 = new SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl();
-            this.tabPage13 = new System.Windows.Forms.TabPage();
             this.scriptControlControl1 = new SpiralLab.Sirius2.Winforms.UI.ScriptUserControl();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.remoteUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RemoteUserControl();
             this.logControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
             this.propertyGridControl1 = new SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl();
             this.treeViewControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl();
             this.penControl1 = new SpiralLab.Sirius2.Winforms.UI.PenUserControl();
             this.treeViewBlockControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl();
-            this.markerControl1 = new SpiralLab.Sirius2.Winforms.UI.MarkerUserControl();
-            this.offsetControl1 = new SpiralLab.Sirius2.Winforms.UI.OffsetUserControl();
-            this.tlsTop2.SuspendLayout();
-            this.tlsTop.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
-            this.panBody.SuspendLayout();
-            this.tabControl2.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
-            this.splitContainer5.Panel1.SuspendLayout();
-            this.splitContainer5.Panel2.SuspendLayout();
-            this.splitContainer5.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
@@ -213,7 +200,157 @@
             this.tabPage16.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.tlsTop2.SuspendLayout();
+            this.tlsTop.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            this.panBody.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
+            this.splitContainer5.Panel1.SuspendLayout();
+            this.splitContainer5.Panel2.SuspendLayout();
+            this.splitContainer5.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // splitContainer3
+            // 
+            resources.ApplyResources(this.splitContainer3, "splitContainer3");
+            this.splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.tabControl3);
+            resources.ApplyResources(this.splitContainer3.Panel1, "splitContainer3.Panel1");
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.logControl1);
+            resources.ApplyResources(this.splitContainer3.Panel2, "splitContainer3.Panel2");
+            // 
+            // tabControl3
+            // 
+            this.tabControl3.Controls.Add(this.tabPage6);
+            this.tabControl3.Controls.Add(this.tabPage10);
+            this.tabControl3.Controls.Add(this.tabPage8);
+            this.tabControl3.Controls.Add(this.tabPage5);
+            this.tabControl3.Controls.Add(this.tabPage3);
+            this.tabControl3.Controls.Add(this.tabPage9);
+            this.tabControl3.Controls.Add(this.tabPage14);
+            this.tabControl3.Controls.Add(this.tabPage13);
+            this.tabControl3.Controls.Add(this.tabPage7);
+            resources.ApplyResources(this.tabControl3, "tabControl3");
+            this.tabControl3.HotTrack = true;
+            this.tabControl3.ImageList = this.imageList1;
+            this.tabControl3.Multiline = true;
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.SelectedIndex = 0;
+            this.tabControl3.TabStop = false;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.editorControl1);
+            resources.ApplyResources(this.tabPage6, "tabPage6");
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.rtcControl1);
+            resources.ApplyResources(this.tabPage10, "tabPage10");
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.laserControl1);
+            resources.ApplyResources(this.tabPage8, "tabPage8");
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.splitContainer1);
+            resources.ApplyResources(this.tabPage5, "tabPage5");
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer1
+            // 
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.offsetControl1);
+            resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.markerControl1);
+            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.manualUserControl1);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.splitContainer2);
+            resources.ApplyResources(this.tabPage9, "tabPage9");
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer2
+            // 
+            resources.ApplyResources(this.splitContainer2, "splitContainer2");
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.rtcDIUserControl1);
+            resources.ApplyResources(this.splitContainer2.Panel1, "splitContainer2.Panel1");
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.rtcDOUserControl1);
+            resources.ApplyResources(this.splitContainer2.Panel2, "splitContainer2.Panel2");
+            // 
+            // tabPage14
+            // 
+            this.tabPage14.Controls.Add(this.tabControl4);
+            resources.ApplyResources(this.tabPage14, "tabPage14");
+            this.tabPage14.Name = "tabPage14";
+            this.tabPage14.UseVisualStyleBackColor = true;
+            // 
+            // tabControl4
+            // 
+            this.tabControl4.Controls.Add(this.tabPage15);
+            this.tabControl4.Controls.Add(this.tabPage16);
+            resources.ApplyResources(this.tabControl4, "tabControl4");
+            this.tabControl4.HotTrack = true;
+            this.tabControl4.ImageList = this.imageList1;
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            // 
+            // tabPage15
+            // 
+            this.tabPage15.Controls.Add(this.powerMeterControl1);
+            resources.ApplyResources(this.tabPage15, "tabPage15");
+            this.tabPage15.Name = "tabPage15";
+            this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // tabPage16
+            // 
+            this.tabPage16.Controls.Add(this.powerMapControl1);
+            resources.ApplyResources(this.tabPage16, "tabPage16");
+            this.tabPage16.Name = "tabPage16";
+            this.tabPage16.UseVisualStyleBackColor = true;
             // 
             // imageList1
             // 
@@ -259,6 +396,20 @@
             this.imageList1.Images.SetKeyName(37, "7077517_csharp_file_icon.png");
             this.imageList1.Images.SetKeyName(38, "free-icon-file-and-folder-2807467.png");
             this.imageList1.Images.SetKeyName(39, "csharp.ico");
+            // 
+            // tabPage13
+            // 
+            this.tabPage13.Controls.Add(this.scriptControlControl1);
+            resources.ApplyResources(this.tabPage13, "tabPage13");
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.remoteUserControl1);
+            resources.ApplyResources(this.tabPage7, "tabPage7");
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // tlsTop2
             // 
@@ -455,6 +606,7 @@
             this.mnuJumpTo,
             this.mnuMeasurementBeginEnd,
             this.mnuMoF,
+            this.mnuSelectCorrectionTable,
             this.mnuAlcDefinedVector,
             this.mnuZDelta,
             this.mnuZDefocus,
@@ -491,8 +643,7 @@
             this.mnuMoFAngularBeginEnd,
             this.mnuMoFAngularWait,
             this.toolStripSeparator11,
-            this.mnuMoFExternalStartDelay,
-            this.mnuMoFRepeat});
+            this.mnuMoFExternalStartDelay});
             resources.ApplyResources(this.mnuMoF, "mnuMoF");
             this.mnuMoF.Name = "mnuMoF";
             // 
@@ -536,11 +687,10 @@
             resources.ApplyResources(this.mnuMoFExternalStartDelay, "mnuMoFExternalStartDelay");
             this.mnuMoFExternalStartDelay.Name = "mnuMoFExternalStartDelay";
             // 
-            // mnuMoFRepeat
+            // mnuSelectCorrectionTable
             // 
-            this.mnuMoFRepeat.AutoToolTip = true;
-            resources.ApplyResources(this.mnuMoFRepeat, "mnuMoFRepeat");
-            this.mnuMoFRepeat.Name = "mnuMoFRepeat";
+            resources.ApplyResources(this.mnuSelectCorrectionTable, "mnuSelectCorrectionTable");
+            this.mnuSelectCorrectionTable.Name = "mnuSelectCorrectionTable";
             // 
             // mnuAlcDefinedVector
             // 
@@ -727,8 +877,8 @@
             // 
             // toolStripSeparator10
             // 
-            this.toolStripSeparator10.Name = "toolStripSeparator10";
             resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
             // 
             // ddbAlign
             // 
@@ -1029,47 +1179,6 @@
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // splitContainer3
-            // 
-            resources.ApplyResources(this.splitContainer3, "splitContainer3");
-            this.splitContainer3.Name = "splitContainer3";
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.tabControl3);
-            resources.ApplyResources(this.splitContainer3.Panel1, "splitContainer3.Panel1");
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.logControl1);
-            resources.ApplyResources(this.splitContainer3.Panel2, "splitContainer3.Panel2");
-            // 
-            // tabControl3
-            // 
-            this.tabControl3.Controls.Add(this.tabPage6);
-            this.tabControl3.Controls.Add(this.tabPage10);
-            this.tabControl3.Controls.Add(this.tabPage8);
-            this.tabControl3.Controls.Add(this.tabPage5);
-            this.tabControl3.Controls.Add(this.tabPage3);
-            this.tabControl3.Controls.Add(this.tabPage9);
-            this.tabControl3.Controls.Add(this.tabPage14);
-            this.tabControl3.Controls.Add(this.tabPage13);
-            this.tabControl3.Controls.Add(this.tabPage7);
-            resources.ApplyResources(this.tabControl3, "tabControl3");
-            this.tabControl3.HotTrack = true;
-            this.tabControl3.ImageList = this.imageList1;
-            this.tabControl3.Multiline = true;
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.TabStop = false;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.editorControl1);
-            resources.ApplyResources(this.tabPage6, "tabPage6");
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
             // editorControl1
             // 
             this.editorControl1.AllowDrop = true;
@@ -1078,25 +1187,11 @@
             this.editorControl1.Name = "editorControl1";
             this.editorControl1.Rtc = null;
             // 
-            // tabPage10
-            // 
-            this.tabPage10.Controls.Add(this.rtcControl1);
-            resources.ApplyResources(this.tabPage10, "tabPage10");
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.UseVisualStyleBackColor = true;
-            // 
             // rtcControl1
             // 
             resources.ApplyResources(this.rtcControl1, "rtcControl1");
             this.rtcControl1.Name = "rtcControl1";
             this.rtcControl1.Rtc = null;
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Controls.Add(this.laserControl1);
-            resources.ApplyResources(this.tabPage8, "tabPage8");
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // laserControl1
             // 
@@ -1104,63 +1199,31 @@
             this.laserControl1.Laser = null;
             this.laserControl1.Name = "laserControl1";
             // 
-            // tabPage5
+            // offsetControl1
             // 
-            this.tabPage5.Controls.Add(this.splitContainer1);
-            resources.ApplyResources(this.tabPage5, "tabPage5");
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.offsetControl1, "offsetControl1");
+            this.offsetControl1.Marker = null;
+            this.offsetControl1.Name = "offsetControl1";
             // 
-            // splitContainer1
+            // markerControl1
             // 
-            resources.ApplyResources(this.splitContainer1, "splitContainer1");
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.offsetControl1);
-            resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.markerControl1);
-            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.manualUserControl1);
-            resources.ApplyResources(this.tabPage3, "tabPage3");
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.markerControl1, "markerControl1");
+            this.markerControl1.Document = null;
+            this.markerControl1.Laser = null;
+            this.markerControl1.Marker = null;
+            this.markerControl1.Name = "markerControl1";
+            this.markerControl1.PowerMeter = null;
+            this.markerControl1.Remote = null;
+            this.markerControl1.Rtc = null;
+            this.markerControl1.View = null;
             // 
             // manualUserControl1
             // 
             resources.ApplyResources(this.manualUserControl1, "manualUserControl1");
             this.manualUserControl1.Laser = null;
+            this.manualUserControl1.Marker = null;
             this.manualUserControl1.Name = "manualUserControl1";
             this.manualUserControl1.Rtc = null;
-            // 
-            // tabPage9
-            // 
-            this.tabPage9.Controls.Add(this.splitContainer2);
-            resources.ApplyResources(this.tabPage9, "tabPage9");
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer2
-            // 
-            resources.ApplyResources(this.splitContainer2, "splitContainer2");
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.rtcDIUserControl1);
-            resources.ApplyResources(this.splitContainer2.Panel1, "splitContainer2.Panel1");
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.rtcDOUserControl1);
-            resources.ApplyResources(this.splitContainer2.Panel2, "splitContainer2.Panel2");
             // 
             // rtcDIUserControl1
             // 
@@ -1175,31 +1238,8 @@
             this.rtcDOUserControl1.DOExt1 = null;
             this.rtcDOUserControl1.DOExt2 = null;
             this.rtcDOUserControl1.DOLaserPort = null;
+            this.rtcDOUserControl1.Marker = null;
             this.rtcDOUserControl1.Name = "rtcDOUserControl1";
-            // 
-            // tabPage14
-            // 
-            this.tabPage14.Controls.Add(this.tabControl4);
-            resources.ApplyResources(this.tabPage14, "tabPage14");
-            this.tabPage14.Name = "tabPage14";
-            this.tabPage14.UseVisualStyleBackColor = true;
-            // 
-            // tabControl4
-            // 
-            this.tabControl4.Controls.Add(this.tabPage15);
-            this.tabControl4.Controls.Add(this.tabPage16);
-            resources.ApplyResources(this.tabControl4, "tabControl4");
-            this.tabControl4.HotTrack = true;
-            this.tabControl4.ImageList = this.imageList1;
-            this.tabControl4.Name = "tabControl4";
-            this.tabControl4.SelectedIndex = 0;
-            // 
-            // tabPage15
-            // 
-            this.tabPage15.Controls.Add(this.powerMeterControl1);
-            resources.ApplyResources(this.tabPage15, "tabPage15");
-            this.tabPage15.Name = "tabPage15";
-            this.tabPage15.UseVisualStyleBackColor = true;
             // 
             // powerMeterControl1
             // 
@@ -1207,13 +1247,6 @@
             this.powerMeterControl1.Laser = null;
             this.powerMeterControl1.Name = "powerMeterControl1";
             this.powerMeterControl1.PowerMeter = null;
-            // 
-            // tabPage16
-            // 
-            this.tabPage16.Controls.Add(this.powerMapControl1);
-            resources.ApplyResources(this.tabPage16, "tabPage16");
-            this.tabPage16.Name = "tabPage16";
-            this.tabPage16.UseVisualStyleBackColor = true;
             // 
             // powerMapControl1
             // 
@@ -1225,29 +1258,16 @@
             this.powerMapControl1.PowerMeter = null;
             this.powerMapControl1.Rtc = null;
             // 
-            // tabPage13
-            // 
-            this.tabPage13.Controls.Add(this.scriptControlControl1);
-            resources.ApplyResources(this.tabPage13, "tabPage13");
-            this.tabPage13.Name = "tabPage13";
-            this.tabPage13.UseVisualStyleBackColor = true;
-            // 
             // scriptControlControl1
             // 
             resources.ApplyResources(this.scriptControlControl1, "scriptControlControl1");
             this.scriptControlControl1.Marker = null;
             this.scriptControlControl1.Name = "scriptControlControl1";
             // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.remoteUserControl1);
-            resources.ApplyResources(this.tabPage7, "tabPage7");
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
             // remoteUserControl1
             // 
             resources.ApplyResources(this.remoteUserControl1, "remoteUserControl1");
+            this.remoteUserControl1.Marker = null;
             this.remoteUserControl1.Name = "remoteUserControl1";
             this.remoteUserControl1.Remote = null;
             // 
@@ -1255,6 +1275,7 @@
             // 
             this.logControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             resources.ApplyResources(this.logControl1, "logControl1");
+            this.logControl1.IsDetailLog = false;
             this.logControl1.Name = "logControl1";
             // 
             // propertyGridControl1
@@ -1289,18 +1310,6 @@
             this.treeViewBlockControl1.Rtc = null;
             this.treeViewBlockControl1.View = null;
             // 
-            // markerControl1
-            // 
-            resources.ApplyResources(this.markerControl1, "markerControl1");
-            this.markerControl1.Marker = null;
-            this.markerControl1.Name = "markerControl1";
-            // 
-            // offsetControl1
-            // 
-            resources.ApplyResources(this.offsetControl1, "offsetControl1");
-            this.offsetControl1.Marker = null;
-            this.offsetControl1.Name = "offsetControl1";
-            // 
             // SiriusEditorUserControl
             // 
             resources.ApplyResources(this, "$this");
@@ -1311,22 +1320,6 @@
             this.Controls.Add(this.tlsTop2);
             this.Controls.Add(this.tlsTop);
             this.Name = "SiriusEditorUserControl";
-            this.tlsTop2.ResumeLayout(false);
-            this.tlsTop2.PerformLayout();
-            this.tlsTop.ResumeLayout(false);
-            this.tlsTop.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.panBody.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.splitContainer5.Panel1.ResumeLayout(false);
-            this.splitContainer5.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
-            this.splitContainer5.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
@@ -1352,6 +1345,22 @@
             this.tabPage16.ResumeLayout(false);
             this.tabPage13.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
+            this.tlsTop2.ResumeLayout(false);
+            this.tlsTop2.PerformLayout();
+            this.tlsTop.ResumeLayout(false);
+            this.tlsTop.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.panBody.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.splitContainer5.Panel1.ResumeLayout(false);
+            this.splitContainer5.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
+            this.splitContainer5.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1426,7 +1435,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuMoFAngularWait;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.ToolStripMenuItem mnuMoFExternalStartDelay;
-        private System.Windows.Forms.ToolStripMenuItem mnuMoFRepeat;
         private System.Windows.Forms.ToolStripMenuItem mnuTimer;
         private System.Windows.Forms.ToolStripMenuItem mnuMeasurementBeginEnd;
         private System.Windows.Forms.ToolStripButton btnImportFile;
@@ -1503,5 +1511,6 @@
         private SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl rtcDOUserControl1;
         private SpiralLab.Sirius2.Winforms.UI.OffsetUserControl offsetControl1;
         private SpiralLab.Sirius2.Winforms.UI.MarkerUserControl markerControl1;
+        private System.Windows.Forms.ToolStripMenuItem mnuSelectCorrectionTable;
     }
 }

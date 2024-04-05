@@ -91,14 +91,14 @@ namespace Demos
                 "D12",
                 "D13",
                 "D14",
-                "D15",
+                "StartFieldCorrection",
             };
             SpiralLab.Sirius2.Winforms.Config.DOut_RtcExtension1Port = new string[16]
             {
                 "Ready",
                 "Busy",
                 "Error",
-                "D03",
+                "Remote",
                 "D04",
                 "D05",
                 "D06",
@@ -174,6 +174,15 @@ namespace Demos
                         siriusEditorUserControl1.DOExt1.OutOn(2);
                     else
                         siriusEditorUserControl1.DOExt1.OutOff(2);
+                    switch (marker.Remote.ControlMode)
+                    {
+                        case SpiralLab.Sirius2.Winforms.Remote.ControlModes.Local:
+                            siriusEditorUserControl1.DOExt1.OutOff(3);
+                            break;
+                        case SpiralLab.Sirius2.Winforms.Remote.ControlModes.Remote:
+                            siriusEditorUserControl1.DOExt1.OutOn(3);
+                            break;
+                    }
                     siriusEditorUserControl1.DOExt1.Update();
                 }
             }
@@ -183,6 +192,9 @@ namespace Demos
             var marker = siriusEditorUserControl1.Marker;
             if (null == marker)
                 return;
+            if (marker.Remote.ControlMode != SpiralLab.Sirius2.Winforms.Remote.ControlModes.Remote)
+                return;
+            
             switch (bitNo)
             {
                 case 0: //start
@@ -197,8 +209,21 @@ namespace Demos
                     if (edge == SignalEdges.High)
                         marker.Reset();
                     break;
+                case 15: //mark field correction by pre-cretaed sirius2 file
+                    if (edge == SignalEdges.High)
+                    {
+                        var doc = DocumentFactory.CreateDefault();
+                        string fileName = Path.Combine(SpiralLab.Sirius2.Winforms.Config.RecipePath, "cal_100mm_5x5.sirius2");
+                        if (!doc.ActOpen(fileName))
+                            break;
+                        marker.Ready(doc);
+                        marker.Start();
+                        // User MUST revert document as original on after marker has finished !
+                        // by marker.Ready(siriusEditorUserControl1.Document, ...);
+                    }
+                    break;
             }
-        }
+        }     
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {

@@ -95,7 +95,6 @@ namespace Demos
             var view = siriusEditorUserControl1.View;
             marker.Ready(document, view, rtc, laser, powerMeter, remote);
         }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             var document = siriusEditorUserControl1.Document;

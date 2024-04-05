@@ -138,6 +138,7 @@
  - Demo 'editor_barcode' winforms project for mark individual barcode entities
  - Demo 'editor_mof' winforms project for encoder based MoF
  - Demo 'editor_mof_barcode' winforms project for mark text, barcode by script with MoF
+ - Demo 'editor_dio' winforms project for control digital input/output
  - Demo 'editor_multiple' winforms project for multiple RTC instances
  - Demo 'editor_marker' winforms project for customized marker
  - Demo 'editor_ui' winforms project for customized ui
@@ -160,6 +161,14 @@
 
 **7. Version history**
 
+* 2024.4.5 v.1.25.1220
+  - added) select correction table entity
+  - added) calculate approx. mof velocity
+  - added) render stipple lines if markerable is false
+  - added) ready target document at marker
+  - fixed) hit test bug at rectangle and group entity 
+  - fixed) create grids with invalid interval   
+  
 * 2024.4.2 v.1.24.1190
   - added) editor_dio demo project 
   - added) ScriptHelper 

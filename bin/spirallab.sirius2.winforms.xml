@@ -14,7 +14,7 @@
             Create default document
             </summary>
             <remarks>
-            Called <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActNew">IDocument.ActNew</see> by default when creation. <br/>
+            Used(or called) with <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActNew">IDocument.ActNew</see> by default. <br/>
             </remarks>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see></returns>
         </member>
@@ -417,7 +417,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Direction_DESC">
             <summary>
-              Looks up a localized string similar to Pixel Direction.
+              Looks up a localized string similar to Pixel Direction..
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Direction_DISP">
@@ -431,9 +431,11 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Extension_channel_DESC">
-            <summary>
-              Looks up a localized string similar to Pixel Output Extension Channel (Analog 1 or 2) (Micro-Vector only).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Pixel Output Extension Channel.
+            Analog 1 or 2.
+            Micro-Vector only..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Extension_channel_DISP">
             <summary>
@@ -441,9 +443,11 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Pixel_period_DESC">
-            <summary>
-              Looks up a localized string similar to Pixel Period (usec) (1/Pixel Frequency) (Micro-Vector only).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Pixel Period (usec) 
+            = 1/Pixel Frequency
+            Micro-Vector only.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Pixel_period_DISP">
             <summary>
@@ -451,9 +455,11 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Pixel_time_DESC">
-            <summary>
-              Looks up a localized string similar to Pixel Duration Time (usec) (Time for Pixel Pulse Width. Should be &lt; Pixel Period).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Pixel Duration Time (usec) 
+            Time for Pixel Pulse Width. 
+            Should be &lt; Pixel Period If Micro_Vector..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Pixel_time_DISP">
             <summary>
@@ -461,9 +467,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Raster_mode_DESC">
-            <summary>
-              Looks up a localized string similar to Raster Mode (Jump and Shoot, Micro-Vector).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Raster Mode 
+            Jump and Shoot, Micro-Vector..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Raster_mode_DISP">
             <summary>
@@ -582,9 +589,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Convertible_DESC">
-            <summary>
-              Looks up a localized string similar to Enable(or Disable) Convert Text Data.
-            </summary>
+             <summary>
+               Looks up a localized string similar to Enable(or Disable) Convert Text Data
+            Used with OnTextConvert function at Script..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Convertible_DISP">
             <summary>
@@ -627,9 +635,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Text_converted_DESC">
-            <summary>
-              Looks up a localized string similar to Text (Converted).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Text (Converted)
+            If Convertible is True only..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.barcode2dbase.Text_converted_DISP">
             <summary>
@@ -1095,6 +1104,47 @@
               Looks up a localized string similar to Width.
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.control.selectcorrection">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.selectcorrection.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.selectcorrection.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.selectcorrection.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.selectcorrection.Primary_DESC">
+            <summary>
+              Looks up a localized string similar to Correction Table at Primary Head.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.selectcorrection.Primary_DISP">
+            <summary>
+              Looks up a localized string similar to Primary.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.selectcorrection.Secondary_DESC">
+            <summary>
+              Looks up a localized string similar to Correction Table at Secondary(2nd) Head.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.selectcorrection.Secondary_DISP">
+            <summary>
+              Looks up a localized string similar to Secondary.
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.scriptevent">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -1127,13 +1177,25 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.scriptevent.Userdata_DESC">
-            <summary>
-              Looks up a localized string similar to User Data.
-            </summary>
+             <summary>
+               Looks up a localized string similar to User Data
+            Type: object (Not Saved).
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.scriptevent.Userdata_DISP">
             <summary>
               Looks up a localized string similar to User data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.scriptevent.Userdata2_DESC">
+             <summary>
+               Looks up a localized string similar to User Data2
+            Type: string (Not Saved).
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.scriptevent.Userdata2_DISP">
+            <summary>
+              Looks up a localized string similar to User data2.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.scriptevent.Value_DESC">
@@ -2677,9 +2739,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.C40_DESC">
-            <summary>
-              Looks up a localized string similar to C40 (Disable Compact Encoding if Enabled).
-            </summary>
+             <summary>
+               Looks up a localized string similar to C40
+            Disable Compact Encoding if Enabled..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.C40_DISP">
             <summary>
@@ -2687,9 +2750,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Compact_DESC">
-            <summary>
-              Looks up a localized string similar to Compact Encoding. Supports the encoding of characters that are not in the ISO-8859-1 character set via ECIs. (Disable C40 If Enabled).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Compact Encoding. 
+            Supports the encoding of characters that are not in the ISO-8859-1 character set via ECIs. (Disable C40 If Enabled).
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Compact_DISP">
             <summary>
@@ -2712,9 +2776,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Min__height_DESC">
-            <summary>
-              Looks up a localized string similar to Y Pixels: (10~144).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Y Pixels
+            10~144..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Min__height_DISP">
             <summary>
@@ -2722,9 +2787,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Min__width_DESC">
-            <summary>
-              Looks up a localized string similar to X Pixels: (10~144).
-            </summary>
+             <summary>
+               Looks up a localized string similar to X Pixel
+            10~144..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.datamatrix.Min__width_DISP">
             <summary>
@@ -2980,9 +3046,11 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Extension_channel_DESC">
-            <summary>
-              Looks up a localized string similar to Pixel Output Extension Channel (Analog 1 or 2) (Micro-Vector only).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Pixel Output Extension Channel 
+            Analog 1 or 2.
+            Micro-Vector only..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Extension_channel_DISP">
             <summary>
@@ -3050,9 +3118,11 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Pixel_period_DESC">
-            <summary>
-              Looks up a localized string similar to Pixel Period (usec) (1/Pixel Frequency) (Micro-Vector only).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Pixel Period (usec) 
+            = 1/Pixel Frequency.
+            Micro-Vector only..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Pixel_period_DISP">
             <summary>
@@ -3070,9 +3140,11 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Pixel_time_DESC">
-            <summary>
-              Looks up a localized string similar to Max. Pixel Dration Time (usec) (Time for Pixel Pulse Width. Should be &lt; Pixel Period).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Max. Pixel Dration Time (usec)
+            Time for Pixel Pulse Width. 
+            Should be &lt; Pixel Period If Micro-Vector..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Pixel_time_DISP">
             <summary>
@@ -3105,9 +3177,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Raster_mode_DESC">
-            <summary>
-              Looks up a localized string similar to Raster Mode (Jump and Shoot, Micro-Vector).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Raster Mode 
+            Jump and Shoot, Micro-Vector..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Raster_mode_DISP">
             <summary>
@@ -3151,9 +3224,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Convertible_DESC">
-            <summary>
-              Looks up a localized string similar to Enable(or Disable) Convert Text Data.
-            </summary>
+             <summary>
+               Looks up a localized string similar to Enable(or Disable) Convert Text Data
+            Used with OnTextConvert function at Script..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Convertible_DISP">
             <summary>
@@ -3196,9 +3270,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Height_pixel_DESC">
-            <summary>
-              Looks up a localized string similar to Pixel Height Size (&gt;= 6 pixels).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Pixel Height Size 
+            &gt;= 6 Pixels..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Height_pixel_DISP">
             <summary>
@@ -3226,9 +3301,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Text_converted_DESC">
-            <summary>
-              Looks up a localized string similar to Text (Converted).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Text (Converted)
+            If Convertible is True only..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.imagetext.Text_converted_DISP">
             <summary>
@@ -3272,9 +3348,11 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc._100__signal_value_DESC">
-            <summary>
-              Looks up a localized string similar to 100% Output Value (Analog: ~10V, Digital: ~255 or ~65535, Pulsewidth: us, Frequency: Hz, SpotDistance: mm).
-            </summary>
+             <summary>
+               Looks up a localized string similar to 100% Output Value 
+            Analog: ~10V, Digital: ~255 or ~65535
+            Pulsewidth: us, Frequency: Hz, SpotDistance: mm.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc._100__signal_value_DISP">
             <summary>
@@ -3312,9 +3390,11 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc.Max_signal_value_DESC">
-            <summary>
-              Looks up a localized string similar to Max. Output value (Analog: ~10V, Digital: ~255 or ~65535, Pulsewidth: us, Frequency: Hz, SpotDistance: none).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Max. Output value 
+            Analog: ~10V, Digital: ~255 or ~65535
+            Pulsewidth: us, Frequency: Hz, SpotDistance: none.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc.Max_signal_value_DISP">
             <summary>
@@ -3322,9 +3402,11 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc.Min_signal_value_DESC">
-            <summary>
-              Looks up a localized string similar to Min. Output value (Analog: ~10V, Digital: ~255 or ~65535, Pulsewidth: us, Frequency: Hz, SpotDistance: none).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Min. Output value 
+            Analog: ~10V, Digital: ~255 or ~65535
+            Pulsewidth: us, Frequency: Hz, SpotDistance: none.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc.Min_signal_value_DISP">
             <summary>
@@ -3337,9 +3419,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc.Position_table_DESC">
-            <summary>
-              Looks up a localized string similar to Position Dependent Compensate Table. Distance or Radius (mm), Scale (0~4).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Position Dependent Compensate Table. 
+            Distance or Radius (mm), Scale (0~4)..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layerrtc.Position_table_DISP">
             <summary>
@@ -3363,9 +3446,11 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layersyncaxis.Band_width_DESC">
-            <summary>
-              Looks up a localized string similar to Band Width (Hz). Load to Stage(High). Scanner(Low) (Used with Scanner + Stage Motion Type).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Band Width (Hz). 
+            Load to Stage(High). Scanner(Low) 
+            Used with Scanner + Stage Motion Type..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.layersyncaxis.Band_width_DISP">
             <summary>
@@ -3747,9 +3832,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.Encoding_DESC">
-            <summary>
-              Looks up a localized string similar to Encoding (ASCII, ISO-8859-1, UTF-8, UTF-16, ...).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Encoding 
+            ASCII, ISO-8859-1, UTF-8, UTF-16, ....
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf417.Encoding_DISP">
             <summary>
@@ -4143,9 +4229,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.QR_version_DESC">
-            <summary>
-              Looks up a localized string similar to QR Version (1~40).
-            </summary>
+             <summary>
+               Looks up a localized string similar to QR Version 
+            1~40..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.qrcode.QR_version_DISP">
             <summary>
@@ -4260,9 +4347,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.siriustext.Convertible_DESC">
-            <summary>
-              Looks up a localized string similar to Enable(or Disable) Convert Text Data.
-            </summary>
+             <summary>
+               Looks up a localized string similar to Enable(or Disable) Convert Text Data
+            Used with OnTextConvert function at Script..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.siriustext.Convertible_DISP">
             <summary>
@@ -4275,9 +4363,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.siriustext.Dwell_DESC">
-            <summary>
-              Looks up a localized string similar to Dwell Time (msec) (Used with Raster Mode by Jump and Shoot).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Dwell Time (msec) 
+            Pixel Time when used Raster Mode with Jump and Shoot..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.siriustext.Dwell_DISP">
             <summary>
@@ -4345,9 +4434,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.siriustext.Text_converted_DESC">
-            <summary>
-              Looks up a localized string similar to Text (Converted).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Text (Converted)
+            If Convertible is True only..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.siriustext.Text_converted_DISP">
             <summary>
@@ -4619,9 +4709,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.text.Convertible_DESC">
-            <summary>
-              Looks up a localized string similar to Enable(or Disable) Convert Text Data.
-            </summary>
+             <summary>
+               Looks up a localized string similar to Enable(or Disable) Convert Text Data
+            Used with OnTextConvert function at Script..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.text.Convertible_DISP">
             <summary>
@@ -4674,9 +4765,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.text.Text_converted_DESC">
-            <summary>
-              Looks up a localized string similar to Text (Converted).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Text (Converted)
+            If Convertible is True only..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.text.Text_converted_DISP">
             <summary>
@@ -4790,7 +4882,7 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Bound_DESC">
              <summary>
                Looks up a localized string similar to Bouding Box.
-            WxHxD: Width, Heigh and Depth..
+            WxHxD : Width, Heigh and Depth..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Bound_DISP">
@@ -5380,6 +5472,54 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.CharacterSetSerialNo.Clone">
             <inheritdoc/>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntitySelectCorrectionTable">
+            <summary>
+            EntitySelectCorrectionTable entity
+            </summary>
+            <remarks>
+            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListSelectCorrection(SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables)">IRtc.ListSelectCorrection</see>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySelectCorrectionTable.PrimaryHead">
+            <summary>
+            Correction Table at Primary Head
+            </summary>
+            <remarks>
+            Default: Table1
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySelectCorrectionTable.SecondaryHead">
+            <summary>
+            Correction Table at Secondary(2nd) Head
+            </summary>
+            <remarks>
+            Default: None
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySelectCorrectionTable.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySelectCorrectionTable.#ctor(SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="primaryHead"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables">CorrectionTables</see> for primary(1st) head</param>
+            <param name="secondaryHead"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables">CorrectionTables</see> for secondary(2nd) head</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySelectCorrectionTable.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySelectCorrectionTable.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySelectCorrectionTable.Regen">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySelectCorrectionTable.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent">
             <summary>
             EntityScriptEvent entity
@@ -5390,7 +5530,20 @@
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent.UserData">
-            <inheritdoc/>
+            <summary>
+            User data (type: object)
+            </summary>
+            <remarks>
+            Temporary data. Not saved into file. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent.UserData2">
+            <summary>
+            User data2 (type: string)
+            </summary>
+            <remarks>
+            Temporary data. Not saved into file. <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent.#ctor">
             <summary>
@@ -8753,6 +8906,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRectangle.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRectangle.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRectangle.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
@@ -11211,7 +11367,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.Color">
             <summary>
-            <c>EntityGroup</c> is not used its own <c>Color</c>
+            <c>EntityGroup</c> is not used its own <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Color">Color</see> 
             <code>
             // Set Color at child entities instead
             foreach(var item in group.Children)
@@ -11219,7 +11375,23 @@
             </code>
             </summary>
             <remarks>
-            Assign <c>IEntity.Color</c> at <c>Children</c> instead. <br/>
+            Assign <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Color">Color</see> at <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Children">Children</see> instead. <br/>
+            Not used. Do not edit operation. <nbr/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.IsMarkerable">
+            <summary>
+            <c>EntityGroup</c> is not used its own <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.IsMarkerable">IsMarkerable</see> status
+            <code>
+            // Set 'IsMarkerable' at child entities instead
+            foreach(var item in group.Children)
+                item.IsMarkerable = true; // or false;
+            </code>
+            </summary>
+            <remarks>
+            Assign <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.IsMarkerable">IsMarkerable</see> at <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Children">Children</see> instead. <br/>
+            Or use <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.GroupMarkerable(SpiralLab.Sirius2.Winforms.Entity.EntityGroup,System.Boolean)">EntityGroup.GroupMarkerable</see> function instead. <br/>
+            Not used. Do not edit operation. <nbr/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.IsClosed">
@@ -11314,6 +11486,17 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.Clip(SpiralLab.Sirius2.Winforms.Entity.BoundingBox)">
             <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.GroupMarkerable(SpiralLab.Sirius2.Winforms.Entity.EntityGroup,System.Boolean)">
+            <summary>
+            Enable(or disable) <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.IsMarkerable">IsMarkerable</see> for children of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityGroup">EntityGroup</see>.
+            </summary>
+            <remarks>
+            <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityGroup">EntityGroup</see> is not supported <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.IsMarkerable">IsMarkerable</see>. <br/>
+            Use this <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.GroupMarkerable(SpiralLab.Sirius2.Winforms.Entity.EntityGroup,System.Boolean)">GroupMarkerable</see> function instead. <br/>
+            </remarks>
+            <param name="group"></param>
+            <param name="isMarkerable"></param>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityLayerSyncAxis">
             <summary>
@@ -11429,7 +11612,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcByPositionTable">
             <summary>
-            ALC (Automatic Laser Control) with Position Dependent Compensate Table
+            ALC (Automatic Laser Control) with position dependent compensate table
             </summary>
             <remarks>
             Key: Distance(or radius) (mm) <br/>
@@ -13305,6 +13488,24 @@
             <param name="zDelta">Z delta (mm)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityZDelta">EntityZDelta</see></returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateSelectCorrectionTable(SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables)">
+            <summary>
+            Create <c>EntitySelectCorrectionTable</c> entity
+            <para>Used with RTC5,6 only (not syncAXIS)</para>
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var selectCorrectionTable = EntityFactory.CreateSelectCorrectionTable(CorrectionTables.Table1);
+            document.ActAdd(selectCorrectionTable);
+            </code>
+            </summary>
+            <remarks>
+            User must reset(or revert) <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables">CorrectionTables</see> as original one if selected(or used) new correction table. <br/>
+            </remarks>
+            <param name="primaryHead"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables">CorrectionTables</see> for primary(1st) head</param>
+            <param name="secondaryHead"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables">CorrectionTables</see> for secondary(2nd) head</param>
+            <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityZDelta">EntityZDelta</see></returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateRampBegin(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,System.Double)">
             <summary>
             Create <c>EntityRampBegin</c> entity 
@@ -14662,8 +14863,15 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.PropertyGridHelper.PropertyBrowsable(System.Type,System.String,System.Boolean)">
             <summary>
-            Browsable visible 
+            Property browsable (or visibility) at <c>PropertyGrid</c>
             </summary>
+            <remarks>
+            Example : <br/>
+            <c>PropertyGridHelper.PropertyBrowsable(typeof(EntityPen), "SkyWritingMode", false); </c> <br/>
+            <c>PropertyGridHelper.PropertyBrowsable(typeof(EntityPen), "PowerMapCategory", false); </c> <br/>
+            <c>PropertyGridHelper.PropertyBrowsable(typeof(CellDot), "RasterMode", false); </c> <br/>
+            <c>PropertyGridHelper.PropertyBrowsable(typeof(EntityLayerRtc), "AlcByPositionTable", false);</c> <br/>
+            </remarks>
             <param name="type">Type</param>
             <param name="name">Property name</param>
             <param name="visible">visible or not</param>
@@ -14829,6 +15037,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtcFast.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.Remote.IRemote)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtcFast.Ready(SpiralLab.Sirius2.Winforms.IDocument)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtcFast.RegisterCharacterSet">
@@ -15240,6 +15451,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.Remote.IRemote)">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Ready(SpiralLab.Sirius2.Winforms.IDocument)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Start">
             <inheritdoc/>
         </member>
@@ -15407,6 +15621,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.Remote.IRemote)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual.Ready(SpiralLab.Sirius2.Winforms.IDocument)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual.Start">
@@ -15602,6 +15819,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.Remote.IRemote)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.Ready(SpiralLab.Sirius2.Winforms.IDocument)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis.Start">
@@ -15873,6 +16093,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.Remote.IRemote)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.Ready(SpiralLab.Sirius2.Winforms.IDocument)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.RegisterCharacterSet">
@@ -16254,6 +16477,7 @@
                 new Offset(10, 0, 0),
             };
             marker.Offsets = offets;
+            marker.Ready(...);
             marker.Start(); 
             </code>
             </summary>
@@ -16355,7 +16579,7 @@
             Ready
             </summary>
             <remarks>
-            Must be once <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.Remote.IRemote)">Ready</see> before do <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Start">Start</see>. <br/>
+            Must be do <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.Remote.IRemote)">Ready</see> before do <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Start">Start</see>. <br/>
             </remarks>
             <param name="document"><c>IDocument</c></param>
             <param name="view"><c>IView</c></param>
@@ -16365,11 +16589,23 @@
             <param name="remote"><c>IRemote</c></param>
             <returns>Success or not</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Ready(SpiralLab.Sirius2.Winforms.IDocument)">
+            <summary>
+            Ready 
+            </summary>
+            <remarks>
+            Temporary re-assign target <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>. <br/>
+            User should be revert target <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see> as original one after mark has ended. <br/>
+            </remarks>
+            <param name="document"><c>IDocument</c></param>
+            <returns>Success or not</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Start">
             <summary>
             Start
             </summary>
             <remarks>
+            Target <c>IDocument</c>, <c>IRtc</c>, <c>ILaser</c>,... must be assigned by <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.Remote.IRemote)">Ready</see> at first. <br/>
             Notify <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnStarted">OnStarted</see>, <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnEnded">OnEnded</see> event. <br/>
             Notify <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnBeforeLayer">OnBeforeLayer</see>, <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnAfterLayer">OnAfterLayer</see> event(s) for each layers. <br/>
             Notify <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnBeforeEntity">OnBeforeEntity</see>, <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnAfterEntity">OnAfterEntity</see> event(s) for each entities. <br/>
@@ -19975,279 +20211,279 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Properties.Resources">
             <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
+              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.ResourceManager">
             <summary>
-              Returns the cached ResourceManager instance used by this class.
+              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.Culture">
             <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
+              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
+              재정의합니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.Calibration3D">
             <summary>
-              Looks up a localized string similar to Calibration 3D.
+              Calibration 3D과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.ConvertBlock">
             <summary>
-              Looks up a localized string similar to Convert to Block.
+              Convert to Block과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.DocumentClipboardEmpty">
             <summary>
-              Looks up a localized string similar to Clipboard are empty. Please copy or cut at first..
+              Clipboard are empty. Please copy or cut at first.과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.DocumentEncoderReset">
             <summary>
-              Looks up a localized string similar to Do you really want to reset encoder values ?.
+              Do you really want to reset encoder values ?과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.DocumentNew">
             <summary>
-              Looks up a localized string similar to Do you really want to new document without save ?.
+              Do you really want to new document without save ?과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.DocumentOpen">
             <summary>
-              Looks up a localized string similar to Do you really want to open without save ?.
+              Do you really want to open without save ?과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.EncoderAngular">
             <summary>
-              Looks up a localized string similar to ENC X,0: {0:F3}˚ [{1}].
+              ENC X,0: {0:F3}˚ [{1}]과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.EncoderXY">
             <summary>
-              Looks up a localized string similar to ENC XY: {0:F3}, {1:F3}mm [{2}, {3}].
+              ENC XY: {0:F3}, {1:F3}mm [{2}, {3}]과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.Error">
             <summary>
-              Looks up a localized string similar to Error.
+              Error과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.Explode">
             <summary>
-              Looks up a localized string similar to Explode.
+              Explode과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.ExtractPointsCloudFailed">
             <summary>
-              Looks up a localized string similar to Fail to extract points cloud from {0}..
+              Fail to extract points cloud from {0}.과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.ExtractPointsCloudTrying">
             <summary>
-              Looks up a localized string similar to Do you want to extract points cloud from {0} ?.
+              Do you want to extract points cloud from {0} ?과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.Group">
             <summary>
-              Looks up a localized string similar to Group.
+              Group과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.HelpKeboard">
             <summary>
-              Looks up a localized string similar to Help - Keyboards.
+              Help - Keyboards과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.HeuristicFailed">
             <summary>
-              Looks up a localized string similar to Heuristic algorithm has failed !.
+              Heuristic algorithm has failed !과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.LicenseKeyIsNotFounded">
             <summary>
-              Looks up a localized string similar to USB license key is not founded..
+              USB license key is not founded.과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.LicenseKeyWithoutIformation">
              <summary>
-               Looks up a localized string similar to No information within USB license key.
-            It&apos;s Empty key..
+               No information within USB license key.
+            It&apos;s Empty key.과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.MarkerIsBusy">
             <summary>
-              Looks up a localized string similar to Marker status is busy now !.
+              Marker status is busy now !과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.MarkerTryingToStart">
             <summary>
-              Looks up a localized string similar to Do you really want to start mark ?.
+              Do you really want to start mark ?과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.MarkerWaitingExternalStart">
             <summary>
-              Looks up a localized string similar to Waiting for external /START trigger ....
+              Waiting for external /START trigger ...과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.NoParentWhenActInsert">
             <summary>
-              Looks up a localized string similar to Please select target parent entity to layer..
+              Please select target parent entity to layer.과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PathOptimizer">
             <summary>
-              Looks up a localized string similar to Path Optimizer.
+              Path Optimizer과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PointsCloud">
             <summary>
-              Looks up a localized string similar to Points Cloud.
+              Points Cloud과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PopUpOptimizedSize">
              <summary>
-               Looks up a localized string similar to Extracted data size are {0} and base location at {1}.
-            Do you want to continue anyway ?.
+               Extracted data size are {0} and base location at {1}.
+            Do you want to continue anyway ?과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PowerCompensateStart">
              <summary>
-               Looks up a localized string similar to Do you really want to start power compensate ?
-            Target counts: {0}.
+               Do you really want to start power compensate ?
+            Target counts: {0}과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PowerMap">
             <summary>
-              Looks up a localized string similar to Power Map.
+              Power Map과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PowerMapBusy">
             <summary>
-              Looks up a localized string similar to Powermap is busy now..
+              Powermap is busy now.과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PowerMapStart">
              <summary>
-               Looks up a localized string similar to Do you really want to start power mapping ?
-            Range: {0:F3} ~ {1:F3}W with {2} steps..
+               Do you really want to start power mapping ?
+            Range: {0:F3} ~ {1:F3}W with {2} steps.과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PowerMapToReset">
             <summary>
-              Looks up a localized string similar to Do you really want to set category: {0} as 1:1 ?.
+              Do you really want to set category: {0} as 1:1 ?과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PowerMapTryingToClear">
             <summary>
-              Looks up a localized string similar to Do you really want to clear all categories ?.
+              Do you really want to clear all categories ?과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PowerVerifyStart">
              <summary>
-               Looks up a localized string similar to Do you really want to start power verification ?
-            Target counts: {0}.
+               Do you really want to start power verification ?
+            Target counts: {0}과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PropertyGridBound">
             <summary>
-              Looks up a localized string similar to Bound (WHD): {0}.
+              Bound (WHD): {0}과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.PropertyGridRealBound">
             <summary>
-              Looks up a localized string similar to Real Bound (WHD). Min: {0}, Max {1}, Center: {2}.
+              Real Bound (WHD). Min: {0}, Max {1}, Center: {2}과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.RemoteConnectedLocal">
             <summary>
-              Looks up a localized string similar to  CONNECTED /LOCAL .
+               CONNECTED /LOCAL 과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.RemoteConnectedRemote">
             <summary>
-              Looks up a localized string similar to  CONNECTED /REMOTE .
+               CONNECTED /REMOTE 과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.RemoteControl">
             <summary>
-              Looks up a localized string similar to Remote Control.
+              Remote Control과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.RemoteDisconnected">
             <summary>
-              Looks up a localized string similar to  DISCONNECTED .
+               DISCONNECTED 과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.RemoteToLocal">
             <summary>
-              Looks up a localized string similar to Do you really want to switch &apos;LOCAL&apos; mode ?.
+              Do you really want to switch &apos;LOCAL&apos; mode ?과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.RemoteToRemote">
             <summary>
-              Looks up a localized string similar to Do you really want to switch &apos;REMOTE&apos; mode ?.
+              Do you really want to switch &apos;REMOTE&apos; mode ?과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.Reverse">
             <summary>
-              Looks up a localized string similar to Reverse.
+              Reverse과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.Selected">
             <summary>
-              Looks up a localized string similar to Selected: {0}.
+              Selected: {0}과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.SpiralLab">
             <summary>
-              Looks up a localized string similar to (c)SpiralLAB.
+              (c)SpiralLAB과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.TreeViewBlock">
             <summary>
-              Looks up a localized string similar to Do you want to convert to block ?.
+              Do you want to convert to block ?과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.TreeViewCalibration3D">
             <summary>
-              Looks up a localized string similar to Do you want to create new scanner field correction file ?.
+              Do you want to create new scanner field correction file ?과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.TreeViewChildren">
             <summary>
-              Looks up a localized string similar to Children: {0}.
+              Children: {0}과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.TreeViewExplode">
             <summary>
-              Looks up a localized string similar to Do you want to explode {0} ?.
+              Do you want to explode {0} ?과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.TreeViewGroup">
             <summary>
-              Looks up a localized string similar to Do you want to convert to group ?.
+              Do you want to convert to group ?과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.TreeViewID">
             <summary>
-              Looks up a localized string similar to ID: {0}.
+              ID: {0}과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.TreeViewReverse">
             <summary>
-              Looks up a localized string similar to Do you want to reverse {0} ?.
+              Do you want to reverse {0} ?과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.TreeViewTooManyNodes">
              <summary>
-               Looks up a localized string similar to Do you really want to show all children nodes ?
-            Too many nodes: {0}.
+               Do you really want to show all children nodes ?
+            Too many nodes: {0}과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Properties.Resources.Warning">
             <summary>
-              Looks up a localized string similar to Warning.
+              Warning과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Remote.RemoteFactory">
@@ -20681,7 +20917,7 @@
                             {
                                 success &amp;= doc.ActOpen(fileName);
                                 if (success)
-                                    success &amp;= marker.Ready(doc, view, rtc, laser, powerMeter, remote);
+                                    success &amp;= marker.Ready(doc);
                             }));
                             if (success)
                                 remote.Send($"OK;");
@@ -21996,6 +22232,11 @@
             <c>IRemote</c>
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl.Marker">
+            <summary>
+            <c>IMarker</c>
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl.#ctor">
             <summary>
             Constructor
@@ -22035,6 +22276,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.UI.ManualUserControl.Laser">
             <summary>
             <c>ILaser</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.ManualUserControl.Marker">
+            <summary>
+            <c>IMarker</c>
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.ManualUserControl.#ctor">
@@ -22471,6 +22717,36 @@
             <c>IMarker</c>
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.MarkerUserControl.Document">
+            <summary>
+            <c>IDocument</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.MarkerUserControl.View">
+            <summary>
+            <c>IView</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.MarkerUserControl.Laser">
+            <summary>
+            <c>ILaser</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.MarkerUserControl.Rtc">
+            <summary>
+            <c>IRtc</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.MarkerUserControl.PowerMeter">
+            <summary>
+            <c>IPowerMeter</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.MarkerUserControl.Remote">
+            <summary>
+            <c>IRemote</c>
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.MarkerUserControl.#ctor">
             <summary>
             Constructor
@@ -22483,6 +22759,9 @@
             <summary>
             Event for start button has clicked
             </summary>
+            <remarks>
+            <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.Remote.IRemote)">IMarker.Ready</see> would be called whenever mark start. <br/>
+            </remarks>
             <param name="sender"></param>
             <param name="e"></param>
         </member>
@@ -22526,6 +22805,11 @@
             Log message would be generated every function calls by <see cref="T:SpiralLab.Sirius2.Logger">Logger</see>. <br/>
             <img src="images/log.png"/> <br/>
             </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.LogUserControl.IsDetailLog">
+            <summary>
+            Enable(or disable) detail log information
+            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.LogUserControl.#ctor">
             <summary>
@@ -22701,6 +22985,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl.DOLaserPort">
             <summary>
             Rtc Laser Port <c>IDOutput</c>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl.Marker">
+            <summary>
+            <c>IMarker</c>
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl.#ctor">
@@ -24514,7 +24803,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.editorControl1_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=742, Height=730}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=742, Height=728}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.editorControl1_TabIndex">
@@ -24554,7 +24843,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.laserControl1_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=842, Height=808}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=742, Height=728}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.laserControl1_TabIndex">
@@ -24820,7 +25109,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.logControl1_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=756, Height=218}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=756, Height=220}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.logControl1_TabIndex">
@@ -24850,7 +25139,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.manualUserControl1_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=842, Height=812}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=742, Height=728}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.manualUserControl1_TabIndex">
@@ -24880,7 +25169,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.markerControl1_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=489, Height=808}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=432, Height=728}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.markerControl1_TabIndex">
@@ -24895,7 +25184,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuAlcDefinedVector_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=158, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuAlcDefinedVector_Text">
@@ -24916,7 +25205,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuBarcode1D_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=147, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuBarcode1D_Text">
@@ -24936,7 +25225,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuData_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=158, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuData_Text">
@@ -24957,7 +25246,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuDataMatrix_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=147, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuDataMatrix_Text">
@@ -24977,7 +25266,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuJumpTo_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=158, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuJumpTo_Text">
@@ -25077,7 +25366,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuMeasurementBeginEnd_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=158, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuMeasurementBeginEnd_Text">
@@ -25097,7 +25386,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuMoF_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=158, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuMoF_Text">
@@ -25171,31 +25460,6 @@
               Looks up a localized string similar to External Start Delay.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuMoFRepeat_Enabled">
-            <summary>
-              Looks up a localized resource of type System.Boolean similar to False.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuMoFRepeat_Image">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuMoFRepeat_Size">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuMoFRepeat_Text">
-            <summary>
-              Looks up a localized string similar to Repeat.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuMoFRepeat_ToolTipText">
-            <summary>
-              Looks up a localized string similar to Repeat.
-            </summary>
-        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuMoFXYBeginEnd_Image">
             <summary>
               Looks up a localized resource of type System.Drawing.Bitmap.
@@ -25243,7 +25507,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuPDF417_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=147, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuPDF417_Text">
@@ -25263,7 +25527,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuQRCode_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=147, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuQRCode_Text">
@@ -25283,7 +25547,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuScriptEvent_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=158, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuScriptEvent_Text">
@@ -25296,6 +25560,26 @@
               Looks up a localized string similar to Script Event.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuSelectCorrectionTable_Image">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuSelectCorrectionTable_Size">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuSelectCorrectionTable_Text">
+            <summary>
+              Looks up a localized string similar to Correction Table.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuSelectCorrectionTable_ToolTipText">
+            <summary>
+              Looks up a localized string similar to Select Correction Table.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuTimer_Image">
             <summary>
               Looks up a localized resource of type System.Drawing.Bitmap.
@@ -25303,7 +25587,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuTimer_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=158, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuTimer_Text">
@@ -25423,7 +25707,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuZDefocus_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=158, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuZDefocus_Text">
@@ -25443,7 +25727,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuZDelta_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=158, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuZDelta_Text">
@@ -25478,7 +25762,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.offsetControl1_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=350, Height=808}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=307, Height=728}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.offsetControl1_TabIndex">
@@ -25533,7 +25817,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.penControl1_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=304, Height=206}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=304, Height=208}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.penControl1_TabIndex">
@@ -25563,7 +25847,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.powerMapControl1_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=824, Height=766}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=724, Height=682}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.powerMapControl1_TabIndex">
@@ -25593,7 +25877,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.powerMeterControl1_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=824, Height=766}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=724, Height=682}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.powerMeterControl1_TabIndex">
@@ -25653,7 +25937,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.remoteUserControl1_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=842, Height=812}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=742, Height=728}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.remoteUserControl1_TabIndex">
@@ -25683,7 +25967,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.rtcControl1_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=742, Height=730}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=742, Height=728}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.rtcControl1_TabIndex">
@@ -25718,7 +26002,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.rtcDIUserControl1_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=413, Height=812}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=361, Height=728}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.rtcDIUserControl1_TabIndex">
@@ -25753,7 +26037,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.rtcDOUserControl1_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=425, Height=812}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=377, Height=728}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.rtcDOUserControl1_TabIndex">
@@ -25783,7 +26067,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.scriptControlControl1_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=842, Height=812}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=742, Height=728}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.scriptControlControl1_TabIndex">
@@ -25818,12 +26102,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer1_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=842, Height=808}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=742, Height=728}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer1_SplitterDistance">
             <summary>
-              Looks up a localized resource of type System.Int32 similar to 350.
+              Looks up a localized resource of type System.Int32 similar to 307.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer1_SplitterWidth">
@@ -25873,12 +26157,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer2_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=842, Height=812}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=742, Height=728}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer2_SplitterDistance">
             <summary>
-              Looks up a localized resource of type System.Int32 similar to 413.
+              Looks up a localized resource of type System.Int32 similar to 361.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer2_TabIndex">
@@ -25923,7 +26207,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer3_SplitterDistance">
             <summary>
-              Looks up a localized resource of type System.Int32 similar to 772.
+              Looks up a localized resource of type System.Int32 similar to 770.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer3_SplitterWidth">
@@ -25973,7 +26257,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer5_SplitterDistance">
             <summary>
-              Looks up a localized resource of type System.Int32 similar to 740.
+              Looks up a localized resource of type System.Int32 similar to 738.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer5_SplitterWidth">
@@ -26208,7 +26492,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl3_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=756, Height=772}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=756, Height=770}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl3_TabIndex">
@@ -26238,7 +26522,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl4_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=840, Height=810}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=740, Height=726}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl4_TabIndex">
@@ -26303,7 +26587,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage10_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=736}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage10_TabIndex">
@@ -26338,7 +26622,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage13_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=848, Height=818}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage13_TabIndex">
@@ -26378,7 +26662,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage14_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=848, Height=818}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage14_TabIndex">
@@ -26413,7 +26697,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage15_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=832, Height=774}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=732, Height=690}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage15_TabIndex">
@@ -26448,7 +26732,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage16_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=832, Height=774}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=732, Height=690}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage16_TabIndex">
@@ -26518,7 +26802,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage3_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=848, Height=818}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage3_TabIndex">
@@ -26583,7 +26867,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage5_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=848, Height=814}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage5_TabIndex">
@@ -26618,7 +26902,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage6_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=736}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage6_TabIndex">
@@ -26653,7 +26937,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage7_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=848, Height=818}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage7_TabIndex">
@@ -26688,7 +26972,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage8_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=848, Height=814}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage8_TabIndex">
@@ -26723,7 +27007,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage9_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=848, Height=818}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage9_TabIndex">
@@ -26873,7 +27157,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripMenuItem2_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=144, Height=6}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=185, Height=6}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripMenuItem4_Size">
@@ -26881,9 +27165,14 @@
               Looks up a localized resource of type System.Drawing.Size similar to {Width=210, Height=6}.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripSeparator10_AutoSize">
+            <summary>
+              Looks up a localized resource of type System.Boolean similar to False.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripSeparator10_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=6, Height=31}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=12, Height=31}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripSeparator11_Size">
@@ -26898,7 +27187,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripSeparator2_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=10, Height=31}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=12, Height=31}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripSeparator3_AutoSize">
@@ -26908,7 +27197,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripSeparator3_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=10, Height=31}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=12, Height=31}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripSeparator5_AutoSize">
@@ -26918,7 +27207,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripSeparator5_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=10, Height=31}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=12, Height=31}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripSeparator7_AutoSize">
@@ -26928,7 +27217,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripSeparator7_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=10, Height=31}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=12, Height=31}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripSeparator8_Size">
@@ -26943,7 +27232,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripSeparator9_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=10, Height=31}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=12, Height=31}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripStatusLabel1_AutoSize">
@@ -26958,7 +27247,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripStatusLabel10_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=436, Height=26}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=336, Height=26}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripStatusLabel11_AutoSize">
@@ -27123,7 +27412,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.treeViewControl1_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=304, Height=740}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=304, Height=738}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.treeViewControl1_TabIndex">
