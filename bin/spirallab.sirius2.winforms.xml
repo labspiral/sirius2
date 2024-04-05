@@ -19181,6 +19181,10 @@
             <summary>
             IDocument interface
             </summary>
+            <remarks>
+            Data with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityLayer">EntityLayer</see> and <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>s at <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">InternalData</see>. <br/>
+            Act~ functions for manipulate <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>s. <br/>
+            </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnNew">
             <summary>

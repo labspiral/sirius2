@@ -9774,7 +9774,16 @@
             </summary>
             <remarks>
             User configurable base matrix. (like as rotate, translate, ...) <br/>
-            Result = matries at stack * <c>BaseMatrix</c>.<br/>
+            <see cref="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.ToResult">ToResult</see> = matries at stack * <see cref="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.BaseMatrix">BaseMatrix</see>. <br/>
+            <br/>
+            Allow operations :<br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateTranslation(System.Numerics.Vector3)">Matrix4x4.CreateTranslation</see>. <br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateRotationZ(System.Single)">Matrix4x4.CreateRotationZ</see>. <br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateScale(System.Single)">Matrix4x4.CreateRotationZ</see> with same factor. <br/>
+            Not allowed operations : (Sadly, SCANLAB RTC is supported 2x2 matrix only) <br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateRotationX(System.Single)">Matrix4x4.CreateRotationX</see>.<br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateRotationY(System.Single)">Matrix4x4.CreateRotationY</see>.<br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateScale(System.Single,System.Single,System.Single)">Matrix4x4.CreateRotationZ</see> with differ (or negative) factor.<br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.ToResult">
@@ -9783,7 +9792,7 @@
             </summary>
             <remarks>
             Calculate whole matries at stack. <br/>
-            Result = matries at stack * <c>BaseMatrix</c>. <br/>
+            <see cref="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.ToResult">ToResult</see> = matries at stack * <see cref="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.BaseMatrix">BaseMatrix</see>. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.Identity">
@@ -9791,7 +9800,7 @@
             Clear (or reset) as identity matrix 
             </summary>
             <remarks>
-            <c>BaseMatrix</c> is not modified. <br/>
+            <see cref="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.BaseMatrix">BaseMatrix</see> is not modified. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.Push(`0)">
@@ -9818,6 +9827,16 @@
             rtc.ListEnd();
             rtc.ListExecute(true);
             </code>
+            <remarks>
+            Allow operations :<br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateTranslation(System.Numerics.Vector3)">Matrix4x4.CreateTranslation</see>. <br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateRotationZ(System.Single)">Matrix4x4.CreateRotationZ</see>. <br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateScale(System.Single)">Matrix4x4.CreateRotationZ</see> with same factor. <br/>
+            Not allowed operations : (Sadly, SCANLAB RTC is supported 2x2 matrix only) <br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateRotationX(System.Single)">Matrix4x4.CreateRotationX</see>.<br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateRotationY(System.Single)">Matrix4x4.CreateRotationY</see>.<br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateScale(System.Single,System.Single,System.Single)">Matrix4x4.CreateRotationZ</see> with differ (or negative) factor.<br/>
+            </remarks>
             </summary>
             <param name="matrix">4x4 matrix<br/>Used with <see cref="T:System.Numerics.Matrix4x4">System.Numerics.Matrix4x4</see></param>
             <returns>Success or failed</returns>
