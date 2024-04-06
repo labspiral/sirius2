@@ -530,14 +530,14 @@ namespace Demos
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl TreeViewCtrl
         { 
-            get { return treeViewControl1; } 
+            get { return trvEntity; } 
         }
         /// <summary>
         /// Treeview user control for <c>EntityBlock</c> nodes
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl TreeViewBlockCtrl
         {
-            get { return treeViewBlockControl1; }
+            get { return trvBlock; }
         }
         /// <summary>
         /// PropertyGrid user control for properties of <c>IEntity</c>
@@ -666,7 +666,7 @@ namespace Demos
             VisibleChanged += SiriusEditorUserControl_VisibleChanged;
             Disposed += SiriusEditorUserControl_Disposed;
 
-            tabControl1.SelectedIndexChanged += TabControl1_SelectedIndexChanged;
+            tbcLeft.SelectedIndexChanged += TabControl1_SelectedIndexChanged;
             timerProgress.Interval = 100;
             timerProgress.Tick += TimerProgress_Tick;
             timerStatus.Interval = 100;
@@ -878,7 +878,7 @@ namespace Demos
                 return;
             if (!IsDisableControl)
             {
-                tlsTop.Enabled = enable;
+                tlsTop1.Enabled = enable;
                 tlsTop2.Enabled = enable;
                 TreeViewBlockCtrl.Enabled = enable;
                 EditorCtrl.Enabled = enable;
@@ -902,7 +902,7 @@ namespace Demos
             if (null == Document)
                 return;
             Document.ActSelectClear();
-            switch (tabControl1.SelectedIndex)
+            switch (tbcLeft.SelectedIndex)
             {
                 case 0:
                     EditorCtrl.View.ViewMode = ViewModes.Entity;
@@ -1395,9 +1395,9 @@ namespace Demos
         /// <param name="fileName">Filename</param>
         private void Document_OnSaved(IDocument document, string fileName)
         {
-            if (!statusStrip1.IsHandleCreated || this.IsDisposed)
+            if (!stsBottom.IsHandleCreated || this.IsDisposed)
                 return;
-            statusStrip1.Invoke(new MethodInvoker(delegate ()
+            stsBottom.Invoke(new MethodInvoker(delegate ()
             {
                 lblFileName.Text = fileName;
             }));
@@ -1409,9 +1409,9 @@ namespace Demos
         /// <param name="entities">Selected array of <c>IEntity</c></param>
         private void Document_OnSelected(IDocument document, IEntity[] entities)
         {
-            if (!statusStrip1.IsHandleCreated || statusStrip1.IsDisposed)
+            if (!stsBottom.IsHandleCreated || stsBottom.IsDisposed)
                 return;
-            statusStrip1.Invoke(new MethodInvoker(delegate ()
+            stsBottom.Invoke(new MethodInvoker(delegate ()
             {
                 lblSelected.Text = string.Format(Properties.Resources.Selected, entities.Length);
             }));
@@ -1549,10 +1549,10 @@ namespace Demos
         int timerProgressColorCounts = 0;
         private void TimerProgress_Tick(object sender, EventArgs e)
         {
-            if (!statusStrip1.IsHandleCreated || this.IsDisposed)
+            if (!stsBottom.IsHandleCreated || this.IsDisposed)
                 return;
             if (0 == timerProgressColorCounts++ % 2)
-                lblProcessTime.ForeColor = statusStrip1.ForeColor;
+                lblProcessTime.ForeColor = stsBottom.ForeColor;
             else
                 lblProcessTime.ForeColor = Color.Red;
 
@@ -1574,7 +1574,7 @@ namespace Demos
                 timerProgress.Enabled = false;
                 lblProcessTime.Text = $"{ts.TotalSeconds:F3} sec";
                 if (success)
-                    lblProcessTime.ForeColor = statusStrip1.ForeColor;
+                    lblProcessTime.ForeColor = stsBottom.ForeColor;
                 else
                     lblProcessTime.ForeColor = Color.Red;
                 VisibilityByMarking(true);
@@ -1589,7 +1589,7 @@ namespace Demos
         /// <param name="encY">ENC Y(1)</param>
         private void Mof_OnEncoderChanged(IRtcMoF rtcMoF, int encX, int encY)
         {
-            if (!statusStrip1.IsHandleCreated || this.IsDisposed)
+            if (!stsBottom.IsHandleCreated || this.IsDisposed)
                 return;
             switch (rtcMoF.MoFType)
             {
@@ -1597,7 +1597,7 @@ namespace Demos
                 case RtcMoFTypes.XY:
                     {
                         rtcMoF.CtlMofGetEncoder(out var x, out var y, out var xMm, out var yMm);
-                        statusStrip1.Invoke(new MethodInvoker(delegate ()
+                        stsBottom.Invoke(new MethodInvoker(delegate ()
                         {
                             lblEncoder.Text = string.Format(Properties.Resources.EncoderXY, xMm, yMm, x, y);
                             //lblEncoder.
@@ -1608,7 +1608,7 @@ namespace Demos
                 case RtcMoFTypes.Angular:
                     {
                         rtcMoF.CtlMofGetAngularEncoder(out var x, out var angle);
-                        statusStrip1.Invoke(new MethodInvoker(delegate ()
+                        stsBottom.Invoke(new MethodInvoker(delegate ()
                         {
                             lblEncoder.Text = string.Format(Properties.Resources.EncoderXY, angle, x);
                         }));
@@ -1623,9 +1623,9 @@ namespace Demos
         /// <param name="powerMeter"><c>IPowerMeter</c></param>
         private void PowerMeter_OnCleared(IPowerMeter powerMeter)
         {
-            if (!statusStrip1.IsHandleCreated || this.IsDisposed)
+            if (!stsBottom.IsHandleCreated || this.IsDisposed)
                 return;
-            statusStrip1.Invoke(new MethodInvoker(delegate ()
+            stsBottom.Invoke(new MethodInvoker(delegate ()
             {
                 lblPowerWatt.Text = $"(Empty)";
             }));
@@ -1636,9 +1636,9 @@ namespace Demos
         /// <param name="powerMeter"><c>IPowerMeter</c></param>
         private void PowerMeter_OnStarted(IPowerMeter powerMeter)
         {
-            if (!statusStrip1.IsHandleCreated || this.IsDisposed)
+            if (!stsBottom.IsHandleCreated || this.IsDisposed)
                 return;
-            statusStrip1.Invoke(new MethodInvoker(delegate ()
+            stsBottom.Invoke(new MethodInvoker(delegate ()
             {
                 lblPowerWatt.Text = $"Started...";
             }));
@@ -1649,9 +1649,9 @@ namespace Demos
         /// <param name="powerMeter"><c>IPowerMeter</c></param>
         private void PowerMeter_OnStopped(IPowerMeter powerMeter)
         {
-            if (!statusStrip1.IsHandleCreated || this.IsDisposed)
+            if (!stsBottom.IsHandleCreated || this.IsDisposed)
                 return;
-            statusStrip1.Invoke(new MethodInvoker(delegate ()
+            stsBottom.Invoke(new MethodInvoker(delegate ()
             {
                 //lblPowerWatt.Text = $"0.0 W";
             }));
@@ -1664,9 +1664,9 @@ namespace Demos
         /// <param name="watt">Measured data(W)</param>
         private void PowerMeter_OnMeasured(IPowerMeter powerMeter, DateTime dt, double watt)
         {
-            if (!statusStrip1.IsHandleCreated || this.IsDisposed)
+            if (!stsBottom.IsHandleCreated || this.IsDisposed)
                 return;
-            statusStrip1.Invoke(new MethodInvoker(delegate ()
+            stsBottom.Invoke(new MethodInvoker(delegate ()
             {
                 lblPowerWatt.Text = $"{watt:F3} W";
             }));
