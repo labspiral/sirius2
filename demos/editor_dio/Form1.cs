@@ -193,25 +193,38 @@ namespace Demos
             if (null == marker)
                 return;
             if (marker.Remote.ControlMode != SpiralLab.Sirius2.Winforms.Remote.ControlModes.Remote)
+            {
+                Logger.Log(Logger.Types.Debug, $"external dio [{bitNo}]:{edge} has changed but it's local mode");
                 return;
-            
+            }
             switch (bitNo)
             {
                 case 0: //start
                     if (edge == SignalEdges.High)
+                    {
+                        Logger.Log(Logger.Types.Info, "trying to start marker by external dio");
+                        marker.Ready(siriusEditorUserControl1.Document);
                         marker.Start();
+                    }
                     break;
                 case 1: //stop
                     if (edge == SignalEdges.High)
+                    {
+                        Logger.Log(Logger.Types.Info, "trying to stop marker by external dio");
                         marker.Stop();
+                    }
                     break;
                 case 2: //reset
                     if (edge == SignalEdges.High)
+                    {
+                        Logger.Log(Logger.Types.Info, "trying to reset marker by external dio");
                         marker.Reset();
+                    }
                     break;
                 case 15: //mark field correction by pre-cretaed sirius2 file
                     if (edge == SignalEdges.High)
                     {
+                        Logger.Log(Logger.Types.Info, "trying to mark field corretion by external dio");
                         var doc = DocumentFactory.CreateDefault();
                         string fileName = Path.Combine(SpiralLab.Sirius2.Winforms.Config.RecipePath, "cal_100mm_5x5.sirius2");
                         if (!doc.ActOpen(fileName))

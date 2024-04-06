@@ -1797,7 +1797,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualRS232(System.Int32,System.Double,System.String)">
             <summary>
-            Create laser source with control RS232 communication at RTC card output power
+            Create laser source with control RS-232C communication at RTC card output power
             <code>
             var rtc = ScannerFactory.Create...
             ...
@@ -1813,7 +1813,7 @@
             </code>
             </summary>
             <remarks>
-            Warning : Used RS232 port at internal RTC card. <br/>
+            Warning : Used RS-232C port at internal RTC card. <br/>
             Fixed with <see cref="F:SpiralLab.Sirius2.Laser.PowerControlMethods.Rs232">PowerControlMethods.Rs232</see> <br/>
             Converted and transmitted data as <c>string.Format(Rs232StringFormat, percentage)</c>. <br/>
             Argument value is fixed to percentage value. For example, "{0:F3}" is means "{percentage:F3}". <br/>
@@ -1853,7 +1853,7 @@
             Create Advanced OptoWave AOPico
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.PowerFactor">PowerFactor</see> value by custom(external) RS-232 communication. <br/>
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.PowerFactor">PowerFactor</see> value by custom(external) RS-232C communication. <br/>
             </remarks>
             <param name="index">Identifier</param>
             <param name="name">Name</param>
@@ -1866,7 +1866,7 @@
             Create Advanced OptoWave AOPico Precision
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.PowerFactor">PowerFactor</see> value by custom(external) RS-232 communication. <br/>
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.PowerFactor">PowerFactor</see> value by custom(external) RS-232C communication. <br/>
             </remarks>
             <param name="index">Identifier</param>
             <param name="name">Name</param>
@@ -1892,7 +1892,7 @@
             Create Coherent Avia LX
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.DiodeCurrent">DiodeCurrent</see> value by custom(external) RS-232 communication. <br/>
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.DiodeCurrent">DiodeCurrent</see> value by custom(external) RS-232C communication. <br/>
             </remarks>
             <param name="index">Identifier</param>
             <param name="name">Name</param>
@@ -1931,7 +1931,7 @@
             Create IPG YLP TypeD
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.OperatingPower">OperatingPower</see> value by custom(external) RS-232 communication. <br/>
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.OperatingPower">OperatingPower</see> value by custom(external) RS-232C communication. <br/>
             </remarks>
             <param name="index">Identifier</param>
             <param name="name">Name</param>
@@ -1944,7 +1944,7 @@
             Create IPG YLP TypeE
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.OperatingPower">OperatingPower</see> value by custom(external) RS-232 communication. <br/>
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.OperatingPower">OperatingPower</see> value by custom(external) RS-232C communication. <br/>
             </remarks>
             <param name="index">Identifier</param>
             <param name="name">Name</param>
@@ -1957,7 +1957,7 @@
             Create IPG YLP ULP N
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.SetPoint">SetPoint</see> value by custom(external) RS-232 communication. <br/>
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.SetPoint">SetPoint</see> value by custom(external) RS-232C communication. <br/>
             </remarks>
             <param name="index">Identifier</param>
             <param name="name">Name</param>
@@ -1970,7 +1970,7 @@
             Create JPT TypeE
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.JPTTypeE.OperatingPower">OperatingPower</see> value by custom(external) RS-232 communication. <br/>
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.JPTTypeE.OperatingPower">OperatingPower</see> value by custom(external) RS-232C communication. <br/>
             </remarks>
             <param name="index">Identifier</param>
             <param name="name">Name</param>
@@ -1983,7 +1983,7 @@
             Create Photonics Industry DX
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.PECLevel">PECLevel</see> value by custom(external) RS-232 communication. <br/>
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.PECLevel">PECLevel</see> value by custom(external) RS-232C communication. <br/>
             </remarks>
             <param name="index">Identifier</param>
             <param name="name">Name</param>
@@ -1996,7 +1996,7 @@
             Create Photonics Industry RGH AIO
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.PECLevel">PECLevel</see> value by custom(external) RS-232 communication. <br/>
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.PECLevel">PECLevel</see> value by custom(external) RS-232C communication. <br/>
             </remarks>
             <param name="index">Identifier</param>
             <param name="name">Name</param>
@@ -2022,7 +2022,7 @@
             Create Spectra Physics Talon
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.DiodeCurrent">DiodeCurrent</see> value by custom(external) RS-232 communication. <br/> 
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.DiodeCurrent">DiodeCurrent</see> value by custom(external) RS-232C communication. <br/> 
             </remarks>
             <param name="index">Identifier</param>
             <param name="name">Name</param>
@@ -2048,7 +2048,7 @@
             Advanced OptoWave AOPico
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.PowerFactor">PowerFactor</see> value by custom(external) RS-232 communication. <br/>
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.PowerFactor">PowerFactor</see> value by custom(external) RS-232C communication. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.LaserType">
@@ -2365,7 +2365,7 @@
             Advanced OptoWave AOPico Precision
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.PowerFactor">PowerFactor</see> value by custom(external) RS-232 communication. <br/>
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.PowerFactor">PowerFactor</see> value by custom(external) RS-232C communication. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision.LaserType">
@@ -2844,7 +2844,7 @@
             Coherent Avia LX 
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.DiodeCurrent">DiodeCurrent</see> value by custom(external) RS-232 communication. <br/>
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.DiodeCurrent">DiodeCurrent</see> value by custom(external) RS-232C communication. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.LaserType">
@@ -3735,7 +3735,7 @@
             IPG YLP Type D 
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.OperatingPower">OperatingPower</see> value by custom(external) RS-232 communication. <br/>
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.OperatingPower">OperatingPower</see> value by custom(external) RS-232C communication. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.LaserType">
@@ -4143,7 +4143,7 @@
             IPG YLP Type E 
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.OperatingPower">OperatingPower</see> value by custom(external) RS-232 communication. <br/>
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.OperatingPower">OperatingPower</see> value by custom(external) RS-232C communication. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.LaserType">
@@ -4590,7 +4590,7 @@
             IPG YLP ULP N
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.SetPoint">SetPoint</see> value by custom(external) RS-232 communication. <br/>
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.SetPoint">SetPoint</see> value by custom(external) RS-232C communication. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.LaserType">
@@ -4961,7 +4961,7 @@
             JPT Type E 
             </summary>
             <remarks>
-            Vary <see cref="P:SpiralLab.Sirius2.Laser.JPTTypeE.OperatingPower">OperatingPower</see>  value by custom(external) RS-232 communication. <br/>
+            Vary <see cref="P:SpiralLab.Sirius2.Laser.JPTTypeE.OperatingPower">OperatingPower</see> value by custom(external) RS-232C communication. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.JPTTypeE.LaserType">
@@ -7355,7 +7355,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Laser.PowerControlMethods.Rs232">
             <summary>
-            Control by specific protocol commands (RS-232)
+            Control by specific protocol commands (RS-232C)
             </summary>
             <remarks>
             User should be set values <c>Rs232StringFormat</c>. <br/>
@@ -9520,10 +9520,10 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.MatrixStack4.InternalStack">
             <summary>
-            Internal stack data by <c>Stack&lt;Matrix4x4&gt;</c>
+            Internal stack data by <c>ConcurrentStack&lt;Matrix4x4&gt;</c>
             </summary>
             <remarks>
-            Used by internally. Do not edit. <br/>
+            Used by internally. Do NOT edit operations. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Mathematics.MatrixStack4.stack">
@@ -9764,7 +9764,9 @@
             IMatrixStack interface 
             </summary>
             <remarks>
-            Used with 4x4 matrix
+            Used with 4x4 matrix <br/>
+            SCANLAB RTC is supported 2x2 matrix operations only. <br/>
+            Sirius2 support 4x4 matrix operations with limitations. <br/>
             </remarks>
             <typeparam name="T">Used with <see cref="T:System.Numerics.Matrix4x4">System.Numerics.Matrix4x4</see></typeparam>
         </member>
@@ -9775,15 +9777,27 @@
             <remarks>
             User configurable base matrix. (like as rotate, translate, ...) <br/>
             <see cref="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.ToResult">ToResult</see> = matries at stack * <see cref="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.BaseMatrix">BaseMatrix</see>. <br/>
+            Default : <c>Matrix4x4.Identity</c> <br/>
             <br/>
             Allow operations :<br/>
              <see cref="M:System.Numerics.Matrix4x4.CreateTranslation(System.Numerics.Vector3)">Matrix4x4.CreateTranslation</see>. <br/>
              <see cref="M:System.Numerics.Matrix4x4.CreateRotationZ(System.Single)">Matrix4x4.CreateRotationZ</see>. <br/>
-             <see cref="M:System.Numerics.Matrix4x4.CreateScale(System.Single)">Matrix4x4.CreateRotationZ</see> with same factor. <br/>
-            Not allowed operations : (Sadly, SCANLAB RTC is supported 2x2 matrix only) <br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateScale(System.Single)">Matrix4x4.CreateScale</see> with same factor. <br/>
+            Not allowed operations :<br/>
              <see cref="M:System.Numerics.Matrix4x4.CreateRotationX(System.Single)">Matrix4x4.CreateRotationX</see>.<br/>
              <see cref="M:System.Numerics.Matrix4x4.CreateRotationY(System.Single)">Matrix4x4.CreateRotationY</see>.<br/>
-             <see cref="M:System.Numerics.Matrix4x4.CreateScale(System.Single,System.Single,System.Single)">Matrix4x4.CreateRotationZ</see> with differ (or negative) factor.<br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateScale(System.Single,System.Single,System.Single)">Matrix4x4.CreateScale</see> with differ (or negative) factor.<br/>
+            <br/> 
+            <code>
+            // If scan-head has rotated 90 deg
+            BaseMatrix = Matrix4x4.CreateRotationZ((float)(90 * Math.PI / 180.0));
+            // If scan-head has rotated 90 deg and translate dx 10mm
+            BaseMatrix = Matrix4x4.CreateRotationZ((float)(90 * Math.PI / 180.0)) * Matrix4x4.CreateTranslation(10, 0, 0));
+            // If scan-head scale up to 10%
+            BaseMatrix = Matrix4x4.CreateScale(1.1f);
+            // Reset 
+            BaseMatrix = Matrix4x4.Identity;
+            </code>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.ToResult">
@@ -9791,13 +9805,13 @@
             Result matrix
             </summary>
             <remarks>
-            Calculate whole matries at stack. <br/>
+            Calculate(or transform) whole matries at stack. <br/>
             <see cref="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.ToResult">ToResult</see> = matries at stack * <see cref="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.BaseMatrix">BaseMatrix</see>. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.Identity">
             <summary>
-            Clear (or reset) as identity matrix 
+            Clear (or reset) as identity matrix at stack
             </summary>
             <remarks>
             <see cref="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.BaseMatrix">BaseMatrix</see> is not modified. <br/>
@@ -9815,7 +9829,7 @@
             {
                 var radian = angle * Math.PI / 180.0;
                 rtc.MatrixStack.Push(Matrix4x4.CreateTranslation(radius, 0, 0)); // 2. translate
-                rtc.MatrixStack.Push(Matrix4x4.CreateRotationZ((float) radian)); // 1. rotate
+                rtc.MatrixStack.Push(Matrix4x4.CreateRotationZ((float)radian)); // 1. rotate
                 rtc.ListJumpTo(new Vector2(-width / 2, height / 2));
                 rtc.ListMarkTo(new Vector2(width / 2, height / 2));
                 rtc.ListMarkTo(new Vector2(width / 2, -height / 2));
@@ -9830,12 +9844,12 @@
             <remarks>
             Allow operations :<br/>
              <see cref="M:System.Numerics.Matrix4x4.CreateTranslation(System.Numerics.Vector3)">Matrix4x4.CreateTranslation</see>. <br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateRotationX(System.Single)">Matrix4x4.CreateRotationX</see>. <br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateRotationY(System.Single)">Matrix4x4.CreateRotationY</see>. <br/>
              <see cref="M:System.Numerics.Matrix4x4.CreateRotationZ(System.Single)">Matrix4x4.CreateRotationZ</see>. <br/>
-             <see cref="M:System.Numerics.Matrix4x4.CreateScale(System.Single)">Matrix4x4.CreateRotationZ</see> with same factor. <br/>
-            Not allowed operations : (Sadly, SCANLAB RTC is supported 2x2 matrix only) <br/>
-             <see cref="M:System.Numerics.Matrix4x4.CreateRotationX(System.Single)">Matrix4x4.CreateRotationX</see>.<br/>
-             <see cref="M:System.Numerics.Matrix4x4.CreateRotationY(System.Single)">Matrix4x4.CreateRotationY</see>.<br/>
-             <see cref="M:System.Numerics.Matrix4x4.CreateScale(System.Single,System.Single,System.Single)">Matrix4x4.CreateRotationZ</see> with differ (or negative) factor.<br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateScale(System.Single)">Matrix4x4.CreateScale</see> with same factor. <br/>
+            Not allowed operations : <br/>
+             <see cref="M:System.Numerics.Matrix4x4.CreateScale(System.Single,System.Single,System.Single)">Matrix4x4.CreateScale</see> with differ (or negative) factor.<br/>
             </remarks>
             </summary>
             <param name="matrix">4x4 matrix<br/>Used with <see cref="T:System.Numerics.Matrix4x4">System.Numerics.Matrix4x4</see></param>

@@ -161,12 +161,12 @@
 
 **7. Version history**
 
-* 2024.4.5 v.1.25.1220
+* 2024.4.8 v.1.25.1220
   - added) select correction table entity
   - added) calculate approx. mof velocity
   - added) render stipple lines if markerable is false
   - added) ready target document at marker
-  - fixed) hit test bug at rectangle and group entity 
+  - fixed) hit test bug at rectangle, group and stl entity 
   - fixed) create grids with invalid interval   
   
 * 2024.4.2 v.1.24.1190

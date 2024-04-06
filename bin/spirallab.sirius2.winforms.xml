@@ -50,9 +50,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.arc.EndRamp_DESC">
-            <summary>
-              Looks up a localized string similar to End Ramp Factor (Default: 1.0).
-            </summary>
+             <summary>
+               Looks up a localized string similar to End Ramp Factor 
+            Default: 1.0.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.arc.EndRamp_DISP">
             <summary>
@@ -80,9 +81,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.arc.StartRamp_DESC">
-            <summary>
-              Looks up a localized string similar to Start Ramp Factor (Default: 1.0).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Start Ramp Factor 
+            Default: 1.0.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.arc.StartRamp_DISP">
             <summary>
@@ -90,9 +92,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.arc.StepAngle_DESC">
-            <summary>
-              Looks up a localized string similar to Step Angle (°) (Default: 0).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Step Angle (°) 
+            Default: 0.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.arc.StepAngle_DISP">
             <summary>
@@ -3655,9 +3658,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.line.EndRamp_DESC">
-            <summary>
-              Looks up a localized string similar to End Ramp Factor (Default: 1.0).
-            </summary>
+             <summary>
+               Looks up a localized string similar to End Ramp Factor 
+            Default: 1.0.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.line.EndRamp_DISP">
             <summary>
@@ -3676,7 +3680,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.line.Reverse_DESC">
             <summary>
-              Looks up a localized string similar to Mark with Reversed Path when Repeats.
+              Looks up a localized string similar to Reverse Start and End..
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.line.Reverse_DISP">
@@ -3695,13 +3699,24 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.line.StartRamp_DESC">
-            <summary>
-              Looks up a localized string similar to Start Ramp Factor (Default: 1.0).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Start Ramp Factor 
+            Default: 1.0.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.line.StartRamp_DISP">
             <summary>
               Looks up a localized string similar to Start ramp.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.line.Zigzag_DESC">
+            <summary>
+              Looks up a localized string similar to Zigzag.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.line.Zigzag_DISP">
+            <summary>
+              Looks up a localized string similar to Mark with Reversed Path when Repeats.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.cone">
@@ -11098,7 +11113,7 @@
             List children of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
             </summary>
             <remarks>
-            Used by internally. Do not edit operations. <br/>
+            Used by internally. Do NOT edit operations. <br/>
             <c>Children</c> are shown at <c>TreeView</c> control as <c>TreeNode</c> item(s). <br/>
             </remarks>
         </member>
@@ -11135,6 +11150,7 @@
             <remarks>
             Dimension information of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. <br/>
             Recalculated real coordinate values by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.Regen">BoundingBox.Regen</see>. <br/>
+            Do NOT set operations by manually. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Alignment">
@@ -12165,7 +12181,12 @@
             Length (mm)
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLine.IsReverseMarkWithRepeats">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLine.IsReverse">
+            <summary>
+            Reverse start/end
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLine.IsZigZag">
             <summary>
             Mark with reverse each repeat time when mark
             </summary>
@@ -19219,7 +19240,7 @@
             </summary>
             <remarks>
             User can register event handler for add entities. <br/>
-            Event will be fired when <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActAdd(SpiralLab.Sirius2.Winforms.Entity.IEntity)">ActAdd</see> has called. <br/>
+            Event will be fired when <see cref="!:ActAdd(IEntity)">ActAdd</see> has called. <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.IDocument.OnInserted">
@@ -19387,11 +19408,15 @@
             </summary>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActAdd(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
+        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActAdd(SpiralLab.Sirius2.Winforms.Entity.IEntity,System.Boolean)">
             <summary>
             Add <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> into <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">InternalData</see> and notify <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnAdded">OnAdded</see> event.
             </summary>
+            <remarks>
+            <see cref="M:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.ZoomFit(SpiralLab.Sirius2.Winforms.Entity.BoundingBox)">View.Camera.ZoomFit(entity.BBox)</see> would be called after entity has added. <br/>
+            </remarks>
             <param name="entity">Target <c>IEntity</c></param>
+            <param name="isZoomToFit">Zoom to fit at view after entity has added or not</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActAdd(SpiralLab.Sirius2.Winforms.Entity.IEntity[])">
@@ -19972,7 +19997,7 @@
             </summary>
             <param name="entity"></param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActAdd(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActAdd(SpiralLab.Sirius2.Winforms.Entity.IEntity,System.Boolean)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActAdd(SpiralLab.Sirius2.Winforms.Entity.IEntity[])">
@@ -24012,6 +24037,32 @@
             Expand/collapse when +- icon has clicked
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.ui.LicenseForm">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.LicenseForm.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.LicenseForm.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.LicenseForm.statusStrip1_TrayLocation">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Point similar to {X=17,Y=17}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.LicenseForm.toolTip1_TrayLocation">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Point similar to {X=133,Y=16}.
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -25188,7 +25239,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuAlcDefinedVector_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=172, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuAlcDefinedVector_Text">
@@ -25209,7 +25260,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuBarcode1D_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=147, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuBarcode1D_Text">
@@ -25229,7 +25280,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuData_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=172, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuData_Text">
@@ -25250,7 +25301,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuDataMatrix_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=147, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuDataMatrix_Text">
@@ -25270,7 +25321,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuJumpTo_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=172, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuJumpTo_Text">
@@ -25370,7 +25421,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuMeasurementBeginEnd_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=172, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuMeasurementBeginEnd_Text">
@@ -25390,7 +25441,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuMoF_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=172, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuMoF_Text">
@@ -25511,7 +25562,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuPDF417_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=147, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuPDF417_Text">
@@ -25531,7 +25582,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuQRCode_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=147, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuQRCode_Text">
@@ -25551,7 +25602,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuScriptEvent_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=172, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuScriptEvent_Text">
@@ -25571,7 +25622,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuSelectCorrectionTable_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=172, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuSelectCorrectionTable_Text">
@@ -25591,7 +25642,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuTimer_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=172, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuTimer_Text">
@@ -25711,7 +25762,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuZDefocus_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=172, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuZDefocus_Text">
@@ -25731,7 +25782,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuZDelta_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=188, Height=30}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=172, Height=30}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.mnuZDelta_Text">
@@ -26079,97 +26130,97 @@
               Looks up a localized resource of type System.Int32 similar to 1.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer1_Dock">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcIO_Dock">
             <summary>
               Looks up a localized resource of type System.Windows.Forms.DockStyle similar to Fill.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer1_Location">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcIO_Location">
             <summary>
               Looks up a localized resource of type System.Drawing.Point similar to {X=3,Y=3}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer1_Margin">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcIO_Margin">
             <summary>
               Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=0,Top=0,Right=0,Bottom=0}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer1_Panel1_RightToLeft">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcIO_Panel1_RightToLeft">
             <summary>
               Looks up a localized resource of type System.Windows.Forms.RightToLeft similar to No.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer1_Panel2_RightToLeft">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.RightToLeft similar to No.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer1_Size">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=742, Height=728}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer1_SplitterDistance">
-            <summary>
-              Looks up a localized resource of type System.Int32 similar to 307.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer1_SplitterWidth">
-            <summary>
-              Looks up a localized resource of type System.Int32 similar to 3.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer1_TabIndex">
-            <summary>
-              Looks up a localized resource of type System.Int32 similar to 1.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer2_Dock">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.DockStyle similar to Fill.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer2_Location">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Point similar to {X=3,Y=3}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer2_Margin">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=0,Top=0,Right=0,Bottom=0}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer2_Panel1_RightToLeft">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.RightToLeft similar to No.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer2_Panel1MinSize">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcIO_Panel1MinSize">
             <summary>
               Looks up a localized resource of type System.Int32 similar to 100.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer2_Panel2_RightToLeft">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcIO_Panel2_RightToLeft">
             <summary>
               Looks up a localized resource of type System.Windows.Forms.RightToLeft similar to No.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer2_Panel2MinSize">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcIO_Panel2MinSize">
             <summary>
               Looks up a localized resource of type System.Int32 similar to 100.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer2_Size">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcIO_Size">
             <summary>
               Looks up a localized resource of type System.Drawing.Size similar to {Width=742, Height=728}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer2_SplitterDistance">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcIO_SplitterDistance">
             <summary>
               Looks up a localized resource of type System.Int32 similar to 361.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.splitContainer2_TabIndex">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcIO_TabIndex">
+            <summary>
+              Looks up a localized resource of type System.Int32 similar to 1.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcMarker_Dock">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.DockStyle similar to Fill.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcMarker_Location">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Point similar to {X=3,Y=3}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcMarker_Margin">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=0,Top=0,Right=0,Bottom=0}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcMarker_Panel1_RightToLeft">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.RightToLeft similar to No.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcMarker_Panel2_RightToLeft">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.RightToLeft similar to No.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcMarker_Size">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=742, Height=728}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcMarker_SplitterDistance">
+            <summary>
+              Looks up a localized resource of type System.Int32 similar to 307.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcMarker_SplitterWidth">
+            <summary>
+              Looks up a localized resource of type System.Int32 similar to 3.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.spcMarker_TabIndex">
             <summary>
               Looks up a localized resource of type System.Int32 similar to 1.
             </summary>
@@ -26359,179 +26410,219 @@
               Looks up a localized resource of type System.Int32 similar to 33.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.statusStrip1_Font">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.stsBottom_Font">
             <summary>
               Looks up a localized resource of type System.Drawing.Font similar to [Font: Name=Arial, Size=9, Units=3, GdiCharSet=1, GdiVerticalFont=False].
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.statusStrip1_Location">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.stsBottom_Location">
             <summary>
               Looks up a localized resource of type System.Drawing.Point similar to {X=0,Y=1069}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.statusStrip1_Margin">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.stsBottom_Margin">
             <summary>
               Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.statusStrip1_Padding">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.stsBottom_Padding">
             <summary>
               Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=2,Top=0,Right=21,Bottom=0}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.statusStrip1_Size">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.stsBottom_Size">
             <summary>
               Looks up a localized resource of type System.Drawing.Size similar to {Width=1400, Height=31}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.statusStrip1_TabIndex">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.stsBottom_TabIndex">
             <summary>
               Looks up a localized resource of type System.Int32 similar to 29.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.statusStrip1_Text">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.stsBottom_Text">
             <summary>
-              Looks up a localized string similar to statusStrip1.
+              Looks up a localized string similar to tlsBottom.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.statusStrip1_TrayLocation">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.stsBottom_TrayLocation">
             <summary>
-              Looks up a localized resource of type System.Drawing.Point similar to {X=282,Y=18}.
+              Looks up a localized resource of type System.Drawing.Point similar to {X=251,Y=19}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl1_Dock">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabEditor_ImageKey">
             <summary>
-              Looks up a localized resource of type System.Windows.Forms.DockStyle similar to Left.
+              Looks up a localized string similar to 3D Object.png.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl1_ItemSize">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabEditor_Location">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=60, Height=28}.
+              Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=32}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl1_Location">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabEditor_Padding">
             <summary>
-              Looks up a localized resource of type System.Drawing.Point similar to {X=0,Y=0}.
+              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl1_Margin">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabEditor_Size">
             <summary>
-              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=0,Top=0,Right=0,Bottom=0}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl1_ShowToolTips">
-            <summary>
-              Looks up a localized resource of type System.Boolean similar to True.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl1_Size">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=320, Height=993}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl1_TabIndex">
-            <summary>
-              Looks up a localized resource of type System.Int32 similar to 29.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl2_Dock">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.DockStyle similar to Right.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl2_ItemSize">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=80, Height=28}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl2_Location">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Point similar to {X=1080,Y=0}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl2_Margin">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=0,Top=0,Right=0,Bottom=0}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl2_ShowToolTips">
-            <summary>
-              Looks up a localized resource of type System.Boolean similar to True.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl2_Size">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=320, Height=993}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl2_TabIndex">
-            <summary>
-              Looks up a localized resource of type System.Int32 similar to 31.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl3_Dock">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.DockStyle similar to Fill.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl3_ImeMode">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.ImeMode similar to NoControl.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl3_ItemSize">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=80, Height=28}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl3_Location">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Point similar to {X=0,Y=0}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl3_ShowToolTips">
-            <summary>
-              Looks up a localized resource of type System.Boolean similar to True.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl3_Size">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=756, Height=770}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl3_TabIndex">
-            <summary>
-              Looks up a localized resource of type System.Int32 similar to 35.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl4_Dock">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.DockStyle similar to Fill.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl4_ItemSize">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=80, Height=28}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl4_Location">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=4}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl4_Margin">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=4,Top=4,Right=4,Bottom=4}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl4_Size">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=740, Height=726}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabControl4_TabIndex">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabEditor_TabIndex">
             <summary>
               Looks up a localized resource of type System.Int32 similar to 0.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabEditor_Text">
+            <summary>
+              Looks up a localized string similar to Editor.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabEditor_ToolTipText">
+            <summary>
+              Looks up a localized string similar to Editor.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabIO_ImageKey">
+            <summary>
+              Looks up a localized string similar to Binary Code.png.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabIO_Location">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=32}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabIO_Padding">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabIO_Size">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabIO_TabIndex">
+            <summary>
+              Looks up a localized resource of type System.Int32 similar to 4.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabIO_Text">
+            <summary>
+              Looks up a localized string similar to IO.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabIO_ToolTipText">
+            <summary>
+              Looks up a localized string similar to Digital I/O.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabLaser_ImageKey">
+            <summary>
+              Looks up a localized string similar to Processor2.png.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabLaser_Location">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=32}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabLaser_Padding">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabLaser_Size">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabLaser_TabIndex">
+            <summary>
+              Looks up a localized resource of type System.Int32 similar to 2.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabLaser_Text">
+            <summary>
+              Looks up a localized string similar to Laser.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabLaser_ToolTipText">
+            <summary>
+              Looks up a localized string similar to Laser.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabManual_ImageKey">
+            <summary>
+              Looks up a localized string similar to light_on_24px.png.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabManual_Location">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=32}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabManual_Padding">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabManual_Size">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabManual_TabIndex">
+            <summary>
+              Looks up a localized resource of type System.Int32 similar to 5.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabManual_Text">
+            <summary>
+              Looks up a localized string similar to Manual.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabManual_ToolTipText">
+            <summary>
+              Looks up a localized string similar to Manual.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabMarker_ImageKey">
+            <summary>
+              Looks up a localized string similar to Design.png.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabMarker_Location">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=32}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabMarker_Padding">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabMarker_Size">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabMarker_TabIndex">
+            <summary>
+              Looks up a localized resource of type System.Int32 similar to 3.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabMarker_Text">
+            <summary>
+              Looks up a localized string similar to Marker.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabMarker_ToolTipText">
+            <summary>
+              Looks up a localized string similar to Marker.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage1_ImageKey">
@@ -26572,111 +26663,6 @@
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage1_ToolTipText">
             <summary>
               Looks up a localized string similar to Layer.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage10_ImageKey">
-            <summary>
-              Looks up a localized string similar to Video Card.png.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage10_Location">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=32}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage10_Padding">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage10_Size">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage10_TabIndex">
-            <summary>
-              Looks up a localized resource of type System.Int32 similar to 7.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage10_Text">
-            <summary>
-              Looks up a localized string similar to RTC.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage10_ToolTipText">
-            <summary>
-              Looks up a localized string similar to RTC.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage13_ImageKey">
-            <summary>
-              Looks up a localized string similar to csharp.ico.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage13_Location">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=32}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage13_Padding">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage13_Size">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage13_TabIndex">
-            <summary>
-              Looks up a localized resource of type System.Int32 similar to 10.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage13_Text">
-            <summary>
-              Looks up a localized string similar to Script.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage13_ToolTipText">
-            <summary>
-              Looks up a localized string similar to Script File.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage14_ImageKey">
-            <summary>
-              Looks up a localized string similar to Graph2.png.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage14_Location">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=32}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage14_Margin">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=4,Top=4,Right=4,Bottom=4}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage14_Padding">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=4,Top=4,Right=4,Bottom=4}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage14_Size">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage14_TabIndex">
-            <summary>
-              Looks up a localized resource of type System.Int32 similar to 11.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage14_Text">
-            <summary>
-              Looks up a localized string similar to Power.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage15_ImageKey">
@@ -26789,41 +26775,6 @@
               Looks up a localized string similar to Block.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage3_ImageKey">
-            <summary>
-              Looks up a localized string similar to light_on_24px.png.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage3_Location">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=32}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage3_Padding">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage3_Size">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage3_TabIndex">
-            <summary>
-              Looks up a localized resource of type System.Int32 similar to 5.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage3_Text">
-            <summary>
-              Looks up a localized string similar to Manual.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage3_ToolTipText">
-            <summary>
-              Looks up a localized string similar to Manual.
-            </summary>
-        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage4_ImageKey">
             <summary>
               Looks up a localized string similar to Property.png.
@@ -26854,219 +26805,319 @@
               Looks up a localized string similar to  Property .
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage5_ImageKey">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPower_ImageKey">
             <summary>
-              Looks up a localized string similar to Design.png.
+              Looks up a localized string similar to Graph2.png.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage5_Location">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=32}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage5_Padding">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage5_Size">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage5_TabIndex">
-            <summary>
-              Looks up a localized resource of type System.Int32 similar to 3.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage5_Text">
-            <summary>
-              Looks up a localized string similar to Marker.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage5_ToolTipText">
-            <summary>
-              Looks up a localized string similar to Marker.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage6_ImageKey">
-            <summary>
-              Looks up a localized string similar to 3D Object.png.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage6_Location">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPower_Location">
             <summary>
               Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=32}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage6_Padding">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPower_Margin">
             <summary>
-              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
+              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=4,Top=4,Right=4,Bottom=4}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage6_Size">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPower_Padding">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=4,Top=4,Right=4,Bottom=4}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPower_Size">
             <summary>
               Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage6_TabIndex">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPower_TabIndex">
             <summary>
-              Looks up a localized resource of type System.Int32 similar to 0.
+              Looks up a localized resource of type System.Int32 similar to 11.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage6_Text">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPower_Text">
             <summary>
-              Looks up a localized string similar to Editor.
+              Looks up a localized string similar to Power.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage6_ToolTipText">
-            <summary>
-              Looks up a localized string similar to Editor.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage7_ImageKey">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabRemote_ImageKey">
             <summary>
               Looks up a localized string similar to RS-232 Male.png.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage7_Location">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabRemote_Location">
             <summary>
               Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=32}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage7_Padding">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabRemote_Padding">
             <summary>
               Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage7_Size">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabRemote_Size">
             <summary>
               Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage7_TabIndex">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabRemote_TabIndex">
             <summary>
               Looks up a localized resource of type System.Int32 similar to 6.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage7_Text">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabRemote_Text">
             <summary>
               Looks up a localized string similar to Remote.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage7_ToolTipText">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabRemote_ToolTipText">
             <summary>
               Looks up a localized string similar to Remote.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage8_ImageKey">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.TabRTC_ImageKey">
             <summary>
-              Looks up a localized string similar to Processor2.png.
+              Looks up a localized string similar to Video Card.png.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage8_Location">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=32}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage8_Padding">
-            <summary>
-              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage8_Size">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage8_TabIndex">
-            <summary>
-              Looks up a localized resource of type System.Int32 similar to 2.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage8_Text">
-            <summary>
-              Looks up a localized string similar to Laser.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage8_ToolTipText">
-            <summary>
-              Looks up a localized string similar to Laser.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage9_ImageKey">
-            <summary>
-              Looks up a localized string similar to Binary Code.png.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage9_Location">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.TabRTC_Location">
             <summary>
               Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=32}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage9_Padding">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.TabRTC_Padding">
             <summary>
               Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage9_Size">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.TabRTC_Size">
             <summary>
               Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage9_TabIndex">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.TabRTC_TabIndex">
             <summary>
-              Looks up a localized resource of type System.Int32 similar to 4.
+              Looks up a localized resource of type System.Int32 similar to 7.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage9_Text">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.TabRTC_Text">
             <summary>
-              Looks up a localized string similar to IO.
+              Looks up a localized string similar to RTC.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabPage9_ToolTipText">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.TabRTC_ToolTipText">
             <summary>
-              Looks up a localized string similar to Digital I/O.
+              Looks up a localized string similar to RTC.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop_Font">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabScript_ImageKey">
             <summary>
-              Looks up a localized resource of type System.Drawing.Font similar to [Font: Name=Arial, Size=9, Units=3, GdiCharSet=1, GdiVerticalFont=False].
+              Looks up a localized string similar to csharp.ico.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop_Location">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabScript_Location">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=32}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabScript_Padding">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabScript_Size">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=748, Height=734}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabScript_TabIndex">
+            <summary>
+              Looks up a localized resource of type System.Int32 similar to 10.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabScript_Text">
+            <summary>
+              Looks up a localized string similar to Script.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tabScript_ToolTipText">
+            <summary>
+              Looks up a localized string similar to Script File.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcLeft_Dock">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.DockStyle similar to Left.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcLeft_ItemSize">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=60, Height=28}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcLeft_Location">
             <summary>
               Looks up a localized resource of type System.Drawing.Point similar to {X=0,Y=0}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop_Margin">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcLeft_Margin">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=0,Top=0,Right=0,Bottom=0}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcLeft_ShowToolTips">
+            <summary>
+              Looks up a localized resource of type System.Boolean similar to True.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcLeft_Size">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=320, Height=993}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcLeft_TabIndex">
+            <summary>
+              Looks up a localized resource of type System.Int32 similar to 29.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcMain_Dock">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.DockStyle similar to Fill.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcMain_ImeMode">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.ImeMode similar to NoControl.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcMain_ItemSize">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=80, Height=28}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcMain_Location">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Point similar to {X=0,Y=0}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcMain_ShowToolTips">
+            <summary>
+              Looks up a localized resource of type System.Boolean similar to True.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcMain_Size">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=756, Height=770}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcMain_TabIndex">
+            <summary>
+              Looks up a localized resource of type System.Int32 similar to 35.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcPower_Dock">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.DockStyle similar to Fill.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcPower_ItemSize">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=80, Height=28}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcPower_Location">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=4}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcPower_Margin">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=4,Top=4,Right=4,Bottom=4}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcPower_Size">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=740, Height=726}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcPower_TabIndex">
+            <summary>
+              Looks up a localized resource of type System.Int32 similar to 0.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcRight_Dock">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.DockStyle similar to Right.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcRight_ItemSize">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=80, Height=28}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcRight_Location">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Point similar to {X=1080,Y=0}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcRight_Margin">
+            <summary>
+              Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=0,Top=0,Right=0,Bottom=0}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcRight_ShowToolTips">
+            <summary>
+              Looks up a localized resource of type System.Boolean similar to True.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcRight_Size">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=320, Height=993}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tbcRight_TabIndex">
+            <summary>
+              Looks up a localized resource of type System.Int32 similar to 31.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop1_Font">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Font similar to [Font: Name=Arial, Size=9, Units=3, GdiCharSet=1, GdiVerticalFont=False].
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop1_Location">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Point similar to {X=0,Y=0}.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop1_Margin">
             <summary>
               Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop_Padding">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop1_Padding">
             <summary>
               Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=3,Top=3,Right=3,Bottom=3}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop_Size">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop1_Size">
             <summary>
               Looks up a localized resource of type System.Drawing.Size similar to {Width=1400, Height=37}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop_TabIndex">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop1_TabIndex">
             <summary>
               Looks up a localized resource of type System.Int32 similar to 18.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop_Text">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop1_Text">
             <summary>
-              Looks up a localized string similar to toolStrip1.
+              Looks up a localized string similar to tlsTop1.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop_TrayLocation">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop1_TrayLocation">
             <summary>
-              Looks up a localized resource of type System.Drawing.Point similar to {X=212,Y=13}.
+              Looks up a localized resource of type System.Drawing.Point similar to {X=29,Y=13}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop2_Font">
@@ -27101,7 +27152,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop2_Text">
             <summary>
-              Looks up a localized string similar to toolStrip2.
+              Looks up a localized string similar to tlsTop2.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.tlsTop2_TrayLocation">
@@ -27161,7 +27212,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripMenuItem2_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=185, Height=6}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=144, Height=6}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripMenuItem4_Size">
@@ -27251,7 +27302,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripStatusLabel10_Size">
             <summary>
-              Looks up a localized resource of type System.Drawing.Size similar to {Width=336, Height=26}.
+              Looks up a localized resource of type System.Drawing.Size similar to {Width=305, Height=26}.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.toolStripStatusLabel11_AutoSize">
@@ -27364,62 +27415,62 @@
               Looks up a localized resource of type System.Drawing.Size similar to {Width=4, Height=26}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.treeViewBlockControl1_Dock">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.trvBlock_Dock">
             <summary>
               Looks up a localized resource of type System.Windows.Forms.DockStyle similar to Fill.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.treeViewBlockControl1_Font">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.trvBlock_Font">
             <summary>
               Looks up a localized resource of type System.Drawing.Font similar to [Font: Name=Arial, Size=9, Units=3, GdiCharSet=1, GdiVerticalFont=False].
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.treeViewBlockControl1_Location">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.trvBlock_Location">
             <summary>
               Looks up a localized resource of type System.Drawing.Point similar to {X=4,Y=4}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.treeViewBlockControl1_Margin">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.trvBlock_Margin">
             <summary>
               Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=0,Top=0,Right=0,Bottom=0}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.treeViewBlockControl1_Size">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.trvBlock_Size">
             <summary>
               Looks up a localized resource of type System.Drawing.Size similar to {Width=304, Height=949}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.treeViewBlockControl1_TabIndex">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.trvBlock_TabIndex">
             <summary>
               Looks up a localized resource of type System.Int32 similar to 1.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.treeViewControl1_Dock">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.trvEntity_Dock">
             <summary>
               Looks up a localized resource of type System.Windows.Forms.DockStyle similar to Fill.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.treeViewControl1_Font">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.trvEntity_Font">
             <summary>
               Looks up a localized resource of type System.Drawing.Font similar to [Font: Name=Arial, Size=9, Units=3, GdiCharSet=1, GdiVerticalFont=False].
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.treeViewControl1_Location">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.trvEntity_Location">
             <summary>
               Looks up a localized resource of type System.Drawing.Point similar to {X=0,Y=0}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.treeViewControl1_Margin">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.trvEntity_Margin">
             <summary>
               Looks up a localized resource of type System.Windows.Forms.Padding similar to {Left=0,Top=0,Right=0,Bottom=0}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.treeViewControl1_Size">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.trvEntity_Size">
             <summary>
               Looks up a localized resource of type System.Drawing.Size similar to {Width=304, Height=738}.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.treeViewControl1_TabIndex">
+        <member name="P:SpiralLab.Sirius2.Winforms.ui.SiriusEditorControl.trvEntity_TabIndex">
             <summary>
               Looks up a localized resource of type System.Int32 similar to 25.
             </summary>

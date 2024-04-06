@@ -16,7 +16,7 @@
  *                `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Laser Source (RS-232 communication power control)
+ * Description : Laser Source (RS-232C communication power control)
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -40,9 +40,9 @@ using SpiralLab.Sirius2.Scanner.Rtc;
 namespace Demos
 {
     /// <summary>
-    /// RS232 communication to power control
+    /// RS232C communication to power control
     /// </summary>
-    /// <remarks>Used with RS232 port at RTC card</remarks>
+    /// <remarks>Used with RS232C port at RTC card</remarks>
     public class MyLaserRS232
         : ILaser
         , ILaserPowerControl
