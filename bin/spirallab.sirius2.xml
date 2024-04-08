@@ -304,7 +304,7 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Config">
             <summary>
-            Configuration for <c>SpiralLab.Sirius2</c> library
+            Configuration for <c>spirallab.sirius2.dll</c> library
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Config.AssemblyName">
@@ -340,6 +340,15 @@
             <remarks>
             Default: <c>True</c> <br/>
             Meaningful when user output program type as Console. <br/>
+            Should be configured before do <see cref="M:SpiralLab.Sirius2.Core.Initialize">Core.Initialize</see>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Config.LogMaxArchiveDays">
+            <summary>
+            Max. log archive days
+            </summary>
+            <remarks>
+            Default: 60 days <br/>
             Should be configured before do <see cref="M:SpiralLab.Sirius2.Core.Initialize">Core.Initialize</see>. <br/>
             </remarks>
         </member>
@@ -392,8 +401,8 @@
             </summary>
             <remarks>
             Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "gnuplot", "gnuplot.exe")</c> <br/>
-             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcMeasurementHelper">RtcMeasurementHelper</see>. <br/>
-            Copy gnuplot program into gnuplot directory from <seealso href="http://tmacchant33.starfree.jp/gnuplot_bin.html">Download link</seealso>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcMeasurementHelper">RtcMeasurementHelper</see>. <br/>
+            Also, copy gnuplot program into gnuplot directory from <seealso href="http://tmacchant33.starfree.jp/gnuplot_bin.html">Download link</seealso>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.CorrectionPath">
@@ -9733,17 +9742,17 @@
             <summary>
             Create Quaternion by yaw, pitch and roll
             </summary>
-            <param name="yaw"></param>
-            <param name="pitch"></param>
-            <param name="roll"></param>
-            <returns></returns>
+            <param name="yaw">Yaw</param>
+            <param name="pitch">Ritch</param>
+            <param name="roll">Roll</param>
+            <returns><c>Quaternion</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.MathHelper.ToEulerAngles(System.Numerics.Quaternion)">
             <summary>
-            Quaternion to Vector3
+            Extension for Quaternion to Vector3
             </summary>
-            <param name="q"></param>
-            <returns></returns>
+            <param name="q"><c>Quaternion</c></param>
+            <returns><c>System.Numerics.Vector3</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.MathHelper.GetDecimalPlaces(System.Decimal)">
             <summary>
@@ -9757,7 +9766,7 @@
             Decimal place (or counts)
             </summary>
             <param name="n">Double value</param>
-            <returns></returns>
+            <returns>Place</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Mathematics.IMatrixStack`1">
             <summary>
@@ -10018,6 +10027,11 @@
         <member name="T:SpiralLab.Sirius2.PowerMap.PowerMapFactory">
             <summary>
             PowerMapFactory
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapFactory.#ctor">
+            <summary>
+            Constructor
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapFactory.CreatePowerMapDefault(System.Int32,System.String)">
@@ -10721,6 +10735,11 @@
             Powermap serializer
             </summary>
         </member>
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapSerializer.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapSerializer.Open(System.String,SpiralLab.Sirius2.PowerMap.IPowerMap)">
             <summary>
             Open <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.InternalData">IPowerMap.InternalData</see> from file
@@ -10969,7 +10988,7 @@
             <summary>
             Initialize device(s)
             </summary>
-            <returns></returns>
+            <returns>Success of failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.CtlStart(System.String)">
             <summary>
@@ -10978,8 +10997,8 @@
             <remarks>
             Notify <see cref="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnStarted">OnStarted</see> and <see cref="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnMeasured">OnMeasured</see> event. <br/>
             </remarks>
-            <param name="category">Target(or current) category(or series)</param>
-            <returns></returns>
+            <param name="category">Target(or current) category(or series)<br/>Default: ""</param>
+            <returns>Success of failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.CtlStop">
             <summary>
@@ -10988,7 +11007,7 @@
             <remarks>
             Notify <see cref="E:SpiralLab.Sirius2.PowerMeter.IPowerMeter.OnStopped">OnStopped</see> event. <br/>
             </remarks>
-            <returns></returns>
+            <returns>Success of failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.IPowerMeter.CtlClear">
             <summary>
@@ -12425,11 +12444,11 @@
             <summary>
             Calculate encoder counts to approx. speed (mm/s)
             </summary>
-            <param name="encX"></param>
-            <param name="encY"></param>
-            <param name="encXmm"></param>
-            <param name="encYmm"></param>
-            <returns></returns>
+            <param name="encX">Measured encoder x(0)</param>
+            <param name="encY">Measured encoder y(1)</param>
+            <param name="encXmm">Approx. x (mm)</param>
+            <param name="encYmm">Approx. y (mm)</param>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlMofEncoderSpeed(System.Double,System.Double)">
             <inheritdoc/>  
@@ -14314,11 +14333,11 @@
             <summary>
             Calculate encoder counts to approx. speed (mm/s)
             </summary>
-            <param name="encX"></param>
-            <param name="encY"></param>
-            <param name="encXmm"></param>
-            <param name="encYmm"></param>
-            <returns></returns>
+            <param name="encX">Measured encoder x(0)</param>
+            <param name="encY">Measured encoder y(1)</param>
+            <param name="encXmm">Approx. x (mm)</param>
+            <param name="encYmm">Approx. y (mm)</param>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlMofEncoderSpeed(System.Double,System.Double)">
             <inheritdoc/>  
@@ -19304,7 +19323,7 @@
             <summary>
             <para>List x,y (or rotate) MoF end</para>
             </summary>
-            <param name="vJumpPosition">Jump x,y,z position (mm)</param>
+            <param name="jumpPosition">Jump x,y,z position (mm)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListRepeatCall(System.UInt32,System.UInt32)">
@@ -23365,7 +23384,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofLimits(System.Numerics.Vector2,System.Numerics.Vector2)">
             <summary>
-            <para>List wait until x,y encoders reached in-range</para>
+            List wait until x,y encoders reached in-range
             </summary>
             <param name="rangeX">X range (mm)</param>
             <param name="rangeY">Y range (mm)</param>
@@ -23757,7 +23776,7 @@
             </remarks>
             <param name="mode"><c>RasterModes</c></param>
             <param name="usec">Pixel period (usec)<br/>Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">RasterModes.MicroVector</see><br/></param>
-            <param name="vPitch">Pixel pitch (dx, dy) (mm)</param>
+            <param name="pitch">Pixel pitch (dx, dy) (mm)</param>
             <param name="pixelCount">Pixel counts per line</param>
             <param name="ext">Output analog channel (1 or 2) (Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">RasterModes.MicroVector</see> only)</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
@@ -23788,7 +23807,7 @@
             </remarks>
             <param name="mode"><c>RasterModes</c></param>
             <param name="usec">Pixel period (usec)<br/>Min. time resolution: 1/128(= 0.0078125) usec <br/>Used with <c>RasterModes.MicroVector</c> only<br/></param>
-            <param name="vPitch">Pixel pitch (dx, dy, dz) (mm)</param>
+            <param name="pitch">Pixel pitch (dx, dy, dz) (mm)</param>
             <param name="pixelCount">Pixel counts per line</param>
             <param name="ext">Output analog channel (1 or 2) (Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">RasterModes.MicroVector</see> only)</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
@@ -35672,10 +35691,23 @@
             Programmed by Toughman from <seealso href="http://www.youngsoft.co.kr/">(c)Youngsoft</seealso> <br/>
             </remarks>
         </member>
+        <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedCategoryAttribute">
             <summary>
             Category attribute
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedCategoryAttribute.Localize(System.String,System.Type)">
+            <summary>
+            Localize
+            </summary>
+            <param name="key">Key string</param>
+            <param name="classType"><c>Type</c> of class</param>
+            <returns></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedCategoryAttribute.#ctor(System.String,System.Type)">
             <summary>
@@ -35697,6 +35729,19 @@
             Display name attribute
             </summary>
         </member>
+        <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDisplayNameAttribute.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDisplayNameAttribute.Localize(System.String,System.Type)">
+            <summary>
+            Localize
+            </summary>
+            <param name="key">Key string</param>
+            <param name="classType"><c>Type</c> of class</param>
+            <returns></returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDisplayNameAttribute.#ctor(System.String,System.Type)">
             <summary>
             _DISP
@@ -35716,6 +35761,19 @@
             <summary>
             Description attribute
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDescriptionAttribute.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDescriptionAttribute.Localize(System.String,System.Type)">
+            <summary>
+            Localize
+            </summary>
+            <param name="key">Key string</param>
+            <param name="classType"><c>Type</c> of class</param>
+            <returns></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDescriptionAttribute.#ctor(System.String,System.Type)">
             <summary>

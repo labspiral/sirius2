@@ -99,6 +99,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SiriusEditorControl.ko-KR.resx">
+      <DependentUpon>SiriusEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SiriusEditorControl.resx">
       <DependentUpon>SiriusEditorControl.cs</DependentUpon>
     </EmbeddedResource>

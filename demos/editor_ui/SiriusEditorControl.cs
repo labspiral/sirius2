@@ -46,6 +46,8 @@ using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Common;
 using SpiralLab.Sirius2.Winforms.Remote;
+using SpiralLab.Sirius2.Scanner;
+using SpiralLab.Sirius2.Winforms.Script;
 using OpenTK;
 
 namespace Demos
@@ -77,13 +79,13 @@ namespace Demos
     public partial class SiriusEditorUserControl : Form
     {
         /// <summary>
-        /// Event for before open sirius file at <c>SiriusEditorUserControl</c>
+        /// Event for before open sirius file at <see cref="SiriusEditorUserControl">SiriusEditorUserControl</see>
         /// </summary>
         /// <remarks>
         /// User can register event handler for customized dialog-box before open sirius file. <br/>
-        /// Event will be fired when user has click 'Open' menu at <c>SiriusEditorUserControl</c>. <br/>
+        /// Event will be fired when user has click 'Open' menu at <see cref="SiriusEditorUserControl">SiriusEditorUserControl</see>. <br/>
         /// If user event handler is not attached, default routine has executed. <br/>
-        /// If returned 'False', default routine would be executed. <br/>
+        /// If returned <c>False</c>, default routine would be executed. <br/>
         /// </remarks>
         public event Func<SiriusEditorUserControl, bool> OnOpenBefore;
         /// <summary>
@@ -101,13 +103,13 @@ namespace Demos
             return success;
         }
         /// <summary>
-        /// Event for save sirius file at <c>SiriusEditorUserControl</c>
+        /// Event for save sirius file at <see cref="SiriusEditorUserControl">SiriusEditorUserControl</see>
         /// </summary>
         /// <remarks>
         /// User can register event handler for customized dialog-box before save sirius file. <br/>
-        /// Event will be fired when user has click 'Save' menu at <c>SiriusEditorUserControl</c>. <br/>
+        /// Event will be fired when user has click 'Save' menu at <see cref="SiriusEditorUserControl">SiriusEditorUserControl</see>. <br/>
         /// If user event handler is not attached, default routine has executed. <br/>
-        /// If returned 'False', default routine would be executed. <br/>
+        /// If returned <c>False</c>, default routine would be executed. <br/>
         /// </remarks>
         public event Func<SiriusEditorUserControl, bool> OnSaveBefore;
         /// <summary>
@@ -179,11 +181,11 @@ namespace Demos
         private bool isDisableControl;
 
         /// <summary>
-        /// <c>IDocument</c> (aka. Recipe data)
+        /// <see cref="IDocument">IDocument</see> (aka. Recipe data)
         /// </summary>
         /// <remarks>
-        /// <c>Document</c> would be created by <c>OnLoad</c> event handler.<br/>
-        /// Do action by <c>IDocument.Act...</c> functions. <br/>
+        /// Created by internally. <br/>
+        /// <see cref="IDocument">IDocument</see> would be created by <see cref="OnLoad(EventArgs)">OnLoad</see> event handler.<br/>
         /// </remarks>
         public IDocument Document
         {
@@ -233,10 +235,10 @@ namespace Demos
         private IDocument document;
 
         /// <summary>
-        /// <c>IRtc</c>
+        /// <see cref="IRtc">IRtc</see>
         /// </summary>
         /// <remarks>
-        /// Created by <c>ScannerFactory</c>. <br/>
+        /// Created by <see cref="ScannerFactory">ScannerFactory</see>. <br/>
         /// </remarks>
         public IRtc Rtc
         {
@@ -276,10 +278,10 @@ namespace Demos
         private IRtc rtc;
 
         /// <summary>
-        /// <c>ILaser</c>
+        /// <see cref="ILaser">ILaser</see>
         /// </summary>
         /// <remarks>
-        /// Created by <c>LaserFactory</c>. <br/>
+        /// Created by <see cref="LaserFactory">LaserFactory</see>. <br/>
         /// </remarks>
         public ILaser Laser
         {
@@ -312,10 +314,10 @@ namespace Demos
         private ILaser laser;
 
         /// <summary>
-        /// <c>IMarker</c>
+        /// <see cref="IMarker">IMarker</see>
         /// </summary>
         /// <remarks>
-        /// Created by <c>MarkerFactory</c>. <br/>
+        /// Created by <see cref="MarkerFactory">MarkerFactory</see>. <br/>
         /// </remarks>
         public IMarker Marker
         {
@@ -349,7 +351,7 @@ namespace Demos
         private IMarker marker;
 
         /// <summary>
-        /// <c>IView</c>
+        /// <see cref="IView">IView</see>
         /// </summary>
         /// <remarks>
         /// Created by internally. <br/>
@@ -361,11 +363,10 @@ namespace Demos
         }
 
         /// <summary>
-        /// <c>IRemote</c>
+        /// <see cref="IRemote">IRemote</see>
         /// </summary>
         /// <remarks>
-        /// Created by <c>RemoteFactory</c>. <br/>
-        /// To do control by remotely. <br/>
+        /// Created by <see cref="RemoteFactory">RemoteFactory</see>. <br/>
         /// </remarks>
         public IRemote Remote 
         {
@@ -389,11 +390,10 @@ namespace Demos
         private IRemote remote;
 
         /// <summary>
-        /// <c>IPowerMeter</c>
+        /// <see cref="IPowerMeter">IPowerMeter</see>
         /// </summary>
         /// <remarks>
-        /// Created by <c>PowerMeterFactory</c>. <br/>
-        /// To do control <c>IPowerMeter</c>. <br/>
+        /// Created by <see cref="PowerMeterFactory">PowerMeterFactory</see>. <br/>
         /// </remarks>
         public IPowerMeter PowerMeter
         {
@@ -424,10 +424,13 @@ namespace Demos
             }
         }
         private IPowerMeter powerMeter;
-            
+
         /// <summary>
         /// RTC DI extension1 port (16 bits)
         /// </summary>
+        /// <remarks>
+        /// Created by <see cref="IOFactory">IOFactory</see>. <br/>
+        /// </remarks>
         public IDInput DIExt1 
         { 
             get { return dIExt1; }
@@ -447,6 +450,9 @@ namespace Demos
         /// <summary>
         /// RTC DI laser port (2 bits)
         /// </summary>
+        /// <remarks>
+        /// Created by <see cref="IOFactory">IOFactory</see>. <br/>
+        /// </remarks>
         public IDInput DILaserPort
         {
             get { return dILaserPort; }
@@ -467,6 +473,9 @@ namespace Demos
         /// <summary>
         /// RTC DO extension1 port (16 bits)
         /// </summary>
+        /// <remarks>
+        /// Created by <see cref="IOFactory">IOFactory</see>. <br/>
+        /// </remarks>
         public IDOutput DOExt1
         {
             get { return dOExt1; }
@@ -487,6 +496,9 @@ namespace Demos
         /// <summary>
         /// RTC DO extension2 port (8 bits)
         /// </summary>
+        /// <remarks>
+        /// Created by <see cref="IOFactory">IOFactory</see>. <br/>
+        /// </remarks>
         public IDOutput DOExt2
         {
             get { return dOExt2; }
@@ -507,6 +519,9 @@ namespace Demos
         /// <summary>
         /// RTC DO laser port (2 bits)
         /// </summary>
+        /// <remarks>
+        /// Created by <see cref="IOFactory">IOFactory</see>. <br/>
+        /// </remarks>
         public IDOutput DOLaserPort
         {
             get { return dOLaserPort; }
@@ -526,21 +541,21 @@ namespace Demos
         private IDOutput dOLaserPort;
 
         /// <summary>
-        /// Treeview user control for <c>IEntity</c> within <c>EntityLayer</c> nodes
+        /// Treeview user control for <see cref="IEntity">IEntity</see> within <see cref="EntityLayer">EntityLayer</see> nodes
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl TreeViewCtrl
         { 
             get { return trvEntity; } 
         }
         /// <summary>
-        /// Treeview user control for <c>EntityBlock</c> nodes
+        /// Treeview user control for <see cref="EntityBlock">EntityBlock</see> nodes
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl TreeViewBlockCtrl
         {
             get { return trvBlock; }
         }
         /// <summary>
-        /// PropertyGrid user control for properties of <c>IEntity</c>
+        /// PropertyGrid user control for properties of <see cref="IEntity">IEntity</see>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl PropertyGridCtrl
         {
@@ -554,49 +569,49 @@ namespace Demos
             get { return editorControl1; }
         }
         /// <summary>
-        /// User control for list of <c>EntityPen</c>
+        /// User control for list of <see cref="EntityPen">EntityPen</see>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.PenUserControl PenCtrl
         {
             get { return penControl1; }
         }
         /// <summary>
-        /// PropertyGrid user control for <c>ILaser</c>
+        /// PropertyGrid user control for <see cref="ILaser">ILaser</see>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.LaserUserControl LaserCtrl
         {
             get { return laserControl1; }
         }
         /// <summary>
-        /// PropertyGrid user control for <c>IRtc</c>
+        /// PropertyGrid user control for <see cref="IRtc">IRtc</see>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.RtcUserControl RtcCtrl
         {
             get { return rtcControl1; }
         }
         /// <summary>
-        /// PropertyGrid user control for <c>IMarer</c>
+        /// PropertyGrid user control for <see cref="IMarker">IMarker</see>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.MarkerUserControl MarkerCtrl
         {
             get { return markerControl1; }
         }
         /// <summary>
-        /// User control for list of <c>IMarker.Offsets</c>
+        /// User control for list of <see cref="IMarker.Offsets">IMarker.Offsets</see>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.OffsetUserControl OffsetCtrl
         {
             get { return offsetControl1; }
         }
         /// <summary>
-        /// User control for RTC DI (extension 1 and laser port)
+        /// User control for RTC DI (extension 1 and laser port) for <see cref="IDInput">IDInput</see>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl RtcDICtrl
         {
             get { return rtcDIUserControl1; }
         }
         /// <summary>
-        /// User control for RTC DO (extension 1,2 and laser port)
+        /// User control for RTC DO (extension 1,2 and laser port) for <see cref="IDOutput">IDOutput</see>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl RtcDOCtrl
         {
@@ -610,28 +625,28 @@ namespace Demos
             get { return manualUserControl1; }
         }
         /// <summary>
-        /// User control for <c>IPowerMeter</c>
+        /// User control for for <see cref="IPowerMeter">IPowerMeter</see>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl PowerMeterCtrl
         {
             get { return powerMeterControl1; }
         }
         /// <summary>
-        ///  User control for <c>IPowerMap</c>
+        ///  User control for <see cref="IPowerMap">IPowerMap</see>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl PowerMapCtrl
         {
             get { return powerMapControl1; }
         }
         /// <summary>
-        /// User control for <c>IScript</c>
+        /// User control for <see cref="IScript">IScript</see>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.ScriptUserControl ScriptCtrl
         {
             get { return scriptControlControl1; }
         }
         /// <summary>
-        /// PropertyGrid user control for <c>IRemote</c>
+        /// PropertyGrid user control for <see cref="IRemote">IRemote</see>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.RemoteUserControl RemoteCtrl
         {
@@ -740,7 +755,6 @@ namespace Demos
             lblRemote.DoubleClick += LblRemote_DoubleClick;
             lblRemote.DoubleClickEnabled = true;
         }
-
 
 
         /// <inheritdoc/>
