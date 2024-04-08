@@ -112,8 +112,9 @@
             this.mnuWaitDataExt16EdgeCond = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuScriptEvent = new System.Windows.Forms.ToolStripMenuItem();
             this.tlsTop1 = new System.Windows.Forms.ToolStrip();
-            this.btnAbout = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnAbout = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.btnNew = new System.Windows.Forms.ToolStripButton();
             this.btnOpen = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
@@ -134,6 +135,9 @@
             this.mnuMarginRight = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMarginTop = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMarginBottom = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnLock = new System.Windows.Forms.ToolStripButton();
             this.stsBottom = new System.Windows.Forms.StatusStrip();
             this.lblName = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -862,8 +866,9 @@
             this.tlsTop1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tlsTop1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.tlsTop1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAbout,
             this.toolStripSeparator5,
+            this.btnAbout,
+            this.toolStripSeparator6,
             this.btnNew,
             this.btnOpen,
             this.btnSave,
@@ -879,8 +884,16 @@
             this.toolStripSeparator9,
             this.btnDelete,
             this.toolStripSeparator10,
-            this.ddbAlign});
+            this.ddbAlign,
+            this.toolStripSeparator1,
+            this.toolStripSeparator4,
+            this.btnLock});
             this.tlsTop1.Name = "tlsTop1";
+            // 
+            // toolStripSeparator5
+            // 
+            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
             // 
             // btnAbout
             // 
@@ -888,10 +901,10 @@
             resources.ApplyResources(this.btnAbout, "btnAbout");
             this.btnAbout.Name = "btnAbout";
             // 
-            // toolStripSeparator5
+            // toolStripSeparator6
             // 
-            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
             // 
             // btnNew
             // 
@@ -1013,6 +1026,25 @@
             this.mnuMarginBottom.AutoToolTip = true;
             resources.ApplyResources(this.mnuMarginBottom, "mnuMarginBottom");
             this.mnuMarginBottom.Name = "mnuMarginBottom";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            // 
+            // btnLock
+            // 
+            this.btnLock.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnLock.CheckOnClick = true;
+            this.btnLock.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.btnLock, "btnLock");
+            this.btnLock.Name = "btnLock";
             // 
             // stsBottom
             // 
@@ -1512,5 +1544,9 @@
         private SpiralLab.Sirius2.Winforms.UI.OffsetUserControl offsetControl1;
         private SpiralLab.Sirius2.Winforms.UI.MarkerUserControl markerControl1;
         private System.Windows.Forms.ToolStripMenuItem mnuSelectCorrectionTable;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnLock;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }

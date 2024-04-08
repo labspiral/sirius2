@@ -1518,6 +1518,8 @@
             Digital output for extension1 port at RTC card.<br/>
             <img src="images/rtc6pciex.png"/><br/>
             Used with <c>ExtensionChannels.ExtDO16</c> at Fig 4.<br/>
+            RTC5 : By Jumper <c>JP1</c> on the lower side of the RTC5, the level of all output signals at the EXTENSION 1 socket connector can be configured for 5 V or 3.3 V <br/>
+            RTC6 : The solder jumper field A is located on the lower side of the RTC6 PCIe Board, It is used to set the level(5 V or 3.3 V) of all output signals at the EXTENSION 1 socket connector. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.#ctor(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String)">
@@ -1558,6 +1560,11 @@
             Digital output for extension2 port at RTC card.<br/>
             <img src="images/rtc6pciex.png"/><br/>
             Used with <c>ExtensionChannels.ExtDO8</c> at Fig 5.<br/>
+            RTC5 : By the jumpers JP2…JP8 on the lower side of the RTC5. pins(15) and(17) of the EXTENSION 2 socket connector can be configured. <br/>
+            RTC6 : The solder jumper field B is located on the lower side of the RTC6 PCIe Board. It serves to configure the signal at pin(17) of the EXTENSION 2 socket connector. <br/>
+            The most significant bit (DATA7) of the 8-bit output value can be assigned to pin(15) or to pin(17). <br/>
+            Alternatively, each of the two pins can be set permanently to +5 V(HIGH) or to GND(LOW level). <br/>
+            Alternatively, pin(17) can be configured for the LATCH signal by closing the correspondingly labeled jumper. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.#ctor(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String)">

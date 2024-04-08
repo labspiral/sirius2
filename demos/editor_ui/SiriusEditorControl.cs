@@ -76,7 +76,9 @@ namespace Demos
     /// 16. <see cref="PropertyGridUserControl">PropertyGridUserControl</see> <br/>
     /// 17. <see cref="LogUserControl">LogUserControl</see> <br/>
     /// </remarks>
-    public partial class SiriusEditorUserControl : Form
+    public partial class SiriusEditorUserControl 
+        : Form
+        //: UserControl
     {
         /// <summary>
         /// Event for before open sirius file at <see cref="SiriusEditorUserControl">SiriusEditorUserControl</see>
@@ -754,8 +756,9 @@ namespace Demos
 
             lblRemote.DoubleClick += LblRemote_DoubleClick;
             lblRemote.DoubleClickEnabled = true;
-        }
 
+            btnLock.CheckedChanged += BtnLock_CheckedChanged;
+        }
 
         /// <inheritdoc/>
         protected override void OnLoad(EventArgs e)
@@ -1729,6 +1732,43 @@ namespace Demos
                             this.Remote.ControlMode = ControlModes.Remote;
                     }
                     break;
+            }
+        }
+        private void BtnLock_CheckedChanged(object sender, EventArgs e)
+        {
+            if (btnLock.Checked)
+            {
+                View.IsEditMode = false;
+                tbcLeft.Visible = false;
+                tbcRight.Visible = false;
+                tlsTop2.Enabled = false;
+                btnNew.Enabled = false;
+                btnSave.Enabled = false;
+                btnCopy.Enabled = false;
+                btnCut.Enabled = false;
+                btnPaste.Enabled = false;
+                btnPasteArray.Enabled = false;
+                btnDelete.Enabled = false;
+                ddbAlign.Enabled = false;
+                //splitContainer3.Panel2Collapsed = false;
+                Remote.ControlMode = ControlModes.Remote;
+            }
+            else
+            {
+                View.IsEditMode = true;
+                tbcLeft.Visible = true;
+                tbcRight.Visible = true;
+                tlsTop2.Enabled = true;
+                btnNew.Enabled = true;
+                btnSave.Enabled = true;
+                btnCopy.Enabled = true;
+                btnCut.Enabled = true;
+                btnPaste.Enabled = true;
+                btnPasteArray.Enabled = true;
+                btnDelete.Enabled = true;
+                ddbAlign.Enabled = true;
+                //splitContainer3.Panel2Collapsed = true;
+                Remote.ControlMode = ControlModes.Local;
             }
         }
     }
