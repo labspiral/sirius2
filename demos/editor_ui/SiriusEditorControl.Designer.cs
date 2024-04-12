@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SiriusEditorUserControl));
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.spcMain = new System.Windows.Forms.SplitContainer();
             this.tbcMain = new System.Windows.Forms.TabControl();
             this.tabEditor = new System.Windows.Forms.TabPage();
             this.editorControl1 = new SpiralLab.Sirius2.Winforms.UI.EditorUserControl();
@@ -61,6 +61,7 @@
             this.remoteUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RemoteUserControl();
             this.logControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
             this.tlsTop2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.btnPoint = new System.Windows.Forms.ToolStripButton();
             this.btnPoints = new System.Windows.Forms.ToolStripButton();
             this.btnRaster = new System.Windows.Forms.ToolStripButton();
@@ -69,6 +70,7 @@
             this.btnCircle = new System.Windows.Forms.ToolStripButton();
             this.btnTrepan = new System.Windows.Forms.ToolStripButton();
             this.btnRectangle = new System.Windows.Forms.ToolStripButton();
+            this.btnTriangle = new System.Windows.Forms.ToolStripButton();
             this.btnPolyline = new System.Windows.Forms.ToolStripButton();
             this.btnSpiral = new System.Windows.Forms.ToolStripButton();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -111,6 +113,7 @@
             this.mnuWaitDataExt16Cond = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuWaitDataExt16EdgeCond = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuScriptEvent = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.tlsTop1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAbout = new System.Windows.Forms.ToolStripButton();
@@ -137,8 +140,9 @@
             this.mnuMarginBottom = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnLock = new System.Windows.Forms.ToolStripButton();
             this.stsBottom = new System.Windows.Forms.StatusStrip();
+            this.lblHelp = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel14 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblName = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblProcessTime = new System.Windows.Forms.ToolStripStatusLabel();
@@ -151,11 +155,9 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblEncoder = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblSelected = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel12 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRenderTime = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblHelp = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel12 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblSelected = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel13 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblReady = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -164,7 +166,6 @@
             this.lblError = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRemote = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitter3 = new System.Windows.Forms.Splitter();
             this.panBody = new System.Windows.Forms.Panel();
             this.splitter2 = new System.Windows.Forms.Splitter();
@@ -174,15 +175,15 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tbcLeft = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.spcEntity = new System.Windows.Forms.SplitContainer();
             this.trvEntity = new SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl();
             this.penControl1 = new SpiralLab.Sirius2.Winforms.UI.PenUserControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.trvBlock = new SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
+            this.spcMain.Panel1.SuspendLayout();
+            this.spcMain.Panel2.SuspendLayout();
+            this.spcMain.SuspendLayout();
             this.tbcMain.SuspendLayout();
             this.tabEditor.SuspendLayout();
             this.TabRTC.SuspendLayout();
@@ -212,27 +213,27 @@
             this.tabPage4.SuspendLayout();
             this.tbcLeft.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
-            this.splitContainer5.Panel1.SuspendLayout();
-            this.splitContainer5.Panel2.SuspendLayout();
-            this.splitContainer5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spcEntity)).BeginInit();
+            this.spcEntity.Panel1.SuspendLayout();
+            this.spcEntity.Panel2.SuspendLayout();
+            this.spcEntity.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer3
+            // spcMain
             // 
-            resources.ApplyResources(this.splitContainer3, "splitContainer3");
-            this.splitContainer3.Name = "splitContainer3";
+            resources.ApplyResources(this.spcMain, "spcMain");
+            this.spcMain.Name = "spcMain";
             // 
-            // splitContainer3.Panel1
+            // spcMain.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.tbcMain);
-            resources.ApplyResources(this.splitContainer3.Panel1, "splitContainer3.Panel1");
+            this.spcMain.Panel1.Controls.Add(this.tbcMain);
+            resources.ApplyResources(this.spcMain.Panel1, "spcMain.Panel1");
             // 
-            // splitContainer3.Panel2
+            // spcMain.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.logControl1);
-            resources.ApplyResources(this.splitContainer3.Panel2, "splitContainer3.Panel2");
+            this.spcMain.Panel2.Controls.Add(this.logControl1);
+            resources.ApplyResources(this.spcMain.Panel2, "spcMain.Panel2");
             // 
             // tbcMain
             // 
@@ -521,6 +522,7 @@
             this.tlsTop2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tlsTop2.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.tlsTop2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator12,
             this.btnPoint,
             this.btnPoints,
             this.btnRaster,
@@ -529,14 +531,21 @@
             this.btnCircle,
             this.btnTrepan,
             this.btnRectangle,
+            this.btnTriangle,
             this.btnPolyline,
             this.btnSpiral,
             this.toolStripDropDownButton1,
             this.ddbBarcode,
             this.btnImportFile,
             this.toolStripSeparator3,
-            this.toolStripDropDownButton3});
+            this.toolStripDropDownButton3,
+            this.toolStripSeparator13});
             this.tlsTop2.Name = "tlsTop2";
+            // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            resources.ApplyResources(this.toolStripSeparator12, "toolStripSeparator12");
             // 
             // btnPoint
             // 
@@ -585,6 +594,12 @@
             this.btnRectangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.btnRectangle, "btnRectangle");
             this.btnRectangle.Name = "btnRectangle";
+            // 
+            // btnTriangle
+            // 
+            this.btnTriangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.btnTriangle, "btnTriangle");
+            this.btnTriangle.Name = "btnTriangle";
             // 
             // btnPolyline
             // 
@@ -698,8 +713,8 @@
             // 
             // toolStripSeparator3
             // 
-            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             this.toolStripSeparator3.Name = "toolStripSeparator3";
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
             // toolStripDropDownButton3
             // 
@@ -859,6 +874,12 @@
             resources.ApplyResources(this.mnuScriptEvent, "mnuScriptEvent");
             this.mnuScriptEvent.Name = "mnuScriptEvent";
             // 
+            // toolStripSeparator13
+            // 
+            this.toolStripSeparator13.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
+            // 
             // tlsTop1
             // 
             resources.ApplyResources(this.tlsTop1, "tlsTop1");
@@ -886,14 +907,13 @@
             this.toolStripSeparator10,
             this.ddbAlign,
             this.toolStripSeparator1,
-            this.toolStripSeparator4,
-            this.btnLock});
+            this.toolStripSeparator4});
             this.tlsTop1.Name = "tlsTop1";
             // 
             // toolStripSeparator5
             // 
-            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
             this.toolStripSeparator5.Name = "toolStripSeparator5";
+            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
             // 
             // btnAbout
             // 
@@ -903,8 +923,8 @@
             // 
             // toolStripSeparator6
             // 
-            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
             this.toolStripSeparator6.Name = "toolStripSeparator6";
+            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
             // 
             // btnNew
             // 
@@ -926,8 +946,8 @@
             // 
             // toolStripSeparator2
             // 
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // btnCopy
             // 
@@ -955,8 +975,8 @@
             // 
             // toolStripSeparator7
             // 
-            resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
             this.toolStripSeparator7.Name = "toolStripSeparator7";
+            resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
             // 
             // btnZoomOut
             // 
@@ -978,8 +998,8 @@
             // 
             // toolStripSeparator9
             // 
-            resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
             this.toolStripSeparator9.Name = "toolStripSeparator9";
+            resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
             // 
             // btnDelete
             // 
@@ -989,8 +1009,8 @@
             // 
             // toolStripSeparator10
             // 
-            resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
             this.toolStripSeparator10.Name = "toolStripSeparator10";
+            resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
             // 
             // ddbAlign
             // 
@@ -1035,22 +1055,16 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            // 
-            // btnLock
-            // 
-            this.btnLock.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnLock.CheckOnClick = true;
-            this.btnLock.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.btnLock, "btnLock");
-            this.btnLock.Name = "btnLock";
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             // 
             // stsBottom
             // 
             resources.ApplyResources(this.stsBottom, "stsBottom");
             this.stsBottom.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.stsBottom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblHelp,
+            this.toolStripStatusLabel14,
             this.lblName,
             this.toolStripStatusLabel2,
             this.lblProcessTime,
@@ -1063,11 +1077,9 @@
             this.toolStripStatusLabel1,
             this.lblEncoder,
             this.toolStripStatusLabel7,
-            this.lblSelected,
-            this.toolStripStatusLabel12,
             this.lblRenderTime,
-            this.toolStripStatusLabel4,
-            this.lblHelp,
+            this.toolStripStatusLabel12,
+            this.lblSelected,
             this.toolStripStatusLabel13,
             this.lblReady,
             this.toolStripStatusLabel8,
@@ -1075,11 +1087,21 @@
             this.toolStripStatusLabel9,
             this.lblError,
             this.toolStripStatusLabel6,
-            this.lblRemote,
-            this.toolStripStatusLabel3});
+            this.lblRemote});
             this.stsBottom.Name = "stsBottom";
             this.stsBottom.ShowItemToolTips = true;
             this.stsBottom.SizingGrip = false;
+            // 
+            // lblHelp
+            // 
+            this.lblHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.lblHelp, "lblHelp");
+            this.lblHelp.Name = "lblHelp";
+            // 
+            // toolStripStatusLabel14
+            // 
+            resources.ApplyResources(this.toolStripStatusLabel14, "toolStripStatusLabel14");
+            this.toolStripStatusLabel14.Name = "toolStripStatusLabel14";
             // 
             // lblName
             // 
@@ -1143,31 +1165,20 @@
             resources.ApplyResources(this.toolStripStatusLabel7, "toolStripStatusLabel7");
             this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
             // 
-            // lblSelected
+            // lblRenderTime
             // 
-            this.lblSelected.Name = "lblSelected";
-            resources.ApplyResources(this.lblSelected, "lblSelected");
+            resources.ApplyResources(this.lblRenderTime, "lblRenderTime");
+            this.lblRenderTime.Name = "lblRenderTime";
             // 
             // toolStripStatusLabel12
             // 
             resources.ApplyResources(this.toolStripStatusLabel12, "toolStripStatusLabel12");
             this.toolStripStatusLabel12.Name = "toolStripStatusLabel12";
             // 
-            // lblRenderTime
+            // lblSelected
             // 
-            resources.ApplyResources(this.lblRenderTime, "lblRenderTime");
-            this.lblRenderTime.Name = "lblRenderTime";
-            // 
-            // toolStripStatusLabel4
-            // 
-            resources.ApplyResources(this.toolStripStatusLabel4, "toolStripStatusLabel4");
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            // 
-            // lblHelp
-            // 
-            this.lblHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.lblHelp, "lblHelp");
-            this.lblHelp.Name = "lblHelp";
+            this.lblSelected.Name = "lblSelected";
+            resources.ApplyResources(this.lblSelected, "lblSelected");
             // 
             // toolStripStatusLabel13
             // 
@@ -1189,7 +1200,7 @@
             // 
             // lblBusy
             // 
-            this.lblBusy.BackColor = System.Drawing.Color.Maroon;
+            this.lblBusy.BackColor = System.Drawing.Color.Olive;
             resources.ApplyResources(this.lblBusy, "lblBusy");
             this.lblBusy.ForeColor = System.Drawing.Color.White;
             this.lblBusy.Name = "lblBusy";
@@ -1215,14 +1226,10 @@
             // 
             this.lblRemote.ActiveLinkColor = System.Drawing.Color.Red;
             this.lblRemote.BackColor = System.Drawing.Color.Maroon;
+            this.lblRemote.DoubleClickEnabled = true;
             resources.ApplyResources(this.lblRemote, "lblRemote");
             this.lblRemote.ForeColor = System.Drawing.Color.White;
             this.lblRemote.Name = "lblRemote";
-            // 
-            // toolStripStatusLabel3
-            // 
-            resources.ApplyResources(this.toolStripStatusLabel3, "toolStripStatusLabel3");
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
             // 
             // splitter3
             // 
@@ -1233,7 +1240,7 @@
             // 
             // panBody
             // 
-            this.panBody.Controls.Add(this.splitContainer3);
+            this.panBody.Controls.Add(this.spcMain);
             this.panBody.Controls.Add(this.splitter2);
             this.panBody.Controls.Add(this.tbcRight);
             this.panBody.Controls.Add(this.splitter1);
@@ -1293,23 +1300,23 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.splitContainer5);
+            this.tabPage1.Controls.Add(this.spcEntity);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // splitContainer5
+            // spcEntity
             // 
-            resources.ApplyResources(this.splitContainer5, "splitContainer5");
-            this.splitContainer5.Name = "splitContainer5";
+            resources.ApplyResources(this.spcEntity, "spcEntity");
+            this.spcEntity.Name = "spcEntity";
             // 
-            // splitContainer5.Panel1
+            // spcEntity.Panel1
             // 
-            this.splitContainer5.Panel1.Controls.Add(this.trvEntity);
+            this.spcEntity.Panel1.Controls.Add(this.trvEntity);
             // 
-            // splitContainer5.Panel2
+            // spcEntity.Panel2
             // 
-            this.splitContainer5.Panel2.Controls.Add(this.penControl1);
+            this.spcEntity.Panel2.Controls.Add(this.penControl1);
             // 
             // trvEntity
             // 
@@ -1352,10 +1359,10 @@
             this.Controls.Add(this.tlsTop2);
             this.Controls.Add(this.tlsTop1);
             this.Name = "SiriusEditorUserControl";
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
+            this.spcMain.Panel1.ResumeLayout(false);
+            this.spcMain.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spcMain)).EndInit();
+            this.spcMain.ResumeLayout(false);
             this.tbcMain.ResumeLayout(false);
             this.tabEditor.ResumeLayout(false);
             this.TabRTC.ResumeLayout(false);
@@ -1388,10 +1395,10 @@
             this.tabPage4.ResumeLayout(false);
             this.tbcLeft.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.splitContainer5.Panel1.ResumeLayout(false);
-            this.splitContainer5.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
-            this.splitContainer5.ResumeLayout(false);
+            this.spcEntity.Panel1.ResumeLayout(false);
+            this.spcEntity.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spcEntity)).EndInit();
+            this.spcEntity.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1438,7 +1445,6 @@
         private System.Windows.Forms.ToolStripStatusLabel lblPos;
         private System.Windows.Forms.ToolStripStatusLabel lblFileName;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lblEncoder;
@@ -1452,7 +1458,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
         private System.Windows.Forms.ToolStripStatusLabel lblRemote;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel13;
-        private System.Windows.Forms.ToolStripStatusLabel lblHelp;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
         private System.Windows.Forms.ToolStripMenuItem mnuData;
         private System.Windows.Forms.ToolStripMenuItem mnuWriteData;
@@ -1473,7 +1478,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Splitter splitter3;
         private System.Windows.Forms.Panel panBody;
-        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.SplitContainer spcMain;
         private System.Windows.Forms.TabControl tbcMain;
         private System.Windows.Forms.TabPage tabEditor;
         private SpiralLab.Sirius2.Winforms.UI.EditorUserControl editorControl1;
@@ -1496,11 +1501,10 @@
         private System.Windows.Forms.ToolStripMenuItem mnuMarginRight;
         private System.Windows.Forms.ToolStripMenuItem mnuMarginTop;
         private System.Windows.Forms.ToolStripMenuItem mnuMarginBottom;
-        private System.Windows.Forms.SplitContainer splitContainer5;
+        private System.Windows.Forms.SplitContainer spcEntity;
         private SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl trvEntity;
         private SpiralLab.Sirius2.Winforms.UI.PenUserControl penControl1;
         private SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl trvBlock;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem btnImageText;
         private System.Windows.Forms.ToolStripMenuItem btnText;
@@ -1545,8 +1549,12 @@
         private SpiralLab.Sirius2.Winforms.UI.MarkerUserControl markerControl1;
         private System.Windows.Forms.ToolStripMenuItem mnuSelectCorrectionTable;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton btnLock;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel14;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
+        private System.Windows.Forms.ToolStripStatusLabel lblHelp;
+        private System.Windows.Forms.ToolStripButton btnTriangle;
     }
 }

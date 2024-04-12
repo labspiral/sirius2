@@ -174,14 +174,17 @@ namespace Demos
                         siriusEditorUserControl1.DOExt1.OutOn(2);
                     else
                         siriusEditorUserControl1.DOExt1.OutOff(2);
-                    switch (marker.Remote.ControlMode)
+                    if (null != marker.Remote)
                     {
-                        case SpiralLab.Sirius2.Winforms.Remote.ControlModes.Local:
-                            siriusEditorUserControl1.DOExt1.OutOff(3);
-                            break;
-                        case SpiralLab.Sirius2.Winforms.Remote.ControlModes.Remote:
-                            siriusEditorUserControl1.DOExt1.OutOn(3);
-                            break;
+                        switch (marker.Remote.ControlMode)
+                        {
+                            case SpiralLab.Sirius2.Winforms.Remote.ControlModes.Local:
+                                siriusEditorUserControl1.DOExt1.OutOff(3);
+                                break;
+                            case SpiralLab.Sirius2.Winforms.Remote.ControlModes.Remote:
+                                siriusEditorUserControl1.DOExt1.OutOn(3);
+                                break;
+                        }
                     }
                     siriusEditorUserControl1.DOExt1.Update();
                 }
@@ -192,10 +195,13 @@ namespace Demos
             var marker = siriusEditorUserControl1.Marker;
             if (null == marker)
                 return;
-            if (marker.Remote.ControlMode != SpiralLab.Sirius2.Winforms.Remote.ControlModes.Remote)
+            if (null != marker.Remote)
             {
-                Logger.Log(Logger.Types.Debug, $"external dio [{bitNo}]:{edge} has changed but it's local mode");
-                return;
+                if (marker.Remote.ControlMode != SpiralLab.Sirius2.Winforms.Remote.ControlModes.Remote)
+                {
+                    Logger.Log(Logger.Types.Debug, $"external dio [{bitNo}]:{edge} has changed but it's local mode");
+                    return;
+                }
             }
             switch (bitNo)
             {

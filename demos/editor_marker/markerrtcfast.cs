@@ -50,7 +50,6 @@ using SpiralLab.Sirius2.Winforms.Common;
 using SpiralLab.Sirius2.PowerMeter;
 using SpiralLab.Sirius2.Winforms.Remote;
 
-
 namespace Demos
 {
     /// <summary>
@@ -521,13 +520,12 @@ namespace Demos
                 for (int j = 0; j < layer.Children.Count; j++)
                 {
                     var entity = layer.Children[j];
-                    if (!entity.IsMarkerable)
-                        continue;
-                    entity.Parent = layer;
-                    if (entity is IMarkerable markerable)
-                    {
                         CurrentEntityIndex = j;
                         CurrentEntity = entity;
+                    if (!entity.IsMarkerable)
+                        continue;
+                    if (entity is IMarkerable markerable)
+                    {
                         switch (MarkTarget)
                         {
                             case MarkTargets.All:

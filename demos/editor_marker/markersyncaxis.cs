@@ -87,12 +87,12 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             /// //Pseudo codes
             /// for (int i = 0; i &lt; Offsets.Length; i++)
             /// {
-            ///     foreach (var layer in Layers)
+            ///     for (int j = 0; j &lt; Layers.Count; j++)
             ///     {
             ///         Laser.ListBegin();
             ///         Rtc.ListBegin();
             ///         ...
-            ///         LayerWork(i, layer, Offsets[i]);
+            ///         LayerWork(i, Offsets[i], j, Layers[j]);
             ///         ...
             ///         Laser.ListEnd();
             ///         Rtc.ListEnd();
@@ -110,14 +110,14 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             /// Order of marks: Mark Layer1 at Offset(s) -> Mark Layer2 at Offset(s), ... 
             /// <code>
             /// //Pseudo codes
-            /// foreach (var layer in Layers)
+            /// for (int j = 0; j &lt; Layers.Count; j++)
             /// {
             ///     Laser.ListBegin();
             ///     Rtc.ListBegin();        
             ///     for (int i = 0; i &lt; Offsets.Length; i++)
             ///     {
             ///         ...
-            ///         LayerWork(i, layer, Offsets[i]);
+            ///         LayerWork(i, Offsets[i], Layers[j], layer);
             ///         ...
             ///     }
             ///     Laser.ListEnd();
@@ -513,34 +513,34 @@ namespace SpiralLab.Sirius2.Winforms.Marker
         /// Consider as its working within async threads. <br/>
         /// </remarks> 
         /// <param name="offsetIndex">Current index of offset (0,1,2,...)</param>
-        /// <param name="layer">Current <c>EntityLayer</c></param>
         /// <param name="offset">Current <c>Offset</c></param>
+        /// <param name="layerIndex">Current layer of offset (0,1,2,...)</param>
+        /// <param name="layer">Current <c>EntityLayer</c></param>
         /// <returns>Success or failed</returns>
-        protected virtual bool LayerWork(int offsetIndex, EntityLayer layer, Offset offset)
+        protected virtual bool LayerWork(int offsetIndex, Offset offset, int layerIndex, EntityLayer layer)
         {
             bool success = true;
+            CurrentLayerIndex = layerIndex;
             CurrentLayer = layer;
             for (int i = 0; i < layer.Repeats; i++)
             {
-                CurrentLayerIndex = i;
                 for (int j = 0; j < layer.Children.Count; j++)
                 {
                     var entity = layer.Children[j];
+                    CurrentEntityIndex = j;
+                    CurrentEntity = entity;
                     if (!entity.IsMarkerable)
                         continue;
-                    entity.Parent = layer;
                     if (entity is IMarkerable markerable)
                     {
-                        CurrentEntityIndex = j;
-                        CurrentEntity = entity;
                         switch (MarkTarget)
                         {
                             case MarkTargets.All:
-                                success &= EntityWork(offsetIndex, layer, j, entity);
+                                success &= EntityWork(offsetIndex, offset, layerIndex, layer, j, entity);
                                 break;
                             case MarkTargets.Selected:
                                 if (entity.IsSelected)
-                                    success &= EntityWork(offsetIndex, layer, j, entity);
+                                    success &= EntityWork(offsetIndex, offset, layerIndex, layer, j, entity);
                                 break;
                         }
                     }
@@ -560,11 +560,13 @@ namespace SpiralLab.Sirius2.Winforms.Marker
         /// Consider as its working within async threads. <br/>
         /// </remarks> 
         /// <param name="offsetIndex">Current index of offset (0,1,2,...)</param>
+        /// <param name="offset">Current <c>Offset</c></param>
+        /// <param name="layerIndex">Current index of layer (0,1,2,...)</param>
         /// <param name="layer">Current <c>EntityLayer</c></param>
         /// <param name="entityIndex">Current index of entity</param>
         /// <param name="entity">Current <c>IEntity</c></param>
         /// <returns>Success or failed</returns>
-        protected virtual bool EntityWork(int offsetIndex, EntityLayer layer, int entityIndex, IEntity entity)
+        protected virtual bool EntityWork(int offsetIndex, Offset offset, int layerIndex, EntityLayer layer, int entityIndex, IEntity entity)
         {
             bool success = true;
             success &= NotifyBeforeEntity(entity);
@@ -608,8 +610,8 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             Debug.Assert(null != rtcSyncAxis);
 
             this.isInternalBusy = true;
-            this.NotifyStarted();
             var dtStarted = DateTime.Now;
+            this.NotifyStarted();
             bool success = true;
             var oldMatrixStack = (IMatrixStack<System.Numerics.Matrix4x4>)rtc.MatrixStack.Clone();
 
@@ -619,8 +621,9 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                 CurrentOffsetIndex = i;
                 rtc.MatrixStack.Push(Offsets[i].ToMatrix);
                 Logger.Log(Logger.Types.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
-                foreach (var layer in layers)
+                for (int j = 0; j < layers.Count; j++)
                 {
+                    var layer = layers[j];
                     if (!layer.IsMarkerable)
                         continue;
                     success &= NotifyBeforeLayer(layer);
@@ -645,7 +648,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                     }
                     success &= laser.ListBegin();
                     success &= rtcSyncAxis.ListBegin(layer.MotionType);
-                    success &= LayerWork(i, layer, Offsets[i]);
+                    success &= LayerWork(i, Offsets[i], j, layer);
                     if (!success)
                         break;
                     if (IsJumpToOriginAfterFinished)
@@ -711,13 +714,14 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             Debug.Assert(null != rtcSyncAxis);
 
             this.isInternalBusy = true;
-            this.NotifyStarted();
             var dtStarted = DateTime.Now;
+            this.NotifyStarted();
             bool success = true;
             var oldMatrixStack = (IMatrixStack<System.Numerics.Matrix4x4>)rtc.MatrixStack.Clone();
 
-            foreach (var layer in layers)
+            for (int j = 0; j < layers.Count; j++)
             {
+                var layer = layers[j];
                 if (!layer.IsMarkerable)
                     continue;
                 success &= NotifyBeforeLayer(layer);
@@ -749,7 +753,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                     CurrentOffset = Offsets[i];
                     rtc.MatrixStack.Push(Offsets[i].ToMatrix);
                     Logger.Log(Logger.Types.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
-                    success &= LayerWork(i, layer, Offsets[i]);
+                    success &= LayerWork(i, Offsets[i], j, layer);
                     rtc.MatrixStack.Pop();
                     if (!success)
                         break;

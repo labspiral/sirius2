@@ -118,17 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="splitContainer3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="spcMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="splitContainer3.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="spcMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>322, 0</value>
   </data>
-  <data name="splitContainer3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="spcMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="splitContainer3.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+  <data name="spcMain.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
   <data name="editorControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -144,7 +144,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="editorControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>742, 726</value>
+    <value>742, 727</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="editorControl1.TabIndex" type="System.Int32, mscorlib">
@@ -172,7 +172,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabEditor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>748, 732</value>
+    <value>748, 733</value>
   </data>
   <data name="tabEditor.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -208,7 +208,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="rtcControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>742, 747</value>
+    <value>742, 727</value>
   </data>
   <data name="rtcControl1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -235,7 +235,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabRTC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>748, 753</value>
+    <value>748, 733</value>
   </data>
   <data name="TabRTC.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -271,7 +271,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="laserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>742, 747</value>
+    <value>742, 727</value>
   </data>
   <data name="laserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -298,7 +298,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabLaser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>748, 753</value>
+    <value>748, 733</value>
   </data>
   <data name="tabLaser.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -343,7 +343,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="offsetControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>306, 747</value>
+    <value>305, 727</value>
   </data>
   <data name="offsetControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -388,7 +388,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="markerControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>433, 747</value>
+    <value>434, 727</value>
   </data>
   <data name="markerControl1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -421,10 +421,10 @@
     <value>1</value>
   </data>
   <data name="spcMarker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>742, 747</value>
+    <value>742, 727</value>
   </data>
   <data name="spcMarker.SplitterDistance" type="System.Int32, mscorlib">
-    <value>306</value>
+    <value>305</value>
   </data>
   <data name="spcMarker.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -454,7 +454,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMarker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>748, 753</value>
+    <value>748, 733</value>
   </data>
   <data name="tabMarker.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -490,7 +490,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="manualUserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>742, 747</value>
+    <value>742, 727</value>
   </data>
   <data name="manualUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -517,7 +517,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabManual.Size" type="System.Drawing.Size, System.Drawing">
-    <value>748, 753</value>
+    <value>748, 733</value>
   </data>
   <data name="tabManual.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -565,7 +565,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="rtcDIUserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 726</value>
+    <value>359, 727</value>
   </data>
   <data name="rtcDIUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -616,7 +616,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="rtcDOUserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 726</value>
+    <value>379, 727</value>
   </data>
   <data name="rtcDOUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -652,10 +652,10 @@
     <value>100</value>
   </data>
   <data name="spcIO.Size" type="System.Drawing.Size, System.Drawing">
-    <value>742, 726</value>
+    <value>742, 727</value>
   </data>
   <data name="spcIO.SplitterDistance" type="System.Int32, mscorlib">
-    <value>360</value>
+    <value>359</value>
   </data>
   <data name="spcIO.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -682,7 +682,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabIO.Size" type="System.Drawing.Size, System.Drawing">
-    <value>748, 732</value>
+    <value>748, 733</value>
   </data>
   <data name="tabIO.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -718,7 +718,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="powerMeterControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>724, 701</value>
+    <value>724, 681</value>
   </data>
   <data name="powerMeterControl1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -748,7 +748,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="tabPage15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>732, 709</value>
+    <value>732, 689</value>
   </data>
   <data name="tabPage15.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -781,7 +781,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="powerMapControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>726, 710</value>
+    <value>724, 681</value>
   </data>
   <data name="powerMapControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -811,7 +811,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="tabPage16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>734, 718</value>
+    <value>732, 689</value>
   </data>
   <data name="tabPage16.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -842,7 +842,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACa
-        SAAAAk1TRnQBSQFMAgEBKAEAAUABBwFAAQcBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        SAAAAk1TRnQBSQFMAgEBKAEAAagBBwGoAQcBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABYAMAAQgBAQIAAQEBAAEIBgABYxgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHc
         AcABAAHwAcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEA
         AzkBAAGAAXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEz
@@ -1164,7 +1164,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="tbcPower.Size" type="System.Drawing.Size, System.Drawing">
-    <value>740, 745</value>
+    <value>740, 725</value>
   </data>
   <data name="tbcPower.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1194,7 +1194,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="tabPower.Size" type="System.Drawing.Size, System.Drawing">
-    <value>748, 753</value>
+    <value>748, 733</value>
   </data>
   <data name="tabPower.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1227,7 +1227,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="scriptControlControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>742, 747</value>
+    <value>742, 727</value>
   </data>
   <data name="scriptControlControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1254,7 +1254,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabScript.Size" type="System.Drawing.Size, System.Drawing">
-    <value>748, 753</value>
+    <value>748, 733</value>
   </data>
   <data name="tabScript.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1290,7 +1290,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="remoteUserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>742, 747</value>
+    <value>742, 727</value>
   </data>
   <data name="remoteUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1317,7 +1317,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabRemote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>748, 753</value>
+    <value>748, 733</value>
   </data>
   <data name="tabRemote.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1356,7 +1356,7 @@
     <value>True</value>
   </data>
   <data name="tbcMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>756, 768</value>
+    <value>756, 769</value>
   </data>
   <data name="tbcMain.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -1368,24 +1368,24 @@
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tbcMain.Parent" xml:space="preserve">
-    <value>splitContainer3.Panel1</value>
+    <value>spcMain.Panel1</value>
   </data>
   <data name="&gt;&gt;tbcMain.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="splitContainer3.Panel1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+  <data name="spcMain.Panel1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
-  <data name="&gt;&gt;splitContainer3.Panel1.Name" xml:space="preserve">
-    <value>splitContainer3.Panel1</value>
+  <data name="&gt;&gt;spcMain.Panel1.Name" xml:space="preserve">
+    <value>spcMain.Panel1</value>
   </data>
-  <data name="&gt;&gt;splitContainer3.Panel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;spcMain.Panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;splitContainer3.Panel1.Parent" xml:space="preserve">
-    <value>splitContainer3</value>
+  <data name="&gt;&gt;spcMain.Panel1.Parent" xml:space="preserve">
+    <value>spcMain</value>
   </data>
-  <data name="&gt;&gt;splitContainer3.Panel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;spcMain.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="logControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -1401,7 +1401,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="logControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>756, 220</value>
+    <value>756, 221</value>
   </data>
   <data name="logControl1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1413,48 +1413,48 @@
     <value>SpiralLab.Sirius2.Winforms.UI.LogUserControl, spirallab.sirius2.winforms, Version=1.25.1220.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;logControl1.Parent" xml:space="preserve">
-    <value>splitContainer3.Panel2</value>
+    <value>spcMain.Panel2</value>
   </data>
   <data name="&gt;&gt;logControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="splitContainer3.Panel2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+  <data name="spcMain.Panel2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
-  <data name="&gt;&gt;splitContainer3.Panel2.Name" xml:space="preserve">
-    <value>splitContainer3.Panel2</value>
+  <data name="&gt;&gt;spcMain.Panel2.Name" xml:space="preserve">
+    <value>spcMain.Panel2</value>
   </data>
-  <data name="&gt;&gt;splitContainer3.Panel2.Type" xml:space="preserve">
+  <data name="&gt;&gt;spcMain.Panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;splitContainer3.Panel2.Parent" xml:space="preserve">
-    <value>splitContainer3</value>
+  <data name="&gt;&gt;spcMain.Panel2.Parent" xml:space="preserve">
+    <value>spcMain</value>
   </data>
-  <data name="&gt;&gt;splitContainer3.Panel2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;spcMain.Panel2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="splitContainer3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>756, 991</value>
+  <data name="spcMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>756, 993</value>
   </data>
-  <data name="splitContainer3.SplitterDistance" type="System.Int32, mscorlib">
-    <value>768</value>
+  <data name="spcMain.SplitterDistance" type="System.Int32, mscorlib">
+    <value>769</value>
   </data>
-  <data name="splitContainer3.SplitterWidth" type="System.Int32, mscorlib">
+  <data name="spcMain.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="splitContainer3.TabIndex" type="System.Int32, mscorlib">
+  <data name="spcMain.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
   </data>
-  <data name="&gt;&gt;splitContainer3.Name" xml:space="preserve">
-    <value>splitContainer3</value>
+  <data name="&gt;&gt;spcMain.Name" xml:space="preserve">
+    <value>spcMain</value>
   </data>
-  <data name="&gt;&gt;splitContainer3.Type" xml:space="preserve">
+  <data name="&gt;&gt;spcMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;splitContainer3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;spcMain.Parent" xml:space="preserve">
     <value>panBody</value>
   </data>
-  <data name="&gt;&gt;splitContainer3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;spcMain.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="tlsTop2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -1462,6 +1462,9 @@
   </metadata>
   <data name="tlsTop2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
+  </data>
+  <data name="toolStripSeparator12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 31</value>
   </data>
   <data name="btnPoint.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1631,6 +1634,31 @@
   </data>
   <data name="btnRectangle.ToolTipText" xml:space="preserve">
     <value>Rectangle</value>
+  </data>
+  <data name="btnTriangle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGMSURBVFhH7Za/K0ZRHMaPlCg/IgMZlEXKQBmUMhiUMill
+        Myijf4BSDAYpKRODbAwYDWKzsNiksDCYRH6GeJ7n3FPEe99733vutbyf+nS+T933nvs9973nXlMkIZfB
+        +C9swUc4qZQxlfAT7gVjFcyUDciJa4JxAWZGBeSkS0rGjMF3WKeUAevwA9YqGVMCX+GqUsqUQ3bPi/jO
+        MHyGjUopsgLfYIPST27hpi3TwXW/rfSbAfgAm5VSYBnyXodNcA13bekX1/2+Um564T1sVfLIInyBbUrh
+        nMJDW/rBdX+slJ8ueAc7lDwwD/mIdSpF4wie2DIZrnsuaxzaIVehWykBc5D3vkcpHvzDntuyMFz3V0rx
+        aYHcF/qUCmAW8rnvVyqMHXhjy3i47rm9JqEJPsFBpRhMQ+75Q0rJWIPcnCLjuufy81WblHrIZkaUIjAF
+        +b4fVfIDd1JeRKlSHtg9jXRwRKohzzmulAceOGFLr8xAnrtMKQf8yj2DbhV8ewFDmzuAf/3Qp3zCihQJ
+        MOYLmwZ7+ELeQk4AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnTriangle.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="btnTriangle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 28</value>
+  </data>
+  <data name="btnTriangle.Text" xml:space="preserve">
+    <value>Triangle</value>
+  </data>
+  <data name="btnTriangle.ToolTipText" xml:space="preserve">
+    <value>Triangle</value>
   </data>
   <data name="btnPolyline.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1944,11 +1972,8 @@
   <data name="btnImportFile.ToolTipText" xml:space="preserve">
     <value>Import File</value>
   </data>
-  <data name="toolStripSeparator3.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 31</value>
+    <value>6, 31</value>
   </data>
   <data name="mnuTimer.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2376,8 +2401,11 @@
   <data name="toolStripDropDownButton3.ToolTipText" xml:space="preserve">
     <value>Control Entity</value>
   </data>
+  <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 31</value>
+  </data>
   <data name="tlsTop2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 39</value>
+    <value>0, 37</value>
   </data>
   <data name="tlsTop2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
@@ -2412,11 +2440,8 @@
   <data name="tlsTop1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="toolStripSeparator5.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 31</value>
+    <value>6, 31</value>
   </data>
   <data name="btnAbout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2431,7 +2456,7 @@
     <value>Magenta</value>
   </data>
   <data name="btnAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 30</value>
+    <value>28, 28</value>
   </data>
   <data name="btnAbout.Text" xml:space="preserve">
     <value>About</value>
@@ -2439,11 +2464,8 @@
   <data name="btnAbout.ToolTipText" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="toolStripSeparator6.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 31</value>
+    <value>6, 31</value>
   </data>
   <data name="btnNew.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2457,7 +2479,7 @@
     <value>Magenta</value>
   </data>
   <data name="btnNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 30</value>
+    <value>28, 28</value>
   </data>
   <data name="btnNew.Text" xml:space="preserve">
     <value>New</value>
@@ -2479,7 +2501,7 @@
     <value>Magenta</value>
   </data>
   <data name="btnOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 30</value>
+    <value>28, 28</value>
   </data>
   <data name="btnOpen.Text" xml:space="preserve">
     <value>Open</value>
@@ -2500,7 +2522,7 @@
     <value>Magenta</value>
   </data>
   <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 30</value>
+    <value>28, 28</value>
   </data>
   <data name="btnSave.Text" xml:space="preserve">
     <value>Save</value>
@@ -2508,11 +2530,8 @@
   <data name="btnSave.ToolTipText" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="toolStripSeparator2.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 31</value>
+    <value>6, 31</value>
   </data>
   <data name="btnCopy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2528,7 +2547,7 @@
     <value>Magenta</value>
   </data>
   <data name="btnCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 30</value>
+    <value>28, 28</value>
   </data>
   <data name="btnCopy.Text" xml:space="preserve">
     <value>Copy</value>
@@ -2552,7 +2571,7 @@
     <value>Magenta</value>
   </data>
   <data name="btnCut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 30</value>
+    <value>28, 28</value>
   </data>
   <data name="btnCut.Text" xml:space="preserve">
     <value>Cut</value>
@@ -2576,7 +2595,7 @@
     <value>Magenta</value>
   </data>
   <data name="btnPaste.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 30</value>
+    <value>28, 28</value>
   </data>
   <data name="btnPaste.Text" xml:space="preserve">
     <value>Paste</value>
@@ -2600,7 +2619,7 @@
     <value>Magenta</value>
   </data>
   <data name="btnPasteArray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 30</value>
+    <value>28, 28</value>
   </data>
   <data name="btnPasteArray.Text" xml:space="preserve">
     <value>Paste Array</value>
@@ -2608,11 +2627,8 @@
   <data name="btnPasteArray.ToolTipText" xml:space="preserve">
     <value>Paste Array</value>
   </data>
-  <data name="toolStripSeparator7.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 31</value>
+    <value>6, 31</value>
   </data>
   <data name="btnZoomOut.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2628,7 +2644,7 @@
     <value>Magenta</value>
   </data>
   <data name="btnZoomOut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 30</value>
+    <value>28, 28</value>
   </data>
   <data name="btnZoomOut.Text" xml:space="preserve">
     <value>Zoom Out</value>
@@ -2650,7 +2666,7 @@
     <value>Magenta</value>
   </data>
   <data name="btnZoomIn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 30</value>
+    <value>28, 28</value>
   </data>
   <data name="btnZoomIn.Text" xml:space="preserve">
     <value>Zoom In</value>
@@ -2674,7 +2690,7 @@
     <value>Magenta</value>
   </data>
   <data name="btnZoomFit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 30</value>
+    <value>28, 28</value>
   </data>
   <data name="btnZoomFit.Text" xml:space="preserve">
     <value>Zoom Fit</value>
@@ -2683,11 +2699,8 @@
     <value>Zoom Fit
 (CTRL+F)</value>
   </data>
-  <data name="toolStripSeparator9.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 31</value>
+    <value>6, 31</value>
   </data>
   <data name="btnDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2702,7 +2715,7 @@
     <value>Magenta</value>
   </data>
   <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 30</value>
+    <value>28, 28</value>
   </data>
   <data name="btnDelete.Text" xml:space="preserve">
     <value>Delete</value>
@@ -2711,11 +2724,8 @@
     <value>Delete
 (CTRL+Del)</value>
   </data>
-  <data name="toolStripSeparator10.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 31</value>
+    <value>6, 31</value>
   </data>
   <data name="mnuMarginLeft.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2797,7 +2807,7 @@
     <value>Magenta</value>
   </data>
   <data name="ddbAlign.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 30</value>
+    <value>37, 28</value>
   </data>
   <data name="ddbAlign.Text" xml:space="preserve">
     <value>Alignment</value>
@@ -2806,48 +2816,19 @@
     <value>Margin Alignment</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 33</value>
-  </data>
-  <data name="toolStripSeparator4.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>6, 31</value>
   </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 33</value>
-  </data>
-  <data name="btnLock.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEoSURBVEhL5VRNS8NAFMxNhWov3jz2zwRT8JKQL0ggv0Cw
-        9D8Wiq0o4iUiwVw96A/QeTAbpOvD3YAUdWAoOzvz3u6+tsHeUdf1YVEUyzzPt2VZvpAbaIswDA9oG4c0
-        TWcodge+K7yuquqMdj/EcXyEU96z0AaMcItTIfSLLMseuHcjt2TMHShyJQXkaZqmOaY8IEmSKfZu2eSS
-        sjsQWksYjeaULMhN2GBFyR0IvUkYJ51QsoD9E/HguV4puUOCQi5VuPoGwByBrQl6sMVMzllGB4zdTtCH
-        Tyyjw5i5dIZz7u82gBbh6/iIzy+HqeUsaEZon4dvDdPscalDM+LUz2YP7CgP0HIWNCM0+X300uhHnug7
-        /K8GvTGPoDV8C/L/D6N3E234vx1B8AGIUkwcL45WcQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnLock.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="btnLock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 30</value>
-  </data>
-  <data name="btnLock.Text" xml:space="preserve">
-    <value>Lock</value>
-  </data>
-  <data name="btnLock.ToolTipText" xml:space="preserve">
-    <value>Lock (Edit Disabled)</value>
+    <value>6, 31</value>
   </data>
   <data name="tlsTop1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
-  </data>
-  <data name="tlsTop1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
   </data>
   <data name="tlsTop1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tlsTop1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1400, 39</value>
+    <value>1400, 37</value>
   </data>
   <data name="tlsTop1.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -2873,6 +2854,30 @@
   <data name="stsBottom.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
+  <data name="lblHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAALpJREFUSEvt
+        lMsNwkAMRLcz6Ag6gE6gE+gAOqAU4oc8yLvmkIOJcshITxr/1km0Stu0Ku2NXSGdnsa7mIfxEU/+q6EC
+        zl52AV7x2UDR3x1EjhqSj/OKu8TFwd+M0+BfDp4ctejjPKQF1aQFR4/h6rnoqQOenGblQXXNfpvgYOge
+        61Wjpw54ctSiB9UhLagmLeBV9Tm4LdyOOdA7zkNagFfM4FzRO84r7hLVLLMA/eNnx5md2FbJplWotQlX
+        gw6ICXdn8wAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="lblHelp.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="lblHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 26</value>
+  </data>
+  <data name="lblHelp.ToolTipText" xml:space="preserve">
+    <value>Help (Shortcuts)</value>
+  </data>
+  <data name="toolStripStatusLabel14.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripStatusLabel14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>8, 26</value>
+  </data>
   <data name="lblName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
@@ -2883,7 +2888,7 @@
     <value>NoName</value>
   </data>
   <data name="lblName.ToolTipText" xml:space="preserve">
-    <value>Alias Name</value>
+    <value>Name</value>
   </data>
   <data name="toolStripStatusLabel2.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2960,7 +2965,7 @@
     <value>FileName</value>
   </data>
   <data name="toolStripStatusLabel10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 26</value>
+    <value>409, 26</value>
   </data>
   <data name="lblPos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2996,10 +3001,10 @@
 </value>
   </data>
   <data name="lblEncoder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 26</value>
+    <value>70, 26</value>
   </data>
   <data name="lblEncoder.Text" xml:space="preserve">
-    <value>ENC XY: 0, 0</value>
+    <value>XY: 0, 0</value>
   </data>
   <data name="lblEncoder.ToolTipText" xml:space="preserve">
     <value>Encoder Count(s)
@@ -3009,21 +3014,6 @@
     <value>False</value>
   </data>
   <data name="toolStripStatusLabel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>8, 26</value>
-  </data>
-  <data name="lblSelected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 26</value>
-  </data>
-  <data name="lblSelected.Text" xml:space="preserve">
-    <value>Selected: 0</value>
-  </data>
-  <data name="lblSelected.ToolTipText" xml:space="preserve">
-    <value>Selected Entity Count(s)</value>
-  </data>
-  <data name="toolStripStatusLabel12.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripStatusLabel12.Size" type="System.Drawing.Size, System.Drawing">
     <value>8, 26</value>
   </data>
   <data name="lblRenderTime.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -3045,29 +3035,20 @@
   <data name="lblRenderTime.ToolTipText" xml:space="preserve">
     <value>Render Time (msec)</value>
   </data>
-  <data name="toolStripStatusLabel4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="toolStripStatusLabel12.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="toolStripStatusLabel4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripStatusLabel12.Size" type="System.Drawing.Size, System.Drawing">
     <value>8, 26</value>
   </data>
-  <data name="lblHelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAALpJREFUSEvt
-        lMsNwkAMRLcz6Ag6gE6gE+gAOqAU4oc8yLvmkIOJcshITxr/1km0Stu0Ku2NXSGdnsa7mIfxEU/+q6EC
-        zl52AV7x2UDR3x1EjhqSj/OKu8TFwd+M0+BfDp4ctejjPKQF1aQFR4/h6rnoqQOenGblQXXNfpvgYOge
-        61Wjpw54ctSiB9UhLagmLeBV9Tm4LdyOOdA7zkNagFfM4FzRO84r7hLVLLMA/eNnx5md2FbJplWotQlX
-        gw6ICXdn8wAAAABJRU5ErkJggg==
-</value>
+  <data name="lblSelected.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 26</value>
   </data>
-  <data name="lblHelp.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
+  <data name="lblSelected.Text" xml:space="preserve">
+    <value>Selected: 0</value>
   </data>
-  <data name="lblHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 26</value>
-  </data>
-  <data name="lblHelp.ToolTipText" xml:space="preserve">
-    <value>Help (Shortcuts)</value>
+  <data name="lblSelected.ToolTipText" xml:space="preserve">
+    <value>Selected Entity Count(s)</value>
   </data>
   <data name="toolStripStatusLabel13.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3079,10 +3060,10 @@
     <value>Arial, 8.25pt, style=Bold</value>
   </data>
   <data name="lblReady.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 26</value>
+    <value>42, 26</value>
   </data>
   <data name="lblReady.Text" xml:space="preserve">
-    <value>  READY  </value>
+    <value>READY</value>
   </data>
   <data name="toolStripStatusLabel8.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3094,10 +3075,10 @@
     <value>Arial, 8.25pt, style=Bold</value>
   </data>
   <data name="lblBusy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 26</value>
+    <value>35, 26</value>
   </data>
   <data name="lblBusy.Text" xml:space="preserve">
-    <value>  BUSY  </value>
+    <value>BUSY</value>
   </data>
   <data name="toolStripStatusLabel9.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3109,31 +3090,25 @@
     <value>Arial, 8.25pt, style=Bold</value>
   </data>
   <data name="lblError.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 26</value>
+    <value>42, 26</value>
   </data>
   <data name="lblError.Text" xml:space="preserve">
-    <value>  ERROR  </value>
+    <value>ERROR</value>
   </data>
   <data name="toolStripStatusLabel6.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="toolStripStatusLabel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>4, 26</value>
+    <value>6, 26</value>
   </data>
   <data name="lblRemote.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 8.25pt, style=Bold</value>
   </data>
   <data name="lblRemote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 26</value>
+    <value>88, 26</value>
   </data>
   <data name="lblRemote.Text" xml:space="preserve">
-    <value> DISCONNECTED </value>
-  </data>
-  <data name="toolStripStatusLabel3.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripStatusLabel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>4, 26</value>
+    <value>DISCONNECTED</value>
   </data>
   <data name="stsBottom.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 1069</value>
@@ -3172,7 +3147,7 @@
     <value>NoControl</value>
   </data>
   <data name="splitter3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 76</value>
+    <value>0, 74</value>
   </data>
   <data name="splitter3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -3208,7 +3183,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="splitter2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>2, 991</value>
+    <value>2, 993</value>
   </data>
   <data name="splitter2.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -3238,7 +3213,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="propertyGridControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 955</value>
+    <value>312, 957</value>
   </data>
   <data name="propertyGridControl1.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -3265,7 +3240,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tabPage4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 955</value>
+    <value>312, 957</value>
   </data>
   <data name="tabPage4.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3301,7 +3276,7 @@
     <value>True</value>
   </data>
   <data name="tbcRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 991</value>
+    <value>320, 993</value>
   </data>
   <data name="tbcRight.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -3328,7 +3303,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="splitter1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>2, 991</value>
+    <value>2, 993</value>
   </data>
   <data name="splitter1.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -3345,16 +3320,16 @@
   <data name="&gt;&gt;splitter1.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="splitContainer5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="spcEntity.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="splitContainer5.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="spcEntity.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 4</value>
   </data>
-  <data name="splitContainer5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="spcEntity.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="splitContainer5.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+  <data name="spcEntity.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
   <data name="trvEntity.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -3370,7 +3345,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="trvEntity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 736</value>
+    <value>304, 737</value>
   </data>
   <data name="trvEntity.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -3382,24 +3357,24 @@
     <value>SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl, spirallab.sirius2.winforms, Version=1.25.1220.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trvEntity.Parent" xml:space="preserve">
-    <value>splitContainer5.Panel1</value>
+    <value>spcEntity.Panel1</value>
   </data>
   <data name="&gt;&gt;trvEntity.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;splitContainer5.Panel1.Name" xml:space="preserve">
-    <value>splitContainer5.Panel1</value>
+  <data name="&gt;&gt;spcEntity.Panel1.Name" xml:space="preserve">
+    <value>spcEntity.Panel1</value>
   </data>
-  <data name="&gt;&gt;splitContainer5.Panel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;spcEntity.Panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;splitContainer5.Panel1.Parent" xml:space="preserve">
-    <value>splitContainer5</value>
+  <data name="&gt;&gt;spcEntity.Panel1.Parent" xml:space="preserve">
+    <value>spcEntity</value>
   </data>
-  <data name="&gt;&gt;splitContainer5.Panel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;spcEntity.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="splitContainer5.Panel1MinSize" type="System.Int32, mscorlib">
+  <data name="spcEntity.Panel1MinSize" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="penControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -3415,7 +3390,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="penControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 208</value>
+    <value>304, 209</value>
   </data>
   <data name="penControl1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3427,48 +3402,48 @@
     <value>SpiralLab.Sirius2.Winforms.UI.PenUserControl, spirallab.sirius2.winforms, Version=1.25.1220.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;penControl1.Parent" xml:space="preserve">
-    <value>splitContainer5.Panel2</value>
+    <value>spcEntity.Panel2</value>
   </data>
   <data name="&gt;&gt;penControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;splitContainer5.Panel2.Name" xml:space="preserve">
-    <value>splitContainer5.Panel2</value>
+  <data name="&gt;&gt;spcEntity.Panel2.Name" xml:space="preserve">
+    <value>spcEntity.Panel2</value>
   </data>
-  <data name="&gt;&gt;splitContainer5.Panel2.Type" xml:space="preserve">
+  <data name="&gt;&gt;spcEntity.Panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;splitContainer5.Panel2.Parent" xml:space="preserve">
-    <value>splitContainer5</value>
+  <data name="&gt;&gt;spcEntity.Panel2.Parent" xml:space="preserve">
+    <value>spcEntity</value>
   </data>
-  <data name="&gt;&gt;splitContainer5.Panel2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;spcEntity.Panel2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="splitContainer5.Panel2MinSize" type="System.Int32, mscorlib">
+  <data name="spcEntity.Panel2MinSize" type="System.Int32, mscorlib">
     <value>200</value>
   </data>
-  <data name="splitContainer5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 947</value>
+  <data name="spcEntity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 949</value>
   </data>
-  <data name="splitContainer5.SplitterDistance" type="System.Int32, mscorlib">
-    <value>736</value>
+  <data name="spcEntity.SplitterDistance" type="System.Int32, mscorlib">
+    <value>737</value>
   </data>
-  <data name="splitContainer5.SplitterWidth" type="System.Int32, mscorlib">
+  <data name="spcEntity.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="splitContainer5.TabIndex" type="System.Int32, mscorlib">
+  <data name="spcEntity.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
-  <data name="&gt;&gt;splitContainer5.Name" xml:space="preserve">
-    <value>splitContainer5</value>
+  <data name="&gt;&gt;spcEntity.Name" xml:space="preserve">
+    <value>spcEntity</value>
   </data>
-  <data name="&gt;&gt;splitContainer5.Type" xml:space="preserve">
+  <data name="&gt;&gt;spcEntity.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;splitContainer5.Parent" xml:space="preserve">
+  <data name="&gt;&gt;spcEntity.Parent" xml:space="preserve">
     <value>tabPage1</value>
   </data>
-  <data name="&gt;&gt;splitContainer5.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;spcEntity.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tabPage1.ImageKey" xml:space="preserve">
@@ -3484,7 +3459,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 955</value>
+    <value>312, 957</value>
   </data>
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3520,7 +3495,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="trvBlock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 973</value>
+    <value>304, 949</value>
   </data>
   <data name="trvBlock.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3550,7 +3525,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 981</value>
+    <value>312, 957</value>
   </data>
   <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3589,7 +3564,7 @@
     <value>True</value>
   </data>
   <data name="tbcLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 991</value>
+    <value>320, 993</value>
   </data>
   <data name="tbcLeft.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -3610,13 +3585,13 @@
     <value>Fill</value>
   </data>
   <data name="panBody.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 78</value>
+    <value>0, 76</value>
   </data>
   <data name="panBody.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="panBody.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1400, 991</value>
+    <value>1400, 993</value>
   </data>
   <data name="panBody.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -3653,6 +3628,12 @@
   </data>
   <data name="&gt;&gt;imageList1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator12.Name" xml:space="preserve">
+    <value>toolStripSeparator12</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnPoint.Name" xml:space="preserve">
     <value>btnPoint</value>
@@ -3700,6 +3681,12 @@
     <value>btnRectangle</value>
   </data>
   <data name="&gt;&gt;btnRectangle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTriangle.Name" xml:space="preserve">
+    <value>btnTriangle</value>
+  </data>
+  <data name="&gt;&gt;btnTriangle.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnPolyline.Name" xml:space="preserve">
@@ -3954,6 +3941,12 @@
   <data name="&gt;&gt;mnuScriptEvent.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator13.Name" xml:space="preserve">
+    <value>toolStripSeparator13</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
     <value>toolStripSeparator5</value>
   </data>
@@ -4104,11 +4097,17 @@
   <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnLock.Name" xml:space="preserve">
-    <value>btnLock</value>
+  <data name="&gt;&gt;lblHelp.Name" xml:space="preserve">
+    <value>lblHelp</value>
   </data>
-  <data name="&gt;&gt;btnLock.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel14.Name" xml:space="preserve">
+    <value>toolStripStatusLabel14</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblName.Name" xml:space="preserve">
     <value>lblName</value>
@@ -4182,10 +4181,10 @@
   <data name="&gt;&gt;toolStripStatusLabel7.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblSelected.Name" xml:space="preserve">
-    <value>lblSelected</value>
+  <data name="&gt;&gt;lblRenderTime.Name" xml:space="preserve">
+    <value>lblRenderTime</value>
   </data>
-  <data name="&gt;&gt;lblSelected.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblRenderTime.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripStatusLabel12.Name" xml:space="preserve">
@@ -4194,22 +4193,10 @@
   <data name="&gt;&gt;toolStripStatusLabel12.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblRenderTime.Name" xml:space="preserve">
-    <value>lblRenderTime</value>
+  <data name="&gt;&gt;lblSelected.Name" xml:space="preserve">
+    <value>lblSelected</value>
   </data>
-  <data name="&gt;&gt;lblRenderTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripStatusLabel4.Name" xml:space="preserve">
-    <value>toolStripStatusLabel4</value>
-  </data>
-  <data name="&gt;&gt;toolStripStatusLabel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblHelp.Name" xml:space="preserve">
-    <value>lblHelp</value>
-  </data>
-  <data name="&gt;&gt;lblHelp.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblSelected.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripStatusLabel13.Name" xml:space="preserve">
@@ -4258,12 +4245,6 @@
     <value>lblRemote</value>
   </data>
   <data name="&gt;&gt;lblRemote.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripStatusLabel3.Name" xml:space="preserve">
-    <value>toolStripStatusLabel3</value>
-  </data>
-  <data name="&gt;&gt;toolStripStatusLabel3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

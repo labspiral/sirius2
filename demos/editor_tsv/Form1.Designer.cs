@@ -41,7 +41,6 @@
             this.siriusEditorUserControl1.DOExt2 = null;
             this.siriusEditorUserControl1.DOLaserPort = null;
             this.siriusEditorUserControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.siriusEditorUserControl1.IsDisableControl = false;
             this.siriusEditorUserControl1.Laser = null;
             this.siriusEditorUserControl1.Location = new System.Drawing.Point(0, 0);
             this.siriusEditorUserControl1.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);

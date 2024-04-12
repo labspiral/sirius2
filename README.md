@@ -5,17 +5,22 @@
  SuperEasy Library for Control Scanner and Laser
 
 
-![sirius2_ex1](https://user-images.githubusercontent.com/58460570/271742677-780f1905-9248-4873-b457-685cb2b45292.png)
+![3dengine](https://user-images.githubusercontent.com/58460570/271742677-780f1905-9248-4873-b457-685cb2b45292.png)
 
-![sirius2_ex2](https://user-images.githubusercontent.com/58460570/271741908-eb3df067-329c-483f-a983-073b6e32e95c.png)
+![freecamera](https://user-images.githubusercontent.com/58460570/271741908-eb3df067-329c-483f-a983-073b6e32e95c.png)
 
-![sirius2_ex3](https://user-images.githubusercontent.com/58460570/271741915-1b836b5d-f386-47f1-aca5-f0c24b1536ee.png)
+![dxf](https://user-images.githubusercontent.com/58460570/271741915-1b836b5d-f386-47f1-aca5-f0c24b1536ee.png)
 
-![sirius2_ex4](https://user-images.githubusercontent.com/58460570/271742410-2527b985-e64b-4146-97cb-273522a01b99.png)
+![simulation](https://user-images.githubusercontent.com/58460570/271742410-2527b985-e64b-4146-97cb-273522a01b99.png)
 
-![sirius2_ex5](https://user-images.githubusercontent.com/58460570/273743004-802904d1-4142-4eda-9282-f810a3b5bf11.png)
+![3dcalibration](https://user-images.githubusercontent.com/58460570/273743004-802904d1-4142-4eda-9282-f810a3b5bf11.png)
 
-![sirius2_ex6](https://user-images.githubusercontent.com/58460570/279851007-10e24e50-c205-4c68-a62f-2410af495d2d.png)
+![powermapping](https://github.com/labspiral/sirius2/assets/58460570/f7d4bc39-6ef3-4292-bc2d-3e8c9379fb6b)
+
+![script](https://github.com/labspiral/sirius2/assets/58460570/6fab7058-a88b-443d-a7f0-a8c0a914c01a)
+
+![girdchecker](https://user-images.githubusercontent.com/58460570/279851007-10e24e50-c205-4c68-a62f-2410af495d2d.png)
+
 
 
 ----
@@ -160,6 +165,16 @@
 
 
 **7. Version history**
+
+* 2024.4.15 v.1.26.1270
+  - added) triangle entity 
+  - added) remote virtual
+  - added) config.ini 
+     - config head rotate angle at demo projects
+  - addded) remote control switch to prevent edit mode
+  - fixed) deadlock(or race) condition
+  - fixed) minor codes at marker 
+  - fixed) reset offset array when document has opened
 
 * 2024.4.8 v.1.25.1220
   - added) select correction table entity

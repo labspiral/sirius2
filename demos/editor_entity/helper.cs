@@ -31,8 +31,6 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Reflection.Emit;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -84,7 +82,7 @@ namespace Demos
         /// </summary>
         public static void SetLanguage()
         {
-            string cultureInfo = NativeMethods.ReadIni<string>(ConfigFileName, $"GLOBAL", "LANGUAGE", "en-US");
+            string cultureInfo = NativeMethods.ReadIni<string>(ConfigFileName, $"GLOBAL", "LANGUAGE", "en-US");            
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureInfo);
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(cultureInfo);
         }
@@ -137,6 +135,7 @@ namespace Demos
             var laserMode = (LaserModes)Enum.Parse(typeof(LaserModes), sLaserMode);
             switch (rtcType.Trim().ToLower())
             {
+                default:
                 case "virtual":
                     rtc = ScannerFactory.CreateVirtual(index, kfactor, correctionPath);
                     break;
@@ -156,8 +155,6 @@ namespace Demos
                     string configXmlFilePath = Path.Combine(SpiralLab.Sirius2.Config.SyncAxisPath, configXmlFileName);
                     rtc = ScannerFactory.CreateRtc6SyncAxis(index, configXmlFilePath);
                     break;
-                default:
-                    throw new InvalidProgramException($"Not supported rtc type: {rtcType}");
             }
 
             // Initialize RTC controller
@@ -263,6 +260,7 @@ namespace Demos
                 var powerMeterSerialPort = NativeMethods.ReadIni<int>(ConfigFileName, $"POWERMETER{index}", "SERIAL_PORT", 0);
                 switch (powerMeterType.Trim().ToLower())
                 {
+                    default:
                     case "virtual":
                         var laserVirtualMaxPower = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "MAXPOWER", 10);
                         powerMeter = PowerMeterFactory.CreateVirtual(index, laserVirtualMaxPower);
@@ -276,8 +274,6 @@ namespace Demos
                     case "thorolabs":
                         powerMeter = PowerMeterFactory.CreateThorlabs(index, powerMeterSerialNo);
                         break;
-                    default:
-                        throw new InvalidProgramException($"Not supported powermeter type: {powerMeterType}");
                 }
                 success &= powerMeter.Initialize();
                 // un-comment auto start if you want
@@ -294,6 +290,7 @@ namespace Demos
             var virtuaLaserPowerControl = NativeMethods.ReadIni(ConfigFileName, $"LASER{index}", "POWERCONTROL", "Unknown");
             switch (laserType.Trim().ToLower())
             {
+                default:
                 case "virtual":
                     switch (virtuaLaserPowerControl.Trim().ToLower())
                     {
@@ -379,8 +376,6 @@ namespace Demos
                 case "spig4":
                     laser = LaserFactory.CreateSPIG4(index, $"LASER{index}", laserComPort, laserMaxPower);
                     break;
-                default:
-                    throw new InvalidProgramException($"Not supported laser source type: {laserType}");
             }
             if (powerMeter != null)
             {
@@ -425,6 +420,7 @@ namespace Demos
             #region Marker
             switch (rtcType.Trim().ToLower())
             {
+                default:
                 case "virtual":
                     marker = MarkerFactory.CreateVirtual(index);
                     break;
@@ -437,8 +433,6 @@ namespace Demos
                 case "syncaxis":
                     marker = MarkerFactory.CreateSyncAxis(index);
                     break;
-                default:
-                    throw new InvalidProgramException($"Not supported rtc type for marker: {rtcType}");
             }
             var scriptFileName = NativeMethods.ReadIni(ConfigFileName, $"MARKER{index}", "SCRIPT_FILENAME", string.Empty);
             if (!string.IsNullOrEmpty(scriptFileName))
@@ -452,26 +446,30 @@ namespace Demos
                 string protocol = NativeMethods.ReadIni<string>(ConfigFileName, $"REMOTE{index}", $"PROTOCOL", "tcpip");
                 switch (protocol.ToLower().Trim())
                 {
-                    case "tcp":
-                        int tcpPort = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"TCP_PORT", 5001);
-                        remote = RemoteFactory.CreateTcpServer(index, "RemoteTcp", marker, tcpPort);
+                    default:
+                    case "virtual":
+                        remote = RemoteFactory.CreateVirtual(index, "Virtual", marker);
                         break;
+                    case "tcp":
+                    case "tcpip":
+                        int tcpPort = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"TCP_PORT", 5001);
+                        remote = RemoteFactory.CreateTcpServer(index, "TCP/IP", marker, tcpPort);
+                        break;
+                    case "rs232":
+                    case "rs232c":
                     case "serial":
                         int serialPort = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"SERIAL_PORT", 1);
                         int serialBaudRate = NativeMethods.ReadIni<int>(ConfigFileName, $"REMOTE{index}", $"SERIAL_BAUDRATE=", 57600);
-                        remote = RemoteFactory.CreateSerial(index, "RemoteSerial", marker, serialPort, serialBaudRate);
+                        remote = RemoteFactory.CreateSerial(index, "RS232C", marker, serialPort, serialBaudRate);
                         break;
-                    default:
-                        throw new InvalidProgramException($"Not supported remote protocol: {protocol}");
                 }
                 remote.EditorControl = editorUserControl;
                 success &= remote.Start();
             }
             #endregion
-
+            
             return success;
         }
-
         
         private static void PowerMap_OnMappingOpened(IPowerMap powerMap, string fileName)
         {

@@ -123,6 +123,12 @@
   <data name="btnAbout.ToolTipText" xml:space="preserve">
     <value>정보</value>
   </data>
+  <data name="btnLock.Text" xml:space="preserve">
+    <value>잠금</value>
+  </data>
+  <data name="btnLock.ToolTipText" xml:space="preserve">
+    <value>잠금 (편집 금지)</value>
+  </data>
   <data name="lblBusy.Text" xml:space="preserve">
     <value> 가공 </value>
   </data>
@@ -138,8 +144,14 @@
   <data name="lblReady.Text" xml:space="preserve">
     <value> 준비 </value>
   </data>
+  <data name="lblRemote.Text" xml:space="preserve">
+    <value> 연결않됨  </value>
+  </data>
   <data name="lblSelected.Text" xml:space="preserve">
     <value>선택: 0</value>
+  </data>
+  <data name="mnuLock.Text" xml:space="preserve">
+    <value>잠금</value>
   </data>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>레이어</value>

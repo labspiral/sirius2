@@ -215,6 +215,15 @@ namespace Demos.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  LOCAL .
+        /// </summary>
+        internal static string Local {
+            get {
+                return ResourceManager.GetString("Local", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Marker status is busy now !.
         /// </summary>
         internal static string MarkerIsBusy {
@@ -363,20 +372,20 @@ namespace Demos.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  CONNECTED /LOCAL .
+        ///   Looks up a localized string similar to  REMOTE .
         /// </summary>
-        internal static string RemoteConnectedLocal {
+        internal static string Remote {
             get {
-                return ResourceManager.GetString("RemoteConnectedLocal", resourceCulture);
+                return ResourceManager.GetString("Remote", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  CONNECTED /REMOTE .
+        ///   Looks up a localized string similar to  CONNECTED .
         /// </summary>
-        internal static string RemoteConnectedRemote {
+        internal static string RemoteConnected {
             get {
-                return ResourceManager.GetString("RemoteConnectedRemote", resourceCulture);
+                return ResourceManager.GetString("RemoteConnected", resourceCulture);
             }
         }
         

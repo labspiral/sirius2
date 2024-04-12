@@ -118,165 +118,165 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Calibration3D" xml:space="preserve">
-    <value>Calibration 3D</value>
+    <value>3D 보정</value>
   </data>
   <data name="ConvertBlock" xml:space="preserve">
-    <value>Convert to Block</value>
+    <value>블럭 전환</value>
   </data>
   <data name="DocumentClipboardEmpty" xml:space="preserve">
-    <value>Clipboard are empty. Please copy or cut at first.</value>
+    <value>클립보드가 비었습니다. 복사 혹은 잘라내기를 진행해 주십시오.</value>
   </data>
   <data name="DocumentEncoderReset" xml:space="preserve">
-    <value>Do you really want to reset encoder values ?</value>
+    <value>엔코더 값을 모두 초기화 하시겠습니까 ?</value>
   </data>
   <data name="DocumentNew" xml:space="preserve">
-    <value>Do you really want to new document without save ?</value>
+    <value>저장없이 문서를 초기화 하시겠습니까 ?</value>
   </data>
   <data name="DocumentOpen" xml:space="preserve">
-    <value>Do you really want to open without save ?</value>
+    <value>저장없이 문서를 새로 가져오시겠습니까 ?</value>
   </data>
   <data name="EncoderAngular" xml:space="preserve">
-    <value>ENC X,0: {0:F3}˚ [{1}]</value>
+    <value>엔코더 X,0: {0:F3}˚ [{1}]</value>
   </data>
   <data name="EncoderXY" xml:space="preserve">
-    <value>ENC XY: {0:F3}, {1:F3}mm [{2}, {3}]</value>
+    <value>엔코더 XY: {0:F3}, {1:F3}mm [{2}, {3}]</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>오류</value>
   </data>
   <data name="Explode" xml:space="preserve">
-    <value>Explode</value>
+    <value>분해</value>
   </data>
   <data name="ExtractPointsCloudFailed" xml:space="preserve">
-    <value>Fail to extract points cloud from {0}.</value>
+    <value>{0} 에서 포인트 클라우드용 정점 추출에 실패하였습니다.</value>
   </data>
   <data name="ExtractPointsCloudTrying" xml:space="preserve">
-    <value>Do you want to extract points cloud from {0} ?</value>
+    <value>{0} 에서 포인트 클라우드용 정점 추출을 진행하시겠습니까?</value>
   </data>
   <data name="Group" xml:space="preserve">
-    <value>Group</value>
+    <value>그룹</value>
   </data>
   <data name="HelpKeboard" xml:space="preserve">
-    <value>Help - Keyboards</value>
+    <value>도움말 - 키보드</value>
   </data>
   <data name="HeuristicFailed" xml:space="preserve">
-    <value>Heuristic algorithm has failed !</value>
+    <value>휴리스틱 알로리즘이 실패하였습니다.</value>
   </data>
   <data name="LicenseKeyIsNotFounded" xml:space="preserve">
-    <value>USB license key is not founded.</value>
+    <value>라이센스 키가 발견되지 않았습니다.</value>
   </data>
   <data name="LicenseKeyWithoutIformation" xml:space="preserve">
-    <value>No information within USB license key.
-It's Empty key.</value>
+    <value>라이센스크에 아무런 정보가 없습니다.
+빈(새로운) 키입니다.</value>
   </data>
   <data name="Local" xml:space="preserve">
-    <value> LOCAL </value>
+    <value> 로컬 </value>
   </data>
   <data name="MarkerIsBusy" xml:space="preserve">
-    <value>Marker status is busy now !</value>
+    <value>마커 상태가 이미 진행중입니다.</value>
   </data>
   <data name="MarkerTryingToStart" xml:space="preserve">
-    <value>Do you really want to start mark ?</value>
+    <value>마커를 이용해 가공을 시작하시겠습니까 ?</value>
   </data>
   <data name="MarkerWaitingExternalStart" xml:space="preserve">
-    <value>Waiting for external /START trigger ...</value>
+    <value>외부 /START 트리거를 대기중입니다.</value>
   </data>
   <data name="NoParentWhenActInsert" xml:space="preserve">
-    <value>Please select target parent entity to layer.</value>
+    <value>대상 부모 개체를 우선 선택해 주십시오.</value>
   </data>
   <data name="PathOptimizer" xml:space="preserve">
-    <value>Path Optimizer</value>
+    <value>경로 최적화</value>
   </data>
   <data name="PointsCloud" xml:space="preserve">
-    <value>Points Cloud</value>
+    <value>포인트 클라우드</value>
   </data>
   <data name="PopUpOptimizedSize" xml:space="preserve">
-    <value>Extracted data size are {0} and base location at {1}.
-Do you want to continue anyway ?</value>
+    <value>추출 데이타의 개수는 {0} 이고 기준 위치는 {1} 입니다.
+계속 진행하시겠습니까 ?</value>
   </data>
   <data name="PowerCompensateStart" xml:space="preserve">
-    <value>Do you really want to start power compensate ?
-Target counts: {0}</value>
+    <value>파워 보정을 시작하시겠습니까 ?
+대상 개수: {0}</value>
   </data>
   <data name="PowerMap" xml:space="preserve">
-    <value>Power Map</value>
+    <value>파워 맵</value>
   </data>
   <data name="PowerMapBusy" xml:space="preserve">
-    <value>Powermap is busy now.</value>
+    <value>파워 맵 관련 기능이 이미 진행중입니다.</value>
   </data>
   <data name="PowerMapStart" xml:space="preserve">
-    <value>Do you really want to start power mapping ?
-Range: {0:F3} ~ {1:F3}W with {2} steps.</value>
+    <value>파워 매핑을 시작하시겠습니까 ?
+범위: {0:F3} ~ {1:F3}W ({2} 단계)</value>
   </data>
   <data name="PowerMapToReset" xml:space="preserve">
-    <value>Do you really want to set category: {0} as 1:1 ?</value>
+    <value>대상 카테고리를 1:1 로 초기화 하시겠습니까 ?</value>
   </data>
   <data name="PowerMapTryingToClear" xml:space="preserve">
-    <value>Do you really want to clear all categories ?</value>
+    <value>모든 카테고리를 초기화 하시겠습니까 ?</value>
   </data>
   <data name="PowerVerifyStart" xml:space="preserve">
-    <value>Do you really want to start power verification ?
-Target counts: {0}</value>
+    <value>파워 검증을 시작하시겠습니까 ?
+대상 개수: {0}</value>
   </data>
   <data name="PropertyGridBound" xml:space="preserve">
-    <value>Bound (WHD): {0}</value>
+    <value>외곽영역 (WHD): {0}</value>
   </data>
   <data name="PropertyGridRealBound" xml:space="preserve">
-    <value>Real Bound (WHD). Min: {0}, Max {1}, Center: {2}</value>
+    <value>실제 외곽영역 (WHD). 최소: {0}, 최대: {1}, 중심: {2}</value>
   </data>
   <data name="Remote" xml:space="preserve">
-    <value> REMOTE </value>
+    <value> 원격 </value>
   </data>
   <data name="RemoteConnected" xml:space="preserve">
-    <value> CONNECTED </value>
+    <value> 연결됨  </value>
   </data>
   <data name="RemoteControl" xml:space="preserve">
-    <value>Remote Control</value>
+    <value>원격 제어</value>
   </data>
   <data name="RemoteDisconnected" xml:space="preserve">
-    <value> DISCONNECTED </value>
+    <value> 연결않됨  </value>
   </data>
   <data name="RemoteToLocal" xml:space="preserve">
-    <value>Do you really want to switch 'LOCAL' mode ?</value>
+    <value>원격 제어 모드를 'LOCAL' 로 전환 하시겠습니까 ?</value>
   </data>
   <data name="RemoteToRemote" xml:space="preserve">
-    <value>Do you really want to switch 'REMOTE' mode ?</value>
+    <value>원격 제어 모드를 'REMOTE' 로 전환 하시겠습니까 ?</value>
   </data>
   <data name="Reverse" xml:space="preserve">
-    <value>Reverse</value>
+    <value>반전</value>
   </data>
   <data name="Selected" xml:space="preserve">
-    <value>Selected: {0}</value>
+    <value>선택: {0}</value>
   </data>
   <data name="SpiralLab" xml:space="preserve">
-    <value>(c)SpiralLAB</value>
+    <value>(c)스파이럴랩</value>
   </data>
   <data name="TreeViewBlock" xml:space="preserve">
-    <value>Do you want to convert to block ?</value>
+    <value>블럭 개체로 변환을 진행하시겠습니까 ?</value>
   </data>
   <data name="TreeViewCalibration3D" xml:space="preserve">
-    <value>Do you want to create new scanner field correction file ?</value>
+    <value>신규 스캐너 보정 파일을 생성하시겠습니까 ?</value>
   </data>
   <data name="TreeViewChildren" xml:space="preserve">
-    <value>Children: {0}</value>
+    <value>자식수: {0}</value>
   </data>
   <data name="TreeViewExplode" xml:space="preserve">
-    <value>Do you want to explode {0} ?</value>
+    <value>{0} 에 대해 분해를 진행하시겠습니까 ?</value>
   </data>
   <data name="TreeViewGroup" xml:space="preserve">
-    <value>Do you want to convert to group ?</value>
+    <value>그룹 개체로 변환을 진행하시겠습니까 ?</value>
   </data>
   <data name="TreeViewID" xml:space="preserve">
-    <value>ID: {0}</value>
+    <value>식별자: {0}</value>
   </data>
   <data name="TreeViewReverse" xml:space="preserve">
-    <value>Do you want to reverse {0} ?</value>
+    <value>{0}에 대해 경로 반전을 진행하시겠습니까 ?</value>
   </data>
   <data name="TreeViewTooManyNodes" xml:space="preserve">
-    <value>Do you really want to show all children nodes ?
-Too many nodes: {0}</value>
+    <value>모든 자식 노드를 표시하시겠습니까 ?
+너무 많은 자식 노드 개수: {0}</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warning</value>
+    <value>경고</value>
   </data>
 </root>
