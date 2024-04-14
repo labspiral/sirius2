@@ -1596,7 +1596,7 @@ namespace Demos
                             rtcMoF.CtlMofGetAngularEncoder(out var x, out var angle);
                             stsBottom.BeginInvoke(new MethodInvoker(delegate ()
                             {
-                                lblEncoder.Text = string.Format(Properties.Resources.EncoderXY, angle, x);
+                                lblEncoder.Text = string.Format(Properties.Resources.EncoderAngular, angle, x);
                             }));
                         }
                         break;
@@ -1755,6 +1755,7 @@ namespace Demos
         /// To do visible(or invisible) controls (like as treeview, propertygrid,...) to disable edit operations. <br/>
         /// Applied also, of <see cref="ControlModes.Remote">ControlModes.Remote</see> has changed. <br/>
         /// </remarks>
+        /// <param name="isHide">Hide or not</param>
         public virtual void VisibilityEditableControls(bool isHide = true)
         {
             if (!this.IsHandleCreated || this.IsDisposed)

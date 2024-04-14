@@ -117,7 +117,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             ///     for (int i = 0; i &lt; Offsets.Length; i++)
             ///     {
             ///         ...
-            ///         LayerWork(i, Offsets[i], Layers[j], layer);
+            ///         LayerWork(i, Offsets[i], j, layer);
             ///         ...
             ///     }
             ///     Laser.ListEnd();

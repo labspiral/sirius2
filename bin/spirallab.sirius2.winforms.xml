@@ -6309,7 +6309,7 @@
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWaitDataExt16Cond(System.String,System.String)">EntityFactory.CreateWaitDataExt16Cond</see>. <br/>
             16 bits digital input at EXTENSION 1 port when input condition has matched. <br/>
-            Used with <see cref="!:IRtc.ListReadExtDI16WaitUntil">IRtc.ListReadExtDI16WaitUntil</see>. <br/>
+            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.ListReadExtDI16WaitUntil(System.UInt32,System.UInt32)">IRtcExtension.ListReadExtDI16WaitUntil</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16Cond.InputLowBitMask">
@@ -7356,7 +7356,26 @@
             Determined by <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Children">IEntity.Children</see>'s pathes(or figures) are closed or not. <br/>
             </remarks>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:SpiralLab.Sirius2.Winforms.Entity.IHatchable.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)" -->
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IHatchable.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Do hatch at closed path within <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
+            </summary>
+            <remarks>
+            Used with internal array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> from <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. <br/>
+            Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values for <c>HatchModes.Line</c> mode. <br/>
+            Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>angle2</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values for <c>HatchModes.CrossLine</c> mode. <br/>
+            Used with <c>HatchJoints</c>, <c>internal</c> values for <c>HatchModes.Polygon</c> mode. <br/>
+            </remarks>
+            <param name="hatchMode"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchModes">HatchModes</see></param>
+            <param name="hatchJoint"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">HatchJoints</see></param>
+            <param name="isZigZag">ZigZag</param>
+            <param name="angle">Angle 1st</param>
+            <param name="angle2">Angle 2nd for <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">HatchModes.CrossLine</see></param>        
+            <param name="interval">Interval (mm)</param>
+            <param name="exclude">Exclude (mm)</param>        
+            <param name="shift">Shift offset (mm)</param>  
+            <returns>Hatched <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityGroup">EntityGroup</see> entity</returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible">
             <summary>
             ITextConvertible interface
@@ -8243,7 +8262,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle.Base">
             <summary>
-            Width (mm)
+            Base length (mm)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle.Height">
@@ -8264,7 +8283,7 @@
             Constructor
             </summary>
             <param name="center">Center X,Y (mm)</param>
-            <param name="_base">Base (mm)</param>
+            <param name="_base">Base length (mm)</param>
             <param name="height">Height (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle.#ctor(OpenTK.Vector3,System.Double,System.Double)">
@@ -8272,7 +8291,7 @@
             Constructor
             </summary>
             <param name="center">Center X,Y,Z (mm)</param>
-            <param name="_base">Base (mm)</param>
+            <param name="_base">Base length (mm)</param>
             <param name="height">Height (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle.Finalize">
@@ -9159,9 +9178,6 @@
             <summary>
             EntityPolyline3D entity
             </summary>
-            <remarks>
-            //Can be created by <see cref="!:EntityFactory.CreatePolyline3D">EntityFactory.CreatePolyline3D</see>. <br/>
-            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline3D.IsClosed">
             <summary>
@@ -12233,7 +12249,7 @@
             <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityLayer">EntityLayer</see> is not used its own <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Alignment">Alignment</see> 
             </summary>
             <remarks>
-            Not used. Do not edit operation. <nbr/>
+            Not used. Do not edit operation. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayer.ModelAlign">
@@ -17161,7 +17177,7 @@
                 {
                     case "TextEntityName1":
                         // For example, "yyyyMMdd HH:mm:ss"
-                        return DateTime.Now.ToString(textConvertible.SourceText);
+                        return DateTime.Now.ToString("yyyyMMdd HH:mm:ss");
                     default:
                         return textConvertible.SourceText;
                 }

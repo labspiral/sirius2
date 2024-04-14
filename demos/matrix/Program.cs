@@ -403,6 +403,16 @@ namespace Demos
 
             // If scanner rotate at 90 deg
             rtc.MatrixStack.BaseMatrix = Matrix4x4.CreateRotationZ((float)(90 * Math.PI / 180.0));
+            //or 
+            //var m4 = Matrix3x2.CreateRotation((float)(90 * Math.PI / 180.0));
+            //rtc.CtlMatrix(ScannerHeads.Primary, m4);
+            //or 
+            //var head2nd = rtc as IRtc2ndHead;
+            //if (head2nd != null)
+            //{
+            //    var offset = new SpiralLab.Sirius2.Mathematics.Offset(0, 0, 90);
+            //    head2nd.PrimaryHeadBaseOffset = offset;
+            //}
 
             bool success = true;
             // List buffer with single buffered

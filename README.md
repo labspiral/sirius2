@@ -168,13 +168,17 @@
 
 * 2024.4.15 v.1.26.1270
   - added) triangle entity 
+  - added) CtlMatrix, ListMatrix functions at RTC interface
   - added) remote virtual
-  - added) config.ini 
-     - config head rotate angle at demo projects
-  - addded) remote control switch to prevent edit mode
-  - fixed) deadlock(or race) condition
-  - fixed) minor codes at marker 
+     - remote control mode switched to not editable view
+  - fixed) MoF
+     - supported negative(-) encoder scale 
+     - supported negative(-) simulation speed
   - fixed) reset offset array when document has opened
+  - fixed) marker function signature
+  - fixed) bugs
+     - deadlock(or race) condition
+     - reduce too many event for propertychanged
 
 * 2024.4.8 v.1.25.1220
   - added) select correction table entity

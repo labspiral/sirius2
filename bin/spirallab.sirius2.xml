@@ -2590,7 +2590,9 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.IsShutterOpen">
-            <inheritdoc/> 
+            <summary>
+            Shutter open(or close)
+            </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.TriggerModes">
             <summary>
@@ -8242,6 +8244,11 @@
               Looks up a localized string similar to External /START max counts.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Head1st_C">
+            <summary>
+              Looks up a localized string similar to Head (1st).
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Head2nd_C">
             <summary>
               Looks up a localized string similar to Head (2nd).
@@ -8409,9 +8416,34 @@
               Looks up a localized string similar to Marking info.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Matrix_C">
+            <summary>
+              Looks up a localized string similar to Matrix.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Matrix1stinternal_DESC">
+            <summary>
+              Looks up a localized string similar to Internal 3x3 Matrix for Primary Head.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Matrix1stinternal_DISP">
+            <summary>
+              Looks up a localized string similar to Matrix (1st).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Matrix2ndinternal_DESC">
+            <summary>
+              Looks up a localized string similar to Internal 3x3 Matrix for Secondary Head.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Matrix2ndinternal_DISP">
+            <summary>
+              Looks up a localized string similar to Matrix (2nd).
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Matrixstack_DESC">
             <summary>
-              Looks up a localized string similar to Matrix Stack.
+              Looks up a localized string similar to 4x4 Matrix Stack.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Matrixstack_DISP">
@@ -8513,7 +8545,7 @@
              <summary>
                Looks up a localized string similar to Primary Head Base Offset
             X(mm), Y(mm), Z(mm), Angle(°)
-            Total Offset = Base + User Offset..
+            Total Head Offset = Base + User Offset..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Primarybaseoffset_DISP">
@@ -8525,7 +8557,7 @@
              <summary>
                Looks up a localized string similar to Primary Head User Offset
             X(mm), Y(mm), Z(mm), Angle(°)
-            Total Offset = Base + User Offset..
+            Total Head Offset = Base + User Offset..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Primaryuseroffset_DISP">
@@ -8535,7 +8567,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Pulsesrev_DESC">
             <summary>
-              Looks up a localized string similar to Encoder (X/0) Counts / revolution for MoF.
+              Looks up a localized string similar to Encoder (X/0) Counts / Revolution for Angular MoF.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Pulsesrev_DISP">
@@ -8555,7 +8587,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Rotatecenter_DESC">
             <summary>
-              Looks up a localized string similar to Rotate Center for MoF Angular.
+              Looks up a localized string similar to Rotate Center for Angular MoF.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Rotatecenter_DISP">
@@ -8605,7 +8637,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Scalex_DESC">
             <summary>
-              Looks up a localized string similar to Encoder X Counts/mm for MoF.
+              Looks up a localized string similar to Encoder X Counts/mm for X/Y MoF.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Scalex_DISP">
@@ -8615,7 +8647,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Scaley_DESC">
             <summary>
-              Looks up a localized string similar to Encoder Y Counts/mm for MoF.
+              Looks up a localized string similar to Encoder Y Counts/mm for X/Y MoF.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Scaley_DISP">
@@ -8668,9 +8700,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Seconds_DESC">
-            <summary>
-              Looks up a localized string similar to Offset for Seconds (s).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Offset for Seconds (s)
+            Used with CharacterSet font only..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Seconds_DISP">
             <summary>
@@ -8683,10 +8716,9 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Simulatedangular_DESC">
-             <summary>
-               Looks up a localized string similar to Simulated Encoder Angular Speed (˚/sec)
-            Positive direction only.
-             </summary>
+            <summary>
+              Looks up a localized string similar to Simulated Encoder Angular Speed (˚/sec).
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Simulatedangular_DISP">
             <summary>
@@ -8694,10 +8726,9 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Simulatedx_DESC">
-             <summary>
-               Looks up a localized string similar to Simulated X Encoder Speed (mm/s) for MoF
-            Positive direction only.
-             </summary>
+            <summary>
+              Looks up a localized string similar to Simulated Encoder X Speed (mm/s) for MoF.
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Simulatedx_DISP">
             <summary>
@@ -8705,10 +8736,9 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Simulatedy_DESC">
-             <summary>
-               Looks up a localized string similar to Simulated Y Encoder Speed (mm/s) for MoF
-            Positive direction only.
-             </summary>
+            <summary>
+              Looks up a localized string similar to Simulated Encoder Y Speed (mm/s) for MoF.
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Simulatedy_DISP">
             <summary>
@@ -9799,6 +9829,7 @@
             <remarks>
             User configurable base matrix. (like as rotate, translate, ...) <br/>
             <see cref="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.ToResult">ToResult</see> = matries at stack * <see cref="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.BaseMatrix">BaseMatrix</see>. <br/>
+            User can use <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.CtlHeadOffset(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Mathematics.Offset)">IRtc2ndHead.CtlHeadOffset</see> instead. <br/>
             Default : <c>Matrix4x4.Identity</c> <br/>
             <br/>
             Allow operations :<br/>
@@ -11588,6 +11619,12 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.MatrixStack">
             <inheritdoc/>  
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.MatrixPrimaryInternal">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.MatrixSecondaryInternal">
+            <inheritdoc/>  
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.KFactor">
             <inheritdoc/>  
         </member>
@@ -11833,14 +11870,6 @@
             <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables">CorrectionTables</see> at secondary head
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.DistanceToSecondaryHead">
-            <inheritdoc/>  
-        </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.distanceToSecondaryHead">
-            <summary>
-            Distance primary to secondary head
-            </summary>
-        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.PrimaryHeadBaseOffset">
             <inheritdoc/>  
         </member>
@@ -11855,6 +11884,14 @@
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.primaryHeadUserOffset">
             <summary>
             User offset for primary head 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.DistanceToSecondaryHead">
+            <inheritdoc/>  
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.distanceToSecondaryHead">
+            <summary>
+            Distance primary to secondary head
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.SecondaryHeadBaseOffset">
@@ -12086,6 +12123,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlLaserMode(SpiralLab.Sirius2.Scanner.Rtc.LaserModes)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlLaserOn">
             <inheritdoc/>  
         </member>
@@ -12181,6 +12221,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListBegin(SpiralLab.Sirius2.Scanner.Rtc.ListTypes)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListSelectCorrection(SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables)">
@@ -12489,9 +12532,9 @@
             <summary>
             Calculate encoder counts to approx. angular speed (mm/s)
             </summary>
-            <param name="enc"></param>
-            <param name="angle"></param>
-            <returns></returns>
+            <param name="enc">Encoder X(0)</param>
+            <param name="angle">Approx. angular speed</param>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlMofAngularCenter(System.Numerics.Vector2)">
             <inheritdoc/>  
@@ -13333,7 +13376,7 @@
             <summary>
             Notify job status has changed(or job has created)
             </summary>
-            <param name="job"><c>IJob</c></param>
+            <param name="job"><see cref="T:SpiralLab.Sirius2.Scanner.IJob">IJob</see></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.NotifyCorrectionTable(SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,System.String)">
             <summary>
@@ -13373,6 +13416,12 @@
             <summary>
             KFactor
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.MatrixPrimaryInternal">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.MatrixSecondaryInternal">
+            <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.BitResolution">
             <summary>
@@ -13677,14 +13726,6 @@
             <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables">CorrectionTables</see> at secondary head
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.DistanceToSecondaryHead">
-            <inheritdoc/>  
-        </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.distanceToSecondaryHead">
-            <summary>
-            Distance primary to secondary head
-            </summary>
-        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.PrimaryHeadBaseOffset">
             <inheritdoc/>  
         </member>
@@ -13699,6 +13740,14 @@
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.primaryHeadUserOffset">
             <summary>
             User offset for primary head 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.DistanceToSecondaryHead">
+            <inheritdoc/>  
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.distanceToSecondaryHead">
+            <summary>
+            Distance primary to secondary head
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.SecondaryHeadBaseOffset">
@@ -13930,6 +13979,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlLaserMode(SpiralLab.Sirius2.Scanner.Rtc.LaserModes)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlLaserOn">
             <inheritdoc/>  
         </member>
@@ -14055,6 +14107,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListBegin(SpiralLab.Sirius2.Scanner.Rtc.ListTypes)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListSelectCorrection(SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables)">
@@ -14385,9 +14440,9 @@
             <summary>
             Calculate encoder counts to approx. angular speed (mm/s)
             </summary>
-            <param name="enc"></param>
-            <param name="angle"></param>
-            <returns></returns>
+            <param name="enc">Encoder X(0)</param>
+            <param name="angle">Approx. angular speed</param>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlMofAngularCenter(System.Numerics.Vector2)">
             <inheritdoc/>  
@@ -15444,6 +15499,12 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.MatrixStack">
             <inheritdoc/>  
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.MatrixPrimaryInternal">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.MatrixSecondaryInternal">
+            <inheritdoc/>  
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.KFactor">
             <summary>
             Not used. assign K-factor at config xml file instead
@@ -15874,7 +15935,7 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlHeadOffset(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ScanDevices,SpiralLab.Sirius2.Mathematics.Offset)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlMatrix(System.Numerics.Matrix3x2)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlContourDependentSpeed(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ContourDependentSpeedDirections,System.Double)">
@@ -15921,7 +15982,7 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListBegin(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionTypes)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListMatrix(System.Numerics.Matrix3x2)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListSelectCorrection(SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables)">
@@ -17187,7 +17248,7 @@
             Simulation output filename
             </summary>
             <remarks>
-            Output to <c>[BaseDirectoryPath]/Logs/</c> by <c>ConfigXMLFile</c> 
+            Output to <c>[BaseDirectoryPath]/Logs/</c> at <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ConfigXMLFile">ConfigXMLFile</see>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.Head1Offset">
@@ -17228,12 +17289,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.Trajectory">
             <summary>
-            Trajectory (<c>MarkConfig</c>, <c>GeometryConfig</c>)
+            Trajectory for <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MarkConfig">MarkConfig</see> and <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.GeometryConfig">GeometryConfig</see> 
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.Dynamics">
             <summary>
-            Dynamics (<c>ScannerDynamic</c>, <c>StageDynamic</c>)
+            Dynamics <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ScannerDynamic">ScannerDynamic</see> and <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.StageDynamic">StageDynamic</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.OpStatus">
@@ -17256,20 +17317,20 @@
             Is enabled(or disable) relative coordinate system or not
             </summary>
             <remarks>
-            Used when <c>ListBegin</c> has called.
+            Used when <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListBegin(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionTypes)">ListBegin</see> has called.
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.IsSoftStop">
             <summary>
-            Is enabled soft stop when aborting <c>CtlAbort</c>
+            Is enabled soft stop when aborting <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlAbort">CtlAbort</see>
             </summary>
             <remarks>
-            True = <br/>
+            <c>True</c>: <br/>
             Cancels the execution of the current Job controlled and inserts a compensation movement for deceleration.  <br/>
             After the slsc_ctrl_stop_controlled call the RTC6 board is still processing already loaded RTC6 micro vector commands in its list memory. <br/>
             Therefore, it may take up to 30 s until the actual Job execution end.Afterwards the compensation movement for deceleration is executed.During this entire time, slsc_ctrl_get_exec_state returns slsc_ExecState_Executing.<br/>
             After the compensation movement, the syncAXIS control instance operation status changes to red. The syncAXIS control instance must be initialized again.<br/> <br/>
-            False = <br/>
+            <c>False</c>:<br/>
             Cancels the execution of the current Job uncontrolled and immediately by a direct access to the RTC6 board. (Emergency stop)<br/>
             </remarks>
         </member>
@@ -17299,8 +17360,9 @@
             BandWidth (Hz)
             </summary>
             <remarks>
-            Higher value: Increase work load at stage. <br/>
-            Lower value: Increase work load at scanner. <br/>
+            Higher value: increase work load at stage. <br/>
+            Lower value: increase work load at scanner. <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionTypes.StageAndScanner">StageAndScanner</see> only. <br/>
             Lower than 0.23 are not allowed. <br/>
             Typical values are between 1~3 Hz, depending on the scan head working field and the dynamic range of the positioning stage.  <br/>
             </remarks>
@@ -17310,7 +17372,7 @@
             Heuristic index
             </summary>
             <remarks>
-            Used with <c>DynamicReductionFunction</c> by <c>ConfigXMLFile</c> <br/>
+            Used with <c>DynamicReductionFunction</c> at <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ConfigXMLFile">ConfigXMLFile</see>. <br/>
             Determines the spatial extent of each Segment = distance between starting point and end point (exception: diameter of the circle with circular Segments ([*] arc[*], [*] circle[*]) which sweep more than a semicircle). <br/>
             Checks the characteristic(= DynamicReductionFunction) if there is a corresponding Velocity value for the result from(1) (= Length value). <br/>
             Only if the Velocity value from(2) is smaller than the original marking speed: the Heuristic reduces the marking speed of the Segment to this Velocity value. <br/>
@@ -17318,17 +17380,17 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.StageCounts">
             <summary>
-            Stage count(s) at <c>ConfigXMLFile</c>
+            Stage count(s) at <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ConfigXMLFile">ConfigXMLFile</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ScanHeadCounts">
             <summary>
-            Scan head count(s) at <c>ConfigXMLFile</c>
+            Scan head count(s) at <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ConfigXMLFile">ConfigXMLFile</see>
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlBandWidth(System.Double)">
             <summary>
-            Change <c>BandWidth</c> (Hz)
+            Change <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.BandWidth">BandWidth</see> (Hz)
             </summary>
             <remarks>
             Higher value: Increase work load at stage.<br/>
@@ -17354,7 +17416,7 @@
             Change heuristic index
             </summary>
             <remarks>
-            Used with <c>DynamicReductionFunction</c> by <c>ConfigXMLFile</c> <br/>
+            Used with <c>DynamicReductionFunction</c> at <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ConfigXMLFile">ConfigXMLFile</see>
             Determines the spatial extent of each Segment = distance between starting point and end point (exception: diameter of the circle with circular Segments ([*] arc[*], [*] circle[*]) which sweep more than a semicircle).<br/>
             Checks the characteristic(= DynamicReductionFunction) if there is a corresponding Velocity value for the result from(1) (= Length value).<br/>
             Only if the Velocity value from(2) is smaller than the original marking speed: the Heuristic reduces the marking speed of the Segment to this Velocity value.<br/>
@@ -17364,24 +17426,24 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlMotionMode(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionModes)">
             <summary>
-            Change <c>MotionMode</c>
+            Change <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionModes">MotionModes</see>
             </summary>
-            <param name="motionMode"><c>MotionMode</c> </param>
+            <param name="motionMode"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionModes">MotionModes</see></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlMotionType(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionTypes)">
             <summary>
-            Change <c>MotionType</c>
+            Change ><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionTypes">MotionTypes</see>
             </summary>
-            <param name="mt"><c>MotionType</c></param>
+            <param name="mt"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionTypes">MotionTypes</see></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlSelectStage(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Stages,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables)">
             <summary>
             Select scanner field correction table at target stage
             </summary>
-            <param name="stage"><c>Stage</c> (1,2,3,4)</param>
-            <param name="tableIndex"><c>CorrectionTableIndex</c> (1,2,3,4) </param>
+            <param name="stage"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Stages">Stages</see> (1,2,3,4)</param>
+            <param name="tableIndex"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables">CorrectionTables</see> (1,2,3,4,5,6,7,8) </param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlMoveScannerPosition(System.Numerics.Vector2)">
@@ -17396,7 +17458,7 @@
             Move stage position
             </summary>
             <remarks>
-            Used with <c>StageMoveSpeed</c>, <c>StageMoveTimeOut</c> values <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.StageMoveSpeed">StageMoveSpeed</see> and <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.StageMoveTimeOut">StageMoveTimeOut</see> values <br/>
             </remarks>
             <param name="position">X,Y position (mm)</param>        
             <returns>Success or failed</returns>
@@ -17405,7 +17467,7 @@
             <summary>
             Get acutal scanner position
             </summary>
-            <param name="scanDevice"><c>ScanDevice</c></param>
+            <param name="scanDevice"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ScanDevices">ScanDevices</see></param>
             <param name="position">X,Y position (mm)</param>
             <returns>Success or failed</returns>
         </member>
@@ -17420,26 +17482,15 @@
             <summary>
             Scan head offset (For multiple scan heads)
             </summary>
-            <param name="scanDevice"><c>ScanDevice</c></param>
-            <param name="offset">Translate dx, dy, dz (mm) and angle(°, +: CCW, -: CW)</param>
-            <returns>Success or failed</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlMatrix(System.Numerics.Matrix3x2)">
-            <summary>
-            Transformation matrix and an offset value 
-            </summary>
-            <remarks>
-            Calculates the new target points according to = (transformation matrix × target point) + offset <br/>
-            The change will take effect at runtime as of the next <c>ListBegin</c>. <br/>
-            </remarks>
-            <param name="matrix">2x2 matrix and offset</param>
+            <param name="scanDevice"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ScanDevices">ScanDevices</see></param>
+            <param name="offset"><see cref="T:SpiralLab.Sirius2.Mathematics.Offset"></see> for translate dx, dy, dz (mm) and angle(°, +: CCW, -: CW)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlContourDependentSpeed(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ContourDependentSpeedDirections,System.Double)">
             <summary>
             Contour dependent speed direction control
             </summary>
-            <param name="direction"><c>ContourDependentSpeedDirection</c></param>
+            <param name="direction"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ContourDependentSpeedDirections">ContourDependentSpeedDirections</see></param>
             <param name="spotRadius">Spot radius (mm)</param>
             <returns>Success or failed</returns>
         </member>
@@ -17447,28 +17498,28 @@
             <summary>
             Get Calculation dynamics
             </summary>
-            <param name="dynamics"><c>Dynamics</c></param>
+            <param name="dynamics"><see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.Dynamics">Dynamics</see></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlSetDynamics(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Dynamics)">
             <summary>
             Set Calculation dynamics
             </summary>
-            <param name="dynamics"><c>Dynamics</c></param>
+            <param name="dynamics"><see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.Dynamics">Dynamics</see></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlGetTrajectory(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Trajectory@)">
             <summary>
             Get Trajectory
             </summary>
-            <param name="trajectory"><c>Trajectory</c></param>
+            <param name="trajectory"><see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.Trajectory">Trajectory</see></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlSetTrajectory(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Trajectory)">
             <summary>
             Set Trajectory
             </summary>
-            <param name="trajectory"><c>Trajectory</c></param>
+            <param name="trajectory"><see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.Trajectory">Trajectory</see></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlGetJumpCalculationDynamics(System.Double@,System.Double@)">
@@ -17514,7 +17565,7 @@
             <summary>
             Get error(s) of internal syncAXIS instance
             </summary>
-            <param name="kvErrors">Array of error code, messages</param>
+            <param name="kvErrors">Array of key(error code) and value(messages)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlStop">
@@ -17538,20 +17589,9 @@
             List begin
             </summary>
             <remarks>
-            Used list buffer mode to <c>slsc_ListHandlingMode_RepeatWhileBufferFull</c> by forcily.
+            Set internal buffer mode to <c>slsc_ListHandlingMode_RepeatWhileBufferFull</c> by forcily.
             </remarks>
-            <param name="motionType"><c>MotionType</c></param>
-            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListMatrix(System.Numerics.Matrix3x2)">
-            <summary>
-            List transformation matrix and an offset value 
-            </summary>
-            <remarks>
-            Calculates the new target points according to = (transformation matrix × target point) + offset <br/>
-            The change applies as of the insert position but only until the end of the currently running Job.<br/>
-            </remarks>
-            <param name="matrix">3x3 matrix with offset</param>
+            <param name="motionType"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionTypes">MotionTypes</see><br/>Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionTypes.ScannerOnly">ScannerOnly</see></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListSpeedMinMark(System.Double)">
@@ -17575,7 +17615,7 @@
             <summary>
             List contour dependent speed calculation
             </summary>
-            <param name="direction"><c>ContourDependentSpeedDirection</c></param>
+            <param name="direction"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ContourDependentSpeedDirections">ContourDependentSpeedDirections</see></param>
             <param name="spotRadius">Radius of the laser spot in the working plane (mm). specifies how far to the right or left of the curve mid-line the speeds are determined.</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
@@ -17583,7 +17623,7 @@
             <summary>
             List spot distance control
             </summary>
-            <param name="suppress">Supress or not. should be activated <c>SpotDistance</c> at <c>ActiveChannel</c></param>
+            <param name="suppress">Supress or not.<br/>Should be activated <c>SpotDistance</c> at <c>ActiveChannel</c></param>
             <param name="timeDelay">Time delay (sec)</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
@@ -17591,7 +17631,7 @@
             <summary>
             List start ramping (aka. Automatic laser control)
             </summary>
-            <param name="startingAlcScaleFactor">Starting ramp factor (default: 1)</param>
+            <param name="startingAlcScaleFactor">Starting ramp factor<br/>Default: 1</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListAlcEnd">
@@ -18657,6 +18697,12 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.MatrixStack">
             <inheritdoc/>  
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.MatrixPrimaryInternal">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.MatrixSecondaryInternal">
+            <inheritdoc/>  
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.KFactor">
             <inheritdoc/>  
         </member>
@@ -18788,13 +18834,13 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.SecondaryHeadTable">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.DistanceToSecondaryHead">
-            <inheritdoc/>  
-        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.PrimaryHeadBaseOffset">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.PrimaryHeadUserOffset">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.DistanceToSecondaryHead">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.SecondaryHeadBaseOffset">
@@ -18990,6 +19036,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlSpeed(System.Double,System.Double)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlWriteData``1(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels,``0)">
             <inheritdoc/>  
         </member>
@@ -19033,6 +19082,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListSpeed(System.Double,System.Double)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListWait(System.Double)">
@@ -20120,7 +20172,34 @@
             4x4 matrix stack
             </summary>
             <remarks>
-            Matrix transformation will applied every jump and mark commands. <br/>
+            Matrix transformation would be applied every jump and mark commands. <br/>
+            May be need to revert matrix stack if <c>IMarker</c> has aborted(or failed). <br/>
+            <code>
+            // Revert matrix stack if needed
+            var oldMatrixStack = rtc.MatrixStack.Clone() as IMatrixStack&lt;Matrix4x4&gt;;
+            // Do something to works and revert matrix stack 
+            rtc.MatrixStack = oldMatrixStack;
+            </code>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixPrimaryInternal">
+            <summary>
+            3x3 matrix
+            </summary>
+            <remarks>
+            Matrix transformation would be applied every jump and mark commands. <br/>
+            This operation has applied into RTC internal matrix. <br/>
+            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.CtlMatrix</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.ListMatrix</see>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixSecondaryInternal">
+            <summary>
+            3x3 matrix
+            </summary>
+            <remarks>
+            Matrix transformation would be applied every jump and mark commands. <br/>
+            This operation has applied into RTC internal matrix. <br/>
+            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.CtlMatrix</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.ListMatrix</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.IsMoF">
@@ -20383,6 +20462,20 @@
             <param name="mark">Scanner mark(or arc) speed (mm/s)</param>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">
+            <summary>
+            Transformation 3x3 matrix
+            </summary>
+            <remarks>
+            Calculates the new target points according by 3x3 matrix. <br/>
+            This operation has applied into RTC internal matrix. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">IRtc2ndHead.PrimaryHeadBaseOffset"></see>( or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">IRtc2ndHead.PrimaryHeadUserOffset"></see>) together. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">IRtc2ndHead.SecondaryHeadBaseOffset"></see>( or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">IRtc2ndHead.SecondaryHeadUserOffset"></see>) together. <br/>
+            </remarks>
+            <param name="head"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see></param>
+            <param name="matrix">3x3 matrix</param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlWriteData``1(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels,``0)">
             <summary>
             Write data at EXTENSION port (<see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels">ExtensionChannels</see>)
@@ -20475,6 +20568,9 @@
             <summary>
             List select correction table at specific scan head
             </summary>
+            <remarks>
+            May not matched matched the actual selected correction table if <c>IMarker</c> has aborted(or failed). <br/>
+            </remarks>
             <param name="primaryHeadTableIndex"><c>CorrectionTableIndex</c> at primary scan head</param>
             <param name="secondaryHeadTableIndex"><c>CorrectionTableIndex</c> at secondary scan head</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
@@ -20483,6 +20579,9 @@
             <summary>
             List frequency and pulse width
             </summary>
+            <remarks>
+            May not matched matched the actual frequency and pulse width if <c>IMarker</c> has aborted(or failed). <br/>
+            </remarks>
             <param name="frequency">Frequency (Hz)<br/>Min. time resolution: 1/128(= 0.0078125) usec<br/>Max. 128MHz<br/></param>
             <param name="pulseWidth">Pulse width (usec)<br/>Min. time resolution: 1/64(= 0.01562) usec</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
@@ -20494,6 +20593,7 @@
             <remarks>
             Laser delays: To compensate laser on/off latency. <br/>
             Scanner delays: To compensate scanner's tracking error. <br/>
+            May not matched matched the actual status if <c>IMarker</c> has aborted(or failed). <br/>
             </remarks>
             <param name="laserOn">Laser on delay (usec)<br/>RTC5: Min. time resolution: 1/2(= 0.5) usec<br/>RTC6: Min. time resolution: 1/64(= 0.01562) usec<br/></param>
             <param name="laserOff">Laser off delay (usec)<br/>RTC5: Min. time resolution: 1/2(= 0.5) usec<br/>RTC6: Min. time resolution: 1/64(= 0.01562) usec<br/></param>
@@ -20506,8 +20606,26 @@
             <summary>
             List Scanner jump and mark speed
             </summary>
+            <remarks>
+            May not matched matched the actual target speed if <c>IMarker</c> has aborted(or failed). <br/>
+            </remarks>
             <param name="jump">Scanner jump speed (mm/s)</param>
             <param name="mark">Scanner mark/arc speed (mm/s)</param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">
+            <summary>
+            List transformation 3x3 matrix 
+            </summary>
+            <remarks>
+            Calculates the new target points according by 3x3 matrix. <br/>
+            The change applies as of the insert position but only until the end of the currently running Job. <br/>
+            This operation has applied into RTC internal matrix. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">IRtc2ndHead.PrimaryHeadBaseOffset"></see>( or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">IRtc2ndHead.PrimaryHeadUserOffset"></see>) together. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">IRtc2ndHead.SecondaryHeadBaseOffset"></see>( or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">IRtc2ndHead.SecondaryHeadUserOffset"></see>) together. <br/>
+            </remarks>
+             <param name="head"><c>ScannerHeads</c></param>
+            <param name="matrix">3x3 matrix</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListWait(System.Double)">
@@ -20541,7 +20659,7 @@
             List write data at EXTENSION port (<see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels">ExtensionChannels</see>)
             </summary>
             <remarks>
-            Digital output(<see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDO16">ExtensionChannels.ExtDO16</see>, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDO8">ExtensionChannels.ExtDO8</see>, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDO2">ExtensionChannels.ExtDO2</see>) values may not matched the actual output status if <c>IMarker</c> has aborted(or failed). <br/>
+            May not matched the actual output status if <c>IMarker</c> has aborted(or failed). <br/>
             </remarks>
             <typeparam name="T"><c>uint</c> or <c>double</c></typeparam>
             <param name="ch"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels">ExtensionChannels</see></param>
@@ -20563,6 +20681,9 @@
             <summary>
             List write free variable 
             </summary>
+            <remarks>
+            May not matched matched the actual variable value if <c>IMarker</c> has aborted(or failed). <br/>
+            </remarks>
             <param name="no">0~7</param>
             <param name="data">Variable value</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
@@ -20596,6 +20717,28 @@
             Used with 2.SCANHEAD connector at Fig 7.<br/>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">
+            <summary>
+            Primary head's base offset
+            </summary>
+            <remarks>
+            Dx(mm), Dy(mm), Dz(mm) and Angle(°) <br/>
+            Total primary head offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">PrimaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">PrimaryHeadUserOffset</see> <br/>
+            This operation has applied into RTC internal matrix. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixPrimaryInternal">IRtc.MatrixPrimaryInternal</see> together. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">
+            <summary>
+            Primary head's user offset
+            </summary>
+            <remarks>
+            Dx(mm), Dy(mm), Dz(mm) and Angle(°) <br/>
+            Total primary head offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">PrimaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">PrimaryHeadUserOffset</see> <br/>
+            This operation has applied into RTC internal matrix. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixPrimaryInternal">IRtc.MatrixPrimaryInternal</see> together. <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.DistanceToSecondaryHead">
             <summary>
             Distance dx, dy between primary and secondary head (mm)
@@ -20622,31 +20765,15 @@
             </code>
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">
-            <summary>
-            Primary head's base offset
-            </summary>
-            <remarks>
-            Dx(mm), Dy(mm), Dz(mm) and Angle(°) <br/>
-            Total offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">PrimaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">PrimaryHeadUserOffset</see> <br/>
-            </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">
-            <summary>
-            Primary head's user offset
-            </summary>
-            <remarks>
-            Dx(mm), Dy(mm), Dz(mm) and Angle(°) <br/>
-            Total offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">PrimaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">PrimaryHeadUserOffset</see> <br/>
-            </remarks>
-        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">
             <summary>
             Secondary head's base offset
             </summary>
             <remarks>
             Dx(mm), Dy(mm), Dz(mm) and Angle(°) <br/>
-            Total offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">SecondaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">SecondaryHeadUserOffset</see> <br/>
+            Total secondary head offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">SecondaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">SecondaryHeadUserOffset</see> <br/>
+            This operation has applied into RTC internal matrix. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixSecondaryInternal">IRtc.MatrixSecondaryInternal</see> together. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">
@@ -20655,7 +20782,9 @@
             </summary>
             <remarks>
             Dx(mm), Dy(mm), Dz(mm) and Angle(°) <br/>
-            Total offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">SecondaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">SecondaryHeadUserOffset</see> <br/>
+            Total secondary head offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">SecondaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">SecondaryHeadUserOffset</see> <br/>
+            This operation has applied into RTC internal matrix. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixSecondaryInternal">IRtc.MatrixSecondaryInternal</see> together. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.CtlHeadOffset(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Mathematics.Offset)">
@@ -20663,9 +20792,12 @@
             Scan head total offset
             </summary>
             <remarks>
-            Total offset = base offset + user offset <br/>
+            Total primary head offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">PrimaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">PrimaryHeadUserOffset</see>. <br/>
+            Total secondary head offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">SecondaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">SecondaryHeadUserOffset</see>. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixPrimaryInternal">IRtc.MatrixPrimaryInternal</see> together. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixSecondaryInternal">IRtc.MatrixSecondaryInternal</see> together. <br/>
             </remarks>
-            <param name="head"><c>ScannerHead</c></param>
+            <param name="head"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see> </param>
             <param name = "offset">Dx(mm), Dy(mm), Dz(mm) and Angle(°)</param>
             <returns>Success or failed</returns>
         </member>
@@ -20674,9 +20806,13 @@
             List scan head total offset
             </summary>
             <remarks>
-            Total offset = base offset + user offset <br/>
+            Total primary head offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">PrimaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">PrimaryHeadUserOffset</see>. <br/>
+            Total secondary head offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">SecondaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">SecondaryHeadUserOffset</see>. <br/>
+            May not matched matched the actual head offset value if <c>IMarker</c> has aborted(or failed). <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixPrimaryInternal">IRtc.MatrixPrimaryInternal</see> together. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixSecondaryInternal">IRtc.MatrixSecondaryInternal</see> together. <br/>
             </remarks>
-            <param name="head"><c>ScannerHead</c></param>
+            <param name="head"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see> </param>
             <param name="offset">Dx(mm), Dy(mm), Dz(mm) and Angle(°)</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
@@ -20802,6 +20938,7 @@
             +: Upper, - : Lower <br/>
             A focus shift causes a defocusing of the laser focus relative to the working plane. <br/>
             A positive value increases the focal length of the dynamic focusing unit and shifts the focus position. <br/>
+            May not matched matched the actual z defocus position if <c>IMarker</c> has aborted(or failed). <br/>
             </remarks>
             <param name="zDefocus">Z defocus (mm)</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
@@ -21461,6 +21598,11 @@
             <summary>
             Reference x, y absolute position (mm)
             </summary>
+            <remarks>
+            <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData2D.Reference">Reference</see> position should not been applied any offset or matrix at all. <br/>
+            <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData2D.Reference">Reference</see> position means absoulte(or raw) positions. <br/>
+            Recommend to measure data without <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">CtlMatrix</see>, <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">ListMatrix</see>, <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">PrimaryHeadBaseOffset</see>,  <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">PrimaryHeadUserOffset</see> at all. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData2D.Measured">
             <summary>
@@ -21479,8 +21621,8 @@
             <summary>
             Constructor
             </summary>
-            <param name="reference">Reference x, y absolute position (mm)</param>
-            <param name="measured">Measured x, y absolute position (mm)</param>
+            <param name="reference">Reference x, y absolute(or raw) position (mm)</param>
+            <param name="measured">Measured x, y absolute(or raw) position (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData2D.ToReferenceString">
             <summary>
@@ -21501,8 +21643,11 @@
         </member>
         <member name="E:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection2D.OnConverted">
             <summary>
-            Event for convert result (with success or failed result and message)
+            Event for convert result
             </summary>
+            <remarks>
+            Arguments with success(or failed), result message <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection2D.Rows">
             <summary>
@@ -21551,8 +21696,8 @@
             </summary>
             <param name="row">Row</param>
             <param name="col">Col</param>
-            <param name="reference">Reference x, y absoulte position (mm)</param>
-            <param name="measured">Measured x, y absoulte position (mm)</param>
+            <param name="reference">Reference x, y absoulte(or raw) position (mm)</param>
+            <param name="measured">Measured x, y absoulte(or raw) position (mm)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection2D.AddRelative(System.Int32,System.Int32,System.Numerics.Vector2,System.Numerics.Vector2)">
@@ -21567,7 +21712,7 @@
             </summary>
             <param name="row">Row</param>
             <param name="col">Col</param>
-            <param name="reference">Reference x, y absoulte position (mm)</param>
+            <param name="reference">Reference x, y absoulte(or raw) position (mm)</param>
             <param name="error">Error dx, dy relative position (mm)</param>
             <returns>Success or failed</returns>
         </member>
@@ -21592,13 +21737,21 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData3D.Reference">
             <summary>
-            Reference x, y, z absolute position (mm)
+            Reference x, y, z absolute(or raw) position (mm)
             </summary>
+            <remarks>
+            <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData3D.Reference">Reference</see> position should not been applied any offset or matrix at all. <br/>
+            <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData3D.Reference">Reference</see> position means absoulte(or raw) positions. <br/>
+            Recommend to measure data without <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">CtlMatrix</see>, <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">ListMatrix</see>, <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">PrimaryHeadBaseOffset</see>,  <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">PrimaryHeadUserOffset</see> at all. <br/>        /// </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData3D.Measured">
             <summary>
-            Measured x, y, z absolute position (mm)
+            Measured x, y, z absolute(or raw) position (mm)
             </summary>
+            <remarks>
+            <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData3D.Reference">Reference</see> position should not been applied any offset or matrix at all. <br/>
+            Recommend to measure data without <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">CtlMatrix</see>, <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">ListMatrix</see>, <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">PrimaryHeadBaseOffset</see>,  <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">PrimaryHeadUserOffset</see> at all. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData3D.Delta">
             <summary>
@@ -21612,8 +21765,8 @@
             <summary>
             Constructor
             </summary>
-            <param name="reference">Reference x, y, z absolute position (mm)</param>
-            <param name="measured">Measured x, y, z absolute position (mm)</param>
+            <param name="reference">Reference x, y, z absolute(or raw) position (mm)</param>
+            <param name="measured">Measured x, y, z absolute(or raw) position (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData3D.ToReferenceString">
             <summary>
@@ -21654,8 +21807,11 @@
         </member>
         <member name="E:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection3D.OnConverted">
             <summary>
-            Event for convert result (with success or failed result and message)
+            Event for convert result 
             </summary>
+            <remarks>
+            Arguments with success(or failed), result message <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection3D.Rows">
             <summary>
@@ -21719,8 +21875,8 @@
             </summary>
             <param name="row">Row</param>
             <param name="col">Col</param>
-            <param name="reference">Reference x, y, z absoulte position (mm)</param>
-            <param name="measured">Measured x, y, z absoulte position (mm)</param>
+            <param name="reference">Reference x, y, z absoulte(or raw) position (mm)</param>
+            <param name="measured">Measured x, y, z absoulte(or raw) position (mm)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCorrection3D.AddRelative(System.Int32,System.Int32,System.Numerics.Vector3,System.Numerics.Vector3)">
@@ -21735,7 +21891,7 @@
             </summary>
             <param name="row">Row</param>
             <param name="col">Col</param>
-            <param name="reference">Reference x, y, z absoulte position (mm)</param>
+            <param name="reference">Reference x, y, z absoulte(or raw) position (mm)</param>
             <param name="error">Error dx, dy, 0 relative position (mm)</param>
             <returns>Success or failed</returns>
         </member>
@@ -22200,6 +22356,9 @@
             <summary>
             List first pulse killer (usec)
             </summary>
+            <remarks>
+            May not matched matched the actual fpk value if <c>IMarker</c> has aborted(or failed). <br/>
+            </remarks>
             <param name="usec">Time (usec)<br/>Min. time resolution: 1/64(= 0.01562) usec <br/></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
@@ -22212,6 +22371,7 @@
             <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.LaserModes.Yag2">LaserModes.Yag2</see>: by FPK value <br/>
             <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.LaserModes.Yag3">LaserModes.Yag3</see>: 10 usec fixed <br/>
             <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.LaserModes.Yag5">LaserModes.Yag5</see>: by this value <br/>
+            May not matched matched the actual qswitch delay value if <c>IMarker</c> has aborted(or failed). <br/>
             </remarks>
             <param name="usec">Time (usec)<br/> Min. time resolution: 1/64(= 0.01562) usec <br/></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
@@ -22220,6 +22380,9 @@
             <summary>
             List variable polygon, jump delays
             </summary>
+            <remarks>
+            May not matched matched the actual delays if <c>IMarker</c> has aborted(or failed). <br/>
+            </remarks>
             <param name="variableScannerPolygonDelay">Enable(or disable) variable scanner polygon delay.<br/>If enabled, scale(angle) = 1 – Cos(angle)</param>
             <param name="variableScannerPolygonEdgeLevel">Variable scanner polygon delay edge level (usec)</param>
             <param name="variableScannerJumpDelay">Enable(or disable) variable scanner jump delay</param>
@@ -22461,7 +22624,7 @@
             Moves the output point (of the laser focus) by a “Hard jump” (without split-up into Microsteps) directly from the current position to the specified position(absolute coordinate values) within a 2D Image field. <br/>
             By LasOn >= 0 and LasOff >= 0, you can set a new LaserOn Delay or LaserOff Delay for each individual Microvector. <br/>
             Each delay thereby gets set at the end of the clock cycle in which the new position actually gets outputted(this output clock cycle is delayed by a preceding scanner delay).<br/>
-            Negative values (LasOn &lt; 0 and LasOff &lt; 0) do not affect Laser Delays.<br/>
+            Negative values (LasOn &lt; 0 and LasOff &lt; 0) do not affect Laser Delays. <br/>
             Hereby, the laser can remain on or off across multiple clock cycles (mark and jump simulation).<br/>
             </remarks>
             <param name="position">X, Y (mm)</param>
@@ -23015,7 +23178,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcMoFTypes.XY">
             <summary>
-            XY (Linear)
+            X/Y (Linear)
             </summary>
             <remarks>
             Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders.EncX">EncX</see> and <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders.EncY">EncY</see>. <br/>
@@ -23100,47 +23263,61 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncXCountsPerMm">
             <summary>
-            Encoder X(or 0) counts/mm
+            Encoder X(or 0) counts/mm for X/Y MoF
             <code>
                                 counts 
             EncXCountsPerMm = ----------
                                   mm  
             </code>
             </summary>
+            <remarks>
+            Used with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncXSimulatedSpeed">EncXSimulatedSpeed</see>. <br/>
+            Possible to use if rotated scan-head by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">IRtc2ndHead.PrimaryHeadBaseOffset</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.CtlMatrix</see>. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncYCountsPerMm">
             <summary>
-            Encoder Y(or 1) counts/mm
+            Encoder Y(or 1) counts/mm for X/Y MoF
             <code>
                                 counts 
             EncYCountsPerMm = ----------
                                   mm  
             </code>
             </summary>
+            <remarks>
+            Used with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncYSimulatedSpeed">EncYSimulatedSpeed</see>. <br/>
+            Possible to use if rotated scan-head by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">IRtc2ndHead.PrimaryHeadBaseOffset</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.CtlMatrix</see>. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncXSimulatedSpeed">
             <summary>
-            Simulated encoder x(or 0) speed (mm/s)
+            Simulated encoder x(or 0) speed (mm/s) for X/Y MoF
             </summary>
+            <remarks>
+            Used with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncXCountsPerMm">EncXCountsPerMm</see>. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncYSimulatedSpeed">
             <summary>
-            Simulated encoder y(or 1) speed (mm/s)
+            Simulated encoder y(or 1) speed (mm/s) for X/Y MoF
             </summary>
+            <remarks>
+            Used with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncYCountsPerMm">EncYCountsPerMm</see>. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncXApproxSpeed">
             <summary>
-            Approx. encoder x(or 0) speed (mm/s)
+            Approx. encoder x(or 0) speed (mm/s) for X/Y MoF
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncYApproxSpeed">
             <summary>
-            Approx. encoder y(or 1) speed (mm/s)
+            Approx. encoder y(or 1) speed (mm/s) for X/Y MoF
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncCountsPerRevolution">
             <summary>
-            Encoder X(or 0) counts/rev
+            Encoder X(or 0) counts/rev for Angular MoF
             <para>Must be > 100</para>
             <code>
                                         Counts
@@ -23148,23 +23325,26 @@
                                          360˚ 
             </code>
             </summary>
+            <remarks>
+            Used with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncSimulatedAngularSpeed">EncSimulatedAngularSpeed</see>. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncSimulatedAngularSpeed">
             <summary>
-            Simulated encoder x(or 0) angular speed (˚/s)
+            Simulated encoder x(or 0) angular speed (˚/s) for Angular MoF
             </summary>
             <remarks>
-            Negative(-) value is not supported. <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncCountsPerRevolution">EncCountsPerRevolution</see>. <br/>        
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.EncAngularApproxSpeed">
             <summary>
-            Approx. encoder x(or 0) angular speed (˚/s)
+            Approx. encoder x(or 0) angular speed (˚/s) for Angular MoF
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.MofAngularCenter">
             <summary>
-            Rotate center x,y position
+            Rotate center x,y position for Angular MoF
             <code>
             For example, rotate center at -50, 0 
                                         |                                   
@@ -23198,7 +23378,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofEncoderReset(System.Double,System.Double)">
             <summary>
-            Reset encoders
+            Reset encoders 
             </summary>
             <param name="offsetX">Encoder X(0) offset (mm)</param>
             <param name="offsetY">Encoder Y(1) offset (mm)</param>
@@ -23206,7 +23386,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofGetEncoder(System.Int32@,System.Int32@,System.Double@,System.Double@)">
             <summary>
-            Get encoders
+            Get encoder values for X/Y MoF
             </summary>
             <param name="encX">Encoder X(0) count</param>
             <param name="encY">Encoder Y(1) count</param>
@@ -23216,18 +23396,18 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofEncoderSpeed(System.Double,System.Double)">
             <summary>
-            Enable(or disable) simulated encoders
+            Enable(or disable) encoder simulation for X/Y MoF
             </summary>
             <remarks>
             Should be called when <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlGetStatus(SpiralLab.Sirius2.Scanner.Rtc.RtcStatus)">CtlGetStatus(RtcStatus.NotBusy)</see> <br/>
             </remarks>
-            <param name="encXSimulatedSpeed">Simulated X(0) encoder speed (mm/s).<br/>Negative(-) direction is not supported. <br/>0: Disabled. <br/></param>
-            <param name="encYSimulatedSpeed">Simulated Y(1) encoder speed (mm/s).<br/>Negative(-) direction is not supported. <br/>0: Disabled. <br/></param>
+            <param name="encXSimulatedSpeed">Simulated X(0) encoder speed (mm/s).<br/>0: Disabled. <br/></param>
+            <param name="encYSimulatedSpeed">Simulated Y(1) encoder speed (mm/s).<br/>0: Disabled. <br/></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofTrackingError(System.Double,System.Double)">
             <summary>
-            Compensate tracking error with MoF.
+            Compensate tracking error for X/Y MoF
             </summary>
             <remarks>
             EC = E + (E – EP) * <c>TrackingError</c> <br/>
@@ -23235,8 +23415,13 @@
             EP : that of the previous cycle. <br/> 
             EC : the compensated encoder value(used for Processing-on-the-fly correction). <br/>
             To avoid step-like galvanometer scanner movements, the used encoders should have a sufficiently high resolution. <br/>
-            Set values for <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcMoFTypes.XY">XY</see>. <br/>
-            Set '0' for <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcMoFTypes.Angular">Angular</see>. <br/>
+            Set values for <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcMoFTypes.XY">X/Y</see> MoF. <br/>
+            For example : <br/>
+            intelliSCANse 10 :  0.11 ms (= 110 usec). <br/>
+            SCANcube IV 10 : 0.12 ms (= 120 usec). <br/>
+            hurrySCAN III 10 :  0.12 ms (120 usec). <br/>
+            basiCube 10 : 0.14 ms (140 usec). <br/>
+            Set '0' for <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcMoFTypes.Angular">Angular</see> MoF. <br/>
             </remarks>
             <param name="xUsec">X tracking error time (usec)<br/>Min. time resolution: 10 usec<br/>Default: 0 (switched off)</param>
             <param name="yUsec">Y tracking error time (usec)<br/>Min. time resolution: 10 usec<br/>Default: 0 (switched off)</param>
@@ -23247,25 +23432,26 @@
             Compensate 2D encoder table
             </summary>
             <remarks>
-            Not usable with MoF Angluar. MoF X,Y only. <br/>
+            Not usable with Angluar MoF. <br/>
+            Used with X,Y MoF only. <br/>
             </remarks>
             <param name="kvList">Array of position X, Y (mm) and delta X,Y (mm)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofExternalControlDelay(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double)">
             <summary>
-            Delay external /START trigger control
+            Delay external <c>/START</c> trigger control
             </summary>
-            <param name="enc"><c>RtcEncoders</c></param>
+            <param name="enc"><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders.EncX">EncX</see> or <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders.EncY">EncY</see></param>
             <param name="distance">Delay distance (mm)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofGetAngularEncoder(System.Int32@,System.Double@)">
             <summary>
-            Get encoders with anuglar
+            Get encoder values for Angular MoF
             </summary>
             <param name="enc">Encoder X(0) count</param>
-            <param name="angle">Encoder Angular (˚)</param>
+            <param name="angle">Angle (˚)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofAngularCenter(System.Numerics.Vector2)">
@@ -23306,25 +23492,26 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofEncoderAngularSpeed(System.Double)">
             <summary>
-            Enable( or disable) simulated angular encoder (x/0)
+            Enable(or disable) encoder simulation for Angular MoF 
             </summary>
             <remarks>
-            <c>EncSimulatedAngularSpeed</c> value should be assigned at first. <br/>
             Should be called when <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlGetStatus(SpiralLab.Sirius2.Scanner.Rtc.RtcStatus)">CtlGetStatus(RtcStatus.NotBusy)</see><br/>
             </remarks>
-            <param name="encSimulatedSpeed">Angular speed (˚/s) (negative direction is not supported)</param>
+            <param name="encSimulatedSpeed">Angular speed (˚/s)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofOverflowClear">
             <summary>
             Clear overflow warnings
-            <para>Detail warnings at <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMarkingInfo">IRtcMarkingInfo</see> </para>
             </summary>
+            <remarks>
+            Detail warnings at <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMarkingInfo">IRtcMarkingInfo</see>. <br/>
+            </remarks>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofBegin(System.Boolean)">
             <summary>
-            List MoF x, y has begin
+            List X/Y MoF has begin
             <code>
             var rtcMoF = rtc as IRtcMoF;
             rtcMoF.EncXCountsPerMm = 2000;
@@ -23340,17 +23527,51 @@
             rtc.ListEnd();
             rtc.ListExecute(true);
             </code>
+            <code>
+            Normal condition :
+            =>-------------------------------------------------------------------=>
+            Conveyor Flow Direction =>                                     
+                               |-----------------|    
+                               |     Scanner     |  
+                               |         y+      |   
+                .....          |      ..|..      |          .....            .....
+                .   .          |      . |___ x+  |          .   .            .   .
+                .....          |      .....      |          .....            .....
+                               |                 |       
+                               |                 |  
+                               |-----------------|        
+            Conveyor Encoder(+) into RTC MoF X(+) Encoder           
+            =>------------------------------------------------------------------=>
+            
+            If scan head rotated 90 angle :
+            =>-------------------------------------------------------------------=>
+                               Conveyor Flow Direction =>                                           
+                               |-----------------|    
+                               |(Rotated) Scanner|  
+                               |        x+       |   
+                .....          |      ..|..      |          .....            .....
+                .   .          |  y+ ___| .      |          .   .            .   .
+                .....          |      .....      |          .....            .....
+                               |                 |       
+                               |                 |  
+                               |-----------------|   
+            Conveyor Encoder(+) into RTC MoF X(+) Encoder
+            Z angle to -90° with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">PrimaryHeadBaseOffset</see> like as :<br/> 
+            var head2nd = rtc as IRtc2ndHead;
+            var offset = new SpiralLab.Sirius2.Mathematics.Offset(0, 0, -90);
+            head2nd.PrimaryHeadBaseOffset = offset;
+            =>------------------------------------------------------------------=>
+            </code>
             </summary>
             <remarks>
-            Scanner movements are affected by accumulate encoder values. <br/>
+            Scanner movement affected by accumulated encoder values. <br/>
             </remarks>
             <param name="encoderReset">Reset encoders or not(</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofAngularBegin(System.Numerics.Vector2,System.Boolean)">
             <summary>
-            List MoF angular has begin
-            <para>Scanner movements affected by accumulate encoder values</para>
+            List Angular MoF has begin
             <code>
             var rtcMoF = rtc as IRtcMoF;
             rtcMoF.EncCountsPerRevolution = 3600; 
@@ -23400,6 +23621,9 @@
                                         |   
             </code>
             </summary>
+            <remarks>
+             Scanner movement affected by accumulated encoder values. <br/>
+            </remarks>
             <param name="center">Rotate center x,y position (mm)</param>
             <param name="encoderReset">Reset encoder</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
@@ -23414,7 +23638,7 @@
             <summary>
             List delay external /START trigger control
             </summary>
-            <param name="enc"><c>RtcEncoders</c></param>
+            <param name="enc"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders">RtcEncoders</see></param>
             <param name="distance">Delay distance (mm)</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
@@ -23425,8 +23649,8 @@
             <remarks>
             Scanner movement goes to stationary. <br/>
             </remarks>
-            <param name="enc"><c>RtcEncoders</c></param>
-            <param name="cond"><c>EncoderRangeCondition</c></param>
+            <param name="enc"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders">RtcEncoders</see></param>
+            <param name="cond"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderRangeConditions">RtcEncoderRangeConditions</see></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions)">
@@ -23436,9 +23660,9 @@
             <remarks>
             Scanner movement goes to stationary. <br/>
             </remarks>
-            <param name="enc"><c>RtcEncoders</c></param>
+            <param name="enc"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders">RtcEncoders</see></param>
             <param name="position">Position (mm)</param>
-            <param name="cond"><c>EncoderWaitConditions</c></param>
+            <param name="cond"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions">RtcEncoderWaitConditions</see></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofAngularWait(System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions)">
@@ -23449,7 +23673,7 @@
             Scanner movement goes to stationary. <br/>
             </remarks>
             <param name="angle">Angle (°)</param>
-            <param name="cond"><c>EncoderWaitConditions</c></param>
+            <param name="cond"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions">RtcEncoderWaitConditions</see></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofWaitRange(System.Numerics.Vector2,System.Numerics.Vector2)">
@@ -23473,9 +23697,9 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofEnd(System.Numerics.Vector2)">
             <summary>
-            List MoF x,y (or angular) has end
+            List X/Y (or Angular) MoF has end
             </summary>
-            <param name="jumpPosition">Jump x,y position (mm)</param>
+            <param name="jumpPosition">Jump x,y position (mm)<br/></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderAxisExtension">
@@ -35788,22 +36012,22 @@
             </summary>
             <param name="key">Key string</param>
             <param name="classType"><c>Type</c> of class</param>
-            <returns></returns>
+            <returns>Converted(or localized) string</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedCategoryAttribute.#ctor(System.String,System.Type)">
             <summary>
             _C
             </summary>
-            <param name="key"></param>
-            <param name="classType"></param>
+            <param name="key">Key string</param>
+            <param name="classType"><c>Type</c> of class</param>
         </member>
         <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedCategoryAttribute.GetString(System.String,System.Type)">
             <summary>
             Get string (_C)
             </summary>
-            <param name="key"></param>
-            <param name="classType"></param>
-            <returns></returns>
+            <param name="key">Key string</param>
+            <param name="classType"><c>Type</c> of class</param>
+            <returns>Converted(or localized) string</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDisplayNameAttribute">
             <summary>
@@ -35821,22 +36045,22 @@
             </summary>
             <param name="key">Key string</param>
             <param name="classType"><c>Type</c> of class</param>
-            <returns></returns>
+            <returns>Converted(or localized) string</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDisplayNameAttribute.#ctor(System.String,System.Type)">
             <summary>
             _DISP
             </summary>
-            <param name="key"></param>
-            <param name="classType"></param>
+            <param name="key">Key string</param>
+            <param name="classType"><c>Type</c> of class</param>
         </member>
         <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDisplayNameAttribute.GetString(System.String,System.Type)">
             <summary>
             Get string (_DISP)
             </summary>
-            <param name="key"></param>
-            <param name="classType"></param>
-            <returns></returns>
+            <param name="key">Key string</param>
+            <param name="classType"><c>Type</c> of class</param>
+            <returns>Converted(or localized) string</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDescriptionAttribute">
             <summary>
@@ -35854,22 +36078,22 @@
             </summary>
             <param name="key">Key string</param>
             <param name="classType"><c>Type</c> of class</param>
-            <returns></returns>
+            <returns>Converted(or localized) string</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDescriptionAttribute.#ctor(System.String,System.Type)">
             <summary>
             _DESC
             </summary>
-            <param name="key"></param>
-            <param name="classType"></param>
+            <param name="key">Key string</param>
+            <param name="classType"><c>Type</c> of class</param>
         </member>
         <member name="M:SpiralLab.Sirius2.PropertyGridLocalizationAttribute.LocalizedDescriptionAttribute.GetString(System.String,System.Type)">
             <summary>
             Get string (_DESC)
             </summary>
-            <param name="key"></param>
-            <param name="classType"></param>
-            <returns></returns>
+            <param name="key">Key string</param>
+            <param name="classType"><c>Type</c> of class</param>
+            <returns>Converted(or localized) string</returns>
         </member>
     </members>
 </doc>
