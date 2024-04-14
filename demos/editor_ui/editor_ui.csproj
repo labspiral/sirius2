@@ -89,6 +89,7 @@
     <Compile Include="SiriusEditorControl.Designer.cs">
       <DependentUpon>SiriusEditorControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.ko-KR.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
