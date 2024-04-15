@@ -82,7 +82,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_tsv", "demos\editor_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_dio", "demos\editor_dio\editor_dio.csproj", "{9FDB331E-0F09-4A36-9DE8-34EC310CEF89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_laser", "..\sirius2lib\demos\editor_laser\editor_laser.csproj", "{F42ABE48-34E5-4C1B-9043-6573F8A389F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_laser", "demos\editor_laser\editor_laser.csproj", "{F42ABE48-34E5-4C1B-9043-6573F8A389F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
