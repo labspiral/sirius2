@@ -545,6 +545,41 @@ namespace Demos
             get { return laserControl1; }
         }
         /// <summary>
+        /// UserControl for customized laser source
+        /// </summary>
+        /// <remarks>
+        /// Replaced internal <c>LaserCtrl</c> as external control <br/>
+        /// </remarks>
+        public UserControl LaserUserCtrl 
+        { 
+            get { return laserUserCtrl; }
+            set {
+                if (laserUserCtrl == value)
+                    return;
+                try
+                {
+                    this.tabLaser.SuspendLayout();
+                    if (null != laserUserCtrl)
+                    {
+                        this.tabLaser.Controls.Remove(laserUserCtrl);
+                    }
+                    laserUserCtrl = value;
+                    if (null != laserUserCtrl)
+                    {
+                        this.tabLaser.Controls.Clear();
+                        this.tabLaser.Controls.Add(laserUserCtrl);
+                        laserUserCtrl.Dock = DockStyle.Fill;
+                    }
+                }
+                finally
+                {
+                    this.tabLaser.ResumeLayout();
+                }
+            }
+        }
+        private UserControl laserUserCtrl = null;
+
+        /// <summary>
         /// PropertyGrid user control for <see cref="IRtc">IRtc</see>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.RtcUserControl RtcCtrl
@@ -587,6 +622,41 @@ namespace Demos
             get { return manualUserControl1; }
         }
         /// <summary>
+        /// UserControl for customized manual control
+        /// </summary>
+        /// <remarks>
+        /// Replaced internal <c>ManualCtrl</c> as external control <br/>
+        /// </remarks>
+        public UserControl ManualUserCtrl
+        {
+            get { return manualUserCtrl; }
+            set
+            {
+                if (manualUserCtrl == value)
+                    return;
+                try
+                {
+                    this.tabManual.SuspendLayout();
+                    if (null != manualUserCtrl)
+                    {
+                        this.tabManual.Controls.Remove(manualUserCtrl);
+                    }
+                    manualUserCtrl = value;
+                    if (null != manualUserCtrl)
+                    {
+                        this.tabManual.Controls.Clear();
+                        this.tabManual.Controls.Add(manualUserCtrl);
+                        manualUserCtrl.Dock = DockStyle.Fill;
+                    }
+                }
+                finally
+                {
+                    this.tabManual.ResumeLayout();
+                }
+            }
+        }
+        private UserControl manualUserCtrl = null;
+        /// <summary>
         /// User control for for <see cref="IPowerMeter">IPowerMeter</see>
         /// </summary>
         public SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl PowerMeterCtrl
@@ -614,6 +684,42 @@ namespace Demos
         {
             get { return remoteUserControl1; }
         }
+        /// <summary>
+        /// UserControl for customized remote control
+        /// </summary>
+        /// <remarks>
+        /// Replaced internal <c>RemoteCtrl</c> as external control <br/>
+        /// </remarks>
+        public UserControl RemoteUserCtrl
+        {
+            get { return remoteUserCtrl; }
+            set
+            {
+                if (remoteUserCtrl == value)
+                    return;
+                try
+                {
+                    this.tabRemote.SuspendLayout();
+                    if (null != remoteUserCtrl)
+                    {
+                        this.tabRemote.Controls.Remove(remoteUserCtrl);
+                    }
+                    remoteUserCtrl = value;
+                    if (null != remoteUserCtrl)
+                    {
+                        this.tabRemote.Controls.Clear();
+                        this.tabRemote.Controls.Add(remoteUserCtrl);
+                        remoteUserCtrl.Dock = DockStyle.Fill;
+                    }
+                }
+                finally
+                {
+                    this.tabRemote.ResumeLayout();
+                }
+            }
+        }
+        private UserControl remoteUserCtrl = null;
+
         /// <summary>
         /// User control for logged messages
         /// </summary>
@@ -718,8 +824,6 @@ namespace Demos
             lblRemote.DoubleClickEnabled = true;
             lblRemote.DoubleClick += LblRemote_DoubleClick;
         }
-
-
 
         /// <inheritdoc/>
         protected override void OnLoad(EventArgs e)
@@ -1738,11 +1842,17 @@ namespace Demos
                 PenCtrl.Enabled = enable;
                 RtcCtrl.Enabled = enable;
                 LaserCtrl.Enabled = enable;
+                if (null != LaserUserCtrl)
+                    LaserUserCtrl.Enabled = enable;
                 OffsetCtrl.Enabled = enable;
                 PropertyGridCtrl.Enabled = enable;
                 OffsetCtrl.Enabled = enable;
                 ManualCtrl.Enabled = enable;
-
+                if (null != ManualUserCtrl)
+                    ManualUserCtrl.Enabled = enable;
+                //RemoteCtrl.Enabled = enable;
+                //if (null != RemoteUserCtrl)
+                //    RemoteUserCtrl.Enabled = enable;
                 tbcLeft.SelectedIndex = 0;
                 tbcLeft.Enabled = enable;
             }));
@@ -1755,7 +1865,6 @@ namespace Demos
         /// To do visible(or invisible) controls (like as treeview, propertygrid,...) to disable edit operations. <br/>
         /// Applied also, of <see cref="ControlModes.Remote">ControlModes.Remote</see> has changed. <br/>
         /// </remarks>
-        /// <param name="isHide">Hide or not</param>
         public virtual void VisibilityEditableControls(bool isHide = true)
         {
             if (!this.IsHandleCreated || this.IsDisposed)

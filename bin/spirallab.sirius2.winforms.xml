@@ -24788,6 +24788,14 @@
             PropertyGrid user control for <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.LaserUserCtrl">
+            <summary>
+            UserControl for customized laser source
+            </summary>
+            <remarks>
+            Replaced internal <c>LaserCtrl</c> as external control <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.RtcCtrl">
             <summary>
             PropertyGrid user control for <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>
@@ -24818,6 +24826,14 @@
             User control for manual control
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.ManualUserCtrl">
+            <summary>
+            UserControl for customized manual control
+            </summary>
+            <remarks>
+            Replaced internal <c>ManualCtrl</c> as external control <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.PowerMeterCtrl">
             <summary>
             User control for for <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>
@@ -24837,6 +24853,14 @@
             <summary>
             PropertyGrid user control for <see cref="T:SpiralLab.Sirius2.Winforms.Remote.IRemote">IRemote</see>
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.RemoteUserCtrl">
+            <summary>
+            UserControl for customized remote control
+            </summary>
+            <remarks>
+            Replaced internal <c>RemoteCtrl</c> as external control <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.LogCtrl">
             <summary>

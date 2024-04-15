@@ -168,6 +168,7 @@
 
 * 2024.4.15 v.1.26.1270
   - added) triangle entity 
+  - added) editor_laser project
   - added) CtlMatrix, ListMatrix functions at RTC interface
   - added) remote virtual
      - remote control mode switched to not editable view
