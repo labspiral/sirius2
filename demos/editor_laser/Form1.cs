@@ -92,6 +92,14 @@ namespace Demos
             // custom UI for laser control
             var myLaserUserControl = new MyLaserCtrl(laser);
             siriusEditorUserControl1.LaserUserCtrl = myLaserUserControl;
+
+            // Assign event handlers at Config
+            EditorHelper.AttachEventHandlers();
+
+            // Assign Document, View, Rtc, Laser into marker
+            var document = siriusEditorUserControl1.Document;
+            var view = siriusEditorUserControl1.View;
+            marker.Ready(document, view, rtc, laser, powerMeter, remote);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
