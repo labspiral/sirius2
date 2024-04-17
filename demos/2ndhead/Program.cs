@@ -111,10 +111,10 @@ namespace Demos
             //                  
 
             // 'DistanceToSecondaryHead' value is not used meaningfully by internally
+            // Let you know physical distance between scan-heads
             float overlapped = 10;
             rtc.DistanceToSecondaryHead = new Vector2((float)fov - overlapped, 0);
 
-            // Total offset = base offset + user offset
             // Reset each head's base offset
             rtc.PrimaryHeadBaseOffset = Offset.Zero;
             rtc.SecondaryHeadBaseOffset = Offset.Zero;

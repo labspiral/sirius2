@@ -401,46 +401,48 @@ namespace Demos
             //                             |                                   
             //                             |                                   
             //                             |                                   
-            //                             |            <--- MATERIAL ENC X+
+            //                             |  <--- MATERIAL MOVEMENT (ENCODER DECREASED: -)
             //                             |                                   
             //                             |                                   
             //                             |                
-            //                             . . . . .       
-            //                             .       . 
-            //                             .       .         Repeat 10 times
-            //                             .       .         
-            // ----------------------------+-------.-------.--------
-            //                             |       .       .
-            //                             |       .       .
-            //                             |       .       .
-            //                             |       . . . . .
+            //                     . . . . . h+
+            //                     .       .         
+            //                     .       .          Repeat 10 times
+            //                     .       .                 
+            // --------------------.-------+-------.------------------
+            //                   w-        .       . w+
+            //                             .       .        
+            //                             .       .        
+            //                          h- . . . . .        
             //                             |                 
             //                             |                
             //                             |
-            //                             |            ---> SCANNER X+ 
-            //                             |   
-            //                             |                
-            //                             | 
+            //                             |  
+            //                             |
+            //                             |
+            //                             | ---> SCANNER X+ 
 
             float width = 5;
             float height = 5;
             int repeats = 10;
-            success &= rtc.ListJumpTo(Vector2.Zero);
+            var start = new Vector2(-width, 0);
+            success &= rtc.ListJumpTo(start);
+            // MoF begin (also, reset encoders)
             for (int i = 0; i < repeats; i++)
             {
-                // MoF begin
-                success &= rtcMoF.ListMofBegin();
-                // Wait until condition has matched
+                success &= rtcMoF.ListMofBegin(true);
+                // Wait until condition has matched 
                 success &= rtcMoF.ListMofWait(RtcEncoders.EncX, 0, RtcEncoderWaitConditions.Over);
+                success &= rtc.ListMarkTo(new Vector2(-width, height));
                 success &= rtc.ListMarkTo(new Vector2(0, height));
-                success &= rtc.ListMarkTo(new Vector2(width, height));
+                success &= rtc.ListMarkTo(new Vector2(0, -height));
                 success &= rtc.ListMarkTo(new Vector2(width, -height));
-                success &= rtc.ListMarkTo(new Vector2(width * 2, -height));
-                success &= rtc.ListMarkTo(new Vector2(width * 2, 0));
-                // MoF end
-                success &= rtcMoF.ListMofEnd(Vector2.Zero);
+                success &= rtc.ListMarkTo(new Vector2(width, 0));
+                success &= rtcMoF.ListMofEnd(start);
+                if (!success)
+                    break;
             }
-
+            // MoF end
             success &= rtcMeasurement.ListMeasurementEnd();
 
             if (!externalStart)

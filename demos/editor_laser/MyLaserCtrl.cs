@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Demos
 {
+    /// <summary>
+    /// You can make customized UI for specific laser source
+    /// </summary>
     public partial class MyLaserCtrl : UserControl
     {
         /// <summary>
