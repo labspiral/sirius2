@@ -142,7 +142,7 @@ namespace Demos
         private static void RtcMoF_OnEncoderChanged(IRtcMoF rtcMoF, int encX, int encY)
         {
             rtcMoF.CtlMofGetAngularEncoder(out var x, out var angle);
-            Console.Title = $"Angle: [{angle:F3}], ENC: {x}";
+            Console.Title = $"Angle: [{angle:F3}˚], ENC: {x}";
         }
 
         /// <summary>
@@ -433,7 +433,7 @@ namespace Demos
                 // Save measurement result to file
                 success &= RtcMeasurementHelper.Save(measurementFile, rtcMeasurement);
                 // Plot as a graph
-                RtcMeasurementHelper.Plot(measurementFile, "MoF Angular");
+                RtcMeasurementHelper.Plot(measurementFile, "Angular MoF");
             }
             else
             {

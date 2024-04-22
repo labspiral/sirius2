@@ -426,6 +426,15 @@ namespace Demos.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Render: {0} ms.
+        /// </summary>
+        internal static string RenderTime {
+            get {
+                return ResourceManager.GetString("RenderTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reverse.
         /// </summary>
         internal static string Reverse {

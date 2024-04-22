@@ -109,7 +109,10 @@ namespace Demos
                 if (dialogResult == DialogResult.Yes)
                     e.Cancel = false;
                 else
+                {
                     e.Cancel = true;
+                    return;
+                }
             }
 
             if (marker.IsBusy)

@@ -90,14 +90,43 @@ namespace Demos
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // destory index 0 devices
             var remote0 = siriusEditorUserControl1.Remote;
             var document0 = siriusEditorUserControl1.Document;
             var marker0 = siriusEditorUserControl1.Marker;
             var laser0 = siriusEditorUserControl1.Laser;
             var rtc0 = siriusEditorUserControl1.Rtc;
             var powerMeter0 = siriusEditorUserControl1.PowerMeter;
+          
+            var remote1 = siriusEditorUserControl2.Remote;
+            var document1 = siriusEditorUserControl2.Document;
+            var marker1 = siriusEditorUserControl2.Marker;
+            var laser1 = siriusEditorUserControl2.Laser;
+            var rtc1 = siriusEditorUserControl2.Rtc;
+            var powerMeter1 = siriusEditorUserControl2.PowerMeter;
 
+            if (document0.IsModified || document1.IsModified)
+            {
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to exit without save ?", "Warning", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = form.ShowDialog(this);
+                if (dialogResult == DialogResult.Yes)
+                    e.Cancel = false;
+                else
+                {
+                    e.Cancel = true;
+                    return;
+                }
+            }
+            if (marker0.IsBusy || marker1.IsBusy)
+            {
+                var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to exit during working on progressing... ?", "Warning", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = form.ShowDialog(this);
+                if (dialogResult == DialogResult.Yes)
+                    e.Cancel = false;
+                else
+                    e.Cancel = true;
+            }
+
+            // destory index 0 devices
             siriusEditorUserControl1.Remote = null;
             siriusEditorUserControl1.PowerMeter = null;
             siriusEditorUserControl1.Marker = null;
@@ -106,13 +135,6 @@ namespace Demos
             EditorHelper.DestroyDevices(rtc0, laser0, powerMeter0, marker0, remote0);
 
             // destory index 1 devices
-            var remote1 = siriusEditorUserControl2.Remote;
-            var document1 = siriusEditorUserControl2.Document;
-            var marker1 = siriusEditorUserControl2.Marker;
-            var laser1 = siriusEditorUserControl2.Laser;
-            var rtc1 = siriusEditorUserControl2.Rtc;
-            var powerMeter1 = siriusEditorUserControl2.PowerMeter;
-
             siriusEditorUserControl2.Remote = null;
             siriusEditorUserControl2.PowerMeter = null;
             siriusEditorUserControl2.Rtc = null;

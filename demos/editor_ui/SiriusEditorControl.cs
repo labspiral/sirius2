@@ -132,7 +132,12 @@ namespace Demos
         /// <summary>
         /// Title name
         /// </summary>
-         public string TitleName
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("Title Name")]
+        [Description("Title Name of Editor")]
+        public string TitleName
         {
             get { return lblName.Text; }
             set { lblName.Text = value; }
@@ -145,6 +150,11 @@ namespace Demos
         /// Created by internally. <br/>
         /// <see cref="IDocument">IDocument</see> would be created by <see cref="OnLoad(EventArgs)">OnLoad</see> event handler.<br/>
         /// </remarks>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("Document")]
+        [Description("Document Instance")]
         public IDocument Document
         {
             get { return document; }
@@ -155,14 +165,8 @@ namespace Demos
                 if (document != null)
                 {
                     PropertyGridCtrl.SelecteObject = null;
-                    document.OnSelected -= Document_OnSelected;
                     document.OnSaved -= Document_OnSaved;
                     document.OnOpened -= Document_OnOpened;
-                    if (EditorCtrl.View is ViewBase vb)
-                    {
-                        vb.Renderer.MouseMove -= Renderer_MouseMove;
-                        vb.Renderer.Paint -= Renderer_Paint;
-                    }
                 }
                 document = value;
                 MarkerCtrl.Document = document;
@@ -178,14 +182,8 @@ namespace Demos
 
                 if (document != null)
                 {
-                    document.OnSelected += Document_OnSelected;
                     document.OnSaved += Document_OnSaved;
                     document.OnOpened += Document_OnOpened;
-                    if (EditorCtrl.View is ViewBase vb)
-                    {
-                        vb.Renderer.MouseMove += Renderer_MouseMove;
-                        vb.Renderer.Paint += Renderer_Paint;
-                    }
                     PropertyGridCtrl.SelecteObject = document.Selected;
                 }
             }
@@ -198,6 +196,11 @@ namespace Demos
         /// <remarks>
         /// Created by <see cref="ScannerFactory">ScannerFactory</see>. <br/>
         /// </remarks>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("Rtc")]
+        [Description("RTC Instance")]
         public IRtc Rtc
         {
             get { return rtc; }
@@ -241,6 +244,11 @@ namespace Demos
         /// <remarks>
         /// Created by <see cref="LaserFactory">LaserFactory</see>. <br/>
         /// </remarks>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("Laser")]
+        [Description("Laser Instance")]
         public ILaser Laser
         {
             get { return laser; }
@@ -277,6 +285,11 @@ namespace Demos
         /// <remarks>
         /// Created by <see cref="MarkerFactory">MarkerFactory</see>. <br/>
         /// </remarks>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("Marker")]
+        [Description("Marker Instance")]
         public IMarker Marker
         {
             get { return marker; }
@@ -297,7 +310,9 @@ namespace Demos
                 ScriptCtrl.Marker = marker;
                 RemoteCtrl.Marker = marker;
                 TreeViewCtrl.Marker = marker;
-                EditorCtrl.View.Marker = marker;
+                TreeViewBlockCtrl.Marker = marker;
+                EditorCtrl.Marker = marker;
+                PropertyGridCtrl.Marker = marker;
                 //marker browsable
                 if (marker != null)
                 {
@@ -314,6 +329,11 @@ namespace Demos
         /// <remarks>
         /// Created by internally. <br/>
         /// </remarks>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("View")]
+        [Description("View Instance")]
         public IView View
         {
             get {                 
@@ -326,6 +346,11 @@ namespace Demos
         /// <remarks>
         /// Created by <see cref="RemoteFactory">RemoteFactory</see>. <br/>
         /// </remarks>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("Remote")]
+        [Description("Remote Instance")]
         public IRemote Remote 
         {
             get { return remote; }
@@ -347,8 +372,6 @@ namespace Demos
                 }
             }
         }
-
-
         private IRemote remote;
 
         /// <summary>
@@ -357,6 +380,11 @@ namespace Demos
         /// <remarks>
         /// Created by <see cref="PowerMeterFactory">PowerMeterFactory</see>. <br/>
         /// </remarks>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("PowerMeter")]
+        [Description("PowerMeter Instance")]
         public IPowerMeter PowerMeter
         {
             get { return powerMeter; }
@@ -393,6 +421,11 @@ namespace Demos
         /// <remarks>
         /// Created by <see cref="IOFactory">IOFactory</see>. <br/>
         /// </remarks>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("DInput")]
+        [Description("IDInput Instance for RTC Extension1 Port")]
         public IDInput DIExt1 
         { 
             get { return dIExt1; }
@@ -415,6 +448,11 @@ namespace Demos
         /// <remarks>
         /// Created by <see cref="IOFactory">IOFactory</see>. <br/>
         /// </remarks>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("DInput")]
+        [Description("IDInput Instance for RTC Laser Port")]
         public IDInput DILaserPort
         {
             get { return dILaserPort; }
@@ -438,6 +476,11 @@ namespace Demos
         /// <remarks>
         /// Created by <see cref="IOFactory">IOFactory</see>. <br/>
         /// </remarks>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("DOutput")]
+        [Description("IDOutput Instance for RTC Extension1 Port")]
         public IDOutput DOExt1
         {
             get { return dOExt1; }
@@ -461,6 +504,11 @@ namespace Demos
         /// <remarks>
         /// Created by <see cref="IOFactory">IOFactory</see>. <br/>
         /// </remarks>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("DOutput")]
+        [Description("IDOutput Instance for RTC Extension2 Port")]
         public IDOutput DOExt2
         {
             get { return dOExt2; }
@@ -484,6 +532,11 @@ namespace Demos
         /// <remarks>
         /// Created by <see cref="IOFactory">IOFactory</see>. <br/>
         /// </remarks>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("DOutput")]
+        [Description("IDOutput Instance for RTC Laser Port")]
         public IDOutput DOLaserPort
         {
             get { return dOLaserPort; }
@@ -505,6 +558,11 @@ namespace Demos
         /// <summary>
         /// Treeview user control for <see cref="IEntity">IEntity</see> within <see cref="EntityLayer">EntityLayer</see> nodes
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("TreeViewUserControl")]
+        [Description("TreeView UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl TreeViewCtrl
         { 
             get { return trvEntity; } 
@@ -512,6 +570,11 @@ namespace Demos
         /// <summary>
         /// Treeview user control for <see cref="EntityBlock">EntityBlock</see> nodes
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("TreeViewBlockUserControl")]
+        [Description("TreeViewBlock UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl TreeViewBlockCtrl
         {
             get { return trvBlock; }
@@ -519,6 +582,11 @@ namespace Demos
         /// <summary>
         /// PropertyGrid user control for properties of <see cref="IEntity">IEntity</see>
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("PropertyGridUserControl")]
+        [Description("PropertyGrid UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl PropertyGridCtrl
         {
             get { return propertyGridControl1; }
@@ -526,6 +594,11 @@ namespace Demos
         /// <summary>
         /// Editor(by OpenTK) user control for rendering view 
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("EditorUserControl")]
+        [Description("Editor UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.EditorUserControl EditorCtrl
         {
             get { return editorControl1; }
@@ -533,6 +606,11 @@ namespace Demos
         /// <summary>
         /// User control for list of <see cref="EntityPen">EntityPen</see>
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("PenUserControl")]
+        [Description("Pen UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.PenUserControl PenCtrl
         {
             get { return penControl1; }
@@ -540,6 +618,11 @@ namespace Demos
         /// <summary>
         /// PropertyGrid user control for <see cref="ILaser">ILaser</see>
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("LaserUserControl")]
+        [Description("Laser UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.LaserUserControl LaserCtrl
         {
             get { return laserControl1; }
@@ -550,6 +633,11 @@ namespace Demos
         /// <remarks>
         /// Replaced internal <c>LaserCtrl</c> as external control <br/>
         /// </remarks>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("LaserUserCtrl (Customized)")]
+        [Description("Laser UserCtrl")]
         public UserControl LaserUserCtrl 
         { 
             get { return laserUserCtrl; }
@@ -582,6 +670,11 @@ namespace Demos
         /// <summary>
         /// PropertyGrid user control for <see cref="IRtc">IRtc</see>
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("RtcUserControl")]
+        [Description("Rtc UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.RtcUserControl RtcCtrl
         {
             get { return rtcControl1; }
@@ -589,6 +682,11 @@ namespace Demos
         /// <summary>
         /// PropertyGrid user control for <see cref="IMarker">IMarker</see>
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("MarkerUserControl")]
+        [Description("Marker UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.MarkerUserControl MarkerCtrl
         {
             get { return markerControl1; }
@@ -596,6 +694,11 @@ namespace Demos
         /// <summary>
         /// User control for list of <see cref="IMarker.Offsets">IMarker.Offsets</see>
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("OffsetUserControl")]
+        [Description("Offset UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.OffsetUserControl OffsetCtrl
         {
             get { return offsetControl1; }
@@ -603,6 +706,11 @@ namespace Demos
         /// <summary>
         /// User control for RTC DI (extension 1 and laser port) for <see cref="IDInput">IDInput</see>
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("RtcDIUserControl")]
+        [Description("RtcDI UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl RtcDICtrl
         {
             get { return rtcDIUserControl1; }
@@ -610,6 +718,11 @@ namespace Demos
         /// <summary>
         /// User control for RTC DO (extension 1,2 and laser port) for <see cref="IDOutput">IDOutput</see>
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("RtcDOUserControl")]
+        [Description("RtcDO UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl RtcDOCtrl
         {
             get { return rtcDOUserControl1; }
@@ -617,6 +730,11 @@ namespace Demos
         /// <summary>
         /// User control for manual control
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("ManualUserControl (Customized)")]
+        [Description("Manual UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.ManualUserControl ManualCtrl
         {
             get { return manualUserControl1; }
@@ -659,6 +777,11 @@ namespace Demos
         /// <summary>
         /// User control for for <see cref="IPowerMeter">IPowerMeter</see>
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("PowerMeterUserControl")]
+        [Description("PowerMeter UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl PowerMeterCtrl
         {
             get { return powerMeterControl1; }
@@ -666,6 +789,11 @@ namespace Demos
         /// <summary>
         ///  User control for <see cref="IPowerMap">IPowerMap</see>
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("PowerMapUserControl")]
+        [Description("PowerMap UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl PowerMapCtrl
         {
             get { return powerMapControl1; }
@@ -673,6 +801,11 @@ namespace Demos
         /// <summary>
         /// User control for <see cref="IScript">IScript</see>
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("ScriptUserControl")]
+        [Description("Script UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.ScriptUserControl ScriptCtrl
         {
             get { return scriptControlControl1; }
@@ -680,6 +813,11 @@ namespace Demos
         /// <summary>
         /// PropertyGrid user control for <see cref="IRemote">IRemote</see>
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("RemoteUserControl (Customized)")]
+        [Description("Remote UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.RemoteUserControl RemoteCtrl
         {
             get { return remoteUserControl1; }
@@ -723,6 +861,11 @@ namespace Demos
         /// <summary>
         /// User control for logged messages
         /// </summary>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("LogUserControl")]
+        [Description("Log UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.LogUserControl LogCtrl
         {
             get { return logControl1; }
@@ -737,10 +880,11 @@ namespace Demos
         /// Constructor
         /// </summary>
         /// <remarks>
-        /// Create devices likes as <c>IRtc</c>, <c>ILaser</c> and <c>IMarker</c> and assign. <br/>
+        /// Create devices likes as <c>IRtc</c>, <c>ILaser</c>, <c>IPowerMeter</c>, ... and assign. <br/>
         /// Digital I/O devices likes as <c>DInput</c>s, <c>DInput</c>s are created when assign <c>IRtc</c> by automatically. <br/>
         /// Create <c>IMarker</c> and assign. <br/>
         /// <c>IDocument</c> is created by automatically. <br/>
+        /// <c>IView</c> is created by automatically. <br/>
         /// </remarks>
         public SiriusEditorUserControl()
         {
@@ -756,8 +900,7 @@ namespace Demos
             timerStatus.Tick += TimerStatus_Tick;
             lblEncoder.DoubleClick += LblEncoder_DoubleClick;
             lblEncoder.DoubleClickEnabled = true;
-
-            lblHelp.Click += LblHelp_Click;
+    
             btnAbout.Click += BtnAbout_Click;
             btnNew.Click += BtnNew_Click;
             btnOpen.Click += BtnOpen_Click;
@@ -833,7 +976,6 @@ namespace Demos
         }
         private void InternalOnLoad(EventArgs e)
         {
-            //TreeViewCtrl.View = EditorCtrl.View;
             TreeViewBlockCtrl.View = EditorCtrl.View;
             PropertyGridCtrl.View = EditorCtrl.View;
 
@@ -875,7 +1017,7 @@ namespace Demos
                         DialogResult dialogResult = form.ShowDialog(this);
                         if (dialogResult == DialogResult.Yes)
                         {
-                            Marker.Ready(Marker.Document, Marker.View, Marker.Rtc, Marker.Laser, Marker.PowerMeter, Marker.Remote);
+                            Marker.Ready(Document);
                             Marker.Start();
                             return true;
                         }
@@ -895,7 +1037,7 @@ namespace Demos
             else if (keyData == Config.KeyboardMoveToCursor)
             {
                 if (this.Focused)
-                    return Config.NotifyMoveToCursor(Document, this.lastCurrentPos);
+                    return Config.NotifyMoveToCursor(Document, EditorCtrl.LastMousePos);
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
@@ -944,7 +1086,7 @@ namespace Demos
             }
         }
         /// <summary>
-        /// Specific property visibility
+        /// Entity Property visibility
         /// </summary>
         private void PropertyVisibility()
         {
@@ -969,8 +1111,16 @@ namespace Demos
             {
                 case 0:
                     EditorCtrl.View.ViewMode = ViewModes.Entity;
-                    // Regen whole document data if modified 
-                    EditorCtrl.Document.ActRegen();
+                    try
+                    {
+                        Cursor.Current = Cursors.WaitCursor;
+                        // Regen whole document data by forcily (possible to be modified)
+                        EditorCtrl.Document.ActRegen();
+                    }
+                    finally
+                    {
+                        Cursor.Current = Cursors.Default;
+                    }
                     break;
                 case 1:
                     EditorCtrl.View.ViewMode = ViewModes.Block;
@@ -1044,22 +1194,22 @@ namespace Demos
         private void MnuMarginBottom_Click(object sender, EventArgs e)
         {
             document.ActAlign(document.Selected, MarginAlignments.Bottom);
-            DoRender();
+            EditorCtrl.DoRender();
         }
         private void MnuMarginTop_Click(object sender, EventArgs e)
         {
             document.ActAlign(document.Selected, MarginAlignments.Top);
-            DoRender();
+            EditorCtrl.DoRender();
         }
         private void MnuMarginRight_Click(object sender, EventArgs e)
         {
             document.ActAlign(document.Selected, MarginAlignments.Right);
-            DoRender();
+            EditorCtrl.DoRender();
         }
         private void MnuMarginLeft_Click(object sender, EventArgs e)
         {
             document.ActAlign(document.Selected, MarginAlignments.Left);
-            DoRender();
+            EditorCtrl.DoRender();
         }
         private void MnuZDelta_Click(object sender, EventArgs e)
         {
@@ -1201,9 +1351,15 @@ namespace Demos
                 if (dialogResult != DialogResult.Yes)
                     return;
             }
-            Cursor.Current = Cursors.WaitCursor;
-            document.ActOpen(dlg.FileName);
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                document.ActOpen(dlg.FileName);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
         private void BtnSave_Click(object sender, EventArgs e)
         {
@@ -1217,20 +1373,26 @@ namespace Demos
             DialogResult result = dlg.ShowDialog();
             if (result != DialogResult.OK)
                 return;
-            Cursor.Current = Cursors.WaitCursor;
-            document.ActSave(dlg.FileName);
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                document.ActSave(dlg.FileName);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
         private void BtnZoomIn_Click(object sender, EventArgs e)
         {
 
             EditorCtrl.View.Camera.ZoomIn(Point.Empty);
-            DoRender();
+            EditorCtrl.DoRender();
         }
         private void BtnZoomOut_Click(object sender, EventArgs e)
         {
             EditorCtrl.View.Camera.ZoomOut(Point.Empty);
-            DoRender();
+            EditorCtrl.DoRender(); 
         }
         private void BtnZoomFit_Click(object sender, EventArgs e)
         {
@@ -1244,7 +1406,7 @@ namespace Demos
                 var bbox = BoundingBox.RealBoundingBox(Document.Selected);
                 EditorCtrl.View.Camera.ZoomFit(bbox);
             }
-            DoRender();
+            EditorCtrl.DoRender();
         }
         private void BtnPasteArray_Click(object sender, EventArgs e)
         {
@@ -1271,11 +1433,12 @@ namespace Demos
                     }
                 }
             }
-            DoRender();
+            EditorCtrl.DoRender(); 
         }
 
         private void BtnPoints_Click(object sender, EventArgs e)
         {
+            // create some points
             Vector2[] locations = new Vector2[]
             {
                 new Vector2(-1,1),
@@ -1332,8 +1495,8 @@ namespace Demos
             //Cursor.Current = Cursors.WaitCursor;
             //Document.ActImport(dlg.FileName, out var entity);
             //Cursor.Current = Cursors.Default;
-            
-            // or preview import winform
+
+            // or using import(or preview) winform
             var form = new SpiralLab.Sirius2.Winforms.UI.ImportForm();
             DialogResult dialogResult = form.ShowDialog(this);
             if (dialogResult != DialogResult.OK)
@@ -1341,19 +1504,22 @@ namespace Demos
             if (null == form.Entity)
                 return;
 
-            // to make gl render as current
-            //if (View is ViewBase vb)
-            //    vb.Renderer.MakeCurrent();
-            //or
-            DoRender();
+            EditorCtrl.DoRender();
 
-            Cursor.Current = Cursors.WaitCursor;
-            var cloned = (IEntity)form.Entity.Clone();
-            cloned.IsNeedToRegen = true;
-            cloned.Parent = null;
-            cloned.IsSelected = false;
-            Document.ActAdd(cloned);
-            Cursor.Current = Cursors.Default;
+            // clone entity at import(or preview) winform
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                var cloned = (IEntity)form.Entity.Clone();
+                cloned.IsNeedToRegen = true;
+                cloned.Parent = null;
+                cloned.IsSelected = false;
+                Document.ActAdd(cloned);
+            }
+            finally
+            { 
+                Cursor.Current = Cursors.Default;
+            }
         }
         private void BtnRectangle_Click(object sender, EventArgs e)
         {
@@ -1380,8 +1546,11 @@ namespace Demos
         }
         private void BtnRaster_Click(object sender, EventArgs e)
         {
+            // you can create by manually
             //var entity = new EntityRaster(2, 2, 100, 100);
             //Document.ActAdd(entity);
+
+            // or using image file
             var dlg = new OpenFileDialog();
             dlg.Filter = Config.FileImportImageFilters;
             dlg.InitialDirectory = Config.SamplePath;
@@ -1390,15 +1559,10 @@ namespace Demos
             DialogResult result = dlg.ShowDialog();
             if (result != DialogResult.OK)
                 return;
-          
             var entity = new EntityRaster(2, dlg.FileName);
             Document.ActAdd(entity);
         }
-        private void BtnDivide_Click(object sender, EventArgs e)
-        {
-            //if (document.Selected.Length > 0)
-            //    Document.ActDivide(document.Selected, null);
-        }
+      
         private void BtnSiriusCharacterSetText_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateSiriusCharacterSetText(Config.FontDefaultSirius, CharacterSetFormats.Date, 5);
@@ -1419,7 +1583,6 @@ namespace Demos
             var entity = EntityFactory.CreateSiriusText(Config.FontDefaultSirius, "SIRIUS2", 2.5);
             document.ActAdd(entity);
         }
-
         private void BtnCopy_Click(object sender, EventArgs e)
         {
             Document.ActCopy();
@@ -1470,45 +1633,12 @@ namespace Demos
                 lblFileName.Text = fileName;
             }));
         }
-        /// <summary>
-        /// Event handler for <c>IEntity</c> has selected
-        /// </summary>
-        /// <param name="document"><c>IDocument</c></param>
-        /// <param name="entities">Selected array of <c>IEntity</c></param>
-        private void Document_OnSelected(IDocument document, IEntity[] entities)
-        {
-            if (!stsBottom.IsHandleCreated || stsBottom.IsDisposed)
-                return;
-            stsBottom.Invoke(new MethodInvoker(delegate ()
-            {
-                lblSelected.Text = string.Format(Properties.Resources.Selected, entities.Length);
-            }));
-        }
-
-        private void Renderer_Paint(object sender, PaintEventArgs e)
-        {
-            DoRender();
-        }
 
         /// <summary>
-        /// Last mouse cursor location
+        /// Encoder reset
         /// </summary>
-        OpenTK.Vector3 lastCurrentPos = OpenTK.Vector3.Zero;
-        private void Renderer_MouseMove(object sender, MouseEventArgs e)
-        {
-            var intersect = OpenTKHelper.ScreenToWorldPlaneZIntersect(e.Location, Vector3.Zero, EditorCtrl.View.Camera.ViewMatrix, EditorCtrl.View.Camera.ProjectionMatrix);
-            lastCurrentPos = intersect;
-            lblPos.Text = $"XY: {intersect.X:F3}, {intersect.Y:F3}mm [{e.Location.X}, {e.Location.Y}]";
-        }
-
-        private void LblHelp_Click(object sender, EventArgs e)
-        {
-            var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(
-                Config.KeyboardHelpMessage,
-                Properties.Resources.HelpKeboard,
-                MessageBoxButtons.OK);
-            form.ShowDialog(this);
-        }
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LblEncoder_DoubleClick(object sender, EventArgs e)
         {
             if (null == Rtc)
@@ -1524,8 +1654,12 @@ namespace Demos
             if (dialogResult == DialogResult.Yes)
                 rtcMoF.CtlMofEncoderReset();
         }
-
         int timerStatusColorCounts = 0;
+        /// <summary>
+        /// Update status by timer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TimerStatus_Tick(object sender, EventArgs e)
         {
             if (null == this.Marker)
@@ -1596,8 +1730,6 @@ namespace Demos
                 }
             }  
 
-            if (null != EditorCtrl.View)
-                lblRenderTime.Text = $"Render: {EditorCtrl.View.RenderTime} ms";
         }
 
         /// <summary>
@@ -1613,10 +1745,15 @@ namespace Demos
             this.Invoke(new MethodInvoker(delegate ()
             {
                 timerProgress.Enabled = true;
-                EditabilityByMarking(false);
+                EditabilityByMarkerBusy(false);
             }));
         }
         int timerProgressColorCounts = 0;
+        /// <summary>
+        /// Update marker progressing by timer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TimerProgress_Tick(object sender, EventArgs e)
         {
             if (!stsBottom.IsHandleCreated || this.IsDisposed)
@@ -1627,6 +1764,95 @@ namespace Demos
                 lblProcessTime.ForeColor = Color.Red;
 
             lblProcessTime.Text = $"{timerProgressStopwatch.ElapsedMilliseconds / 1000.0:F3} sec";
+        }
+        /// <summary>
+        /// Editability during marker is busy
+        /// </summary>
+        /// <param name="isEnable">Enable(or disable) controls</param>
+        /// <remarks>
+        /// To disable edit operations during marker is busy status. <br/>
+        /// </remarks>
+        private void EditabilityByMarkerBusy(bool isEnable)
+        {
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                switch (Remote.ControlMode)
+                {
+                    case ControlModes.Local:
+                        View.IsEditMode = isEnable;
+                        break;
+                    case ControlModes.Remote:
+                        break;
+                }
+                tlsTop1.Enabled = isEnable;
+                tlsTop2.Enabled = isEnable;
+                tbcLeft.SelectedIndex = 0;
+                tbcLeft.Enabled = isEnable;
+                //EditorCtrl.Enabled = isEnable;
+#if DEBUG
+                // let them as enabled for debugging purpose
+#else
+                OffsetCtrl.Enabled = isEnable;
+                ManualCtrl.Enabled = isEnable;
+                RtcCtrl.Enabled = isEnable;
+                LaserCtrl.Enabled = isEnable;
+                if (null != LaserUserCtrl)
+                    LaserUserCtrl.Enabled = isEnable;
+                if (null != ManualUserCtrl)
+                    ManualUserCtrl.Enabled = isEnable;
+#endif
+            }));
+        }
+        /// <summary>
+        /// Hide UI controls if remote control mode
+        /// </summary>
+        /// <remarks>
+        /// To do visible(or invisible) controls (like as treeview, propertygrid,...) to prevent edit operations at locally. <br/>
+        /// Applied whenever <see cref="IRemote.ControlMode">IRemote.ControlModes</see> has changed. <br/>
+        /// </remarks>
+        /// <param name="isLocalMode">visible(or invisible) controls</param>
+        public virtual void VisibilityByControlMode(bool isLocalMode = true)
+        {
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                this.SuspendLayout();
+                if (isLocalMode)
+                {
+                    if (!Marker.IsBusy)
+                        View.IsEditMode = true;
+                    tbcLeft.Visible = true;
+                    tbcRight.Visible = true;
+                    tlsTop2.Enabled = true;
+                    btnNew.Enabled = true;
+                    btnSave.Enabled = true;
+                    btnCopy.Enabled = true;
+                    btnCut.Enabled = true;
+                    btnPaste.Enabled = true;
+                    btnPasteArray.Enabled = true;
+                    btnDelete.Enabled = true;
+                    ddbAlign.Enabled = true;
+                }
+                else
+                {
+                    View.IsEditMode = false;
+                    tbcLeft.Visible = false;
+                    tbcRight.Visible = false;
+                    tlsTop2.Enabled = false;
+                    btnNew.Enabled = false;
+                    btnSave.Enabled = false;
+                    btnCopy.Enabled = false;
+                    btnCut.Enabled = false;
+                    btnPaste.Enabled = false;
+                    btnPasteArray.Enabled = false;
+                    btnDelete.Enabled = false;
+                    ddbAlign.Enabled = false;
+                }
+                this.ResumeLayout();
+            }));
         }
         /// <summary>
         /// Event handler for <c>IMarker</c> has ended
@@ -1647,7 +1873,7 @@ namespace Demos
                     lblProcessTime.ForeColor = stsBottom.ForeColor;
                 else
                     lblProcessTime.ForeColor = Color.Red;
-                EditabilityByMarking(true);
+                EditabilityByMarkerBusy(true);
                 EditorCtrl.Focus();
             }));
         }
@@ -1661,14 +1887,48 @@ namespace Demos
             switch(mode)
             {
                 case ControlModes.Local:
-                    VisibilityEditableControls(false);
+                    VisibilityByControlMode(true);
                     break;
                 case ControlModes.Remote:
-                    VisibilityEditableControls(true);
+                    VisibilityByControlMode(false);
                     break;
             }
         }
-
+        /// <summary>
+        /// Switch control mode (local and remote)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LblRemote_DoubleClick(object sender, EventArgs e)
+        {
+            if (null == this.Remote)
+                return;
+            switch (this.Remote.ControlMode)
+            {
+                case ControlModes.Remote:
+                    {
+                        var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(
+                            Properties.Resources.RemoteToLocal,
+                            Properties.Resources.RemoteControl,
+                            MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = form.ShowDialog(this);
+                        if (dialogResult == DialogResult.Yes)
+                            this.Remote.ControlMode = ControlModes.Local;
+                    }
+                    break;
+                case ControlModes.Local:
+                    {
+                        var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(
+                            Properties.Resources.RemoteToRemote,
+                            Properties.Resources.RemoteControl,
+                            MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = form.ShowDialog(this);
+                        if (dialogResult == DialogResult.Yes)
+                            this.Remote.ControlMode = ControlModes.Remote;
+                    }
+                    break;
+            }
+        }
         /// <summary>
         /// Event handler for external ENCODER values has changed
         /// </summary>
@@ -1690,8 +1950,6 @@ namespace Demos
                             stsBottom.BeginInvoke(new MethodInvoker(delegate ()
                             {
                                 lblEncoder.Text = string.Format(Properties.Resources.EncoderXY, xMm, yMm, x, y);
-                                //lblEncoder.
-
                             }));
                         }
                         break;
@@ -1742,12 +2000,6 @@ namespace Demos
         /// <param name="powerMeter"><c>IPowerMeter</c></param>
         private void PowerMeter_OnStopped(IPowerMeter powerMeter)
         {
-            if (!stsBottom.IsHandleCreated || this.IsDisposed)
-                return;
-            stsBottom.Invoke(new MethodInvoker(delegate ()
-            {
-                //lblPowerWatt.Text = $"0.0 W";
-            }));
         }
         /// <summary>
         /// Event handler for powermeter has mesaured data
@@ -1768,144 +2020,6 @@ namespace Demos
             }
             catch (Exception)
             { }
-        }
-
-        /// <summary>
-        /// Do <c>IView</c> render by forcily
-        /// </summary>
-        public void DoRender()
-        {
-            if (!this.IsHandleCreated || this.IsDisposed)
-                return;
-            try
-            {
-                this.BeginInvoke(new MethodInvoker(delegate ()
-                {
-                    EditorCtrl.View.Render();
-                    lblRenderTime.Text = $"Render: {EditorCtrl.View.RenderTime} ms";
-                }));
-            }
-            catch (Exception)
-            { }
-        }
-
-        private void LblRemote_DoubleClick(object sender, EventArgs e)
-        {
-            if (null == this.Remote)
-                return;            
-            switch(this.Remote.ControlMode)
-            {
-                case ControlModes.Remote:
-                    {
-                        var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(
-                            Properties.Resources.RemoteToLocal,
-                            Properties.Resources.RemoteControl,
-                            MessageBoxButtons.YesNo);
-                        DialogResult dialogResult = form.ShowDialog(this);
-                        if (dialogResult == DialogResult.Yes)
-                            this.Remote.ControlMode = ControlModes.Local;
-                    }
-                    break;
-                case ControlModes.Local:
-                    {
-                        var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(
-                            Properties.Resources.RemoteToRemote,
-                            Properties.Resources.RemoteControl,
-                            MessageBoxButtons.YesNo);
-                        DialogResult dialogResult = form.ShowDialog(this);
-                        if (dialogResult == DialogResult.Yes)
-                            this.Remote.ControlMode = ControlModes.Remote;
-                    }
-                    break;
-            }
-        }
-
-        /// <summary>
-        /// Editability during marker is busy
-        /// </summary>
-        /// <param name="enable">Enable controls or not</param>
-        /// <remarks>
-        /// Disable edit operation during marker is busy status. <br/>
-        /// </remarks>
-        private void EditabilityByMarking(bool enable)
-        {
-            if (!this.IsHandleCreated || this.IsDisposed)
-                return;
-            this.Invoke(new MethodInvoker(delegate ()
-            {
-                //View.IsEditMode = enable;
-                EditorCtrl.Enabled = enable;
-                tlsTop1.Enabled = enable;
-                tlsTop2.Enabled = enable;
-                TreeViewCtrl.Enabled = true;
-                TreeViewBlockCtrl.Enabled = enable;
-                PenCtrl.Enabled = enable;
-                RtcCtrl.Enabled = enable;
-                LaserCtrl.Enabled = enable;
-                if (null != LaserUserCtrl)
-                    LaserUserCtrl.Enabled = enable;
-                OffsetCtrl.Enabled = enable;
-                PropertyGridCtrl.Enabled = enable;
-                OffsetCtrl.Enabled = enable;
-                ManualCtrl.Enabled = enable;
-                if (null != ManualUserCtrl)
-                    ManualUserCtrl.Enabled = enable;
-                //RemoteCtrl.Enabled = enable;
-                //if (null != RemoteUserCtrl)
-                //    RemoteUserCtrl.Enabled = enable;
-                tbcLeft.SelectedIndex = 0;
-                tbcLeft.Enabled = enable;
-            }));
-        }
-
-        /// <summary>
-        /// Hide UI controls to prevent edit operations
-        /// </summary>
-        /// <remarks>
-        /// To do visible(or invisible) controls (like as treeview, propertygrid,...) to disable edit operations. <br/>
-        /// Applied also, of <see cref="ControlModes.Remote">ControlModes.Remote</see> has changed. <br/>
-        /// </remarks>
-        public virtual void VisibilityEditableControls(bool isHide = true)
-        {
-            if (!this.IsHandleCreated || this.IsDisposed)
-                return;
-            this.Invoke(new MethodInvoker(delegate ()
-            {
-                this.SuspendLayout();
-                if (isHide)
-                {
-                    View.IsEditMode = false;
-                    tbcLeft.Visible = false;
-                    tbcRight.Visible = false;
-                    tlsTop2.Enabled = false;
-                    btnNew.Enabled = false;
-                    btnSave.Enabled = false;
-                    btnCopy.Enabled = false;
-                    btnCut.Enabled = false;
-                    btnPaste.Enabled = false;
-                    btnPasteArray.Enabled = false;
-                    btnDelete.Enabled = false;
-                    ddbAlign.Enabled = false;
-                    //splitContainer3.Panel2Collapsed = false;
-                }
-                else
-                {
-                    View.IsEditMode = true;
-                    tbcLeft.Visible = true;
-                    tbcRight.Visible = true;
-                    tlsTop2.Enabled = true;
-                    btnNew.Enabled = true;
-                    btnSave.Enabled = true;
-                    btnCopy.Enabled = true;
-                    btnCut.Enabled = true;
-                    btnPaste.Enabled = true;
-                    btnPasteArray.Enabled = true;
-                    btnDelete.Enabled = true;
-                    ddbAlign.Enabled = true;
-                    //splitContainer3.Panel2Collapsed = true;
-                }
-                this.ResumeLayout();
-            }));
         }
     }
 }

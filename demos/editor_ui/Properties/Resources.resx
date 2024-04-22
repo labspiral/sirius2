@@ -242,6 +242,9 @@ Target counts: {0}</value>
   <data name="RemoteToRemote" xml:space="preserve">
     <value>Do you really want to switch 'REMOTE' mode ?</value>
   </data>
+  <data name="RenderTime" xml:space="preserve">
+    <value>Render: {0} ms</value>
+  </data>
   <data name="Reverse" xml:space="preserve">
     <value>Reverse</value>
   </data>

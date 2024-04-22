@@ -19,7 +19,7 @@
 
 ![script](https://github.com/labspiral/sirius2/assets/58460570/6fab7058-a88b-443d-a7f0-a8c0a914c01a)
 
-![girdchecker](https://user-images.githubusercontent.com/58460570/279851007-10e24e50-c205-4c68-a62f-2410af495d2d.png)
+![gridchecker](https://user-images.githubusercontent.com/58460570/279851007-10e24e50-c205-4c68-a62f-2410af495d2d.png)
 
 
 
@@ -166,6 +166,15 @@
 
 **7. Version history**
 
+* 2024.4.22 v.1.27.1330
+  - added) model sx, sy, sz scale by individually
+  - added) support expand/shrink at arc, rectangle, triangle entity
+  - added) support clipping at point entity
+  - added) display flag values with checked listbox control
+  - added) support custom alignment 
+  - fixed) redesign EditorCtrl UI
+  - fixed) invalid CtlLaserControlSignal at rtc
+  
 * 2024.4.15 v.1.26.1270
   - added) triangle entity 
   - added) editor_laser project

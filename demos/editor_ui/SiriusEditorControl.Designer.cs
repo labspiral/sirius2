@@ -141,7 +141,6 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.stsBottom = new System.Windows.Forms.StatusStrip();
-            this.lblHelp = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel14 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblName = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -151,14 +150,8 @@
             this.toolStripStatusLabel11 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblFileName = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblPos = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblEncoder = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblRenderTime = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel12 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblSelected = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel13 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblReady = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblBusy = new System.Windows.Forms.ToolStripStatusLabel();
@@ -1061,9 +1054,9 @@
             // stsBottom
             // 
             resources.ApplyResources(this.stsBottom, "stsBottom");
+            this.stsBottom.GripMargin = new System.Windows.Forms.Padding(0);
             this.stsBottom.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.stsBottom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblHelp,
             this.toolStripStatusLabel14,
             this.lblName,
             this.toolStripStatusLabel2,
@@ -1073,14 +1066,8 @@
             this.toolStripStatusLabel11,
             this.lblFileName,
             this.toolStripStatusLabel10,
-            this.lblPos,
-            this.toolStripStatusLabel1,
             this.lblEncoder,
             this.toolStripStatusLabel7,
-            this.lblRenderTime,
-            this.toolStripStatusLabel12,
-            this.lblSelected,
-            this.toolStripStatusLabel13,
             this.lblReady,
             this.toolStripStatusLabel8,
             this.lblBusy,
@@ -1091,12 +1078,6 @@
             this.stsBottom.Name = "stsBottom";
             this.stsBottom.ShowItemToolTips = true;
             this.stsBottom.SizingGrip = false;
-            // 
-            // lblHelp
-            // 
-            this.lblHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.lblHelp, "lblHelp");
-            this.lblHelp.Name = "lblHelp";
             // 
             // toolStripStatusLabel14
             // 
@@ -1145,16 +1126,6 @@
             resources.ApplyResources(this.toolStripStatusLabel10, "toolStripStatusLabel10");
             this.toolStripStatusLabel10.Spring = true;
             // 
-            // lblPos
-            // 
-            resources.ApplyResources(this.lblPos, "lblPos");
-            this.lblPos.Name = "lblPos";
-            // 
-            // toolStripStatusLabel1
-            // 
-            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            // 
             // lblEncoder
             // 
             resources.ApplyResources(this.lblEncoder, "lblEncoder");
@@ -1164,26 +1135,6 @@
             // 
             resources.ApplyResources(this.toolStripStatusLabel7, "toolStripStatusLabel7");
             this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            // 
-            // lblRenderTime
-            // 
-            resources.ApplyResources(this.lblRenderTime, "lblRenderTime");
-            this.lblRenderTime.Name = "lblRenderTime";
-            // 
-            // toolStripStatusLabel12
-            // 
-            resources.ApplyResources(this.toolStripStatusLabel12, "toolStripStatusLabel12");
-            this.toolStripStatusLabel12.Name = "toolStripStatusLabel12";
-            // 
-            // lblSelected
-            // 
-            this.lblSelected.Name = "lblSelected";
-            resources.ApplyResources(this.lblSelected, "lblSelected");
-            // 
-            // toolStripStatusLabel13
-            // 
-            resources.ApplyResources(this.toolStripStatusLabel13, "toolStripStatusLabel13");
-            this.toolStripStatusLabel13.Name = "toolStripStatusLabel13";
             // 
             // lblReady
             // 
@@ -1441,12 +1392,9 @@
         private System.Windows.Forms.StatusStrip stsBottom;
         private System.Windows.Forms.ToolStripStatusLabel lblName;
         private System.Windows.Forms.ToolStripStatusLabel lblProcessTime;
-        private System.Windows.Forms.ToolStripStatusLabel lblRenderTime;
-        private System.Windows.Forms.ToolStripStatusLabel lblPos;
         private System.Windows.Forms.ToolStripStatusLabel lblFileName;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lblEncoder;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel10;
@@ -1457,7 +1405,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
         private System.Windows.Forms.ToolStripStatusLabel lblRemote;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel13;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
         private System.Windows.Forms.ToolStripMenuItem mnuData;
         private System.Windows.Forms.ToolStripMenuItem mnuWriteData;
@@ -1509,8 +1456,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnImageText;
         private System.Windows.Forms.ToolStripMenuItem btnText;
         private System.Windows.Forms.ToolStripMenuItem mnuAlcDefinedVector;
-        private System.Windows.Forms.ToolStripStatusLabel lblSelected;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel12;
         private System.Windows.Forms.ToolStripMenuItem btnSiriusText;
         private System.Windows.Forms.ToolStripMenuItem btnCircularText;
         private System.Windows.Forms.ToolStripMenuItem btnCharacterSetText;
@@ -1554,7 +1499,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel14;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
-        private System.Windows.Forms.ToolStripStatusLabel lblHelp;
         private System.Windows.Forms.ToolStripButton btnTriangle;
     }
 }

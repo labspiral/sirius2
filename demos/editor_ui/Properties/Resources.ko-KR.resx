@@ -242,6 +242,9 @@
   <data name="RemoteToRemote" xml:space="preserve">
     <value>원격 제어 모드를 'REMOTE' 로 전환 하시겠습니까 ?</value>
   </data>
+  <data name="RenderTime" xml:space="preserve">
+    <value>그리기: {0} ms</value>
+  </data>
   <data name="Reverse" xml:space="preserve">
     <value>반전</value>
   </data>
