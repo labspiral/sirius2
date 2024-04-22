@@ -1033,12 +1033,6 @@ namespace Demos
                     return true;
                 }
             }
-            // Cursor: F9
-            else if (keyData == Config.KeyboardMoveToCursor)
-            {
-                if (this.Focused)
-                    return Config.NotifyMoveToCursor(Document, EditorCtrl.LastMousePos);
-            }
             return base.ProcessCmdKey(ref msg, keyData);
         }
         private void SiriusEditorUserControl_Disposed(object sender, EventArgs e)
