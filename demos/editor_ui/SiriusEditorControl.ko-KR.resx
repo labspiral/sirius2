@@ -132,20 +132,53 @@
   <data name="lblBusy.Text" xml:space="preserve">
     <value> 가공 </value>
   </data>
+  <data name="lblBusy.ToolTipText" xml:space="preserve">
+    <value>가공 상태</value>
+  </data>
   <data name="lblEncoder.Text" xml:space="preserve">
     <value>엔코더 XY: 0, 0</value>
+  </data>
+  <data name="lblEncoder.ToolTipText" xml:space="preserve">
+    <value>엔코더 
+(더블클릭시 초기화)</value>
   </data>
   <data name="lblError.Text" xml:space="preserve">
     <value> 오류 </value>
   </data>
+  <data name="lblError.ToolTipText" xml:space="preserve">
+    <value>에러 상태</value>
+  </data>
+  <data name="lblFileName.ToolTipText" xml:space="preserve">
+    <value>파일이름</value>
+  </data>
   <data name="lblHelp.ToolTipText" xml:space="preserve">
     <value>도움말</value>
+  </data>
+  <data name="lblLog.ToolTipText" xml:space="preserve">
+    <value>로그 창
+(더블클릭시 보이기/숨기기)</value>
+  </data>
+  <data name="lblName.ToolTipText" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="lblPowerWatt.ToolTipText" xml:space="preserve">
+    <value>파워 (W)</value>
+  </data>
+  <data name="lblProcessTime.ToolTipText" xml:space="preserve">
+    <value>가공 시간 (sec)</value>
   </data>
   <data name="lblReady.Text" xml:space="preserve">
     <value> 준비 </value>
   </data>
+  <data name="lblReady.ToolTipText" xml:space="preserve">
+    <value>준비 상태</value>
+  </data>
   <data name="lblRemote.Text" xml:space="preserve">
-    <value> 연결않됨  </value>
+    <value> 연결해제 </value>
+  </data>
+  <data name="lblRemote.ToolTipText" xml:space="preserve">
+    <value>원격 제어 모드
+(더블클릭시 모드 전환됨)</value>
   </data>
   <data name="lblSelected.Text" xml:space="preserve">
     <value>선택: 0</value>

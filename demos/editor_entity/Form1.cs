@@ -84,6 +84,7 @@ namespace Demos
 
             var document = siriusEditorUserControl1.Document;
             var view = siriusEditorUserControl1.View;
+
             // Create entities for test
             EditorHelper.CreateTestEntities(rtc, view, document);
 
@@ -93,6 +94,7 @@ namespace Demos
             // Assign Document, View, Rtc, Laser into marker
             marker.Ready(document, view, rtc, laser, powerMeter, remote);
         }
+
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             var document = siriusEditorUserControl1.Document;

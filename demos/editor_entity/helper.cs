@@ -137,7 +137,7 @@ namespace Demos
             {
                 default:
                 case "virtual":
-                    rtc = ScannerFactory.CreateVirtual(index, kfactor, correctionPath);
+                    rtc = ScannerFactory.CreateVirtual(index, kfactor, laserMode, signalLevelLaser12, signalLevelLaserOn, correctionPath);
                     break;
                 case "rtc5":
                     rtc = ScannerFactory.CreateRtc5(index, kfactor, laserMode, signalLevelLaser12, signalLevelLaserOn, correctionPath);
@@ -334,10 +334,10 @@ namespace Demos
                             break;
                     }
                     break;
-                case "advancedooptowaveaopico":
+                case "advancedoptowaveaopico":
                     laser = LaserFactory.CreateAdvancedOptoWaveAOPico(index, $"LASER{index}", laserComPort, laserMaxPower);
                     break;
-                case "advancedooptowaveaopicoprecision":
+                case "advancedoptowaveaopicoprecision":
                     laser = LaserFactory.CreateAdvancedOptoWaveAOPicoPrecision(index, $"LASER{index}", laserComPort, laserMaxPower);
                     break;
                 case "coherentavialx":

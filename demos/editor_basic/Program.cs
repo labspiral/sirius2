@@ -16,7 +16,7 @@
  *               `---`            `---'                                                        `----'   
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Editor demo
+ * Description : Editor basic demo
  * 
  */
 
@@ -31,6 +31,9 @@ namespace Demos
 {
     internal static class Program
     {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
         [STAThread]
         static void Main(string[] args)
         {

@@ -647,7 +647,7 @@
             IDInput interface
             </summary>
             <remarks>
-            Used with digital inputs at RTC card <br/>
+            Used with digital inputs at RTC card. <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.IO.IDInput.OnChanged">
@@ -696,39 +696,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.IO.IDInput.Initialize">
             <summary>
-            Initialize
-            <code>
-            enum DIN
-            {
-                D0 = 0,
-                D1 = 1,
-                D2 = 2,
-                D3 = 3,
-                D4 = 4,
-                D5 = 5,
-                D6 = 6,
-                D7 = 7,
-                D8 = 8,
-                D9 = 9,
-                D10 = 10,
-                D11 = 11,
-                D12 = 12,
-                D13 = 13,
-                D14 = 14,
-                D15 = 15,
-            }
-            var dInput = IOFactory.CreateInputExtension1(rtc);
-            dInput.Initialize();
-            do
-            {
-                dInput.Update();
-                if (dIn.IsAOn(DIN.D0))
-                {
-                    // something ...
-                }
-            }
-            while(true);
-            </code>
+            Initialize      
             </summary>
             <returns>Success or failed</returns>
         </member>
@@ -811,9 +779,68 @@
         <member name="M:SpiralLab.Sirius2.IO.IDInput.Update">
             <summary>
             Update channel(s) data from input
+            <code>
+            enum DIN
+            {
+                D0 = 0,
+                D1 = 1,
+                D2 = 2,
+                D3 = 3,
+                D4 = 4,
+                D5 = 5,
+                D6 = 6,
+                D7 = 7,
+                D8 = 8,
+                D9 = 9,
+                D10 = 10,
+                D11 = 11,
+                D12 = 12,
+                D13 = 13,
+                D14 = 14,
+                D15 = 15,
+            }
+            var dInput = IOFactory.CreateInputExtension1(rtc);
+            
+            // 1. by manually
+            dInput.Initialize();
+            do
+            {
+                // read and update input channel(s) 
+                dInput.Update();
+                ...
+                if (dIn.IsAOn(DIN.D0))
+                {
+                    ... something
+                }
+            }
+            while(true);
+            
+            // 2. by event 
+            dInput.OnChanged += DIn_OnChanged;
+            do
+            {
+                // read and update input channel(s) 
+                // also 'OnChanged' event handler has called
+                dInput.Update();
+            }
+            while(true);
+            ...
+            void DIn_OnChanged(IDInput dInput, int bitNo, SignalEdges edge)
+            {
+                 switch (bitNo)
+                 {
+                     case 0: 
+                        if (edge == SignalEdges.High)
+                        { 
+                            ... something
+                        }
+                        break;
+                 }
+            }
+            </code>
             </summary>
             <remarks>
-            If input bit(s) had changed, <see cref="E:SpiralLab.Sirius2.IO.IDInput.OnChanged">OnChanged</see> event would be fired whenever do after <see cref="M:SpiralLab.Sirius2.IO.IDInput.Update">Update</see>. <br/>
+            If input bit(s) had changed, <see cref="E:SpiralLab.Sirius2.IO.IDInput.OnChanged">OnChanged</see> event would be fired within doing <see cref="M:SpiralLab.Sirius2.IO.IDInput.Update">Update</see>. <br/>
             </remarks>
             <returns>Success or failed</returns>
         </member>
@@ -864,38 +891,6 @@
         <member name="M:SpiralLab.Sirius2.IO.IDOutput.Initialize">
             <summary>
             Initialize
-            <code>
-            enum DOUT
-            {
-                D0 = 0,
-                D1 = 1,
-                D2 = 2,
-                D3 = 3,
-                D4 = 4,
-                D5 = 5,
-                D6 = 6,
-                D7 = 7,
-                D8 = 8,
-                D9 = 9,
-                D10 = 10,
-                D11 = 11,
-                D12 = 12,
-                D13 = 13,
-                D14 = 14,
-                D15 = 15,
-            }
-            var dOutput = IOFactory.RtcDOutputExtension1Port(rtc);
-            dOutput.Initialize();
-            do
-            {
-                ...
-                dOutput.OutOn(DOUT.D0);
-                dOutput.OutOn(DOUT.D1);
-                ...
-                dOutput.Update();
-            }
-            while(true);
-            </code>
             </summary>
             <returns>Success or failed</returns>
         </member>
@@ -977,7 +972,39 @@
         </member>
         <member name="M:SpiralLab.Sirius2.IO.IDOutput.Update">
             <summary>
-            Update channel(s) data to output
+            Update channel(s) data into output
+            <code>
+            enum DOUT
+            {
+                D0 = 0,
+                D1 = 1,
+                D2 = 2,
+                D3 = 3,
+                D4 = 4,
+                D5 = 5,
+                D6 = 6,
+                D7 = 7,
+                D8 = 8,
+                D9 = 9,
+                D10 = 10,
+                D11 = 11,
+                D12 = 12,
+                D13 = 13,
+                D14 = 14,
+                D15 = 15,
+            }
+            var dOutput = IOFactory.RtcDOutputExtension1Port(rtc);
+            dOutput.Initialize();
+            do
+            {
+                dOutput.OutOn(DOUT.D0);
+                dOutput.OutOn(DOUT.D1);
+                ...
+                // write output channel(s) 
+                dOutput.Update();
+            }
+            while(true);
+            </code>
             </summary>
             <returns>Success or failed</returns>
         </member>
@@ -13588,6 +13615,7 @@
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Coefa_DESC">
              <summary>
                Looks up a localized string similar to Coefficient A (Zout= A + Bl + Cl²)
+            l = Focus shift (bit).
             Used with 3D only..
              </summary>
         </member>
@@ -13599,6 +13627,7 @@
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Coefb_DESC">
              <summary>
                Looks up a localized string similar to Coefficient B (Zout= A + Bl + Cl²)
+            l = Focus shift (bit).
             Used with 3D only..
              </summary>
         </member>
@@ -13610,6 +13639,7 @@
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Coefc_DESC">
              <summary>
                Looks up a localized string similar to Coefficient C (Zout= A + Bl + Cl²)
+            l = Focus shift (bit).
             Used with 3D only..
              </summary>
         </member>
@@ -17024,7 +17054,7 @@
             ScannerFactory
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.ScannerFactory.CreateVirtual(System.Int32,System.Double,System.String)">
+        <member name="M:SpiralLab.Sirius2.Scanner.ScannerFactory.CreateVirtual(System.Int32,System.Double,SpiralLab.Sirius2.Scanner.Rtc.LaserModes,SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevels,SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevels,System.String)">
             <summary>
             Create virtual controller
             <code>
@@ -17037,6 +17067,9 @@
             </summary>
             <param name="index">RTC controller index (0,1,2,...)</param>
             <param name="kFactor">K-Factor (bits/mm)</param>
+            <param name="laserMode"><c>LaserMode</c></param>
+            <param name="laser12SignalLevel"><c>RtcSignalLevel</c></param>
+            <param name="laserOnSignalLevel"><c>RtcSignalLevel</c></param>
             <param name="ctFileName">Field correction file at Table1</param>
             <returns><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual">RtcVirtual</see></returns>
         </member>
@@ -18003,6 +18036,28 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlGetMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32[]@)">
             <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ConvertMeasurementZBit(System.Int32,System.Double@)">
+            <summary>
+            Polynomial coefficients for focus shift control
+            </summary>
+            <remarks>
+            Zout = A + Bl + Cl^2 = <br/>
+            l = (-B ± sqrt( B^2 - 4CA)) / 2C
+            Calculate 'ds' by substituting 'Control value' by the measured 'SampleAZ_corr' in the formula (i.e. inverse transformation). <br/>
+            16 bits:<br/>
+            A = 156.752<br/>
+            B = 12.5973<br/>
+            C = -2.619e-05<br/>
+            <br/>
+            20 bits:<br/>
+            A = 2508.04 (= *16)<br/>
+            B = 12.5973<br/>
+            C = -1.63687e-06 (= /16)<br/>
+            </remarks>
+            <param name="zOutBit">Measured z-out bits</param>
+            <param name="zInBit">Approx. Inverse transformaiton for z value.<br/>Sign(+,-) is dot care.</param>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlConvertMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32,System.Double@)">
             <inheritdoc/>  
@@ -19947,6 +20002,28 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlGetMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32[]@)">
             <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ConvertMeasurementZBit(System.Int32,System.Double@)">
+            <summary>
+            Polynomial coefficients for focus shift control
+            </summary>
+            <remarks>
+            Zout = A + Bl + Cl^2 = <br/>
+            l = (-B ± sqrt( B^2 - 4CA)) / 2C
+            Calculate 'ds' by substituting 'Control value' by the measured 'SampleAZ_corr' in the formula (i.e. inverse transformation). <br/>
+            16 bits:<br/>
+            A = 156.752<br/>
+            B = 12.5973<br/>
+            C = -2.619e-05<br/>
+            <br/>
+            20 bits:<br/>
+            A = 2508.04 (= *16)<br/>
+            B = 12.5973<br/>
+            C = -1.63687e-06 (= /16)<br/>
+            </remarks>
+            <param name="zOutBit">Measured z-out bits</param>
+            <param name="zInBit">Approx. Inverse transformaiton for z value.<br/>Sign(+,-) is dot care.</param>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlConvertMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32,System.Double@)">
             <inheritdoc/>  
@@ -24841,12 +24918,15 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.#ctor(System.Int32,System.Double,System.String)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.#ctor(System.Int32,System.Double,SpiralLab.Sirius2.Scanner.Rtc.LaserModes,SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevels,SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevels,System.String)">
             <summary>
             Constructor
             </summary>
             <param name="index">RTC Controller identifier (0,1,2,...)</param>
             <param name="kFactor">K-Factor (bits/mm)</param>
+            <param name="laserMode"><c>LaserMode</c></param>
+            <param name="laser12SignalLevel"><c>RtcSignalLevel</c></param>
+            <param name="laserOnSignalLevel"><c>RtcSignalLevel</c></param>
             <param name="ctFileName">Field correction file at Table1</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.Finalize">
@@ -28118,14 +28198,14 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlLaserControlSignal(SpiralLab.Sirius2.Scanner.Rtc.ILaserControlSignal)">
             <summary>
-            Laser control signal by <c>ILaserControlSignal</c>
+            Laser control signal by <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ILaserControlSignal">ILaserControlSignal</see>
             </summary>
             <remarks>
             RTC5: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal">Rtc5LaserControlSignal</see> <br/>
             RTC6: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal">Rtc6LaserControlSignal</see> <br/>
             Used with above RTC5 <br/>
             </remarks>
-            <param name="laserControlSignal"><c>ILaserControlSignal</c></param>
+            <param name="laserControlSignal"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ILaserControlSignal">ILaserControlSignal</see></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlExternalControl(SpiralLab.Sirius2.Scanner.Rtc.IRtcExternalControlMode,System.UInt32)">
@@ -28136,7 +28216,7 @@
             RTC5: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode">Rtc5ExternalControlMode</see> <br/>
             RTC6: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode">Rtc6ExternalControlMode</see> <br/>
             </remarks>
-            <param name="mode"><c>IRtcExternalControlMode</c></param>
+            <param name="mode"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcExternalControlMode">IRtcExternalControlMode</see></param>
             <param name="maxStartCounts">Max /START external trigger counts (0 is unlimited)</param>
             <returns>Success or failed</returns>
         </member>
@@ -28161,9 +28241,13 @@
             <summary>
             Loaded correction table information
             </summary>
-            <param name="tableIndex"><c>CorrectionTableIndex</c></param>
-            <param name="parameter"><c>CorrectionFileHeaderParam</c></param>
-            <param name="data">Data</param>
+            <remarks>
+            A 1to1 correction file does not contain all parameter data. <br/>
+            These must be transferred manually to the user program.<br/>
+            </remarks>
+            <param name="tableIndex"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables">CorrectionTables</see></param>
+            <param name="parameter"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionFileHeaderParams">CorrectionFileHeaderParams</see></param>
+            <param name="data">Loaded data</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlCorrectionReadABC(System.String,System.Double@,System.Double@,System.Double@)">
@@ -28172,6 +28256,7 @@
             </summary>
             <remarks>
             Zout = A + Bl + Cl² <br/>
+            l = Focus shift (bit) and used 16bits resolution. <br/>        
             </remarks>
             <param name="ctFileName">Correction filename</param>
             <param name="coefA">Coeffecient A</param>
@@ -28200,7 +28285,7 @@
             RTC5: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5MarkingInfo">Rtc5MarkingInfo</see> <br/>
             RTC6: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6MarkingInfo">Rtc6MarkingInfo</see>  <br/>
             </remarks>
-            <param name="info"><c>IRtcMarkingInfo</c></param>
+            <param name="info"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMarkingInfo">IRtcMarkingInfo</see></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlStartStopInfo(SpiralLab.Sirius2.Scanner.Rtc.IRtcStartStopInfo@)">
@@ -28211,7 +28296,7 @@
             RTC5: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo">Rtc5StartStopInfo</see> <br/>
             RTC6: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo">Rtc6StartStopInfo</see> <br/>
             </remarks>
-            <param name="info"><c>IRtcStartStopInfo</c></param>
+            <param name="info"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcStartStopInfo">IRtcStartStopInfo</see></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlCompensateTimeLag(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Double,System.Double)">
@@ -28221,7 +28306,7 @@
             <remarks>
             Above. RTC6 only <br/>
             </remarks>
-            <param name="head"><c>ScannerHead</c> </param>
+            <param name="head"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see> </param>
             <param name="xyUsec">X,Y tracking errror time (usec)<br/>Max. 2550 usec. <br/></param>
             <param name="zUsec">Z tracking error time (usec)<br/>Max. 2550 usec. <br/></param>
             <returns>Success or failed</returns>
@@ -28600,6 +28685,8 @@
             </summary>
             <remarks>
             Converted(or multipled) by <see cref="P:SpiralLab.Sirius2.Config.MeasurementLaserOnFactor">Config.MeasurementLaserOnFactor</see> scale value. <br/>
+            Raw format: 0,1 <br/>
+            Human readable format: 0,1 <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.StatusAX">
@@ -28607,7 +28694,8 @@
             StatusAX (X-axis status signal of the primary scan head connector)
             </summary>
             <remarks>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.StatusAY">
@@ -28615,7 +28703,8 @@
             StatusAY (Y-axis status signal of the primary scan head connector)
             </summary>
             <remarks>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.StatusBX">
@@ -28623,7 +28712,8 @@
             StatusBX (X-axis status signal of the secondary scan head connector)
             </summary>
             <remarks>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.StatusBY">
@@ -28631,7 +28721,8 @@
             StatusBY (Y-axis status signal of the secondary scan head connector)
             </summary>
             <remarks>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleX">
@@ -28639,7 +28730,8 @@
             SampleX (X-axis cartesian control value)
             </summary>
             <remarks>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleY">
@@ -28647,7 +28739,8 @@
             SampleY (Y-axis cartesian control value)
             </summary>
             <remarks>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleZ">
@@ -28655,7 +28748,8 @@
             SampleZ (Z-axis cartesian control value)
             </summary>
             <remarks>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAX_Coor">
@@ -28663,7 +28757,8 @@
             SampleAX_Corr (corrected X-axis control value for the primary scan head connector)
             </summary>
             <remarks>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAY_Coor">
@@ -28671,7 +28766,8 @@
             SampleAY_Corr (corrected Y-axis control value for the primary scan head connector)
             </summary>
             <remarks>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAZ_Coor">
@@ -28680,7 +28776,8 @@
             Identical to the effective output value for the Z axis) <br/>
             </summary>
             <remarks>
-            Converted bits into mm value. <br/>
+            Raw format: bits (transformed z by polynomial coefficients) <br/>
+            Human readable format: mm (sign is don't care)<br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleBX_Coor">
@@ -28688,7 +28785,8 @@
             SampleBX_Corr (corrected X-axis control value for the secondary scan head connector)
             </summary>
             <remarks>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleBY_Coor">
@@ -28696,7 +28794,8 @@
             SampleBY_Corr (corrected Y-axis control value for the secondary scan head connector)
             </summary>
             <remarks>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleBZ_Coor">
@@ -28705,7 +28804,8 @@
             Identical to the effective output value for the Z axis)<br/>
             </summary>
             <remarks>
-            
+            Raw format: bits (transformed z by polynomial coefficients)<br/>
+            Human readable format: mm (sign is don't care)<br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAX_Out">
@@ -28714,7 +28814,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAY_Out">
@@ -28723,7 +28824,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleBX_Out">
@@ -28732,7 +28834,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleBY_Out">
@@ -28741,15 +28844,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted bits into mm value. <br/>
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.AutomaticLaserControlParam">
-            <summary>
-            Laser control parameter of automatic laser control (see set_auto_laser_control)
-            </summary>
-            <remarks>
-            above RTC5. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAX_Trans">
@@ -28758,7 +28854,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAY_Trans">
@@ -28767,7 +28864,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAZ_Trans">
@@ -28776,7 +28874,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted bits into mm value. <br/>
+            Raw format: bits (transformed z by polynomial coefficients)<br/>
+            Human readable format: mm (sign is don't care)<br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleBX_Trans">
@@ -28785,7 +28884,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleBY_Trans">
@@ -28794,7 +28894,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted bits into mm value. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleBZ_Trans">
@@ -28803,24 +28904,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted bits into mm value. <br/>
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.AutomaticLaserControlByVectorParam">
-            <summary>
-            Laser control parameter of vector-defined laser control (see set_vector_control)
-            </summary>
-            <remarks>
-            above RTC5. <br/>
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.FocusShift">
-            <summary>
-            Focus shift (see set_vector_control, set_defocus, set_defocus_list)
-            </summary>
-            <remarks>
-            above RTC5. <br/>
-            Converted bits into mm value. <br/>
+            Raw format: bits (transformed z by polynomial coefficients)<br/>
+            Human readable format: mm (sign is don't care)<br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.ExtAO1">
@@ -28829,7 +28914,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted bits into voltage (0~10) value.  <br/>
+            Raw format: 0 ~ 2^12 bits <br/>
+            Human readable format: 0 ~ 10V <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.ExtAO2">
@@ -28838,7 +28924,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted bits into voltage (0~10) value.  <br/>
+            Raw format: 0 ~ 2^12 bits <br/>
+            Human readable format: 0 ~ 10V <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.ExtDO16">
@@ -28847,7 +28934,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted bits into digital (0~65535) value. <br/>
+            Raw format: 0 ~ 2^16 bits <br/>
+            Human readable format: 0 ~ 2^16 <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.ExtDO8">
@@ -28856,7 +28944,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted bits into digital (0~255) value. <br/>
+            Raw format: 0 ~ 2^8 bits <br/>
+            Human readable format: 0 ~ 2^8 <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.PulseLength">
@@ -28864,7 +28953,8 @@
             Pulse length (PulseLength) of the LASER1 and LASER2 laser signals (see set_auto_laser_control, set_vector_control)
             </summary>
             <remarks>
-            Converted into pulse width(usec) value. <br/>
+            Raw format: 1/64 usec <br/>
+            Human readable format: usec <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.OutputPeriod">
@@ -28873,7 +28963,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted bits into frequency(Hz) value. <br/>
+            Raw format: 1/64 usec <br/>
+            Human readable format: hz <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.FreeVariable0">
@@ -28902,7 +28993,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted into mm(if X/Y) or degree(if Angular) value. <br/>
+            Raw format: encoder counts<br/>
+            Human readable format: mm (if X/Y) or degree(if Angular) <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.Enc1Counter">
@@ -28911,7 +29003,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted into mm(if X/Y) or degree(if Angular) value. <br/>
+            Raw format: encoder counts<br/>
+            Human readable format: mm (if X/Y) or degree(if Angular) <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.MarkSpeed">
@@ -28919,7 +29012,9 @@
             Marking speed (from set_mark_speed, set_mark_speed_ctrl)
             </summary>
             <remarks>
-            above RTC5 
+            above RTC5. <br/>
+            Raw format: bits/ms <br/>
+            Human readable format: mm/s <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.ExtDI16">
@@ -28928,15 +29023,8 @@
             </summary>
             <remarks>
             above RTC5. <br/>
-            Converted bits into digital (0~65535) value. <br/>
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.ZoomValueForIntelliWeld">
-            <summary>
-            Zoom value (only for intelliWELD II)
-            </summary>
-            <remarks>
-            above RTC5 
+            Raw format: 0 ~ 2^16 bits <br/>
+            Human readable format: 0 ~ 2^16 <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.FreeVariable4">
@@ -28958,55 +29046,6 @@
             <summary>
             FreeVariable7
             </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.TimeStampCounter">
-            <summary>
-            Time stamp counter 
-            </summary>
-            <remarks>
-            above RTC5 
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.WobbelAmplitude">
-            <summary>
-            Wobbel amplitude (see set_wobbel, set_wobbel_mode)
-            </summary>
-            <remarks>
-            above RTC5 
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.ExtAI">
-            <summary>
-            ReadAnalogIn (see read_analog_in)
-            </summary>
-            <remarks>
-            above RTC5. <br/>
-            Converted bits into analog (0~10) value. <br/>
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.ScaledEncoderX">
-            <summary>
-            Scaled encoder value for X.
-            </summary>
-            <remarks>
-            above RTC6
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.ScaledEncoderY">
-            <summary>
-            Scaled encoder value for Y.
-            </summary>
-            <remarks>
-            above RTC6
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.ScaledEncoderZ">
-            <summary>
-            Scaled encoder value for Z.
-            </summary>
-            <remarks>
-            above RTC6
-            </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement">
             <summary>

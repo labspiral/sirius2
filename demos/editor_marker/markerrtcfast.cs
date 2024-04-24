@@ -507,21 +507,22 @@ namespace Demos
         /// Consider as its working within async threads. <br/>
         /// </remarks> 
         /// <param name="offsetIndex">Current index of offset (0,1,2,...)</param>
-        /// <param name="layer">Current <c>EntityLayer</c></param>
-        /// <param name="offset">Current <c>Offset</c></param>
+        /// <param name="offset">Current <see cref="MarkerBase.CurrentOffset">CurrentOffset</see></param>
+        /// <param name="layerIndex">Current layer of offset (0,1,2,...)</param>
+        /// <param name="layer">Current <see cref="MarkerBase.CurrentLayer">CurrentLayer</see></param>
         /// <returns>Success or failed</returns>
-        protected virtual bool LayerWork(int offsetIndex, EntityLayer layer, Offset offset)
+        protected virtual bool LayerWork(int offsetIndex, Offset offset, int layerIndex, EntityLayer layer)
         {
             bool success = true;
+            CurrentLayerIndex = layerIndex;
             CurrentLayer = layer;
             for (int i = 0; i < layer.Repeats; i++)
             {
-                CurrentLayerIndex = i;
                 for (int j = 0; j < layer.Children.Count; j++)
                 {
                     var entity = layer.Children[j];
-                        CurrentEntityIndex = j;
-                        CurrentEntity = entity;
+                    CurrentEntityIndex = j;
+                    CurrentEntity = entity;
                     if (!entity.IsMarkerable)
                         continue;
                     if (entity is IMarkerable markerable)
@@ -529,11 +530,11 @@ namespace Demos
                         switch (MarkTarget)
                         {
                             case MarkTargets.All:
-                                success &= EntityWork(offsetIndex, layer, j, entity);
+                                success &= EntityWork(offsetIndex, offset, layerIndex, layer, j, entity);
                                 break;
                             case MarkTargets.Selected:
                                 if (entity.IsSelected)
-                                    success &= EntityWork(offsetIndex, layer, j, entity);
+                                    success &= EntityWork(offsetIndex, offset, layerIndex, layer, j, entity);
                                 break;
                         }
                     }
@@ -553,31 +554,31 @@ namespace Demos
         /// Consider as its working within async threads. <br/>
         /// </remarks> 
         /// <param name="offsetIndex">Current index of offset (0,1,2,...)</param>
-        /// <param name="layer">Current <c>EntityLayer</c></param>
-        /// <param name="entityIndex">Current index of entity</param>
-        /// <param name="entity">Current <c>IEntity</c></param>
+        /// <param name="offset">Current <see cref="MarkerBase.CurrentOffset">CurrentOffset</see></param>
+        /// <param name="layerIndex">Current index of layer (0,1,2,...)</param>
+        /// <param name="layer">Current <see cref="MarkerBase.CurrentLayer">CurrentLayer</see></param>
+        /// <param name="entityIndex">Current index of entity (0,1,2,...)</param>
+        /// <param name="entity">Current <see cref="MarkerBase.CurrentEntity">CurrentEntity</see></param>
         /// <returns>Success or failed</returns>
-        protected virtual bool EntityWork(int offsetIndex, EntityLayer layer, int entityIndex, IEntity entity)
+        protected virtual bool EntityWork(int offsetIndex, Offset offset, int layerIndex, EntityLayer layer, int entityIndex, IEntity entity)
         {
             bool success = true;
             success &= NotifyBeforeEntity(entity);
             if (!success)
             {
-                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark entity at before event handler"); ;
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark entity at before event handler"); 
                 return success;
             }
             if (entity is IMarkerable markerable)
             {
-                // During each marks, internal entity data should be synchronized or locked
-                lock (entity.SyncRoot)
-                    success &= markerable.Mark(this);
+                success &= markerable.Mark(this);
             }
             if (!success)
                 return success;
             success &= NotifyAfterEntity(entity);
             if (!success)
             {
-                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark entity at after event handler"); ;
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark entity at after event handler"); 
                 return success;
             }
             return success;
@@ -604,12 +605,10 @@ namespace Demos
             Debug.Assert(laser != null);
             Debug.Assert(document != null);
             Debug.Assert(null == rtcSyncAxis);
-
-            this.NotifyStarted();
-            var dtStarted = DateTime.Now;
-            bool success = true;
-
             this.isInternalBusy = true;
+            var dtStarted = DateTime.Now;
+            this.NotifyStarted();
+            bool success = true;
             var oldMatrixStack = (IMatrixStack<System.Numerics.Matrix4x4>)rtc.MatrixStack.Clone();
             if (null != rtcMoF && rtc.IsMoF)
             {
@@ -619,17 +618,15 @@ namespace Demos
 
             success &= laser.ListBegin();
             success &= rtc.ListBegin(ListType);
-
             for (int i = 0; i < Offsets.Length; i++)
             {
-                if (!success)
-                    break;
                 CurrentOffset = Offsets[i];
                 CurrentOffsetIndex = i;
                 rtc.MatrixStack.Push(Offsets[i].ToMatrix);
                 Logger.Log(Logger.Types.Debug, $"marker [{Index}]: offset index= {i}, xyzt= {Offsets[i].ToString()}");
-                foreach (var layer in layers)
+                for (int j = 0; j < layers.Count; j++)
                 {
+                    var layer = layers[j];
                     if (!layer.IsMarkerable)
                         continue;
                     success &= NotifyBeforeLayer(layer);
@@ -638,7 +635,7 @@ namespace Demos
                         Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at before event handler"); ;
                         break;
                     }
-                    success &= LayerWork(i, layer, Offsets[i]);                   
+                    success &= LayerWork(i, Offsets[i], j, layer);
                     if (!success)
                         break;
                     success &= NotifyAfterLayer(layer);
@@ -679,12 +676,12 @@ namespace Demos
                     if (rtc is Rtc5 rtc5)
                     {
                         var info = rtc5.MarkingInfo;
-                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. markinfg info= {info.Value}");
+                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. marking info= {info.Value}");
                     }
                     else if (rtc is Rtc6 rtc6)
                     {
                         var info = rtc6.MarkingInfo;
-                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. markinfg info= {info.Value}");
+                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. marking info= {info.Value}");
                     }
                 }
             }

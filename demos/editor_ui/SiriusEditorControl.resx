@@ -131,6 +131,37 @@
   <data name="spcMain.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
+  <data name="editorControl1.CursorPositionList" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAMUCbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1u
+        ZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbT3BlblRLLlZlY3RvcjMsIE9w
+        ZW5USywgVmVyc2lvbj0zLjMuMy4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWJhZDE5
+        OWZlODRlYjNkZjRdXSwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQ
+        dWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0sIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAs
+        IEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQUBAAAAW1N5c3Rl
+        bS5Db2xsZWN0aW9ucy5HZW5lcmljLkxpc3RgMVtbU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuS2V5
+        VmFsdWVQYWlyYDJbW1N5c3RlbS5TdHJpbmcDAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgMAAOUBU3lz
+        dGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuS2V5VmFsdWVQYWlyYDJbW1N5c3RlbS5TdHJpbmcsIG1zY29y
+        bGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVj
+        NTYxOTM0ZTA4OV0sW09wZW5USy5WZWN0b3IzLCBPcGVuVEssIFZlcnNpb249My4zLjMuMCwgQ3VsdHVy
+        ZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iYWQxOTlmZTg0ZWIzZGY0XV1bXQgIAgAAAAkDAAAAAAAA
+        AAAAAAAMBAAAAPYBbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJs
+        aWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbT3BlblRLLlZlY3RvcjMsIE9wZW5USywgVmVyc2lv
+        bj0zLjMuMy4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWJhZDE5OWZlODRlYjNkZjRd
+        XSwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tl
+        bj1iNzdhNWM1NjE5MzRlMDg5BwMAAAAAAQAAAAoAAAAEOFN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmlj
+        LktleVZhbHVlUGFpcmAyW1tTeXN0ZW0uU3RyaW5nBAAAAAwGAAAASU9wZW5USywgVmVyc2lvbj0zLjMu
+        My4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWJhZDE5OWZlODRlYjNkZjQF+////zhT
+        eXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5LZXlWYWx1ZVBhaXJgMltbU3lzdGVtLlN0cmluZwIAAAAD
+        a2V5BXZhbHVlAQQOT3BlblRLLlZlY3RvcjMGAAAABAAAAAoF+f///w5PcGVuVEsuVmVjdG9yMwMAAAAB
+        WAFZAVoAAAALCwsGAAAAAAAAAAAAAAAAAAAAAfj////7////CgH3////+f///wAAAAAAAAAAAAAAAAH2
+        ////+////woB9f////n///8AAAAAAAAAAAAAAAAB9P////v///8KAfP////5////AAAAAAAAAAAAAAAA
+        AfL////7////CgHx////+f///wAAAAAAAAAAAAAAAAHw////+////woB7/////n///8AAAAAAAAAAAAA
+        AAAB7v////v///8KAe3////5////AAAAAAAAAAAAAAAAAez////7////CgHr////+f///wAAAAAAAAAA
+        AAAAAAHq////+////woB6f////n///8AAAAAAAAAAAAAAAAB6P////v///8KAef////5////AAAAAAAA
+        AAAAAAAACw==
+</value>
+  </data>
   <data name="editorControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -360,9 +391,6 @@
   <data name="&gt;&gt;offsetControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="spcMarker.Panel1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
   <data name="&gt;&gt;spcMarker.Panel1.Name" xml:space="preserve">
     <value>spcMarker.Panel1</value>
   </data>
@@ -404,9 +432,6 @@
   </data>
   <data name="&gt;&gt;markerControl1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="spcMarker.Panel2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
   </data>
   <data name="&gt;&gt;spcMarker.Panel2.Name" xml:space="preserve">
     <value>spcMarker.Panel2</value>
@@ -582,9 +607,6 @@
   <data name="&gt;&gt;rtcDIUserControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="spcIO.Panel1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
   <data name="&gt;&gt;spcIO.Panel1.Name" xml:space="preserve">
     <value>spcIO.Panel1</value>
   </data>
@@ -632,9 +654,6 @@
   </data>
   <data name="&gt;&gt;rtcDOUserControl1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="spcIO.Panel2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
   </data>
   <data name="&gt;&gt;spcIO.Panel2.Name" xml:space="preserve">
     <value>spcIO.Panel2</value>
@@ -842,7 +861,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACa
-        SAAAAk1TRnQBSQFMAgEBKAEAAcABBwHAAQcBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        SAAAAk1TRnQBSQFMAgEBKAEAAfgBBwH4AQcBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABYAMAAQgBAQIAAQEBAAEIBgABYxgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHc
         AcABAAHwAcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEA
         AzkBAAGAAXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEz
@@ -1202,6 +1221,9 @@
   <data name="tabPower.Text" xml:space="preserve">
     <value>Power</value>
   </data>
+  <data name="tabPower.ToolTipText" xml:space="preserve">
+    <value>PowerMeter</value>
+  </data>
   <data name="&gt;&gt;tabPower.Name" xml:space="preserve">
     <value>tabPower</value>
   </data>
@@ -1263,7 +1285,7 @@
     <value>Script</value>
   </data>
   <data name="tabScript.ToolTipText" xml:space="preserve">
-    <value>Script File</value>
+    <value>C# Script</value>
   </data>
   <data name="&gt;&gt;tabScript.Name" xml:space="preserve">
     <value>tabScript</value>
@@ -2863,8 +2885,15 @@
   <data name="lblName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
+  <data name="lblName.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAFRJREFUSEvt
+        zcEKACAIA1D//6cLPYUuVlgX8cEOmTgpZTxOgJYyCdCHn7G3QjNzsszeCs3M9uNSF1BdQNGCVwnQUibX
+        0geYLqC+FfjDPmno6JrSRCYdo6NdNZFp1wAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="lblName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 24</value>
+    <value>81, 24</value>
   </data>
   <data name="lblName.Text" xml:space="preserve">
     <value>NoName</value>
@@ -2896,7 +2925,7 @@
     <value>0 msec</value>
   </data>
   <data name="lblProcessTime.ToolTipText" xml:space="preserve">
-    <value>Mark Time (msec)</value>
+    <value>Mark Time (sec)</value>
   </data>
   <data name="toolStripStatusLabel5.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2906,12 +2935,11 @@
   </data>
   <data name="lblPowerWatt.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAPdJREFUSEtj
-        GHQgKirKEcqkPmhoaGCKjo6+AOVSH8TExEQCLfgP5VIXeHp6sgMNv0czC4AG54IMp4kFQEP5gMHzimYW
-        AA1vgBlOdQsSEhIkgIZ+ppkFwHQ/GdlwqloQERGhALTgB7oFOPA+qDbiATDsl2MxCBv+C1SrD9VGHAC6
-        3Bio8R+aQbjwMqg24gFQ0240Q7BiUBDGxsYqQrVRDrBYMh0qRR2AZvjH0NBQUagUdQCyBcDgqYcKUw8g
-        WfAc6HoeqDD1AMwCYLLMgQpRF0AtuJ2WlsYKFaIuAFkADPsIKJf6AGjBGSDFCOHRAABd7wJlDgbAwAAA
-        nVLG3mbQdsEAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAANBJREFUSEvt
+        lFENAjEQRCsBCUg4ByABB5wEHIAUJOCAk4ADcAAOYN7HJs1mjystIXzcJC9pOttO2+s1zfpbLcUqoBMo
+        8ukrEoV38QzYCXQT3mPMQkxqLfxgeAgm6LM+D2MnNRZwEOgiIh+aAlj9mGdUBxwF4vvgw0b4uuqAs9hn
+        oKiuOiDHdnMS3vtKAMcEkdccwKoRu4j86gD+gUHYn0w7uq5NO+DWmGhfha9pCuAp2ApuVORDU0AJRQHc
+        EM48muAd9lYVyZ6FTyiefNYvldILj1C0qxcjTuEAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="lblPowerWatt.Size" type="System.Drawing.Size, System.Drawing">
@@ -2947,7 +2975,7 @@
     <value>FileName</value>
   </data>
   <data name="toolStripStatusLabel10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>735, 24</value>
+    <value>710, 24</value>
   </data>
   <data name="lblEncoder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2966,8 +2994,33 @@
     <value>XY: 0, 0</value>
   </data>
   <data name="lblEncoder.ToolTipText" xml:space="preserve">
-    <value>Encoder Count(s)
+    <value>Encoder Counts
 (Double Click to RESET)</value>
+  </data>
+  <data name="toolStripStatusLabel3.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripStatusLabel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>8, 24</value>
+  </data>
+  <data name="lblLog.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAALxJREFUSEvt
+        ldENwjAMRDMCIzACG8AobAAjsAlsABvAZnAn9STLMiRxwl+f9KTWTXJV2rplZZQd3FfkmBQ3+G70Crs4
+        wmihX3JOM/buz4t2sajOOc28oCaKg1NoHOc0EwV8YzhgC+/w6WSN16YEPJaalbUpATWGA/gh6VheoFAt
+        HbCB/g3i1ogpAVGLUMhwQLRFVNuk83RAjVSAbRUnGG0R5TWN62oVf292pKddd929hQ/Yv6Le9A9nBZTy
+        AZ+3lRzYEe7HAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="lblLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="lblLog.Text" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="lblLog.ToolTipText" xml:space="preserve">
+    <value>Log Window
+(Double Click to Show/Hide)</value>
   </data>
   <data name="toolStripStatusLabel7.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2984,6 +3037,9 @@
   <data name="lblReady.Text" xml:space="preserve">
     <value>READY</value>
   </data>
+  <data name="lblReady.ToolTipText" xml:space="preserve">
+    <value>Ready Status</value>
+  </data>
   <data name="toolStripStatusLabel8.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -2998,6 +3054,9 @@
   </data>
   <data name="lblBusy.Text" xml:space="preserve">
     <value>BUSY</value>
+  </data>
+  <data name="lblBusy.ToolTipText" xml:space="preserve">
+    <value>Busy Status</value>
   </data>
   <data name="toolStripStatusLabel9.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3014,6 +3073,9 @@
   <data name="lblError.Text" xml:space="preserve">
     <value>ERROR</value>
   </data>
+  <data name="lblError.ToolTipText" xml:space="preserve">
+    <value>Error Status</value>
+  </data>
   <data name="toolStripStatusLabel6.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -3028,6 +3090,10 @@
   </data>
   <data name="lblRemote.Text" xml:space="preserve">
     <value>DISCONNECTED</value>
+  </data>
+  <data name="lblRemote.ToolTipText" xml:space="preserve">
+    <value>Remote Control Mode
+(Double Click to Switch Mode)</value>
   </data>
   <data name="stsBottom.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 1071</value>
@@ -4071,6 +4137,18 @@
     <value>lblEncoder</value>
   </data>
   <data name="&gt;&gt;lblEncoder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel3.Name" xml:space="preserve">
+    <value>toolStripStatusLabel3</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLog.Name" xml:space="preserve">
+    <value>lblLog</value>
+  </data>
+  <data name="&gt;&gt;lblLog.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripStatusLabel7.Name" xml:space="preserve">

@@ -151,6 +151,8 @@
             this.lblFileName = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblEncoder = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblLog = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblReady = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -257,8 +259,10 @@
             // editorControl1
             // 
             this.editorControl1.AllowDrop = true;
+            this.editorControl1.CursorPositionList = ((System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<string, OpenTK.Vector3>>)(resources.GetObject("editorControl1.CursorPositionList")));
             resources.ApplyResources(this.editorControl1, "editorControl1");
             this.editorControl1.Document = null;
+            this.editorControl1.Marker = null;
             this.editorControl1.Name = "editorControl1";
             this.editorControl1.Rtc = null;
             // 
@@ -303,12 +307,10 @@
             // spcMarker.Panel1
             // 
             this.spcMarker.Panel1.Controls.Add(this.offsetControl1);
-            resources.ApplyResources(this.spcMarker.Panel1, "spcMarker.Panel1");
             // 
             // spcMarker.Panel2
             // 
             this.spcMarker.Panel2.Controls.Add(this.markerControl1);
-            resources.ApplyResources(this.spcMarker.Panel2, "spcMarker.Panel2");
             // 
             // offsetControl1
             // 
@@ -358,12 +360,10 @@
             // spcIO.Panel1
             // 
             this.spcIO.Panel1.Controls.Add(this.rtcDIUserControl1);
-            resources.ApplyResources(this.spcIO.Panel1, "spcIO.Panel1");
             // 
             // spcIO.Panel2
             // 
             this.spcIO.Panel2.Controls.Add(this.rtcDOUserControl1);
-            resources.ApplyResources(this.spcIO.Panel2, "spcIO.Panel2");
             // 
             // rtcDIUserControl1
             // 
@@ -1067,6 +1067,8 @@
             this.lblFileName,
             this.toolStripStatusLabel10,
             this.lblEncoder,
+            this.toolStripStatusLabel3,
+            this.lblLog,
             this.toolStripStatusLabel7,
             this.lblReady,
             this.toolStripStatusLabel8,
@@ -1130,6 +1132,17 @@
             // 
             resources.ApplyResources(this.lblEncoder, "lblEncoder");
             this.lblEncoder.Name = "lblEncoder";
+            // 
+            // toolStripStatusLabel3
+            // 
+            resources.ApplyResources(this.toolStripStatusLabel3, "toolStripStatusLabel3");
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            // 
+            // lblLog
+            // 
+            this.lblLog.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.lblLog, "lblLog");
+            this.lblLog.Name = "lblLog";
             // 
             // toolStripStatusLabel7
             // 
@@ -1227,6 +1240,7 @@
             // 
             resources.ApplyResources(this.propertyGridControl1, "propertyGridControl1");
             this.propertyGridControl1.Document = null;
+            this.propertyGridControl1.Marker = null;
             this.propertyGridControl1.Name = "propertyGridControl1";
             this.propertyGridControl1.SelecteObject = null;
             this.propertyGridControl1.View = null;
@@ -1296,6 +1310,7 @@
             this.trvBlock.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             resources.ApplyResources(this.trvBlock, "trvBlock");
             this.trvBlock.Document = null;
+            this.trvBlock.Marker = null;
             this.trvBlock.Name = "trvBlock";
             this.trvBlock.Rtc = null;
             this.trvBlock.View = null;
@@ -1500,5 +1515,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripButton btnTriangle;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel lblLog;
     }
 }

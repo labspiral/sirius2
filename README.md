@@ -166,6 +166,18 @@
 
 **7. Version history**
 
+* 2024.4.25 v.1.28.1360
+  - fixed) reversed start/end when mark at line entity
+  - refactor) MoveToCursor
+     - added) CursorPositionList at EditorUserControl
+  - added) show(or hide) log window 
+  - added) zoom to fit with margin scale
+  - fixed) IDocument can be replaceable now
+  - fixed) convert measurement z data format correctly (like as SampleAZ_Coor,...) 
+  - fixed) editor_ui demo project by usercontrol
+  - fixed) editor_marker demo project 
+  - removed) editor_laser demo project
+
 * 2024.4.22 v.1.27.1330
   - added) model sx, sy, sz scale by individually
   - added) support expand/shrink at arc, rectangle, triangle entity

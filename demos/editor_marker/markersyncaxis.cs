@@ -577,9 +577,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             }
             if (entity is IMarkerable markerable)
             {
-                // During each marks, internal entity data should be synchronized or locked
-                lock (entity.SyncRoot)
-                    success &= markerable.Mark(this);
+                success &= markerable.Mark(this);
             }
             if (!success)
                 return success;

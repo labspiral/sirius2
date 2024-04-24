@@ -77,8 +77,8 @@ namespace Demos
     /// 17. <see cref="LogUserControl">LogUserControl</see> <br/>
     /// </remarks>
     public partial class SiriusEditorUserControl
-        : Form
-        //: UserControl
+        //: Form
+        : UserControl
     {
         /// <summary>
         /// Event for before open sirius file at <see cref="SiriusEditorUserControl">SiriusEditorUserControl</see>
@@ -147,8 +147,8 @@ namespace Demos
         /// <see cref="IDocument">IDocument</see> (aka. Recipe data)
         /// </summary>
         /// <remarks>
-        /// Created by internally. <br/>
-        /// <see cref="IDocument">IDocument</see> would be created by <see cref="OnLoad(EventArgs)">OnLoad</see> event handler.<br/>
+        /// Core data like as entity, layer, block, pen are exist within <see cref="IDocument.InternalData">IDocument.InternalData</see>. <br/>
+        /// Created <see cref="DocumentFactory.CreateDefault">DocumentFactory.CreateDefault</see> by default. <br/>
         /// </remarks>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -158,7 +158,7 @@ namespace Demos
         public IDocument Document
         {
             get { return document; }
-            protected set 
+            set 
             {
                 if (document == value)
                     return;
@@ -179,7 +179,8 @@ namespace Demos
                 //RtcControl
                 //LaserControl
                 MarkerCtrl.View = EditorCtrl.View;
-
+                TreeViewBlockCtrl.View = EditorCtrl.View;
+                PropertyGridCtrl.View = EditorCtrl.View;
                 if (document != null)
                 {
                     document.OnSaved += Document_OnSaved;
@@ -627,45 +628,6 @@ namespace Demos
         {
             get { return laserControl1; }
         }
-        /// <summary>
-        /// UserControl for customized laser source
-        /// </summary>
-        /// <remarks>
-        /// Replaced internal <c>LaserCtrl</c> as external control <br/>
-        /// </remarks>
-        [Browsable(true)]
-        [ReadOnly(false)]
-        [Category("Sirius2")]
-        [DisplayName("LaserUserCtrl (Customized)")]
-        [Description("Laser UserCtrl")]
-        public UserControl LaserUserCtrl 
-        { 
-            get { return laserUserCtrl; }
-            set {
-                if (laserUserCtrl == value)
-                    return;
-                try
-                {
-                    this.tabLaser.SuspendLayout();
-                    if (null != laserUserCtrl)
-                    {
-                        this.tabLaser.Controls.Remove(laserUserCtrl);
-                    }
-                    laserUserCtrl = value;
-                    if (null != laserUserCtrl)
-                    {
-                        this.tabLaser.Controls.Clear();
-                        this.tabLaser.Controls.Add(laserUserCtrl);
-                        laserUserCtrl.Dock = DockStyle.Fill;
-                    }
-                }
-                finally
-                {
-                    this.tabLaser.ResumeLayout();
-                }
-            }
-        }
-        private UserControl laserUserCtrl = null;
 
         /// <summary>
         /// PropertyGrid user control for <see cref="IRtc">IRtc</see>
@@ -822,41 +784,6 @@ namespace Demos
         {
             get { return remoteUserControl1; }
         }
-        /// <summary>
-        /// UserControl for customized remote control
-        /// </summary>
-        /// <remarks>
-        /// Replaced internal <c>RemoteCtrl</c> as external control <br/>
-        /// </remarks>
-        public UserControl RemoteUserCtrl
-        {
-            get { return remoteUserCtrl; }
-            set
-            {
-                if (remoteUserCtrl == value)
-                    return;
-                try
-                {
-                    this.tabRemote.SuspendLayout();
-                    if (null != remoteUserCtrl)
-                    {
-                        this.tabRemote.Controls.Remove(remoteUserCtrl);
-                    }
-                    remoteUserCtrl = value;
-                    if (null != remoteUserCtrl)
-                    {
-                        this.tabRemote.Controls.Clear();
-                        this.tabRemote.Controls.Add(remoteUserCtrl);
-                        remoteUserCtrl.Dock = DockStyle.Fill;
-                    }
-                }
-                finally
-                {
-                    this.tabRemote.ResumeLayout();
-                }
-            }
-        }
-        private UserControl remoteUserCtrl = null;
 
         /// <summary>
         /// User control for logged messages
@@ -900,6 +827,8 @@ namespace Demos
             timerStatus.Tick += TimerStatus_Tick;
             lblEncoder.DoubleClick += LblEncoder_DoubleClick;
             lblEncoder.DoubleClickEnabled = true;
+            lblLog.DoubleClick += LblLog_DoubleClick;
+            lblLog.DoubleClickEnabled = true;
     
             btnAbout.Click += BtnAbout_Click;
             btnNew.Click += BtnNew_Click;
@@ -966,29 +895,9 @@ namespace Demos
 
             lblRemote.DoubleClickEnabled = true;
             lblRemote.DoubleClick += LblRemote_DoubleClick;
-        }
-
-        /// <inheritdoc/>
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-            InternalOnLoad(e);
-        }
-        private void InternalOnLoad(EventArgs e)
-        {
-            TreeViewBlockCtrl.View = EditorCtrl.View;
-            PropertyGridCtrl.View = EditorCtrl.View;
 
             // Create document by default 
             this.Document = DocumentFactory.CreateDefault();
-        }
-        /// <inheritdoc/>
-        public override void Refresh()
-        {
-            base.Refresh();
-            PropertyGridCtrl.Refresh();
-            OffsetCtrl.Refresh();
-            EditorCtrl.View.Render();
         }
 
         /// <inheritdoc/>
@@ -1046,51 +955,7 @@ namespace Demos
         {
             timerStatus.Enabled = Visible;
         }
-        /// <summary>
-        /// Menu visibility
-        /// </summary>
-        private void MenuVisibility()
-        {
-            Debug.Assert(rtc != null);
-            if (null == rtc)
-                return;
-            switch (rtc.RtcType)
-            {
-                case RtcTypes.RtcVirtual:
-                    break;
-                case RtcTypes.Rtc4:
-                case RtcTypes.Rtc5:
-                case RtcTypes.Rtc6:
-                case RtcTypes.Rtc6e:
-                    break;
-                case RtcTypes.Rtc6SyncAxis:
-                    btnImageText.Enabled = false;
-                    mnuMeasurementBeginEnd.Enabled = false;
-                    mnuMoF.Enabled = false;
-                    mnuZDelta.Enabled = false;
-                    mnuZDefocus.Enabled = false;
-                    mnuWriteDataExt16Cond.Enabled = false;
-                    mnuWaitDataExt16Cond.Enabled = false;
-                    mnuSelectCorrectionTable.Enabled = false;
-
-                    lblEncoder.Visible = false;
-                    btnCharacterSetText.Enabled = false;
-                    btnSiriusCharacterSetText.Enabled = false;
-                    break;
-            }
-        }
-        /// <summary>
-        /// Entity Property visibility
-        /// </summary>
-        private void PropertyVisibility()
-        {
-            EntityPen.PropertyVisibility(rtc);
-            EntityPen.PropertyVisibility(laser);
-            EntityLayer.PropertyVisibility(rtc);
-            EntityPoints.PropertyVisibility(rtc);
-            EntityRampBegin.PropertyVisibility(rtc);
-        }
-        
+       
         /// <summary>
         /// Switch view mode
         /// </summary>
@@ -1556,7 +1421,6 @@ namespace Demos
             var entity = new EntityRaster(2, dlg.FileName);
             Document.ActAdd(entity);
         }
-      
         private void BtnSiriusCharacterSetText_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateSiriusCharacterSetText(Config.FontDefaultSirius, CharacterSetFormats.Date, 5);
@@ -1628,6 +1492,15 @@ namespace Demos
             }));
         }
 
+        /// <summary>
+        /// Show(or hide) log screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LblLog_DoubleClick(object sender, EventArgs e)
+        {
+            spcMain.Panel2Collapsed = !spcMain.Panel2Collapsed;
+        }
         /// <summary>
         /// Encoder reset
         /// </summary>
@@ -1759,95 +1632,7 @@ namespace Demos
 
             lblProcessTime.Text = $"{timerProgressStopwatch.ElapsedMilliseconds / 1000.0:F3} sec";
         }
-        /// <summary>
-        /// Editability during marker is busy
-        /// </summary>
-        /// <param name="isEnable">Enable(or disable) controls</param>
-        /// <remarks>
-        /// To disable edit operations during marker is busy status. <br/>
-        /// </remarks>
-        private void EditabilityByMarkerBusy(bool isEnable)
-        {
-            if (!this.IsHandleCreated || this.IsDisposed)
-                return;
-            this.Invoke(new MethodInvoker(delegate ()
-            {
-                switch (Remote.ControlMode)
-                {
-                    case ControlModes.Local:
-                        View.IsEditMode = isEnable;
-                        break;
-                    case ControlModes.Remote:
-                        break;
-                }
-                tlsTop1.Enabled = isEnable;
-                tlsTop2.Enabled = isEnable;
-                tbcLeft.SelectedIndex = 0;
-                tbcLeft.Enabled = isEnable;
-                //EditorCtrl.Enabled = isEnable;
-#if DEBUG
-                // let them as enabled for debugging purpose
-#else
-                OffsetCtrl.Enabled = isEnable;
-                ManualCtrl.Enabled = isEnable;
-                RtcCtrl.Enabled = isEnable;
-                LaserCtrl.Enabled = isEnable;
-                if (null != LaserUserCtrl)
-                    LaserUserCtrl.Enabled = isEnable;
-                if (null != ManualUserCtrl)
-                    ManualUserCtrl.Enabled = isEnable;
-#endif
-            }));
-        }
-        /// <summary>
-        /// Hide UI controls if remote control mode
-        /// </summary>
-        /// <remarks>
-        /// To do visible(or invisible) controls (like as treeview, propertygrid,...) to prevent edit operations at locally. <br/>
-        /// Applied whenever <see cref="IRemote.ControlMode">IRemote.ControlModes</see> has changed. <br/>
-        /// </remarks>
-        /// <param name="isLocalMode">visible(or invisible) controls</param>
-        public virtual void VisibilityByControlMode(bool isLocalMode = true)
-        {
-            if (!this.IsHandleCreated || this.IsDisposed)
-                return;
-            this.Invoke(new MethodInvoker(delegate ()
-            {
-                this.SuspendLayout();
-                if (isLocalMode)
-                {
-                    if (!Marker.IsBusy)
-                        View.IsEditMode = true;
-                    tbcLeft.Visible = true;
-                    tbcRight.Visible = true;
-                    tlsTop2.Enabled = true;
-                    btnNew.Enabled = true;
-                    btnSave.Enabled = true;
-                    btnCopy.Enabled = true;
-                    btnCut.Enabled = true;
-                    btnPaste.Enabled = true;
-                    btnPasteArray.Enabled = true;
-                    btnDelete.Enabled = true;
-                    ddbAlign.Enabled = true;
-                }
-                else
-                {
-                    View.IsEditMode = false;
-                    tbcLeft.Visible = false;
-                    tbcRight.Visible = false;
-                    tlsTop2.Enabled = false;
-                    btnNew.Enabled = false;
-                    btnSave.Enabled = false;
-                    btnCopy.Enabled = false;
-                    btnCut.Enabled = false;
-                    btnPaste.Enabled = false;
-                    btnPasteArray.Enabled = false;
-                    btnDelete.Enabled = false;
-                    ddbAlign.Enabled = false;
-                }
-                this.ResumeLayout();
-            }));
-        }
+
         /// <summary>
         /// Event handler for <c>IMarker</c> has ended
         /// </summary>
@@ -1878,15 +1663,18 @@ namespace Demos
         /// <param name="mode"><c>ControlModes</c>></param>
         private void Remote_OnModeChanged(IRemote remote, ControlModes mode)
         {
-            switch(mode)
+            this.Invoke(new MethodInvoker(delegate ()
             {
-                case ControlModes.Local:
-                    VisibilityByControlMode(true);
-                    break;
-                case ControlModes.Remote:
-                    VisibilityByControlMode(false);
-                    break;
-            }
+                switch (mode)
+                {
+                    case ControlModes.Local:
+                        VisibilityByRemoteControlMode(true);
+                        break;
+                    case ControlModes.Remote:
+                        VisibilityByRemoteControlMode(false);
+                        break;
+                }
+            }));
         }
         /// <summary>
         /// Switch control mode (local and remote)
@@ -1961,7 +1749,6 @@ namespace Demos
             catch (Exception)
             { }
         }
-
         /// <summary>
         /// Event handler for powermeter data has cleared
         /// </summary>
@@ -2014,6 +1801,136 @@ namespace Demos
             }
             catch (Exception)
             { }
+        }
+
+        /// <summary>
+        /// Menu visibility
+        /// </summary>
+        private void MenuVisibility()
+        {
+            Debug.Assert(rtc != null);
+            if (null == rtc)
+                return;
+            switch (rtc.RtcType)
+            {
+                case RtcTypes.RtcVirtual:
+                    break;
+                case RtcTypes.Rtc4:
+                case RtcTypes.Rtc5:
+                case RtcTypes.Rtc6:
+                case RtcTypes.Rtc6e:
+                    break;
+                case RtcTypes.Rtc6SyncAxis:
+                    btnImageText.Enabled = false;
+                    mnuMeasurementBeginEnd.Enabled = false;
+                    mnuMoF.Enabled = false;
+                    mnuZDelta.Enabled = false;
+                    mnuZDefocus.Enabled = false;
+                    mnuWriteDataExt16Cond.Enabled = false;
+                    mnuWaitDataExt16Cond.Enabled = false;
+                    mnuSelectCorrectionTable.Enabled = false;
+
+                    lblEncoder.Visible = false;
+                    btnCharacterSetText.Enabled = false;
+                    btnSiriusCharacterSetText.Enabled = false;
+                    break;
+            }
+        }
+        /// <summary>
+        /// Entity Property visibility
+        /// </summary>
+        private void PropertyVisibility()
+        {
+            EntityPen.PropertyVisibility(rtc);
+            EntityPen.PropertyVisibility(laser);
+            EntityLayer.PropertyVisibility(rtc);
+            EntityPoints.PropertyVisibility(rtc);
+            EntityRampBegin.PropertyVisibility(rtc);
+        }
+        /// <summary>
+        /// Enable(or disable) controls during <see cref="IMarker">IMarker</see> status is busy
+        /// </summary>
+        /// <param name="isEnable">Enable(or disable) controls</param>
+        /// <remarks>
+        /// To disable edit operations during marker is busy status. <br/>
+        /// </remarks>
+        public virtual void EditabilityByMarkerBusy(bool isEnable)
+        {
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                switch (Remote.ControlMode)
+                {
+                    case ControlModes.Local:
+                        View.IsEditMode = isEnable;
+                        break;
+                    case ControlModes.Remote:
+                        break;
+                }
+                tlsTop1.Enabled = isEnable;
+                tlsTop2.Enabled = isEnable;
+                tbcLeft.SelectedIndex = 0;
+                tbcLeft.Enabled = isEnable;
+                //EditorCtrl.Enabled = isEnable;
+#if DEBUG
+                // let them enabled for debugging purpose
+#else
+                OffsetCtrl.Enabled = isEnable;
+                ManualCtrl.Enabled = isEnable;
+                RtcCtrl.Enabled = isEnable;
+                LaserCtrl.Enabled = isEnable;
+#endif
+            }));
+        }
+        /// <summary>
+        /// Hide UI controls if remote control mode
+        /// </summary>
+        /// <remarks>
+        /// To do visible(or invisible) controls (like as treeview, propertygrid,...) to prevent edit operations at locally. <br/>
+        /// Applied whenever <see cref="IRemote.ControlMode">IRemote.ControlModes</see> has changed. <br/>
+        /// </remarks>
+        /// <param name="isLocalMode">Local(visible) or Remote(invisible)</param>
+        public virtual void VisibilityByRemoteControlMode(bool isLocalMode = true)
+        {
+            if (!this.IsHandleCreated || this.IsDisposed)
+                return;
+
+            this.SuspendLayout();
+            if (isLocalMode)
+            {
+                if (null != Marker && null != View)
+                    if (!Marker.IsBusy)
+                        View.IsEditMode = true;
+                tbcLeft.Visible = true;
+                tbcRight.Visible = true;
+                tlsTop2.Enabled = true;
+                btnNew.Enabled = true;
+                btnSave.Enabled = true;
+                btnCopy.Enabled = true;
+                btnCut.Enabled = true;
+                btnPaste.Enabled = true;
+                btnPasteArray.Enabled = true;
+                btnDelete.Enabled = true;
+                ddbAlign.Enabled = true;
+            }
+            else
+            {
+                if (null != View)
+                    View.IsEditMode = false;
+                tbcLeft.Visible = false;
+                tbcRight.Visible = false;
+                tlsTop2.Enabled = false;
+                btnNew.Enabled = false;
+                btnSave.Enabled = false;
+                btnCopy.Enabled = false;
+                btnCut.Enabled = false;
+                btnPaste.Enabled = false;
+                btnPasteArray.Enabled = false;
+                btnDelete.Enabled = false;
+                ddbAlign.Enabled = false;
+            }
+            this.ResumeLayout();
         }
     }
 }

@@ -405,8 +405,7 @@ namespace Demos
                 Logger.Log(Logger.Types.Error, $"marker [{Index}]: assigned invalid RTC instance");
                 return false;
             }
-            // Clear registered characterset when ready
-            TextRegisterHelper.Unregister(this);
+            Logger.Log(Logger.Types.Debug, $"marker [{Index}]: ready with doc= {document?.FileName}, view= {view?.Name}, rtc= {rtc?.Name}, laser= {laser?.Name}, pm= {powerMeter?.Name}, remote= {remote?.Name}");
             return true;
         }
         /// <inheritdoc/>
@@ -417,8 +416,8 @@ namespace Demos
                 Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to ready. marker status is busy");
                 return false;
             }
-
-            base.Document = document;          
+            base.Document = document;
+            Logger.Log(Logger.Types.Debug, $"marker [{Index}]: ready with doc= {document?.FileName}");
             return true;
         }
         /// <summary>
@@ -655,9 +654,9 @@ namespace Demos
         /// Consider as its working within async threads. <br/>
         /// </remarks> 
         /// <param name="offsetIndex">Current index of offset (0,1,2,...)</param>
-        /// <param name="offset">Current <c>Offset</c></param>
+        /// <param name="offset">Current <see cref="MarkerBase.CurrentOffset">CurrentOffset</see></param>
         /// <param name="layerIndex">Current layer of offset (0,1,2,...)</param>
-        /// <param name="layer">Current <c>EntityLayer</c></param>
+        /// <param name="layer">Current <see cref="MarkerBase.CurrentLayer">CurrentLayer</see></param>
         /// <returns>Success or failed</returns>
         protected virtual bool LayerWork(int offsetIndex, Offset offset, int layerIndex, EntityLayer layer)
         {
@@ -702,11 +701,11 @@ namespace Demos
         /// Consider as its working within async threads. <br/>
         /// </remarks> 
         /// <param name="offsetIndex">Current index of offset (0,1,2,...)</param>
-        /// <param name="offset">Current <c>Offset</c></param>
+        /// <param name="offset">Current <see cref="MarkerBase.CurrentOffset">CurrentOffset</see></param>
         /// <param name="layerIndex">Current index of layer (0,1,2,...)</param>
-        /// <param name="layer">Current <c>EntityLayer</c></param>
-        /// <param name="entityIndex">Current index of entity</param>
-        /// <param name="entity">Current <c>IEntity</c></param>
+        /// <param name="layer">Current <see cref="MarkerBase.CurrentLayer">CurrentLayer</see></param>
+        /// <param name="entityIndex">Current index of entity (0,1,2,...)</param>
+        /// <param name="entity">Current <see cref="MarkerBase.CurrentEntity">CurrentEntity</see></param>
         /// <returns>Success or failed</returns>
         protected virtual bool EntityWork(int offsetIndex, Offset offset, int layerIndex, EntityLayer layer, int entityIndex, IEntity entity)
         {
@@ -714,21 +713,19 @@ namespace Demos
             success &= NotifyBeforeEntity(entity);
             if (!success)
             {
-                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark entity at before event handler"); ;
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark entity at before event handler");
                 return success;
             }
             if (entity is IMarkerable markerable)
             {
-                // During each marks, internal entity data should be synchronized(or locked)
-                lock (entity.SyncRoot)
-                    success &= markerable.Mark(this);
+                success &= markerable.Mark(this);
             }
             if (!success)
                 return success;
             success &= NotifyAfterEntity(entity);
             if (!success)
             {
-                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark entity at after event handler"); ;
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark entity at after event handler");
                 return success;
             }
             return success;
@@ -739,7 +736,7 @@ namespace Demos
         /// </summary>
         /// <remarks>
         /// <see cref="MarkProcedures.LayerFirst">LayerFirst</see> <br/>
-        /// Move offset1 and Mark layers -> Move offset2 and Mark layers , ... <br/>
+        /// Move offset1 and Mark layers -> Move offset2 and Mark layers, ... <br/>
         /// </remarks>
         protected virtual void MarkerThreadLayerFirst()
         {
@@ -850,12 +847,12 @@ namespace Demos
                     if (rtc is Rtc5 rtc5)
                     {
                         var info = rtc5.MarkingInfo;
-                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. markinfg info= {info.Value}");
+                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. marking info= {info.Value}");
                     }
                     else if (rtc is Rtc6 rtc6)
                     {
                         var info = rtc6.MarkingInfo;
-                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. markinfg info= {info.Value}");
+                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. marking info= {info.Value}");
                     }
                 }
             }
@@ -1045,12 +1042,12 @@ namespace Demos
                     if (rtc is Rtc5 rtc5)
                     {
                         var info = rtc5.MarkingInfo;
-                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. markinfg info= {info.Value}");
+                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. marking info= {info.Value}");
                     }
                     else if (rtc is Rtc6 rtc6)
                     {
                         var info = rtc6.MarkingInfo;
-                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. markinfg info= {info.Value}");
+                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. marking info= {info.Value}");
                     }
                 }
             }
