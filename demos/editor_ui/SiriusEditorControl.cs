@@ -1860,14 +1860,20 @@ namespace Demos
                 return;
             this.Invoke(new MethodInvoker(delegate ()
             {
-                switch (Remote.ControlMode)
+                if (null != Remote)
                 {
-                    case ControlModes.Local:
-                        View.IsEditMode = isEnable;
-                        break;
-                    case ControlModes.Remote:
-                        break;
+                    switch (Remote.ControlMode)
+                    {
+                        case ControlModes.Local:
+                            View.IsEditMode = isEnable;
+                            break;
+                        case ControlModes.Remote:
+                            break;
+                    }
                 }
+                else
+                    View.IsEditMode = isEnable;
+
                 tlsTop1.Enabled = isEnable;
                 tlsTop2.Enabled = isEnable;
                 tbcLeft.SelectedIndex = 0;

@@ -10170,6 +10170,7 @@
             </summary>
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateArc(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.UInt32)">EntityFactory.CreateArc</see>. <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Config.DivideArcToLinesDistance">Config.DivideArcToLinesDistance</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityArc.Radius">
@@ -25406,32 +25407,6 @@
             <summary>
             For Empty Tree Node
             Expand/collapse when +- icon has clicked
-            </summary>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.ui.LicenseForm">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.LicenseForm.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.LicenseForm.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.LicenseForm.statusStrip1_TrayLocation">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Point similar to {X=17,Y=17}.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.ui.LicenseForm.toolTip1_TrayLocation">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Point similar to {X=133,Y=16}.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.ViewFactory">

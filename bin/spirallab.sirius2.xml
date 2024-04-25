@@ -516,7 +516,7 @@
             <item><description>Curve(or spline) are splitted into lines.</description></item>
             <item><description>Spiral are splitted into lines.</description></item>
             <item><description>DXF ellipse is splitted into lines.</description></item>
-            <item><description>Transformed(like as rotated by matrix) arc is splitted into lines.</description></item>
+            <item><description>Transformed(like as rotated x or y axis by matrix) arc is splitted into lines.</description></item>
             <item><description>Jump and marks are splitted into lines when simulate laser path.</description></item>
             <item><description>Hatch by polygon are splitted into lines.</description></item>
             </list>
