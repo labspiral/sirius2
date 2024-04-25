@@ -21307,6 +21307,8 @@
             </summary>        
             <remarks>
             <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.IsReady">IDocument.IsReady</see> value would be toggled. <br/>
+            Parsed entities are :<br/>
+            Point, Ellipse, Spline, Line, Arc, Circle, Polyline2D, Text, MText, Block, Block Insert <br/>
             </remarks>
             <param name="fileName">Filename</param>
             <param name="document"><see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see></param>
