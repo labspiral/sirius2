@@ -139,6 +139,9 @@ namespace Demos
                 case "virtual":
                     rtc = ScannerFactory.CreateVirtual(index, kfactor, laserMode, signalLevelLaser12, signalLevelLaserOn, correctionPath);
                     break;
+                case "rtc4":
+                    rtc = ScannerFactory.CreateRtc4(index, kfactor, laserMode, correctionPath);
+                    break;
                 case "rtc5":
                     rtc = ScannerFactory.CreateRtc5(index, kfactor, laserMode, signalLevelLaser12, signalLevelLaserOn, correctionPath);
                     break;
@@ -184,7 +187,12 @@ namespace Demos
             // Set Virtual image field area
             if (rtc.IsMoF)
             {
-                if (rtc is Rtc5 rtc5)
+                if (rtc is Rtc4 rtc4)
+                {
+                    //2^16 bits = no virtual image field 
+                    //SpiralLab.Sirius2.Winforms.Config.ViewVirtualImageSize =
+                }
+                else if (rtc is Rtc5 rtc5)
                 {
                     //2^24 bits = 2^20 + 2^4
                     SpiralLab.Sirius2.Winforms.Config.ViewVirtualImageSize = new SizeF(fov * (float)Math.Pow(2, 4), fov * (float)Math.Pow(2, 4));
@@ -276,7 +284,7 @@ namespace Demos
                         break;
                 }
                 success &= powerMeter.Initialize();
-                // un-comment auto start if you want
+                // uncomment to auto start 
                 //success &= powerMeter.CtlStart();
             }
             #endregion
@@ -386,9 +394,9 @@ namespace Demos
             }
             var laserPowerControlDelay = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "POWERCONTROL_DELAY", 0);
             laser.PowerControlDelayTime = laserPowerControlDelay;
-            var powerControl = laser as ILaserPowerControl;
-
+            
             // Initialize PowerMap 
+            var powerControl = laser as ILaserPowerControl;
             var enablePowerMap = NativeMethods.ReadIni<int>(ConfigFileName, $"LASER{index}", "POWERMAP_ENABLE", 0);
             if (0 != enablePowerMap)
             {
@@ -413,8 +421,8 @@ namespace Demos
 
             // Set Default Power
             var laserDefaultPower = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "DEFAULT_POWER", 1);
-            if (laser is ILaserPowerControl powerControl2)
-                success &= powerControl2.CtlPower(laserDefaultPower);
+            if (null != powerControl)
+                success &= powerControl.CtlPower(laserDefaultPower);
             #endregion
 
             #region Marker
@@ -424,6 +432,7 @@ namespace Demos
                 case "virtual":
                     marker = MarkerFactory.CreateVirtual(index);
                     break;
+                case "rtc4":
                 case "rtc5":
                 case "rtc6":
                 case "rtc6e":
@@ -606,22 +615,16 @@ namespace Demos
             success &= document.ActAdd(textCircular2);
 
             // Sirius text entity
-            switch (rtc.RtcType)
-            {
-                case RtcTypes.Rtc6SyncAxis:
-                    break;
-                default:
-                    var text2 = EntityFactory.CreateSiriusText("romans2.cxf", $"12345 67890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", 2);
-                    text2.Name = "MyText3";
-                    text2.Translate(18, -12);
-                    success &= document.ActAdd(text2);
-                    break;
-            }
+            var text2 = EntityFactory.CreateSiriusText("romans2.cxf", $"12345 67890{Environment.NewLine}ABCDEFGHIJKLMNOPQRSTUVWXYZ{Environment.NewLine}`~!@#$%^&*()-_=+[{{]|}}\\|;:'\",<.>/?{Environment.NewLine}abcdefghijklmnopqrstuvwxyz", 2);
+            text2.Name = "MyText3";
+            text2.Translate(18, -12);
+            success &= document.ActAdd(text2);
 
             // Registerable text characterset
             switch (rtc.RtcType)
             {
                 case RtcTypes.Rtc6SyncAxis:
+                    //syncaxis is not support IRtcCharacterSet
                     break;
                 default:
                     // Text
@@ -781,7 +784,6 @@ namespace Demos
             dataMatrix1.CellDot.IsZigZag = false;
             dataMatrix1.Translate(-23, 2);
             success &= document.ActAdd(dataMatrix1);
-                 
 
             // Datamatrix barcode cell by lines
             var dataMatrix2 = EntityFactory.CreateDataMatrix("SIRIUS2", Barcode2DCells.Lines, 4, 4, 4);
@@ -823,12 +825,12 @@ namespace Demos
             pdf417.Translate(-45, 12);
             success &= document.ActAdd(pdf417);
 
-            // 1D barcode
+            // 1D barcode by Code128
             var bcd1 = EntityFactory.CreateBarcode("1234567890", Barcode1DFormats.Code128, 5, 5, 2);
             bcd1.Translate(-28, 19);
             success &= document.ActAdd(bcd1);
 
-            // 1D barcode
+            // 1D barcode by CODABAR
             var bcd2 = EntityFactory.CreateBarcode("1234567890", Barcode1DFormats.CODABAR, 3, 5, 2);
             bcd2.Translate(-22, 19);
             success &= document.ActAdd(bcd2);
@@ -885,7 +887,7 @@ namespace Demos
             {
                 for (int col = 0; col < cols; col++)
                 {
-                    // x,y deviation by machine vision inspection
+                    // x,y deviation by image inspection
                     var errorXy = new System.Numerics.Vector2(
                            rand.Next(20) / 1000.0f - 0.01f,
                            rand.Next(20) / 1000.0f - 0.01f);

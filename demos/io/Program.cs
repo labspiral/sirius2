@@ -188,8 +188,8 @@ namespace Demos
         }
         private static bool DrawCircleByTrigger(IRtc rtc, ILaser laser, float radius = 10, int bitPos = 0)
         {
-            var rtcExtension = rtc as IRtcExtension;
-            Debug.Assert(rtcExtension != null);
+            var rtcConditionalIO = rtc as IRtcConditionalIO;
+            Debug.Assert(rtcConditionalIO != null);
 
             int circleRepeats = 10;
             bool success = true;
@@ -197,7 +197,7 @@ namespace Demos
             success &= rtc.ListBegin(ListTypes.Single);
 
             // Wait until EXTENSTION1 PORT DIN0 goes to HIGH 
-            success &= rtcExtension.ListReadExtDI16WaitUntil((uint)(0x01 << bitPos), 0x00);
+            success &= rtcConditionalIO.ListReadExtDI16WaitUntil((uint)(0x01 << bitPos), 0x00);
             success &= rtc.ListJumpTo(new Vector2(radius, 0));
             success &= rtc.ListArcTo(Vector2.Zero, 360 * circleRepeats);
             success &= rtc.ListJumpTo(Vector2.Zero);

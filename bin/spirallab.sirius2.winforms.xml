@@ -1462,58 +1462,59 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.mofbegin">
             <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
+              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofbegin.ResourceManager">
             <summary>
-              Returns the cached ResourceManager instance used by this class.
+              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofbegin.Culture">
             <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
+              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
+              재정의합니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofbegin.Center_DESC">
-            <summary>
-              Looks up a localized string similar to Angular X,Y Center (Used with EncoderType.Angular only).
-            </summary>
+             <summary>
+               Angular X,Y Center
+            Used with EncoderType.Angular only.과(와) 유사한 지역화된 문자열을 찾습니다.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofbegin.Center_DISP">
             <summary>
-              Looks up a localized string similar to Center.
+              Center과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofbegin.Encoder_type_DESC">
             <summary>
-              Looks up a localized string similar to Encoder Type.
+              Encoder Type과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofbegin.Encoder_type_DISP">
             <summary>
-              Looks up a localized string similar to Encoder type.
+              Encoder type과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofbegin.MoF_angular_C">
             <summary>
-              Looks up a localized string similar to MoF (angular).
+              MoF (angular)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofbegin.MoF_C">
             <summary>
-              Looks up a localized string similar to MoF.
+              MoF과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofbegin.Reset_encoder_DESC">
             <summary>
-              Looks up a localized string similar to Reset Encoders or not.
+              Reset Encoders or not과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofbegin.Reset_encoder_DISP">
             <summary>
-              Looks up a localized string similar to Reset encoders.
+              Reset encoders과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.mofend">
@@ -1923,150 +1924,150 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.pen">
             <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
+              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.ResourceManager">
             <summary>
-              Returns the cached ResourceManager instance used by this class.
+              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Culture">
             <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
+              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
+              재정의합니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Frequency_DESC">
              <summary>
-               Looks up a localized string similar to Laser Frequency (Hz) 
-            = 1 / Pulse Period (usec).
+               Laser Frequency (Hz) 
+            = 1 / Pulse Period (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Frequency_DISP">
             <summary>
-              Looks up a localized string similar to Frequency.
+              Frequency과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Jump_speed_DESC">
             <summary>
-              Looks up a localized string similar to Scanner Jump Speed (mm/s).
+              Scanner Jump Speed (mm/s)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Jump_speed_DISP">
             <summary>
-              Looks up a localized string similar to Jump speed.
+              Jump speed과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Laser_C">
             <summary>
-              Looks up a localized string similar to Laser.
+              Laser과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Mark_speed_DESC">
             <summary>
-              Looks up a localized string similar to Scanner Mark(or Arc) Speed (mm/s).
+              Scanner Mark(or Arc) Speed (mm/s)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Mark_speed_DISP">
             <summary>
-              Looks up a localized string similar to Mark speed.
+              Mark speed과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power____DESC">
              <summary>
-               Looks up a localized string similar to Laser Output Power (%).
-            Output (%) = Input Power (W) / Max Power (W) * 100..
+               Laser Output Power (%).
+            Output (%) = Input Power (W) / Max Power (W) * 100.과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power____DISP">
             <summary>
-              Looks up a localized string similar to Power (%).
+              Power (%)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_category_DESC">
              <summary>
-               Looks up a localized string similar to Target Category(or Series) Name.
-            Look up PowerMap Table When Assigned..
+               Target Category(or Series) Name.
+            Look up PowerMap Table When Assigned.과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_category_DISP">
             <summary>
-              Looks up a localized string similar to Power Category.
+              Power Category과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_Max__DESC">
              <summary>
-               Looks up a localized string similar to Laser Max. Output Power (W).
-            Actual Output (W) = Max Power (W) * Output Power (%)..
+               Laser Max. Output Power (W).
+            Actual Output (W) = Max Power (W) * Output Power (%).과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_Max__DISP">
             <summary>
-              Looks up a localized string similar to Power (Max).
+              Power (Max. W)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_W__DESC">
              <summary>
-               Looks up a localized string similar to Laser Output Power (W).
+               Laser Output Power (W).
             Frequency : Min~Max Frequency * Power (%).
             Duty Cycle : Min~Max Duty Cycle * Power (%).
             Analog : Min~Max Voltage * Power (%).
-            DO8 : Min~Max Bit * Power (%)..
+            DO8 : Min~Max Bit * Power (%).과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_W__DISP">
             <summary>
-              Looks up a localized string similar to Power (W).
+              Power (W)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_duty_cycle_DESC">
              <summary>
-               Looks up a localized string similar to Laser Pulse Duty Cycle (%).
-            = Pulse Width / Pulse Period * 100..
+               Laser Pulse Duty Cycle (%).
+            = Pulse Width / Pulse Period * 100.과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_duty_cycle_DISP">
             <summary>
-              Looks up a localized string similar to Pulse cycle.
+              Pulse cycle과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_period_DESC">
              <summary>
-               Looks up a localized string similar to Laser Pulse Period (usec).
-            = 1 / Pulse Frequency (Hz)..
+               Laser Pulse Period (usec).
+            = 1 / Pulse Frequency (Hz).과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_period_DISP">
             <summary>
-              Looks up a localized string similar to Pulse period.
+              Pulse period과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_pitch_DESC">
              <summary>
-               Looks up a localized string similar to Estimated Pulse Pitch (um).
-            Mark Speed * 1000 / Frequency (Hz)..
+               Estimated Pulse Pitch (um).
+            Mark Speed * 1000 / Frequency (Hz).과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_pitch_DISP">
             <summary>
-              Looks up a localized string similar to Pulse pitch.
+              Pulse pitch과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_width_DESC">
              <summary>
-               Looks up a localized string similar to Laser Pulse Width (usec).
-            Should be Lower than &lt;= 1/ Pulse Frequency..
+               Laser Pulse Width (usec).
+            Should be Lower than &lt;= 1/ Pulse Frequency.과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_width_DISP">
             <summary>
-              Looks up a localized string similar to Pulse width.
+              Pulse width과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Scanner_C">
             <summary>
-              Looks up a localized string similar to Scanner.
+              Scanner과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.penrtc">
@@ -2096,9 +2097,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Jump_delay_DESC">
-            <summary>
-              Looks up a localized string similar to Scanner Jump Delay (usec).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Scanner Jump Delay (usec)
+            If Enabled Variable Jump Delay, used when longer than Jump Limit Length (mm)..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Jump_delay_DISP">
             <summary>
@@ -2146,9 +2148,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Polygon_delay_DESC">
-            <summary>
-              Looks up a localized string similar to Scanner Polygon Delay (usec).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Scanner Polygon Delay (usec)
+            If Enabled Variable Polygon Delay, 90° degree = x1 Scale..
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Polygon_delay_DISP">
             <summary>
@@ -2344,7 +2347,8 @@
              <summary>
                Looks up a localized string similar to Wobbel Frequency (Hz) 
             &gt;0 ClockWise.
-            &lt; 0.1/TrackingError..
+            &lt; 0.1/TrackingError.
+            &lt; ± 1000 Hz.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Wobbel_frequency_DISP">
@@ -2441,6 +2445,136 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pensyncaxis.SyncAxis_C">
             <summary>
               Looks up a localized string similar to SyncAxis.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.stitchedimage">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Basic_C">
+            <summary>
+              Looks up a localized string similar to Basic.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Cols_DESC">
+            <summary>
+              Looks up a localized string similar to Column Count(s).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Cols_DISP">
+            <summary>
+              Looks up a localized string similar to Cols.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Fixed_aspect_ratio_DESC">
+            <summary>
+              Looks up a localized string similar to Fixed Aspect Ratio.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Fixed_aspect_ratio_DISP">
+            <summary>
+              Looks up a localized string similar to Fixed aspect ratio.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Height_DESC">
+            <summary>
+              Looks up a localized string similar to Cell Height (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Height_DISP">
+            <summary>
+              Looks up a localized string similar to Height.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imagefilename_DESC">
+             <summary>
+               Looks up a localized string similar to Target Image File to Update(or Load)
+            .
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imagefilename_DISP">
+            <summary>
+              Looks up a localized string similar to Image file.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imageindex_DESC">
+             <summary>
+               Looks up a localized string similar to Target Image Index to Update(or Load)
+            Left Bottom to Right Top Orders.
+            Starting from 0..
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imageindex_DISP">
+            <summary>
+              Looks up a localized string similar to Image index.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Images_DESC">
+            <summary>
+              Looks up a localized string similar to Array of Image(s).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Images_DISP">
+            <summary>
+              Looks up a localized string similar to Images.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imagesave_DESC">
+            <summary>
+              Looks up a localized string similar to Save Image(s) or not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imagesave_DISP">
+            <summary>
+              Looks up a localized string similar to Image save.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Rows_DESC">
+            <summary>
+              Looks up a localized string similar to Row Count(s).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Rows_DISP">
+            <summary>
+              Looks up a localized string similar to Rows.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Transparent_DESC">
+             <summary>
+               Looks up a localized string similar to Image Transparent 
+            Range: 0.1~1.0.
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Transparent_DISP">
+            <summary>
+              Looks up a localized string similar to Transparent.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Width_DESC">
+            <summary>
+              Looks up a localized string similar to Cell Width (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Width_DISP">
+            <summary>
+              Looks up a localized string similar to Width.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.raster">
@@ -5701,7 +5835,8 @@
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFExternalStartDelay(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double)">EntityFactory.CreateMoFExternalStartDelay</see>. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> or <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension">IRtcMoFExtension</see>. <br/>
-            Used with external /START trigger <br/>
+            Used with external /START trigger. <br/>
+            Not used with syncAXIS <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMoFExtStartDelay.Encoder">
@@ -5747,7 +5882,8 @@
             EntityVariable entity
             </summary>
             <remarks>
-            Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateVariable(System.UInt32,System.UInt32)">EntityFactory.CreateVariable</see>. <br/>
+            Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateFreeVariable(System.UInt32,System.UInt32)">EntityFactory.CreateVariable</see>. <br/>
+            Above RTC5 <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityVariable.No">
@@ -5789,9 +5925,10 @@
             EntityWaitDataExt16EdgeCond entity
             </summary>
             <remarks>
-            Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWaitDataExt16EdgeCond(System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.SignalEdges)">EntityFactory.CreateWaitDataExt16EdgeCond</see>. <br/>
+            Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWaitDataExt16EdgeCond(System.UInt32,SpiralLab.Sirius2.IO.SignalEdges)">EntityFactory.CreateWaitDataExt16EdgeCond</see>. <br/>
             Wait until EXTENSION 1 port input condition has matched until goes to Rising(or Failling) edge. <br/>
-            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.ListReadExtDI16WaitEdgeUntil(System.UInt32,System.Boolean)">IRtcExtension.ListReadExtDI16WaitEdgeUntil</see>. <br/>
+            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcConditionalIO.ListReadExtDI16WaitEdgeUntil(System.UInt32,System.Boolean)">IRtcConditionalIO.ListReadExtDI16WaitEdgeUntil</see>. <br/>
+            Not used with RTC5,6 <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.BitPosition">
@@ -5831,12 +5968,12 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.#ctor(System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.SignalEdges)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.#ctor(System.UInt32,SpiralLab.Sirius2.IO.SignalEdges)">
             <summary>
             Constructor
             </summary>
             <param name="bitPosition">Bit postion: 0~15</param>
-            <param name="signalEdge"><c>SignalEdges</c></param>
+            <param name="signalEdge"><see cref="T:SpiralLab.Sirius2.IO.SignalEdges">SignalEdges</see></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.ToString">
             <inheritdoc/>
@@ -5848,6 +5985,204 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage">
+            <summary>
+            EntityStitchedImage entity
+            </summary>
+            <remarks>
+            Created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateStitchedImage(System.Int32,System.Int32,System.Double,System.Double)">EntityFactory.CreateStitchedImage</see>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Rows">
+            <summary>
+            Row counts
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Cols">
+            <summary>
+            Col counts
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.ImageIndex">
+            <summary>
+            Target image index to update
+            <code>
+            6 7 8
+            3 4 5
+            0 1 2
+            </code>
+            </summary>
+            <remarks>
+            Starting from 0. <br/>
+            Image index from left bottom to right top order. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.ImageFileName">
+            <summary>
+            Image file to update(or load) at current image index
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.IsImageFileSave">
+            <summary>
+            Save images or not
+            </summary>
+            <remarks>
+            Default: <c>False</c>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Width">
+            <summary>
+            Width (mm)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.width">
+            <summary>
+            Width (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Height">
+            <summary>
+            Height (mm)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.height">
+            <summary>
+            Height (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Transparent">
+            <summary>
+            Image Transparent 
+            </summary>
+            <remarks>
+            Range: 0.1 ~ 1 <br/>
+            Default: 0.5 <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Images">
+            <summary>
+            Array of images
+            <code>
+            Orders : 
+             6 7 8
+             3 4 5
+             0 1 2
+            </code>
+            </summary>
+            <remarks>
+            Starting from 0. <br/>
+            Image index from left bottom to right top order. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage._Images">
+            <summary>
+            Used by internally. Do NOT edit.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.glBuffers">
+            <summary>
+            GLBuffer 
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.#ctor(System.Int32,System.Int32,System.Double,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="rows">Rows</param>
+            <param name="cols">Cols</param>
+            <param name="width">Cell width (mm)</param>
+            <param name="height">Cell height (mm)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.ClearImages">
+            <summary>
+            Clear all images
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.ClearImage(System.Int32)">
+            <summary>
+            Clear image at target index
+            </summary>
+            <param name="index">Target index (0,1,2,...)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.LoadImage(System.Int32,System.String)">
+            <summary>
+            Load image file at target index
+            </summary>
+            <param name="index">Target index (0,1,2,...)</param>
+            <param name="fileName">Filename</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.LoadImage(System.Int32,System.Byte[])">
+            <summary>
+            Load array of bytes at target index
+            </summary>
+            <param name="index">Target index (0,1,2,...)</param>
+            <param name="bitmapBytes">Array of bytes</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.LoadImage(System.Int32,System.IO.Stream)">
+            <summary>
+            Load stream at target index
+            </summary>
+            <param name="index">Target index (0,1,2,...)</param>
+            <param name="bitmapStream"><c>Stream</c></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.LoadImage(System.Int32,System.Drawing.Bitmap)">
+            <summary>
+            Load bitmap image at target index
+            </summary>
+            <param name="index">Target index (0,1,2,...)</param>
+            <param name="bitmap"><c>System.Drawing.Bitmap</c></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.GetCellPosition(System.Int32,System.Double@,System.Double@)">
+            <summary>
+            Get left/bottom(or x, y) position from index
+            <code>
+            Order :
+             6 7 8
+             3 4 5
+             0 1 2
+            </code>
+            </summary>
+            <remarks>
+            Image index from left bottom to right top order. <br/>
+            Starting index from 0 with x(or left) = 0 , y(or bottom) = 0. <br/>
+            </remarks>
+            <param name="index">Image index<br/>Range: 0 ~ Rows*Cols-1</param>
+            <param name="left">Left x (mm)</param>
+            <param name="bottom">Bottom y (mm)</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Regen">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Render(SpiralLab.Sirius2.Winforms.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityRaster">
@@ -6240,7 +6575,8 @@
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateRampEnd">EntityFactory.CreateRampEnd</see>. <br/>
             Should be used <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityRampBegin">EntityRampBegin</see> and <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityRampEnd">EntityRampEnd</see> together. <br/>
-            aka. Automatic laser control by defined vector
+            aka. Automatic laser control by defined vector. <br/>
+            Not used with RTC4, syncAXIS <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRampEnd.#ctor">
@@ -6265,6 +6601,7 @@
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateRampBegin(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,System.Double)">EntityFactory.CreateRampBegin</see>. <br/>
             Should be used <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityRampBegin">EntityRampBegin</see> and <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityRampEnd">EntityRampEnd</see> together. <br/>
             aka. Automatic laser control by defined vector. <br/>
+            Not used with RTC4, syncAXIS <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRampBegin.Signal">
@@ -6318,7 +6655,8 @@
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWaitDataExt16Cond(System.String,System.String)">EntityFactory.CreateWaitDataExt16Cond</see>. <br/>
             16 bits digital input at EXTENSION 1 port when input condition has matched. <br/>
-            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.ListReadExtDI16WaitUntil(System.UInt32,System.UInt32)">IRtcExtension.ListReadExtDI16WaitUntil</see>. <br/>
+            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcConditionalIO.ListReadExtDI16WaitUntil(System.UInt32,System.UInt32)">IRtcConditionalIO.ListReadExtDI16WaitUntil</see>. <br/>
+            Used with RTC5,6 <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16Cond.InputLowBitMask">
@@ -6373,7 +6711,8 @@
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWaitDataExt16Cond(System.String,System.String)">EntityFactory.CreateWaitDataExt16Cond</see>. <br/>
             16 bits digital input and output at EXTENSION 1 port when input condition has matched. <br/>
-            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.ListWriteExtDO16If(System.UInt32,System.UInt32,System.UInt32,System.Boolean)">IRtcExtension.ListWriteExtDO16If</see>. <br/>
+            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcConditionalIO.ListWriteExtDO16If(System.UInt32,System.UInt32,System.UInt32,System.Boolean)">IRtcConditionalIO.ListWriteExtDO16If</see>. <br/>
+            Used with RTC5,6 <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityWriteDataExt16Cond.InputLowBitMask">
@@ -6416,7 +6755,7 @@
             Used with 16 bits digital input and output at EXTENSION 1 port. <br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWriteDataExt16Cond.#ctor(System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.SignalEdges)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWriteDataExt16Cond.#ctor(System.String,System.String,System.String,SpiralLab.Sirius2.IO.SignalEdges)">
             <summary>
             Constructor
             </summary>
@@ -6445,6 +6784,7 @@
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWriteDataExt16(System.UInt32,System.Boolean)">EntityFactory.CreateWriteDataExt16</see>. <br/>
             16 bits digital output at EXTENSION 1 port. <br/>
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListWriteExtDO16(System.UInt16,System.Boolean)">IRtc.ListWriteExtDO16</see>. <br/>
+            Above RTC5 <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityWriteDataExt16.BitPosition">
@@ -6562,6 +6902,7 @@
             </summary>
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateZDelta(System.Double)">EntityFactory.CreateZDelta</see>. <br/>
+            Not used with syncAXIS <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityZDelta.ZDelta">
@@ -6599,6 +6940,7 @@
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateZDefocus(System.Double)">EntityFactory.CreateZDefocus</see>. <br/>
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc3D.ListZDefocus(System.Double)">IRtc3D.ListZDefocus</see>. <br/>
+            Not used with syncAXIS <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityZDefocus.ZDefocus">
@@ -6990,12 +7332,6 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.ToPolylines">
             <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.PropertyVisibility(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
-            <summary>
-            Property visibility for <c>IRtc</c>
-            </summary>
-            <param name="rtc"><c>IRtc</c></param>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.IMarkerable">
             <summary>
@@ -9417,6 +9753,7 @@
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double)">EntityFactory.CreateMoFWait</see>. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> or <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension">IRtcMoFExtension</see>. <br/>
+            Not used with RTC4, syncAXIS <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.Condition">
@@ -9490,6 +9827,7 @@
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFEnd(System.Double,System.Double)">EntityFactory.CreateMoFEnd</see>. <br/>
             Should be used <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFBegin">EntityMoFBegin</see> and <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFEnd">EntityMoFEnd</see> together. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> or <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension">IRtcMoFExtension</see>. <br/>
+            Not used with syncAXIS <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMoFEnd.JumpTo">
@@ -9540,6 +9878,7 @@
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFBegin(SpiralLab.Sirius2.Scanner.Rtc.RtcMoFTypes,System.Boolean)">EntityFactory.CreateMoFBegin</see>. <br/>
             Should be used <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFBegin">EntityMoFBegin</see> and <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFEnd">EntityMoFEnd</see> together. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> or <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension">IRtcMoFExtension</see>. <br/>
+            Not used with syncAXIS <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMoFBegin.IsEncoderReset">
@@ -9589,6 +9928,12 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFBegin.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFBegin.PropertyVisibility(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
+            <summary>
+            Property visibility for <c>IRtc</c>
+            </summary>
+            <param name="rtc"><c>IRtc</c></param>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityTimer">
             <summary>
@@ -10745,6 +11090,7 @@
             Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "measurement")</c> <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcMeasurementHelper">RtcMeasurementHelper</see>. <br/>
             Also, copy gnuplot program into gnuplot directory from <seealso href="http://tmacchant33.starfree.jp/gnuplot_bin.html">Download link</seealso>
+            Not used with syncAXIS <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementEnd.#ctor">
@@ -10771,6 +11117,7 @@
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcMeasurementHelper">RtcMeasurementHelper</see>. <br/>
             Also, copy gnuplot program into gnuplot directory from <seealso href="http://tmacchant33.starfree.jp/gnuplot_bin.html">Download link</seealso>
             Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "measurement")</c> <br/>
+            Not used with syncAXIS <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementBegin.Title">
@@ -10903,6 +11250,9 @@
             <summary>
             EntityPenSyncAxis entity
             </summary>
+            <remarks>
+            Not used with syncAXIS <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPenSyncAxis.MinMarkSpeed">
             <summary>
@@ -10939,6 +11289,9 @@
             <summary>
             EntityPenRtc entity
             </summary>
+            <remarks>
+            Used with RTC4,5,6 <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.Color">
             <inheritdoc/>
@@ -11056,64 +11409,6 @@
             Scanner polygon delay (usec)
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.IsScannerVariablePolygonDelay">
-            <summary>
-            Enable/Disable variable scanner polygon delay
-            </summary>
-            <remarks>
-            Scale(angle) = 1 – Cosine(angle). <br/>
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.isScannerVariablePolygonDelay">
-            <summary>
-            Enable/Disable variable scanner polygon delay
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.ScannerVariablePolygonDelayEdgeLevel">
-            <summary>
-            Variable scanner polygon delay edge level (usec)
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.scannerVariablePolygonDelayEdgeLevel">
-            <summary>
-            Variable scanner polygon delay edge level (usec)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.IsScannerVariableJumpDelay">
-            <summary>
-            Enable/Disable variable scanner jump delay
-            </summary>
-            <remarks>
-            Variable scanner jump delay depends jump distance. <br/>
-            Short distance : low delay time. <br/>
-            Long distance : high delay time. <br/>
-            </remarks>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.isScannerVariableJumpDelay">
-            <summary>
-            Enable/Disable variable scanner jump delay
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.ScannerVariableJumpDelayMin">
-            <summary>
-            Variable scanner jump delay min. time (usec)
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.scannerVariableJumpDelayMin">
-            <summary>
-            Variable scanner jump delay min. time (usec)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.ScannerVariableJumpLength">
-            <summary>
-            Variable scanner jump length (mm)
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.scannerVariableJumpLength">
-            <summary>
-            Variable scanner jump length (mm)
-            </summary>
-        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.IsSkyWritingEnabled">
             <summary>
             Enable/Disable skywriting
@@ -11204,6 +11499,7 @@
             For example : <br/>
             BasicCube 10 = 0.14ms then 1/1.4ms = 1/0.0014 = 714 Hz <br/>
             IntelliSCAN III 10 = 0.11ms then 1/1.1ms = 1/0.0011 = 909 Hz <br/>
+            Must be lower than 1000Hz by Math.Abs(WobbelFrequency). <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPenRtc.wobbelFrequency">
@@ -13840,6 +14136,29 @@
             <param name="width">Width (mm) (If width is 0, aspect-ratio will be calculated by automatically)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityImage">EntityImage</see></returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateStitchedImage(System.Int32,System.Int32,System.Double,System.Double)">
+            <summary>
+            Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage">EntityStitchedImage</see> entity
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            int rows = 2;
+            int cols = 2;
+            var stitchedImage = EntityFactory.CreateStitchedImage(rows, cols, 4.0, 3.0);
+            document.ActAdd(stitchedImage);
+            ...
+            stitchedImage.LoadImage(0, "image1.bmp");
+            stitchedImage.LoadImage(1, "image2.bmp");
+            stitchedImage.LoadImage(2, "image3.bmp");
+            stitchedImage.LoadImage(3, "image4.bmp");
+            </code>
+            </summary>
+            <param name="rows">Rows</param>
+            <param name="cols">Cols</param>
+            <param name="width">Cell width (mm)</param>
+            <param name="height">Cell height (mm)</param>
+            <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage">EntityStitchedImage</see></returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateRaster(System.Double,System.String,System.Boolean)">
             <summary>
             Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityRaster">EntityRaster</see> entity
@@ -14232,7 +14551,8 @@
             </code>
             </summary>
             <remarks>
-            Used with RTC5,6 only (not syncAXIS)
+             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement">IRtcMeasurement</see> only. <br/>
+            Used with RTC5,6 only (not syncAXIS) <br/>
             </remarks>
             <param name="samplingFrequency">Frequency (Hz)</param>
             <param name="channels">Target channels</param>
@@ -14243,7 +14563,8 @@
             Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementEnd">EntityMeasurementEnd</see> entity
             </summary>
             <remarks>
-            Used with RTC5,6 only (not syncAXIS)
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement">IRtcMeasurement</see> only. <br/>
+            Used with RTC5,6 only (not syncAXIS) <br/>
             </remarks>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementEnd">EntityMeasurementEnd</see></returns>
         </member>
@@ -14260,7 +14581,8 @@
             </code>
             </summary>
             <remarks>
-            Used with RTC5,6 only (not syncAXIS)
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> only. <br/>
+            Used with RTC5,6 only (not syncAXIS) <br/>
             </remarks>
             <param name="type"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcMoFTypes">RtcMoFTypes</see><br/>Default:<see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcMoFTypes.XY">XY</see> </param>
             <param name="isEncoderReset">Reset encoders or not</param>
@@ -14296,6 +14618,7 @@
             </code>
             </summary>
             <remarks>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> only. <br/>
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofBegin(System.Boolean)">IRtcMoF.ListMofBegin</see>. <br/>
             Used with RTC5,6 only (not syncAXIS) <br/>
             </remarks>
@@ -14315,6 +14638,7 @@
             </code>
             </summary>
             <remarks>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> only. <br/>
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofAngularBegin(System.Numerics.Vector2,System.Boolean)">IRtcMoF.ListMofAngularBegin</see>. <br/>
             Used with RTC5,6 only (not syncAXIS) <br/>
             </remarks>
@@ -14327,7 +14651,8 @@
             Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFEnd">EntityMoFEnd</see> entity
             </summary>
             <remarks>
-            Used with RTC5,6 only (not syncAXIS)
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> only. <br/>
+            Used with RTC5,6 only (not syncAXIS) <br/>
             </remarks>
             <param name="jumpTo">Jump x,y (mm) location when MoF has ended</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFEnd">EntityMoFEnd</see></returns>
@@ -14337,7 +14662,8 @@
             Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFEnd">EntityMoFEnd</see> entity
             </summary>
             <remarks>
-            Used with RTC5,6 only (not syncAXIS)
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> only. <br/>
+            Used with RTC5,6 only (not syncAXIS) <br/>
             </remarks>
             <param name="x">Jump x location when MoF has ended</param>
             <param name="y">Jump x location when MoF has ended</param>
@@ -14354,7 +14680,8 @@
             </code>
             </summary>
             <remarks>
-            Used with RTC5,6 only (not syncAXIS)
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc3D">IRtc3D</see> only. <br/>
+            Used with RTC5,6 only (not syncAXIS) <br/>
             </remarks>
             <param name="zDefocus">Z defocus (mm)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityZDefocus">EntityZDefocus</see></returns>
@@ -14371,6 +14698,7 @@
             </summary>
             <remarks>
             If need to revert original z position, create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityZDelta">EntityZDelta</see> entity with -zDefocus value. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc3D">IRtc3D</see> only. <br/>
             Used with RTC5,6 only (not syncAXIS) <br/>
             </remarks>
             <param name="zDelta">Z delta (mm)</param>
@@ -14408,6 +14736,7 @@
             </summary>
             <remarks>
             ALC(Automatic laser control) with defined vector. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl">IRtcAutoLaserControl</see> only. <br/>
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">IRtcAutoLaserControl.ListAlcByVectorBegin</see>. <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityLine.StartRampFactor">EntityLine.StartRampFactor</see> and <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityLine.EndRampFactor">EntityLine.EndRampFactor</see> <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityVertex2D.RampFactor">EntityVertex2D.RampFactor</see> at <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> <br/>
@@ -14422,6 +14751,7 @@
             </summary>
             <remarks>
             ALC(Automatic laser control) with defined vector. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl">IRtcAutoLaserControl</see> only. <br/>
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorEnd">IRtcAutoLaserControl.ListAlcByVectorEnd</see>. <br/> 
             </remarks>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityRampEnd">EntityRampEnd</see></returns>
@@ -14459,7 +14789,7 @@
             <param name="onOff">On(off)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityWriteDataExt16">EntityWriteDataExt16</see></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWriteDataExt16Cond(System.String,System.String,System.String,SpiralLab.Sirius2.Scanner.Rtc.SignalEdges)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWriteDataExt16Cond(System.String,System.String,System.String,SpiralLab.Sirius2.IO.SignalEdges)">
             <summary>
             Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityWriteDataExt16Cond">EntityWriteDataExt16Cond</see> entity 
             <code>
@@ -14476,11 +14806,12 @@
             Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DOut_RtcExtension1Port">Config.DOut_RtcExtension1Port</see>. <br/>
             If masked input bits condition has matched, then write masked output bits into EXTENSION 1 port. <br/>
             Don't care bit for '0'. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcConditionalIO">IRtcConditionalIO</see> only. <br/>
             </remarks>
             <param name="inputLowBitMask">Input low bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <param name="inputHightBitMask">Input high bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <param name="outputBitMask">Output bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
-            <param name="outputLevel"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SignalEdges">SignalEdges</see> for output level when condition has matched.</param>
+            <param name="outputLevel"><see cref="T:SpiralLab.Sirius2.IO.SignalEdges">SignalEdges</see> for output level when condition has matched.</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityWriteDataExt16Cond">EntityWriteDataExt16Cond</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWaitDataExt16Cond(System.String,System.String)">
@@ -14499,12 +14830,13 @@
             Used with <see cref="F:SpiralLab.Sirius2.Winforms.Config.DIn_RtcExtension1Port">Config.DIn_RtcExtension1Port</see>. <br/>
             Wait until if masked input bits condition has matched at EXTENSION 1 port. <br/>
             Don't care bit for '0'. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcConditionalIO">IRtcConditionalIO</see> only. <br/>
             </remarks>
             <param name="inputLowBitMask">Input low bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <param name="inputHightBitMask">Input high bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16Cond">EntityWaitDataExt16Cond</see></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWaitDataExt16EdgeCond(System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.SignalEdges)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWaitDataExt16EdgeCond(System.UInt32,SpiralLab.Sirius2.IO.SignalEdges)">
             <summary>
             Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond">EntityWaitDataExt16CondEdge</see> entity 
             <code>
@@ -14519,12 +14851,13 @@
             Used with 16 bits digital input at EXTENSION 1 port. <br/>
             Used with and should be assigned one of <see cref="F:SpiralLab.Sirius2.Winforms.Config.DIn_RtcExtension1Port">Config.DIn_RtcExtension1Port</see>. <br/>
             Wait until input bit goes to rising(of falling) edge condition has matched at EXTENSION 1 port. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcConditionalIO">IRtcConditionalIO</see> only. <br/>
             </remarks>
             <param name="bitPosition">Input bit (0~15)</param>
-            <param name="signalEdge">Wait <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SignalEdges">SignalEdges</see> condition<br/>Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.SignalEdges.High">High</see></param>
+            <param name="signalEdge">Wait <see cref="T:SpiralLab.Sirius2.IO.SignalEdges">SignalEdges</see> condition<br/>Default: <see cref="F:SpiralLab.Sirius2.IO.SignalEdges.High">High</see></param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond">EntityWaitDataExt16CondEdge</see></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateVariable(System.UInt32,System.UInt32)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateFreeVariable(System.UInt32,System.UInt32)">
             <summary>
             Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityVariable">EntityVariable</see> entity
             <code>
@@ -14534,7 +14867,7 @@
             document.ActAdd(freeVariable);
             </code>
             <remarks>
-            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension">IRtcExtension</see> only. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcFreeVariable">IRtcFreeVariable</see> only. <br/>
             </remarks>        
             </summary>
             <param name="no">0~7</param>
@@ -14563,6 +14896,7 @@
             </summary>
             <remarks>
             3D calibration entities are support convert new 3D correction file by <seealso cref="T:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D"/>. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary">RtcCalibrationLibrary</see> only. <br/>
             </remarks>
             <param name="vertices">Array of vertices (x, nx, y, yn, zn)<br/>X1,Normal, Y1,Normal, Z1,Normal, X2,Normal, Y2,Normal, Z2,Normal,... <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud">EntityPointsCloud</see></returns>
@@ -14573,6 +14907,7 @@
             </summary>
             <remarks>
             3D calibration entities are support convert new 3D correction file by <seealso cref="T:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D"/>. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary">RtcCalibrationLibrary</see> only. <br/>
             </remarks>
             <param name="reference">New reference(or origin) location at surface</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPlane">EntityPlane</see></returns>
@@ -14585,6 +14920,7 @@
             If <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone.RadiusReference">EntityCone.RadiusReference</see> and <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone.RadiusEnd">EntityCone.RadiusEnd</see> are not equals, assumed as conic shape. <br/>
             If <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone.RadiusReference">EntityCone.RadiusReference</see> and <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone.RadiusEnd">EntityCone.RadiusEnd</see> are equals, assumed as cylinderic shape. <br/>
             3D calibration entities are support convert new 3D correction file by <seealso cref="T:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D"/>. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary">RtcCalibrationLibrary</see> only. <br/>
             </remarks>
             <param name="radiusReference">Radius(mm) at reference(or origin) location</param>
             <param name="radiusEnd">Radius(mm) at end location</param>
@@ -15273,29 +15609,29 @@
             <summary>
             Encode bitmap to base64 encoding
             </summary>
-            <param name="bitmap">Bitmap</param>
-            <returns>Base64</returns>
+            <param name="bitmap"><c>System.Drawing.Bitmap</c></param>
+            <returns>Encoded base64 string</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.DecodeFrom(System.String)">
             <summary>
             Decode base64 encoding to bitmap
             </summary>
-            <param name="base64String">base64 formatted string</param>
-            <returns>Bitmap</returns>
+            <param name="base64String">Encoded base64 string</param>
+            <returns><c>System.Drawing.Bitmap</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.ConvertToBitmap(System.String)">
             <summary>
-            Load bitmap to image
+            Load bitmap image from file
             </summary>
-            <param name="fileName"></param>
-            <returns><c>System.Drawing.Bitmap </c></returns>
+            <param name="fileName">Filename</param>
+            <returns><c>System.Drawing.Bitmap</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.ConvertToBitmap(System.IO.Stream)">
             <summary>
-            Convert stream to image
+            Convert bitmap image from stream
             </summary>
             <param name="stream">Stream</param>
-            <returns>Bitmap</returns>
+             <returns><c>System.Drawing.Bitmap</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.RGB2Gray(System.Drawing.Color)">
             <summary>
@@ -15550,6 +15886,14 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Common.ScriptFileBrowser.InitializeDialog(System.Windows.Forms.OpenFileDialog)">
             <inheritdoc/>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.ImageFileBrowser">
+            <summary>
+            ImageFileBrowser
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.ImageFileBrowser.InitializeDialog(System.Windows.Forms.OpenFileDialog)">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.PenColorEditor">
             <summary>
             Pen color editor
@@ -15586,6 +15930,22 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.PowerMapCategoryEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.PowerEditor">
+            <summary>
+            Power (%) editor  by trackbar
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PowerEditor.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PowerEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PowerEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.AlignmentEditor">
@@ -15835,7 +16195,7 @@
             PropertyGrid helper
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Common.PropertyGridHelper.PropertyBrowsable(System.Type,System.String,System.Boolean)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PropertyGridHelper.Browsable(System.Type,System.String,System.Boolean)">
             <summary>
             Property browsable (or visibility) at <c>PropertyGrid</c>
             </summary>
@@ -19054,6 +19414,28 @@
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnCreatePen">
             <summary>
             Event for create pen entity
+            <code>
+            SpiralLab.Sirius2.Winforms.Config.OnCreatePen += Config_OnCreatePen;
+            EntityPen Config_OnCreatePen(IDocument doc, Color color)
+            {
+                EntityPen pen = new EntityPen();
+                pen.Name = color.ToKnownColor().ToString();
+                pen.Color = color; 
+                pen.Description = color.ToString();
+                pen.Power = 1;
+                pen.Frequency = 50 * 1000;
+                pen.PulseWidth = 2;
+                pen.JumpSpeed = 100;
+                pen.MarkSpeed = 100;
+                pen.LaserOnDelay = 10;
+                pen.LaserOffDelay = 50;
+                pen.ScannerJumpDelay = 250;
+                pen.ScannerMarkDelay = 150;
+                pen.ScannerPolygonDelay = 0;
+                ...
+                return pen;
+            }
+            </code>
             </summary>
             <remarks>
             User can register event handler to override configure <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see> entity. <br/>
@@ -19326,6 +19708,21 @@
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnExtractPointsCloud">
             <summary>
             Event for create(or convert) <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud">EntityPointsCloud</see> from 3D model (like as STL)
+            <code>
+            SpiralLab.Sirius2.Winforms.Config.OnExtractPointsCloud += Config_OnExtractPointsCloud;
+            EntityPointsCloud Config_OnExtractPointsCloud(IDocument doc, EntityStl stl, OpenTK.Vector3 direction)
+            {
+                // vertex + normal (= x,nx,y,ny,z,nx) * N
+                List&lt;Vector3&gt; vectorAndNormals = new List&lt;Vector3&gt;();
+                // analyze faces and extract points cloud from STL entity    
+                ...
+                var pointsCloud = new EntityPointsCloud(vectorAndNormals.ToArray());
+                pointsCloud.Color = stl.Color; 
+                pointsCloud.IsHitTestable = false; 
+                pointsCloud.Name = $"PointsCloud_{Path.GetFileNameWithoutExtension(stl.FileName)}";
+                return pointsCloud;
+            }
+            </code>
             </summary>
             <remarks>
             User can register event handler for customized extract points cloud from 3D model. <br/>
@@ -19345,6 +19742,18 @@
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnBlockInsert">
             <summary>
             Event for create custom array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert">EntityBlockInsert</see> at <see cref="T:SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl">TreeViewUserControl</see>
+            <code>
+            SpiralLab.Sirius2.Winforms.Config.OnBlockInsert += Config_OnBlockInsert;
+            EntityBlockInsert[] Config_OnBlockInsert(IDocument doc, EntityBlock block)
+            {
+                string masterName = block.Name;
+                List&lt;EntityBlockInsert&gt; inserts = new List&lt;EntityBlockInsert&gt;();  
+                var insert1 = new EntityBlockInsert(masterName, 0, 0, 0);
+                inserts.Add(insert1);
+                ...
+                return inserts.ToArray();
+            }
+            </code>
             </summary>
             <remarks>
             User can register event handler for override <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert">EntityBlockInsert</see> entity. <br/>
@@ -19796,6 +20205,14 @@
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnMoveToCursor">
             <summary>
             Event for move to cursor position at <see cref="T:SpiralLab.Sirius2.Winforms.UI.EditorUserControl">EditorUserControl</see>
+            <code>
+            SpiralLab.Sirius2.Winforms.Config.OnMoveToCursor += Config_OnMoveToCursor;
+            voboolid Config_OnMoveToCursor(IDocument doc, string name, OpenTK.Vector3 position)
+            {
+               // move stage to target position
+               ...
+            }
+            </code>
             </summary>
             <remarks>
             User can assign event handler for move external stage to specific position. <br/>
@@ -19807,6 +20224,7 @@
             Notify event for move to cursor position at <see cref="T:SpiralLab.Sirius2.Winforms.UI.EditorUserControl">EditorUserControl</see>
             </summary>
             <remarks>
+            Used with <see cref="E:SpiralLab.Sirius2.Winforms.Config.OnMoveToCursor">OnMoveToCursor</see>. <br/>
             For example, user can implement event hander for move external stage to specific position. <br/>
             </remarks>
             <param name="document"><see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see></param>
@@ -20054,6 +20472,16 @@
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnOptimizePath">
             <summary>
             Event for optimize path winforms
+            <code>
+            SpiralLab.Sirius2.Winforms.Config.OnOptimizePath += Config_OnOptimizePath;
+            int[] Config_OnOptimizePath(IDocument doc, IEntity entity)
+            {
+                // do some path optimization to sort 'entity.Children' orders
+                var optimizedOrder = new List&lt;Vector2&gt;(entity.ChildCount);
+                ...
+                return optimizedOrder.ToArray();
+            }
+            </code>
             </summary>
             <remarks>
             User can register event handler for optimize path winforms. <br/>
@@ -23422,6 +23850,57 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.UI.PowerPercentageForm">
+            <summary>
+            PowerPercentageForm winforms
+            </summary>
+            <remarks>
+            Used to calculate <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.PowerPercentage">EntityPen.PowerPercentage</see>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.PowerPercentageForm.PowerPercentage">
+            <summary>
+            Percentage (Should be > 0)
+            </summary>
+            <remarks>
+            Range: 0~100 %
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.PowerPercentageForm.oldPercentage">
+            <summary>
+            Old percentage
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.PowerPercentageForm.entityPen">
+            <summary>
+            Target entity
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerPercentageForm.#ctor(SpiralLab.Sirius2.Winforms.Entity.EntityPen,System.Double,System.Windows.Forms.Design.IWindowsFormsEditorService)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="entity">Target <c>EntityPen</c></param>
+            <param name="percentage">Power (%)</param>
+            <param name="wfes"><c>IWindowsFormsEditorService</c></param>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.PowerPercentageForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerPercentageForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.PowerPercentageForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.UI.ScriptUserControl">
             <summary>
             ScriptUserControl
@@ -23656,8 +24135,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.PathOptimizerForm.Efficiency">
             <summary>
-            Efficiency (higher than 100% or lower)
+            Efficiency 
             </summary>
+            <remarks>
+            Good: higher than 100 % <br/>
+            Bad: lower than 100% <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.PathOptimizerForm.IsFinished">
             <summary>

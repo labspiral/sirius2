@@ -29,6 +29,7 @@
 **2. Features**
  
  - Support SCANLAB's RTC controllers.
+    - RTC4
     - RTC5
     - RTC6 
     - RTC6e 
@@ -50,7 +51,7 @@
     - Defined-vector
  - Support SCANahead control, SDC(Spot Distance Control) with RTC6.
  - Support measure and profile scanner trajectory with output signals by plotted graph.
- - Support stream parser software. (https://www.scanlab.de/en/downloads/software/streamparser-software)
+ - Support stream parser software.
  - Support many kinds of laser source controls.
     - Frequency
     - Duty cycle
@@ -121,6 +122,7 @@
     - Target frameworks: .NET Framework 4.7.2
     - Target platforms: Windows 
  - Dependencies
+    - SCANLAB RTC4: (2023.11.02)
     - SCANLAB RTC5: (2022.11.11)
     - SCANLAB RTC6: v.1.16.3 (2023.12.19)
     - SCANLAB syncAXIS: v.1.8.2 (2023.3.9)
@@ -165,6 +167,18 @@
 
 
 **7. Version history**
+
+* 2024.5.2 v.1.29.1420
+  - added) EntityStitchedImage entity 
+  - added) (experimental version) RTC4 controller
+  - added) internal measurement plot form
+  - added) output pulse syncronization mode at RTC6
+  - refactor) IRtc interfaces
+     - added) IRtcVariableDelay interface
+     - added) IRtcConditionalIO interface
+     - added) IRtcInformation interface 
+     - added) IRtcSignalLevel interface 
+     - added) IRtcFreeVariable interface 
 
 * 2024.4.25 v.1.28.1360
   - fixed) reversed start/end when mark at line entity

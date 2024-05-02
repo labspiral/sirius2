@@ -40,6 +40,7 @@ using System.Windows.Forms;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using SpiralLab.Sirius2;
+using SpiralLab.Sirius2.IO;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Mathematics;
 using SpiralLab.Sirius2.Scanner;

@@ -562,7 +562,7 @@ namespace Demos
             CurrentLayerIndex = 0;
             CurrentEntity = null;
             CurrentEntityIndex = 0;
-            AccumulatedMarks++;
+            AccumulatedMarks = unchecked(AccumulatedMarks + 1);
 
             if (IsExternalStart)
                 Logger.Log(Logger.Types.Warn, $"marker [{Index}]: trying to start mark by external trigger with {this.Offsets.Length} offsets");
@@ -620,7 +620,12 @@ namespace Demos
 
             if (this.IsExternalStart)
             {
-                if (rtc is Rtc5)
+                if (rtc is Rtc4)
+                {
+                    var extMode = Rtc4ExternalControlMode.Empty;                 
+                    success &= rtcExtension.CtlExternalControl(extMode);
+                }
+                else if (rtc is Rtc5)
                 {
                     var extMode = Rtc5ExternalControlMode.Empty;
                     success = rtcExtension.CtlExternalControl(extMode);
@@ -844,7 +849,12 @@ namespace Demos
             {
                 if (rtc.CtlGetStatus(RtcStatus.MofOutOfRange))
                 {
-                    if (rtc is Rtc5 rtc5)
+                    if (rtc is Rtc4 rtc4)
+                    {
+                        var info = rtc4.MarkingInfo;
+                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. marking info= {info.Value}");
+                    }
+                    else if (rtc is Rtc5 rtc5)
                     {
                         var info = rtc5.MarkingInfo;
                         Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. marking info= {info.Value}");
@@ -887,7 +897,14 @@ namespace Demos
             }
             else
             {
-                if (rtc is Rtc5)
+                if (rtc is Rtc4)
+                {
+                    var extMode = Rtc4ExternalControlMode.Empty;
+                    extMode.Add(Rtc4ExternalControlMode.Bit.ExternalStart);
+                    extMode.Add(Rtc4ExternalControlMode.Bit.ExternalStartAgain);
+                    success &= rtcExtension.CtlExternalControl(extMode);
+                }
+                else if (rtc is Rtc5)
                 {
                     var extMode = Rtc5ExternalControlMode.Empty;
                     extMode.Add(Rtc5ExternalControlMode.Bit.ExternalStart);
@@ -897,7 +914,7 @@ namespace Demos
                     extMode.Add(Rtc5ExternalControlMode.Bit.TrackDelay);
                     success &= rtcExtension.CtlExternalControl(extMode);
                 }
-                else if (rtc is Rtc6)
+                else if (rtc is Rtc6 || rtc is Rtc6Ethernet)
                 {
                     var extMode = Rtc6ExternalControlMode.Empty;
                     extMode.Add(Rtc6ExternalControlMode.Bit.ExternalStart);
@@ -1039,7 +1056,12 @@ namespace Demos
             {
                 if (rtc.CtlGetStatus(RtcStatus.MofOutOfRange))
                 {
-                    if (rtc is Rtc5 rtc5)
+                    if (rtc is Rtc4 rtc4)
+                    {
+                        var info = rtc4.MarkingInfo;
+                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. marking info= {info.Value}");
+                    }
+                    else if (rtc is Rtc5 rtc5)
                     {
                         var info = rtc5.MarkingInfo;
                         Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. marking info= {info.Value}");
@@ -1071,7 +1093,14 @@ namespace Demos
             }
             else
             {
-                if (rtc is Rtc5)
+                if (rtc is Rtc4)
+                {
+                    var extMode = Rtc4ExternalControlMode.Empty;
+                    extMode.Add(Rtc4ExternalControlMode.Bit.ExternalStart);
+                    extMode.Add(Rtc4ExternalControlMode.Bit.ExternalStartAgain);
+                    success &= rtcExtension.CtlExternalControl(extMode);
+                }
+                else if (rtc is Rtc5)
                 {
                     var extMode = Rtc5ExternalControlMode.Empty;
                     extMode.Add(Rtc5ExternalControlMode.Bit.ExternalStart);

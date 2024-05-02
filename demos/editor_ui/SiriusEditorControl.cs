@@ -1813,9 +1813,17 @@ namespace Demos
                 return;
             switch (rtc.RtcType)
             {
+                case RtcTypes.Rtc4:
+                    mnuWriteDataExt16Cond.Enabled = false;
+                    mnuWaitDataExt16Cond.Enabled = false;
+                    mnuWaitDataExt16EdgeCond.Enabled = false;
+                    btnCharacterSetText.Enabled = false;
+                    btnSiriusCharacterSetText.Enabled = false;
+                    mnuAlcDefinedVector.Enabled = false;
+                    break;
                 case RtcTypes.RtcVirtual:
                     break;
-                case RtcTypes.Rtc4:
+              
                 case RtcTypes.Rtc5:
                 case RtcTypes.Rtc6:
                 case RtcTypes.Rtc6e:
@@ -1828,6 +1836,7 @@ namespace Demos
                     mnuZDefocus.Enabled = false;
                     mnuWriteDataExt16Cond.Enabled = false;
                     mnuWaitDataExt16Cond.Enabled = false;
+                    mnuWaitDataExt16EdgeCond.Enabled = false;
                     mnuSelectCorrectionTable.Enabled = false;
 
                     lblEncoder.Visible = false;

@@ -673,7 +673,12 @@ namespace Demos
             {
                 if (rtc.CtlGetStatus(RtcStatus.MofOutOfRange))
                 {
-                    if (rtc is Rtc5 rtc5)
+                    if (rtc is Rtc4 rtc4)
+                    {
+                        var info = rtc4.MarkingInfo;
+                        Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. marking info= {info.Value}");
+                    }
+                    else if (rtc is Rtc5 rtc5)
                     {
                         var info = rtc5.MarkingInfo;
                         Logger.Log(Logger.Types.Warn, $"marker [{Index}]: mof out of range. marking info= {info.Value}");
