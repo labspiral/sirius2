@@ -749,14 +749,13 @@
             Initialize(or start up) library 
             </summary>
             <remarks>
-            When initializing, configuring path, starting log service and verifying licenses. <br/>
-            Created <see cref="P:SpiralLab.Sirius2.Config.LogPath">Config.LogPath</see>, <see cref="P:SpiralLab.Sirius2.Config.SyncAxisSimulateFilePath">Config.SyncAxisSimulateFilePath</see>, <see cref="P:SpiralLab.Sirius2.Config.MeasurementPath">Config.MeasurementPath</see> pathes if not exist. <br/>
-            Output logged file is <see cref="P:SpiralLab.Sirius2.Config.LogPath">Config.LogPath\'date'.txt </see> with max 90 days. <br/>
-            Output logged file is <see cref="P:SpiralLab.Sirius2.Config.LogPath">Config.LogPath\errors.txt</see> with max 90 days and error only. <br/>
+            When initializing, starting log service, configuring pathes and verifying licenses. <br/>
+            Log files are outputted <see cref="P:SpiralLab.Sirius2.Config.LogPath">Config.LogPath\yyyy-MM-dd.txt</see> with max <see cref="P:SpiralLab.Sirius2.Config.LogMaxArchiveDays">Config.LogMaxArchiveDays</see> days with <see cref="P:SpiralLab.Sirius2.Config.LogLevel">Config.LogLevel</see>. <br/>
+            Log files are outputted <see cref="P:SpiralLab.Sirius2.Config.LogPath">Config.LogPath\errors.txt</see> with max <see cref="P:SpiralLab.Sirius2.Config.LogMaxArchiveDays">Config.LogMaxArchiveDays</see> days with error log leve only. <br/>
             Enabled(or disable) logging feature by <see cref="P:SpiralLab.Sirius2.Config.IsLogEnable">Config.IsLogEnable</see>. <br/>
             Enabled(or disable) log to console by <see cref="P:SpiralLab.Sirius2.Config.IsLogToConsole">Config.IsLogToConsole</see>. <br/>
-            Minimal log level configured by <see cref="P:SpiralLab.Sirius2.Config.LogLevel">Config.LogLevel</see>. <br/>
-            Without license key, would be activated evalution mode during 30 mins. <br/>
+            Created <see cref="P:SpiralLab.Sirius2.Config.LogPath">Config.LogPath</see>, <see cref="P:SpiralLab.Sirius2.Config.SyncAxisSimulateFilePath">Config.SyncAxisSimulateFilePath</see>, <see cref="P:SpiralLab.Sirius2.Config.MeasurementPath">Config.MeasurementPath</see> pathes if not exist. <br/>
+            Without license key, evalution mode would be activated during 30 mins. <br/>
             </remarks>
             <returns>Success of initialization or not</returns>
         </member>
@@ -1861,7 +1860,7 @@
             </code>
             </summary>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <param name="powerControlMethod"><see cref="T:SpiralLab.Sirius2.Laser.PowerControlMethods">PowerControlMethod</see></param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.LaserVirtual">LaserVirtual</see></returns>
         </member>
@@ -1890,10 +1889,10 @@
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlWriteData``1(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels,``0)">CtlWriteData(ExtensionChannels.ExtAO1, voltage)</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListWriteData``1(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels,``0)">ListWriteData(ExtensionChannels.ExtAO2, voltage)</see>.<br/>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <param name="analogCh">1: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtAO1">ExtensionChannels.ExtAO1</see><br/>2: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtAO2">ExtensionChannels.ExtAO2</see></param>
-            <param name="minVoltage">Min voltage (V)</param>
-            <param name="maxVoltage">Max voltage (V)</param>
+            <param name="minVoltage">Min. voltage (V)</param>
+            <param name="maxVoltage">Max. voltage (V)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.LaserVirtual">LaserVirtual</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualFrequency(System.Int32,System.Double,System.Double,System.Double)">
@@ -1919,9 +1918,9 @@
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlFrequency(System.Double,System.Double)">CtlFrequency</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListFrequency(System.Double,System.Double)">ListFrequency</see>. <br/>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
-            <param name="minFrequency">Min Frequency (Hz)</param>
-            <param name="maxFrequency">Max Frequency (Hz)</param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="minFrequency">Min. frequency (Hz)</param>
+            <param name="maxFrequency">Max. frequency (Hz)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.LaserVirtual">LaserVirtual</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualDutyCycle(System.Int32,System.Double,System.Double,System.Double)">
@@ -1948,9 +1947,9 @@
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlFrequency(System.Double,System.Double)">CtlFrequency</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListFrequency(System.Double,System.Double)">ListFrequency</see>. <br/>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
-            <param name="minDutyCycle">Min Duty Cycle Duty (%)</param>
-            <param name="maxDutyCycle">Max Duty Cycle Duty (%)</param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="minDutyCycle">Min. duty cycle (%)</param>
+            <param name="maxDutyCycle">Max. duty cycle (%)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.LaserVirtual">LaserVirtual</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualDO16Bits(System.Int32,System.Double,System.UInt16,System.UInt16)">
@@ -1977,9 +1976,9 @@
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlWriteData``1(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels,``0)">CtlWriteData(ExtensionChannels.ExtDO16, 16bits)</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListWriteData``1(SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels,``0)">ListWriteData(ExtensionChannels.ExtDO16, 16bits)</see>. <br/>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
-            <param name="minBit">Min bit value (0)</param>
-            <param name="maxBit">Max bit value (65535)</param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="minBit">Min. bit value (0x0000: 0)</param>
+            <param name="maxBit">Max. bit value (0xFF00: 65535)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.LaserVirtual">LaserVirtual</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualDO8Bits(System.Int32,System.Double,System.UInt16,System.UInt16)">
@@ -2007,8 +2006,8 @@
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
             <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
-            <param name="minBit">Min bit value (0)</param>
-            <param name="maxBit">Max bit value (255)</param>
+            <param name="minBit">Min. bit value (0x00: 0)</param>
+            <param name="maxBit">Max. bit value (0xFF: 255)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.LaserVirtual">LaserVirtual</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualRS232(System.Int32,System.Double,System.String)">
@@ -2036,7 +2035,7 @@
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcSerialComm.CtlSerialWrite(System.Byte[])">CtlSerialWrite</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcSerialComm.ListSerialWrite(System.Byte[])">ListSerialWrite</see>. <br/>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <param name="format">Formatted string</param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.LaserVirtual">LaserVirtual</see></returns>
         </member>
@@ -2061,12 +2060,12 @@
             Recommened that create your own laser instance that inherited <see cref="T:SpiralLab.Sirius2.Laser.LaserBase">LaserBase</see> <br/>
             </remarks>
             <param name="index">Identifier (0,1,2,...)</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.LaserVirtual">LaserVirtual</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateAdvancedOptoWaveAOPico(System.Int32,System.String,System.Int32,System.Double)">
             <summary>
-            Create Advanced OptoWave AOPico
+            Create Advanced OptoWave AOPico laser source
             </summary>
             <remarks>
             Vary <see cref="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.PowerFactor">PowerFactor</see> value by custom(external) RS-232C communication. <br/>
@@ -2074,12 +2073,12 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico">AdvancedOptoWaveAOPico</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateAdvancedOptoWaveAOPicoPrecision(System.Int32,System.String,System.Int32,System.Double)">
             <summary>
-            Create Advanced OptoWave AOPico Precision
+            Create Advanced OptoWave AOPico Precision laser source
             </summary>
             <remarks>
             Vary <see cref="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.PowerFactor">PowerFactor</see> value by custom(external) RS-232C communication. <br/>
@@ -2087,12 +2086,12 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPicoPrecision">AdvancedOptoWaveAOPicoPrecision</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateAdvancedOptoWaveFotia(System.Int32,System.String,System.Int32,System.Double)">
             <summary>
-            Create Advanced OptoWave Fotia
+            Create Advanced OptoWave Fotia laser source
             </summary>
             <remarks>
             Vary pulse width(cycle) between <see cref="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.MinDutyCycle">MinDutyCycle</see> and <see cref="P:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.MaxDutyCycle">MaxDutyCycle</see>. <br/>
@@ -2100,12 +2099,12 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia">AdvancedOptoWaveFotia</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateCoherentAviaLX(System.Int32,System.String,System.Int32,System.Double)">
             <summary>
-            Create Coherent Avia LX
+            Create Coherent Avia LX laser source
             </summary>
             <remarks>
             Vary <see cref="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.DiodeCurrent">DiodeCurrent</see> value by custom(external) RS-232C communication. <br/>
@@ -2113,24 +2112,24 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.CoherentAviaLX">CoherentAviaLX</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateCoherentDiamondCSeries(System.Int32,System.String,System.Double)">
             <summary>
-            Create Coherent Diamond C-Series
+            Create Coherent Diamond C-Series laser source
             </summary>
             <remarks>
             Vary pulse width(cycle) between <see cref="P:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.MinDutyCycle">MinDutyCycle</see> and <see cref="P:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.MaxDutyCycle">MaxDutyCycle</see>. <br/>
             </remarks>
             <param name="index">Identifier</param>
             <param name="name">Name</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries">CoherentDiamondCSeries</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateIPGYLPN(System.Int32,System.String,System.Int32,System.Double,System.Int32)">
             <summary>
-            Create IPG YLP N
+            Create IPG YLP N laser source
             </summary>
             <remarks>
             Vary ouput analog voltage between <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPN.MinVoltage">MinVoltage</see> and <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPN.MaxVoltage">MaxVoltage</see>. <br/>
@@ -2138,13 +2137,13 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <param name="analogPort">RTC analog port no (1 or 2)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.IPGYLPN">IPGYLPN</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateIPGYLPTypeD(System.Int32,System.String,System.Int32,System.Double)">
             <summary>
-            Create IPG YLP TypeD
+            Create IPG YLP TypeD laser source
             </summary>
             <remarks>
             Vary <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPTypeD.OperatingPower">OperatingPower</see> value by custom(external) RS-232C communication. <br/>
@@ -2152,12 +2151,12 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.IPGYLPTypeD">IPGYLPTypeD</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateIPGYLPTypeE(System.Int32,System.String,System.Int32,System.Double)">
             <summary>
-            Create IPG YLP TypeE
+            Create IPG YLP TypeE laser source
             </summary>
             <remarks>
             Vary <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPTypeE.OperatingPower">OperatingPower</see> value by custom(external) RS-232C communication. <br/>
@@ -2165,12 +2164,12 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.IPGYLPTypeE">IPGYLPTypeE</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateIPGYLPULPN(System.Int32,System.String,System.Int32,System.Double)">
             <summary>
-            Create IPG YLP ULP N
+            Create IPG YLP ULP N laser source
             </summary>
             <remarks>
             Vary <see cref="P:SpiralLab.Sirius2.Laser.IPGYLPULPN.SetPoint">SetPoint</see> value by custom(external) RS-232C communication. <br/>
@@ -2178,12 +2177,12 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.IPGYLPULPN">IPGYLPULPN</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateJPTTypeE(System.Int32,System.String,System.Int32,System.Double)">
             <summary>
-            Create JPT TypeE
+            Create JPT TypeE laser source
             </summary>
             <remarks>
             Vary <see cref="P:SpiralLab.Sirius2.Laser.JPTTypeE.OperatingPower">OperatingPower</see> value by custom(external) RS-232C communication. <br/>
@@ -2191,12 +2190,12 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.JPTTypeE">JPTTypeE</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreatePhotonicsIndustryDX(System.Int32,System.String,System.Int32,System.Double)">
             <summary>
-            Create Photonics Industry DX
+            Create Photonics Industry DX laser source
             </summary>
             <remarks>
             Vary <see cref="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.PECLevel">PECLevel</see> value by custom(external) RS-232C communication. <br/>
@@ -2204,12 +2203,12 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX">PhotonicsIndustryDX</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreatePhotonicsIndustryRGHAIO(System.Int32,System.String,System.Int32,System.Double)">
             <summary>
-            Create Photonics Industry RGH AIO
+            Create Photonics Industry RGH AIO laser source
             </summary>
             <remarks>
             Vary <see cref="P:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.PECLevel">PECLevel</see> value by custom(external) RS-232C communication. <br/>
@@ -2217,12 +2216,12 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO">PhotonicsIndustryRGHAIO</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateSpectraPhysicsHippo(System.Int32,System.String,System.Int32,System.Double)">
             <summary>
-            Create Spectra Physics Hippo
+            Create Spectra Physics Hippo laser source
             </summary>
             <remarks>
             Vary <see cref="P:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.Diode1Current">Diode1Current</see> and <see cref="P:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.Diode2Current">Diode2Current</see> values by custom(external) RS-232 communication. <br/> 
@@ -2230,12 +2229,12 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo">SpectraPhysicsHippo</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateSpectraPhysicsTalon(System.Int32,System.String,System.Int32,System.Double)">
             <summary>
-            Create Spectra Physics Talon
+            Create Spectra Physics Talon laser source
             </summary>
             <remarks>
             Vary <see cref="P:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.DiodeCurrent">DiodeCurrent</see> value by custom(external) RS-232C communication. <br/> 
@@ -2243,12 +2242,12 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon">SpectraPhysicsTalon</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateSPIG4(System.Int32,System.String,System.Int32,System.Double)">
             <summary>
-            Create SPI G4(or G3)
+            Create SPI G4(or G3) laser source
             </summary>
             <remarks>
             Vary <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtAO1">Analog1</see> and <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtAO2">Analog2</see> voltage output at RTC analog port <br/>
@@ -2256,7 +2255,7 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="comPort">COM port</param>
-            <param name="maxPowerWatt">Max laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
+            <param name="maxPowerWatt">Max. laser power (W)<br/>Actual output laser power(W) but theorical.<br/>Recommended by measure output laser max power by powermeter and use it. <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Laser.SPIG4">SPIG4</see></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico">
@@ -17406,12 +17405,16 @@
             <remarks>
             Not supported <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcSkyWriting">IRtcSkyWriting</see>. <br/>
             Not supported <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl">IRtcAutoLaserControl</see>. <br/>
+            Not supported <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcSignalLevel">IRtcSignalLevel</see>. <br/>
             Not supported <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet">IRtcCharacterSet</see>. <br/>
-            Not supported <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension">IRtcExtension</see>. <br/>
             Not supported <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcJumpMode">IRtcJumpMode</see>. <br/>
+            Not supported <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcFreeVariable">IRtcFreeVariable</see>. <br/>
+            Not supported <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcSerialComm">IRtcSerialComm</see>. <br/>
+            Not fully supported <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension">IRtcExtension</see>. <br/>
             Not fully supported <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see>. <br/>
             Not fully supported <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcWobbel">IRtcWobbel</see>. <br/>
             Not fully supported <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcVariableDelay">IRtcVariableDelay</see>. <br/>
+            Not fully supported <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcConditionalIO">IRtcConditionalIO</see>. <br/>
             Not fully supported <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster">IRtcRaster</see>. <br/>
             Not fully supported <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels">MeasurementChannels</see>. <br/>
             </remarks>
@@ -17966,22 +17969,22 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.TrackingErrorX">
             <summary>
-            Not support at RTC5 (Compensate tracking error for X/Y MoF)
+            Not support at RTC4 (Compensate tracking error for X/Y MoF)
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.mofTrackingErrorX">
             <summary>
-            Not support at RTC5 (Compensate tracking error for X/Y MoF)
+            Not support at RTC4 (Compensate tracking error for X/Y MoF)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.TrackingErrorY">
             <summary>
-            Not support at RTC5 (Compensate tracking error for X/Y MoF)
+            Not support at RTC4 (Compensate tracking error for X/Y MoF)
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.mofTrackingErrorY">
             <summary>
-            Not support at RTC5 (Compensate tracking error for X/Y MoF)
+            Not support at RTC4 (Compensate tracking error for X/Y MoF)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.EncXCountsPerMm">
@@ -25713,7 +25716,7 @@
             <summary>
             RtcCalibrationLibrary
             <para>
-            Used with SCANLAB's CalibrationLibrary (1.0.0)
+            Used with SCANLAB's CalibrationLibrary v1.4.1.1 <br/>
             </para>
             </summary>
         </member>
@@ -26380,9 +26383,6 @@
         <member name="E:SpiralLab.Sirius2.Scanner.Rtc.RtcStreamParserHelper.OnReceived">
             <summary>
             Event for when channel data has receive(or arrived)
-            <code>
-            
-            </code>
             </summary>
             <remarks>
             With package buffer data
@@ -28930,6 +28930,7 @@
             Effective scan field size (mm)
             </summary>
             <remarks>     
+            Theorical scan field area is calculated by : <br/>
             RTC4: 2^16 / <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.KFactor">KFactor</see> <br/>
             RTC5: 2^20 / <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.KFactor">KFactor</see> <br/>
             RTC6: 2^20 / <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.KFactor">KFactor</see> <br/>
@@ -28942,6 +28943,7 @@
             <remarks>
             Size limit for width, height (mm) <br/>
             Out of range would be checked if <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.FieldSizeLimit">FieldSizeLimit</see> has assigned. <br/>
+            Default: <c>SizeF.Empty</c> <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.LaserMode">
@@ -29026,7 +29028,10 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.Is3D">
             <summary>
-            3d option (VarioScan, VarioScan-II, Z-Shift)
+            3d option 
+            <para>
+            Used with like as VarioScan, VarioScan-II, Z-Shift, ... <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.IsScanAhead">
@@ -29034,7 +29039,7 @@
             ScanAhead option 
             </summary>
             <remarks>
-            Only for ExcelliSCAN(or IntelliSCAN IV) scanner product <br/>
+            Used with ExcelliSCAN(or IntelliSCAN IV) scanner product only. <br/>
             Also, above RTC6 <br/>
             </remarks>
         </member>
@@ -29051,6 +29056,7 @@
             SyncAxis option
             </summary>
             <remarks>
+            Used with XL-SCAN product only. <br/>
             Above RTC6 and ACS controller <br/>
             </remarks>
         </member>
@@ -30756,10 +30762,10 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData2D.Delta">
             <summary>
             Error dx, dy deviation (mm)
-            </summary>
-            <remarks>
+            <para>
             = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData2D.Measured">Measured</see> - <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData2D.Reference">Reference</see> <br/>
-            </remarks>
+            </para>
+            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.CorrectionData2D.#ctor(System.Numerics.Vector2,System.Numerics.Vector2)">
             <summary>
@@ -31089,7 +31095,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlExternalControl(SpiralLab.Sirius2.Scanner.Rtc.IRtcExternalControlMode,System.UInt32)">
             <summary>
-            External control by <c>IRtcExternalControlMode</c>
+            External control by <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcExternalControlMode">IRtcExternalControlMode</see>
             </summary>
             <remarks>
             RTC4: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc4ExternalControlMode">Rtc4ExternalControlMode</see> <br/>
@@ -31850,7 +31856,7 @@
             </code>
             </summary>
             <param name="frequency">Sampling frequency (Hz)<br/>Max. frequency: ~100KHz <br/>Min. time resolution: 10 usec<br/></param>
-            <param name="channels">Array of <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.MeasurementChannels">MeasurementChannels</see><br/>RTC4: 2 channels<br/>RTC5: 4 channels<br/>RTC6: 8 channels<br/></param>
+            <param name="channels">Array of <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.MeasurementChannels">MeasurementChannels</see><br/>RTC4: Max. 2 channels<br/>RTC5: Max. 4 channels<br/>RTC6: Max. 8 channels<br/></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.ListMeasurementEnd">
@@ -32331,8 +32337,7 @@
                                |                 |       
                                |                 |  
                                |-----------------|   
-            Conveyor Encoder(+) into RTC MoF X(+) Encoder
-            Z angle to -90° with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">PrimaryHeadBaseOffset</see> like as :<br/> 
+            Conveyor Encoder(+) into RTC MoF X(+) Encoder        
             var head2nd = rtc as IRtc2ndHead;
             var offset = new SpiralLab.Sirius2.Mathematics.Offset(0, 0, -90);
             head2nd.PrimaryHeadBaseOffset = offset;
@@ -32978,7 +32983,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcSignalLevel.InitLaser12SignalLevel">
             <summary>
-            Signal level Laser1(Pin1), Laser2(Pin9) at LASER Port 
+            Signal level <c>LASER1</c>(Pin1), <c>LASER2</c>(Pin9) at LASER Port 
             </summary>
             <remarks>
             Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevels.ActiveHigh">RtcSignalLevels.ActiveHigh</see>. <br/>
@@ -32988,7 +32993,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcSignalLevel.InitLaserOnSignalLevel">
             <summary>
-            Signal level LaserOn(Pin2) at LASER Port 
+            Signal level <c>LASERON</c>(Pin2) at LASER Port 
             </summary>
             <remarks>
             Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevels.ActiveHigh">RtcSignalLevels.ActiveHigh</see>. <br/>
@@ -33054,6 +33059,9 @@
             <summary>
             IRtcSkyWriting interface
             </summary>
+            <remarks>
+            Above RTC5. <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcSkyWriting.ListSkyWritingBegin(SpiralLab.Sirius2.Scanner.Rtc.SkyWritingMode,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>

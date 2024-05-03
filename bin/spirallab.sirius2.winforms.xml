@@ -15891,6 +15891,11 @@
             ImageFileBrowser
             </summary>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.ImageFileBrowser.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.ImageFileBrowser.InitializeDialog(System.Windows.Forms.OpenFileDialog)">
             <inheritdoc/>
         </member>
@@ -23545,6 +23550,11 @@
             <img src="images/license.png"/> <br/>
             </remarks>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.LicenseForm.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.LicenseForm.components">
             <summary>
             Required designer variable.
@@ -23560,11 +23570,6 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.UI.LicenseForm.#ctor">
-            <summary>
-            Constructor
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.UI.PowerMapCategoriesForm">
