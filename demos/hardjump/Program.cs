@@ -54,15 +54,16 @@ namespace Demos
             // Default (1:1) correction file
             // Field correction file path: \correction\cor_1to1.ct5
             var correctionFile = Path.Combine(Config.CorrectionPath, "cor_1to1.ct5");
+            // If RTC4
+            //var correctionFile = Path.Combine(Config.CorrectionPath, "cor_1to1.ctb");
 
-            // Create virtual RTC controller (without valid RTC controller)
+            // Create RTC controller 
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
-            // Create RTC5 controller
+            //var rtc = ScannerFactory.CreateRtc4(0, kfactor, LaserModes.Yag1, correctionFile);
             //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
-            // Create RTC6 controller
             var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
-            // Create RTC6 Ethernet controller
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6SyncAxis(0, "your config xml file");
 
             // Initialize RTC controller
             success &= rtc.Initialize();
@@ -106,11 +107,10 @@ namespace Demos
             do
             {
                 Console.WriteLine("Testcase for hard jump tuning mode");
-                Console.WriteLine("'V' : disable jump mode (vector mode)");
-                Console.WriteLine("'J' : enable jump mode (jump mode)");
-                Console.WriteLine("'1' : jump and on");
-                Console.WriteLine("'2' : jump(hard/microvector) and on");
-                Console.WriteLine("'3' : jump and drills (iDRIVE: intelliSCAN, intellicube, intelliWELD or intelliDRILL scan system only)");
+                Console.WriteLine("'V' : disable jump mode");
+                Console.WriteLine("'J' : enable jump mode");
+                Console.WriteLine("'1' : jump and laser on");
+                Console.WriteLine("'2' : hard jump and laser on");
                 Console.WriteLine("'Q' : quit");
                 Console.Write("Select your target : ");
                 key = Console.ReadKey(false);
@@ -132,7 +132,7 @@ namespace Demos
                         {
                             // Configure jump tuning mode at primary scan head
                             var jumpMode = RtcJumpMode.Empty;
-                            jumpMode.Flag = JumpModeFlags.EnabledButDeactivated;
+                            jumpMode.Flag = JumpModeFlags.EnabledAndActivated;
                             jumpMode.JumpTuningPrimaryX = 1;
                             jumpMode.JumpTuningPrimaryY = 1;
                             jumpMode.LimitLength = 0;
@@ -140,13 +140,10 @@ namespace Demos
                         }
                         break;
                     case ConsoleKey.D1:
-                        DrawJumpAndOn(laser, rtc, 0);
+                        DrawJumpAndOn(laser, rtc, false);
                         break;
                     case ConsoleKey.D2:
-                        DrawJumpAndOn(laser, rtc, 1);
-                        break;
-                    case ConsoleKey.D3:
-                        DrawJumpAndDrill(laser, rtc);
+                        DrawJumpAndOn(laser, rtc, true);
                         break;
                 }
             } while (true);
@@ -155,7 +152,7 @@ namespace Demos
             laser.Dispose();
         }
        
-        private static bool DrawJumpAndOn(ILaser laser, IRtc rtc, int hardJumpIfOne)
+        private static bool DrawJumpAndOn(ILaser laser, IRtc rtc, bool hardJump)
         {
             var rtcJumpMode = rtc as IRtcJumpMode;
             Debug.Assert(rtcJumpMode != null);
@@ -181,13 +178,10 @@ namespace Demos
             // Each dx = 1 mm
             for (float x = -10; x <= 10; x += 1)
             {
-                if (1 != hardJumpIfOne)
-                {
-                    success &= rtcJumpMode.ListJumpMode(JumpModeFlags.EnabledAndActivated);
-                    success &= rtc.ListJumpTo(new Vector2(x, 0));
-                }
+                if (hardJump)
+                    success &= rtcJumpMode.ListHardJump(new Vector2(x, 0));
                 else
-                    success &= rtcJumpMode.ListJumpHard(new Vector2(x, 0), 0, 0);
+                    success &= rtc.ListJumpTo(new Vector2(x, 0));
                 // 1ms
                 success &= rtc.ListLaserOn(1);
                 if (!success)
@@ -202,61 +196,12 @@ namespace Demos
             }
 
             // Temporary measurement file
-            var measurementFile = Path.Combine(Config.MeasurementPath, $"measurement_jumpmode{hardJumpIfOne}.txt");
+            var measurementFile = Path.Combine(Config.MeasurementPath, $"measurement_jumpmode{hardJump}.txt");
             // Save measurement result to file
             success &= RtcMeasurementHelper.Save(measurementFile, rtcMeasurement);
             // Plot as a graph
-            RtcMeasurementHelper.Plot(measurementFile, $"Jump and Shoots {hardJumpIfOne}");
+            RtcMeasurementHelper.Plot(measurementFile, $"Jump and Shoots {hardJump}");
           
-            return success;
-        }
-        private static bool DrawJumpAndDrill(ILaser laser, IRtc rtc)
-        {
-            var rtcJumpMode = rtc as IRtcJumpMode;
-            Debug.Assert(rtcJumpMode != null);
-
-            var rtcMeasurement = rtc as IRtcMeasurement;
-            Debug.Assert(rtcMeasurement != null);
-            // 20KHz Sample rate (max 100KHz)
-            double sampleRateHz = 20 * 1000;
-            // Max 4 channels at RTC5
-            var channels = new MeasurementChannels[4]
-            {
-                 MeasurementChannels.SampleX, //X commanded
-                 MeasurementChannels.SampleY, //Y commanded
-                 MeasurementChannels.LaserOn, //Gate signal 0/1
-                 MeasurementChannels.OutputPeriod, //Converted Raw Data to Frequency(KHz)
-            };
-
-            bool success = true;
-            // Start list buffer
-            success &= rtc.ListBegin(ListTypes.Auto);
-            success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
-            success &= rtcJumpMode.ListJumpMode(JumpModeFlags.EnabledAndActivated);
-
-            // Each dx = 1 mm
-            for (float x = -10; x <= 10; x += 1)
-            {
-                // 1ms
-                success &= rtcJumpMode.ListJumpAndDrill(new Vector2(x, 0), 1000);
-                if (!success)
-                    break;
-            }
-            success &= rtc.ListJumpTo(Vector2.Zero);
-            success &= rtcMeasurement.ListMeasurementEnd();
-            if (success)
-            {
-                success &= rtc.ListEnd();
-                success &= rtc.ListExecute();
-            }
-
-            // Temporary measurement file
-            var measurementFile = Path.Combine(Config.MeasurementPath, $"measurement_jumpmode3.txt");
-            // Save measurement result to file
-            success &= RtcMeasurementHelper.Save(measurementFile, rtcMeasurement);
-            // Plot as a graph
-            RtcMeasurementHelper.Plot(measurementFile, "Jump and Drills");
-
             return success;
         }
     }

@@ -82,13 +82,18 @@ namespace Demos
         
             // RTC5,6 using 20bits resolution
             var kfactor = Math.Pow(2, 20) / fov;
+            // RTC4 using 16bits resolution
+            //var kfactor = Math.Pow(2, 16) / fov;
 
             // Default (1:1) correction file
             // Field correction file path: \correction\cor_1to1.ct5
             var correctionFile = Path.Combine(Config.CorrectionPath, "cor_1to1.ct5");
+            // If RTC4
+            //var correctionFile = Path.Combine(Config.CorrectionPath, "cor_1to1.ctb");
 
             // Create RTC controller 
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc4(0, kfactor, LaserModes.Yag1, correctionFile);
             //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
@@ -208,7 +213,9 @@ namespace Demos
             Debug.Assert(rtcMeasurement != null);
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000; 
+            // Max 2 channels at RTC4
             // Max 4 channels at RTC5
+            // Max 8 channels at RTC6
             var channels = new MeasurementChannels[4]
             {
                  MeasurementChannels.SampleX, //X commanded
@@ -248,7 +255,9 @@ namespace Demos
             Debug.Assert(rtcMeasurement != null);
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
+            // Max 2 channels at RTC4
             // Max 4 channels at RTC5
+            // Max 8 channels at RTC6
             var channels = new MeasurementChannels[4]
             {
                  MeasurementChannels.SampleX, //X commanded
@@ -299,7 +308,9 @@ namespace Demos
             Debug.Assert(rtcMeasurement != null);
             // 10KHz Sample rate (max 100KHz)
             double sampleRateHz = 10 * 1000;
+            // Max 2 channels at RTC4
             // Max 4 channels at RTC5
+            // Max 8 channels at RTC6
             var channels = new MeasurementChannels[4]
             {
                  MeasurementChannels.SampleX, //X commanded

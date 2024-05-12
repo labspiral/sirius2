@@ -1159,8 +1159,8 @@ namespace Demos
                     MeasurementChannels.Enc0Counter,
                     MeasurementChannels.Enc1Counter,
                 };
-                if (rtc.Is3D)
-                    channels[2] = MeasurementChannels.SampleAZ_Coor;
+                //if (rtc.Is3D)
+                //    channels[2] = MeasurementChannels.SampleAZ_Coor;
                 var entity2 = EntityFactory.CreateMeasurementBegin(5 * 1000, channels);
                 document.ActInsert(entity2, document.ActiveLayer, 0);
             }
@@ -1418,12 +1418,12 @@ namespace Demos
             DialogResult result = dlg.ShowDialog();
             if (result != DialogResult.OK)
                 return;
-            var entity = new EntityRaster(2, dlg.FileName);
+            var entity = new EntityRaster(dlg.FileName, 2);
             Document.ActAdd(entity);
         }
         private void BtnSiriusCharacterSetText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateSiriusCharacterSetText(Config.FontDefaultSirius, CharacterSetFormats.Date, 5);
+            var entity = EntityFactory.CreateSiriusCharacterSetText(Config.SiriusFontDefault, CharacterSetFormats.Date, 5);
             document.ActAdd(entity);
         }
         private void BtnCharacterSetText_Click(object sender, EventArgs e)
@@ -1438,7 +1438,7 @@ namespace Demos
         }
         private void BtnSiriusText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateSiriusText(Config.FontDefaultSirius, "SIRIUS2", 2.5);
+            var entity = EntityFactory.CreateSiriusText(Config.SiriusFontDefault, "SIRIUS2", 2.5);
             document.ActAdd(entity);
         }
         private void BtnCopy_Click(object sender, EventArgs e)
@@ -1660,7 +1660,7 @@ namespace Demos
         /// Event handler for <c>IRemote</c> has ended
         /// </summary>
         /// <param name="remote"><c>IRemote</c></param>
-        /// <param name="mode"><c>ControlModes</c>></param>
+        /// <param name="mode"><c>ControlModes</c></param>
         private void Remote_OnModeChanged(IRemote remote, ControlModes mode)
         {
             this.Invoke(new MethodInvoker(delegate ()
@@ -1855,6 +1855,7 @@ namespace Demos
             EntityLayer.PropertyVisibility(rtc);
             EntityPoints.PropertyVisibility(rtc);
             EntityRampBegin.PropertyVisibility(rtc);
+            EntityMoFBegin.PropertyVisibility(rtc);
         }
         /// <summary>
         /// Enable(or disable) controls during <see cref="IMarker">IMarker</see> status is busy

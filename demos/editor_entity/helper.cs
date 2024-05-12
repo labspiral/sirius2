@@ -131,7 +131,7 @@ namespace Demos
             var signalLevelLaser12 = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "SIGNALLEVEL_LASER12", "High") == "High" ? RtcSignalLevels.ActiveHigh : RtcSignalLevels.ActiveLow;
             var signalLevelLaserOn = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "SIGNALLEVEL_LASERON", "High") == "High" ? RtcSignalLevels.ActiveHigh : RtcSignalLevels.ActiveLow;
             var rtcType = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "TYPE", "Rtc5");
-            var sLaserMode = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "LASERMODE", "Yag5");
+            var sLaserMode = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "LASERMODE", "Yag1");
             var laserMode = (LaserModes)Enum.Parse(typeof(LaserModes), sLaserMode);
             switch (rtcType.Trim().ToLower())
             {
@@ -588,7 +588,7 @@ namespace Demos
             success &= document.ActAdd(imagetext1);
 
             // Raster entity 
-            var raster1 = EntityFactory.CreateRaster(5, filename1);
+            var raster1 = EntityFactory.CreateRaster(filename1, 5);
             raster1.Name = "Raster1";
             raster1.RasterMode = RasterModes.MicroVector;
             raster1.PixelPeriod = 100;

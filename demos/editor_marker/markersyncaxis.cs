@@ -572,7 +572,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             success &= NotifyBeforeEntity(entity);
             if (!success)
             {
-                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark entity at before event handler"); ;
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark entity at before event handler"); 
                 return success;
             }
             if (entity is IMarkerable markerable)
@@ -584,7 +584,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             success &= NotifyAfterEntity(entity);
             if (!success)
             {
-                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark entity at after event handler"); ;
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark entity at after event handler");
                 return success;
             }
             return success;
@@ -627,7 +627,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                     success &= NotifyBeforeLayer(layer);
                     if (!success)
                     {
-                        Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at before event handler"); ;
+                        Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at before event handler"); 
                         break;
                     }
 
@@ -725,7 +725,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
                 success &= NotifyBeforeLayer(layer);
                 if (!success)
                 {
-                    Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at before event handler"); ;
+                    Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at before event handler"); 
                     break;
                 }
 

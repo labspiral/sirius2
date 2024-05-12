@@ -28,7 +28,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Numerics;
 using System.Threading;
-
 using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;

@@ -168,6 +168,16 @@
 
 **7. Version history**
 
+* 2024.5.13 v.1.30.1460
+  - RTC6e 
+     - added) high performance mode 
+     - added) connection loss behavior
+  - added) (experimental) global hard jump mode
+     - can be set by Config.IsConvertJumpToHardJump
+  - added) (experimental) interactive camera
+  - fixed) invisible ray when do simulation 
+  - fixed) invalid Bit flags at RTC
+
 * 2024.5.2 v.1.29.1420
   - added) EntityStitchedImage entity 
   - added) (experimental version) RTC4 controller

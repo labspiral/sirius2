@@ -198,9 +198,9 @@ namespace Demos
                 return;
             if (null != marker.Remote)
             {
-                if (marker.Remote.ControlMode != SpiralLab.Sirius2.Winforms.Remote.ControlModes.Remote)
+                if (marker.Remote.ControlMode == SpiralLab.Sirius2.Winforms.Remote.ControlModes.Local)
                 {
-                    Logger.Log(Logger.Types.Debug, $"external dio [{bitNo}]:{edge} has changed but it's local mode");
+                    Logger.Log(Logger.Types.Debug, $"external dio [{bitNo}]:{edge} has changed but control mode is LOCAL");
                     return;
                 }
             }

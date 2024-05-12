@@ -180,7 +180,7 @@ namespace Demos
                 if (!File.Exists(SpiralLab.Sirius2.Config.MeasurementGNUPlotProgramPath))
                 {
                     if (DialogResult.Yes == MessageBox.Show($"gnuplot program is not exist at '{SpiralLab.Sirius2.Config.MeasurementGNUPlotProgramPath}'.{Environment.NewLine}Press 'Yes' to open downloadable webpage", "Warning", MessageBoxButtons.YesNo))
-                        System.Diagnostics.Process.Start("http://tmacchant33.starfree.jp/gnuplot_bin.html");
+                        System.Diagnostics.Process.Start("http://gnuplot.info/download.html");
                     return;
                 }
                 isMeasurementPlot = value;
@@ -632,7 +632,7 @@ namespace Demos
                     success &= NotifyBeforeLayer(layer);
                     if (!success)
                     {
-                        Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at before event handler"); ;
+                        Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at before event handler"); 
                         break;
                     }
                     success &= LayerWork(i, Offsets[i], j, layer);
@@ -641,7 +641,7 @@ namespace Demos
                     success &= NotifyAfterLayer(layer);
                     if (!success)
                     {
-                        Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at after event handler"); ;
+                        Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark layer at after event handler");
                         break;
                     }
                 }
