@@ -13089,6 +13089,7 @@
             bool success = true;
             success &amp;= rtc.ListBegin();
             success &amp;= laser.ListBegin();
+            ...
             success &amp;= laser.ListPower(5); // output power to 5W
             success &amp;= rtc.ListJumpTo(new Vector2(radius, 0));
             success &amp;= rtc.ListArcTo(Vector2.Zero, 360); // 1st circle
@@ -13096,6 +13097,7 @@
             success &amp;= rtc.ListJumpTo(new Vector2(-radius, 0)); // 2nd circle
             success &amp;= rtc.ListArcTo(Vector2.Zero, 360);
             success &amp;= rtc.ListJumpTo(Vector2.Zero);
+            ...
             success &amp;= laser.ListEnd();
             success &amp;= rtc.ListEnd();
             if (success)
@@ -13151,9 +13153,11 @@
         <member name="M:SpiralLab.Sirius2.Laser.ILaserGuideControl.CtlGuide(System.Boolean)">
             <summary>
             Enable(or disable) guided laser beam
+            <para>
+            User should be implement its own codes to control guide(or pilot) laser beam. <br/>
+            </para>
             </summary>
             <remarks>
-            User should be implement its own codes to control guide(or pilot) laser beam. <br/>
             If <c>False</c>, also <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlLaserSignal(System.Boolean)">IRtc.CtlLaserSignal(False)</see> would be called by automatically. <br/>
             If <c>True</c>, also <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlLaserSignal(System.Boolean)">IRtc.CtlLaserSignal(True)</see> would be called by automatically. <br/>
             </remarks>
@@ -13241,9 +13245,9 @@
             Assigned <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">IPowerMap</see> for calculate(or compensate) output power
             </summary>
             <remarks>
-            If <see cref="P:SpiralLab.Sirius2.Laser.ILaserPowerControl.PowerMap">PowerMap</see> is not <c>null</c>, output power value would be compensated by power map table. <br/>
-            If <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsEnableLookUp">IPowerMap.IsEnableLookUp</see> is <c>True</c>, every output power values (W) by <see cref="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.CtlPower(System.Double,System.String)">CtlPower</see>, <see cref="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.ListPower(System.Double,System.String)">ListPower</see> are affected(or compensated). <br/>
-            To disable <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">PowerMap</see> function, configure it as <c>null</c>. <br/>
+            If <see cref="P:SpiralLab.Sirius2.Laser.ILaserPowerControl.PowerMap">PowerMap</see> is not <c>null</c>, output power value would be compensated by powermap table. <br/>
+            If <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsEnableLookUp">IPowerMap.IsEnableLookUp</see> is <c>True</c>, every output power values (W) by <see cref="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.CtlPower(System.Double,System.String)">CtlPower</see>, <see cref="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.ListPower(System.Double,System.String)">ListPower</see> are compensated by powermap table. <br/>
+            To disable <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">PowerMap</see> feature, set it as <c>null</c>. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.CtlPower(System.Double,System.String)">
@@ -15615,7 +15619,7 @@
             <summary>
             Most verbose level. Used for development and seldom enabled in production.
             <para>
-            Default Min. log level <br/>
+            Default min. log level <br/>
             </para>
             </summary>
         </member>
@@ -17755,7 +17759,7 @@
             <param name="laser12SignalLevel"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevels">LaseRtcSignalLevelsrModes</see> for LASER 1,2</param>
             <param name="laserOnSignalLevel"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevels">RtcSignalLevels</see> for LASERON</param>
             <param name="ctFileName">Field correction file<br/>Loaded into <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables.Table1">Table1</see> also.</param>
-            <param name="connectionLossBehavior"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet.RtcEthernetConnectionLossBehavior">RtcEthernetConnectionLossBehavior</see> <br/>Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet.RtcEthernetConnectionLossBehavior.Disable">RtcEthernetConnectionLossBehavior.Disable</see></param>
+            <param name="connectionLossBehavior"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet.RtcEthernetConnectionLossBehavior">RtcEthernetConnectionLossBehavior</see> <br/>Default: <see cref="!:RtcEthernetConnectionLossBehavior.Disable">RtcEthernetConnectionLossBehavior.Disable</see></param>
             <param name="isHighPerformanceMode">Enable(or disable) high performance mode<br/>Default: <c>False</c></param>
             <returns><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet">Rtc6Ethernet</see></returns>
         </member>
@@ -31917,8 +31921,8 @@
             <summary>
             IRtcInformation interface
             <para>
-            TO support queriable(READ ONLY) information from RTC card. <br/>
-            For example, <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5MarkingInfo">Rtc5MarkingInfo</see> has a MoF overflow information. <br/>
+            To support queriable(means, read only) information from RTC card. <br/>
+            For example, <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5MarkingInfo">Rtc5MarkingInfo</see> has a MoF overflow information like as <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5MarkingInfo.Bit.MofOverflowInXDirection">MofOverflowInXDirection</see> <br/>
             </para>
             </summary>
         </member>
@@ -32097,42 +32101,82 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcJumpMode.VectorTuningPrimaryX">
             <summary>
-            VA1
+            VA1 
+            <para>
+            Vector tuning <br/>
+            Primary head <br/>
+            X axis <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcJumpMode.VectorTuningPrimaryY">
             <summary>
             VA2
+            <para>
+            Vector tuning <br/>
+            Primary head <br/>
+            Y axis <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcJumpMode.VectorTuningSecondaryX">
             <summary>
             VB1
+            <para>
+            Vector tuning <br/>
+            Secondary head <br/>
+            X axis <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcJumpMode.VectorTuningSecondaryY">
             <summary>
             VB2
+            <para>
+            Vector tuning <br/>
+            Secondary head <br/>
+            Y axis <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcJumpMode.JumpTuningPrimaryX">
             <summary>
             JA1
+            <para>
+            Jump tuning <br/>
+            Primary head <br/>
+            X axis <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcJumpMode.JumpTuningPrimaryY">
             <summary>
             JA2
+            <para>
+            Jump tuning <br/>
+            Primary head <br/>
+            Y axis <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcJumpMode.JumpTuningSecondaryX">
             <summary>
             JB1
+            <para>
+            Jump tuning <br/>
+            Secondary head <br/>
+            X axis <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcJumpMode.JumpTuningSecondaryY">
             <summary>
             JB2
+            <para>
+            Jump tuning <br/>
+            Secondary head <br/>
+            Y axis <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcJumpMode.Tag">
