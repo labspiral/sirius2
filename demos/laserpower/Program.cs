@@ -97,13 +97,13 @@ namespace Demos
                 case 1:
                     var myLaserDOut8 = new MyLaserDOut(0, "My DOut 8Bits Laser", maxWatt, 0, 255);
                     myLaserDOut8.PowerControlMethod = PowerControlMethods.DigitalBits;
-                    myLaserDOut8.DigitalBitsPortNo = 2; //RTC EXTENSION PORT 2 (8bits)
+                    myLaserDOut8.DigitalBitsPortNo = 2; //RTC EXTENSION2 PORT (8bits)
                     laser = myLaserDOut8;
                     break;
                 case 2:
                     var myLaserDOut16 = new MyLaserDOut(0, "My DOut 16Bits Laser", maxWatt, 0, 65535);
                     myLaserDOut16.PowerControlMethod = PowerControlMethods.DigitalBits;
-                    myLaserDOut16.DigitalBitsPortNo = 1; //RTC EXTENSION PORT 1 (16bits)
+                    myLaserDOut16.DigitalBitsPortNo = 1; //RTC EXTENSION1 PORT (16bits)
                     laser = myLaserDOut16;
                     break;
                 case 3:
@@ -134,7 +134,7 @@ namespace Demos
                 case 8:
                     var myLaserDOut82 = new MyLaserDOut2(0, "My DOut 8Bits Laser", maxWatt, 0, 255);
                     myLaserDOut82.PowerControlMethod = PowerControlMethods.DigitalBits;
-                    myLaserDOut82.DigitalBitsPortNo = 2; //RTC EXTENSION PORT 2 (8bits)
+                    myLaserDOut82.DigitalBitsPortNo = 2; //RTC EXTENSION2 PORT (8bits)
                     laser = myLaserDOut82;
                     break;
             }
@@ -231,8 +231,8 @@ namespace Demos
 
         /// <summary>
         /// Measuremented range 
-        /// EXTENSION PORT 2 (D.Out 8bits) : 0~255
-        /// EXTENSION PORT 1 (D.Out 16bits) : 0~65535
+        /// EXTENSION1 PORT (D.Out 16bits) : 0~65535
+        /// EXTENSION2 PORT (D.Out 8bits) : 0~255
         /// Analog 1/2 : 0~10 V
         /// Pulse width : usec
         /// RS232 : unsupported

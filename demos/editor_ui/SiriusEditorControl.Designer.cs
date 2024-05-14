@@ -97,6 +97,7 @@
             this.mnuMoF = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMoFXYBeginEnd = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMoFXYWait = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMoFXYWaitRange = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuMoFAngularBeginEnd = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMoFAngularWait = new System.Windows.Forms.ToolStripMenuItem();
@@ -371,6 +372,7 @@
             this.rtcDIUserControl1.DIExt1 = null;
             this.rtcDIUserControl1.DILaserPort = null;
             this.rtcDIUserControl1.Name = "rtcDIUserControl1";
+            this.rtcDIUserControl1.TimerInterval = 100;
             // 
             // rtcDOUserControl1
             // 
@@ -750,6 +752,7 @@
             this.mnuMoF.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuMoFXYBeginEnd,
             this.mnuMoFXYWait,
+            this.mnuMoFXYWaitRange,
             this.toolStripSeparator8,
             this.mnuMoFAngularBeginEnd,
             this.mnuMoFAngularWait,
@@ -769,6 +772,11 @@
             this.mnuMoFXYWait.AutoToolTip = true;
             resources.ApplyResources(this.mnuMoFXYWait, "mnuMoFXYWait");
             this.mnuMoFXYWait.Name = "mnuMoFXYWait";
+            // 
+            // mnuMoFXYWaitRange
+            // 
+            resources.ApplyResources(this.mnuMoFXYWaitRange, "mnuMoFXYWaitRange");
+            this.mnuMoFXYWaitRange.Name = "mnuMoFXYWaitRange";
             // 
             // toolStripSeparator8
             // 
@@ -1517,5 +1525,6 @@
         private System.Windows.Forms.ToolStripButton btnTriangle;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel lblLog;
+        private System.Windows.Forms.ToolStripMenuItem mnuMoFXYWaitRange;
     }
 }

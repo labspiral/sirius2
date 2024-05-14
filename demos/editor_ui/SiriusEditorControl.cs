@@ -871,6 +871,7 @@ namespace Demos
 
             mnuMoFXYBeginEnd.Click += MnuMofXYBeginEnd_Click;
             mnuMoFXYWait.Click += MnuMofXYWait_Click;
+            mnuMoFXYWaitRange.Click += MnuMoFXYWaitRange_Click;
             mnuMoFAngularBeginEnd.Click += MnuMofAngularBeginEnd_Click;
             mnuMoFAngularWait.Click += MnuMofAngularWait_Click;
             mnuMoFExternalStartDelay.Click += MnuMoFExternalStartDelay_Click;
@@ -1102,6 +1103,11 @@ namespace Demos
             var entity = EntityFactory.CreateMoFWait(RtcEncoders.EncX, RtcEncoderWaitConditions.Over, 10);
             document.ActAdd(entity);
         }
+        private void MnuMoFXYWaitRange_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateMoFWaitRange(new Vector2(5, 5), new Vector2(6, 6));
+            document.ActAdd(entity);
+        }
         private void MnuMofXYBeginEnd_Click(object sender, EventArgs e)
         {
             {
@@ -1130,7 +1136,7 @@ namespace Demos
         }
         private void MnuMeasurementBeginEnd_Click(object sender, EventArgs e)
         {
-            if (rtc is Rtc5)
+            if (rtc is Rtc4)
             {
                 var entity1 = EntityFactory.CreateMeasurementEnd();
                 document.ActAdd(entity1);
@@ -1138,13 +1144,11 @@ namespace Demos
                 {
                     MeasurementChannels.SampleX,
                     MeasurementChannels.SampleY,
-                    MeasurementChannels.SampleZ,
-                    MeasurementChannels.LaserOn,
                 };
                 var entity2 = EntityFactory.CreateMeasurementBegin(5 * 1000, channels);
                 document.ActInsert(entity2, document.ActiveLayer, 0);
             }
-            else if (rtc is Rtc6 rtc6)
+            else
             {
                 var entity1 = EntityFactory.CreateMeasurementEnd();
                 document.ActAdd(entity1);
@@ -1154,13 +1158,11 @@ namespace Demos
                     MeasurementChannels.SampleY,
                     MeasurementChannels.SampleZ,
                     MeasurementChannels.LaserOn,
-                    MeasurementChannels.OutputPeriod,
-                    MeasurementChannels.PulseLength,
-                    MeasurementChannels.Enc0Counter,
-                    MeasurementChannels.Enc1Counter,
+                    //MeasurementChannels.OutputPeriod,
+                    //MeasurementChannels.PulseLength,
+                    //MeasurementChannels.Enc0Counter,
+                    //MeasurementChannels.Enc1Counter,
                 };
-                //if (rtc.Is3D)
-                //    channels[2] = MeasurementChannels.SampleAZ_Coor;
                 var entity2 = EntityFactory.CreateMeasurementBegin(5 * 1000, channels);
                 document.ActInsert(entity2, document.ActiveLayer, 0);
             }
@@ -1297,19 +1299,18 @@ namespace Demos
 
         private void BtnPoints_Click(object sender, EventArgs e)
         {
-            // create some points
-            Vector2[] locations = new Vector2[]
+            // create test 500 points
+            int counts = 500;
+            var rand = new Random();
+            var locations = new List<Vector2>(counts);
+            for (int i = 0; i < counts; i++)
             {
-                new Vector2(-1,1),
-                new Vector2(-1.1f,1.2f),
-                new Vector2(-1.2f,1.0f),
-                new Vector2(-0.9f,-0.8f),
-                new Vector2(-1,1.1f),
-                new Vector2(-1.2f,0.7f),
-                new Vector2(-1.4f,1.1f),
-                new Vector2(-1.2f,-0.95f),
-            };
-            var entity = EntityFactory.CreatePoints(locations, 10);
+                locations.Add(new Vector2(
+                        (float)(rand.NextDouble() * 10.0),
+                        (float)(rand.NextDouble() * 10.0)
+                        ));
+            }
+            var entity = EntityFactory.CreatePoints(locations.ToArray(), 50);
             document.ActAdd(entity);
         }
         private void BtnPoint_Click(object sender, EventArgs e)

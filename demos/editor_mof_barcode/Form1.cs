@@ -94,7 +94,7 @@ namespace Demos
             Color penColor = SpiralLab.Sirius2.Winforms.Config.PenColors[0];
 
             // For example
-            // 1. wait until DIN0 goes to HIGH at Extentension Port 1
+            // 1. wait until DIN0 goes to HIGH at Extension1 Port
             // 2. mof begin with reset encoder
             // 3. mark barcode and text 
             //   - text has changed by script

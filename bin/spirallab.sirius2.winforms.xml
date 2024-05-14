@@ -1119,6 +1119,63 @@
               Looks up a localized string similar to Width.
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.control.mofwaitrange">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwaitrange.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwaitrange.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwaitrange.Matrixstack_DESC">
+             <summary>
+               Looks up a localized string similar to Apply(or Calculate) Matrix Stack or Not
+            Default: False.
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwaitrange.Matrixstack_DISP">
+            <summary>
+              Looks up a localized string similar to Matrix stack.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwaitrange.Max_DESC">
+            <summary>
+              Looks up a localized string similar to Range Max. X,Y Position (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwaitrange.Max_DISP">
+            <summary>
+              Looks up a localized string similar to Max.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwaitrange.Min_DESC">
+            <summary>
+              Looks up a localized string similar to Range Min. X,Y Position (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwaitrange.Min_DISP">
+            <summary>
+              Looks up a localized string similar to Min.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwaitrange.MoF_C">
+            <summary>
+              Looks up a localized string similar to MoF.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwaitrange.Range_C">
+            <summary>
+              Looks up a localized string similar to Range.
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.selectcorrection">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -1551,73 +1608,73 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.mofwait">
             <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
+              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwait.ResourceManager">
             <summary>
-              Returns the cached ResourceManager instance used by this class.
+              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwait.Culture">
             <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
+              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
+              재정의합니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwait.Angle_DESC">
             <summary>
-              Looks up a localized string similar to Encoder Wait Angle (°).
+              Encoder Wait Angle (°)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwait.Angle_DISP">
             <summary>
-              Looks up a localized string similar to Angle.
+              Angle과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwait.Condition_DESC">
             <summary>
-              Looks up a localized string similar to Encoder Wait Condition.
+              Encoder Wait Condition과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwait.Condition_DISP">
             <summary>
-              Looks up a localized string similar to Condition.
+              Condition과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwait.MoF_angular_C">
             <summary>
-              Looks up a localized string similar to MoF (angular).
+              MoF (angular)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwait.MoF_C">
             <summary>
-              Looks up a localized string similar to MoF.
+              MoF과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwait.MoF_xy_C">
             <summary>
-              Looks up a localized string similar to MoF (xy).
+              MoF (xy)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwait.Position_DESC">
             <summary>
-              Looks up a localized string similar to Encoder Wait Position (mm).
+              Encoder Wait Position (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwait.Position_DISP">
             <summary>
-              Looks up a localized string similar to Position.
+              Position과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwait.Wait_encoder_DESC">
             <summary>
-              Looks up a localized string similar to Target Encoder for Waiting.
+              Target Encoder for Waiting과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.mofwait.Wait_encoder_DISP">
             <summary>
-              Looks up a localized string similar to Wait encoder.
+              Wait encoder과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.timer">
@@ -1925,150 +1982,150 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.pen">
             <summary>
-              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.ResourceManager">
             <summary>
-              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Culture">
             <summary>
-              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
-              재정의합니다.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Frequency_DESC">
              <summary>
-               Laser Frequency (Hz) 
-            = 1 / Pulse Period (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
+               Looks up a localized string similar to Laser Frequency (Hz) 
+            = 1 / Pulse Period (usec).
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Frequency_DISP">
             <summary>
-              Frequency과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Frequency.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Jump_speed_DESC">
             <summary>
-              Scanner Jump Speed (mm/s)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Scanner Jump Speed (mm/s).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Jump_speed_DISP">
             <summary>
-              Jump speed과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Jump speed.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Laser_C">
             <summary>
-              Laser과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Laser.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Mark_speed_DESC">
             <summary>
-              Scanner Mark(or Arc) Speed (mm/s)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Scanner Mark(or Arc) Speed (mm/s).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Mark_speed_DISP">
             <summary>
-              Mark speed과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Mark speed.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power____DESC">
              <summary>
-               Laser Output Power (%).
-            Output (%) = Input Power (W) / Max Power (W) * 100.과(와) 유사한 지역화된 문자열을 찾습니다.
+               Looks up a localized string similar to Laser Output Power (%).
+            Output (%) = Input Power (W) / Max Power (W) * 100..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power____DISP">
             <summary>
-              Power (%)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Power (%).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_category_DESC">
              <summary>
-               Target Category(or Series) Name.
-            Look up PowerMap Table When Assigned.과(와) 유사한 지역화된 문자열을 찾습니다.
+               Looks up a localized string similar to Target Category(or Series) Name.
+            Look up PowerMap Table When Assigned..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_category_DISP">
             <summary>
-              Power Category과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Power category.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_Max__DESC">
              <summary>
-               Laser Max. Output Power (W).
-            Actual Output (W) = Max Power (W) * Output Power (%).과(와) 유사한 지역화된 문자열을 찾습니다.
+               Looks up a localized string similar to Laser Max. Output Power (W).
+            Actual Output (W) = Max Power (W) * Output Power (%)..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_Max__DISP">
             <summary>
-              Power (Max. W)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Power (Max. W).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_W__DESC">
              <summary>
-               Laser Output Power (W).
+               Looks up a localized string similar to Laser Output Power (W).
             Frequency : Min~Max Frequency * Power (%).
             Duty Cycle : Min~Max Duty Cycle * Power (%).
             Analog : Min~Max Voltage * Power (%).
-            DO8 : Min~Max Bit * Power (%).과(와) 유사한 지역화된 문자열을 찾습니다.
+            DO8 : Min~Max Bit * Power (%)..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Power_W__DISP">
             <summary>
-              Power (W)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Power (W).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_duty_cycle_DESC">
              <summary>
-               Laser Pulse Duty Cycle (%).
-            = Pulse Width / Pulse Period * 100.과(와) 유사한 지역화된 문자열을 찾습니다.
+               Looks up a localized string similar to Laser Pulse Duty Cycle (%).
+            = Pulse Width / Pulse Period * 100..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_duty_cycle_DISP">
             <summary>
-              Pulse cycle과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Pulse cycle.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_period_DESC">
              <summary>
-               Laser Pulse Period (usec).
-            = 1 / Pulse Frequency (Hz).과(와) 유사한 지역화된 문자열을 찾습니다.
+               Looks up a localized string similar to Laser Pulse Period (usec).
+            = 1 / Pulse Frequency (Hz)..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_period_DISP">
             <summary>
-              Pulse period과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Pulse period.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_pitch_DESC">
              <summary>
-               Estimated Pulse Pitch (um).
-            Mark Speed * 1000 / Frequency (Hz).과(와) 유사한 지역화된 문자열을 찾습니다.
+               Looks up a localized string similar to Estimated Pulse Pitch (um).
+            Mark Speed * 1000 / Frequency (Hz)..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_pitch_DISP">
             <summary>
-              Pulse pitch과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Pulse pitch.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_width_DESC">
              <summary>
-               Laser Pulse Width (usec).
-            Should be Lower than &lt;= 1/ Pulse Frequency.과(와) 유사한 지역화된 문자열을 찾습니다.
+               Looks up a localized string similar to Laser Pulse Width (usec).
+            Should be Lower than &lt;= 1/ Pulse Frequency..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Pulse_width_DISP">
             <summary>
-              Pulse width과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Pulse width.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pen.Scanner_C">
             <summary>
-              Scanner과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Scanner.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.control.penrtc">
@@ -2187,7 +2244,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.SCANahead_off_shift_DISP">
             <summary>
-              Looks up a localized string similar to Laser Off Shift.
+              Looks up a localized string similar to Laser off shift.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.SCANahead_on_shift_DESC">
@@ -2197,7 +2254,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.SCANahead_on_shift_DISP">
             <summary>
-              Looks up a localized string similar to Laser On Shift.
+              Looks up a localized string similar to Laser on shift.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Scanner__Variable__C">
@@ -2234,7 +2291,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Sky_writing_enable_DISP">
             <summary>
-              Looks up a localized string similar to SW Enable.
+              Looks up a localized string similar to SW enable.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.penrtc.Sky_writing_laser_on_shift_DESC">
@@ -2410,7 +2467,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pensyncaxis.Approx_blend_limt_DISP">
             <summary>
-              Looks up a localized string similar to Blend Limt.
+              Looks up a localized string similar to Blend limt.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pensyncaxis.Minimal_mark_speed_DESC">
@@ -2420,7 +2477,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pensyncaxis.Minimal_mark_speed_DISP">
             <summary>
-              Looks up a localized string similar to Minimal Mark Speed.
+              Looks up a localized string similar to Minimal mark speed.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pensyncaxis.SDC_suppress_delay_time_DESC">
@@ -2430,7 +2487,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pensyncaxis.SDC_suppress_delay_time_DISP">
             <summary>
-              Looks up a localized string similar to SDC Delay.
+              Looks up a localized string similar to SDC delay.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pensyncaxis.SDC_suppress_DESC">
@@ -2440,12 +2497,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pensyncaxis.SDC_suppress_DISP">
             <summary>
-              Looks up a localized string similar to SDC Suppress.
+              Looks up a localized string similar to SDC suppress.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.pensyncaxis.SyncAxis_C">
             <summary>
-              Looks up a localized string similar to SyncAxis.
+              Looks up a localized string similar to syncAXIS.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.stitchedimage">
@@ -5743,6 +5800,82 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.CharacterSetSerialNo.Clone">
             <inheritdoc/>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWaitRange">
+            <summary>
+            EntityMoFWaitRange entity
+            </summary>
+            <remarks>
+            Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWaitRange(OpenTK.Vector2,OpenTK.Vector2)">EntityFactory.CreateMoFWaitRange</see>. <br/>
+            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofWaitRange(System.Numerics.Vector2,System.Numerics.Vector2,System.Boolean)">IRtcMoF.ListMofWaitRange</see>. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> or <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension">IRtcMoFExtension</see>. <br/>
+            Above RTC5 <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWaitRange.Min">
+            <summary>
+            <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions">RtcEncoderWaitConditions</see>
+            </summary>
+            <remarks>
+            Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions.Auto">RtcEncoderWaitConditions.Auto</see> 
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWaitRange.Max">
+            <summary>
+            <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions">RtcEncoderWaitConditions</see>
+            </summary>
+            <remarks>
+            Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions.Auto">RtcEncoderWaitConditions.Auto</see> 
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWaitRange.IsMatrixStack">
+            <summary>
+            Apply <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see> or not
+            <para>
+            Default: <c>False</c>
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWaitRange._Min">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWaitRange._Max">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWaitRange.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWaitRange.#ctor(OpenTK.Vector2,OpenTK.Vector2)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="min">Min. xy (mm)</param>
+            <param name="max">Max. xy (mm)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWaitRange.#ctor(OpenTK.Vector3,OpenTK.Vector3)">
+            <summary>
+            Constructor 
+            </summary>
+            <param name="min">Min. xyz (mm)<br/>Z value is not used at current version.</param>
+            <param name="max">Max. xyz (mm)<br/>Z value is not used at current version.</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWaitRange.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWaitRange.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWaitRange.Regen">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWaitRange.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntitySelectCorrectionTable">
             <summary>
             EntitySelectCorrectionTable entity
@@ -6425,11 +6558,17 @@
             Constructor
             </summary>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityJumpTo.#ctor(OpenTK.Vector2)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="jumpTo">Jump x,y (mm) location</param>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityJumpTo.#ctor(OpenTK.Vector3)">
             <summary>
             Constructor
             </summary>
-            <param name="jumpTo">Jump x,y,z location</param>
+            <param name="jumpTo">Jump x,y,z (mm) location</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityJumpTo.#ctor(System.Double,System.Double,System.Double)">
             <summary>
@@ -9808,7 +9947,7 @@
             </summary>
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double)">EntityFactory.CreateMoFWait</see>. <br/>
-            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions)">IRtcMoF.ListMofWait</see> and <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofAngularWait(System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions)">IRtcMoF.ListMofAngularWait</see> <br/>
+            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Boolean)">IRtcMoF.ListMofWait</see> and <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofAngularWait(System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions)">IRtcMoF.ListMofAngularWait</see> <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> or <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension">IRtcMoFExtension</see>. <br/>
             Above RTC5 <br/>
             </remarks>
@@ -9834,6 +9973,14 @@
             Wait encoder position for <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders.EncX">EncX</see> or <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders.EncY">EncY</see><br/>
             Default: 0 (mm) <br/>
             </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.IsMatrixStack">
+            <summary>
+            Apply <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see> or not
+            <para>
+            Default: <c>False</c>
+            </para>
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.Angle">
             <summary>
@@ -14727,7 +14874,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double)">
             <summary>
-            Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait">EntityMoFWait</see> for x,y
+            Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait">EntityMoFWait</see> for x(or y)
             <code>
             var document = siriusEditorUserControl1.Document;
             ...
@@ -14763,6 +14910,25 @@
             <param name="condition"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions">RtcEncoderWaitConditions</see></param>
             <param name="angle">Waiting angle (˚)<br/>+: CW<br/>-: CCW</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait">EntityMoFWait</see></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWaitRange(OpenTK.Vector2,OpenTK.Vector2)">
+            <summary>
+            Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWaitRange">EntityMoFWaitRange</see> for x,y
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var entity = EntityFactory.EntityMoFWaitRange(new Vector2(1,1), new Vector2(2,2));
+            document.ActAdd(entity);
+            </code>
+            </summary>
+            <remarks>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> only. <br/>
+            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofBegin(System.Boolean)">IRtcMoF.ListMofBegin</see>. <br/>
+            Used with RTC5,6 only (not RTC4, syncAXIS) <br/>
+            </remarks>
+            <param name="min">Min. xy (mm)</param>
+            <param name="max">Max. xy (mm)</param>
+            <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWaitRange">EntityMoFWaitRange</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFEnd(OpenTK.Vector2)">
             <summary>

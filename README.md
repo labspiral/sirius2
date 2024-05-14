@@ -168,13 +168,14 @@
 
 **7. Version history**
 
-* 2024.5.13 v.1.30.1460
+* 2024.5.14 v.1.30.1460
   - RTC6e 
      - added) high performance mode 
      - added) connection loss behavior
   - added) (experimental) global hard jump mode
      - can be set by Config.IsConvertJumpToHardJump
   - added) (experimental) interactive camera
+  - refactor) IRtcMoF signatures to support matrix stack
   - fixed) invisible ray when do simulation 
   - fixed) invalid Bit flags at RTC
 
