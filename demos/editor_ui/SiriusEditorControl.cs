@@ -417,7 +417,7 @@ namespace Demos
         private IPowerMeter powerMeter;
 
         /// <summary>
-        /// RTC DI extension1 port (16 bits)
+        /// RTC DI EXTENSION1 port (16 bits)
         /// </summary>
         /// <remarks>
         /// Created by <see cref="IOFactory">IOFactory</see>. <br/>
@@ -426,7 +426,7 @@ namespace Demos
         [ReadOnly(false)]
         [Category("Sirius2")]
         [DisplayName("DInput")]
-        [Description("IDInput Instance for RTC Extension1 Port")]
+        [Description("IDInput Instance for RTC EXTENSION1 Port")]
         public IDInput DIExt1 
         { 
             get { return dIExt1; }
@@ -444,7 +444,7 @@ namespace Demos
         }
         private IDInput dIExt1;
         /// <summary>
-        /// RTC DI laser port (2 bits)
+        /// RTC DI LASER port (2 bits)
         /// </summary>
         /// <remarks>
         /// Created by <see cref="IOFactory">IOFactory</see>. <br/>
@@ -453,7 +453,7 @@ namespace Demos
         [ReadOnly(false)]
         [Category("Sirius2")]
         [DisplayName("DInput")]
-        [Description("IDInput Instance for RTC Laser Port")]
+        [Description("IDInput Instance for RTC LASER Port")]
         public IDInput DILaserPort
         {
             get { return dILaserPort; }
@@ -472,7 +472,7 @@ namespace Demos
         }
         private IDInput dILaserPort;
         /// <summary>
-        /// RTC DO extension1 port (16 bits)
+        /// RTC DO EXTENSION1 port (16 bits)
         /// </summary>
         /// <remarks>
         /// Created by <see cref="IOFactory">IOFactory</see>. <br/>
@@ -481,7 +481,7 @@ namespace Demos
         [ReadOnly(false)]
         [Category("Sirius2")]
         [DisplayName("DOutput")]
-        [Description("IDOutput Instance for RTC Extension1 Port")]
+        [Description("IDOutput Instance for RTC EXTENSION1 Port")]
         public IDOutput DOExt1
         {
             get { return dOExt1; }
@@ -500,7 +500,7 @@ namespace Demos
         }
         private IDOutput dOExt1;
         /// <summary>
-        /// RTC DO extension2 port (8 bits)
+        /// RTC DO EXTENSION2 port (8 bits)
         /// </summary>
         /// <remarks>
         /// Created by <see cref="IOFactory">IOFactory</see>. <br/>
@@ -509,7 +509,7 @@ namespace Demos
         [ReadOnly(false)]
         [Category("Sirius2")]
         [DisplayName("DOutput")]
-        [Description("IDOutput Instance for RTC Extension2 Port")]
+        [Description("IDOutput Instance for RTC EXTENSION2 Port")]
         public IDOutput DOExt2
         {
             get { return dOExt2; }
@@ -528,7 +528,7 @@ namespace Demos
         }
         private IDOutput dOExt2;
         /// <summary>
-        /// RTC DO laser port (2 bits)
+        /// RTC DO LASER port (2 bits)
         /// </summary>
         /// <remarks>
         /// Created by <see cref="IOFactory">IOFactory</see>. <br/>
@@ -537,7 +537,7 @@ namespace Demos
         [ReadOnly(false)]
         [Category("Sirius2")]
         [DisplayName("DOutput")]
-        [Description("IDOutput Instance for RTC Laser Port")]
+        [Description("IDOutput Instance for RTC LASER Port")]
         public IDOutput DOLaserPort
         {
             get { return dOLaserPort; }
@@ -666,7 +666,7 @@ namespace Demos
             get { return offsetControl1; }
         }
         /// <summary>
-        /// User control for RTC DI (extension 1 and laser port) for <see cref="IDInput">IDInput</see>
+        /// User control for RTC DI (EXTENSION1 and LASER port) for <see cref="IDInput">IDInput</see>
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -678,7 +678,7 @@ namespace Demos
             get { return rtcDIUserControl1; }
         }
         /// <summary>
-        /// User control for RTC DO (extension 1,2 and laser port) for <see cref="IDOutput">IDOutput</see>
+        /// User control for RTC DO (EXTENSION1,2 and LASER port) for <see cref="IDOutput">IDOutput</see>
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -1815,16 +1815,21 @@ namespace Demos
             switch (rtc.RtcType)
             {
                 case RtcTypes.Rtc4:
-                    mnuWriteDataExt16Cond.Enabled = false;
-                    mnuWaitDataExt16Cond.Enabled = false;
-                    mnuWaitDataExt16EdgeCond.Enabled = false;
                     btnCharacterSetText.Enabled = false;
                     btnSiriusCharacterSetText.Enabled = false;
                     mnuAlcDefinedVector.Enabled = false;
+
+                    mnuWriteDataExt16Cond.Enabled = false;
+                    mnuWaitDataExt16Cond.Enabled = false;
+                    mnuWaitDataExt16EdgeCond.Enabled = false;
+
+                    mnuMoFXYWait.Enabled = false;
+                    mnuMoFXYWaitRange.Enabled = false;
+                    mnuMoFAngularWait.Enabled = false;
                     break;
                 case RtcTypes.RtcVirtual:
                     break;
-              
+
                 case RtcTypes.Rtc5:
                 case RtcTypes.Rtc6:
                 case RtcTypes.Rtc6e:

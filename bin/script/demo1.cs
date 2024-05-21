@@ -25,6 +25,7 @@ using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Remote;
 using SpiralLab.Sirius2.Winforms.Script;
+using OpenTK;
 
 public class UserScript : MarkerScriptBase
 {    

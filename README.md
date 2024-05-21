@@ -168,6 +168,11 @@
 
 **7. Version history**
 
+* 2024.5.21 v.1.31.1490
+  - added) editor_mof_text demo 
+  - fixed) range can be checked by IRtc.FieldSizeLimit 
+  - fixed) fail to initialize RTC4 
+  
 * 2024.5.14 v.1.30.1460
   - RTC6e 
      - added) high performance mode 

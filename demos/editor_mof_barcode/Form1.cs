@@ -94,7 +94,7 @@ namespace Demos
             Color penColor = SpiralLab.Sirius2.Winforms.Config.PenColors[0];
 
             // For example
-            // 1. wait until DIN0 goes to HIGH at Extension1 Port
+            // 1. wait until DIN0 goes to HIGH at EXTENSION1 Port
             // 2. mof begin with reset encoder
             // 3. mark barcode and text 
             //   - text has changed by script
@@ -159,7 +159,7 @@ namespace Demos
 
             // Repeats 100 times
             document.ActiveLayer.Repeats = 100;
-            // or almost infinitely
+            // or infinitely
             //document.ActiveLayer.Repeats = uint.MaxValue;
 
             // Zoom to fit by manually
@@ -193,9 +193,9 @@ namespace Demos
             Debug.Assert(rtcMoF != null);
             Debug.Assert(rtcMoF.EncXCountsPerMm != 0);
 
-            // Activated simulated encoders for test purpose (x= 1, y=0 mm/s)
+            // Activated simulated encoders for test purpose (x= -1, y=0 mm/s)
             // DO NOT set simulated encoder speed if ENC 0,1 has connected
-            rtcMoF.CtlMofEncoderSpeed(1, 0);
+            rtcMoF.CtlMofEncoderSpeed(-1, 0);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

@@ -293,6 +293,8 @@ namespace Demos
             success &= rtcMof.ListMofBegin();
             // Wait until encoder x over 10 mm 
             success &= rtcMof.ListMofWait(RtcEncoders.EncX, 10, RtcEncoderWaitConditions.Over);
+            // OR Wait until encoder x under -10 mm 
+            //success &= rtcMof.ListMofWait(RtcEncoders.EncX, -10, RtcEncoderWaitConditions.Under);
 
             // Draw circle
             success &= rtc.ListJumpTo(new Vector2((float)10, 0));
@@ -643,7 +645,9 @@ namespace Demos
             // MoF begin
             success &= rtcMoF.ListMofBegin(true);
             // Wait until x > 5 mm condition has matched
-            success &= rtcMoF.ListMofWait(RtcEncoders.EncX, 5, RtcEncoderWaitConditions.Over);                           
+            success &= rtcMoF.ListMofWait(RtcEncoders.EncX, 5, RtcEncoderWaitConditions.Over);
+            // OR Wait until x < -5 mm condition has matched
+            //success &= rtcMoF.ListMofWait(RtcEncoders.EncX, -5, RtcEncoderWaitConditions.Under);
 
             // draw helix shape
             // helix height per revolution (mm) 

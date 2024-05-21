@@ -1718,11 +1718,11 @@
         </member>
         <member name="T:SpiralLab.Sirius2.IO.RtcDInputExtension1Port">
             <summary>
-            DInput RTC Extension1 Port
+            DInput RTC EXTENSION1 Port
             </summary>
             <remarks>
             Digital input for EXTENSION1 port at RTC card.<br/>
-            Used with <c>ExtensionChannels.ExtDI16</c> at Fig 4.<br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDI16">ExtensionChannels.ExtDI16</see> at Fig 4.<br/>
             <img src="images/rtc6pciex.png"/> <br/>
             </remarks>
         </member>
@@ -1730,7 +1730,7 @@
             <summary>
             Constructor
             </summary>
-            <param name="rtc">IRtc interface</param>
+            <param name="rtc"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see></param>
             <param name="name">Name</param>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.Finalize">
@@ -1739,10 +1739,7 @@
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.Dispose(System.Boolean)">
-            <summary>
-            Dispose internal resources
-            </summary>
-            <param name="disposing">Explicit dispose or not</param>
+            <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDInputExtension1Port.Initialize">
             <inheritdoc/>  
@@ -1752,12 +1749,12 @@
         </member>
         <member name="T:SpiralLab.Sirius2.IO.RtcDInputLaserPort">
             <summary>
-            DInput RTC Laser Port 2Pin
+            DInput RTC LASER Port 2Pin
             </summary>
             <remarks>
             Digital input for LASER port at RTC card.<br/>
             Be-aware pull-up status. <nr/>
-            Used with <c>ExtensionChannels.ExtDI2</c> at Fig 2.<br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDI2">ExtensionChannels.ExtDI2</see> at Fig 2.<br/>
             <img src="images/rtc6pciex.png"/><br/>
             </remarks>
         </member>
@@ -1765,7 +1762,7 @@
             <summary>
             Constructor
             </summary>
-            <param name="rtc">IRtc interface</param>
+            <param name="rtc"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see></param>
             <param name="name">Name</param>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDInputLaserPort.Finalize">
@@ -1787,11 +1784,11 @@
         </member>
         <member name="T:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port">
             <summary>
-            DOutput RTC Extension1 Port
+            DOutput RTC EXTENSION1 Port
             </summary>
             <remarks>
             Digital output for EXTENSION1 port at RTC card.<br/>
-            Used with <c>ExtensionChannels.ExtDO16</c> at Fig 4.<br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDO16">ExtensionChannels.ExtDO16</see> at Fig 4.<br/>
             RTC5 : By Jumper <c>JP1</c> on the lower side of the RTC5, the level of all output signals at the EXTENSION 1 socket connector can be configured for 5 V or 3.3 V <br/>
             RTC6 : The solder jumper field A is located on the lower side of the RTC6 PCIe Board, It is used to set the level(5 V or 3.3 V) of all output signals at the EXTENSION 1 socket connector. <br/>
             <img src="images/rtc6pciex.png"/><br/>
@@ -1801,7 +1798,7 @@
             <summary>
             Constructor
             </summary>
-            <param name="rtc"><c>IRtc</c></param>
+            <param name="rtc"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see></param>
             <param name="name">Name</param>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.Finalize">
@@ -1810,10 +1807,7 @@
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.Dispose(System.Boolean)">
-            <summary>
-            Dispose internal resources
-            </summary>
-            <param name="disposing">Explicit dispose or not</param>
+            <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.Initialize">
             <inheritdoc/>  
@@ -1823,18 +1817,18 @@
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension1Port.ReverseUpdate">
             <summary>
-            Read output status and save as channel values
+            Read output status and save into channel values
             </summary>
             <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port">
             <summary>
-            DOutput RTC Extension2 Port
+            DOutput RTC EXTENSION2 Port
             </summary>
             <remarks>
             Digital output for EXTENSION2 port at RTC card.<br/>
-            Used with <c>ExtensionChannels.ExtDO8</c> at Fig 5.<br/>
-            RTC5 : By the jumpers JP2…JP8 on the lower side of the RTC5. pins(15) and(17) of the EXTENSION 2 socket connector can be configured. <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDO8">ExtensionChannels.ExtDO8</see> at Fig 5.<br/>
+            RTC5 : By the jumpers JP2~JP8 on the lower side of the RTC5. pins(15) and(17) of the EXTENSION 2 socket connector can be configured. <br/>
             RTC6 : The solder jumper field B is located on the lower side of the RTC6 PCIe Board. It serves to configure the signal at pin(17) of the EXTENSION 2 socket connector. <br/>
             The most significant bit (DATA7) of the 8-bit output value can be assigned to pin(15) or to pin(17). <br/>
             Alternatively, each of the two pins can be set permanently to +5 V(HIGH) or to GND(LOW level). <br/>
@@ -1846,7 +1840,7 @@
             <summary>
             Constructor
             </summary>
-            <param name="rtc">IRtc interface</param>
+            <param name="rtc"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see></param>
             <param name="name">Name</param>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.Finalize">
@@ -1855,10 +1849,7 @@
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.Dispose(System.Boolean)">
-            <summary>
-            Dispose internal resources
-            </summary>
-            <param name="disposing">Explicit dispose or not</param>
+            <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.Initialize">
             <inheritdoc/>  
@@ -1868,17 +1859,17 @@
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputExtension2Port.ReverseUpdate">
             <summary>
-            Read output status and save as channel values
+            Read output status and save into channel values
             </summary>
             <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.IO.RtcDOutputLaserPort">
             <summary>
-            DOutput RTC Laser Port 2Pin
+            DOutput RTC LASER Port 2Pin
             </summary>
             <remarks>
             Digital output for LASER port at RTC card.<br/>
-            Used with <c>ExtensionChannels.ExtDO2</c> at Fig 2.<br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDO2">ExtensionChannels.ExtDO2</see>at Fig 2.<br/>
             <img src="images/rtc6pciex.png"/><br/>
             </remarks>
         </member>
@@ -1886,7 +1877,7 @@
             <summary>
             Constructor
             </summary>
-            <param name="rtc"><c>IRtc</c></param>
+            <param name="rtc"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see></param>
             <param name="name">Name</param>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.Finalize">
@@ -1895,10 +1886,7 @@
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.Dispose(System.Boolean)">
-            <summary>
-            Dispose internal resources
-            </summary>
-            <param name="disposing">Explicit dispose or not</param>
+            <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.Initialize">
             <inheritdoc/>  
@@ -1908,7 +1896,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.IO.RtcDOutputLaserPort.ReverseUpdate">
             <summary>
-            Read output status and save as channel values
+            Read output status and save into channel values
             </summary>
             <returns>Success or failed</returns>
         </member>
@@ -2030,7 +2018,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualDO16Bits(System.Int32,System.Double,System.UInt16,System.UInt16)">
             <summary>
-            Create laser source with extension1 port with digital 16bits output power
+            Create laser source with EXTENSION1 port with digital 16bits output power
             <code>
             var rtc = ScannerFactory.Create...
             ...
@@ -2059,7 +2047,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.LaserFactory.CreateVirtualDO8Bits(System.Int32,System.Double,System.UInt16,System.UInt16)">
             <summary>
-            Create laser source with extension2 port with digital 8bits output power
+            Create laser source with EXTENSION2 port with digital 8bits output power
             <code>
             var rtc = ScannerFactory.Create...
             ...
@@ -14665,9 +14653,11 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Simulatedangular_DESC">
-            <summary>
-              Looks up a localized string similar to Simulated Encoder Angular Speed (˚/sec).
-            </summary>
+             <summary>
+               Looks up a localized string similar to Simulated Encoder Angular Speed (˚/sec)
+            Positive(+): ↻
+            Negative(-): ↺.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Simulatedangular_DISP">
             <summary>
@@ -14675,9 +14665,11 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Simulatedx_DESC">
-            <summary>
-              Looks up a localized string similar to Simulated Encoder X Speed (mm/s) for MoF.
-            </summary>
+             <summary>
+               Looks up a localized string similar to Simulated Encoder X Speed (mm/s) for MoF
+            Positive(+): →
+            Negative(-): ←.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Simulatedx_DISP">
             <summary>
@@ -14685,9 +14677,11 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Simulatedy_DESC">
-            <summary>
-              Looks up a localized string similar to Simulated Encoder Y Speed (mm/s) for MoF.
-            </summary>
+             <summary>
+               Looks up a localized string similar to Simulated Encoder Y Speed (mm/s) for MoF
+            Positive(+): ↑
+            Negative(-): ↓.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Simulatedy_DISP">
             <summary>
@@ -16955,11 +16949,6 @@
             Powermap serializer
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapSerializer.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
         <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapSerializer.Open(System.String,SpiralLab.Sirius2.PowerMap.IPowerMap)">
             <summary>
             Open <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.InternalData">IPowerMap.InternalData</see> from file
@@ -17761,7 +17750,7 @@
             <param name="laser12SignalLevel"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevels">LaseRtcSignalLevelsrModes</see> for LASER 1,2</param>
             <param name="laserOnSignalLevel"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcSignalLevels">RtcSignalLevels</see> for LASERON</param>
             <param name="ctFileName">Field correction file<br/>Loaded into <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables.Table1">Table1</see> also.</param>
-            <param name="connectionLossBehavior"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet.RtcEthernetConnectionLossBehavior">RtcEthernetConnectionLossBehavior</see> <br/>Default: <see cref="!:RtcEthernetConnectionLossBehavior.Disable">RtcEthernetConnectionLossBehavior.Disable</see></param>
+            <param name="connectionLossBehavior"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet.RtcEthernetConnectionLossBehavior">RtcEthernetConnectionLossBehavior</see> <br/>Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet.RtcEthernetConnectionLossBehavior.Disable">RtcEthernetConnectionLossBehavior.Disable</see></param>
             <param name="isHighPerformanceMode">Enable(or disable) high performance mode<br/>Default: <c>False</c></param>
             <returns><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet">Rtc6Ethernet</see></returns>
         </member>
@@ -18674,19 +18663,12 @@
             <param name="position">position</param>
             <returns>Is duplicated or not</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.IsInFov(System.Numerics.Vector2,System.Boolean)">
-            <summary>
-            Check for position x,y in fov range  
-            </summary>
-            <param name="position"></param>
-            <param name="isArcCenter">Is arc center or not</param>
-            <returns>Is in fov range or not</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.IsInFov(System.Numerics.Vector3,System.Boolean)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.IsInFov(System.Numerics.Vector3,System.Boolean,System.Boolean)">
             <summary>
             Check for position x,y,z in fov range  
             </summary>
             <param name="position">X,Y position (not applied matrix stack)</param>
+            <param name="isViF">Check virtual image field also</param>
             <param name="isArcCenter">Is arc center or not</param>
             <returns>Is in fov range or not</returns>
         </member>
@@ -18853,6 +18835,26 @@
             0: The external /STOP input (and /STOP2 input of the MAKING ON THE FLY connector) are currently set to LOW. <br/>
             </remarks>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4ExternalControlMode.Bit.Reserved5">
+            <summary>
+            Reserved5
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4ExternalControlMode.Bit.Reserved6">
+            <summary>
+            Reserved6
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4ExternalControlMode.Bit.Reserved7">
+            <summary>
+            Reserved7
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4ExternalControlMode.Bit.Reserved8">
+            <summary>
+            Reserved7
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4ExternalControlMode.Bit.EnableLaserStatus">
             <summary>
             Enable Laser Status (Bit = 1: Laser is enabled. See enable_laser or disable_laser)
@@ -18866,6 +18868,11 @@
             </para>
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4ExternalControlMode.Bit.Reserved11">
+            <summary>
+            Reserved11
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4ExternalControlMode.Bit.ExtStartStatus">
             <summary>
             Ext-Start status 
@@ -18877,6 +18884,21 @@
             1: The external /START input (and /START2 input of the MAKING ON THE FLY connector) are currently set to HIGH or not connected. <br/>
             0: The external /START input (and /START2 input of the MAKING ON THE FLY connector) are currently set to LOW. <br/>
             </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4ExternalControlMode.Bit.Reserved13">
+            <summary>
+            Reserved13
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4ExternalControlMode.Bit.Reserved14">
+            <summary>
+            Reserved14
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4ExternalControlMode.Bit.Reserved15">
+            <summary>
+            Reserved15
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc4ExternalControlMode.Value">
             <summary>
@@ -18963,6 +18985,26 @@
             0: External /STOP input (and /STOP2 input of the MOTF connector) are currently set to LOW or not connected. <br/>
             </remarks>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4StartStopInfo.Bit.Reserved5">
+            <summary>
+            Reserved5
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4StartStopInfo.Bit.Reserved6">
+            <summary>
+            Reserved6
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4StartStopInfo.Bit.Reserved7">
+            <summary>
+            Reserved7
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4StartStopInfo.Bit.Reserved8">
+            <summary>
+            Reserved8
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4StartStopInfo.Bit.EnableLaserStatus">
             <summary>
             Enable laser status
@@ -18981,6 +19023,11 @@
             1: Laser signals are active HIGH (jumper X10 is close). <br/>
             </remarks>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4StartStopInfo.Bit.Reserved11">
+            <summary>
+            Reserved11
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4StartStopInfo.Bit.ExtStartStatus">
             <summary>
             logical AND operation of the signals /START, /START2
@@ -18989,6 +19036,21 @@
             1: External /STTART input(and /START2 input of MOTF connector) are currently set to HIGH or not connected. <br/>
             0: External /STTART input(and /START2 input of MOTF connector) are currently set to LOW. <br/>
             </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4StartStopInfo.Bit.Reserved13">
+            <summary>
+            Reserved13
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4StartStopInfo.Bit.Reserved14">
+            <summary>
+            Reserved14
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4StartStopInfo.Bit.Reserved15">
+            <summary>
+            Reserved15
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc4StartStopInfo.Value">
             <summary>
@@ -19066,9 +19128,64 @@
             Y &gt; +32767
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4MarkingInfo.Bit.Reserved4">
+            <summary>
+            Reserved4
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4MarkingInfo.Bit.Reserved5">
+            <summary>
+            Reserved5
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4MarkingInfo.Bit.Reserved6">
+            <summary>
+            Reserved6
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4MarkingInfo.Bit.Reserved7">
+            <summary>
+            Reserved7
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4MarkingInfo.Bit.TriggerError">
             <summary>
             TriggerError: an enabled external trigger or simulated trigger occurred during execution of a list.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4MarkingInfo.Bit.Reserved9">
+            <summary>
+            Reserved9
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4MarkingInfo.Bit.Reserved10">
+            <summary>
+            Reserved10
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4MarkingInfo.Bit.Reserved11">
+            <summary>
+            Reserved11
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4MarkingInfo.Bit.Reserved12">
+            <summary>
+            Reserved12
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4MarkingInfo.Bit.Reserved13">
+            <summary>
+            Reserved13
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4MarkingInfo.Bit.Reserved14">
+            <summary>
+            Reserved14
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4MarkingInfo.Bit.Reserved15">
+            <summary>
+            Reserved15
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc4MarkingInfo.Value">
@@ -20170,19 +20287,12 @@
             <param name="position">position</param>
             <returns>Is duplicated or not</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.IsInFov(System.Numerics.Vector2,System.Boolean)">
-            <summary>
-            Check for position x,y in fov range  
-            </summary>
-            <param name="position"></param>
-            <param name="isArcCenter">Is arc center or not</param>
-            <returns>Is in fov range or not</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.IsInFov(System.Numerics.Vector3,System.Boolean)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.IsInFov(System.Numerics.Vector3,System.Boolean,System.Boolean)">
             <summary>
             Check for position x,y,z in fov range  
             </summary>
-            <param name="position">X,Y,Z position (not applied matrix stack)</param>
+            <param name="position">X,Y position (not applied matrix stack)</param>
+            <param name="isViF">Check virtual image field also</param>
             <param name="isArcCenter">Is arc center or not</param>
             <returns>Is in fov range or not</returns>
         </member>
@@ -20438,9 +20548,124 @@
             </para>
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved8">
+            <summary>
+            Reserved8
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved9">
+            <summary>
+            Reserved9
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved10">
+            <summary>
+            Reserved10
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved11">
+            <summary>
+            Reserved11
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved12">
+            <summary>
+            Reserved12
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved13">
+            <summary>
+            Reserved13
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved14">
+            <summary>
+            Reserved14
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved15">
+            <summary>
+            Reserved15
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved16">
+            <summary>
+            Reserved16
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved17">
+            <summary>
+            Reserved17
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved18">
+            <summary>
+            Reserved18
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved19">
+            <summary>
+            Reserved19
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved20">
+            <summary>
+            Reserved20
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved21">
+            <summary>
+            Reserved21
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved22">
+            <summary>
+            Reserved22
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved23">
+            <summary>
+            Reserved23
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved24">
+            <summary>
+            Reserved24
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved25">
+            <summary>
+            Reserved25
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved26">
+            <summary>
+            Reserved26
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved27">
+            <summary>
+            Reserved27
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.AutomaticMonitoringToStop">
             <summary>
             = 1: In case of error, automatic monitoring (laser-signal auto-suppression) automatically generates a /STOP signal (list stops, laser control signals get permanently switched off).
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved29">
+            <summary>
+            Reserved29
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved30">
+            <summary>
+            Reserved30
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Bit.Reserved31">
+            <summary>
+            Reserved31
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal.Value">
@@ -20540,6 +20765,26 @@
             Disables simulate_ext_start_ctrl. 
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved5">
+            <summary>
+            Reserved5
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved6">
+            <summary>
+            Reserved6
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved7">
+            <summary>
+            Reserved7
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved8">
+            <summary>
+            Reserved8
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.EncoderReset">
             <summary>
             Encoder Reset
@@ -20556,6 +20801,111 @@
             = 1: Track delay configured by simulate_ext_start, set_ext_start_delay or set_ext_start_delay_list is counted beginning with the most recent externally (but not with execute_list_pos etc.) triggered or simulated external list start.The interval between subsequent external list starts (in encoder pulses) is thus constant(see also page 242). For stop_execution or an external stop signal, bit #10 gets reset to “0”. This bit has no effect if the firmware version is 506 or lower(see get_rtc_version).<br/>
             = 0: Track delay configured by simulate_ext_start, set_ext_start_delay or set_ext_start_delay_list is counted beginning with the time point an external list start was requested(i.e.with the corresponding simulate_ext_start or simulate_ext_start_ctrl command or external start signal). The interval between subsequent external list starts (in encoder pulses) can thus vary.This is standard for firmware version 506 or lower(see get_rtc_version).<br/>
             </para>
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved11">
+            <summary>
+            Reserved11
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved12">
+            <summary>
+            Reserved12
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved13">
+            <summary>
+            Reserved13
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved14">
+            <summary>
+            Reserved14
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved15">
+            <summary>
+            Reserved15
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved16">
+            <summary>
+            Reserved16
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved17">
+            <summary>
+            Reserved17
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved18">
+            <summary>
+            Reserved18
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved19">
+            <summary>
+            Reserved19
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved20">
+            <summary>
+            Reserved20
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved21">
+            <summary>
+            Reserved21
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved22">
+            <summary>
+            Reserved22
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved23">
+            <summary>
+            Reserved23
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved24">
+            <summary>
+            Reserved24
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved25">
+            <summary>
+            Reserved25
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved26">
+            <summary>
+            Reserved26
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved27">
+            <summary>
+            Reserved27
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved28">
+            <summary>
+            Reserved28
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved29">
+            <summary>
+            Reserved29
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved30">
+            <summary>
+            Reserved30
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Bit.Reserved31">
+            <summary>
+            Reserved31
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ExternalControlMode.Value">
@@ -20643,6 +20993,26 @@
             0: There is a stop signal at least at one of the input ports. <br/>
             </remarks>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.Reserved5">
+            <summary>
+            Reserved5
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.Reserved6">
+            <summary>
+            Reserved6
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.Reserved7">
+            <summary>
+            Reserved7
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.Reserved8">
+            <summary>
+            Reserved8
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.LaserControlSignalsGlobalEnabled">
             <summary>
             The laser control signals are globally enabled, see Chapter 7.4.1 ”Enabling, Activating and Switching Laser Control Signals”, page 183. See also set_laser_control. 
@@ -20675,6 +21045,11 @@
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.LaserControlSignalsEnabled">
             <summary>
             The laser control signals are enabled 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.Reserved15">
+            <summary>
+            Reserved16
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5StartStopInfo.Bit.ErrorBits16">
@@ -21301,7 +21676,7 @@
             <remarks>
             Above RTC6 <br/>
             Delays the output of a <c>LASER1</c> pulse until a new clock signal pulse of the laser at DIGITAL IN1 pin(1) is detected. <br/>
-            Used with D.IN1 at <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDI2">ExtensionChannels.ExtDI2</see> at Laser Port. <br/>
+            Used with D.IN1 at <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDI2">ExtensionChannels.ExtDI2</see> at LASER Port. <br/>
             Min. pulse holding time: 80 nsec. <br/>
             Pulse rising/falling edge is configurable by <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ILaserControlSignal">ILaserControlSignal</see> bit5: <c>ExtPulseSignalRisingEdge</c>. <br/>
             Used when <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlGetStatus(SpiralLab.Sirius2.Scanner.Rtc.RtcStatus)">CtlGetStatus(RtcStatus.NotBusy)</see>. <br/>
@@ -21319,7 +21694,7 @@
             <remarks>
             Above RTC6 <br/>
             Delays the output of a <c>LASER1</c> pulse until a new clock signal pulse of the laser at DIGITAL IN1 pin(1) is detected. <br/>
-            Used with D.IN1 at <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDI2">ExtensionChannels.ExtDI2</see> at Laser Port. <br/>
+            Used with D.IN1 at <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDI2">ExtensionChannels.ExtDI2</see> at LASER Port. <br/>
             Min. pulse holding time: 80 nsec. <br/>
             Pulse rising/falling edge is configurable by <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ILaserControlSignal">ILaserControlSignal</see> bit5: <c>ExtPulseSignalRisingEdge</c>. <br/>
             Used when <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlGetStatus(SpiralLab.Sirius2.Scanner.Rtc.RtcStatus)">CtlGetStatus(RtcStatus.NotBusy)</see>. <br/>
@@ -22123,7 +22498,7 @@
             Above RTC6. <br/>
             Useful to femtosecond laser source. <br/>
             Delays the output of a <c>LASER1</c> pulse until a new clock signal pulse of the laser at DIGITAL IN1 pin(1) is detected. <br/>
-            Used with D.IN1 at <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDI2">ExtensionChannels.ExtDI2</see> at Laser Port. <br/>
+            Used with D.IN1 at <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDI2">ExtensionChannels.ExtDI2</see> at LASER Port. <br/>
             Min. pulse holding time: 80 nsec. <br/>
             Pulse rising/falling edge is configurable by <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ILaserControlSignal">ILaserControlSignal</see> bit5: <c>ExtPulseSignalRisingEdge</c>. <br/>
             Used when <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlGetStatus(SpiralLab.Sirius2.Scanner.Rtc.RtcStatus)">CtlGetStatus(RtcStatus.NotBusy)</see>. <br/>
@@ -22314,19 +22689,12 @@
             <param name="position">position</param>
             <returns>Is duplicated or not</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsInFov(System.Numerics.Vector2,System.Boolean)">
-            <summary>
-            Check for position x,y in fov range  
-            </summary>
-            <param name="position"></param>
-            <param name="isArcCenter">Is arc center or not</param>
-            <returns>Is in fov range or not</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsInFov(System.Numerics.Vector3,System.Boolean)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsInFov(System.Numerics.Vector3,System.Boolean,System.Boolean)">
             <summary>
             Check for position x,y,z in fov range  
             </summary>
-            <param name="position">X,Y,Z position (not applied matrix stack)</param>
+            <param name="position">X,Y position (not applied matrix stack)</param>
+            <param name="isViF">Check virtual image field also</param>
             <param name="isArcCenter">Is arc center or not</param>
             <returns>Is in fov range or not</returns>
         </member>
@@ -22808,6 +23176,106 @@
             </para>
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved8">
+            <summary>
+            Reserved8
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved9">
+            <summary>
+            Reserved9
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved10">
+            <summary>
+            Reserved10
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved11">
+            <summary>
+            Reserved11
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved12">
+            <summary>
+            Reserved12
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved13">
+            <summary>
+            Reserved13
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved14">
+            <summary>
+            Reserved14
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved15">
+            <summary>
+            Reserved15
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved16">
+            <summary>
+            Reserved16
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved17">
+            <summary>
+            Reserved17
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved18">
+            <summary>
+            Reserved18
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved19">
+            <summary>
+            Reserved19
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved20">
+            <summary>
+            Reserved20
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved21">
+            <summary>
+            Reserved21
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved22">
+            <summary>
+            Reserved22
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved23">
+            <summary>
+            Reserved23
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved24">
+            <summary>
+            Reserved24
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved25">
+            <summary>
+            Reserved25
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved26">
+            <summary>
+            Reserved26
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved27">
+            <summary>
+            Reserved27
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.AutomaticMonitoringToStop">
             <summary>
             = 1: In case of error, automatic monitoring (automatic suppression of laser control signals) automatically generates a /STOP signal (list stops, laser control signals get permanently switched off).
@@ -22816,6 +23284,16 @@
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.StopToAllMasterSlave">
             <summary>
             = 1: In case of error according to Bit #28, the stop_execution is forwarded as /Master-STOP 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved30">
+            <summary>
+            Reserved30
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Bit.Reserved31">
+            <summary>
+            Reserved31
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal.Value">
@@ -22915,6 +23393,26 @@
             Disables simulate_ext_start_ctrl. 
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved5">
+            <summary>
+            Reserved5
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved6">
+            <summary>
+            Reserved6
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved7">
+            <summary>
+            Reserved7
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved8">
+            <summary>
+            Reserved8
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.EncoderReset">
             <summary>
             Encoder Reset
@@ -22931,6 +23429,111 @@
             = 1: Track delay configured by simulate_ext_start, set_ext_start_delay or set_ext_start_delay_list is counted beginning with the most recent externally (but not with execute_list_pos etc.) triggered or simulated external list start.The interval between subsequent external list starts (in encoder pulses) is thus constant(see also page 242). For stop_execution or an external stop signal, bit #10 gets reset to “0”. This bit has no effect if the firmware version is 506 or lower(see get_rtc_version).<br/>
             = 0: Track delay configured by simulate_ext_start, set_ext_start_delay or set_ext_start_delay_list is counted beginning with the time point an external list start was requested(i.e.with the corresponding simulate_ext_start or simulate_ext_start_ctrl command or external start signal). The interval between subsequent external list starts (in encoder pulses) can thus vary.This is standard for firmware version 506 or lower(see get_rtc_version).<br/>
             </para>
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved11">
+            <summary>
+            Reserved11
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved12">
+            <summary>
+            Reserved12
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved13">
+            <summary>
+            Reserved13
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved14">
+            <summary>
+            Reserved14
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved15">
+            <summary>
+            Reserved15
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved16">
+            <summary>
+            Reserved16
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved17">
+            <summary>
+            Reserved17
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved18">
+            <summary>
+            Reserved18
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved19">
+            <summary>
+            Reserved19
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved20">
+            <summary>
+            Reserved20
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved21">
+            <summary>
+            Reserved21
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved22">
+            <summary>
+            Reserved22
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved23">
+            <summary>
+            Reserved23
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved24">
+            <summary>
+            Reserved24
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved25">
+            <summary>
+            Reserved25
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved26">
+            <summary>
+            Reserved26
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved27">
+            <summary>
+            Reserved27
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved28">
+            <summary>
+            Reserved28
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved29">
+            <summary>
+            Reserved29
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved30">
+            <summary>
+            Reserved30
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Bit.Reserved31">
+            <summary>
+            Reserved31
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ExternalControlMode.Value">
@@ -23015,6 +23618,21 @@
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.TimeOut">
             <summary>
             The timeout with wait_for_timestamp_counter_mode and wait_for_timestamp_counter_long. 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.Reserved6">
+            <summary>
+            Reserved6
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.Reserved7">
+            <summary>
+            Reserved7
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.Reserved8">
+            <summary>
+            Reserved8
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6StartStopInfo.Bit.LaserControlSignalsGlobalEnabled">
@@ -26759,7 +27377,7 @@
             Save measurement result into file
             </summary>
             <param name="fileName">Filename</param>
-            <param name="rtcMeasurement"><c>IRtcMeasurement</c></param>
+            <param name="rtcMeasurement"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement">IRtcMeasurement</see></param>
             <param name="isRawData">Raw data (or human readable data)</param>
             <returns>Success or failed</returns>
         </member>
@@ -28691,10 +29309,12 @@
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.ListTypes.Single">
             <summary>
             Single list buffered.
-            <para>RTC4: max 8000 buffer size</para>
-            <para>RTC5: max 2^20 buffer size</para>
-            <para>RTC6: max 2^23 buffer size</para>
-            Use buffer as giant single memory. so there is a limitation of data counts. <br/>
+            <para>
+            RTC4: max 8000 buffer size. <br/>
+            RTC5: max 2^20 buffer size. <br/>
+            RTC6: max 2^23 buffer size. <br/>
+            </para>
+            Use list buffer as single giant memory. so there is a limitation of data size. <br/>
             </summary>
             <remarks>
             List commands are executed after <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListExecute(System.Boolean)">ListExecute</see> has called. <br/>
@@ -28703,18 +29323,22 @@
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.ListTypes.Auto">
             <summary>
             Double list buffered. 
-            <para>2 buffers are executed and exchanged(or swapped) by automatically if full enough. </para>
+            <para>
+            2 list buffers are executed and exchanged(or swapped) by automatically if full enough. <br/>
+            Buffer size can be configured by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.DoubleBufferMaxSize">DoubleBufferMaxSize</see> . <br/>
+            </para>
             </summary>
             <remarks>
-            List commands are executed when buffer if full enough. <br/>
-            Use 2 buffers for swap each other. so there is no limitation of data counts. <br/>
+            Use 2 buffers for swap each other. so there is no limitation of data size. <br/>
+            List commands are executed when buffer is full enough by automatically. <br/>
+            Should be inserted list commands continously(or without delay). <br/>
             </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.LaserModes">
             <summary>
             RTC Laser Modes
             <para>
-            Timing of <c>LASER1</c>, <c>LASER2</c>, <c>LASERON</c> pin-out signals
+            Timing of <c>LASER1</c>, <c>LASER2</c>, <c>LASERON</c> pin-out signals at LASER port
             </para>
             </summary>
         </member>
@@ -29366,12 +29990,12 @@
                           mm  
             </code>
             <para>
-            RTC4: 16 bits <br/>
-            RTC5: 20 bits <br/>
-            RTC6: 20 bits <br/>
+            RTC4: 16 bits. <br/>
+            RTC5: 20 bits. <br/>
+            RTC6: 20 bits. <br/>
             </para>
             <remarks>
-            Position x, y (mm) are multiply this scale value (bits/mm) to get(or calculate) to bits value. <br/>
+            Position x, y(mm) commands are multiplied this scale value(bits/mm) to get(or calculate) to bits value. <br/>
             </remarks>
             </summary>
         </member>
@@ -29379,10 +30003,10 @@
             <summary>
             Effective scan field size (mm)
             <para>
-            Theorical scan field area is calculated by : <br/>
-            RTC4: 2^16 / <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.KFactor">KFactor</see> <br/>
-            RTC5: 2^20 / <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.KFactor">KFactor</see> <br/>
-            RTC6: 2^20 / <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.KFactor">KFactor</see> <br/>
+            Theorical(or effective) field area calculated by : <br/>
+            RTC4: 2^16 / <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.KFactor">KFactor</see>. <br/>
+            RTC5: 2^20 / <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.KFactor">KFactor</see>. <br/>
+            RTC6: 2^20 / <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.KFactor">KFactor</see>. <br/>
             </para>
             </summary>
             <remarks>     
@@ -29396,8 +30020,9 @@
             </para>
             </summary>
             <remarks>
-            Size limit for width, height (mm) <br/>
+            Rectangluar limit size for width, height (mm). <br/>
             Out of range would be checked if <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.FieldSizeLimit">FieldSizeLimit</see> has assigned. <br/>
+            Used with <see cref="M:SpiralLab.Sirius2.Scanner.IScanner.ListJumpTo(System.Numerics.Vector2,System.Double)">ListJumpTo</see>, <see cref="M:SpiralLab.Sirius2.Scanner.IScanner.ListMarkTo(System.Numerics.Vector2,System.Double)">ListMarkTo</see>, <see cref="M:SpiralLab.Sirius2.Scanner.IScanner.ListArcTo(System.Numerics.Vector2,System.Double,System.Double)">ListArcTo</see> and so on. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.LaserMode">
@@ -30470,13 +31095,13 @@
             <summary>
             KZ-factor factor (bits/mm)
             <para>
-            RTC4: 16 bits = KFactor <br/>
-            RTC5: 16 bits = KFactor/16 <br/>
-            RTC6: 20 bits = KFactor <br/>
+            RTC4: 16 bits = KFactor. <br/>
+            RTC5: 16 bits = KFactor/16. <br/>
+            RTC6: 20 bits = KFactor. <br/>
             </para>
             </summary>
             <remarks>
-            Position z commands are multiply this scale value to get(or convert) to bits value. <br/>
+            Position z(mm) commands are multiplied this scale value(bits/mm) to get(or calculate) to bits value. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc3D.KZScale">
@@ -30487,8 +31112,9 @@
             </para>
             </summary>
             <remarks>
-            Negative(-), Positive(+) <br/>
-            Position z commands (likes as <c>ListJumpTo</c>, <c>ListMarkTo</c>, ... ) are multiply this scale value.
+            <c>KZScale.X</c>: scale for negative(-) area. <br/>
+            <c>KZScale.Y</c>: scale for positive(+) area. <br/>
+            Position z(mm) commands (likes as  <see cref="M:SpiralLab.Sirius2.Scanner.IScanner3D.ListJumpTo(System.Numerics.Vector3,System.Double)">ListJumpTo</see>, <see cref="M:SpiralLab.Sirius2.Scanner.IScanner3D.ListMarkTo(System.Numerics.Vector3,System.Double)">ListMarkTo</see>, ... ) are multiplied this scale value.
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc3D.CtlCorrectionReadABC(System.String,System.Double@,System.Double@,System.Double@)">
@@ -32948,7 +33574,9 @@
             <summary>
             Simulated encoder x(or 0) speed (mm/s) for X/Y MoF
             <para>
-            Default: 0 <br/>
+            Positive(+): Rightward(→). <br/>
+            Negative(-): Leftward(←). <br/>
+            Default(Disabled): 0 <br/>
             </para>
             </summary>
             <remarks>
@@ -32959,7 +33587,9 @@
             <summary>
             Simulated encoder y(or 1) speed (mm/s) for X/Y MoF
             <para>
-            Default: 0 <br/>
+            Positive(+): Upward(↑). <br/>
+            Negative(-): Downward(↓). <br/>
+            Default(Disabled): 0 <br/>
             </para>
             </summary>
             <remarks>
@@ -32997,7 +33627,9 @@
             <summary>
             Simulated encoder x(or 0) angular speed (˚/s) for Angular MoF
             <para>
-            Default: 0 <br/>
+            Positive(+): CW(↻) <br/>
+            Negative(-): CCW(↺) <br/>
+            Default(Disabled): 0 <br/>
             </para>
             </summary>
             <remarks>
@@ -33074,8 +33706,8 @@
             <remarks>
             Should be called when <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlGetStatus(SpiralLab.Sirius2.Scanner.Rtc.RtcStatus)">CtlGetStatus(RtcStatus.NotBusy)</see> <br/>
             </remarks>
-            <param name="encXSimulatedSpeed">Simulated X(0) encoder speed (mm/s).<br/>0: Disabled. <br/></param>
-            <param name="encYSimulatedSpeed">Simulated Y(1) encoder speed (mm/s).<br/>0: Disabled. <br/></param>
+            <param name="encXSimulatedSpeed">Simulated X(0) encoder speed (mm/s).<br/>Positive(+): Rightward(→).<br/>Negative(-): Leftward(←).<br/>0: Disabled. <br/></param>
+            <param name="encYSimulatedSpeed">Simulated Y(1) encoder speed (mm/s).<br/>Positive(+): Upward(↑).<br/>Negative(-): Downward(↓).<br/>0: Disabled. <br/></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofTrackingError(System.Double,System.Double)">
@@ -33183,7 +33815,7 @@
             <remarks>
             Should be called when <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlGetStatus(SpiralLab.Sirius2.Scanner.Rtc.RtcStatus)">CtlGetStatus(RtcStatus.NotBusy)</see><br/>
             </remarks>
-            <param name="encSimulatedSpeed">Angular speed (˚/s)</param>
+            <param name="encSimulatedSpeed">Angular speed (˚/s)<br/>Positive(+): CW(↻)<br/>Negative(-): CCW(↺)<br/>0: Disabled</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.CtlMofOverflowClear">
@@ -34542,7 +35174,7 @@
             <summary>
             Move scanner position to x,y,z 
             </summary>
-            <param name="position">x,y,z (mm) position<br/>Position would be transformed(or applied) by <see cref="!:IRtc.MatrixStack">MatrixStack</see></param>
+            <param name="position">x,y,z (mm) position<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
             <param name="overrideJumpSpeed">Override jump speed (mm/s)<br/>Default: 0 (No override) <br/></param>
             <returns>Success or failed</returns>
         </member>
@@ -34550,7 +35182,7 @@
             <summary>
             List jump 3d (move 3d)
             </summary>
-            <param name="position">x,y,z (mm) position<br/>Position would be transformed(or applied) by <see cref="!:IRtc.MatrixStack">MatrixStack</see></param>
+            <param name="position">x,y,z (mm) position<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
             <param name="alcScaleFactor">Ramp scale factor<br/>Default: 1.0<br/>Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl">IRtcAutoLaserControl</see><br/>Used if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">IRtcAutoLaserControl.ListAlcByVectorBegin</see> has called</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
@@ -34558,7 +35190,7 @@
             <summary>
             List mark 3d (line 3d)
             </summary>
-            <param name="position">x,y,z (mm) position<br/>Position would be transformed(or applied) by <see cref="!:IRtc.MatrixStack">MatrixStack</see></param>
+            <param name="position">x,y,z (mm) position<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
             <param name="alcScaleFactor">Ramp scale factor<br/>Default: 1.0<br/>Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl">IRtcAutoLaserControl</see><br/>Used if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">IRtcAutoLaserControl.ListAlcByVectorBegin</see> has called</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
@@ -34567,7 +35199,7 @@
             List arc 3d at center (arc z)
             </summary>
             <remarks>Do NOT use if matrix stack has pushed rotate tranform by x or y axis. Use <c>ListMarkTo</c> or <c>ListMarksTo</c> instead. Because RTC is not support 3x3 matrix with arc movement.</remarks>
-            <param name="center">Center x,y,z (mm)<br/>Position would be transformed(or applied) by <see cref="!:IRtc.MatrixStack">MatrixStack</see></param>
+            <param name="center">Center x,y,z (mm)<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
             <param name="sweepAngleZ">Sweep angle (°) (+: CCW, -: CW)</param>
             <param name="alcScaleFactor">(Unsupported!) Ramp scale factor<br/>Default: 1.0<br/>Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl">IRtcAutoLaserControl</see><br/>Used if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">IRtcAutoLaserControl.ListAlcByVectorBegin</see> has called</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
@@ -34576,7 +35208,7 @@
             <summary>
             List marks 3d (lines 3d)
             </summary>
-            <param name="positions">Array of x,y,z positions (mm)<br/>Position would be transformed(or applied) by <see cref="!:IRtc.MatrixStack">MatrixStack</see></param>
+            <param name="positions">Array of x,y,z positions (mm)<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
             <param name="alcScaleFactors">Array of ramp scale factors<br/>Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl">IRtcAutoLaserControl</see><br/>Used if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">IRtcAutoLaserControl.ListAlcByVectorBegin</see> has called</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
@@ -46140,7 +46772,8 @@
             <summary>
             Plot measurement result winform
             <para>
-            Used this internal measurement result winforms if not installed gnuplot program. <br/>
+            Used this internal measurement winforms if not installed gnuplot program. <br/>
+            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.RtcMeasurementHelper.Plot(System.String,System.String)">RtcMeasurementHelper.Plot</see>. <br/>
             </para>
             </summary>
             <remarks>
@@ -46180,7 +46813,7 @@
             <summary>
             Variable jump delay winform
             <para>
-            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcVariableDelay">IRtcVariableDelay</see> <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcVariableDelay">IRtcVariableDelay</see>. <br/>
             </para>
             </summary>
             <remarks>

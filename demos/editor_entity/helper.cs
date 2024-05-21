@@ -90,11 +90,11 @@ namespace Demos
         /// Create devices (like as <c>IRtc</c>, <c>ILaser</c>, ...)
         /// </summary>
         /// <param name="rtc"><c>IRtc</c></param>
-        /// <param name="dInExt1">RTC D.Input extension1 port</param>
-        /// <param name="dInLaserPort">RTC D.Input laser port</param>
-        /// <param name="dOutExt1">RTC D.Output extension1 port</param>
-        /// <param name="dOutExt2">RTC D.Output extension2 port</param>
-        /// <param name="dOutLaserPort">RTC D.Output laser port</param>
+        /// <param name="dInExt1">RTC D.Input EXTENSION1 port</param>
+        /// <param name="dInLaserPort">RTC D.Input LASER port</param>
+        /// <param name="dOutExt1">RTC D.Output EXTENSION1 port</param>
+        /// <param name="dOutExt2">RTC D.Output EXTENSION2 port</param>
+        /// <param name="dOutLaserPort">RTC D.Output LASER port</param>
         /// <param name="laser"><c>ILaser</c></param>
         /// <param name="powerMeter"><c>IPowerMeter</c></param>
         /// <param name="marker"><c>IMarker</c></param>
@@ -182,27 +182,31 @@ namespace Demos
                 success &= dOutLaserPort.Initialize();
             }
 
-            // Set FOV area: WxH, it will be drawn as red rectangle
+            // Set FOV area: WxH, it will be drawn as red square
             SpiralLab.Sirius2.Winforms.Config.ViewFovSize = new SizeF(fov, fov);
-            // Set Virtual image field area
+
+            // Set virtual image field area
             if (rtc.IsMoF)
             {
                 if (rtc is Rtc4 rtc4)
                 {
-                    //2^16 bits = no virtual image field 
-                    //SpiralLab.Sirius2.Winforms.Config.ViewVirtualImageSize =
+                    //no virtual image field 
+                    SpiralLab.Sirius2.Winforms.Config.ViewVirtualImageSize = SizeF.Empty;
                 }
                 else if (rtc is Rtc5 rtc5)
                 {
-                    //2^24 bits = 2^20 + 2^4
+                    //2^24 bits 
                     SpiralLab.Sirius2.Winforms.Config.ViewVirtualImageSize = new SizeF(fov * (float)Math.Pow(2, 4), fov * (float)Math.Pow(2, 4));
                 }
                 else if (rtc is Rtc6 rtc6)
                 {
-                    //2^29 bits = 2^20 + 2^9
+                    //2^29 bits 
                     SpiralLab.Sirius2.Winforms.Config.ViewVirtualImageSize = new SizeF(fov * (float)Math.Pow(2, 9), fov * (float)Math.Pow(2, 9));
                 }
             }
+
+            // To check out of range for jump and mark x,y locations
+            //rtc.FieldSizeLimit = new SizeF(fov, fov);
 
             // 2nd Head
             var rtc2ndHead = rtc as IRtc2ndHead;

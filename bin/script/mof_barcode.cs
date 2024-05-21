@@ -1,7 +1,7 @@
 // Powered by (c)SpiralLab.Sirius2 with C# script codes
 // Written by hcchoi@spirallab.co.kr
 // 2023 Coypright to (c)SpiralLab
-
+#region
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,10 +25,11 @@ using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Remote;
 using SpiralLab.Sirius2.Winforms.Script;
+using OpenTK;
+#endregion
 
 public class UserScript : MarkerScriptBase
 {    
-    [RefreshProperties(RefreshProperties.All)]
     [Browsable(true)]
     [ReadOnly(false)]
     [Category("Serial")]
@@ -44,7 +45,6 @@ public class UserScript : MarkerScriptBase
     }
     uint startSerialNo;
     
-    [RefreshProperties(RefreshProperties.All)]
     [Browsable(true)]
     [ReadOnly(false)]
     [Category("Serial")]
@@ -52,7 +52,6 @@ public class UserScript : MarkerScriptBase
     [Description("Max Serial No")]
     public uint MaxSerialNo { get; set; }
         
-    [RefreshProperties(RefreshProperties.All)]
     [Browsable(true)]
     [ReadOnly(false)]
     [Category("Serial")]
@@ -100,9 +99,9 @@ public class UserScript : MarkerScriptBase
     }   
   
     // Mark at EntityScriptEvent entity
-	public override bool ListEvent(EntityScriptEvent entityScriptEvent)
+    public override bool ListEvent(EntityScriptEvent entityScriptEvent)
     {
-		//Increase serial no
+        //Increase serial no
         SerialNo++;
         if (MaxSerialNo > 0)
         {            
@@ -114,14 +113,15 @@ public class UserScript : MarkerScriptBase
         Logger.Log(Logger.Types.Trace, "serial no has changed to {0} at script event", SerialNo);
         return true;
     }   
-	
-	
-	// Control event for external user
-	public override bool CtlEvent(object userData = null)
-	{
-		//Reset serial no as start no
-		SerialNo = StartSerialNo;
-		return true;
-	}
+    
+    
+    // Control event for external user
+    public override bool CtlEvent(object userData = null)
+    {
+        //Reset serial no as start no
+        Logger.Log(Logger.Types.Trace, "serial no has reset to start no: {0}", StartSerialNo);
+        SerialNo = StartSerialNo;
+        return true;
+    }
 }       
  
