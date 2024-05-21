@@ -116,26 +116,27 @@ namespace Demos
             document.ActAdd(mofBegin);
          
             // Create text entity
-            var text1 = EntityFactory.CreateText("Arial", "ABCDEFGHIJKLMNOPQRSTUVWXYZ {0}", FontStyle.Bold, 2);
+            var text1 = EntityFactory.CreateText("Arial", "ABCDEFGHIJKLMNOPQRSTUVWXYZ {0}", FontStyle.Bold, 5);
             text1.Name = "MyText1";
             text1.IsConvertedText = true;
-            text1.Color = penColor;            
+            text1.Color = penColor;
+            text1.Translate(-45, 0);
             document.ActAdd(text1);
 
             // Create sirius text entity
-            var text2 = EntityFactory.CreateSiriusText("romans2.cxf", "0123456789 {0}", 2);
+            var text2 = EntityFactory.CreateSiriusText("romans2.cxf", "0123456789 {0}", 5);
             text2.Name = "MyText2";
             text2.IsConvertedText = true;
             text2.Color = penColor;
-            text2.Translate(45, 0);
+            text2.Translate(60, 0);
             document.ActAdd(text2);
 
             // Create image text entity
-            var text3 = EntityFactory.CreateImageText("Arial", "POWERED BY SIRIUS2 SPIRALLAB {0}", FontStyle.Regular, true, 0, 64, 2.5);
+            var text3 = EntityFactory.CreateImageText("Arial", "POWERED BY SIRIUS2 SPIRALLAB {0}", FontStyle.Regular, true, 0, 32, 6);
             text3.Name = "MyText3";
             text3.IsConvertedText = true;
             text3.Color = penColor;
-            text3.Translate(65, -0.5);
+            text3.Translate(105, -1);
             document.ActAdd(text3);
 
             // Create mof end
