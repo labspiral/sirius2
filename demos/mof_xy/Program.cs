@@ -16,7 +16,7 @@
  *               `---`            `---'                                                        `----'   
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : XY MoF(Marking on the Fly) 
+ * Description : MoF(Marking on the Fly) X/Y
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */

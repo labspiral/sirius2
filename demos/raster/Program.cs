@@ -16,7 +16,7 @@
  *               `---`            `---'                                                        `----'   
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Raster(Bitmap, Pixel) Operation
+ * Description : Raster(Bitmap, Pixel) operation
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */

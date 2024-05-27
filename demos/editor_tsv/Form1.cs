@@ -135,10 +135,10 @@ namespace Demos
                     // . . . . . . . . . .
                     // . . . . . . . . . .
 
-                    double left = -interval * (float)(cols - 1) / 2.0;
-                    double top = interval * (float)(rows - 1) / 2.0;
+                    double x = -interval * (float)(cols - 1) / 2.0;
+                    double y = interval * (float)(rows - 1) / 2.0;
                     var blockInsert = EntityFactory.CreateBlockInsert("Hole", 
-                        new Vector3((float)(left + col * interval), (float)(top - row * interval), 0));
+                        new Vector3((float)(x + col * interval), (float)(y - row * interval), 0));
                     document.ActAdd(blockInsert);
                     targets.Add(blockInsert);
                 }
@@ -170,7 +170,14 @@ namespace Demos
             // Assign Document, View, Rtc, Laser into marker
             marker.Ready(document, view, rtc, laser, powerMeter, remote);
 
-            // Assign 6 offset array positions
+            // Assign 6 offsets positions
+            //
+            //    .          .          .
+            // -20,10       0,10      20,10
+            //
+            //    .          .          .
+            // -20,-10      0,-10     20,-10
+            //
             var offsets = new List<Offset>()
             {
                 new Offset(-20, 10, 0),

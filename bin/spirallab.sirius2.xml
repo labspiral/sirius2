@@ -690,6 +690,31 @@
             </summary>
             <remarks>
             Convert whole <see cref="M:SpiralLab.Sirius2.Scanner.IScanner.ListJumpTo(System.Numerics.Vector2,System.Double)">ListJumpTo</see> to <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcJumpMode.ListHardJump(System.Numerics.Vector2,System.Double,System.Double)">ListHardJump</see> by automatically. <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Config.HardJumpLaserOnDelay">HardJumpLaserOnDelay</see>, <see cref="P:SpiralLab.Sirius2.Config.HardJumpLaserOffDelay">HardJumpLaserOffDelay</see> together. <br/>
+            Above RTC5. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Config.HardJumpLaserOnDelay">
+            <summary>
+            Laser on delay for hard jumps (usec) 
+            <para>
+            Default: -1 (means. unchanged)
+            </para>
+            </summary>
+            <remarks>
+            Used if <see cref="P:SpiralLab.Sirius2.Config.IsConvertJumpToHardJump">IsConvertJumpToHardJump</see> is <c>True</c> only.
+            Above RTC5. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Config.HardJumpLaserOffDelay">
+            <summary>
+            Laser off delay for hard jumps (usec) 
+            <para>
+            Default: -1 (means. unchanged)
+            </para>
+            </summary>
+            <remarks>
+            Used if <see cref="P:SpiralLab.Sirius2.Config.IsConvertJumpToHardJump">IsConvertJumpToHardJump</see> is <c>True</c> only.
             Above RTC5. <br/>
             </remarks>
         </member>
@@ -1753,7 +1778,7 @@
             </summary>
             <remarks>
             Digital input for LASER port at RTC card.<br/>
-            Be-aware pull-up status. <nr/>
+            Be-aware pull-up status. <br/>
             Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDI2">ExtensionChannels.ExtDI2</see> at Fig 2.<br/>
             <img src="images/rtc6pciex.png"/><br/>
             </remarks>
@@ -15828,7 +15853,7 @@
             Zero check for float-point value by epsilon
             </summary>
             <param name="number">Value</param>
-            <returns>True(Zero), False(Not zero)</returns>
+            <returns><c>True</c>: Near zero<br/><c>False</c>: Not zero</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.MathHelper.IsZero(System.Double,System.Double)">
             <summary>
@@ -15836,7 +15861,7 @@
             </summary>
             <param name="number">Value</param>
             <param name="threshold">Threshold</param>
-            <returns>True(Zero), False(Not zero)</returns>
+            <returns><c>True</c>: Near zero<br/><c>False</c>: Not zero</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.MathHelper.IsEqual(System.Double,System.Double)">
             <summary>
@@ -15844,7 +15869,7 @@
             </summary>
             <param name="a">Value</param>
             <param name="b">Value</param>
-            <returns>True(Equal), False(Not equal)</returns>
+            <returns><c>True</c>: Equal<br/><c>False</c>: Not equal</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.MathHelper.IsEqual(System.Double,System.Double,System.Double)">
             <summary>
@@ -15853,16 +15878,16 @@
             <param name="a">Value</param>
             <param name="b">Value</param>
             <param name="threshold">threshold</param>
-            <returns>True(Equal), False(Not equal)</returns>
+            <returns><c>True</c>: Equal<br/><c>False</c>: Not equal</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.MathHelper.IsEqual(System.Numerics.Vector2,System.Numerics.Vector2,System.Double)">
             <summary>
-            Equality of <c>System.Numerics.Vector2</c> by threshold
+            Equality of <c>System.Numerics.Vector2</c>(for float-point values) by threshold
             </summary>
             <param name="a"><c>System.Numerics.Vector2</c></param>
             <param name="b"><c>System.Numerics.Vector2</c></param>
             <param name="threshold">Threshold</param>
-            <returns>True(Equal), False(Not equal)</returns>
+            <returns><c>True</c>: Equal<br/><c>False</c>: Not equal</returns>
         </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.MathHelper.Epsilon">
             <summary>
@@ -15885,9 +15910,9 @@
             Range check
             </summary>
             <param name="a">Value</param>
-            <param name="lower">Lower</param>
-            <param name="upper">Upper</param>
-            <returns>True (In range), False (Out of range)</returns>
+            <param name="lower">Lower value</param>
+            <param name="upper">Upper value</param>
+            <returns><c>True</c>: In range<br/><c>False</c>: Out of range</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.MathHelper.Max(System.Double,System.Double)">
             <summary>
@@ -15959,7 +15984,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.MathHelper.CreateFromYawPitchRoll(System.Single,System.Single,System.Single)">
             <summary>
-            Create Quaternion by yaw, pitch and roll
+            Create <c>Quaternion</c> by yaw, pitch and roll
             </summary>
             <param name="yaw">Yaw</param>
             <param name="pitch">Ritch</param>
@@ -15968,7 +15993,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.MathHelper.ToEulerAngles(System.Numerics.Quaternion)">
             <summary>
-            Extension for Quaternion to Vector3
+            Extension for <c>Quaternion</c> to <c>System.Numerics.Vector3</c>
             </summary>
             <param name="q"><c>Quaternion</c></param>
             <returns><c>System.Numerics.Vector3</c></returns>
@@ -15978,14 +16003,14 @@
             Decimal place (or counts)
             </summary>
             <param name="n">Decimal value</param>
-            <returns>Place</returns>
+            <returns>Index of place</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.MathHelper.GetDecimalPlaces(System.Double)">
             <summary>
             Decimal place (or counts)
             </summary>
             <param name="n">Double value</param>
-            <returns>Place</returns>
+            <returns>Index of place</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Mathematics.IMatrixStack`1">
             <summary>
@@ -18752,9 +18777,6 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.ListMofOverflowClear">
             <inheritdoc/> 
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.ListMofLimitIf(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderRangeConditions)">
-            <inheritdoc/> 
-        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.ListMofExternalControlDelay(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double)">
             <inheritdoc/>  
         </member>
@@ -20366,9 +20388,6 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListMofOverflowClear">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListMofLimitIf(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderRangeConditions)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListMofExternalControlDelay(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double)">
@@ -22768,9 +22787,6 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofOverflowClear">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofLimitIf(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderRangeConditions)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMofExternalControlDelay(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double)">
@@ -28480,9 +28496,6 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListMofOverflowClear">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListMofLimitIf(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderRangeConditions)">
-            <inheritdoc/>  
-        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListMofExternalControlDelay(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double)">
             <inheritdoc/>  
         </member>
@@ -31872,7 +31885,30 @@
             <param name="characterSet"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CharacterSets">CharacterSets</see><br/>Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.CharacterSets._0">CharacterSets._0</see></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.ListDate(SpiralLab.Sirius2.Scanner.Rtc.DateFormats,System.Boolean,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)" -->
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.ListDate(SpiralLab.Sirius2.Scanner.Rtc.DateFormats,System.Boolean,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
+            <summary>
+            List mark date from character set
+            <code>
+            var rtcCharSet = rtc as IRtcCharacterSet;
+            rtc.ListBegin();
+            rtc.ListJumpTo(new Vector2(-10, 0));
+            rtcCharSet.ListDate(DateFormats.MonthDigit, true, CharacterSets._0);
+            rtc.ListJumpTo(new Vector2(10, 0));
+            rtcCharSet.ListDate(DateFormats.Day, true, CharacterSets._0);
+            rtc.ListEnd();
+            rtc.ListExecute(true);
+            </code>
+            </summary>
+            <remarks>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet">IRtcCharacterSet</see> only. <br/>
+            <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">IRtc.MatrixStack</see> is not applied. <br/>
+            When registering character set, final transformed positions should be calculated and downloaded from <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterBegin(System.UInt32)">CtlCharacterBegin</see> ~ <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.CtlCharacterEnd">CtlCharacterEnd</see>. <br/>
+            </remarks>
+            <param name="dateFormat"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.DateFormats">DateFormats</see></param>
+            <param name="leadingWithZero">Leading with 0 or not</param>
+            <param name="characterSet"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CharacterSets">CharacterSets</see><br/>Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.CharacterSets._0">CharacterSets._0</see></param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.ListTime(SpiralLab.Sirius2.Scanner.Rtc.TimeFormats,System.Boolean,SpiralLab.Sirius2.Scanner.Rtc.CharacterSets)">
             <summary>
             List mark time from character set
@@ -34305,13 +34341,31 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtParkReturn">
             <summary>
-            List return(or disable) park. (aka. fly extension version)
+            List park return (aka. fly extension version)
             </summary>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtParkReturn(System.Numerics.Vector2)" -->
-        <!-- Badly formed XML comment ignored for member "M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtEnd(System.Numerics.Vector2)" -->
-        <!-- Badly formed XML comment ignored for member "M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtEnd(System.Numerics.Vector3)" -->
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtParkReturn(System.Numerics.Vector2)">
+            <summary>
+            List moves the output position for 2 Axes with jump speed from the intermediate parking position to the specified absolute position in the 2D Image field. (aka. fly extension version)
+            </summary>
+            <param name="position">Jump x, y position (mm)<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtEnd(System.Numerics.Vector2)">
+            <summary>
+            List MoF x,y (or angular) has end (aka. fly extension version)
+            </summary>
+            <param name="jumpPosition">Jump x,y position (mm)<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension.ListMofExtEnd(System.Numerics.Vector3)">
+            <summary>
+            List MoF x,y,z has end (aka. fly extension version)
+            </summary>
+            <param name="jumpPosition">Jump x,y,z position (mm)<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RasterModes">
             <summary>
             Raster modes

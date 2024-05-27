@@ -17,7 +17,7 @@
  * 
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : StreamParser
+ * Description : How to use StreamParser (RTC6e only)
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */

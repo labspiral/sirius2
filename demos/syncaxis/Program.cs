@@ -16,7 +16,7 @@
  *               `---`            `---'                                                        `----'   
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : XL-SCAN (by syncAXIS)
+ * Description : XL-SCAN (by syncAXIS) (RTC6 + SCANahead + ACS motion)
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */

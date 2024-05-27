@@ -57,12 +57,11 @@ namespace Demos
             EditorHelper.SetLanguage();
 
             InitializeComponent();
-
-            this.Load += Form1_Load;
+            this.Shown += Form1_Shown;
             this.FormClosing += Form1_FormClosing;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Shown(object sender, EventArgs e)
         {
             // Initialize sirius2 library
             EditorHelper.Initialize();

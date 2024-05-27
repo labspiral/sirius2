@@ -17,7 +17,7 @@
  * 
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Initialize Sirius2 library 
+ * Description : How to use sirius2 library with easy 
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */

@@ -1,0 +1,12 @@
+﻿<Application x:Class="editor_wpf.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:editor_wpf"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="{x:Type Window}">
+            <Setter Property="FontFamily" Value="Arial" />
+            <Setter Property="FontSize" Value="9" />
+        </Style>
+    </Application.Resources>
+</Application>

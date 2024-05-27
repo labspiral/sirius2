@@ -16,7 +16,7 @@
  *               `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Download Characterset and Mark Text, Date, Time and SerialNo 
+ * Description : Download characterset into RTC list3 buffer and mark registered text, date, time and serial no 
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */

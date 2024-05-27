@@ -15817,11 +15817,13 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Common.TextRegisterHelper">
             <summary>
             TextRegisterHelper
+            <para>
+            RTC characterset helper for register. <br/>
+            </para>
             </summary>
             <remarks>
-            RTC characterset helper for register. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.ITextRegisterable">ITextRegisterable</see> only. <br/>
-            Used with RTC5 or RTC6 only. <br/>
+            Above RTC5. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.TextRegisterHelper.Register(SpiralLab.Sirius2.Winforms.Entity.ITextRegisterable[],SpiralLab.Sirius2.Winforms.Marker.IMarker)">
@@ -16240,7 +16242,7 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Common.OpenTKExtension">
             <summary>
             OpenTK extension
-            <para>Convert type between System.Numerics and OpenTK</para>
+            <para>Extension for type conversion between <c>System.Numerics</c> and <c>OpenTK</c></para>
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKExtension.ToVector3(System.Drawing.Color)">
@@ -16651,13 +16653,15 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Common.PropertyGridHelper.Browsable(System.Type,System.String,System.Boolean)">
             <summary>
             Property browsable (or visibility) at <c>PropertyGrid</c>
+            <code>
+            Examples : <br/>
+            PropertyGridHelper.PropertyBrowsable(typeof(EntityPen), "SkyWritingMode", false); <br/>
+            PropertyGridHelper.PropertyBrowsable(typeof(EntityPen), "PowerMapCategory", false); <br/>
+            PropertyGridHelper.PropertyBrowsable(typeof(CellDot), "RasterMode", false); <br/>
+            PropertyGridHelper.PropertyBrowsable(typeof(EntityLayerRtc), "AlcByPositionTable", false); <br/>
+            </code>
             </summary>
             <remarks>
-            Example : <br/>
-            <c>PropertyGridHelper.PropertyBrowsable(typeof(EntityPen), "SkyWritingMode", false); </c> <br/>
-            <c>PropertyGridHelper.PropertyBrowsable(typeof(EntityPen), "PowerMapCategory", false); </c> <br/>
-            <c>PropertyGridHelper.PropertyBrowsable(typeof(CellDot), "RasterMode", false); </c> <br/>
-            <c>PropertyGridHelper.PropertyBrowsable(typeof(EntityLayerRtc), "AlcByPositionTable", false);</c> <br/>
             </remarks>
             <param name="type">Type</param>
             <param name="name">Property name</param>
@@ -16665,7 +16669,10 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.PropertyGridHelper.AddButton(System.Windows.Forms.PropertyGrid,System.String,System.String,System.Drawing.Image,System.EventHandler)">
             <summary>
+            Add button at <c>PropertyGrid</c>
+            <para>
             https://stackoverflow.com/questions/6525639/how-do-you-have-a-button-in-a-property-grid
+            </para>
             </summary>
             <param name="propertyGrid"><c>PropertyGrid</c></param>
             <param name="text">Text</param>
@@ -22214,7 +22221,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.FindByLayerName(System.String,SpiralLab.Sirius2.Winforms.Entity.EntityLayer@)">
             <summary>
-            Find <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityLayer">EntityLayer</see> entity by name at <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>
+            Find <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityLayer">EntityLayer</see> by name at <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>
             </summary>
             <param name="layerName">Layer name</param>
             <param name="foundedLayer">Founded <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityLayer">EntityLayer</see></param>
@@ -22222,7 +22229,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.FindByPenColor(System.Drawing.Color,SpiralLab.Sirius2.Winforms.Entity.EntityPen@)">
             <summary>
-            Find <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see> entity by <see cref="T:System.Drawing.Color">Color</see> at <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>
+            Find <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see> by <see cref="T:System.Drawing.Color">Color</see> at <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>
             </summary>
             <param name="color">Pen color</param>
             <param name="foundedPen">Founded <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see></param>
@@ -22230,7 +22237,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.FindByPenName(System.String,SpiralLab.Sirius2.Winforms.Entity.EntityPen@)">
             <summary>
-            Find <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see> entity by name at <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>
+            Find <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see> by name at <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>
             </summary>
             <param name="penName">Pen name</param>
             <param name="foundedPen">Founded <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see></param>
@@ -22249,7 +22256,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.FindById(System.UInt32,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <summary>
-            Find <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> entity by <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Id">IEntity.Id</see> at <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>
+            Find <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> by <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Id">Id</see> at <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>
             </summary>
             <param name="entityId">ID of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>
             <param name="foundedEntity">Founded <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>
@@ -22257,7 +22264,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.FindByName(System.String,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <summary>
-            Find <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> entity by name at <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see> with recursively
+            Find <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> by name at <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see> with recursively
             </summary>
             <remarks>
             Consider unique name of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. <br/>
@@ -22268,7 +22275,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.FindBlockByName(System.String,SpiralLab.Sirius2.Winforms.Entity.EntityBlock@)">
             <summary>
-            Find <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlock">EntityBlock</see> entity by name
+            Find <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlock">EntityBlock</see> by name
             </summary>
             <remarks>
             Consider unique name of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlock">EntityBlock</see>. <br/>
@@ -22279,7 +22286,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.FindByType(System.Type,SpiralLab.Sirius2.Winforms.Entity.IEntity[]@)">
             <summary>
-            Find entities by <see cref="T:System.Type">Type</see> (also. compared by interface types) at <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see> with recursively
+            Find <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> by <see cref="T:System.Type">Type</see> with recursively
             </summary>
             <param name="entityType"><see cref="T:System.Type">Type</see> of entity</param>
             <param name="foundedEntities">Array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>

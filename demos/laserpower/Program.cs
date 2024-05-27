@@ -16,7 +16,7 @@
  *                `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Control Output Laser Power 
+ * Description : User defined laser source and control output power
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */

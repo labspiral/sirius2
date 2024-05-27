@@ -16,7 +16,7 @@
  *               `---`            `---'                                                        `----'   
  *  
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : 4x4 Matrix Operations
+ * Description : Easy to use matrix stack 
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */

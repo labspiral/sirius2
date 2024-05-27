@@ -17,7 +17,7 @@
  * 
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Optimize laser, scanner delays and mark speed and laser power
+ * Description : Optimize laser, scanner delays and mark speed with laser output power
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */

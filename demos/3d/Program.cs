@@ -17,7 +17,7 @@
  * 
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Control X,Y and Z position. Convert scanner field correction by points cloud at 3D surface.
+ * Description : Control x,y and z position. Also convert scanner field correction by pointscloud at 3D surface.
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */

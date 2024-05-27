@@ -58,27 +58,14 @@
     - Analog output
     - Digital output 
  - Support specific laser source vendors.
-    - AdvancedOptoWave 
-       - AOPico
-       - AOPico Precision,
-       - Fotia
-    - Coherent
-       - Avia LX
-       - Diamond C-Series
-    - IPG 
-       - YLP N
-       - YLP Type D
-       - YLP Type E
-       - YLP ULP N
-    - JPT Type E
-    - Photonics Industry
-       - DX
-       - RGH AIO
-    - Spectra Physics
-       - Hippo
-       - Talon
+    - AdvancedOptoWave (AOPico, AOPico Precision, Fotia)
+    - Coherent (Avia LX, Diamond C-Series)
+    - IPG (YLP N, Type D, Type E, ULP N)
+    - JPT (Type E)
+    - Photonics Industry (DX, RGH AIO)
+    - Spectra Physics (Hippo, Talon)
  - Support many kinds of powermeters.
-    - Coherent PowerMax
+    - Coherent (PowerMax)
     - Thorlabs (by OPM)
     - Ophir (by StarLab)
  - Support powermap table for compensate output laser power.
@@ -86,7 +73,7 @@
     - TCP/IP communication
     - Serial(RS-232) communication
  - Support powerful external script by C# language.
- - Open sourced code with editor, marker, laser and pen control for customization.
+ - Open sourced codes with editor, marker, laser source control for customization.
  - Support many kinds of executable demo programs.
 
 
@@ -117,8 +104,8 @@
 
 **4. Libraries**
 
- - Spirallab.sirius2.dll
- - Spirallab.sirius2.winforms.dll
+ - spirallab.sirius2.dll
+ - spirallab.sirius2.winforms.dll
     - Target frameworks: .NET Framework 4.7.2
     - Target platforms: Windows 
  - Dependencies
@@ -139,12 +126,13 @@
  - Add reference files ('spirallab.sirius2.dll', 'spirallab.sirius2.winforms.dll') into your project
  - Demo 'init' console project for beginner
  - Demo 'editor_basic' winforms project for beginner
-    - config 'config.ini' for RTC5 or RTC6
+    - config 'config.ini' for RTC4, RTC5 or RTC6
     - config 'config_syncaxis.ini' for XL-SCAN
  - Demo 'editor_entity' winforms project for create entities
  - Demo 'editor_barcode' winforms project for mark individual barcode entities
  - Demo 'editor_mof' winforms project for encoder based MoF
  - Demo 'editor_mof_barcode' winforms project for mark text, barcode by script with MoF
+ - Demo 'editor_mof_text' winforms project for mark out of ranged texts by script with MoF
  - Demo 'editor_dio' winforms project for control digital input/output
  - Demo 'editor_multiple' winforms project for multiple RTC instances
  - Demo 'editor_marker' winforms project for customized marker
@@ -167,6 +155,9 @@
 
 
 **7. Version history**
+
+* 2024.5.27 v.1.32.1500
+  - added) editor_wpf demo 
 
 * 2024.5.21 v.1.31.1490
   - added) editor_mof_text demo 

@@ -16,7 +16,7 @@
  *               `---`            `---'                                                        `----'   
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : XY MoF(Marking on the Fly) by fly extension (above RTC6 only)
+ * Description : MoF(Marking on the Fly) X/Y by fly extension (above RTC6 only)
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */

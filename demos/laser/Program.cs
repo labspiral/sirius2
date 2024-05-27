@@ -17,7 +17,7 @@
  * 
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : How to use many kinds of laser sources
+ * Description : How to use many kinds of laser sources 
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -77,8 +77,15 @@ namespace Demos
             ILaser laser = null;
             int laserType = 0;
             int laserId = 0;
+            // Max laser output: 20W
             float maxWatt = 20;
-            Console.Write("select laser (0~5) : ");
+            Console.WriteLine("'1' : control custom laser");
+            Console.WriteLine("'2' : control analog(V) laser");
+            Console.WriteLine("'3' : control frequency(Hz) laser");
+            Console.WriteLine("'4' : control duty cycle(%) laser");
+            Console.WriteLine("'5' : control digital output (16bits) laser");
+            Console.WriteLine("'6' : control digital output (8bits) laser");
+            Console.Write("select laser (1~6) : ");
             try
             {
                 laserType = Convert.ToInt32(Console.ReadLine());
@@ -90,27 +97,27 @@ namespace Demos
             switch (laserType)
             {
                 default:
-                case 0:
+                case 1:
                     // custom
                     laser = LaserFactory.CreateVirtual(laserId, maxWatt);
                     break;
-                case 1:
+                case 2:
                     // analog (V)
                     laser = LaserFactory.CreateVirtualAnalog(laserId, maxWatt, 1, 0, 10);
                     break;
-                case 2:
+                case 3:
                     // frequency (Hz)
                     laser = LaserFactory.CreateVirtualFrequency(laserId, maxWatt, 0, 50*1000);
                     break;
-                case 3:
+                case 4:
                     // duty cycle (0~99%)
                     laser = LaserFactory.CreateVirtualDutyCycle(laserId, maxWatt, 0, 99);
                     break;
-                case 4:
+                case 5:
                     // 16bits (0~65535)
                     laser = LaserFactory.CreateVirtualDO16Bits(laserId, maxWatt, 0, 65535);
                     break;
-                case 5:
+                case 6:
                     // 8bits (0~255)
                     laser = LaserFactory.CreateVirtualDO8Bits(laserId, maxWatt, 0, 255);
                     break;

@@ -417,7 +417,7 @@ namespace Demos
         private IPowerMeter powerMeter;
 
         /// <summary>
-        /// RTC DI EXTENSION1 port (16 bits)
+        /// RTC DI extension1 port (16 bits)
         /// </summary>
         /// <remarks>
         /// Created by <see cref="IOFactory">IOFactory</see>. <br/>
@@ -426,7 +426,7 @@ namespace Demos
         [ReadOnly(false)]
         [Category("Sirius2")]
         [DisplayName("DInput")]
-        [Description("IDInput Instance for RTC EXTENSION1 Port")]
+        [Description("IDInput Instance for RTC Extension1 Port")]
         public IDInput DIExt1 
         { 
             get { return dIExt1; }
@@ -1299,19 +1299,19 @@ namespace Demos
 
         private void BtnPoints_Click(object sender, EventArgs e)
         {
-            // create test 500 points
-            int counts = 500;
-            var rand = new Random();
-            var locations = new List<Vector2>(counts);
-            for (int i = 0; i < counts; i++)
-            {
-                locations.Add(new Vector2(
-                        (float)(rand.NextDouble() * 10.0),
-                        (float)(rand.NextDouble() * 10.0)
-                        ));
-            }
-            var entity = EntityFactory.CreatePoints(locations.ToArray(), 50);
-            document.ActAdd(entity);
+			// create test 500 points
+			int counts = 500;
+			var rand = new Random();
+			var locations = new List<Vector2>(counts);
+			for (int i = 0; i < counts; i++)
+			{
+				locations.Add(new Vector2(
+						(float)(rand.NextDouble() * 10.0),
+						(float)(rand.NextDouble() * 10.0)
+						));
+			}
+			var entity = EntityFactory.CreatePoints(locations.ToArray(), 50);
+			document.ActAdd(entity);
         }
         private void BtnPoint_Click(object sender, EventArgs e)
         {
@@ -1829,7 +1829,7 @@ namespace Demos
                     break;
                 case RtcTypes.RtcVirtual:
                     break;
-
+              
                 case RtcTypes.Rtc5:
                 case RtcTypes.Rtc6:
                 case RtcTypes.Rtc6e:

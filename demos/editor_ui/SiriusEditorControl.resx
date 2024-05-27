@@ -131,11 +131,61 @@
   <data name="spcMain.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
+  <data name="editorControl1.CursorPositionList" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAMUCbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1u
+        ZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbT3BlblRLLlZlY3RvcjMsIE9w
+        ZW5USywgVmVyc2lvbj0zLjMuMy4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWJhZDE5
+        OWZlODRlYjNkZjRdXSwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQ
+        dWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0sIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAs
+        IEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQUBAAAAW1N5c3Rl
+        bS5Db2xsZWN0aW9ucy5HZW5lcmljLkxpc3RgMVtbU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuS2V5
+        VmFsdWVQYWlyYDJbW1N5c3RlbS5TdHJpbmcDAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgMAAOUBU3lz
+        dGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuS2V5VmFsdWVQYWlyYDJbW1N5c3RlbS5TdHJpbmcsIG1zY29y
+        bGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVj
+        NTYxOTM0ZTA4OV0sW09wZW5USy5WZWN0b3IzLCBPcGVuVEssIFZlcnNpb249My4zLjMuMCwgQ3VsdHVy
+        ZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iYWQxOTlmZTg0ZWIzZGY0XV1bXQgIAgAAAAkDAAAAAAAA
+        AAAAAAAMBAAAAPYBbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJs
+        aWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbT3BlblRLLlZlY3RvcjMsIE9wZW5USywgVmVyc2lv
+        bj0zLjMuMy4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWJhZDE5OWZlODRlYjNkZjRd
+        XSwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tl
+        bj1iNzdhNWM1NjE5MzRlMDg5BwMAAAAAAQAAAAoAAAAEOFN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmlj
+        LktleVZhbHVlUGFpcmAyW1tTeXN0ZW0uU3RyaW5nBAAAAAwGAAAASU9wZW5USywgVmVyc2lvbj0zLjMu
+        My4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWJhZDE5OWZlODRlYjNkZjQF+////zhT
+        eXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5LZXlWYWx1ZVBhaXJgMltbU3lzdGVtLlN0cmluZwIAAAAD
+        a2V5BXZhbHVlAQQOT3BlblRLLlZlY3RvcjMGAAAABAAAAAoF+f///w5PcGVuVEsuVmVjdG9yMwMAAAAB
+        WAFZAVoAAAALCwsGAAAAAAAAAAAAAAAAAAAAAfj////7////CgH3////+f///wAAAAAAAAAAAAAAAAH2
+        ////+////woB9f////n///8AAAAAAAAAAAAAAAAB9P////v///8KAfP////5////AAAAAAAAAAAAAAAA
+        AfL////7////CgHx////+f///wAAAAAAAAAAAAAAAAHw////+////woB7/////n///8AAAAAAAAAAAAA
+        AAAB7v////v///8KAe3////5////AAAAAAAAAAAAAAAAAez////7////CgHr////+f///wAAAAAAAAAA
+        AAAAAAHq////+////woB6f////n///8AAAAAAAAAAAAAAAAB6P////v///8KAef////5////AAAAAAAA
+        AAAAAAAACw==
+</value>
+  </data>
+  <data name="editorControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="editorControl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="editorControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="editorControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="editorControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>742, 728</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="editorControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
   <data name="&gt;&gt;editorControl1.Name" xml:space="preserve">
     <value>editorControl1</value>
   </data>
   <data name="&gt;&gt;editorControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.EditorUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.EditorUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;editorControl1.Parent" xml:space="preserve">
     <value>tabEditor</value>
@@ -155,7 +205,6 @@
   <data name="tabEditor.Size" type="System.Drawing.Size, System.Drawing">
     <value>748, 734</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabEditor.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -177,95 +226,110 @@
   <data name="&gt;&gt;tabEditor.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;rtcControl1.Name" xml:space="preserve">
-    <value>rtcControl1</value>
+  <data name="spcMarker.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="&gt;&gt;rtcControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RtcUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="spcMarker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
-  <data name="&gt;&gt;rtcControl1.Parent" xml:space="preserve">
-    <value>TabRTC</value>
+  <data name="spcMarker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
-  <data name="&gt;&gt;rtcControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="offsetControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="TabRTC.ImageKey" xml:space="preserve">
-    <value>Video Card.png</value>
+  <data name="offsetControl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
   </data>
-  <data name="TabRTC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 32</value>
+  <data name="offsetControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="TabRTC.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="offsetControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
-  <data name="TabRTC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>748, 734</value>
+  <data name="offsetControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 728</value>
   </data>
-  <data name="TabRTC.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="TabRTC.Text" xml:space="preserve">
-    <value>RTC</value>
-  </data>
-  <data name="TabRTC.ToolTipText" xml:space="preserve">
-    <value>RTC</value>
-  </data>
-  <data name="&gt;&gt;TabRTC.Name" xml:space="preserve">
-    <value>TabRTC</value>
-  </data>
-  <data name="&gt;&gt;TabRTC.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabRTC.Parent" xml:space="preserve">
-    <value>tbcMain</value>
-  </data>
-  <data name="&gt;&gt;TabRTC.ZOrder" xml:space="preserve">
+  <data name="offsetControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;laserControl1.Name" xml:space="preserve">
-    <value>laserControl1</value>
+  <data name="&gt;&gt;offsetControl1.Name" xml:space="preserve">
+    <value>offsetControl1</value>
   </data>
-  <data name="&gt;&gt;laserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.LaserUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;offsetControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.OffsetUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;laserControl1.Parent" xml:space="preserve">
-    <value>tabLaser</value>
+  <data name="&gt;&gt;offsetControl1.Parent" xml:space="preserve">
+    <value>spcMarker.Panel1</value>
   </data>
-  <data name="&gt;&gt;laserControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;offsetControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tabLaser.ImageKey" xml:space="preserve">
-    <value>Processor2.png</value>
+  <data name="&gt;&gt;spcMarker.Panel1.Name" xml:space="preserve">
+    <value>spcMarker.Panel1</value>
   </data>
-  <data name="tabLaser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 32</value>
+  <data name="&gt;&gt;spcMarker.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tabLaser.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="&gt;&gt;spcMarker.Panel1.Parent" xml:space="preserve">
+    <value>spcMarker</value>
   </data>
-  <data name="tabLaser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>748, 734</value>
+  <data name="&gt;&gt;spcMarker.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="tabLaser.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="markerControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="tabLaser.Text" xml:space="preserve">
-    <value>Laser</value>
+  <data name="markerControl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
   </data>
-  <data name="tabLaser.ToolTipText" xml:space="preserve">
-    <value>Laser</value>
+  <data name="markerControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;tabLaser.Name" xml:space="preserve">
-    <value>tabLaser</value>
+  <data name="markerControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
-  <data name="&gt;&gt;tabLaser.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="markerControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 728</value>
   </data>
-  <data name="&gt;&gt;tabLaser.Parent" xml:space="preserve">
-    <value>tbcMain</value>
+  <data name="markerControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;tabLaser.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;markerControl1.Name" xml:space="preserve">
+    <value>markerControl1</value>
+  </data>
+  <data name="&gt;&gt;markerControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.MarkerUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;markerControl1.Parent" xml:space="preserve">
+    <value>spcMarker.Panel2</value>
+  </data>
+  <data name="&gt;&gt;markerControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;spcMarker.Panel2.Name" xml:space="preserve">
+    <value>spcMarker.Panel2</value>
+  </data>
+  <data name="&gt;&gt;spcMarker.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;spcMarker.Panel2.Parent" xml:space="preserve">
+    <value>spcMarker</value>
+  </data>
+  <data name="&gt;&gt;spcMarker.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="spcMarker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>742, 728</value>
+  </data>
+  <data name="spcMarker.SplitterDistance" type="System.Int32, mscorlib">
+    <value>305</value>
+  </data>
+  <data name="spcMarker.SplitterWidth" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="spcMarker.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;spcMarker.Name" xml:space="preserve">
     <value>spcMarker</value>
@@ -310,13 +374,31 @@
     <value>tbcMain</value>
   </data>
   <data name="&gt;&gt;tabMarker.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
+  </data>
+  <data name="manualUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="manualUserControl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="manualUserControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="manualUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="manualUserControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>742, 728</value>
+  </data>
+  <data name="manualUserControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;manualUserControl1.Name" xml:space="preserve">
     <value>manualUserControl1</value>
   </data>
   <data name="&gt;&gt;manualUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.ManualUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.ManualUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;manualUserControl1.Parent" xml:space="preserve">
     <value>tabManual</value>
@@ -325,7 +407,7 @@
     <value>0</value>
   </data>
   <data name="tabManual.ImageKey" xml:space="preserve">
-    <value>light_on_24px.png</value>
+    <value>Voltage.png</value>
   </data>
   <data name="tabManual.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 32</value>
@@ -355,7 +437,247 @@
     <value>tbcMain</value>
   </data>
   <data name="&gt;&gt;tabManual.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="rtcControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtcControl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="rtcControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="rtcControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="rtcControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>742, 728</value>
+  </data>
+  <data name="rtcControl1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="&gt;&gt;rtcControl1.Name" xml:space="preserve">
+    <value>rtcControl1</value>
+  </data>
+  <data name="&gt;&gt;rtcControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.RtcUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;rtcControl1.Parent" xml:space="preserve">
+    <value>TabRTC</value>
+  </data>
+  <data name="&gt;&gt;rtcControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TabRTC.ImageKey" xml:space="preserve">
+    <value>Video Card.png</value>
+  </data>
+  <data name="TabRTC.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 32</value>
+  </data>
+  <data name="TabRTC.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabRTC.Size" type="System.Drawing.Size, System.Drawing">
+    <value>748, 734</value>
+  </data>
+  <data name="TabRTC.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="TabRTC.Text" xml:space="preserve">
+    <value>RTC</value>
+  </data>
+  <data name="TabRTC.ToolTipText" xml:space="preserve">
+    <value>RTC</value>
+  </data>
+  <data name="&gt;&gt;TabRTC.Name" xml:space="preserve">
+    <value>TabRTC</value>
+  </data>
+  <data name="&gt;&gt;TabRTC.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabRTC.Parent" xml:space="preserve">
+    <value>tbcMain</value>
+  </data>
+  <data name="&gt;&gt;TabRTC.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="laserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="laserControl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="laserControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="laserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="laserControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>742, 728</value>
+  </data>
+  <data name="laserControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;laserControl1.Name" xml:space="preserve">
+    <value>laserControl1</value>
+  </data>
+  <data name="&gt;&gt;laserControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.LaserUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;laserControl1.Parent" xml:space="preserve">
+    <value>tabLaser</value>
+  </data>
+  <data name="&gt;&gt;laserControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabLaser.ImageKey" xml:space="preserve">
+    <value>Processor2.png</value>
+  </data>
+  <data name="tabLaser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 32</value>
+  </data>
+  <data name="tabLaser.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabLaser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>748, 734</value>
+  </data>
+  <data name="tabLaser.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabLaser.Text" xml:space="preserve">
+    <value>Laser</value>
+  </data>
+  <data name="tabLaser.ToolTipText" xml:space="preserve">
+    <value>Laser</value>
+  </data>
+  <data name="&gt;&gt;tabLaser.Name" xml:space="preserve">
+    <value>tabLaser</value>
+  </data>
+  <data name="&gt;&gt;tabLaser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabLaser.Parent" xml:space="preserve">
+    <value>tbcMain</value>
+  </data>
+  <data name="&gt;&gt;tabLaser.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="spcIO.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="spcIO.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="spcIO.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="rtcDIUserControl1.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rtcDIUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtcDIUserControl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="rtcDIUserControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="rtcDIUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="rtcDIUserControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 728</value>
+  </data>
+  <data name="rtcDIUserControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;rtcDIUserControl1.Name" xml:space="preserve">
+    <value>rtcDIUserControl1</value>
+  </data>
+  <data name="&gt;&gt;rtcDIUserControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;rtcDIUserControl1.Parent" xml:space="preserve">
+    <value>spcIO.Panel1</value>
+  </data>
+  <data name="&gt;&gt;rtcDIUserControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;spcIO.Panel1.Name" xml:space="preserve">
+    <value>spcIO.Panel1</value>
+  </data>
+  <data name="&gt;&gt;spcIO.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;spcIO.Panel1.Parent" xml:space="preserve">
+    <value>spcIO</value>
+  </data>
+  <data name="&gt;&gt;spcIO.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="spcIO.Panel1MinSize" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="rtcDOUserControl1.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rtcDOUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtcDOUserControl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="rtcDOUserControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="rtcDOUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="rtcDOUserControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 728</value>
+  </data>
+  <data name="rtcDOUserControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;rtcDOUserControl1.Name" xml:space="preserve">
+    <value>rtcDOUserControl1</value>
+  </data>
+  <data name="&gt;&gt;rtcDOUserControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;rtcDOUserControl1.Parent" xml:space="preserve">
+    <value>spcIO.Panel2</value>
+  </data>
+  <data name="&gt;&gt;rtcDOUserControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;spcIO.Panel2.Name" xml:space="preserve">
+    <value>spcIO.Panel2</value>
+  </data>
+  <data name="&gt;&gt;spcIO.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;spcIO.Panel2.Parent" xml:space="preserve">
+    <value>spcIO</value>
+  </data>
+  <data name="&gt;&gt;spcIO.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="spcIO.Panel2MinSize" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="spcIO.Size" type="System.Drawing.Size, System.Drawing">
+    <value>742, 728</value>
+  </data>
+  <data name="spcIO.SplitterDistance" type="System.Int32, mscorlib">
+    <value>359</value>
+  </data>
+  <data name="spcIO.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;spcIO.Name" xml:space="preserve">
     <value>spcIO</value>
@@ -402,145 +724,133 @@
   <data name="&gt;&gt;tabIO.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;tbcPower.Name" xml:space="preserve">
-    <value>tbcPower</value>
+  <data name="powerMeterControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="&gt;&gt;tbcPower.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="powerMeterControl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
   </data>
-  <data name="&gt;&gt;tbcPower.Parent" xml:space="preserve">
-    <value>tabPower</value>
+  <data name="powerMeterControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
   </data>
-  <data name="&gt;&gt;tbcPower.ZOrder" xml:space="preserve">
+  <data name="powerMeterControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="powerMeterControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>724, 682</value>
+  </data>
+  <data name="powerMeterControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;powerMeterControl1.Name" xml:space="preserve">
+    <value>powerMeterControl1</value>
+  </data>
+  <data name="&gt;&gt;powerMeterControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;powerMeterControl1.Parent" xml:space="preserve">
+    <value>tabPage15</value>
+  </data>
+  <data name="&gt;&gt;powerMeterControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tabPower.ImageKey" xml:space="preserve">
+  <data name="tabPage15.ImageKey" xml:space="preserve">
     <value>Graph2.png</value>
   </data>
-  <data name="tabPower.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabPage15.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 32</value>
   </data>
-  <data name="tabPower.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabPage15.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
-  <data name="tabPower.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabPage15.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
-  <data name="tabPower.Size" type="System.Drawing.Size, System.Drawing">
-    <value>748, 734</value>
+  <data name="tabPage15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>732, 690</value>
   </data>
-  <data name="tabPower.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="tabPage15.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="tabPower.Text" xml:space="preserve">
-    <value>Power</value>
-  </data>
-  <data name="tabPower.ToolTipText" xml:space="preserve">
+  <data name="tabPage15.Text" xml:space="preserve">
     <value>PowerMeter</value>
   </data>
-  <data name="&gt;&gt;tabPower.Name" xml:space="preserve">
-    <value>tabPower</value>
+  <data name="&gt;&gt;tabPage15.Name" xml:space="preserve">
+    <value>tabPage15</value>
   </data>
-  <data name="&gt;&gt;tabPower.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabPage15.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabPower.Parent" xml:space="preserve">
-    <value>tbcMain</value>
+  <data name="&gt;&gt;tabPage15.Parent" xml:space="preserve">
+    <value>tbcPower</value>
   </data>
-  <data name="&gt;&gt;tabPower.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;scriptControlControl1.Name" xml:space="preserve">
-    <value>scriptControlControl1</value>
-  </data>
-  <data name="&gt;&gt;scriptControlControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.ScriptUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;scriptControlControl1.Parent" xml:space="preserve">
-    <value>tabScript</value>
-  </data>
-  <data name="&gt;&gt;scriptControlControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tabPage15.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tabScript.ImageKey" xml:space="preserve">
-    <value>csharp.ico</value>
+  <data name="powerMapControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="tabScript.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 32</value>
+  <data name="powerMapControl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
   </data>
-  <data name="tabScript.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="powerMapControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
   </data>
-  <data name="tabScript.Size" type="System.Drawing.Size, System.Drawing">
-    <value>748, 734</value>
+  <data name="powerMapControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
-  <data name="tabScript.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="powerMapControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>724, 682</value>
   </data>
-  <data name="tabScript.Text" xml:space="preserve">
-    <value>Script</value>
+  <data name="powerMapControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="tabScript.ToolTipText" xml:space="preserve">
-    <value>C# Script</value>
+  <data name="&gt;&gt;powerMapControl1.Name" xml:space="preserve">
+    <value>powerMapControl1</value>
   </data>
-  <data name="&gt;&gt;tabScript.Name" xml:space="preserve">
-    <value>tabScript</value>
+  <data name="&gt;&gt;powerMapControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;tabScript.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;powerMapControl1.Parent" xml:space="preserve">
+    <value>tabPage16</value>
   </data>
-  <data name="&gt;&gt;tabScript.Parent" xml:space="preserve">
-    <value>tbcMain</value>
-  </data>
-  <data name="&gt;&gt;tabScript.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;remoteUserControl1.Name" xml:space="preserve">
-    <value>remoteUserControl1</value>
-  </data>
-  <data name="&gt;&gt;remoteUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RemoteUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;remoteUserControl1.Parent" xml:space="preserve">
-    <value>tabRemote</value>
-  </data>
-  <data name="&gt;&gt;remoteUserControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;powerMapControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tabRemote.ImageKey" xml:space="preserve">
-    <value>RS-232 Male.png</value>
+  <data name="tabPage16.ImageKey" xml:space="preserve">
+    <value>Graph.png</value>
   </data>
-  <data name="tabRemote.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabPage16.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 32</value>
   </data>
-  <data name="tabRemote.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="tabPage16.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="tabRemote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>748, 734</value>
+  <data name="tabPage16.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="tabRemote.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="tabPage16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>732, 690</value>
   </data>
-  <data name="tabRemote.Text" xml:space="preserve">
-    <value>Remote</value>
+  <data name="tabPage16.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="tabRemote.ToolTipText" xml:space="preserve">
-    <value>Remote</value>
+  <data name="tabPage16.Text" xml:space="preserve">
+    <value>PowerMap</value>
   </data>
-  <data name="&gt;&gt;tabRemote.Name" xml:space="preserve">
-    <value>tabRemote</value>
+  <data name="&gt;&gt;tabPage16.Name" xml:space="preserve">
+    <value>tabPage16</value>
   </data>
-  <data name="&gt;&gt;tabRemote.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabPage16.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabRemote.Parent" xml:space="preserve">
-    <value>tbcMain</value>
+  <data name="&gt;&gt;tabPage16.Parent" xml:space="preserve">
+    <value>tbcPower</value>
   </data>
-  <data name="&gt;&gt;tabRemote.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;tabPage16.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="tbcMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="tbcPower.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -550,37 +860,41 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACU
-        SAAAAk1TRnQBSQFMAgEBKAEABAgBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEoAwABYAMA
-        AQgBAQIAAQEBAAEIBgABYxgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHcAcABAAHw
-        AcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEAAzkBAAGA
-        AXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEzAwABZgMA
-        AZkDAAHMAgABMwMAAjMCAAEzAWYCAAEzAZkCAAEzAcwCAAEzAf8CAAFmAwABZgEzAgACZgIAAWYBmQIA
-        AWYBzAIAAWYB/wIAAZkDAAGZATMCAAGZAWYCAAKZAgABmQHMAgABmQH/AgABzAMAAcwBMwIAAcwBZgIA
-        AcwBmQIAAswCAAHMAf8CAAH/AWYCAAH/AZkCAAH/AcwBAAEzAf8CAAH/AQABMwEAATMBAAFmAQABMwEA
-        AZkBAAEzAQABzAEAATMBAAH/AQAB/wEzAgADMwEAAjMBZgEAAjMBmQEAAjMBzAEAAjMB/wEAATMBZgIA
-        ATMBZgEzAQABMwJmAQABMwFmAZkBAAEzAWYBzAEAATMBZgH/AQABMwGZAgABMwGZATMBAAEzAZkBZgEA
-        ATMCmQEAATMBmQHMAQABMwGZAf8BAAEzAcwCAAEzAcwBMwEAATMBzAFmAQABMwHMAZkBAAEzAswBAAEz
-        AcwB/wEAATMB/wEzAQABMwH/AWYBAAEzAf8BmQEAATMB/wHMAQABMwL/AQABZgMAAWYBAAEzAQABZgEA
-        AWYBAAFmAQABmQEAAWYBAAHMAQABZgEAAf8BAAFmATMCAAFmAjMBAAFmATMBZgEAAWYBMwGZAQABZgEz
-        AcwBAAFmATMB/wEAAmYCAAJmATMBAANmAQACZgGZAQACZgHMAQABZgGZAgABZgGZATMBAAFmAZkBZgEA
-        AWYCmQEAAWYBmQHMAQABZgGZAf8BAAFmAcwCAAFmAcwBMwEAAWYBzAGZAQABZgLMAQABZgHMAf8BAAFm
-        Af8CAAFmAf8BMwEAAWYB/wGZAQABZgH/AcwBAAHMAQAB/wEAAf8BAAHMAQACmQIAAZkBMwGZAQABmQEA
-        AZkBAAGZAQABzAEAAZkDAAGZAjMBAAGZAQABZgEAAZkBMwHMAQABmQEAAf8BAAGZAWYCAAGZAWYBMwEA
-        AZkBMwFmAQABmQFmAZkBAAGZAWYBzAEAAZkBMwH/AQACmQEzAQACmQFmAQADmQEAApkBzAEAApkB/wEA
-        AZkBzAIAAZkBzAEzAQABZgHMAWYBAAGZAcwBmQEAAZkCzAEAAZkBzAH/AQABmQH/AgABmQH/ATMBAAGZ
-        AcwBZgEAAZkB/wGZAQABmQH/AcwBAAGZAv8BAAHMAwABmQEAATMBAAHMAQABZgEAAcwBAAGZAQABzAEA
-        AcwBAAGZATMCAAHMAjMBAAHMATMBZgEAAcwBMwGZAQABzAEzAcwBAAHMATMB/wEAAcwBZgIAAcwBZgEz
-        AQABmQJmAQABzAFmAZkBAAHMAWYBzAEAAZkBZgH/AQABzAGZAgABzAGZATMBAAHMAZkBZgEAAcwCmQEA
-        AcwBmQHMAQABzAGZAf8BAALMAgACzAEzAQACzAFmAQACzAGZAQADzAEAAswB/wEAAcwB/wIAAcwB/wEz
-        AQABmQH/AWYBAAHMAf8BmQEAAcwB/wHMAQABzAL/AQABzAEAATMBAAH/AQABZgEAAf8BAAGZAQABzAEz
-        AgAB/wIzAQAB/wEzAWYBAAH/ATMBmQEAAf8BMwHMAQAB/wEzAf8BAAH/AWYCAAH/AWYBMwEAAcwCZgEA
-        Af8BZgGZAQAB/wFmAcwBAAHMAWYB/wEAAf8BmQIAAf8BmQEzAQAB/wGZAWYBAAH/ApkBAAH/AZkBzAEA
-        Af8BmQH/AQAB/wHMAgAB/wHMATMBAAH/AcwBZgEAAf8BzAGZAQAB/wLMAQAB/wHMAf8BAAL/ATMBAAHM
-        Af8BZgEAAv8BmQEAAv8BzAEAAmYB/wEAAWYB/wFmAQABZgL/AQAB/wJmAQAB/wFmAf8BAAL/AWYBAAEh
-        AQABpQEAA18BAAN3AQADhgEAA5YBAAPLAQADsgEAA9cBAAPdAQAD4wEAA+oBAAPxAQAD+AEAAfAB+wH/
-        AQABpAKgAQADgAMAAf8CAAH/AwAC/wEAAf8DAAH/AQAB/wEAAv8CAAP//wD/AP8A/wD/AP8A/wD/AP8A
-        JgAB/wHwDbwB8j0AAf8B7wIPAe8B/wwAAesRAAH/OgAB8AFDAe0C/wHtAUMB8AoAAfMBAAHsDgAB/zoA
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAi
+        SgAAAk1TRnQBSQFMAgEBKQEAASABCAEgAQgBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        AwABYAMAAQgBAQIAAQEBAAEIBgABYxgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHc
+        AcABAAHwAcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEA
+        AzkBAAGAAXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEz
+        AwABZgMAAZkDAAHMAgABMwMAAjMCAAEzAWYCAAEzAZkCAAEzAcwCAAEzAf8CAAFmAwABZgEzAgACZgIA
+        AWYBmQIAAWYBzAIAAWYB/wIAAZkDAAGZATMCAAGZAWYCAAKZAgABmQHMAgABmQH/AgABzAMAAcwBMwIA
+        AcwBZgIAAcwBmQIAAswCAAHMAf8CAAH/AWYCAAH/AZkCAAH/AcwBAAEzAf8CAAH/AQABMwEAATMBAAFm
+        AQABMwEAAZkBAAEzAQABzAEAATMBAAH/AQAB/wEzAgADMwEAAjMBZgEAAjMBmQEAAjMBzAEAAjMB/wEA
+        ATMBZgIAATMBZgEzAQABMwJmAQABMwFmAZkBAAEzAWYBzAEAATMBZgH/AQABMwGZAgABMwGZATMBAAEz
+        AZkBZgEAATMCmQEAATMBmQHMAQABMwGZAf8BAAEzAcwCAAEzAcwBMwEAATMBzAFmAQABMwHMAZkBAAEz
+        AswBAAEzAcwB/wEAATMB/wEzAQABMwH/AWYBAAEzAf8BmQEAATMB/wHMAQABMwL/AQABZgMAAWYBAAEz
+        AQABZgEAAWYBAAFmAQABmQEAAWYBAAHMAQABZgEAAf8BAAFmATMCAAFmAjMBAAFmATMBZgEAAWYBMwGZ
+        AQABZgEzAcwBAAFmATMB/wEAAmYCAAJmATMBAANmAQACZgGZAQACZgHMAQABZgGZAgABZgGZATMBAAFm
+        AZkBZgEAAWYCmQEAAWYBmQHMAQABZgGZAf8BAAFmAcwCAAFmAcwBMwEAAWYBzAGZAQABZgLMAQABZgHM
+        Af8BAAFmAf8CAAFmAf8BMwEAAWYB/wGZAQABZgH/AcwBAAHMAQAB/wEAAf8BAAHMAQACmQIAAZkBMwGZ
+        AQABmQEAAZkBAAGZAQABzAEAAZkDAAGZAjMBAAGZAQABZgEAAZkBMwHMAQABmQEAAf8BAAGZAWYCAAGZ
+        AWYBMwEAAZkBMwFmAQABmQFmAZkBAAGZAWYBzAEAAZkBMwH/AQACmQEzAQACmQFmAQADmQEAApkBzAEA
+        ApkB/wEAAZkBzAIAAZkBzAEzAQABZgHMAWYBAAGZAcwBmQEAAZkCzAEAAZkBzAH/AQABmQH/AgABmQH/
+        ATMBAAGZAcwBZgEAAZkB/wGZAQABmQH/AcwBAAGZAv8BAAHMAwABmQEAATMBAAHMAQABZgEAAcwBAAGZ
+        AQABzAEAAcwBAAGZATMCAAHMAjMBAAHMATMBZgEAAcwBMwGZAQABzAEzAcwBAAHMATMB/wEAAcwBZgIA
+        AcwBZgEzAQABmQJmAQABzAFmAZkBAAHMAWYBzAEAAZkBZgH/AQABzAGZAgABzAGZATMBAAHMAZkBZgEA
+        AcwCmQEAAcwBmQHMAQABzAGZAf8BAALMAgACzAEzAQACzAFmAQACzAGZAQADzAEAAswB/wEAAcwB/wIA
+        AcwB/wEzAQABmQH/AWYBAAHMAf8BmQEAAcwB/wHMAQABzAL/AQABzAEAATMBAAH/AQABZgEAAf8BAAGZ
+        AQABzAEzAgAB/wIzAQAB/wEzAWYBAAH/ATMBmQEAAf8BMwHMAQAB/wEzAf8BAAH/AWYCAAH/AWYBMwEA
+        AcwCZgEAAf8BZgGZAQAB/wFmAcwBAAHMAWYB/wEAAf8BmQIAAf8BmQEzAQAB/wGZAWYBAAH/ApkBAAH/
+        AZkBzAEAAf8BmQH/AQAB/wHMAgAB/wHMATMBAAH/AcwBZgEAAf8BzAGZAQAB/wLMAQAB/wHMAf8BAAL/
+        ATMBAAHMAf8BZgEAAv8BmQEAAv8BzAEAAmYB/wEAAWYB/wFmAQABZgL/AQAB/wJmAQAB/wFmAf8BAAL/
+        AWYBAAEhAQABpQEAA18BAAN3AQADhgEAA5YBAAPLAQADsgEAA9cBAAPdAQAD4wEAA+oBAAPxAQAD+AEA
+        AfAB+wH/AQABpAKgAQADgAMAAf8CAAH/AwAC/wEAAf8DAAH/AQAB/wEAAv8CAAP//wCHAAH/DPIB/1EA
+        AfQBDwwAAQ8B/1AAAfIOAAHyUAAB8gUAAQ8B8AHrBgAB8lAAAfIFAAHxAgAB8QFDBAAB8lAAAfIEAAEP
+        AW0B8wEAAW0BEwQAAfJQAAHyBgAB7AEAAe0FAAHyUAAB8gcAAvQFAAHyUAAB8gcAAe0BAAHsBAAB8lAA
+        AfIEAAHrA+8BAAHyBAAB8lAAAfIEAAHtAQAB9ALyAfEEAAHyUAAB8gUAAf8B8gcAAfJQAAHyBQAB7wEA
+        ARMGAAHyUAAB8gUAAQ8B/wHwBgAB8lAAAfQBDwUAAQcBAAFDBAABDwH/UQAB9AXyAfMBAAH0BPIB9P8A
+        6gAB/wHwDbwB8j0AAf8B7wIPAe8B/wwAAesRAAH/OgAB8AFDAe0C/wHtAUMB8AoAAfMBAAHsDgAB/zoA
         AfIBEwHrAfMEAAHzAesBEwHyCAAB6xEAAe8DAAH/Ae0BDxIAAQ8B7QH/HAAB9AHsAUMB8ggAAfIBQwHs
         AfQGAAESEQAB8AMAAe0BDgHrEuwB6wEOAe0aAAH/AfcBDwEHBQAC8gUAAQcBDwH3Af8EAAESBwABBwFt
         AewB9AYAAfADAAEPAW0U9AFtAQ8aAAFtAe8B/wMAAfQB7AEPAusBDwHsAfQDAAH/Ae8BbQQAARIFAAHz
@@ -787,81 +1101,276 @@
         AuoCAALqCgAD6gHvBPAB7wPqCAAB/wH0EPIB9AH/BQAE6gH3C/IB9AH/BwAC6gEAAesB6gLzAeoB6wEA
         AuoCAALqCgAM6goAAf8B9AHzCvIB8wH0Af8HAALqAesBBwvyAf8JAALqAQABBwTqAQcBAALqAgAC6goA
         DOoNAAH/AfMG8gHzAf8KAAHtAewB8AryAfMB/woAAuoBAAH/AQcC7AEHAf8BAALqAgAC6goAAe0K6gHt
-        DwAB/wH0AvIB8wH//wAqAAFCAU0BPgcAAT4DAAEoAwABYAMAAQgBAQIAAQEBAAEBBQABYAEMFgAD//8A
-        IgAD/wHwAQABDwf/AYEB/wHgAQABAwf/AQAB/wHHAf8B4wb/AfwBPAE/Ac8B/wHzAwAD/wHwAf8BDwHP
-        Af8B8wMAA/8BwwHnAcMBzwHDAfMDAAP/AccBAAHjAc8BAQHzAwAD/wHeATwBewHPAT8B8wMAA/8B3AFC
-        ATsBzgE9AXMDAAH4AQwBnwHcAYABCwHOAXwBMwMAAfkBzAGfAdkBPAEDAc4BfAEzAwAB+QH4AQ8B2QE+
-        AQMBzgE+AXMDAAH5AfwBnwHZAT4BAwHPARMB8wMAAfkB/AGfAdkBPAEDAc8BgQHzAwAB+QH8AZ8B3AGA
-        AQsBzwHnAfMDAAH5AfgBDwHcAUIBOwHPAf8BAwMAAfkBzAGfAd4BPAF7Ac8B/gEDAwAB+AEMAZ8BxwEA
-        AeMBzwH8AUcDAAP/AcMBxwHDAc8B/AGPAwAD/wHwAf8BDwHPAfwBHwEAAR8E/wH8ATwBPwHHAfwBPwEA
-        AT8F/wEAAf8B4AEAAX8H/wGBAf8B4AEALP8B/AE/Af8B/AEfA/8BwAEAAQMB/wH8AT8B+AE8AR8B4AEA
-        AQcBwAEAAQMBwwH4AT8BAAE8AQ8B4AEAAQcD/wHBAfABHwEAARgBDwHgAQABBwH+AX4BfwHAAQEBDwIA
-        AQcD/wH+AX4BfwHAAQMBgwIAAYMB/AH/AT8E/wEHAcMBDwEBAcAB/AH/AT8B/gF+AX8B/wGHAcMB/wGD
-        AeAD/wHGAQ4BfwL/AcMB/wHDAfAD/wHCAQ8E/wEPAf8B8AH8Af8BPwHiAQYBfwP/AQMC/wH8Af8BPwHw
-        AQIBDwHDAfwBPwEAAT8B/wHjAv8B8AFBAQ8BwwH8AT8BAAE8AR8B4AEHAf8B+AFgAQcBwAHwAT8B4AEc
-        AR8B4AEAAQ8B/gFwAQcBwAEAAR8B+AEIAQ8B8AEAAQcB/wH4AUMB/AEDAQ8B+AEAAQ8B+AFgAQMB/gF4
-        AWMB/wEPAYMB/wEAAQcB/wHwAcMB/gF+AWcB/wEPAcMB/wGAAYMB/AH/ASMF/wHDAf8BwwHAAfwB/wE/
-        Af4BfgF/Av8BwwH/AcMB4AP/Af4BfgF/Bf8B8Av/AfAt/wHAAYEBgwHgAQABBwHgAQABBwP/AcABgQGD
-        AeABAAEHAeABAAEHA/8BwAGBAYMB5wL/AecC/wHgAQABBwHAAYEBgwHnAv8B5wL/AeABAAEHAcABgQGD
-        AecC/wHmAWYBZwHAAQABAwHAAYEBgwHnAv8B5gFmAWcBwwEYAcMBwAGBAYMB5wL/AeEC/wHAAQABAwHA
-        AYEBgwHgAcMB/wHgAv8BwAEAAQMBwAGBAYMB4AEAAR8B5AFmAWcBwAEAAQMBwAGBAYMB4AEAAQ8B5gEk
-        AScBgAEAAQEBwAGBAYMB5AEAAQcB5wEYAR8BjAFCATEBwAGBAYMB5gEYAQcB5wGBAY8BgAEAAQEBwAH/
-        AYMB5wH/AccB5gFCAUcBgAEAAQEBwAH/AYMB5wL/AeYBZgFnAcABAAEDAcAB/wGDAecC/wHnB/8BgwHn
-        Av8B5wf/AYMB5wL/AeYBZgFnBf8BgwHnAv8B5gFmAWc3/wGBBf8B/gF/BP8BgQT/AeAB/AE/Ac4BAAEf
-        AeMBgQHHA/8B4AF4AR8BzgEAAR8B4wGBAccC/wEfAeQBMAEPAc4BAAEfAecBAAHnAf8BwAEPAeIBAAEH
-        AcABAAEDAf4BAAF/Af8BzwEPAeEBAAEDAcABAAEBAfwBAAE/Af8B3wGfAfABgAEDAcABAAEBAfgBAAEf
-        Af8B3wGfAfgBQAEHAcABAAEBAfgBAAEfAf8BwAEPAfwBIAEPAcMBgwHBAfgBAAEfAfsBwAEPAfwBEAEf
-        AcABAwHhATgBAAEcAfEB3wEfAfgBCAE/AcABBwHhATgBAAEcAeABHwH/AfABBAE/AcMBgwHhAfgBAAEf
-        AfEB3wEfAeABAgEfAcABAQHBAfgBAAEfAf8BwAEPAcABAQEPAcABAAEBAfgBAAEfAf8B3wEfAcABAAEH
-        AcABAAEBAfwBAAE/Af8B3wH/AeABAAEDAcABAAEBAf4BAAF/Af8B3wEfAfABDAEjAc8C/wHnAQAB5wH/
-        AcABDwH4AR4BAwEPAv8B4wH/AccC/wEfAfwBPwEHAQ8C/wHjAf8BxwL/Ab8B/gF/AY8Q/wHnC/8B5wf/
-        AfkBmQGfCf8B+QGZAZ8D/wGAAX8B/wHgAQABBwH5AZkBnwH8AQABPwGAAT8B/wHgAQABBwHgAQABBwH8
-        AQABPwGAAR8B/wHjAf8BxwHvAf8B9wH8AQABPwGAAQ8B/wHgAQEBxwEPAf8BkAH4AQABHwGGAQcB/wHg
-        AQEBxwEPAf8BEAHAAQABAwGHAQMB/wHgAQEBxwHvAf8BtwHBAf8CgwGBAf8B4AEBAccB7wH/AfcBwQH4
-        AYMBgQHAAf8B4AEAAQcBDwH/AfABwQH4AYMBwAHgAX8B4AEAAQcBDwH/AfABwQH4AYMB4AFwAT8B4AEA
-        AQcB7wH/AfcBwQH/AYMB8AE4AR8B4AEAAQcB7wH/AfcBwQH/AYMB+AEcAQ8B4AEAAQcBDwH/AfABwQEf
-        AYMB/AEOAQcB4AEAAQcBDwH/AfABwQEfAYMB/gEHAQMB4AEAAQcB7wH/AfcBwQEfAYMB/wEDAYEB4AEA
-        AQcB7QH/AfcBwQH/AYMB/wGBAQEB4AEAAQcBCAH/AfABwAEAAQMB/wHAAQMB4AEBAccBCQH/AfAB+AEA
-        AR8B/wHgAQcB4wH/AccB7wH/AfcB/AEAAT8B/wHwAQ8B4AEAAQcB4AEAAQcB/AEAAT8B/wH4AR8B4AEA
-        AQcB+QGZAZ8B/AEAAT8B/wH8AT8D/wH5AZkBnwT/Af4BfwP/AfkBmQGfIv8B/gHPAf8BAAL/AfgBfwHg
-        AQABBwH+AQIBRwH8AQABPwH/AfABHwHgAQABBwH8AQIBDwH4AQABHwH/AeABDwHnAf8B5wH4AQIBAwHw
-        AQABDwH/AcABBwHnAf8B5wHwAX4BAQHgAQABBwH/AcABBwHmAWABZwHgAX4BAwHgAQABBwH/AcEBAwHm
-        AWABZwHgAX4BBwHAAQABAwH/AcABAwHnAf8B5wHgAX4BDwHAAQABAwHgAYABQwHnAf8B5wHgAX4BBwHA
-        AQABAwHAAQABAwHmAWABZwHgAX4BBwHAAQABAwHAAQABAwHmAWABZwHgAX4BRwHAAQABAwHAAQABAwHn
-        Af8B5wHgAX8BxwHAAQABAwHAAQABQwHnAf8B5wHgAX8BxwHAAQABAwHAAQABAwHgAQABBwHgAQABBwHA
-        AQABAwHAAQABAwHgAQABBwHgAQABBwHgAQABBwHAAQEBBwHgAQABBwHgAQABDwHgAQABBwHgARABDwHg
-        AQABBwHgAQABHwHwAQABDwHwAQABDwHgAQABBwHgAQABPwH4AQABHwH4AQABHwHgAQABBwHgAQABfwH8
-        AQABPwH8AQABfwf/AQAC/wGBPf8B4wExAZ8D/wHzBf8B4gERAQ8BwAEAAQMB8gEAAR8BgAEAAQEB4AEA
-        AQcBwAEAAQMB8gEAAR8BgAEAAQEB4AEAAQcBgAEAAQEB8AEAAQMBgAEAAQEB4AEAAQcBgAEAAQEB8AEA
-        AQMBjwH/AfEB4AEAAQcBgAEAAQEB8wH4ATMBjwH/AfEB4AEAAQcBgAEAAQEB8gEQARMBjwHxAeEB4gER
-        AQ8BgAEAAUEB8gEQAUMBjwHhAcEB4wExAZ8BgAEQAUEB8gEQAQMBjwHDAYEB+QGMAccBgAESAUEB8gEQ
-        AQMBhwGAAQEB8AGIAUcBgAEQAUEB8gEQAQMBgwEAAQEB4AEAAQcBgQEAAUEB8gEQARMBgAEAAQEB4AEA
-        AQcBgAEAAQEB8wH4ATMBgAEAAWEB4AEAAQcBgAEAAQEB8AEAAQMBgAEAAWEB4AEAAQcBgAEAAQEB8AEA
-        AQMBgAEAAQEB4AEAAQcBwAEAAQMB8wL/AYABAAEBAfABiAFHAcABAAEDAcMC/wGAAQABAQH5AYwBxwP/
-        AcM5/wHDCP8BwwL/AcMC/wH4AQcB/wEAAv8BAAL/AQAC/wH4AQcB/AEAAT8B+AEAAR8B/AEAAT8B/AEB
-        AecB+AEYAR8B4AEYAQcB+AEAAR8B/AEBAecB8AH/AQ8BwAFmAQMB+AEAAR8B/AH4AQcB4QH/AYcBwwEA
-        AcMB8AEAAQ8B/AH4AQcB4wH/AccBzAEAATMB8AEAAQ8B/AL/AccBvwHjAfABAAEPAfABQgEPAfwC/wHH
-        AZ8B4wHAASQBAwHwAX4BDwH8AfgBBwHHAY8B4wHBAYEBgwHwAf8BDwH8AfgBBwHAAQcB8wHGAQABYwHw
-        Af8BDwH8AQEB5wHAAQcB8wHYAQABGwHwAX4BDwH8AQEB5wHHAY8B4wHAAQABAwHwAUIBDwH8AfgBBwHH
-        AZ8B4wHAAQABAwHwAQABDwH8AfgBBwHHAb8B4wHAAQABAwHwAQABDwHgAR8B/wHjAf8BxwHAAQABAwH4
-        AQABHwHgAR8B/wHhAf8BhwHwAQABDwH4AQABHwHnAZ8B/wHwAf8BDwH+AQABfwH8AQABPwHnAZ8B/wH4
-        ARgBHwH/AYEC/wEAAf8B4AEfAf8B/AEAAT8B/wHnAv8BwwH/AeABHwL/AQAF/wHDLv8B8AEAAQ8E/wEB
-        Af8B4AEAAQcB8AEAAQ8BwAEAAQMB/AEBAf8B4AEAAQcB8AEAAQ8BwAEAAQMB+AEBAf8B4AEAAQcB8AEA
-        AQ8BwAEAAQMB8AExAf8B4AEAAQcB8AEAAQ8BwAEAAQMB4AExAf8B4AEAAQcB8AEAAQ8BwAEAAQMBwAEA
-        Af8B4AEAAQcB8AEAAQ8B4AEAAQcBwAEAAX8B4AEAAQcB8AEAAQ8B8AEAAQ8BwAEAAQMB4AEAAQcB8AEA
-        AQ8B8AEAAQ8BxAEAAQMB4AEAAQcB8AEAAQ8B+AEAAR8BwAEAAQMB4AEAAQcB8AEAAQ8B+AEAAR8BwAEA
-        ASMB4AEAAQcB8AEAAQ8B/AEAAT8BwAEAAQMB4AEAAQcB8AEAAQ8B/AEAAT8BwAEAAQMB4AEAAQcB8AEA
-        AQ8B/gEAAX8BwgEAAQMB4AEAAQcB8AEAAQ8B/wEAAf8BwAEAAQcB4AEAAQcB8AEAAR8B/wEAAf8B4AEB
-        AQcB4AEAAQcB8AEAAT8B/wGBAf8B8AEgAQ8B4AEAAQcB8AEAAX8B/wGBAf8B8AEAAR8B4AEAAQcB8AEA
-        Av8BwwH/AfwBAAE/A/8B8AEBBP8B/gEAAX8r/wEACv8B/AEAAT8D/wH+AQABAwHwASABTwH4AQABHwH/
-        AYEB/wH8AQABAwHwASABTwHwAQABDwH+AQABfwH4AQABAwHwASABTwHwAQABDwH4AQABHwHgAQABAwHz
-        ASYBTwHwAQABDwHgAQABBwHgAQABAwHzASYBTwHwAQABDwHAAQABAwHgAQABAwHwASABTwHwAQABDwHA
-        AQABAwHgAQABAwHwASABTwHwAQABDwHAAQABAwHgAQABAwHwASABTwH8AQABPwHAAQABAwHgAQABAwP/
-        AfwBAAE/AcABAAEDAeABAAEDA/8B/AEAAT8BwAEAAQMB4AEAAQMB8gEEAc8B/AEAAT8BwAEAAQMB4AEA
-        AQMB8gEEAc8B/AE8AT8BwAEAAQMB4AEAAQMB8gEEAc8B/AF+AT8BwAEAAQMB4AEAAQMB8gFkAc8B/AE8
-        AT8BwAEAAQMB4AEAAQMB8gFkAc8B/AEAAT8BwAEAAQMB4AEAAQcB8gEEAc8B/AEAAT8B8AEAAQ8B4AEA
-        AR8B8gEEAc8B/AEAAT8B/gEAAX8B4AEAAT8B8gEEAc8B/AEAAT8B/wGBJf8L
+        DwAB/wH0AvIB8wH//wAqAAFCAU0BPgcAAT4DAAEoAwABYAMAAQgBAQIAAQEBAAEBBQABYAEMFgAD/wEA
+        A/8JAAP/CQAD/wkAA/8JAAH4AQABHwkAAfABAAEPCQAB8AEAAQ8JAAHwAQABDwkAAfABGAEPCQAB8AEI
+        AQ8JAAHwAQgBDwkAAfABAAEPCQAB8AEEAQ8JAAHwAQQBDwkAAfABIAEPCQAB8AEAAQ8JAAHwARABDwkA
+        AfABAAEPCQAB8AEIAQ8JAAH4AQgBHwkAA/8JAAP/CQAD/wkAA/8JAAP/AfABAAEPB/8BgQH/AeABAAED
+        B/8BAAH/AccB/wHjBv8B/AE8AT8BzwH/AfMDAAP/AfAB/wEPAc8B/wHzAwAD/wHDAecBwwHPAcMB8wMA
+        A/8BxwEAAeMBzwEBAfMDAAP/Ad4BPAF7Ac8BPwHzAwAD/wHcAUIBOwHOAT0BcwMAAfgBDAGfAdwBgAEL
+        Ac4BfAEzAwAB+QHMAZ8B2QE8AQMBzgF8ATMDAAH5AfgBDwHZAT4BAwHOAT4BcwMAAfkB/AGfAdkBPgED
+        Ac8BEwHzAwAB+QH8AZ8B2QE8AQMBzwGBAfMDAAH5AfwBnwHcAYABCwHPAecB8wMAAfkB+AEPAdwBQgE7
+        Ac8B/wEDAwAB+QHMAZ8B3gE8AXsBzwH+AQMDAAH4AQwBnwHHAQAB4wHPAfwBRwMAA/8BwwHHAcMBzwH8
+        AY8DAAP/AfAB/wEPAc8B/AEfAQABHwT/AfwBPAE/AccB/AE/AQABPwX/AQAB/wHgAQABfwf/AYEB/wHg
+        AQAs/wH8AT8B/wH8AR8D/wHAAQABAwH/AfwBPwH4ATwBHwHgAQABBwHAAQABAwHDAfgBPwEAATwBDwHg
+        AQABBwP/AcEB8AEfAQABGAEPAeABAAEHAf4BfgF/AcABAQEPAgABBwP/Af4BfgF/AcABAwGDAgABgwH8
+        Af8BPwT/AQcBwwEPAQEBwAH8Af8BPwH+AX4BfwH/AYcBwwH/AYMB4AP/AcYBDgF/Av8BwwH/AcMB8AP/
+        AcIBDwT/AQ8B/wHwAfwB/wE/AeIBBgF/A/8BAwL/AfwB/wE/AfABAgEPAcMB/AE/AQABPwH/AeMC/wHw
+        AUEBDwHDAfwBPwEAATwBHwHgAQcB/wH4AWABBwHAAfABPwHgARwBHwHgAQABDwH+AXABBwHAAQABHwH4
+        AQgBDwHwAQABBwH/AfgBQwH8AQMBDwH4AQABDwH4AWABAwH+AXgBYwH/AQ8BgwH/AQABBwH/AfABwwH+
+        AX4BZwH/AQ8BwwH/AYABgwH8Af8BIwX/AcMB/wHDAcAB/AH/AT8B/gF+AX8C/wHDAf8BwwHgA/8B/gF+
+        AX8F/wHwC/8B8C3/AcABgQGDAeABAAEHAeABAAEHA/8BwAGBAYMB4AEAAQcB4AEAAQcD/wHAAYEBgwHn
+        Av8B5wL/AeABAAEHAcABgQGDAecC/wHnAv8B4AEAAQcBwAGBAYMB5wL/AeYBZgFnAcABAAEDAcABgQGD
+        AecC/wHmAWYBZwHDARgBwwHAAYEBgwHnAv8B4QL/AcABAAEDAcABgQGDAeABwwH/AeAC/wHAAQABAwHA
+        AYEBgwHgAQABHwHkAWYBZwHAAQABAwHAAYEBgwHgAQABDwHmASQBJwGAAQABAQHAAYEBgwHkAQABBwHn
+        ARgBHwGMAUIBMQHAAYEBgwHmARgBBwHnAYEBjwGAAQABAQHAAf8BgwHnAf8BxwHmAUIBRwGAAQABAQHA
+        Af8BgwHnAv8B5gFmAWcBwAEAAQMBwAH/AYMB5wL/AecH/wGDAecC/wHnB/8BgwHnAv8B5gFmAWcF/wGD
+        AecC/wHmAWYBZzf/AYEF/wH+AX8E/wGBBP8B4AH8AT8BzgEAAR8B4wGBAccD/wHgAXgBHwHOAQABHwHj
+        AYEBxwL/AR8B5AEwAQ8BzgEAAR8B5wEAAecB/wHAAQ8B4gEAAQcBwAEAAQMB/gEAAX8B/wHPAQ8B4QEA
+        AQMBwAEAAQEB/AEAAT8B/wHfAZ8B8AGAAQMBwAEAAQEB+AEAAR8B/wHfAZ8B+AFAAQcBwAEAAQEB+AEA
+        AR8B/wHAAQ8B/AEgAQ8BwwGDAcEB+AEAAR8B+wHAAQ8B/AEQAR8BwAEDAeEBOAEAARwB8QHfAR8B+AEI
+        AT8BwAEHAeEBOAEAARwB4AEfAf8B8AEEAT8BwwGDAeEB+AEAAR8B8QHfAR8B4AECAR8BwAEBAcEB+AEA
+        AR8B/wHAAQ8BwAEBAQ8BwAEAAQEB+AEAAR8B/wHfAR8BwAEAAQcBwAEAAQEB/AEAAT8B/wHfAf8B4AEA
+        AQMBwAEAAQEB/gEAAX8B/wHfAR8B8AEMASMBzwL/AecBAAHnAf8BwAEPAfgBHgEDAQ8C/wHjAf8BxwL/
+        AR8B/AE/AQcBDwL/AeMB/wHHAv8BvwH+AX8BjxD/AecL/wHnB/8B+QGZAZ8J/wH5AZkBnwP/AYABfwH/
+        AeABAAEHAfkBmQGfAfwBAAE/AYABPwH/AeABAAEHAeABAAEHAfwBAAE/AYABHwH/AeMB/wHHAe8B/wH3
+        AfwBAAE/AYABDwH/AeABAQHHAQ8B/wGQAfgBAAEfAYYBBwH/AeABAQHHAQ8B/wEQAcABAAEDAYcBAwH/
+        AeABAQHHAe8B/wG3AcEB/wKDAYEB/wHgAQEBxwHvAf8B9wHBAfgBgwGBAcAB/wHgAQABBwEPAf8B8AHB
+        AfgBgwHAAeABfwHgAQABBwEPAf8B8AHBAfgBgwHgAXABPwHgAQABBwHvAf8B9wHBAf8BgwHwATgBHwHg
+        AQABBwHvAf8B9wHBAf8BgwH4ARwBDwHgAQABBwEPAf8B8AHBAR8BgwH8AQ4BBwHgAQABBwEPAf8B8AHB
+        AR8BgwH+AQcBAwHgAQABBwHvAf8B9wHBAR8BgwH/AQMBgQHgAQABBwHtAf8B9wHBAf8BgwH/AYEBAQHg
+        AQABBwEIAf8B8AHAAQABAwH/AcABAwHgAQEBxwEJAf8B8AH4AQABHwH/AeABBwHjAf8BxwHvAf8B9wH8
+        AQABPwH/AfABDwHgAQABBwHgAQABBwH8AQABPwH/AfgBHwHgAQABBwH5AZkBnwH8AQABPwH/AfwBPwP/
+        AfkBmQGfBP8B/gF/A/8B+QGZAZ8i/wH+Ac8B/wEAAv8B+AF/AeABAAEHAf4BAgFHAfwBAAE/Af8B8AEf
+        AeABAAEHAfwBAgEPAfgBAAEfAf8B4AEPAecB/wHnAfgBAgEDAfABAAEPAf8BwAEHAecB/wHnAfABfgEB
+        AeABAAEHAf8BwAEHAeYBYAFnAeABfgEDAeABAAEHAf8BwQEDAeYBYAFnAeABfgEHAcABAAEDAf8BwAED
+        AecB/wHnAeABfgEPAcABAAEDAeABgAFDAecB/wHnAeABfgEHAcABAAEDAcABAAEDAeYBYAFnAeABfgEH
+        AcABAAEDAcABAAEDAeYBYAFnAeABfgFHAcABAAEDAcABAAEDAecB/wHnAeABfwHHAcABAAEDAcABAAFD
+        AecB/wHnAeABfwHHAcABAAEDAcABAAEDAeABAAEHAeABAAEHAcABAAEDAcABAAEDAeABAAEHAeABAAEH
+        AeABAAEHAcABAQEHAeABAAEHAeABAAEPAeABAAEHAeABEAEPAeABAAEHAeABAAEfAfABAAEPAfABAAEP
+        AeABAAEHAeABAAE/AfgBAAEfAfgBAAEfAeABAAEHAeABAAF/AfwBAAE/AfwBAAF/B/8BAAL/AYE9/wHj
+        ATEBnwP/AfMF/wHiAREBDwHAAQABAwHyAQABHwGAAQABAQHgAQABBwHAAQABAwHyAQABHwGAAQABAQHg
+        AQABBwGAAQABAQHwAQABAwGAAQABAQHgAQABBwGAAQABAQHwAQABAwGPAf8B8QHgAQABBwGAAQABAQHz
+        AfgBMwGPAf8B8QHgAQABBwGAAQABAQHyARABEwGPAfEB4QHiAREBDwGAAQABQQHyARABQwGPAeEBwQHj
+        ATEBnwGAARABQQHyARABAwGPAcMBgQH5AYwBxwGAARIBQQHyARABAwGHAYABAQHwAYgBRwGAARABQQHy
+        ARABAwGDAQABAQHgAQABBwGBAQABQQHyARABEwGAAQABAQHgAQABBwGAAQABAQHzAfgBMwGAAQABYQHg
+        AQABBwGAAQABAQHwAQABAwGAAQABYQHgAQABBwGAAQABAQHwAQABAwGAAQABAQHgAQABBwHAAQABAwHz
+        Av8BgAEAAQEB8AGIAUcBwAEAAQMBwwL/AYABAAEBAfkBjAHHA/8Bwzn/AcMI/wHDAv8BwwL/AfgBBwH/
+        AQAC/wEAAv8BAAL/AfgBBwH8AQABPwH4AQABHwH8AQABPwH8AQEB5wH4ARgBHwHgARgBBwH4AQABHwH8
+        AQEB5wHwAf8BDwHAAWYBAwH4AQABHwH8AfgBBwHhAf8BhwHDAQABwwHwAQABDwH8AfgBBwHjAf8BxwHM
+        AQABMwHwAQABDwH8Av8BxwG/AeMB8AEAAQ8B8AFCAQ8B/AL/AccBnwHjAcABJAEDAfABfgEPAfwB+AEH
+        AccBjwHjAcEBgQGDAfAB/wEPAfwB+AEHAcABBwHzAcYBAAFjAfAB/wEPAfwBAQHnAcABBwHzAdgBAAEb
+        AfABfgEPAfwBAQHnAccBjwHjAcABAAEDAfABQgEPAfwB+AEHAccBnwHjAcABAAEDAfABAAEPAfwB+AEH
+        AccBvwHjAcABAAEDAfABAAEPAeABHwH/AeMB/wHHAcABAAEDAfgBAAEfAeABHwH/AeEB/wGHAfABAAEP
+        AfgBAAEfAecBnwH/AfAB/wEPAf4BAAF/AfwBAAE/AecBnwH/AfgBGAEfAf8BgQL/AQAB/wHgAR8B/wH8
+        AQABPwH/AecC/wHDAf8B4AEfAv8BAAX/AcMu/wHwAQABDwT/AQEB/wHgAQABBwHwAQABDwHAAQABAwH8
+        AQEB/wHgAQABBwHwAQABDwHAAQABAwH4AQEB/wHgAQABBwHwAQABDwHAAQABAwHwATEB/wHgAQABBwHw
+        AQABDwHAAQABAwHgATEB/wHgAQABBwHwAQABDwHAAQABAwHAAQAB/wHgAQABBwHwAQABDwHgAQABBwHA
+        AQABfwHgAQABBwHwAQABDwHwAQABDwHAAQABAwHgAQABBwHwAQABDwHwAQABDwHEAQABAwHgAQABBwHw
+        AQABDwH4AQABHwHAAQABAwHgAQABBwHwAQABDwH4AQABHwHAAQABIwHgAQABBwHwAQABDwH8AQABPwHA
+        AQABAwHgAQABBwHwAQABDwH8AQABPwHAAQABAwHgAQABBwHwAQABDwH+AQABfwHCAQABAwHgAQABBwHw
+        AQABDwH/AQAB/wHAAQABBwHgAQABBwHwAQABHwH/AQAB/wHgAQEBBwHgAQABBwHwAQABPwH/AYEB/wHw
+        ASABDwHgAQABBwHwAQABfwH/AYEB/wHwAQABHwHgAQABBwHwAQAC/wHDAf8B/AEAAT8D/wHwAQEE/wH+
+        AQABfyv/AQAK/wH8AQABPwP/Af4BAAEDAfABIAFPAfgBAAEfAf8BgQH/AfwBAAEDAfABIAFPAfABAAEP
+        Af4BAAF/AfgBAAEDAfABIAFPAfABAAEPAfgBAAEfAeABAAEDAfMBJgFPAfABAAEPAeABAAEHAeABAAED
+        AfMBJgFPAfABAAEPAcABAAEDAeABAAEDAfABIAFPAfABAAEPAcABAAEDAeABAAEDAfABIAFPAfABAAEP
+        AcABAAEDAeABAAEDAfABIAFPAfwBAAE/AcABAAEDAeABAAEDA/8B/AEAAT8BwAEAAQMB4AEAAQMD/wH8
+        AQABPwHAAQABAwHgAQABAwHyAQQBzwH8AQABPwHAAQABAwHgAQABAwHyAQQBzwH8ATwBPwHAAQABAwHg
+        AQABAwHyAQQBzwH8AX4BPwHAAQABAwHgAQABAwHyAWQBzwH8ATwBPwHAAQABAwHgAQABAwHyAWQBzwH8
+        AQABPwHAAQABAwHgAQABBwHyAQQBzwH8AQABPwHwAQABDwHgAQABHwHyAQQBzwH8AQABPwH+AQABfwHg
+        AQABPwHyAQQBzwH8AQABPwH/AYEl/ws=
 </value>
+  </data>
+  <data name="tbcPower.ItemSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 28</value>
+  </data>
+  <data name="tbcPower.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="tbcPower.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="tbcPower.Size" type="System.Drawing.Size, System.Drawing">
+    <value>740, 726</value>
+  </data>
+  <data name="tbcPower.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbcPower.Name" xml:space="preserve">
+    <value>tbcPower</value>
+  </data>
+  <data name="&gt;&gt;tbcPower.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbcPower.Parent" xml:space="preserve">
+    <value>tabPower</value>
+  </data>
+  <data name="&gt;&gt;tbcPower.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPower.ImageKey" xml:space="preserve">
+    <value>Graph2.png</value>
+  </data>
+  <data name="tabPower.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 32</value>
+  </data>
+  <data name="tabPower.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="tabPower.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="tabPower.Size" type="System.Drawing.Size, System.Drawing">
+    <value>748, 734</value>
+  </data>
+  <data name="tabPower.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="tabPower.Text" xml:space="preserve">
+    <value>Power</value>
+  </data>
+  <data name="tabPower.ToolTipText" xml:space="preserve">
+    <value>PowerMeter</value>
+  </data>
+  <data name="&gt;&gt;tabPower.Name" xml:space="preserve">
+    <value>tabPower</value>
+  </data>
+  <data name="&gt;&gt;tabPower.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPower.Parent" xml:space="preserve">
+    <value>tbcMain</value>
+  </data>
+  <data name="&gt;&gt;tabPower.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="scriptControlControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="scriptControlControl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="scriptControlControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="scriptControlControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="scriptControlControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>742, 728</value>
+  </data>
+  <data name="scriptControlControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;scriptControlControl1.Name" xml:space="preserve">
+    <value>scriptControlControl1</value>
+  </data>
+  <data name="&gt;&gt;scriptControlControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.ScriptUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;scriptControlControl1.Parent" xml:space="preserve">
+    <value>tabScript</value>
+  </data>
+  <data name="&gt;&gt;scriptControlControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabScript.ImageKey" xml:space="preserve">
+    <value>csharp.ico</value>
+  </data>
+  <data name="tabScript.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 32</value>
+  </data>
+  <data name="tabScript.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabScript.Size" type="System.Drawing.Size, System.Drawing">
+    <value>748, 734</value>
+  </data>
+  <data name="tabScript.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="tabScript.Text" xml:space="preserve">
+    <value>Script</value>
+  </data>
+  <data name="tabScript.ToolTipText" xml:space="preserve">
+    <value>C# Script</value>
+  </data>
+  <data name="&gt;&gt;tabScript.Name" xml:space="preserve">
+    <value>tabScript</value>
+  </data>
+  <data name="&gt;&gt;tabScript.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabScript.Parent" xml:space="preserve">
+    <value>tbcMain</value>
+  </data>
+  <data name="&gt;&gt;tabScript.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="remoteUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="remoteUserControl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="remoteUserControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="remoteUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="remoteUserControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>742, 728</value>
+  </data>
+  <data name="remoteUserControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;remoteUserControl1.Name" xml:space="preserve">
+    <value>remoteUserControl1</value>
+  </data>
+  <data name="&gt;&gt;remoteUserControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.RemoteUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;remoteUserControl1.Parent" xml:space="preserve">
+    <value>tabRemote</value>
+  </data>
+  <data name="&gt;&gt;remoteUserControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabRemote.ImageKey" xml:space="preserve">
+    <value>RS-232 Male.png</value>
+  </data>
+  <data name="tabRemote.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 32</value>
+  </data>
+  <data name="tabRemote.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabRemote.Size" type="System.Drawing.Size, System.Drawing">
+    <value>748, 734</value>
+  </data>
+  <data name="tabRemote.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="tabRemote.Text" xml:space="preserve">
+    <value>Remote</value>
+  </data>
+  <data name="tabRemote.ToolTipText" xml:space="preserve">
+    <value>Remote</value>
+  </data>
+  <data name="&gt;&gt;tabRemote.Name" xml:space="preserve">
+    <value>tabRemote</value>
+  </data>
+  <data name="&gt;&gt;tabRemote.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabRemote.Parent" xml:space="preserve">
+    <value>tbcMain</value>
+  </data>
+  <data name="&gt;&gt;tabRemote.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tbcMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="tbcMain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -930,7 +1439,7 @@
     <value>logControl1</value>
   </data>
   <data name="&gt;&gt;logControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.LogUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.LogUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;logControl1.Parent" xml:space="preserve">
     <value>spcMain.Panel2</value>
@@ -975,640 +1484,6 @@
     <value>panBody</value>
   </data>
   <data name="&gt;&gt;spcMain.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="editorControl1.CursorPositionList" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAMUCbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1u
-        ZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbT3BlblRLLlZlY3RvcjMsIE9w
-        ZW5USywgVmVyc2lvbj0zLjMuMy4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWJhZDE5
-        OWZlODRlYjNkZjRdXSwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQ
-        dWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0sIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAs
-        IEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQUBAAAAW1N5c3Rl
-        bS5Db2xsZWN0aW9ucy5HZW5lcmljLkxpc3RgMVtbU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuS2V5
-        VmFsdWVQYWlyYDJbW1N5c3RlbS5TdHJpbmcDAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgMAAOUBU3lz
-        dGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuS2V5VmFsdWVQYWlyYDJbW1N5c3RlbS5TdHJpbmcsIG1zY29y
-        bGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVj
-        NTYxOTM0ZTA4OV0sW09wZW5USy5WZWN0b3IzLCBPcGVuVEssIFZlcnNpb249My4zLjMuMCwgQ3VsdHVy
-        ZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iYWQxOTlmZTg0ZWIzZGY0XV1bXQgIAgAAAAkDAAAAAAAA
-        AAAAAAAMBAAAAPYBbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJs
-        aWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbT3BlblRLLlZlY3RvcjMsIE9wZW5USywgVmVyc2lv
-        bj0zLjMuMy4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWJhZDE5OWZlODRlYjNkZjRd
-        XSwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tl
-        bj1iNzdhNWM1NjE5MzRlMDg5BwMAAAAAAQAAAAoAAAAEOFN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmlj
-        LktleVZhbHVlUGFpcmAyW1tTeXN0ZW0uU3RyaW5nBAAAAAwGAAAASU9wZW5USywgVmVyc2lvbj0zLjMu
-        My4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWJhZDE5OWZlODRlYjNkZjQF+////zhT
-        eXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5LZXlWYWx1ZVBhaXJgMltbU3lzdGVtLlN0cmluZwIAAAAD
-        a2V5BXZhbHVlAQQOT3BlblRLLlZlY3RvcjMGAAAABAAAAAoF+f///w5PcGVuVEsuVmVjdG9yMwMAAAAB
-        WAFZAVoAAAALCwsGAAAAAAAAAAAAAAAAAAAAAfj////7////CgH3////+f///wAAAAAAAAAAAAAAAAH2
-        ////+////woB9f////n///8AAAAAAAAAAAAAAAAB9P////v///8KAfP////5////AAAAAAAAAAAAAAAA
-        AfL////7////CgHx////+f///wAAAAAAAAAAAAAAAAHw////+////woB7/////n///8AAAAAAAAAAAAA
-        AAAB7v////v///8KAe3////5////AAAAAAAAAAAAAAAAAez////7////CgHr////+f///wAAAAAAAAAA
-        AAAAAAHq////+////woB6f////n///8AAAAAAAAAAAAAAAAB6P////v///8KAef////5////AAAAAAAA
-        AAAAAAAACw==
-</value>
-  </data>
-  <data name="editorControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="editorControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="editorControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="editorControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="editorControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>742, 728</value>
-  </data>
-  <data name="editorControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="&gt;&gt;editorControl1.Name" xml:space="preserve">
-    <value>editorControl1</value>
-  </data>
-  <data name="&gt;&gt;editorControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.EditorUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;editorControl1.Parent" xml:space="preserve">
-    <value>tabEditor</value>
-  </data>
-  <data name="&gt;&gt;editorControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="rtcControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="rtcControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="rtcControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="rtcControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="rtcControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>742, 728</value>
-  </data>
-  <data name="rtcControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;rtcControl1.Name" xml:space="preserve">
-    <value>rtcControl1</value>
-  </data>
-  <data name="&gt;&gt;rtcControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RtcUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;rtcControl1.Parent" xml:space="preserve">
-    <value>TabRTC</value>
-  </data>
-  <data name="&gt;&gt;rtcControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="laserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="laserControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="laserControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="laserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="laserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>742, 728</value>
-  </data>
-  <data name="laserControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;laserControl1.Name" xml:space="preserve">
-    <value>laserControl1</value>
-  </data>
-  <data name="&gt;&gt;laserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.LaserUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;laserControl1.Parent" xml:space="preserve">
-    <value>tabLaser</value>
-  </data>
-  <data name="&gt;&gt;laserControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="spcMarker.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="spcMarker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="spcMarker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="offsetControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="offsetControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="offsetControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="offsetControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="offsetControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 728</value>
-  </data>
-  <data name="offsetControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;offsetControl1.Name" xml:space="preserve">
-    <value>offsetControl1</value>
-  </data>
-  <data name="&gt;&gt;offsetControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.OffsetUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;offsetControl1.Parent" xml:space="preserve">
-    <value>spcMarker.Panel1</value>
-  </data>
-  <data name="&gt;&gt;offsetControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;spcMarker.Panel1.Name" xml:space="preserve">
-    <value>spcMarker.Panel1</value>
-  </data>
-  <data name="&gt;&gt;spcMarker.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spcMarker.Panel1.Parent" xml:space="preserve">
-    <value>spcMarker</value>
-  </data>
-  <data name="&gt;&gt;spcMarker.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="markerControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="markerControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="markerControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="markerControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="markerControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 728</value>
-  </data>
-  <data name="markerControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;markerControl1.Name" xml:space="preserve">
-    <value>markerControl1</value>
-  </data>
-  <data name="&gt;&gt;markerControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.MarkerUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;markerControl1.Parent" xml:space="preserve">
-    <value>spcMarker.Panel2</value>
-  </data>
-  <data name="&gt;&gt;markerControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;spcMarker.Panel2.Name" xml:space="preserve">
-    <value>spcMarker.Panel2</value>
-  </data>
-  <data name="&gt;&gt;spcMarker.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spcMarker.Panel2.Parent" xml:space="preserve">
-    <value>spcMarker</value>
-  </data>
-  <data name="&gt;&gt;spcMarker.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="spcMarker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>742, 728</value>
-  </data>
-  <data name="spcMarker.SplitterDistance" type="System.Int32, mscorlib">
-    <value>305</value>
-  </data>
-  <data name="spcMarker.SplitterWidth" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="spcMarker.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;spcMarker.Name" xml:space="preserve">
-    <value>spcMarker</value>
-  </data>
-  <data name="&gt;&gt;spcMarker.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spcMarker.Parent" xml:space="preserve">
-    <value>tabMarker</value>
-  </data>
-  <data name="&gt;&gt;spcMarker.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="manualUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="manualUserControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="manualUserControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="manualUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="manualUserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>742, 728</value>
-  </data>
-  <data name="manualUserControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;manualUserControl1.Name" xml:space="preserve">
-    <value>manualUserControl1</value>
-  </data>
-  <data name="&gt;&gt;manualUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.ManualUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;manualUserControl1.Parent" xml:space="preserve">
-    <value>tabManual</value>
-  </data>
-  <data name="&gt;&gt;manualUserControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="spcIO.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="spcIO.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="spcIO.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="rtcDIUserControl1.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rtcDIUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="rtcDIUserControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="rtcDIUserControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="rtcDIUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="rtcDIUserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 728</value>
-  </data>
-  <data name="rtcDIUserControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;rtcDIUserControl1.Name" xml:space="preserve">
-    <value>rtcDIUserControl1</value>
-  </data>
-  <data name="&gt;&gt;rtcDIUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;rtcDIUserControl1.Parent" xml:space="preserve">
-    <value>spcIO.Panel1</value>
-  </data>
-  <data name="&gt;&gt;rtcDIUserControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;spcIO.Panel1.Name" xml:space="preserve">
-    <value>spcIO.Panel1</value>
-  </data>
-  <data name="&gt;&gt;spcIO.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spcIO.Panel1.Parent" xml:space="preserve">
-    <value>spcIO</value>
-  </data>
-  <data name="&gt;&gt;spcIO.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="spcIO.Panel1MinSize" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="rtcDOUserControl1.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rtcDOUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="rtcDOUserControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="rtcDOUserControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="rtcDOUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="rtcDOUserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 728</value>
-  </data>
-  <data name="rtcDOUserControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;rtcDOUserControl1.Name" xml:space="preserve">
-    <value>rtcDOUserControl1</value>
-  </data>
-  <data name="&gt;&gt;rtcDOUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;rtcDOUserControl1.Parent" xml:space="preserve">
-    <value>spcIO.Panel2</value>
-  </data>
-  <data name="&gt;&gt;rtcDOUserControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;spcIO.Panel2.Name" xml:space="preserve">
-    <value>spcIO.Panel2</value>
-  </data>
-  <data name="&gt;&gt;spcIO.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spcIO.Panel2.Parent" xml:space="preserve">
-    <value>spcIO</value>
-  </data>
-  <data name="&gt;&gt;spcIO.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="spcIO.Panel2MinSize" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="spcIO.Size" type="System.Drawing.Size, System.Drawing">
-    <value>742, 728</value>
-  </data>
-  <data name="spcIO.SplitterDistance" type="System.Int32, mscorlib">
-    <value>359</value>
-  </data>
-  <data name="spcIO.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;spcIO.Name" xml:space="preserve">
-    <value>spcIO</value>
-  </data>
-  <data name="&gt;&gt;spcIO.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spcIO.Parent" xml:space="preserve">
-    <value>tabIO</value>
-  </data>
-  <data name="&gt;&gt;spcIO.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;powerMeterControl1.Name" xml:space="preserve">
-    <value>powerMeterControl1</value>
-  </data>
-  <data name="&gt;&gt;powerMeterControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;powerMeterControl1.Parent" xml:space="preserve">
-    <value>tabPage15</value>
-  </data>
-  <data name="&gt;&gt;powerMeterControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabPage15.ImageKey" xml:space="preserve">
-    <value>Graph2.png</value>
-  </data>
-  <data name="tabPage15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 32</value>
-  </data>
-  <data name="tabPage15.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="tabPage15.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="tabPage15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>732, 690</value>
-  </data>
-  <data name="tabPage15.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabPage15.Text" xml:space="preserve">
-    <value>PowerMeter</value>
-  </data>
-  <data name="&gt;&gt;tabPage15.Name" xml:space="preserve">
-    <value>tabPage15</value>
-  </data>
-  <data name="&gt;&gt;tabPage15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage15.Parent" xml:space="preserve">
-    <value>tbcPower</value>
-  </data>
-  <data name="&gt;&gt;tabPage15.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;powerMapControl1.Name" xml:space="preserve">
-    <value>powerMapControl1</value>
-  </data>
-  <data name="&gt;&gt;powerMapControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;powerMapControl1.Parent" xml:space="preserve">
-    <value>tabPage16</value>
-  </data>
-  <data name="&gt;&gt;powerMapControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabPage16.ImageKey" xml:space="preserve">
-    <value>Graph.png</value>
-  </data>
-  <data name="tabPage16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 32</value>
-  </data>
-  <data name="tabPage16.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="tabPage16.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="tabPage16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>732, 690</value>
-  </data>
-  <data name="tabPage16.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPage16.Text" xml:space="preserve">
-    <value>PowerMap</value>
-  </data>
-  <data name="&gt;&gt;tabPage16.Name" xml:space="preserve">
-    <value>tabPage16</value>
-  </data>
-  <data name="&gt;&gt;tabPage16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage16.Parent" xml:space="preserve">
-    <value>tbcPower</value>
-  </data>
-  <data name="&gt;&gt;tabPage16.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tbcPower.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tbcPower.ItemSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 28</value>
-  </data>
-  <data name="tbcPower.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="tbcPower.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="tbcPower.Size" type="System.Drawing.Size, System.Drawing">
-    <value>740, 726</value>
-  </data>
-  <data name="tbcPower.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tbcPower.Name" xml:space="preserve">
-    <value>tbcPower</value>
-  </data>
-  <data name="&gt;&gt;tbcPower.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbcPower.Parent" xml:space="preserve">
-    <value>tabPower</value>
-  </data>
-  <data name="&gt;&gt;tbcPower.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="powerMeterControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="powerMeterControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="powerMeterControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="powerMeterControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="powerMeterControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>724, 682</value>
-  </data>
-  <data name="powerMeterControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;powerMeterControl1.Name" xml:space="preserve">
-    <value>powerMeterControl1</value>
-  </data>
-  <data name="&gt;&gt;powerMeterControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;powerMeterControl1.Parent" xml:space="preserve">
-    <value>tabPage15</value>
-  </data>
-  <data name="&gt;&gt;powerMeterControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="powerMapControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="powerMapControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="powerMapControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="powerMapControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="powerMapControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>724, 682</value>
-  </data>
-  <data name="powerMapControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;powerMapControl1.Name" xml:space="preserve">
-    <value>powerMapControl1</value>
-  </data>
-  <data name="&gt;&gt;powerMapControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;powerMapControl1.Parent" xml:space="preserve">
-    <value>tabPage16</value>
-  </data>
-  <data name="&gt;&gt;powerMapControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="scriptControlControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="scriptControlControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="scriptControlControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="scriptControlControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
-  </data>
-  <data name="scriptControlControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>742, 728</value>
-  </data>
-  <data name="scriptControlControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;scriptControlControl1.Name" xml:space="preserve">
-    <value>scriptControlControl1</value>
-  </data>
-  <data name="&gt;&gt;scriptControlControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.ScriptUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;scriptControlControl1.Parent" xml:space="preserve">
-    <value>tabScript</value>
-  </data>
-  <data name="&gt;&gt;scriptControlControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="remoteUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="remoteUserControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="remoteUserControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="remoteUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="remoteUserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>742, 728</value>
-  </data>
-  <data name="remoteUserControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;remoteUserControl1.Name" xml:space="preserve">
-    <value>remoteUserControl1</value>
-  </data>
-  <data name="&gt;&gt;remoteUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RemoteUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;remoteUserControl1.Parent" xml:space="preserve">
-    <value>tabRemote</value>
-  </data>
-  <data name="&gt;&gt;remoteUserControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="tlsTop2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -1862,6 +1737,134 @@
   <data name="btnSpiral.ToolTipText" xml:space="preserve">
     <value>Spiral</value>
   </data>
+  <data name="btnText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAR9JREFUSEvl
+        lW0NwkAQRCsBCUhAAhKQgAQk4AAcgAOQgAQcgANwAPOAIZuGo9uPP4SXTNqU697u7F6p/oqDdHvpwoMh
+        GUvn5+2DrTR/3g7DWlpKM4nAU4mKBoPsqWIvnXgg/Kw3ZE1ggl2lozSRqIjKekNwbFlIBORKD7xhL2IQ
+        Zz6S/IzNqbAzzprAcYoc2PZ1xo20NQbLsAmoplOzGUVsgfrE2CauHuHW+DBhgzeK+Hc2jvaliBkSxJ+I
+        upw5h65Vs6PHGdquf4/kt+wtN98VNxJHsqn0uJYK4qQV8cJs81xt/awUcanZb40PI7AZ410kNotsMgeI
+        NSQFjc3G8520kj7Nfgk+FxuJ9/i3KzabcrEG4WkW1vo9lJqmX6Cq7p63WCqTvmcjAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 30</value>
+  </data>
+  <data name="btnText.Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="btnText.ToolTipText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="btnSiriusText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAO5JREFUSEvt
+        lG0NAjEQRCsBCUhAAg5AAhKQgAQcgANwABJwAA7AAcxrs0lp2nLJLf/uJZNbyNGPmV3CxMRGuqfyP1yl
+        t7SMn5yZSyx+lo584c1OYvGF9JJmkisPaZ3KWJOHG3jOqY2tdEmlD3i+T2XE8uA5Grx+SnifQx7kMhq8
+        vqXyC7eZoPfxvAa5lDPBTQ/SSfo5L+Z1qyXJJp8J3sdO8kIcoJsTHrNBTyxoB8A2bmz0bh8Z0u/5Oxyo
+        3KDZCGXvt8hngnrwBmXvt8hnwv5GVhJTj32EXc2Qq5e934KZMJt48ls2shvV2nyiRggfxoU/qPWe9r8A
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnSiriusText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 30</value>
+  </data>
+  <data name="btnSiriusText.Text" xml:space="preserve">
+    <value>Sirius Text</value>
+  </data>
+  <data name="btnSiriusText.ToolTipText" xml:space="preserve">
+    <value>Sirius Text</value>
+  </data>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 6</value>
+  </data>
+  <data name="btnImageText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAOhJREFUSEvt
+        lFEKwjAQRHsCz+JdpBSafAvezGP0LEXsHUSsszCBuCbNNvSn0AdhsLszoxJtDvaPc24ehmFe0BGn43o9
+        hZKgn77vb7TUYSgJ+kaZo209xpK4rKV1OxDsJVyVPTjeFpb9fDKO1gFzp96x1lE/p9WO3KRM+KLSbgMm
+        bwlNKSPKyM1ZCgsnN2dMmZQ59RvBLHXr7EWxKVcSwE79rYtNorkizE44d73PcRksP5X57+8Fr88y0yWi
+        XCmDkFbCUyEWZYwN7/0Fppc1PFZG2Kkto30dMHY4UyZ0wtd81c9pPdgVTfMFPmMmOGBXIgsAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="btnImageText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 30</value>
+  </data>
+  <data name="btnImageText.Text" xml:space="preserve">
+    <value>Image Text</value>
+  </data>
+  <data name="btnImageText.ToolTipText" xml:space="preserve">
+    <value>Image Text (Raster)</value>
+  </data>
+  <data name="btnCircularText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAUdJREFUSEut
+        kz8uRFEYxU1mFmA6hUIj01qCVicKhUKmVFrAJG6jZgcUTCexANZAqWMHJFoJ5xfn8olnnvvePckv874/
+        97yZezJLBboX7+acRk2tiWwOz2JZVNOpiC+AqaimF4Hpkz/hTlQR3zSbHorrUG+I3oqGZLEd6t5hx3B5
+        UVa+MugVdhLZKIYaQ+faOiuGeiKOzJl78Cg6Kd51G5uiWATYZNZEcdgElw9zTU2KO1AUNsHlgwT6l+Kv
+        LAo7hrvozxRzKgqb0DJtKtn9qZTSWOyKC/EgXg3P9JiNvf5/6dBEXIlbsSdWxMhj5iP3mLHD7sTjxdLi
+        TNyIdbdaxa7PzNz6LQ0Hgm+y71axOGuPgVvfUvNS7LjsLDzwcvkpNabi2GVv4YVnLobiTXyF2Fd42XNI
+        sSUOPKsmPPHmYS5W3a8mPFNK8w8JisXIHYfIywAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnCircularText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 30</value>
+  </data>
+  <data name="btnCircularText.Text" xml:space="preserve">
+    <value>Circular Text</value>
+  </data>
+  <data name="btnCircularText.ToolTipText" xml:space="preserve">
+    <value>Circular Text</value>
+  </data>
+  <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 6</value>
+  </data>
+  <data name="btnCharacterSetText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAdZJREFUWEft
+        lmFRA0EMhSsBCUhAAhKQgAQk4AAJSEACdYAEJCAB9ru5b3iE3Sttr1N+9M284S7JJm+z2Subf4HtdvuZ
+        1DY5Z9SY6j8Ko2Ta079qYUHS5GyesOt9FSwlPasA7ek/mYCktsk5Y2S/4BS4aXxtfJrevnHb+NKI7x5D
+        gDXPjfjuMHTA+l7eX3hs5JwJFteN2JIWumr8aOz5EgjEl3m7eGusgajOApA48NBYfb0iilwUQJt6SRRV
+        ye45Ft+zEwmOTPtQAOeYCTIwbR4RRPD7/EyXslAiRQ4F4DCoBmqjQM4DAiiMcHzZQUGXtMG9BVCQIrxT
+        oAoAFIG9DqQN7hRgS0eBmVABgGfXOqDA9veG+wdwENy7hgmFwkTOBiJBtt/bMhTAIhYsCcgzzl2CFMCd
+        BxYl1rVDAWJJQO7eXYoUAJkV246QowXk7pl6upXgGqeInBWesxvEDjESkLsn2QjG1I4kF7vQE4BiF9ez
+        B3z7aTkwblUB+VtQf2j8etoV41YV4DBVMhcKYPLzI4VQnyv3FlATSAQQ57sfIlgH7eBbkOdfSVKnO4mQ
+        ioMFuLBHfFzH3Dms3wjwZwEEIsIknCvvPTr5/PVfsl5xYJ6R/4JzYLP5AtIrkbYYa+59AAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <data name="btnCharacterSetText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 30</value>
+  </data>
+  <data name="btnCharacterSetText.Text" xml:space="preserve">
+    <value>CharacterSet Text</value>
+  </data>
+  <data name="btnCharacterSetText.ToolTipText" xml:space="preserve">
+    <value>CharacterSet Text</value>
+  </data>
+  <data name="btnSiriusCharacterSetText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAcZJREFUWEft
+        lYFNAzEMRW8ERmAERmAERmAERmADRmAERuA2YARGYIQ2L70v/TNxmsJVRahPsu5iO8530uamP8E8zzs3
+        +WpwIebE+K/Iisnv8U0XFhR1W9yVY+NN6BW9qAD5PX42AW7y1eBC5r+yNTfFXou9FbvDYTDG/1xHOcqj
+        DvUit8VeDq/fYRJnjH3gMD6LKdYT4XmthZ6KvR9e16BWC9MB79qFx2KM8bPAV7EWD8WUR51WHvObAjSZ
+        LUIMk9UpO8NEUN59Ha2hY+URj3l0j68pgMU0GehCiTx9OylCsQh5iBXeBLvJOBXARA8wUeO4IH4V5ngw
+        8AXB83hSh6NpCsDpXWoC8PStJFed8q6CrTzFqMccnvKtwCm1oDOEXmF/j3k0pJh+0CcL0L8jK+xHEPNa
+        i50swJ8iK/I/BXAvxMJ+BM5ZBEAsTO6IgJbQroCf/A2dEaGpAL/5wBMpnF1ETu8iEqkAAtlVzO3luxMF
+        CfKzq1ikAvSR4cIY+Rj5l1L3gOfpN+RHAqmA0c9x/MxSTAVHPsepAKADCkiIQ2eK+ba6APA8PzbRFcAu
+        IIIO1L1gjN8XB/yeqzwWp16EeyXWvnIppmkPehg5iP9dKFYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnSiriusCharacterSetText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 30</value>
+  </data>
+  <data name="btnSiriusCharacterSetText.Text" xml:space="preserve">
+    <value>Sirius CharacterSet Text</value>
+  </data>
+  <data name="btnSiriusCharacterSetText.ToolTipText" xml:space="preserve">
+    <value>Sirius CharacterSet Text</value>
+  </data>
   <data name="toolStripDropDownButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1880,6 +1883,82 @@
   </data>
   <data name="toolStripDropDownButton1.Text" xml:space="preserve">
     <value>Text</value>
+  </data>
+  <data name="mnuDataMatrix.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAIpJREFUSEvt
+        jEEOAyEQw/j/p9tLjUYBa6B7XUtzSHAYL7d8fgdkO7B+IYU62h1Yv2BiZjj1JggpZoZTb9INyNa3dEOy
+        9S11XAe3WUHMwW1WEG3Q9fY+6cSut/eJCbe9cvuR9UoOyNZDdWq/kEId7XqoTu0XTMwM1isMcpgZrFcY
+        PD1lJ/9zL6eM8QWRfcM9VqlHrwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="mnuDataMatrix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 30</value>
+  </data>
+  <data name="mnuDataMatrix.Text" xml:space="preserve">
+    <value>DataMatrix</value>
+  </data>
+  <data name="mnuDataMatrix.ToolTipText" xml:space="preserve">
+    <value>DataMatrix (2D)</value>
+  </data>
+  <data name="mnuQRCode.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAH1JREFUSEvt
+        1EEKgDAMRNHe/3J6I62L7yIxTKfiRvpgFikTRYS2xbX3HCFbDziD6iexTFDNMaVYUAtu315w+3chBtUc
+        U3r6adcZOIPq/xCfibdzohbcedpnD8b0C9TdwhnUnFCIgTsnowujvWR0cbSXUIyBOyfuXaTmRWntBMhX
+        oSbC3dnHAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="mnuQRCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 30</value>
+  </data>
+  <data name="mnuQRCode.Text" xml:space="preserve">
+    <value>QR Code</value>
+  </data>
+  <data name="mnuQRCode.ToolTipText" xml:space="preserve">
+    <value>QR Code (2D)</value>
+  </data>
+  <data name="mnuPDF417.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAOoAAAB1BAMAAACyimDrAAAABGdBTUEAALGPC/xhBQAAAA9QTFRFAQEB
+        hISEurq65eXl////pKB6awAAAa5JREFUaN7tmru5gzAMhZXAABQMkCIDUGQAIGf/mWI9bON8t7l5OM1R
+        hYXQ78Y6toXgFybYpNh1PWEad7kBd3PgMtzTaPeBeedNvel5FY2De2WAfy2N1+yEy6jxmhuYZlJJJfUr
+        1JQtUddzCtxioAl1LpLz50GNXTQVqaSS2pPq9SA+no8rX1MqUZ8jJKoEoqLYFEglldRu1OKJty7xi8p7
+        KHqdi81Qg8a9ToxUUkntR7WVr5ngqn5ttN6oofVt7JJ37KSSSmo3qkh7Ejb9njN+dFV/omrsMoBUUknt
+        S1WlRqx8f23eNLimDyc5nqUVpKp+0/hmx04qqaT2oGYP1jO0DKBovRcGp5pXqZHjE3drpJJK6j+psfLz
+        qTmot7zFbupBiVXzXAOppJLameqqvh+osPusnH84UMvdl7yxCyeVVFJfofpJGFW/i1JbBusXlSN0E/v+
+        3RqppJL6yqnZCkPTGcq1QyQ238MhtnSR3uo1k0oqqS+perLwVKUuVUK35PWWy6nAU8eJVFJJ/T61eCw/
+        4PXAHnLK2lsSyf8yq6p/ondFKqmk/kH9hZH6XQMeSPO+P44DnJMAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="mnuPDF417.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 30</value>
+  </data>
+  <data name="mnuPDF417.Text" xml:space="preserve">
+    <value>PDF417</value>
+  </data>
+  <data name="mnuPDF417.ToolTipText" xml:space="preserve">
+    <value>PDF417 (2D)</value>
+  </data>
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 6</value>
+  </data>
+  <data name="mnuBarcode1D.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAABPSURBVFhH7Y5BCgAhDAP7NJ/mz3yaa8BALl5XDzMQ
+        LDWFKXiNGWkxi7Hifd+zXuFe3qifPf9pf8THCgIIIIAAAggggAACCCCAwBUB+JmqD8mE2PD6mvIUAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="mnuBarcode1D.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 30</value>
+  </data>
+  <data name="mnuBarcode1D.Text" xml:space="preserve">
+    <value>Barcode 1D</value>
+  </data>
+  <data name="mnuBarcode1D.ToolTipText" xml:space="preserve">
+    <value>Barcode (1D)</value>
   </data>
   <data name="ddbBarcode.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1935,7 +2014,7 @@
 </value>
   </data>
   <data name="mnuTimer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuTimer.Text" xml:space="preserve">
     <value>Timer</value>
@@ -1954,7 +2033,7 @@
 </value>
   </data>
   <data name="mnuJumpTo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuJumpTo.Text" xml:space="preserve">
     <value>Jump To</value>
@@ -1972,7 +2051,7 @@
 </value>
   </data>
   <data name="mnuMeasurementBeginEnd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuMeasurementBeginEnd.Text" xml:space="preserve">
     <value>Measurement</value>
@@ -2108,7 +2187,7 @@
 </value>
   </data>
   <data name="mnuMoF.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuMoF.Text" xml:space="preserve">
     <value>MoF</value>
@@ -2126,7 +2205,7 @@
 </value>
   </data>
   <data name="mnuSelectCorrectionTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuSelectCorrectionTable.Text" xml:space="preserve">
     <value>Correction Table</value>
@@ -2142,7 +2221,7 @@
 </value>
   </data>
   <data name="mnuAlcDefinedVector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuAlcDefinedVector.Text" xml:space="preserve">
     <value>Ramp</value>
@@ -2160,7 +2239,7 @@
 </value>
   </data>
   <data name="mnuZDelta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuZDelta.Text" xml:space="preserve">
     <value>Z Delta</value>
@@ -2180,323 +2259,13 @@
 </value>
   </data>
   <data name="mnuZDefocus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuZDefocus.Text" xml:space="preserve">
     <value>Z Defocus</value>
   </data>
   <data name="mnuZDefocus.ToolTipText" xml:space="preserve">
     <value>Z Defocus</value>
-  </data>
-  <data name="mnuData.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAn1JREFUSEvd
-        lUtrU1EQxxNf+AJtrVJTqqVoW6UiEuqrtI1ooRZT00fuvXmaVXApbsRdcCd+BAvu9Rv4RQS/g0uh4EJ/
-        /8l4uffWQCELoX8YzpmZ/8ycOXNykzt86Ha7x6vV6rler3fETUnk8Z3wfQxsRyuVyvlSqXTMTf9GFEVT
-        tVotQIQygWfdlWs2mw8bjcZ35Af7a25W8lHiNj1mG33cXWnoFCJA3qnX63fFDoJgUT6SLiC/kN8SCrQt
-        CMB9Ii5rkdiQbdldabRarUsiQrqHmme7LZEPW4GkuyT/4kVeyK4rIXGErEtnfaQcyc5jqG05Cb4lPQzD
-        p9I7nc5JIwASvEsWQB8RB6y4bp1TYEJ6CiSckZN1XjrbNekM/bQRQLZAu92+IA72ZenYF6TT8aT0FKh6
-        xclF6azPkUizMQLIFuBazygGrEon8ZLrY9JT+Eumg2ckHTcaXbjbkC0gkHQTCb0bzS0Y+FwJXLS0DhJe
-        dZeBOb1WAVzxS+FAN/rsPih2x137oR8XSa8jRYa77z3rdVBkLXtCXa9ikGnUfN/6P6AOuIKXyCdOddHN
-        BvRZ2t/glOusBTcbvLMP+D4mn3UKkE5B+Ko7dnnlLvuh+f1qoDtIqEchH8OdgKtPiMVRaMOCsiC57n4P
-        0jcnv3WXBnlfBTQX7De1J9GsfOiPkZ+IxWEPLGgQIOmKUgXIZz86tU+Cy9qrqLsNuqJhCpSVVK9Hs9Ge
-        a1pyt2HYAtaB5pSYhz6KMYYt8MCTFvSt0h7Mudtw4AIMuisi6xs3KdjuHdsWi/6QguRHUCDmvRewT/xA
-        cMopSJ+zJ9Qrw6arWlVBN8fAdhvZhTfipkOBXO4PVtVe5cZBq58AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="mnuData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
-  </data>
-  <data name="mnuData.Text" xml:space="preserve">
-    <value>Data and I/O</value>
-  </data>
-  <data name="mnuData.ToolTipText" xml:space="preserve">
-    <value>Read/Write Data and I/O
-(Extension1,2 and Laser Port)</value>
-  </data>
-  <data name="mnuScriptEvent.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAmFJREFUWEfV
-        l7+LE0EcxYMoFv7u9EDBUhA5Qe2UINekFQL5sRtCiq1UsLAQLKI2Fv4LNjmEgyuuCVrZ6IEi13i2CopX
-        nFjeHVed+nnhGzOZ25jMbXLBB4/dnXnvzXd3Z2d3c/8t4ji+Wa1WW6L2rXnyqFQqs/A1A/92qTb1mWz8
-        iKLojM4W7rgDe1RfS1qzZUexWDxK4FOCt5yBhnFTHnktJhzNZvMAlzQhbM0LD+GaMpRlsaMB0w3MK15Y
-        Fq4o0+IHw+7zPPzlmMdFZc7X6/XTNlw/qPAUgu+OYRB3KPQt+scw5jiCD+AyHKXwbxRx0obtgbB6itjn
-        +1KpdNksu0DGLMV9TPH1EU3NLD1gvpcmdrhQKBQOm3wgpEH70vP2UWOZvIchBbzzB2f1u8iZ3Kbvjs7c
-        mjvg+BbtA9eL0AJ0X6+aLNdoNI5xvOj0d7lIxjW2r+z4KwV+ZqtC9ERtWHtwAcsm6QDdUopmF9ElUFdi
-        Sz62b5y+0Qug/aFJdNmvpGl8lsvlS7plSZIc6s54u3JP1B9UgDtj0dxN06SwjXbOCn4uL9tH8JP6gwqg
-        PTZJSAEvKPy6WwDH99n/oP7QAoJvgQZnexz9EXheXtaPGdqeqT+oADjdSQj3+hj+hOtQ/i9wG3a0oQWI
-        U12Iupz4UrxvLyMYmaUHzPv2OuZT7YQN2w+Cp/dB4oIJdgFx2zFnZVuZFj86uMRzmFe9sBCuKsPi9oZ8
-        Pn+QEH0d//DC/8V1eeS1mOyw/4Mm4X8XlBRuS5Ppf2AYarXaOQbSH5I7UbXf4hE9a7LJg0k1nZ/T8SKX
-        +wNFLGBUxr2U1gAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="mnuScriptEvent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
-  </data>
-  <data name="mnuScriptEvent.Text" xml:space="preserve">
-    <value>Script Event</value>
-  </data>
-  <data name="mnuScriptEvent.ToolTipText" xml:space="preserve">
-    <value>Script Event</value>
-  </data>
-  <data name="toolStripDropDownButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADqSURBVEhL7ZR/DcIwEIUrAQlIQQISkIAEJEwCDsABOAAH
-        SGAO4H0Jt7TjKGS3AH/sJV92uVz7uuuPNOmvNBc7cRW3gTCWOWbiSWfhDRrCSRRaCK8wAnN22givKAJz
-        dooaHJ1c1aAV9otsvu3Pq4Wgfq5qsBLLR9wIzLYCEWO4FtQRo3w8VA2YpP/bF4HIA9oLjibKa6FqwOpZ
-        MTErtBjxxYBFWD2y2KgaHASXhRawB7SJvOXCBkBLuJVcmjyHOW3J8+QsNt4aRPmuQd7PsWDOQmM+dnY3
-        CnFCONfcYm/QJzCWI+0+15N+oZTutqwmaFmJTHUAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="toolStripDropDownButton3.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripDropDownButton3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 28</value>
-  </data>
-  <data name="toolStripDropDownButton3.Text" xml:space="preserve">
-    <value>Control</value>
-  </data>
-  <data name="toolStripDropDownButton3.ToolTipText" xml:space="preserve">
-    <value>Control Entity</value>
-  </data>
-  <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 31</value>
-  </data>
-  <data name="tlsTop2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 37</value>
-  </data>
-  <data name="tlsTop2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tlsTop2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tlsTop2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1400, 37</value>
-  </data>
-  <data name="tlsTop2.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="tlsTop2.Text" xml:space="preserve">
-    <value>tlsTop2</value>
-  </data>
-  <data name="&gt;&gt;tlsTop2.Name" xml:space="preserve">
-    <value>tlsTop2</value>
-  </data>
-  <data name="&gt;&gt;tlsTop2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlsTop2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tlsTop2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAR9JREFUSEvl
-        lW0NwkAQRCsBCUhAAhKQgAQk4AAcgAOQgAQcgANwAPOAIZuGo9uPP4SXTNqU697u7F6p/oqDdHvpwoMh
-        GUvn5+2DrTR/3g7DWlpKM4nAU4mKBoPsqWIvnXgg/Kw3ZE1ggl2lozSRqIjKekNwbFlIBORKD7xhL2IQ
-        Zz6S/IzNqbAzzprAcYoc2PZ1xo20NQbLsAmoplOzGUVsgfrE2CauHuHW+DBhgzeK+Hc2jvaliBkSxJ+I
-        upw5h65Vs6PHGdquf4/kt+wtN98VNxJHsqn0uJYK4qQV8cJs81xt/awUcanZb40PI7AZ410kNotsMgeI
-        NSQFjc3G8520kj7Nfgk+FxuJ9/i3KzabcrEG4WkW1vo9lJqmX6Cq7p63WCqTvmcjAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 30</value>
-  </data>
-  <data name="btnText.Text" xml:space="preserve">
-    <value>Text</value>
-  </data>
-  <data name="btnText.ToolTipText" xml:space="preserve">
-    <value>Text</value>
-  </data>
-  <data name="btnSiriusText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAO5JREFUSEvt
-        lG0NAjEQRCsBCUhAAg5AAhKQgAQcgANwABJwAA7AAcxrs0lp2nLJLf/uJZNbyNGPmV3CxMRGuqfyP1yl
-        t7SMn5yZSyx+lo584c1OYvGF9JJmkisPaZ3KWJOHG3jOqY2tdEmlD3i+T2XE8uA5Grx+SnifQx7kMhq8
-        vqXyC7eZoPfxvAa5lDPBTQ/SSfo5L+Z1qyXJJp8J3sdO8kIcoJsTHrNBTyxoB8A2bmz0bh8Z0u/5Oxyo
-        3KDZCGXvt8hngnrwBmXvt8hnwv5GVhJTj32EXc2Qq5e934KZMJt48ls2shvV2nyiRggfxoU/qPWe9r8A
-        AAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnSiriusText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 30</value>
-  </data>
-  <data name="btnSiriusText.Text" xml:space="preserve">
-    <value>Sirius Text</value>
-  </data>
-  <data name="btnSiriusText.ToolTipText" xml:space="preserve">
-    <value>Sirius Text</value>
-  </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 6</value>
-  </data>
-  <data name="btnImageText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAOhJREFUSEvt
-        lFEKwjAQRHsCz+JdpBSafAvezGP0LEXsHUSsszCBuCbNNvSn0AdhsLszoxJtDvaPc24ehmFe0BGn43o9
-        hZKgn77vb7TUYSgJ+kaZo209xpK4rKV1OxDsJVyVPTjeFpb9fDKO1gFzp96x1lE/p9WO3KRM+KLSbgMm
-        bwlNKSPKyM1ZCgsnN2dMmZQ59RvBLHXr7EWxKVcSwE79rYtNorkizE44d73PcRksP5X57+8Fr88y0yWi
-        XCmDkFbCUyEWZYwN7/0Fppc1PFZG2Kkto30dMHY4UyZ0wtd81c9pPdgVTfMFPmMmOGBXIgsAAAAASUVO
-        RK5CYII=
-</value>
-  </data>
-  <data name="btnImageText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 30</value>
-  </data>
-  <data name="btnImageText.Text" xml:space="preserve">
-    <value>Image Text</value>
-  </data>
-  <data name="btnImageText.ToolTipText" xml:space="preserve">
-    <value>Image Text (Raster)</value>
-  </data>
-  <data name="btnCircularText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAUdJREFUSEut
-        kz8uRFEYxU1mFmA6hUIj01qCVicKhUKmVFrAJG6jZgcUTCexANZAqWMHJFoJ5xfn8olnnvvePckv874/
-        97yZezJLBboX7+acRk2tiWwOz2JZVNOpiC+AqaimF4Hpkz/hTlQR3zSbHorrUG+I3oqGZLEd6t5hx3B5
-        UVa+MugVdhLZKIYaQ+faOiuGeiKOzJl78Cg6Kd51G5uiWATYZNZEcdgElw9zTU2KO1AUNsHlgwT6l+Kv
-        LAo7hrvozxRzKgqb0DJtKtn9qZTSWOyKC/EgXg3P9JiNvf5/6dBEXIlbsSdWxMhj5iP3mLHD7sTjxdLi
-        TNyIdbdaxa7PzNz6LQ0Hgm+y71axOGuPgVvfUvNS7LjsLDzwcvkpNabi2GVv4YVnLobiTXyF2Fd42XNI
-        sSUOPKsmPPHmYS5W3a8mPFNK8w8JisXIHYfIywAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnCircularText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 30</value>
-  </data>
-  <data name="btnCircularText.Text" xml:space="preserve">
-    <value>Circular Text</value>
-  </data>
-  <data name="btnCircularText.ToolTipText" xml:space="preserve">
-    <value>Circular Text</value>
-  </data>
-  <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 6</value>
-  </data>
-  <data name="btnCharacterSetText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAdZJREFUWEft
-        lmFRA0EMhSsBCUhAAhKQgAQk4AAJSEACdYAEJCAB9ru5b3iE3Sttr1N+9M284S7JJm+z2Subf4HtdvuZ
-        1DY5Z9SY6j8Ko2Ta079qYUHS5GyesOt9FSwlPasA7ek/mYCktsk5Y2S/4BS4aXxtfJrevnHb+NKI7x5D
-        gDXPjfjuMHTA+l7eX3hs5JwJFteN2JIWumr8aOz5EgjEl3m7eGusgajOApA48NBYfb0iilwUQJt6SRRV
-        ye45Ft+zEwmOTPtQAOeYCTIwbR4RRPD7/EyXslAiRQ4F4DCoBmqjQM4DAiiMcHzZQUGXtMG9BVCQIrxT
-        oAoAFIG9DqQN7hRgS0eBmVABgGfXOqDA9veG+wdwENy7hgmFwkTOBiJBtt/bMhTAIhYsCcgzzl2CFMCd
-        BxYl1rVDAWJJQO7eXYoUAJkV246QowXk7pl6upXgGqeInBWesxvEDjESkLsn2QjG1I4kF7vQE4BiF9ez
-        B3z7aTkwblUB+VtQf2j8etoV41YV4DBVMhcKYPLzI4VQnyv3FlATSAQQ57sfIlgH7eBbkOdfSVKnO4mQ
-        ioMFuLBHfFzH3Dms3wjwZwEEIsIknCvvPTr5/PVfsl5xYJ6R/4JzYLP5AtIrkbYYa+59AAAAAElFTkSu
-        QmCC
-</value>
-  </data>
-  <data name="btnCharacterSetText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 30</value>
-  </data>
-  <data name="btnCharacterSetText.Text" xml:space="preserve">
-    <value>CharacterSet Text</value>
-  </data>
-  <data name="btnCharacterSetText.ToolTipText" xml:space="preserve">
-    <value>CharacterSet Text</value>
-  </data>
-  <data name="btnSiriusCharacterSetText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAcZJREFUWEft
-        lYFNAzEMRW8ERmAERmAERmAERmADRmAERuA2YARGYIQ2L70v/TNxmsJVRahPsu5iO8530uamP8E8zzs3
-        +WpwIebE+K/Iisnv8U0XFhR1W9yVY+NN6BW9qAD5PX42AW7y1eBC5r+yNTfFXou9FbvDYTDG/1xHOcqj
-        DvUit8VeDq/fYRJnjH3gMD6LKdYT4XmthZ6KvR9e16BWC9MB79qFx2KM8bPAV7EWD8WUR51WHvObAjSZ
-        LUIMk9UpO8NEUN59Ha2hY+URj3l0j68pgMU0GehCiTx9OylCsQh5iBXeBLvJOBXARA8wUeO4IH4V5ngw
-        8AXB83hSh6NpCsDpXWoC8PStJFed8q6CrTzFqMccnvKtwCm1oDOEXmF/j3k0pJh+0CcL0L8jK+xHEPNa
-        i50swJ8iK/I/BXAvxMJ+BM5ZBEAsTO6IgJbQroCf/A2dEaGpAL/5wBMpnF1ETu8iEqkAAtlVzO3luxMF
-        CfKzq1ikAvSR4cIY+Rj5l1L3gOfpN+RHAqmA0c9x/MxSTAVHPsepAKADCkiIQ2eK+ba6APA8PzbRFcAu
-        IIIO1L1gjN8XB/yeqzwWp16EeyXWvnIppmkPehg5iP9dKFYAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnSiriusCharacterSetText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 30</value>
-  </data>
-  <data name="btnSiriusCharacterSetText.Text" xml:space="preserve">
-    <value>Sirius CharacterSet Text</value>
-  </data>
-  <data name="btnSiriusCharacterSetText.ToolTipText" xml:space="preserve">
-    <value>Sirius CharacterSet Text</value>
-  </data>
-  <data name="mnuDataMatrix.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAIpJREFUSEvt
-        jEEOAyEQw/j/p9tLjUYBa6B7XUtzSHAYL7d8fgdkO7B+IYU62h1Yv2BiZjj1JggpZoZTb9INyNa3dEOy
-        9S11XAe3WUHMwW1WEG3Q9fY+6cSut/eJCbe9cvuR9UoOyNZDdWq/kEId7XqoTu0XTMwM1isMcpgZrFcY
-        PD1lJ/9zL6eM8QWRfcM9VqlHrwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="mnuDataMatrix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 30</value>
-  </data>
-  <data name="mnuDataMatrix.Text" xml:space="preserve">
-    <value>DataMatrix</value>
-  </data>
-  <data name="mnuDataMatrix.ToolTipText" xml:space="preserve">
-    <value>DataMatrix (2D)</value>
-  </data>
-  <data name="mnuQRCode.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAH1JREFUSEvt
-        1EEKgDAMRNHe/3J6I62L7yIxTKfiRvpgFikTRYS2xbX3HCFbDziD6iexTFDNMaVYUAtu315w+3chBtUc
-        U3r6adcZOIPq/xCfibdzohbcedpnD8b0C9TdwhnUnFCIgTsnowujvWR0cbSXUIyBOyfuXaTmRWntBMhX
-        oSbC3dnHAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="mnuQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 30</value>
-  </data>
-  <data name="mnuQRCode.Text" xml:space="preserve">
-    <value>QR Code</value>
-  </data>
-  <data name="mnuQRCode.ToolTipText" xml:space="preserve">
-    <value>QR Code (2D)</value>
-  </data>
-  <data name="mnuPDF417.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAOoAAAB1BAMAAACyimDrAAAABGdBTUEAALGPC/xhBQAAAA9QTFRFAQEB
-        hISEurq65eXl////pKB6awAAAa5JREFUaN7tmru5gzAMhZXAABQMkCIDUGQAIGf/mWI9bON8t7l5OM1R
-        hYXQ78Y6toXgFybYpNh1PWEad7kBd3PgMtzTaPeBeedNvel5FY2De2WAfy2N1+yEy6jxmhuYZlJJJfUr
-        1JQtUddzCtxioAl1LpLz50GNXTQVqaSS2pPq9SA+no8rX1MqUZ8jJKoEoqLYFEglldRu1OKJty7xi8p7
-        KHqdi81Qg8a9ToxUUkntR7WVr5ngqn5ttN6oofVt7JJ37KSSSmo3qkh7Ejb9njN+dFV/omrsMoBUUknt
-        S1WlRqx8f23eNLimDyc5nqUVpKp+0/hmx04qqaT2oGYP1jO0DKBovRcGp5pXqZHjE3drpJJK6j+psfLz
-        qTmot7zFbupBiVXzXAOppJLameqqvh+osPusnH84UMvdl7yxCyeVVFJfofpJGFW/i1JbBusXlSN0E/v+
-        3RqppJL6yqnZCkPTGcq1QyQ238MhtnSR3uo1k0oqqS+perLwVKUuVUK35PWWy6nAU8eJVFJJ/T61eCw/
-        4PXAHnLK2lsSyf8yq6p/ondFKqmk/kH9hZH6XQMeSPO+P44DnJMAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="mnuPDF417.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 30</value>
-  </data>
-  <data name="mnuPDF417.Text" xml:space="preserve">
-    <value>PDF417</value>
-  </data>
-  <data name="mnuPDF417.ToolTipText" xml:space="preserve">
-    <value>PDF417 (2D)</value>
-  </data>
-  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 6</value>
-  </data>
-  <data name="mnuBarcode1D.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAABPSURBVFhH7Y5BCgAhDAP7NJ/mz3yaa8BALl5XDzMQ
-        LDWFKXiNGWkxi7Hifd+zXuFe3qifPf9pf8THCgIIIIAAAggggAACCCCAwBUB+JmqD8mE2PD6mvIUAAAA
-        AElFTkSuQmCC
-</value>
-  </data>
-  <data name="mnuBarcode1D.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 30</value>
-  </data>
-  <data name="mnuBarcode1D.Text" xml:space="preserve">
-    <value>Barcode 1D</value>
-  </data>
-  <data name="mnuBarcode1D.ToolTipText" xml:space="preserve">
-    <value>Barcode (1D)</value>
   </data>
   <data name="mnuWriteData.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2607,38 +2376,117 @@
   <data name="mnuWaitDataExt16EdgeCond.ToolTipText" xml:space="preserve">
     <value>Wait Extension16 If Edge Condition</value>
   </data>
+  <data name="mnuData.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAn1JREFUSEvd
+        lUtrU1EQxxNf+AJtrVJTqqVoW6UiEuqrtI1ooRZT00fuvXmaVXApbsRdcCd+BAvu9Rv4RQS/g0uh4EJ/
+        /8l4uffWQCELoX8YzpmZ/8ycOXNykzt86Ha7x6vV6rler3fETUnk8Z3wfQxsRyuVyvlSqXTMTf9GFEVT
+        tVotQIQygWfdlWs2mw8bjcZ35Af7a25W8lHiNj1mG33cXWnoFCJA3qnX63fFDoJgUT6SLiC/kN8SCrQt
+        CMB9Ii5rkdiQbdldabRarUsiQrqHmme7LZEPW4GkuyT/4kVeyK4rIXGErEtnfaQcyc5jqG05Cb4lPQzD
+        p9I7nc5JIwASvEsWQB8RB6y4bp1TYEJ6CiSckZN1XjrbNekM/bQRQLZAu92+IA72ZenYF6TT8aT0FKh6
+        xclF6azPkUizMQLIFuBazygGrEon8ZLrY9JT+Eumg2ckHTcaXbjbkC0gkHQTCb0bzS0Y+FwJXLS0DhJe
+        dZeBOb1WAVzxS+FAN/rsPih2x137oR8XSa8jRYa77z3rdVBkLXtCXa9ikGnUfN/6P6AOuIKXyCdOddHN
+        BvRZ2t/glOusBTcbvLMP+D4mn3UKkE5B+Ko7dnnlLvuh+f1qoDtIqEchH8OdgKtPiMVRaMOCsiC57n4P
+        0jcnv3WXBnlfBTQX7De1J9GsfOiPkZ+IxWEPLGgQIOmKUgXIZz86tU+Cy9qrqLsNuqJhCpSVVK9Hs9Ge
+        a1pyt2HYAtaB5pSYhz6KMYYt8MCTFvSt0h7Mudtw4AIMuisi6xs3KdjuHdsWi/6QguRHUCDmvRewT/xA
+        cMopSJ+zJ9Qrw6arWlVBN8fAdhvZhTfipkOBXO4PVtVe5cZBq58AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="mnuData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 30</value>
+  </data>
+  <data name="mnuData.Text" xml:space="preserve">
+    <value>Data and I/O</value>
+  </data>
+  <data name="mnuData.ToolTipText" xml:space="preserve">
+    <value>Read/Write Data and I/O
+(Extension1,2 and Laser Port)</value>
+  </data>
+  <data name="mnuScriptEvent.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAmFJREFUWEfV
+        l7+LE0EcxYMoFv7u9EDBUhA5Qe2UINekFQL5sRtCiq1UsLAQLKI2Fv4LNjmEgyuuCVrZ6IEi13i2CopX
+        nFjeHVed+nnhGzOZ25jMbXLBB4/dnXnvzXd3Z2d3c/8t4ji+Wa1WW6L2rXnyqFQqs/A1A/92qTb1mWz8
+        iKLojM4W7rgDe1RfS1qzZUexWDxK4FOCt5yBhnFTHnktJhzNZvMAlzQhbM0LD+GaMpRlsaMB0w3MK15Y
+        Fq4o0+IHw+7zPPzlmMdFZc7X6/XTNlw/qPAUgu+OYRB3KPQt+scw5jiCD+AyHKXwbxRx0obtgbB6itjn
+        +1KpdNksu0DGLMV9TPH1EU3NLD1gvpcmdrhQKBQOm3wgpEH70vP2UWOZvIchBbzzB2f1u8iZ3Kbvjs7c
+        mjvg+BbtA9eL0AJ0X6+aLNdoNI5xvOj0d7lIxjW2r+z4KwV+ZqtC9ERtWHtwAcsm6QDdUopmF9ElUFdi
+        Sz62b5y+0Qug/aFJdNmvpGl8lsvlS7plSZIc6s54u3JP1B9UgDtj0dxN06SwjXbOCn4uL9tH8JP6gwqg
+        PTZJSAEvKPy6WwDH99n/oP7QAoJvgQZnexz9EXheXtaPGdqeqT+oADjdSQj3+hj+hOtQ/i9wG3a0oQWI
+        U12Iupz4UrxvLyMYmaUHzPv2OuZT7YQN2w+Cp/dB4oIJdgFx2zFnZVuZFj86uMRzmFe9sBCuKsPi9oZ8
+        Pn+QEH0d//DC/8V1eeS1mOyw/4Mm4X8XlBRuS5Ppf2AYarXaOQbSH5I7UbXf4hE9a7LJg0k1nZ/T8SKX
+        +wNFLGBUxr2U1gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="mnuScriptEvent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 30</value>
+  </data>
+  <data name="mnuScriptEvent.Text" xml:space="preserve">
+    <value>Script Event</value>
+  </data>
+  <data name="mnuScriptEvent.ToolTipText" xml:space="preserve">
+    <value>Script Event</value>
+  </data>
+  <data name="toolStripDropDownButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADqSURBVEhL7ZR/DcIwEIUrAQlIQQISkIAEJEwCDsABOAAH
+        SGAO4H0Jt7TjKGS3AH/sJV92uVz7uuuPNOmvNBc7cRW3gTCWOWbiSWfhDRrCSRRaCK8wAnN22givKAJz
+        dooaHJ1c1aAV9otsvu3Pq4Wgfq5qsBLLR9wIzLYCEWO4FtQRo3w8VA2YpP/bF4HIA9oLjibKa6FqwOpZ
+        MTErtBjxxYBFWD2y2KgaHASXhRawB7SJvOXCBkBLuJVcmjyHOW3J8+QsNt4aRPmuQd7PsWDOQmM+dnY3
+        CnFCONfcYm/QJzCWI+0+15N+oZTutqwmaFmJTHUAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="toolStripDropDownButton3.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripDropDownButton3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 28</value>
+  </data>
+  <data name="toolStripDropDownButton3.Text" xml:space="preserve">
+    <value>Control</value>
+  </data>
+  <data name="toolStripDropDownButton3.ToolTipText" xml:space="preserve">
+    <value>Control Entity</value>
+  </data>
+  <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 31</value>
+  </data>
+  <data name="tlsTop2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 37</value>
+  </data>
+  <data name="tlsTop2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tlsTop2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tlsTop2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1400, 37</value>
+  </data>
+  <data name="tlsTop2.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="tlsTop2.Text" xml:space="preserve">
+    <value>tlsTop2</value>
+  </data>
+  <data name="&gt;&gt;tlsTop2.Name" xml:space="preserve">
+    <value>tlsTop2</value>
+  </data>
+  <data name="&gt;&gt;tlsTop2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlsTop2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tlsTop2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <metadata name="tlsTop1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>29, 13</value>
   </metadata>
   <data name="tlsTop1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
-  </data>
-  <data name="tlsTop1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tlsTop1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tlsTop1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1400, 37</value>
-  </data>
-  <data name="tlsTop1.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="tlsTop1.Text" xml:space="preserve">
-    <value>tlsTop1</value>
-  </data>
-  <data name="&gt;&gt;tlsTop1.Name" xml:space="preserve">
-    <value>tlsTop1</value>
-  </data>
-  <data name="&gt;&gt;tlsTop1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlsTop1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tlsTop1.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 31</value>
@@ -2927,27 +2775,6 @@
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 31</value>
   </data>
-  <data name="ddbAlign.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACXSURBVEhL7ZTRCYQwEERTiqVYynWgHWgJV4KdeB1YwpWi
-        O+rKfIy3HBFByIMHGpMZCLip8C+9OWaKjFPw8ZPpz4JbeJmdsDIdPKs9jRkyn9iaDq5B7YEh6hDku/WC
-        en3b8LUQDmVLwQGHsqXggENZVTCZPoO++1oIh7JcgD9ZzaHBDFHhkAuyUOHwOQVvU90vT9PCVaS0AObk
-        n94/vxpMAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ddbAlign.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ddbAlign.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 28</value>
-  </data>
-  <data name="ddbAlign.Text" xml:space="preserve">
-    <value>Alignment</value>
-  </data>
-  <data name="ddbAlign.ToolTipText" xml:space="preserve">
-    <value>Margin Alignment</value>
-  </data>
   <data name="mnuMarginLeft.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAIhJREFUSEvt
@@ -3015,44 +2842,65 @@
   <data name="mnuMarginBottom.ToolTipText" xml:space="preserve">
     <value>Margin Align to Bottom</value>
   </data>
+  <data name="ddbAlign.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACXSURBVEhL7ZTRCYQwEERTiqVYynWgHWgJV4KdeB1YwpWi
+        O+rKfIy3HBFByIMHGpMZCLip8C+9OWaKjFPw8ZPpz4JbeJmdsDIdPKs9jRkyn9iaDq5B7YEh6hDku/WC
+        en3b8LUQDmVLwQGHsqXggENZVTCZPoO++1oIh7JcgD9ZzaHBDFHhkAuyUOHwOQVvU90vT9PCVaS0AObk
+        n94/vxpMAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ddbAlign.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ddbAlign.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 28</value>
+  </data>
+  <data name="ddbAlign.Text" xml:space="preserve">
+    <value>Alignment</value>
+  </data>
+  <data name="ddbAlign.ToolTipText" xml:space="preserve">
+    <value>Margin Alignment</value>
+  </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 31</value>
   </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 31</value>
   </data>
+  <data name="tlsTop1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tlsTop1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tlsTop1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1400, 37</value>
+  </data>
+  <data name="tlsTop1.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="tlsTop1.Text" xml:space="preserve">
+    <value>tlsTop1</value>
+  </data>
+  <data name="&gt;&gt;tlsTop1.Name" xml:space="preserve">
+    <value>tlsTop1</value>
+  </data>
+  <data name="&gt;&gt;tlsTop1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlsTop1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tlsTop1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <metadata name="stsBottom.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>251, 19</value>
   </metadata>
   <data name="stsBottom.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
-  </data>
-  <data name="stsBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 1071</value>
-  </data>
-  <data name="stsBottom.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 21, 0</value>
-  </data>
-  <data name="stsBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1400, 29</value>
-  </data>
-  <data name="stsBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="stsBottom.Text" xml:space="preserve">
-    <value>tlsBottom</value>
-  </data>
-  <data name="&gt;&gt;stsBottom.Name" xml:space="preserve">
-    <value>stsBottom</value>
-  </data>
-  <data name="&gt;&gt;stsBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;stsBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;stsBottom.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="toolStripStatusLabel14.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3273,6 +3121,33 @@
     <value>Remote Control Mode
 (Double Click to Switch Mode)</value>
   </data>
+  <data name="stsBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 1071</value>
+  </data>
+  <data name="stsBottom.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 21, 0</value>
+  </data>
+  <data name="stsBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1400, 29</value>
+  </data>
+  <data name="stsBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="stsBottom.Text" xml:space="preserve">
+    <value>tlsBottom</value>
+  </data>
+  <data name="&gt;&gt;stsBottom.Name" xml:space="preserve">
+    <value>stsBottom</value>
+  </data>
+  <data name="&gt;&gt;stsBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stsBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;stsBottom.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="splitter3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -3302,81 +3177,6 @@
   </data>
   <data name="&gt;&gt;splitter3.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;splitter2.Name" xml:space="preserve">
-    <value>splitter2</value>
-  </data>
-  <data name="&gt;&gt;splitter2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Splitter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitter2.Parent" xml:space="preserve">
-    <value>panBody</value>
-  </data>
-  <data name="&gt;&gt;splitter2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tbcRight.Name" xml:space="preserve">
-    <value>tbcRight</value>
-  </data>
-  <data name="&gt;&gt;tbcRight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbcRight.Parent" xml:space="preserve">
-    <value>panBody</value>
-  </data>
-  <data name="&gt;&gt;tbcRight.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;splitter1.Name" xml:space="preserve">
-    <value>splitter1</value>
-  </data>
-  <data name="&gt;&gt;splitter1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Splitter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitter1.Parent" xml:space="preserve">
-    <value>panBody</value>
-  </data>
-  <data name="&gt;&gt;splitter1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tbcLeft.Name" xml:space="preserve">
-    <value>tbcLeft</value>
-  </data>
-  <data name="&gt;&gt;tbcLeft.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbcLeft.Parent" xml:space="preserve">
-    <value>panBody</value>
-  </data>
-  <data name="&gt;&gt;tbcLeft.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="panBody.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panBody.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 76</value>
-  </data>
-  <data name="panBody.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="panBody.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1400, 995</value>
-  </data>
-  <data name="panBody.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="&gt;&gt;panBody.Name" xml:space="preserve">
-    <value>panBody</value>
-  </data>
-  <data name="&gt;&gt;panBody.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panBody.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panBody.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="splitter2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -3408,11 +3208,29 @@
   <data name="&gt;&gt;splitter2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="propertyGridControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="propertyGridControl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="propertyGridControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="propertyGridControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="propertyGridControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 959</value>
+  </data>
+  <data name="propertyGridControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
   <data name="&gt;&gt;propertyGridControl1.Name" xml:space="preserve">
     <value>propertyGridControl1</value>
   </data>
   <data name="&gt;&gt;propertyGridControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertyGridControl1.Parent" xml:space="preserve">
     <value>tabPage4</value>
@@ -3483,36 +3301,6 @@
   <data name="&gt;&gt;tbcRight.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="propertyGridControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="propertyGridControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="propertyGridControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="propertyGridControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="propertyGridControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 959</value>
-  </data>
-  <data name="propertyGridControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="&gt;&gt;propertyGridControl1.Name" xml:space="preserve">
-    <value>propertyGridControl1</value>
-  </data>
-  <data name="&gt;&gt;propertyGridControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;propertyGridControl1.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;propertyGridControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="splitter1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -3539,6 +3327,120 @@
   </data>
   <data name="&gt;&gt;splitter1.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="spcEntity.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="spcEntity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="spcEntity.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="spcEntity.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="trvEntity.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="trvEntity.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="trvEntity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="trvEntity.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="trvEntity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 738</value>
+  </data>
+  <data name="trvEntity.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;trvEntity.Name" xml:space="preserve">
+    <value>trvEntity</value>
+  </data>
+  <data name="&gt;&gt;trvEntity.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;trvEntity.Parent" xml:space="preserve">
+    <value>spcEntity.Panel1</value>
+  </data>
+  <data name="&gt;&gt;trvEntity.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;spcEntity.Panel1.Name" xml:space="preserve">
+    <value>spcEntity.Panel1</value>
+  </data>
+  <data name="&gt;&gt;spcEntity.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;spcEntity.Panel1.Parent" xml:space="preserve">
+    <value>spcEntity</value>
+  </data>
+  <data name="&gt;&gt;spcEntity.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="spcEntity.Panel1MinSize" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="penControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="penControl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="penControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="penControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="penControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 210</value>
+  </data>
+  <data name="penControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;penControl1.Name" xml:space="preserve">
+    <value>penControl1</value>
+  </data>
+  <data name="&gt;&gt;penControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.PenUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;penControl1.Parent" xml:space="preserve">
+    <value>spcEntity.Panel2</value>
+  </data>
+  <data name="&gt;&gt;penControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;spcEntity.Panel2.Name" xml:space="preserve">
+    <value>spcEntity.Panel2</value>
+  </data>
+  <data name="&gt;&gt;spcEntity.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;spcEntity.Panel2.Parent" xml:space="preserve">
+    <value>spcEntity</value>
+  </data>
+  <data name="&gt;&gt;spcEntity.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="spcEntity.Panel2MinSize" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
+  <data name="spcEntity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 951</value>
+  </data>
+  <data name="spcEntity.SplitterDistance" type="System.Int32, mscorlib">
+    <value>738</value>
+  </data>
+  <data name="spcEntity.SplitterWidth" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="spcEntity.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
   </data>
   <data name="&gt;&gt;spcEntity.Name" xml:space="preserve">
     <value>spcEntity</value>
@@ -3588,11 +3490,29 @@
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="trvBlock.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="trvBlock.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="trvBlock.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="trvBlock.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="trvBlock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 951</value>
+  </data>
+  <data name="trvBlock.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;trvBlock.Name" xml:space="preserve">
     <value>trvBlock</value>
   </data>
   <data name="&gt;&gt;trvBlock.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl, spirallab.sirius2.winforms, Version=1.32.1500.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trvBlock.Parent" xml:space="preserve">
     <value>tabPage2</value>
@@ -3669,160 +3589,31 @@
   <data name="&gt;&gt;tbcLeft.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="spcEntity.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="panBody.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="spcEntity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
+  <data name="panBody.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 76</value>
   </data>
-  <data name="spcEntity.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+  <data name="panBody.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="spcEntity.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
-    <value>Horizontal</value>
+  <data name="panBody.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1400, 995</value>
   </data>
-  <data name="trvEntity.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="panBody.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
   </data>
-  <data name="trvEntity.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
+  <data name="&gt;&gt;panBody.Name" xml:space="preserve">
+    <value>panBody</value>
   </data>
-  <data name="trvEntity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;panBody.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="trvEntity.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+  <data name="&gt;&gt;panBody.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="trvEntity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 738</value>
-  </data>
-  <data name="trvEntity.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="&gt;&gt;trvEntity.Name" xml:space="preserve">
-    <value>trvEntity</value>
-  </data>
-  <data name="&gt;&gt;trvEntity.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;trvEntity.Parent" xml:space="preserve">
-    <value>spcEntity.Panel1</value>
-  </data>
-  <data name="&gt;&gt;trvEntity.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;spcEntity.Panel1.Name" xml:space="preserve">
-    <value>spcEntity.Panel1</value>
-  </data>
-  <data name="&gt;&gt;spcEntity.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spcEntity.Panel1.Parent" xml:space="preserve">
-    <value>spcEntity</value>
-  </data>
-  <data name="&gt;&gt;spcEntity.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="spcEntity.Panel1MinSize" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="penControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="penControl1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="penControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="penControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="penControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 210</value>
-  </data>
-  <data name="penControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;penControl1.Name" xml:space="preserve">
-    <value>penControl1</value>
-  </data>
-  <data name="&gt;&gt;penControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PenUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;penControl1.Parent" xml:space="preserve">
-    <value>spcEntity.Panel2</value>
-  </data>
-  <data name="&gt;&gt;penControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;spcEntity.Panel2.Name" xml:space="preserve">
-    <value>spcEntity.Panel2</value>
-  </data>
-  <data name="&gt;&gt;spcEntity.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spcEntity.Panel2.Parent" xml:space="preserve">
-    <value>spcEntity</value>
-  </data>
-  <data name="&gt;&gt;spcEntity.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="spcEntity.Panel2MinSize" type="System.Int32, mscorlib">
-    <value>200</value>
-  </data>
-  <data name="spcEntity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 951</value>
-  </data>
-  <data name="spcEntity.SplitterDistance" type="System.Int32, mscorlib">
-    <value>738</value>
-  </data>
-  <data name="spcEntity.SplitterWidth" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="spcEntity.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="&gt;&gt;spcEntity.Name" xml:space="preserve">
-    <value>spcEntity</value>
-  </data>
-  <data name="&gt;&gt;spcEntity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spcEntity.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;spcEntity.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="trvBlock.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="trvBlock.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9pt</value>
-  </data>
-  <data name="trvBlock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="trvBlock.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="trvBlock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 951</value>
-  </data>
-  <data name="trvBlock.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;trvBlock.Name" xml:space="preserve">
-    <value>trvBlock</value>
-  </data>
-  <data name="&gt;&gt;trvBlock.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl, spirallab.sirius2.winforms, Version=1.30.1460.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;trvBlock.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;trvBlock.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panBody.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
