@@ -509,7 +509,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Zigzag_DISP">
             <summary>
-              Looks up a localized string similar to Zigzg.
+              Looks up a localized string similar to Zigzag.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.barcode2dbase">
@@ -3401,6 +3401,16 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Width_DISP">
             <summary>
               Looks up a localized string similar to Width.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Zigzag_DESC">
+            <summary>
+              Looks up a localized string similar to ZigZag or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Zigzag_DISP">
+            <summary>
+              Looks up a localized string similar to ZigZag.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.imagetext">
@@ -7164,6 +7174,7 @@
             <remarks>
             Degree 2: Conic bezier. <br/>
             Degree 3: Cubic bezier. <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Config.DivideArcToLinesDistance">Config.DivideArcToLinesDistance</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCurve.Start">
@@ -7550,7 +7561,7 @@
             <summary>
             Repeat counts when do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IMarkerable.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">Mark</see>
             <para>
-            Default: 1 (Must be > 0)
+            Default: 1 
             </para>
             </summary>
         </member>
@@ -9402,6 +9413,7 @@
             </summary>
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateCircularText(System.String,System.String,System.Drawing.FontStyle,System.Double,SpiralLab.Sirius2.Winforms.Entity.TextCircularDirections,System.Double,System.Double)">EntityFactory.CreateCircularText</see>. <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Config.DivideArcToLinesDistance">Config.DivideArcToLinesDistance</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.SourceText">
@@ -9732,6 +9744,7 @@
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateText(System.String,System.String,System.Drawing.FontStyle,System.Double)">EntityFactory.CreateText</see>. <br/>
             Used with installed system fonts(like as true type fonts). <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Config.DivideArcToLinesDistance">Config.DivideArcToLinesDistance</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityText.FontName">
@@ -10737,6 +10750,14 @@
             <remarks>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.IsZigZag">
+            <summary>
+            ZigZag or not
+            <para>
+            Default: <c>True</c>
+            </para>
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage._BitmapImage">
             <summary>
             Image Encodering t Base64 
@@ -10809,21 +10830,27 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.MarkVerticalLine(System.Int32,System.Boolean,SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <summary>
-            Mark vertical line 
+            Mark vertical single line 
             </summary>
-            <param name="px">Index of x line</param>
-            <param name="btmToTop"></param>
-            <param name="marker"></param>
-            <returns></returns>
+            <remarks>
+            Consider as its working <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">Mark</see> within async threads by <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>. <br/>
+            </remarks>
+            <param name="px">Index of x line<br/>Starting from 0(or left)</param>
+            <param name="isBtmToTop">Is bottom to top order</param>
+            <param name="marker"><see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see></param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.MarkHorizontalLine(System.Int32,System.Boolean,SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <summary>
-            Mark horizozntal line
+            Mark horizontal single line
             </summary>
-            <param name="py">Index of y line</param>
-            <param name="leftToRight"></param>
-            <param name="marker"></param>
-            <returns></returns>
+            <remarks>
+            Consider as its working <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">Mark</see> within async threads by <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>. <br/>
+            </remarks>
+            <param name="py">Index of y line<br/>Starting from 0(or bottom)</param>
+            <param name="isLeftToRight">Is left to right order</param>
+            <param name="marker"><see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see></param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityArc">
             <summary>
@@ -12747,7 +12774,7 @@
             EntityFace
             </summary>
             <remarks>
-            Triangle with normals (= x,nx,y,ny,z,nx)
+            Triangle with vertices and normals (v1,n1, v2,n2, v3,n3)
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityFace.Color">
@@ -12758,7 +12785,7 @@
             Vertices for triangle and normal
             </summary>
             <remarks>
-            Array of 6 vertices (= x,nx,y,ny,z,nx) <br/>
+            Array of 6 vertices v1,n1, v2,n2, v3,n3 <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityFace._Vertices">
@@ -12775,7 +12802,7 @@
             <summary>
             Constructor
             </summary>
-            <param name="vertices">Should be 6 vertices for x,nx,y,ny,z,nx</param>
+            <param name="vertices">Array length should be 6 vertices for v1,n1, v2,n2, v3,n3</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFace.Clone">
             <inheritdoc/>
@@ -12799,6 +12826,7 @@
             </summary>
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateGroup(System.String,SpiralLab.Sirius2.Winforms.Entity.IEntity[])">EntityFactory.CreateGroup</see>. <br/>
+            Group is a set(or container) of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.Color">
@@ -13372,6 +13400,7 @@
             </summary>
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateSpiral(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.UInt32,System.Boolean)">EntityFactory.CreateSpiral</see>. <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Config.DivideArcToLinesDistance">Config.DivideArcToLinesDistance</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral.StartDiameter">
@@ -13478,6 +13507,7 @@
             </summary>
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePoints(OpenTK.Vector2[],System.Double)">EntityFactory.CreatePoints</see>. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcJumpMode">IRtcJumpMode</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPoints.IsHardJump">
@@ -13815,6 +13845,7 @@
             </summary>
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePolyline2D(SpiralLab.Sirius2.Winforms.Entity.EntityVertex2D[],System.Boolean)">EntityFactory.CreatePolyline2D</see>. <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Config.DivideArcToLinesDistance">Config.DivideArcToLinesDistance</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.IsClosed">
@@ -16045,7 +16076,7 @@
             <summary>
             Encode bitmap to base64 encoding
             </summary>
-            <param name="bitmap"><c>System.Drawing.Bitmap</c></param>
+            <param name="bitmap"><see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></param>
             <returns>Encoded base64 string</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.DecodeFrom(System.String)">
@@ -16053,36 +16084,36 @@
             Decode base64 encoding to bitmap
             </summary>
             <param name="base64String">Encoded base64 string</param>
-            <returns><c>System.Drawing.Bitmap</c></returns>
+            <returns><see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.ConvertToBitmap(System.String)">
             <summary>
             Load bitmap image from file
             </summary>
             <param name="fileName">Filename</param>
-            <returns><c>System.Drawing.Bitmap</c></returns>
+            <returns><see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.ConvertToBitmap(System.IO.Stream)">
             <summary>
             Convert bitmap image from stream
             </summary>
             <param name="stream">Stream</param>
-             <returns><c>System.Drawing.Bitmap</c></returns>
+             <returns><see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.RGB2Gray(System.Drawing.Color)">
             <summary>
-            RGB to gray
+            <see cref="T:System.Drawing.Color">Color</see> value to gray(range from 0~1) value
             </summary>
-            <param name="color"><c>Color</c></param>
-            <returns>Gray weight from 0 ~ 1</returns>
+            <param name="color"><see cref="T:System.Drawing.Color">Color</see></param>
+            <returns>Gray value (range from 0~1)</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.ToStream(System.Drawing.Image,System.Drawing.Imaging.ImageFormat)">
             <summary>
             Image Extension
             </summary>
-            <param name="image"><c>Image</c></param>
-            <param name="format"><c>ImageFormat</c></param>
-            <returns><c>Stream</c></returns>
+            <param name="image"><see cref="T:System.Drawing.Image">Image</see></param>
+            <param name="format"><see cref="T:System.Drawing.Imaging.ImageFormat">ImageFormat</see></param>
+            <returns><see cref="T:System.IO.Stream">Stream</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.CreateTextToImage(System.String,System.String,System.Double,System.Int32,System.Drawing.StringAlignment,System.Boolean,System.Double,System.Drawing.Bitmap@,System.Drawing.SizeF@)">
             <summary>
@@ -16090,13 +16121,13 @@
             </summary>
             <param name="fontName">Font name</param>
             <param name="text">Text string</param>
-            <param name="pixels">Height of pixel</param>
-            <param name="fontStyle"><c>System.Drawing.FontStyle</c></param>
+            <param name="pixels">Text height pixel size</param>
+            <param name="fontStyle"><see cref="T:System.Drawing.FontStyle">FontStyle</see></param>
             <param name="isFill">Is outline only</param>
-            <param name="outlineSize">Outline size (if outline only)</param>
+            <param name="outlineSize">Outline pixel size (if outline only)</param>
             <param name="horizontalAlignment">Horizontal of <c>StringAlignment</c></param>
-            <param name="bitmap">Created <c>System.Drawing.Bitmap</c></param>
-            <param name="sizef">Create size of <c>System.Drawing.Bitmap</c></param>
+            <param name="bitmap">Created <see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></param>
+            <param name="sizef">Created size of <see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></param>
             <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.MathHelper">
@@ -20226,7 +20257,7 @@
             <summary>
             Sirius font glyph limit for max ascii hexa
             <para>
-            Default: 255 (It means, using ascii code range: 0~255 glyphs only) <br/>
+            Default: 255 (It means, using ascii code range: 32~255 glyphs only) <br/>
             </para>
             </summary>
             <remarks>
@@ -22056,7 +22087,7 @@
             Used with inherited <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> from <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IClipRegion">IClipRegion</see> interface. <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Config.DivideArcToLinesDistance">DivideArcToLinesDistance</see>. <br/>
             </remarks>
-            <param name="entities">Target array of <c>IEntity</c> to clipping(or divide)</param>
+            <param name="entities">Target array of  <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> to clipping(or divide)</param>
             <param name="bboxes">Array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.BoundingBox">BoundingBox</see> to clip</param>
             <returns>Success or failed</returns>
         </member>

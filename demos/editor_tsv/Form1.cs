@@ -92,7 +92,8 @@ namespace Demos
             var document = siriusEditorUserControl1.Document;
             var view = siriusEditorUserControl1.View;
 
-            // To draw(or render) very small arcs with high resolution (20um)
+            // To draw(or render) very small arcs with high resolution 
+            // Edit: 0.020mm (default : 0.3mm)
             SpiralLab.Sirius2.Config.DivideArcToLinesDistance = 0.02;
 
             // Color of index '0' is White

@@ -718,6 +718,18 @@
             Above RTC5. <br/>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Config.HardJumpScannerJumpDelay">
+            <summary>
+            Jump delay for hard jumps (usec) 
+            <para>
+            Default: 0 (usec)
+            </para>
+            </summary>
+            <remarks>
+            Used if <see cref="P:SpiralLab.Sirius2.Config.IsConvertJumpToHardJump">IsConvertJumpToHardJump</see> is <c>True</c> only.
+            Above RTC5. <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Config.DivideArcToLinesDistance">
             <summary>
             Step distance for divide arc into lines (mm)
@@ -726,16 +738,14 @@
             </para>
             </summary>
             <remarks>
-            <list type="case study">
-            <item><description>When draw(or render) arc at screen, it will be splitted into lines.</description></item>
-            <item><description>If center of arc is out of range when marking, it will be splitted into lines.</description></item>
-            <item><description>Curve(or spline) are splitted into lines.</description></item>
-            <item><description>Spiral are splitted into lines.</description></item>
-            <item><description>DXF ellipse is splitted into lines.</description></item>
-            <item><description>Transformed(like as rotated x or y axis by matrix) arc is splitted into lines.</description></item>
-            <item><description>Jump and marks are splitted into lines when simulate laser path.</description></item>
-            <item><description>Hatch by polygon are splitted into lines.</description></item>
-            </list>
+            If draw(or render) arc at view, it will be splitted into lines. <br/>
+            If center of arc is out of range when do marking, it will be splitted into lines.<br/>
+            If  arc is transformed(like as rotated x or y axis by matrix) when do marking, it will be splitted into lines.<br/>
+            Curve(or spline) are splitted into lines.<br/>
+            Spiral are splitted into lines.<br/>
+            Ellipse at dxf file are splitted into lines.<br/>
+            Jump and marks are splitted into lines when simulate laser path.<br/>
+            Hatch by polygon shape are splitted into lines.<br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Config.VirtualJumpAndMarkAccScale">
@@ -17037,10 +17047,12 @@
             <remarks>
             Install Optical Power Monitor (OPM) v5.0 Software package at first. <br/>
             Link: <see href="https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM">https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM</see>. <br/>
+            Direct download link: <see href="https://www.thorlabs.com/software/MUC/OPM/v5.0/Thorlabs.OpticalPowerMonitor.5.0.4591.730_NSIS.zip">OPM v5.0</see>. <br/>
             </remarks>
             <param name="index">Identifier (0,1,2,3, ...)</param>
-            <param name="serialNo">Serial no</param>
-            <returns><see cref="T:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs">PowerMeterThorLabs</see></returns>
+            <param name="serialNo">Serial no (for searching)</param>
+            <returns><see cref="T:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs">PowerMeterThorLabs</see><br/>Created <see cref="T:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs">PowerMeterThorLabs_x32</see> if runtime is x32 <br/>Created <see cref="T:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs">PowerMeterThorLabs_x64</see> if runtime is x64 <br/>
+            </returns>
         </member>
         <member name="T:SpiralLab.Sirius2.PowerMeter.PowerMeterTypes">
             <summary>
@@ -17551,7 +17563,8 @@
             </summary>
             <remarks>
             Install Optical Power Monitor (OPM) v5.0 Software package at first. <br/>
-            Link: https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM <br/>
+            Link: <see href="https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM">https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM</see>. <br/>
+            Direct download link: <see href="https://www.thorlabs.com/software/MUC/OPM/v5.0/Thorlabs.OpticalPowerMonitor.5.0.4591.730_NSIS.zip">OPM v5.0</see>. <br/>
             Used <c>TLPM</c> Interop object internally. <br/>
             </remarks>
         </member>
@@ -17561,6 +17574,9 @@
         <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.SerialNo">
             <summary>
             Serial no
+            <para>
+            Serial no for searching 
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.PowerDensity">
@@ -17578,18 +17594,25 @@
             Power current
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.rsrcName">
+            <summary>
+            searched(or founded) resource name
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.modelName">
+            <summary>
+            searched(or founded) model name
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.timer">
+            <summary>
+            timer for sampling to measure
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.#ctor">
             <summary>
             Constructor
             </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.#ctor(System.Int32,System.String,System.String)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="index">Identifier</param>
-            <param name="name">Name</param>
-            <param name="serialNo">Serial no</param>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.Finalize">
             <summary>
@@ -17599,11 +17622,10 @@
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.Dispose(System.Boolean)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.Initialize">
-            <inheritdoc/>  
-        </member>
-        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.CtlStart(System.String)">
-            <inheritdoc/>  
+        <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.isInitialized">
+            <summary>
+            Initialized or not
+            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.CtlStop">
             <inheritdoc/>  
@@ -17612,6 +17634,68 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.CtlReset">
+            <inheritdoc/>  
+        </member>
+        <member name="T:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs_x32">
+            <summary>
+            PowerMeterThorLabsPMSeries for x32 (32bits)
+            <para>
+            Used with <c>Thorlabs.TLPM_32.Interop.TLPM</c>
+            </para>
+            </summary>
+            <remarks>
+            Install Optical Power Monitor (OPM) v5.0 Software package at first. <br/>
+            Link: <see href="https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM">https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM</see>. <br/>
+            Direct download link: <see href="https://www.thorlabs.com/software/MUC/OPM/v5.0/Thorlabs.OpticalPowerMonitor.5.0.4591.730_NSIS.zip">OPM v5.0</see>. <br/>
+            Used <c>TLPM</c> Interop object internally. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs_x32.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs_x32.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Identifier</param>
+            <param name="name">Name</param>
+            <param name="serialNo">Serial no</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs_x32.Initialize">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs_x32.CtlStart(System.String)">
+            <inheritdoc/>  
+        </member>
+        <member name="T:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs_x64">
+            <summary>
+            PowerMeterThorLabsPMSeries for x64 (64bits)
+            <para>
+            Used with <c>Thorlabs.TLPM_64.Interop.TLPM</c>
+            </para>
+            </summary>
+            <remarks>
+            Install Optical Power Monitor (OPM) v5.0 Software package at first. <br/>
+            Link: <see href="https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM">https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM</see>. <br/>
+            Direct download link: <see href="https://www.thorlabs.com/software/MUC/OPM/v5.0/Thorlabs.OpticalPowerMonitor.5.0.4591.730_NSIS.zip">OPM v5.0</see>. <br/>
+            Used <c>TLPM</c> Interop object internally. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs_x64.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs_x64.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Identifier</param>
+            <param name="name">Name</param>
+            <param name="serialNo">Serial no</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs_x64.Initialize">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs_x64.CtlStart(System.String)">
             <inheritdoc/>  
         </member>
         <member name="T:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual">
@@ -34369,6 +34453,11 @@
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RasterModes">
             <summary>
             Raster modes
+            <para>
+            Mark for rasterized pixels (aka. bitmap operation) <br/>
+            Recommended raster mode:  <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">JumpAndShoot</see> <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster">IRtcRaster</see>. <br/> 
+            </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">

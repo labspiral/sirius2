@@ -153,7 +153,7 @@ namespace Demos
             // Repeats 100 times
             document.ActiveLayer.Repeats = 100;
             // or infinitely
-            //document.ActiveLayer.Repeats = uint.MaxValue;
+            //document.ActiveLayer.Repeats = int.MaxValue;
 
             // Zoom to fit by manually
             var bbox = BoundingBox.RealBoundingBox(document.ActiveLayer);
