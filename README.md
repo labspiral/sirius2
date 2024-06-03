@@ -82,12 +82,12 @@
 
 **3. What's major changes in Sirius2**
 
-|                       |                         Sirius2                       |       Sirius(Old)        |
+|                       |                         Sirius2                       |    Sirius (Deprecated)   |
 |:---------------------:|:------------------------------------------------------|:-------------------------|
 | Matrix operation      |4x4 (3D)                                               |3x3 (2D)                  |
 | Camera                |Perspective                                            |Orthogonal                |
 | Editor                |3D                                                     |2D                        |
-| Render engine         |OpenTK (with shaders)                                  |SharpGL                   |
+| Render engine         |OpenTK                                                 |SharpGL                   |
 | Render speed          |Faster                                                 |Acceptable                |
 | Field correction      |correXionPro and CalibrationTool                       |correXionPro              |
 | Font                  |cxf, lff format and Windows fonts (semi ocr also)      |external ttf, cxf format  |
@@ -115,6 +115,9 @@
     - SCANLAB syncAXIS: v.1.8.2 (2023.3.9)
     - OpenTK: v3.3.3 (https://www.nuget.org/packages/OpenTK/3.3.3)
     - OpenTK.GLControl: v3.3.3 (https://www.nuget.org/packages/OpenTK.GLControl/)
+  - Dependencies (optional)
+    - OphirPhotonics StarLab v3.9 (https://www.ophiropt.com/en/g/starlab-for-usb)
+    - Thorlabs OPM v5.0 (https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM)
 
 
 ----
@@ -122,9 +125,17 @@
 
 **5. How to use ?**
 
- - Copy all files at 'bin' to your working directory 
- - Add reference files ('spirallab.sirius2.dll', 'spirallab.sirius2.winforms.dll') into your project
+ - Copy all files and subdirectories at 'bin' to your working(or output) directory
+ - Add reference 'spirallab.sirius2.dll', 'spirallab.sirius2.winforms.dll', 'OpenTK.dll'(optional) into your project
+  
+  
+ ----
+
+
+**6. Copyrights**
+
  - Demo 'init' console project for beginner
+ - Demo 'laserpower' console project for customized laser source (open sourced)
  - Demo 'editor_basic' winforms project for beginner
     - config 'config.ini' for RTC4, RTC5 or RTC6
     - config 'config_syncaxis.ini' for XL-SCAN
@@ -135,14 +146,14 @@
  - Demo 'editor_mof_text' winforms project for mark out of ranged texts by script with MoF
  - Demo 'editor_dio' winforms project for control digital input/output
  - Demo 'editor_multiple' winforms project for multiple RTC instances
- - Demo 'editor_marker' winforms project for customized marker
- - Demo 'editor_ui' winforms project for customized ui
+ - Demo 'editor_marker' winforms project for customized marker (open sourced)
+ - Demo 'editor_ui' winforms project for customized ui (open sourced)
 
 
 ----
 
   
-**6. Copyrights**
+**7. Copyrights**
  
  - Evaluation copy mode would be activated during 30 mins without license.
  - Homepage: http://spirallab.co.kr
@@ -154,10 +165,10 @@
 ----
 
 
-**7. Version history**
+**8. Version history**
 
 * 2024.6.3 v.1.33.1520
-  - fixed) thorlab powermeter
+  - fixed) thorlabs powermeter
      - updated) dlls files for OPM v5.0 
      - fixed) seperated instance for specific(x32 or x64) runtime 
   - fixed) ophir powermeter
