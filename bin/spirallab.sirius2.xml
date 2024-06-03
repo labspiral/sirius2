@@ -17016,7 +17016,7 @@
             Create virtual powermeter controller
             </summary>
             <param name="index">Identifier (0,1,2,3, ...)</param>
-            <param name="maxWatt">Max watt (W)</param>
+            <param name="maxWatt">Max watt (W)<br/>Recommend to use by <see cref="P:SpiralLab.Sirius2.Laser.ILaser.MaxPowerWatt">ILaser.MaxPowerWatt</see></param>
             <returns><see cref="T:SpiralLab.Sirius2.PowerMeter.PowerMeterVirtual">PowerMeterVirtual</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterFactory.CreateOphirPhotonics(System.Int32,System.String)">
@@ -17024,12 +17024,13 @@
             Create Ophir Photonics powermeter controller 
             </summary>
             <remarks>
-            Supported Ophir devices: Ariel, Centauri, StarBright, StarLite, Juno, Juno+, Vega, Nova II, Pulsar <br/>
-            Install the Visual Studio 2019 Visual C++ redistributable, available at https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist. <br/>
-            Install StarLab 3.8, available at <see href="https://www.ophiropt.com/en/g/com-object">https://www.ophiropt.com/en/g/com-object</see>. <br/>
+            Supported devices: Ariel, Centauri, StarBright, StarLite, Juno, Juno+, Vega, Nova II, Pulsar, ...<br/>
+            Install Ophir Photonics StarLab v3.9 at first. <br/>
+            Link: <see href="https://www.ophiropt.com/en/g/starlab-for-usb">https://www.ophiropt.com/en/g/starlab-for-usb</see>. <br/>
+            Direct download link: <see href="https://www.ophiropt.com/mam/celum/celum_assets/op/resources/StarLab.zip?0">StarLab v3.9</see>. <br/>        
             </remarks>
             <param name="index">Identifier (0,1,2,3, ...)</param>
-            <param name="serialNo">Serial no</param>
+            <param name="serialNo">Serial no (for searching)</param>
             <returns><see cref="T:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir">PowerMeterOphir</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterFactory.CreateCoherentPowerMax(System.Int32,System.Int32)">
@@ -17044,7 +17045,7 @@
             <summary>
             Create Thorlabs PowerMeter controller
             <para>
-            PM100A, PM100D, PM400, PM5020, PM100USB, PM101 Series, PM102 Series, PM103 Series, PM16 Series, PM160 Series, PM200, SPCNT, ...
+            Supported devices: PM100A, PM100D, PM400, PM5020, PM100USB, PM101 Series, PM102 Series, PM103 Series, PM16 Series, PM160 Series, PM200, SPCNT, ...<br/>
             </para>
             </summary>
             <remarks>
@@ -17487,7 +17488,7 @@
             <summary>
             PowerMeter Ophir Photonics
             <para>
-            Ariel, Centauri, StarBright, StarLite, Juno, Juno+, Vega, Nova II, Pulsar, ...
+            Supported devices: Ariel, Centauri, StarBright, StarLite, Juno, Juno+, Vega, Nova II, Pulsar, ... <br/>
             </para>
             </summary>
             <remarks>
