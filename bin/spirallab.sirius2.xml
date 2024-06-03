@@ -17042,7 +17042,10 @@
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterFactory.CreateThorlabs(System.Int32,System.String)">
             <summary>
-            Create Thorlabs PowerMeter controller (PM100A, PM100D, PM400, PM5020, PM100USB, PM101 Series, PM102 Series, PM103 Series, PM16 Series, PM160 Series, PM200, SPCNT, ...)
+            Create Thorlabs PowerMeter controller
+            <para>
+            PM100A, PM100D, PM400, PM5020, PM100USB, PM101 Series, PM102 Series, PM103 Series, PM16 Series, PM160 Series, PM200, SPCNT, ...
+            </para>
             </summary>
             <remarks>
             Install Optical Power Monitor (OPM) v5.0 Software package at first. <br/>
@@ -17483,10 +17486,15 @@
         <member name="T:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir">
             <summary>
             PowerMeter Ophir Photonics
+            <para>
+            Ariel, Centauri, StarBright, StarLite, Juno, Juno+, Vega, Nova II, Pulsar, ...
+            </para>
             </summary>
             <remarks>
-            Install Ophir Photonics StarLab v3.8 at first. <br/>
-            Used <c>OphirLMMeasurementLib</c> COM object internally. <br/>
+            Install Ophir Photonics StarLab v3.9 at first. <br/>
+            Link: <see href="https://www.ophiropt.com/en/g/starlab-for-usb">https://www.ophiropt.com/en/g/starlab-for-usb</see>. <br/>
+            Direct download link: <see href="https://www.ophiropt.com/mam/celum/celum_assets/op/resources/StarLab.zip?0">StarLab v3.9</see>. <br/>
+            Used <c>OphirLMMeasurementLib.CoLMMeasurement</c> COM object internally. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterOphir.PowerMeterType">
@@ -17559,13 +17567,18 @@
         </member>
         <member name="T:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs">
             <summary>
-            PowerMeterThorLabsPMSeries
+            PowerMeter by ThorLabs PM Series
+            <para>
+            The Optical Power Monitor (OPM) software provides remote control and monitoring of up to eight power and energy meters. 
+            This software is compatible with our Power Meter Consoles and Interfaces (PM100A and PM101 Series), Power and Energy Meter Consoles
+            and Interfaces (PM100D, PM400, PM5020, PM100USB, PM103 Series, and legacy PM200), Position, Power Meter Interfaces (PM102 Series), Wireless Power Meters (PM160, PM160T, and PM160T-HP), 
+            and USB-Interface Power Meters and Photon Counter (PM16 Series, and SPCNT). <br/>
+            </para>
             </summary>
             <remarks>
             Install Optical Power Monitor (OPM) v5.0 Software package at first. <br/>
             Link: <see href="https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM">https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM</see>. <br/>
             Direct download link: <see href="https://www.thorlabs.com/software/MUC/OPM/v5.0/Thorlabs.OpticalPowerMonitor.5.0.4591.730_NSIS.zip">OPM v5.0</see>. <br/>
-            Used <c>TLPM</c> Interop object internally. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.PowerMeterType">
@@ -17640,15 +17653,9 @@
             <summary>
             PowerMeterThorLabsPMSeries for x32 (32bits)
             <para>
-            Used with <c>Thorlabs.TLPM_32.Interop.TLPM</c>
+            Used <c>Thorlabs.TLPM_32.Interop.TLPM</c> by internally
             </para>
             </summary>
-            <remarks>
-            Install Optical Power Monitor (OPM) v5.0 Software package at first. <br/>
-            Link: <see href="https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM">https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM</see>. <br/>
-            Direct download link: <see href="https://www.thorlabs.com/software/MUC/OPM/v5.0/Thorlabs.OpticalPowerMonitor.5.0.4591.730_NSIS.zip">OPM v5.0</see>. <br/>
-            Used <c>TLPM</c> Interop object internally. <br/>
-            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs_x32.Dispose(System.Boolean)">
             <inheritdoc/>
@@ -17671,15 +17678,9 @@
             <summary>
             PowerMeterThorLabsPMSeries for x64 (64bits)
             <para>
-            Used with <c>Thorlabs.TLPM_64.Interop.TLPM</c>
+            Used <c>Thorlabs.TLPM_64.Interop.TLPM</c> by internally
             </para>
             </summary>
-            <remarks>
-            Install Optical Power Monitor (OPM) v5.0 Software package at first. <br/>
-            Link: <see href="https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM">https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM</see>. <br/>
-            Direct download link: <see href="https://www.thorlabs.com/software/MUC/OPM/v5.0/Thorlabs.OpticalPowerMonitor.5.0.4591.730_NSIS.zip">OPM v5.0</see>. <br/>
-            Used <c>TLPM</c> Interop object internally. <br/>
-            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs_x64.Dispose(System.Boolean)">
             <inheritdoc/>

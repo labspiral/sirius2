@@ -61,8 +61,8 @@ namespace Demos
             // Create RTC controller 
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, LaserModes.Yag1, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             //var rtc = ScannerFactory.CreateRtc4(0, kfactor, LaserModes.Yag1, correctionFile);
-            var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
-            //var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             //var rtc = ScannerFactory.CreateRtc6SyncAxis(0, "your config xml file");
 
@@ -92,11 +92,11 @@ namespace Demos
             //var powerMeter = PowerMeterFactory.CreateOphirPhotonics(0, "SERIALNO");
             //var powerMeter = PowerMeterFactory.CreateThorlabs(0, "SERIALNO");
             success &= powerMeter.Initialize();
+            Debug.Assert(success);
+
             powerMeter.OnStarted += PowerMeter_OnStarted;
             powerMeter.OnMeasured += PowerMeter_OnMeasured;
             powerMeter.OnStopped += PowerMeter_OnStopped;
-
-            Debug.Assert(success);
 
             ConsoleKeyInfo key;
             do
@@ -116,6 +116,8 @@ namespace Demos
                 switch (key.Key)
                 {
                     case ConsoleKey.D1:
+                        powerMeter.CtlReset();
+                        powerMeter.CtlClear();
                         success &= powerMeter.CtlStart();
                         break;
                     case ConsoleKey.D2:
@@ -150,9 +152,9 @@ namespace Demos
             laser.Dispose();
         }
 
-        private static void PowerMeter_OnStopped(IPowerMeter obj)
+        private static void PowerMeter_OnStopped(IPowerMeter powerMeter)
         {
-            Console.Title = $"Stopped PowerMeter";
+            Console.Title = $"Stopped !";
         }
 
         private static void PowerMeter_OnMeasured(IPowerMeter powerMeter, DateTime dt, double watt)
@@ -160,9 +162,9 @@ namespace Demos
             Console.Title = $"Power: {watt:F3} W";
         }
 
-        private static void PowerMeter_OnStarted(IPowerMeter obj)
+        private static void PowerMeter_OnStarted(IPowerMeter powerMeter)
         {
-            Console.Title = $"Started PowerMeter";
+            Console.Title = $"Started ...";
         }
     }
 }

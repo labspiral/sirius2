@@ -160,11 +160,13 @@
   - fixed) thorlab powermeter
      - updated) dlls files for OPM v5.0 
      - fixed) seperated instance for specific(x32 or x64) runtime 
+  - fixed) ophir powermeter
+     - updated) starlab v3.9
   - fixed) image, imagetext entity
      - added) zigzag mark order at 
   - fixed) text entity
-     - removed duplicated vertices 
-     - simplfied duplicated pathes
+     - removed) duplicated vertices 
+     - simplfied) duplicated pathes
 
 * 2024.5.27 v.1.32.1500
   - added) editor_wpf demo 
