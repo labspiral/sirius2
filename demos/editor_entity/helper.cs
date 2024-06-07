@@ -283,7 +283,7 @@ namespace Demos
                     case "coherentpowermax":
                         powerMeter = PowerMeterFactory.CreateCoherentPowerMax(index, powerMeterSerialPort);
                         break;
-                    case "thorolabs":
+                    case "thorlabs":
                         powerMeter = PowerMeterFactory.CreateThorlabs(index, powerMeterSerialNo);
                         break;
                 }
@@ -404,7 +404,7 @@ namespace Demos
             var enablePowerMap = NativeMethods.ReadIni<int>(ConfigFileName, $"LASER{index}", "POWERMAP_ENABLE", 0);
             if (0 != enablePowerMap)
             {
-                var powerMap = PowerMapFactory.CreatePowerMapDefault(index, $"MAP{index}");
+                var powerMap = PowerMapFactory.CreateDefault(index, $"MAP{index}");
                 powerMap.OnOpened += PowerMap_OnMappingOpened;
                 powerMap.OnSaved += PowerMap_OnMappingSaved;
                 var powerMapFile = NativeMethods.ReadIni<string>(ConfigFileName, $"LASER{index}", "POWERMAP_FILE", string.Empty);

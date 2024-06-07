@@ -2505,6 +2505,63 @@
               Looks up a localized string similar to syncAXIS.
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.pdf">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf.Basic_C">
+            <summary>
+              Looks up a localized string similar to Basic.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf.DPI_DESC">
+             <summary>
+               Looks up a localized string similar to DPI (Dots per Inch)
+            Default: 96 (Max. 1024).
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf.DPI_DISP">
+            <summary>
+              Looks up a localized string similar to DPI.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf.File_DESC">
+            <summary>
+              Looks up a localized string similar to PDF File Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf.File_DISP">
+            <summary>
+              Looks up a localized string similar to File.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf.Page_DESC">
+            <summary>
+              Looks up a localized string similar to Page No.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.pdf.Page_DISP">
+            <summary>
+              Looks up a localized string similar to Page.
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.stitchedimage">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -3294,9 +3351,11 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Invert_color_DESC">
-            <summary>
-              Looks up a localized string similar to Invert Output Pixel Color.
-            </summary>
+             <summary>
+               Looks up a localized string similar to Invert Output Pixel Color
+            True: White major
+            False: Black major.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Invert_color_DISP">
             <summary>
@@ -6145,6 +6204,83 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16EdgeCond.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityPDF">
+            <summary>
+            EntityPDF entity
+            </summary>
+            <remarks>
+            Created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePDF(System.String,System.Int32,System.Double,System.Double)">EntityFactory.CreatePDF</see>. <br/>
+            Be-aware, Source(or input) <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityPDF.FileName">PDF file</see> must be exist at path. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPDF.FileName">
+            <summary>
+            PDF Filename
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPDF.PageStart">
+            <summary>
+            Page starting no
+            <para>
+            Default: 1 (Must be >= 1)
+            </para>
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPDF.pageStart">
+            <summary>
+            DPI
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPDF.DPI">
+            <summary>
+            DPI (Dots per inch)
+            <para>
+            Default: 96 (Max. 1024)
+            </para>
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPDF.dpi">
+            <summary>
+            DPI
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF.#ctor(System.String,System.Int32,System.Double,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="fileName">PDF filename</param>
+            <param name="pageNo">Page no<br/>Must be &gt;= 1</param>
+            <param name="height">Height (mm)</param>
+            <param name="width">Width (mm)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF.Regen">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF.Render(SpiralLab.Sirius2.Winforms.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage">
             <summary>
             EntityStitchedImage entity
@@ -6475,6 +6611,10 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.IsInvertColor">
             <summary>
             Invert Pixel Color
+            <para>
+            <c>True</c>: <c>White</c> is major color.<br/>
+            <c>False</c>: <c>Black</c> is major color.<br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.Direction">
@@ -10054,7 +10194,7 @@
             EntityMoFWait entity
             </summary>
             <remarks>
-            Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double)">EntityFactory.CreateMoFWait</see>. <br/>
+            Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double,System.Boolean)">EntityFactory.CreateMoFWait</see>. <br/>
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Boolean)">IRtcMoF.ListMofWait</see> and <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofAngularWait(System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions)">IRtcMoF.ListMofAngularWait</see> <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> or <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension">IRtcMoFExtension</see>. <br/>
             Above RTC5 <br/>
@@ -10104,13 +10244,14 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.#ctor(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.#ctor(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double,System.Boolean)">
             <summary>
             Constructor (MoF XY)
             </summary>
             <param name="encoder"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders">RtcEncoders</see></param>
             <param name="condition"> <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions">RtcEncoderWaitConditions</see></param>
             <param name="position">Wait position (mm)</param>
+            <param name="isApplyMatrixStack">If <c>True</c>, Wait <c>position</c> value would be transformed by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see> . <br/>Default: <c>False</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait.#ctor(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double)">
             <summary>
@@ -10738,6 +10879,10 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.IsInvertColor">
             <summary>
             Invert pixel color
+            <para>
+            <c>True</c>: <c>White</c> is major color.<br/>
+            <c>False</c>: <c>Black</c> is major color.<br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.Direction">
@@ -14550,7 +14695,7 @@
             </code>
             </summary>
             <remarks>
-            Not supported <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">RasterModes.MicroVector</see> with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis">IRtcSyncAxis</see> <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">RasterModes.JumpAndShoot</see> only at <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis">IRtcSyncAxis</see>. <br/>
             </remarks>
             <param name="fileName">Image filename (like as .bmp, *.jpg, *.png, ...)</param>
             <param name="height">Height (mm)<br/>Must be > 0</param>
@@ -14565,12 +14710,31 @@
             User must dispose returned <see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see> resource. <br/>
             </remarks>
             <remarks>
-            Not supported <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">RasterModes.MicroVector</see> with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis">IRtcSyncAxis</see> <br/>
+            Used with<see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">RasterModes.JumpAndShoot</see> only at<see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis"> IRtcSyncAxis</see>. <br/>
             </remarks>
             <param name="bitmap"><see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see> </param>
             <param name="height">Height (mm)<br/>Must be > 0</param>
             <param name="width">Width (mm)<br/>Default: 0 (Must be >= 0)<br/>If width is 0, aspect-ratio will be calculated by automatically</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityImage">EntityImage</see></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePDF(System.String,System.Int32,System.Double,System.Double)">
+            <summary>
+            Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPDF">EntityPDF</see> entity
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var pdf = EntityFactory.CreatePDF(Path.Combine("sample", "test.pdf", 1, 10);
+            document.ActAdd(pdf);
+            </code>
+            </summary>
+            <remarks>
+            Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">RasterModes.JumpAndShoot</see> only at <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis">IRtcSyncAxis</see>. <br/>
+            </remarks>
+            <param name="fileName">PDF filename (like as .pdf)</param>
+            <param name="pageNo">Page no<br/>Must be &gt;= 1</param>
+            <param name="height">Height (mm)<br/>Must be > 0</param>
+            <param name="width">Width (mm)<br/>Default: 0 (Must be >= 0)<br/>If width is 0, aspect-ratio will be calculated by automatically</param>
+            <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPDF">EntityImage</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateStitchedImage(System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
@@ -14603,7 +14767,7 @@
             ...
             var fileName = Path.Combine("sample", "lena.bmp");
             var raster = EntityFactory.CreateRaster(fileName, 2);
-            raster.RasterMode = RasterModes.MicroVector;
+            raster.RasterMode = RasterModes.JumpAndShoot;
             raster.PixelPeriod = 1000;
             raster.PixelTime = 100;
             raster.Direction = RasterDirections.LeftToRight;
@@ -14612,7 +14776,7 @@
             </summary>
             <remarks>
             Extract x,y array of weights from image. <br/>
-            Not supported <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">RasterModes.MicroVector</see> with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis">IRtcSyncAxis</see> <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">RasterModes.JumpAndShoot</see> only at <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis">IRtcSyncAxis</see>. <br/>
             </remarks>
             <param name="imageFileName">Image filename (like as .bmp, *.jpg, *.png, ...)<br/>Extract array of x, y weight values from 0 ~ 1</param>
             <param name="height">Height (mm)<br/>Must be > 0</param>
@@ -14629,7 +14793,7 @@
             var weights = new float[100,100];
             ...
             var raster = EntityFactory.CreateRaster(2, 2, weights);
-            raster.RasterMode = RasterModes.MicroVector;
+            raster.RasterMode = RasterModes.JumpAndShoot;
             raster.PixelPeriod = 1000;
             raster.PixelTime = 100;
             raster.Direction = RasterDirections.LeftToRight;
@@ -14637,8 +14801,7 @@
             </code>
             </summary>
             <remarks>
-            x, y  pixels by array of x,y <br/>
-            Not supported <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">RasterModes.MicroVector</see> with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis">IRtcSyncAxis</see> <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">RasterModes.JumpAndShoot</see> only at <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis">IRtcSyncAxis</see>. <br/>
             </remarks>
             <param name="width">Width (mm)<br/>Must be > 0</param>
             <param name="height">Height (mm)<br/>Must be > 0</param>
@@ -14656,7 +14819,7 @@
             </code>
             </summary>
             <remarks>
-            Not supported <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">RasterModes.MicroVector</see> with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis">IRtcSyncAxis</see>. <br/>
+            Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">RasterModes.JumpAndShoot</see> only at <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis">IRtcSyncAxis</see>. <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Winforms.Config.ImageTextRenderingHint">Config.ImageTextRenderingHint</see>. <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Winforms.Config.ImageTextSmoothingMode">Config.ImageTextSmoothingMode</see>. <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Winforms.Config.ImageTextClearColor">Config.ImageTextClearColor</see>. <br/>
@@ -15053,7 +15216,7 @@
             <param name="distance">Distance (mm)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFExtStartDelay">EntityMoFExtStartDelay</see></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double,System.Boolean)">
             <summary>
             Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait">EntityMoFWait</see> for x(or y)
             <code>
@@ -15071,6 +15234,7 @@
             <param name="encoder"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcMoFTypes">RtcMoFTypes</see></param>
             <param name="condition"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions">RtcEncoderWaitConditions</see></param>
             <param name="position">Waiting position (mm)</param>
+            <param name="isApplyMatrixStack">If <c>True</c>, Wait <c>position</c> value would be transformed by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see> . <br/>Default: <c>False</c></param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait">EntityMoFWait</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Double)">
@@ -16105,7 +16269,7 @@
             <see cref="T:System.Drawing.Color">Color</see> value to gray(range from 0~1) value
             </summary>
             <param name="color"><see cref="T:System.Drawing.Color">Color</see></param>
-            <returns>Gray value (range from 0~1)</returns>
+            <returns>Gray value (range from 0~1)<br/>0: White<br/>1: Black</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.ToStream(System.Drawing.Image,System.Drawing.Imaging.ImageFormat)">
             <summary>
@@ -16378,6 +16542,19 @@
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.ImageFileBrowser.InitializeDialog(System.Windows.Forms.OpenFileDialog)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Common.PDFFileBrowser">
+            <summary>
+            PDFFileBrowser
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PDFFileBrowser.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.PDFFileBrowser.InitializeDialog(System.Windows.Forms.OpenFileDialog)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.PenColorEditor">
@@ -20275,6 +20452,18 @@
             <remarks>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.IsWaitXEncoderForEachGlyph">
+            <summary>
+            (Experimental) Wait Encoder X position by auto for each font glyphs 
+            <para>
+            Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">EntityText</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText">EntitySiriusText</see> <br/>
+            Default: <c>False</c><br/>
+            </para>
+            </summary>
+            <remarks>
+            Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFWait">EntityMoFWait</see> 
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ScriptReferenceAssemblies">
             <summary>
             Script reference assemblies (*.dll)
@@ -21925,7 +22114,7 @@
             Import target file and update <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">InternalData</see>, notify <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnAdded">OnAdded</see> event also.
             </summary>
             <remarks>
-            Supported file types are '.dxf, .stl, .plt, .png, .bmp, .gif, .jpg, .jpeg' <br/>
+            Supported file types are '.pdf, .dxf, .stl, .plt, .png, .bmp, .gif, .jpg, .jpeg' <br/>
             </remarks>
             <param name="fileName">Filename</param>
             <param name="entity">Imported <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>
@@ -25240,7 +25429,7 @@
             <summary>
             Constructor
             </summary>
-            <param name="xyPosition">Array of X,Y locations</param>
+            <param name="xyPosition">Array of X,Y locations.<br/>Used with <see cref="P:SpiralLab.Sirius2.Winforms.Config.PathOptimizerBasePosition">Config.PathOptimizerBasePosition</see>.</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.PathOptimizerForm.ComputeEuclideanDistanceMatrix(System.Int32[0:,0:]@)">
             <summary>
@@ -27507,6 +27696,138 @@
             Event handler would be called just before internal <c>Renderer.SwapBuffers</c> may called. <br/>
             </remarks>
             <param name="view"><see cref="T:SpiralLab.Sirius2.Winforms.IView">IView</see></param>
+        </member>
+        <member name="M:GhostscriptSharp.API.GhostScript32.CallAPI(System.String[])">
+            <summary>
+            Calls the Ghostscript API with a collection of arguments to be passed to it
+            </summary>
+        </member>
+        <member name="M:GhostscriptSharp.API.GhostScript32.Cleanup(System.IntPtr)">
+            <summary>
+            Frees up the memory used for the API arguments and clears the Ghostscript API instance
+            </summary>
+        </member>
+        <member name="F:GhostscriptSharp.API.GhostScript32.resourceLock">
+            <summary>
+            GS can only support a single instance, so we need to bottleneck any multi-threaded systems.
+            </summary>
+        </member>
+        <member name="M:GhostscriptSharp.API.GhostScript64.CallAPI(System.String[])">
+            <summary>
+            Calls the Ghostscript API with a collection of arguments to be passed to it
+            </summary>
+        </member>
+        <member name="M:GhostscriptSharp.API.GhostScript64.Cleanup(System.IntPtr)">
+            <summary>
+            Frees up the memory used for the API arguments and clears the Ghostscript API instance
+            </summary>
+        </member>
+        <member name="F:GhostscriptSharp.API.GhostScript64.resourceLock">
+            <summary>
+            GS can only support a single instance, so we need to bottleneck any multi-threaded systems.
+            </summary>
+        </member>
+        <member name="T:GhostscriptSharp.GhostscriptWrapper">
+            <summary>
+            Wraps the Ghostscript API with a C# interface
+            </summary>
+        </member>
+        <member name="M:GhostscriptSharp.GhostscriptWrapper.GeneratePageThumb(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generates a thumbnail jpg for the pdf at the input path and saves it 
+            at the output path
+            </summary>
+        </member>
+        <member name="M:GhostscriptSharp.GhostscriptWrapper.GeneratePageThumbs(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generates a collection of thumbnail jpgs for the pdf at the input path 
+            starting with firstPage and ending with lastPage.
+            Put "%d" somewhere in the output path to have each of the pages numbered
+            </summary>
+        </member>
+        <member name="M:GhostscriptSharp.GhostscriptWrapper.GenerateOutput(System.String,System.String,GhostscriptSharp.GhostscriptSettings)">
+            <summary>
+            Rasterises a PDF into selected format
+            </summary>
+            <param name="inputPath">PDF file to convert</param>
+            <param name="outputPath">Destination file</param>
+            <param name="settings">Conversion settings</param>
+        </member>
+        <member name="M:GhostscriptSharp.GhostscriptWrapper.GetArgs(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns an array of arguments to be sent to the Ghostscript API
+            </summary>
+            <param name="inputPath">Path to the source file</param>
+            <param name="outputPath">Path to the output file</param>
+            <param name="firstPage">The page of the file to start on</param>
+            <param name="lastPage">The page of the file to end on</param>
+            <param name="dpix"></param>
+            <param name="dpiy"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:GhostscriptSharp.GhostscriptWrapper.GetArgs(System.String,System.String,GhostscriptSharp.GhostscriptSettings)">
+            <summary>
+            Returns an array of arguments to be sent to the Ghostscript API
+            </summary>
+            <param name="inputPath">Path to the source file</param>
+            <param name="outputPath">Path to the output file</param>
+            <param name="settings">API parameters</param>
+            <returns>API arguments</returns>
+        </member>
+        <member name="T:GhostscriptSharp.GhostscriptSettings">
+            <summary>
+            Ghostscript settings
+            </summary>
+        </member>
+        <member name="T:GhostscriptSharp.Settings.GhostscriptPages">
+            <summary>
+            Which pages to output
+            </summary>
+        </member>
+        <member name="P:GhostscriptSharp.Settings.GhostscriptPages.AllPages">
+            <summary>
+            Output all pages avaialble in document
+            </summary>
+        </member>
+        <member name="P:GhostscriptSharp.Settings.GhostscriptPages.Start">
+            <summary>
+            Start output at this page (1 for page 1)
+            </summary>
+        </member>
+        <member name="P:GhostscriptSharp.Settings.GhostscriptPages.End">
+            <summary>
+            Page to stop output at
+            </summary>
+        </member>
+        <member name="T:GhostscriptSharp.Settings.GhostscriptDevices">
+            <summary>
+            Output devices for GhostScript
+            </summary>
+        </member>
+        <member name="T:GhostscriptSharp.Settings.GhostscriptPageSize">
+            <summary>
+            Output document physical dimensions
+            </summary>
+        </member>
+        <member name="P:GhostscriptSharp.Settings.GhostscriptPageSize.Manual">
+            <summary>
+            Custom document size
+            </summary>
+        </member>
+        <member name="P:GhostscriptSharp.Settings.GhostscriptPageSize.Native">
+            <summary>
+            Standard paper size
+            </summary>
+        </member>
+        <member name="T:GhostscriptSharp.Settings.GhostscriptPageSizes">
+            <summary>
+            Native page sizes
+            </summary>
+            <remarks>
+            Missing 11x17 as enums can't start with a number, and I can't be bothered
+            to add in logic to handle it - if you need it, do it yourself.
+            </remarks>
         </member>
         <member name="T:Accord.Controls.Chart">
             <summary>

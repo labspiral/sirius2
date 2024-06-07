@@ -136,6 +136,7 @@
 
  - Demo 'init' console project for beginner
  - Demo 'laserpower' console project for customized laser source (open sourced)
+ - Demo 'powermeter' console project for customized powermeter (open sourced)
  - Demo 'editor_basic' winforms project for beginner
     - config 'config.ini' for RTC4, RTC5 or RTC6
     - config 'config_syncaxis.ini' for XL-SCAN
@@ -167,6 +168,16 @@
 
 **8. Version history**
 
+* 2024.6.7 v.1.34.1540
+  - added) PDF entity 
+    - can be import PDF file by image
+    - do marks like as rasterized image
+  - added) (experimental) Config.IsWaitXEncoderForEachGlyph 
+     - wait each font glyphs by automatically
+     - works with siriustext, text entity
+  - fixed) exception when start thorlabs powermeter
+  - removed) useless dll files
+
 * 2024.6.3 v.1.33.1520
   - fixed) thorlabs powermeter
      - updated) dlls files for OPM v5.0 
@@ -174,10 +185,9 @@
   - fixed) ophir powermeter
      - updated) starlab v3.9
   - fixed) image, imagetext entity
-     - added) zigzag mark order at 
+     - added) zigzag mark order
   - fixed) text entity
      - removed) duplicated vertices 
-     - simplfied) duplicated pathes
 
 * 2024.5.27 v.1.32.1500
   - added) editor_wpf demo 

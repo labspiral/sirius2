@@ -17,7 +17,7 @@
  * 
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Create powermap and how to use it
+ * Description : Create powermap, verify and compensate by user-defined routines
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -107,7 +107,7 @@ namespace Demos
             powerMeter.OnStopped += PowerMeter_OnStopped;
 
             // Create powermap and assign powermap into laser
-            var powerMap = PowerMapFactory.CreatePowerMapDefault(0, $"MAP");
+            var powerMap = PowerMapFactory.CreateDefault(0, $"MAP");
             //or Create user-customized powermap 
             //var powerMap = new MyPowerMap(0, $"MAP");
 
@@ -136,7 +136,7 @@ namespace Demos
             {
                 Console.WriteLine($"{Environment.NewLine}");
                 Console.WriteLine("Testcase for powermap");
-                Console.WriteLine($"----------------------------------------------------------------------------------------");
+                Console.WriteLine($"-------------------------------------");
                 Console.WriteLine("'1' : laser on (warning !!!)");
                 Console.WriteLine("'2' : laser off");
                 Console.WriteLine("'F1' : start power mapping");

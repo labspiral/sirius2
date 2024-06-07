@@ -3723,7 +3723,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.TrgMode">
             <summary>
-            Trigget mode
+            Trigger mode
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.CoherentAviaLX.PulseModes">
@@ -16275,7 +16275,7 @@
             PowerMapFactory
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapFactory.CreatePowerMapDefault(System.Int32,System.String)">
+        <member name="M:SpiralLab.Sirius2.PowerMap.PowerMapFactory.CreateDefault(System.Int32,System.String)">
             <summary>
             Create PowerMap (default version)
             </summary>
@@ -17208,6 +17208,9 @@
         <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.SamplingRateHz">
             <summary>
             Sampling rate (Hz)
+            <para>
+            Default: 5Hz
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMeter.IPowerMeter.Data">
@@ -17591,21 +17594,6 @@
             <para>
             Serial no for searching 
             </para>
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.PowerDensity">
-            <summary>
-            Power density
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.PowerEnergy">
-            <summary>
-            Power energy
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.PowerCurrent">
-            <summary>
-            Power current
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.rsrcName">
@@ -46969,7 +46957,7 @@
             <summary>
             Constructor
             </summary>
-            <param name="rtcVariableDelay"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcVariableDelay">IRtcVariableDelay</see> </param>
+            <param name="rtcVariableDelay"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcVariableDelay">IRtcVariableDelay</see></param>
             <param name="wfes"><c>IWindowsFormsEditorService</c></param>
         </member>
         <member name="P:SpiralLab.Sirius2.VarJumpDelayForm.CreateParams">
