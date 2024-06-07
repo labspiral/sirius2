@@ -20454,7 +20454,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.IsWaitXEncoderForEachGlyph">
             <summary>
-            (Experimental) Wait Encoder X position by auto for each font glyphs 
+            (Experimental) Wait Encoder X position for each font glyphs by automatically
             <para>
             Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">EntityText</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText">EntitySiriusText</see> <br/>
             Default: <c>False</c><br/>
