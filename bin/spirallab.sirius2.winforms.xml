@@ -4730,7 +4730,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.siriustext.Height_DESC">
             <summary>
-              Looks up a localized string similar to Height (mm).
+              Looks up a localized string similar to Capital Height (mm).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.siriustext.Height_DISP">
@@ -5081,7 +5081,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.text.Height_DESC">
             <summary>
-              Looks up a localized string similar to Height (mm).
+              Looks up a localized string similar to Capital Height (mm).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.text.Height_DISP">
@@ -9357,6 +9357,7 @@
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateSiriusText(System.String,System.String,System.Double)">EntityFactory.CreateSiriusText</see>. <br/>
             Allowed glyph ascii code range from: 0 ~ <see cref="P:SpiralLab.Sirius2.Winforms.Config.SiriusFontAsciiMax">Config.SiriusFontAsciiMax</see>. <br/>
             Supported font file format: cxf, lff <br/>
+            Used with <see cref="E:SpiralLab.Sirius2.Winforms.Config.OnMarkSiriusTextEachGlyph">Config.OnMarkSiriusTextEachGlyph</see>. <br/>
             <list type="utilities">
             <item><description>ttf2lff : https://github.com/LibreCAD/LibreCAD/tree/master/tools/ttf2lff </description></item>
             <item><description>ttf2lff : https://github.com/Rallaz/LibreCAD/tree/dwgsupp2/tools/ttf2lff </description></item>
@@ -9394,7 +9395,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.Height">
             <summary>
-            Text height (mm)
+            Capital height (mm)
             <para>
             Must be > 0
             </para>
@@ -9471,7 +9472,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.group">
             <summary>
-            Array of <c>EntityPolyline2D</c>
+            Group has array of <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Children">Children</see> for each glyphs. <br/>
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.#ctor">
@@ -9885,6 +9886,7 @@
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateText(System.String,System.String,System.Drawing.FontStyle,System.Double)">EntityFactory.CreateText</see>. <br/>
             Used with installed system fonts(like as true type fonts). <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Config.DivideArcToLinesDistance">Config.DivideArcToLinesDistance</see>. <br/>
+            Used with <see cref="E:SpiralLab.Sirius2.Winforms.Config.OnMarkTextEachGlyph">Config.OnMarkTextEachGlyph</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityText.FontName">
@@ -9916,7 +9918,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityText.Height">
             <summary>
-            Text height (mm)
+            Capital height (mm)
             <para>
             Must be > 0
             </para>
@@ -9977,7 +9979,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityText.polylines">
             <summary>
-            Array of <c>EntityPolyline2D</c>
+            Array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> for each glyphs.
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.#ctor">
@@ -10973,28 +10975,30 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.MarkVerticalLine(System.Int32,System.Boolean,SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.MarkVerticalLine(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32,System.Boolean)">
             <summary>
             Mark vertical single line 
             </summary>
             <remarks>
             Consider as its working <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">Mark</see> within async threads by <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster">IRtcRaster</see>. <br/> 
             </remarks>
+            <param name="marker"><see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see></param>
             <param name="px">Index of x line<br/>Starting from 0(or left)</param>
             <param name="isBtmToTop">Is bottom to top order</param>
-            <param name="marker"><see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.MarkHorizontalLine(System.Int32,System.Boolean,SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.MarkHorizontalLine(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32,System.Boolean)">
             <summary>
             Mark horizontal single line
             </summary>
             <remarks>
             Consider as its working <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">Mark</see> within async threads by <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster">IRtcRaster</see>. <br/>
             </remarks>
+            <param name="marker"><see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see></param>
             <param name="py">Index of y line<br/>Starting from 0(or bottom)</param>
             <param name="isLeftToRight">Is left to right order</param>
-            <param name="marker"><see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityArc">
@@ -16163,7 +16167,7 @@
             </summary>
             <param name="fontName"></param>
             <param name="text"></param>
-            <param name="height"></param>
+            <param name="capHeight"></param>
             <param name="fontStyle"><c>System.Drawing.FontStyle</c></param>
             <param name="horizontalAlignment"><c>StringAlignment</c></param>
             <param name="verticalAlignment"><c>StringAlignment</c></param>
@@ -20336,6 +20340,7 @@
             If user event handler is not attached, default internal routine has executed. <br/>
             <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Color">IEntity.Color</see> must be configured one of <see cref="P:SpiralLab.Sirius2.Winforms.Config.PenColors">Config.PenColors</see>. <br/>
             Every entities are marked(or applied) by <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Color">IEntity.Color</see> parameter values. <br/>
+            Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>, <see cref="T:System.Drawing.Color">Color</see>. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyCreatePen(SpiralLab.Sirius2.Winforms.IDocument,System.Drawing.Color)">
@@ -20456,15 +20461,207 @@
             <summary>
             (Experimental) Wait Encoder X position for each font glyphs by automatically
             <para>
-            Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">EntityText</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText">EntitySiriusText</see>. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">EntityText</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText">EntitySiriusText</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityImageText">EntityImageText</see> <br/>
             Default: <c>False</c><br/>
             </para>
             </summary>
             <remarks>
-            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> <br/>
-            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Boolean)">ListMofWait</see> <br/>
-            Above RTC5. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> and <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcMoFTypes.XY">RtcMoFTypes.XY</see>. <br/>
+            If <c>True</c>, <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Boolean)">IRtcMoF.ListMofWait</see> will be inserted with left(or right) position for each glyphs into list buffer by automatically. <br/>
+            Also, user can override default routines by <see cref="E:SpiralLab.Sirius2.Winforms.Config.OnMarkSiriusTextEachGlyph">OnMarkSiriusTextEachGlyph</see>, <see cref="E:SpiralLab.Sirius2.Winforms.Config.OnMarkTextEachGlyph">OnMarkTextEachGlyph</see>, <see cref="E:SpiralLab.Sirius2.Winforms.Config.OnMarkImageTextEachGlyph">OnMarkImageTextEachGlyph</see>. <br/>
             </remarks>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnMarkSiriusTextEachGlyph">
+            <summary>
+            Event for mark each glyph for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText">EntitySiriusText</see> 
+            <para>
+            Used for wait encoder x position with each glyphs at sirius text. <br/>
+            </para>
+            <code>
+            SpiralLab.Sirius2.Winforms.Config.OnMarkSiriusTextEachGlyph += Config_OnMarkSiriusTextEachGlyph;
+            bool Config_OnMarkSiriusTextEachGlyph(IMarker marker, EntitySiriusText text, EntityGroup group)
+            {
+                 bool success = true;
+                 var rtc = marker.Rtc;
+                 var rtcMoF = rtc as IRtcMoF;
+                 for (int j = 0; j &lt; text.Repeats; j++)
+                 {
+                    for (int i = 0; i &lt; group.Children.Count; i++)
+                    {
+                        var entity = group.Children[i];
+                        if (!entity.IsMarkerable)
+                            continue;
+                        if (entity is IMarkerable markerable)
+                        {
+                            if (!text.IsReversed)
+                                success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, -entity.BBox.RealMin.X, RtcEncoderWaitConditions.Under, true);
+                            else
+                                success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, entity.BBox.RealMax.X, RtcEncoderWaitConditions.Over, true);
+                        }
+                        if (!success)
+                            break;
+                    }
+                }
+                return success;
+            }
+            </code>
+            </summary>
+            <remarks>
+            Event will be fired when do marks <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText">EntitySiriusText</see> entity. <br/>
+            If user event handler is not attached, default routine has executed. <br/>
+            If user event handler is attached, user should be implement mark routines for each glyphs itself. <br/>
+            Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText">EntitySiriusText</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityGroup">EntityGroup</see> for each glyphs. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyMarkSiriusTextEachGlyph(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText)">
+            <summary>
+            Notify mark each glyph for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText">EntitySiriusText</see> 
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="text"><c>EntitySiriusText</c></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnMarkTextEachGlyph">
+            <summary>
+            Event for mark each glyph for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">EntityText</see> 
+            <para>
+            Used for wait encoder x position with each glyphs at text. <br/>
+            </para>
+            <code>
+            SpiralLab.Sirius2.Winforms.Config.OnMarkTextEachGlyph += Config_OnMarkTextEachGlyph;
+            bool Config_OnMarkTextEachGlyph(IMarker marker, EntityText text, EntityPolyline2D[] polylines)
+            {
+                 bool success = true;
+                 var rtc = marker.Rtc;
+                 var rtcMoF = rtc as IRtcMoF;
+                 for (int j = 0; j &lt; text.Repeats; j++)
+                 {
+                    for (int i = 0; i &lt; polylines.Length; i++)
+                    {
+                        var polyline = polylines[i];
+                        if (!text.IsReversed)
+                            success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, -polyline.BBox.RealMin.X, RtcEncoderWaitConditions.Under, true);
+                        else
+                            success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, polyline.BBox.RealMax.X, RtcEncoderWaitConditions.Over, true);
+                        success &amp;= polyline.Mark(marker);
+                        if (!success)
+                            break;
+                    }
+                    if (!success)
+                        break;
+                }
+                return success;
+            }
+            </code>
+            </summary>
+            <remarks>
+            Event will be fired when do marks <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">EntityText</see> entity. <br/>
+            If user event handler is not attached, default routine has executed. <br/>
+            If user event handler is attached, user should be implement mark routines for each glyphs itself. <br/>
+            Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">EntityText</see>, array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> for each glyphs. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyMarkTextEachGlyph(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityText)">
+            <summary>
+            Notify mark each glyph for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">EntityText</see> 
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="text"><c>EntityText</c></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnMarkImageTextEachGlyph">
+            <summary>
+            Event for mark each glyph for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityImageText">EntityImageText</see> 
+            <para>
+            Used for wait encoder x position with each glyphs at image text. <br/>
+            </para>
+            <code>
+            SpiralLab.Sirius2.Winforms.Config.OnMarkImageTextEachGlyph += Config_OnMarkImageTextEachGlyph;
+            bool Config_OnMarkImageTextEachGlyph(IMarker marker, EntityImageText text)
+            {
+                 bool success = true;
+                 var rtc = marker.Rtc;
+                 var rtcMoF = rtc as IRtcMoF;
+                 var rtcRaster = rtc as IRtcRaster;
+                 if (rtcRaster == null)
+                    return true;
+                 success = EntityBase.MarkPen(marker, text);
+                 rtc.MatrixStack.Push(text.ModelMatrix.ToNumeric());
+                 for (int j = 0; j &lt; text.Repeats; j++)
+                 {
+                     switch (text.Direction)
+                     {
+                         case RasterDirections.LeftToRight:
+                             for (int x = 0; x &gt; text.Px; x++)
+                             {
+                                 success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, -x * xPitch, RtcEncoderWaitConditions.Under, true);
+                                 if (text.IsZigZag)
+                                     success &amp;= text.MarkVerticalLine(marker, x, x % 2 == 0);
+                                 else
+                                     success &amp;= text.MarkVerticalLine(marker, x, true);
+                                 if (!success)
+                                     break;
+                             }
+                             break;
+                         case RasterDirections.RightToLeft:
+                             for (int x = text.Px - 1; x &lt;= 0; x--)
+                             {
+                                 success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, x * xPitch, RtcEncoderWaitConditions.Over, true);
+                                 if (text.IsZigZag)
+                                     success &amp;= text.MarkVerticalLine(marker, x, x % 2 == 0);
+                                 else
+                                     success &amp;= text.MarkVerticalLine(marker, x, true);
+                                 if (!success)
+                                     break;
+                             }
+                             break;
+                         case RasterDirections.TopToBottom:
+                             for (int y = text.Py - 1; y x &lt; 0; y--)
+                             {
+                                 // no wait position
+                                 if (text.IsZigZag)
+                                     success &amp;= text.MarkHorizontalLine(marker, y, y % 2 == 0);
+                                 else
+                                     success &amp;= text.MarkHorizontalLine(marker, y, true);
+                                 if (!success)
+                                     break;
+                             }
+                             break;
+                         case RasterDirections.BottomToTop:
+                             for (int y = 0 ; y &gt; text.Py; 0; y++)
+                             {
+                                 // no wait position
+                                 if (text.IsZigZag)
+                                     success &amp;= text.MarkHorizontalLine(marker, y, y % 2 == 0);
+                                 else
+                                     success &amp;= text.MarkHorizontalLine(marker, y, true);
+                                 if (!success)
+                                     break;
+                             }
+                             break;
+                     }
+                     if (!success)
+                         break;
+                 }
+                 rtc.MatrixStack.Pop();
+                 return success;
+            }
+            </code>
+            </summary>
+            <remarks>
+            Event will be fired when do marks <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityImageText">EntityText</see> entity. <br/>
+            If user event handler is not attached, default routine has executed. <br/>
+            If user event handler is attached, user should be implement mark routines for each glyphs itself. <br/>
+            Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityImageText">EntityImageText</see> (use <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.MarkVerticalLine(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32,System.Boolean)">MarkVerticalLine</see>, <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.MarkHorizontalLine(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32,System.Boolean)">MarkHorizontalLine</see> for each lines). <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyMarkImageTextEachGlyph(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityImageText)">
+            <summary>
+            Notify mark each glyph for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityImageText">EntityImageText</see> 
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="text"><c>EntityImageText</c></param>
+            <returns>Success or failed</returns>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ScriptReferenceAssemblies">
             <summary>
@@ -20689,6 +20886,7 @@
             User can register event handler for customized extract points cloud from 3D model. <br/>
             Event will be fired when user select extract points cloud menu item at <see cref="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl">SiriusEditorUserControl</see>. <br/>
             If user event handler is not attached, default internal routine has executed. <br/>
+            Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityStl">EntityStl</see>, <see cref="T:OpenTK.Vector3">Vector3</see>. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyExtractPointsCloud(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.Entity.EntityStl,OpenTK.Vector3)">
@@ -20721,6 +20919,7 @@
             Event will be fired when user select block-insert menu item at <see cref="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl">SiriusEditorUserControl</see>. <br/>
             If user event handler is not attached, default routine has executed. <br/>
             If returned array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert">EntityBlockInsert</see> (not <c>null</c>), values are inserted. <br/>
+            Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlock">EntityBlock</see>, array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert">EntityBlockInsert</see>. <br/>
             </remarks>        
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyBlockInsert(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.Entity.EntityBlock)">
@@ -21376,6 +21575,7 @@
             <remarks>
             User can assign event handler for move external stage to specific position. <br/>
             Used with one of saved <see cref="P:SpiralLab.Sirius2.Winforms.UI.EditorUserControl.CursorPositionList">KeyValuePair</see> item at <see cref="T:SpiralLab.Sirius2.Winforms.UI.EditorUserControl">EditorUserControl</see>. <br/>
+            Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>, <see cref="T:System.String">string</see> for name, array of <see cref="T:OpenTK.Vector3">Vector3</see>. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyMoveToCursor(SpiralLab.Sirius2.Winforms.IDocument,System.String,OpenTK.Vector3)">
@@ -21484,6 +21684,7 @@
             Event will be fired when select scanner field correction 2D menu at <see cref="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl">SiriusEditorUserControl</see>. <br/>
             If user event handler is not attached, default routine has executed. <br/>
             If user event handler is attached, it should be create <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection2D">RtcCorrection2D</see> and return it. <br/>
+            Arguments: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection2DShow(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
@@ -21534,6 +21735,7 @@
             Event will be fired when select scanner field correction 3D menu at <see cref="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl">SiriusEditorUserControl</see> <br/>
             If user event handler is not attached, default routine has executed. <br/>
             If user event handler is attached, it should be create <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection3D">RtcCorrection3D</see> and return it. <br/>
+            Arguments: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection3DShow(SpiralLab.Sirius2.Scanner.Rtc.IRtc)">
@@ -21558,13 +21760,14 @@
                Debug.Assert(success);
             }
             </code>
+            </summary>
             <remarks>
             User can register event handler for apply scanner field correction 2d at winforms. <br/>
             Target correction table is <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables">CorrectionTables.PrimaryHeadTable</see>. <br/>
             Event will be fired when apply scanner field correction 2D at winforms. <br/>
             If user event handler is not attached, nothing has changed. <br/>
+            Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm">RtcCorrection2DForm</see>. <br/>
             </remarks>
-            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection2DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection2DForm)">
             <summary>
@@ -21588,6 +21791,7 @@
                Debug.Assert(success);
             }
             </code>
+            </summary>
             <remarks>
             <see cref="E:SpiralLab.Sirius2.Winforms.Config.OnScannerFieldCorrection3DApply">Config.OnScannerFieldCorrection3DApply</see> is for create new 3D correction file (with new stretch factors). <br/>
             <see cref="E:SpiralLab.Sirius2.Winforms.Config.OnCalibration3D">Config.OnCalibration3D</see> is for create new 3D correction file (with new z depth table). <br/>
@@ -21595,8 +21799,8 @@
             Target correction table is <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables">CorrectionTables.PrimaryHeadTable</see>. <br/>
             Event will be fired when apply scanner field correction 3D at winforms. <br/>
             If user event handler is not attached, nothing has changed. <br/>
+            Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcCorrection3DForm">RtcCorrection3DForm</see>. <br/>
             </remarks>
-            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyScannerFieldCorrection3DApply(SpiralLab.Sirius2.Winforms.UI.RtcCorrection3DForm)">
             <summary>
@@ -21616,8 +21820,10 @@
             <remarks>
             User can register event handler for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D">ICalibration3D</see> has succeeded. <br/>
             Event will be fired when success to convert new scanner 3D field correction file by <see cref="T:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D">ICalibration3D</see>. <br/>
-            Both(Primary and secondary head) target correction table are <c>Table4</c> if RTC5. <br/>
-            Both(Primary and secondary head) target correction table are <c>Table8</c> if RTC6. <br/>
+            Loaded and selected target correction table at secondary head with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables.Table2">Table2</see> if RTC4. <br/>
+            Loaded and selected target correction table at secondary head with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables.Table4">Table4</see> if RTC5. <br/>
+            Loaded and selected target correction table at secondary head with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables.Table8">Table8</see> if RTC6. <br/>
+            Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D">ICalibration3D</see>, <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>, <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables">CorrectionTables</see>, <see cref="T:System.String">string</see> for input file, <see cref="T:System.String">string</see> for new(or output) file. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyCalibration3D(SpiralLab.Sirius2.Winforms.Entity.ICalibration3D,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,System.String,System.String)">
@@ -21663,6 +21869,7 @@
             Target entities are must be inherited from <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IMarkerable">IMarkerable</see>. <br/>
             Target entities are not must be inherited from <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityControlBase">EntityControlBase</see>. <br/>
             Target entities are must be has <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.BBox">BoundingBox</see>. <br/>
+            Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> with children. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Config.NotifyOptimizePath(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.Entity.IEntity)">

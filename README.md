@@ -168,11 +168,19 @@
 
 **8. Version history**
 
+* 2024.6.11 v.1.35.1550
+  - added) events for wait MoF position by automatically
+     - Config.OnMarkSiriusTextEachGlyph for sirius text entity 
+     - Config.OnMarkTextEachGlyph for text entity
+     - Config.OnMarkImageTextEachGlyph for image text entity 
+  - fixed) image text 
+     - invalid size when do clone
+ 
 * 2024.6.7 v.1.34.1540
   - added) PDF entity 
-    - can be import PDF file by image
-    - do marks like as rasterized image
-  - added) (experimental) Config.IsWaitXEncoderForEachGlyph 
+     - can be import PDF file by image
+     - do marks like as rasterized image
+  - added) (experimental) Config.IsWaitEncoderXForEachGlyph 
      - wait each font glyphs by automatically
      - works with siriustext, text entity
   - fixed) exception when start thorlabs powermeter
