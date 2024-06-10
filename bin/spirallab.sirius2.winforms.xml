@@ -20497,6 +20497,7 @@
                                 success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, -entity.BBox.RealMin.X, RtcEncoderWaitConditions.Under, true);
                             else
                                 success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, entity.BBox.RealMax.X, RtcEncoderWaitConditions.Over, true);
+                            success &amp;= markerable.Mark(maker);
                         }
                         if (!success)
                             break;

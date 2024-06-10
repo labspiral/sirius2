@@ -157,10 +157,10 @@
 **7. Copyrights**
  
  - Evaluation copy mode would be activated during 30 mins without license.
- - Homepage: http://spirallab.co.kr
- - Email: <a href="mailto:hcchoi@spirallab.co.kr">hcchoi@spirallab.co.kr</a> 
  - All rights reserved. 2021-2024 Copyright to (c)SpiralLAB. 
  - RTC and syncAXIS are trademarks of (c)SCANLAB GmbH.
+ - Homepage: http://spirallab.co.kr
+ - Email: <a href="mailto:hcchoi@spirallab.co.kr">hcchoi@spirallab.co.kr</a> 
  
 
 ----
@@ -168,7 +168,7 @@
 
 **8. Version history**
 
-* 2024.6.11 v.1.35.1550
+* 2024.6.11 v.1.35.1560
   - added) events for wait MoF position by automatically
      - Config.OnMarkSiriusTextEachGlyph for sirius text entity 
      - Config.OnMarkTextEachGlyph for text entity
