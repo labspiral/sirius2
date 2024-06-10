@@ -189,6 +189,11 @@ namespace Demos
             // Activated simulated encoders for test purpose (x= -10, y=0 mm/s)
             // DO NOT set simulated encoder speed if ENC 0,1 has connected
             rtcMoF.CtlMofEncoderSpeed(-10, 0);
+
+            // To waiting MoF x positions by automatically, set 'IsWaitEncoderXForEachGlyph' to 'True'
+            // 1. Remove 'OnBeforeEntity' function at script and 
+            // 2. Remove MoF waiting conditions at entity treeview
+            // 3. SpiralLab.Sirius2.Winforms.Config.IsWaitEncoderXForEachGlyph = true;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
