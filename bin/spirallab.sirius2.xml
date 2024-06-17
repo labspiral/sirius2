@@ -24161,7 +24161,7 @@
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis">
             <summary>
             Rtc6SyncAxis
-            <para>XL-SCAN (Rtc6 + excelliSCAN + ACS)</para>
+            <para>XL-SCAN: RTC6 + excelliSCAN(or intelliSCAN IV) + ACS motion controller</para>
             <para>Based on syncAXIS v1.8.2</para>
             </summary>
         </member>
@@ -24451,14 +24451,10 @@
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ActiveChannelCounts">
-            <summary>
-            Active channel counts
-            </summary>
+            <inheritdoc/> 
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ActiveChannels">
-            <summary>
-            Active channel list (by names)
-            </summary>
+            <inheritdoc/> 
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.vPhysical">
             <summary>
@@ -24665,13 +24661,17 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlAbort">
             <summary>
             Abort list executing (emergency stop)
+            <para>
+            If <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.IsSoftStop">IsSoftStop</see> is <c>False</c>, do emergency stop. <br/>
+            If <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.IsSoftStop">IsSoftStop</see> is <c>True</c>, do soft stop. <br/>
+            </para>
             </summary>
             <remarks>
-            If <c>IsSoftStop</c> is True, then <c>CtlStop</c> function has called internally.
-            Emergency stop. Immediately turns off the laser. 
-            Brings mirrors and positioning stage to a standstill as quickly as possible. 
-            Wear may occur with frequent use.
-            Cancels the execution of the current Job uncontrolled and immediately by a direct access to the RTC6 board (Emergency stop)
+            If <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.IsSoftStop">IsSoftStop</see> is <c>True</c>, then function would be replaced by <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlStop">CtlStop</see> instead.
+            Emergency stop. Immediately turns off the laser.  <br/>
+            Brings mirrors and positioning stage to a standstill as quickly as possible. <br/>
+            Wear may occur with frequent use.<br/>
+            Cancels the execution of the current Job uncontrolled and immediately by a direct access to the RTC6 board. <br/>
             </remarks>
             <returns>Success or failed</returns>
         </member>
@@ -25738,7 +25738,7 @@
             Lower than 0.23 are not allowed. <br/>
             <img src="images/lpf.png"/> <br/>
             Otherwise, the return value indicates that Bit #06 is set (UnplausibleOrUnknownParameter). <br/>
-            Typical values are between 1…3 Hz, depending on the scan head working field and the dynamic range of the positioning stage.<br/>
+            Typical values are between 1~3 Hz, depending on the scan head working field and the dynamic range of the positioning stage. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.MotionType">
@@ -25801,22 +25801,22 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.Head1Offset">
             <summary>
-            Scan head1 offset (x,y and rotate) (mm,mm,deg)
+            Scan head1 offset (x,y and rotate z) (mm,mm,deg)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.Head2Offset">
             <summary>
-            Scan head2 offset (x,y and rotate) (mm,mm,deg)
+            Scan head2 offset (x,y and rotate z) (mm,mm,deg)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.Head3Offset">
             <summary>
-            Scan head3 offset (x,y and rotate) (mm,mm,deg)
+            Scan head3 offset (x,y and rotate z) (mm,mm,deg)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.Head4Offset">
             <summary>
-            Scan head4 offset (x,y and rotate) (mm,mm,deg)
+            Scan head4 offset (x,y and rotate z) (mm,mm,deg)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.UtilizedScanner">
@@ -26204,7 +26204,7 @@
             <summary>
             IRtcSyncAxis interface
             <para>
-            XL-SCAN is composed by RTC6 + excelliSCAN + ACS motion controller. <br/>
+            XL-SCAN is composed by RTC6 + excelliSCAN(or intelliSCAN IV) + ACS motion controller. <br/>
             Default functions for syncAXIS(or XL-SCAN). <br/>
             </para>
             </summary>
@@ -26217,19 +26217,27 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.LastError">
             <summary>
             Last syncAXIS error code
+            <para>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.SyncAxisError.Bit">SyncAxisError.Bit</see> also. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ConfigXMLFile">
             <summary>
             XML config filename
+            <para>
+            External configure xml file for XL-SCAN system. <br/>
+            </para>
             </summary>
             <remarks>
-            Do <c>IRtcSyncAxis.Initialize()</c> to change xml file at first. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.IsSimulationMode">
             <summary>
             Enable(or disable) simulation mode 
+            <para>
+            Used with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.SimulationFileName">SimulationFileName</see>. <br/>
+            </para>
             </summary>
             <remarks>
             Edit config xml file at first to enable simulation mode. <br/>
@@ -26238,6 +26246,9 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.SimulationFileName">
             <summary>
             Simulation output filename
+            <para>
+            Valid if <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.IsSimulationMode">IsSimulationMode</see> is <c>True</c>. <br/>
+            </para>
             </summary>
             <remarks>
             Output to <c>'[BaseDirectoryPath]/Logs/'</c> at <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ConfigXMLFile">ConfigXMLFile</see>
@@ -26281,13 +26292,21 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.Trajectory">
             <summary>
-            Trajectory for <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MarkConfig">MarkConfig</see> and <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.GeometryConfig">GeometryConfig</see> 
+            Trajectory for <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MarkConfig">MarkConfig</see> and <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.GeometryConfig">GeometryConfig</see>
             </summary>
+            <remarks>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MarkConfig">MarkConfig</see>. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.GeometryConfig">GeometryConfig</see>. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.Dynamics">
             <summary>
             Dynamics <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ScannerDynamic">ScannerDynamic</see> and <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.StageDynamic">StageDynamic</see>
             </summary>
+            <remarks>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ScannerDynamic">ScannerDynamic</see>. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.StageDynamic">StageDynamic</see>. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.OpStatus">
             <summary>
@@ -26297,16 +26316,22 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.MotionMode">
             <summary>
             Motion mode
+            <para>
+            Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionModes.Unfollow">Unfollow</see>. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.MotionType">
             <summary>
-            Motion type
+            Motion type 
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.IsRelativeCoordinateSystem">
             <summary>
             Is enabled(or disable) relative coordinate system or not
+            <para>
+            Default: <c>False</c> <br/>
+            </para>
             </summary>
             <remarks>
             Used when <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListBegin(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionTypes)">ListBegin</see> has called.
@@ -26314,38 +26339,39 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.IsSoftStop">
             <summary>
-            Is enabled soft stop when aborting <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlAbort">CtlAbort</see>
+            Enable soft(or emergency) stop by <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlAbort">CtlAbort</see>
+            <para>
+            Default: <c>True</c> <br/>
+            </para>
             </summary>
             <remarks>
-            <c>True</c>: <br/>
-            Cancels the execution of the current Job controlled and inserts a compensation movement for deceleration.  <br/>
-            After the slsc_ctrl_stop_controlled call the RTC6 board is still processing already loaded RTC6 micro vector commands in its list memory. <br/>
-            Therefore, it may take up to 30 s until the actual Job execution end.Afterwards the compensation movement for deceleration is executed.During this entire time, slsc_ctrl_get_exec_state returns slsc_ExecState_Executing.<br/>
-            After the compensation movement, the syncAXIS control instance operation status changes to red. The syncAXIS control instance must be initialized again.<br/> <br/>
-            <c>False</c>:<br/>
-            Cancels the execution of the current Job uncontrolled and immediately by a direct access to the RTC6 board. (Emergency stop)<br/>
+            If <c>True</c>, do soft stop when <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlAbort">CtlAbort</see> function has called. <br/>
+            If <c>False</c>, do emergency stop when <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlAbort">CtlAbort</see> function has called. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.TargetStage">
             <summary>
             Target stage
+            <para>
+            Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Stages.Stage1">Stage1</see> <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.StageMoveSpeed">
             <summary>
             Stage moving speed (mm/s)
+            <para>
+            Default speed: 10 mm/s (Must be > 0) <br/>
+            </para>
             </summary>
-            <remarks>
-            Default speed: 10 mm/s
-            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.StageMoveTimeOut">
             <summary>
             Stage moving timeout (s)
+            <para>
+            Default timeout: 10 s (Must be > 0) <br/>
+            </para>
             </summary>
-            <remarks>
-            Default timeout: 10 s
-            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.BandWidth">
             <summary>
@@ -26354,6 +26380,7 @@
             Higher value: increase work load at stage. <br/>
             Lower value: increase work load at scanner. <br/>
             Lower than 0.23 are not allowed. <br/>
+            Default: <c>FilterBandwidth</c> from config xml file. <br/>
             </para>
             </summary>
             <remarks>
@@ -26375,16 +26402,32 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.StageCounts">
             <summary>
             Stage count(s) at <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ConfigXMLFile">ConfigXMLFile</see>
+            <para>
+            Range: 1~4 counts <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ScanHeadCounts">
             <summary>
             Scan head count(s) at <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ConfigXMLFile">ConfigXMLFile</see>
+            <para>
+            Range: 1~4 counts <br/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ActiveChannelCounts">
+            <summary>
+            Active channel counts
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ActiveChannels">
+            <summary>
+            Active channel list (by names)
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlBandWidth(System.Double)">
             <summary>
-            Change <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.BandWidth">BandWidth</see> (Hz)
+            Change <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.BandWidth">BandWidth</see> (Hz) for <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionTypes.StageAndScanner">StageAndScanner</see>
             <para>
             Higher value: Increase work load at stage. <br/>
             Lower value: Increase work load at scanner. <br/>
@@ -26402,7 +26445,8 @@
             Enable(or disable) simulation mode 
             </summary>
             <remarks>
-            <c>False</c> means, hardware mode has activated. <br/>
+            <c>False</c>: hardware mode has activated. <br/>
+            <c>True</c>: for test(or debug) purpose. <br/>
             </remarks>
             <param name="enable">Enable(or disable)</param>
             <returns>Success or failed</returns>
@@ -26431,7 +26475,7 @@
             <summary>
             Change ><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionTypes">MotionTypes</see>
             </summary>
-            <param name="mt"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionTypes">MotionTypes</see></param>
+            <param name="motionType"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionTypes">MotionTypes</see></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlSelectStage(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Stages,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables)">
@@ -26476,7 +26520,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlHeadOffset(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ScanDevices,SpiralLab.Sirius2.Mathematics.Offset)">
             <summary>
-            Scan head offset (For multiple scan heads)
+            Scan head offset (used for multiple scan heads)
             </summary>
             <param name="scanDevice"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ScanDevices">ScanDevices</see></param>
             <param name="offset"><see cref="T:SpiralLab.Sirius2.Mathematics.Offset"></see> for translate dx, dy (mm) and angle(°, +: CCW, -: CW)<br/>Z offset is not supported yet. <br/></param>
@@ -26567,7 +26611,10 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlStop">
             <summary>
             Stop list executing (soft stop)
-            <para>With compensation movement for deceleration. Does not ensure the fastest possible standstill of the system, but maintains all specified dynamic limits. </para>
+            <para>
+            With compensation movement for deceleration. <br/>
+            Does not ensure the fastest possible standstill of the system, but maintains all specified dynamic limits. 
+            </para>
             </summary>
             <remarks>
             Cancels the execution of the current Job controlled and inserts a compensation movement for deceleration. <br/>
@@ -26585,21 +26632,23 @@
             List begin
             </summary>
             <remarks>
-            Set internal buffer mode to <c>slsc_ListHandlingMode_RepeatWhileBufferFull</c> by forcily.
+            Used with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.IsRelativeCoordinateSystem">IsRelativeCoordinateSystem</see>. <br/>
+            Try to change <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionModes.Follow">Follow</see> mode. <br/>
+            Set internal buffer mode to '<c>slsc_ListHandlingMode_RepeatWhileBufferFull</c>' by forcily. <br/>
             </remarks>
             <param name="motionType"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionTypes">MotionTypes</see><br/>Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.MotionTypes.ScannerOnly">ScannerOnly</see></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListSpeedMinMark(System.Double)">
             <summary>
-            List min. mark speed
+            List min. mark speed (mm/s)
             </summary>
             <param name="mark">Min. mark speed (mm/s)</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListApproxBlendLimit(System.Double)">
             <summary>
-            List approx. blend limit
+            List approx. blend limit (mm)
             </summary>
             <remarks>
             Maximum tolerable mathematical distance of the blending curve to the corner point. <br/>
@@ -26626,6 +26675,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListAlcBegin(System.Double)">
             <summary>
             List start ramping (aka. Automatic laser control)
+            <para>
+            Used with '<c>ActiveChannel</c>' at <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ConfigXMLFile">ConfigXMLFile</see>. <br/>
+            </para>
             </summary>
             <param name="startingAlcScaleFactor">Starting ramp factor<br/>Default: 1</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
@@ -26667,8 +26719,8 @@
             </list>
             </remarks>
             <param name="position">x, y position (mm)<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
-            <param name="laserSwitches">Array of line length with laser switches (mm)<br/>Distance is not applied matrix transformation<br/>(</param>
-            <param name="alcScaleFactor">Ramp factor if <c>ListAlcByVectorBegin</c> has enabled</param>
+            <param name="laserSwitches">Array of line length with laser switches (mm)<br/>Distance is not applied matrix transformation. <br/></param>
+            <param name="alcScaleFactor">Ramp factor if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListAlcBegin(System.Double)">ListAlcBegin</see> has enabled</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListDashedArcTo(System.Numerics.Vector3,System.Double,System.Double[],System.Double)">
@@ -26686,9 +26738,9 @@
             </list>
             </remarks>
             <param name="center">Center x,y  (mm)<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
-            <param name="sweepAngleZ">Sweep angle (°) (+: CCW, -: CW)</param>
-            <param name="laserSwitches">Array of arc length with laser switches (mm) (distance is not applied by matrix stack)</param>
-            <param name="alcScaleFactor">(Unsupported!) Ramp factor if <c>ListAlcByVectorBegin</c> has enabled</param>
+            <param name="sweepAngleZ">Sweep angle (°)<br/>+: CCW direction.<br/>-: CW direction. <br/></param>
+            <param name="laserSwitches">Array of arc length with laser switches (mm)<br/>Distance is not applied by matrix stack. <br/></param>
+            <param name="alcScaleFactor">Ramp factor if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.ListAlcBegin(System.Double)">ListAlcBegin</see> has enabled</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes">
@@ -31334,7 +31386,7 @@
             <summary>
             Actual velocity + EncoderSpeed + SCANahead 
             <para>
-            Used with SCANAhead scanner products only. (like as ExcelliSCAN or intelliSCAN IV) <br/>
+            Used with SCANAhead scanner products only. (like as excelliSCAN or intelliSCAN IV) <br/>
             Used with <c>Rtc6</c> + SCANahead option only. <br/>
             </para>
             </summary>
@@ -35333,7 +35385,7 @@
             </summary>
             <remarks>Do NOT use if matrix stack has pushed rotate tranform by x or y axis. Use <c>ListMarkTo</c> or <c>ListMarksTo</c> instead. Because RTC is not support 3x3 matrix with arc movement.</remarks>
             <param name="center">Center x,y,z (mm)<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
-            <param name="sweepAngleZ">Sweep angle (°) (+: CCW, -: CW)</param>
+            <param name="sweepAngleZ">Sweep angle (°)<br/>+: CCW<br/>-: CW</param>
             <param name="alcScaleFactor">(Unsupported!) Ramp scale factor<br/>Default: 1.0<br/>Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl">IRtcAutoLaserControl</see><br/>Used if <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl.ListAlcByVectorBegin``1(SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals,``0)">IRtcAutoLaserControl.ListAlcByVectorBegin</see> has called</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>

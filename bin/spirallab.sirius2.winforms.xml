@@ -5791,7 +5791,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CharacterSetDate.DateFormat">
             <summary>
-            <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.DateFormats">DateFormats</see>
+            <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.DateFormats">DateFormats</see> for date format
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CharacterSetDate.IsLeadingWithZero">
@@ -5816,7 +5816,7 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.CharacterSetTime">
             <summary>
-            <see cref="T:SpiralLab.Sirius2.Winforms.Entity.CharacterSetTime">CharacterSetTime</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.Entity.CharacterSetTime">CharacterSetTime</see> for time format
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CharacterSetTime.TimeFormat">
@@ -5846,7 +5846,7 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.CharacterSetSerialNo">
             <summary>
-            <see cref="T:SpiralLab.Sirius2.Winforms.Entity.CharacterSetSerialNo">CharacterSetSerialNo</see> 
+            <see cref="T:SpiralLab.Sirius2.Winforms.Entity.CharacterSetSerialNo">CharacterSetSerialNo</see> for serial no format
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CharacterSetSerialNo.NumOfDigits">
@@ -6497,6 +6497,7 @@
             </summary>
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateRaster(System.Double,System.Double,System.Double[0:,0:])">EntityFactory.CreateRaster</see>. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster">IRtcRaster</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.Width">
@@ -6708,19 +6709,19 @@
             <summary>
             Mark vertical line 
             </summary>
-            <param name="px">Index of x line</param>
+            <param name="px">Index of x line<br/>Starting from 0</param>
             <param name="btmToTop"></param>
             <param name="marker"></param>
-            <returns></returns>
+            <returns>Success or not</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRaster.MarkHorizontalLine(System.Int32,System.Boolean,SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <summary>
             Mark horizozntal line
             </summary>
-            <param name="py">Index of y line</param>
+            <param name="py">Index of y line<br/>Starting from 0</param>
             <param name="leftToRight"></param>
             <param name="marker"></param>
-            <returns></returns>
+            <returns>Success or not</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityJumpTo">
             <summary>
@@ -6781,26 +6782,41 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">
             <summary>
             Enable(or disable) hatch 
+            <para>
+            Used for internal closed path only. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchMode">
             <summary>
             <see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchModes">HatchModes</see>
+            <para>
+            Used if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">IsHatchable</see> is <c>True</c>. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchJoint">
             <summary>
             <see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">HatchJoints</see>
+            <para>
+            Used if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">IsHatchable</see> is <c>True</c>. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchZigZag">
             <summary>
             Hatch with zigzag
+            <para>
+            Used if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">IsHatchable</see> is <c>True</c>. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchAngle">
             <summary>
-            Hatch angle(1st)
+            Hatch angle (1st)
+            <para>
+            Used if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">IsHatchable</see> is <c>True</c>. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchAngle2">
@@ -6808,22 +6824,33 @@
             Hatch 2nd angle 
             <para>
             Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">HatchModes.CrossLine</see>. <br/>
+            Used if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">IsHatchable</see> is <c>True</c>. <br/>
             </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchInterval">
             <summary>
             Hatch interval (mm)
+            <para>
+            Used if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">IsHatchable</see> is <c>True</c>. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchExclude">
             <summary>
             Hatch exclude (mm)
+            <para>
+            Default: 0 <br/>
+            Used if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">IsHatchable</see> is <c>True</c>. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchShift">
             <summary>
             Hatch shift (mm)
+            <para>
+            Used if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">IsHatchable</see> is <c>True</c>. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchRepeat">
@@ -6831,12 +6858,16 @@
             Hatch repeats
             <para>
             Default: 1 <br/>
+            Used if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">IsHatchable</see> is <c>True</c>. <br/>
             </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchIncludeOutline">
             <summary>
             Mark outline with hatch or not
+            <para>
+            Used if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">IsHatchable</see> is <c>True</c>. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchOutlineFirst">
@@ -6845,6 +6876,7 @@
             </summary>
             <remarks>
             Used when <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchIncludeOutline">IsHatchIncludeOutline</see> is <c>True</c> only. <br/>
+            Used if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">IsHatchable</see> is <c>True</c>. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.hatchedGroup">
@@ -6854,6 +6886,7 @@
             <remarks>
             Valid when <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">IsHatchable</see> is <c>True</c>. <br/>
             <c>null</c> when <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">IsHatchable</see> is <c>False</c>. <br/>
+            Used if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">IsHatchable</see> is <c>True</c>. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.Dispose(System.Boolean)">
@@ -7439,11 +7472,10 @@
             Dots
             </summary>
             <remarks>
-            Usable with <c>IRtcMoF</c>. <br/>
-            Not usable with <c>IRtcAutoLaserControl</c>, <c>IRtcWobbel</c> or <c>IRtcSkywriting</c>. <br/>
+            Usable with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see>. <br/>
+            Not usable with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl">IRtcAutoLaserControl</see>,  <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcWobbel">IRtcWobbel</see> or <see cref="!:IRtcSkywriting">IRtcSkywriting</see>. <br/>
             Activated LASER ON signal during rastering and modulated output pulse width by each pixels time. <br/>
             Pixel pulses (at the LASER1 port) directly by the PulseLength parameter, not the LASERON signal. <br/>
-            <c>Rtc6SyncAxis</c> is not supported <c>Dots</c> cell type. Because <c>Rtc6SyncAxis</c> is not supported <c>IRtcRaster</c> interface. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.Barcode2DCells.Lines">
@@ -7548,10 +7580,10 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.IsFixedAspectRatio">
             <summary>
             Fixed aspect ratio or not
-            </summary>
-            <remarks>
+            <para>
             Default: <c>True</c> <br/>
-            </remarks>
+            </para>
+            </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.isFixedAspectRatio">
             <summary>
@@ -7701,7 +7733,7 @@
             <summary>
             Repeat counts when do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IMarkerable.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">Mark</see>
             <para>
-            Default: 1 
+            Default: 1 <br/>
             </para>
             </summary>
         </member>
@@ -8080,7 +8112,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.IHatchable.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
-            Do hatch at closed path within <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
+            Do hatch at closed path(or figure) within <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
             </summary>
             <remarks>
             Used with internal array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> from <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. <br/>
@@ -8090,12 +8122,12 @@
             </remarks>
             <param name="hatchMode"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchModes">HatchModes</see></param>
             <param name="hatchJoint"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">HatchJoints</see></param>
-            <param name="isZigZag">ZigZag</param>
-            <param name="angle">Angle 1st</param>
-            <param name="angle2">Angle 2nd for <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">HatchModes.CrossLine</see></param>        
-            <param name="interval">Interval (mm)</param>
-            <param name="exclude">Exclude (mm)</param>        
-            <param name="shift">Shift offset (mm)</param>  
+            <param name="isZigZag">ZigZag or not<br/>Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Line">Line</see>, <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see>. <br/></param>      
+            <param name="angle">Angle 1st<br/>Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Line">Line</see>, <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see>. <br/></param>      
+            <param name="angle2">Angle 2nd<br/>Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see> only. <br/></param>        
+            <param name="interval">Interval (mm)<br/>Must be > 0 <br/></param>
+            <param name="exclude">Exclude (mm)<br/>Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Line">Line</see>, <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see>. <br/></param>      
+            <param name="shift">Shift offset (mm)<br/>Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Line">Line</see>, <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see>. <br/>Default: 0 <br/></param>      
             <returns>Hatched <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityGroup">EntityGroup</see> entity</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible">
@@ -8282,18 +8314,18 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Format">
             <summary>
             Barcode format
-            </summary>
-            <remarks>
+            <para>
             Default : <see cref="F:SpiralLab.Sirius2.Winforms.Entity.Barcode1DFormats.Code128">Barcode1DFormats.Code128</see> <br/>
-            </remarks>
+            </para>
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.DotFactor">
             <summary>
             Dot factor
+            <para>
+            Default : 1 (Must be >= 1)
+            </para>
             </summary>
-            <remarks>
-            Higher than 1 <br/>
-            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.dotFactor">
             <summary>
@@ -8323,6 +8355,9 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.IsZigZag">
             <summary>
             ZigZag
+            <para>
+            Default: <c>False</c> (means. bottom to top order) <br/>
+            </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.isZigZag">
@@ -8333,6 +8368,9 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.IsReverse">
             <summary>
             Reverse
+            <para>
+            Default : <c>False</c> (means. left to right order) <br/>
+            </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.isReverse">
@@ -8363,10 +8401,10 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.LinePitch">
             <summary>
             Line Pitch (mm)
-            </summary>
-            <remarks>
+            <para>
             Approx. line pitch (= width / dot counts) <br/>
-            </remarks>
+            </para>
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.SourceText">
             <inheritdoc/>
@@ -8412,7 +8450,7 @@
             Constructor
             </summary>
             <param name="text">Text data</param>
-            <param name="format"><c>Barcode1DFormats</c></param>
+            <param name="format"> <see cref="T:SpiralLab.Sirius2.Winforms.Entity.Barcode1DFormats">Barcode1DFormats</see> </param>
             <param name="dotFactor">Cell dot factor (1*1, 2*2, ...)</param>
             <param name="width">Width (mm)</param>
             <param name="height">Height (mm)</param>
@@ -8521,8 +8559,8 @@
             Model rotate
             </summary>
             <remarks>
-            Rotate angle value for z (NOT x,y) axis (°). <br/>
-            User can rotate delta by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.RotateZ(System.Double)">RotateZ</see>. <br/>
+            Rotate angle for z (NOT x,y) axis (°). <br/>
+            User can rotate delta angle by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.RotateZ(System.Double)">RotateZ</see>. <br/>
             Positive(+) is CCW direction. <br/>
             Negative(-) is CW direction. <br/>
             <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelMatrix">ModelMatrix</see> = <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelAlign">ModelAlign</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelTranslate</see>. <br/>
@@ -8663,10 +8701,10 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.QuiteZone">
             <summary>
             Quite Zone
+            <para>
+            Default:  0 (Must be >= 0) <br/>
+            </para>
             </summary>
-            <remarks>
-            Should be >= 0
-            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.quiteZone">
             <summary>
@@ -8688,7 +8726,7 @@
             Encoding 
             </summary>
             <remarks>
-            Default: UTF-8
+            Default: "UTF-8"
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417.encoding">
@@ -8790,18 +8828,18 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPlane.Mode">
             <summary>
             <see cref="T:SpiralLab.Sirius2.Winforms.Entity.STLModes">STLModes</see>
+            <para>
+            Default: <see cref="F:SpiralLab.Sirius2.Winforms.Entity.STLModes.Wireframe">Wireframe</see>. <br/>
+            </para>
             </summary>
-            <remarks>
-            Default: STLModes.Wireframe <br/>
-            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPlane.Reference">
             <summary>
             The reference point represents the new origin of the target plane, while the direction vectors represent the new X- and Y- directions in the target plane. 
+            <para>
+            Default: <see cref="F:OpenTK.Vector3.Zero">Vector3.Zero</see>. <br/>
+            </para>
             </summary>
-            <remarks>
-            Default: Vector3.Zero <br/>
-            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPlane.DirectionX">
             <summary>
@@ -8902,10 +8940,10 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityQRCode.QuiteZone">
             <summary>
             Quite Zone
+            <para>
+            Default:  0 (Must be >= 0) <br/>
+            </para>
             </summary>
-            <remarks>
-            Should be >= 0
-            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityQRCode.quiteZone">
             <summary>
@@ -8926,7 +8964,7 @@
             <summary>
             Encoding 
             <para>
-            Default: UTF-8
+            Default: "UTF-8"
             </para>
             </summary>
         </member>
@@ -9003,10 +9041,10 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityDataMatrix.QuiteZone">
             <summary>
             Quite Zone
+            <para>
+            Default:  0 (Must be >= 0) <br/>
+            </para>
             </summary>
-            <remarks>
-            Range: >= 0 <br/>
-            </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityDataMatrix.quiteZone">
             <summary>
@@ -9025,7 +9063,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityDataMatrix.IsCompactEncoding">
             <summary>
-            CompactEncoding or not
+            Compact encoding or not
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityDataMatrix.IsC40">
@@ -9036,6 +9074,9 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityDataMatrix.IsSquare">
             <summary>
             Square (or rectangle) shape 
+            <para>
+            Default: <c>True</c> <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityDataMatrix.Px">
@@ -9102,7 +9143,9 @@
             <summary>
             Height (mm)
             <para>
-            Must be != 0
+            Must be != 0 <br/>
+            + : To upside. <br/>
+            - : To upside-down. <br/>
             </para>
             </summary>
         </member>
@@ -9120,7 +9163,7 @@
             </summary>
             <param name="center">Base center x,y (mm)</param>
             <param name="_base">Base length (mm)<br/>Must be > 0</param>
-            <param name="height">Height (mm)<br/>Must be != 0</param>
+            <param name="height">Height (mm)<br/>Must be != 0<br/>+ : To upside <br/>- : To upside-down <br/></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle.#ctor(OpenTK.Vector3,System.Double,System.Double)">
             <summary>
@@ -9128,7 +9171,7 @@
             </summary>
             <param name="center">Base center x,y,z (mm)</param>
             <param name="_base">Base length (mm)<br/>Must be > 0</param>
-            <param name="height">Height (mm)<br/>Must be != 0</param>
+            <param name="height">Height (mm)<br/>Must be != 0<br/>+ : To upside <br/>- : To upside-down <br/></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle.Finalize">
             <summary>
@@ -9180,7 +9223,7 @@
             </summary>
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateSiriusCharacterSetText(System.String,SpiralLab.Sirius2.Winforms.Entity.CharacterSetFormats,System.Double)">EntityFactory.CreateSiriusCharacterSetText</see>. <br/>
-            Allowed glyph ascii code range from: 0 ~ <see cref="P:SpiralLab.Sirius2.Winforms.Config.SiriusFontAsciiMax">Config.SiriusFontAsciiMax</see>. <br/>
+            Allowed glyph ascii code range from: 32 ~ <see cref="P:SpiralLab.Sirius2.Winforms.Config.SiriusFontAsciiMax">Config.SiriusFontAsciiMax</see>. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet">IRtcCharacterSet</see>. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.ITextRegisterable">ITextRegisterable</see>. <br/>
             Used with like as <see cref="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.RegisterCharacterSet">MarkerRtc.RegisterCharacterSet</see>. <br/>
@@ -9342,11 +9385,17 @@
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.LetterSpaces.Variable">
             <summary>
             Variable
+            <para>
+            Can be re-arranged glyph begin position to make same interval. <br/>
+            </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.LetterSpaces.Fixed">
             <summary>
             Fixed
+            <para>
+            Fixed glyph begin position. <br/>
+            </para>
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText">
@@ -9355,7 +9404,7 @@
             </summary>
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateSiriusText(System.String,System.String,System.Double)">EntityFactory.CreateSiriusText</see>. <br/>
-            Allowed glyph ascii code range from: 0 ~ <see cref="P:SpiralLab.Sirius2.Winforms.Config.SiriusFontAsciiMax">Config.SiriusFontAsciiMax</see>. <br/>
+            Allowed glyph ascii code range from: 32 ~ <see cref="P:SpiralLab.Sirius2.Winforms.Config.SiriusFontAsciiMax">Config.SiriusFontAsciiMax</see>. <br/>
             Supported font file format: cxf, lff <br/>
             Used with <see cref="E:SpiralLab.Sirius2.Winforms.Config.OnMarkSiriusTextEachGlyph">Config.OnMarkSiriusTextEachGlyph</see>. <br/>
             <list type="utilities">
@@ -9448,6 +9497,7 @@
             </summary>
             <remarks>
             Used with 'semi_ocr_single' or 'semi_ocr_singledouble' font for raster operation only. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster">IRtcRaster</see> only. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.IsReversed">
@@ -9572,6 +9622,9 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.Direction">
             <summary>
             <see cref="T:SpiralLab.Sirius2.Winforms.Entity.TextCircularDirections">TextCircularDirections</see>
+            <para>
+            Default: <see cref="F:SpiralLab.Sirius2.Winforms.Entity.TextCircularDirections.ClockWise">ClockWise</see> <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.Radius">
@@ -9584,12 +9637,16 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.radius">
             <summary>
-            Text radius
+            Text radius (mm)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.StartAngle">
             <summary>
             Text starting angle (°)
+            <para>
+            + : CCW direction. <br/>
+            - : CW direction. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.LetterSpacing">
@@ -9612,7 +9669,7 @@
             <param name="height">Height (mm)<br/>Must be > 0</param>
             <param name="direction"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.TextCircularDirections">TextCircularDirections</see></param>
             <param name="radius">Radius (mm)<br/>Must be > 0</param>
-            <param name="startAngle">Start angle (°)<br/></param>
+            <param name="startAngle">Start angle (°)<br/>+: CCW<br/>-: CW</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText.ToString">
             <inheritdoc/>
@@ -9632,7 +9689,7 @@
             </summary>
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateCharacterSetText(System.String,SpiralLab.Sirius2.Winforms.Entity.CharacterSetFormats,System.Double)">EntityFactory.CreateCharacterSetText</see>. <br/>
-            Used with installed system fonts(like as true type fonts). <br/>
+            Used with installed system fonts (like as true type fonts). <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet">IRtcCharacterSet</see>. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.ITextRegisterable">ITextRegisterable</see>. <br/>
             Used with like as <see cref="M:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.RegisterCharacterSet">MarkerRtc.RegisterCharacterSet</see>. <br/>
@@ -10052,8 +10109,11 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline3D.IsClosed">
             <summary>
-            Closed status
+            Is closed path or not
             </summary>
+            <remarks>
+            Determined by <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Children">IEntity.Children</see>'s pathes(or figures) are closed or not. <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline3D.#ctor">
             <summary>
@@ -10832,7 +10892,7 @@
             <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RasterModes">RasterModes</see>
             </summary>
             <remarks>
-            Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">RasterModes.JumpAndShoot</see> <br/>
+            Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">RasterModes.JumpAndShoot</see>. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImage.rasterMode">
@@ -10882,8 +10942,8 @@
             <summary>
             Invert pixel color
             <para>
-            <c>True</c>: <c>White</c> is major color.<br/>
-            <c>False</c>: <c>Black</c> is major color.<br/>
+            <c>True</c>: <c>White</c> is major color. <br/>
+            <c>False</c>: <c>Black</c> is major color. <br/>
             </para>
             </summary>
         </member>
@@ -10891,7 +10951,7 @@
             <summary>
             <see cref="T:SpiralLab.Sirius2.Winforms.Entity.RasterDirections">RasterDirections</see>
             <para>
-            Default: <see cref="F:SpiralLab.Sirius2.Winforms.Entity.RasterDirections.LeftToRight">RasterDirections.LeftToRight</see>
+            Default: <see cref="F:SpiralLab.Sirius2.Winforms.Entity.RasterDirections.LeftToRight">LeftToRight</see>
             </para>
             </summary>
             <remarks>
@@ -11018,16 +11078,20 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityArc.StartAngle">
             <summary>
             Start angle (°)
+            <para>
+            + : CCW direction. <br/>
+            - : CW direction. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityArc.SweepAngle">
             <summary>
             Sweep angle (°)
+            <para>
+            + : CCW direction. <br/>
+            - : CW direction. <br/>
+            </para>
             </summary>
-            <remarks>
-            Positive(+) is ccw direction. <br/>
-            Negative(-) is cw direction. <br/>
-            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityArc.StartRampFactor">
             <summary>
@@ -11037,7 +11101,7 @@
             </para>
             </summary>
             <remarks>
-            (Not supported) RTC is not supported arc with ramp yet. <br/>
+            (Not supported) RTC is not supported arc with ramping yet. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityArc.EndRampFactor">
@@ -11048,7 +11112,7 @@
             </para>
             </summary>
             <remarks>
-            (Not supported) RTC is not supported arc with ramp yet.
+            (Not supported) RTC is not supported arc with ramping yet.
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityArc.IsClosed">
@@ -11062,6 +11126,7 @@
             </para>
             </summary>
             <remarks>
+            If 0, not be divided into lines. <br/>
             If higher than 0, arc would be divided into lines. <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Config.DivideArcToLinesDistance">Config.DivideArcToLinesDistance</see>. <br/>
             </remarks>
@@ -11077,8 +11142,8 @@
             </summary>
             <param name="center">Center X,Y (mm)</param>
             <param name="radius">Radius (mm)</param>
-            <param name="startAngle">Start angle (°)</param>
-            <param name="sweepAngle">Sweep angle (°)</param>
+            <param name="startAngle">Start angle (°)<br/>+: CCW<br/>-: CW</param>
+            <param name="sweepAngle">Sweep angle (°)<br/>+: CCW<br/>-: CW</param>
             <param name="stepAngle">Step angle (°) (Default: 0)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityArc.#ctor(OpenTK.Vector3,System.Double,System.Double,System.Double,System.UInt32)">
@@ -11087,9 +11152,9 @@
             </summary>
             <param name="center">Center X,Y,Z (mm)</param>
             <param name="radius">Radius (mm)</param>
-            <param name="startAngle">Start angle (°)</param>
-            <param name="sweepAngle">Sweep angle (°)</param>
-            <param name="stepAngle">Step angle (°) (Default: 0)</param>
+            <param name="startAngle">Start angle (°)<br/>+: CCW<br/>-: CW</param>
+            <param name="sweepAngle">Sweep angle (°)<br/>+: CCW<br/>-: CW</param>
+            <param name="stepAngle">Step angle (°)<br/>Default: 0</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityArc.Finalize">
             <summary>
@@ -11353,19 +11418,25 @@
             <summary>
             Min x,y,z (mm)
             </summary>
-            <remarks>NOT applied parent model matrix</remarks>
+            <remarks>
+            NOT applied parent model matrix
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.Max">
             <summary>
             Max x,y,z (mm)
             </summary>
-            <remarks>NOT applied parent model matrix</remarks>
+            <remarks>
+            NOT applied parent model matrix
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.Center">
             <summary>
             Center x,y,z (mm)
             </summary>
-            <remarks>NOT applied parent model matrix</remarks>
+            <remarks>
+            NOT applied parent model matrix
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.Width">
             <summary>
@@ -11381,26 +11452,33 @@
             <summary>
             Real min x,y,z (mm)
             </summary>
-            <remarks>Applied parent model matrix</remarks>
+            <remarks>
+            Applied parent model matrix
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.RealMax">
             <summary>
             Real max x,y,z (mm)
             </summary>
-            <remarks>Applied parent model matrix</remarks>
+            <remarks>
+            Applied parent model matrix
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.RealCenter">
             <summary>
             Real center x,y,z (mm)
             </summary>
-            <remarks>Applied parent model matrix</remarks>
+            <remarks>
+            Applied parent model matrix
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.RealWidth">
             <summary>
             Real. Width (mm)
             </summary>
             <remarks>
-            If modified, edited y scaling of parent <see cref="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.ModelMatrix">ModelMatrix</see>  
+            Applied parent model matrix. <br/>
+            If modified, edited y scaling of parent <see cref="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.ModelMatrix">ModelMatrix</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.RealHeight">
@@ -11408,7 +11486,8 @@
             Real. Height (mm)
             </summary>
             <remarks>
-            If modified, edited x scaling of parent <see cref="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.ModelMatrix">ModelMatrix</see> 
+            Applied parent model matrix. <br/>
+            If modified, edited x scaling of parent <see cref="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.ModelMatrix">ModelMatrix</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.RealDepth">
@@ -11416,17 +11495,18 @@
             Real. Depth (mm)
             </summary>
             <remarks>
-            If modified, edited z scaling of parent <see cref="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.ModelMatrix">ModelMatrix</see> 
+             Applied parent model matrix. <br/>
+            If modified, edited z scaling of parent <see cref="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.ModelMatrix">ModelMatrix</see>. <br/> 
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.Parent">
             <summary>
-            Parent of entity 
+            Parent of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> 
             </summary>
             <remarks>
             Used by internally. Do NOT edit <br/>
             Not saved. automatically regenerate at runtime. <br/>
-            <see cref="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.Parent">Parent</see> entity must be assigned to transform parent's model matrix
+            <see cref="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.Parent">Parent</see> entity must be assigned to transform(or apply) parent's model matrix
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.BoundingBox.ModelMatrix">
@@ -12529,7 +12609,7 @@
             </summary>
             <remarks>
             Used for prevent cross-thread issue. <br/>
-            Atomic operation for <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.Regen">Regen</see>. <br/>
+            Used for atomic operation for <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.Regen">Regen</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Id">
@@ -12659,7 +12739,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.BBox">
             <summary>
-            Bounding Box of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
+            Bounding Box for each <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. 
             </summary>
             <remarks>
             Dimension information of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. <br/>
@@ -12670,7 +12750,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Alignment">
             <summary>
-            Alignments
+            <see cref="T:SpiralLab.Sirius2.Winforms.Entity.Alignments">Alignments</see> each <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. 
             </summary>
             <remarks>
             Alignment information of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. <br/>
@@ -12683,8 +12763,8 @@
             Model align
             </summary>
             <remarks>
-            Translate for alignment by <see cref="T:SpiralLab.Sirius2.Winforms.Entity.Alignments">Alignments</see> value. <br/>
-            Recalculated whenever <see cref="T:SpiralLab.Sirius2.Winforms.Entity.Alignments">Alignment</see> has modified. <br/>
+            Translate for alignment by <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Alignment">Alignment</see> value. <br/>
+            Recalculated whenever <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Alignment">Alignment</see> has modified. <br/>
             Real alignment position = <c>BBox.Min</c> + <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelAlign">ModelAlign</see>. <br/>
             User can edit if <see cref="F:SpiralLab.Sirius2.Winforms.Entity.Alignments.Custom">Alignments.Custom</see> has used. <br/>
             <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelMatrix">ModelMatrix</see> = <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelAlign">ModelAlign</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelTranslate</see>. <br/>
@@ -12717,7 +12797,7 @@
             Model rotate
             </summary>
             <remarks>
-            Rotate angle values at x,y and z axis (°). <br/>
+            Rotate angle at x,y and z axis (°). <br/>
             User can rotate delta by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.Rotate(System.Double,System.Double,System.Double)">Rotate</see>. <br/>
             Positive(+) is ccw direction. <br/>
             Negative(-) is cw direction. <br/>
@@ -12729,7 +12809,7 @@
             Model matrix
             </summary>
             <remarks>
-            4x4 matrix for transformation. <br/>
+            4x4 matrix for each <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. <br/>
             <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelMatrix">ModelMatrix</see> = <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelAlign">ModelAlign</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelTranslate</see>. <br/>
             </remarks>
         </member>
@@ -12796,7 +12876,7 @@
             Translate dx, dy, dz
             </summary>
             <remarks>
-            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelTranslate</see>. <br/>
+            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelTranslate</see> matrix. <br/>
             Delta values would be accumulated. <br/>
             <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelMatrix">ModelMatrix</see> = <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelAlign">ModelAlign</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelTranslate</see>. <br/>
             </remarks>
@@ -12807,7 +12887,7 @@
             Translate dx, dy
             </summary>
             <remarks>
-            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelTranslate</see>. <br/>
+            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelTranslate</see> matrix. <br/>
             Delta value would be accumulated. <br/>
             <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelMatrix">ModelMatrix</see> = <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelAlign">ModelAlign</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelTranslate</see>. <br/>
             </remarks>
@@ -12818,7 +12898,7 @@
             Rotate at x axis
             </summary>
             <remarks>
-            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate.X</see>. <br/>
+            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate.X</see> matrix. <br/>
             Delta value would be accumulated. <br/>
             Positive(+) is ccw direction. <br/>
             Negative(-) is cw direction. <br/>
@@ -12831,7 +12911,7 @@
             Rotate at y axis
             </summary>
             <remarks>
-            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate.Y</see>. <br/>
+            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate.Y</see> matrix. <br/>
             Delta value would be accumulated. <br/>
             Positive(+) is ccw direction. <br/>
             Negative(-) is cw direction. <br/>
@@ -12844,7 +12924,7 @@
             Rotate at z axis
             </summary>
             <remarks>
-            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate.Z</see>. <br/>
+            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate.Z</see> matrix. <br/>
             Delta value would be accumulated. <br/>
             Positive(+) is ccw direction. <br/>
             Negative(-) is cw direction. <br/>
@@ -12857,7 +12937,7 @@
             Rotate at x,y,z axes
             </summary>
             <remarks>
-            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate</see>. <br/>
+            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate</see> matrix. <br/>
             Delta value would be accumulated. <br/>
             Positive(+) is ccw direction. <br/>
             Negative(-) is cw direction. <br/>
@@ -12872,7 +12952,7 @@
             Rotate at x,y,z axes
             </summary>
             <remarks>
-            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate</see>. <br/>
+            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate</see> matrix. <br/>
             Delta value would be accumulated. <br/>
             Positive(+) is ccw direction. <br/>
             Negative(-) is cw direction. <br/>
@@ -12885,7 +12965,7 @@
             Scale 
             </summary>
             <remarks>
-            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see>. <br/>
+            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see> matrix. <br/>
             Delta value would be accumulated. <br/>
             Negative(-) factor are not allowed. should be greater than zero (> 0). <br/>
             <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelMatrix">ModelMatrix</see> = <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelAlign">ModelAlign</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelTranslate</see>. <br/>
@@ -12897,7 +12977,7 @@
             Scale at x,y,z axes
             </summary>
             <remarks>
-            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see>. <br/>
+            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see> matrix. <br/>
             Delta value would be accumulated. <br/>
             Negative(-) factors are not allowed. should be greater than zero (> 0). <br/>
             <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelMatrix">ModelMatrix</see> = <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelAlign">ModelAlign</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelTranslate</see>. <br/>
@@ -12911,7 +12991,7 @@
             Scale at x,y,z axes
             </summary>
             <remarks>
-            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see>. <br/>
+            Applied into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see> matrix. <br/>
             Delta value would be accumulated. <br/>
             Negative(-) factors are not allowed. should be greater than zero (> 0). <br/>
             <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelMatrix">ModelMatrix</see> = <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelAlign">ModelAlign</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelTranslate</see>. <br/>
@@ -12976,6 +13056,7 @@
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateGroup(System.String,SpiralLab.Sirius2.Winforms.Entity.IEntity[])">EntityFactory.CreateGroup</see>. <br/>
             Group is a set(or container) of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. <br/>
+            <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.BBox">BBox</see> of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityGroup">EntityGroup</see> is calcuted calcuted once when it has created only. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.Color">
@@ -13171,27 +13252,33 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.IsALC">
             <summary>
             Enable(or disable) ALC (Automatic Laser Control) 
+            <para>
+            Default: <c>False</c>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcMode">
             <summary>
-            ALC (Automatic Laser Control) mode 
-            </summary>
-            <remarks>
             <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlModes">AutoLaserControlModes</see>
-            </remarks>
+            <para>
+            Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlModes.Disabled">Disabled</see> <br/>
+            </para>
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcSignal">
             <summary>
-            ALC (Automatic Laser Control) signal
-            </summary>
-            <remarks>
             <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals">AutoLaserControlSignals</see>
-            </remarks>
+            <para>
+            Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals.Disabled">Disabled</see> <br/>
+            </para>
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcPercentage100">
             <summary>
-            ALC (Automatic Laser Control) 100% output value
+            ALC (Automatic Laser Control) 
+            <para>
+            100% output value
+            </para>
             </summary>
             <remarks>
             If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals.Analog1">AutoLaserControlSignals.Analog1</see>, value is analog voltage(V). <br/>
@@ -13205,7 +13292,10 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcMinValue">
             <summary>
-            ALC (Automatic Laser Control) min. output value
+            ALC (Automatic Laser Control)
+            <para>
+            Min. output value
+            </para>
             </summary>
             <remarks>
             If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals.Analog1">AutoLaserControlSignals.Analog1</see>, value is analog voltage(V). <br/>
@@ -13219,7 +13309,10 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.AlcMaxValue">
             <summary>
-            ALC (Automatic Laser Control) max. output value
+            ALC (Automatic Laser Control)
+            <para>
+            Max. output value
+            </para>
             </summary>
             <remarks>
             If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlSignals.Analog1">AutoLaserControlSignals.Analog1</see>, value is analog voltage(V). <br/>
@@ -13238,6 +13331,7 @@
             <remarks>
             Key: Distance(or radius) (mm) <br/>
             Value: Scale (0~4) <br/>
+            Can be saved. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityLayerRtc.#ctor">
@@ -13570,11 +13664,13 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral.Height">
             <summary>
-            Height (mm)
+            Height(or depth) (mm)
+            <para>
+            + : means. height (or upper direction) <br/>
+            - : means. depth (or lower direction) <br/>
+            </para>
             </summary>
             <remarks>
-            +: Height (or upper) <br/>
-            -: Depth (or lower) <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral.Revolutions">
@@ -13599,7 +13695,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral.HeightPitch">
             <summary>
-            Height pitch (mm)
+            Height(or depth) pitch (mm)
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral.#ctor">
@@ -13614,7 +13710,7 @@
             <param name="center">Center x,y,z (mm)</param>
             <param name="startDiameter">Start diameter (mm)</param>
             <param name="endDiameter">End diameter (mm)</param>
-            <param name="height">Height (mm)<br/>Must be != 0<br/>Positive(+): height(or upper)<br/>Negative(-): depth(or lower)</param>
+            <param name="height">Height(or depth) (mm)<br/>+: height(or upper direction)<br/>-: depth(or lower direction)</param>
             <param name="revolutions">Revolutions<br/>Must be > 0</param>
             <param name="isClosed">Closed path or not</param>
         </member>
@@ -13657,6 +13753,7 @@
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePoints(OpenTK.Vector2[],System.Double)">EntityFactory.CreatePoints</see>. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcJumpMode">IRtcJumpMode</see>. <br/>
+            Also, can be override whole jump commands with hard by <see cref="P:SpiralLab.Sirius2.Config.IsConvertJumpToHardJump">Config.IsConvertJumpToHardJump</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPoints.IsHardJump">
@@ -13760,6 +13857,7 @@
             </summary>
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePoints(OpenTK.Vector2[],System.Double)">EntityFactory.CreatePoint</see>. <br/>
+            Can be override whole jump commands with hard by <see cref="P:SpiralLab.Sirius2.Config.IsConvertJumpToHardJump">Config.IsConvertJumpToHardJump</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPoint.DwellMsec">
@@ -13879,7 +13977,8 @@
             <summary>
             Length (mm)
             <para>
-            Must be > 0
+            Distance(or length) from start to end location. <br/>
+            Must be > 0 <br/>
             </para>
             </summary>
         </member>
@@ -13890,7 +13989,10 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLine.IsZigZag">
             <summary>
-            Mark with reversed order or not
+            Mark zigzag orders if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IMarkerable.Repeats">Repeats</see> > 1  <br/>
+            <para>
+            If <c>True</c>, jump commands are eliminated. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLine._Start">
@@ -14010,7 +14112,7 @@
             Constructor
             </summary>
             <param name="vertices">Array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityVertex2D">EntityVertex2D</see><br/></param>
-            <param name="isClosed">Closed path or not</param>
+            <param name="isClosed">Closed path(or figure) or not</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.Finalize">
             <summary>
@@ -14082,8 +14184,8 @@
             <summary>
             Clockwise winding or not
             </summary>
-            <param name="polygon">Array of <c>Vector3</c></param>
-            <returns>True(CW winding) or False (CCW winding)</returns>
+            <param name="vertices">Array of <see cref="T:OpenTK.Vector3">Vector3</see></param>
+            <returns><c>True</c>: CW winding<br/><c>False</c>: CCW winding</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.Clip(SpiralLab.Sirius2.Winforms.Entity.BoundingBox)">
             <inheritdoc/>
@@ -14461,7 +14563,7 @@
             <param name="center">X,Y,Z center (mm)</param>
             <param name="startDiameter">Start diameter (mm)<br/>Must be > 0</param>
             <param name="endDiameter">End diameter (mm)<br/>Must be > Start diameter</param>
-            <param name="height">Height (mm)<br/>+: -:</param>
+            <param name="height">Height(or depth) (mm)<br/>+: height(or upper direction)<br/>-: depth(or lower direction)</param>
             <param name="revolutions">Revolutions<br/>Must be > 0</param>
             <param name="isClosed">Closed path at end diameter or not</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral">EntitySpiral</see></returns>
@@ -14484,7 +14586,7 @@
             <param name="cz">Z center (mm)</param>
             <param name="startDiameter">Start diameter (mm)<br/>Must be > 0</param>
             <param name="endDiameter">End diameter (mm)<br/>Must be > Start diameter</param>
-            <param name="height">Height (mm)<br/>+: -:</param>
+            <param name="height">Height(or depth) (mm)<br/>+: height(or upper direction)<br/>-: depth(or lower direction)</param>
             <param name="revolutions">Revolutions<br/>Must be > 0</param>
             <param name="isClosed">Closed path at end diameter or not</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral">EntitySpiral</see></returns>
@@ -15568,7 +15670,8 @@
             EntityVertex2D entity
             </summary>
             <remarks>
-            Used with <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelTranslate</see>(for x,y,z) and <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityVertex2D.Bulge">Bulge</see> for (bulge).
+            Used for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see>. <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelTranslate</see>(for x,y,z) and <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityVertex2D.Bulge">Bulge</see> for (bulge). <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityVertex2D.Color">
@@ -15854,7 +15957,7 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.STLMaterialFaceModes">
             <summary>
-            <c>STLMaterialFaceModes</c>
+            STL material face modes
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.STLMaterialFaceModes.Front">
@@ -15980,7 +16083,7 @@
             <summary>
             Constructor
             </summary>
-            <param name="faces">Array of <c>EntityFace</c></param>
+            <param name="faces">Array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityFace">EntityFace</see></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStl.Finalize">
             <summary>
@@ -16007,10 +16110,10 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStl.ExtractPointsCloud(OpenTK.Vector3,SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud@)">
             <summary>
-            Extract point clouds from STL surface and return <c>EntityPointsCloud</c>
+            Extract point clouds from STL surface and return <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud">EntityPointsCloud</see>
             </summary>
-            <param name="dir">Directional vector</param>
-            <param name="entityPointsColud">Created <c>EntityPointCloud</c> if succeeded</param>
+            <param name="dir">Directional vector<br/>Recommend to use <see cref="P:SpiralLab.Sirius2.Winforms.Config.ExtractPointsCloudDirectionVector">Config.ExtractPointsCloudDirectionVector</see> </param>
+            <param name="entityPointsColud">Created <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud">EntityPointsCloud</see> if succeeded</param>
             <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.TextRegisterHelper">
@@ -20249,6 +20352,9 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Config.IsCompressedFileFormat">
             <summary>
             File format with compressed or not
+            <para>
+            Default: <c>True</c>
+            </para>
             </summary>
             <remarks>
             Used by internally. Do not edit. <br/>
@@ -20429,7 +20535,7 @@
             <summary>
             Default font for create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">EntityText</see>
             <para>
-            Default: "Arial"<br/>
+            Default: "Arial" <br/>
             </para>
             </summary>
             <remarks>
@@ -20469,6 +20575,7 @@
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> and <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RtcMoFTypes.XY">RtcMoFTypes.XY</see>. <br/>
             If <c>True</c>, <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofWait(SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders,System.Double,SpiralLab.Sirius2.Scanner.Rtc.RtcEncoderWaitConditions,System.Boolean)">IRtcMoF.ListMofWait</see> will be inserted with left(or right) position for each glyphs into list buffer by automatically. <br/>
             Also, user can override default routines by <see cref="E:SpiralLab.Sirius2.Winforms.Config.OnMarkSiriusTextEachGlyph">OnMarkSiriusTextEachGlyph</see>, <see cref="E:SpiralLab.Sirius2.Winforms.Config.OnMarkTextEachGlyph">OnMarkTextEachGlyph</see>, <see cref="E:SpiralLab.Sirius2.Winforms.Config.OnMarkImageTextEachGlyph">OnMarkImageTextEachGlyph</see>. <br/>
+            Not used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IHatchable">IHatchable</see> together. <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Config.OnMarkSiriusTextEachGlyph">
@@ -20494,9 +20601,9 @@
                         if (entity is IMarkerable markerable)
                         {
                             if (!text.IsReversed)
-                                success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, -entity.BBox.RealMin.X, RtcEncoderWaitConditions.Under, true);
+                                success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, -entity.BBox.Min.X, RtcEncoderWaitConditions.Under, true);
                             else
-                                success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, entity.BBox.RealMax.X, RtcEncoderWaitConditions.Over, true);
+                                success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, entity.BBox.Min.X, RtcEncoderWaitConditions.Over, true);
                             success &amp;= markerable.Mark(maker);
                         }
                         if (!success)
@@ -20509,6 +20616,7 @@
             </summary>
             <remarks>
             Event will be fired when do marks <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText">EntitySiriusText</see> entity. <br/>
+            Not used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IHatchable">IHatchable</see> together. <br/>
             If user event handler is not attached, default routine has executed. <br/>
             If user event handler is attached, user should be implement mark routines for each glyphs itself. <br/>
             Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText">EntitySiriusText</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityGroup">EntityGroup</see> for each glyphs. <br/>
@@ -20541,9 +20649,9 @@
                     {
                         var polyline = polylines[i];
                         if (!text.IsReversed)
-                            success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, -polyline.BBox.RealMin.X, RtcEncoderWaitConditions.Under, true);
+                            success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, -polyline.BBox.Min.X, RtcEncoderWaitConditions.Under, true);
                         else
-                            success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, polyline.BBox.RealMax.X, RtcEncoderWaitConditions.Over, true);
+                            success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, polyline.BBox.Min.X, RtcEncoderWaitConditions.Over, true);
                         success &amp;= polyline.Mark(marker);
                         if (!success)
                             break;
@@ -20557,6 +20665,7 @@
             </summary>
             <remarks>
             Event will be fired when do marks <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">EntityText</see> entity. <br/>
+            Not used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IHatchable">IHatchable</see> together. <br/>
             If user event handler is not attached, default routine has executed. <br/>
             If user event handler is attached, user should be implement mark routines for each glyphs itself. <br/>
             Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">EntityText</see>, array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> for each glyphs. <br/>
@@ -20651,6 +20760,7 @@
             </summary>
             <remarks>
             Event will be fired when do marks <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityImageText">EntityText</see> entity. <br/>
+            Not used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IHatchable">IHatchable</see> together. <br/>
             If user event handler is not attached, default routine has executed. <br/>
             If user event handler is attached, user should be implement mark routines for each glyphs itself. <br/>
             Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityImageText">EntityImageText</see> (use <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.MarkVerticalLine(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32,System.Boolean)">MarkVerticalLine</see>, <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.MarkHorizontalLine(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Int32,System.Boolean)">MarkHorizontalLine</see> for each lines). <br/>
@@ -21392,7 +21502,7 @@
             <summary>
             Threshold pixel counts when do hit testing by mouse hover
             <para>
-            Default: 4 <br/>
+            Default: 4 (px) <br/>
             </para>
             </summary>
             <remarks>

@@ -168,6 +168,10 @@
 
 **8. Version history**
 
+* 2024.6.17 v.1.36.1570
+  - fixed) reverse mark at EntityBarcode1D
+  - fixed) reverse mark CellCircle at EntityBarcode2D
+
 * 2024.6.11 v.1.35.1560
   - added) events for wait MoF position by automatically
      - Config.OnMarkSiriusTextEachGlyph for sirius text entity 

@@ -93,8 +93,8 @@ public class UserScript : MarkerScriptBase
             case "MyText1":                           
             case "MyText2":             
 			case "MyText3":             
-				var leftX = currentEntity.BBox.RealMin.X;
-				return rtcMoF.ListMofWait(RtcEncoders.EncX, -leftX, RtcEncoderWaitConditions.Under);
+				var leftX = currentEntity.BBox.Min.X;
+				return rtcMoF.ListMofWait(RtcEncoders.EncX, -leftX, RtcEncoderWaitConditions.Under, true);
         }		
         return true;
     }
