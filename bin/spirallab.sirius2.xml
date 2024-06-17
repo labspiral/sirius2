@@ -21926,13 +21926,14 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsActivateAutoDelays">
             <summary>
-            Activated auto delays 
+            Activate auto delays or not
             </summary>
             <remarks>
             If <c>False</c>, should be use <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListDelay(System.Double,System.Double,System.Double,System.Double,System.Double)">ListDelay</see> to compensate scanner movement and laser output signals. <br/>
             If <c>True</c>, should be use <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListDelayScanAhead(System.Double,System.Double)">ListDelayScanAhead</see> to compensate laser output signals. <br/>
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlDelayAutoByScanAhead(System.Boolean)">CtlDelayAutoByScanAhead</see> also. <br/>
-            Must be exist SCANahead option. <br/> 
+            Must be exist <c>SCANahead</c> option to manupulate. <br/> 
+            Default: <c>True</c> if <c>SCANahead</c> option is exist. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ScanAheadLineParamsCornerScale">
@@ -21940,8 +21941,8 @@
             Corner scale (0~100)
             </summary>
             <remarks>
-            Only for SCANahead option. <br/>
-            Use <c>CtlDelayScanAheadByAuto</c> at first. <br/>
+            Only for <c>SCANahead</c> option. <br/>
+            Use <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlDelayAutoByScanAhead(System.Boolean)">CtlDelayAutoByScanAhead</see> at first. <br/>
             Polyline: 100%: max precision, 0% min execution time. <br/>
             </remarks>
         </member>
@@ -21955,8 +21956,8 @@
             End scale (0~100)
             </summary>
             <remarks>
-            Only for SCANahead option. <br/>
-            Use <c>CtlDelayScanAheadByAuto</c> at first. <br/>
+            Only for <c>SCANahead</c> option. <br/>
+            Use <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlDelayAutoByScanAhead(System.Boolean)">CtlDelayAutoByScanAhead</see>  at first. <br/>
             Mark, jump: 100%: max precision, 0% min execution time. <br/>
             </remarks>
         </member>
@@ -21970,10 +21971,10 @@
             Acc scale (0~100)
             </summary>
             <remarks>
-            Only for SCANahead option. <br/>
-            Use <c>CtlDelayScanAheadByAuto</c> at first. <br/>
-            100%: laser is on during acceleration and deceleration. <br/>
+            Only for <c>SCANahead</c> option. <br/>
+            Use <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlDelayAutoByScanAhead(System.Boolean)">CtlDelayAutoByScanAhead</see>  at first. <br/>
             0%: laser is off during acceleration and deceleration. <br/>
+            100%: laser is on during acceleration and deceleration. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.scanAheadLineParamsAccScale">
@@ -22306,8 +22307,8 @@
             Shift laser on/off delays 
             </summary>
             <remarks>
-            Use <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlDelayScanAhead(System.Double,System.Double)">CtlDelayScanAhead</see> at first.
-            Must be exist SCANAhead option. <br/>
+            Use <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlDelayScanAhead(System.Double,System.Double)">CtlDelayScanAhead</see> at first.<br/>
+            Must be exist <c>SCANahead</c> option. <br/>
             </remarks>
             <param name="laserOnShift">Laser on shift (usec)</param>
             <param name="laserOffShift">Laser off shift (usec)</param>
@@ -22315,11 +22316,11 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlDelayAutoByScanAhead(System.Boolean)">
             <summary>
-            Activate Auto delays by SCANAhead
+            Activate auto delays by SCANAhead
             </summary>
             <remarks>
-            Used with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsActivateAutoDelays">IsActivateAutoDelays</see>.
-            Must be exist SCANAhead option. <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsActivateAutoDelays">IsActivateAutoDelays</see>. <br/>
+            Must be exist <c>SCANahead</c> option. <br/>
             </remarks>
             <param name="onOff">On(or off)</param>
             <returns>Success or failed</returns>
@@ -22453,7 +22454,7 @@
             </summary>
             <remarks>
             Enable auto delays by <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlDelayAutoByScanAhead(System.Boolean)">CtlDelayAutoByScanAhead</see> at first. <br/>
-            Must be exist SCANAhead option. <br/>
+            Must be exist <c>SCANahead</c> option. <br/>
             </remarks>
             <param name="laserOnShift">Laser on shift (usec)</param>
             <param name="laserOffShift">Laser off shift (usec)</param>
@@ -24876,7 +24877,15 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListExecute(System.Boolean)">
-            <inheritdoc/>  
+            <summary>
+            List execute
+            </summary>
+            <remarks>
+            List commands are executed by automatically if buffers are loaded enough. <br/>
+            Used internal buffer mode to '<c>slsc_ListHandlingMode_RepeatWhileBufferFull</c>' by forcily. <br/>
+            </remarks>
+            <param name="busyWait">Wait until list commands has done or not.<br/>If <c>True</c>, function would be blocked until done. It also same feature with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlBusyWait">CtlBusyWait</see>.<br/>If <c>False</c>, function would be returned at immediately.<br/>Default: <c>True</c></param>
+            <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector2,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
             <inheritdoc/>  
@@ -26259,7 +26268,7 @@
             Scan head1 offset 
             </summary>
             <remarks>
-            X(mm), Y(mm), Z(mm), Angle(°)<br/>
+            X(mm), Y(mm), Z(mm), Angle(°) <br/>
             Z offset is not supported yet. <br/>
             </remarks>
         </member>
@@ -26268,7 +26277,7 @@
             Scan head2 offset
             </summary>
             <remarks>
-            X(mm), Y(mm), Z(mm), Angle(°)<br/>
+            X(mm), Y(mm), Z(mm), Angle(°) <br/>
             Z offset is not supported yet. <br/>
             </remarks>
         </member>
@@ -26277,7 +26286,7 @@
             Scan head3 offset
             </summary>
             <remarks>
-            X(mm), Y(mm), Z(mm), Angle(°)<br/>
+            X(mm), Y(mm), Z(mm), Angle(°) <br/>
             Z offset is not supported yet. <br/>
             </remarks>
         </member>
@@ -26286,7 +26295,7 @@
             Scan head4 offset
             </summary>
             <remarks>
-            X(mm), Y(mm), Z(mm), Angle(°)<br/>
+            X(mm), Y(mm), Z(mm), Angle(°) <br/>
             Z offset is not supported yet. <br/>
             </remarks>
         </member>
@@ -30876,7 +30885,7 @@
             To use external <c>/START</c> trigger, configure <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcExtension.CtlExternalControl(SpiralLab.Sirius2.Scanner.Rtc.IRtcExternalControlMode,System.UInt32)">IRtcExtension.CtlExternalControl</see>. <br/>
             Notify <see cref="E:SpiralLab.Sirius2.Scanner.Rtc.IRtc.OnJob">OnJob</see> event. <br/>
             </remarks>
-            <param name="busyWait">Wait until list commands has done or not.<br/>If <c>True</c>, function would be blocked until done. It also same feature with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlBusyWait">CtlBusyWait</see>.<br/>If <c>False</c>, function would be returned at immediately.<br/></param>
+            <param name="busyWait">Wait until list commands has done or not.<br/>If <c>True</c>, function would be blocked until done. It also same feature with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlBusyWait">CtlBusyWait</see>.<br/>If <c>False</c>, function would be returned at immediately.<br/>Default: <c>True</c></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead">
