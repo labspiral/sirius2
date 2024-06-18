@@ -111,7 +111,7 @@
  - Dependencies
     - SCANLAB RTC4: (2023.11.02)
     - SCANLAB RTC5: (2022.11.11)
-    - SCANLAB RTC6: v.1.16.3 (2023.12.19)
+    - SCANLAB RTC6: v.1.18.0 (2024.6.17)
     - SCANLAB syncAXIS: v.1.8.2 (2023.3.9)
     - OpenTK: v3.3.3 (https://www.nuget.org/packages/OpenTK/3.3.3)
     - OpenTK.GLControl: v3.3.3 (https://www.nuget.org/packages/OpenTK.GLControl/)
@@ -168,7 +168,8 @@
 
 **8. Version history**
 
-* 2024.6.17 v.1.36.1570
+* 2024.6.17 v.1.36.1571
+  - updated) RTC6 v.1.18.0 (2024.6.17)
   - fixed) reverse mark at EntityBarcode1D
   - fixed) reverse mark CellCircle at EntityBarcode2D
 

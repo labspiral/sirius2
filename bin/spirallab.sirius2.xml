@@ -42337,6 +42337,11 @@
              void n_get_status(uint CardNo, out uint Status, out uint Pos);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_short_cmd_mode_ctrl">
+            <summary>
+             void n_set_short_cmd_mode_ctrl(uint CardNo, uint Mode);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.auto_change_pos">
             <summary>
              void auto_change_pos(uint Pos);
@@ -42405,6 +42410,11 @@
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.get_status">
             <summary>
              void get_status(out uint Status, out uint Pos);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_short_cmd_mode_ctrl">
+            <summary>
+             void set_short_cmd_mode_ctrl(uint Mode);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_extstartpos">
@@ -42857,6 +42867,11 @@
              int n_load_position_control(uint CardNo, string Name, uint No);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_load_position_control_2d_ctrl">
+            <summary>
+             uint n_load_position_control_2d_ctrl(uint CardNo, string Name);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_default_pixel">
             <summary>
              void n_set_default_pixel(uint CardNo, uint PulseLength);
@@ -42990,6 +43005,11 @@
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.load_position_control">
             <summary>
              int load_position_control(string Name, uint No);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.load_position_control_2d_ctrl">
+            <summary>
+             uint load_position_control_2d_ctrl(string Name);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_default_pixel">
@@ -43437,6 +43457,26 @@
              void n_set_enduring_wobbel_2(uint CardNo, uint CenterX, uint CenterY, uint CenterZ, uint LimitHi, uint LimitLo, double ScaleX, double ScaleY, double ScaleZ);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_enduring_wobbel_3">
+            <summary>
+             void n_set_enduring_wobbel_3(uint CardNo, uint CenterX, uint CenterY, uint CenterZ, uint LimitHi, uint LimitLo, double ScaleX, double ScaleY, double ScaleZ);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_enduring_wobbel_4">
+            <summary>
+             void n_set_enduring_wobbel_4(uint CardNo, uint CenterX, uint CenterY, uint CenterZ, uint LimitHi, uint LimitLo, double ScaleX, double ScaleY, double ScaleZ);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_enduring_wobbel_ctrl">
+            <summary>
+             void n_set_enduring_wobbel_ctrl(uint CardNo, uint CenterX, uint CenterY, uint CenterZ, uint LimitHi, uint LimitLo, double ScaleX, double ScaleY, double ScaleZ, uint Mode, uint Ctrl);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_check_enduring_wobbel">
+            <summary>
+             uint n_check_enduring_wobbel(uint CardNo);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_free_variable">
             <summary>
              void n_set_free_variable(uint CardNo, uint VarNo, uint Value);
@@ -43625,6 +43665,26 @@
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_enduring_wobbel_2">
             <summary>
              void set_enduring_wobbel_2(uint CenterX, uint CenterY, uint CenterZ, uint LimitHi, uint LimitLo, double ScaleX, double ScaleY, double ScaleZ);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_enduring_wobbel_3">
+            <summary>
+             void set_enduring_wobbel_3(uint CenterX, uint CenterY, uint CenterZ, uint LimitHi, uint LimitLo, double ScaleX, double ScaleY, double ScaleZ);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_enduring_wobbel_4">
+            <summary>
+             void set_enduring_wobbel_4(uint CenterX, uint CenterY, uint CenterZ, uint LimitHi, uint LimitLo, double ScaleX, double ScaleY, double ScaleZ);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_enduring_wobbel_ctrl">
+            <summary>
+             void set_enduring_wobbel_ctrl(uint CenterX, uint CenterY, uint CenterZ, uint LimitHi, uint LimitLo, double ScaleX, double ScaleY, double ScaleZ, uint Mode, uint Ctrl);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.check_enduring_wobbel">
+            <summary>
+             uint check_enduring_wobbel();
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_free_variable">
@@ -43837,6 +43897,11 @@
              void n_set_sky_writing_mode(uint CardNo, uint Mode);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_sky_writing_min_speed_ctrl">
+            <summary>
+             void n_set_sky_writing_min_speed_ctrl(uint CardNo, double Speed);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_load_varpolydelay">
             <summary>
              int n_load_varpolydelay(uint CardNo, string Name, uint No);
@@ -43910,6 +43975,11 @@
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_sky_writing_mode">
             <summary>
              void set_sky_writing_mode(uint Mode);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_sky_writing_min_speed_ctrl">
+            <summary>
+             void set_sky_writing_min_speed_ctrl(double Speed);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.load_varpolydelay">
@@ -44317,6 +44387,11 @@
              void n_wait_for_timestamp_counter_mode(uint CardNo, uint TimeStampCounter, uint Mode);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_short_cmd_mode_list">
+            <summary>
+             void n_set_short_cmd_mode_list(uint CardNo, uint Mode);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_list_jump">
             <summary>
              void n_set_list_jump(uint CardNo, uint Pos);
@@ -44400,6 +44475,11 @@
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.wait_for_timestamp_counter_long">
             <summary>
              void wait_for_timestamp_counter_long(uint WaitCounterL, uint WaitCounterH, uint MaxWaitTime, uint Mode);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_short_cmd_mode_list">
+            <summary>
+             void set_short_cmd_mode_list(uint Mode);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_list_jump">
@@ -45432,6 +45512,11 @@
              void n_init_fly_2d_list(uint CardNo, int OffsetX, int OffsetY, uint No);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_fly_disable_list">
+            <summary>
+             void n_fly_disable_list(uint CardNo);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_wait_for_encoder">
             <summary>
              void n_wait_for_encoder(uint CardNo, int Value, uint EncoderNo);
@@ -45742,6 +45827,11 @@
              void init_fly_2d_list(int OffsetX, int OffsetY, uint No);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.fly_disable_list">
+            <summary>
+             void fly_disable_list();
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.wait_for_encoder">
             <summary>
              void wait_for_encoder(int Value, uint EncoderNo);
@@ -45927,6 +46017,16 @@
              void n_jump_rel_drill(uint CardNo, int dX, int dY, uint DrillTime);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_jump_abs_drill_3">
+            <summary>
+             void n_jump_abs_drill_3(uint CardNo, int X, int Y, uint DrillTime, int XOff, int YOff);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_jump_rel_drill_3">
+            <summary>
+             void n_jump_rel_drill_3(uint CardNo, int dX, int dY, uint DrillTime, int XOff, int YOff);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.save_and_restart_timer">
             <summary>
              void save_and_restart_timer();
@@ -46105,6 +46205,16 @@
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.jump_rel_drill">
             <summary>
              void jump_rel_drill(int dX, int dY, uint DrillTime);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.jump_abs_drill_3">
+            <summary>
+             void jump_abs_drill_3(int X, int Y, uint DrillTime, int XOff, int YOff);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.jump_rel_drill_3">
+            <summary>
+             void jump_rel_drill_3(int dX, int dY, uint DrillTime, int XOff, int YOff);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_timed_mark_abs_3d">
@@ -46432,6 +46542,11 @@
              void n_set_defocus_list(uint CardNo, int Shift);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_defocus_2_list">
+            <summary>
+             void n_set_defocus_2_list(uint CardNo, int Shift, uint Mode);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_defocus_offset_list">
             <summary>
              void n_set_defocus_offset_list(uint CardNo, int Shift);
@@ -46445,6 +46560,11 @@
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_defocus_list">
             <summary>
              void set_defocus_list(int Shift);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_defocus_2_list">
+            <summary>
+             void set_defocus_2_list(int Shift, uint Mode);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_defocus_offset_list">
