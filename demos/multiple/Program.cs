@@ -177,7 +177,6 @@ namespace Demos
             var start = new Vector2(-10, 0);
             // Pitch
             var pitch = new Vector2(dx, 0);
-            // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
             uint counts = 1000;
             // Prepare raster horizontal line
             success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, 0, start, pitch, counts);

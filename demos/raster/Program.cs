@@ -142,7 +142,6 @@ namespace Demos
             var start = new Vector2(-25, 0);
             // Pitch
             var pitch = new Vector2(dx, 0);
-            // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
             uint counts = 5000;
             // Prepare raster horizontal line
             success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, 0, start, pitch, counts);
@@ -180,7 +179,6 @@ namespace Demos
             var start = new Vector2(-25, 0);
             // Pitch
             var pitch = new Vector2(dx, 0);
-            // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
             uint counts = 5000;
             // Prepare raster horizontal line
             success &= rtcRaster.ListRasterLine(RasterModes.MicroVector, period, start, pitch, counts);
@@ -275,7 +273,6 @@ namespace Demos
                 var start = new Vector2(-25, -rows / 2 + row);
                 // Pitch
                 var pitch = new Vector2(dx, dy);
-                // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
                 uint counts = 5000;
                 // Prepare raster horizontal line
                 success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, 0, start, pitch, counts);
