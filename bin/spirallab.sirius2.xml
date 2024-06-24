@@ -514,10 +514,10 @@
             Event for log message
             <code>
             SpiralLab.Sirius2.Config.OnLogged += Config_OnLogged;
-            void OnLogged(SpiralLab.Sirius2.Logger.Types type, string message)
+            void Config_OnLogged(SpiralLab.Sirius2.Logger.Types type, string message)
             {
+                // add log message at UI control
                 var dt = DateTime.Now.ToString("HH:mm:ss.fff");
-                // add log message at visible control
                 ...
             }
             </code>
@@ -14832,7 +14832,7 @@
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Varjumpdelaymin_DESC">
              <summary>
                Looks up a localized string similar to Min. jump delay for variable jump delay (usec)
-            Assign smaller than fixed Jump Delay..
+            Assign less than fixed Jump Delay..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Varjumpdelaymin_DISP">
@@ -18529,7 +18529,7 @@
             If the Polygon Delay is longer than or equal to this value (because the angle φ is close to 180°, for instance). <br/>
             the laser is switched off (after a LaserOff Delay) and a new Polyline is started. <br/>
             This can be useful for preventing burn-in effects.<br/>
-            The EdgeLevel value must be smaller than twice the set value for the Polygon Delay, otherwise it has no effect <br/>
+            The EdgeLevel value must be less than twice the set value for the Polygon Delay, otherwise it has no effect <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.varScannerJumpDelay">
@@ -18683,7 +18683,7 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.ListQSwitchDelay(System.Double)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector2,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector2,System.Numerics.Vector2,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.ListRasterPixel(System.Double,System.Double)">
@@ -18752,7 +18752,7 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.ListMarksTo(System.Numerics.Vector3[],System.Double[])">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector3,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector3,System.Numerics.Vector3,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.IsDuplicated(System.Numerics.Vector3)">
@@ -20039,7 +20039,7 @@
             If the Polygon Delay is longer than or equal to this value (because the angle φ is close to 180°, for instance). <br/>
             the laser is switched off (after a LaserOff Delay) and a new Polyline is started. <br/>
             This can be useful for preventing burn-in effects.<br/>
-            The EdgeLevel value must be smaller than twice the set value for the Polygon Delay, otherwise it has no effect <br/>
+            The EdgeLevel value must be less than twice the set value for the Polygon Delay, otherwise it has no effect <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.varScannerJumpDelay">
@@ -20258,7 +20258,7 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListSkyWritingEnd">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector2,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector2,System.Numerics.Vector2,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListRasterPixel(System.Double,System.Double)">
@@ -20373,7 +20373,7 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListMarksTo(System.Numerics.Vector3[],System.Double[])">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector3,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector3,System.Numerics.Vector3,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.IsDuplicated(System.Numerics.Vector3)">
@@ -22631,7 +22631,7 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListSkyWritingEnd">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector2,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector2,System.Numerics.Vector2,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListRasterPixel(System.Double,System.Double)">
@@ -22773,7 +22773,7 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMarksTo(System.Numerics.Vector3[],System.Double[])">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector3,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector3,System.Numerics.Vector3,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsDuplicated(System.Numerics.Vector3)">
@@ -24887,10 +24887,10 @@
             <param name="busyWait">Wait until list commands has done or not.<br/>If <c>True</c>, function would be blocked until done. It also same feature with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlBusyWait">CtlBusyWait</see>.<br/>If <c>False</c>, function would be returned at immediately.<br/>Default: <c>True</c></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector2,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector2,System.Numerics.Vector2,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector3,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector3,System.Numerics.Vector3,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ListRasterPixel(System.Double,System.Double)">
@@ -28460,7 +28460,7 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListSkyWritingEnd">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector2,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector2,System.Numerics.Vector2,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListRasterPixel(System.Double,System.Double)">
@@ -28553,7 +28553,7 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListMarksTo(System.Numerics.Vector3[],System.Double[])">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector3,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector3,System.Numerics.Vector3,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.IsDuplicated(System.Numerics.Vector3)">
@@ -32979,6 +32979,11 @@
             Measurement channels
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.None">
+            <summary>
+            None
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.LaserOn">
             <summary>
             LASERON signal 
@@ -34573,29 +34578,29 @@
             <img src="images/raster.png"/><br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector2,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector2,System.Numerics.Vector2,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
             <summary>
-            List prepare raster line
+            List prepare raster line with 2d by dx, dy
             <code>
             // Jumps and shoots
             var rtcRaster = rtc as IRtcRaster;
             var image = System.Drawing.Bitmap.FromFile("sample.bmp") as Bitmap;
             int px = bitmap.Width;
             int py = bitmap.Height;
-            float pitch = 0.05f; // Pixel pitch = 50um
-            //pixelPeriod is not used if RasterModes.JumpAndShoot
-            double pixelPeriod = 10*1000; // Pixel period: 10 msec (0.01 s)
-            double pixelTime = 200; // Max. pixel duration: 0.2 msec (0.02 s)
+            float pitch = 0.05f; // 0.05mm
+            Vector2 pixelPitch = new System.Numerics.Vector2(pitch, 0); //dx
+            double pixelPeriod = 0; // not used if RasterModes.JumpAndShoot
+            double pixelDurationTime = 100; // Max. output pixel duration: 0.1 msec (0.01 s)
             rtc.ListBegin();
             for (int y = 0; y &lt; py; y++)
             {
-                rtc.ListJumpTo(new Vector2(0, py * pitch));        
-                rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, pixelPeriod, xPitch, (uint)px);
+                Vector2 pixelStart =  new System.Numerics.Vector2(0, (float)(pitch * y)); 
+                rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, pixelPeriod, pixelStart, pixelPitch, (uint)px);
                 for (int x = 0; x &lt; px; x++)
                 {
                     var color = bitmap.GetPixel(x, py - y - 1);
                     double grayScale = 1.0 - (0.3 * color.R + 0.59 * color.G + 0.11 * color.B) / 255.0; 
-                    rtcRaster.ListRasterPixel(pixelTime * grayScale);
+                    rtcRaster.ListRasterPixel(pixelDurationTime * grayScale);
                 }
             }
             rtc.ListEnd();
@@ -34608,11 +34613,12 @@
             Each raster line should be preceded by a jump or mark command to the start point of the line. <br/>
             Activated LASER ON signal during rastering and modulated output pulse width by each pixels time. <br/>
             </remarks>
-            <param name="mode"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RasterModes">RasterModes</see><br/>Allowed <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">RasterModes.JumpAndShoot</see> only at <c>Rtc6SyncAxis</c></param>
+            <param name="mode"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RasterModes">RasterModes</see><br/></param>
             <param name="usec">Pixel period (usec)<br/>Min. time resolution: 1/128(= 0.0078125) usec (1/10 if RTC4)<br/>Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">MicroVector</see> only.<br/>Not used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">JumpAndShoot</see>.<br/></param>
+            <param name="start">Pixel start (x, y) (mm)<br/>Will be jumped to start location by automatically.<br/>Start location would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
             <param name="pitch">Pixel pitch (dx, dy) (mm)<br/>Pitch would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
             <param name="pixelCount">Pixel counts per line</param>
-            <param name="ext">Output analog channel (1 or 2)<br/>Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">RasterModes.MicroVector</see> only.<br/>Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtAO2">ExtAO2</see>. </param>
+            <param name="ext">Output analog channel (1 or 2)<br/>Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">MicroVector</see> only.<br/>Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtAO2">ExtAO2</see>. </param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster.ListRasterPixel(System.Double,System.Double)">
@@ -34620,17 +34626,17 @@
             List raster pixel data
             </summary>
             <remarks>
-            Should be called repeatly after <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector2,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">ListRasterLine</see> has called with pixel count times. <br/>
-            If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">RasterModes.JumpAndShoot</see>, jump to move with jump delay and activate LASER signal with on and off. <br/>
-            If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">RasterModes.MicroVector</see>, move with pixel period speed and activate LASER ON signal during rastering with modulated pulse length. <br/>
+            Should be called repeatly after <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector2,System.Numerics.Vector2,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">ListRasterLine</see> has called with pixel count times. <br/>
+            If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">JumpAndShoot</see>, jump to move with jump delay and activate LASER signal with on and off. <br/>
+            If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">MicroVector</see>, move with pixel period speed and activate LASER ON signal during rastering with modulated pulse length. <br/>
             </remarks>
-            <param name="usec">Pixel duration (usec)<br/>Should be &lt;= 'pixel period' from <c>ListRasterLine</c><br/>Min. time resolution: 1/128(= 0.0078125) usec (1/8 if RTC4)<br/></param>
-            <param name="analogValue">Output analog voltage value at <c>ExtensionChannels</c><br/>Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">RasterModes.MicroVector</see> only<br/>Min. ADC resolution: 12bits (10bits if RTC4)<br/></param>
+            <param name="usec">Pixel duration (usec)<br/>Should be &lt;= 'pixel period' at <c>ListRasterLine</c><br/>If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">JumpAndShoot</see> min. time resolution: 10 usec <br/>If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">RasterModes.MicroVector</see> min. time resolution: 1/128(= 0.0078125) usec (1/8 if RTC4)<br/></param>
+            <param name="analogValue">Output analog voltage value at <c>ExtensionChannels</c><br/>Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">MicroVector</see> only<br/>Min. ADC resolution: 12bits (10bits if RTC4)<br/></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector3,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcRaster.ListRasterLine(SpiralLab.Sirius2.Scanner.Rtc.RasterModes,System.Double,System.Numerics.Vector3,System.Numerics.Vector3,System.UInt32,SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels)">
             <summary>
-            List prepare raster 3d line
+            List prepare raster line with 3d by dx, dy and dz
             </summary>
             <remarks>
             Usable with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see>. <br/>
@@ -34639,11 +34645,12 @@
             Activated LASER ON signal during rastering and modulated output pulse width by each pixels time. <br/>
             Pixel pulses (at the LASER1 port) directly by the PulseLength parameter, not the LASERON signal. <br/>
             </remarks>
-            <param name="mode"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RasterModes">RasterModes</see><br/>Allowed <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">RasterModes.JumpAndShoot</see> only at <c>Rtc6SyncAxis</c></param>
+            <param name="mode"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RasterModes">RasterModes</see><br/></param>
             <param name="usec">Pixel period (usec)<br/>Min. time resolution: 1/128(= 0.0078125) usec (1/10 if RTC4)<br/>Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">MicroVector</see> only.<br/>Not used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">JumpAndShoot</see>.<br/></param>
+            <param name="start">Pixel start (x, y, z) (mm)<br/>Will be jumped to start location by automatically.<br/>Start location would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
             <param name="pitch">Pixel pitch (dx, dy, dz) (mm)<br/>Pitch would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
             <param name="pixelCount">Pixel counts per line</param>
-            <param name="ext">Output analog channel (1 or 2)<br/>Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">RasterModes.MicroVector</see> only.<br/>Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtAO2">ExtAO2</see>. </param>
+            <param name="ext">Output analog channel (1 or 2)<br/>Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">MicroVector</see> only.<br/>Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtAO2">ExtAO2</see>. </param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcSerialComm">

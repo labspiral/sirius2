@@ -432,7 +432,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Direction_DESC">
             <summary>
-              Looks up a localized string similar to Pixel Direction..
+              Looks up a localized string similar to Mark Direction for Line(or Pixels)..
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Direction_DISP">
@@ -448,8 +448,7 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Extension_channel_DESC">
              <summary>
                Looks up a localized string similar to Pixel Output Extension Channel.
-            Analog 1 or 2.
-            Micro-Vector only..
+            Analog 1 or 2 (Micro-Vector only).
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Extension_channel_DISP">
@@ -460,8 +459,8 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Pixel_period_DESC">
              <summary>
                Looks up a localized string similar to Pixel Period (usec) 
-            = 1/Pixel Frequency
-            Micro-Vector only.
+            = 1/Pixel Frequency (Micro-Vector only).
+            Not used at Jump and Shoot mode..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Pixel_period_DISP">
@@ -472,8 +471,7 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Pixel_time_DESC">
              <summary>
                Looks up a localized string similar to Pixel Duration Time (usec) 
-            Time for Pixel Pulse Width. 
-            Should be &lt; Pixel Period If Micro_Vector..
+            Time for Pixel Pulse Width (Should be &lt;= Pixel Period If Micro-Vector)..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Pixel_time_DISP">
@@ -484,7 +482,8 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Raster_mode_DESC">
              <summary>
                Looks up a localized string similar to Raster Mode 
-            Jump and Shoot, Micro-Vector..
+            Jump and Shoot : Insert Jump Delays for Every Pixels
+            Micro-Vector : Beware Output Signals..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.celldot.Raster_mode_DISP">
@@ -3280,7 +3279,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Direction_DESC">
             <summary>
-              Looks up a localized string similar to Raster Direction.
+              Looks up a localized string similar to Mark Direction for Line(or Pixels)..
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Direction_DISP">
@@ -3311,8 +3310,7 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Extension_channel_DESC">
              <summary>
                Looks up a localized string similar to Pixel Output Extension Channel 
-            Analog 1 or 2.
-            Micro-Vector only..
+            Analog 1 or 2 (Micro-Vector only).
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Extension_channel_DISP">
@@ -3385,8 +3383,8 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Pixel_period_DESC">
              <summary>
                Looks up a localized string similar to Pixel Period (usec) 
-            = 1/Pixel Frequency.
-            Micro-Vector only..
+            = 1/Pixel Frequency (Micro-Vector only).
+            Not used at Jump and Shoot mode..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Pixel_period_DISP">
@@ -3406,9 +3404,8 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Pixel_time_DESC">
              <summary>
-               Looks up a localized string similar to Max. Pixel Dration Time (usec)
-            Time for Pixel Pulse Width. 
-            Should be &lt; Pixel Period If Micro-Vector..
+               Looks up a localized string similar to Pixel Duration Time (usec) 
+            Time for Pixel Pulse Width (Should be &lt;= Pixel Period If Micro-Vector)..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Pixel_time_DISP">
@@ -3444,7 +3441,8 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Raster_mode_DESC">
              <summary>
                Looks up a localized string similar to Raster Mode 
-            Jump and Shoot, Micro-Vector..
+            Jump and Shoot : Insert Jump Delays for Every Pixels
+            Micro-Vector : Beware Output Signals..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.image.Raster_mode_DISP">
@@ -5724,8 +5722,8 @@
             Pixel duration time (usec)
             </summary>
             <remarks>
-            If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">RasterModes.JumpAndShoot</see>, <see cref="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelPeriod">PixelPeriod</see> is not used. Also works like as 'dwell time' at <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityPoint.DwellMsec">EntityPoint.DwellMsec</see>. <br/>
-            If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">RasterModes.MicroVector</see>, Pixel speed = Pixel pitch(mm) / <see cref="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelPeriod">PixelPeriod</see>(usec). <see cref="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelTime">PixelTime</see> should be lower than <see cref="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelPeriod">PixelPeriod</see>. <br/>
+            If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">JumpAndShoot</see>, <see cref="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelPeriod">PixelPeriod</see> is not used. Also works like as 'dwell time' at <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityPoint.DwellMsec">EntityPoint.DwellMsec</see>. <br/>
+            If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">MicroVector</see>, Pixel speed = Pixel pitch(mm) / <see cref="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelPeriod">PixelPeriod</see>(usec). <see cref="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelTime">PixelTime</see> should be lower than <see cref="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelPeriod">PixelPeriod</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellDot.PixelChannel">
@@ -6100,7 +6098,7 @@
             <remarks>
             Can be created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateFreeVariable(System.UInt32,System.UInt32)">EntityFactory.CreateVariable</see>. <br/>
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcFreeVariable.ListWriteVariable(System.UInt32,System.UInt32)">IRtcFreeVariable.ListWriteVariable</see>. <br/>
-            Above RTC5 <br/>
+            Above RTC5. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityVariable.No">
@@ -10919,8 +10917,8 @@
             Pixel duration time (usec)
             </summary>
             <remarks>
-            If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">RasterModes.JumpAndShoot</see>, <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.PixelPeriod">PixelPeriod</see> is not used. Also works like as 'dwell time' at <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityPoint.DwellMsec">EntityPoint.DwellMsec</see>. <br/>
-            If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">RasterModes.MicroVector</see>, Pixel speed = Pixel pitch(mm) / <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.PixelPeriod">PixelPeriod</see>(usec). <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.PixelTime">PixelTime</see> should be lower than <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.PixelPeriod">PixelPeriod</see>. <br/>
+            If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.JumpAndShoot">RasterModes.JumpAndShoot</see>, <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.PixelPeriod">PixelPeriod</see> is not used.<br/>Also works like as 'dwell time' at <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityPoint.DwellMsec">EntityPoint.DwellMsec</see>. <br/>
+            If <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.RasterModes.MicroVector">RasterModes.MicroVector</see>, Pixel speed (mm/s) = Pixel pitch(mm) / <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.PixelPeriod">PixelPeriod</see>(usec). <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.PixelTime">PixelTime</see> should be less than <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityImage.PixelPeriod">PixelPeriod</see>. <br/>
             </remarks>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImage.pixelTime">
@@ -16373,7 +16371,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.RGB2Gray(System.Drawing.Color)">
             <summary>
-            <see cref="T:System.Drawing.Color">Color</see> value to gray(range from 0~1) value
+            Convert <see cref="T:System.Drawing.Color">Color</see> to gray scale value range from 0~1
             </summary>
             <param name="color"><see cref="T:System.Drawing.Color">Color</see></param>
             <returns>Gray value (range from 0~1)<br/>0: White<br/>1: Black</returns>

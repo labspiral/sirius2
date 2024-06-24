@@ -168,6 +168,11 @@
 
 **8. Version history**
 
+* 2024.6.24 v.1.37.1575
+  - fixed) ListRasterLine signature
+     - jump to start location by automatically
+     - skip(or jump to next pixel) if pixel duration time is below 10 usec at JumpAndShoot mode for speed up
+   
 * 2024.6.17 v.1.36.1571
   - updated) RTC6 v.1.18.0 (2024.6.17)
   - fixed) reverse mark at EntityBarcode1D

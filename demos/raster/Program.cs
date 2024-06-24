@@ -134,19 +134,18 @@ namespace Demos
             var rtcRaster = rtc as IRtcRaster;
             // Start list
             success &= rtc.ListBegin();
-            // Jump to start
-            success &= rtc.ListJumpTo(new Vector2(-25, 0));
-            
-            // Pixel period: 100 usec (0.0001 s)
-            double period = 100;
             // Pixel duration: 10 usec
             double duration = 10;
             // Distance = 0.01 mm
             float dx = 0.01f;
+            // Start
+            var start = new Vector2(-25, 0);
+            // Pitch
+            var pitch = new Vector2(dx, 0);
             // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
             uint counts = 5000;
             // Prepare raster horizontal line
-            success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, period, new Vector2(dx, 0), counts);
+            success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, 0, start, pitch, counts);
             for (int i = 0; i < counts; i++)
             {
                 // laser on during duration time
@@ -170,8 +169,6 @@ namespace Demos
             var rtcRaster = rtc as IRtcRaster;
             // Start list
             success &= rtc.ListBegin();
-            // Jump to start
-            success &= rtc.ListJumpTo(new Vector2(-25, 0));
 
             // Pixel period: 100 usec (0.0001 s)
             double period = 100;
@@ -179,10 +176,14 @@ namespace Demos
             double duration = 10;
             // Distance = 0.01 mm
             float dx = 0.01f;
+            // Start
+            var start = new Vector2(-25, 0);
+            // Pitch
+            var pitch = new Vector2(dx, 0);
             // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
             uint counts = 5000;
             // Prepare raster horizontal line
-            success &= rtcRaster.ListRasterLine(RasterModes.MicroVector, period, new Vector2(dx, 0), counts);
+            success &= rtcRaster.ListRasterLine(RasterModes.MicroVector, period, start, pitch, counts);
             for (int i = 0; i < counts; i++)
             {
                 // laser on during duration time
@@ -222,19 +223,18 @@ namespace Demos
 
             // Start list
             success &= rtc.ListBegin();
-            // Jump to start
-            success &= rtc.ListJumpTo(new Vector2(-25, 0));
-
-            // Pixel period: 100 usec (0.0001 s)
-            double period = 100;
-            // Pixel duration: 10 usec
+            // Max. output pixel duration: 10 usec
             double duration = 10;
             // Distance = 0.01 mm
             float dx = 0.01f;
-            // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
+            // Start
+            var start = new Vector2(-25, 0);
+            // Pitch
+            var pitch = new Vector2(dx, 0);
+            // Approx. length = 5000 * 0.01mm = 50 mm (x range from -25 to 25mm)
             uint counts = 5000;
             // Prepare raster horizontal line
-            success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, period, new Vector2(dx, 0), counts);
+            success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, 0, start, pitch, counts);
             for (int i = 0; i < counts; i++)
             {
                 // laser on during 10 usec
@@ -266,19 +266,19 @@ namespace Demos
             float dx = 0.01f;
             // Y pitch = 0 mm
             float dy = 0;
-            // Pixel period: 100 usec (0.0001 s)
-            double period = 100;
             // Pixel duration: 10 usec
             double duration = 10;
 
             for (int row = 0; row < rows; row++)
             {
-                // Jump to start
-                success &= rtc.ListJumpTo(new Vector2(-25, -rows/2 + row));
+                // Start
+                var start = new Vector2(-25, -rows / 2 + row);
+                // Pitch
+                var pitch = new Vector2(dx, dy);
                 // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
                 uint counts = 5000;
                 // Prepare raster horizontal line
-                success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, period, new Vector2(dx, dy), counts);
+                success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, 0, start, pitch, counts);
                 for (int i = 0; i < counts; i++)
                 {
                     // Laser on during 10 usec
@@ -325,9 +325,6 @@ namespace Demos
             int px = bitmap.Width;
             int py = bitmap.Height;
 
-            // Pixel period: 100 usec (0.0001 s)
-            double pixelPeriod = 100;
-
             //Max. pixel duration: 50 usec (0.00005 s)
             double pixelTime = 50;
 
@@ -367,9 +364,9 @@ namespace Demos
             for (int y = 0; y < py; y++)
             {
                 // Starting from 0,0
-                success &= rtc.ListJumpTo(new Vector2(0, y * pitch));
+                var start = new Vector2(0, y * pitch);
                 // Prepare raster horizontal line
-                success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, pixelPeriod, xPitch, (uint)px);
+                success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, 0, start, xPitch, (uint)px);
                 for (int x = 0; x < px; x++)
                 {
                     var color = bitmap.GetPixel(x, py - y - 1);

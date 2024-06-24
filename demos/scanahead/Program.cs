@@ -296,19 +296,17 @@ namespace Demos
             if (null == rtcRaster)
                 return false;
             int counts = (int)(length / gap);
-            // Every 200 usec
-            float period = 200;
             // Gap or interval: distance from pixel to pixel
-            var delta = new System.Numerics.Vector2(gap, 0);
+            var pitch = new System.Numerics.Vector2(gap, 0);
 
             bool success = true;
             success &= rtc.ListBegin();
             for (int i = 0; i < counts; i++)
             {
                 // Jump to start position 
-                success &= rtc.ListJumpTo(new System.Numerics.Vector2(0, i * gap));
+                var start = new System.Numerics.Vector2(0, i * gap);
                 // Mark raster(or dots) at line
-                success &= rtcRaster.ListRasterLine( RasterModes.JumpAndShoot, period, delta, (uint)counts, ExtensionChannels.ExtAO2);
+                success &= rtcRaster.ListRasterLine( RasterModes.JumpAndShoot, 0, start, pitch, (uint)counts, ExtensionChannels.ExtAO2);
                 for (int j = 0; j < counts; j++)
                     success &= rtcRaster.ListRasterPixel(50, 0.5f); // each pixel with 50usec, 5V
                 if (!success)

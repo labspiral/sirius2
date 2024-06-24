@@ -17,7 +17,7 @@
  * 
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : How to use sirius2 library with easy 
+ * Description : Easy to use sirius2 library
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -221,7 +221,7 @@ namespace Demos
                  MeasurementChannels.SampleX, //X commanded
                  MeasurementChannels.SampleY, //Y commanded
                  MeasurementChannels.LaserOn, //Gate signal 0/1
-                 MeasurementChannels.OutputPeriod, //Converted Raw Data to Frequency(KHz)
+                 MeasurementChannels.OutputPeriod, //Converted output pulse period(raw data) to frequency(KHz)
             };
 
             bool success = true;
@@ -263,7 +263,7 @@ namespace Demos
                  MeasurementChannels.SampleX, //X commanded
                  MeasurementChannels.SampleY, //Y commanded
                  MeasurementChannels.LaserOn, //Gate signal 0/1
-                 MeasurementChannels.OutputPeriod, //Converted Raw Data to Frequency(KHz)
+                 MeasurementChannels.OutputPeriod, //Converted output pulse period(raw data) to frequency(KHz)
             };
 
             bool success = true;
@@ -316,7 +316,7 @@ namespace Demos
                  MeasurementChannels.SampleX, //X commanded
                  MeasurementChannels.SampleY, //Y commanded
                  MeasurementChannels.LaserOn, //Gate signal 0/1
-                 MeasurementChannels.OutputPeriod, //KHz
+                 MeasurementChannels.OutputPeriod, //Converted output pulse period(raw data) to frequency(KHz)
             };
 
             bool success = true;

@@ -168,19 +168,19 @@ namespace Demos
             var rtcRaster = rtc as IRtcRaster;
             // Start list
             success &= rtc.ListBegin();
-            // Jump to start
-            success &= rtc.ListJumpTo(new Vector2(-10, 0));
-            
-            // Pixel period: 100 usec (0.0001 s)
-            double period = 100;
+
             // Pixel duration: 10 usec
             double duration = 10;
             // Distance = 0.1 mm
             float dx = 0.1f;
+            // Jump to start
+            var start = new Vector2(-10, 0);
+            // Pitch
+            var pitch = new Vector2(dx, 0);
             // Calculated speed (mm/s) = 1000 mm/s (= 0.1mm / 0.0001s)
             uint counts = 1000;
             // Prepare raster horizontal line
-            success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, period, new Vector2(dx, 0), counts);
+            success &= rtcRaster.ListRasterLine(RasterModes.JumpAndShoot, 0, start, pitch, counts);
             for (int i = 0; i < counts; i++)
             {
                 // laser on during 10 usec
