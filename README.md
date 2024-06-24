@@ -132,7 +132,7 @@
  ----
 
 
-**6. Copyrights**
+**6. Examples**
 
  - Demo 'init' console project for beginner
  - Demo 'laserpower' console project for customized laser source (open sourced)
