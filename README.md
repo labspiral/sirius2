@@ -171,6 +171,7 @@
 * 2024.7.1 v.1.38.1580
   - fixed) thorlabs powermeter 
      - added) serial communication
+  - fixed) can be edit length of line
 
 * 2024.6.24 v.1.37.1575
   - fixed) ListRasterLine signature
