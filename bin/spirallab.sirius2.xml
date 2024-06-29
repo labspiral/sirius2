@@ -3349,6 +3349,17 @@
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.Serial">
             <summary>
             <see cref="T:System.IO.Ports.SerialPort">SerialPort</see> instance
+            <para>
+            Used by internally. Do NOT set operation.
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.TcpClient">
+            <summary>
+            <see cref="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.TcpClient">TcpClient</see>  instance
+            <para>
+            Used by internally. Do NOT set operation.
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.PulseRepRate">
@@ -3786,6 +3797,21 @@
             COM port no
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.IpAddress">
+            <summary>
+            IP address
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.PortNo">
+            <summary>
+            Port no
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.CoherentAviaLX.networkStream">
+            <summary>
+            Network stream for <c>TcpClient</c>
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.#ctor">
             <summary>
             Constructor
@@ -3797,7 +3823,7 @@
             </summary>
             <param name="index">Identifier</param>
             <param name="name">Name</param>
-            <param name="comPort">COM port</param>
+            <param name="comPort">COM port for RS-232C connection</param>
             <param name="maxPowerWatt">Max power (W)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.Finalize">
@@ -3833,16 +3859,15 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.Send(System.String)">
             <summary>
-            Send string data by <c>SerialPort</c>
+            Send string data
             </summary>
             <param name="data">Data</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.ReceiveParse(System.IO.Ports.SerialPort,System.String@)">
+        <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.ReceiveParse(System.String@)">
             <summary>
-            Receive data from <c>SerialPort</c>
+            Receive data 
             </summary>
-            <param name="serialPort"><c>SerialPort</c> instance</param>
             <param name="data">Return and converted string data</param>
             <returns>Success or failed</returns>
         </member>
@@ -17045,7 +17070,7 @@
             <summary>
             Create Thorlabs PowerMeter controller
             <para>
-            Supported devices: PM100A, PM100D, PM400, PM5020, PM100USB, PM101 Series, PM102 Series, PM103 Series, PM16 Series, PM160 Series, PM200, SPCNT, ...<br/>
+            Used for USB communication. <br/>
             </para>
             </summary>
             <remarks>
@@ -17054,7 +17079,24 @@
             Direct download link: <see href="https://www.thorlabs.com/software/MUC/OPM/v5.0/Thorlabs.OpticalPowerMonitor.5.0.4591.730_NSIS.zip">OPM v5.0</see>. <br/>
             </remarks>
             <param name="index">Identifier (0,1,2,3, ...)</param>
-            <param name="serialNo">Serial no (for searching)</param>
+            <param name="serialNo">Serial no (for searching)<br/>Must be connected with powermeter controller by USB communication. <br/></param>
+            <returns><see cref="T:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs">PowerMeterThorLabs</see><br/>Created <see cref="T:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs">PowerMeterThorLabs_x32</see> if runtime is x32 <br/>Created <see cref="T:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs">PowerMeterThorLabs_x64</see> if runtime is x64 <br/>
+            </returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterFactory.CreateThorlabs(System.Int32,System.Int32)">
+            <summary>
+            Create Thorlabs PowerMeter controller 
+            <para>
+            Used for RS-232C communication. <br/>
+            </para>
+            </summary>
+            <remarks>
+            Install Optical Power Monitor (OPM) v5.0 Software package at first. <br/>
+            Link: <see href="https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM">https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM</see>. <br/>
+            Direct download link: <see href="https://www.thorlabs.com/software/MUC/OPM/v5.0/Thorlabs.OpticalPowerMonitor.5.0.4591.730_NSIS.zip">OPM v5.0</see>. <br/>
+            </remarks>
+            <param name="index">Identifier (0,1,2,3, ...)</param>
+            <param name="comPort">COM port no<br/>Must be connected with powermeter controller by SERIAL communication. <br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs">PowerMeterThorLabs</see><br/>Created <see cref="T:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs">PowerMeterThorLabs_x32</see> if runtime is x32 <br/>Created <see cref="T:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs">PowerMeterThorLabs_x64</see> if runtime is x64 <br/>
             </returns>
         </member>
@@ -17592,7 +17634,16 @@
             <summary>
             Serial no
             <para>
-            Serial no for searching 
+            Target serial no for searching 
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs.ComPort">
+            <summary>
+            COM port
+            <para>
+            Target COM port no for searching <br/>
+            Default: 0 <br/>
             </para>
             </summary>
         </member>
@@ -17657,6 +17708,14 @@
             <param name="name">Name</param>
             <param name="serialNo">Serial no</param>
         </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs_x32.#ctor(System.Int32,System.String,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Identifier</param>
+            <param name="name">Name</param>
+            <param name="comPort">Serial COM port no</param>
+        </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs_x32.Initialize">
             <inheritdoc/>  
         </member>
@@ -17681,6 +17740,14 @@
             <param name="index">Identifier</param>
             <param name="name">Name</param>
             <param name="serialNo">Serial no</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs_x64.#ctor(System.Int32,System.String,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Identifier</param>
+            <param name="name">Name</param>
+            <param name="comPort">Serial COM port no</param>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterThorLabs_x64.Initialize">
             <inheritdoc/>  

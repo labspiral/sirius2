@@ -90,7 +90,8 @@ namespace Demos
             //var powerMeter = PowerMeterFactory.CreateVirtual(0, laser.MaxPowerWatt);
             //var powerMeter = PowerMeterFactory.CreateCoherentPowerMax(0, 1);
             //var powerMeter = PowerMeterFactory.CreateOphirPhotonics(0, "SERIALNO");
-            //var powerMeter = PowerMeterFactory.CreateThorlabs(0, "P123456");
+            //var powerMeter = PowerMeterFactory.CreateThorlabs(0, "M00544131"); // for USB communication
+            //var powerMeter = PowerMeterFactory.CreateThorlabs(0, 3); // for COM port communication
             var powerMeter = new MyPowerMeter(0, "NAME");
             success &= powerMeter.Initialize();
             Debug.Assert(success);

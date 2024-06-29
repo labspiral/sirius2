@@ -159,7 +159,7 @@ namespace Demos
             var dt = DateTime.Now;
             double watt = 0;
 
-            // Get output laser power value by watt
+            // Get output laser power value randomly by watt 
             var rand = new Random();
             watt = Math.Round(10.0 * rand.NextDouble(), 3);
 

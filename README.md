@@ -168,6 +168,10 @@
 
 **8. Version history**
 
+* 2024.7.1 v.1.38.1580
+  - fixed) thorlabs powermeter 
+     - added) serial communication
+
 * 2024.6.24 v.1.37.1575
   - fixed) ListRasterLine signature
      - jump to start location by automatically

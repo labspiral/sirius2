@@ -284,7 +284,16 @@ namespace Demos
                         powerMeter = PowerMeterFactory.CreateCoherentPowerMax(index, powerMeterSerialPort);
                         break;
                     case "thorlabs":
-                        powerMeter = PowerMeterFactory.CreateThorlabs(index, powerMeterSerialNo);
+                        if (powerMeterSerialPort > 0)
+                        {
+                            // by COM port communication
+                            powerMeter = PowerMeterFactory.CreateThorlabs(index, powerMeterSerialPort);
+                        }
+                        else
+                        {
+                            // by USB communication
+                            powerMeter = PowerMeterFactory.CreateThorlabs(index, powerMeterSerialNo);
+                        }
                         break;
                 }
                 success &= powerMeter.Initialize();

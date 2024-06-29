@@ -7471,7 +7471,7 @@
             </summary>
             <remarks>
             Usable with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see>. <br/>
-            Not usable with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl">IRtcAutoLaserControl</see>,  <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcWobbel">IRtcWobbel</see> or <see cref="!:IRtcSkywriting">IRtcSkywriting</see>. <br/>
+            Not usable with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcAutoLaserControl">IRtcAutoLaserControl</see>,  <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcWobbel">IRtcWobbel</see> or <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcSkyWriting">IRtcSkyWriting</see>. <br/>
             Activated LASER ON signal during rastering and modulated output pulse width by each pixels time. <br/>
             Pixel pulses (at the LASER1 port) directly by the PulseLength parameter, not the LASERON signal. <br/>
             </remarks>
