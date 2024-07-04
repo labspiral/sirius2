@@ -101,7 +101,7 @@ namespace Demos
             {
                 this.IsError = true;
                 this.IsReady = false;
-                Logger.Log(Logger.Types.Error, $"powermap [{this.Index}]: fail to start mapping power. target watts is not valid");
+                Logger.Log(Logger.Types.Error, $"powermap [{this.Index}]: fail to start mapping power. target watts is not valid. counts= {xWatts.Length}");
                 this.NotifyMappingFailed();
                 return false;
             }
@@ -255,7 +255,7 @@ namespace Demos
                 this.IsError = true;
                 this.IsReady = false;
                 Logger.Log(Logger.Types.Error, $"powermap [{this.Index}]: fail to start verify power. assign rtc, laser and powermeter at first");
-                this.NotifyMappingFailed();
+                this.NotifyVerifyFailed();
                 return false;
             }
             if (this.IsBusy)
@@ -429,7 +429,7 @@ namespace Demos
                 this.IsError = true;
                 this.IsReady = false;
                 Logger.Log(Logger.Types.Error, $"powermap [{this.Index}]: fail to start compensate power. assign rtc, laser and powermeter at first");
-                this.NotifyMappingFailed();
+                this.NotifyCompensateFailed();
                 return false;
             }
             if (this.IsBusy)
@@ -601,6 +601,7 @@ namespace Demos
                                         {
                                             Logger.Log(Logger.Types.Info, $"powermap [{this.Index}: update powermap left x: {leftXWatt:F3}, y: {detectedLeftWatt:F3}W at category: {category}");
                                             success &= powerControl.PowerMap.Update(category, leftXWatt, detectedLeftWatt);
+                                            // update mapping table
                                             this.NotifyMappingProgress(category, leftXWatt);
                                         }
                                     }
@@ -625,6 +626,7 @@ namespace Demos
                                         {
                                             Logger.Log(Logger.Types.Info, $"powermap [{this.Index}: update powermap right x: {rightXWatt:F3}, y: {detectedRightWatt:F3}W at category: {category}");
                                             success &= powerControl.PowerMap.Update(category, rightXWatt, detectedRightWatt);
+                                            // update mapping table
                                             this.NotifyMappingProgress(category, rightXWatt);
                                         }
                                     }

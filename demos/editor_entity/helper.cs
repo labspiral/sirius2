@@ -99,10 +99,10 @@ namespace Demos
         /// <param name="powerMeter"><c>IPowerMeter</c></param>
         /// <param name="marker"><c>IMarker</c></param>
         /// <param name="remote"><c>IRemote</c></param>
-        /// <param name="editorUserControl">Target <c>SiriusEditorUserControl</c></param>
+        /// <param name="editorUserControl">Target <c>Control</c> like as <c>SiriusEditorUserControl</c>, <c>SiriusEditorUserControlV2</c></param>
         /// <param name="index">Index (assign value if using multiple devices) (0,1,2,...)</param>
         /// <returns>Success or failed</returns>
-        public static bool CreateDevices(out IRtc rtc, out IDInput dInExt1, out IDInput dInLaserPort, out IDOutput dOutExt1, out IDOutput dOutExt2, out IDOutput dOutLaserPort, out ILaser laser, out IPowerMeter powerMeter, out IMarker marker, out IRemote remote, SiriusEditorUserControl editorUserControl, int index = 0)
+        public static bool CreateDevices(out IRtc rtc, out IDInput dInExt1, out IDInput dInLaserPort, out IDOutput dOutExt1, out IDOutput dOutExt2, out IDOutput dOutLaserPort, out ILaser laser, out IPowerMeter powerMeter, out IMarker marker, out IRemote remote, Control editorUserControl, int index = 0)
         {
             rtc = null;
             dInExt1 = null;
@@ -140,6 +140,8 @@ namespace Demos
                     rtc = ScannerFactory.CreateVirtual(index, kfactor, laserMode, signalLevelLaser12, signalLevelLaserOn, correctionPath);
                     break;
                 case "rtc4":
+                    kfactor = Math.Pow(2, 16) / fov;
+                    correctionFile = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "CORRECTION", "cor_1to1.ctb");
                     rtc = ScannerFactory.CreateRtc4(index, kfactor, laserMode, correctionPath);
                     break;
                 case "rtc5":

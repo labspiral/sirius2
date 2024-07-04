@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.siriusEditorUserControl1 = new Demos.SiriusEditorUserControl();
+            //this.siriusEditorUserControl1 = new Demos.SiriusEditorUserControlV2();
             this.SuspendLayout();
             // 
             // siriusEditorUserControl1
@@ -69,5 +70,6 @@
         #endregion
 
         private Demos.SiriusEditorUserControl siriusEditorUserControl1;
+        //private Demos.SiriusEditorUserControlV2 siriusEditorUserControl1;
     }
 }

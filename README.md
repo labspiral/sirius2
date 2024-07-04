@@ -137,10 +137,10 @@
  - Demo 'init' console project for beginner
  - Demo 'laserpower' console project for customized laser source (open sourced)
  - Demo 'powermeter' console project for customized powermeter (open sourced)
- - Demo 'editor_basic' winforms project for beginner
+ - Demo 'editor_basic', 'editor_basic_v2'  winforms project for beginner
     - config 'config.ini' for RTC4, RTC5 or RTC6
     - config 'config_syncaxis.ini' for XL-SCAN
- - Demo 'editor_entity' winforms project for create entities
+ - Demo 'editor_entity', 'editor_entity_v2' winforms project for create entities
  - Demo 'editor_barcode' winforms project for mark individual barcode entities
  - Demo 'editor_mof' winforms project for encoder based MoF
  - Demo 'editor_mof_barcode' winforms project for mark text, barcode by script with MoF
@@ -167,6 +167,15 @@
 
 
 **8. Version history**
+
+* 2024.7.5 v.1.39.1600
+  - added) new SiriusEditorControlV2 control 
+     - editor_basic_v2 demo project
+     - editor_entity_v2 demo project
+  - added) ActBlock at document  
+  - fixed) invalid powermap events
+  - fixed) updated marker status with IPowerMap.IsError status
+  - fixed) exception when convert to block entity
 
 * 2024.7.1 v.1.38.1580
   - fixed) thorlabs powermeter 

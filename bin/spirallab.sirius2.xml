@@ -13287,6 +13287,7 @@
             ILaserPowerControl interface
             <para>
             Used with <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see> for control output laser power. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">IPowerMap</see> also. <br/>
             </para>
             </summary>
         </member>
@@ -16372,6 +16373,9 @@
         <member name="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnMappingProgress">
             <summary>
             Event for power mapping is progressing
+            <para>
+            Event for power compensate is progressing also. <br/>
+            </para>
             </summary>
         </member>
         <member name="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnMappingFailed">
@@ -16616,9 +16620,9 @@
             <remarks>
             Do laser on by each watt (x: input) and measure output power (y: output). <br/>
             Update measured output power value(W) into <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">IPowerMap</see>. <br/>
-            Used with <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>, <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>, <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>. Assign these values before do start. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>, <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>, <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>. assign these values before do start. <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Config.PowerMapPreHeatTimeMs">Config.PowerMapPreHeatTimeMs</see>, <see cref="P:SpiralLab.Sirius2.Config.PowerMapHoldTimeMs">Config.PowerMapHoldTimeMs</see>, <see cref="P:SpiralLab.Sirius2.Config.PowerMapInRangeThreshold">Config.PowerMapInRangeThreshold</see> values. <br/>
-            Notify <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnMappingStarted">OnMappingStarted</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnMappingProgress">OnMappingProgress</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnMappingFinished">OnMappingFinished</see> event. <br/>
+            Notify <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnMappingStarted">OnMappingStarted</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnMappingProgress">OnMappingProgress</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnMappingFinished">OnMappingFinished</see> events. <br/>
             Consider as its working within async threads. <br/>
             </remarks>
             <param name="categories"></param>
@@ -16645,9 +16649,9 @@
             <remarks>
             Do laser on and measure output power by each category and target watt (y). <br/>
             Passed(or succeeded) if measured laser output power value(W) in range of threshold percent. <br/>
-            Used with <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>, <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>, <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>. Assign these values before do start. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>, <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>, <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>. assign these values before do start. <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Config.PowerMapPreHeatTimeMs">Config.PowerMapPreHeatTimeMs</see>, <see cref="P:SpiralLab.Sirius2.Config.PowerMapHoldTimeMs">Config.PowerMapHoldTimeMs</see>, <see cref="P:SpiralLab.Sirius2.Config.PowerMapInRangeThreshold">Config.PowerMapInRangeThreshold</see> values. <br/>
-            Notify <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnVerifyStarted">OnVerifyStarted</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnVerifyProgress">OnVerifyProgress</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnVerifyFinished">OnVerifyFinished</see> event. <br/>
+            Notify <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnVerifyStarted">OnVerifyStarted</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnVerifyProgress">OnVerifyProgress</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnVerifyFinished">OnVerifyFinished</see> events. <br/>
             Consider as its working within async threads. <br/>
             </remarks>
             <param name="categoryAndYWatts">Array of category and target y watt(W)</param>
@@ -16673,10 +16677,11 @@
             <remarks>
             Do laser on and measure output power each category and watts. <br/>
             Passed(or succeeded) if measured laser output power value(W) in range of threshold percent. <br/>
-            Failed(or out of range threshold percent), then retry(update <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">IPowerMap</see> again) 2nd run with whether in-range power or not. <br/>
-            Used with <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>, <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>, <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>. Assign these values before do start. <br/>
+            Failed(or out of range threshold percent), then do retry(update <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">IPowerMap</see> again) for whether in-range power or not. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>, <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>, <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>. assign these values before do start. <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Config.PowerMapPreHeatTimeMs">Config.PowerMapPreHeatTimeMs</see>, <see cref="P:SpiralLab.Sirius2.Config.PowerMapHoldTimeMs">Config.PowerMapHoldTimeMs</see>, <see cref="P:SpiralLab.Sirius2.Config.PowerMapInRangeThreshold">Config.PowerMapInRangeThreshold</see>, <see cref="P:SpiralLab.Sirius2.Config.PowerMapOutOfRangeThreshold">Config.PowerMapOutOfRangeThreshold</see> and <see cref="P:SpiralLab.Sirius2.Config.PowerMapCompensateRetryCounts">Config.PowerMapCompensateRetryCounts</see> values. <br/>
-            Notify <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnCompensateStarted">OnCompensateStarted</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnCompensateProgress">OnCompensateProgress</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnCompensateFinished">OnCompensateFinished</see> event. <br/>
+            Notify <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnCompensateStarted">OnCompensateStarted</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnCompensateProgress">OnCompensateProgress</see>, <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnCompensateFinished">OnCompensateFinished</see> events. <br/>
+            Can be notified <see cref="E:SpiralLab.Sirius2.PowerMap.IPowerMap.OnMappingProgress">OnMappingProgress</see> if needed. <br/>
             Consider as its working within async threads. <br/>
             </remarks>
             <param name="categoryAndYWatts">Array of category and target y watt(W)</param>
@@ -16858,7 +16863,10 @@
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.Location">
             <summary>
-            Scanner x,y location 
+            Scanner x,y location (mm) 
+            <para>
+            Default: <c>Vector2.Zero</c> <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMap.PowerMapBase.Tag">

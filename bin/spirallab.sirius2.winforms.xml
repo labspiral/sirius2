@@ -6431,7 +6431,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.LoadImage(System.Int32,System.String)">
             <summary>
-            Load image file at target index
+            Load image at target index from file
             </summary>
             <param name="index">Target index (0,1,2,...)</param>
             <param name="fileName">Filename</param>
@@ -6439,7 +6439,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.LoadImage(System.Int32,System.Byte[])">
             <summary>
-            Load array of bytes at target index
+            Load image at target index from array of bytes
             </summary>
             <param name="index">Target index (0,1,2,...)</param>
             <param name="bitmapBytes">Array of bytes</param>
@@ -6447,7 +6447,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.LoadImage(System.Int32,System.IO.Stream)">
             <summary>
-            Load stream at target index
+            Load image at target index from <c>Stream</c> 
             </summary>
             <param name="index">Target index (0,1,2,...)</param>
             <param name="bitmapStream"><c>Stream</c></param>
@@ -6455,7 +6455,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.LoadImage(System.Int32,System.Drawing.Bitmap)">
             <summary>
-            Load bitmap image at target index
+            Load image at target index from <c>System.Drawing.Bitmap</c> 
             </summary>
             <param name="index">Target index (0,1,2,...)</param>
             <param name="bitmap"><c>System.Drawing.Bitmap</c></param>
@@ -11017,6 +11017,34 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.Clone">
             <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.LoadImage(System.String)">
+            <summary>
+            Load image file 
+            </summary>
+            <param name="fileName">Filename</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.LoadImage(System.Byte[])">
+            <summary>
+            Load image from array of bytes
+            </summary>
+            <param name="bitmapBytes">Array of bytes</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.LoadImage(System.IO.Stream)">
+            <summary>
+            Load image from stream
+            </summary>
+            <param name="bitmapStream"><c>Stream</c></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.LoadImage(System.Drawing.Bitmap)">
+            <summary>
+            Load bitmap image 
+            </summary>
+            <param name="bitmap"><c>System.Drawing.Bitmap</c></param>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImage.Regen">
             <inheritdoc/>
@@ -18735,6 +18763,15 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.IsReady">
             <summary>
             Ready status
+            <para>
+            Checked <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.IsReady">IDocument.IsReady</see>. <br/>
+            Checked <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.IsBusy">IMarker.IsBusy</see>. <br/>
+            Checked <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.IsScriptError">IMarker.IsScriptError</see>. <br/>
+            Checked <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.IsBusy">IRtc.IsBusy</see>. <br/>
+            Checked <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.IsError">IRtc.IsError</see>. <br/>
+            Checked <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsReady">ILaser.IsReady</see>. <br/>
+            Checked <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsReady">PowerMap.IsReady</see> at <see cref="T:SpiralLab.Sirius2.Laser.ILaserPowerControl">ILaserPowerControl</see> if assigned. <br/>
+            </para>
             </summary>
             <remarks>
             Set value by internally. <br/>
@@ -18743,6 +18780,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.IsBusy">
             <summary>
             Busy status
+            <para>
+            Checked <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.IsBusy">IRtc.IsBusy</see>. <br/>
+            Checked <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsBusy">ILaser.IsReady</see>. <br/>
+            Checked <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsBusy">PowerMap.IsBusy</see> at <see cref="T:SpiralLab.Sirius2.Laser.ILaserPowerControl">ILaserPowerControl</see> if assigned. <br/>
+            </para>
             </summary>
             <remarks>
             Set value by internally. <br/>
@@ -18751,6 +18793,13 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.IsError">
             <summary>
             Error status
+            <para>
+            Checked <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>. <br/>
+            Checked <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.IsScriptError">IMarker.IsScriptError</see>. <br/>
+            Checked <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.IsError">IRtc.IsError</see>. <br/>
+            Checked <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsError">ILaser.IsError</see>. <br/>
+            Checked <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsError">PowerMap.IsError</see> at <see cref="T:SpiralLab.Sirius2.Laser.ILaserPowerControl">ILaserPowerControl</see> if assigned. <br/>
+            </para>
             </summary>
             <remarks>
             Set value by internally. <br/>
@@ -22149,33 +22198,42 @@
         <member name="P:SpiralLab.Sirius2.Winforms.IDocumentData.ExtensionData">
             <summary>
             Extension user data
-            </summary>
-            <remarks>
+            <para>
             User data. also saved. <br/>
-            </remarks>
+            </para>
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocumentData.Blocks">
             <summary>
             List of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlock">EntityBlock</see> entity
+            <para>
+            Do not edit operations. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocumentData.Layers">
             <summary>
             List of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityLayer">EntityLayer</see> entity
+            <para>
+            Do not edit operations. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocumentData.Pens">
             <summary>
             List of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see> entity
+            <para>
+            Do not edit operations. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocumentData.Tag">
             <summary>
             User data 
-            </summary>
-            <remarks>
+            <para>
             User data. but not saved. <br/>
-            </remarks>
+            </para>
+            </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.MarginAlignments">
             <summary>
@@ -22521,6 +22579,17 @@
             <param name="entities">Target array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> </param>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActBlock(SpiralLab.Sirius2.Winforms.Entity.IEntity[],System.String)">
+            <summary>
+            Convert array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> into <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlock">EntityBlock</see> at <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">InternalData</see> and notify <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnAdded">OnAdded</see>, <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnRemoved">OnRemoved</see> event.
+            <para>
+            Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert">EntityBlockInsert</see>. <br/>
+            </para>
+            </summary>
+            <param name="entities">Target array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>
+            <param name="blockName">Block name</param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActExplode(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
             <summary>
             Explode <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> to seperated <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>'s at <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">InternalData</see> and notify <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnRemoved">OnRemoved</see>, <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnAdded">OnAdded</see> event. 
@@ -22789,7 +22858,7 @@
             Find used(or assigned) <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Color">IEntity.Color</see> only. <br/>
             Also <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.IsMarkerable">IEntity.IsMarkerable</see> should be <c>True</c>. <br/>
             </remarks>
-            <param name="foundedPens">Founded array of <see cref="T:System.Drawing.Color">Color</see></param>
+            <param name="foundedColors">Founded array of <see cref="T:System.Drawing.Color">Color</see></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.FindById(System.UInt32,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
@@ -23094,6 +23163,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActGroup(SpiralLab.Sirius2.Winforms.Entity.IEntity[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActBlock(SpiralLab.Sirius2.Winforms.Entity.IEntity[],System.String)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActExplode(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
@@ -23907,7 +23979,23 @@
             </summary>
             <param name="cmd">Commands like as start, stop, reset </param>
             <param name="param">Array of param</param>
-            <returns>Success of faileds</returns>
+            <returns>Success of failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.LaserParse(System.String,System.String[])">
+            <summary>
+            laser commands
+            </summary>
+            <param name="cmd">Commands like as on, off</param>
+            <param name="param">Array of param</param>
+            <returns>Success of failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.PowerParse(System.String,System.String[])">
+            <summary>
+            power commands
+            </summary>
+            <param name="cmd">Commands like as map, compensate, verify</param>
+            <param name="param">Array of param</param>
+            <returns>Success of failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteBase.StatusParse">
             <summary>
@@ -26906,6 +26994,433 @@
             <summary>
             디자이너 지원에 필요한 메서드입니다. 
             이 메서드의 내용을 코드 편집기로 수정하지 마세요.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2">
+            <summary>
+            SiriusEditorUserControl v.2nd edition
+            </summary>
+            <remarks>
+            User can insert(or create) usercontrol at own winforms. <br/>
+            <img src="images/siriuseditorcontrol.png"/> <br/>
+            1. <see cref="T:SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl">TreeViewUserControl</see> <br/>
+            2. <see cref="T:SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl">TreeViewBlockUserControl</see> <br/>
+            3. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PenUserControl">PenUserControl</see> <br/>
+            4. <see cref="T:SpiralLab.Sirius2.Winforms.UI.EditorUserControl">EditorUserControl</see> <br/>
+            5. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcUserControl">RtcUserControl</see> <br/>
+            6. <see cref="T:SpiralLab.Sirius2.Winforms.UI.LaserUserControl">LaserUserControl</see> <br/>
+            7. <see cref="T:SpiralLab.Sirius2.Winforms.UI.MarkerUserControl">MarkerUserControl</see> <br/>
+            8. <see cref="T:SpiralLab.Sirius2.Winforms.UI.ManualUserControl">ManualUserControl</see> <br/>
+            9. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl">RtcDIUserControl</see> <br/>
+            10. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl">RtcDOUserControl</see> <br/>
+            11. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl">RtcDOUserControl</see> <br/>
+            12. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl">PowerMeterUserControl</see> <br/>
+            13. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl">PowerMapUserControl</see> <br/>
+            14. <see cref="T:SpiralLab.Sirius2.Winforms.UI.ScriptUserControl">ScriptUserControl</see> <br/>
+            15. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl">RemoteUserControl</see> <br/>
+            16. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl">PropertyGridUserControl</see> <br/>
+            17. <see cref="T:SpiralLab.Sirius2.Winforms.UI.LogUserControl">LogUserControl</see> <br/>
+            </remarks>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.OnOpenBefore">
+            <summary>
+            Event for before open sirius file at <see cref="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2">SiriusEditorUserControlV2</see>
+            </summary>
+            <remarks>
+            User can register event handler for customized dialog-box before open sirius file. <br/>
+            Event will be fired when user has click 'Open' menu at <see cref="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2">SiriusEditorUserControlV2</see>. <br/>
+            If user event handler is not attached, default routine has executed. <br/>
+            If returned <c>False</c>, default routine would be executed. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.NotifyOpenBefore">
+            <summary>
+            Notify before open sirius file
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.OnSaveBefore">
+            <summary>
+            Event for save sirius file at <see cref="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2">SiriusEditorUserControlV2</see>
+            </summary>
+            <remarks>
+            User can register event handler for customized dialog-box before save sirius file. <br/>
+            Event will be fired when user has click 'Save' menu at <see cref="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2">SiriusEditorUserControlV2</see>. <br/>
+            If user event handler is not attached, default routine has executed. <br/>
+            If returned <c>False</c>, default routine would be executed. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.NotifySaveBefore">
+            <summary>
+            Notify save sirius file
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.TitleName">
+            <summary>
+            Title name
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.Document">
+            <summary>
+            <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see> (aka. Recipe data)
+            </summary>
+            <remarks>
+            Core data like as entity, layer, block, pen are exist within <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">IDocument.InternalData</see>. <br/>
+            Created <see cref="M:SpiralLab.Sirius2.Winforms.DocumentFactory.CreateDefault">DocumentFactory.CreateDefault</see> by default. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.Rtc">
+            <summary>
+            <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>
+            </summary>
+            <remarks>
+            Created by <see cref="T:SpiralLab.Sirius2.Scanner.ScannerFactory">ScannerFactory</see>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.Laser">
+            <summary>
+            <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>
+            </summary>
+            <remarks>
+            Created by <see cref="T:SpiralLab.Sirius2.Laser.LaserFactory">LaserFactory</see>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.Marker">
+            <summary>
+            <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>
+            </summary>
+            <remarks>
+            Created by <see cref="T:SpiralLab.Sirius2.Winforms.Marker.MarkerFactory">MarkerFactory</see>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.View">
+            <summary>
+            <see cref="T:SpiralLab.Sirius2.Winforms.IView">IView</see>
+            </summary>
+            <remarks>
+            Created by internally. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.Remote">
+            <summary>
+            <see cref="T:SpiralLab.Sirius2.Winforms.Remote.IRemote">IRemote</see>
+            </summary>
+            <remarks>
+            Created by <see cref="T:SpiralLab.Sirius2.Winforms.Remote.RemoteFactory">RemoteFactory</see>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.PowerMeter">
+            <summary>
+            <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>
+            </summary>
+            <remarks>
+            Created by <see cref="T:SpiralLab.Sirius2.PowerMeter.PowerMeterFactory">PowerMeterFactory</see>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.DIExt1">
+            <summary>
+            RTC DI extension1 port (16 bits)
+            </summary>
+            <remarks>
+            Created by <see cref="T:SpiralLab.Sirius2.IO.IOFactory">IOFactory</see>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.DILaserPort">
+            <summary>
+            RTC DI LASER port (2 bits)
+            </summary>
+            <remarks>
+            Created by <see cref="T:SpiralLab.Sirius2.IO.IOFactory">IOFactory</see>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.DOExt1">
+            <summary>
+            RTC DO EXTENSION1 port (16 bits)
+            </summary>
+            <remarks>
+            Created by <see cref="T:SpiralLab.Sirius2.IO.IOFactory">IOFactory</see>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.DOExt2">
+            <summary>
+            RTC DO EXTENSION2 port (8 bits)
+            </summary>
+            <remarks>
+            Created by <see cref="T:SpiralLab.Sirius2.IO.IOFactory">IOFactory</see>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.DOLaserPort">
+            <summary>
+            RTC DO LASER port (2 bits)
+            </summary>
+            <remarks>
+            Created by <see cref="T:SpiralLab.Sirius2.IO.IOFactory">IOFactory</see>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.TreeViewCtrl">
+            <summary>
+            Treeview user control for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> within <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityLayer">EntityLayer</see> nodes
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.TreeViewBlockCtrl">
+            <summary>
+            Treeview user control for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlock">EntityBlock</see> nodes
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.PropertyGridCtrl">
+            <summary>
+            PropertyGrid user control for properties of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.EditorCtrl">
+            <summary>
+            Editor(by OpenTK) user control for rendering view 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.PenCtrl">
+            <summary>
+            User control for list of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.LaserCtrl">
+            <summary>
+            PropertyGrid user control for <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.RtcCtrl">
+            <summary>
+            PropertyGrid user control for <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.MarkerCtrl">
+            <summary>
+            PropertyGrid user control for <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.OffsetCtrl">
+            <summary>
+            User control for list of <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Offsets">IMarker.Offsets</see>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.RtcDICtrl">
+            <summary>
+            User control for RTC DI (EXTENSION1 and LASER port) for <see cref="T:SpiralLab.Sirius2.IO.IDInput">IDInput</see>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.RtcDOCtrl">
+            <summary>
+            User control for RTC DO (EXTENSION1,2 and LASER port) for <see cref="T:SpiralLab.Sirius2.IO.IDOutput">IDOutput</see>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.ManualCtrl">
+            <summary>
+            User control for manual control
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.ManualUserCtrl">
+            <summary>
+            UserControl for customized manual control
+            </summary>
+            <remarks>
+            Replaced internal <c>ManualCtrl</c> as external control <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.PowerMeterCtrl">
+            <summary>
+            User control for for <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.PowerMapCtrl">
+            <summary>
+             User control for <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">IPowerMap</see>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.ScriptCtrl">
+            <summary>
+            User control for <see cref="T:SpiralLab.Sirius2.Winforms.Script.IScript">IScript</see>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.RemoteCtrl">
+            <summary>
+            PropertyGrid user control for <see cref="T:SpiralLab.Sirius2.Winforms.Remote.IRemote">IRemote</see>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.LogCtrl">
+            <summary>
+            User control for logged messages
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.#ctor">
+            <summary>
+            Constructor
+            </summary>
+            <remarks>
+            Create devices likes as <c>IRtc</c>, <c>ILaser</c>, <c>IPowerMeter</c>, ... and assign. <br/>
+            Digital I/O devices likes as <c>DInput</c>s, <c>DInput</c>s are created when assign <c>IRtc</c> by automatically. <br/>
+            Create <c>IMarker</c> and assign. <br/>
+            <c>IDocument</c> is created by automatically. <br/>
+            <c>IView</c> is created by automatically. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.tbcLeft_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Switch view mode
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.Document_OnOpened(SpiralLab.Sirius2.Winforms.IDocument,System.String)">
+            <summary>
+            Event handler for <c>Document</c> has opened
+            </summary>
+            <param name="document"><c>IDocument</c></param>
+            <param name="fileName">Filename</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.Document_OnSaved(SpiralLab.Sirius2.Winforms.IDocument,System.String)">
+            <summary>
+            Event handler for <c>Document</c> has saved
+            </summary>
+            <param name="document"><c>IDocument</c></param>
+            <param name="fileName">Filename</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.LblLog_DoubleClick(System.Object,System.EventArgs)">
+            <summary>
+            Show(or hide) log screen
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.LblEncoder_DoubleClick(System.Object,System.EventArgs)">
+            <summary>
+            Encoder reset
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.TimerStatus_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Update status by timer
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.Marker_OnStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <summary>
+            Event handler for <c>IMarker</c> has started
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.TimerProgress_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Update marker progressing by timer
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.Marker_OnEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker,System.Boolean,System.TimeSpan)">
+            <summary>
+            Event handler for <c>IMarker</c> has ended
+            </summary>
+            <param name="marker"><c>IMarker</c></param>
+            <param name="success">Sucess(or failed) to mark</param>
+            <param name="ts"><c>TimeSpan</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.Remote_OnModeChanged(SpiralLab.Sirius2.Winforms.Remote.IRemote,SpiralLab.Sirius2.Winforms.Remote.ControlModes)">
+            <summary>
+            Event handler for <c>IRemote</c> has ended
+            </summary>
+            <param name="remote"><c>IRemote</c></param>
+            <param name="mode"><c>ControlModes</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.LblRemote_DoubleClick(System.Object,System.EventArgs)">
+            <summary>
+            Switch control mode (local and remote)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.Mof_OnEncoderChanged(SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF,System.Int32,System.Int32)">
+            <summary>
+            Event handler for external ENCODER values has changed
+            </summary>
+            <param name="rtcMoF"><c>IRtcMoF</c></param>
+            <param name="encX">ENC X(0)</param>
+            <param name="encY">ENC Y(1)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.PowerMeter_OnCleared(SpiralLab.Sirius2.PowerMeter.IPowerMeter)">
+            <summary>
+            Event handler for powermeter data has cleared
+            </summary>
+            <param name="powerMeter"><c>IPowerMeter</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.PowerMeter_OnStarted(SpiralLab.Sirius2.PowerMeter.IPowerMeter)">
+            <summary>
+            Event handler for powermeter has started
+            </summary>
+            <param name="powerMeter"><c>IPowerMeter</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.PowerMeter_OnStopped(SpiralLab.Sirius2.PowerMeter.IPowerMeter)">
+            <summary>
+            Event handler for powermeter has stopped
+            </summary>
+            <param name="powerMeter"><c>IPowerMeter</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.PowerMeter_OnMeasured(SpiralLab.Sirius2.PowerMeter.IPowerMeter,System.DateTime,System.Double)">
+            <summary>
+            Event handler for powermeter has mesaured data
+            </summary>
+            <param name="powerMeter"><c>IPowerMeter</c></param>
+            <param name="dt"><c>DateTime</c></param>
+            <param name="watt">Measured data(W)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.MenuVisibility">
+            <summary>
+            Menu visibility
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.PropertyVisibility">
+            <summary>
+            Entity Property visibility
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.EditabilityByMarkerBusy(System.Boolean)">
+            <summary>
+            Enable(or disable) controls during <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see> status is busy
+            </summary>
+            <param name="isEnable">Enable(or disable) controls</param>
+            <remarks>
+            To disable edit operations during marker is busy status. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.VisibilityByRemoteControlMode(System.Boolean)">
+            <summary>
+            Hide UI controls if remote control mode
+            </summary>
+            <remarks>
+            To do visible(or invisible) controls (like as treeview, propertygrid,...) to prevent edit operations at locally. <br/>
+            Applied whenever <see cref="P:SpiralLab.Sirius2.Winforms.Remote.IRemote.ControlMode">IRemote.ControlModes</see> has changed. <br/>
+            </remarks>
+            <param name="isLocalMode">Local(visible) or Remote(invisible)</param>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl">
