@@ -176,6 +176,7 @@
   - fixed) invalid powermap events
   - fixed) updated marker status with IPowerMap.IsError status
   - fixed) exception when convert to block entity
+  - fixed) log messages are not show up at logcontrol
 
 * 2024.7.1 v.1.38.1580
   - fixed) thorlabs powermeter 

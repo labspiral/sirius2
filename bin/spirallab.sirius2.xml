@@ -16500,7 +16500,7 @@
             </summary>
             <remarks>
             If <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsEnableLookUp">IsEnableLookUp</see> is <c>True</c>, <see cref="M:SpiralLab.Sirius2.PowerMap.IPowerMap.LookUp(System.String,System.Double,System.Double@,System.Double@,System.Double@)">LookUp</see> woulde be calculate return value to compensate. <br/>
-            If <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsEnableLookUp">IsEnableLookUp</see> is <c>False</c>, <see cref="M:SpiralLab.Sirius2.PowerMap.IPowerMap.LookUp(System.String,System.Double,System.Double@,System.Double@,System.Double@)">LookUp</see> would be do return without calcuate. <br/>
+            If <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsEnableLookUp">IsEnableLookUp</see> is <c>False</c>, <see cref="M:SpiralLab.Sirius2.PowerMap.IPowerMap.LookUp(System.String,System.Double,System.Double@,System.Double@,System.Double@)">LookUp</see> would be return without calcuate. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.Tag">

@@ -18820,7 +18820,7 @@
             <summary>
             Ready
             <para>
-            Must be do <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.Remote.IRemote)">Ready</see> before do <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Start">Start</see>. <br/>
+            Must be <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.Remote.IRemote)">Ready</see> before <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Start">Start</see>. <br/>
             </para>
             </summary>
             <remarks>
@@ -18837,8 +18837,9 @@
             <summary>
             Ready 
             <para>
-            Temporary re-assign target <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>. <br/>
-            User should be revert target <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see> as original one after mark has ended. <br/>
+            Re-assign target <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>. <br/>
+            Used for temporary <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see> target. <br/>
+            User should be revert target <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see> as original one after mark has finished. <br/>
             </para>
             </summary>
             <remarks>
