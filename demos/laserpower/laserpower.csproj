@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="mylasercustom.cs" />
     <Compile Include="mylaserdout2.cs" />
+    <Compile Include="mylaserrs232ext.cs" />
     <Compile Include="mylaserrs232.cs" />
     <Compile Include="mydutycycle.cs" />
     <Compile Include="mylaseranalog.cs" />

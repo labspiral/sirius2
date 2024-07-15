@@ -90,6 +90,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_entity_v2", "demos\e
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_basic_v2", "demos\editor_basic_v2\editor_basic_v2.csproj", "{909A57CA-BAD2-4DB2-B460-74F8E19EDD82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_remote", "demos\editor_remote\editor_remote.csproj", "{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -592,6 +594,18 @@ Global
 		{909A57CA-BAD2-4DB2-B460-74F8E19EDD82}.Remote|Any CPU.Build.0 = Release|Any CPU
 		{909A57CA-BAD2-4DB2-B460-74F8E19EDD82}.Remote|x64.ActiveCfg = Release|x64
 		{909A57CA-BAD2-4DB2-B460-74F8E19EDD82}.Remote|x64.Build.0 = Release|x64
+		{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}.Debug|x64.ActiveCfg = Debug|x64
+		{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}.Debug|x64.Build.0 = Debug|x64
+		{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}.Release|x64.ActiveCfg = Release|x64
+		{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}.Release|x64.Build.0 = Release|x64
+		{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}.Remote|Any CPU.ActiveCfg = Release|Any CPU
+		{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}.Remote|Any CPU.Build.0 = Release|Any CPU
+		{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}.Remote|x64.ActiveCfg = Release|x64
+		{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}.Remote|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

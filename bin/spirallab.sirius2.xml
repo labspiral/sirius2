@@ -655,6 +655,17 @@
             Please assign your activation keycode. <br/>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Config.DecimalPrecision">
+            <summary>
+            Format for decimal precision for float(or double) value
+            <para>
+            Default: 3 (means 1um = 0.001mm) (If 6 means, 1nm = 0.000001mm) <br/>
+            </para>
+            <remarks>
+            Represent specific decimal precision for float(or double) value at UI controls
+            </remarks>
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Config.MergeDistance">
             <summary>
             Threshold distance between jump and mark(or arc) list commands that merged (mm)

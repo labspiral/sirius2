@@ -7742,9 +7742,10 @@
             <remarks>
             Consider as its working <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IMarkerable.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">Mark</see> within async threads by <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>. <br/>
             Must be called after <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Start">IMarker.Start</see> had executed. <br/>
-            Must be called between <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListBegin(SpiralLab.Sirius2.Scanner.Rtc.ListTypes)">IRtc.ListBegin</see> and <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListEnd">IRtc.ListEnd</see>.
+            Must be called between <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListBegin(SpiralLab.Sirius2.Scanner.Rtc.ListTypes)">IRtc.ListBegin</see> and <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListEnd">IRtc.ListEnd</see>. <br/>
+            User can override pen(by color) parameters for each entities by <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnMarkPen">IMarker.OnMarkPen</see>. <br/>
             </remarks>
-            <param name="marker"> <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see></param>
+            <param name="marker"><see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.IRenderable">
@@ -8180,8 +8181,9 @@
             Converted text data
             </summary>
             <remarks>
-            If <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">IsConvertedText</see> is <c>True</c>, modified by event handler or external script code. <br/>
-            More specific <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnTextConvert">IMarker.OnTextConvert</see> event will be fired and modified <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.ConvertedText">ConvertedText</see> as returned value when do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IMarkerable.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">IMarkerable.Mark</see>. <br/>
+            If <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">IsConvertedText</see> is <c>True</c>, <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.SourceText">SourceText</see> will be converted into <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.ConvertedText">ConvertedText</see> by <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnTextConvert">event handler</see> or external <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">script</see>. <br/>
+            User can assign event handler by <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnTextConvert">IMarker.OnTextConvert</see> to override. <br/>
+            User can implement script by <see cref="M:SpiralLab.Sirius2.Winforms.Script.MarkerScriptBase.OnTextConvert(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.ITextConvertible)">MarkerScriptBase.OnTextConvert</see> to override. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityCircularText">EntityCircularText</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityImageText">EntityImageText</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityDataMatrix">EntityDataMatrix</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityQRCode">EntityQRCode</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPDF417">EntityPDF417</see> entities. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">EntityText</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText">EntitySiriusText</see>. <br/>
             </remarks>
@@ -17915,8 +17917,8 @@
             {
                 for (int j = 0; j &lt; Layers.Count; j++)
                 {
-                    Laser.ListBegin();
                     Rtc.ListBegin();
+                    Laser.ListBegin();
                     ...
                     LayerWork(i, Offsets[i], j, Layers[j]);
                     ...
@@ -17939,8 +17941,8 @@
             //Pseudo codes
             for (int j = 0; j &lt; Layers.Count; j++)
             {
-                Laser.ListBegin();
                 Rtc.ListBegin();        
+                Laser.ListBegin();
                 for (int i = 0; i &lt; Offsets.Length; i++)
                 {
                     ...
@@ -18132,8 +18134,8 @@
             {
                 for (int j = 0; j &lt; Layers.Count; j++)
                 {
-                    Laser.ListBegin();
                     Rtc.ListBegin();
+                    Laser.ListBegin();
                     ...
                     LayerWork(i, Offsets[i], j, Layers[j]);
                     ...
@@ -18156,8 +18158,8 @@
             //Pseudo codes
             for (int j = 0; j &lt; Layers.Count; j++)
             {
-                Laser.ListBegin();
                 Rtc.ListBegin();        
+                Laser.ListBegin();
                 for (int i = 0; i &lt; Offsets.Length; i++)
                 {
                     ...
@@ -18414,9 +18416,9 @@
             </para>
             </summary>
             <remarks>
+            Consider as its working within async threads. <br/>
             Do external control works like as i/o, motion stage controls before mark layer. <br/>
             If returned <c>False</c>, mark progress would be stopped. <br/>
-            Consider as its working within async threads. <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnAfterLayer">
@@ -18427,9 +18429,9 @@
             </para>
             </summary>
             <remarks>
+            Consider as its working within async threads. <br/>
             Do external control works like as i/o, motion stage controls after mark layer. <br/>
             If returned <c>False</c>, mark progress would be stopped. <br/>
-            Consider as its working within async threads. <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnBeforeEntity">
@@ -18440,9 +18442,9 @@
             </para>
             </summary>
             <remarks>
+            Consider as its working within async threads. <br/>
             Consider as within RTC list buffer is executing. <br/>
             If returned <c>False</c>, mark progress would be stopped. <br/>
-            Consider as its working within async threads. <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnAfterEntity">
@@ -18453,9 +18455,9 @@
             </para>
             </summary>
             <remarks>
+            Consider as its working within async threads. <br/>
             Consider as within RTC list buffer is executing. <br/>
             If returned <c>False</c>, mark progress would be stopped. <br/>
-            Consider as its working within async threads. <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnMarkPen">
@@ -18466,9 +18468,9 @@
             </para>
             <code>
             // User can override default mark routine for EntityPen
-            marker.OnMarkPen += MyMarkPen;
+            marker.OnMarkPen += OnMarkPen;
             ...
-            protected override bool MyMarkPen(EntityPen pen)
+            protected override bool OnMarkPen(IMarker marker, EntityPen pen)
             {
                bool success = true;
                var rtc = marker.Rtc;
@@ -18485,14 +18487,14 @@
                success &amp;= rtc.ListSpeed(pen.JumpSpeed, pen.MarkSpeed);
                success &amp;= rtcExtension.ListFirstPulseKiller(pen.LaserFpk);
                success &amp;= rtcExtension.ListQSwitchDelay(pen.LaserQSwitchDelay);
-               ...(simplified)
-               
                return success;
             }
             </code>
             </summary>
             <remarks>
+            Consider as its working within async threads. <br/>
             User can add event handler for override <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see> mark routines. <br/>
+            If return <c>False</c>, <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see> would be stopped(or aborted) immediately. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Index">
@@ -18851,10 +18853,74 @@
             <summary>
             Start
             <para>
-            Target <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>, <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>, <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>, ... are must be assigned by <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.Remote.IRemote)">Ready</see> at first. <br/>
+            1. Pseudo codes for <see cref="F:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.MarkProcedures.LayerFirst">LayerFirst</see> at <see cref="T:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc">MarkerRtc</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis">MarkerSyncAxis</see> <br/>
             </para>
+            <code>
+            foreach (var offset in Marker.Offsets)
+            {
+                foreach (var layer in Document.Layers)
+                {
+                    Rtc.ListBegin();
+                    Laser.ListBegin();
+                    foreach (var entity in Document.Layers.Children)
+                    {
+                        if (entity is IMarkerable markerable)
+                            markerable.Mark();
+                        ... (simplified)
+                    }
+                    Laser.ListEnd();
+                    Rtc.ListEnd();
+                    Rtc.ListExecute(true);
+                }
+            }
+            </code>
+            <para>
+            2. Pseudo codes for <see cref="F:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.MarkProcedures.OffsetFirst">OffsetFirst</see> at <see cref="T:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc">MarkerRtc</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Marker.MarkerSyncAxis">MarkerSyncAxis</see> <br/>
+            </para>
+            <code>
+            foreach (var layer in Document.Layers)
+            {
+                foreach (var offset in Marker.Offsets)
+                {
+                    Rtc.ListBegin();
+                    Laser.ListBegin();
+                    foreach (var entity in Document.Layers.Children)
+                    {
+                        if (entity is IMarkerable markerable)
+                            markerable.Mark();
+                        ... (simplified)
+                    }
+                    Laser.ListEnd();
+                    Rtc.ListEnd();
+                    Rtc.ListExecute(true);
+                }
+            }
+            </code>
+            <para>
+            3. Pseudo codes at <see cref="T:SpiralLab.Sirius2.Winforms.Marker.MarkerRtcFast">MarkerRtcFast</see> <br/>
+            </para>
+            <code>
+            Rtc.ListBegin();
+            Laser.ListBegin();
+            foreach (var layer in Document.Layers)
+            {
+                foreach (var offset in Marker.Offsets)
+                {
+                    foreach (var entity in Document.Layers.Children)
+                    {
+                        if (entity is IMarkerable markerable)
+                            markerable.Mark();
+                        ... (simplified)
+                    }
+                }
+            }
+            Laser.ListEnd();
+            Rtc.ListEnd();
+            Rtc.ListExecute(true);
+            </code>
             </summary>
             <remarks>
+            Target <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>, <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>, <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>, ... are must be assigned by <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Ready(SpiralLab.Sirius2.Winforms.IDocument,SpiralLab.Sirius2.Winforms.IView,SpiralLab.Sirius2.Scanner.Rtc.IRtc,SpiralLab.Sirius2.Laser.ILaser,SpiralLab.Sirius2.PowerMeter.IPowerMeter,SpiralLab.Sirius2.Winforms.Remote.IRemote)">Ready</see> at first. <br/>
             Notify <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnStarted">OnStarted</see>, <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnEnded">OnEnded</see> event. <br/>
             Notify <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnBeforeLayer">OnBeforeLayer</see>, <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnAfterLayer">OnAfterLayer</see> event(s) for each layers. <br/>
             Notify <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnBeforeEntity">OnBeforeEntity</see>, <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnAfterEntity">OnAfterEntity</see> event(s) for each entities. <br/>
@@ -20952,7 +21018,7 @@
             <remarks>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config.PrecisionForCalibration3DPosition">
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.DecimalPrecisionForCalibration3DPosition">
             <summary>
             Round up position (mm) when do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D.Calibration3D(SpiralLab.Sirius2.Scanner.Rtc.IRtc,System.String@,System.String@,SpiralLab.Sirius2.Scanner.Rtc.SlscErrorCodes@)">ICalibration3D.Calibration3D</see> to convert 3D scanner field correction 
             <para>
@@ -24297,47 +24363,52 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper">
             <summary>
             RemoteHelper
+            <para>
+            To manipulate property values by <see cref="T:SpiralLab.Sirius2.Winforms.Remote.IRemote">IRemote</see>
+            </para>
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper.EntityProperties(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper.QueryProperties(SpiralLab.Sirius2.Winforms.Entity.IEntity)">
             <summary>
             Query property list from <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
+            <para>
+            Target [Browasable] attribute must be <c>True</c> only. <br/>
+            Query name and value of properties at <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. <br/>
+            </para>
             </summary>
-            <remarks>
-            Target properties are [Browasable] attribute is <c>True</c> only <br/>
-            </remarks>
             <param name="entity">Target <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>
             <returns><c>Dictionary&lt;string, object&gt;</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper.ScriptProperties(SpiralLab.Sirius2.Winforms.Script.IScript)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper.QueryProperties(SpiralLab.Sirius2.Winforms.Script.IScript)">
             <summary>
             Query property list from <see cref="T:SpiralLab.Sirius2.Winforms.Script.IScript">IScript</see>
+            <para>
+            Target [Browasable] attribute must be <c>True</c> only. <br/>
+            Query name and value of properties at <see cref="T:SpiralLab.Sirius2.Winforms.Script.IScript">IScript</see>. <br/>
+            </para>
             </summary>
-            <remarks>
-            Target properties are [Browasable] attribute is <c>True</c> only <br/>
-            </remarks>
             <param name="script">Target <see cref="T:SpiralLab.Sirius2.Winforms.Script.IScript">IScript</see></param>
             <returns><c>Dictionary&lt;string, object&gt;</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper.EntityReadPropertyValue(SpiralLab.Sirius2.Winforms.Script.IScript,System.Reflection.PropertyInfo,System.String)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper.ReadProperty(SpiralLab.Sirius2.Winforms.Entity.IEntity,System.Reflection.PropertyInfo,System.String)">
             <summary>
-            Read property value at <see cref="T:SpiralLab.Sirius2.Winforms.Script.IScript">IScript</see>
-            </summary>
-            <param name="script">Target <see cref="T:SpiralLab.Sirius2.Winforms.Script.IScript">IScript</see></param>
-            <param name="propInfo"><c>PropertyInfo</c></param>
-            <param name="propName">Property name</param>
-            <returns>Property value as string</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper.EntityReadPropertyValue(SpiralLab.Sirius2.Winforms.Entity.IEntity,System.Reflection.PropertyInfo,System.String)">
-            <summary>
-            Read property value at <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
+            Read property value from <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
             </summary>
             <param name="entity">Target <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>
             <param name="propInfo"><c>PropertyInfo</c></param>
             <param name="propName">Property name</param>
             <returns>Property value as string</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper.EntityWritePropertyValue(SpiralLab.Sirius2.Winforms.Entity.IEntity,System.Reflection.PropertyInfo,System.String,System.String[])">
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper.ReadProperty(SpiralLab.Sirius2.Winforms.Script.IScript,System.Reflection.PropertyInfo,System.String)">
+            <summary>
+            Read property value from <see cref="T:SpiralLab.Sirius2.Winforms.Script.IScript">IScript</see>
+            </summary>
+            <param name="script">Target <see cref="T:SpiralLab.Sirius2.Winforms.Script.IScript">IScript</see></param>
+            <param name="propInfo"><c>PropertyInfo</c></param>
+            <param name="propName">Property name</param>
+            <returns>Property value as string</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper.WriteProperty(SpiralLab.Sirius2.Winforms.Entity.IEntity,System.Reflection.PropertyInfo,System.String,System.String[])">
             <summary>
             Write property value at <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
             </summary>
@@ -24347,7 +24418,7 @@
             <param name="propValues">Property value</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper.EntityWritePropertyValue(SpiralLab.Sirius2.Winforms.Script.IScript,System.Reflection.PropertyInfo,System.String,System.String[])">
+        <member name="M:SpiralLab.Sirius2.Winforms.Remote.RemoteHelper.WriteProperty(SpiralLab.Sirius2.Winforms.Script.IScript,System.Reflection.PropertyInfo,System.String,System.String[])">
             <summary>
             Write property value at <see cref="T:SpiralLab.Sirius2.Winforms.Script.IScript">IScript</see>
             </summary>

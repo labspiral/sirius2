@@ -411,18 +411,18 @@ namespace Demos
                         Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
                         return false;
                     case PowerControlMethods.Custom:
-                        // Do something you want to vary output laser power
-                        // For example if RTC5,6 (Rtc6SyncAXIS is not applicable)
+                        // Rtc6SyncAXIS is not applicable
                         Debug.Assert(!(rtc is IRtcSyncAxis));
+                        // Flush(or wait until finished) list commands at RTC buffer 
+                        var listType = rtc.ListType;
                         success &= rtc.ListEnd();
                         success &= rtc.ListExecute(true);
-                        // Vary output laser power 
+                        // Do something you want to vary output laser power
                         // ...
-                        // And it takes some time
+                        // Waiting for some delay time
                         Thread.Sleep((int)this.PowerControlDelayTime);
-                        // Restart list buffer
-                        success &= rtc.ListBegin(rtc.ListType);
-
+                        // Start list buffer at RTC again
+                        success &= rtc.ListBegin(listType);
                         break;
                 }
             }

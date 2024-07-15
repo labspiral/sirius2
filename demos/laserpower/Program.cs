@@ -82,7 +82,7 @@ namespace Demos
             Debug.Assert(success);
 
             int laserType = 1;
-            Console.Write("Select laser (1: D.Out8bits, 2: D.Out16bits, 3: Analog1, 4: Analog2, 5: Pulse width, 6: RS232, 7: Custom, 8: D.Out8bits+Guide) (Default= 1) : ");
+            Console.Write("Select laser (1: D.Out8bits, 2: D.Out16bits, 3: Analog1, 4: Analog2, 5: Pulse width, 6: RS232, 7: D.Out8bits+Guide 8: Custom, 9:External COM port) (Default= 1) : ");
             try {
                 laserType = Convert.ToInt32(Console.ReadLine());
             }
@@ -128,14 +128,19 @@ namespace Demos
                     laser = myLaserRS232;
                     break;
                 case 7:
-                    var myLaserCustom = new MyLaserCustom(0, "Custom Communication Laser", maxWatt);
-                    laser = myLaserCustom;
-                    break;
-                case 8:
                     var myLaserDOut82 = new MyLaserDOut2(0, "My DOut 8Bits Laser", maxWatt, 0, 255);
                     myLaserDOut82.PowerControlMethod = PowerControlMethods.DigitalBits;
                     myLaserDOut82.DigitalBitsPortNo = 2; //RTC EXTENSION2 PORT (8bits)
                     laser = myLaserDOut82;
+                    break;
+                case 8:
+                    var myLaserCustom = new MyLaserCustom(0, "Custom Communication Laser", maxWatt);
+                    laser = myLaserCustom;
+                    break;
+                case 9:
+                    int comPortNo = 1;
+                    var myLaserExternalRS232 = new MyLaserRS232External(0, "External RS232 Laser", maxWatt, comPortNo);
+                    laser = myLaserExternalRS232;
                     break;
             }
             // Assign RTC into laser
@@ -157,8 +162,7 @@ namespace Demos
                 Console.WriteLine("'F3' : draw circles (by analog1 voltage output)");
                 Console.WriteLine("'F4' : draw circles (by analog2 voltage output)");
                 Console.WriteLine("'F5' : draw circles (by duty cycle output)");
-                Console.WriteLine("'F6' : draw circles (by rs232 communication)");
-                Console.WriteLine("'F7' : draw circles (by custom control)");
+                Console.WriteLine("'F6' : draw circles (by custom)");
                 Console.WriteLine("'0' : laser off");
                 Console.WriteLine("'1' : laser on (warning !!!)");
                 Console.WriteLine("'2' : guide laser on");
@@ -195,12 +199,7 @@ namespace Demos
                         DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.PulseLength, watt);
                         break;
                     case ConsoleKey.F6:
-                        rtc.CtlWriteVariable(0, 5); //FreeVariable0 = 5
-                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.FreeVariable0, watt);
-                        break;
-                    case ConsoleKey.F7:
-                        rtc.CtlWriteVariable(1, 10);//FreeVariable1 = 10
-                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.FreeVariable1, watt);                        
+                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.None, watt);
                         break;
                     case ConsoleKey.D0:
                         rtc.CtlLaserOff();

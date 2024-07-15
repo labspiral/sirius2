@@ -17,7 +17,7 @@
  *               `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Example sirius2 editor
+ * Description : Example sirius2 editor for block and block insert
  * Laser drilling for PoP(Package on package) : https://smtnet.com/news/index.cfm?fuseaction=view_news&company_id=41637&news_id=9373
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 

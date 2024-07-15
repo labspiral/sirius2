@@ -271,7 +271,7 @@ namespace Demos
             {
                 var powerMeterType = NativeMethods.ReadIni(ConfigFileName, $"POWERMETER{index}", "TYPE", "Virtual");
                 var powerMeterSerialNo = NativeMethods.ReadIni(ConfigFileName, $"POWERMETER{index}", "SERIAL_NO", string.Empty);
-                var powerMeterSerialPort = NativeMethods.ReadIni<int>(ConfigFileName, $"POWERMETER{index}", "SERIAL_PORT", 0);
+                var powerMeterCOMPort = NativeMethods.ReadIni<int>(ConfigFileName, $"POWERMETER{index}", "SERIAL_PORT", 0);
                 switch (powerMeterType.Trim().ToLower())
                 {
                     default:
@@ -283,13 +283,13 @@ namespace Demos
                         powerMeter = PowerMeterFactory.CreateOphirPhotonics(index, powerMeterSerialNo);
                         break;
                     case "coherentpowermax":
-                        powerMeter = PowerMeterFactory.CreateCoherentPowerMax(index, powerMeterSerialPort);
+                        powerMeter = PowerMeterFactory.CreateCoherentPowerMax(index, powerMeterCOMPort);
                         break;
                     case "thorlabs":
-                        if (powerMeterSerialPort > 0)
+                        if (powerMeterCOMPort > 0)
                         {
                             // by COM port communication
-                            powerMeter = PowerMeterFactory.CreateThorlabs(index, powerMeterSerialPort);
+                            powerMeter = PowerMeterFactory.CreateThorlabs(index, powerMeterCOMPort);
                         }
                         else
                         {
@@ -307,7 +307,7 @@ namespace Demos
             #region Initialize Laser source
             var laserType = NativeMethods.ReadIni(ConfigFileName, $"LASER{index}", "TYPE", "Virtual");
             var laserMaxPower = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "MAXPOWER", 10);
-            var laserComPort = NativeMethods.ReadIni<int>(ConfigFileName, $"LASER{index}", "COM_PORT", 1);
+            var laserCOMPort = NativeMethods.ReadIni<int>(ConfigFileName, $"LASER{index}", "COM_PORT", 1);
             var laserIPaddress = NativeMethods.ReadIni<string>(ConfigFileName, $"LASER{index}", "IP_ADDRESS", string.Empty);
             var rtcAnalogPort = NativeMethods.ReadIni<int>(ConfigFileName, $"LASER{index}", "ANALOG_PORT", 1);
             var virtuaLaserPowerControl = NativeMethods.ReadIni(ConfigFileName, $"LASER{index}", "POWERCONTROL", "Unknown");
@@ -358,46 +358,46 @@ namespace Demos
                     }
                     break;
                 case "advancedoptowaveaopico":
-                    laser = LaserFactory.CreateAdvancedOptoWaveAOPico(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    laser = LaserFactory.CreateAdvancedOptoWaveAOPico(index, $"LASER{index}", laserCOMPort, laserMaxPower);
                     break;
                 case "advancedoptowaveaopicoprecision":
-                    laser = LaserFactory.CreateAdvancedOptoWaveAOPicoPrecision(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    laser = LaserFactory.CreateAdvancedOptoWaveAOPicoPrecision(index, $"LASER{index}", laserCOMPort, laserMaxPower);
                     break;
                 case "coherentavialx":
-                    laser = LaserFactory.CreateCoherentAviaLX(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    laser = LaserFactory.CreateCoherentAviaLX(index, $"LASER{index}", laserCOMPort, laserMaxPower);
                     break;
                 case "coherentdiamondcseries":
                     laser = LaserFactory.CreateCoherentDiamondCSeries(index, $"LASER{index}", laserMaxPower);
                     break;
                 case "ipgylptyped":
-                    laser = LaserFactory.CreateIPGYLPTypeD(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    laser = LaserFactory.CreateIPGYLPTypeD(index, $"LASER{index}", laserCOMPort, laserMaxPower);
                     break;
                 case "ipgylptypee":
-                    laser = LaserFactory.CreateIPGYLPTypeE(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    laser = LaserFactory.CreateIPGYLPTypeE(index, $"LASER{index}", laserCOMPort, laserMaxPower);
                     break;
                 case "ipgylpulpn":
-                    laser = LaserFactory.CreateIPGYLPULPN(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    laser = LaserFactory.CreateIPGYLPULPN(index, $"LASER{index}", laserCOMPort, laserMaxPower);
                     break;
                 case "ipgylpn":
-                    laser = LaserFactory.CreateIPGYLPN(index, $"LASER{index}", laserComPort, laserMaxPower, rtcAnalogPort);
+                    laser = LaserFactory.CreateIPGYLPN(index, $"LASER{index}", laserCOMPort, laserMaxPower, rtcAnalogPort);
                     break;
                 case "jpttypee":
-                    laser = LaserFactory.CreateJPTTypeE(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    laser = LaserFactory.CreateJPTTypeE(index, $"LASER{index}", laserCOMPort, laserMaxPower);
                     break;
                 case "photonicsindustrydx":
-                    laser = LaserFactory.CreatePhotonicsIndustryDX(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    laser = LaserFactory.CreatePhotonicsIndustryDX(index, $"LASER{index}", laserCOMPort, laserMaxPower);
                     break;
                 case "photonicsindustryrghaio":
-                    laser = LaserFactory.CreatePhotonicsIndustryRGHAIO(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    laser = LaserFactory.CreatePhotonicsIndustryRGHAIO(index, $"LASER{index}", laserCOMPort, laserMaxPower);
                     break;
                 case "spectraphysicshippo":
-                    laser = LaserFactory.CreateSpectraPhysicsHippo(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    laser = LaserFactory.CreateSpectraPhysicsHippo(index, $"LASER{index}", laserCOMPort, laserMaxPower);
                     break;
                 case "spectraphysicstalon":
-                    laser = LaserFactory.CreateSpectraPhysicsTalon(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    laser = LaserFactory.CreateSpectraPhysicsTalon(index, $"LASER{index}", laserCOMPort, laserMaxPower);
                     break;
                 case "spig4":
-                    laser = LaserFactory.CreateSPIG4(index, $"LASER{index}", laserComPort, laserMaxPower);
+                    laser = LaserFactory.CreateSPIG4(index, $"LASER{index}", laserCOMPort, laserMaxPower);
                     break;
             }
             if (powerMeter != null)
@@ -453,6 +453,7 @@ namespace Demos
                 case "rtc6e":
                     marker = MarkerFactory.CreateRtc(index);
                     //marker = MarkerFactory.CreateRtcFast(index);
+                    //or your custom marker
                     break;
                 case "syncaxis":
                     marker = MarkerFactory.CreateSyncAxis(index);

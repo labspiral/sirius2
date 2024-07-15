@@ -146,6 +146,7 @@
  - Demo 'editor_mof_barcode' winforms project for mark text, barcode by script with MoF
  - Demo 'editor_mof_text' winforms project for mark out of ranged texts by script with MoF
  - Demo 'editor_dio' winforms project for control digital input/output
+ - Demo 'editor_remote' winforms project for customized tcp/ip server 
  - Demo 'editor_multiple' winforms project for multiple RTC instances
  - Demo 'editor_marker' winforms project for customized marker (open sourced)
  - Demo 'editor_ui' winforms project for customized ui (open sourced)
@@ -167,6 +168,10 @@
 
 
 **8. Version history**
+
+* 2024.7.15 v.1.40.1620
+  - added) editor_remote demo project
+  - added) Config.DecimalPrecision
 
 * 2024.7.5 v.1.39.1600
   - added) new SiriusEditorControlV2 control 

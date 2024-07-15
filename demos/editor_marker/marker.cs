@@ -93,8 +93,8 @@ namespace Demos
             /// {
             ///     for (int j = 0; j &lt; Layers.Count; j++)
             ///     {
-            ///         Laser.ListBegin();
             ///         Rtc.ListBegin();
+            ///         Laser.ListBegin();
             ///         ...
             ///         LayerWork(i, Offsets[i], j, Layers[j]);
             ///         ...
@@ -116,8 +116,8 @@ namespace Demos
             /// //Pseudo codes
             /// for (int j = 0; j &lt; Layers.Count; j++)
             /// {
-            ///     Laser.ListBegin();
             ///     Rtc.ListBegin();        
+            ///     Laser.ListBegin();
             ///     for (int i = 0; i &lt; Offsets.Length; i++)
             ///     {
             ///         ...

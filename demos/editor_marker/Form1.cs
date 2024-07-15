@@ -17,7 +17,7 @@
  *               `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Example sirius2 editor
+ * Description : Example sirius2 editor for customized marker
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -41,6 +41,7 @@ using SpiralLab.Sirius2;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner;
 using SpiralLab.Sirius2.Scanner.Rtc;
+using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
 using SpiralLab.Sirius2.Winforms;
 using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
@@ -90,15 +91,18 @@ namespace Demos
             marker.OnBeforeLayer += Marker_OnBeforeLayer;
             marker.OnAfterLayer += Marker_OnAfterLayer;
 
-
             var document = siriusEditorUserControl1.Document;
             var view = siriusEditorUserControl1.View;
             // Create entities for test
-            //Common.CreateTestEntities(rtc, view, document);
+            //EditorHelper.CreateTestEntities(rtc, view, document);
+
+            // Override mark routine for each pen color
+            //marker.OnMarkPen += Marker_OnMarkPen;
 
             // Assign Document, View, Rtc, Laser into marker
             marker.Ready(document, view, rtc, laser, powerMeter, remote);
         }
+     
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             var document = siriusEditorUserControl1.Document;
@@ -175,7 +179,47 @@ namespace Demos
         {
             // marker has ended
         }
+
+        /// <summary>
+        /// Override mark routine for each <c>EntityPen</c>
+        /// </summary>
+        /// <param name="marker"><c>IMarker</c></param>
+        /// <param name="pen"><c>EntityPen</c></param>
+        /// <returns></returns>
+        private bool Marker_OnMarkPen(IMarker marker, EntityPen pen)
+        {
+            bool success = true;
+            // simplified routine 
+            //var rtc = marker.Rtc;
+            //var laser = marker.Laser;
+            //var rtcExtension = rtc as IRtcExtension;
+            //var rtcSkywriting = rtc as IRtcSkyWriting;
+            //var rtcWobbel = rtc as IRtcWobbel;
+            // if (laser is ILaserPowerControl laserPowerControl)
+            //     success &= laserPowerControl.ListPower(pen.Power, pen.PowerMapCategory);
+            //success &= rtc.ListDelay(pen.LaserOnDelay, pen.LaserOffDelay, pen.ScannerJumpDelay, pen.ScannerMarkDelay, pen.ScannerPolygonDelay);
+            //success &= rtc.ListSpeed(pen.JumpSpeed, pen.MarkSpeed);
+            //success &= rtc.ListFirstPulseKiller(pen.LaserFpk);
+            //if (null != rtcExtension)
+            //    success &= rtcExtension.ListQSwitchDelay(pen.LaserQSwitchDelay);
+            //if (null != rtcSkywriting)
+            //{
+            //    double cosineLimit = Math.Cos(Math.PI / 180.0 * pen.AngularLimit);
+            //    if (pen.IsSkyWritingEnabled)
+            //        success &= rtcSkywriting.ListSkyWritingBegin(pen.SkyWritingMode, pen.LaserOnShift, pen.TimeLag, pen.Prev, pen.Post, cosineLimit);
+            //    else
+            //        success &= rtcSkywriting.ListSkyWritingEnd();
+            //}
+            //if (null != rtcWobbel)
+            //{
+            //    if (pen.IsWobbelEnabled)
+            //        success &= rtcWobbel.ListWobbelBegin(pen.WobbelParallel, pen.WobbelPerpendicular, pen.WobbelFrequency, pen.WobbelShape);
+            //    else
+            //        success &= rtcWobbel.ListWobbelEnd();
+            //}
+            // ...
+            return success;
+        }
         #endregion
-       
     }
 }
