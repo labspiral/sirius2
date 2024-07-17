@@ -18559,13 +18559,13 @@
             </summary>
             <remarks>
             Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible">ITextConvertible</see> interface. <br/>
-            User can use <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ScriptFile">IMarker.ScriptFile</see> script file instead.
+            Cannot be used with <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ScriptFile">ScriptFile</see>(or <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ScriptInstance">ScriptInstance</see> together. <br/>
             User can register event handler to convert data of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible">ITextConvertible</see>. <br/>
             Event will be fired when <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">ITextConvertible.IsConvertedText</see> is <c>True</c> only. <br/>
             Event will be fired whenever do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IMarkerable.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">IMarkerable.Mark</see> or <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.Regen">IEntity.Regen</see>. <br/>
             If user event handler is not attached, used <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.SourceText">ITextConvertible.SourceText</see> value. <br/>
             <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see> value can be <c>NULL</c> while <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.Regen">IEntity.Regen</see>. <br/>
-            <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.CurrentOffsetIndex">IMarker.CurrentOffsetIndex</see> values are useful when marks at multiple offset positions. <br/>
+            <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.CurrentOffsetIndex">CurrentOffsetIndex</see> values are useful when marks at multiple offset positions. <br/>
             <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see> can be set as <see cref="T:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual">MarkerVirtual</see> if do simulate laser path. <br/>
             Consider as its working within async threads. <br/>
             </remarks>
@@ -18618,7 +18618,7 @@
             </summary>
             <remarks>
             Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible">ITextConvertible</see> interface. <br/>
-            User can use <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnTextConvert">IMarker.OnTextConvert</see> event instead. <br/>
+            Cannot be used with <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnTextConvert">OnTextConvert</see> event together. <br/>
             Old <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ScriptInstance">ScriptInstance</see> would be disposed and created(or replaced) by new one. <br/>
             Reference script files are "sample.cs", "demo1.cs", "demo2.cs" at <see cref="P:SpiralLab.Sirius2.Winforms.Config.ScriptPath">Config.ScriptPath</see>. <br/>
             <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnTextConvert">OnTextConvert</see> event will be fired when <see cref="P:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible.IsConvertedText">ITextConvertible.IsConvertedText</see> is <c>True</c> only. <br/>
@@ -18772,7 +18772,7 @@
             Checked <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.IsBusy">IRtc.IsBusy</see>. <br/>
             Checked <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.IsError">IRtc.IsError</see>. <br/>
             Checked <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsReady">ILaser.IsReady</see>. <br/>
-            Checked <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsReady">PowerMap.IsReady</see> at <see cref="T:SpiralLab.Sirius2.Laser.ILaserPowerControl">ILaserPowerControl</see> if assigned. <br/>
+            Checked <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsReady">IPowerMap.IsReady</see> at <see cref="T:SpiralLab.Sirius2.Laser.ILaserPowerControl">ILaserPowerControl</see> if assigned. <br/>
             </para>
             </summary>
             <remarks>
@@ -18785,7 +18785,7 @@
             <para>
             Checked <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.IsBusy">IRtc.IsBusy</see>. <br/>
             Checked <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsBusy">ILaser.IsReady</see>. <br/>
-            Checked <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsBusy">PowerMap.IsBusy</see> at <see cref="T:SpiralLab.Sirius2.Laser.ILaserPowerControl">ILaserPowerControl</see> if assigned. <br/>
+            Checked <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsBusy">IPowerMap.IsBusy</see> at <see cref="T:SpiralLab.Sirius2.Laser.ILaserPowerControl">ILaserPowerControl</see> if assigned. <br/>
             </para>
             </summary>
             <remarks>
@@ -18800,7 +18800,7 @@
             Checked <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.IsScriptError">IMarker.IsScriptError</see>. <br/>
             Checked <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.IsError">IRtc.IsError</see>. <br/>
             Checked <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsError">ILaser.IsError</see>. <br/>
-            Checked <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsError">PowerMap.IsError</see> at <see cref="T:SpiralLab.Sirius2.Laser.ILaserPowerControl">ILaserPowerControl</see> if assigned. <br/>
+            Checked <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsError">IPowerMap.IsError</see> at <see cref="T:SpiralLab.Sirius2.Laser.ILaserPowerControl">ILaserPowerControl</see> if assigned. <br/>
             </para>
             </summary>
             <remarks>

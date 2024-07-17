@@ -16062,14 +16062,29 @@
         <member name="T:SpiralLab.Sirius2.Mathematics.IMatrixStack`1">
             <summary>
             IMatrixStack interface 
+            <code>                                         
+                                        . . . . . IMatrixStack . . . . 
+                                        .                            .
+                                        .  Push  Pop                 .
+                                        .    ↓    ↑                  .
+                                        .   |  Mn  |                 .
+                                        .   |  .   |                 .
+                                        .   |  .   |                 .
+             Transformed = Commanded *  .   |  M3  |  * Base matrix  .
+                position    position    .   |  M2  |                 .
+                                        .   |  M1  |                 .
+                                        .   |______|                 .
+                                        .    Stack                   .
+                                        . . . . . . . . . . . . . .  .
+            </code>
             <para>
             Used 4x4 matrix with push and pop operations at stack. <br/>
             </para>
             </summary>
             <remarks>
             Used with 4x4 matrix <br/>
-            SCANLAB RTC is supported 2x2 matrix operations only. <br/>
-            Sirius2 support 4x4 matrix operations with some limitations. <br/>
+            SCANLAB RTC is supported 2x2 matrix operations only (by <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">CtlMatrix</see>). <br/>
+            <c>SIRIUS2</c> is support 4x4 matrix operations with stack. <br/>
             </remarks>
             <typeparam name="T">Used with <see cref="T:System.Numerics.Matrix4x4">System.Numerics.Matrix4x4</see></typeparam>
         </member>
@@ -17833,7 +17848,7 @@
             var fov = 100.0f;
             var kFactor = Math.Pow(2, 20) / fov;
             var correctionFile = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, "cor_1to1.ct5");
-            var rtc = ScannerFactory.CreateVirtual(0, kFactor, correctionFile);
+            var rtc = ScannerFactory.CreateVirtual(0, kFactor, LaserModes.Yag1, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             bool success = rtc.Initialize();
             </code>
             </summary>
@@ -30308,12 +30323,36 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">
             <summary>
             4x4 matrix stack
+            <code>                                         
+                                        . . . . . IMatrixStack . . . . 
+                                        .                            .
+                                        .  Push  Pop                 .
+                                        .    ↓    ↑                  .
+                                        .   |  Mn  |                 .
+                                        .   |  .   |                 .
+                                        .   |  .   |                 .
+             Transformed = Commanded *  .   |  M3  |  * Base matrix  .
+                position    position    .   |  M2  |                 .
+                                        .   |  M1  |                 .
+                                        .   |______|                 .
+                                        .    Stack                   .
+                                        . . . . . . . . . . . . . .  .
+            </code>
             <code>
-            // Revert matrix stack if needed
+            // Clone matrix stack
             var oldMatrixStack = rtc.MatrixStack.Clone() as IMatrixStack&lt;Matrix4x4&gt;;
-            // Do something to works and revert matrix stack 
+            rtc.MatrixStack.Push(M1);
+            rtc.MatrixStack.Push(M2);
+            var transformed = Vector3.Transform(commanded, rtc.MatrixStack.ToResult);
+            ...
+            rtc.MatrixStack.Pop();
+            rtc.MatrixStack.Pop();
+            // Revert matrix stack 
             rtc.MatrixStack = oldMatrixStack;
             </code>
+            <para>
+            Default: <c>IMatrixStack.ToResult</c> is <see cref="P:System.Numerics.Matrix4x4.Identity">Matrix4x4.Identity</see> <br/>
+            </para>
             </summary>
             <remarks>
             Matrix transformation would be applied every jump and mark(or arc) commands. <br/>
@@ -30322,27 +30361,33 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixPrimaryInternal">
             <summary>
-            3x3 matrix
+            3x3 matrix for RTC's internal matrix at primary head
+            <code>
+            Final position = Transformed position(by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see>) * <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixPrimaryInternal">MatrixPrimaryInternal</see> 
+            </code>
             <para>
             Default: <see cref="P:System.Numerics.Matrix3x2.Identity">Matrix3x2.Identity</see> <br/>
             </para>
             </summary>
             <remarks>
             Matrix transformation would be applied every jump and mark(or arc) commands. <br/>
-            This operation has applied into <c>RTC INTERNAL MATRIX</c>. <br/>
+            This matrix will be assigned into <c>RTC's INTERNAL MATRIX</c> but not <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see>. <br/>
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.CtlMatrix</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.ListMatrix</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixSecondaryInternal">
             <summary>
-            3x3 matrix
+            3x3 matrix for RTC's internal matrix at secondary head
+            <code>
+            Final position = Transformed position(by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see>) * <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixPrimaryInternal">MatrixPrimaryInternal</see> 
+            </code>
             <para>
             Default: <see cref="P:System.Numerics.Matrix3x2.Identity">Matrix3x2.Identity</see> <br/>
             </para>
             </summary>
             <remarks>
-            Matrix transformation would be applied every jump and mark commands. <br/>
-            This operation has applied into  <c>RTC INTERNAL MATRIX</c>. <br/>
+            Matrix transformation would be applied every jump and mark(or arc) commands. <br/>
+            This matrix will be assigned into <c>RTC's INTERNAL MATRIX</c> but not <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see>. <br/>
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.CtlMatrix</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.ListMatrix</see>. <br/>
             </remarks>
         </member>
@@ -30716,16 +30761,13 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">
             <summary>
-            Transformation 3x3 matrix
-            <para>
-            <c>RTC INTERNAL MATRIX</c>
-            </para>
+            3x3 matrix for RTC's internal matrix at primary head
             </summary>
             <remarks>
-            Calculates the new target points according by 3x3 matrix. <br/>
-            This operation has applied into <c>RTC INTERNAL MATRIX</c> . <br/>
-            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">IRtc2ndHead.PrimaryHeadBaseOffset"></see>( or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">IRtc2ndHead.PrimaryHeadUserOffset"></see>) together. <br/>
-            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">IRtc2ndHead.SecondaryHeadBaseOffset"></see>( or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">IRtc2ndHead.SecondaryHeadUserOffset"></see>) together. <br/>
+            Matrix transformation would be applied every jump and mark(or arc) commands. <br/>
+            This matrix will be assigned into <c>RTC's INTERNAL MATRIX</c> but not <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see>. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">IRtc2ndHead.PrimaryHeadBaseOffset"></see>(or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">IRtc2ndHead.PrimaryHeadUserOffset"></see>) together. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">IRtc2ndHead.SecondaryHeadBaseOffset"></see>(or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">IRtc2ndHead.SecondaryHeadUserOffset"></see>) together. <br/>
             </remarks>
             <param name="head"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see><br/>Not allowed <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads.Secondary">ScannerHeads.Secondary</see> if RTC4.</param>
             <param name="matrix">3x3 matrix</param>
@@ -30886,19 +30928,15 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">
             <summary>
-            List transformation 3x3 matrix 
-            <para>
-            <c>RTC INTERNAL MATRIX</c>
-            </para>
+            List 3x3 matrix for RTC's internal matrix
             </summary>
             <remarks>
-            Calculates the new target points according by 3x3 matrix. <br/>
             The change applies as of the insert position but only until the end of the currently running Job. <br/>
-            This operation has applied into <c>RTC INTERNAL MATRIX</c>. <br/>
+            This matrix will be assigned into <c>RTC's INTERNAL MATRIX</c> but not <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see>. <br/>
             Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">IRtc2ndHead.PrimaryHeadBaseOffset"></see>( or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">IRtc2ndHead.PrimaryHeadUserOffset"></see>) together. <br/>
             Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">IRtc2ndHead.SecondaryHeadBaseOffset"></see>( or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">IRtc2ndHead.SecondaryHeadUserOffset"></see>) together. <br/>
             </remarks>
-            <param name="head"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see><br/>Not allowed <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads.Secondary">ScannerHeads.Secondary</see> if RTC4.</param>
+            <param name="head"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see><br/>If RTC4, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads.Secondary">ScannerHeads.Secondary</see> is not allowed.</param>
             <param name="matrix">3x3 matrix</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
