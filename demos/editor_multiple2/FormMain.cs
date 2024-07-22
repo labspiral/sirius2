@@ -52,9 +52,20 @@ namespace Demos
         {
             var button = sender as Button;
             int index = int.Parse((string)button.Tag);
-            
+
+            var editorCtrl = formEditors[index].siriusEditorUserControl1;
+
+            // open sirius file at editor and marker to ready
             //string fileName = Path.Combine(SpiralLab.Sirius2.Winforms.Config.RecipePath, "cal_100mm_5x5.sirius2");
-            //formEditors[index].siriusEditorUserControl1.Document.ActOpen(fileName);
+            //editorCtrl.Document.ActOpen(fileName);
+            //
+            //or
+            //
+            // open another sirius file and marker to ready
+            //var doc = DocumentFactory.CreateDefault();
+            //if (!doc.ActOpen(fileName))
+            //    return;
+            //editorCtrl.Marker.Ready(doc);
 
             SwitchForm(panel1, formEditors[index]);
         }
