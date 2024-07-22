@@ -22,7 +22,6 @@
 ![gridchecker](https://user-images.githubusercontent.com/58460570/279851007-10e24e50-c205-4c68-a62f-2410af495d2d.png)
 
 
-
 ----
 
 
@@ -33,13 +32,8 @@
     - RTC5
     - RTC6 
     - RTC6e 
-    - XL-SCAN (aka. syncAxis) by RTC6 + ACS 
- - Support 2D, 3D scanner field correction.
- - Support calibration tool for 3D surfaces.
-    - Plane 
-    - Cone 
-    - Cylinder 
-    - Points cloud  
+    - XL-SCAN(RTC6 + ACS) by syncAXIS
+ - Support measure and profile scanner trajectory with output signals by plotted graph.
  - Support powerful options.
     - MoF(Marking on the Fly)
     - 2nd head
@@ -49,9 +43,13 @@
     - Position dependent
     - Velocity dependent 
     - Defined-vector
- - Support SCANahead control, SDC(Spot Distance Control) with RTC6.
- - Support measure and profile scanner trajectory with output signals by plotted graph.
- - Support stream parser software.
+ - Support SCANahead and SDC(Spot Distance Control) control with RTC6.
+ - Support 2D, 3D scanner field correction.
+ - Support calibration tool for 3D surfaces.
+    - Plane 
+    - Cone 
+    - Cylinder 
+    - Points cloud  
  - Support many kinds of laser source controls.
     - Frequency
     - Duty cycle
@@ -64,17 +62,15 @@
     - JPT (Type E)
     - Photonics Industry (DX, RGH AIO)
     - Spectra Physics (Hippo, Talon)
- - Support many kinds of powermeters.
+ - Support many kinds of powermeters with powermap table for compensate output laser power.
     - Coherent (PowerMax)
     - Thorlabs (by OPM)
     - Ophir (by StarLab)
- - Support powermap table for compensate output laser power.
  - Support remote controls.
     - TCP/IP communication
     - Serial(RS-232) communication
  - Support powerful external script by C# language.
- - Open sourced codes with editor, marker, laser source control for customization.
- - Support many kinds of executable demo programs.
+ - Open source codes with editor, marker, remote and laser source control for customization.
 
 
 ----
@@ -125,7 +121,7 @@
 
 **5. How to use ?**
 
- - Copy all files and subdirectories at 'bin' to your working(or output) directory
+ - Copy all files and sub-directories at 'bin' to your working(or output) directory
  - Add reference 'spirallab.sirius2.dll', 'spirallab.sirius2.winforms.dll', 'OpenTK.dll'(optional) into your project
   
   
@@ -168,6 +164,11 @@
 
 
 **8. Version history**
+
+* 2024.7.23 v.1.41.1630
+  - added) skywriting mode4
+  - added) editor_multiple2 demo project
+  - fixed) exception at editorcontrol if not shown 
 
 * 2024.7.15 v.1.40.1620
   - added) editor_remote demo project

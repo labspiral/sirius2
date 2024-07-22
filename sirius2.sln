@@ -92,6 +92,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_basic_v2", "demos\ed
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_remote", "demos\editor_remote\editor_remote.csproj", "{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "editor_multiple2", "demos\editor_multiple2\editor_multiple2.csproj", "{C27AB278-AE47-440B-9473-9B8CFD95111E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -606,6 +608,18 @@ Global
 		{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}.Remote|Any CPU.Build.0 = Release|Any CPU
 		{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}.Remote|x64.ActiveCfg = Release|x64
 		{62FD0E84-F832-4F6D-9B4F-B1EBCC35F135}.Remote|x64.Build.0 = Release|x64
+		{C27AB278-AE47-440B-9473-9B8CFD95111E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C27AB278-AE47-440B-9473-9B8CFD95111E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C27AB278-AE47-440B-9473-9B8CFD95111E}.Debug|x64.ActiveCfg = Debug|x64
+		{C27AB278-AE47-440B-9473-9B8CFD95111E}.Debug|x64.Build.0 = Debug|x64
+		{C27AB278-AE47-440B-9473-9B8CFD95111E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C27AB278-AE47-440B-9473-9B8CFD95111E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C27AB278-AE47-440B-9473-9B8CFD95111E}.Release|x64.ActiveCfg = Release|x64
+		{C27AB278-AE47-440B-9473-9B8CFD95111E}.Release|x64.Build.0 = Release|x64
+		{C27AB278-AE47-440B-9473-9B8CFD95111E}.Remote|Any CPU.ActiveCfg = Release|Any CPU
+		{C27AB278-AE47-440B-9473-9B8CFD95111E}.Remote|Any CPU.Build.0 = Release|Any CPU
+		{C27AB278-AE47-440B-9473-9B8CFD95111E}.Remote|x64.ActiveCfg = Release|x64
+		{C27AB278-AE47-440B-9473-9B8CFD95111E}.Remote|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

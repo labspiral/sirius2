@@ -24251,7 +24251,7 @@
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.AutoDelayParamModes.Load">
             <summary>
             Load 
-            <para>Preconfigured</para>
+            <para>Load pre-configured params</para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.AutoDelayParamModes.Develop">
@@ -29860,6 +29860,7 @@
             <para>
             Be-aware pull-up status by default. <br/>
             Above RTC5 only.
+            Range from 0x00 ~ 0x03. <br/>
             </para>
             </summary>
             <remarks>
@@ -29870,6 +29871,7 @@
             2 bits digital output at LASER connector
             <para>
             Above RTC5 only.
+            Range from 0x00 ~ 0x03. <br/>
             </para>
             </summary>
             <remarks>
@@ -29881,6 +29883,7 @@
             <para>
             Be-aware <c>Data7</c> (for 8 or 7 bits) setting at RTC card. <br/>
             Be-aware <c>Latch</c> setting at RTC card. <br/>
+            Range from 0x00 ~ 0xFF. <br/>
             </para>
             </summary>
             <remarks>
@@ -29893,6 +29896,7 @@
             Be-aware output signal level (3.3V or 5V) setting at RTC card. <br/>
             RTC5: <c>JP1</c> jumper <br/>
             RTC6: solder jumper <br/>
+            Range from 0x0000 ~ 0xFFFF. <br/>
             </para>
             </summary>
             <remarks>
@@ -29901,14 +29905,17 @@
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtDI16">
             <summary>
             16 bits digital input at EXTENSION 1 port
+            <para>
+            Range from 0x0000 ~ 0xFFFF. <br/>
+            </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels.ExtAO1">
             <summary>
             ANALOG OUT1 port
             <para>
-            RTC4: Range: 0~10 V and resolution: 10 bits. <br/>
-            RTC5,6: Range: 0~10 V and resolution: 12 bits. <br/>
+            RTC4: Range: 0~10 V(0 ~ 1023) and resolution: 10 bits. <br/>
+            RTC5,6: Range: 0~10 V(0 ~ 4095) and resolution: 12 bits. <br/>
             </para>
             </summary>
             <remarks>
@@ -29918,8 +29925,8 @@
             <summary>
             ANALOG OUT2 port
             <para>
-            RTC4: Range: 0~10 V and resolution: 10 bits. <br/>
-            RTC5,6: Range: 0~10 V and resolution: 12 bits. <br/>
+            RTC4: Range: 0~10 V(0 ~ 1023) and resolution: 10 bits. <br/>
+            RTC5,6: Range: 0~10 V(0 ~ 4095) and resolution: 12 bits. <br/>
             </para>
             </summary>
             <remarks>
@@ -34896,6 +34903,9 @@
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.SkyWritingMode">
             <summary>
             Skywriting modes
+            <para>
+            Above RTC5 only. <br/>
+            </para>
             </summary>
             <remarks>
             <img src="images/skywriting.png"/><br/>
@@ -34934,12 +34944,23 @@
             Only for larger angle deviations (Cos(φ) &lt; Limit) between successive Mark commands of a Polyline a Sky Writing motions is executed as in <c>SkyWritingMode.Mode2</c>. <br/>
             </remarks>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.SkyWritingMode.Mode4">
+            <summary>
+            Mode4
+            <para>
+            Above RTC6 only. <br/>
+            </para>
+            </summary>
+            <remarks>
+             Like Sky Writing Mode 3.<br/>Plus allows short list commands between Jump Commands/Mark Commands. <br/>
+            </remarks>
+        </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcSkyWriting">
             <summary>
             IRtcSkyWriting interface
             <para>
             'Sky writing' is used for improve mark quality at start,end location by accel,decel effect. <br/>
-            Above RTC5. <br/>
+            Above RTC5 only. <br/>
             </para>
             </summary>
             <remarks>
@@ -34975,11 +34996,11 @@
             Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.SkyWritingMode.Mode3">SkyWritingMode.Mode3</see> only<br/>
             </remarks>
             <param name="mode"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SkyWritingMode">SkyWritingMode</see></param>
-            <param name="laserOnShift">Shift (>0: Delay) of the point of time, where the are switched on (usec)<br/>Min. time resolution: 1/64 usec<br/></param>
-            <param name="timeLag">Tracking error (usec)<br/>Min. time resolution: 1/64 usec<br/></param>
+            <param name="laserOnShift">Laser on shift (>0: Delay) of the point of time, where the are switched on (usec)<br/>Min. time resolution: 1/64 usec<br/></param>
+            <param name="timeLag">Time duration of tracking error (usec)<br/>Min. time resolution: 1/64 usec<br/></param>
             <param name="prev">Time duration of the run-in phase (usec)<br/>Min. time resolution: 10 usec<br/></param>
             <param name="post">Time duration of the run-out phase (usec)<br/>Min. time resolution: 10 usec<br/></param>
-            <param name="cosineLimit">Cosine of the angular limit (-1 ~ +1)<br/>
+            <param name="cosineLimit">Cosine of the angular limit.<br/>Range from -1 ~ 1.<br/>Used with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.SkyWritingMode.Mode3">Mode3</see> or <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.SkyWritingMode.Mode4">Mode4</see> only.<br/>
             <code>
                                        | 1
                                     ,--|--.
