@@ -126,13 +126,14 @@ namespace Demos
             // Field correction file path: \correction\cor_1to1.ct5
             // Default (1:1) correction file
             //var correctionFile = Path.Combine(Config.CorrectionPath, "cor_1to1.ct5");
-            var correctionFile = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "CORRECTION", "cor_1to1.ct5");
-            var correctionPath = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, correctionFile);
-            var signalLevelLaser12 = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "SIGNALLEVEL_LASER12", "High") == "High" ? RtcSignalLevels.ActiveHigh : RtcSignalLevels.ActiveLow;
-            var signalLevelLaserOn = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "SIGNALLEVEL_LASERON", "High") == "High" ? RtcSignalLevels.ActiveHigh : RtcSignalLevels.ActiveLow;
-            var rtcType = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "TYPE", "Rtc5");
-            var sLaserMode = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "LASERMODE", "Yag1");
-            var laserMode = (LaserModes)Enum.Parse(typeof(LaserModes), sLaserMode);
+            string correctionFile = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "CORRECTION", "cor_1to1.ct5");
+            string correctionPath = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, correctionFile);
+            RtcSignalLevels signalLevelLaser12 = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "SIGNALLEVEL_LASER12", "High") == "High" ? RtcSignalLevels.ActiveHigh : RtcSignalLevels.ActiveLow;
+            RtcSignalLevels signalLevelLaserOn = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "SIGNALLEVEL_LASERON", "High") == "High" ? RtcSignalLevels.ActiveHigh : RtcSignalLevels.ActiveLow;
+            string rtcType = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "TYPE", "Rtc5");
+            string sLaserMode = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "LASERMODE", "Yag1");
+            LaserModes laserMode = (LaserModes)Enum.Parse(typeof(LaserModes), sLaserMode);
+            string ipAddress, subnetMask;
             switch (rtcType.Trim().ToLower())
             {
                 default:
@@ -144,6 +145,11 @@ namespace Demos
                     correctionFile = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "CORRECTION", "cor_1to1.ctb");
                     rtc = ScannerFactory.CreateRtc4(index, kfactor, laserMode, correctionPath);
                     break;
+                case "rtc4e":
+                    ipAddress = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "IP_ADDRESS", "192.168.0.100");
+                    subnetMask = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "SUBNET_MASK", "255.255.255.0");
+                    rtc = ScannerFactory.CreateRtc4Ethernet(index, ipAddress, subnetMask, kfactor, laserMode, correctionPath);
+                    break;
                 case "rtc5":
                     rtc = ScannerFactory.CreateRtc5(index, kfactor, laserMode, signalLevelLaser12, signalLevelLaserOn, correctionPath);
                     break;
@@ -151,8 +157,8 @@ namespace Demos
                     rtc = ScannerFactory.CreateRtc6(index, kfactor, laserMode, signalLevelLaser12, signalLevelLaserOn, correctionPath);
                     break;
                 case "rtc6e":
-                    var ipAddress = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "IP_ADDRESS", "192.168.0.100");
-                    var subnetMask = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "SUBNET_MASK", "255.255.255.0");
+                    ipAddress = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "IP_ADDRESS", "192.168.0.100");
+                    subnetMask = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "SUBNET_MASK", "255.255.255.0");
                     rtc = ScannerFactory.CreateRtc6Ethernet(index, ipAddress, subnetMask, kfactor, laserMode, signalLevelLaser12, signalLevelLaserOn, correctionPath);
                     break;
                 case "syncaxis":
@@ -212,30 +218,34 @@ namespace Demos
 
             // 2nd Head
             var rtc2ndHead = rtc as IRtc2ndHead;
-            int enable2ndHead = NativeMethods.ReadIni<int>(ConfigFileName, $"RTC{index}", $"SECONDARY_HEAD_ENABLE");
-            if (0 != enable2ndHead && null != rtc2ndHead)
-            { 
-                var secondaryCorrectionFileName = NativeMethods.ReadIni<string>(ConfigFileName, $"RTC{index}", "SECONDARY_CORRECTION");
-                var secondaryCorrectionFullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "correction", secondaryCorrectionFileName);
-                success &= rtc.CtlLoadCorrectionFile(CorrectionTables.Table2, secondaryCorrectionFullPath);
-                success &= rtc.CtlSelectCorrection(rtc.PrimaryHeadTable, CorrectionTables.Table2);
-
-                float distX = NativeMethods.ReadIni<float>(ConfigFileName, $"RTC{index}", "PRIMARY_TO_SECONDARY_DISTANCE_X");
-                float distY = NativeMethods.ReadIni<float>(ConfigFileName, $"RTC{index}", "PRIMARY_TO_SECONDARY_DISTANCE_Y");
-                // Distance from primary to secondary head
-                rtc2ndHead.DistanceToSecondaryHead = new System.Numerics.Vector2(distX, distY);
-
+            if (null != rtc2ndHead)
+            {
                 // Primary head base offset
                 float dx1 = NativeMethods.ReadIni<float>(ConfigFileName, $"RTC{index}", "PRIMARY_BASE_OFFSET_X");
                 float dy1 = NativeMethods.ReadIni<float>(ConfigFileName, $"RTC{index}", "PRIMARY_BASE_OFFSET_Y");
                 float angle1 = NativeMethods.ReadIni<float>(ConfigFileName, $"RTC{index}", "PRIMARY_BASE_OFFSET_ANGLE");
                 rtc2ndHead.PrimaryHeadBaseOffset = new SpiralLab.Sirius2.Mathematics.Offset(dx1, dy1, 0, angle1);
 
-                // Secondary head base offset
-                float dx2 = NativeMethods.ReadIni<float>(ConfigFileName, $"RTC{index}", "SECONDARY_BASE_OFFSET_X");
-                float dy2 = NativeMethods.ReadIni<float>(ConfigFileName, $"RTC{index}", "SECONDARY_BASE_OFFSET_Y");
-                float angle2 = NativeMethods.ReadIni<float>(ConfigFileName, $"RTC{index}", "SECONDARY_BASE_OFFSET_ANGLE");
-                rtc2ndHead.SecondaryHeadBaseOffset = new SpiralLab.Sirius2.Mathematics.Offset(dx2, dy2, 0, angle2);
+                int enable2ndHead = NativeMethods.ReadIni<int>(ConfigFileName, $"RTC{index}", $"SECONDARY_HEAD_ENABLE");
+                if (0 != enable2ndHead)
+                {
+                    var secondaryCorrectionFileName = NativeMethods.ReadIni<string>(ConfigFileName, $"RTC{index}", "SECONDARY_CORRECTION");
+                    var secondaryCorrectionFullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "correction", secondaryCorrectionFileName);
+                    success &= rtc.CtlLoadCorrectionFile(CorrectionTables.Table2, secondaryCorrectionFullPath);
+                    success &= rtc.CtlSelectCorrection(rtc.PrimaryHeadTable, CorrectionTables.Table2);
+                    
+                    float distX = NativeMethods.ReadIni<float>(ConfigFileName, $"RTC{index}", "PRIMARY_TO_SECONDARY_DISTANCE_X");
+                    float distY = NativeMethods.ReadIni<float>(ConfigFileName, $"RTC{index}", "PRIMARY_TO_SECONDARY_DISTANCE_Y");
+                    
+                    // Distance from primary to secondary head
+                    rtc2ndHead.DistanceToSecondaryHead = new System.Numerics.Vector2(distX, distY);
+
+                    // Secondary head base offset
+                    float dx2 = NativeMethods.ReadIni<float>(ConfigFileName, $"RTC{index}", "SECONDARY_BASE_OFFSET_X");
+                    float dy2 = NativeMethods.ReadIni<float>(ConfigFileName, $"RTC{index}", "SECONDARY_BASE_OFFSET_Y");
+                    float angle2 = NativeMethods.ReadIni<float>(ConfigFileName, $"RTC{index}", "SECONDARY_BASE_OFFSET_ANGLE");
+                    rtc2ndHead.SecondaryHeadBaseOffset = new SpiralLab.Sirius2.Mathematics.Offset(dx2, dy2, 0, angle2);
+                }
             }
 
             // 3D
@@ -362,6 +372,9 @@ namespace Demos
                     break;
                 case "advancedoptowaveaopicoprecision":
                     laser = LaserFactory.CreateAdvancedOptoWaveAOPicoPrecision(index, $"LASER{index}", laserCOMPort, laserMaxPower);
+                    break;
+                case "advancedoptowavefotia":
+                    laser = LaserFactory.CreateAdvancedOptoWaveFotia(index, $"LASER{index}", laserCOMPort, laserMaxPower);
                     break;
                 case "coherentavialx":
                     laser = LaserFactory.CreateCoherentAviaLX(index, $"LASER{index}", laserCOMPort, laserMaxPower);

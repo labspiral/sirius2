@@ -427,7 +427,7 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported operation !");
                         return false;
                     case PowerControlMethods.Analog:
                         double dataVoltage = this.MinVoltage + (this.MaxVoltage - this.MinVoltage) * percentage / 100.0;
@@ -487,7 +487,7 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported operation !");
                         return false;
                     case PowerControlMethods.Analog:
                         double dataVoltage = percentage / 100.0 * (this.MaxVoltage - this.MinVoltage) + this.MinVoltage;

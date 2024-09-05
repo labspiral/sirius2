@@ -185,7 +185,7 @@
     <value>editorControl1</value>
   </data>
   <data name="&gt;&gt;editorControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.EditorUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.EditorUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;editorControl1.Parent" xml:space="preserve">
     <value>tabEditor</value>
@@ -254,7 +254,7 @@
     <value>trvEntity</value>
   </data>
   <data name="&gt;&gt;trvEntity.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trvEntity.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -320,7 +320,7 @@
     <value>trvBlock</value>
   </data>
   <data name="&gt;&gt;trvBlock.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trvBlock.Parent" xml:space="preserve">
     <value>tabPage2</value>
@@ -386,7 +386,7 @@
     <value>penControl1</value>
   </data>
   <data name="&gt;&gt;penControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PenUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.PenUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;penControl1.Parent" xml:space="preserve">
     <value>tabPen</value>
@@ -435,7 +435,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAi
-        SgAAAk1TRnQBSQFMAgEBKQEAAVgBCAFYAQgBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        SgAAAk1TRnQBSQFMAgEBKQEAAXgBCAF4AQgBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABYAMAAQgBAQIAAQEBAAEIBgABYxgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHc
         AcABAAHwAcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEA
         AzkBAAGAAXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEz
@@ -818,7 +818,7 @@
     <value>propertyGridControl1</value>
   </data>
   <data name="&gt;&gt;propertyGridControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertyGridControl1.Parent" xml:space="preserve">
     <value>spcRight.Panel2</value>
@@ -1271,7 +1271,27 @@
   <data name="btnSiriusCharacterSetText.ToolTipText" xml:space="preserve">
     <value>Sirius CharacterSet Text</value>
   </data>
-  <data name="toolStripDropDownButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 6</value>
+  </data>
+  <data name="btnZPL.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAJRJREFUSEvd
+        kMEJAjEUBVNnkj4sQU/W5dUu7EJ3hcDj8dg/etyBIRDe5JB2at5/iEkxFZFCKiKFVEQKqYgUUhEppCJ0
+        rJHf6blE6Fgjv9NzidCxRn6n5xKhwa8iUkhFpJCKSCEVkULqId/RGOPae79UbrvHasRDyoHhj5d9OTD8
+        8bLfv+c157xv3oDPvTERHhFPSWsfkgEVOfReHYQAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnZPL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 30</value>
+  </data>
+  <data name="btnZPL.Text" xml:space="preserve">
+    <value>Image ZPL</value>
+  </data>
+  <data name="btnZPL.ToolTipText" xml:space="preserve">
+    <value>Image ZPL</value>
+  </data>
+  <data name="ddbText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADxSURBVEhL5ZVhzcIwFEUnAQlIQAISkPBJQAISkIAEHIAE
@@ -1281,13 +1301,13 @@
         7V8tSm/Ft47q145yWZVYLTVB2HEfNnXTf2CaPm2WkP6xfSl9AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="toolStripDropDownButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="ddbText.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="toolStripDropDownButton1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ddbText.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 28</value>
   </data>
-  <data name="toolStripDropDownButton1.Text" xml:space="preserve">
+  <data name="ddbText.Text" xml:space="preserve">
     <value>Text</value>
   </data>
   <data name="mnuDataMatrix.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -1299,7 +1319,7 @@
 </value>
   </data>
   <data name="mnuDataMatrix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuDataMatrix.Text" xml:space="preserve">
     <value>DataMatrix</value>
@@ -1316,7 +1336,7 @@
 </value>
   </data>
   <data name="mnuQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuQRCode.Text" xml:space="preserve">
     <value>QR Code</value>
@@ -1338,7 +1358,7 @@
 </value>
   </data>
   <data name="mnuPDF417.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuPDF417.Text" xml:space="preserve">
     <value>PDF417</value>
@@ -1347,7 +1367,7 @@
     <value>PDF417 (2D)</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 6</value>
+    <value>185, 6</value>
   </data>
   <data name="mnuBarcode1D.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1358,7 +1378,7 @@
 </value>
   </data>
   <data name="mnuBarcode1D.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuBarcode1D.Text" xml:space="preserve">
     <value>Barcode 1D</value>
@@ -1420,7 +1440,7 @@
 </value>
   </data>
   <data name="mnuTimer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuTimer.Text" xml:space="preserve">
     <value>Timer</value>
@@ -1439,7 +1459,7 @@
 </value>
   </data>
   <data name="mnuJumpTo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuJumpTo.Text" xml:space="preserve">
     <value>Jump To</value>
@@ -1457,7 +1477,7 @@
 </value>
   </data>
   <data name="mnuMeasurementBeginEnd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuMeasurementBeginEnd.Text" xml:space="preserve">
     <value>Measurement</value>
@@ -1593,7 +1613,7 @@
 </value>
   </data>
   <data name="mnuMoF.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuMoF.Text" xml:space="preserve">
     <value>MoF</value>
@@ -1611,7 +1631,7 @@
 </value>
   </data>
   <data name="mnuSelectCorrectionTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuSelectCorrectionTable.Text" xml:space="preserve">
     <value>Correction Table</value>
@@ -1627,7 +1647,7 @@
 </value>
   </data>
   <data name="mnuAlcDefinedVector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuAlcDefinedVector.Text" xml:space="preserve">
     <value>Ramp</value>
@@ -1645,7 +1665,7 @@
 </value>
   </data>
   <data name="mnuZDelta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuZDelta.Text" xml:space="preserve">
     <value>Z Delta</value>
@@ -1665,7 +1685,7 @@
 </value>
   </data>
   <data name="mnuZDefocus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuZDefocus.Text" xml:space="preserve">
     <value>Z Defocus</value>
@@ -1799,7 +1819,7 @@
 </value>
   </data>
   <data name="mnuData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuData.Text" xml:space="preserve">
     <value>Data and I/O</value>
@@ -1825,7 +1845,7 @@
 </value>
   </data>
   <data name="mnuScriptEvent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuScriptEvent.Text" xml:space="preserve">
     <value>Script Event</value>
@@ -1833,7 +1853,7 @@
   <data name="mnuScriptEvent.ToolTipText" xml:space="preserve">
     <value>Script Event</value>
   </data>
-  <data name="toolStripDropDownButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ddbControl.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADqSURBVEhL7ZR/DcIwEIUrAQlIQQISkIAEJEwCDsABOAAH
@@ -1843,16 +1863,16 @@
         CnFCONfcYm/QJzCWI+0+15N+oZTutqwmaFmJTHUAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="toolStripDropDownButton3.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="ddbControl.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="toolStripDropDownButton3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ddbControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 28</value>
   </data>
-  <data name="toolStripDropDownButton3.Text" xml:space="preserve">
+  <data name="ddbControl.Text" xml:space="preserve">
     <value>Control</value>
   </data>
-  <data name="toolStripDropDownButton3.ToolTipText" xml:space="preserve">
+  <data name="ddbControl.ToolTipText" xml:space="preserve">
     <value>Control Entity</value>
   </data>
   <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
@@ -2214,7 +2234,7 @@
 </value>
   </data>
   <data name="mnuMarginLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuMarginLeft.Text" xml:space="preserve">
     <value>Left</value>
@@ -2230,7 +2250,7 @@
 </value>
   </data>
   <data name="mnuMarginRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuMarginRight.Text" xml:space="preserve">
     <value>Right</value>
@@ -2247,7 +2267,7 @@
 </value>
   </data>
   <data name="mnuMarginTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuMarginTop.Text" xml:space="preserve">
     <value>Top</value>
@@ -2264,7 +2284,7 @@
 </value>
   </data>
   <data name="mnuMarginBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 30</value>
+    <value>188, 30</value>
   </data>
   <data name="mnuMarginBottom.Text" xml:space="preserve">
     <value>Bottom</value>
@@ -2378,7 +2398,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="offsetControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>569, 827</value>
+    <value>569, 927</value>
   </data>
   <data name="offsetControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2387,7 +2407,7 @@
     <value>offsetControl1</value>
   </data>
   <data name="&gt;&gt;offsetControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.OffsetUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.OffsetUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;offsetControl1.Parent" xml:space="preserve">
     <value>spcMarker.Panel1</value>
@@ -2420,7 +2440,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="markerControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>814, 827</value>
+    <value>814, 927</value>
   </data>
   <data name="markerControl1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2429,7 +2449,7 @@
     <value>markerControl1</value>
   </data>
   <data name="&gt;&gt;markerControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.MarkerUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.MarkerUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;markerControl1.Parent" xml:space="preserve">
     <value>spcMarker.Panel2</value>
@@ -2450,7 +2470,7 @@
     <value>1</value>
   </data>
   <data name="spcMarker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1386, 827</value>
+    <value>1386, 927</value>
   </data>
   <data name="spcMarker.SplitterDistance" type="System.Int32, mscorlib">
     <value>569</value>
@@ -2483,7 +2503,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMarker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1392, 833</value>
+    <value>1392, 933</value>
   </data>
   <data name="tabMarker.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2519,7 +2539,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="manualUserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1386, 827</value>
+    <value>1386, 927</value>
   </data>
   <data name="manualUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2528,7 +2548,7 @@
     <value>manualUserControl1</value>
   </data>
   <data name="&gt;&gt;manualUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.ManualUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.ManualUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;manualUserControl1.Parent" xml:space="preserve">
     <value>tabManual</value>
@@ -2546,7 +2566,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabManual.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1392, 833</value>
+    <value>1392, 933</value>
   </data>
   <data name="tabManual.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -2588,7 +2608,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="rtcControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>613, 827</value>
+    <value>613, 927</value>
   </data>
   <data name="rtcControl1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2597,7 +2617,7 @@
     <value>rtcControl1</value>
   </data>
   <data name="&gt;&gt;rtcControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RtcUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.ScannerUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rtcControl1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -2630,7 +2650,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="laserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>769, 827</value>
+    <value>769, 927</value>
   </data>
   <data name="laserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -2639,7 +2659,7 @@
     <value>laserControl1</value>
   </data>
   <data name="&gt;&gt;laserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.LaserUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.LaserUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;laserControl1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -2660,7 +2680,7 @@
     <value>1</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1386, 827</value>
+    <value>1386, 927</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
     <value>613</value>
@@ -2690,7 +2710,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabLaser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1392, 833</value>
+    <value>1392, 933</value>
   </data>
   <data name="tabLaser.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2738,7 +2758,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="rtcDIUserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>670, 827</value>
+    <value>670, 927</value>
   </data>
   <data name="rtcDIUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2747,7 +2767,7 @@
     <value>rtcDIUserControl1</value>
   </data>
   <data name="&gt;&gt;rtcDIUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rtcDIUserControl1.Parent" xml:space="preserve">
     <value>spcIO.Panel1</value>
@@ -2786,7 +2806,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="rtcDOUserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>712, 827</value>
+    <value>712, 927</value>
   </data>
   <data name="rtcDOUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2795,7 +2815,7 @@
     <value>rtcDOUserControl1</value>
   </data>
   <data name="&gt;&gt;rtcDOUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rtcDOUserControl1.Parent" xml:space="preserve">
     <value>spcIO.Panel2</value>
@@ -2819,7 +2839,7 @@
     <value>100</value>
   </data>
   <data name="spcIO.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1386, 827</value>
+    <value>1386, 927</value>
   </data>
   <data name="spcIO.SplitterDistance" type="System.Int32, mscorlib">
     <value>670</value>
@@ -2849,7 +2869,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabIO.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1392, 833</value>
+    <value>1392, 933</value>
   </data>
   <data name="tabIO.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2885,7 +2905,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="powerMeterControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1368, 781</value>
+    <value>1368, 881</value>
   </data>
   <data name="powerMeterControl1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2894,7 +2914,7 @@
     <value>powerMeterControl1</value>
   </data>
   <data name="&gt;&gt;powerMeterControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;powerMeterControl1.Parent" xml:space="preserve">
     <value>tabPage15</value>
@@ -2915,7 +2935,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="tabPage15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1376, 789</value>
+    <value>1376, 889</value>
   </data>
   <data name="tabPage15.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2948,7 +2968,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="powerMapControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1368, 781</value>
+    <value>1368, 881</value>
   </data>
   <data name="powerMapControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2957,7 +2977,7 @@
     <value>powerMapControl1</value>
   </data>
   <data name="&gt;&gt;powerMapControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;powerMapControl1.Parent" xml:space="preserve">
     <value>tabPage16</value>
@@ -2978,7 +2998,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="tabPage16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1376, 789</value>
+    <value>1376, 889</value>
   </data>
   <data name="tabPage16.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3011,7 +3031,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="tbcPower.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1384, 825</value>
+    <value>1384, 925</value>
   </data>
   <data name="tbcPower.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3041,7 +3061,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="tabPower.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1392, 833</value>
+    <value>1392, 933</value>
   </data>
   <data name="tabPower.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -3077,7 +3097,7 @@
     <value>3, 4, 3, 4</value>
   </data>
   <data name="scriptControlControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1386, 827</value>
+    <value>1386, 927</value>
   </data>
   <data name="scriptControlControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3086,7 +3106,7 @@
     <value>scriptControlControl1</value>
   </data>
   <data name="&gt;&gt;scriptControlControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.ScriptUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.ScriptUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scriptControlControl1.Parent" xml:space="preserve">
     <value>tabScript</value>
@@ -3104,7 +3124,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabScript.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1392, 833</value>
+    <value>1392, 933</value>
   </data>
   <data name="tabScript.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -3140,7 +3160,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="remoteUserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1386, 827</value>
+    <value>1386, 927</value>
   </data>
   <data name="remoteUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3149,7 +3169,7 @@
     <value>remoteUserControl1</value>
   </data>
   <data name="&gt;&gt;remoteUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RemoteUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.RemoteUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;remoteUserControl1.Parent" xml:space="preserve">
     <value>tabRemote</value>
@@ -3167,7 +3187,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabRemote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1392, 833</value>
+    <value>1392, 933</value>
   </data>
   <data name="tabRemote.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -3203,7 +3223,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="logControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1386, 827</value>
+    <value>1386, 927</value>
   </data>
   <data name="logControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3212,7 +3232,7 @@
     <value>logControl1</value>
   </data>
   <data name="&gt;&gt;logControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.LogUserControl, spirallab.sirius2.winforms, Version=1.39.1600.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.LogUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;logControl1.Parent" xml:space="preserve">
     <value>tabLog</value>
@@ -3230,7 +3250,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1392, 833</value>
+    <value>1392, 933</value>
   </data>
   <data name="tabLog.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -3736,10 +3756,10 @@
   <data name="&gt;&gt;btnSpiral.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripDropDownButton1.Name" xml:space="preserve">
-    <value>toolStripDropDownButton1</value>
+  <data name="&gt;&gt;ddbText.Name" xml:space="preserve">
+    <value>ddbText</value>
   </data>
-  <data name="&gt;&gt;toolStripDropDownButton1.Type" xml:space="preserve">
+  <data name="&gt;&gt;ddbText.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnText.Name" xml:space="preserve">
@@ -3790,6 +3810,18 @@
   <data name="&gt;&gt;btnSiriusCharacterSetText.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripMenuItem3.Name" xml:space="preserve">
+    <value>toolStripMenuItem3</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnZPL.Name" xml:space="preserve">
+    <value>btnZPL</value>
+  </data>
+  <data name="&gt;&gt;btnZPL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ddbBarcode.Name" xml:space="preserve">
     <value>ddbBarcode</value>
   </data>
@@ -3838,10 +3870,10 @@
   <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripDropDownButton3.Name" xml:space="preserve">
-    <value>toolStripDropDownButton3</value>
+  <data name="&gt;&gt;ddbControl.Name" xml:space="preserve">
+    <value>ddbControl</value>
   </data>
-  <data name="&gt;&gt;toolStripDropDownButton3.Type" xml:space="preserve">
+  <data name="&gt;&gt;ddbControl.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;mnuTimer.Name" xml:space="preserve">

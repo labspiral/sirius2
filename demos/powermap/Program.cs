@@ -52,7 +52,7 @@ namespace Demos
         /// <summary>
         /// Powermap file path
         /// </summary>
-        static string mapFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "powermap", "default.map");
+        static string mapFile = Path.Combine(Config.PowerMapPath, "default.map");
 
         [STAThread]
         static void Main(string[] args)
@@ -74,7 +74,7 @@ namespace Demos
             //var correctionFile = Path.Combine(Config.CorrectionPath, "cor_1to1.ctb");
 
             // Create RTC controller 
-            //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
+            //var rtc = ScannerFactory.CreateVirtual(0, kfactor, LaserModes.Yag1, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             //var rtc = ScannerFactory.CreateRtc4(0, kfactor, LaserModes.Yag1, correctionFile);
             //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
@@ -221,9 +221,10 @@ namespace Demos
             Config.PowerMapHoldTimeMs = 5000;
             Config.PowerMapInRangeThreshold = 5;
             // Category: 100 khz
+            const string category = "100000";
             // Power range: 10 steps (0~20 W)
             return powerMap.CtlMapping(
-                new string[] { "100000" }, //100 KHz
+                new string[] { category }, //100 KHz
                 new double[] { 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 } //target x watts
                 );
         }
@@ -233,12 +234,13 @@ namespace Demos
             Config.PowerMapHoldTimeMs = 5000;
             Config.PowerMapInRangeThreshold = 5;
             // Category: 100 khz
+            const string category = "100000";
             // Target power: 3, 5, 8 W
             return powerMap.CtlVerify(new KeyValuePair<string, double>[]
                 {
-                    new KeyValuePair<string, double>("100000", 3 ),
-                    new KeyValuePair<string, double>("100000", 5 ),
-                    new KeyValuePair<string, double>("100000", 8 ),
+                    new KeyValuePair<string, double>(category, 3 ),
+                    new KeyValuePair<string, double>(category, 5 ),
+                    new KeyValuePair<string, double>(category, 8 ),
                 });
         }
         private static bool StartPowerCompensate(IPowerMap powerMap)
@@ -248,12 +250,13 @@ namespace Demos
             Config.PowerMapInRangeThreshold = 5;
             Config.PowerMapOutOfRangeThreshold = 20;
             // Category: 100 khz
+            const string category = "100000";
             // Target power: 2.5, 5.5, 7.5 W
             return powerMap.CtlCompensate(new KeyValuePair<string, double>[]
                 {
-                    new KeyValuePair<string, double>("100000", 2.5 ),
-                    new KeyValuePair<string, double>("100000", 5.5 ),
-                    new KeyValuePair<string, double>("100000", 7.5 ),
+                    new KeyValuePair<string, double>(category, 2.5 ),
+                    new KeyValuePair<string, double>(category, 5.5 ),
+                    new KeyValuePair<string, double>(category, 7.5 ),
                 });
         }
 

@@ -94,6 +94,7 @@ namespace Demos
             // Create RTC controller 
             //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
             //var rtc = ScannerFactory.CreateRtc4(0, kfactor, LaserModes.Yag1, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc4Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag1, correctionFile);
             //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);

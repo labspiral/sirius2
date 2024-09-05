@@ -29,6 +29,7 @@
  
  - Support SCANLAB's RTC controllers.
     - RTC4
+    - RTC4e
     - RTC5
     - RTC6 
     - RTC6e 
@@ -69,6 +70,14 @@
  - Support remote controls.
     - TCP/IP communication
     - Serial(RS-232) communication
+ - Various pre-built entities
+    - Point(s), Line, Arc, Polyline, Triangle, Rectangle, Spiral, Trepan, Curve, Raster
+    - Layer, Group, Block and Block insert
+    - Text, SiriusText, ImageText, Circular text
+    - Image, Stitched image, DXF, PDF, ZPL(zebra programming language)
+    - Barcode, QR code, DataMatrix, PDF417
+    - Plane, Cone(or cylinder), STL(Stereo lithography), Point cloud
+    - and more control entities
  - Support powerful external script by C# language.
  - Open source codes with editor, marker, remote and laser source control for customization.
 
@@ -122,7 +131,7 @@
 **5. How to use ?**
 
  - Copy all files and sub-directories at 'bin' to your working(or output) directory
- - Add reference 'spirallab.sirius2.dll', 'spirallab.sirius2.winforms.dll', 'OpenTK.dll'(optional) into your project
+ - Add reference files 'spirallab.sirius2.dll', 'spirallab.sirius2.winforms.dll', 'OpenTK.dll'(optional) into your project
   
   
  ----
@@ -142,9 +151,10 @@
  - Demo 'editor_mof_barcode' winforms project for mark text, barcode by script with MoF
  - Demo 'editor_mof_text' winforms project for mark out of ranged texts by script with MoF
  - Demo 'editor_dio' winforms project for control digital input/output
- - Demo 'editor_remote' winforms project for customized tcp/ip server 
+ - Demo 'editor_remote' winforms project for customized tcp/ip server (open sourced)
  - Demo 'editor_multiple' winforms project for multiple RTC instances
  - Demo 'editor_marker' winforms project for customized marker (open sourced)
+ - Demo 'editor_laser' winforms project for customized laser UI (open sourced)
  - Demo 'editor_ui' winforms project for customized ui (open sourced)
 
 
@@ -165,6 +175,21 @@
 
 **8. Version history**
 
+* 2024.9.5 v.1.42.1760
+  - added) customizable laser UI 
+     - added) editor_laser demo
+  - added) timed demo
+     - added) IRtcTimed interface
+     - fixed) support timed operation for point, line and arc entities
+  - added) ZPL(zebra programming language) entity
+  - added) RTC4e controller
+  - added) (experimental) read raw .ctb file format and plot to graph
+  - added) 1D barcode formats (ITF, MSI)
+  - added) shortcut for start simulation by 'F1'
+  - fixed) exception when import PDF file
+  - fixed) IClipRegion.Clip bug at arc entity
+  - fixed) removed hard jumps at points entity
+  
 * 2024.7.23 v.1.41.1630
   - added) skywriting mode4
   - added) editor_multiple2 demo project

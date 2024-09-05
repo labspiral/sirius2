@@ -405,7 +405,7 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported operation !");
                         return false;
                     case PowerControlMethods.DigitalBits:
                         double dataBits = this.DigitalBitMinValue + (this.DigitalBitMaxValue - this.DigitalBitMinValue) * percentage / 100.0;
@@ -469,7 +469,7 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported operation !");
                         return false;
                     case PowerControlMethods.DigitalBits:
                         double dataBits = this.DigitalBitMinValue + (this.DigitalBitMaxValue - this.DigitalBitMinValue) * percentage / 100.0;

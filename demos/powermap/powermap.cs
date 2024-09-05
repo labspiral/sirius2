@@ -16,7 +16,7 @@
  *                `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : Custom PowerMap
+ * Description : Custom power map, verify and compensate routines
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (https://sepwind.blogspot.com)
  * 
  */

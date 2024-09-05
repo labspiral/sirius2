@@ -378,7 +378,7 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported operation !");
                         return false;
                     case PowerControlMethods.DutyCycle:
                         double dutyCycle = this.MinDutyCycle + (this.MaxDutyCycle - this.MinDutyCycle) * percentage / 100.0;
@@ -437,7 +437,7 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported operation !");
                         return false;
                     case PowerControlMethods.DutyCycle:
                         double dutyCycle = this.MinDutyCycle + (this.MaxDutyCycle - this.MinDutyCycle) * percentage / 100.0;

@@ -383,7 +383,7 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported operation !");
                         return false;
                     case PowerControlMethods.Rs232:
                         if (rtc is IRtcSerialComm rtcSerialComm)
@@ -448,7 +448,7 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported operation !");
                         return false;
                     case PowerControlMethods.Rs232:
                         if (rtc is IRtcSerialComm rtcSerialComm)

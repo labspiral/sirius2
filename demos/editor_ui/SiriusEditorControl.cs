@@ -62,7 +62,7 @@ namespace Demos
     /// 2. <see cref="TreeViewBlockUserControl">TreeViewBlockUserControl</see> <br/>
     /// 3. <see cref="PenUserControl">PenUserControl</see> <br/>
     /// 4. <see cref="EditorUserControl">EditorUserControl</see> <br/>
-    /// 5. <see cref="RtcUserControl">RtcUserControl</see> <br/>
+    /// 5. <see cref="ScannerUserControl">RtcUserControl</see> <br/>
     /// 6. <see cref="LaserUserControl">LaserUserControl</see> <br/>
     /// 7. <see cref="MarkerUserControl">MarkerUserControl</see> <br/>
     /// 8. <see cref="ManualUserControl">ManualUserControl</see> <br/>
@@ -218,7 +218,7 @@ namespace Demos
                 }
                 
                 rtc = value;
-                RtcCtrl.Rtc = rtc;
+                RtcCtrl.Scanner = rtc;
                 MarkerCtrl.Rtc = rtc;
                 ManualCtrl.Rtc = rtc;
                 EditorCtrl.Rtc = rtc;
@@ -637,7 +637,7 @@ namespace Demos
         [Category("Sirius2")]
         [DisplayName("RtcUserControl")]
         [Description("Rtc UserControl")]
-        public SpiralLab.Sirius2.Winforms.UI.RtcUserControl RtcCtrl
+        public SpiralLab.Sirius2.Winforms.UI.ScannerUserControl RtcCtrl
         {
             get { return rtcControl1; }
         }
@@ -860,6 +860,7 @@ namespace Demos
             btnCharacterSetText.Click += BtnCharacterSetText_Click;
             btnSiriusText.Click += BtnSiriusText_Click;
             btnSiriusCharacterSetText.Click += BtnSiriusCharacterSetText_Click;
+            btnZPL.Click += BtnZPL_Click;
 
             mnuDataMatrix.Click += MnuDataMatrix_Click;
             mnuQRCode.Click += MnuQRCode_Click;
@@ -900,6 +901,7 @@ namespace Demos
             // Create document by default 
             this.Document = DocumentFactory.CreateDefault();
         }
+
 
         /// <inheritdoc/>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -942,6 +944,13 @@ namespace Demos
                     Marker.Reset();
                     return true;
                 }
+            }
+            // Simulation: F1
+            else if (keyData == Config.KeyboardSimulationStart)
+            {
+                Document.ActSimulateStart(Document.Selected, Marker, SimulationSpeeds.Fast);
+                return true;
+
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
@@ -1008,6 +1017,53 @@ namespace Demos
         private void MnuBarcode1D_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateBarcode("1234567890", Barcode1DFormats.Code128, 3, 5, 2);
+            document.ActAdd(entity);
+        }
+        private void BtnZPL_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("^XA");
+            sb.Append("");
+            sb.Append("^FX Top section with logo, name and address.");
+            sb.Append("^CF0,60");
+            sb.Append("^FO50,50^GB100,100,100^FS");
+            sb.Append("^FO75,75^FR^GB100,100,100^FS");
+            sb.Append("^FO93,93^GB40,40,40^FS");
+            sb.Append("^FO220,50^FDIntershipping, Inc.^FS");
+            sb.Append("^CF0,30");
+            sb.Append("^FO220,115^FD1000 Shipping Lane^FS");
+            sb.Append("^FO220,155^FDShelbyville TN 38102^FS");
+            sb.Append("^FO220,195^FDUnited States (USA)^FS");
+            sb.Append("^FO50,250^GB700,3,3^FS");
+            sb.Append("");
+            sb.Append("^FX Second section with recipient address and permit information.");
+            sb.Append("^CFA,30");
+            sb.Append("^FO50,300^FDJohn Doe^FS");
+            sb.Append("^FO50,340^FD100 Main Street^FS");
+            sb.Append("^FO50,380^FDSpringfield TN 39021^FS");
+            sb.Append("^FO50,420^FDUnited States (USA)^FS");
+            sb.Append("^CFA,15");
+            sb.Append("^FO600,300^GB150,150,3^FS");
+            sb.Append("^FO638,340^FDPermit^FS");
+            sb.Append("^FO638,390^FD123456^FS");
+            sb.Append("^FO50,500^GB700,3,3^FS");
+            sb.Append("");
+            sb.Append("^FX Third section with bar code.");
+            sb.Append("^BY5,2,270");
+            sb.Append("^FO100,550^BC^FD12345678^FS");
+            sb.Append("");
+            sb.Append("^FX Fourth section (the two boxes on the bottom).");
+            sb.Append("^FO50,900^GB700,250,3^FS");
+            sb.Append("^FO400,900^GB3,250,3^FS");
+            sb.Append("^CF0,40");
+            sb.Append("^FO100,960^FDCtr. X34B-1^FS");
+            sb.Append("^FO100,1010^FDREF1 F00B47^FS");
+            sb.Append("^FO100,1060^FDREF2 BL4H8^FS");
+            sb.Append("^CF0,190");
+            sb.Append("^FO470,955^FDCA^FS");
+            sb.Append("");
+            sb.Append("^XZ");
+            var entity = EntityFactory.CreateImageZPL(sb.ToString(), 4 * 25.4, 6 * 25.4);
             document.ActAdd(entity);
         }
         private void MnuWriteDataExt16_Click(object sender, EventArgs e)
@@ -1814,7 +1870,10 @@ namespace Demos
                 return;
             switch (rtc.RtcType)
             {
+                case RtcTypes.RtcVirtual:
+                    break;
                 case RtcTypes.Rtc4:
+                case RtcTypes.Rtc4e:
                     btnCharacterSetText.Enabled = false;
                     btnSiriusCharacterSetText.Enabled = false;
                     mnuAlcDefinedVector.Enabled = false;
@@ -1827,15 +1886,11 @@ namespace Demos
                     mnuMoFXYWaitRange.Enabled = false;
                     mnuMoFAngularWait.Enabled = false;
                     break;
-                case RtcTypes.RtcVirtual:
-                    break;
-              
                 case RtcTypes.Rtc5:
                 case RtcTypes.Rtc6:
                 case RtcTypes.Rtc6e:
                     break;
                 case RtcTypes.Rtc6SyncAxis:
-                    btnImageText.Enabled = false;
                     mnuMeasurementBeginEnd.Enabled = false;
                     mnuMoF.Enabled = false;
                     mnuZDelta.Enabled = false;
@@ -1860,6 +1915,9 @@ namespace Demos
             EntityPen.PropertyVisibility(laser);
             EntityLayer.PropertyVisibility(rtc);
             EntityPoints.PropertyVisibility(rtc);
+            EntityPoint.PropertyVisibility(rtc);
+            EntityLine.PropertyVisibility(rtc);
+            EntityArc.PropertyVisibility(rtc);
             EntityRampBegin.PropertyVisibility(rtc);
             EntityMoFBegin.PropertyVisibility(rtc);
         }

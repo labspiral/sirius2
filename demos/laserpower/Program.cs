@@ -16,7 +16,7 @@
  *                `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : User defined laser source and control output power
+ * Description : User defined(or implemented) laser sources
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -64,7 +64,7 @@ namespace Demos
             //var correctionFile = Path.Combine(Config.CorrectionPath, "cor_1to1.ctb");
 
             // Create RTC controller 
-            //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
+            //var rtc = ScannerFactory.CreateVirtual(0, kfactor, LaserModes.Yag1, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             //var rtc = ScannerFactory.CreateRtc4(0, kfactor, LaserModes.Yag1, correctionFile);
             //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
@@ -82,7 +82,7 @@ namespace Demos
             Debug.Assert(success);
 
             int laserType = 1;
-            Console.Write("Select laser (1: D.Out8bits, 2: D.Out16bits, 3: Analog1, 4: Analog2, 5: Pulse width, 6: RS232, 7: D.Out8bits+Guide 8: Custom, 9:External COM port) (Default= 1) : ");
+            Console.Write("Select laser (1: Digital 8bits, 2: Digital 16bits, 3: Analog1, 4: Analog2, 5: Duty cycle, 6: RS232, 7: Digital 8bits+Guide 8: Custom, 9:External COM port) (Default= 1) : ");
             try {
                 laserType = Convert.ToInt32(Console.ReadLine());
             }
@@ -124,7 +124,7 @@ namespace Demos
                     laser = myLaserPulseWidth;
                     break;
                 case 6:
-                    var myLaserRS232 = new MyLaserRS232(0, "My RS232 Communication Laser", maxWatt);
+                    var myLaserRS232 = new MyLaserRS232(0, "My Internal RS232 Communication Laser", maxWatt);
                     laser = myLaserRS232;
                     break;
                 case 7:
@@ -134,12 +134,12 @@ namespace Demos
                     laser = myLaserDOut82;
                     break;
                 case 8:
-                    var myLaserCustom = new MyLaserCustom(0, "Custom Communication Laser", maxWatt);
+                    var myLaserCustom = new MyLaserCustom(0, "My Custom Communication Laser", maxWatt);
                     laser = myLaserCustom;
                     break;
                 case 9:
                     int comPortNo = 1;
-                    var myLaserExternalRS232 = new MyLaserRS232External(0, "External RS232 Laser", maxWatt, comPortNo);
+                    var myLaserExternalRS232 = new MyLaserRS232External(0, "My External RS232 Laser", maxWatt, comPortNo);
                     laser = myLaserExternalRS232;
                     break;
             }
@@ -148,9 +148,10 @@ namespace Demos
             // Initialize laser
             success &= laser.Initialize();
             // Default power as 2W
-            var powerControl = laser as ILaserPowerControl;
-            Debug.Assert(null != powerControl);
-            success &= powerControl.CtlPower(2);
+            var laserPowerControl = laser as ILaserPowerControl;
+            Debug.Assert(null != laserPowerControl);
+            success &= laserPowerControl.CtlPower(2);
+            var laserGuideControl = laser as ILaserGuideControl;
             Debug.Assert(success);
 
             ConsoleKeyInfo key;
@@ -167,7 +168,7 @@ namespace Demos
                 Console.WriteLine("'1' : laser on (warning !!!)");
                 Console.WriteLine("'2' : guide laser on");
                 Console.WriteLine("'3' : guide laser off");
-                Console.WriteLine("'Q'  : quit");
+                Console.WriteLine("'Q' : quit");
                 Console.Write("Select your target : ");
                 key = Console.ReadKey(false);
                 if (key.Key == ConsoleKey.Q)
@@ -209,16 +210,10 @@ namespace Demos
                         rtc.CtlLaserOn();
                         break;
                     case ConsoleKey.D2:
-                        {
-                            if (laser is ILaserGuideControl laserGuideControl)
-                                laserGuideControl.CtlGuide(true);
-                        }
+                        laserGuideControl?.CtlGuide(true);
                         break;
                     case ConsoleKey.D3:
-                        {
-                            if (laser is ILaserGuideControl laserGuideControl)
-                                laserGuideControl.CtlGuide(false);
-                        }
+                        laserGuideControl?.CtlGuide(false);
                         break;
                 }
                 Logger.Log(Logger.Types.Info, $"Processing time: {sw.Elapsed.TotalSeconds:F3} sec");
@@ -230,12 +225,14 @@ namespace Demos
 
         /// <summary>
         /// Measuremented range 
-        /// EXTENSION1 PORT (D.Out 16bits) : 0~65535
-        /// EXTENSION2 PORT (D.Out 8bits) : 0~255
-        /// Analog 1/2 : 0~10 V
-        /// Pulse width : usec
-        /// RS232 : unsupported
-        /// Custom : unsupported
+        /// <para>
+        /// EXTENSION1 PORT (D.Out 16bits) : 0~65535 <br/>
+        /// EXTENSION2 PORT (D.Out 8bits) : 0~255 <br/>
+        /// Analog 1/2 : 0~10 V <br/>
+        /// Pulse width : usec <br/>
+        /// RS232 : unsupported <br/>
+        /// Custom : unsupported <br/>
+        /// </para>
         /// </summary>
         /// <param name="rtc"></param>
         /// <param name="laser"></param>
@@ -290,6 +287,5 @@ namespace Demos
             }
             return success;
         }
-       
     }
 }

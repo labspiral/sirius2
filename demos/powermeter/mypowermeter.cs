@@ -16,7 +16,7 @@
  *               `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : User implemented powermeter
+ * Description : User defined(or implemented) powermeter
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -93,7 +93,7 @@ namespace Demos
             this.IsError = false;
             this.IsReady = true;
             this.CtlClear();
-            Logger.Log(Logger.Types.Info, $"powermeter[{this.Index}]: initialized");
+            Logger.Log(Logger.Types.Info, $"powermeter [{this.Index}]: initialized");
             return true;
         }
         /// <inheritdoc/>  
@@ -104,7 +104,7 @@ namespace Demos
                 this.Category = category;
             if (this.IsBusy)
             {
-                Logger.Log(Logger.Types.Warn, $"powermeter[{this.Index}]: trying to start but busy now");
+                Logger.Log(Logger.Types.Warn, $"powermeter [{this.Index}]: trying to start but busy now");
                 return true;
             }
             double secs = 1.0 / SamplingRateHz;
@@ -117,7 +117,7 @@ namespace Demos
             NotifyPropertyChanged("IsBusy");
             NotifyPropertyChanged("IsReady");
             NotifyStarted();
-            Logger.Log(Logger.Types.Info, $"powermeter[{this.Index}]: started");
+            Logger.Log(Logger.Types.Info, $"powermeter [{this.Index}]: started");
             return true;
         }
         /// <inheritdoc/>  
@@ -129,7 +129,7 @@ namespace Demos
             NotifyPropertyChanged("IsBusy");
             NotifyPropertyChanged("IsReady");
             NotifyStopped();
-            Logger.Log(Logger.Types.Info, $"powermeter[{this.Index}]: stopped");
+            Logger.Log(Logger.Types.Info, $"powermeter [{this.Index}]: stopped");
             return true;
         }
         /// <inheritdoc/>  
@@ -159,7 +159,8 @@ namespace Demos
             var dt = DateTime.Now;
             double watt = 0;
 
-            // Get output laser power value randomly by watt 
+            // Get output laser power value
+            // Generate random values for testing
             var rand = new Random();
             watt = Math.Round(10.0 * rand.NextDouble(), 3);
 

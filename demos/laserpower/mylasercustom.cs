@@ -352,7 +352,7 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported operation !");
                         return false;
                     case PowerControlMethods.Custom:
                         // do something you want to vary output laser power
@@ -408,7 +408,7 @@ namespace Demos
                 switch (this.PowerControlMethod)
                 {
                     default:
-                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported !");
+                        Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: unsupported operation !");
                         return false;
                     case PowerControlMethods.Custom:
                         // Rtc6SyncAXIS is not applicable

@@ -58,7 +58,7 @@
             this.btnTriangle = new System.Windows.Forms.ToolStripButton();
             this.btnPolyline = new System.Windows.Forms.ToolStripButton();
             this.btnSpiral = new System.Windows.Forms.ToolStripButton();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.ddbText = new System.Windows.Forms.ToolStripDropDownButton();
             this.btnText = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSiriusText = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -67,6 +67,8 @@
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCharacterSetText = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSiriusCharacterSetText = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnZPL = new System.Windows.Forms.ToolStripMenuItem();
             this.ddbBarcode = new System.Windows.Forms.ToolStripDropDownButton();
             this.mnuDataMatrix = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQRCode = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +77,7 @@
             this.mnuBarcode1D = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImportFile = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.ddbControl = new System.Windows.Forms.ToolStripDropDownButton();
             this.mnuTimer = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuJumpTo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMeasurementBeginEnd = new System.Windows.Forms.ToolStripMenuItem();
@@ -133,7 +135,7 @@
             this.manualUserControl1 = new SpiralLab.Sirius2.Winforms.UI.ManualUserControl();
             this.tabLaser = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.rtcControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcUserControl();
+            this.rtcControl1 = new SpiralLab.Sirius2.Winforms.UI.ScannerUserControl();
             this.laserControl1 = new SpiralLab.Sirius2.Winforms.UI.LaserUserControl();
             this.tabIO = new System.Windows.Forms.TabPage();
             this.spcIO = new System.Windows.Forms.SplitContainer();
@@ -436,11 +438,11 @@
             this.btnTriangle,
             this.btnPolyline,
             this.btnSpiral,
-            this.toolStripDropDownButton1,
+            this.ddbText,
             this.ddbBarcode,
             this.btnImportFile,
             this.toolStripSeparator3,
-            this.toolStripDropDownButton3,
+            this.ddbControl,
             this.toolStripSeparator13});
             this.tlsTop2.Name = "tlsTop2";
             // 
@@ -510,10 +512,10 @@
             resources.ApplyResources(this.btnSpiral, "btnSpiral");
             this.btnSpiral.Name = "btnSpiral";
             // 
-            // toolStripDropDownButton1
+            // ddbText
             // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ddbText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ddbText.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnText,
             this.btnSiriusText,
             this.toolStripMenuItem1,
@@ -521,9 +523,11 @@
             this.btnCircularText,
             this.toolStripMenuItem4,
             this.btnCharacterSetText,
-            this.btnSiriusCharacterSetText});
-            resources.ApplyResources(this.toolStripDropDownButton1, "toolStripDropDownButton1");
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.btnSiriusCharacterSetText,
+            this.toolStripMenuItem3,
+            this.btnZPL});
+            resources.ApplyResources(this.ddbText, "ddbText");
+            this.ddbText.Name = "ddbText";
             // 
             // btnText
             // 
@@ -564,6 +568,16 @@
             // 
             resources.ApplyResources(this.btnSiriusCharacterSetText, "btnSiriusCharacterSetText");
             this.btnSiriusCharacterSetText.Name = "btnSiriusCharacterSetText";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+            // 
+            // btnZPL
+            // 
+            resources.ApplyResources(this.btnZPL, "btnZPL");
+            this.btnZPL.Name = "btnZPL";
             // 
             // ddbBarcode
             // 
@@ -614,10 +628,10 @@
             resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             this.toolStripSeparator3.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical90;
             // 
-            // toolStripDropDownButton3
+            // ddbControl
             // 
-            this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ddbControl.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ddbControl.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuTimer,
             this.mnuJumpTo,
             this.mnuMeasurementBeginEnd,
@@ -628,8 +642,8 @@
             this.mnuZDefocus,
             this.mnuData,
             this.mnuScriptEvent});
-            resources.ApplyResources(this.toolStripDropDownButton3, "toolStripDropDownButton3");
-            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
+            resources.ApplyResources(this.ddbControl, "ddbControl");
+            this.ddbControl.Name = "ddbControl";
             // 
             // mnuTimer
             // 
@@ -1039,7 +1053,7 @@
             this.rtcControl1.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.rtcControl1, "rtcControl1");
             this.rtcControl1.Name = "rtcControl1";
-            this.rtcControl1.Rtc = null;
+            this.rtcControl1.Scanner = null;
             // 
             // laserControl1
             // 
@@ -1469,7 +1483,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Splitter splitter4;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private SpiralLab.Sirius2.Winforms.UI.RtcUserControl rtcControl1;
+        private SpiralLab.Sirius2.Winforms.UI.ScannerUserControl rtcControl1;
         private SpiralLab.Sirius2.Winforms.UI.LaserUserControl laserControl1;
         private System.Windows.Forms.TabPage tabLog;
         private SpiralLab.Sirius2.Winforms.UI.LogUserControl logControl1;
@@ -1485,7 +1499,7 @@
         private System.Windows.Forms.ToolStripButton btnTriangle;
         private System.Windows.Forms.ToolStripButton btnPolyline;
         private System.Windows.Forms.ToolStripButton btnSpiral;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripDropDownButton ddbText;
         private System.Windows.Forms.ToolStripMenuItem btnText;
         private System.Windows.Forms.ToolStripMenuItem btnSiriusText;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
@@ -1502,7 +1516,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuBarcode1D;
         private System.Windows.Forms.ToolStripButton btnImportFile;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
+        private System.Windows.Forms.ToolStripDropDownButton ddbControl;
         private System.Windows.Forms.ToolStripMenuItem mnuTimer;
         private System.Windows.Forms.ToolStripMenuItem mnuJumpTo;
         private System.Windows.Forms.ToolStripMenuItem mnuMeasurementBeginEnd;
@@ -1539,5 +1553,7 @@
         private System.Windows.Forms.TabPage tabPen;
         private SpiralLab.Sirius2.Winforms.UI.PenUserControl penControl1;
         private SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl propertyGridControl1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem btnZPL;
     }
 }

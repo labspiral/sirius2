@@ -17,7 +17,7 @@
  * 
  *
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : How to use many kinds of laser sources 
+ * Description : How to create and control many kinds of laser sources 
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -56,7 +56,7 @@ namespace Demos
             //var correctionFile = Path.Combine(Config.CorrectionPath, "cor_1to1.ctb");
 
             // Create RTC controller 
-            //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
+            //var rtc = ScannerFactory.CreateVirtual(0, kfactor, LaserModes.Yag1, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             //var rtc = ScannerFactory.CreateRtc4(0, kfactor, LaserModes.Yag1, correctionFile);
             //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
@@ -79,12 +79,12 @@ namespace Demos
             int laserId = 0;
             // Max laser output: 20W
             float maxWatt = 20;
-            Console.WriteLine("'1' : control custom laser");
+            Console.WriteLine("'1' : control virtual(dummy) laser");
             Console.WriteLine("'2' : control analog(V) laser");
             Console.WriteLine("'3' : control frequency(Hz) laser");
             Console.WriteLine("'4' : control duty cycle(%) laser");
-            Console.WriteLine("'5' : control digital output (16bits) laser");
-            Console.WriteLine("'6' : control digital output (8bits) laser");
+            Console.WriteLine("'5' : control digital 16bits output (0~65535) laser");
+            Console.WriteLine("'6' : control digital 8bits output (0~255) laser");
             Console.Write("select laser (1~6) : ");
             try
             {
@@ -139,16 +139,17 @@ namespace Demos
             // Initialize laser
             success &= laser.Initialize();
             // Default output power to 1%
-            if (laser is ILaserPowerControl powerControl)
-                success &= powerControl.CtlPower(laser.MaxPowerWatt * 0.01);
+            ILaserPowerControl laserPowerControl = laser as ILaserPowerControl;
+            Debug.Assert(laserPowerControl != null);
+            success &= laserPowerControl.CtlPower(laser.MaxPowerWatt * 0.01);
             Debug.Assert(success);
 
             ConsoleKeyInfo key;
             do
             {
-                Console.WriteLine("Testcase for control variouse laser sources");
+                Console.WriteLine("Testcase for control various laser source");
                 Console.WriteLine("'1' : draw circle");
-                Console.WriteLine("'2' : draw circles with change output power");
+                Console.WriteLine("'2' : draw circles with increasing output power");
                 Console.WriteLine("'P' : change output power");
                 Console.WriteLine("'Q' : quit");
                 Console.Write("Select your target : ");
@@ -165,12 +166,11 @@ namespace Demos
                         DrawCircle2(laser, rtc);
                         break;
                     case ConsoleKey.P:
-                        Console.Write($"Target power (Max.{laser.MaxPowerWatt}W): ");
+                        Console.Write($"Target power(W) (Max.{laser.MaxPowerWatt}W): ");
                         try
                         {
                             double watt = Convert.ToDouble(Console.ReadLine());
-                            if (laser is ILaserPowerControl powerControl2)
-                                success &= powerControl2.CtlPower(watt);
+                            success &= laserPowerControl.CtlPower(watt);
                         }
                         catch (Exception)
                         {
@@ -187,7 +187,7 @@ namespace Demos
         private static bool DrawCircle(ILaser laser, IRtc rtc)
         {
             bool success = true;
-            // Start list
+            // Begin list
             success &= rtc.ListBegin();
             success &= laser.ListBegin();
             for (int i = 0; i < 10; i++)
@@ -203,6 +203,7 @@ namespace Demos
             }
             if (success)
             {
+                // End and execute list 
                 success &= laser.ListEnd();
                 success &= rtc.ListEnd();
                 success &= rtc.ListExecute(true);
@@ -215,13 +216,14 @@ namespace Demos
             var laserPowerControl = laser as ILaserPowerControl;
             Debug.Assert(laserPowerControl != null);
 
-            // Start list
+            // Begin list
             success &= rtc.ListBegin();
             success &= laser.ListBegin();
-            for (int i = 0; i < 10; i++)
+            const int steps = 10;
+            for (int i = 1; i <= steps; i++)
             {
-                // Increase laser power  (0, 10, 20, ... 100 %)
-                success &= laserPowerControl.ListPower(laser.MaxPowerWatt / 10 * i);
+                // Increase laser power  (10, 20, ... 100 %)
+                success &= laserPowerControl.ListPower(laser.MaxPowerWatt / steps * i);
 
                 // Draw line
                 success &= rtc.ListJumpTo(new Vector2(0, 0));
@@ -234,6 +236,7 @@ namespace Demos
             }
             if (success)
             {
+                // End and execute list
                 success &= laser.ListEnd();
                 success &= rtc.ListEnd();
                 success &= rtc.ListExecute(true);

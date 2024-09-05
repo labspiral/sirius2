@@ -117,23 +117,393 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="editorControl1.CursorPositionList" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="tabEditor.Text" xml:space="preserve">
+    <value>편집기</value>
+  </data>
+  <data name="tabMarker.Text" xml:space="preserve">
+    <value>마커</value>
+  </data>
+  <data name="tabMarker.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="tabManual.Text" xml:space="preserve">
+    <value>수동</value>
+  </data>
+  <data name="tabManual.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="tabLaser.Text" xml:space="preserve">
+    <value>레이저</value>
+  </data>
+  <data name="tabLaser.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="tabIO.Text" xml:space="preserve">
+    <value>입출력</value>
+  </data>
+  <data name="tabIO.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="tabPage15.Text" xml:space="preserve">
+    <value>파워메터</value>
+  </data>
+  <data name="tabPage16.Text" xml:space="preserve">
+    <value>파워맵</value>
+  </data>
+  <data name="tabPower.Text" xml:space="preserve">
+    <value>파워</value>
+  </data>
+  <data name="tabPower.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="tabScript.Text" xml:space="preserve">
+    <value>스크립트</value>
+  </data>
+  <data name="tabScript.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="tabRemote.Text" xml:space="preserve">
+    <value>원격</value>
+  </data>
+  <data name="tabRemote.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnPoint.Text" xml:space="preserve">
+    <value>점</value>
+  </data>
+  <data name="btnPoint.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnPoints.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnPoints.ImageTransparentColor" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnPoints.Size" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnPoints.Text" xml:space="preserve">
+    <value>점 집합</value>
+  </data>
+  <data name="btnPoints.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnRaster.Text" xml:space="preserve">
+    <value>레스터</value>
+  </data>
+  <data name="btnRaster.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnLine.Text" xml:space="preserve">
+    <value>선</value>
+  </data>
+  <data name="btnLine.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnArc.Text" xml:space="preserve">
+    <value>호</value>
+  </data>
+  <data name="btnArc.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnCircle.Text" xml:space="preserve">
+    <value>원</value>
+  </data>
+  <data name="btnCircle.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnTrepan.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnTrepan.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnRectangle.Text" xml:space="preserve">
+    <value>사각형</value>
+  </data>
+  <data name="btnRectangle.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnTriangle.Text" xml:space="preserve">
+    <value>삼각형</value>
+  </data>
+  <data name="btnTriangle.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnPolyline.Text" xml:space="preserve">
+    <value>다중 선</value>
+  </data>
+  <data name="btnPolyline.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnSpiral.Text" xml:space="preserve">
+    <value>나선</value>
+  </data>
+  <data name="btnSpiral.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnText.Text" xml:space="preserve">
+    <value>텍스트</value>
+  </data>
+  <data name="btnText.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnSiriusText.Text" xml:space="preserve">
+    <value>시리우스 텍스트</value>
+  </data>
+  <data name="btnSiriusText.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnImageText.Text" xml:space="preserve">
+    <value>이미지 텍스트</value>
+  </data>
+  <data name="btnImageText.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnCircularText.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnCircularText.Size" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnCircularText.Text" xml:space="preserve">
+    <value>원형 텍스트</value>
+  </data>
+  <data name="btnCircularText.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnCharacterSetText.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnCharacterSetText.Text" xml:space="preserve">
+    <value>문자집합 텍스트</value>
+  </data>
+  <data name="btnCharacterSetText.ToolTipText" xml:space="preserve">
+    <value>문자집합 텍스트 개체</value>
+  </data>
+  <data name="btnZPL.Text" xml:space="preserve">
+    <value>이미지 ZPL</value>
+  </data>
+  <data name="btnZPL.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="ddbText.Text" xml:space="preserve">
+    <value>텍스트</value>
+  </data>
+  <data name="mnuDataMatrix.Text" xml:space="preserve">
+    <value>데이타 매트릭스</value>
+  </data>
+  <data name="mnuDataMatrix.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="mnuQRCode.Text" xml:space="preserve">
+    <value>QR 코드</value>
+  </data>
+  <data name="mnuQRCode.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="mnuBarcode1D.Text" xml:space="preserve">
+    <value>바코드 1D</value>
+  </data>
+  <data name="mnuBarcode1D.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="ddbBarcode.Text" xml:space="preserve">
+    <value>바코드</value>
+  </data>
+  <data name="ddbBarcode.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnImportFile.Text" xml:space="preserve">
+    <value>가져오기</value>
+  </data>
+  <data name="btnImportFile.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="mnuTimer.Text" xml:space="preserve">
+    <value>타이머</value>
+  </data>
+  <data name="mnuTimer.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="mnuJumpTo.Text" xml:space="preserve">
+    <value>점프</value>
+  </data>
+  <data name="mnuJumpTo.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="mnuMeasurementBeginEnd.Text" xml:space="preserve">
+    <value>계측</value>
+  </data>
+  <data name="mnuMoFAngularWait.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="mnuSelectCorrectionTable.Text" xml:space="preserve">
+    <value>보정 테이블</value>
+  </data>
+  <data name="mnuSelectCorrectionTable.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="mnuZDelta.Text" xml:space="preserve">
+    <value>Z 변위</value>
+  </data>
+  <data name="mnuZDelta.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="mnuZDefocus.Text" xml:space="preserve">
+    <value>Z 디포커스</value>
+  </data>
+  <data name="mnuZDefocus.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="mnuWriteData.Text" xml:space="preserve">
+    <value>데이타 쓰기</value>
+  </data>
+  <data name="mnuWriteData.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="mnuWriteDataExt16.Text" xml:space="preserve">
+    <value>확장16 데이타 쓰기</value>
+  </data>
+  <data name="mnuWriteDataExt16.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="mnuWriteDataExt16Cond.Text" xml:space="preserve">
+    <value>확장16 조건 데이타 쓰기</value>
+  </data>
+  <data name="mnuWaitDataExt16EdgeCond.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="mnuData.Text" xml:space="preserve">
+    <value>데이터 및 입출력</value>
+  </data>
+  <data name="mnuData.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="mnuScriptEvent.Text" xml:space="preserve">
+    <value>스크립트 이벤트</value>
+  </data>
+  <data name="mnuScriptEvent.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="ddbControl.Text" xml:space="preserve">
+    <value>제어</value>
+  </data>
+  <data name="ddbControl.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <data name="btnAbout.Text" xml:space="preserve">
     <value>정보</value>
   </data>
   <data name="btnAbout.ToolTipText" xml:space="preserve">
     <value>정보</value>
   </data>
-  <data name="btnLock.Text" xml:space="preserve">
-    <value>잠금</value>
+  <data name="btnNew.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
-  <data name="btnLock.ToolTipText" xml:space="preserve">
-    <value>잠금 (편집 금지)</value>
+  <data name="btnNew.ImageTransparentColor" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
-  <data name="lblBusy.Text" xml:space="preserve">
-    <value> 가공 </value>
+  <data name="btnNew.Text" xml:space="preserve">
+    <value>새 파일</value>
   </data>
-  <data name="lblBusy.ToolTipText" xml:space="preserve">
-    <value>가공 상태</value>
+  <data name="btnNew.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnOpen.Text" xml:space="preserve">
+    <value>파일 열기</value>
+  </data>
+  <data name="btnOpen.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>파일 저장</value>
+  </data>
+  <data name="btnSave.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>복사</value>
+  </data>
+  <data name="btnCopy.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnCut.ImageTransparentColor" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnCut.Text" xml:space="preserve">
+    <value>잘라내기</value>
+  </data>
+  <data name="btnCut.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnPaste.Text" xml:space="preserve">
+    <value>붙혀넣기</value>
+  </data>
+  <data name="btnPaste.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnPasteArray.Text" xml:space="preserve">
+    <value>배열 붙혀넣기</value>
+  </data>
+  <data name="btnPasteArray.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnZoomOut.Text" xml:space="preserve">
+    <value>축소</value>
+  </data>
+  <data name="btnZoomOut.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnZoomIn.Text" xml:space="preserve">
+    <value>확대</value>
+  </data>
+  <data name="btnZoomIn.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnZoomFit.Text" xml:space="preserve">
+    <value>맞춤</value>
+  </data>
+  <data name="btnZoomFit.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="btnDelete.Text" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="btnDelete.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="mnuMarginBottom.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="ddbAlign.Text" xml:space="preserve">
+    <value>정렬</value>
+  </data>
+  <data name="ddbAlign.ToolTipText" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="lblName.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="lblName.ToolTipText" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="lblProcessTime.ToolTipText" xml:space="preserve">
+    <value>가공 시간 (sec)</value>
+  </data>
+  <data name="lblPowerWatt.ToolTipText" xml:space="preserve">
+    <value>파워 (W)</value>
+  </data>
+  <data name="lblFileName.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="lblFileName.ToolTipText" xml:space="preserve">
+    <value>파일이름</value>
   </data>
   <data name="lblEncoder.Text" xml:space="preserve">
     <value>엔코더 XY: 0, 0</value>
@@ -142,36 +512,33 @@
     <value>엔코더 
 (더블클릭시 초기화)</value>
   </data>
-  <data name="lblError.Text" xml:space="preserve">
-    <value> 오류 </value>
+  <data name="lblLog.Size" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
-  <data name="lblError.ToolTipText" xml:space="preserve">
-    <value>에러 상태</value>
-  </data>
-  <data name="lblFileName.ToolTipText" xml:space="preserve">
-    <value>파일이름</value>
-  </data>
-  <data name="lblHelp.ToolTipText" xml:space="preserve">
-    <value>도움말</value>
+  <data name="lblLog.Text" xml:space="preserve">
+    <value>로그</value>
   </data>
   <data name="lblLog.ToolTipText" xml:space="preserve">
     <value>로그 창
 (더블클릭시 보이기/숨기기)</value>
-  </data>
-  <data name="lblName.ToolTipText" xml:space="preserve">
-    <value>이름</value>
-  </data>
-  <data name="lblPowerWatt.ToolTipText" xml:space="preserve">
-    <value>파워 (W)</value>
-  </data>
-  <data name="lblProcessTime.ToolTipText" xml:space="preserve">
-    <value>가공 시간 (sec)</value>
   </data>
   <data name="lblReady.Text" xml:space="preserve">
     <value> 준비 </value>
   </data>
   <data name="lblReady.ToolTipText" xml:space="preserve">
     <value>준비 상태</value>
+  </data>
+  <data name="lblBusy.Text" xml:space="preserve">
+    <value> 가공 </value>
+  </data>
+  <data name="lblBusy.ToolTipText" xml:space="preserve">
+    <value>가공 상태</value>
+  </data>
+  <data name="lblError.Text" xml:space="preserve">
+    <value> 오류 </value>
+  </data>
+  <data name="lblError.ToolTipText" xml:space="preserve">
+    <value>에러 상태</value>
   </data>
   <data name="lblRemote.Text" xml:space="preserve">
     <value> 연결해제 </value>
@@ -180,14 +547,29 @@
     <value>원격 제어 모드
 (더블클릭시 모드 전환됨)</value>
   </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>속성</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>레이어</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>블럭</value>
+  </data>
+  <data name="btnLock.Text" xml:space="preserve">
+    <value>잠금</value>
+  </data>
+  <data name="btnLock.ToolTipText" xml:space="preserve">
+    <value>잠금 (편집 금지)</value>
+  </data>
+  <data name="lblHelp.ToolTipText" xml:space="preserve">
+    <value>도움말</value>
+  </data>
   <data name="lblSelected.Text" xml:space="preserve">
     <value>선택: 0</value>
   </data>
   <data name="mnuLock.Text" xml:space="preserve">
     <value>잠금</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>레이어</value>
   </data>
   <data name="tabPage10.Text" xml:space="preserve">
     <value>RTC</value>
@@ -198,20 +580,8 @@
   <data name="tabPage14.Text" xml:space="preserve">
     <value>파워</value>
   </data>
-  <data name="tabPage15.Text" xml:space="preserve">
-    <value>파워메터</value>
-  </data>
-  <data name="tabPage16.Text" xml:space="preserve">
-    <value>파워맵</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>블럭</value>
-  </data>
   <data name="tabPage3.Text" xml:space="preserve">
     <value>수동</value>
-  </data>
-  <data name="tabPage4.Text" xml:space="preserve">
-    <value>속성</value>
   </data>
   <data name="tabPage5.Text" xml:space="preserve">
     <value>마커</value>
