@@ -53,25 +53,26 @@ namespace Demos
 {
     public partial class FormEditor : Form
     {
+        public int Index { get; set; }
+
         public FormEditor(int index)
         {
-            // Set language
-            EditorHelper.SetLanguage();
-
             InitializeComponent();
 
-            //this.Load += Form1_Load;
-
+            Index = index;
             this.FormClosing += Form1_FormClosing;
+        }
+        
 
-            // Initialize sirius2 library
-            EditorHelper.Initialize();
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CleanUp();            
+        }
 
-            // Set FOV area: WxH, it will be drawn as red rectangle
-            SpiralLab.Sirius2.Winforms.Config.ViewFovSize = new SizeF(100, 100);
-
+        public void SetUp()
+        {
             // Create devices 
-            EditorHelper.CreateDevices(out var rtc, out var dInExt1, out var dInLaserPort, out var dOutExt1, out var dOutExt2, out var dOutLaserPort, out var laser, out var powerMeter, out var marker, out var remote, this.siriusEditorUserControl1, index);
+            EditorHelper.CreateDevices(out var rtc, out var dInExt1, out var dInLaserPort, out var dOutExt1, out var dOutExt2, out var dOutLaserPort, out var laser, out var powerMeter, out var marker, out var remote, this.siriusEditorUserControl1, Index);
 
             // Assign devices into usercontrol
             siriusEditorUserControl1.Laser = laser;
@@ -93,8 +94,7 @@ namespace Demos
             var view = siriusEditorUserControl1.View;
             marker.Ready(document, view, rtc, laser, powerMeter, remote);
         }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        public void CleanUp()
         {
             var document = siriusEditorUserControl1.Document;
             var marker = siriusEditorUserControl1.Marker;
@@ -102,39 +102,13 @@ namespace Demos
             var rtc = siriusEditorUserControl1.Rtc;
             var powerMeter = siriusEditorUserControl1.PowerMeter;
             var remote = siriusEditorUserControl1.Remote;
-
-            //if (document.IsModified)
-            //{
-            //    var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to exit without save ?", "Warning", MessageBoxButtons.YesNo);
-            //    DialogResult dialogResult = form.ShowDialog(this);
-            //    if (dialogResult == DialogResult.Yes)
-            //        e.Cancel = false;
-            //    else
-            //    {
-            //        e.Cancel = true;
-            //        return;
-            //    }
-            //}
-
-            //if (marker.IsBusy)
-            //{
-            //    var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox($"Do you really want to exit during working on progressing... ?", "Warning", MessageBoxButtons.YesNo);
-            //    DialogResult dialogResult = form.ShowDialog(this);
-            //    if (dialogResult == DialogResult.Yes)
-            //        e.Cancel = false;
-            //    else
-            //        e.Cancel = true;
-            //}
-
-            //if (e.Cancel == false)
-            {
-                siriusEditorUserControl1.Remote = null;
-                siriusEditorUserControl1.PowerMeter = null;
-                siriusEditorUserControl1.Marker = null;
-                siriusEditorUserControl1.Rtc = null;
-                siriusEditorUserControl1.Laser = null;
-                EditorHelper.DestroyDevices(rtc, laser, powerMeter, marker, remote);
-            }
+          
+            siriusEditorUserControl1.Remote = null;
+            siriusEditorUserControl1.PowerMeter = null;
+            siriusEditorUserControl1.Marker = null;
+            siriusEditorUserControl1.Rtc = null;
+            siriusEditorUserControl1.Laser = null;
+            EditorHelper.DestroyDevices(rtc, laser, powerMeter, marker, remote);
         }
     }
 }

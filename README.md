@@ -343,7 +343,7 @@
   - fixed) display invalid category name at propertygrid
 
 * 2024.3.23 v.1.22.1140
-  - added) semi orc font files
+  - added) semi ocr font files
      - semi_ocr_single.cxf
      - semi_ocr_double.cxf
   - added) mark sirius text with reverse order

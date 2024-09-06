@@ -22,6 +22,15 @@ namespace Demos
         {
             InitializeComponent();
 
+            // Set language
+            EditorHelper.SetLanguage();
+
+            // Set FOV area: WxH, it will be drawn as red rectangle
+            SpiralLab.Sirius2.Winforms.Config.ViewFovSize = new SizeF(100, 100);
+
+            // Initialize sirius2 library
+            EditorHelper.Initialize();
+
             formEditors = new FormEditor[2]
             {
                 new FormEditor(0),
@@ -34,6 +43,9 @@ namespace Demos
             //formEditors[2].siriusEditorUserControl1.TitleName = "[3] CO2";
             //formEditors[3].siriusEditorUserControl1.TitleName = "[4] GREEN";
 
+            foreach (var editor in formEditors)
+                editor?.SetUp();
+
             button1.Click += Button_Click;
             button2.Click += Button_Click;
             //button3.Click += FormMain_Click;
@@ -45,7 +57,10 @@ namespace Demos
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             foreach (var editor in formEditors)
-                editor.Close();
+            {
+                editor?.CleanUp();
+                editor?.Close();
+            }
         }
 
         private void Button_Click(object sender, EventArgs e)
