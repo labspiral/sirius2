@@ -13590,7 +13590,7 @@
             <code>
                                         Target power (W)
             Output power ratio (%) = --------------------- X 100
-                                        <see cref="P:SpiralLab.Sirius2.Laser.ILaser.MaxPowerWatt">MaxPowerWatt</see> (W)
+                                          Max power (W)
             </code>
             <remarks>
             Max. output laser power(W) theorically. <br/> 
