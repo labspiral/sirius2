@@ -936,6 +936,19 @@ namespace Demos
                     }
                 }
             }
+            // Preview: F4
+            else if (keyData == Config.KeyboardMarkerPreview)
+            {
+                if (null != Marker)
+                {
+                    if (!Marker.IsBusy)
+                    {
+                        Marker.Ready(Document);
+                        Marker.Preview();
+                        return true;
+                    }
+                }
+            }
             // Reset: F8
             else if (keyData == Config.KeyboardMarkerReset)
             {

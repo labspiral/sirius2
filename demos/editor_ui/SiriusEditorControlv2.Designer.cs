@@ -268,7 +268,6 @@
             // editorControl1
             // 
             this.editorControl1.AllowDrop = true;
-            this.editorControl1.CursorPositionList = ((System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<string, OpenTK.Vector3>>)(resources.GetObject("editorControl1.CursorPositionList")));
             resources.ApplyResources(this.editorControl1, "editorControl1");
             this.editorControl1.Document = null;
             this.editorControl1.Marker = null;

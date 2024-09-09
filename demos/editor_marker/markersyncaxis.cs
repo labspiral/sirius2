@@ -463,6 +463,79 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             return true;
         }
         /// <inheritdoc/>
+        public override bool Preview()
+        {
+            if (Document == null || Rtc == null || Laser == null)
+            {
+                Logger.Log(Logger.Types.Warn, $"marker [{Index}]: ready at first");
+                return false;
+            }
+            if (this.IsBusy)
+            {
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: busy now !");
+                return false;
+            }
+            if (this.IsError)
+            {
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: has a error. reset at first");
+                return false;
+            }
+            if (!this.IsReady)
+            {
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: is not ready yet");
+                return false;
+            }
+
+            if (Rtc.CtlGetStatus(RtcStatus.Busy))
+            {
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: busy now !");
+                return false;
+            }
+            if (!Rtc.CtlGetStatus(RtcStatus.NoError))
+            {
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: rtc has a internal error. reset at first");
+                return false;
+            }
+            if (Laser.IsError)
+            {
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: laser has a error status. reset at first");
+                return false;
+            }
+
+            if (null == Document.Selected || 0 == Document.Selected.Length)
+            {
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: select target entity to preview at first");
+                return false;
+            }
+            var laserGuideControl = Laser as ILaserGuideControl;
+            if (null == laserGuideControl)
+            {
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: laser is not supported guide control");
+                return false;
+            }
+
+            if (null != thread)
+            {
+                if (!this.thread.Join(500))
+                {
+                    Logger.Log(Logger.Types.Error, $"marker [{Index}]: previous works has not finished yet");
+                    return false;
+                }
+            }
+
+            if (null == Offsets || 0 == Offsets.Length)
+                this.Offsets = new Offset[1] { Offset.Zero };
+
+            // Shallow copy for cross-thread issue
+            layers = new List<EntityLayer>(Document.InternalData.Layers);
+
+            Logger.Log(Logger.Types.Warn, $"marker [{Index}]: trying to start preview mark");
+            this.thread = new Thread(this.MarkerThreadPreview);
+            this.thread.Name = $"MyMarkerSyncAxis: {this.Name}";
+            this.thread.Start();
+            return true;
+        }
+        /// <inheritdoc/>
         public override bool Stop()
         {
             if (null == Rtc || null == Laser)
@@ -608,7 +681,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             Debug.Assert(null != rtcSyncAxis);
 
             this.isInternalBusy = true;
-            var dtStarted = DateTime.Now;
+            base.StartTime = base.EndTime = DateTime.Now;
             this.NotifyStarted();
             bool success = true;
             var oldMatrixStack = (IMatrixStack<System.Numerics.Matrix4x4>)rtc.MatrixStack.Clone();
@@ -681,16 +754,16 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             }
 
             rtc.MatrixStack = oldMatrixStack;
-            this.TimeSpan = DateTime.Now - dtStarted;
+            base.EndTime = DateTime.Now;
             this.isInternalBusy = false;
             this.NotifyEnded(success);
             if (success)
             {
-                Logger.Log(Logger.Types.Info, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
+                Logger.Log(Logger.Types.Info, $"marker [{Index}]: mark has finished with {ExecuteTime.TotalSeconds:F3}s");
             }
             else
             {
-                Logger.Log(Logger.Types.Error, $"marker [{Index}]: mark has failed with {this.TimeSpan.TotalSeconds:F3}s");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: mark has failed with {ExecuteTime.TotalSeconds:F3}s");
             }
         }
         /// <summary>
@@ -712,7 +785,7 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             Debug.Assert(null != rtcSyncAxis);
 
             this.isInternalBusy = true;
-            var dtStarted = DateTime.Now;
+            base.StartTime = base.EndTime= DateTime.Now;
             this.NotifyStarted();
             bool success = true;
             var oldMatrixStack = (IMatrixStack<System.Numerics.Matrix4x4>)rtc.MatrixStack.Clone();
@@ -788,17 +861,91 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             }
 
             rtc.MatrixStack = oldMatrixStack;
-            this.TimeSpan = DateTime.Now - dtStarted;
+            base.EndTime = DateTime.Now;
             this.isInternalBusy = false;
             this.NotifyEnded(success);
             if (success)
             {
-                Logger.Log(Logger.Types.Info, $"marker [{Index}]: mark has finished with {this.TimeSpan.TotalSeconds:F3}s");
+                Logger.Log(Logger.Types.Info, $"marker [{Index}]: mark has finished with {ExecuteTime.TotalSeconds:F3}s");
             }
             else
             {
-                Logger.Log(Logger.Types.Error, $"marker [{Index}]: mark has failed with {this.TimeSpan.TotalSeconds:F3}s");
+                Logger.Log(Logger.Types.Error, $"marker [{Index}]: mark has failed with {ExecuteTime.TotalSeconds:F3}s");
             }
+        }
+        /// <summary>
+        /// Marker preview
+        /// </summary>
+        /// <remarks>
+        /// Mark bounding box with <see cref="ILaserGuideControl">ILaserGuideControl</see>
+        /// </remarks>
+        protected virtual void MarkerThreadPreview()
+        {
+            var rtc = this.Rtc;
+            var laser = this.Laser;
+            var laserGuideControl = Laser as ILaserGuideControl;
+            var document = this.Document;
+            var rtc3D = rtc as IRtc3D;
+            var rtc2ndHead = rtc as IRtc2ndHead;
+            var rtcExtension = rtc as IRtcExtension;
+            var rtcAlc = rtc as IRtcAutoLaserControl;
+            var rtcMoF = rtc as IRtcMoF;
+            Debug.Assert(rtc != null);
+            Debug.Assert(laser != null);
+            Debug.Assert(document != null);
+            var bbox = BoundingBox.RealBoundingBox(document.Selected); 
+            Debug.Assert(!bbox.IsEmpty);
+
+            this.isInternalBusy = true;
+            bool success = true;
+            success &= laserGuideControl.CtlGuide(true);
+            var oldMatrixStack = (IMatrixStack<System.Numerics.Matrix4x4>)rtc.MatrixStack.Clone();
+
+            var oldSpeedJump = rtc.SpeedJump;
+            var oldSpeedMark = rtc.SpeedMark;
+            success &= rtc.ListBegin(ListTypes.Auto);
+            success &= laser.ListBegin();
+            success &= rtc.ListSpeed(SpiralLab.Sirius2.Winforms.Config.MarkPreviewSpeed, SpiralLab.Sirius2.Winforms.Config.MarkPreviewSpeed);
+            for (int j = 0; j < SpiralLab.Sirius2.Winforms.Config.MarkPreviewRepeats; j++)
+            {
+                for (int i = 0; i < Offsets.Length; i++)
+                {
+                    try
+                    {
+                        // Push offset matrix
+                        rtc.MatrixStack.Push(Offsets[i].ToMatrix);
+                        // Rectangle by bouding box 
+                        // 2 1
+                        // 3 4
+                        success &= rtc.ListJumpTo(new System.Numerics.Vector2(bbox.RealMax.X, bbox.RealMax.Y));
+                        success &= rtc.ListMarkTo(new System.Numerics.Vector2(bbox.RealMin.X, bbox.RealMax.Y));
+                        success &= rtc.ListMarkTo(new System.Numerics.Vector2(bbox.RealMin.X, bbox.RealMin.Y));
+                        success &= rtc.ListMarkTo(new System.Numerics.Vector2(bbox.RealMax.X, bbox.RealMin.Y));
+                        success &= rtc.ListMarkTo(new System.Numerics.Vector2(bbox.RealMax.X, bbox.RealMax.Y));
+                    }
+                    finally
+                    {
+                        // Pop offset matrix
+                        rtc.MatrixStack.Pop();
+                    }
+                    if (!success)
+                        break;
+                }
+                if (!success)
+                    break;
+            }
+
+            if (success)
+            {
+                success &= rtc.ListJumpTo(System.Numerics.Vector2.Zero);
+                success &= laser.ListEnd();
+                success &= rtc.ListEnd();
+                success &= rtc.ListExecute(true);
+            }
+            success &= rtc.CtlSpeed(oldSpeedJump, oldSpeedMark);
+            success &= laserGuideControl.CtlGuide(false);
+            rtc.MatrixStack = oldMatrixStack;
+            this.isInternalBusy = false;
         }
     }
 }

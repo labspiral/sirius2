@@ -164,10 +164,10 @@
 **7. Copyrights**
  
  - Evaluation copy mode would be activated during 30 mins without license.
- - All rights reserved. 2021-2024 Copyright to (c)SpiralLAB. 
- - RTC and syncAXIS are trademarks of (c)SCANLAB GmbH.
  - Homepage: http://spirallab.co.kr
  - Email: <a href="mailto:hcchoi@spirallab.co.kr">hcchoi@spirallab.co.kr</a> 
+ - RTC and syncAXIS are trademarks of (c)SCANLAB GmbH.
+ - All rights reserved. 2021-2024 Copyright to (c)SpiralLAB. 
  
 
 ----
@@ -175,7 +175,14 @@
 
 **8. Version history**
 
-* 2024.9.5 v.1.42.1760
+* 2024.9.9 v.1.43.1770
+  - added) preview at marker 
+    - by IMarker.Preview()
+    - Shortcut: F4
+  - fixed) invisible internal properties
+  - fixed) bugs when create usercontrol at design time
+  
+* 24.9.5 v.1.42.1760
   - added) customizable laser UI 
      - added) editor_laser demo
   - added) timed demo

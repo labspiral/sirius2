@@ -287,7 +287,7 @@
         <member name="M:SpiralLab.Sirius2.Common.OffsetXYRConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
             <inheritdoc/>
         </member>
-        <member name="T:SpiralLab.Sirius2.Common.DTTypeConverter">
+        <member name="T:SpiralLab.Sirius2.Common.DateTimeConverter">
             <summary>
             Datetime format converter
             </summary>
@@ -295,16 +295,36 @@
             Used with PropertyGrid control <br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Common.DTTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+        <member name="M:SpiralLab.Sirius2.Common.DateTimeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Common.DTTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+        <member name="M:SpiralLab.Sirius2.Common.DateTimeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Common.DTTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+        <member name="M:SpiralLab.Sirius2.Common.DateTimeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Common.DTTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+        <member name="M:SpiralLab.Sirius2.Common.DateTimeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Common.TimeSpanConverter">
+            <summary>
+            TimeSpan format converter
+            </summary>
+            <remarks>
+            Used with PropertyGrid control <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Common.TimeSpanConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Common.TimeSpanConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Common.TimeSpanConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Common.TimeSpanConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Common.FloatTypeConverter">
@@ -9500,9 +9520,8 @@
             Laser Virtual
             </summary>
             <remarks>
-            Select <see cref="T:SpiralLab.Sirius2.Laser.PowerControlMethods">PowerControlMethods</see> to vary output laser power. <br/>
-            Inherited from <c>ILaser</c> &lt;- <c>LaserBase</c> &lt;- <c>LaserVirtual</c> <br/>
-            Inherited from <c>ILaserPowerControl</c> &lt;- <c>LaserVirtual</c> <br/>
+            Supported <see cref="T:SpiralLab.Sirius2.Laser.ILaserPowerControl">ILaserPowerControl</see> by <see cref="P:SpiralLab.Sirius2.Laser.LaserBase.PowerControlMethod">PowerControlMethod</see>. <br/>
+            Supported <see cref="T:SpiralLab.Sirius2.Laser.ILaserGuideControl">ILaserGuideControl</see> by <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlLaserSignal(System.Boolean)">IRtc.CtlLaserSignal</see>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.LaserVirtual.LaserType">
@@ -10111,6 +10130,46 @@
             D4 (faults in temperature control) <br/>
             D0 ~ D7 : each bit indicates fault in corresponding temperature control. <br/>
             </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.PIDXStatus.Bit4.TempAlarm0">
+            <summary>
+            D0
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.PIDXStatus.Bit4.TempAlarm1">
+            <summary>
+            D1
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.PIDXStatus.Bit4.TempAlarm2">
+            <summary>
+            D2
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.PIDXStatus.Bit4.TempAlarm3">
+            <summary>
+            D3
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.PIDXStatus.Bit4.TempAlarm4">
+            <summary>
+            D4
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.PIDXStatus.Bit4.TempAlarm5">
+            <summary>
+            D5
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.PIDXStatus.Bit4.TempAlarm6">
+            <summary>
+            D6
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.PIDXStatus.Bit4.TempAlarm7">
+            <summary>
+            D7
+            </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.PIDXStatus.Bit5">
             <summary>
@@ -13579,18 +13638,14 @@
             Also, meaning with inherited from <see cref="T:SpiralLab.Sirius2.Laser.ILaserPowerControl">ILaserPowerControl</see> or not. <br/>
             </para>
             </summary>
-            <remarks>
-            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.ILaser.PowerControlMethod">
             <summary>
             Laser power control method
             <para>
-            Configure valid <see cref="T:SpiralLab.Sirius2.Laser.PowerControlMethods">PowerControlMethods</see> if <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsPowerControl">IsPowerControl</see> is <c>True</c> <br/>
+            Choose valid <see cref="T:SpiralLab.Sirius2.Laser.PowerControlMethods">PowerControlMethods</see> if <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsPowerControl">IsPowerControl</see> is <c>True</c>. <br/>
             </para>
             </summary>
-            <remarks>
-            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.ILaser.PowerControlDelayTime">
             <summary>
@@ -13600,18 +13655,14 @@
             Would be insert delay time every <see cref="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.CtlPower(System.Double,System.String)">ILaserPowerControl.CtlPower</see> and <see cref="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.ListPower(System.Double,System.String)">ILaserPowerControl.ListPower</see> has called. <br/>
             </para>
             </summary>
-            <remarks>
-            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.ILaser.IsGuideControl">
             <summary>
-            Enabled <c>ILaserGuideControl</c> or not
+            Enabled <see cref="T:SpiralLab.Sirius2.Laser.ILaserGuideControl">ILaserGuideControl</see> or not
             <para>
-            Inherited and implemented for <see cref="T:SpiralLab.Sirius2.Laser.ILaserGuideControl">ILaserGuideControl</see>. <br/>
+            Also, Inherited and implemented for <see cref="T:SpiralLab.Sirius2.Laser.ILaserGuideControl">ILaserGuideControl</see> or not. <br/>
             </para>
             </summary>
-            <remarks>
-            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.ILaser.Tag">
             <summary>
@@ -17038,6 +17089,9 @@
         <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.Tag">
             <summary>
             User data
+            <para>
+            Not saved.
+            </para>
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.Categories(System.String[]@)">
@@ -17398,6 +17452,7 @@
             Scanner x,y location (mm) 
             <para>
             Default: <c>Vector2.Zero</c> <br/>
+            Not saved. <br/>
             </para>
             </summary>
         </member>
@@ -27607,8 +27662,17 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.ListTotalCounts">
             <summary>
-            Approx. Total list command counts
+            Approx. total counts of list commands
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.StartTime">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.EndTime">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.ExecutionTime">
+            <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.Characteristic">
             <summary>
@@ -27683,17 +27747,10 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.UtilizedStages">
             <summary>
             Array of utilized stages
-            <para>Only for multiple stage(s)</para>
+            <para>
+            Only for multiple stages
+            </para>
             </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.StartTime">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.EndTime">
-            <inheritdoc/>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.ExecutionTime">
-            <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.Tag">
             <inheritdoc/>
@@ -29476,7 +29533,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.JobRtc.ListTotalCounts">
             <summary>
-            Total counts of list commands
+            Approx. total counts of list commands
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.JobRtc.StartTime">
@@ -29491,6 +29548,9 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.JobRtc.Tag">
             <inheritdoc/>
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.JobRtc.ToString">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.JobRtc.#ctor">
             <summary>
             Constructor
@@ -29501,9 +29561,6 @@
             Constructor
             </summary>
             <param name="id">Job id</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.JobRtc.ToString">
-            <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RtcMeasurementHelper">
             <summary>
@@ -37340,6 +37397,9 @@
         <member name="P:SpiralLab.Sirius2.Scanner.IJob.ID">
             <summary>
             Job id
+            <para>
+            Assigned by internally. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.IJob.Name">
@@ -37354,22 +37414,25 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.IJob.StartTime">
             <summary>
-            Started time
+            Start time
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.IJob.EndTime">
             <summary>
-            Ended time
+            End time
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.IJob.ExecutionTime">
             <summary>
-            Execution time (s)
+            Execution time 
+            <para>
+            = End time - Start time <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.IJob.Result">
             <summary>
-            <see cref="T:SpiralLab.Sirius2.Scanner.JobResults">JobResults</see>
+            Final <see cref="T:SpiralLab.Sirius2.Scanner.JobResults">JobResults</see> of job
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.IJob.Tag">
