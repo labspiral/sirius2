@@ -26979,11 +26979,11 @@
             <param name="flag"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.SyncAxisError.Bit">Bit</see></param>
             <returns>Is exist flag or not</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.SyncAxisError.ToInt">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.SyncAxisError.ToUInt">
             <summary>
-            Convert to <c>int</c>
+            Convert to <c>uint</c>
             </summary>
-            <returns><c>int</c></returns>
+            <returns><c>uint</c></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.SyncAxisError.#ctor(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.SyncAxisError.Bit)">
             <summary>
