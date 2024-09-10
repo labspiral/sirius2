@@ -179,7 +179,6 @@
   - added) preview at marker 
     - by IMarker.Preview()
     - Shortcut: F4
-  - fixed) invisible internal properties
   - fixed) bugs when create usercontrol at design time
   
 * 24.9.5 v.1.42.1760

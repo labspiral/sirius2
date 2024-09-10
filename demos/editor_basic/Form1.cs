@@ -69,6 +69,9 @@ namespace Demos
             // Initialize sirius2 library
             EditorHelper.Initialize();
 
+
+            SpiralLab.Sirius2.Winforms.Config.IsCompressedFileFormat = false;
+
             // Set FOV area: WxH, it will be drawn as red rectangle
             SpiralLab.Sirius2.Winforms.Config.ViewFovSize = new SizeF(100, 100);
 
