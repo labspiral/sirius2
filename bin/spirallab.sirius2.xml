@@ -3851,7 +3851,7 @@
             Internal
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.TrgMode">
+        <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.TriggerMode">
             <summary>
             Trigger mode
             </summary>
@@ -3876,7 +3876,7 @@
             CW aligmnment
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.PsMode">
+        <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.PulseMode">
             <summary>
             Pulse mode
             </summary>
@@ -3896,7 +3896,7 @@
             Pulse track
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.PsControlMode">
+        <member name="P:SpiralLab.Sirius2.Laser.CoherentAviaLX.PulseControlMode">
             <summary>
             Pulse control mode
             </summary>

@@ -21400,6 +21400,7 @@
             <summary>
             Default font for create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">EntityText</see>
             <para>
+            Must be one of installed fonts family name. <br/>
             Default: "Arial" <br/>
             </para>
             </summary>
@@ -21422,6 +21423,7 @@
             <summary>
             Default font for create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText">EntitySiriusText</see> 
             <para>
+            Must be one of sirius font file name at <see cref="P:SpiralLab.Sirius2.Winforms.Config.SiriusFontPath">SiriusFontPath</see>. <br/>
             Default: "romans2.cxf" <br/>
             </para>
             </summary>
@@ -21724,6 +21726,7 @@
             <summary>
             Convert font of text entity (like as Text, MText) at dxf file into assigned font
             <para>
+            Must be one of installed fonts family name. <br/>
             Default: Arial <br/>
             </para>
             </summary>
@@ -22486,6 +22489,7 @@
             Shortcut key for simulation start
             <para>
             Used with <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActSimulateStart(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.SimulationSpeeds)">IDocument.ActSimulateStart</see>. <br/> 
+            Not supported combination of multiple keys. <br/>
             Default: <c>F1</c> <br/>
             </para>
             </summary>
@@ -22497,6 +22501,7 @@
             Used with <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Preview">IMarker.Preview</see>. <br/> 
             Used with <see cref="P:SpiralLab.Sirius2.Winforms.Config.MarkPreviewRepeats">Config.MarkPreviewRepeats</see>. <br/> 
             Used with <see cref="P:SpiralLab.Sirius2.Winforms.Config.MarkPreviewSpeed">Config.MarkPreviewSpeed</see>. <br/> 
+            Not supported combination of multiple keys. <br/>
             Default: <c>F4</c> <br/>
             </para>
             </summary>
@@ -22506,6 +22511,7 @@
             Shortcut key for marker start
             <para>
             Used with <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Start">IMarker.Start</see>. <br/> 
+            Not supported combination of multiple keys. <br/>
             Default: <c>F5</c> <br/>
             </para>
             </summary>
@@ -22515,6 +22521,7 @@
             Shortcut key for marker stop
             <para>
             Used with <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Start">IMarker.Stop</see>. <br/> 
+            Not supported combination of multiple keys. <br/>
             Default: <c>F6</c> <br/>
             </para>
             </summary>
@@ -22524,6 +22531,7 @@
             Shortcut key for marker reset
             <para>
             Used with <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Reset">IMarker.Reset</see>. <br/> 
+            Not supported combination of multiple keys. <br/>
             Default: <c>F8</c> <br/> 
             </para>
             </summary>
@@ -22532,6 +22540,7 @@
             <summary>
             Shortcut key for save cursor position at <see cref="T:SpiralLab.Sirius2.Winforms.UI.EditorUserControl">EditorUserControl</see>
             <para>
+            Not supported combination of multiple keys. <br/>
             Default: <c>F9</c> <br/>
             </para>
             </summary>
@@ -26279,6 +26288,38 @@
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.Laser.AdvancedOptoWaveFotiaForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.UI.Laser.CoherentAviaLXForm">
+            <summary>
+            Used with <see cref="T:SpiralLab.Sirius2.Laser.CoherentAviaLX">CoherentAviaLX</see>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.Laser.CoherentAviaLXForm.LaserSource">
+            <summary>
+             <see cref="T:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries">CoherentDiamondCSeries</see>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.Laser.CoherentAviaLXForm.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.Laser.CoherentAviaLXForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.Laser.CoherentAviaLXForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.Laser.CoherentAviaLXForm.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.

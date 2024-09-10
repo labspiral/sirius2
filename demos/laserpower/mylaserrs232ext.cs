@@ -444,7 +444,7 @@ namespace Demos
             catch (System.TimeoutException ex)
             {
                 IsError = true;
-                Logger.Log(Logger.Types.Error, ex);
+                Logger.Log(Logger.Types.Error, $"laser [{this.Index}]: fail to receive data. timed out");
                 success &= false;
             }
             catch (System.Exception ex)

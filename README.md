@@ -175,7 +175,7 @@
 
 **8. Version history**
 
-* 2024.9.9 v.1.43.1770
+* 2024.9.10 v.1.43.1770
   - added) preview at marker 
     - by IMarker.Preview()
     - Shortcut: F4
