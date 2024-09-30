@@ -60,6 +60,9 @@
             this.tabRemote = new System.Windows.Forms.TabPage();
             this.remoteUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RemoteUserControl();
             this.logControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
+            this.spcEntity = new System.Windows.Forms.SplitContainer();
+            this.trvEntity = new SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl();
+            this.penControl1 = new SpiralLab.Sirius2.Winforms.UI.PenUserControl();
             this.tlsTop2 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.btnPoint = new System.Windows.Forms.ToolStripButton();
@@ -173,11 +176,9 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tbcLeft = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.spcEntity = new System.Windows.Forms.SplitContainer();
-            this.trvEntity = new SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl();
-            this.penControl1 = new SpiralLab.Sirius2.Winforms.UI.PenUserControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.trvBlock = new SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl();
+            this.btnCross = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -203,6 +204,10 @@
             this.tabPage16.SuspendLayout();
             this.tabScript.SuspendLayout();
             this.tabRemote.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spcEntity)).BeginInit();
+            this.spcEntity.Panel1.SuspendLayout();
+            this.spcEntity.Panel2.SuspendLayout();
+            this.spcEntity.SuspendLayout();
             this.tlsTop2.SuspendLayout();
             this.tlsTop1.SuspendLayout();
             this.stsBottom.SuspendLayout();
@@ -211,10 +216,6 @@
             this.tabPage4.SuspendLayout();
             this.tbcLeft.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spcEntity)).BeginInit();
-            this.spcEntity.Panel1.SuspendLayout();
-            this.spcEntity.Panel2.SuspendLayout();
-            this.spcEntity.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -522,6 +523,36 @@
             this.logControl1.IsDetailLog = false;
             this.logControl1.Name = "logControl1";
             // 
+            // spcEntity
+            // 
+            resources.ApplyResources(this.spcEntity, "spcEntity");
+            this.spcEntity.Name = "spcEntity";
+            // 
+            // spcEntity.Panel1
+            // 
+            this.spcEntity.Panel1.Controls.Add(this.trvEntity);
+            // 
+            // spcEntity.Panel2
+            // 
+            this.spcEntity.Panel2.Controls.Add(this.penControl1);
+            // 
+            // trvEntity
+            // 
+            this.trvEntity.BackColor = System.Drawing.SystemColors.Control;
+            this.trvEntity.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.trvEntity, "trvEntity");
+            this.trvEntity.Document = null;
+            this.trvEntity.Marker = null;
+            this.trvEntity.Name = "trvEntity";
+            // 
+            // penControl1
+            // 
+            this.penControl1.BackColor = System.Drawing.SystemColors.Control;
+            this.penControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.penControl1, "penControl1");
+            this.penControl1.Document = null;
+            this.penControl1.Name = "penControl1";
+            // 
             // tlsTop2
             // 
             resources.ApplyResources(this.tlsTop2, "tlsTop2");
@@ -539,6 +570,7 @@
             this.btnTrepan,
             this.btnRectangle,
             this.btnTriangle,
+            this.btnCross,
             this.btnPolyline,
             this.btnSpiral,
             this.ddbText,
@@ -1303,36 +1335,6 @@
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // spcEntity
-            // 
-            resources.ApplyResources(this.spcEntity, "spcEntity");
-            this.spcEntity.Name = "spcEntity";
-            // 
-            // spcEntity.Panel1
-            // 
-            this.spcEntity.Panel1.Controls.Add(this.trvEntity);
-            // 
-            // spcEntity.Panel2
-            // 
-            this.spcEntity.Panel2.Controls.Add(this.penControl1);
-            // 
-            // trvEntity
-            // 
-            this.trvEntity.BackColor = System.Drawing.SystemColors.Control;
-            this.trvEntity.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.trvEntity, "trvEntity");
-            this.trvEntity.Document = null;
-            this.trvEntity.Marker = null;
-            this.trvEntity.Name = "trvEntity";
-            // 
-            // penControl1
-            // 
-            this.penControl1.BackColor = System.Drawing.SystemColors.Control;
-            this.penControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.penControl1, "penControl1");
-            this.penControl1.Document = null;
-            this.penControl1.Name = "penControl1";
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.trvBlock);
@@ -1350,6 +1352,12 @@
             this.trvBlock.Name = "trvBlock";
             this.trvBlock.Rtc = null;
             this.trvBlock.View = null;
+            // 
+            // btnCross
+            // 
+            this.btnCross.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.btnCross, "btnCross");
+            this.btnCross.Name = "btnCross";
             // 
             // SiriusEditorUserControl
             // 
@@ -1386,6 +1394,10 @@
             this.tabPage16.ResumeLayout(false);
             this.tabScript.ResumeLayout(false);
             this.tabRemote.ResumeLayout(false);
+            this.spcEntity.Panel1.ResumeLayout(false);
+            this.spcEntity.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spcEntity)).EndInit();
+            this.spcEntity.ResumeLayout(false);
             this.tlsTop2.ResumeLayout(false);
             this.tlsTop2.PerformLayout();
             this.tlsTop1.ResumeLayout(false);
@@ -1397,10 +1409,6 @@
             this.tabPage4.ResumeLayout(false);
             this.tbcLeft.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.spcEntity.Panel1.ResumeLayout(false);
-            this.spcEntity.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.spcEntity)).EndInit();
-            this.spcEntity.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1556,5 +1564,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuMoFXYWaitRange;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem btnZPL;
+        private System.Windows.Forms.ToolStripButton btnCross;
     }
 }

@@ -849,6 +849,7 @@ namespace Demos
             btnPoints.Click += BtnPoints_Click;
             btnRectangle.Click += BtnRectangle_Click;
             btnTriangle.Click += BtnTriangle_Click;
+            btnCross.Click += BtnCross_Click;
             btnArc.Click += BtnArc_Click;
             btnCircle.Click += BtnCircle_Click;
             btnTrepan.Click += BtnTrepan_Click;
@@ -921,16 +922,24 @@ namespace Demos
                 {
                     if (!Marker.IsBusy)
                     {
-                        var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(
+                        if (Config.IsShowMessageBoxWhenMarkerStart)
+                        {
+                            var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(
                             Properties.Resources.MarkerTryingToStart,
                             Properties.Resources.Warning,
                             MessageBoxButtons.YesNo);
-                        DialogResult dialogResult = form.ShowDialog(this);
-                        if (dialogResult == DialogResult.Yes)
+                            DialogResult dialogResult = form.ShowDialog(this);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                Marker.Ready(Document);
+                                Marker.Start();
+                                return true;
+                            }
+                        }
+                        else
                         {
                             Marker.Ready(Document);
                             Marker.Start();
-                            return true;
                         }
                     }
                 }
@@ -1457,6 +1466,11 @@ namespace Demos
         private void BtnTriangle_Click(object sender, EventArgs e)
         {
             var entity = EntityFactory.CreateTriangle(Vector2.Zero, 5, 7);
+            document.ActAdd(entity);
+        }
+        private void BtnCross_Click(object sender, EventArgs e)
+        {
+            var entity = EntityFactory.CreateCross(Vector2.Zero, 5, 5, 1);
             document.ActAdd(entity);
         }
         private void BtnText_Click(object sender, EventArgs e)

@@ -73,7 +73,7 @@ namespace Demos
         : IRemote
     {
         /// <inheritdoc/>
-        public virtual event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <inheritdoc/>
         public event Action<IRemote> OnConnected;
         /// <inheritdoc/>

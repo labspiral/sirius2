@@ -49,7 +49,7 @@ namespace Demos
         , ILaserPowerControl
     {
         /// <inheritdoc/>
-        public virtual event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// Nofity property value has changed
         /// </summary>

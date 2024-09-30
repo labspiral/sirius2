@@ -48,7 +48,7 @@ namespace Demos
         , ILaserGuideControl
     {
         /// <inheritdoc/>
-        public virtual event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// Nofity property value has changed
         /// </summary>

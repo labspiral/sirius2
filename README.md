@@ -175,6 +175,16 @@
 
 **8. Version history**
 
+* 2024.9.30 v.1.44.1780
+  - added) cross entity 
+  - added) Config.OnCreateGrids event
+     - fixed) can be created grids with each rows and cols
+  - fixed) laser path simulation with more dynamics
+  - fixed) 3d calibration at cone entity
+  - fixed) stitched image
+     - renamed) EntityImageStitched
+     - modified) image index order 
+
 * 2024.9.10 v.1.43.1770
   - added) preview at marker 
     - by IMarker.Preview()

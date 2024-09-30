@@ -131,37 +131,6 @@
   <data name="spcMain.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
-  <data name="editorControl1.CursorPositionList" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAMUCbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1u
-        ZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbT3BlblRLLlZlY3RvcjMsIE9w
-        ZW5USywgVmVyc2lvbj0zLjMuMy4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWJhZDE5
-        OWZlODRlYjNkZjRdXSwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQ
-        dWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0sIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAs
-        IEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQUBAAAAW1N5c3Rl
-        bS5Db2xsZWN0aW9ucy5HZW5lcmljLkxpc3RgMVtbU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuS2V5
-        VmFsdWVQYWlyYDJbW1N5c3RlbS5TdHJpbmcDAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgMAAOUBU3lz
-        dGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuS2V5VmFsdWVQYWlyYDJbW1N5c3RlbS5TdHJpbmcsIG1zY29y
-        bGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVj
-        NTYxOTM0ZTA4OV0sW09wZW5USy5WZWN0b3IzLCBPcGVuVEssIFZlcnNpb249My4zLjMuMCwgQ3VsdHVy
-        ZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iYWQxOTlmZTg0ZWIzZGY0XV1bXQgIAgAAAAkDAAAAAAAA
-        AAAAAAAMBAAAAPYBbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJs
-        aWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbT3BlblRLLlZlY3RvcjMsIE9wZW5USywgVmVyc2lv
-        bj0zLjMuMy4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWJhZDE5OWZlODRlYjNkZjRd
-        XSwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tl
-        bj1iNzdhNWM1NjE5MzRlMDg5BwMAAAAAAQAAAAoAAAAEOFN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmlj
-        LktleVZhbHVlUGFpcmAyW1tTeXN0ZW0uU3RyaW5nBAAAAAwGAAAASU9wZW5USywgVmVyc2lvbj0zLjMu
-        My4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWJhZDE5OWZlODRlYjNkZjQF+////zhT
-        eXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5LZXlWYWx1ZVBhaXJgMltbU3lzdGVtLlN0cmluZwIAAAAD
-        a2V5BXZhbHVlAQQOT3BlblRLLlZlY3RvcjMGAAAABAAAAAoF+f///w5PcGVuVEsuVmVjdG9yMwMAAAAB
-        WAFZAVoAAAALCwsGAAAAAAAAAAAAAAAAAAAAAfj////7////CgH3////+f///wAAAAAAAAAAAAAAAAH2
-        ////+////woB9f////n///8AAAAAAAAAAAAAAAAB9P////v///8KAfP////5////AAAAAAAAAAAAAAAA
-        AfL////7////CgHx////+f///wAAAAAAAAAAAAAAAAHw////+////woB7/////n///8AAAAAAAAAAAAA
-        AAAB7v////v///8KAe3////5////AAAAAAAAAAAAAAAAAez////7////CgHr////+f///wAAAAAAAAAA
-        AAAAAAHq////+////woB6f////n///8AAAAAAAAAAAAAAAAB6P////v///8KAef////5////AAAAAAAA
-        AAAAAAAACw==
-</value>
-  </data>
   <data name="editorControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -185,7 +154,7 @@
     <value>editorControl1</value>
   </data>
   <data name="&gt;&gt;editorControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.EditorUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.EditorUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;editorControl1.Parent" xml:space="preserve">
     <value>tabEditor</value>
@@ -254,7 +223,7 @@
     <value>trvEntity</value>
   </data>
   <data name="&gt;&gt;trvEntity.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trvEntity.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -320,7 +289,7 @@
     <value>trvBlock</value>
   </data>
   <data name="&gt;&gt;trvBlock.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trvBlock.Parent" xml:space="preserve">
     <value>tabPage2</value>
@@ -386,7 +355,7 @@
     <value>penControl1</value>
   </data>
   <data name="&gt;&gt;penControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PenUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.PenUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;penControl1.Parent" xml:space="preserve">
     <value>tabPen</value>
@@ -435,7 +404,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAi
-        SgAAAk1TRnQBSQFMAgEBKQEAAXgBCAF4AQgBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        SgAAAk1TRnQBSQFMAgEBKQEAAZABCAGQAQgBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABYAMAAQgBAQIAAQEBAAEIBgABYxgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHc
         AcABAAHwAcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEA
         AzkBAAGAAXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEz
@@ -818,7 +787,7 @@
     <value>propertyGridControl1</value>
   </data>
   <data name="&gt;&gt;propertyGridControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;propertyGridControl1.Parent" xml:space="preserve">
     <value>spcRight.Panel2</value>
@@ -1028,15 +997,14 @@
   <data name="btnTrepan.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHZSURBVEhL3ZW5SgNRGIWj4gJqZy9o5fIaSopIjDpkN5Ai
-        jVHwCVJop6KPoIVgoZ1vIVi4NMHlDRQXEBWM39E/mYRMEpNgoQcOc+f8/3/uMvfe8f1v+P3+3ng8noBH
-        8BreGa9jsdhhNBqNK8fSmwMGDka3sFCPkUjkJpFIzFtZYziO04X5TtGAUZ7zvorRBO0hEcNJacQvyvK2
-        VWs2tUHyphW9YpStV6QYecuBQODNajYs5A0MZ8vMp0xuCPKnVQM/mMmMyZVgND0kXMEC08+YXBPJZHKM
-        3P1wOHwvUnOiWpjPZDLdluaCniOWcJbL5TpN9gSzW8TwGA6bpE0xQu2TPGg7JrsgcGDBFZM8oZHL3F4r
-        gK4PL4/qOIG8gjIwyRPk7GNQGnk5tLvkEQqFHkxyQeBrenyLAZM8ofW2ZhXS6fSgPESTXNDrswKMot8k
-        T7TcAWLbS6TDKA+ejya5IPC7H7ndbcrSjRaXGb16m7Z70GifqhZ6HzSBkbV0VZDrp+YdfjC4gMneIGGr
-        2AntpUaXHebZsstuzUK1oSKMq65r2uOpVKpP1G4xrXRd875Oece3yw9A0QL80Q8H8zkraw76HWp3YbCH
-        0WUwGHwR1UbfRQ+3/Mv8I/D5PgFfUVUhY07jPgAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGgSURBVEhL3ZU7TsNAEIYDiIcEdPRIUPG4BsgFSAiw7MQO
+        lly4ISDlBCmgAwRHgI4COk4C9ByFfDPOIj+XPKCAXxr9s7Mz/87a63Xjf8NxnPkgCELsmeFn1lqt1lOz
+        2Qwkh/HoQMBF+AM3J1xlYRgewcPBdd0ZxO9wtRj/Dev6vr9FxytiCG5LjAbeM3m3UotvB0XXkOmsYyuS
+        OfLPcDUf/0on6oDgAWTEdzQ4BBDehbSOHe5rsAi6mYPMdhMNWtButzcgzS9akiSzcB6s7EOa0Ov1pjVY
+        A3Z3Akkjq2lED8UapPX4rgazYJuPkEyep5FqZDovgdouJBovaSQPXX0gYEOu8yzkdEGqo4ECdIJ3sZQO
+        a1FZLIjjeBmyL0AXi+mwFpMtMMkjko8Rql7gJ14yMOLleXNMWeh1nGPqed46pOLEy8f01z80AZ2NdVWQ
+        60BaR3N7GqwDCTeQST797rJDvIOr+TzeC52wQYoQLl3XFG9GUbQgJqdFYiZnkHcJT2HDAcFj6EvAZogf
+        wqNDfodyuhB4YFgUvce8sX+ZfwSNRh9XoO2yN6ziTwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btnTrepan.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -1072,15 +1040,13 @@
   </data>
   <data name="btnTriangle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGMSURBVFhH7Za/K0ZRHMaPlCg/IgMZlEXKQBmUMhiUMill
-        Myijf4BSDAYpKRODbAwYDWKzsNiksDCYRH6GeJ7n3FPEe99733vutbyf+nS+T933nvs9973nXlMkIZfB
-        +C9swUc4qZQxlfAT7gVjFcyUDciJa4JxAWZGBeSkS0rGjMF3WKeUAevwA9YqGVMCX+GqUsqUQ3bPi/jO
-        MHyGjUopsgLfYIPST27hpi3TwXW/rfSbAfgAm5VSYBnyXodNcA13bekX1/2+Um564T1sVfLIInyBbUrh
-        nMJDW/rBdX+slJ8ueAc7lDwwD/mIdSpF4wie2DIZrnsuaxzaIVehWykBc5D3vkcpHvzDntuyMFz3V0rx
-        aYHcF/qUCmAW8rnvVyqMHXhjy3i47rm9JqEJPsFBpRhMQ+75Q0rJWIPcnCLjuufy81WblHrIZkaUIjAF
-        +b4fVfIDd1JeRKlSHtg9jXRwRKohzzmulAceOGFLr8xAnrtMKQf8yj2DbhV8ewFDmzuAf/3Qp3zCihQJ
-        MOYLmwZ7+ELeQk4AAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAENSURBVEhL7dO/asJwFMXxXxG6FRwc3Do5li59ARdnF0ef
+        wVdw0bGLg12KLyC0iEsptJODoghiCx06iN30AdSl/Z6L/0BLEhNx8cCHcBNIwrmJOyfKXOEdcZuOkCp+
+        0LQp4txgghpGyCLSfGGBGPr4RWRV5fGBnE3OpTDFs00ho8XqbdX9dsoYIHRVWmwPaZs2ucQcoarSYr/R
+        sWk3GXTxZNMBUe9D3Nq0P/pkWwhclRbbgNcikwhc1fZir3XCIwXU4bsqLbaCB5u8c4ExXuFZlRb7iRkS
+        OuEzd/D1A2qxJRRtCpZH3OPfqrTYF+gtDslqd/qsd6pSNbrYXh7DeFsedU/L6ubHsH7IOaeKc3/bilz9
+        O55NBQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btnTriangle.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -1094,6 +1060,26 @@
   </data>
   <data name="btnTriangle.ToolTipText" xml:space="preserve">
     <value>Triangle</value>
+  </data>
+  <data name="btnCross.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB6SURBVEhL7ZJBCsAgDATz8z6tT2sruBK2ialEoQcHBspG
+        3UMjf+B4vBzLLM3yAjzGePkwuyBkSkHZBmtbdM5gftZvLe41+IAlY51hG68gyS4IcQt6MtYZtqHXUatz
+        huda5J/AJQYPpekVWPkwuyDE2hI45ScvL0ggcgN6u5MhqVPucgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnCross.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="btnCross.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 28</value>
+  </data>
+  <data name="btnCross.Text" xml:space="preserve">
+    <value>Cross</value>
+  </data>
+  <data name="btnCross.ToolTipText" xml:space="preserve">
+    <value>Cross</value>
   </data>
   <data name="btnPolyline.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1319,7 +1305,7 @@
 </value>
   </data>
   <data name="mnuDataMatrix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>147, 30</value>
   </data>
   <data name="mnuDataMatrix.Text" xml:space="preserve">
     <value>DataMatrix</value>
@@ -1336,7 +1322,7 @@
 </value>
   </data>
   <data name="mnuQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>147, 30</value>
   </data>
   <data name="mnuQRCode.Text" xml:space="preserve">
     <value>QR Code</value>
@@ -1358,7 +1344,7 @@
 </value>
   </data>
   <data name="mnuPDF417.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>147, 30</value>
   </data>
   <data name="mnuPDF417.Text" xml:space="preserve">
     <value>PDF417</value>
@@ -1367,7 +1353,7 @@
     <value>PDF417 (2D)</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 6</value>
+    <value>144, 6</value>
   </data>
   <data name="mnuBarcode1D.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1378,7 +1364,7 @@
 </value>
   </data>
   <data name="mnuBarcode1D.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>147, 30</value>
   </data>
   <data name="mnuBarcode1D.Text" xml:space="preserve">
     <value>Barcode 1D</value>
@@ -1440,7 +1426,7 @@
 </value>
   </data>
   <data name="mnuTimer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuTimer.Text" xml:space="preserve">
     <value>Timer</value>
@@ -1459,7 +1445,7 @@
 </value>
   </data>
   <data name="mnuJumpTo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuJumpTo.Text" xml:space="preserve">
     <value>Jump To</value>
@@ -1477,7 +1463,7 @@
 </value>
   </data>
   <data name="mnuMeasurementBeginEnd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuMeasurementBeginEnd.Text" xml:space="preserve">
     <value>Measurement</value>
@@ -1613,7 +1599,7 @@
 </value>
   </data>
   <data name="mnuMoF.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuMoF.Text" xml:space="preserve">
     <value>MoF</value>
@@ -1631,7 +1617,7 @@
 </value>
   </data>
   <data name="mnuSelectCorrectionTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuSelectCorrectionTable.Text" xml:space="preserve">
     <value>Correction Table</value>
@@ -1647,7 +1633,7 @@
 </value>
   </data>
   <data name="mnuAlcDefinedVector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuAlcDefinedVector.Text" xml:space="preserve">
     <value>Ramp</value>
@@ -1665,7 +1651,7 @@
 </value>
   </data>
   <data name="mnuZDelta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuZDelta.Text" xml:space="preserve">
     <value>Z Delta</value>
@@ -1685,7 +1671,7 @@
 </value>
   </data>
   <data name="mnuZDefocus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuZDefocus.Text" xml:space="preserve">
     <value>Z Defocus</value>
@@ -1819,7 +1805,7 @@
 </value>
   </data>
   <data name="mnuData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuData.Text" xml:space="preserve">
     <value>Data and I/O</value>
@@ -1845,7 +1831,7 @@
 </value>
   </data>
   <data name="mnuScriptEvent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>172, 30</value>
   </data>
   <data name="mnuScriptEvent.Text" xml:space="preserve">
     <value>Script Event</value>
@@ -2234,7 +2220,7 @@
 </value>
   </data>
   <data name="mnuMarginLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>121, 30</value>
   </data>
   <data name="mnuMarginLeft.Text" xml:space="preserve">
     <value>Left</value>
@@ -2250,7 +2236,7 @@
 </value>
   </data>
   <data name="mnuMarginRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>121, 30</value>
   </data>
   <data name="mnuMarginRight.Text" xml:space="preserve">
     <value>Right</value>
@@ -2267,7 +2253,7 @@
 </value>
   </data>
   <data name="mnuMarginTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>121, 30</value>
   </data>
   <data name="mnuMarginTop.Text" xml:space="preserve">
     <value>Top</value>
@@ -2284,7 +2270,7 @@
 </value>
   </data>
   <data name="mnuMarginBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 30</value>
+    <value>121, 30</value>
   </data>
   <data name="mnuMarginBottom.Text" xml:space="preserve">
     <value>Bottom</value>
@@ -2407,7 +2393,7 @@
     <value>offsetControl1</value>
   </data>
   <data name="&gt;&gt;offsetControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.OffsetUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.OffsetUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;offsetControl1.Parent" xml:space="preserve">
     <value>spcMarker.Panel1</value>
@@ -2449,7 +2435,7 @@
     <value>markerControl1</value>
   </data>
   <data name="&gt;&gt;markerControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.MarkerUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.MarkerUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;markerControl1.Parent" xml:space="preserve">
     <value>spcMarker.Panel2</value>
@@ -2548,7 +2534,7 @@
     <value>manualUserControl1</value>
   </data>
   <data name="&gt;&gt;manualUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.ManualUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.ManualUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;manualUserControl1.Parent" xml:space="preserve">
     <value>tabManual</value>
@@ -2617,7 +2603,7 @@
     <value>rtcControl1</value>
   </data>
   <data name="&gt;&gt;rtcControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.ScannerUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.ScannerUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rtcControl1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -2659,7 +2645,7 @@
     <value>laserControl1</value>
   </data>
   <data name="&gt;&gt;laserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.LaserUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.LaserUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;laserControl1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -2767,7 +2753,7 @@
     <value>rtcDIUserControl1</value>
   </data>
   <data name="&gt;&gt;rtcDIUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rtcDIUserControl1.Parent" xml:space="preserve">
     <value>spcIO.Panel1</value>
@@ -2815,7 +2801,7 @@
     <value>rtcDOUserControl1</value>
   </data>
   <data name="&gt;&gt;rtcDOUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rtcDOUserControl1.Parent" xml:space="preserve">
     <value>spcIO.Panel2</value>
@@ -2914,7 +2900,7 @@
     <value>powerMeterControl1</value>
   </data>
   <data name="&gt;&gt;powerMeterControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;powerMeterControl1.Parent" xml:space="preserve">
     <value>tabPage15</value>
@@ -2977,7 +2963,7 @@
     <value>powerMapControl1</value>
   </data>
   <data name="&gt;&gt;powerMapControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;powerMapControl1.Parent" xml:space="preserve">
     <value>tabPage16</value>
@@ -3106,7 +3092,7 @@
     <value>scriptControlControl1</value>
   </data>
   <data name="&gt;&gt;scriptControlControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.ScriptUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.ScriptUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scriptControlControl1.Parent" xml:space="preserve">
     <value>tabScript</value>
@@ -3169,7 +3155,7 @@
     <value>remoteUserControl1</value>
   </data>
   <data name="&gt;&gt;remoteUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RemoteUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.RemoteUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;remoteUserControl1.Parent" xml:space="preserve">
     <value>tabRemote</value>
@@ -3232,7 +3218,7 @@
     <value>logControl1</value>
   </data>
   <data name="&gt;&gt;logControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.LogUserControl, spirallab.sirius2.winforms, Version=1.42.1760.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.LogUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;logControl1.Parent" xml:space="preserve">
     <value>tabLog</value>
@@ -4277,6 +4263,12 @@
   </data>
   <data name="&gt;&gt;lblRemote.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCross.Name" xml:space="preserve">
+    <value>btnCross</value>
+  </data>
+  <data name="&gt;&gt;btnCross.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SiriusEditorUserControlV2</value>

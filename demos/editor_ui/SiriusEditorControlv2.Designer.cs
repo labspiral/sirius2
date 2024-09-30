@@ -176,6 +176,7 @@
             this.lblRemote = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitter3 = new System.Windows.Forms.Splitter();
             this.panBody = new System.Windows.Forms.Panel();
+            this.btnCross = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.SuspendLayout();
@@ -435,6 +436,7 @@
             this.btnTrepan,
             this.btnRectangle,
             this.btnTriangle,
+            this.btnCross,
             this.btnPolyline,
             this.btnSpiral,
             this.ddbText,
@@ -1350,6 +1352,12 @@
             resources.ApplyResources(this.panBody, "panBody");
             this.panBody.Name = "panBody";
             // 
+            // btnCross
+            // 
+            this.btnCross.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.btnCross, "btnCross");
+            this.btnCross.Name = "btnCross";
+            // 
             // SiriusEditorUserControlV2
             // 
             resources.ApplyResources(this, "$this");
@@ -1554,5 +1562,6 @@
         private SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl propertyGridControl1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem btnZPL;
+        private System.Windows.Forms.ToolStripButton btnCross;
     }
 }

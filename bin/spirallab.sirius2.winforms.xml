@@ -2620,134 +2620,195 @@
               Looks up a localized string similar to Page.
             </summary>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.entity.stitchedimage">
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.cross">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.ResourceManager">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cross.ResourceManager">
             <summary>
               Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Culture">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cross.Culture">
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Basic_C">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cross.Closed_DESC">
             <summary>
-              Looks up a localized string similar to Basic.
+              Looks up a localized string similar to Is Closed Path or Not.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Cols_DESC">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cross.Closed_DISP">
             <summary>
-              Looks up a localized string similar to Column Count(s).
+              Looks up a localized string similar to Closed.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Cols_DISP">
-            <summary>
-              Looks up a localized string similar to Cols.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Data_C">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cross.Data_C">
             <summary>
               Looks up a localized string similar to Data.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Fixed_aspect_ratio_DESC">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cross.Height_DESC">
             <summary>
-              Looks up a localized string similar to Fixed Aspect Ratio.
+              Looks up a localized string similar to Height (mm).
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Fixed_aspect_ratio_DISP">
-            <summary>
-              Looks up a localized string similar to Fixed aspect ratio.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Height_DESC">
-            <summary>
-              Looks up a localized string similar to Cell Height (mm).
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Height_DISP">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cross.Height_DISP">
             <summary>
               Looks up a localized string similar to Height.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cross.Thickness_DESC">
+            <summary>
+              Looks up a localized string similar to Thickness (mm) (&gt;= 0).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cross.Thickness_DISP">
+            <summary>
+              Looks up a localized string similar to Thickness.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cross.Width_DESC">
+            <summary>
+              Looks up a localized string similar to Width (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cross.Width_DISP">
+            <summary>
+              Looks up a localized string similar to Width.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.stitchedimage">
+            <summary>
+              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.ResourceManager">
+            <summary>
+              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Culture">
+            <summary>
+              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
+              재정의합니다.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Basic_C">
+            <summary>
+              Basic과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Cols_DESC">
+            <summary>
+              Column Count(s)과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Cols_DISP">
+            <summary>
+              Cols과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Data_C">
+            <summary>
+              Data과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Fixed_aspect_ratio_DESC">
+            <summary>
+              Fixed Aspect Ratio과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Fixed_aspect_ratio_DISP">
+            <summary>
+              Fixed aspect ratio과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Height_DESC">
+            <summary>
+              Cell Height (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Height_DISP">
+            <summary>
+              Height과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imagefilename_DESC">
              <summary>
-               Looks up a localized string similar to Target Image File to Update(or Load)
-            .
+               Target Image File to Update(or Load)
+            과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imagefilename_DISP">
             <summary>
-              Looks up a localized string similar to Image file.
+              Image file과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imageindex_DESC">
              <summary>
-               Looks up a localized string similar to Target Image Index to Update(or Load)
-            Left Bottom to Right Top Orders.
-            Starting from 0..
+               Target Image Index to Update(or Load)
+            Left Top to Right Bottom Orders.
+            Starting from 0.과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imageindex_DISP">
             <summary>
-              Looks up a localized string similar to Image index.
+              Image index과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Images_DESC">
             <summary>
-              Looks up a localized string similar to Array of Image(s).
+              Array of Image(s)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Images_DISP">
             <summary>
-              Looks up a localized string similar to Images.
+              Images과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imagesave_DESC">
             <summary>
-              Looks up a localized string similar to Save Image(s) or not.
+              Save Image(s) or not과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imagesave_DISP">
             <summary>
-              Looks up a localized string similar to Image save.
+              Image save과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Rows_DESC">
             <summary>
-              Looks up a localized string similar to Row Count(s).
+              Row Count(s)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Rows_DISP">
             <summary>
-              Looks up a localized string similar to Rows.
+              Rows과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Transparent_DESC">
              <summary>
-               Looks up a localized string similar to Image Transparent 
-            Range: 0.1~1.0.
+               Image Transparent 
+            Range: 0.1~1.0과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Transparent_DISP">
             <summary>
-              Looks up a localized string similar to Transparent.
+              Transparent과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Width_DESC">
             <summary>
-              Looks up a localized string similar to Cell Width (mm).
+              Cell Width (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Width_DISP">
             <summary>
-              Looks up a localized string similar to Width.
+              Width과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.raster">
@@ -4050,98 +4111,102 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.cone">
             <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
+              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.ResourceManager">
             <summary>
-              Returns the cached ResourceManager instance used by this class.
+              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Culture">
             <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
+              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
+              재정의합니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Basic_C">
             <summary>
-              Looks up a localized string similar to Basic.
+              Basic과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Data_C">
             <summary>
-              Looks up a localized string similar to Data.
+              Data과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Direction_DESC">
             <summary>
-              Looks up a localized string similar to New Directional (Default: 1,0,0).
+              New Directional (Default: 1,0,0)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Direction_DISP">
             <summary>
-              Looks up a localized string similar to Direction.
+              Direction과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Length_DESC">
             <summary>
-              Looks up a localized string similar to Length(or Distance) from Reference to End location (mm).
+              Length(or Distance) from Reference to End location (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Length_DISP">
             <summary>
-              Looks up a localized string similar to Length.
+              Length과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.RadiusEnd_DESC">
-            <summary>
-              Looks up a localized string similar to Radius at End Location (mm).
-            </summary>
+             <summary>
+               Radius at End Location (mm)
+            Cylinder: If Equal Radius (Reference)
+            Cone: If Not Equal Radius (Reference)과(와) 유사한 지역화된 문자열을 찾습니다.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.RadiusEnd_DISP">
             <summary>
-              Looks up a localized string similar to Radius (End).
+              Radius (End)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.RadiusReference_DESC">
-            <summary>
-              Looks up a localized string similar to Radius at Reference Location (mm) .
-            </summary>
+             <summary>
+               Radius at Reference Location (mm) 
+            Cylinder: If Equal Radius (Reference)
+            Cone: If Not Equal Radius (Reference)과(와) 유사한 지역화된 문자열을 찾습니다.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.RadiusReference_DISP">
             <summary>
-              Looks up a localized string similar to Radius (Reference).
+              Radius (Reference)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.RadiusStart_DESC">
             <summary>
-              Looks up a localized string similar to Radius at Start Location (mm).
+              Radius at Start Location (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.RadiusStart_DISP">
             <summary>
-              Looks up a localized string similar to Radius (Start).
+              Radius (Start)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Reference_DESC">
             <summary>
-              Looks up a localized string similar to New Reference X,Y,Z Location (Default: 0,0,0).
+              New Reference X,Y,Z Location (Default: 0,0,0)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Reference_DISP">
             <summary>
-              Looks up a localized string similar to Reference.
+              Reference과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Z_scale_DESC">
             <summary>
-              Looks up a localized string similar to Z Scale Factor (-, +). Calculated When Convert New 3D Correction File (Default 1:1).
+              Z Scale Factor (-, +). Calculated When Convert New 3D Correction File (Default 1:1)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cone.Z_scale_DISP">
             <summary>
-              Looks up a localized string similar to Z scale.
+              Z scale과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.pdf417">
@@ -4700,6 +4765,16 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.rectangle.Height_DISP">
             <summary>
               Looks up a localized string similar to Height.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.rectangle.Thickness_DESC">
+            <summary>
+              Looks up a localized string similar to Thickness (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.rectangle.Thickness_DISP">
+            <summary>
+              Looks up a localized string similar to Thickness.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.rectangle.Width_DESC">
@@ -6416,50 +6491,165 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPDF.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage">
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityCross">
             <summary>
-            EntityStitchedImage entity
+            EntityCross entity
             </summary>
             <remarks>
-            Created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateStitchedImage(System.Int32,System.Int32,System.Double,System.Double)">EntityFactory.CreateStitchedImage</see>. <br/>
+            Created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateCross(System.Double,System.Double,System.Double,System.Double,System.Double)">EntityFactory.CreateCross</see>. <br/>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Rows">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Width">
+            <summary>
+            Width (mm)
+            <para>
+            Must be > 0
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Height">
+            <summary>
+            Height (mm)
+            <para>
+            Must be > 0
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Thickness">
+            <summary>
+            Thickness (mm)
+            <para>
+            Must be >= 0 (0 means single line and hatch is not possible) <br/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCross.IsClosed">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.#ctor(OpenTK.Vector2,System.Double,System.Double,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="center">Center x,y (mm)</param>
+            <param name="width">Width (mm)<br/>Must be > 0</param>
+            <param name="height">Height (mm)<br/>Must be > 0</param>
+            <param name="thickness">Thickness (mm)<br/>Must be >= 0</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.#ctor(OpenTK.Vector3,System.Double,System.Double,System.Double)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="center">Center x,y,z (mm)</param>
+            <param name="width">Width (mm)<br/>Must be > 0</param>
+            <param name="height">Height (mm)<br/>Must be > 0</param>
+            <param name="thickness">Thickness (mm)<br/>Must be >= 0</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Explode">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Regen">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.RegenInOut">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Render(SpiralLab.Sirius2.Winforms.IView)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.HitTest(SpiralLab.Sirius2.Winforms.IView,OpenTK.Vector2,OpenTK.Vector2,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.ToPolylines">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Expand(SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Double)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Clip(SpiralLab.Sirius2.Winforms.Entity.BoundingBox)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched">
+            <summary>
+            EntityImageStitched entity
+            </summary>
+            <remarks>
+            Created by <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateImageStitched(System.Int32,System.Int32,System.Double,System.Double)">EntityFactory.CreateImageStitched</see>. <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.Rows">
             <summary>
             Row counts
+            <code>
+            For example: 3(Rows) x 4(Cols)
+            Row0: 0  1  2  4
+            Row1: 4  5  6  7
+            Row2: 8  9  10 11
+            </code>
             <para>
             Must be > 0
             </para>
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Cols">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.Cols">
             <summary>
             Col counts
+            <code>
+            For example: 3(Rows) x 4(Cols)
+            Row0: 0  1  2  4
+            Row1: 4  5  6  7
+            Row2: 8  9  10 11
+            </code>
             <para>
             Must be > 0
             </para>
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.ImageIndex">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.ImageIndex">
             <summary>
             Target image index to update
             <code>
-            6 7 8
-            3 4 5
-            0 1 2
+            For example: 3(Rows) x 4(Cols)
+            Row0: 0  1  2  4
+            Row1: 4  5  6  7
+            Row2: 8  9  10 11
             </code>
             </summary>
             <remarks>
             Must be >= 0 and starting from 0. <br/>
-            Image index from left bottom to right top order. <br/>
+            Image index from left top to right bottom order. <br/>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.ImageFileName">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.ImageFileName">
             <summary>
-            Image file to update(or load) at current image index
+            Image file to update(or load) at current image <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.ImageIndex">index</see> 
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.IsImageFileSave">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.IsImageFileSave">
             <summary>
             Save images or not
             </summary>
@@ -6467,7 +6657,7 @@
             Default: <c>False</c>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Width">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.Width">
             <summary>
             Width (mm)
             <para>
@@ -6475,12 +6665,12 @@
             </para>
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.width">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.width">
             <summary>
             Width (mm)
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Height">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.Height">
             <summary>
             Height (mm)
             <para>
@@ -6488,12 +6678,12 @@
             </para>
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.height">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.height">
             <summary>
             Height (mm)
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Transparent">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.Transparent">
             <summary>
             Image Transparent 
             </summary>
@@ -6502,14 +6692,14 @@
             Default: 0.5 <br/>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Images">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.Images">
             <summary>
             Array of images
             <code>
-            Orders : 
-             6 7 8
-             3 4 5
-             0 1 2
+            For example: 3(Rows) x 4(Cols)
+            Row0: 0  1  2  4
+            Row1: 4  5  6  7
+            Row2: 8  9  10 11
             </code>
             </summary>
             <remarks>
@@ -6517,113 +6707,119 @@
             Image index from left bottom to right top order. <br/>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage._Images">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched._Images">
             <summary>
             Used by internally. Do NOT edit.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.glBuffers">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.glBuffers">
             <summary>
             GLBuffer 
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.#ctor">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.#ctor">
             <summary>
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.#ctor(System.Int32,System.Int32,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.#ctor(System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Constructor
+            <code>
+            For example: 3(Rows) x 4(Cols)
+            Row0: 0  1  2  4
+            Row1: 4  5  6  7
+            Row2: 8  9  10  11
+            </code>
             </summary>
             <param name="rows">Row counts<br/>Must be > 0</param>
             <param name="cols">Column counts<br/>Must be > 0</param>
             <param name="width">Cell width (mm)<br/>Must be > 0</param>
             <param name="height">Cell height (mm)<br/>Must be > 0</param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.ToString">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.ToString">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Finalize">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.Finalize">
             <summary>
             Finalizer
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Dispose(System.Boolean)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.Dispose(System.Boolean)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Clone">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.Clone">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.ClearImages">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.ClearImages">
             <summary>
             Clear all images
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.ClearImage(System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.ClearImage(System.Int32)">
             <summary>
             Clear image at target index
             </summary>
-            <param name="index">Target index (0,1,2,...)</param>
+            <param name="index">Target index (0,1,2,...)<br/>Starting from left/top to right bottom<br/>Range: 0 ~ Rows*Cols-1</param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.LoadImage(System.Int32,System.String)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.LoadImage(System.Int32,System.String)">
             <summary>
             Load image at target index from file
             </summary>
-            <param name="index">Target index (0,1,2,...)</param>
+            <param name="index">Target index (0,1,2,...)<br/>Starting from left/top to right bottom<br/>Range: 0 ~ Rows*Cols-1</param>
             <param name="fileName">Filename</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.LoadImage(System.Int32,System.Byte[])">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.LoadImage(System.Int32,System.Byte[])">
             <summary>
             Load image at target index from array of bytes
             </summary>
-            <param name="index">Target index (0,1,2,...)</param>
+            <param name="index">Target index (0,1,2,...)<br/>Starting from left/top to right bottom<br/>Range: 0 ~ Rows*Cols-1</param>
             <param name="bitmapBytes">Array of bytes</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.LoadImage(System.Int32,System.IO.Stream)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.LoadImage(System.Int32,System.IO.Stream)">
             <summary>
             Load image at target index from <c>Stream</c> 
             </summary>
-            <param name="index">Target index (0,1,2,...)</param>
+            <param name="index">Target index (0,1,2,...)<br/>Starting from left/top to right bottom<br/>Range: 0 ~ Rows*Cols-1</param>
             <param name="bitmapStream"><c>Stream</c></param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.LoadImage(System.Int32,System.Drawing.Bitmap)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.LoadImage(System.Int32,System.Drawing.Bitmap)">
             <summary>
             Load image at target index from <c>System.Drawing.Bitmap</c> 
             </summary>
-            <param name="index">Target index (0,1,2,...)</param>
+            <param name="index">Target index (0,1,2,...)<br/>Starting from left/top to right bottom<br/>Range: 0 ~ Rows*Cols-1</param>
             <param name="bitmap"><c>System.Drawing.Bitmap</c></param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.GetCellPosition(System.Int32,System.Double@,System.Double@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.GetCellPosition(System.Int32,System.Double@,System.Double@)">
             <summary>
             Get left/bottom(or x, y) position from index
             <code>
             Order :
-             6 7 8
-             3 4 5
              0 1 2
+             3 4 5
+             6 7 8
             </code>
             </summary>
             <remarks>
-            Image index from left bottom to right top order. <br/>
+            Image index from left top to right bottom order. <br/>
             Starting index from 0 with x(or left) = 0 , y(or bottom) = 0. <br/>
             </remarks>
-            <param name="index">Image index<br/>Range: 0 ~ Rows*Cols-1</param>
+            <param name="index">Image index<br/>Starting from left/top to right bottom.<br/>Range: 0 ~ Rows*Cols-1</param>
             <param name="left">Left x (mm)</param>
             <param name="bottom">Bottom y (mm)</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Regen">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.Regen">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.Render(SpiralLab.Sirius2.Winforms.IView)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.Render(SpiralLab.Sirius2.Winforms.IView)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.HitTest(SpiralLab.Sirius2.Winforms.IView,System.Drawing.Point,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityRaster">
@@ -14558,8 +14754,8 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.#ctor(System.Int32)">
             <summary>
             Constructor
-            <param name="capacity">The number of elements(or children) that the new list can initially store</param>
             </summary>
+            <param name="capacity">The number of elements(or children) that the new list can initially store</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.#ctor(SpiralLab.Sirius2.Winforms.Entity.EntityVertex2D[],System.Boolean)">
             <summary>
@@ -14958,6 +15154,57 @@
             <param name="height">Height (mm)<br/>Must be != 0</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle">EntityTriangle</see></returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateCross(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityCross">EntityCross</see> entity
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var cross = EntityFactory.CreateCross(10, -10, 0, 10, 5, 1);
+            document.ActAdd(cross);
+            </code>
+            </summary>
+            <param name="cx">X center (mm) </param>
+            <param name="cy">Y center (mm)</param>
+            <param name="cz">Z center (mm)</param>
+            <param name="width">Width (mm)<br/>Must be > 0</param>
+            <param name="height">Height (mm)<br/>Must be > 0</param>
+            <param name="thickness">Thickness (mm)<br/>Must be >= 0</param>
+            <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityCross">EntityCross</see></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateCross(OpenTK.Vector2,System.Double,System.Double,System.Double)">
+            <summary>
+            Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityCross">EntityCross</see> entity
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var cross = EntityFactory.CreateCross(new Vector2(10, -10), 10, 5, 1);
+            document.ActAdd(cross);
+            </code>
+            </summary>
+            <param name="center">Base x,y center (mm)</param>
+            <param name="width">Width (mm)<br/>Must be > 0</param>
+            <param name="height">Height (mm)<br/>Must be != 0</param>
+            <param name="thickness">Thickness (mm)<br/>Must be >= 0</param>
+            <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityCross">EntityCross</see></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateCross(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityCross">EntityCross</see> entity
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var cross = EntityFactory.CreateCross(new Vector2(10, -10), 10, 5, 1);
+            document.ActAdd(cross);
+            </code>
+            </summary>
+            <param name="cx">Base x center (mm) </param>
+            <param name="cy">Base y center (mm)</param>
+            / <param name="width">Width (mm)<br/>Must be > 0</param>
+            <param name="height">Height (mm)<br/>Must be != 0</param>
+            <param name="thickness">Thickness (mm)<br/>Must be >= 0</param>
+            <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityCross">EntityCross</see></returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateSpiral(OpenTK.Vector2,System.Double,System.Double,System.Double,System.UInt32,System.Boolean)">
             <summary>
             Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral">EntitySpiral</see> entity
@@ -15322,28 +15569,28 @@
             <param name="dpmm">Dots per mm<br/>Default: <see cref="F:SpiralLab.Sirius2.Winforms.Entity.DotsPerMm.Dots8_203DPI">DotsPerMm.Dots8_203DPI</see><br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityImageZPL">EntityImageZPL</see></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateStitchedImage(System.Int32,System.Int32,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateImageStitched(System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
-            Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage">EntityStitchedImage</see> entity
+            Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched">EntityImageStitched</see> entity
             <code>
             var document = siriusEditorUserControl1.Document;
             ...
             int rows = 2;
             int cols = 2;
-            var stitchedImage = EntityFactory.CreateStitchedImage(rows, cols, 4.0, 3.0);
+            var imageStitched = EntityFactory.CreateImageStitched(rows, cols, 4.0, 3.0);
             document.ActAdd(stitchedImage);
             ...
-            stitchedImage.LoadImage(0, "image1.bmp");
-            stitchedImage.LoadImage(1, "image2.bmp");
-            stitchedImage.LoadImage(2, "image3.bmp");
-            stitchedImage.LoadImage(3, "image4.bmp");
+            imageStitched.LoadImage(0, "image1.bmp");
+            imageStitched.LoadImage(1, "image2.bmp");
+            imageStitched.LoadImage(2, "image3.bmp");
+            imageStitched.LoadImage(3, "image4.bmp");
             </code>
             </summary>
             <param name="rows">Rows<br/>Must be > 0</param>
             <param name="cols">Cols<br/>Must be > 0</param>
             <param name="width">Cell width (mm)<br/>Must be > 0</param>
             <param name="height">Cell height (mm)<br/>Must be > 0</param>
-            <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityStitchedImage">EntityStitchedImage</see></returns>
+            <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched">EntityImageStitched</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateRaster(System.String,System.Double,System.Boolean)">
             <summary>
@@ -15533,6 +15780,9 @@
             document.ActAdd(block);
             </code>
             </summary>
+            <remarks>
+            Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert">EntityBlockInsert</see> entity. <br/>
+            </remarks>
             <param name="blockName">Block name</param>
             <param name="entities">Child array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlock">EntityBlock</see></returns>
@@ -15554,6 +15804,7 @@
             </code>
             </summary>
             <remarks>
+            Used <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlock">EntityBlock</see> entity as master block. <br/>
             Target name of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlock">EntityBlock</see> should be exist at <see cref="P:SpiralLab.Sirius2.Winforms.IDocumentData.Blocks">IDocumentData.Blocks</see>. <br/>
             </remarks>
             <param name="blockName">Master block name<br/>Master block must be exist at <see cref="P:SpiralLab.Sirius2.Winforms.IDocumentData.Blocks">IDocumentData.Blocks</see>.</param>
@@ -15693,7 +15944,10 @@
             document.ActAdd(timer);
             </code>
             </summary>
-            <param name="mesc">Delay time (msec)<br/>Must be >= 0</param>
+            <remarks>
+            Delay specific target time period. <br/>
+            </remarks>
+            <param name="mesc">Delay time (msec)<br/>Must be >= 0 (0 : No delay)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityTimer">EntityTimer</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateJumpTo(OpenTK.Vector3)">
@@ -15706,6 +15960,9 @@
             document.ActAdd(jumpTo);
             </code>
             </summary>
+            <remarks>
+            Jump specific target position. <br/>
+            </remarks>
             <param name="jumpTo">Jump x,y,z (mm) location</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityJumpTo">EntityJumpTo</see></returns>
         </member>
@@ -15719,6 +15976,9 @@
             document.ActAdd(jumpTo);
             </code>
             </summary>
+            <remarks>
+            Jump specific target position. <br/>
+            </remarks>
             <param name="x">Jump x location (mm)</param>
             <param name="y">Jump y location (mm)</param>
             <param name="z">Jump z location (mm)</param>
@@ -15726,7 +15986,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels[])">
             <summary>
-            Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementBegin">EntityMeasurementBegin</see>entity
+            Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementBegin">EntityMeasurementBegin</see> entity
             <code>
             var document = siriusEditorUserControl1.Document;
             ...
@@ -15744,6 +16004,7 @@
             </code>
             </summary>
             <remarks>
+            Target <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels">channel</see> are saved as measurement session by sampling with target frequency. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement">IRtcMeasurement</see> only. <br/>
             Used with RTC4,5,6 only (not syncAXIS) <br/>
             </remarks>
@@ -15756,6 +16017,7 @@
             Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMeasurementEnd">EntityMeasurementEnd</see> entity
             </summary>
             <remarks>
+            Target <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels">channel</see> are saved as measurement session by sampling with target frequency. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement">IRtcMeasurement</see> only. <br/>
             Used with RTC4,5,6 only (not syncAXIS) <br/>
             </remarks>
@@ -15774,6 +16036,7 @@
             </code>
             </summary>
             <remarks>
+            Starting MoF function means external encoder value(s) will be accumulated into current scanner position. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> only. <br/>
             Used with RTC4,5,6 only (not syncAXIS) <br/>
             </remarks>
@@ -15792,11 +16055,12 @@
             </code>
             </summary>
             <remarks>
+            Delay external /START trigger at LASER port. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> only. <br/>
-            Used with RTC4,5,6 only (not syncAXIS) <br/>
             Used with if <see cref="P:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.IsExternalStart">IsExternalStart</see> is <c>True</c>. <br/>
             Used with if <see cref="P:SpiralLab.Sirius2.Winforms.Marker.MarkerRtc.ListType">ListType</see> is <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ListTypes.Single">ListTypes.Single</see>. <br/>
             Used with if <see cref="P:SpiralLab.Sirius2.Winforms.IDocumentData.Layers">IDocumentData.Layers</see> count is 1. <br/>
+            Used with RTC4,5,6 only (not syncAXIS) <br/>
             </remarks>
             <param name="encoder"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcEncoders">RtcEncoders</see></param>
             <param name="distance">Distance (mm)</param>
@@ -15813,6 +16077,7 @@
             </code>
             </summary>
             <remarks>
+            Waiting until specific encoder condition(overrun or underrun) is matched. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> only. <br/>
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofBegin(System.Boolean)">IRtcMoF.ListMofBegin</see>. <br/>
             Used with RTC5,6 only (not RTC4, syncAXIS) <br/>
@@ -15834,6 +16099,7 @@
             </code>
             </summary>
             <remarks>
+            Waiting until angle condition is matched. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> only. <br/>
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofAngularBegin(System.Numerics.Vector2,System.Boolean)">IRtcMoF.ListMofAngularBegin</see>. <br/>
             Used with RTC5,6 only (not RTC4, syncAXIS) <br/>
@@ -15853,6 +16119,7 @@
             </code>
             </summary>
             <remarks>
+            Waiting until range x, y conditions are matched. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> only. <br/>
             Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofBegin(System.Boolean)">IRtcMoF.ListMofBegin</see>. <br/>
             Used with RTC5,6 only (not RTC4, syncAXIS) <br/>
@@ -15866,10 +16133,11 @@
             Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFEnd">EntityMoFEnd</see> entity
             </summary>
             <remarks>
+            End MoF function means external encoder value(s) will not be accumulated into current scanner position any more. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> only. <br/>
             Used with RTC4,5,6 only (not syncAXIS) <br/>
             </remarks>
-            <param name="jumpTo">Jump x,y (mm) location after MoF has ended</param>
+            <param name="jumpTo">X,Y (mm) for jump location after MoF has ended</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFEnd">EntityMoFEnd</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateMoFEnd(System.Double,System.Double)">
@@ -15880,8 +16148,8 @@
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> only. <br/>
             Used with RTC4,5,6 only (not syncAXIS) <br/>
             </remarks>
-            <param name="x">Jump x location (mm) after MoF has ended</param>
-            <param name="y">Jump y location (mm) after MoF has ended</param>
+            <param name="x">X (mm) for jump after MoF has ended</param>
+            <param name="y">Y (mm) for jump after MoF has ended</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityMoFEnd">EntityMoFEnd</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateZDefocus(System.Double)">
@@ -15897,8 +16165,9 @@
             <remarks>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc3D">IRtc3D</see> only. <br/>
             Used with RTC4,5,6 only (not syncAXIS) <br/>
+            If need to revert original z position, create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityZDefocus">EntityZDefocus</see> entity with <c>-zDefocus</c> value. <br/>
             </remarks>
-            <param name="zDefocus">Z defocus (mm)</param>
+            <param name="zDefocus">Z defocus (mm)<br/>Range is specified by installed Z deivice.</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityZDefocus">EntityZDefocus</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateZDelta(System.Double)">
@@ -15912,11 +16181,11 @@
             </code>
             </summary>
             <remarks>
-            If need to revert original z position, create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityZDelta">EntityZDelta</see> entity with -zDefocus value. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc3D">IRtc3D</see> only. <br/>
             Used with RTC4,5,6 only (not syncAXIS) <br/>
+            If need to revert original z position, create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityZDelta">EntityZDelta</see> entity with <c>-zDelta</c> value. <br/>
             </remarks>
-            <param name="zDelta">Z delta (mm)</param>
+            <param name="zDelta">Z delta (mm)<br/>Range: -Z ~ Z (mm)<br/>Range is specified by installed Z deivice.</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityZDelta">EntityZDelta</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateSelectCorrectionTable(SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables)">
@@ -15984,7 +16253,7 @@
             </code>
             </summary>
             <param name="channel"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels">ExtensionChannels</see></param>
-            <param name="data">Analog: ~10V<br/>DO: ~255 (8bits), ~65535 (16bits)<br/></param>
+            <param name="data">Analog: 0~10V<br/>DO: 0~255 (8bits), 0~65535 (16bits)<br/></param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityWriteData">EntityWriteData</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWriteDataExt16(System.UInt32,System.Boolean)">
@@ -16025,9 +16294,9 @@
             Don't care bit for '0'. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcConditionalIO">IRtcConditionalIO</see> only. <br/>
             </remarks>
-            <param name="inputLowBitMask">Input low bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
-            <param name="inputHightBitMask">Input high bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
-            <param name="outputBitMask">Output bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
+            <param name="inputLowBitMask">Input low bit mask<br/>Like as (MSB)"0000 0000 0000 0000"(LSB)</param>
+            <param name="inputHightBitMask">Input high bit mask<br/>Like as (MSB)"0000 0000 0000 0000"(LSB)</param>
+            <param name="outputBitMask">Output bit mask<br/>Like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <param name="outputLevel"><see cref="T:SpiralLab.Sirius2.IO.SignalEdges">SignalEdges</see> for output level when condition has matched.<br/>Default: <see cref="F:SpiralLab.Sirius2.IO.SignalEdges.High">SignalEdges.High</see> </param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityWriteDataExt16Cond">EntityWriteDataExt16Cond</see></returns>
         </member>
@@ -16049,8 +16318,8 @@
             Don't care bit for '0'. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcConditionalIO">IRtcConditionalIO</see> only. <br/>
             </remarks>
-            <param name="inputLowBitMask">Input low bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
-            <param name="inputHightBitMask">Input high bit mask. like as (MSB)"0000 0000 0000 0000"(LSB)</param>
+            <param name="inputLowBitMask">Input low bit mask<br/>Like as (MSB)"0000 0000 0000 0000"(LSB)</param>
+            <param name="inputHightBitMask">Input high bit mask<br/>Like as (MSB)"0000 0000 0000 0000"(LSB)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityWaitDataExt16Cond">EntityWaitDataExt16Cond</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateWaitDataExt16EdgeCond(System.UInt32,SpiralLab.Sirius2.IO.SignalEdges)">
@@ -16103,7 +16372,7 @@
             </code>
             </summary>
             <remarks>
-            Used with <see cref="M:SpiralLab.Sirius2.Winforms.Script.IScript.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">IScript.ListEvent</see> at <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ScriptInstance">ScriptInstance</see>. <br/>
+            Used with <see cref="M:SpiralLab.Sirius2.Winforms.Script.IScript.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">IScript.ListEvent</see> at <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ScriptInstance">IMarker.ScriptInstance</see>. <br/>
             User should be implement <see cref="M:SpiralLab.Sirius2.Winforms.Script.IScript.ListEvent(SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent)">IScript.ListEvent</see> function by override. <br/>
             </remarks>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityScriptEvent">EntityScriptEvent</see></returns>
@@ -16111,6 +16380,18 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePointsCloud(OpenTK.Vector3[])">
             <summary>
             Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud">EntityPointsCloud</see> for 3D calibration
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var surfacePoints = new List&lt;Vector3&gt;();
+            surfacePoints.Add(new Vector3(-2, 2, 0));
+            surfacePoints.Add(new Vector3(-3, 2, 1));
+            surfacePoints.Add(new Vector3(-4, 2, 0.3f));
+            ...
+            var pointsCloud = EntityFactory.CreatePointsCloud(surfacePoints.ToArray());
+            document.ActAdd(pointsCloud);
+            //or pointsCloud.Calibration3D(...)
+            </code>
             </summary>
             <remarks>
             3D calibration entities are support convert new 3D correction file by <seealso cref="T:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D"/>. <br/>
@@ -16122,6 +16403,15 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreatePlane(OpenTK.Vector3)">
             <summary>
             Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPlane">EntityPlane</see>for 3D calibration
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            ...
+            var plane = EntityFactory.CreatePlane(new Vector3(0,0,0));
+            // rotate 10 degree at x axis
+            plane.RotateX(10); 
+            document.ActAdd(plane);
+            //or plane.Calibration3D(...)
+            </code>
             </summary>
             <remarks>
             3D calibration entities are support convert new 3D correction file by <seealso cref="T:SpiralLab.Sirius2.Winforms.Entity.ICalibration3D"/>. <br/>
@@ -16133,6 +16423,16 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateCone(System.Double,System.Double,System.Double)">
             <summary>
             Create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityCone">EntityCone</see> for 3D calibration
+            <code>
+            var document = siriusEditorUserControl1.Document;
+            var cylinder = EntityFactory.CreateCone(30, 30, 100);
+            document.ActAdd(cylinder);
+            //or cylinder.Calibration3D(...);
+            ...
+            var cone = EntityFactory.CreateCone(30, 20, 100);
+            document.ActAdd(cone);
+            //or cone.Calibration3D(...);
+            </code>
             </summary>
             <remarks>
             If <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone.RadiusReference">EntityCone.RadiusReference</see> and <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityCone.RadiusEnd">EntityCone.RadiusEnd</see> are not equals, assumed as conic shape. <br/>
@@ -19031,7 +19331,7 @@
             <summary>
             Dispose internal resources
             </summary>
-            <param name="disposing"></param>
+            <param name="disposing">Is disposing or not</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Initialize">
             <inheritdoc/>
@@ -20360,6 +20660,7 @@
             <para>
             Preview bounding box of selected entities with guided laser beam. <br/>
             </para>
+            </summary>
             <remarks>
             Must be assign target array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> at <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>. <br/>
             Must be implement <see cref="T:SpiralLab.Sirius2.Laser.ILaserGuideControl">ILaserGuideControl</see> at <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see> by itself. <br/>
@@ -20367,7 +20668,7 @@
             Used with <see cref="P:SpiralLab.Sirius2.Winforms.Config.MarkPreviewRepeats">Config.MarkPreviewRepeats</see>. <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Winforms.Config.MarkPreviewSpeed">Config.MarkPreviewSpeed</see>. <br/>
             </remarks>
-            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Stop">
             <summary>
@@ -21235,7 +21536,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.SamplePath">
             <summary>
-            Sample file path (.dxf, .plt, ..stl, ..)
+            Sample file path (.dxf, .plt, .stl, ...)
             <para>
             Default: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sample")</c> <br/>
             </para>
@@ -21865,6 +22166,7 @@
             User can register event handler for customized extract points cloud from 3D model. <br/>
             Event will be fired when user select extract points cloud menu item at <see cref="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl">SiriusEditorUserControl</see>. <br/>
             If user event handler is not attached, default internal routine has executed. <br/>
+            Model matrix by <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelMatrix">EntityStl.ModelMatrix</see> must be applied(or calculated) by user. <br/>
             Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityStl">EntityStl</see>, <see cref="T:OpenTK.Vector3">Vector3</see>. <br/>
             </remarks>
         </member>
@@ -22344,7 +22646,7 @@
             <summary>
             Move camera smoothly when simulation has activated  
             <para>
-            Default: <c>False</c> <br/>
+            Default: <c>True</c> <br/>
             </para>
             </summary>
             <remarks>
@@ -22513,6 +22815,15 @@
             Used with <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Start">IMarker.Start</see>. <br/> 
             Not supported combination of multiple keys. <br/>
             Default: <c>F5</c> <br/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.IsShowMessageBoxWhenMarkerStart">
+            <summary>
+            Show message box when press shortcut marker start or not
+            <para>
+            Used with <see cref="M:SpiralLab.Sirius2.Winforms.Marker.IMarker.Start">IMarker.Start</see>. <br/> 
+            Default: <c>True</c> <br/>
             </para>
             </summary>
         </member>
@@ -22837,6 +23148,44 @@
             <param name="inputCtFileName">Input correction filename</param>
             <param name="tableIndex"><c>CorrectionTableIndex</c></param>
             <param name="newCtFileName">Created new correction filename</param>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Config.OnCreateGrids">
+            <summary>
+            Event for create grids by <see cref="T:SpiralLab.Sirius2.Winforms.UI.CreateGridsForm">CreateGridsForm</see> winforms
+            <code>
+            SpiralLab.Sirius2.Winforms.Config.OnCreateGrids += Config_OnCreateGrids;
+            IEntity Config_OnCreateGrids(SpiralLab.Sirius2.Winforms.UI.CreateGridsForm form, uint rows, uint cols, double rowInterval, double colInterval)
+            {
+                var left = (float)(-colInterval * (float)(int)(cols / 2));
+                var right = (float)(colInterval * (float)(int)(cols / 2));
+                var bottom = (float)(-rowInterval * (float)(int)(rows / 2));
+                var top = (float)(rowInterval * (float)(int)(rows / 2));
+                var entities = new List&lt;IEntity&gt;((int)(rows * cols));
+                for (int row = 0; row &lt; rows; row++)
+                {
+                    var start = new Vector2(left, (float)(bottom + rowInterval * row));
+                    var end = new Vector2(right, (float)(bottom + rowInterval * row));
+                    var line = EntityFactory.CreateLine(start, end);
+                    entities.Add(line);
+                }
+                for (int col = 0; col &lt; cols; col++)
+                {
+                    var start = new Vector2((float)(left + colInterval * col), bottom);
+                    var end = new Vector2((float)(left + colInterval * col), top);
+                    var line = EntityFactory.CreateLine(start, end);
+                    entities.Add(line);
+                }
+                return EntityFactory.CreateGroup($"{right - left:F3}mm {rows}x{cols}", entities.ToArray());
+            }
+            </code>
+            </summary>
+            <remarks>
+            User can register event handler for open(or show) create grids winforms. <br/>
+            Event will be fired when create grids at <see cref="T:SpiralLab.Sirius2.Winforms.UI.CreateGridsForm">CreateGridsForm</see>. <br/>
+            If user event handler is not attached, default routine has executed. <br/>
+            If user event handler is attached, it should be create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> and return it. <br/>
+            Arguments: Rows, Cols, Row Interval, Col Interval. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.PathOptimizerBasePosition">
             <summary>
@@ -24002,10 +24351,10 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentData.Clone">
             <summary>
-            Implement clone of <c>DocumentData</c> 
+            Implement clone of <see cref="T:SpiralLab.Sirius2.Winforms.DocumentData">DocumentData</see>
             </summary>
-            <remarks>Deep clone of <c>DocumentData</c> </remarks>
-            <returns>Cloned <c>DocumentData</c></returns>
+            <remarks>Deep clone of <see cref="T:SpiralLab.Sirius2.Winforms.DocumentData">DocumentData</see> </remarks>
+            <returns>Cloned <see cref="T:SpiralLab.Sirius2.Winforms.DocumentData">DocumentData</see></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.DocumentBase">
             <summary>
@@ -24286,7 +24635,7 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.DocumentSerializer">
             <summary>
-            Serializer for SpiralLab.Sirius2 Document 
+            Serializer for SpiralLab.Sirius2.Winforms Document 
             </summary>
             <remarks>
             <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.IsReady">IDocument.IsReady</see> value would be toggled. <br/>
@@ -27602,14 +27951,24 @@
             Field size (mm)
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.UI.CreateGridsForm.RowsCols">
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.CreateGridsForm.Rows">
             <summary>
-            Row (also. col) counts
+            Row counts
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.UI.CreateGridsForm.Interval">
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.CreateGridsForm.Cols">
             <summary>
-            Interval (mm)
+            Col counts
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.CreateGridsForm.RowInterval">
+            <summary>
+            Row Interval (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.CreateGridsForm.ColInterval">
+            <summary>
+            Col Interval (mm)
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.CreateGridsForm.#ctor">

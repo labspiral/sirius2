@@ -172,6 +172,15 @@ namespace Demos
             success &= rtc.Initialize();
             Debug.Assert(success);
 
+            // Load 2nd correction file into TABLE2 if assigned
+            string correction2File = NativeMethods.ReadIni(ConfigFileName, $"RTC{index}", "CORRECTION2", string.Empty);
+            string correction2Path = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, correction2File);
+            if (File.Exists(correction2Path))
+            {
+                success &= rtc.CtlLoadCorrectionFile(CorrectionTables.Table2, correction2Path);
+                success &= rtc.CtlSelectCorrection(CorrectionTables.Table1, CorrectionTables.Table2);
+            }
+
             // RTC DIO
             dInExt1 = IOFactory.CreateInputExtension1(rtc);
             dOutExt1 = IOFactory.CreateOutputExtension1(rtc);
