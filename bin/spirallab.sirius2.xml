@@ -896,6 +896,11 @@
             <param name="licenseInfo"><see cref="T:SpiralLab.Sirius2.LicenseInfo">LicenseInfo</see></param>
             <returns><c>True</c>: License key is exist.<br/><c>False</c>: License key is NOT exist. <br/></returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Core.ActivateInvalidLicense">
+            <summary>
+            Notify invalid license
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Core.IsRunningPlatform64">
             <summary>
             Runtime platform
@@ -16196,6 +16201,14 @@
             Option for 3D or not
             <para>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary">RtcCalibrationLibrary</see> <br/>
+            </para>
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.LicenseInfo.IsVisionLicensed">
+            <summary>
+            Option for Vision or not
+            <para>
+            Used with <c>spirallab.sirius2.vision.dll</c> <br/>
             </para>
             </summary>
         </member>
@@ -51342,6 +51355,24 @@
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
+        </member>
+        <member name="T:AlpImport.FlutWriteModes">
+            <summary> Use with ProjControlEx_Flut to write the Frame Look Up Table</summary>
+        </member>
+        <member name="M:AlpImport.ProjControlEx_Flut(System.UInt32,AlpImport.FlutWriteModes,AlpImport.tFlutWrite@)">
+            <summary>
+            General FrameLUT write function.
+            ControlType selects numerical type of ControlValue.FrameNumbers.
+            Call in "unsafe" context.
+            </summary>
+            <seealso cref="M:AlpImport.ProjControlEx_Flut9(System.UInt32,System.UInt32,System.UInt32[])"/>
+            <seealso cref="M:AlpImport.ProjControlEx_Flut18(System.UInt32,System.UInt32,System.UInt32[])"/>
+        </member>
+        <member name="M:AlpImport.ProjControlEx_Flut18(System.UInt32,System.UInt32,System.UInt32[])">
+            <summary>Specialized 18-bit FrameLUT write function</summary>
+        </member>
+        <member name="M:AlpImport.ProjControlEx_Flut9(System.UInt32,System.UInt32,System.UInt32[])">
+            <summary>Specialized 9-bit FrameLUT write function</summary>
         </member>
     </members>
 </doc>

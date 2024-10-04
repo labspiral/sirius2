@@ -2796,11 +2796,6 @@
             Range: 0.1~1.0과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Transparent_DISP">
-            <summary>
-              Transparent과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Width_DESC">
             <summary>
               Cell Width (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
@@ -19138,9 +19133,6 @@
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnStarted">
             <inheritdoc/>
         </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnEnded">
-            <inheritdoc/>
-        </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnBeforeLayer">
             <inheritdoc/>
         </member>
@@ -19154,6 +19146,9 @@
             <inheritdoc/>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnMarkPen">
+            <inheritdoc/>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnEnded">
             <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Index">
@@ -19368,14 +19363,6 @@
             Consider as its working within async threads. <br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyEnded(System.Boolean)">
-            <summary>
-            Notify marker has finished event
-            </summary>
-            <remarks>
-            Consider as its working within async threads. <br/>
-            </remarks>
-        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyBeforeLayer(SpiralLab.Sirius2.Winforms.Entity.EntityLayer)">
             <summary>
             Notify before mark <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityLayer">EntityLayer</see> event
@@ -19444,6 +19431,14 @@
             Used by internally. <br/>
             </remarks>
             <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyEnded(System.Boolean)">
+            <summary>
+            Notify marker has finished event
+            </summary>
+            <remarks>
+            Consider as its working within async threads. <br/>
+            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.PenEntityWork(SpiralLab.Sirius2.Winforms.Entity.EntityPen)">
             <summary>
@@ -20110,19 +20105,6 @@
             More detail codes are exist at <see cref="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.EditabilityByMarkerBusy(System.Boolean)">EditabilityByMarkerBusy</see>. <br/>
             </remarks> 
         </member>
-        <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnEnded">
-            <summary>
-            Event for marker has ended
-            <para>
-            Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>, success(or failed), <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ExecuteTime">TimeSpan</see> <br/>
-            </para>
-            </summary>
-            <remarks>
-            Consider as its working within async threads. <br/>
-            <c>True</c> for sucess to mark. <br/>
-            <c>False</c> for fail to mark. <br/>
-            </remarks> 
-        </member>
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnBeforeLayer">
             <summary>
             Event for before do layer works
@@ -20211,6 +20193,19 @@
             User can add event handler for override <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see> mark routines. <br/>
             If return <c>False</c>, <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see> would be stopped(or aborted) immediately. <br/>
             </remarks>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnEnded">
+            <summary>
+            Event for marker has ended
+            <para>
+            Arguments: <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>, success(or failed), <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ExecuteTime">TimeSpan</see> <br/>
+            </para>
+            </summary>
+            <remarks>
+            Consider as its working within async threads. <br/>
+            <c>True</c> for sucess to mark. <br/>
+            <c>False</c> for fail to mark. <br/>
+            </remarks> 
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Index">
             <summary>
