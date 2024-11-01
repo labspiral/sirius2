@@ -633,16 +633,21 @@ namespace Demos
 
             var proc1 = ProcessFactory.CreateCircle();
             doc.ActAdd(proc1);
-            var proc2 = ProcessFactory.CreateLine();
+            var proc2 = ProcessFactory.CreateCross();
             doc.ActAdd(proc2);
-            var proc3 = ProcessFactory.CreatePattern();
+            var proc3 = ProcessFactory.CreateLine();
             doc.ActAdd(proc3);
-            var proc4 = ProcessFactory.CreateBlob();
+            var proc4 = ProcessFactory.CreatePattern();
             doc.ActAdd(proc4);
-            var proc5 = ProcessFactory.CreatePattern();
-            proc5.Children.Add(ProcessFactory.CreateCircle());
+            var proc5 = ProcessFactory.CreateBlob();
             doc.ActAdd(proc5);
-           
+            var proc6 = ProcessFactory.CreatePattern();
+            proc6.Children.Add(ProcessFactory.CreateCircle());
+            doc.ActAdd(proc6);
+            var proc7 = ProcessFactory.CreatePattern();
+            proc7.Children.Add(ProcessFactory.CreateCross());
+            doc.ActAdd(proc7);
+
             var layer = ProcessFactory.CreateLayer("Stitched Image");
             layer.Children.Add(ProcessFactory.CreateCircle());
             layer.Children.Add(ProcessFactory.CreateLine());

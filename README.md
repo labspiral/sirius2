@@ -252,7 +252,7 @@
     
  - Demo 'sirius_basic' winforms project for integrated editor and vision
     - config [RTC0], [LASER0] and [CAMERA0]
-    - auto focuse
+    - auto focus
     - extract scanner field correction data from inspection result
     - extract marker offset position from inspection result
 
