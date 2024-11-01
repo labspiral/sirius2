@@ -57,7 +57,7 @@ namespace Demos
             //var correctionFile = Path.Combine(Config.CorrectionPath, "cor_1to1.ctb");
 
             // Create RTC controller 
-            //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
+            //var rtc = ScannerFactory.CreateVirtual(0, kfactor, LaserModes.Yag1, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             //var rtc = ScannerFactory.CreateRtc4(0, kfactor, LaserModes.Yag1, correctionFile);
             //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
@@ -309,6 +309,8 @@ namespace Demos
                             }
                             if (File.Exists(newCtFileName))
                                 File.Delete(newCtFileName);
+                            // Positive(+) if the cone widens for larger values of x
+                            // Negative(-) if it becomes more narrow
                             float radian1 = (float)(-10.0 * (Math.PI / 180.0));
                             if (RtcCalibrationLibrary.ConeCalibration(Vector3.Zero, Vector3.UnitX, 20, radian1, inputCtFileName, null, newCtFileName, out var returnCode))
                             {

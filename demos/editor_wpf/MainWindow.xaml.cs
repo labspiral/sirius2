@@ -77,7 +77,7 @@ namespace editor_wpf
             SpiralLab.Sirius2.Winforms.Config.ViewFovSize = new System.Drawing.SizeF(100, 100);
 
             // Create devices 
-            EditorHelper.CreateDevices(out var rtc, out var dInExt1, out var dInLaserPort, out var dOutExt1, out var dOutExt2, out var dOutLaserPort, out var laser, out var powerMeter, out var marker, out var remote, this.siriusEditor);
+            EditorHelper.CreateDevices(out var rtc, out var dInExt1, out var dInLaserPort, out var dOutExt1, out var dOutExt2, out var dOutLaserPort, out var laser, out var powerMeter, out var marker, out var remote);
 
             // Assign devices into usercontrol
             siriusEditor.Laser = laser;

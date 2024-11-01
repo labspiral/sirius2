@@ -62,7 +62,7 @@ namespace Demos
             int index = 0;
 
             // Create index 0 devices 
-            EditorHelper.CreateDevices(out var rtc0, out var dInExt10, out var dInLaserPort0, out var dOutExt10, out var dOutExt20, out var dOutLaserPort0, out var laser0, out var powerMeter0, out var marker0, out var remote0, this.siriusEditorUserControl1, index);
+            EditorHelper.CreateDevices(out var rtc0, out var dInExt10, out var dInLaserPort0, out var dOutExt10, out var dOutExt20, out var dOutLaserPort0, out var laser0, out var powerMeter0, out var marker0, out var remote0, index);
 
             // Assign index 0 devices into usercontrol
             siriusEditorUserControl1.Rtc = rtc0;
@@ -79,14 +79,14 @@ namespace Demos
         
             var document0 = siriusEditorUserControl1.Document;
             var view0 = siriusEditorUserControl1.View;
-            EditorHelper.CreateTestEntities(rtc0, view0, document0);
+            EditorHelper.CreateTestEntities(rtc0, document0);
             // Assign Document, View, Rtc, Laser into marker at index 0
             marker0.Ready(document0, view0, rtc0, laser0, powerMeter0, remote0);
 
             // index 1
             index = 1;
             // Create index 1 devices
-            EditorHelper.CreateDevices(out var rtc1, out var dInExt11, out var dInLaserPort1, out var dOutExt11, out var dOutExt21, out var dOutLaserPort1, out var laser1, out var powerMeter1, out var marker1, out var remote1, this.siriusEditorUserControl2, index);
+            EditorHelper.CreateDevices(out var rtc1, out var dInExt11, out var dInLaserPort1, out var dOutExt11, out var dOutExt21, out var dOutLaserPort1, out var laser1, out var powerMeter1, out var marker1, out var remote1, index);
 
             // Assign index 1 devices into usercontrol
             siriusEditorUserControl2.Rtc = rtc1;
@@ -104,7 +104,7 @@ namespace Demos
             var document1 = siriusEditorUserControl2.Document;
             var view1 = siriusEditorUserControl2.View;
             // Create index 1 entities for test
-            EditorHelper.CreateTestEntities(rtc1, view1, document1);
+            EditorHelper.CreateTestEntities(rtc1, document1);
 
             // Assign event handlers at Config
             EditorHelper.AttachEventHandlers();

@@ -203,6 +203,11 @@
             license for MachineVision
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.VisionLicenseMax">
+            <summary>
+            Max Vision license
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.ExtensionLicenseText">
             <summary>
             license for Extension feature
@@ -305,6 +310,46 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Common.DateTimeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Common.Matrix3x2Converter">
+            <summary>
+            Matrix3x2 format converter
+            </summary>
+            <remarks>
+            Used with PropertyGrid control <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Common.Matrix3x2Converter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Common.Matrix3x2Converter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Common.Matrix3x2Converter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Common.Matrix3x2Converter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Common.Matrix4x4Converter">
+            <summary>
+            Matrix4x4 format converter
+            </summary>
+            <remarks>
+            Used with PropertyGrid control <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Common.Matrix4x4Converter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Common.Matrix4x4Converter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Common.Matrix4x4Converter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Common.Matrix4x4Converter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Common.TimeSpanConverter">
@@ -14987,9 +15032,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Matrix1stinternal_DESC">
-            <summary>
-              Looks up a localized string similar to Internal 3x3 Matrix for Primary Head.
-            </summary>
+             <summary>
+               Looks up a localized string similar to Internal 3x3 Matrix for Primary Head
+            (M11, M12, M21, M22, Dx, Dy).
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Matrix1stinternal_DISP">
             <summary>
@@ -14997,9 +15043,10 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Matrix2ndinternal_DESC">
-            <summary>
-              Looks up a localized string similar to Internal 3x3 Matrix for Secondary Head.
-            </summary>
+             <summary>
+               Looks up a localized string similar to Internal 3x3 Matrix for Secondary Head
+            (M11, M12, M21, M22, Dx, Dy).
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Matrix2ndinternal_DISP">
             <summary>
@@ -15007,9 +15054,13 @@
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Matrixstack_DESC">
-            <summary>
-              Looks up a localized string similar to 4x4 Matrix Stack.
-            </summary>
+             <summary>
+               Looks up a localized string similar to 4x4 Matrix Stack
+            (M11, M12, M13, M14, 
+            M21, M22, M23, M24, 
+            M31, M32, M33, M34,
+            M41, M42, M43, M44).
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Matrixstack_DISP">
             <summary>
@@ -15110,7 +15161,7 @@
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Primarybaseoffset_DESC">
              <summary>
                Looks up a localized string similar to Primary Head Base Offset
-            X(mm), Y(mm), Z(mm), Angle(°)
+            Dx, Dy, Dz (mm), Angle(°)
             Total Head Offset = Base + User Offset..
              </summary>
         </member>
@@ -15256,7 +15307,7 @@
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Secondaryuseroffset_DESC">
              <summary>
                Looks up a localized string similar to Secondary Head User Offset
-            X(mm), Y(mm), Z(mm), Angle(°)
+            Dx, Dy, Dz (mm), Angle(°)
             Total Offset = Base + User Offset..
              </summary>
         </member>
@@ -16169,7 +16220,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.LicenseInfo.RtcLicenseMax">
             <summary>
-            Max instance count(s) of RTC license
+            Max instance count(s) of scanner(like as RTC) license
             <para>
             Used with RTC4,5,6 <br/>
             </para>
@@ -16177,20 +16228,20 @@
         </member>
         <member name="F:SpiralLab.Sirius2.LicenseInfo.IsRtcSyncAxisLicensed">
             <summary>
-            License for syncAXIS or not
+            License for XL-SCAN(aka. syncAXIS) or not
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.LicenseInfo.RtcSyncAxisLicenseMax">
             <summary>
-            Max instance count(s) of syncAXIS license
+            Max instance count(s) of XL-SCAN(aka. syncAXIS) license
             <para>
-            Used with syncAXIS(or XL-SCAN) <br/>
+            Used with syncAXIS <br/>
             </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.LicenseInfo.IsMoFLicensed">
             <summary>
-            Option for MoF or not
+            Option for MoF(Marking/Processing on the fly) or not
             <para>
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> <br/>
             </para>
@@ -16212,11 +16263,20 @@
             </para>
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.LicenseInfo.VisionLicenseMax">
+            <summary>
+            Max instance count(s) of vision license
+            <para>
+            Used with <c>spirallab.sirius2.vision.dll</c> for vision. <br/>
+            You must be equipped with license key for Cognex <c>VPRO</c> to use <c>Cognex.VisionPro</c> as image processing engine. <br/>
+            </para>
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.LicenseInfo.ExtendedLicense">
             <summary>
-            Option for extended feature
+            Option for extended license
             <para>
-            Used for customer specific functions. <br/>
+            Used for customer specific function only. <br/>
             Default: <c>string.Empty</c> <br/>
             </para>
             </summary>
@@ -16613,7 +16673,7 @@
             Extension for <c>Quaternion</c> to <c>System.Numerics.Vector3</c>
             </summary>
             <param name="q"><c>Quaternion</c></param>
-            <returns><c>System.Numerics.Vector3</c></returns>
+            <returns><c>System.Numerics.Vector3</c><br/>Degree values</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.MathHelper.GetDecimalPlaces(System.Decimal)">
             <summary>
@@ -16661,16 +16721,6 @@
         <member name="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.BaseMatrix">
             <summary>
             Base matrix
-            </summary>
-            <remarks>
-            User configurable base matrix. (like as rotate, translate, ...) <br/>
-            <see cref="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.ToResult">ToResult</see> = matries at stack * <see cref="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.BaseMatrix">BaseMatrix</see>. <br/>
-            User can use <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.CtlHeadOffset(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Mathematics.Offset)">IRtc2ndHead.CtlHeadOffset</see> instead. <br/>
-            Default : <c>Matrix4x4.Identity</c> <br/>
-            <br/>
-            Not allowed operations :<br/>
-             <see cref="M:System.Numerics.Matrix4x4.CreateScale(System.Single,System.Single,System.Single)">Matrix4x4.CreateScale</see> with negative factor.<br/>
-            <br/> 
             <code>
             // If scan-head has rotated 90 deg
             BaseMatrix = Matrix4x4.CreateRotationZ((float)(90 * Math.PI / 180.0));
@@ -16678,10 +16728,27 @@
             BaseMatrix = Matrix4x4.CreateRotationZ((float)(90 * Math.PI / 180.0)) * Matrix4x4.CreateTranslation(10, 0, 0));
             // If scan-head scale up to 10%
             BaseMatrix = Matrix4x4.CreateScale(1.1f);
+            // If scan-head has inverted x axis
+            BaseMatrix = Matrix4x4.CreateScale(-1, 1, 1);
+            // If scan-head has inverted y axis
+            BaseMatrix = Matrix4x4.CreateScale(1, -1, 1);    
+            // If scan-head has scaled by sx, sy factor
+            BaseMatrix = Matrix4x4.CreateScale(sx, sy, 1);  
+            ...
             // Reset 
             BaseMatrix = Matrix4x4.Identity;
             </code>
+            <remarks>
+            User configurable base matrix. (like as rotate, translate, and inversion ...) <br/>
+            <see cref="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.ToResult">ToResult</see> = matries at stack * <see cref="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.BaseMatrix">BaseMatrix</see>. <br/>
+            User can use <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.CtlHeadOffset(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Mathematics.Offset)">IRtc2ndHead.CtlHeadOffset</see> instead. <br/>
+            Supported scale by x, y with same value(absolute). <br/>
+            Supported invert x, y axis. <br/>
+            Supported rotation z axis (not x, y). <br/>
+            Recommended to set as <c>Matrix4x4.Identity</c> when do scanner field correction or calculate k-factor to avoid confusion. <br/>
+            Default: <c>Matrix4x4.Identity</c> <br/>
             </remarks>
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.IMatrixStack`1.ToResult">
             <summary>
@@ -16724,10 +16791,6 @@
             rtc.ListEnd();
             rtc.ListExecute(true);
             </code>
-            <remarks>
-            Not allowed operations : <br/>
-             <see cref="M:System.Numerics.Matrix4x4.CreateScale(System.Single,System.Single,System.Single)">Matrix4x4.CreateScale</see> with negative factor.<br/>
-            </remarks>
             </summary>
             <param name="matrix">4x4 matrix<br/>Used with <see cref="T:System.Numerics.Matrix4x4">System.Numerics.Matrix4x4</see></param>
             <returns>Success or failed</returns>
@@ -17975,7 +18038,10 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.NotifyPropertyChanged(System.String)">
-            <inheritdoc/>
+            <summary>
+            Notify property value has change event
+            </summary>
+            <param name="propertyName">Property name</param>
         </member>
         <member name="E:SpiralLab.Sirius2.PowerMeter.PowerMeterBase.OnStarted">
             <inheritdoc/>  
@@ -19347,6 +19413,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.CtlMoveTo(System.Numerics.Vector2,System.Double)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.CtlMoveToBit(System.Numerics.Vector2)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.CtlFrequency(System.Double,System.Double)">
             <inheritdoc/>  
         </member>
@@ -19602,6 +19671,9 @@
             <inheritdoc/> 
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.CtlMoveTo(System.Numerics.Vector3,System.Double)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.CtlMoveToBit(System.Numerics.Vector3)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.CtlZDefocus(System.Double)">
@@ -20402,6 +20474,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.CtlMoveTo(System.Numerics.Vector2,System.Double)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.CtlMoveToBit(System.Numerics.Vector2)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.CtlFrequency(System.Double,System.Double)">
             <inheritdoc/>  
         </member>
@@ -20657,6 +20732,9 @@
             <inheritdoc/> 
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.CtlMoveTo(System.Numerics.Vector3,System.Double)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.CtlMoveToBit(System.Numerics.Vector3)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.CtlZDefocus(System.Double)">
@@ -21936,6 +22014,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlMoveTo(System.Numerics.Vector2,System.Double)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlMoveToBit(System.Numerics.Vector2)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlFrequency(System.Double,System.Double)">
             <inheritdoc/>  
         </member>
@@ -22302,6 +22383,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlMoveTo(System.Numerics.Vector3,System.Double)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlMoveToBit(System.Numerics.Vector3)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlZDefocus(System.Double)">
@@ -24257,6 +24341,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlMoveTo(System.Numerics.Vector2,System.Double)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlMoveToBit(System.Numerics.Vector2)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlFrequency(System.Double,System.Double)">
             <inheritdoc/>  
         </member>
@@ -24726,6 +24813,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlMoveTo(System.Numerics.Vector3,System.Double)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlMoveToBit(System.Numerics.Vector3)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlZDefocus(System.Double)">
@@ -26556,6 +26646,16 @@
             <param name="overrideJumpSpeed">Override jump speed (mm/s)<br/>0: No override</param>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlMoveToBit(System.Numerics.Vector2)">
+            <summary>
+            Not supported. 
+            </summary>
+            <remarks>
+            Use <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlMoveScannerPosition(System.Numerics.Vector2)">CtlMoveScannerPosition</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlMoveStagePosition(System.Numerics.Vector2)">CtlMoveStagePosition</see> instead.
+            </remarks>
+            <param name="position">X,Y (bit)</param>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlMoveTo(System.Numerics.Vector3,System.Double)">
             <summary>
             Not used. 
@@ -26565,6 +26665,16 @@
             </remarks>
             <param name="position">X,Y (mm)</param>
             <param name="overrideJumpSpeed">Override jump speed (mm/s)<br/>0: No override</param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlMoveToBit(System.Numerics.Vector3)">
+            <summary>
+            Not used. 
+            </summary>
+            <remarks>
+            Use <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlMoveScannerPosition(System.Numerics.Vector2)">CtlMoveScannerPosition</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlMoveStagePosition(System.Numerics.Vector2)">CtlMoveStagePosition</see> instead.
+            </remarks>
+            <param name="position">X,Y (bit)</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlFrequency(System.Double,System.Double)">
@@ -30406,6 +30516,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlMoveTo(System.Numerics.Vector2,System.Double)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlMoveToBit(System.Numerics.Vector2)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlFrequency(System.Double,System.Double)">
             <inheritdoc/>  
         </member>
@@ -30696,6 +30809,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlMoveTo(System.Numerics.Vector3,System.Double)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlMoveToBit(System.Numerics.Vector3)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlZDefocus(System.Double)">
@@ -32448,6 +32564,10 @@
             </summary>
             <remarks>
             Matrix transformation would be applied every jump and mark(or arc) commands. <br/>
+            Final position = RTC INTERNAL matrix * <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see> * commanded position. <br/>
+            Laser path simulation is supported. <br/>
+            RTC INTERNAL matrix can be assigned by <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">CtlMatrix</see>, <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.ListMatrix</see>. <br/>
+            If <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead">IRtc2ndHead</see> avaiable, RTC INTERNAL matrix can be assigned by <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.CtlHeadOffset(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Mathematics.Offset)">CtlHeadOffset</see>, <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.ListHeadOffset(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Mathematics.Offset)">ListHeadOffset</see>, <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">PrimaryHeadBaseOffset</see>, <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">PrimaryHeadUserOffset</see> and so on. <br/>
             May be need to revert matrix stack if <c>IMarker</c> has aborted(or failed). <br/>
             </remarks>
         </member>
@@ -32463,8 +32583,11 @@
             </summary>
             <remarks>
             Matrix transformation would be applied every jump and mark(or arc) commands. <br/>
-            This matrix will be assigned into <c>RTC's INTERNAL MATRIX</c> but not <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see>. <br/>
-            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.CtlMatrix</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.ListMatrix</see>. <br/>
+            RTC INTERNAL matrix can be assigned by <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">CtlMatrix</see>, <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.ListMatrix</see>. <br/>
+            Final position = RTC INTERNAL matrix * <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see> * commanded position. <br/>
+            Laser path simulation is NOT supported. <br/>
+            If <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead">IRtc2ndHead</see> avaiable, can be assigned by <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.CtlHeadOffset(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Mathematics.Offset)">CtlHeadOffset</see>, <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.ListHeadOffset(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Mathematics.Offset)">ListHeadOffset</see>, <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">PrimaryHeadBaseOffset</see>, <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">PrimaryHeadUserOffset</see> and so on. <br/>
+            Recommended to set as <c>Matrix3x2.Identity</c> when do scanner field correction or calculate k-factor to avoid confusion. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixSecondaryInternal">
@@ -32479,8 +32602,11 @@
             </summary>
             <remarks>
             Matrix transformation would be applied every jump and mark(or arc) commands. <br/>
-            This matrix will be assigned into <c>RTC's INTERNAL MATRIX</c> but not <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see>. <br/>
-            Used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.CtlMatrix</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.ListMatrix</see>. <br/>
+            RTC INTERNAL matrix can be assigned by <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">CtlMatrix</see>, <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.ListMatrix</see>. <br/>
+            Final position = RTC INTERNAL matrix * <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see> * commanded position. <br/>
+            Laser path simulation is NOT supported. <br/>
+            If <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead">IRtc2ndHead</see> avaiable, can be assigned by <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.CtlHeadOffset(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Mathematics.Offset)">CtlHeadOffset</see>, <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.ListHeadOffset(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Mathematics.Offset)">ListHeadOffset</see>, <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">PrimaryHeadBaseOffset</see>, <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">PrimaryHeadUserOffset</see> and so on. <br/>
+            Recommended to set as <c>Matrix3x2.Identity</c> when do scanner field correction or calculate k-factor to avoid confusion. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.IsMoF">
@@ -32858,8 +32984,9 @@
             <remarks>
             Matrix transformation would be applied every jump and mark(or arc) commands. <br/>
             This matrix will be assigned into <c>RTC's INTERNAL MATRIX</c> but not <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see>. <br/>
-            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">IRtc2ndHead.PrimaryHeadBaseOffset"></see>(or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">IRtc2ndHead.PrimaryHeadUserOffset"></see>) together. <br/>
-            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">IRtc2ndHead.SecondaryHeadBaseOffset"></see>(or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">IRtc2ndHead.SecondaryHeadUserOffset"></see>) together. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">IRtc2ndHead.PrimaryHeadBaseOffset</see> (or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">IRtc2ndHead.PrimaryHeadUserOffset</see>) together. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">IRtc2ndHead.SecondaryHeadBaseOffset</see> (or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">IRtc2ndHead.SecondaryHeadUserOffset</see>) together. <br/>
+            Recommended to set as <c>Matrix3x2.Identity</c> when do scanner field correction or calculate k-factor to avoid confusion. <br/>
             </remarks>
             <param name="head"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see><br/>Not allowed <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads.Secondary">ScannerHeads.Secondary</see> if RTC4.</param>
             <param name="matrix">3x3 matrix</param>
@@ -33025,8 +33152,9 @@
             <remarks>
             The change applies as of the insert position but only until the end of the currently running Job. <br/>
             This matrix will be assigned into <c>RTC's INTERNAL MATRIX</c> but not <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see>. <br/>
-            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">IRtc2ndHead.PrimaryHeadBaseOffset"></see>( or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">IRtc2ndHead.PrimaryHeadUserOffset"></see>) together. <br/>
-            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">IRtc2ndHead.SecondaryHeadBaseOffset"></see>( or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">IRtc2ndHead.SecondaryHeadUserOffset"></see>) together. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">IRtc2ndHead.PrimaryHeadBaseOffset</see> (or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">IRtc2ndHead.PrimaryHeadUserOffset</see>) together. <br/>
+            Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">IRtc2ndHead.SecondaryHeadBaseOffset</see> (or <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">IRtc2ndHead.SecondaryHeadUserOffset</see>) together. <br/>
+            Recommended to set as <c>Matrix3x2.Identity</c> when do scanner field correction or calculate k-factor to avoid confusion. <br/>
             </remarks>
             <param name="head"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see><br/>If RTC4, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads.Secondary">ScannerHeads.Secondary</see> is not allowed.</param>
             <param name="matrix">3x3 matrix</param>
@@ -33128,6 +33256,8 @@
             Total primary head offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">PrimaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">PrimaryHeadUserOffset</see> <br/>
             This operation has applied into RTC internal matrix. <br/>
             Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixPrimaryInternal">IRtc.MatrixPrimaryInternal</see> together. <br/>
+            Laser path simulation is NOT supported. <br/>
+            Recommended to set as <c>Offset.Zero</c> when do scanner field correction or calculate k-factor to avoid confusion. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">
@@ -33142,6 +33272,8 @@
             Total primary head offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">PrimaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadUserOffset">PrimaryHeadUserOffset</see> <br/>
             This operation has applied into RTC internal matrix. <br/>
             Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixPrimaryInternal">IRtc.MatrixPrimaryInternal</see> together. <br/>
+            Laser path simulation is NOT supported. <br/>
+            Recommended to set as <c>Offset.Zero</c> when do scanner field correction or calculate k-factor to avoid confusion. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.DistanceToSecondaryHead">
@@ -33182,7 +33314,8 @@
             Total secondary head offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">SecondaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">SecondaryHeadUserOffset</see> <br/>
             This operation has applied into RTC internal matrix. <br/>
             Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixSecondaryInternal">IRtc.MatrixSecondaryInternal</see> together. <br/>
-            Not supported at RTC4. <br/>
+            Laser path simulation is NOT supported. <br/>
+            Recommended to set as <c>Offset.Zero</c> when do scanner field correction or calculate k-factor to avoid confusion. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">
@@ -33197,7 +33330,8 @@
             Total secondary head offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">SecondaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">SecondaryHeadUserOffset</see> <br/>
             This operation has applied into RTC internal matrix. <br/>
             Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixSecondaryInternal">IRtc.MatrixSecondaryInternal</see> together. <br/>
-            Not supported at RTC4. <br/>
+            Laser path simulation is NOT supported. <br/>
+            Recommended to set as <c>Offset.Zero</c> when do scanner field correction or calculate k-factor to avoid confusion. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.CtlHeadOffset(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Mathematics.Offset)">
@@ -33212,6 +33346,8 @@
             Total secondary head offset = <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">SecondaryHeadBaseOffset</see> + <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadUserOffset">SecondaryHeadUserOffset</see>. <br/>
             Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixPrimaryInternal">IRtc.MatrixPrimaryInternal</see> together. <br/>
             Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixSecondaryInternal">IRtc.MatrixSecondaryInternal</see> together. <br/>
+            Laser path simulation is NOT supported. <br/>
+            Recommended to set as <c>Offset.Zero</c> when do scanner field correction or calculate k-factor to avoid confusion. <br/>
             </remarks>
             <param name="head"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see><br/>Not allowed <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads.Secondary">ScannerHeads.Secondary</see> if RTC4.</param>
             <param name="offset">Dx(mm), Dy(mm), Dz(mm) and Angle(°)<br/>Dx(mm), Dy(mm) and Angle(°) if RTC4</param>
@@ -33230,6 +33366,8 @@
             May not matched matched the actual head offset value if <c>IMarker</c> has aborted(or failed). <br/>
             Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixPrimaryInternal">IRtc.MatrixPrimaryInternal</see> together. <br/>
             Do not combine to use <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixSecondaryInternal">IRtc.MatrixSecondaryInternal</see> together. <br/>
+            Laser path simulation is NOT supported. <br/>
+            Recommended to set as <c>Offset.Zero</c> when do scanner field correction or calculate k-factor to avoid confusion. <br/>
             Not supported at RTC4. <br/>
             </remarks>
             <param name="head"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see><br/>Not allowed <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads.Secondary">ScannerHeads.Secondary</see> if RTC4.</param>
@@ -36286,7 +36424,7 @@
             RTC4: Encoder input max. frequency: 2MHz <br/>
             RTC5,6: Encoder input max. frequency: 4MHz <br/>
             </remarks>
-            <param name="encoderReset">Reset encoders(or not)<br/><c>True</c> by foricly at RTC4.</param>
+            <param name="encoderReset">Reset encoders(or not)<br/><c>True</c> by forcily at RTC4.</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofAngularBegin(System.Numerics.Vector2,System.Boolean)">
@@ -36345,7 +36483,7 @@
             Scanner movement affected by accumulated encoder values. <br/>
             </remarks>
             <param name="center">Rotate center x,y position (mm)</param>
-            <param name="encoderReset">Reset encoders(or not)<br/><c>True</c> by foricly at RTC4</param>
+            <param name="encoderReset">Reset encoders(or not)<br/><c>True</c> by forcily at RTC4</param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF.ListMofOverflowClear">
@@ -37688,10 +37826,17 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.IScanner.CtlMoveTo(System.Numerics.Vector2,System.Double)">
             <summary>
-            Move scanner x,y position
+            Move scanner x,y position (mm)
             </summary>
             <param name="position">x,y (mm)<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
             <param name="overrideJumpSpeed">Override jump speed (mm/s)<br/>Default: 0 (No override) <br/></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.IScanner.CtlMoveToBit(System.Numerics.Vector2)">
+            <summary>
+            Move scanner x,y position (bit)
+            </summary>
+            <param name="position">x,y (bit)<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.IScanner.ListJumpTo(System.Numerics.Vector2,System.Double)">
@@ -37737,10 +37882,17 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.IScanner3D.CtlMoveTo(System.Numerics.Vector3,System.Double)">
             <summary>
-            Move scanner position to x,y,z 
+            Move scanner position to x,y,z (mm)
             </summary>
             <param name="position">x,y,z (mm) position<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
             <param name="overrideJumpSpeed">Override jump speed (mm/s)<br/>Default: 0 (No override) <br/></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.IScanner3D.CtlMoveToBit(System.Numerics.Vector3)">
+            <summary>
+            Move scanner position to x,y,z (bit)
+            </summary>
+            <param name="position">x,y,z (bit) position<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.IScanner3D.ListJumpTo(System.Numerics.Vector3,System.Double)">
@@ -51355,24 +51507,6 @@
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
-        </member>
-        <member name="T:AlpImport.FlutWriteModes">
-            <summary> Use with ProjControlEx_Flut to write the Frame Look Up Table</summary>
-        </member>
-        <member name="M:AlpImport.ProjControlEx_Flut(System.UInt32,AlpImport.FlutWriteModes,AlpImport.tFlutWrite@)">
-            <summary>
-            General FrameLUT write function.
-            ControlType selects numerical type of ControlValue.FrameNumbers.
-            Call in "unsafe" context.
-            </summary>
-            <seealso cref="M:AlpImport.ProjControlEx_Flut9(System.UInt32,System.UInt32,System.UInt32[])"/>
-            <seealso cref="M:AlpImport.ProjControlEx_Flut18(System.UInt32,System.UInt32,System.UInt32[])"/>
-        </member>
-        <member name="M:AlpImport.ProjControlEx_Flut18(System.UInt32,System.UInt32,System.UInt32[])">
-            <summary>Specialized 18-bit FrameLUT write function</summary>
-        </member>
-        <member name="M:AlpImport.ProjControlEx_Flut9(System.UInt32,System.UInt32,System.UInt32[])">
-            <summary>Specialized 9-bit FrameLUT write function</summary>
         </member>
     </members>
 </doc>

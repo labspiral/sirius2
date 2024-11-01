@@ -131,35 +131,35 @@
   <data name="spcMain.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
-  <data name="editorControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="editorUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="editorControl1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="editorUserControl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="editorControl1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="editorUserControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>45, 42</value>
   </data>
-  <data name="editorControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="editorUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="editorControl1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="editorUserControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1041, 888</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="editorControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="editorUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
   </data>
-  <data name="&gt;&gt;editorControl1.Name" xml:space="preserve">
-    <value>editorControl1</value>
+  <data name="&gt;&gt;editorUserControl1.Name" xml:space="preserve">
+    <value>editorUserControl1</value>
   </data>
-  <data name="&gt;&gt;editorControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.EditorUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;editorUserControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.EditorUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;editorControl1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;editorUserControl1.Parent" xml:space="preserve">
     <value>tabEditor</value>
   </data>
-  <data name="&gt;&gt;editorControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;editorUserControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="splitter2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -201,34 +201,34 @@
   <data name="spcRight.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
-  <data name="trvEntity.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="treeviewEntityUserControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="trvEntity.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="treeviewEntityUserControl.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="trvEntity.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="treeviewEntityUserControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 4</value>
   </data>
-  <data name="trvEntity.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="treeviewEntityUserControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="trvEntity.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="treeviewEntityUserControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 476</value>
   </data>
-  <data name="trvEntity.TabIndex" type="System.Int32, mscorlib">
+  <data name="treeviewEntityUserControl.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
-  <data name="&gt;&gt;trvEntity.Name" xml:space="preserve">
-    <value>trvEntity</value>
+  <data name="&gt;&gt;treeviewEntityUserControl.Name" xml:space="preserve">
+    <value>treeviewEntityUserControl</value>
   </data>
-  <data name="&gt;&gt;trvEntity.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;treeviewEntityUserControl.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;trvEntity.Parent" xml:space="preserve">
+  <data name="&gt;&gt;treeviewEntityUserControl.Parent" xml:space="preserve">
     <value>tabPage1</value>
   </data>
-  <data name="&gt;&gt;trvEntity.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;treeviewEntityUserControl.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tabPage1.ImageKey" xml:space="preserve">
@@ -267,34 +267,34 @@
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="trvBlock.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="treeviewBlockUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="trvBlock.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="treeviewBlockUserControl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="trvBlock.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="treeviewBlockUserControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 4</value>
   </data>
-  <data name="trvBlock.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="treeviewBlockUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="trvBlock.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="treeviewBlockUserControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 476</value>
   </data>
-  <data name="trvBlock.TabIndex" type="System.Int32, mscorlib">
+  <data name="treeviewBlockUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;trvBlock.Name" xml:space="preserve">
-    <value>trvBlock</value>
+  <data name="&gt;&gt;treeviewBlockUserControl1.Name" xml:space="preserve">
+    <value>treeviewBlockUserControl1</value>
   </data>
-  <data name="&gt;&gt;trvBlock.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;treeviewBlockUserControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;trvBlock.Parent" xml:space="preserve">
+  <data name="&gt;&gt;treeviewBlockUserControl1.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;trvBlock.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;treeviewBlockUserControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tabPage2.ImageKey" xml:space="preserve">
@@ -333,34 +333,34 @@
   <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="penControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="penUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="penControl1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="penUserControl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="penControl1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="penUserControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="penControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="penUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="penControl1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="penUserControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 478</value>
   </data>
-  <data name="penControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="penUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;penControl1.Name" xml:space="preserve">
-    <value>penControl1</value>
+  <data name="&gt;&gt;penUserControl1.Name" xml:space="preserve">
+    <value>penUserControl1</value>
   </data>
-  <data name="&gt;&gt;penControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PenUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;penUserControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.PenUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;penControl1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;penUserControl1.Parent" xml:space="preserve">
     <value>tabPen</value>
   </data>
-  <data name="&gt;&gt;penControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;penUserControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tabPen.ImageIndex" type="System.Int32, mscorlib">
@@ -404,7 +404,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAi
-        SgAAAk1TRnQBSQFMAgEBKQEAAZABCAGQAQgBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        SgAAAk1TRnQBSQFMAgEBKQEAAagBCAGoAQgBGAEAARgBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABYAMAAQgBAQIAAQEBAAEIBgABYxgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHc
         AcABAAHwAcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEA
         AzkBAAGAAXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEz
@@ -765,34 +765,34 @@
   <data name="&gt;&gt;spcRight.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="propertyGridControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="propertyGridUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="propertyGridControl1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="propertyGridUserControl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="propertyGridControl1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="propertyGridUserControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="propertyGridControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="propertyGridUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="propertyGridControl1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="propertyGridUserControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>301, 366</value>
   </data>
-  <data name="propertyGridControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="propertyGridUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
   </data>
-  <data name="&gt;&gt;propertyGridControl1.Name" xml:space="preserve">
-    <value>propertyGridControl1</value>
+  <data name="&gt;&gt;propertyGridUserControl1.Name" xml:space="preserve">
+    <value>propertyGridUserControl1</value>
   </data>
-  <data name="&gt;&gt;propertyGridControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;propertyGridUserControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;propertyGridControl1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;propertyGridUserControl1.Parent" xml:space="preserve">
     <value>spcRight.Panel2</value>
   </data>
-  <data name="&gt;&gt;propertyGridControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;propertyGridUserControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;spcRight.Panel2.Name" xml:space="preserve">
@@ -997,14 +997,14 @@
   <data name="btnTrepan.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGgSURBVEhL3ZU7TsNAEIYDiIcEdPRIUPG4BsgFSAiw7MQO
-        lly4ISDlBCmgAwRHgI4COk4C9ByFfDPOIj+XPKCAXxr9s7Mz/87a63Xjf8NxnPkgCELsmeFn1lqt1lOz
-        2Qwkh/HoQMBF+AM3J1xlYRgewcPBdd0ZxO9wtRj/Dev6vr9FxytiCG5LjAbeM3m3UotvB0XXkOmsYyuS
-        OfLPcDUf/0on6oDgAWTEdzQ4BBDehbSOHe5rsAi6mYPMdhMNWtButzcgzS9akiSzcB6s7EOa0Ov1pjVY
-        A3Z3Akkjq2lED8UapPX4rgazYJuPkEyep5FqZDovgdouJBovaSQPXX0gYEOu8yzkdEGqo4ECdIJ3sZQO
-        a1FZLIjjeBmyL0AXi+mwFpMtMMkjko8Rql7gJ14yMOLleXNMWeh1nGPqed46pOLEy8f01z80AZ2NdVWQ
-        60BaR3N7GqwDCTeQST797rJDvIOr+TzeC52wQYoQLl3XFG9GUbQgJqdFYiZnkHcJT2HDAcFj6EvAZogf
-        wqNDfodyuhB4YFgUvce8sX+ZfwSNRh9XoO2yN6ziTwAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGiSURBVEhL3ZU7TsNAEIYDiIcEdPRIUPG4BsgFSAiw7MQ2
+        kVK4ISDlBC6gAwRHgI4COk4C9BwFvhmzyM/FSaCAXxr9s7Mz/87a63Xrf8NxnNkgCELskeF71jqdzkO7
+        3Q4kh/HwQMBF+A03J1xlYRgewM3guu4U4je4WkyXL4wHvu9v4C+JIbgpMRp4zeRdSy2+HRRdQqazvq1I
+        5sg/wdV8/AudqAOCe5AR39JgAyC8DZmd7GqwCLqZgTSJ7ccatCCKojVI84sWx/E0nAcr+5AmJEkyqcEa
+        sLsjSBpZTiN6KFYgrcd3NZgF27yHZPI0jVQj03kJ1A4g0XhKI3no6p8CNuQ6z0JOF6Q6GihAJ3gXC+mw
+        FpXFgl6vtwjZF6CL+XRYi/EWGOcRyccIVS/wEy8ZGPHyvDmmLPQ8yjH1PG8VUnHi5WP66x+agM5GuirI
+        dSCto7kdDdaBhCvIJB9/d9kh3sfVfB7vmU7YIEUIl65rite73e6cmJwWiZkcMcbn8ATWDAgeQl8CNkN8
+        Hx4e8juU04XAHcOcKPFb4t7Iv8w/glbrAyNo7aaJfsH+AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnTrepan.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2189,10 +2189,10 @@
   <data name="btnDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACTSURBVEhL5ZVBDYAwFEMnAQlIQQISkIITLCABKUjAAbSH
-        XZaydUt2gZe82+//2aFZ+A0LvBM3WE26pNVX1HCLH2eF6tmOzBbpfmCGKuzIbJEJqrAjs0VGqMKOzFqo
-        sKPNBdWCnCe0OaBakpMZmx2qJTmZsWnpgtWBSPcDLV2wOhDpfmCAaknOavhNOn3gDGc/SQgPUyzx3Hf/
-        KNsAAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACxSURBVEhL7dOxDgFRFEXRSUSLkpYWUaFEJaIUic4n+jR/
+        wL7FSxQn754Z7exkdXNuMsVr+rp0waOjM9JuUGNHbNP++YPYph2hxo4D0nZQY8cWaSuosWOJtAXU2DFH
+        2gxq7JgibQw1doyQNoQaOwawukMdqLEeWekKdaTGemSlE9SRGuuRlfZQR2qsR1ZaQx2piQdq98SnpdjY
+        TfCGOqTEt7Fp1QYvqIO/4pv4tq9LTfMFgXZuJrKCUBoAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnDelete.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2371,34 +2371,34 @@
   <data name="spcMarker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="offsetControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="offsetUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="offsetControl1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="offsetUserControl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="offsetControl1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="offsetUserControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="offsetControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="offsetUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="offsetControl1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="offsetUserControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>569, 927</value>
   </data>
-  <data name="offsetControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="offsetUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;offsetControl1.Name" xml:space="preserve">
-    <value>offsetControl1</value>
+  <data name="&gt;&gt;offsetUserControl1.Name" xml:space="preserve">
+    <value>offsetUserControl1</value>
   </data>
-  <data name="&gt;&gt;offsetControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.OffsetUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;offsetUserControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.OffsetUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;offsetControl1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;offsetUserControl1.Parent" xml:space="preserve">
     <value>spcMarker.Panel1</value>
   </data>
-  <data name="&gt;&gt;offsetControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;offsetUserControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;spcMarker.Panel1.Name" xml:space="preserve">
@@ -2413,34 +2413,34 @@
   <data name="&gt;&gt;spcMarker.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="markerControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="markerUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="markerControl1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="markerUserControl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="markerControl1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="markerUserControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="markerControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="markerUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="markerControl1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="markerUserControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>814, 927</value>
   </data>
-  <data name="markerControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="markerUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;markerControl1.Name" xml:space="preserve">
-    <value>markerControl1</value>
+  <data name="&gt;&gt;markerUserControl1.Name" xml:space="preserve">
+    <value>markerUserControl1</value>
   </data>
-  <data name="&gt;&gt;markerControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.MarkerUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;markerUserControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.MarkerUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;markerControl1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;markerUserControl1.Parent" xml:space="preserve">
     <value>spcMarker.Panel2</value>
   </data>
-  <data name="&gt;&gt;markerControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;markerUserControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;spcMarker.Panel2.Name" xml:space="preserve">
@@ -2534,7 +2534,7 @@
     <value>manualUserControl1</value>
   </data>
   <data name="&gt;&gt;manualUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.ManualUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.ManualUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;manualUserControl1.Parent" xml:space="preserve">
     <value>tabManual</value>
@@ -2581,34 +2581,34 @@
   <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="rtcControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="rtcUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="rtcControl1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="rtcUserControl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="rtcControl1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="rtcUserControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="rtcControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="rtcUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="rtcControl1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="rtcUserControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>613, 927</value>
   </data>
-  <data name="rtcControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="rtcUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;rtcControl1.Name" xml:space="preserve">
-    <value>rtcControl1</value>
+  <data name="&gt;&gt;rtcUserControl1.Name" xml:space="preserve">
+    <value>rtcUserControl1</value>
   </data>
-  <data name="&gt;&gt;rtcControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.ScannerUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;rtcUserControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.ScannerUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;rtcControl1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;rtcUserControl1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
   </data>
-  <data name="&gt;&gt;rtcControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;rtcUserControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
@@ -2623,34 +2623,34 @@
   <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="laserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="laserUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="laserControl1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="laserUserControl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="laserControl1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="laserUserControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="laserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="laserUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="laserControl1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="laserUserControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>769, 927</value>
   </data>
-  <data name="laserControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="laserUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;laserControl1.Name" xml:space="preserve">
-    <value>laserControl1</value>
+  <data name="&gt;&gt;laserUserControl1.Name" xml:space="preserve">
+    <value>laserUserControl1</value>
   </data>
-  <data name="&gt;&gt;laserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.LaserUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;laserUserControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.LaserUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;laserControl1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;laserUserControl1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
   </data>
-  <data name="&gt;&gt;laserControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;laserUserControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
@@ -2753,7 +2753,7 @@
     <value>rtcDIUserControl1</value>
   </data>
   <data name="&gt;&gt;rtcDIUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rtcDIUserControl1.Parent" xml:space="preserve">
     <value>spcIO.Panel1</value>
@@ -2801,7 +2801,7 @@
     <value>rtcDOUserControl1</value>
   </data>
   <data name="&gt;&gt;rtcDOUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rtcDOUserControl1.Parent" xml:space="preserve">
     <value>spcIO.Panel2</value>
@@ -2878,34 +2878,34 @@
   <data name="&gt;&gt;tabIO.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="powerMeterControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="powerMeterUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="powerMeterControl1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="powerMeterUserControl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="powerMeterControl1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="powerMeterUserControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 4</value>
   </data>
-  <data name="powerMeterControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="powerMeterUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="powerMeterControl1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="powerMeterUserControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1368, 881</value>
   </data>
-  <data name="powerMeterControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="powerMeterUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;powerMeterControl1.Name" xml:space="preserve">
-    <value>powerMeterControl1</value>
+  <data name="&gt;&gt;powerMeterUserControl1.Name" xml:space="preserve">
+    <value>powerMeterUserControl1</value>
   </data>
-  <data name="&gt;&gt;powerMeterControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;powerMeterUserControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;powerMeterControl1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;powerMeterUserControl1.Parent" xml:space="preserve">
     <value>tabPage15</value>
   </data>
-  <data name="&gt;&gt;powerMeterControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;powerMeterUserControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tabPage15.ImageKey" xml:space="preserve">
@@ -2941,34 +2941,34 @@
   <data name="&gt;&gt;tabPage15.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="powerMapControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="powerMapUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="powerMapControl1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="powerMapUserControl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="powerMapControl1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="powerMapUserControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 4</value>
   </data>
-  <data name="powerMapControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="powerMapUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="powerMapControl1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="powerMapUserControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1368, 881</value>
   </data>
-  <data name="powerMapControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="powerMapUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;powerMapControl1.Name" xml:space="preserve">
-    <value>powerMapControl1</value>
+  <data name="&gt;&gt;powerMapUserControl1.Name" xml:space="preserve">
+    <value>powerMapUserControl1</value>
   </data>
-  <data name="&gt;&gt;powerMapControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;powerMapUserControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;powerMapControl1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;powerMapUserControl1.Parent" xml:space="preserve">
     <value>tabPage16</value>
   </data>
-  <data name="&gt;&gt;powerMapControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;powerMapUserControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tabPage16.ImageKey" xml:space="preserve">
@@ -3070,34 +3070,34 @@
   <data name="&gt;&gt;tabPower.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="scriptControlControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="scriptUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="scriptControlControl1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="scriptUserControl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="scriptControlControl1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="scriptUserControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="scriptControlControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="scriptUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
-  <data name="scriptControlControl1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="scriptUserControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1386, 927</value>
   </data>
-  <data name="scriptControlControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="scriptUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;scriptControlControl1.Name" xml:space="preserve">
-    <value>scriptControlControl1</value>
+  <data name="&gt;&gt;scriptUserControl1.Name" xml:space="preserve">
+    <value>scriptUserControl1</value>
   </data>
-  <data name="&gt;&gt;scriptControlControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.ScriptUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;scriptUserControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.ScriptUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;scriptControlControl1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;scriptUserControl1.Parent" xml:space="preserve">
     <value>tabScript</value>
   </data>
-  <data name="&gt;&gt;scriptControlControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;scriptUserControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tabScript.ImageKey" xml:space="preserve">
@@ -3155,7 +3155,7 @@
     <value>remoteUserControl1</value>
   </data>
   <data name="&gt;&gt;remoteUserControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.RemoteUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SpiralLab.Sirius2.Winforms.UI.RemoteUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;remoteUserControl1.Parent" xml:space="preserve">
     <value>tabRemote</value>
@@ -3196,34 +3196,34 @@
   <data name="&gt;&gt;tabRemote.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="logControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="logUserControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="logControl1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="logUserControl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9pt</value>
   </data>
-  <data name="logControl1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="logUserControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="logControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="logUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="logControl1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="logUserControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1386, 927</value>
   </data>
-  <data name="logControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="logUserControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;logControl1.Name" xml:space="preserve">
-    <value>logControl1</value>
+  <data name="&gt;&gt;logUserControl1.Name" xml:space="preserve">
+    <value>logUserControl1</value>
   </data>
-  <data name="&gt;&gt;logControl1.Type" xml:space="preserve">
-    <value>SpiralLab.Sirius2.Winforms.UI.LogUserControl, spirallab.sirius2.winforms, Version=1.43.1770.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;logUserControl1.Type" xml:space="preserve">
+    <value>SpiralLab.Sirius2.Winforms.UI.LogUserControl, spirallab.sirius2.winforms, Version=1.45.1950.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;logControl1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;logUserControl1.Parent" xml:space="preserve">
     <value>tabLog</value>
   </data>
-  <data name="&gt;&gt;logControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;logUserControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tabLog.ImageKey" xml:space="preserve">
@@ -3326,7 +3326,7 @@
     <value>1400, 969</value>
   </data>
   <data name="spcMain.SplitterDistance" type="System.Int32, mscorlib">
-    <value>827</value>
+    <value>826</value>
   </data>
   <data name="spcMain.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3728,6 +3728,12 @@
     <value>btnTriangle</value>
   </data>
   <data name="&gt;&gt;btnTriangle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCross.Name" xml:space="preserve">
+    <value>btnCross</value>
+  </data>
+  <data name="&gt;&gt;btnCross.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnPolyline.Name" xml:space="preserve">
@@ -4263,12 +4269,6 @@
   </data>
   <data name="&gt;&gt;lblRemote.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCross.Name" xml:space="preserve">
-    <value>btnCross</value>
-  </data>
-  <data name="&gt;&gt;btnCross.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SiriusEditorUserControlV2</value>

@@ -33,18 +33,18 @@
             this.spcMain = new System.Windows.Forms.SplitContainer();
             this.tbcMain = new System.Windows.Forms.TabControl();
             this.tabEditor = new System.Windows.Forms.TabPage();
-            this.editorControl1 = new SpiralLab.Sirius2.Winforms.UI.EditorUserControl();
+            this.editorUserControl1 = new SpiralLab.Sirius2.Winforms.UI.EditorUserControl();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.spcRight = new System.Windows.Forms.SplitContainer();
             this.tbcLeft = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.trvEntity = new SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl();
+            this.treeviewEntityUserControl = new SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.trvBlock = new SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl();
+            this.treeviewBlockUserControl1 = new SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl();
             this.tabPen = new System.Windows.Forms.TabPage();
-            this.penControl1 = new SpiralLab.Sirius2.Winforms.UI.PenUserControl();
+            this.penUserControl1 = new SpiralLab.Sirius2.Winforms.UI.PenUserControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.propertyGridControl1 = new SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl();
+            this.propertyGridUserControl1 = new SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tlsTop2 = new System.Windows.Forms.ToolStrip();
             this.btnPoint = new System.Windows.Forms.ToolStripButton();
@@ -56,6 +56,7 @@
             this.btnTrepan = new System.Windows.Forms.ToolStripButton();
             this.btnRectangle = new System.Windows.Forms.ToolStripButton();
             this.btnTriangle = new System.Windows.Forms.ToolStripButton();
+            this.btnCross = new System.Windows.Forms.ToolStripButton();
             this.btnPolyline = new System.Windows.Forms.ToolStripButton();
             this.btnSpiral = new System.Windows.Forms.ToolStripButton();
             this.ddbText = new System.Windows.Forms.ToolStripDropDownButton();
@@ -129,14 +130,14 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tabMarker = new System.Windows.Forms.TabPage();
             this.spcMarker = new System.Windows.Forms.SplitContainer();
-            this.offsetControl1 = new SpiralLab.Sirius2.Winforms.UI.OffsetUserControl();
-            this.markerControl1 = new SpiralLab.Sirius2.Winforms.UI.MarkerUserControl();
+            this.offsetUserControl1 = new SpiralLab.Sirius2.Winforms.UI.OffsetUserControl();
+            this.markerUserControl1 = new SpiralLab.Sirius2.Winforms.UI.MarkerUserControl();
             this.tabManual = new System.Windows.Forms.TabPage();
             this.manualUserControl1 = new SpiralLab.Sirius2.Winforms.UI.ManualUserControl();
             this.tabLaser = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.rtcControl1 = new SpiralLab.Sirius2.Winforms.UI.ScannerUserControl();
-            this.laserControl1 = new SpiralLab.Sirius2.Winforms.UI.LaserUserControl();
+            this.rtcUserControl1 = new SpiralLab.Sirius2.Winforms.UI.ScannerUserControl();
+            this.laserUserControl1 = new SpiralLab.Sirius2.Winforms.UI.LaserUserControl();
             this.tabIO = new System.Windows.Forms.TabPage();
             this.spcIO = new System.Windows.Forms.SplitContainer();
             this.rtcDIUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl();
@@ -144,15 +145,15 @@
             this.tabPower = new System.Windows.Forms.TabPage();
             this.tbcPower = new System.Windows.Forms.TabControl();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.powerMeterControl1 = new SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl();
+            this.powerMeterUserControl1 = new SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl();
             this.tabPage16 = new System.Windows.Forms.TabPage();
-            this.powerMapControl1 = new SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl();
+            this.powerMapUserControl1 = new SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl();
             this.tabScript = new System.Windows.Forms.TabPage();
-            this.scriptControlControl1 = new SpiralLab.Sirius2.Winforms.UI.ScriptUserControl();
+            this.scriptUserControl1 = new SpiralLab.Sirius2.Winforms.UI.ScriptUserControl();
             this.tabRemote = new System.Windows.Forms.TabPage();
             this.remoteUserControl1 = new SpiralLab.Sirius2.Winforms.UI.RemoteUserControl();
             this.tabLog = new System.Windows.Forms.TabPage();
-            this.logControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
+            this.logUserControl1 = new SpiralLab.Sirius2.Winforms.UI.LogUserControl();
             this.stsBottom = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel14 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblName = new System.Windows.Forms.ToolStripStatusLabel();
@@ -176,7 +177,6 @@
             this.lblRemote = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitter3 = new System.Windows.Forms.Splitter();
             this.panBody = new System.Windows.Forms.Panel();
-            this.btnCross = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.SuspendLayout();
@@ -248,7 +248,6 @@
             resources.ApplyResources(this.tbcMain, "tbcMain");
             this.tbcMain.HotTrack = true;
             this.tbcMain.ImageList = this.imageList1;
-            this.tbcMain.Multiline = true;
             this.tbcMain.Name = "tbcMain";
             this.tbcMain.SelectedIndex = 0;
             this.tbcMain.TabStop = false;
@@ -256,7 +255,7 @@
             // tabEditor
             // 
             this.tabEditor.BackColor = System.Drawing.SystemColors.Control;
-            this.tabEditor.Controls.Add(this.editorControl1);
+            this.tabEditor.Controls.Add(this.editorUserControl1);
             this.tabEditor.Controls.Add(this.splitter2);
             this.tabEditor.Controls.Add(this.spcRight);
             this.tabEditor.Controls.Add(this.splitter1);
@@ -266,14 +265,14 @@
             resources.ApplyResources(this.tabEditor, "tabEditor");
             this.tabEditor.Name = "tabEditor";
             // 
-            // editorControl1
+            // editorUserControl1
             // 
-            this.editorControl1.AllowDrop = true;
-            resources.ApplyResources(this.editorControl1, "editorControl1");
-            this.editorControl1.Document = null;
-            this.editorControl1.Marker = null;
-            this.editorControl1.Name = "editorControl1";
-            this.editorControl1.Rtc = null;
+            this.editorUserControl1.AllowDrop = true;
+            resources.ApplyResources(this.editorUserControl1, "editorUserControl1");
+            this.editorUserControl1.Document = null;
+            this.editorUserControl1.Marker = null;
+            this.editorUserControl1.Name = "editorUserControl1";
+            this.editorUserControl1.Rtc = null;
             // 
             // splitter2
             // 
@@ -293,7 +292,7 @@
             // 
             // spcRight.Panel2
             // 
-            this.spcRight.Panel2.Controls.Add(this.propertyGridControl1);
+            this.spcRight.Panel2.Controls.Add(this.propertyGridUserControl1);
             // 
             // tbcLeft
             // 
@@ -302,59 +301,58 @@
             this.tbcLeft.Controls.Add(this.tabPen);
             resources.ApplyResources(this.tbcLeft, "tbcLeft");
             this.tbcLeft.ImageList = this.imageList1;
-            this.tbcLeft.Multiline = true;
             this.tbcLeft.Name = "tbcLeft";
             this.tbcLeft.SelectedIndex = 0;
             this.tbcLeft.TabStop = false;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.trvEntity);
+            this.tabPage1.Controls.Add(this.treeviewEntityUserControl);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // trvEntity
+            // treeviewEntityUserControl
             // 
-            this.trvEntity.BackColor = System.Drawing.SystemColors.Control;
-            this.trvEntity.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.trvEntity, "trvEntity");
-            this.trvEntity.Document = null;
-            this.trvEntity.Marker = null;
-            this.trvEntity.Name = "trvEntity";
+            this.treeviewEntityUserControl.BackColor = System.Drawing.SystemColors.Control;
+            this.treeviewEntityUserControl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.treeviewEntityUserControl, "treeviewEntityUserControl");
+            this.treeviewEntityUserControl.Document = null;
+            this.treeviewEntityUserControl.Marker = null;
+            this.treeviewEntityUserControl.Name = "treeviewEntityUserControl";
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.trvBlock);
+            this.tabPage2.Controls.Add(this.treeviewBlockUserControl1);
             resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // trvBlock
+            // treeviewBlockUserControl1
             // 
-            this.trvBlock.BackColor = System.Drawing.SystemColors.Control;
-            this.trvBlock.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.trvBlock, "trvBlock");
-            this.trvBlock.Document = null;
-            this.trvBlock.Marker = null;
-            this.trvBlock.Name = "trvBlock";
-            this.trvBlock.Rtc = null;
-            this.trvBlock.View = null;
+            this.treeviewBlockUserControl1.BackColor = System.Drawing.SystemColors.Control;
+            this.treeviewBlockUserControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.treeviewBlockUserControl1, "treeviewBlockUserControl1");
+            this.treeviewBlockUserControl1.Document = null;
+            this.treeviewBlockUserControl1.Marker = null;
+            this.treeviewBlockUserControl1.Name = "treeviewBlockUserControl1";
+            this.treeviewBlockUserControl1.Rtc = null;
+            this.treeviewBlockUserControl1.View = null;
             // 
             // tabPen
             // 
-            this.tabPen.Controls.Add(this.penControl1);
+            this.tabPen.Controls.Add(this.penUserControl1);
             resources.ApplyResources(this.tabPen, "tabPen");
             this.tabPen.Name = "tabPen";
             this.tabPen.UseVisualStyleBackColor = true;
             // 
-            // penControl1
+            // penUserControl1
             // 
-            this.penControl1.BackColor = System.Drawing.SystemColors.Control;
-            this.penControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.penControl1, "penControl1");
-            this.penControl1.Document = null;
-            this.penControl1.Name = "penControl1";
+            this.penUserControl1.BackColor = System.Drawing.SystemColors.Control;
+            this.penUserControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.penUserControl1, "penUserControl1");
+            this.penUserControl1.Document = null;
+            this.penUserControl1.Name = "penUserControl1";
             // 
             // imageList1
             // 
@@ -402,15 +400,15 @@
             this.imageList1.Images.SetKeyName(39, "csharp.ico");
             this.imageList1.Images.SetKeyName(40, "Voltage.png");
             // 
-            // propertyGridControl1
+            // propertyGridUserControl1
             // 
-            this.propertyGridControl1.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.propertyGridControl1, "propertyGridControl1");
-            this.propertyGridControl1.Document = null;
-            this.propertyGridControl1.Marker = null;
-            this.propertyGridControl1.Name = "propertyGridControl1";
-            this.propertyGridControl1.SelecteObject = null;
-            this.propertyGridControl1.View = null;
+            this.propertyGridUserControl1.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.propertyGridUserControl1, "propertyGridUserControl1");
+            this.propertyGridUserControl1.Document = null;
+            this.propertyGridUserControl1.Marker = null;
+            this.propertyGridUserControl1.Name = "propertyGridUserControl1";
+            this.propertyGridUserControl1.SelecteObject = null;
+            this.propertyGridUserControl1.View = null;
             // 
             // splitter1
             // 
@@ -500,6 +498,12 @@
             this.btnTriangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.btnTriangle, "btnTriangle");
             this.btnTriangle.Name = "btnTriangle";
+            // 
+            // btnCross
+            // 
+            this.btnCross.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.btnCross, "btnCross");
+            this.btnCross.Name = "btnCross";
             // 
             // btnPolyline
             // 
@@ -987,31 +991,31 @@
             // 
             // spcMarker.Panel1
             // 
-            this.spcMarker.Panel1.Controls.Add(this.offsetControl1);
+            this.spcMarker.Panel1.Controls.Add(this.offsetUserControl1);
             // 
             // spcMarker.Panel2
             // 
-            this.spcMarker.Panel2.Controls.Add(this.markerControl1);
+            this.spcMarker.Panel2.Controls.Add(this.markerUserControl1);
             // 
-            // offsetControl1
+            // offsetUserControl1
             // 
-            this.offsetControl1.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.offsetControl1, "offsetControl1");
-            this.offsetControl1.Marker = null;
-            this.offsetControl1.Name = "offsetControl1";
+            this.offsetUserControl1.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.offsetUserControl1, "offsetUserControl1");
+            this.offsetUserControl1.Marker = null;
+            this.offsetUserControl1.Name = "offsetUserControl1";
             // 
-            // markerControl1
+            // markerUserControl1
             // 
-            this.markerControl1.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.markerControl1, "markerControl1");
-            this.markerControl1.Document = null;
-            this.markerControl1.Laser = null;
-            this.markerControl1.Marker = null;
-            this.markerControl1.Name = "markerControl1";
-            this.markerControl1.PowerMeter = null;
-            this.markerControl1.Remote = null;
-            this.markerControl1.Rtc = null;
-            this.markerControl1.View = null;
+            this.markerUserControl1.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.markerUserControl1, "markerUserControl1");
+            this.markerUserControl1.Document = null;
+            this.markerUserControl1.Laser = null;
+            this.markerUserControl1.Marker = null;
+            this.markerUserControl1.Name = "markerUserControl1";
+            this.markerUserControl1.PowerMeter = null;
+            this.markerUserControl1.Remote = null;
+            this.markerUserControl1.Rtc = null;
+            this.markerUserControl1.View = null;
             // 
             // tabManual
             // 
@@ -1043,25 +1047,25 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.rtcControl1);
+            this.splitContainer1.Panel1.Controls.Add(this.rtcUserControl1);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.laserControl1);
+            this.splitContainer1.Panel2.Controls.Add(this.laserUserControl1);
             // 
-            // rtcControl1
+            // rtcUserControl1
             // 
-            this.rtcControl1.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.rtcControl1, "rtcControl1");
-            this.rtcControl1.Name = "rtcControl1";
-            this.rtcControl1.Scanner = null;
+            this.rtcUserControl1.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.rtcUserControl1, "rtcUserControl1");
+            this.rtcUserControl1.Name = "rtcUserControl1";
+            this.rtcUserControl1.Scanner = null;
             // 
-            // laserControl1
+            // laserUserControl1
             // 
-            this.laserControl1.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.laserControl1, "laserControl1");
-            this.laserControl1.Laser = null;
-            this.laserControl1.Name = "laserControl1";
+            this.laserUserControl1.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.laserUserControl1, "laserUserControl1");
+            this.laserUserControl1.Laser = null;
+            this.laserUserControl1.Name = "laserUserControl1";
             // 
             // tabIO
             // 
@@ -1121,49 +1125,49 @@
             // 
             // tabPage15
             // 
-            this.tabPage15.Controls.Add(this.powerMeterControl1);
+            this.tabPage15.Controls.Add(this.powerMeterUserControl1);
             resources.ApplyResources(this.tabPage15, "tabPage15");
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
-            // powerMeterControl1
+            // powerMeterUserControl1
             // 
-            this.powerMeterControl1.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.powerMeterControl1, "powerMeterControl1");
-            this.powerMeterControl1.Laser = null;
-            this.powerMeterControl1.Name = "powerMeterControl1";
-            this.powerMeterControl1.PowerMeter = null;
+            this.powerMeterUserControl1.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.powerMeterUserControl1, "powerMeterUserControl1");
+            this.powerMeterUserControl1.Laser = null;
+            this.powerMeterUserControl1.Name = "powerMeterUserControl1";
+            this.powerMeterUserControl1.PowerMeter = null;
             // 
             // tabPage16
             // 
-            this.tabPage16.Controls.Add(this.powerMapControl1);
+            this.tabPage16.Controls.Add(this.powerMapUserControl1);
             resources.ApplyResources(this.tabPage16, "tabPage16");
             this.tabPage16.Name = "tabPage16";
             this.tabPage16.UseVisualStyleBackColor = true;
             // 
-            // powerMapControl1
+            // powerMapUserControl1
             // 
-            this.powerMapControl1.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.powerMapControl1, "powerMapControl1");
-            this.powerMapControl1.Document = null;
-            this.powerMapControl1.Laser = null;
-            this.powerMapControl1.Name = "powerMapControl1";
-            this.powerMapControl1.PowerMeter = null;
-            this.powerMapControl1.Rtc = null;
+            this.powerMapUserControl1.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.powerMapUserControl1, "powerMapUserControl1");
+            this.powerMapUserControl1.Document = null;
+            this.powerMapUserControl1.Laser = null;
+            this.powerMapUserControl1.Name = "powerMapUserControl1";
+            this.powerMapUserControl1.PowerMeter = null;
+            this.powerMapUserControl1.Rtc = null;
             // 
             // tabScript
             // 
-            this.tabScript.Controls.Add(this.scriptControlControl1);
+            this.tabScript.Controls.Add(this.scriptUserControl1);
             resources.ApplyResources(this.tabScript, "tabScript");
             this.tabScript.Name = "tabScript";
             this.tabScript.UseVisualStyleBackColor = true;
             // 
-            // scriptControlControl1
+            // scriptUserControl1
             // 
-            this.scriptControlControl1.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.scriptControlControl1, "scriptControlControl1");
-            this.scriptControlControl1.Marker = null;
-            this.scriptControlControl1.Name = "scriptControlControl1";
+            this.scriptUserControl1.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.scriptUserControl1, "scriptUserControl1");
+            this.scriptUserControl1.Marker = null;
+            this.scriptUserControl1.Name = "scriptUserControl1";
             // 
             // tabRemote
             // 
@@ -1182,18 +1186,18 @@
             // 
             // tabLog
             // 
-            this.tabLog.Controls.Add(this.logControl1);
+            this.tabLog.Controls.Add(this.logUserControl1);
             resources.ApplyResources(this.tabLog, "tabLog");
             this.tabLog.Name = "tabLog";
             this.tabLog.UseVisualStyleBackColor = true;
             // 
-            // logControl1
+            // logUserControl1
             // 
-            this.logControl1.BackColor = System.Drawing.SystemColors.Control;
-            this.logControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.logControl1, "logControl1");
-            this.logControl1.IsDetailLog = false;
-            this.logControl1.Name = "logControl1";
+            this.logUserControl1.BackColor = System.Drawing.SystemColors.Control;
+            this.logUserControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.logUserControl1, "logUserControl1");
+            this.logUserControl1.IsDetailLog = false;
+            this.logUserControl1.Name = "logUserControl1";
             // 
             // stsBottom
             // 
@@ -1352,12 +1356,6 @@
             resources.ApplyResources(this.panBody, "panBody");
             this.panBody.Name = "panBody";
             // 
-            // btnCross
-            // 
-            this.btnCross.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.btnCross, "btnCross");
-            this.btnCross.Name = "btnCross";
-            // 
             // SiriusEditorUserControlV2
             // 
             resources.ApplyResources(this, "$this");
@@ -1449,18 +1447,18 @@
         private System.Windows.Forms.ToolStripStatusLabel lblPowerWatt;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel11;
         private System.Windows.Forms.TabPage tabScript;
-        private SpiralLab.Sirius2.Winforms.UI.ScriptUserControl scriptControlControl1;
+        private SpiralLab.Sirius2.Winforms.UI.ScriptUserControl scriptUserControl1;
         private System.Windows.Forms.TabPage tabPower;
         private System.Windows.Forms.TabControl tbcPower;
         private System.Windows.Forms.TabPage tabPage15;
-        private SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl powerMeterControl1;
+        private SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl powerMeterUserControl1;
         private System.Windows.Forms.TabPage tabPage16;
-        private SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl powerMapControl1;
+        private SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl powerMapUserControl1;
         private System.Windows.Forms.SplitContainer spcIO;
         private SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl rtcDIUserControl1;
         private SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl rtcDOUserControl1;
-        private SpiralLab.Sirius2.Winforms.UI.OffsetUserControl offsetControl1;
-        private SpiralLab.Sirius2.Winforms.UI.MarkerUserControl markerControl1;
+        private SpiralLab.Sirius2.Winforms.UI.OffsetUserControl offsetUserControl1;
+        private SpiralLab.Sirius2.Winforms.UI.MarkerUserControl markerUserControl1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel14;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel lblLog;
@@ -1490,10 +1488,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Splitter splitter4;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private SpiralLab.Sirius2.Winforms.UI.ScannerUserControl rtcControl1;
-        private SpiralLab.Sirius2.Winforms.UI.LaserUserControl laserControl1;
+        private SpiralLab.Sirius2.Winforms.UI.ScannerUserControl rtcUserControl1;
+        private SpiralLab.Sirius2.Winforms.UI.LaserUserControl laserUserControl1;
         private System.Windows.Forms.TabPage tabLog;
-        private SpiralLab.Sirius2.Winforms.UI.LogUserControl logControl1;
+        private SpiralLab.Sirius2.Winforms.UI.LogUserControl logUserControl1;
         private System.Windows.Forms.ToolStrip tlsTop2;
         private System.Windows.Forms.ToolStripButton btnPoint;
         private System.Windows.Forms.ToolStripButton btnPoints;
@@ -1549,17 +1547,17 @@
         private System.Windows.Forms.ToolStripMenuItem mnuScriptEvent;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.Splitter splitter1;
-        private SpiralLab.Sirius2.Winforms.UI.EditorUserControl editorControl1;
+        private SpiralLab.Sirius2.Winforms.UI.EditorUserControl editorUserControl1;
         private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.SplitContainer spcRight;
         private System.Windows.Forms.TabControl tbcLeft;
         private System.Windows.Forms.TabPage tabPage1;
-        private SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl trvEntity;
+        private SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl treeviewEntityUserControl;
         private System.Windows.Forms.TabPage tabPage2;
-        private SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl trvBlock;
+        private SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl treeviewBlockUserControl1;
         private System.Windows.Forms.TabPage tabPen;
-        private SpiralLab.Sirius2.Winforms.UI.PenUserControl penControl1;
-        private SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl propertyGridControl1;
+        private SpiralLab.Sirius2.Winforms.UI.PenUserControl penUserControl1;
+        private SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl propertyGridUserControl1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem btnZPL;
         private System.Windows.Forms.ToolStripButton btnCross;

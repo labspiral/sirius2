@@ -55,7 +55,7 @@ namespace Demos
             //var correctionFile = Path.Combine(Config.CorrectionPath, "cor_1to1.ctb");
 
             // Create RTC controller 
-            //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
+            //var rtc = ScannerFactory.CreateVirtual(0, kfactor, LaserModes.Yag1, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             //var rtc = ScannerFactory.CreateRtc4(0, kfactor, LaserModes.Yag1, correctionFile);
             //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
             var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
@@ -91,6 +91,7 @@ namespace Demos
                 Console.WriteLine("'2' : draw rectangle with translate -> rotate");
                 Console.WriteLine("'3' : draw rectangle with scale -> rotate -> translate");
                 Console.WriteLine("'4' : draw rectangle with scale -> rotate -> translate (with pre-calculated matrix) + rotated scanner");
+                Console.WriteLine("'5' : draw rectangle with scale -> invert -> translate");
                 Console.WriteLine("'Q' : quit");
                 Console.Write("Select your target : ");
                 key = Console.ReadKey(false);
@@ -113,6 +114,9 @@ namespace Demos
                         float angleZ = 30;
                         float scale = 1.2f;
                         DrawRectangle4(rtc, laser, dXyz, angleZ, scale); 
+                        break;
+                    case ConsoleKey.D5:
+                        DrawRectangle5(rtc, laser);
                         break;
                 }
             } while (true);
@@ -181,6 +185,8 @@ namespace Demos
                 success &= rtc.ListMarkTo(new Vector2(-width / 2, height / 2));
                 rtc.MatrixStack.Pop();
                 rtc.MatrixStack.Pop();
+                if (!success)
+                    break;
             }
             success &= rtc.ListJumpTo(Vector2.Zero);
             success &= rtcMeasurement.ListMeasurementEnd();
@@ -261,6 +267,8 @@ namespace Demos
                 success &= rtc.ListMarkTo(new Vector2(-width / 2, heigth / 2));
                 rtc.MatrixStack.Pop();
                 rtc.MatrixStack.Pop();
+                if (!success)
+                    break;
             }
             success &= rtc.ListJumpTo(Vector2.Zero);
             success &= rtcMeasurement.ListMeasurementEnd();
@@ -345,6 +353,8 @@ namespace Demos
                 rtc.MatrixStack.Pop();
                 rtc.MatrixStack.Pop();
                 rtc.MatrixStack.Pop();
+                if (!success)
+                    break;
             }
             success &= rtc.ListJumpTo(Vector2.Zero);
             success &= rtcMeasurement.ListMeasurementEnd();
@@ -419,24 +429,30 @@ namespace Demos
             // List buffer with single buffered
             success &= rtc.ListBegin(ListTypes.Auto);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
-           
-            // With tranform by matrix
-            rtc.MatrixStack.Push(matrix);
-            success &= rtc.ListJumpTo(new Vector2(-width / 2, height / 2));
-            success &= rtc.ListMarkTo(new Vector2(width / 2, height / 2));
-            success &= rtc.ListMarkTo(new Vector2(width / 2, -height / 2));
-            success &= rtc.ListMarkTo(new Vector2(-width / 2, -height / 2));
-            success &= rtc.ListMarkTo(new Vector2(-width / 2, height / 2));
-            success &= rtc.ListJumpTo(Vector2.Zero);
-            rtc.MatrixStack.Pop();
 
-            // Without transform by matrix
-            success &= rtc.ListJumpTo(new Vector2(-width / 2, height / 2));
-            success &= rtc.ListMarkTo(new Vector2(width / 2, height / 2));
-            success &= rtc.ListMarkTo(new Vector2(width / 2, -height / 2));
-            success &= rtc.ListMarkTo(new Vector2(-width / 2, -height / 2));
-            success &= rtc.ListMarkTo(new Vector2(-width / 2, height / 2));
+            for (int i = 0; i < 10; i++)
+            {
+                // With tranform by matrix
+                rtc.MatrixStack.Push(matrix);
+                // Draw rectangle
+                success &= rtc.ListJumpTo(new Vector2(-width / 2, height / 2));
+                success &= rtc.ListMarkTo(new Vector2(width / 2, height / 2));
+                success &= rtc.ListMarkTo(new Vector2(width / 2, -height / 2));
+                success &= rtc.ListMarkTo(new Vector2(-width / 2, -height / 2));
+                success &= rtc.ListMarkTo(new Vector2(-width / 2, height / 2));
+                success &= rtc.ListJumpTo(Vector2.Zero);
+                rtc.MatrixStack.Pop();
 
+                // Without transform by matrix
+                // Draw rectangle
+                success &= rtc.ListJumpTo(new Vector2(-width / 2, height / 2));
+                success &= rtc.ListMarkTo(new Vector2(width / 2, height / 2));
+                success &= rtc.ListMarkTo(new Vector2(width / 2, -height / 2));
+                success &= rtc.ListMarkTo(new Vector2(-width / 2, -height / 2));
+                success &= rtc.ListMarkTo(new Vector2(-width / 2, height / 2));
+                if (!success)
+                    break;
+            }
             success &= rtc.ListJumpTo(Vector2.Zero);
             success &= rtcMeasurement.ListMeasurementEnd();
             if (success)
@@ -458,6 +474,90 @@ namespace Demos
 
             // Revert base matrix
             rtc.MatrixStack.BaseMatrix = Matrix4x4.Identity;
+            return success;
+        }
+
+        /// <summary>
+        /// Invert and scale
+        /// </summary>
+        /// <param name="rtc"></param>
+        /// <param name="laser"></param>
+        /// <param name="radius"></param>
+        /// <param name="width"></param>
+        /// <param name="heigth"></param>
+        /// <returns></returns>
+        private static bool DrawRectangle5(IRtc rtc, ILaser laser, float radius = 10, float width = 5, float heigth = 5)
+        {
+            var rtcMeasurement = rtc as IRtcMeasurement;
+            Debug.Assert(rtcMeasurement != null);
+            // 10KHz Sample rate (max 100KHz)
+            double sampleRateHz = 10 * 1000;
+            // Max 4 channels at RTC5
+            var channels = new MeasurementChannels[4]
+            {
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
+                 MeasurementChannels.OutputPeriod, //Converted Raw Data to Frequency(KHz)
+            };
+            rtc.MatrixStack.BaseMatrix = Matrix4x4.CreateScale(-2, -2, 1); //scale and invert x and y
+
+            bool success = true;
+            // List buffer with single buffered
+            success &= rtc.ListBegin(ListTypes.Auto);
+            success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
+            for (int i = 0; i < 10; i++)
+            {
+                // 1. translate
+                rtc.MatrixStack.Push(Matrix4x4.CreateTranslation(radius, 0, 0));
+
+                //                        |  
+                //                        |  
+                //                        |      
+                //                        |                 
+                //                        |           
+                //                        |             
+                //                        |           
+                //            ---         |         ..... 
+                // --------- |   | -------+-------- .   . ---------
+                //            ---         |         ..... 
+                //                        |           
+                //                        |           
+                //                        |         
+                //                        |      
+                //                        |  
+                //                        |
+                success &= rtc.ListJumpTo(new Vector2(-width / 2, heigth / 2));
+                success &= rtc.ListMarkTo(new Vector2(width / 2, heigth / 2));
+                success &= rtc.ListMarkTo(new Vector2(width / 2, -heigth / 2));
+                success &= rtc.ListMarkTo(new Vector2(-width / 2, -heigth / 2));
+                success &= rtc.ListMarkTo(new Vector2(-width / 2, heigth / 2));
+
+                rtc.MatrixStack.Pop();
+                if (!success)
+                    break;
+            }
+            success &= rtc.ListJumpTo(Vector2.Zero);
+            success &= rtcMeasurement.ListMeasurementEnd();
+            if (success)
+            {
+                success &= rtc.ListEnd();
+                success &= rtc.ListExecute(true);
+            }
+            if (success)
+            {
+                // Temporary measurement file
+                var measurementFile = Path.Combine(Config.MeasurementPath, "measurement_matrix5.txt");
+                // Adjust laser on scale factor if need to zoom
+                Config.MeasurementLaserOnFactor = 2;
+                // Save measurement result to file
+                success &= RtcMeasurementHelper.Save(measurementFile, rtcMeasurement);
+                // Plot as a graph
+                RtcMeasurementHelper.Plot(measurementFile, $"scale and invert translate");
+            }
+            // Revert base matrix
+            rtc.MatrixStack.BaseMatrix = Matrix4x4.Identity;
+
             return success;
         }
     }

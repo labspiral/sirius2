@@ -44,15 +44,20 @@ namespace Demos
         static readonly float fov = 60.0f;
 
         /// <summary>
-        /// RTC5,6
+        /// RTC5,6 using 20bits resolution
         /// </summary>
         static readonly double kfactor20bits = Math.Pow(2, 20) / fov;
+        // RTC4 using 16bits resolution
+        static readonly double kfactor16bits = Math.Pow(2, 16) / fov;
 
         static readonly int rows = 3;
         static readonly int cols = 3;
         static readonly float interval = 20;
         static readonly string sourceFile = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, "D3_2982.ct5");
+        //static readonly string sourceFile = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, "Cor_1to1.ct5");
+        //static readonly string sourceFile = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, "Cor_1to1.ctb");
         static readonly string targetFile = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, "D3_2982_new.ct5");
+        //static readonly string targetFile = Path.Combine(SpiralLab.Sirius2.Config.CorrectionPath, "NewFile.ctb");
 
         [STAThread]
         static void Main(string[] args)
@@ -65,18 +70,14 @@ namespace Demos
 
             bool success = true;
 
-            // Fied of view : 60mm
-            var fov = 60.0;
-            // RTC5,6 using 20bits resolution
-            var kfactor = Math.Pow(2, 20) / fov;
-
             var correctionFile = sourceFile;
 
             // Create RTC controller 
-            //var rtc = ScannerFactory.CreateVirtual(0, kfactor, correctionFile);
-            //var rtc = ScannerFactory.CreateRtc5(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
-            var rtc = ScannerFactory.CreateRtc6(0, kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
-            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateVirtual(0, kfactor20bits, LaserModes.Yag1, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc4(0, kfactor16bits, LaserModes.Yag1, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc5(0, kfactor20bits, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            var rtc = ScannerFactory.CreateRtc6(0, kfactor20bits, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
+            //var rtc = ScannerFactory.CreateRtc6Ethernet(0, "192.168.0.100", "255.255.255.0", kfactor20bits, LaserModes.Yag5, RtcSignalLevels.ActiveHigh, RtcSignalLevels.ActiveHigh, correctionFile);
 
             // Initialize RTC controller
             success &= rtc.Initialize();
@@ -110,6 +111,8 @@ namespace Demos
                 Console.WriteLine("'X' : convert field correction file for 2D (by calibratitonlib)");
                 Console.WriteLine("'F2' : convert field correction file for 2D by winforms");
                 Console.WriteLine("'F3' : convert field correction file for 3D by winforms");
+                Console.WriteLine("'A' : plot source correction file");
+                Console.WriteLine("'B' : plot target correction file");
                 Console.WriteLine("'Home' : select old(or original) correction (Table1)");
                 Console.WriteLine("'End' : select new(or converted) correction (Table2)");
                 Console.WriteLine("'Q' : quit");
@@ -140,11 +143,17 @@ namespace Demos
                     case ConsoleKey.X:
                         ConvertFieldCorrection2DByCalLibAndSelect(rtc);
                         break;
-                    case ConsoleKey.F1:
+                    case ConsoleKey.F2:
                         ConvertFieldCorrection2DByWinforms(rtc);
                         break;
-                    case ConsoleKey.F2:
+                    case ConsoleKey.F3:
                         ConvertFieldCorrection3DByWinforms(rtc);
+                        break;
+                    case ConsoleKey.A:
+                        PlotRawData(rtc, sourceFile);
+                        break;
+                    case ConsoleKey.B:
+                        PlotRawData(rtc, targetFile);
                         break;
                     case ConsoleKey.Home:
                         rtc.CtlSelectCorrection(CorrectionTables.Table1);
@@ -277,7 +286,24 @@ namespace Demos
             }
             return success;
         }
-
+        private static bool PlotRawData(IRtc rtc, string ctFileName)
+        {
+            bool success = true;
+            if (rtc is Rtc4 rtc4)
+            {
+                // for .ctb
+                var rtcRawCtFile = RawCorrectionFileFactory.CreateRtcRawCtb(ctFileName);
+                success &= rtcRawCtFile.Plot(rtc);
+            }
+            else
+            {
+                // for .ct5 (not supported yet)
+                // var rtcRawCtFile = RawCorrectionFileFactory.CreateRtcRawCt5(ctFileName);
+                //success &= rtcRawCtFile.Plot(rtc);
+                success &= false;
+            }
+            return success;
+        }
         private static bool ConvertFieldCorrection2DByCalLibAndSelect(IRtc rtc)
         {
             // 9 points: 3x3

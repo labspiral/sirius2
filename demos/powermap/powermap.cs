@@ -672,7 +672,7 @@ namespace Demos
             bool success = true;
             isTerminated = true;
 
-            Logger.Log(Logger.Types.Warn, $"powermap [{this.Index}]: trying to stop");
+            Logger.Log(Logger.Types.Debug, $"powermap [{this.Index}]: trying to stop");
             if (null != Rtc && Rtc.IsBusy)
             {
                 success &= Rtc.CtlAbort();

@@ -99,10 +99,9 @@ namespace Demos
         /// <param name="powerMeter"><c>IPowerMeter</c></param>
         /// <param name="marker"><c>IMarker</c></param>
         /// <param name="remote"><c>IRemote</c></param>
-        /// <param name="editorUserControl">Target <c>Control</c> like as <c>SiriusEditorUserControl</c>, <c>SiriusEditorUserControlV2</c></param>
         /// <param name="index">Index (assign value if using multiple devices) (0,1,2,...)</param>
         /// <returns>Success or failed</returns>
-        public static bool CreateDevices(out IRtc rtc, out IDInput dInExt1, out IDInput dInLaserPort, out IDOutput dOutExt1, out IDOutput dOutExt2, out IDOutput dOutLaserPort, out ILaser laser, out IPowerMeter powerMeter, out IMarker marker, out IRemote remote, Control editorUserControl, int index = 0)
+        public static bool CreateDevices(out IRtc rtc, out IDInput dInExt1, out IDInput dInLaserPort, out IDOutput dOutExt1, out IDOutput dOutExt2, out IDOutput dOutLaserPort, out ILaser laser, out IPowerMeter powerMeter, out IMarker marker, out IRemote remote, int index = 0)
         {
             rtc = null;
             dInExt1 = null;
@@ -257,7 +256,7 @@ namespace Demos
                 }
             }
 
-            // 3D
+               // 3D
             var rtc3D = rtc as IRtc3D;
             if (null != rtc3D)
             {
@@ -481,7 +480,7 @@ namespace Demos
                     marker = MarkerFactory.CreateSyncAxis(index);
                     break;
             }
-            var scriptFileName = NativeMethods.ReadIni(ConfigFileName, $"MARKER{index}", "SCRIPT_FILENAME", string.Empty);
+            var scriptFileName = NativeMethods.ReadIni(ConfigFileName, $"MARKER{index}", "SCRIPT_FILE", string.Empty);
             if (!string.IsNullOrEmpty(scriptFileName))
                 marker.ScriptFile = Path.Combine(SpiralLab.Sirius2.Winforms.Config.ScriptPath, scriptFileName);
             #endregion
@@ -510,7 +509,7 @@ namespace Demos
                         remote = RemoteFactory.CreateSerial(index, "RS232C", marker, serialPort, serialBaudRate);
                         break;
                 }
-                remote.EditorControl = editorUserControl;
+                //remote.EditorControl = editorUserControl;
                 success &= remote.Start();
             }
             #endregion
@@ -537,10 +536,9 @@ namespace Demos
         /// Create test entities at <c>IDocument</c>
         /// </summary>
         /// <param name="rtc"><c>IRtc</c></param>
-        /// <param name="view"><c>IView</c></param>
         /// <param name="document"><c>IDocument</c></param>
         /// <returns>Success or failed</returns>
-        public static bool CreateTestEntities(IRtc rtc, IView view, IDocument document)
+        public static bool CreateTestEntities(IRtc rtc, IDocument document)
         {
             Debug.Assert(null != document.ActiveLayer);
             bool success = true;

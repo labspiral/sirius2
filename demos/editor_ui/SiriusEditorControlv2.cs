@@ -16,7 +16,7 @@
  *               `---`            `---'                                                        `----'   
  * 
  * 2023 Copyright to (c)SpiralLAB. All rights reserved.
- * Description : SiriusEditor usercontrol
+ * Description : SiriusEditor v2 usercontrol
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
  */
@@ -33,20 +33,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using System.IO;
-using System.Runtime.InteropServices;
-using SpiralLab.Sirius2.Winforms;
-using SpiralLab.Sirius2.Winforms.UI;
 using SpiralLab.Sirius2.IO;
 using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.PowerMeter;
 using SpiralLab.Sirius2.PowerMap;
+using SpiralLab.Sirius2.Scanner;
 using SpiralLab.Sirius2.Scanner.Rtc;
 using SpiralLab.Sirius2.Scanner.Rtc.SyncAxis;
 using SpiralLab.Sirius2.Winforms.Entity;
 using SpiralLab.Sirius2.Winforms.Marker;
 using SpiralLab.Sirius2.Winforms.Common;
 using SpiralLab.Sirius2.Winforms.Remote;
-using SpiralLab.Sirius2.Scanner;
 using SpiralLab.Sirius2.Winforms.Script;
 using OpenTK;
 
@@ -58,23 +55,6 @@ namespace Demos
     /// <remarks>
     /// User can insert(or create) usercontrol at own winforms. <br/>
     /// <img src="images/siriuseditorcontrolv2.png"/> <br/>
-    /// 1. <see cref="TreeViewUserControl">TreeViewUserControl</see> <br/>
-    /// 2. <see cref="TreeViewBlockUserControl">TreeViewBlockUserControl</see> <br/>
-    /// 3. <see cref="PenUserControl">PenUserControl</see> <br/>
-    /// 4. <see cref="EditorUserControl">EditorUserControl</see> <br/>
-    /// 5. <see cref="ScannerUserControl">RtcUserControl</see> <br/>
-    /// 6. <see cref="LaserUserControl">LaserUserControl</see> <br/>
-    /// 7. <see cref="MarkerUserControl">MarkerUserControl</see> <br/>
-    /// 8. <see cref="ManualUserControl">ManualUserControl</see> <br/>
-    /// 9. <see cref="RtcDIUserControl">RtcDIUserControl</see> <br/>
-    /// 10. <see cref="RtcDOUserControl">RtcDOUserControl</see> <br/>
-    /// 11. <see cref="RtcDOUserControl">RtcDOUserControl</see> <br/>
-    /// 12. <see cref="PowerMeterUserControl">PowerMeterUserControl</see> <br/>
-    /// 13. <see cref="PowerMapUserControl">PowerMapUserControl</see> <br/>
-    /// 14. <see cref="ScriptUserControl">ScriptUserControl</see> <br/>
-    /// 15. <see cref="RemoteUserControl">RemoteUserControl</see> <br/>
-    /// 16. <see cref="PropertyGridUserControl">PropertyGridUserControl</see> <br/>
-    /// 17. <see cref="LogUserControl">LogUserControl</see> <br/>
     /// </remarks>
     public partial class SiriusEditorUserControlV2
         //: Form
@@ -142,23 +122,22 @@ namespace Demos
             get { return lblName.Text; }
             set { lblName.Text = value; }
         }
-
         /// <summary>
-        /// <see cref="IDocument">IDocument</see> (aka. Recipe data)
+        /// <see cref="SpiralLab.Sirius2.Winforms.IDocument">IDocument</see> (aka. Recipe data)
         /// </summary>
         /// <remarks>
-        /// Core data like as entity, layer, block, pen are exist within <see cref="IDocument.InternalData">IDocument.InternalData</see>. <br/>
-        /// Created <see cref="DocumentFactory.CreateDefault">DocumentFactory.CreateDefault</see> by default. <br/>
+        /// Core data like as entity, layer, block, pen are exist within <see cref="SpiralLab.Sirius2.Winforms.IDocument.InternalData">IDocument.InternalData</see>. <br/>
+        /// Created <see cref="SpiralLab.Sirius2.Winforms.DocumentFactory.CreateDefault">DocumentFactory.CreateDefault</see> by default. <br/>
         /// </remarks>
         [Browsable(true)]
         [ReadOnly(false)]
         [Category("Sirius2")]
         [DisplayName("Document")]
         [Description("Document Instance")]
-        public IDocument Document
+        public SpiralLab.Sirius2.Winforms.IDocument Document
         {
             get { return document; }
-            set 
+            set
             {
                 if (document == value)
                     return;
@@ -188,9 +167,8 @@ namespace Demos
                     PropertyGridCtrl.SelecteObject = document.Selected;
                 }
             }
-        }  
-        private IDocument document;
-
+        }
+        private SpiralLab.Sirius2.Winforms.IDocument document;
         /// <summary>
         /// <see cref="IRtc">IRtc</see>
         /// </summary>
@@ -202,13 +180,13 @@ namespace Demos
         [Category("Sirius2")]
         [DisplayName("Rtc")]
         [Description("RTC Instance")]
-        public IRtc Rtc
+        public SpiralLab.Sirius2.Scanner.Rtc.IRtc Rtc
         {
             get { return rtc; }
             set
             {
                 if (rtc == value)
-                    return;                
+                    return;
                 if (rtc != null)
                 {
                     if (rtc is IRtcMoF mof)
@@ -216,7 +194,7 @@ namespace Demos
                         mof.OnEncoderChanged -= Mof_OnEncoderChanged;
                     }
                 }
-                
+
                 rtc = value;
                 RtcCtrl.Scanner = rtc;
                 MarkerCtrl.Rtc = rtc;
@@ -237,8 +215,7 @@ namespace Demos
                 }
             }
         }
-        private IRtc rtc;
-
+        private SpiralLab.Sirius2.Scanner.Rtc.IRtc rtc;
         /// <summary>
         /// <see cref="ILaser">ILaser</see>
         /// </summary>
@@ -250,7 +227,7 @@ namespace Demos
         [Category("Sirius2")]
         [DisplayName("Laser")]
         [Description("Laser Instance")]
-        public ILaser Laser
+        public SpiralLab.Sirius2.Laser.ILaser Laser
         {
             get { return laser; }
             set
@@ -278,8 +255,7 @@ namespace Demos
                 }
             }
         }
-        private ILaser laser;
-
+        private SpiralLab.Sirius2.Laser.ILaser laser;
         /// <summary>
         /// <see cref="IMarker">IMarker</see>
         /// </summary>
@@ -291,7 +267,7 @@ namespace Demos
         [Category("Sirius2")]
         [DisplayName("Marker")]
         [Description("Marker Instance")]
-        public IMarker Marker
+        public SpiralLab.Sirius2.Winforms.Marker.IMarker Marker
         {
             get { return marker; }
             set
@@ -322,8 +298,7 @@ namespace Demos
                 }
             }
         }
-        private IMarker marker;
-
+        private SpiralLab.Sirius2.Winforms.Marker.IMarker marker;
         /// <summary>
         /// <see cref="IView">IView</see>
         /// </summary>
@@ -335,12 +310,13 @@ namespace Demos
         [Category("Sirius2")]
         [DisplayName("View")]
         [Description("View Instance")]
-        public IView View
+        public SpiralLab.Sirius2.Winforms.IView View
         {
-            get {                 
-                return EditorCtrl.View; }
+            get
+            {
+                return EditorCtrl.View;
+            }
         }
-
         /// <summary>
         /// <see cref="IRemote">IRemote</see>
         /// </summary>
@@ -352,7 +328,7 @@ namespace Demos
         [Category("Sirius2")]
         [DisplayName("Remote")]
         [Description("Remote Instance")]
-        public IRemote Remote 
+        public SpiralLab.Sirius2.Winforms.Remote.IRemote Remote
         {
             get { return remote; }
             set
@@ -373,8 +349,7 @@ namespace Demos
                 }
             }
         }
-        private IRemote remote;
-
+        private SpiralLab.Sirius2.Winforms.Remote.IRemote remote;
         /// <summary>
         /// <see cref="IPowerMeter">IPowerMeter</see>
         /// </summary>
@@ -386,7 +361,7 @@ namespace Demos
         [Category("Sirius2")]
         [DisplayName("PowerMeter")]
         [Description("PowerMeter Instance")]
-        public IPowerMeter PowerMeter
+        public SpiralLab.Sirius2.PowerMeter.IPowerMeter PowerMeter
         {
             get { return powerMeter; }
             set
@@ -411,11 +386,10 @@ namespace Demos
                     powerMeter.OnStopped += PowerMeter_OnStopped;
                     powerMeter.OnMeasured += PowerMeter_OnMeasured;
                     powerMeter.OnCleared += PowerMeter_OnCleared;
-                }     
+                }
             }
         }
-        private IPowerMeter powerMeter;
-
+        private SpiralLab.Sirius2.PowerMeter.IPowerMeter powerMeter;
         /// <summary>
         /// RTC DI extension1 port (16 bits)
         /// </summary>
@@ -427,10 +401,11 @@ namespace Demos
         [Category("Sirius2")]
         [DisplayName("DInput")]
         [Description("IDInput Instance for RTC Extension1 Port")]
-        public IDInput DIExt1 
-        { 
+        public SpiralLab.Sirius2.IO.IDInput DIExt1
+        {
             get { return dIExt1; }
-            set {
+            set
+            {
                 if (dIExt1 == value)
                     return;
                 if (dIExt1 != null)
@@ -438,11 +413,11 @@ namespace Demos
                     dIExt1?.Dispose();
                     dIExt1 = null;
                 }
-                dIExt1 = value; 
+                dIExt1 = value;
                 rtcDIUserControl1.DIExt1 = dIExt1;
-            } 
+            }
         }
-        private IDInput dIExt1;
+        private SpiralLab.Sirius2.IO.IDInput dIExt1;
         /// <summary>
         /// RTC DI LASER port (2 bits)
         /// </summary>
@@ -454,7 +429,7 @@ namespace Demos
         [Category("Sirius2")]
         [DisplayName("DInput")]
         [Description("IDInput Instance for RTC LASER Port")]
-        public IDInput DILaserPort
+        public SpiralLab.Sirius2.IO.IDInput DILaserPort
         {
             get { return dILaserPort; }
             set
@@ -470,7 +445,7 @@ namespace Demos
                 rtcDIUserControl1.DILaserPort = dILaserPort;
             }
         }
-        private IDInput dILaserPort;
+        private SpiralLab.Sirius2.IO.IDInput dILaserPort;
         /// <summary>
         /// RTC DO EXTENSION1 port (16 bits)
         /// </summary>
@@ -482,7 +457,7 @@ namespace Demos
         [Category("Sirius2")]
         [DisplayName("DOutput")]
         [Description("IDOutput Instance for RTC EXTENSION1 Port")]
-        public IDOutput DOExt1
+        public SpiralLab.Sirius2.IO.IDOutput DOExt1
         {
             get { return dOExt1; }
             set
@@ -498,7 +473,7 @@ namespace Demos
                 rtcDOUserControl1.DOExt1 = dOExt1;
             }
         }
-        private IDOutput dOExt1;
+        private SpiralLab.Sirius2.IO.IDOutput dOExt1;
         /// <summary>
         /// RTC DO EXTENSION2 port (8 bits)
         /// </summary>
@@ -510,7 +485,7 @@ namespace Demos
         [Category("Sirius2")]
         [DisplayName("DOutput")]
         [Description("IDOutput Instance for RTC EXTENSION2 Port")]
-        public IDOutput DOExt2
+        public SpiralLab.Sirius2.IO.IDOutput DOExt2
         {
             get { return dOExt2; }
             set
@@ -526,7 +501,7 @@ namespace Demos
                 rtcDOUserControl1.DOExt2 = dOExt2;
             }
         }
-        private IDOutput dOExt2;
+        private SpiralLab.Sirius2.IO.IDOutput dOExt2;
         /// <summary>
         /// RTC DO LASER port (2 bits)
         /// </summary>
@@ -538,7 +513,7 @@ namespace Demos
         [Category("Sirius2")]
         [DisplayName("DOutput")]
         [Description("IDOutput Instance for RTC LASER Port")]
-        public IDOutput DOLaserPort
+        public SpiralLab.Sirius2.IO.IDOutput DOLaserPort
         {
             get { return dOLaserPort; }
             set
@@ -554,10 +529,9 @@ namespace Demos
                 rtcDOUserControl1.DOLaserPort = dOLaserPort;
             }
         }
-        private IDOutput dOLaserPort;
-
+        private SpiralLab.Sirius2.IO.IDOutput dOLaserPort;
         /// <summary>
-        /// Treeview user control for <see cref="IEntity">IEntity</see> within <see cref="EntityLayer">EntityLayer</see> nodes
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl">TreeViewUserControl</see> user control for <see cref="IEntity">IEntity</see> within <see cref="EntityLayer">EntityLayer</see> nodes
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -565,11 +539,11 @@ namespace Demos
         [DisplayName("TreeViewUserControl")]
         [Description("TreeView UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl TreeViewCtrl
-        { 
-            get { return trvEntity; } 
+        {
+            get { return treeviewEntityUserControl; }
         }
         /// <summary>
-        /// Treeview user control for <see cref="EntityBlock">EntityBlock</see> nodes
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl">TreeViewBlockUserControl</see> user control for <see cref="EntityBlock">EntityBlock</see> nodes
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -578,10 +552,10 @@ namespace Demos
         [Description("TreeViewBlock UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl TreeViewBlockCtrl
         {
-            get { return trvBlock; }
+            get { return treeviewBlockUserControl1; }
         }
         /// <summary>
-        /// PropertyGrid user control for properties of <see cref="IEntity">IEntity</see>
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl">PropertyGridUserControl</see> user control for properties of <see cref="IEntity">IEntity</see>
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -590,10 +564,10 @@ namespace Demos
         [Description("PropertyGrid UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl PropertyGridCtrl
         {
-            get { return propertyGridControl1; }
+            get { return propertyGridUserControl1; }
         }
         /// <summary>
-        /// Editor(by OpenTK) user control for rendering view 
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.EditorUserControl">EditorUserControl</see> user control for rendering view 
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -602,10 +576,10 @@ namespace Demos
         [Description("Editor UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.EditorUserControl EditorCtrl
         {
-            get { return editorControl1; }
+            get { return editorUserControl1; }
         }
         /// <summary>
-        /// User control for list of <see cref="EntityPen">EntityPen</see>
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.PenUserControl">PenUserControl</see> user control for list of <see cref="EntityPen">EntityPen</see>
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -614,10 +588,10 @@ namespace Demos
         [Description("Pen UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.PenUserControl PenCtrl
         {
-            get { return penControl1; }
+            get { return penUserControl1; }
         }
         /// <summary>
-        /// PropertyGrid user control for <see cref="ILaser">ILaser</see>
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.LaserUserControl">LaserUserControl</see> user control for <see cref="ILaser">ILaser</see>
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -626,11 +600,10 @@ namespace Demos
         [Description("Laser UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.LaserUserControl LaserCtrl
         {
-            get { return laserControl1; }
+            get { return laserUserControl1; }
         }
-
         /// <summary>
-        /// PropertyGrid user control for <see cref="IRtc">IRtc</see>
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.ScannerUserControl">ScannerUserControl</see> user control for <see cref="IRtc">IRtc</see>
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -639,10 +612,10 @@ namespace Demos
         [Description("Rtc UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.ScannerUserControl RtcCtrl
         {
-            get { return rtcControl1; }
+            get { return rtcUserControl1; }
         }
         /// <summary>
-        /// PropertyGrid user control for <see cref="IMarker">IMarker</see>
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.MarkerUserControl">MarkerUserControl</see> user control for <see cref="IMarker">IMarker</see>
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -651,10 +624,10 @@ namespace Demos
         [Description("Marker UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.MarkerUserControl MarkerCtrl
         {
-            get { return markerControl1; }
+            get { return markerUserControl1; }
         }
         /// <summary>
-        /// User control for list of <see cref="IMarker.Offsets">IMarker.Offsets</see>
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.OffsetUserControl">OffsetUserControl</see> user control for list of <see cref="IMarker.Offsets">IMarker.Offsets</see>
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -663,10 +636,10 @@ namespace Demos
         [Description("Offset UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.OffsetUserControl OffsetCtrl
         {
-            get { return offsetControl1; }
+            get { return offsetUserControl1; }
         }
         /// <summary>
-        /// User control for RTC DI (EXTENSION1 and LASER port) for <see cref="IDInput">IDInput</see>
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl">RtcDIUserControl</see> user control for RTC DI (EXTENSION1 and LASER port) for <see cref="IDInput">IDInput</see>
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -678,7 +651,7 @@ namespace Demos
             get { return rtcDIUserControl1; }
         }
         /// <summary>
-        /// User control for RTC DO (EXTENSION1,2 and LASER port) for <see cref="IDOutput">IDOutput</see>
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl">RtcDOUserControl</see> user control for RTC DO (EXTENSION1,2 and LASER port) for <see cref="IDOutput">IDOutput</see>
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -690,7 +663,7 @@ namespace Demos
             get { return rtcDOUserControl1; }
         }
         /// <summary>
-        /// User control for manual control
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.ManualUserControl">ManualUserControl</see> user control for manual control
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -702,11 +675,16 @@ namespace Demos
             get { return manualUserControl1; }
         }
         /// <summary>
-        /// UserControl for customized manual control
+        /// Customized(or replaced) <see cref="SpiralLab.Sirius2.Winforms.UI.ManualUserControl">ManualUserControl</see> by <see cref="ManualUserCtrl">ManualUserCtrl</see> for manual control
         /// </summary>
         /// <remarks>
         /// Replaced internal <c>ManualCtrl</c> as external control <br/>
         /// </remarks>
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("ManualUserControl (Customized)")]
+        [Description("Manual UserControl")]
         public UserControl ManualUserCtrl
         {
             get { return manualUserCtrl; }
@@ -737,7 +715,7 @@ namespace Demos
         }
         private UserControl manualUserCtrl = null;
         /// <summary>
-        /// User control for for <see cref="IPowerMeter">IPowerMeter</see>
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl">PowerMeterUserControl</see> user control for for <see cref="IPowerMeter">IPowerMeter</see>
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -746,10 +724,10 @@ namespace Demos
         [Description("PowerMeter UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl PowerMeterCtrl
         {
-            get { return powerMeterControl1; }
+            get { return powerMeterUserControl1; }
         }
         /// <summary>
-        ///  User control for <see cref="IPowerMap">IPowerMap</see>
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl">PowerMapUserControl</see> user control for <see cref="IPowerMap">IPowerMap</see>
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -758,10 +736,10 @@ namespace Demos
         [Description("PowerMap UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl PowerMapCtrl
         {
-            get { return powerMapControl1; }
+            get { return powerMapUserControl1; }
         }
         /// <summary>
-        /// User control for <see cref="IScript">IScript</see>
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.ScriptUserControl">ScriptUserControl</see> user control for <see cref="IScript">IScript</see>
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -770,10 +748,10 @@ namespace Demos
         [Description("Script UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.ScriptUserControl ScriptCtrl
         {
-            get { return scriptControlControl1; }
+            get { return scriptUserControl1; }
         }
         /// <summary>
-        /// PropertyGrid user control for <see cref="IRemote">IRemote</see>
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.RemoteUserControl">RemoteUserControl</see> user control for <see cref="IRemote">IRemote</see>
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -784,9 +762,8 @@ namespace Demos
         {
             get { return remoteUserControl1; }
         }
-
         /// <summary>
-        /// User control for logged messages
+        /// <see cref="SpiralLab.Sirius2.Winforms.UI.LogUserControl">LogUserControl</see> user control for logged messages
         /// </summary>
         [Browsable(true)]
         [ReadOnly(false)]
@@ -795,7 +772,30 @@ namespace Demos
         [Description("Log UserControl")]
         public SpiralLab.Sirius2.Winforms.UI.LogUserControl LogCtrl
         {
-            get { return logControl1; }
+            get { return logUserControl1; }
+        }
+        /// <summary>
+        /// Show(or Visible) <see cref="SpiralLab.Sirius2.Winforms.UI.LogUserControl">LogUserControl</see> usercontrol or not
+        /// </summary>
+        [ReadOnly(false)]
+        [Category("Sirius2")]
+        [DisplayName("Show LogUserControl")]
+        [Description("Show Log UserControl or Not")]
+        public bool IsShowLogCtrl
+        {
+            get
+            {
+                return tbcMain.TabPages.Contains(tabLog);
+                //return !spcMain.Panel2Collapsed;
+            }
+            set
+            {
+                if (value)
+                    tbcMain.TabPages.Add(tabLog);
+                else
+                    tbcMain.TabPages.Remove(tabLog);
+                //spcMain.Panel2Collapsed = !value;
+            }
         }
 
         System.Windows.Forms.Timer timerProgress = new System.Windows.Forms.Timer();
@@ -900,14 +900,14 @@ namespace Demos
             lblRemote.DoubleClick += LblRemote_DoubleClick;
 
             // Create document by default 
-            this.Document = DocumentFactory.CreateDefault();
+            this.Document = SpiralLab.Sirius2.Winforms.DocumentFactory.CreateDefault();
         }
 
         /// <inheritdoc/>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             // Stop: F6
-            if (keyData == Config.KeyboardMarkerStop)
+            if (keyData == SpiralLab.Sirius2.Winforms.Config.KeyboardMarkerStop)
             {
                 if (null != Marker)
                 {
@@ -916,13 +916,13 @@ namespace Demos
                 }
             }
             // Start: F5
-            else if (keyData == Config.KeyboardMarkerStart)
+            else if (keyData == SpiralLab.Sirius2.Winforms.Config.KeyboardMarkerStart)
             {
                 if (null != Marker)
                 {
                     if (!Marker.IsBusy)
                     {
-                        if (Config.IsShowMessageBoxWhenMarkerStart)
+                        if (SpiralLab.Sirius2.Winforms.Config.IsShowMessageBoxWhenMarkerStart)
                         {
                             var form = new SpiralLab.Sirius2.Winforms.UI.MessageBox(
                             Properties.Resources.MarkerTryingToStart,
@@ -940,12 +940,13 @@ namespace Demos
                         {
                             Marker.Ready(Document);
                             Marker.Start();
+                            return true;
                         }
                     }
                 }
             }
             // Preview: F4
-            else if (keyData == Config.KeyboardMarkerPreview)
+            else if (keyData == SpiralLab.Sirius2.Winforms.Config.KeyboardMarkerPreview)
             {
                 if (null != Marker)
                 {
@@ -958,7 +959,7 @@ namespace Demos
                 }
             }
             // Reset: F8
-            else if (keyData == Config.KeyboardMarkerReset)
+            else if (keyData == SpiralLab.Sirius2.Winforms.Config.KeyboardMarkerReset)
             {
                 if (null != Marker)
                 {
@@ -967,9 +968,9 @@ namespace Demos
                 }
             }
             // Simulation: F1
-            else if (keyData == Config.KeyboardSimulationStart)
+            else if (keyData == SpiralLab.Sirius2.Winforms.Config.KeyboardSimulationStart)
             {
-                Document.ActSimulateStart(Document.Selected, Marker, SimulationSpeeds.Fast);
+                Document.ActSimulateStart(Document.Selected, Marker, SpiralLab.Sirius2.Winforms.SimulationSpeeds.Fast);
                 return true;
 
             }
@@ -1000,7 +1001,7 @@ namespace Demos
             switch (tbcLeft.SelectedIndex)
             {
                 case 0:
-                    EditorCtrl.View.ViewMode = ViewModes.Entity;
+                    EditorCtrl.View.ViewMode = SpiralLab.Sirius2.Winforms.ViewModes.Entity;
                     try
                     {
                         Cursor.Current = Cursors.WaitCursor;
@@ -1013,7 +1014,7 @@ namespace Demos
                     }
                     break;
                 case 1:
-                    EditorCtrl.View.ViewMode = ViewModes.Block;
+                    EditorCtrl.View.ViewMode = SpiralLab.Sirius2.Winforms.ViewModes.Block;
                     break;
             }
             EditorCtrl.View.Render();
@@ -1130,22 +1131,22 @@ namespace Demos
         }
         private void MnuMarginBottom_Click(object sender, EventArgs e)
         {
-            document.ActAlign(document.Selected, MarginAlignments.Bottom);
+            document.ActAlign(document.Selected, SpiralLab.Sirius2.Winforms.MarginAlignments.Bottom);
             EditorCtrl.DoRender();
         }
         private void MnuMarginTop_Click(object sender, EventArgs e)
         {
-            document.ActAlign(document.Selected, MarginAlignments.Top);
+            document.ActAlign(document.Selected, SpiralLab.Sirius2.Winforms.MarginAlignments.Top);
             EditorCtrl.DoRender();
         }
         private void MnuMarginRight_Click(object sender, EventArgs e)
         {
-            document.ActAlign(document.Selected, MarginAlignments.Right);
+            document.ActAlign(document.Selected, SpiralLab.Sirius2.Winforms.MarginAlignments.Right);
             EditorCtrl.DoRender();
         }
         private void MnuMarginLeft_Click(object sender, EventArgs e)
         {
-            document.ActAlign(document.Selected, MarginAlignments.Left);
+            document.ActAlign(document.Selected, SpiralLab.Sirius2.Winforms.MarginAlignments.Left);
             EditorCtrl.DoRender();
         }
         private void MnuZDelta_Click(object sender, EventArgs e)
@@ -1273,9 +1274,9 @@ namespace Demos
             if (NotifyOpenBefore())
                 return;
             var dlg = new OpenFileDialog();
-            dlg.Filter = Config.FileOpenFilters;
+            dlg.Filter = SpiralLab.Sirius2.Winforms.Config.FileOpenFilters;
             dlg.Title = "Open File";
-            dlg.InitialDirectory = Config.RecipePath;
+            dlg.InitialDirectory = SpiralLab.Sirius2.Winforms.Config.RecipePath;
             DialogResult result = dlg.ShowDialog();
             if (result != DialogResult.OK)
                 return;
@@ -1304,9 +1305,9 @@ namespace Demos
             if (NotifySaveBefore())
                 return;
             var dlg = new SaveFileDialog();
-            dlg.Filter = Config.FileSaveFilters;
+            dlg.Filter = SpiralLab.Sirius2.Winforms.Config.FileSaveFilters;
             dlg.Title = "Save File";
-            dlg.InitialDirectory = Config.RecipePath;
+            dlg.InitialDirectory = SpiralLab.Sirius2.Winforms.Config.RecipePath;
             dlg.OverwritePrompt = true;
             DialogResult result = dlg.ShowDialog();
             if (result != DialogResult.OK)
@@ -1451,6 +1452,7 @@ namespace Demos
                 cloned.IsNeedToRegen = true;
                 cloned.Parent = null;
                 cloned.IsSelected = false;
+                cloned.Alignment = Alignments.MiddleCenter; //forcily ?
                 Document.ActAdd(cloned);
             }
             finally
@@ -1475,7 +1477,7 @@ namespace Demos
         }
         private void BtnText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateText(Config.FontDefault, $"Hello{Environment.NewLine}SIRIUS2", FontStyle.Regular, 2);
+            var entity = EntityFactory.CreateText(SpiralLab.Sirius2.Winforms.Config.FontDefault, $"Hello{Environment.NewLine}SIRIUS2", FontStyle.Regular, 2);
             Document.ActAdd(entity);
         }
         private void BtnImageText_Click(object sender, EventArgs e)
@@ -1494,8 +1496,8 @@ namespace Demos
 
             // or using image file
             var dlg = new OpenFileDialog();
-            dlg.Filter = Config.FileImportImageFilters;
-            dlg.InitialDirectory = Config.SamplePath;
+            dlg.Filter = SpiralLab.Sirius2.Winforms.Config.FileImportImageFilters;
+            dlg.InitialDirectory = SpiralLab.Sirius2.Winforms.Config.SamplePath;
             dlg.Title = "Open Image File";
 
             DialogResult result = dlg.ShowDialog();
@@ -1506,22 +1508,22 @@ namespace Demos
         }
         private void BtnSiriusCharacterSetText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateSiriusCharacterSetText(Config.SiriusFontDefault, CharacterSetFormats.Date, 5);
+            var entity = EntityFactory.CreateSiriusCharacterSetText(SpiralLab.Sirius2.Winforms.Config.SiriusFontDefault, CharacterSetFormats.Date, 5);
             document.ActAdd(entity);
         }
         private void BtnCharacterSetText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateCharacterSetText(Config.FontDefault, CharacterSetFormats.Date, 5);
+            var entity = EntityFactory.CreateCharacterSetText(SpiralLab.Sirius2.Winforms.Config.FontDefault, CharacterSetFormats.Date, 5);
             document.ActAdd(entity);
         }
         private void BtnCircularText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateCircularText(Config.FontDefault, "POWERED BY SIRIUS2 0123456789", FontStyle.Regular, 2, TextCircularDirections.ClockWise, 5, 180);
+            var entity = EntityFactory.CreateCircularText(SpiralLab.Sirius2.Winforms.Config.FontDefault, "POWERED BY SIRIUS2 0123456789", FontStyle.Regular, 2, TextCircularDirections.ClockWise, 5, 180);
             document.ActAdd(entity);
         }
         private void BtnSiriusText_Click(object sender, EventArgs e)
         {
-            var entity = EntityFactory.CreateSiriusText(Config.SiriusFontDefault, "SIRIUS2", 2.5);
+            var entity = EntityFactory.CreateSiriusText(SpiralLab.Sirius2.Winforms.Config.SiriusFontDefault, "SIRIUS2", 2.5);
             document.ActAdd(entity);
         }
         private void BtnCopy_Click(object sender, EventArgs e)
@@ -1547,7 +1549,7 @@ namespace Demos
         /// </summary>
         /// <param name="document"><c>IDocument</c></param>
         /// <param name="fileName">Filename</param>
-        private void Document_OnOpened(IDocument document, string fileName)
+        private void Document_OnOpened(SpiralLab.Sirius2.Winforms.IDocument document, string fileName)
         {
             if (!this.IsHandleCreated || this.IsDisposed)
                 return;
@@ -1565,7 +1567,7 @@ namespace Demos
         /// </summary>
         /// <param name="document"><c>IDocument</c></param>
         /// <param name="fileName">Filename</param>
-        private void Document_OnSaved(IDocument document, string fileName)
+        private void Document_OnSaved(SpiralLab.Sirius2.Winforms.IDocument document, string fileName)
         {
             if (!stsBottom.IsHandleCreated || this.IsDisposed)
                 return;
@@ -1582,7 +1584,7 @@ namespace Demos
         /// <param name="e"></param>
         private void LblLog_DoubleClick(object sender, EventArgs e)
         {
-            spcMain.Panel2Collapsed = !spcMain.Panel2Collapsed;
+            IsShowLogCtrl = !IsShowLogCtrl;
         }
         /// <summary>
         /// Encoder reset
@@ -1686,7 +1688,7 @@ namespace Demos
         /// Event handler for <c>IMarker</c> has started
         /// </summary>
         /// <param name="marker"><c>IMarker</c></param>
-        private void Marker_OnStarted(IMarker marker)
+        private void Marker_OnStarted(SpiralLab.Sirius2.Winforms.Marker.IMarker marker)
         {
             if (!this.IsHandleCreated || this.IsDisposed)
                 return;
@@ -1722,7 +1724,7 @@ namespace Demos
         /// <param name="marker"><c>IMarker</c></param>
         /// <param name="success">Sucess(or failed) to mark</param>
         /// <param name="ts"><c>TimeSpan</c></param>
-        private void Marker_OnEnded(IMarker marker, bool success, TimeSpan ts)
+        private void Marker_OnEnded(SpiralLab.Sirius2.Winforms.Marker.IMarker marker, bool success, TimeSpan ts)
         {
             if (!this.IsHandleCreated || this.IsDisposed)
                 return;
@@ -1744,7 +1746,7 @@ namespace Demos
         /// </summary>
         /// <param name="remote"><c>IRemote</c></param>
         /// <param name="mode"><c>ControlModes</c></param>
-        private void Remote_OnModeChanged(IRemote remote, ControlModes mode)
+        private void Remote_OnModeChanged(SpiralLab.Sirius2.Winforms.Remote.IRemote remote, SpiralLab.Sirius2.Winforms.Remote.ControlModes mode)
         {
             this.Invoke(new MethodInvoker(delegate ()
             {
@@ -1800,7 +1802,7 @@ namespace Demos
         /// <param name="rtcMoF"><c>IRtcMoF</c></param>
         /// <param name="encX">ENC X(0)</param>
         /// <param name="encY">ENC Y(1)</param>
-        private void Mof_OnEncoderChanged(IRtcMoF rtcMoF, int encX, int encY)
+        private void Mof_OnEncoderChanged(SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF rtcMoF, int encX, int encY)
         {
             if (!stsBottom.IsHandleCreated || this.IsDisposed)
                 return;
@@ -1836,7 +1838,7 @@ namespace Demos
         /// Event handler for powermeter data has cleared
         /// </summary>
         /// <param name="powerMeter"><c>IPowerMeter</c></param>
-        private void PowerMeter_OnCleared(IPowerMeter powerMeter)
+        private void PowerMeter_OnCleared(SpiralLab.Sirius2.PowerMeter.IPowerMeter powerMeter)
         {
             if (!stsBottom.IsHandleCreated || this.IsDisposed)
                 return;
@@ -1849,7 +1851,7 @@ namespace Demos
         /// Event handler for powermeter has started
         /// </summary>
         /// <param name="powerMeter"><c>IPowerMeter</c></param>
-        private void PowerMeter_OnStarted(IPowerMeter powerMeter)
+        private void PowerMeter_OnStarted(SpiralLab.Sirius2.PowerMeter.IPowerMeter powerMeter)
         {
             if (!stsBottom.IsHandleCreated || this.IsDisposed)
                 return;
@@ -1862,7 +1864,7 @@ namespace Demos
         /// Event handler for powermeter has stopped
         /// </summary>
         /// <param name="powerMeter"><c>IPowerMeter</c></param>
-        private void PowerMeter_OnStopped(IPowerMeter powerMeter)
+        private void PowerMeter_OnStopped(SpiralLab.Sirius2.PowerMeter.IPowerMeter powerMeter)
         {
         }
         /// <summary>
@@ -1871,7 +1873,7 @@ namespace Demos
         /// <param name="powerMeter"><c>IPowerMeter</c></param>
         /// <param name="dt"><c>DateTime</c></param>
         /// <param name="watt">Measured data(W)</param>
-        private void PowerMeter_OnMeasured(IPowerMeter powerMeter, DateTime dt, double watt)
+        private void PowerMeter_OnMeasured(SpiralLab.Sirius2.PowerMeter.IPowerMeter powerMeter, DateTime dt, double watt)
         {
             if (!stsBottom.IsHandleCreated || this.IsDisposed)
                 return;

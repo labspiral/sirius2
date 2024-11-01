@@ -748,7 +748,7 @@ namespace Demos
             }
         }
         /// <summary>
-        /// Print last executed Job's Characteristic
+        /// Print characteristic for last executed job
         /// </summary>
         /// <param name="rtc"></param>
         static void PrintJobCharacteristic(Rtc6SyncAxis rtc)

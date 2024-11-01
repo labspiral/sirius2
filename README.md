@@ -2,7 +2,7 @@
 
 **1. Descriptions**
 
- SuperEasy Library for Control Scanner and Laser
+ SuperEasy Library for Control Scanner, Laser and Vision
 
 
 ![3dengine](https://user-images.githubusercontent.com/58460570/271742677-780f1905-9248-4873-b457-685cb2b45292.png)
@@ -20,6 +20,20 @@
 ![script](https://github.com/labspiral/sirius2/assets/58460570/6fab7058-a88b-443d-a7f0-a8c0a914c01a)
 
 ![gridchecker](https://user-images.githubusercontent.com/58460570/279851007-10e24e50-c205-4c68-a62f-2410af495d2d.png)
+
+![calibration_source](https://github.com/user-attachments/assets/bb83f626-7c8a-4ba8-a83e-1a2782ab4c7c)
+
+![calibration_result](https://github.com/user-attachments/assets/3adb67af-59e9-43ae-a2bb-1b89419aae55)
+
+![stitch_image](https://github.com/user-attachments/assets/4319bd3a-99e7-4851-bc99-2c40a3cf96ce)
+
+![stitch_calibration](https://github.com/user-attachments/assets/0c1c3ba1-f6ca-4c21-a5ef-8535e16f850f)
+
+![barcode_finder](https://github.com/user-attachments/assets/c9800429-748d-4826-bebc-b797d97cee3f)
+
+![pattern_finder](https://github.com/user-attachments/assets/f9715acc-aefc-47d9-9494-1676ab39c080)
+
+![sirius_basic](https://github.com/user-attachments/assets/0eb745a5-bda7-4714-8790-15c130507503)
 
 
 ----
@@ -51,12 +65,12 @@
     - Cone 
     - Cylinder 
     - Points cloud  
- - Support many kinds of laser source controls.
+ - Support many kinds of laser controls.
     - Frequency
     - Duty cycle
     - Analog output
     - Digital output 
- - Support specific laser source vendors.
+ - Support specific laser source vendors to control and communication.
     - AdvancedOptoWave (AOPico, AOPico Precision, Fotia)
     - Coherent (Avia LX, Diamond C-Series)
     - IPG (YLP N, Type D, Type E, ULP N)
@@ -70,22 +84,48 @@
  - Support remote controls.
     - TCP/IP communication
     - Serial(RS-232) communication
- - Various pre-built entities
+ - Various pre-built entities.
     - Point(s), Line, Arc, Polyline, Triangle, Rectangle, Spiral, Trepan, Curve, Raster
     - Layer, Group, Block and Block insert
     - Text, SiriusText, ImageText, Circular text
     - Image, Stitched image, DXF, PDF, ZPL(zebra programming language)
-    - Barcode, QR code, DataMatrix, PDF417
+    - QR code, DataMatrix, PDF417 and Barcodes
     - Plane, Cone(or cylinder), STL(Stereo lithography), Point cloud
     - and more control entities
  - Support powerful external script by C# language.
  - Open source codes with editor, marker, remote and laser source control for customization.
-
+ 
 
 ----
 
 
-**3. What's major changes in Sirius2**
+**3.(optional) Vision**
+     
+ - Release status: developer preview version
+ - Support many kinds of cameras.
+    - Basler Pylon camera
+    - Sentech camera
+    - Crevis camera
+    - Euresys grabber
+    - WebCam (installed on Windows)
+    - RTSP (realtime streaming protocol) camera 
+ - Supported co-axial camera behind of scanner for merge stitched images.
+    - merge stitched images into a large one by automatically
+    - integrated RTC control to acquire stitched images
+ - Supported image processing for line, cross, circle, blob, pattern finders.
+ - Supported 1D and 2D barcode decoders.
+    - DataMatrix, QRCode, PDF417, Code128, Code 39, Code93, Codabar, UPCEAN, I2Of5, PharmaCode, Databasr, EANUCC, Postnet, Planet, FourState and so on.
+    - Can be queried metrics information for AIM-DPM, ISO-15415, SEMI T10
+ - Calibration for resolve distortion by checkerboard and grid dots are supported.
+ - User can select image processing engine to OpenCV or VisionPro.
+ - Support powerful external script by C# language.
+ - Open source codes with ui, camera control for customization.
+
+  
+----
+
+
+**4. What's major changes in Sirius2**
 
 |                       |                         Sirius2                       |    Sirius (Deprecated)   |
 |:---------------------:|:------------------------------------------------------|:-------------------------|
@@ -102,78 +142,155 @@
 | Stream parser         |Supported                                              |x                         |
 | Multi-language        |Supported                                              |x                         |
 | Customization         |Expandable                                             |Acceptable                |
+| Option                |spirallab.sirius2.vision.dll                           |x                         |
 
 
 ----
 
 
-**4. Libraries**
+**5. Libraries**
 
  - spirallab.sirius2.dll
  - spirallab.sirius2.winforms.dll
     - Target frameworks: .NET Framework 4.7.2
-    - Target platforms: Windows 
- - Dependencies
-    - SCANLAB RTC4: (2023.11.02)
-    - SCANLAB RTC5: (2022.11.11)
-    - SCANLAB RTC6: v.1.18.0 (2024.6.17)
-    - SCANLAB syncAXIS: v.1.8.2 (2023.3.9)
-    - OpenTK: v3.3.3 (https://www.nuget.org/packages/OpenTK/3.3.3)
-    - OpenTK.GLControl: v3.3.3 (https://www.nuget.org/packages/OpenTK.GLControl/)
-  - Dependencies (optional)
-    - OphirPhotonics StarLab v3.9 (https://www.ophiropt.com/en/g/starlab-for-usb)
-    - Thorlabs OPM v5.0 (https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM)
+    - Target platforms: Windows x64 
+    - Dependencies
+       - SCANLAB RTC4 2023.11.02 (https://www.scanlab.de/en/products/software/rtc-software/download)
+       - SCANLAB RTC5 2024.09.27 (https://www.scanlab.de/en/products/software/rtc-software/download)
+       - SCANLAB RTC6 v.1.18.0 (2024.6.17) (https://www.scanlab.de/en/products/software/rtc-software/download)
+       - SCANLAB syncAXIS: v.1.8.2 (2023.3.9) (https://www.scanlab.de/en/products/software-calibration/syncaxis/download)
+       - OpenTK: v3.3.3 (https://www.nuget.org/packages/OpenTK/3.3.3)
+       - OpenTK.GLControl: v3.3.3 (https://www.nuget.org/packages/OpenTK.GLControl/)
+       - OphirPhotonics StarLab v3.9 (https://www.ophiropt.com/en/g/starlab-for-usb)
+       - Thorlabs OPM v5.0 (https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM)
+       - Zxing v0.16.9.0 (https://github.com/zxing/zxing/releases)
+       - Google OrTools 9.6.2534.0 (https://github.com/google/or-tools/releases)
+ - (optional) spirallab.sirius2.vision.dll 
+    - Target frameworks: .NET Framework 4.7.2
+    - Target platforms: Windows x64
+    - Dependencies
+       - Cognex VisionPro v9.8 (https://support.cognex.com/ko-kr/downloads/detail/visionpro/4464/1033)
+       - Basler Pylon runtime v8.0.0 (https://www2.baslerweb.com/en/downloads/software-downloads/software-pylon-8-0-0-windows/)
+       - Sentech v1.2.2 (https://sentech.co.jp/en/information/c/update)
+       - Euresys Multicam v6.19.0.5375 (https://www.euresys.com/en/download-area/)
+       - Crevis MCam40 SDK v4.8.0.8354 (https://www.crevis.co.kr/Customer/download)
+       - OpenCVSharp v4.8.0.20230708 (https://www.nuget.org/packages/OpenCvSharp4/4.8.0.20230708)
 
 
 ----
 
 
-**5. How to use ?**
+**6. How to use ?**
 
+ - (Basic) Add reference files into your project
+    - spirallab.sirius2.dll
+    - spirallab.sirius2.winforms.dll
+    - OpenTK.dll 
+ - (optional) Add reference files into your project 
+    - spirallab.sirius2.vision.dll
  - Copy all files and sub-directories at 'bin' to your working(or output) directory
- - Add reference files 'spirallab.sirius2.dll', 'spirallab.sirius2.winforms.dll', 'OpenTK.dll'(optional) into your project
   
   
  ----
 
 
-**6. Examples**
+**7. Examples**
 
- - Demo 'init' console project for beginner
- - Demo 'laserpower' console project for customized laser source (open sourced)
- - Demo 'powermeter' console project for customized powermeter (open sourced)
+ - Demo 'init' console project for RTC beginner 
+ - Demo 'io' console project for manipulate DIO at RTC
+ - Demo 'laser' console project for various laser source
+ - Demo 'laserpower' console project for customized laser source 
+    - Open sourced laser output power control
+ - Demo 'matrix' console project for push/pop matrix at stack 
+ - Demo 'fieldcorrection' console project for do scanner field correction
+ - Demo 'wobbel' console project for mark wobbel shapes
+ - Demo '3d' console project for control 3d space by x,y and z position
+ - Demo 'raster' console project for bitmap(or rasterized) operation
+ - Demo 'skywriting' console project for sky-writing operation (RTC5,6)
+ - Demo 'alc' console project for automatic laser control (aka. Ramp)
+ - Demo 'characterset' console project for download(or register) font family
+ - Demo 'hardjump' console project for hard jump and select specific tuning mode
+ - Demo 'mof_xy' console project for marking on the fly with x,y encoders
+ - Demo 'mof_angular' console project for marking on the fly with rotate encoder
+ - Demo 'optimize' console project for how to optimize laser and scanner delays
+ - Demo 'timed' console project for timed jump and mark control
+ - Demo 'powermeter' console project for customized powermeter 
+    - Open sourced PowerMeter control
+ - Demo 'powermap' console project for customized power mapping
+    - Open sourced power mapping, verify and compensate
+ - Demo 'multiple' console project for control multiple RTC cards
+ - Demo 'scanahead' console project for specific SCANahead control (RTC6)
+ - Demo 'syncaxis' console project for specific XL-SCAN control (RTC6 + ACS motion)
+  
  - Demo 'editor_basic', 'editor_basic_v2'  winforms project for beginner
-    - config 'config.ini' for RTC4, RTC5 or RTC6
-    - config 'config_syncaxis.ini' for XL-SCAN
+    - config [RTC0], [LASER0] at 'config.ini' for RTC4,5,6
+    - config [RTC0], [LASER0] at 'config_syncaxis.ini' for XL-SCAN
  - Demo 'editor_entity', 'editor_entity_v2' winforms project for create entities
  - Demo 'editor_barcode' winforms project for mark individual barcode entities
  - Demo 'editor_mof' winforms project for encoder based MoF
  - Demo 'editor_mof_barcode' winforms project for mark text, barcode by script with MoF
  - Demo 'editor_mof_text' winforms project for mark out of ranged texts by script with MoF
  - Demo 'editor_dio' winforms project for control digital input/output
- - Demo 'editor_remote' winforms project for customized tcp/ip server (open sourced)
+ - Demo 'editor_remote' winforms project for customized tcp/ip server
+   - Open sourced Remote control
  - Demo 'editor_multiple' winforms project for multiple RTC instances
- - Demo 'editor_marker' winforms project for customized marker (open sourced)
- - Demo 'editor_laser' winforms project for customized laser UI (open sourced)
- - Demo 'editor_ui' winforms project for customized ui (open sourced)
+    - config [RTC0], [LASER0] and [RTC1], [LASER1] at 'config.ini' 
+ - Demo 'editor_marker' winforms project for customized marker 
+    - Open sourced Marker control
+ - Demo 'editor_laser' winforms project for customized laser UI 
+    - Open sourced Laser control
+ - Demo 'editor_ui' winforms project for customized ui 
+    - Open sourced SiriuseEitorControl, SiriuseEitorControlv2 UI
+    
+ - Demo 'vision_basic', 'vision_basic_v2' winforms project for beginner
+    - config [CAMERA0] at 'config.ini' 
+ - Demo 'vision_stitch' winforms project for integrated with scanner control
+ - Demo 'vision_camera' winforms project for customized camera
+    - Open sourced Camera control
+ - Demo 'vision_ui' winforms project for customized ui 
+    - Open sourced SiriuseVisionControl, SiriuseVisionControlv2 UI
+    
+ - Demo 'sirius_basic' winforms project for integrated editor and vision
+    - config [RTC0], [LASER0] and [CAMERA0]
+    - auto focuse
+    - extract scanner field correction data from inspection result
+    - extract marker offset position from inspection result
 
 
 ----
 
   
-**7. Copyrights**
+**8. Copyrights**
  
  - Evaluation copy mode would be activated during 30 mins without license.
  - Homepage: http://spirallab.co.kr
  - Email: <a href="mailto:hcchoi@spirallab.co.kr">hcchoi@spirallab.co.kr</a> 
  - RTC and syncAXIS are trademarks of (c)SCANLAB GmbH.
- - All rights reserved. 2021-2024 Copyright to (c)SpiralLAB. 
+ - All rights reserved. 2018-2024 Copyright to (c)SpiralLAB. 
  
 
 ----
 
 
-**8. Version history**
+**9. Version history**
+
+* 2024.11.1 v.1.45.2100
+  - added) spirallab.sirius2.vision.dll 
+     - added) demo projects for machine vision
+        - 'vision_basic', 'vision_basic_v2' for beginner
+        - 'vision_stitch' for stitch images with control RTC
+        - 'vision_camera' : customized camera 
+        - 'vision_ui' : customized ui (open sourced) 
+  - added) 'sirius_basic' demo project 
+     - integrated editor and vision   
+  - updated) SCANLAB RTC5 dll v2024.09.27
+  - added) scanner jog control window at manual screen
+     - Jog with arrow keys and CTRL, ALT, SHIFT combination
+  - fixed) matrix
+     - support scale and inversion at entity
+     - support scale and inversion at 4x4 basematrix with matrixstack
+     - editable primary/secondary internal 3x3 matrix
+     - IExtractPolyline.ToPolylines is not remove internal matrix data
 
 * 2024.9.30 v.1.44.1780
   - added) cross entity 

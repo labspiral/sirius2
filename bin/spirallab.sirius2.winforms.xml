@@ -2702,41 +2702,6 @@
               Basic과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Cols_DESC">
-            <summary>
-              Column Count(s)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Cols_DISP">
-            <summary>
-              Cols과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Data_C">
-            <summary>
-              Data과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Fixed_aspect_ratio_DESC">
-            <summary>
-              Fixed Aspect Ratio과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Fixed_aspect_ratio_DISP">
-            <summary>
-              Fixed aspect ratio과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Height_DESC">
-            <summary>
-              Cell Height (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Height_DISP">
-            <summary>
-              Height과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imagefilename_DESC">
              <summary>
                Target Image File to Update(or Load)
@@ -2778,32 +2743,6 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imagesave_DISP">
             <summary>
               Image save과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Rows_DESC">
-            <summary>
-              Row Count(s)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Rows_DISP">
-            <summary>
-              Rows과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Transparent_DESC">
-             <summary>
-               Image Transparent 
-            Range: 0.1~1.0과(와) 유사한 지역화된 문자열을 찾습니다.
-             </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Width_DESC">
-            <summary>
-              Cell Width (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Width_DISP">
-            <summary>
-              Width과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.raster">
@@ -5400,7 +5339,7 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Align_DESC">
              <summary>
                Looks up a localized string similar to Translate for Alignment (mm).
-            Can be Edited if using Custom Alignment..
+            Can be Edited by User Except None..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Align_DISP">
@@ -5411,7 +5350,7 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Alignment_DESC">
              <summary>
                Looks up a localized string similar to Alignments. 
-            ModelMatrix = ModelAlign * ModelScale * ModelRotate * ModelTranslate..
+            ModelMatrix = ModelAlign * ModelScale * ModelRotate * ModelTranslate. (Except None).
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Alignment_DISP">
@@ -6750,12 +6689,14 @@
             <summary>
             Clear all images
             </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.ClearImage(System.Int32)">
             <summary>
             Clear image at target index
             </summary>
             <param name="index">Target index (0,1,2,...)<br/>Starting from left/top to right bottom<br/>Range: 0 ~ Rows*Cols-1</param>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.LoadImage(System.Int32,System.String)">
             <summary>
@@ -6786,7 +6727,7 @@
             Load image at target index from <c>System.Drawing.Bitmap</c> 
             </summary>
             <param name="index">Target index (0,1,2,...)<br/>Starting from left/top to right bottom<br/>Range: 0 ~ Rows*Cols-1</param>
-            <param name="bitmap"><c>System.Drawing.Bitmap</c></param>
+            <param name="bitmap"><c>System.Drawing.Bitmap</c><br/>Target bitmap will be cloned internally.</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityImageStitched.GetCellPosition(System.Int32,System.Double@,System.Double@)">
@@ -7225,39 +7166,6 @@
             <summary>
             Regen internal hatch if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">IsHatchable</see> is <c>True</c>
             </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.Translate(System.Double,System.Double,System.Double)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.Translate(OpenTK.Vector3)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.Translate(OpenTK.Vector2)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.RotateX(System.Double)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.RotateY(System.Double)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.RotateZ(System.Double)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.Rotate(System.Double,System.Double,System.Double)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.Rotate(OpenTK.Vector3)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.Scale(System.Double)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.Scale(System.Double,System.Double,System.Double)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.Scale(OpenTK.Vector3)">
-            <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityRampEnd">
             <summary>
@@ -8248,10 +8156,11 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.IExtractPolyline.ToPolylines">
             <summary>
-            Extract array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see>
+            Extract internal pathes as array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see>
             </summary>
             <remarks>
-            Returned <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> are transformed(or applied) by model matrix.
+            Returned <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> are not applied matrix transformation. <br/>
+            Like as align, scale, rotate and translate matrixes are copied from it's parent entity. <br/>
             </remarks>
             <returns>Array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see></returns>
         </member>
@@ -8314,9 +8223,11 @@
             <remarks>
             Expand or shrink <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> from <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. <br/>
             This operations leads to CPU burst. so need to consider optimized calls. <br/> 
+            Returned <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> are not applied matrix transformation. <br/>
+            Like as align, scale, rotate and translate matrixes are copied from it's parent entity. <br/>
             </remarks>
             <param name="hatchJoint"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">HatchJoints</see></param>
-            <param name="expandDistance">Expand(or shrink) distance (mm)<br/>Positive(+): expand <br/>Negative(-): shrink <br/></param>
+            <param name="distance">Expand(or shrink) distance (mm)<br/>Positive(+): expand <br/>Negative(-): shrink <br/></param>
             <returns>Array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.IArrayOfOffset">
@@ -8427,7 +8338,6 @@
             </code>
             </summary>    
             <remarks>
-            Possible to hatch within closed shapes only. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IHatchable.IsClosed">
@@ -8444,9 +8354,13 @@
             </summary>
             <remarks>
             Used with internal array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> from <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. <br/>
+            If figure path are overlapped like as 'O' shape, then outer boundary should have a clockwise orientation, while the inner boundary (the hole) should have a counterclockwise orientation. <br/>
+            User can change rewind(or reverse) direction by using <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IReversable.Reverse">IReversable.Reverse</see>. <br/>
             Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values for <c>HatchModes.Line</c> mode. <br/>
             Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>angle2</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values for <c>HatchModes.CrossLine</c> mode. <br/>
             Used with <c>HatchJoints</c>, <c>internal</c> values for <c>HatchModes.Polygon</c> mode. <br/>
+            Returned <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityGroup">EntityGroup</see> are not applied matrix transformation. <br/>
+            Like as align, scale, rotate and translate matrixes are copied from it's parent entity. <br/>
             </remarks>
             <param name="hatchMode"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchModes">HatchModes</see></param>
             <param name="hatchJoint"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">HatchJoints</see></param>
@@ -10504,6 +10418,9 @@
             <summary>
             EntityPolyline3D entity
             </summary>
+            <remarks>
+            Not supported bulge but only array of x,y,z vertex. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline3D.IsClosed">
             <summary>
@@ -13037,28 +12954,26 @@
             <param name="entity">Source <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBase">EntityBase</see></param>
             <returns>Deep cloned <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBase">EntityBase</see></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.IsEqual(System.Drawing.Color)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Regen">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.RegenInOut">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.RegenAlign">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.InternalResetMatrixes(SpiralLab.Sirius2.Winforms.Entity.EntityBase,SpiralLab.Sirius2.Winforms.Entity.IEntity)">
             <summary>
-            Re-adjust position for align by <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Alignment">Alignment</see> value
-            </summary>
-            <remarks>
-            Used with <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.BBox">IEntity.BBox</see> <br/>
-            </remarks>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.ResetModelMatrix(SpiralLab.Sirius2.Winforms.Entity.EntityBase)">
-            <summary>
-            Reset(or identity) model matrix 
+            Reset(by identity) with model rotate, translate, scale, align and aligment also
+            <para>
+            <c>entity.Parent</c> will be set as <c>null</c> <br/>
+            </para>
             </summary>
             <param name="entity"><c>EntityBase</c></param>
+            <param name="parent">Parent <c>IEntity</c></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.InternalMergeMatrixes(SpiralLab.Sirius2.Winforms.Entity.EntityBase,SpiralLab.Sirius2.Winforms.Entity.EntityBase)">
+            <summary>
+            Merge(or accumulate) matrixes with  model rotate, translate, scale, align and aligment also
+            <para>
+            Accumulated its own matrixes also. <br/>
+            <c>to.Parent</c> will be set as <c>null</c> <br/>
+            </para>
+            </summary>
+            <param name="from">Origin <c>EntityBase</c></param>
+            <param name="to">Target <c>EntityBase</c></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.InternalHatchByLine(SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D[],SpiralLab.Sirius2.Winforms.Entity.HatchJoints,OpenTK.Vector3,OpenTK.Vector3,SpiralLab.Sirius2.Winforms.Entity.EntityGroup,System.Boolean,System.Double,System.Double,System.Double,System.Double)">
             <summary>
@@ -13070,8 +12985,8 @@
             </remarks>
             <param name="polylines">Source array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> </param>
             <param name="hatchJoint"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">HatchJoints</see></param>
-            <param name="min">Source dimension of min</param>
-            <param name="max">Source dimension of max</param>
+            <param name="min">Source dimension for min x,y,z</param>
+            <param name="max">Source dimension for max x,y,z</param>
             <param name="hatchedGroup">Result hatch into <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityGroup">EntityGroup</see></param>
             <param name="isZigZag">ZigZag</param>
             <param name="angle">Angle (°)</param>
@@ -13094,6 +13009,23 @@
             <param name="interval">Interval (mm)</param>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.IsEqual(System.Drawing.Color)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Regen">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.RegenInOut">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.RegenAlign">
+            <summary>
+            Re-adjust position for align by <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Alignment">Alignment</see> value
+            </summary>
+            <remarks>
+            Used with <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.BBox">IEntity.BBox</see> <br/>
+            </remarks>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
             <inheritdoc/>
         </member>
@@ -13107,6 +13039,18 @@
             <param name="marker"><see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see></param>
             <param name="entity"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>
             <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.InternalRenderConvertedTextData(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <summary>
+            Do convert text data by <see cref="T:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible">ITextConvertible</see> and do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Regen">Regen</see>. <br/>
+            Do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IRenderable.Render(SpiralLab.Sirius2.Winforms.IView)">IRenderable.Render(IView)</see> also. <br/>
+            </summary>
+            <remarks>
+            Used with <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.View">IMarker.View</see>. <br/>
+            Used with <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.Regen">IEntity.Regen</see>. <br/>
+            Used with <see cref="M:SpiralLab.Sirius2.Winforms.IView.Render">IView.Render</see>. <br/>
+            </remarks>
+            <param name="marker"><see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see> </param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Render(SpiralLab.Sirius2.Winforms.IView)">
             <inheritdoc/>
@@ -13149,18 +13093,6 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Scale(OpenTK.Vector3)">
             <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.ConvertTextDataAndUpdate(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
-            <summary>
-            Do convert text data by <see cref="T:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible">ITextConvertible</see> and do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.Regen">Regen</see>. <br/>
-            Do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IRenderable.Render(SpiralLab.Sirius2.Winforms.IView)">IRenderable.Render(IView)</see> also. <br/>
-            </summary>
-            <remarks>
-            Used with <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.View">IMarker.View</see>. <br/>
-            Used with <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.Regen">IEntity.Regen</see>. <br/>
-            Used with <see cref="M:SpiralLab.Sirius2.Winforms.IView.Render">IView.Render</see>. <br/>
-            </remarks>
-            <param name="marker"><see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see> </param>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.Alignments">
             <summary>
@@ -13396,10 +13328,9 @@
             Model align
             </summary>
             <remarks>
-            Translate for alignment by <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Alignment">Alignment</see> value. <br/>
-            Recalculated whenever <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Alignment">Alignment</see> has modified. <br/>
-            Real alignment position = <c>BBox.Min</c> + <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelAlign">ModelAlign</see>. <br/>
-            User can edit if <see cref="F:SpiralLab.Sirius2.Winforms.Entity.Alignments.Custom">Alignments.Custom</see> has used. <br/>
+            Translate for alignment by <see cref="T:SpiralLab.Sirius2.Winforms.Entity.Alignments">Alignments</see> value. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.Alignments">Alignments</see> except <see cref="F:SpiralLab.Sirius2.Winforms.Entity.Alignments.None">Alignments.None</see>. <br/>
+            Base position is left/bottom position and translated by -<c>BBox.Min</c> + <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelAlign">ModelAlign</see>. <br/>
             <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelMatrix">ModelMatrix</see> = <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelAlign">ModelAlign</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelScale">ModelScale</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelRotate">ModelRotate</see> * <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelTranslate">ModelTranslate</see>. <br/>
             </remarks>
         </member>
@@ -13465,11 +13396,11 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.IEntity.IsEqual(System.Drawing.Color)">
             <summary>
-            Indicates whether the current color of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> is equal to another color
+            Indicates whether the current color of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> is equal to another one
             </summary>
             <remarks>
             Compared 32-bit ARGB value of <see cref="T:System.Drawing.Color">System.Drawing.Color</see> only. <br/>
-            <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Color">IEntity.Color</see> is used for find <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see> entity also. <br/> 
+            <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Color">IEntity.Color</see> is used for find <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see> also. <br/> 
             </remarks>
             <param name="color"><see cref="T:System.Drawing.Color">System.Drawing.Color</see></param>
             <returns><c>True</c>: current color is equal to assigned color.<br/><c>False</c>: current color is not equal to assigned color</returns>
@@ -13773,25 +13704,26 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
-            Do hatch for closed path at <c>IEntity</c>
+             Do hatch at closed path(or figure) within <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
             <para>It would be hatched by 2D (Z=0) coordinates only</para>
             </summary>
             <remarks>
-            Used with internal array of <c>EntityPolyline</c> from <c>IEntity</c>. <br/>
+            Used with internal array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> from <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. <br/>
+            If figure path are overlapped like as 'O' shae, then outer boundary should have a clockwise orientation, while the inner boundary (the hole) should have a counterclockwise orientation. <br/>
+            User can change rewind(or reverse) direction by using <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IReversable.Reverse">IReversable.Reverse</see>. <br/>
             Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values for <c>HatchModes.Line</c> mode. <br/>
             Used with <c>HatchJoints</c>, <c>isZigZag</c>, <c>angle</c>, <c>angle2</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values for <c>HatchModes.CrossLine</c> mode. <br/>
             Used with <c>HatchJoints</c>, <c>internal</c> values for <c>HatchModes.Polygon</c> mode. <br/>
-            Model matrix are not applied but accumulated into hatched <c>EntityGroup</c>. <br/>
             </remarks>
-            <param name="hatchMode"><c>HatchModes</c></param>
-            <param name="hatchJoint"><c>HatchJoints</c></param>
-            <param name="isZigZag">ZigZag</param>
-            <param name="angle">Angle 1st</param>
-            <param name="angle2">Angle 2nd for <c>CrossLine</c></param>        
-            <param name="interval">Interval (mm)</param>
-            <param name="exclude">Exclude (mm)</param>        
-            <param name="shift">Shift offset (mm)</param>  
-            <returns>Hatched <c>EntityGroup</c> entity</returns>
+            <param name="hatchMode"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchModes">HatchModes</see></param>
+            <param name="hatchJoint"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">HatchJoints</see></param>
+            <param name="isZigZag">ZigZag or not<br/>Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Line">Line</see>, <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see>. <br/></param>      
+            <param name="angle">Angle 1st<br/>Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Line">Line</see>, <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see>. <br/></param>      
+            <param name="angle2">Angle 2nd<br/>Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see> only. <br/></param>        
+            <param name="interval">Interval (mm)<br/>Must be > 0 <br/></param>
+            <param name="exclude">Exclude (mm)<br/>Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Line">Line</see>, <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see>. <br/></param>      
+            <param name="shift">Shift offset (mm)<br/>Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Line">Line</see>, <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see>. <br/>Default: 0 <br/></param>      
+            <returns>Hatched <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityGroup">EntityGroup</see> entity</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.Regen">
             <inheritdoc/>
@@ -14824,13 +14756,6 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.Expand(SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Double)">
             <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.IsClockwisePolygon(OpenTK.Vector3[])">
-            <summary>
-            Clockwise winding or not
-            </summary>
-            <param name="vertices">Array of <see cref="T:OpenTK.Vector3">Vector3</see></param>
-            <returns><c>True</c>: CW winding<br/><c>False</c>: CCW winding</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.Clip(SpiralLab.Sirius2.Winforms.Entity.BoundingBox)">
             <inheritdoc/>
@@ -17268,7 +17193,7 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.BitmapHelper">
             <summary>
-            BitmapHelper
+             Bitmap helper to manipulate 
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.EncodeTo(System.Drawing.Bitmap)">
@@ -17328,6 +17253,15 @@
             <param name="bitmap">Created <see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></param>
             <param name="sizef">Created size of <see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></param>
             <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.BitmapHelper.FlipAndRotate(System.Drawing.Bitmap,System.Boolean,System.Int32)">
+            <summary>
+            Rotate and flip input bitmap
+            </summary>
+            <param name="bitmap"><see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></param>
+            <param name="isFlipX">Fip x or not</param>
+            <param name="angle">Rotate angle (degree)</param>
+            <returns><see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.MathHelper">
             <summary>
@@ -17571,6 +17505,9 @@
         <member name="T:SpiralLab.Sirius2.Winforms.Common.ScriptFileBrowser">
             <summary>
             ScriptFileBrowser
+            <para>
+            For .cs script file
+            </para>
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Common.ScriptFileBrowser.#ctor">
@@ -19151,6 +19088,12 @@
         <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnEnded">
             <inheritdoc/>
         </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnSimulationStarted">
+            <inheritdoc/>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.OnSimulationEnded">
+            <inheritdoc/>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.Index">
             <inheritdoc/>
         </member>
@@ -19435,6 +19378,23 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifyEnded(System.Boolean)">
             <summary>
             Notify marker has finished event
+            </summary>
+            <remarks>
+            Consider as its working within async threads. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifySimulationStarted(SpiralLab.Sirius2.Winforms.Entity.IEntity[])">
+            <summary>
+            Notify simulation has started event
+            </summary>
+            <param name="entities">Array of <c>IEntity</c></param>
+            <remarks>
+            Consider as its working within async threads. <br/>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.NotifySimulationEnded">
+            <summary>
+            Notify simulation has ended event
             </summary>
             <remarks>
             Consider as its working within async threads. <br/>
@@ -20206,6 +20166,25 @@
             <c>True</c> for sucess to mark. <br/>
             <c>False</c> for fail to mark. <br/>
             </remarks> 
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnSimulationStarted">
+            <summary>
+            Event for simulation has started
+            </summary>
+            <remarks>
+            Used with <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActSimulateStart(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.SimulationSpeeds)">IDocument.ActSimulateStart</see>. <br/>
+            Consider as its working within async threads. <br/>
+            </remarks>
+        </member>
+        <member name="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnSimulationEnded">
+            <summary>
+            Event for simulation has ended
+            </summary>
+            <remarks>
+            Event will be fired after <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActSimulateStart(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.SimulationSpeeds)">IDocument.ActSimulateStart</see> has finished. <br/>
+            Used with <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActSimulateStop">IDocument.ActSimulateStop</see> also. <br/>
+            Consider as its working within async threads. <br/>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Index">
             <summary>
@@ -21516,7 +21495,7 @@
             </para>
             </summary>
             <remarks>
-            Used when <see cref="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.SaveSirius(System.String,SpiralLab.Sirius2.Winforms.IDocument)">DocumentSerializer.SaveSirius</see> (<see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActSave(System.String)">IDocument.ActSave</see> also). <br/>
+            Used when <see cref="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.Save(System.String,SpiralLab.Sirius2.Winforms.IDocument)">DocumentSerializer.SaveSirius</see> (<see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActSave(System.String)">IDocument.ActSave</see> also). <br/>
             Used by internally. Do not edit. <br/>
             </remarks>
         </member>
@@ -21524,7 +21503,7 @@
             <summary>
             Type of internal objects for json deserialization 
             <para>
-            Used when <see cref="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.OpenSirius(System.String,SpiralLab.Sirius2.Winforms.IDocument)">DocumentSerializer.OpenSirius</see> (<see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActOpen(System.String)">IDocument.ActOpen</see> also). <br/>
+            Used when <see cref="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.Open(System.String,SpiralLab.Sirius2.Winforms.IDocument)">DocumentSerializer.Open</see> (<see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActOpen(System.String)">IDocument.ActOpen</see> also). <br/>
             User can add own types for deserialization. <br/>
             </para>
             </summary>
@@ -21697,7 +21676,7 @@
             Default font for create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityText">EntityText</see>
             <para>
             Must be one of installed fonts family name. <br/>
-            Default: "Arial" <br/>
+            Default: "Segoe UI" <br/>
             </para>
             </summary>
             <remarks>
@@ -22206,6 +22185,72 @@
             <param name="block"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlock">EntityBlock</see></param>
             <returns>Array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert">EntityBlockInsert</see></returns>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.IsCloneBaseMatrixWhenSimulation">
+            <summary>
+            Clone original <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">IRtc.MatrixStack.BaseMatrix</see> when simulation start or not
+            <para>
+            Used with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">IRtc.MatrixStack.BaseMatrix</see> only. <br/> 
+            Useful when scan-head attached rotated(or scaled, inverted) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">IRtc.MatrixStack.BaseMatrix</see>. <br/>
+            Not used with <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.CtlMatrix(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Numerics.Matrix3x2)">IRtc.CtlMatrix</see>. it's RTC INTERNAL matrix. <br/>
+            Not used with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.PrimaryHeadBaseOffset">IRtc2ndHead.PrimaryHeadBaseOffset</see>. it's RTC INTERNAL matrix. <br/>
+            Not used with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc2ndHead.SecondaryHeadBaseOffset">IRtc2ndHead.SecondaryHeadBaseOffset</see>. it's RTC INTERNAL matrix. <br/>
+            Default: <c>False</c> <br/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.ViewSimulationJumpRayColor">
+            <summary>
+            Color of jump ray when be simulating
+            <para>
+            Default: <c>Vector4(0.4f, 0.4f, 0.4f, 0.9f)</c> <br/>
+            </para>
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config._ViewSimulationJumpRayColor">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.ViewSimulationMarkRayColor">
+            <summary>
+            Color of mark ray when be simulating
+            </summary>
+            <remarks>
+            Default: <c>Vector4(0.95f, 0.95f, 0, 0.85f)</c> <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config._ViewSimulationMarkRayColor">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.ViewSimulationMarkPointColor">
+            <summary>
+            Color of mark laser point when be simulating
+            <para>
+            Default: <c>Vector4(1, 0, 0, 0.75f)</c> <br/>
+            </para>
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config._ViewSimulationMarkPointColor">
+            <summary>
+            Used by internally (Do NOT edit)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.ViewSimulationMarkSphereDiameter">
+            <summary>
+            Diameter(or size of beam sphere) when do simulate laser pathes (mm)
+            <para>
+            Default: 0.3 <br/>
+            </para>
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ViewFovSize">
             <summary>
             Size of FOV area (WxH)
@@ -22414,59 +22459,6 @@
             <summary>
             Used by internally (Do NOT edit)
             </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config.ViewSimulationJumpRayColor">
-            <summary>
-            Color of jump ray when be simulating
-            <para>
-            Default: <c>Vector4(0.4f, 0.4f, 0.4f, 0.9f)</c> <br/>
-            </para>
-            </summary>
-            <remarks>
-            </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config._ViewSimulationJumpRayColor">
-            <summary>
-            Used by internally (Do NOT edit)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config.ViewSimulationMarkRayColor">
-            <summary>
-            Color of mark ray when be simulating
-            </summary>
-            <remarks>
-            Default: <c>Vector4(0.95f, 0.95f, 0, 0.85f)</c> <br/>
-            </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config._ViewSimulationMarkRayColor">
-            <summary>
-            Used by internally (Do NOT edit)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config.ViewSimulationMarkPointColor">
-            <summary>
-            Color of mark laser point when be simulating
-            <para>
-            Default: <c>Vector4(1, 0, 0, 0.75f)</c> <br/>
-            </para>
-            </summary>
-            <remarks>
-            </remarks>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config._ViewSimulationMarkPointColor">
-            <summary>
-            Used by internally (Do NOT edit)
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Config.ViewSimulationMarkSphereDiameter">
-            <summary>
-            Diameter(or size of beam sphere) when do simulate laser pathes (mm)
-            <para>
-            Default: 0.3 <br/>
-            </para>
-            </summary>
-            <remarks>
-            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ViewNormalVectorAtPointsCloudColor">
             <summary>
@@ -23311,6 +23303,15 @@
             </remarks>
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.ScannerJogDistance">
+            <summary>
+            Scanner jog distance (mm)
+            <para>
+            Used with <see cref="T:SpiralLab.Sirius2.Winforms.UI.ScannerJogForm">ScannerJogForm</see>. <br/>
+            Default: 5 mm <br/>
+            </para>
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.RemoteSeparator">
             <summary>
             Separator at remote communication
@@ -23693,8 +23694,8 @@
             </summary>
             <remarks>
             Internal document data for open and save. <br/>
-            Opened <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">InternalData</see> by <see cref="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.OpenSirius(System.String,SpiralLab.Sirius2.Winforms.IDocument)">DocumentSerializer.OpenSirius</see> <br/>
-            Saved <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">InternalData</see> by <see cref="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.SaveSirius(System.String,SpiralLab.Sirius2.Winforms.IDocument)">DocumentSerializer.SaveSirius</see> <br/>
+            Opened <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">InternalData</see> by <see cref="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.Open(System.String,SpiralLab.Sirius2.Winforms.IDocument)">DocumentSerializer.Open</see> <br/>
+            Saved <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">InternalData</see> by <see cref="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.Save(System.String,SpiralLab.Sirius2.Winforms.IDocument)">DocumentSerializer.Save</see> <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocument.Selected">
@@ -24124,6 +24125,9 @@
             Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual">RtcVirtual</see> and <see cref="T:SpiralLab.Sirius2.Winforms.Marker.MarkerVirtual">MarkerVirtual</see> by internally. <br/>
             Not applied(or converted) with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.ITextConvertible">ITextConvertible</see> (like as <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ScriptFile">ScriptFile</see> or <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.ScriptInstance">ScriptInstance</see> also). <br/>
             </para>
+            <remarks>
+            WARNING! Do not edit operation at target <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> during simulation. <br/>
+            </remarks>
             </summary>
             <param name="entities">Target array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>
             <param name="marker">Target <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see></param>
@@ -24637,7 +24641,7 @@
             <see cref="M:System.GC.Collect">GC.Collect</see> would be called. <br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.OpenSirius(System.String,SpiralLab.Sirius2.Winforms.IDocument)">
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.Open(System.String,SpiralLab.Sirius2.Winforms.IDocument)">
             <summary>
             Open document from sirius2 file
             </summary>
@@ -24648,7 +24652,7 @@
             <param name="document"><see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see></param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.SaveSirius(System.String,SpiralLab.Sirius2.Winforms.IDocument)">
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentSerializer.Save(System.String,SpiralLab.Sirius2.Winforms.IDocument)">
             <summary>
             Save document into sirius2 file
             </summary>
@@ -25460,9 +25464,11 @@
             <see cref="F:SpiralLab.Sirius2.Winforms.Remote.ControlModes.Local">Local</see> :<br/>
             - <see cref="T:SpiralLab.Sirius2.Winforms.IView">IView</see> set to editor mode. <br/>
             - Enabled buttons and menus at <see cref="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl">SiriusEditorUserControl</see> would be <c>True</c>. <br/>
+            - Enabled buttons and menus at <see cref="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2">SiriusEditorUserControlV2</see> would be <c>True</c>. <br/>
             <see cref="F:SpiralLab.Sirius2.Winforms.Remote.ControlModes.Remote">Remote</see> :<br/>
             - <see cref="T:SpiralLab.Sirius2.Winforms.IView">IView</see> set to viewer mode. <br/>
             - Disabled buttons and menus at <see cref="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl">SiriusEditorUserControl</see> would be <c>True</c>. <br/>
+            - Disabled buttons and menus at <see cref="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2">SiriusEditorUserControlV2</see> would be <c>True</c>. <br/>
             More detail codes are exist at <see cref="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.VisibilityByRemoteControlMode(System.Boolean)">VisibilityByRemoteControlMode</see>. <br/>
             </remarks>
         </member>
@@ -25568,10 +25574,10 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Remote.IRemote.EditorControl">
             <summary>
-            Assigned <see cref="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl">SiriusEditorUserControl</see> 
+            Assigned <see cref="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl">SiriusEditorUserControl</see> or <see cref="T:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2">SiriusEditorUserControlV2</see> 
             </summary>
             <remarks>
-            If assigned this value, trying to refresh UI controls like as <c>PropertyGridUserControl</c>, <c>OffsetUserControl</c> by automatically. <br/>
+            If assigned this value, UI controls like as <c>PropertyGridUserControl</c>, <c>OffsetUserControl</c> are refreshed if needed. <br/>
             </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Remote.IRemote.Start">
@@ -27401,6 +27407,61 @@
             <param name="text"></param>
             <param name="color"></param>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.UI.ScannerJogForm">
+            <summary>
+            ScannerJogUserControl
+            </summary>
+            <remarks>
+            User can insert(or create) usercontrol at own winforms. <br/>
+            Used with jog scanner position by <see cref="T:SpiralLab.Sirius2.Scanner.IScanner">IScanner</see>. <br/>
+            Transit -X (1mm): CTRL + Left <br/>
+            Transit -X (0.1mm): CTRL + ALT + Left <br/>
+            Transit -X (0.01mm): CTRL + SHIFT + ALT + Left <br/>
+            Transit +X (1mm): CTRL + Right <br/>
+            Transit +X (0.1mm): CTRL + ALT + Right <br/>
+            Transit +X (0.01mm): CTRL + SHIFT + ALT + Right <br/>
+            Transit -Y (1mm): CTRL + Down <br/>
+            Transit -Y (0.1mm): CTRL + ALT + Down <br/>
+            Transit -Y (0.01mm): CTRL + SHIFT + ALT + Down <br/>
+            Transit +Y (1mm): CTRL + Up <br/>
+            Transit +Y (0.1mm): CTRL + ALT + Up <br/>
+            Transit +Y (0.01mm): CTRL + SHIFT + ALT + Up <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Winforms.Config.KeyboardTransitXYCtrl">Config.KeyboardTransitXYCtrl</see> <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Winforms.Config.KeyboardTransitXYCtrlAlt">Config.KeyboardTransitXYCtrlAlt</see> <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Winforms.Config.KeyboardTransitXYCtrlAltShift">Config.KeyboardTransitXYCtrlAltShift</see> <br/>
+            <img src="images/scannerjog.png"/> <br/>
+            </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.ScannerJogForm.Rtc">
+            <summary>
+            <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.ScannerJogForm.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.ScannerJogForm.CreateParams">
+            <inheritdoc/>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.UI.ScannerJogForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.ScannerJogForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.ScannerJogForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.Scanner.Rtc6Form.components">
             <summary> 
             Required designer variable.
@@ -27507,6 +27568,9 @@
             <summary>
             Constructor
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.UI.ScriptUserControl.Refresh">
+            <inheritdoc/>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.UI.ScriptUserControl.components">
             <summary> 
@@ -28921,23 +28985,6 @@
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
             <img src="images/siriuseditorcontrolv2.png"/> <br/>
-            1. <see cref="T:SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl">TreeViewUserControl</see> <br/>
-            2. <see cref="T:SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl">TreeViewBlockUserControl</see> <br/>
-            3. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PenUserControl">PenUserControl</see> <br/>
-            4. <see cref="T:SpiralLab.Sirius2.Winforms.UI.EditorUserControl">EditorUserControl</see> <br/>
-            5. <see cref="T:SpiralLab.Sirius2.Winforms.UI.ScannerUserControl">RtcUserControl</see> <br/>
-            6. <see cref="T:SpiralLab.Sirius2.Winforms.UI.LaserUserControl">LaserUserControl</see> <br/>
-            7. <see cref="T:SpiralLab.Sirius2.Winforms.UI.MarkerUserControl">MarkerUserControl</see> <br/>
-            8. <see cref="T:SpiralLab.Sirius2.Winforms.UI.ManualUserControl">ManualUserControl</see> <br/>
-            9. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl">RtcDIUserControl</see> <br/>
-            10. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl">RtcDOUserControl</see> <br/>
-            11. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl">RtcDOUserControl</see> <br/>
-            12. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl">PowerMeterUserControl</see> <br/>
-            13. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl">PowerMapUserControl</see> <br/>
-            14. <see cref="T:SpiralLab.Sirius2.Winforms.UI.ScriptUserControl">ScriptUserControl</see> <br/>
-            15. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl">RemoteUserControl</see> <br/>
-            16. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl">PropertyGridUserControl</see> <br/>
-            17. <see cref="T:SpiralLab.Sirius2.Winforms.UI.LogUserControl">LogUserControl</see> <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.OnOpenBefore">
@@ -29078,67 +29125,67 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.TreeViewCtrl">
             <summary>
-            Treeview user control for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> within <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityLayer">EntityLayer</see> nodes
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl">TreeViewUserControl</see> user control for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> within <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityLayer">EntityLayer</see> nodes
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.TreeViewBlockCtrl">
             <summary>
-            Treeview user control for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlock">EntityBlock</see> nodes
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl">TreeViewBlockUserControl</see> user control for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlock">EntityBlock</see> nodes
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.PropertyGridCtrl">
             <summary>
-            PropertyGrid user control for properties of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl">PropertyGridUserControl</see> user control for properties of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.EditorCtrl">
             <summary>
-            Editor(by OpenTK) user control for rendering view 
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.EditorUserControl">EditorUserControl</see> user control for rendering view 
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.PenCtrl">
             <summary>
-            User control for list of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.PenUserControl">PenUserControl</see> user control for list of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.LaserCtrl">
             <summary>
-            PropertyGrid user control for <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.LaserUserControl">LaserUserControl</see> user control for <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.RtcCtrl">
             <summary>
-            PropertyGrid user control for <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.ScannerUserControl">ScannerUserControl</see> user control for <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.MarkerCtrl">
             <summary>
-            PropertyGrid user control for <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.MarkerUserControl">MarkerUserControl</see> user control for <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.OffsetCtrl">
             <summary>
-            User control for list of <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Offsets">IMarker.Offsets</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.OffsetUserControl">OffsetUserControl</see> user control for list of <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Offsets">IMarker.Offsets</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.RtcDICtrl">
             <summary>
-            User control for RTC DI (EXTENSION1 and LASER port) for <see cref="T:SpiralLab.Sirius2.IO.IDInput">IDInput</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl">RtcDIUserControl</see> user control for RTC DI (EXTENSION1 and LASER port) for <see cref="T:SpiralLab.Sirius2.IO.IDInput">IDInput</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.RtcDOCtrl">
             <summary>
-            User control for RTC DO (EXTENSION1,2 and LASER port) for <see cref="T:SpiralLab.Sirius2.IO.IDOutput">IDOutput</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl">RtcDOUserControl</see> user control for RTC DO (EXTENSION1,2 and LASER port) for <see cref="T:SpiralLab.Sirius2.IO.IDOutput">IDOutput</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.ManualCtrl">
             <summary>
-            User control for manual control
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.ManualUserControl">ManualUserControl</see> user control for manual control
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.ManualUserCtrl">
             <summary>
-            UserControl for customized manual control
+            Customized(or replaced) <see cref="T:SpiralLab.Sirius2.Winforms.UI.ManualUserControl">ManualUserControl</see> by <see cref="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.ManualUserCtrl">ManualUserCtrl</see> for manual control
             </summary>
             <remarks>
             Replaced internal <c>ManualCtrl</c> as external control <br/>
@@ -29146,27 +29193,32 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.PowerMeterCtrl">
             <summary>
-            User control for for <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl">PowerMeterUserControl</see> user control for for <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.PowerMapCtrl">
             <summary>
-             User control for <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">IPowerMap</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl">PowerMapUserControl</see> user control for <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">IPowerMap</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.ScriptCtrl">
             <summary>
-            User control for <see cref="T:SpiralLab.Sirius2.Winforms.Script.IScript">IScript</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.ScriptUserControl">ScriptUserControl</see> user control for <see cref="T:SpiralLab.Sirius2.Winforms.Script.IScript">IScript</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.RemoteCtrl">
             <summary>
-            PropertyGrid user control for <see cref="T:SpiralLab.Sirius2.Winforms.Remote.IRemote">IRemote</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl">RemoteUserControl</see> user control for <see cref="T:SpiralLab.Sirius2.Winforms.Remote.IRemote">IRemote</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.LogCtrl">
             <summary>
-            User control for logged messages
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.LogUserControl">LogUserControl</see> user control for logged messages
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.IsShowLogCtrl">
+            <summary>
+            Show(or Visible) <see cref="T:SpiralLab.Sirius2.Winforms.UI.LogUserControl">LogUserControl</see> usercontrol or not
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControlV2.#ctor">
@@ -29348,23 +29400,6 @@
             <remarks>
             User can insert(or create) usercontrol at own winforms. <br/>
             <img src="images/siriuseditorcontrol.png"/> <br/>
-            1. <see cref="T:SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl">TreeViewUserControl</see> <br/>
-            2. <see cref="T:SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl">TreeViewBlockUserControl</see> <br/>
-            3. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PenUserControl">PenUserControl</see> <br/>
-            4. <see cref="T:SpiralLab.Sirius2.Winforms.UI.EditorUserControl">EditorUserControl</see> <br/>
-            5. <see cref="T:SpiralLab.Sirius2.Winforms.UI.ScannerUserControl">RtcUserControl</see> <br/>
-            6. <see cref="T:SpiralLab.Sirius2.Winforms.UI.LaserUserControl">LaserUserControl</see> <br/>
-            7. <see cref="T:SpiralLab.Sirius2.Winforms.UI.MarkerUserControl">MarkerUserControl</see> <br/>
-            8. <see cref="T:SpiralLab.Sirius2.Winforms.UI.ManualUserControl">ManualUserControl</see> <br/>
-            9. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl">RtcDIUserControl</see> <br/>
-            10. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl">RtcDOUserControl</see> <br/>
-            11. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl">RtcDOUserControl</see> <br/>
-            12. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl">PowerMeterUserControl</see> <br/>
-            13. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl">PowerMapUserControl</see> <br/>
-            14. <see cref="T:SpiralLab.Sirius2.Winforms.UI.ScriptUserControl">ScriptUserControl</see> <br/>
-            15. <see cref="T:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl">RemoteUserControl</see> <br/>
-            16. <see cref="T:SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl">PropertyGridUserControl</see> <br/>
-            17. <see cref="T:SpiralLab.Sirius2.Winforms.UI.LogUserControl">LogUserControl</see> <br/>
             </remarks>
         </member>
         <member name="E:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.OnOpenBefore">
@@ -29505,67 +29540,67 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.TreeViewCtrl">
             <summary>
-            Treeview user control for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> within <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityLayer">EntityLayer</see> nodes
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.TreeViewUserControl">TreeViewUserControl</see> user control for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> within <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityLayer">EntityLayer</see> nodes
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.TreeViewBlockCtrl">
             <summary>
-            Treeview user control for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlock">EntityBlock</see> nodes
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.TreeViewBlockUserControl">TreeViewBlockUserControl</see> user control for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlock">EntityBlock</see> nodes
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.PropertyGridCtrl">
             <summary>
-            PropertyGrid user control for properties of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.PropertyGridUserControl">PropertyGridUserControl</see> user control for properties of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.EditorCtrl">
             <summary>
-            Editor(by OpenTK) user control for rendering view 
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.EditorUserControl">EditorUserControl</see> user control for rendering view 
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.PenCtrl">
             <summary>
-            User control for list of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.PenUserControl">PenUserControl</see> user control for list of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.LaserCtrl">
             <summary>
-            PropertyGrid user control for <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.LaserUserControl">LaserUserControl</see> user control for <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.RtcCtrl">
             <summary>
-            PropertyGrid user control for <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.ScannerUserControl">ScannerUserControl</see> user control for <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.MarkerCtrl">
             <summary>
-            PropertyGrid user control for <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.MarkerUserControl">MarkerUserControl</see> user control for <see cref="T:SpiralLab.Sirius2.Winforms.Marker.IMarker">IMarker</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.OffsetCtrl">
             <summary>
-            User control for list of <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Offsets">IMarker.Offsets</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.OffsetUserControl">OffsetUserControl</see> user control for list of <see cref="P:SpiralLab.Sirius2.Winforms.Marker.IMarker.Offsets">IMarker.Offsets</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.RtcDICtrl">
             <summary>
-            User control for RTC DI (EXTENSION1 and LASER port) for <see cref="T:SpiralLab.Sirius2.IO.IDInput">IDInput</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDIUserControl">RtcDIUserControl</see> user control for RTC DI (EXTENSION1 and LASER port) for <see cref="T:SpiralLab.Sirius2.IO.IDInput">IDInput</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.RtcDOCtrl">
             <summary>
-            User control for RTC DO (EXTENSION1,2 and LASER port) for <see cref="T:SpiralLab.Sirius2.IO.IDOutput">IDOutput</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.RtcDOUserControl">RtcDOUserControl</see> user control for RTC DO (EXTENSION1,2 and LASER port) for <see cref="T:SpiralLab.Sirius2.IO.IDOutput">IDOutput</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.ManualCtrl">
             <summary>
-            User control for manual control
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.ManualUserControl">ManualUserControl</see> user control for manual control
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.ManualUserCtrl">
             <summary>
-            UserControl for customized manual control
+            Customized(or replaced) <see cref="T:SpiralLab.Sirius2.Winforms.UI.ManualUserControl">ManualUserControl</see> by <see cref="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.ManualUserCtrl">ManualUserCtrl</see> for manual control
             </summary>
             <remarks>
             Replaced internal <c>ManualCtrl</c> as external control <br/>
@@ -29573,27 +29608,32 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.PowerMeterCtrl">
             <summary>
-            User control for for <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.PowerMeterUserControl">PowerMeterUserControl</see> user control for for <see cref="T:SpiralLab.Sirius2.PowerMeter.IPowerMeter">IPowerMeter</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.PowerMapCtrl">
             <summary>
-             User control for <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">IPowerMap</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.PowerMapUserControl">PowerMapUserControl</see> user control for <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">IPowerMap</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.ScriptCtrl">
             <summary>
-            User control for <see cref="T:SpiralLab.Sirius2.Winforms.Script.IScript">IScript</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.ScriptUserControl">ScriptUserControl</see> user control for <see cref="T:SpiralLab.Sirius2.Winforms.Script.IScript">IScript</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.RemoteCtrl">
             <summary>
-            PropertyGrid user control for <see cref="T:SpiralLab.Sirius2.Winforms.Remote.IRemote">IRemote</see>
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.RemoteUserControl">RemoteUserControl</see> user control for <see cref="T:SpiralLab.Sirius2.Winforms.Remote.IRemote">IRemote</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.LogCtrl">
             <summary>
-            User control for logged messages
+            <see cref="T:SpiralLab.Sirius2.Winforms.UI.LogUserControl">LogUserControl</see> user control for logged messages
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.IsShowLogCtrl">
+            <summary>
+            Show(or Visible) <see cref="T:SpiralLab.Sirius2.Winforms.UI.LogUserControl">LogUserControl</see> usercontrol or not
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.#ctor">

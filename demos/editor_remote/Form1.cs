@@ -74,7 +74,7 @@ namespace Demos
             SpiralLab.Sirius2.Winforms.Config.ViewFovSize = new SizeF(100, 100);
 
             // Create devices 
-            EditorHelper.CreateDevices(out var rtc, out var dInExt1, out var dInLaserPort, out var dOutExt1, out var dOutExt2, out var dOutLaserPort, out var laser, out var powerMeter, out var marker, out var remote, this.siriusEditorUserControl1);
+            EditorHelper.CreateDevices(out var rtc, out var dInExt1, out var dInLaserPort, out var dOutExt1, out var dOutExt2, out var dOutLaserPort, out var laser, out var powerMeter, out var marker, out var remote);
 
             // Override remote control to use customized communication
             remote?.Dispose();

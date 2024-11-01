@@ -72,7 +72,7 @@ namespace Demos
             EditorHelper.Initialize();
 
             // Create devices 
-            EditorHelper.CreateDevices(out var rtc, out var dInExt1, out var dInLaserPort, out var dOutExt1, out var dOutExt2, out var dOutLaserPort, out var laser, out var powerMeter, out var marker, out var remote, this.siriusEditorUserControl1);
+            EditorHelper.CreateDevices(out var rtc, out var dInExt1, out var dInLaserPort, out var dOutExt1, out var dOutExt2, out var dOutLaserPort, out var laser, out var powerMeter, out var marker, out var remote);
 
             // Naming for D.IO at extension 1 port
             SpiralLab.Sirius2.Winforms.Config.DIn_RtcExtension1Port = new string[16]

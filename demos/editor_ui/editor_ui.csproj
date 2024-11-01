@@ -53,11 +53,11 @@
     <Reference Include="OpenTK.GLControl, Version=3.3.3.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
       <HintPath>..\..\packages\OpenTK.GLControl.3.3.3\lib\net20\OpenTK.GLControl.dll</HintPath>
     </Reference>
-    <Reference Include="spirallab.sirius2, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="spirallab.sirius2, Version=1.45.2100.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\bin\spirallab.sirius2.dll</HintPath>
     </Reference>
-    <Reference Include="spirallab.sirius2.winforms, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="spirallab.sirius2.winforms, Version=1.45.2100.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\bin\spirallab.sirius2.winforms.dll</HintPath>
     </Reference>
