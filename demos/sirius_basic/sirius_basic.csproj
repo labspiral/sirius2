@@ -69,17 +69,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="OpenTK, Version=3.3.3.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4" />
-    <Reference Include="spirallab.sirius2, Version=1.45.2000.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="spirallab.sirius2, Version=1.45.2100.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\sirius2lib\bin\spirallab.sirius2.dll</HintPath>
+      <HintPath>..\..\bin\spirallab.sirius2.dll</HintPath>
     </Reference>
-    <Reference Include="spirallab.sirius2.vision, Version=1.45.2000.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="spirallab.sirius2.vision, Version=1.45.2100.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\sirius2lib\bin\spirallab.sirius2.vision.dll</HintPath>
+      <HintPath>..\..\bin\spirallab.sirius2.vision.dll</HintPath>
     </Reference>
-    <Reference Include="spirallab.sirius2.winforms, Version=1.45.2000.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="spirallab.sirius2.winforms, Version=1.45.2100.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\sirius2lib\bin\spirallab.sirius2.winforms.dll</HintPath>
+      <HintPath>..\..\bin\spirallab.sirius2.winforms.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
