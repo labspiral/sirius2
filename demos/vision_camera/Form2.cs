@@ -144,6 +144,7 @@ namespace Demos
             {
                 if (camera is ICameraStitched cameraStitched)
                 {
+                    // Create default stitch positions
                     cameraStitched.CreateStitchedCells();
                     //    cameraStitched.OnStitchedCalibratorSaved += CameraStitched_OnStitchedCalibratorSaved;
                     //    string calibrationStitcedFile = NativeMethods.ReadIni(ConfigFileName, $"CAMERA{index}", "CALIBRATION_STITCHED", string.Empty);

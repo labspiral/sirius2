@@ -26637,10 +26637,13 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlMoveTo(System.Numerics.Vector2,System.Double)">
             <summary>
-            Not used. 
+            Move to scanner x,y position (mm)
+            <para>
+            Used <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlMoveScannerPosition(System.Numerics.Vector2)">CtlMoveScannerPosition</see> by internally. <br/>
+            </para>
             </summary>
             <remarks>
-            Use <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlMoveScannerPosition(System.Numerics.Vector2)">CtlMoveScannerPosition</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlMoveStagePosition(System.Numerics.Vector2)">CtlMoveStagePosition</see> instead.
+            Recommended to use <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlMoveScannerPosition(System.Numerics.Vector2)">CtlMoveScannerPosition</see> or <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.CtlMoveStagePosition(System.Numerics.Vector2)">CtlMoveStagePosition</see> instead.
             </remarks>
             <param name="position">X,Y (mm)</param>
             <param name="overrideJumpSpeed">Override jump speed (mm/s)<br/>0: No override</param>
@@ -28600,14 +28603,14 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlMoveScannerPosition(System.Numerics.Vector2)">
             <summary>
-            Move scanner position
+            Move scanner x,y position (mm)
             </summary>
             <param name="position">X,Y position (mm)<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>        
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlMoveStagePosition(System.Numerics.Vector2)">
             <summary>
-            Move stage position
+            Move stage x,y position (mm)
             </summary>
             <remarks>
             Used with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.StageMoveSpeed">StageMoveSpeed</see> and <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.StageMoveTimeOut">StageMoveTimeOut</see> values <br/>
@@ -28617,7 +28620,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlGetScannerPosition(SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ScanDevices,System.Numerics.Vector2@)">
             <summary>
-            Get acutal scanner position
+            Get acutal scanner x,y position (mm)
             </summary>
             <param name="scanDevice"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.ScanDevices">ScanDevices</see></param>
             <param name="position">X,Y position (mm)</param>
@@ -28625,7 +28628,7 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis.CtlGetStagePosition(System.Numerics.Vector2@)">
             <summary>
-            Get actual stage position
+            Get actual stage x,y position (mm)
             </summary>
             <param name="position">X,Y position (mm)</param>
             <returns>Success or failed</returns>
@@ -32768,12 +32771,12 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.SpeedJump">
             <summary>
-            Last jump speed (mm/s)
+            Last scanner jump speed (mm/s)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.SpeedMark">
             <summary>
-            Last mark(or arc) speed (mm/s)
+            Last scanner mark(or arc) speed (mm/s)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListType">
@@ -45676,11 +45679,6 @@
             TypeInitializationException type exception.
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.Initialized">
-            <summary>
-            dll 초기화 여부
-            </summary>
-        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.init_rtc6_dll">
             <summary>
              uint init_rtc6_dll();
@@ -45834,6 +45832,11 @@
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.eth_get_serial_search">
             <summary>
              uint eth_get_serial_search(uint SearchNo);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.eth_full_reset">
+            <summary>
+             uint eth_full_reset(uint CardNo);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_eth_get_last_error">
@@ -46096,9 +46099,24 @@
              uint create_dat_file(int Flag);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_upgrade_bios">
+            <summary>
+             uint n_upgrade_bios(uint CardNo, string Name);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.upgrade_bios">
+            <summary>
+             uint upgrade_bios(string Name);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.transform">
             <summary>
              uint transform(out int Sig1, out int Sig2, uint[] Ptr, uint Code);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.demux_rcm_ctrl">
+            <summary>
+             uint demux_rcm_ctrl(int[] Input, uint Input_length, uint N_signals, uint Index, uint Flags, int[] Output);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.rtc6_count_cards">
@@ -46196,6 +46214,11 @@
              void n_master_slave_config(uint CardNo, uint Flags);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_master_slave_set_offset_ctrl">
+            <summary>
+             void n_master_slave_set_offset_ctrl(uint CardNo, uint Mode, uint Ctrl);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_load_correction_file">
             <summary>
              uint n_load_correction_file(uint CardNo, string Name, uint No, uint Dim);
@@ -46279,6 +46302,11 @@
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.master_slave_config">
             <summary>
              void master_slave_config(uint Flags);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.master_slave_set_offset_ctrl">
+            <summary>
+             void master_slave_set_offset_ctrl(uint Mode, uint Ctrl);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.load_correction_file">
@@ -47226,6 +47254,11 @@
              void n_set_controlpreview_compensation_ctrl(uint CardNo, uint ControlPreview, uint Mode);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_laser_delays_ctrl">
+            <summary>
+             void n_set_laser_delays_ctrl(uint CardNo, int LaserOnDelay, uint LaserOffDelay);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.disable_laser">
             <summary>
              void disable_laser();
@@ -47364,6 +47397,11 @@
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_controlpreview_compensation_ctrl">
             <summary>
              void set_controlpreview_compensation_ctrl(uint ControlPreview, uint Mode);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_laser_delays_ctrl">
+            <summary>
+             void set_laser_delays_ctrl(int LaserOnDelay, uint LaserOffDelay);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_ext_start_delay">
@@ -47811,29 +47849,49 @@
              void n_periodic_toggle(uint CardNo, uint Port, uint Mask, uint P1, uint P2, uint Count, uint Start);
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_multi_axis_config">
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_multi_axis_set_config_ctrl">
             <summary>
-             void n_multi_axis_config(uint CardNo, uint Cfg, uint[] Ptr);
+             uint n_multi_axis_set_config_ctrl(uint CardNo, uint Mode, uint BlockSize, uint NumAxes, uint StopOnFrameError, uint StopOnStageError);
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_quad_axis_init">
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_multi_axis_get_config_ctrl">
             <summary>
-             void n_quad_axis_init(uint CardNo, uint Idle, double X1, double Y1);
+             void n_multi_axis_get_config_ctrl(uint CardNo, out uint Mode, out uint BlockSize, out uint NumAxes, out uint StopOnFrameError, out uint StopOnStageError);
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_quad_axis_get_status">
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_multi_axis_get_error_ctrl">
             <summary>
-             uint n_quad_axis_get_status(uint CardNo);
+             uint n_multi_axis_get_error_ctrl(uint CardNo);
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_quad_axis_get_values">
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_multi_axis_init_ctrl">
             <summary>
-             void n_quad_axis_get_values(uint CardNo, out double X1, out double Y1, out uint Flags0, out uint Flags1);
+             uint n_multi_axis_init_ctrl(uint CardNo, double[] StageAxesPtr);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_multi_axis_get_values_ctrl">
+            <summary>
+             void n_multi_axis_get_values_ctrl(uint CardNo, double[] StageAxesPtr, uint[] FlagsPtr);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_get_temperature">
             <summary>
              double n_get_temperature(uint CardNo);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_get_extended_head_status_value_ctrl">
+            <summary>
+             uint n_get_extended_head_status_value_ctrl(uint CardNo, uint Head, uint Axis, uint Value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_get_extended_head_status_block_ctrl">
+            <summary>
+             void n_get_extended_head_status_block_ctrl(uint CardNo, uint Head, uint Axis, uint[] Ptr);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_get_rcm_value_ctrl">
+            <summary>
+             uint n_get_rcm_value_ctrl(uint CardNo, uint Head, uint Axis, uint Value);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.get_time">
@@ -48021,29 +48079,49 @@
              void periodic_toggle(uint Port, uint Mask, uint P1, uint P2, uint Count, uint Start);
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.multi_axis_config">
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.multi_axis_set_config_ctrl">
             <summary>
-             void multi_axis_config(uint Cfg, uint[] Ptr);
+             uint multi_axis_set_config_ctrl(uint Mode, uint BlockSize, uint NumAxes, uint StopOnFrameError, uint StopOnStageError);
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.quad_axis_init">
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.multi_axis_get_config_ctrl">
             <summary>
-             void quad_axis_init(uint Idle, double X1, double Y1);
+             void multi_axis_get_config_ctrl(out uint Mode, out uint BlockSize, out uint NumAxes, out uint StopOnFrameError, out uint StopOnStageError);
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.quad_axis_get_status">
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.multi_axis_get_error_ctrl">
             <summary>
-             uint quad_axis_get_status();
+             uint multi_axis_get_error_ctrl();
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.quad_axis_get_values">
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.multi_axis_init_ctrl">
             <summary>
-             void quad_axis_get_values(out double X1, out double Y1, out uint Flags0, out uint Flags1);
+             uint multi_axis_init_ctrl(double[] StageAxesPtr);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.multi_axis_get_values_ctrl">
+            <summary>
+             void multi_axis_get_values_ctrl(double[] StageAxesPtr, uint[] FlagsPtr);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.get_temperature">
             <summary>
              double get_temperature();
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.get_extended_head_status_value_ctrl">
+            <summary>
+             uint get_extended_head_status_value_ctrl(uint Head, uint Axis, uint Value);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.get_extended_head_status_block_ctrl">
+            <summary>
+             void get_extended_head_status_block_ctrl(uint Head, uint Axis, uint[] Ptr);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.get_rcm_value_ctrl">
+            <summary>
+             uint get_rcm_value_ctrl(uint Head, uint Axis, uint Value);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_defocus">
@@ -48211,6 +48289,11 @@
              void n_set_sky_writing_min_speed_ctrl(uint CardNo, double Speed);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_sky_writing_scale_ctrl">
+            <summary>
+             void n_set_sky_writing_scale_ctrl(uint CardNo, double Scale);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_load_varpolydelay">
             <summary>
              int n_load_varpolydelay(uint CardNo, string Name, uint No);
@@ -48244,6 +48327,11 @@
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_timelag_compensation">
             <summary>
              void n_set_timelag_compensation(uint CardNo, uint HeadNo, uint TimeLagXY, uint TimeLagZ);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_scanner_delays_ctrl">
+            <summary>
+             void n_set_scanner_delays_ctrl(uint CardNo, uint Jump, uint Mark, uint Polygon);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_sky_writing">
@@ -48291,6 +48379,11 @@
              void set_sky_writing_min_speed_ctrl(double Speed);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_sky_writing_scale_ctrl">
+            <summary>
+             void set_sky_writing_scale_ctrl(double Scale);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.load_varpolydelay">
             <summary>
              int load_varpolydelay(string Name, uint No);
@@ -48324,6 +48417,11 @@
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_timelag_compensation">
             <summary>
              void set_timelag_compensation(uint HeadNo, uint TimeLagXY, uint TimeLagZ);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_scanner_delays_ctrl">
+            <summary>
+             void set_scanner_delays_ctrl(uint Jump, uint Mark, uint Polygon);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_sky_writing">
@@ -50276,19 +50374,14 @@
              void n_micro_vector_rel(uint CardNo, int dX, int dY, int LasOn, int LasOff);
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_micro_vector_quad_axis_v_2">
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_multi_axis_micro_vector_scanner_list">
             <summary>
-             void n_micro_vector_quad_axis_v_2(uint CardNo, int X0, int Y0, int X1, int Y1, int LasOn, int LasOff, uint Power, uint Port, uint Flags, double Velocity);
+             void n_multi_axis_micro_vector_scanner_list(uint CardNo, int X0, int Y0, int X1, int Y1, int LasOn, int LasOff, uint Power, uint Port, double Velocity, uint FrameCount, uint WaitForSync);
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_micro_vector_quad_axis_v">
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_multi_axis_micro_vector_stage_list">
             <summary>
-             void n_micro_vector_quad_axis_v(uint CardNo, int X0, int Y0, double X1, double Y1, int LasOn, int LasOff, uint Power, uint Port, uint Flags, double Velocity);
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_micro_vector_quad_axis">
-            <summary>
-             void n_micro_vector_quad_axis(uint CardNo, int X0, int Y0, double X1, double Y1, int LasOn, int LasOff, uint Power, uint Port, uint Flags);
+             void n_multi_axis_micro_vector_stage_list(uint CardNo, int X, int Y, double Stage, int LasOn, int LasOff, uint Power, uint Port, double Velocity, uint FrameCount, uint WaitForSync);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_micro_vector_set_position">
@@ -50296,9 +50389,9 @@
              void n_micro_vector_set_position(uint CardNo, int X0, int X1, int X2, int X3, int LasOn, int LasOff);
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_multi_axis_flags">
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_multi_axis_flags_list">
             <summary>
-             void n_multi_axis_flags(uint CardNo, uint Flags);
+             void n_multi_axis_flags_list(uint CardNo, uint Flags);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_free_variable_list">
@@ -50466,19 +50559,14 @@
              void micro_vector_rel(int dX, int dY, int LasOn, int LasOff);
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.micro_vector_quad_axis_v_2">
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.multi_axis_micro_vector_scanner_list">
             <summary>
-             void micro_vector_quad_axis_v_2(int X0, int Y0, int X1, int Y1, int LasOn, int LasOff, uint Power, uint Port, uint Flags, double Velocity);
+             void multi_axis_micro_vector_scanner_list(int X0, int Y0, int X1, int Y1, int LasOn, int LasOff, uint Power, uint Port, double Velocity, uint FrameCount, uint WaitForSync);
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.micro_vector_quad_axis_v">
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.multi_axis_micro_vector_stage_list">
             <summary>
-             void micro_vector_quad_axis_v(int X0, int Y0, double X1, double Y1, int LasOn, int LasOff, uint Power, uint Port, uint Flags, double Velocity);
-            </summary>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.micro_vector_quad_axis">
-            <summary>
-             void micro_vector_quad_axis(int X0, int Y0, double X1, double Y1, int LasOn, int LasOff, uint Power, uint Port, uint Flags);
+             void multi_axis_micro_vector_stage_list(int X, int Y, double Stage, int LasOn, int LasOff, uint Power, uint Port, double Velocity, uint FrameCount, uint WaitForSync);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.micro_vector_set_position">
@@ -50486,9 +50574,9 @@
              void micro_vector_set_position(int X0, int X1, int X2, int X3, int LasOn, int LasOff);
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.multi_axis_flags">
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.multi_axis_flags_list">
             <summary>
-             void multi_axis_flags(uint Flags);
+             void multi_axis_flags_list(uint Flags);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_free_variable_list">
@@ -51086,6 +51174,16 @@
              void n_set_delay_mode_list(uint CardNo, uint VarPoly, uint DirectMove3D, uint EdgeLevel, uint MinJumpDelay, uint JumpLengthLimit);
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_sky_writing_min_speed_list">
+            <summary>
+             void n_set_sky_writing_min_speed_list(uint CardNo, double Speed);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_set_sky_writing_scale_list">
+            <summary>
+             void n_set_sky_writing_scale_list(uint CardNo, double Scale);
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_mark_speed">
             <summary>
              void set_mark_speed(double Speed);
@@ -51134,6 +51232,16 @@
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_delay_mode_list">
             <summary>
              void set_delay_mode_list(uint VarPoly, uint DirectMove3D, uint EdgeLevel, uint MinJumpDelay, uint JumpLengthLimit);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_sky_writing_min_speed_list">
+            <summary>
+             void set_sky_writing_min_speed_list(double Speed);
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.set_sky_writing_scale_list">
+            <summary>
+             void set_sky_writing_scale_list(double Scale);
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.RTC6Wrap.n_activate_scanahead_autodelays_list">

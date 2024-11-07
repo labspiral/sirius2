@@ -157,7 +157,7 @@
     - Dependencies
        - SCANLAB RTC4 2023.11.02 (https://www.scanlab.de/en/products/software/rtc-software/download)
        - SCANLAB RTC5 2024.09.27 (https://www.scanlab.de/en/products/software/rtc-software/download)
-       - SCANLAB RTC6 v.1.18.0 (2024.6.17) (https://www.scanlab.de/en/products/software/rtc-software/download)
+       - SCANLAB RTC6 v.1.19.1 (2024.11.4) (https://www.scanlab.de/en/products/software/rtc-software/download)
        - SCANLAB syncAXIS: v.1.8.2 (2023.3.9) (https://www.scanlab.de/en/products/software-calibration/syncaxis/download)
        - OpenTK: v3.3.3 (https://www.nuget.org/packages/OpenTK/3.3.3)
        - OpenTK.GLControl: v3.3.3 (https://www.nuget.org/packages/OpenTK.GLControl/)
@@ -273,6 +273,13 @@
 
 
 **9. Version history**
+
+* 2024.11.8 v.1.46.2105
+  - updated) RTC6 v1.19.1 
+  - added) support reverse order for triangle, rectangle, cross entity
+  - added) ProcessFocus process for auto focus
+  - fixed) fail to save for StitchCalibrator
+  - fixed) show invalid license information 
 
 * 2024.11.1 v.1.45.2100
   - added) spirallab.sirius2.vision.dll 

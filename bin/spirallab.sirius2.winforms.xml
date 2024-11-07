@@ -2563,6 +2563,265 @@
               Looks up a localized string similar to syncAXIS.
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.entity.entitybase">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Align_DESC">
+             <summary>
+               Looks up a localized string similar to Translate for Alignment (mm).
+            Can be Edited by User Except None..
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Align_DISP">
+            <summary>
+              Looks up a localized string similar to Mode align.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Alignment_DESC">
+             <summary>
+               Looks up a localized string similar to Alignments. 
+            ModelMatrix = ModelAlign * ModelScale * ModelRotate * ModelTranslate. (Except None).
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Alignment_DISP">
+            <summary>
+              Looks up a localized string similar to Alignment.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Basic_C">
+            <summary>
+              Looks up a localized string similar to Basic.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Bound_DESC">
+             <summary>
+               Looks up a localized string similar to Bouding Box.
+            WxHxD : Width, Heigh and Depth..
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Bound_DISP">
+            <summary>
+              Looks up a localized string similar to Bound box.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Color_DESC">
+             <summary>
+               Looks up a localized string similar to Color of Entity. 
+            Used with Pen Color..
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Color_DISP">
+            <summary>
+              Looks up a localized string similar to Color.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Data_C">
+            <summary>
+              Looks up a localized string similar to Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Description_DESC">
+            <summary>
+              Looks up a localized string similar to Description of Entity.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Description_DISP">
+            <summary>
+              Looks up a localized string similar to Description.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Entity_id_DESC">
+            <summary>
+              Looks up a localized string similar to Unique Entity ID.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Entity_id_DISP">
+            <summary>
+              Looks up a localized string similar to ID.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Entity_type_DESC">
+            <summary>
+              Looks up a localized string similar to Entity Type by Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Entity_type_DISP">
+            <summary>
+              Looks up a localized string similar to Type.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.HitTest_DESC">
+            <summary>
+              Looks up a localized string similar to Is Allow Hittest or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.HitTest_DISP">
+            <summary>
+              Looks up a localized string similar to HitTest.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.In_DESC">
+            <summary>
+              Looks up a localized string similar to In(Start) Location.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.In_DISP">
+            <summary>
+              Looks up a localized string similar to In.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Items_DESC">
+            <summary>
+              Looks up a localized string similar to Counts of Child Entities.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Items_DISP">
+            <summary>
+              Looks up a localized string similar to Items.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Mark_C">
+            <summary>
+              Looks up a localized string similar to Mark.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Mark_DESC">
+            <summary>
+              Looks up a localized string similar to Is Allow to Mark or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Mark_DISP">
+            <summary>
+              Looks up a localized string similar to Mark.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Matrix_C">
+            <summary>
+              Looks up a localized string similar to Matrix.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Model_DESC">
+             <summary>
+               Looks up a localized string similar to Model 4x4 Matrix.
+            ModelMatrix = ModelAlign * ModelScale * ModelRotate * ModelTranslate..
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Model_DISP">
+            <summary>
+              Looks up a localized string similar to Model matrix.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Name_DESC">
+            <summary>
+              Looks up a localized string similar to Name of Entity.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Name_DISP">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Out_DESC">
+            <summary>
+              Looks up a localized string similar to Out(End) Location.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Out_DISP">
+            <summary>
+              Looks up a localized string similar to Out.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Render_DESC">
+            <summary>
+              Looks up a localized string similar to Is Allow to Render or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Render_DISP">
+            <summary>
+              Looks up a localized string similar to Render.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Repeats_DESC">
+             <summary>
+               Looks up a localized string similar to Mark Repeat Counts.
+            Default: 1..
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Repeats_DISP">
+            <summary>
+              Looks up a localized string similar to Repeats.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Reversed_DESC">
+            <summary>
+              Looks up a localized string similar to Reversed Path Order or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Reversed_DISP">
+            <summary>
+              Looks up a localized string similar to Reversed.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Rotate_DESC">
+            <summary>
+              Looks up a localized string similar to Model Rotate X,Y,Z Angle (°) .
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Rotate_DISP">
+            <summary>
+              Looks up a localized string similar to Model rotate.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Scale_DESC">
+             <summary>
+               Looks up a localized string similar to Model Scale X,Y,Z 
+            Default: 1.
+            Should be &gt; 0..
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Scale_DISP">
+            <summary>
+              Looks up a localized string similar to Model scale.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Selected_DESC">
+            <summary>
+              Looks up a localized string similar to Is Selected or Not.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Selected_DISP">
+            <summary>
+              Looks up a localized string similar to Selected.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Status_C">
+            <summary>
+              Looks up a localized string similar to Status.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Translate_DESC">
+            <summary>
+              Looks up a localized string similar to Model Translate Position X,Y,Z (mm) .
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Translate_DISP">
+            <summary>
+              Looks up a localized string similar to Model translate.
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.pdf">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -2683,66 +2942,118 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.stitchedimage">
             <summary>
-              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.ResourceManager">
             <summary>
-              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Culture">
             <summary>
-              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
-              재정의합니다.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Basic_C">
             <summary>
-              Basic과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Basic.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Cols_DESC">
+            <summary>
+              Looks up a localized string similar to Col Counts.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Cols_DISP">
+            <summary>
+              Looks up a localized string similar to Cols.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Height_DESC">
+            <summary>
+              Looks up a localized string similar to Height (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Height_DISP">
+            <summary>
+              Looks up a localized string similar to Height.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imagefilename_DESC">
              <summary>
-               Target Image File to Update(or Load)
-            과(와) 유사한 지역화된 문자열을 찾습니다.
+               Looks up a localized string similar to Target Image File to Update(or Load)
+            .
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imagefilename_DISP">
             <summary>
-              Image file과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Image file.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imageindex_DESC">
              <summary>
-               Target Image Index to Update(or Load)
+               Looks up a localized string similar to Target Image Index to Update(or Load)
             Left Top to Right Bottom Orders.
-            Starting from 0.과(와) 유사한 지역화된 문자열을 찾습니다.
+            Starting from 0..
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imageindex_DISP">
             <summary>
-              Image index과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Image index.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Images_DESC">
-            <summary>
-              Array of Image(s)과(와) 유사한 지역화된 문자열을 찾습니다.
-            </summary>
+             <summary>
+               Looks up a localized string similar to Array of Image(s)
+            Starting from left, top.
+             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Images_DISP">
             <summary>
-              Images과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Images.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imagesave_DESC">
             <summary>
-              Save Image(s) or not과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Save Image(s) or not.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Imagesave_DISP">
             <summary>
-              Image save과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Save.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Rows_DESC">
+            <summary>
+              Looks up a localized string similar to Row Counts.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Rows_DISP">
+            <summary>
+              Looks up a localized string similar to Rows.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Transparent_DESC">
+             <summary>
+               Looks up a localized string similar to Image Transparent 
+            Default: 0.5 (0.1~1).
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Transparent_DISP">
+            <summary>
+              Looks up a localized string similar to Transparent.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Width_DESC">
+            <summary>
+              Looks up a localized string similar to Width (mm).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.stitchedimage.Width_DISP">
+            <summary>
+              Looks up a localized string similar to Width.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.entity.raster">
@@ -5155,12 +5466,12 @@
               Looks up a localized string similar to Height.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.text.Reverse_DESC">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.text.Reversed_DESC">
             <summary>
-              Looks up a localized string similar to Reverse Mark.
+              Looks up a localized string similar to Reverse Path or Not.
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.text.Reverse_DISP">
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.text.Reversed_DISP">
             <summary>
               Looks up a localized string similar to Reverse.
             </summary>
@@ -5318,250 +5629,6 @@
         <member name="P:SpiralLab.Sirius2.Winforms.entity.imagezpl.ZPLText_DISP">
             <summary>
               Looks up a localized string similar to ZPL text.
-            </summary>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Winforms.entity.entitybase">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Align_DESC">
-             <summary>
-               Looks up a localized string similar to Translate for Alignment (mm).
-            Can be Edited by User Except None..
-             </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Align_DISP">
-            <summary>
-              Looks up a localized string similar to Mode align.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Alignment_DESC">
-             <summary>
-               Looks up a localized string similar to Alignments. 
-            ModelMatrix = ModelAlign * ModelScale * ModelRotate * ModelTranslate. (Except None).
-             </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Alignment_DISP">
-            <summary>
-              Looks up a localized string similar to Alignment.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Basic_C">
-            <summary>
-              Looks up a localized string similar to Basic.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Bound_DESC">
-             <summary>
-               Looks up a localized string similar to Bouding Box.
-            WxHxD : Width, Heigh and Depth..
-             </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Bound_DISP">
-            <summary>
-              Looks up a localized string similar to Bound box.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Color_DESC">
-             <summary>
-               Looks up a localized string similar to Color of Entity. 
-            Used with Pen Color..
-             </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Color_DISP">
-            <summary>
-              Looks up a localized string similar to Color.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Description_DESC">
-            <summary>
-              Looks up a localized string similar to Description of Entity.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Description_DISP">
-            <summary>
-              Looks up a localized string similar to Description.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Entity_id_DESC">
-            <summary>
-              Looks up a localized string similar to Unique Entity ID.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Entity_id_DISP">
-            <summary>
-              Looks up a localized string similar to ID.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Entity_type_DESC">
-            <summary>
-              Looks up a localized string similar to Entity Type by Name.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Entity_type_DISP">
-            <summary>
-              Looks up a localized string similar to Type.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.HitTest_DESC">
-            <summary>
-              Looks up a localized string similar to Is Allow Hittest or Not.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.HitTest_DISP">
-            <summary>
-              Looks up a localized string similar to HitTest.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.In_DESC">
-            <summary>
-              Looks up a localized string similar to In(Start) Location.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.In_DISP">
-            <summary>
-              Looks up a localized string similar to In.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Items_DESC">
-            <summary>
-              Looks up a localized string similar to Counts of Child Entities.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Items_DISP">
-            <summary>
-              Looks up a localized string similar to Items.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Mark_C">
-            <summary>
-              Looks up a localized string similar to Mark.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Mark_DESC">
-            <summary>
-              Looks up a localized string similar to Is Allow to Mark or Not.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Mark_DISP">
-            <summary>
-              Looks up a localized string similar to Mark.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Matrix_C">
-            <summary>
-              Looks up a localized string similar to Matrix.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Model_DESC">
-             <summary>
-               Looks up a localized string similar to Model 4x4 Matrix.
-            ModelMatrix = ModelAlign * ModelScale * ModelRotate * ModelTranslate..
-             </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Model_DISP">
-            <summary>
-              Looks up a localized string similar to Model matrix.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Name_DESC">
-            <summary>
-              Looks up a localized string similar to Name of Entity.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Name_DISP">
-            <summary>
-              Looks up a localized string similar to Name.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Out_DESC">
-            <summary>
-              Looks up a localized string similar to Out(End) Location.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Out_DISP">
-            <summary>
-              Looks up a localized string similar to Out.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Render_DESC">
-            <summary>
-              Looks up a localized string similar to Is Allow to Render or Not.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Render_DISP">
-            <summary>
-              Looks up a localized string similar to Render.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Repeats_DESC">
-             <summary>
-               Looks up a localized string similar to Mark Repeat Counts.
-            Default: 1..
-             </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Repeats_DISP">
-            <summary>
-              Looks up a localized string similar to Repeats.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Rotate_DESC">
-            <summary>
-              Looks up a localized string similar to Model Rotate X,Y,Z Angle (°) .
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Rotate_DISP">
-            <summary>
-              Looks up a localized string similar to Model rotate.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Scale_DESC">
-             <summary>
-               Looks up a localized string similar to Model Scale X,Y,Z 
-            Default: 1.
-            Should be &gt; 0..
-             </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Scale_DISP">
-            <summary>
-              Looks up a localized string similar to Model scale.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Selected_DESC">
-            <summary>
-              Looks up a localized string similar to Is Selected or Not.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Selected_DISP">
-            <summary>
-              Looks up a localized string similar to Selected.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Status_C">
-            <summary>
-              Looks up a localized string similar to Status.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Translate_DESC">
-            <summary>
-              Looks up a localized string similar to Model Translate Position X,Y,Z (mm) .
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.entity.entitybase.Translate_DISP">
-            <summary>
-              Looks up a localized string similar to Model translate.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.LineDirections">
@@ -6460,6 +6527,9 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCross.IsClosed">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCross.IsReversed">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.#ctor">
             <summary>
             Constructor
@@ -6522,6 +6592,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Expand(SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Double)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Reverse">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Clip(SpiralLab.Sirius2.Winforms.Entity.BoundingBox)">
@@ -7613,6 +7686,9 @@
             Cubic spline: 3 <br/>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCurve.IsReversed">
+            <inheritdoc/>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityCurve._Start">
             <summary>
             Used by internally (Do NOT edit)
@@ -8109,6 +8185,11 @@
             Reversable means, possible to reverse internal order of marks at entity. <br/>
             Some <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> has its own <c>IsReverse</c> flag. <br/>
             </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.IReversable.IsReversed">
+            <summary>
+            Reversed or not
+            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.IReversable.Reverse">
             <summary>
@@ -8661,17 +8742,17 @@
             ZigZag
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.IsReverse">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.IsReversed">
             <summary>
-            Reverse
+            Reversed path or not
             <para>
-            Default : <c>False</c> (means. left to right order) <br/>
+            Default: <c>False</c> (means. left to right order) <br/>
             </para>
             </summary>
         </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.isReverse">
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.isReversed">
             <summary>
-            Reverse
+            Reversed or not
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Width">
@@ -8791,6 +8872,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Reverse">
             <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntityCone">
@@ -9464,6 +9548,9 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle.IsClosed">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle.IsReversed">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle.#ctor">
             <summary>
             Constructor
@@ -9524,6 +9611,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle.Expand(SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Double)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle.Reverse">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle.Clip(SpiralLab.Sirius2.Winforms.Entity.BoundingBox)">
@@ -9813,9 +9903,7 @@
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText.IsReversed">
-            <summary>
-            Reversed pathes or not
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntitySiriusText._SourceText">
             <summary>
@@ -10501,6 +10589,9 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRectangle.IsClosed">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityRectangle.IsReversed">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRectangle.#ctor">
             <summary>
             Constructor
@@ -10561,6 +10652,9 @@
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRectangle.Expand(SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Double)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRectangle.Reverse">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRectangle.Clip(SpiralLab.Sirius2.Winforms.Entity.BoundingBox)">
@@ -11617,6 +11711,9 @@
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityArc.IsClosed">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityArc.IsReversed">
             <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityArc.StepAngle">
@@ -13658,6 +13755,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.IsClosed">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.IsReversed">
+            <summary>
+            Reverse start and end location or not
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.#ctor">
             <summary>
             Constructor
@@ -14324,6 +14426,9 @@
             Also, can be override whole jump commands with hard by <see cref="P:SpiralLab.Sirius2.Config.IsConvertJumpToHardJump">Config.IsConvertJumpToHardJump</see>. <br/>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPoints.IsReversed">
+            <inheritdoc/>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPoints.#ctor">
             <summary>
             Constructor
@@ -14528,7 +14633,7 @@
             </para>
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLine.IsReverse">
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityLine.IsReversed">
             <summary>
             Reverse start and end location or not
             </summary>
@@ -14661,6 +14766,9 @@
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.IsClosed">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.IsReversed">
             <inheritdoc/>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.linesAndArcs">

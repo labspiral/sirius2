@@ -2693,6 +2693,553 @@
         <member name="M:SpiralLab.Sirius2.Vision.Camera.UnitTransformBase.Calculate(System.Double,System.Numerics.Vector2,System.Double,System.Numerics.Vector2)">
             <inheritdoc/>
         </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Common.LstSquQuadRegr">
+            <summary>
+            LstSquQuadRegr
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.LstSquQuadRegr.AddPoints(System.Double,System.Double)">
+            <summary>
+            add point pairs
+            </summary>
+            <param name="x">x value</param>
+            <param name="y">y value</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.LstSquQuadRegr.aTerm">
+            <summary>
+            returns the a term of the equation ax^2 + bx + c
+            </summary>
+            <returns>a term</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.LstSquQuadRegr.bTerm">
+            <summary>
+            returns the b term of the equation ax^2 + bx + c
+            </summary>
+            <returns>b term</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.LstSquQuadRegr.cTerm">
+            <summary>
+            returns the c term of the equation ax^2 + bx + c
+            </summary>
+            <returns>c term</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Common.BitmapHelper">
+            <summary>
+            Bitmap helper to manipulate 
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.BitmapHelper.EncodeTo(System.Drawing.Bitmap)">
+            <summary>
+            Encode bitmap to base64 encoding
+            </summary>
+            <param name="bitmap"><see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></param>
+            <returns>Encoded base64 string</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.BitmapHelper.DecodeFrom(System.String)">
+            <summary>
+            Decode base64 encoding to bitmap
+            </summary>
+            <param name="base64String">Encoded base64 string</param>
+            <returns><see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.BitmapHelper.ConvertTo8bppIndexed(System.Drawing.Bitmap)">
+            <summary>
+            Convert input bitmap pixel format to 8bpp indexed pixel format
+            </summary>
+            <param name="bitmap"> <see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></param>
+            <returns> <returns><see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></returns></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Common.CogImageRoot">
+            <summary>
+            Cognex image buffer root
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageRoot.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageRoot.FromMemory(System.Int32,System.Int32)">
+            <summary>
+            Initialize internal memory by size
+            </summary>
+            <param name="width">Width (pixel)</param>
+            <param name="height">Height (pixel)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageRoot.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Common.CogImageGreySingle">
+            <summary>
+            Single cognex grey (8) image by memory
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageGreySingle.Image">
+            <summary>
+            Internal image by <c>CogImageRoot</c>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreySingle.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreySingle.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="width">Width (pixel)</param>
+            <param name="height">Height (pixel)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreySingle.#ctor(Cognex.VisionPro.CogImage8Grey)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="image"><see cref="T:Cognex.VisionPro.CogImage8Grey">CogImage8Grey</see></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreySingle.ClearAndFill(System.Byte)">
+            <summary>
+            Clear image
+            </summary>
+            <param name="fillGreyValue">0~255</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreySingle.Load(Cognex.VisionPro.CogImage8Grey,SpiralLab.Sirius2.Vision.Camera.CenterCalibrator)">
+            <summary>
+            Update(or change) target image
+            </summary>
+            <param name="image"><see cref="T:Cognex.VisionPro.CogImage8Grey">CogImage8Grey</see></param>
+            <param name="calibrator"><see cref="T:SpiralLab.Sirius2.Vision.Camera.CenterCalibrator">CenterCalibrator</see><br/>If <c>null</c>, used with raw input image.</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreySingle.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Common.CogImageColorSingle">
+            <summary>
+            Single cognex color (24) image by memory
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageColorSingle.Image">
+            <summary>
+            Internal image by <c>CogImageRoot</c>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorSingle.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorSingle.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="width">Width (pixel)</param>
+            <param name="height">Height (pixel)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorSingle.#ctor(Cognex.VisionPro.CogImage24PlanarColor)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="image"><see cref="T:Cognex.VisionPro.CogImage24PlanarColor">CogImage24PlanarColor</see></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorSingle.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorSingle.ClearAndFill(System.Byte)">
+            <summary>
+            Clear image
+            </summary>
+            <param name="fillGreyValue">0~255</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorSingle.Load(Cognex.VisionPro.CogImage24PlanarColor,SpiralLab.Sirius2.Vision.Camera.CenterCalibrator)">
+            <summary>
+            Update(or change) target image
+            </summary>
+            <param name="image"><see cref="T:Cognex.VisionPro.CogImage24PlanarColor">CogImage24PlanarColor</see></param>
+            <param name="calibrator"><see cref="T:SpiralLab.Sirius2.Vision.Camera.CenterCalibrator">CenterCalibrator</see><br/>If <c>null</c>, used with raw input image.</param>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched">
+            <summary>
+            Single cognex grey (8) images by memory
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.Image">
+            <summary>
+            One large image by array of CogImageRoot 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.Rows">
+            <summary>
+            Row(Y) counts
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.Cols">
+            <summary>
+            Col(X) counts
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.RowPitch">
+            <summary>
+            Pixel
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.ColPitch">
+            <summary>
+            Pixel
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="cellWidth">Cell width (pixel)</param>
+            <param name="cols">Col counts</param>
+            <param name="cellHeight">Cell height (pixel)</param>
+            <param name="rows">Row counts</param>
+            <param name="widthMargin">Cell width margin (pixel)</param>
+            <param name="heightMargin">Cell height margin (pixel)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.ClearAndFill(System.Byte)">
+            <summary>
+            Clear whole array of image
+            </summary>
+            <param name="fillGreyValue">0~255</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.Load(System.Int32,System.Int32,Cognex.VisionPro.CogImage8Grey,SpiralLab.Sirius2.Vision.Camera.StitchCalibrator)">
+            <summary>
+            Update(or change) target image at row/col
+            </summary>
+            <param name="row">0~rows<br/>Starting from 0 at left, bottom corner</param>
+            <param name="col">0~rows<br/>Starting from 0 at left, bottom corner</param>
+            <param name="image"><see cref="T:Cognex.VisionPro.CogImage8Grey">CogImage8Grey</see></param>
+            <param name="calibrator"><see cref="T:SpiralLab.Sirius2.Vision.Camera.StitchCalibrator">StitchCalibrator</see></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.Load(System.Int32,Cognex.VisionPro.CogImage8Grey,SpiralLab.Sirius2.Vision.Camera.StitchCalibrator)">
+            <summary>
+            Update(or change) target image at index
+            </summary>
+            <param name="index">0~rows*cols<br/>Starting from 0 at left, bottom corner</param>
+            <param name="image"><see cref="T:Cognex.VisionPro.CogImage8Grey">CogImage8Grey</see></param>
+            <param name="calibrator"><see cref="T:SpiralLab.Sirius2.Vision.Camera.StitchCalibrator">StitchCalibrator</see></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.Load(Cognex.VisionPro.CogImage8Grey)">
+            <summary>
+            Update whole images
+            </summary>
+            <param name="image"><see cref="T:Cognex.VisionPro.CogImage8Grey">CogImage8Grey</see></param>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched">
+            <summary>
+            Single cognex color (24) images by memory
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.Image">
+            <summary>
+            One large image by array of CogImageRoot 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.RowPitch">
+            <summary>
+            Row(Y) pixels
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.ColPitch">
+            <summary>
+            Col(X) pixels
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="cellWidth">Cell width (pixel)</param>
+            <param name="cols">Col counts</param>
+            <param name="cellHeight">Cell height (pixel)</param>
+            <param name="rows">Row counts</param>
+            <param name="widthMargin">Cell width margin (pixel)</param>
+            <param name="heightMargin">Cell height margin (pixel)</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.ClearAndFill(System.Byte)">
+            <summary>
+            Clear whole array of image
+            </summary>
+            <param name="fillGreyValue">0~255</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.Load(System.Int32,System.Int32,Cognex.VisionPro.CogImage24PlanarColor,SpiralLab.Sirius2.Vision.Camera.StitchCalibrator)">
+            <summary>
+            Update(or change) target image at row/col
+            </summary>
+            <param name="row">0~rows<br/>Starting from 0 at left, bottom corner</param>
+            <param name="col">0~rows<br/>Starting from 0 at left, bottom corner</param>
+            <param name="image"><see cref="T:Cognex.VisionPro.CogImage24PlanarColor">CogImage24PlanarColor</see></param>
+            <param name="calibrator"><see cref="T:SpiralLab.Sirius2.Vision.Camera.StitchCalibrator">StitchCalibrator</see></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.Load(System.Int32,Cognex.VisionPro.CogImage24PlanarColor,SpiralLab.Sirius2.Vision.Camera.StitchCalibrator)">
+            <summary>
+            Update(or change) target image at index
+            </summary>
+            <param name="index">0~rows*cols<br/>Starting from 0 at left, bottom corner</param>
+            <param name="image"><see cref="T:Cognex.VisionPro.CogImage24PlanarColor">CogImage24PlanarColor</see></param>
+            <param name="calibrator"><see cref="T:SpiralLab.Sirius2.Vision.Camera.StitchCalibrator">StitchCalibrator</see></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.Load(Cognex.VisionPro.CogImage24PlanarColor)">
+            <summary>
+            Update whole images
+            </summary>
+            <param name="image"><see cref="T:Cognex.VisionPro.CogImage24PlanarColor">CogImage24PlanarColor</see></param>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Common.CogHelper">
+            <summary>
+            Cognex helper
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogHelper.ConvertToGrey(Cognex.VisionPro.CogImage24PlanarColor)">
+            <summary>
+            Convert <see cref="T:Cognex.VisionPro.CogImage24PlanarColor">CogImage24PlanarColor</see> into <see cref="T:Cognex.VisionPro.CogImage8Grey">CogImage8Grey</see>
+            </summary>
+            <param name="colorImage"><see cref="T:Cognex.VisionPro.CogImage24PlanarColor">CogImage24PlanarColor</see></param>
+            <returns><see cref="T:Cognex.VisionPro.CogImage8Grey">CogImage8Grey</see></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogHelper.ConvertToBitmap(Cognex.VisionPro.CogImage8Grey)">
+            <summary>
+            Convert 8bit gery cog image into bitmap
+            </summary>
+            <param name="cogGreyImage"><see cref="T:Cognex.VisionPro.CogImage8Grey">CogImage8Grey</see></param>
+            <returns><see cref="T:System.Drawing.Bitmap">Bitmap</see></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogHelper.CalculateSharpnessScore(System.Drawing.Bitmap)">
+            <summary>
+            Calculate sharpness score from image
+            </summary>
+            <param name="bitmap"><see cref="T:System.Drawing.Bitmap">Bitmap</see></param>
+            <returns>Sharpness score</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogHelper.Clone(Cognex.VisionPro.ICogImage)">
+            <summary>
+            Clone <see cref="T:Cognex.VisionPro.ICogImage">ICogImage</see>
+            </summary>
+            <param name="sourceImage"><see cref="T:Cognex.VisionPro.ICogImage">ICogImage</see></param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogHelper.CopyRegion(Cognex.VisionPro.ICogImage,Cognex.VisionPro.CogRectangle)">
+            <summary>
+            Copy from assigned rectangular region at input image to output image
+            </summary>
+            <param name="inputImage">Input <c>ICogImage</c></param>
+            <param name="inputRect">Copy region from input image</param>
+            <returns>Output <c>ICogImage</c><br/>Width, height size will be matched with input rectangle size</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogHelper.XYWHFromRectangle(Cognex.VisionPro.CogRectangle,System.Double[]@)">
+            <summary>
+            Get x,y, width, height from CogRectangle 
+            </summary>
+            <param name="cogRectangle"><see cref="T:Cognex.VisionPro.CogRectangle">CogRectangle</see> </param>
+            <param name="xyWidthHeight">4 length array for x, y, width, height</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogHelper.XYWHToRectangle(System.Double[],Cognex.VisionPro.CogRectangle)">
+            <summary>
+            Set x,y, width, height into CogRectangle 
+            </summary>
+            <param name="xyWidthHeight">4 length array for x, y, width, height</param>
+            <param name="cogRectangle"><see cref="T:Cognex.VisionPro.CogRectangle">CogRectangle</see> </param>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Common.OverlayHelper">
+            <summary>
+            OverlayHelper
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Common.OverlayHelper.Graphics">
+            <summary>
+            List of graphic objects
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Common.OverlayHelper.TextXLocation">
+            <summary>
+            Current(or last) x position of text object 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Common.OverlayHelper.TextYLocation">
+            <summary>
+            Current(or last) y position of text object 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Common.OverlayHelper.YMax">
+            <summary>
+            Max. y position of text object
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.Finalize">
+            <summary>
+            Finalizer
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.ToString">
+            <summary>
+            Represent name for <see cref="T:SpiralLab.Sirius2.Vision.Common.OverlayHelper">CogDispHelper</see> string
+            </summary>
+            <returns>Represent name for <see cref="T:SpiralLab.Sirius2.Vision.Common.OverlayHelper">CogDispHelper</see> string</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.Clone">
+            <summary>
+            Implement <see cref="M:System.ICloneable.Clone">ICloneable.Clone</see> of <see cref="T:SpiralLab.Sirius2.Vision.Common.OverlayHelper">OverlayHelper</see>
+            </summary>
+            <remarks>Deep clone of <see cref="T:SpiralLab.Sirius2.Vision.Common.OverlayHelper">OverlayHelper</see></remarks>
+            <returns><see cref="T:SpiralLab.Sirius2.Vision.Common.OverlayHelper">OverlayHelper</see></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.AddTextResult(System.String)">
+            <summary>
+            Add normal text string into display buffer
+            </summary>
+            <param name="text">messsage</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.AddTextError(System.String)">
+            <summary>
+            Add error text string into display buffer
+            </summary>
+            <param name="text">messsage</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.AddTextWarn(System.String)">
+            <summary>
+            Add warn text string into display buffer
+            </summary>
+            <param name="text">messsage</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.Clear">
+            <summary>
+            Dispose graphic objects 
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.Clear(Cognex.VisionPro.Display.CogDisplay)">
+            <summary>
+            Clear graphic objects at target <see cref="T:Cognex.VisionPro.Display.CogDisplay">CogDisplay</see> 
+            </summary>
+            <param name="cogDisp"><see cref="T:Cognex.VisionPro.Display.CogDisplay">CogDisplay</see> </param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.Draw(Cognex.VisionPro.Display.CogDisplay)">
+            <summary>
+            Draw graphic objects at target <see cref="T:Cognex.VisionPro.Display.CogDisplay">CogDisplay</see> 
+            </summary>
+            <param name="cogDisp"><see cref="T:Cognex.VisionPro.Display.CogDisplay">CogDisplay</see> </param>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Common.TextHelper">
+            <summary>
+            TextHelper
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.TextHelper.EncodeTo(System.String)">
+            <summary>
+            Encode string to Base64 
+            </summary>
+            <param name="str">string</param>
+            <returns>Base64</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.TextHelper.DecodeFrom(System.String)">
+            <summary>
+            Decode Base64 to string
+            </summary>
+            <param name="base64String">base64 formatted string</param>
+            <returns>string</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Common.TrainImageTypeEditor">
+            <summary>
+            TrainImageTypeEditor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.TrainImageTypeEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.TrainImageTypeEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.TrainImageTypeEditor.PaintValue(System.Drawing.Design.PaintValueEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.TrainImageTypeEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Common.IntensityEditor">
+            <summary>
+            Intensity (%) editor  by trackbar
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.IntensityEditor.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.IntensityEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.IntensityEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Common.ModelFileTypeEditor">
+            <summary>
+            ModelFileTypeEditor 변환기
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Common.PatternFinderEditor">
+            <summary>
+            PatternFinderEditor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.PatternFinderEditor.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.PatternFinderEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.PatternFinderEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Common.StaticPropertyDescriptor">
+            <summary>
+            StaticPropertyDescriptor
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Common.ScriptFileBrowser">
+            <summary>
+            ScriptFileBrowser
+            <para>
+            For vision .cs script file
+            </para>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.ScriptFileBrowser.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Common.ScriptFileBrowser.InitializeDialog(System.Windows.Forms.OpenFileDialog)">
+            <inheritdoc/>
+        </member>
         <member name="T:SpiralLab.Sirius2.Vision.inspector.inspectorbase">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -2887,6 +3434,95 @@
         <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Working_C">
             <summary>
               Looks up a localized string similar to Working.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP">
+            <summary>
+            ProcessCalibratorNtoNPointVP
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.IsInspectable">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.LightIntensity">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.OverlayLevel">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.ResultCount">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP._Result">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.PitchX">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.PitchY">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.IsTrained">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.#ctor(SpiralLab.Sirius2.Vision.Camera.ICamera)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="camera">Target <see cref="T:SpiralLab.Sirius2.Vision.Camera.ICamera">ICamera</see></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.TrainOn(SpiralLab.Sirius2.Vision.Process.TrainArg)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.DoTrain(System.Drawing.Bitmap)">
+            <summary>
+            Train by bitmap image
+            </summary>
+            <param name="bitmap"><see cref="T:System.Drawing.Bitmap">Bitmap</see> for train</param>
+            <returns>Success of failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.TrainOff">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.TrainRegister">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.DoInspect(SpiralLab.Sirius2.Vision.Inspector.InspectorArg)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.Calibrate(Cognex.VisionPro.ICogImage,Cognex.VisionPro.ICogImage@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.Clear">
+            <inheritdoc/>  
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.SpaceSize">
+            <summary>
+            Raw. the physical grid spacing (px) in the X,Y direction of raw calibrated space
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.UserSpaceSize">
+            <summary>
+            Raw. the physical grid spacing (mm) in the X,Y direction of raw calibrated space
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorNtoNPointVP.RoiRect">
+            <summary>
+            ROI rectangle for x,y, width, height
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Vision.Process.ProcessCross">
@@ -4236,6 +4872,176 @@
             </para>
             </summary>
         </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Process.ProcessFocus">
+            <summary>
+            ProcessFocus
+            <para>
+            Can be created by <see cref="M:SpiralLab.Sirius2.Vision.Process.ProcessFactory.CreateFocus">ProcessFactory.CreateFocus</see>. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Vision.Process.FocusResult">FocusResult</see> for result. <br/>
+            </para>
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP">
+            <summary>
+            ProcessFocusVP
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.SampleData">
+            <summary>
+            Internal sample data
+            <para>
+            Key: current position (mm) <br/>
+            Value: sharpness score <br/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.SampleCount">
+            <summary>
+            Sample counts
+            <para>
+            Counts of <see cref="P:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.SampleData">SampleData</see> 
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.CurrentPosition">
+            <summary>
+            Current position (mm)
+            <para>
+            Set current focus position before start inspect
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.Mode">
+            <summary>
+            Sharpness mode
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.BandPassMin">
+            <summary>
+            Min. band frequency
+            <para>
+            Used with if <see cref="P:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.Mode">Mode</see> is <see cref="F:Cognex.VisionPro.ImageProcessing.CogImageSharpnessModeConstants.BandPass">BandPass</see> only. <br/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.BandPassMax">
+            <summary>
+            Max. band frequency
+            <para>
+            Used with if <see cref="P:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.Mode">Mode</see> is <see cref="F:Cognex.VisionPro.ImageProcessing.CogImageSharpnessModeConstants.BandPass">BandPass</see> only. <br/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.AutoCorrNoiseLevel">
+            <summary>
+            Auto corr noise level
+            <para>
+            Used with if <see cref="P:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.Mode">Mode</see> is <see cref="F:Cognex.VisionPro.ImageProcessing.CogImageSharpnessModeConstants.AutoCorrelation">AutoCorrelation</see> only. <br/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.AbsDiff">
+            <summary>
+            Abs diff x,y
+            <para>
+            Used with if <see cref="P:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.Mode">Mode</see> is <see cref="F:Cognex.VisionPro.ImageProcessing.CogImageSharpnessModeConstants.AbsDiff">AutoCorrelation</see> only. <br/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.GradientEnergySmoothing">
+            <summary>
+            Gradient energy low pass smoothing
+            <para>
+            Used with if <see cref="P:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.Mode">Mode</see> is <see cref="F:Cognex.VisionPro.ImageProcessing.CogImageSharpnessModeConstants.GradientEnergy">GradientEnergy</see> only. <br/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.RoiRect">
+            <summary>
+            Used by internally. Do not edit <br/>
+            <para>
+            ROI rectangle for x, y, width, height
+            </para>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name">Name</param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.TrainOn(SpiralLab.Sirius2.Vision.Process.TrainArg)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.TrainOff">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.TrainRegister">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.DoInspect(SpiralLab.Sirius2.Vision.Inspector.InspectorArg)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.ClearSampleData">
+            <summary>
+            Clear internal sample data
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessFocusVP.CalculateFocus(System.Double@,System.Double@)">
+            <summary>
+            Calculate best focus position from internal sample data
+            <para>
+            Sample data counts must be greater than 3 at least. <br/>
+            </para>
+            </summary>
+            <param name="pos">Calculated focus position (mm)</param>
+            <param name="score">Expected sharpness score</param>
+            <returns>Success of failed</returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Vision.Process.FocusResult">
+            <summary>
+            FocusResult
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.FocusResult.SampleData">
+            <summary>
+            Sample data 
+            <para>
+            Key: Target position (mm) <br/>
+            value: Sharpness score. <br/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.FocusResult.BestPosition">
+            <summary>
+            Best focus position (mm)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.FocusResult.ExpectScore">
+            <summary>
+            Expected sharpness score
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.FocusResult.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.FocusResult.#ctor(SpiralLab.Sirius2.Vision.Process.IProcess)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="owner"><see cref="T:SpiralLab.Sirius2.Vision.Process.IProcess">IProcess</see></param>
+        </member>
         <member name="T:SpiralLab.Sirius2.Vision.Process.ProcessChildrenBase">
             <summary>
             ProcessChildrenBase
@@ -4515,6 +5321,30 @@
             </summary>
             <returns><see cref="T:SpiralLab.Sirius2.Vision.Process.ProcessBarcode">ProcessBarcode</see></returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessFactory.CreateFocus">
+            <summary>
+            Create <see cref="T:SpiralLab.Sirius2.Vision.Process.ProcessFocus">ProcessFocus</see> process
+            <code>
+            var document = siriusVisionUserControl1.Document;
+            ...
+            var focus = ProcessFactory.CreateFocus();
+            document.ActAdd(focus);
+            ...
+            // Repeat begin 3 more times 
+            focus.CurrentPosition = your actuator position;
+            camera.CtlGrab(focus);
+            //or focus.Inspect(...);
+            // Repeat end
+            
+            if (focus.CalculateFocus(out var position, out var score))
+            {
+                //move actuator to focus position
+                ...
+            }
+            </code>
+            </summary>
+            <returns><see cref="T:SpiralLab.Sirius2.Vision.Process.ProcessFocus">ProcessFocus</see></returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Vision.Process.ProcessFactory.CreateCalibrator(SpiralLab.Sirius2.Vision.Camera.ICamera)">
             <summary>
             Create <see cref="T:SpiralLab.Sirius2.Vision.Process.ProcessCalibrator">ProcessCalibrator</see> process for checkerboard calibration
@@ -4536,7 +5366,7 @@
             ProcessPatternVP
             </summary>
             <summary>
-            ProcessPatternCog
+            ProcessPatternVP
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessPatternVP.ResultOrigin">
@@ -6922,523 +7752,6 @@
             </remarks>
             <returns><see cref="T:SpiralLab.Sirius2.Vision.IDocument">IDocument</see></returns>
         </member>
-        <member name="T:SpiralLab.Sirius2.Vision.Common.BitmapHelper">
-            <summary>
-            Bitmap helper to manipulate 
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.BitmapHelper.EncodeTo(System.Drawing.Bitmap)">
-            <summary>
-            Encode bitmap to base64 encoding
-            </summary>
-            <param name="bitmap"><see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></param>
-            <returns>Encoded base64 string</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.BitmapHelper.DecodeFrom(System.String)">
-            <summary>
-            Decode base64 encoding to bitmap
-            </summary>
-            <param name="base64String">Encoded base64 string</param>
-            <returns><see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.BitmapHelper.ConvertTo8bppIndexed(System.Drawing.Bitmap)">
-            <summary>
-            Convert input bitmap pixel format to 8bpp indexed pixel format
-            </summary>
-            <param name="bitmap"> <see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></param>
-            <returns> <returns><see cref="T:System.Drawing.Bitmap">System.Drawing.Bitmap</see></returns></returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Vision.Common.CogImageRoot">
-            <summary>
-            Cognex image buffer root
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageRoot.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageRoot.FromMemory(System.Int32,System.Int32)">
-            <summary>
-            Initialize internal memory by size
-            </summary>
-            <param name="width">Width (pixel)</param>
-            <param name="height">Height (pixel)</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageRoot.Dispose">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Vision.Common.CogImageGreySingle">
-            <summary>
-            Single cognex grey (8) image by memory
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageGreySingle.Image">
-            <summary>
-            Internal image by <c>CogImageRoot</c>
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreySingle.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreySingle.#ctor(System.Int32,System.Int32)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="width">Width (pixel)</param>
-            <param name="height">Height (pixel)</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreySingle.#ctor(Cognex.VisionPro.CogImage8Grey)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="image"><see cref="T:Cognex.VisionPro.CogImage8Grey">CogImage8Grey</see></param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreySingle.ClearAndFill(System.Byte)">
-            <summary>
-            Clear image
-            </summary>
-            <param name="fillGreyValue">0~255</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreySingle.Load(Cognex.VisionPro.CogImage8Grey,SpiralLab.Sirius2.Vision.Camera.CenterCalibrator)">
-            <summary>
-            Update(or change) target image
-            </summary>
-            <param name="image"><see cref="T:Cognex.VisionPro.CogImage8Grey">CogImage8Grey</see></param>
-            <param name="calibrator"><see cref="T:SpiralLab.Sirius2.Vision.Camera.CenterCalibrator">CenterCalibrator</see><br/>If <c>null</c>, used with raw input image.</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreySingle.Dispose">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Vision.Common.CogImageColorSingle">
-            <summary>
-            Single cognex color (24) image by memory
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageColorSingle.Image">
-            <summary>
-            Internal image by <c>CogImageRoot</c>
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorSingle.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorSingle.#ctor(System.Int32,System.Int32)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="width">Width (pixel)</param>
-            <param name="height">Height (pixel)</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorSingle.#ctor(Cognex.VisionPro.CogImage24PlanarColor)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="image"><see cref="T:Cognex.VisionPro.CogImage24PlanarColor">CogImage24PlanarColor</see></param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorSingle.Dispose">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorSingle.ClearAndFill(System.Byte)">
-            <summary>
-            Clear image
-            </summary>
-            <param name="fillGreyValue">0~255</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorSingle.Load(Cognex.VisionPro.CogImage24PlanarColor,SpiralLab.Sirius2.Vision.Camera.CenterCalibrator)">
-            <summary>
-            Update(or change) target image
-            </summary>
-            <param name="image"><see cref="T:Cognex.VisionPro.CogImage24PlanarColor">CogImage24PlanarColor</see></param>
-            <param name="calibrator"><see cref="T:SpiralLab.Sirius2.Vision.Camera.CenterCalibrator">CenterCalibrator</see><br/>If <c>null</c>, used with raw input image.</param>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched">
-            <summary>
-            Single cognex grey (8) images by memory
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.Image">
-            <summary>
-            One large image by array of CogImageRoot 
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.Rows">
-            <summary>
-            Row(Y) counts
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.Cols">
-            <summary>
-            Col(X) counts
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.RowPitch">
-            <summary>
-            Pixel
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.ColPitch">
-            <summary>
-            Pixel
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="cellWidth">Cell width (pixel)</param>
-            <param name="cols">Col counts</param>
-            <param name="cellHeight">Cell height (pixel)</param>
-            <param name="rows">Row counts</param>
-            <param name="widthMargin">Cell width margin (pixel)</param>
-            <param name="heightMargin">Cell height margin (pixel)</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.Dispose">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.ClearAndFill(System.Byte)">
-            <summary>
-            Clear whole array of image
-            </summary>
-            <param name="fillGreyValue">0~255</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.Load(System.Int32,System.Int32,Cognex.VisionPro.CogImage8Grey,SpiralLab.Sirius2.Vision.Camera.StitchCalibrator)">
-            <summary>
-            Update(or change) target image at row/col
-            </summary>
-            <param name="row">0~rows<br/>Starting from 0 at left, bottom corner</param>
-            <param name="col">0~rows<br/>Starting from 0 at left, bottom corner</param>
-            <param name="image"><see cref="T:Cognex.VisionPro.CogImage8Grey">CogImage8Grey</see></param>
-            <param name="calibrator"><see cref="T:SpiralLab.Sirius2.Vision.Camera.StitchCalibrator">StitchCalibrator</see></param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.Load(System.Int32,Cognex.VisionPro.CogImage8Grey,SpiralLab.Sirius2.Vision.Camera.StitchCalibrator)">
-            <summary>
-            Update(or change) target image at index
-            </summary>
-            <param name="index">0~rows*cols<br/>Starting from 0 at left, bottom corner</param>
-            <param name="image"><see cref="T:Cognex.VisionPro.CogImage8Grey">CogImage8Grey</see></param>
-            <param name="calibrator"><see cref="T:SpiralLab.Sirius2.Vision.Camera.StitchCalibrator">StitchCalibrator</see></param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageGreyStitched.Load(Cognex.VisionPro.CogImage8Grey)">
-            <summary>
-            Update whole images
-            </summary>
-            <param name="image"><see cref="T:Cognex.VisionPro.CogImage8Grey">CogImage8Grey</see></param>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched">
-            <summary>
-            Single cognex color (24) images by memory
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.Image">
-            <summary>
-            One large image by array of CogImageRoot 
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.RowPitch">
-            <summary>
-            Row(Y) pixels
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.ColPitch">
-            <summary>
-            Col(X) pixels
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="cellWidth">Cell width (pixel)</param>
-            <param name="cols">Col counts</param>
-            <param name="cellHeight">Cell height (pixel)</param>
-            <param name="rows">Row counts</param>
-            <param name="widthMargin">Cell width margin (pixel)</param>
-            <param name="heightMargin">Cell height margin (pixel)</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.Dispose">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.ClearAndFill(System.Byte)">
-            <summary>
-            Clear whole array of image
-            </summary>
-            <param name="fillGreyValue">0~255</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.Load(System.Int32,System.Int32,Cognex.VisionPro.CogImage24PlanarColor,SpiralLab.Sirius2.Vision.Camera.StitchCalibrator)">
-            <summary>
-            Update(or change) target image at row/col
-            </summary>
-            <param name="row">0~rows<br/>Starting from 0 at left, bottom corner</param>
-            <param name="col">0~rows<br/>Starting from 0 at left, bottom corner</param>
-            <param name="image"><see cref="T:Cognex.VisionPro.CogImage24PlanarColor">CogImage24PlanarColor</see></param>
-            <param name="calibrator"><see cref="T:SpiralLab.Sirius2.Vision.Camera.StitchCalibrator">StitchCalibrator</see></param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.Load(System.Int32,Cognex.VisionPro.CogImage24PlanarColor,SpiralLab.Sirius2.Vision.Camera.StitchCalibrator)">
-            <summary>
-            Update(or change) target image at index
-            </summary>
-            <param name="index">0~rows*cols<br/>Starting from 0 at left, bottom corner</param>
-            <param name="image"><see cref="T:Cognex.VisionPro.CogImage24PlanarColor">CogImage24PlanarColor</see></param>
-            <param name="calibrator"><see cref="T:SpiralLab.Sirius2.Vision.Camera.StitchCalibrator">StitchCalibrator</see></param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.Load(Cognex.VisionPro.CogImage24PlanarColor)">
-            <summary>
-            Update whole images
-            </summary>
-            <param name="image"><see cref="T:Cognex.VisionPro.CogImage24PlanarColor">CogImage24PlanarColor</see></param>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Vision.Common.CogHelper">
-            <summary>
-            Cognex helper
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogHelper.ConvertToGrey(Cognex.VisionPro.CogImage24PlanarColor)">
-            <summary>
-            Convert <see cref="T:Cognex.VisionPro.CogImage24PlanarColor">CogImage24PlanarColor</see> into <see cref="T:Cognex.VisionPro.CogImage8Grey">CogImage8Grey</see>
-            </summary>
-            <param name="colorImage"><see cref="T:Cognex.VisionPro.CogImage24PlanarColor">CogImage24PlanarColor</see></param>
-            <returns><see cref="T:Cognex.VisionPro.CogImage8Grey">CogImage8Grey</see></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogHelper.ConvertToBitmap(Cognex.VisionPro.CogImage8Grey)">
-            <summary>
-            Convert 8bit gery cog image into bitmap
-            </summary>
-            <param name="cogGreyImage"><see cref="T:Cognex.VisionPro.CogImage8Grey">CogImage8Grey</see></param>
-            <returns><see cref="T:System.Drawing.Bitmap">Bitmap</see></returns>
-            <exception cref="T:System.InvalidOperationException"></exception>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogHelper.CalculateSharpnessScore(System.Drawing.Bitmap)">
-            <summary>
-            Calculate sharpness score from image
-            </summary>
-            <param name="bitmap"><see cref="T:System.Drawing.Bitmap">Bitmap</see></param>
-            <returns>Sharpness score</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogHelper.Clone(Cognex.VisionPro.ICogImage)">
-            <summary>
-            Clone <see cref="T:Cognex.VisionPro.ICogImage">ICogImage</see>
-            </summary>
-            <param name="sourceImage"><see cref="T:Cognex.VisionPro.ICogImage">ICogImage</see></param>
-            <returns></returns>
-            <exception cref="T:System.NotSupportedException"></exception>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogHelper.CopyRegion(Cognex.VisionPro.ICogImage,Cognex.VisionPro.CogRectangle)">
-            <summary>
-            Copy from assigned rectangular region at input image to output image
-            </summary>
-            <param name="inputImage">Input <c>ICogImage</c></param>
-            <param name="inputRect">Copy region from input image</param>
-            <returns>Output <c>ICogImage</c><br/>Width, height size will be matched with input rectangle size</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogHelper.XYWHFromRectangle(Cognex.VisionPro.CogRectangle,System.Double[]@)">
-            <summary>
-            Get x,y, width, height from CogRectangle 
-            </summary>
-            <param name="cogRectangle"><see cref="T:Cognex.VisionPro.CogRectangle">CogRectangle</see> </param>
-            <param name="xyWidthHeight">4 length array for x, y, width, height</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogHelper.XYWHToRectangle(System.Double[],Cognex.VisionPro.CogRectangle)">
-            <summary>
-            Set x,y, width, height into CogRectangle 
-            </summary>
-            <param name="xyWidthHeight">4 length array for x, y, width, height</param>
-            <param name="cogRectangle"><see cref="T:Cognex.VisionPro.CogRectangle">CogRectangle</see> </param>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Vision.Common.OverlayHelper">
-            <summary>
-            OverlayHelper
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Vision.Common.OverlayHelper.Graphics">
-            <summary>
-            List of graphic objects
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Vision.Common.OverlayHelper.TextXLocation">
-            <summary>
-            Current(or last) x position of text object 
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Vision.Common.OverlayHelper.TextYLocation">
-            <summary>
-            Current(or last) y position of text object 
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Vision.Common.OverlayHelper.YMax">
-            <summary>
-            Max. y position of text object
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.Finalize">
-            <summary>
-            Finalizer
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.Dispose">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.ToString">
-            <summary>
-            Represent name for <see cref="T:SpiralLab.Sirius2.Vision.Common.OverlayHelper">CogDispHelper</see> string
-            </summary>
-            <returns>Represent name for <see cref="T:SpiralLab.Sirius2.Vision.Common.OverlayHelper">CogDispHelper</see> string</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.Clone">
-            <summary>
-            Implement <see cref="M:System.ICloneable.Clone">ICloneable.Clone</see> of <see cref="T:SpiralLab.Sirius2.Vision.Common.OverlayHelper">OverlayHelper</see>
-            </summary>
-            <remarks>Deep clone of <see cref="T:SpiralLab.Sirius2.Vision.Common.OverlayHelper">OverlayHelper</see></remarks>
-            <returns><see cref="T:SpiralLab.Sirius2.Vision.Common.OverlayHelper">OverlayHelper</see></returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.AddTextResult(System.String)">
-            <summary>
-            Add normal text string into display buffer
-            </summary>
-            <param name="text">messsage</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.AddTextError(System.String)">
-            <summary>
-            Add error text string into display buffer
-            </summary>
-            <param name="text">messsage</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.AddTextWarn(System.String)">
-            <summary>
-            Add warn text string into display buffer
-            </summary>
-            <param name="text">messsage</param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.Clear">
-            <summary>
-            Dispose graphic objects 
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.Clear(Cognex.VisionPro.Display.CogDisplay)">
-            <summary>
-            Clear graphic objects at target <see cref="T:Cognex.VisionPro.Display.CogDisplay">CogDisplay</see> 
-            </summary>
-            <param name="cogDisp"><see cref="T:Cognex.VisionPro.Display.CogDisplay">CogDisplay</see> </param>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.OverlayHelper.Draw(Cognex.VisionPro.Display.CogDisplay)">
-            <summary>
-            Draw graphic objects at target <see cref="T:Cognex.VisionPro.Display.CogDisplay">CogDisplay</see> 
-            </summary>
-            <param name="cogDisp"><see cref="T:Cognex.VisionPro.Display.CogDisplay">CogDisplay</see> </param>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Vision.Common.TextHelper">
-            <summary>
-            TextHelper
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.TextHelper.EncodeTo(System.String)">
-            <summary>
-            Encode string to Base64 
-            </summary>
-            <param name="str">string</param>
-            <returns>Base64</returns>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.TextHelper.DecodeFrom(System.String)">
-            <summary>
-            Decode Base64 to string
-            </summary>
-            <param name="base64String">base64 formatted string</param>
-            <returns>string</returns>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Vision.Common.TrainImageTypeEditor">
-            <summary>
-            TrainImageTypeEditor
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.TrainImageTypeEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.TrainImageTypeEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.TrainImageTypeEditor.PaintValue(System.Drawing.Design.PaintValueEventArgs)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.TrainImageTypeEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Vision.Common.IntensityEditor">
-            <summary>
-            Intensity (%) editor  by trackbar
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.IntensityEditor.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.IntensityEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.IntensityEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Vision.Common.ModelFileTypeEditor">
-            <summary>
-            ModelFileTypeEditor 변환기
-            </summary>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Vision.Common.PatternFinderEditor">
-            <summary>
-            PatternFinderEditor
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.PatternFinderEditor.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.PatternFinderEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
-            <inheritdoc/>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.PatternFinderEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
-            <inheritdoc/>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Vision.Common.StaticPropertyDescriptor">
-            <summary>
-            StaticPropertyDescriptor
-            </summary>
-        </member>
-        <member name="T:SpiralLab.Sirius2.Vision.Common.ScriptFileBrowser">
-            <summary>
-            ScriptFileBrowser
-            <para>
-            For vision .cs script file
-            </para>
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.ScriptFileBrowser.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.ScriptFileBrowser.InitializeDialog(System.Windows.Forms.OpenFileDialog)">
-            <inheritdoc/>
-        </member>
         <member name="T:SpiralLab.Sirius2.Vision.IDocumentData">
             <summary>
             IDocumentData interface
@@ -8232,6 +8545,17 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Abs_diff_DESC">
+             <summary>
+               Looks up a localized string similar to Separation in the X, Y direction.
+            Used if Sharpness Mode is AbsDiff..
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Abs_diff_DISP">
+            <summary>
+              Looks up a localized string similar to Abs diff.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.AIM_DPM_DESC">
             <summary>
               Looks up a localized string similar to Automatic Identification Manufacturers - Direct Part Marking.
@@ -8272,6 +8596,18 @@
         <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Area_threshold_DISP">
             <summary>
               Looks up a localized string similar to Area threshold.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Auto_corr_noise_level_DESC">
+             <summary>
+               Looks up a localized string similar to Noise level for autocorrelation mode. 
+            Used if Sharpness Mode is AutoCorrelation.
+            The grey-level variation inherent in the sensor, and should be significantly smaller than the grey-level range observed in the image..
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Auto_corr_noise_level_DISP">
+            <summary>
+              Looks up a localized string similar to Correlation noise.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Barcode_auto_rotate_DESC">
@@ -8625,6 +8961,17 @@
               Looks up a localized string similar to Corner rows.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Current_position_DESC">
+             <summary>
+               Looks up a localized string similar to Current Position (mm)
+            Set Focus Position before Start Inspect.
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Current_position_DISP">
+            <summary>
+              Looks up a localized string similar to Position.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Data_C">
             <summary>
               Looks up a localized string similar to Data.
@@ -8722,6 +9069,17 @@
               Looks up a localized string similar to Find max.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Gradient_energy_smoothing_DESC">
+             <summary>
+               Looks up a localized string similar to Low pass smoothing for gradient energy mode. The image is processed using Gaussian smoothing before sharpness is measured. 
+            Used if Sharpness Mode is GradientEnergy..
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Gradient_energy_smoothing_DISP">
+            <summary>
+              Looks up a localized string similar to Smoothing.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Grid_space_size_DESC">
             <summary>
               Looks up a localized string similar to The physical grid spacing (px) in the X, Y direction of raw calibrated space.
@@ -8809,6 +9167,17 @@
               Looks up a localized string similar to Max angle.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Max_band_frequency_DESC">
+             <summary>
+               Looks up a localized string similar to Max. Band Frequency (pixel)
+            Used if Sharpness Mode is BandPass..
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Max_band_frequency_DISP">
+            <summary>
+              Looks up a localized string similar to Max. band frequency.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Max_scale_DESC">
             <summary>
               Looks up a localized string similar to Max Scale.
@@ -8832,6 +9201,17 @@
         <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Min_angle_DISP">
             <summary>
               Looks up a localized string similar to Min angle.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Min_band_frequency_DESC">
+             <summary>
+               Looks up a localized string similar to Min. Band Frequency (pixel)
+            Used if Sharpness Mode is BandPass..
+             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Min_band_frequency_DISP">
+            <summary>
+              Looks up a localized string similar to Min. band frequency.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Min_pixel_DESC">
@@ -9154,6 +9534,26 @@
               Looks up a localized string similar to Width.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Sample_count_DESC">
+            <summary>
+              Looks up a localized string similar to Sample Data Counts.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Sample_count_DISP">
+            <summary>
+              Looks up a localized string similar to Sample counts.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Sample_data_DESC">
+            <summary>
+              Looks up a localized string similar to Sample Data.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Sample_data_DISP">
+            <summary>
+              Looks up a localized string similar to Sample data.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Scale_delta_DESC">
              <summary>
                Looks up a localized string similar to Scale Delta for Min, Max Scale
@@ -9193,6 +9593,16 @@
         <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.SEMIT10_DISP">
             <summary>
               Looks up a localized string similar to SEMI T10.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Sharpness_mode_DESC">
+            <summary>
+              Looks up a localized string similar to Sharpness Mode.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Sharpness_mode_DISP">
+            <summary>
+              Looks up a localized string similar to Sharpness.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.process.ProcessBase.Simple_detector_DESC">

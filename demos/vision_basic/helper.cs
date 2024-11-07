@@ -242,14 +242,18 @@ namespace Demos
                 // Load calibration file into camera (if stitching supported)
                 if (camera is ICameraStitched cameraStitched)
                 {
-                    // Create center position for stitced images
+                    // Create default stitch positions
                     cameraStitched.CreateStitchedCells();
                     string calibrationStitcedFile = NativeMethods.ReadIni(ConfigFileName, $"CAMERA{index}", "CALIBRATION_STITCHED", string.Empty);
                     if (!string.IsNullOrEmpty(calibrationStitcedFile))
                     {
                         string calibrationPath = Path.Combine(SpiralLab.Sirius2.Vision.Config.CalibrationPath, calibrationStitcedFile);
                         if (StitchCalibratorSerializer.Open(calibrationPath, out var calibrator))
+                        {
+                            if (cameraStitched.StitchRows * cameraStitched.StitchCols != calibrator.Cells.Count)
+                                Logger.Log(Logger.Types.Warn, $"stitch camera calibration counts are mismatched: {calibrator.Cells.Count}");
                             cameraStitched.StitchCalibrator = calibrator;
+                        }
                     }
                     cameraStitched.OnStitchedCalibratorSaved += CameraStitched_OnStitchedCalibratorSaved;
                 }

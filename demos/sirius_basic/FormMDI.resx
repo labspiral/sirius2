@@ -121,25 +121,6 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="inspectionResultsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAI5JREFUSEvl
-        lIsJgDAMRDuSG+qmuoFuoDkwEK6W1FDx9+CB1Hi2ITT9gkGcxVHssdAShK8k1kJwkLXbxTNOonCdNeOo
-        SLU/mESF66xVNG1RCQQuInbePPw2cJLnjS5/5OmNboa+qNUb3TDhFp0Bgc8eXezqHTeohUO9MfTM4AJv
-        DD2LXNYiCwK/d4MGSGkDz2uP4/qeBGoAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="mnuAutoFocus.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAASNJREFUSEvt
-        le0RAUEQRC8EIQhFCDIgBBmQCRmQARmQARmQAf2UUaPvOB/LL131qtzs3vTu3Oyq/jJ1xVQcRZ9AKfXE
-        XJA4KGJA4qXIiVeCnXykociJD4LE/Cb+tki8FTnxRHQu7ARxdva0eHEgcmKYCddIMLY4P7WIxGOxFzlx
-        QJw5WTzH+F01Jaa+lMfNKI9rIxirlSn3cEDimEjb5TFYCxelY4xyXeUvM8lXwGrznMAV82525wbspKgB
-        okSxvYCeflQi6u1qLFEWHxl3ejwSYUSr5hjUVind/ciuJqMM8bfa1MVLtGic0oDv5AYvHbQmuRHngjOD
-        EcQ5aS1PmzCKyy2M4vIjXkysNBsBRh9f1y6MqHs2KvKH48pn6SsGv1ZVnQDJh5fIsySSCwAAAABJRU5E
-        rkJggg==
-</value>
-  </data>
   <data name="exitToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAATZJREFUSEvt
@@ -166,6 +147,14 @@
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAEdJREFUSEvd
         jyEOACAQw/b/T4MBXdEDsSYTTWqWX6yzy7RjYL0AumgdA+sF0EXrGFgvgC5ax8B6AXTROgbWC6CL1jGw
         /opkA4lVj3FPOPHaAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="inspectionResultsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAI5JREFUSEvl
+        lIsJgDAMRDuSG+qmuoFuoDkwEK6W1FDx9+CB1Hi2ITT9gkGcxVHssdAShK8k1kJwkLXbxTNOonCdNeOo
+        SLU/mESF66xVNG1RCQQuInbePPw2cJLnjS5/5OmNboa+qNUb3TDhFp0Bgc8eXezqHTeohUO9MfTM4AJv
+        DD2LXNYiCwK/d4MGSGkDz2uP4/qeBGoAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="cascadeToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
