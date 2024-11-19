@@ -274,6 +274,10 @@
 
 **9. Version history**
 
+* 2024.11.19 v.1.47.2110
+  - fixed) syncaxis
+     - exception after marker has finished
+
 * 2024.11.8 v.1.46.2105
   - updated) RTC6 v1.19.1 
   - added) support reverse order for triangle, rectangle, cross entity
