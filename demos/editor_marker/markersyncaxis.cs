@@ -681,8 +681,8 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             Debug.Assert(null != rtcSyncAxis);
 
             this.isInternalBusy = true;
-            base.StartTime = base.EndTime = DateTime.Now;
             this.NotifyStarted();
+            base.StartTime = base.EndTime = DateTime.Now;
             bool success = true;
             var oldMatrixStack = (IMatrixStack<System.Numerics.Matrix4x4>)rtc.MatrixStack.Clone();
 

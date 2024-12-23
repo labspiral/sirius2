@@ -274,6 +274,11 @@
 
 **9. Version history**
 
+* 2024.12.23 v.1.48.2111
+  - fixed) accurate executed job time
+    - added) IJob.ExecutionTimeRtcOnly
+    - added) job history at marker
+
 * 2024.11.19 v.1.47.2110
   - fixed) syncaxis
      - exception after marker has finished

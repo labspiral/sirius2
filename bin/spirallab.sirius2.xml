@@ -16138,6 +16138,16 @@
               Looks up a localized string similar to Execute.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtcjob.ExecuteRtcOnly_DESC">
+            <summary>
+              Looks up a localized string similar to Execution Time for RTC Only (s).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtcjob.ExecuteRtcOnly_DISP">
+            <summary>
+              Looks up a localized string similar to Execution (RTC).
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtcjob.ID_DESC">
             <summary>
               Looks up a localized string similar to Job ID.
@@ -16151,6 +16161,16 @@
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtcjob.Job_C">
             <summary>
               Looks up a localized string similar to Job.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtcjob.JobHistory_DESC">
+            <summary>
+              Looks up a localized string similar to RTC Job History.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtcjob.JobHistory_DISP">
+            <summary>
+              Looks up a localized string similar to History.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtcjob.Listcommands_DESC">
@@ -16200,7 +16220,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtcjob.Time_C">
             <summary>
-              Looks up a localized string similar to Time_C.
+              Looks up a localized string similar to Time.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.LicenseInfo">
@@ -16210,40 +16230,61 @@
         </member>
         <member name="F:SpiralLab.Sirius2.LicenseInfo.SerialNo">
             <summary>
-            Serial number for license dongle key
+            Serial number for license key
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.LicenseInfo.IsRtcLicensed">
             <summary>
             License for RTC or not
+            <para>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc4">Rtc4</see>. <br/> 
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet">Rtc4Ethernet</see>. <br/> 
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5">Rtc5</see>. <br/> 
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6">Rtc6</see>. <br/> 
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet">Rtc6Ethernet</see>. <br/> 
+            </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.LicenseInfo.RtcLicenseMax">
             <summary>
             Max instance count(s) of scanner(like as RTC) license
             <para>
-            Used with RTC4,5,6 <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc4">Rtc4</see>. <br/> 
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet">Rtc4Ethernet</see>. <br/> 
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5">Rtc5</see>. <br/> 
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6">Rtc6</see>. <br/> 
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet">Rtc6Ethernet</see>. <br/> 
             </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.LicenseInfo.IsRtcSyncAxisLicensed">
             <summary>
             License for XL-SCAN(aka. syncAXIS) or not
+            <para>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis">IRtcSyncAxis</see>. <br/> 
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis">Rtc6SyncAxis</see>. <br/> 
+            </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.LicenseInfo.RtcSyncAxisLicenseMax">
             <summary>
             Max instance count(s) of XL-SCAN(aka. syncAXIS) license
             <para>
-            Used with syncAXIS <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.IRtcSyncAxis">IRtcSyncAxis</see>. <br/> 
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis">Rtc6SyncAxis</see>. <br/> 
             </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.LicenseInfo.IsMoFLicensed">
             <summary>
-            Option for MoF(Marking/Processing on the fly) or not
+            Option for MoF(Marking on the fly, aka. Processing on the fly) or not
             <para>
-            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see>. <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc4">Rtc4</see>. <br/> 
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet">Rtc4Ethernet</see>. <br/> 
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5">Rtc5</see>. <br/> 
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6">Rtc6</see>. <br/> 
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet">Rtc6Ethernet</see>. <br/> 
             </para>
             </summary>
         </member>
@@ -16251,21 +16292,24 @@
             <summary>
             Option for 3D or not
             <para>
-            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary">RtcCalibrationLibrary</see> <br/>
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection3D">RtcCorrection3D</see>. <br/> 
+            Used with <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcCalibrationLibrary">RtcCalibrationLibrary</see>. <br/>
+            You must be equipped with 3D actuator like as vario-scan series. <br/>
             </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.LicenseInfo.IsVisionLicensed">
             <summary>
-            Option for Vision or not
+            Option for <c>Vision</c> or not
             <para>
             Used with <c>spirallab.sirius2.vision.dll</c> <br/>
+            You must be equipped with license key for Cognex <c>VPRO</c> to use <c>Cognex.VisionPro</c> as image processing engine. <br/>
             </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.LicenseInfo.VisionLicenseMax">
             <summary>
-            Max instance count(s) of vision license
+            Max instance count(s) of <c>Vision</c> license
             <para>
             Used with <c>spirallab.sirius2.vision.dll</c> for vision. <br/>
             You must be equipped with license key for Cognex <c>VPRO</c> to use <c>Cognex.VisionPro</c> as image processing engine. <br/>
@@ -16439,7 +16483,7 @@
             4x4 Matrix Stack
             </summary>
             <remarks>
-            By <c>System.Numerics.Matrix4x4</c>
+            Used with <see cref="T:System.Numerics.Matrix4x4">System.Numerics.Matrix4x4</see>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Mathematics.MatrixStack4.ToResult">
@@ -16505,6 +16549,66 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.MatrixStack4.Pop">
             <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Mathematics.MatrixStack4.CreatePerspective(System.Numerics.Vector2[],System.Numerics.Vector2[])">
+            <summary>
+            Create 4x4 matrix for perspective transformation <br/>
+            <para>
+            Measuring the positions of the four corners of an target and obtaining a transformation matrix for distortions such as scale, rotation, and skew is typically done using a Perspective Transformation. <br/>
+            </para>
+            <code>
+            // 4 Source points
+            Vector2[] srcPoints = new Vector2[]
+            {
+                new Vector2(100, 150),
+                new Vector2(400, 150),
+                new Vector2(400, 400),
+                new Vector2(100, 400) 
+            };
+            // 4 Target points
+            Vector2[] dstPoints  = new Vector2[]
+            {
+                new Vector2(0, 0), 
+                new Vector2(300, 0),
+                new Vector2(300, 300),
+                new Vector2(0, 300)  
+            };
+            // Create perspective transform 4x4 matrix
+            Matrix4x4 perspectiveMatrix = CreatePerspective(srcPoints, dstPoints);
+            ...
+            rtc.MatrixStack.Push(perspectiveMatrix); 
+            rtc.ListJumpTo(new Vector2(-width / 2, height / 2));
+            rtc.ListMarkTo(new Vector2(width / 2, height / 2));
+            rtc.ListMarkTo(new Vector2(width / 2, -height / 2));
+            rtc.ListMarkTo(new Vector2(-width / 2, -height / 2));
+            rtc.ListMarkTo(new Vector2(-width / 2, height / 2));
+            rtc.MatrixStack.Pop(); 
+            }
+            rtc.ListEnd();
+            rtc.ListExecute(true);
+            </code>
+            </summary>
+            <param name="srcPoints">Source array of 4 points <see cref="T:System.Numerics.Vector2">System.Numerics.Vector2</see></param>
+            <param name="dstPoints">Destination array of 4 points <see cref="T:System.Numerics.Vector2">System.Numerics.Vector2</see></param>
+            <returns><see cref="T:System.Numerics.Matrix4x4">System.Numerics.Matrix4x4</see></returns>
+            <exception cref="T:System.ArgumentException">Throw if array of point counts are not 4</exception>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Mathematics.MatrixStack4.ConvertTo(System.Numerics.Matrix4x4@)">
+            <summary>
+            Convert 4x4 matrix into 3x2 matrix<br/>
+            <para>
+            </para>
+            </summary>
+            <param name="matrix"><see cref="T:System.Numerics.Matrix4x4">System.Numerics.Matrix4x4</see></param>
+            <returns><see cref="T:System.Numerics.Matrix3x2">System.Numerics.Matrix3x2</see></returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Mathematics.MatrixStack4.SolveLinearSystem(System.Double[0:,0:],System.Double[])">
+            <summary>
+            A의 역행렬 계산 후 B와 곱해 h 계산
+            </summary>
+            <param name="A"></param>
+            <param name="B"></param>
+            <returns></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Mathematics.MathHelper">
             <summary>
@@ -27901,6 +28005,9 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.ExecutionTime">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.ExecutionTimeRtcOnly">
+            <inheritdoc/>
+        </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.JobSyncAxis.Characteristic">
             <summary>
             Job characteristic
@@ -29770,6 +29877,9 @@
             <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.JobRtc.ExecutionTime">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.JobRtc.ExecutionTimeRtcOnly">
             <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.JobRtc.Tag">
@@ -37683,6 +37793,11 @@
             <para>
             = End time - Start time <br/>
             </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.IJob.ExecutionTimeRtcOnly">
+            <summary>
+            Execution time for RTC only (s)
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.IJob.Result">

@@ -694,8 +694,8 @@ namespace Demos
             Debug.Assert(document != null);
             Debug.Assert(null == rtcSyncAxis);
             this.isInternalBusy = true;
-            base.StartTime = base.EndTime = DateTime.Now;
             this.NotifyStarted();
+            base.StartTime = base.EndTime = DateTime.Now;
             bool success = true;
             var oldMatrixStack = (IMatrixStack<System.Numerics.Matrix4x4>)rtc.MatrixStack.Clone();
             if (null != rtcMoF && rtc.IsMoF)

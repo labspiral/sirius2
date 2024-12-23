@@ -8242,6 +8242,7 @@
             <remarks>
             Returned <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> are not applied matrix transformation. <br/>
             Like as align, scale, rotate and translate matrixes are copied from it's parent entity. <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Config.DivideArcToLinesDistance">DivideArcToLinesDistance</see> for length of each lines. <br/>
             </remarks>
             <returns>Array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see></returns>
         </member>
@@ -18081,288 +18082,303 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.marker.markerbase">
             <summary>
-              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ResourceManager">
             <summary>
-              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Culture">
             <summary>
-              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
-              재정의합니다.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.AccumulatedMarks_DESC">
             <summary>
-              Accumulated Mark Counts과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Accumulated Mark Counts.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.AccumulatedMarks_DISP">
             <summary>
-              Marks과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Marks.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Basic_C">
             <summary>
-              Basic과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Basic.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Busy_DESC">
             <summary>
-              Busy Status과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Busy Status.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Busy_DISP">
             <summary>
-              Busy과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Busy.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Data_C">
             <summary>
-              Data과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Data.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.EndTime_DESC">
              <summary>
-               Ended Time
-            Format (HH:mm:ss.fff)과(와) 유사한 지역화된 문자열을 찾습니다.
+               Looks up a localized string similar to Ended Time
+            Format (HH:mm:ss.fff).
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.EndTime_DISP">
             <summary>
-              End time과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to End time.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Entity_DESC">
             <summary>
-              Current(Working) Entity과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Current(Working) Entity.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Entity_DISP">
             <summary>
-              Entity과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Entity.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Entity_Index_DESC">
             <summary>
-              Current(Working) Entity과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Current(Working) Entity.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Entity_Index_DISP">
             <summary>
-              Entity index과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Entity index.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Error_DESC">
             <summary>
-              Error Status과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Error Status.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Error_DISP">
             <summary>
-              Error과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Error.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ExecuteTime_DESC">
              <summary>
-               Execution Time (s)
-            Format (mm:ss.fff)과(와) 유사한 지역화된 문자열을 찾습니다.
+               Looks up a localized string similar to Execution Time (s)
+            Format (mm:ss.fff).
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ExecuteTime_DISP">
             <summary>
-              Execution time과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Execution time.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Index_DESC">
             <summary>
-              Index과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Index.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Index_DISP">
             <summary>
-              Index과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Index.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Job_C">
+            <summary>
+              Looks up a localized string similar to Job.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.JobHistory_DESC">
+            <summary>
+              Looks up a localized string similar to RTC Job History.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.JobHistory_DISP">
+            <summary>
+              Looks up a localized string similar to History.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Jump_Origin_DESC">
             <summary>
-              Jump to Origin Location After Finish Mark과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Jump to Origin Location After Finish Mark.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Jump_Origin_DISP">
             <summary>
-              Jump origin과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Jump origin.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Layer_DESC">
             <summary>
-              Current(Working) Layer과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Current(Working) Layer.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Layer_DISP">
             <summary>
-              Layer과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Layer.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Layer_Index_DESC">
             <summary>
-              Current(Working) Layer Index과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Current(Working) Layer Index.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Layer_Index_DISP">
             <summary>
-              Layer index과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Layer index.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.MarkProc_DESC">
              <summary>
-               Mark Procedure (Layer First, Offset First)
+               Looks up a localized string similar to Mark Procedure (Layer First, Offset First)
             Layer First: Move offset1 and Mark layers -&gt; Move offset2 and Mark layers , ...
-            Offset First: Mark layer1 with offset1 and offset2, ... -&gt; Mark layer2 with offset1 and offset2, ...과(와) 유사한 지역화된 문자열을 찾습니다.
+            Offset First: Mark layer1 with offset1 and offset2, ... -&gt; Mark layer2 with offset1 and offset2, ....
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.MarkProc_DISP">
             <summary>
-              Mark procedure과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Mark procedure.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.MarkTarget_DESC">
             <summary>
-              Mark Target for Entity (All or Selected)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Mark Target for Entity (All or Selected).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.MarkTarget_DISP">
             <summary>
-              Mark target과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Mark target.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Name_DESC">
             <summary>
-              Name과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Name.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Name_DISP">
             <summary>
-              Name과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Name.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offset_DESC">
             <summary>
-              Current(Working) Offset과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Current(Working) Offset.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offset_DISP">
             <summary>
-              Offset과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Offset.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offset_Index_DESC">
             <summary>
-              Current(Working) Offset Index과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Current(Working) Offset Index.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offset_Index_DISP">
             <summary>
-              Offset index과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Offset index.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offsets_DESC">
             <summary>
-              Array of Offset (Dx, Dy, Dz and Angle Z)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Array of Offset (Dx, Dy, Dz and Angle Z).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Offsets_DISP">
             <summary>
-              Offsets과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Offsets.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Pen_Color_DESC">
             <summary>
-              Current(Working) Pen Color과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Current(Working) Pen Color.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Pen_Color_DISP">
             <summary>
-              Pen color과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Pen color.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Ready_DESC">
             <summary>
-              Ready Status과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Ready Status.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Ready_DISP">
             <summary>
-              Ready과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Ready.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Script_C">
             <summary>
-              Script과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Script.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptError_DESC">
             <summary>
-              Script Compilation Error(s) or Not과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Script Compilation Error(s) or Not.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptError_DISP">
             <summary>
-              Script error과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Script error.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptFile_DESC">
             <summary>
-              Script File과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Script File.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptFile_DISP">
             <summary>
-              Script file과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Script file.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptInstance_DESC">
             <summary>
-              Script instance (Inherited from MarkerScriptBase)과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Script instance (Inherited from MarkerScriptBase).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptInstance_DISP">
             <summary>
-              Script instance과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Script instance.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptLineIfError_DESC">
             <summary>
-              Script Line of Code If Error과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Script Line of Code If Error.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.ScriptLineIfError_DISP">
             <summary>
-              Script line과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Script line.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.StartTime_DESC">
              <summary>
-               Started Time
-            Format (HH:mm:ss.fff)과(와) 유사한 지역화된 문자열을 찾습니다.
+               Looks up a localized string similar to Started Time
+            Format (HH:mm:ss.fff).
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.StartTime_DISP">
             <summary>
-              Start time과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Start time.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Status_C">
             <summary>
-              Status과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Status.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.marker.markerbase.Working_C">
             <summary>
-              Working과(와) 유사한 지역화된 문자열을 찾습니다.
+              Looks up a localized string similar to Working.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Winforms.marker.markerrtcfast">
@@ -19297,6 +19313,9 @@
             <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.ExecuteTime">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.JobHistory">
             <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Marker.MarkerBase.IsReady">
