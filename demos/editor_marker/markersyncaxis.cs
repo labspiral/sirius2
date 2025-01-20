@@ -652,14 +652,13 @@ namespace SpiralLab.Sirius2.Winforms.Marker
             {
                 success &= markerable.Mark(this);
             }
-            if (!success)
-                return success;
-            success &= NotifyAfterEntity(entity);
+  
             if (!success)
             {
                 Logger.Log(Logger.Types.Error, $"marker [{Index}]: fail to mark entity at after event handler");
                 return success;
             }
+            success &= NotifyAfterEntity(entity);
             return success;
         }
         /// <summary>

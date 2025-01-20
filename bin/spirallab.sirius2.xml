@@ -835,6 +835,18 @@
             Acceleration scale for when simulate(or render) laser path with jump and mark commands. <br/>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Config.CharacterSetMaxSerialNoUpdateTime">
+            <summary>
+            Update Timer Check Max Serial No at CharacterSet 
+            <para>
+            Default: 50 ms <br/>
+            </para>
+            </summary>
+            <remarks>
+            Used if <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcCharacterSet.SerialMaxNo">SerialMaxNo</see> has assigned. <br/>
+            Above RTC5. <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Config.MeasurementLaserOnFactor">
             <summary>
             Laser ON scale factor when convert measurement data 
@@ -15457,6 +15469,21 @@
               Looks up a localized string similar to Type.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Variable_C">
+            <summary>
+              Looks up a localized string similar to Variable.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Variables_DESC">
+            <summary>
+              Looks up a localized string similar to Free Variables (0~7).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Variables_DISP">
+            <summary>
+              Looks up a localized string similar to Variables.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.src.scanner.impl.rtc5.Varjumpdelay_DESC">
             <summary>
               Looks up a localized string similar to Enable(or disable) variable jump delay..
@@ -22048,6 +22075,9 @@
             Max serial no
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.Variables">
+            <inheritdoc/>  
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.cardId">
             <summary>
             RTC card's identifier no (for multiple cards)
@@ -22711,6 +22741,132 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListSerialWrite(System.String)">
             <inheritdoc/>  
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode">
+            <summary>
+            Rtc5ErrorCode
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit">
+            <summary>
+            Bit flags
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit.NO_CARD">
+            <summary>
+            No board found (this error can only occur by init_rtc5_dll).
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit.ACCESS_DENIED">
+            <summary>
+            Access denied (this error can occur by init_rtc5_dll, select_rtc, acquire_rtc or any multiboard command).
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit.SEND_ERROR">
+            <summary>
+            Command not forwarded (this error implies an internal, PCI or driver error, for example, caused by a hardware defect or an incorrect connection).
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit.TIMEOUT">
+            <summary>
+            No response from board (it is likely that no program has been loaded onto the RTC5; this error can especially occur in connection with control commands that expect a response).
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit.PARAM_ERROR">
+            <summary>
+            Invalid parameter (this error can occur through all commands for which invalid parameters are not automatically corrected to valid values)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit.BUSY">
+            <summary>
+            List processing is (not) active (for example, for execute_list, if a list is currently being processed)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit.REJECTED">
+            <summary>
+            List command rejected, illegal input pointer. 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit.IGNORED">
+            <summary>
+            List command has been converted to a list_nop
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit.VERSION_MISMATCH">
+            <summary>
+            Version error: RTC5 DLL version, RTC5RBF.rbf version and RTC5OUT.out version are not compatible with each other.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit.VERIFY_ERROR">
+            <summary>
+            Verify error: The download verification has detected an incorrect download.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit.TYPE_REJECTED">
+            <summary>
+            DSP version error: DSP version too old (this error only occurs with older RTC5 Boards
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit.OUT_OF_MEMORY">
+            <summary>
+            A RTC5 DLL-internal Windows memory request failed.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit.EEPROM_ERROR">
+            <summary>
+            EEPROM read or write error (can occur during initialization or auto_cal).
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit.CONFIG_ERROR">
+            <summary>
+            Error reading PCI configuration register (can only occur during init_rtc5_dll).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Value">
+            <summary>
+            Bit value
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Add(SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit)">
+            <summary>
+            Add flag
+            </summary>
+            <param name="flag"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit">Bit</see></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Remove(SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit)">
+            <summary>
+            Remove flag
+            </summary>
+            <param name="flag"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit">Bit</see></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Contains(SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit)">
+            <summary>
+            Is flag exist or not
+            </summary>
+            <param name="flag"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit">Bit</see></param>
+            <returns>Is exist flag or not</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.ToUInt">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Empty">
+            <summary>
+            Create empty <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode">Rtc5ErrorCode</see> instance
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.#ctor(SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit)">
+            <summary>
+            Constructor
+            </summary>
+             <param name="bit"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.Bit">Bit</see></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5LaserControlSignal">
             <summary>
@@ -24375,6 +24531,9 @@
             Max serial no
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.Variables">
+            <inheritdoc/>  
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.cardId">
             <summary>
             RTC card's identifier no (for multiple cards)
@@ -25368,6 +25527,148 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6Ethernet.ListMeasurementEnd">
             <inheritdoc/>  
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode">
+            <summary>
+            Rtc6ErrorCode
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit">
+            <summary>
+            Bit flags
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.NO_CARD">
+            <summary>
+            No board found (this error can only occur by init_rtc6_dll).
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.ACCESS_DENIED">
+            <summary>
+            Access denied (this error can occur by init_rtc6_dll, select_rtc, acquire_rtc or any multiboard command).
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.SEND_ERROR">
+            <summary>
+            Command not forwarded (this error implies an internal, PCI or driver error, for example, caused by a hardware defect or an incorrect connection).
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.TIMEOUT">
+            <summary>
+            No response from board (it is likely that no program has been loaded onto the RTC6; this error can especially occur in connection with control commands that expect a response).
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.PARAM_ERROR">
+            <summary>
+            Invalid parameter (this error can occur through all commands for which invalid parameters are not automatically corrected to valid values)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.BUSY">
+            <summary>
+            List processing is (not) active (for example, for execute_list, if a list is currently being processed)
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.REJECTED">
+            <summary>
+            List command rejected, illegal input pointer. 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.IGNORED">
+            <summary>
+            List command has been converted to a list_nop
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.VERSION_MISMATCH">
+            <summary>
+             Version error: RTC6 DLL version, RTC6RBF.rbf version and RTC6OUT.out/RTC6ETH.out version are not compatible with each other. 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.VERIFY_ERROR">
+            <summary>
+            Verify error: The download verification has detected an incorrect download.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.TYPE_REJECTED">
+            <summary>
+            For example, an [*] eth[*] command has been sent to an RTC6 PCIe Board. 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.OUT_OF_MEMORY">
+            <summary>
+            A RTC6 DLL-internal Windows memory request failed.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.EEPROM_ERROR">
+            <summary>
+            Download error. The values have possibly not been saved. May occur with auto_cal and write_hi_pos
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.ETH_ERROR">
+            <summary>
+            General Ethernet error. May occur, for example, when trying to switch by select_rtc or acquire_rtc from RTC6 PCIe Board to RTC6 Ethernet Board. ,br/>
+            Further information is provided by n_eth_get_error on the addressed RTC6 Ethernet Board.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.UNSUPPORTED_WINDOWS">
+            <summary>
+            Unsupported Windows version. May only occur during init_rtc6_dll.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.UNSUPPORTED_BIOS">
+            <summary>
+            Unsupported BIOS version
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit.REMOTE_ERROR">
+            <summary>
+            Can occur exclusively in Remote Interface Mode: Invalid Command Telegram. 
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Value">
+            <summary>
+            Bit value
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Add(SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit)">
+            <summary>
+            Add flag
+            </summary>
+            <param name="flag"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit">Bit</see></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Remove(SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit)">
+            <summary>
+            Remove flag
+            </summary>
+            <param name="flag"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit">Bit</see></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Contains(SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit)">
+            <summary>
+            Is flag exist or not
+            </summary>
+            <param name="flag"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit">Bit</see></param>
+            <returns>Is exist flag or not</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.ToUInt">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Empty">
+            <summary>
+            Create empty <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode">Rtc6ErrorCode</see> instance
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.#ctor(SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit)">
+            <summary>
+            Constructor
+            </summary>
+             <param name="bit"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.Bit">Bit</see></param>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6LaserControlSignal">
             <summary>
@@ -26538,6 +26839,9 @@
             <summary>
             Not used
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.Variables">
+            <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.SyncAxis.Rtc6SyncAxis.ConfigXMLFile">
             <inheritdoc/>  
@@ -30562,6 +30866,9 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.SerialMaxNo">
             <inheritdoc/>  
         </member>
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.Variables">
+            <inheritdoc/>  
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.cardId">
             <summary>
             RTC card's identifier no (for multiple cards)
@@ -32483,6 +32790,23 @@
             </summary>
             <returns>int</returns>
         </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcErrorCode">
+            <summary>
+            RTC error code
+            <para>
+            RTC5: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc5ErrorCode">Rtc5ErrorCode</see> <br/>
+            RTC6: <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.Rtc6ErrorCode">Rtc6ErrorCode</see> <br/>
+            </para>
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcErrorCode.ToUInt">
+            <summary>
+            32bits uint data
+            </summary>
+            <returns>uint</returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">
             <summary>
             IRtc interface
@@ -33667,13 +33991,13 @@
             <summary>
             ZDefocus
             <para>
-            +: Upper, - : Lower <br/>
+            +: Lower, - : Upper <br/>
             </para>
             </summary>
             <remarks>
             3D Z defocus (mm) <br/>
             A focus shift causes a defocusing of the laser focus relative to the working plane. <br/>
-            A positive value increases the focal length of the Dynamic focusing unit and shifts the focus position. <br/>
+            A positive(+) value increases the focal length of the Dynamic focusing unit and shifts the focus position. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc3D.CoefA">
@@ -33774,7 +34098,7 @@
             A focus shift causes a defocusing of the laser focus relative to the working plane. <br/>
             A positive value increases the focal length of the dynamic focusing unit and shifts the focus position. <br/>
             </remarks>
-            <param name="zDefocus">Defocus (mm)<br/>Z+: Upper<br/>Z-: Lower<br/>Position is not transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
+            <param name="zDefocus">Defocus (mm)<br/>Z+: Lower<br/>Z-: Upper<br/>A positive(+) value increases the focal length of the Dynamic focusing unit and shifts the focus position.<br/>Position is not transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc3D.CtlLoadZTable(System.Double,System.Double,System.Double)">
@@ -33809,7 +34133,7 @@
             A positive value increases the focal length of the dynamic focusing unit and shifts the focus position. <br/>
             May not matched matched the actual z defocus position if <c>IMarker</c> has aborted(or failed). <br/>
             </remarks>
-            <param name="zDefocus">Z defocus (mm)<br/>Z+: Upper<br/>Z-: Lower<br/>Position is not transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
+            <param name="zDefocus">Z defocus (mm)<br/>Z+: Lower<br/>Z-: Upper<br/>A positive(+) value increases the focal length of the Dynamic focusing unit and shifts the focus position.<br/>Position is not transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.AutoLaserControlModes">
@@ -35099,9 +35423,16 @@
             Above RTC5. <br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcFreeVariable.CtlWriteVariable(System.UInt32,System.UInt32)">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcFreeVariable.Variables">
             <summary>
-            Write free variable
+            Free variables
+            <para>
+            Index range from 0 to 7</para>
+            </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcFreeVariable.CtlReadVariable(System.UInt32,System.UInt32@)">
+            <summary>
+            Read free variable
             <para>
             RTC4 is not supported <br/>
             </para>
@@ -35112,9 +35443,9 @@
             <param name="data">FreeVariable value</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcFreeVariable.CtlReadVariable(System.UInt32,System.UInt32@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcFreeVariable.CtlWriteVariable(System.UInt32,System.UInt32)">
             <summary>
-            Read free variable
+            Write free variable
             <para>
             RTC4 is not supported <br/>
             </para>

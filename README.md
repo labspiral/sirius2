@@ -265,14 +265,25 @@
  - Evaluation copy mode would be activated during 30 mins without license.
  - Homepage: http://spirallab.co.kr
  - Email: <a href="mailto:hcchoi@spirallab.co.kr">hcchoi@spirallab.co.kr</a> 
+ - All rights reserved. 2018-2025 Copyright to (c)SpiralLAB. 
  - RTC and syncAXIS are trademarks of (c)SCANLAB GmbH.
- - All rights reserved. 2018-2024 Copyright to (c)SpiralLAB. 
  
 
 ----
 
 
 **9. Version history**
+
+* 2025.1.21 v.1.49.2130
+  - added) demo for stage x,y
+     - editor_marker\markerstagexy.cs
+  - added) Config.CharacterSetMaxSerialNoUpdateTime
+     - Check timer for max serial no
+  - fixed) IRtcErrorCode 
+     - detail logs if fail to initialize RTC5,6 card
+  - fixed) IRtcFreeVariable
+     - read array of free variables
+  - fixed) description for ZDefocus 
 
 * 2024.12.23 v.1.48.2111
   - fixed) accurate executed job time

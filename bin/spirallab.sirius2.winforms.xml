@@ -1983,7 +1983,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.zdefocus.Z_defocus_DESC">
             <summary>
-              Looks up a localized string similar to Z Defocus (mm).
+              Looks up a localized string similar to Z Defocus (mm) (+: Increases focal length, -: Decrease focal length).
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.control.zdefocus.Z_defocus_DISP">
@@ -7622,6 +7622,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityZDefocus.ZDefocus">
             <summary>
             Z defocus (mm)
+            <para>
+            Z+: Lower<br/>Z-: Upper<br/>
+            A positive(+) value increases the focal length of the Dynamic focusing unit and shifts the focus position.<br/>
+            Range is specified by installed Z deivice. <br/>
+            </para>
             </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityZDefocus.#ctor">
@@ -16196,7 +16201,7 @@
             Used with RTC4,5,6 only (not syncAXIS) <br/>
             If need to revert original z position, create <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityZDefocus">EntityZDefocus</see> entity with <c>-zDefocus</c> value. <br/>
             </remarks>
-            <param name="zDefocus">Z defocus (mm)<br/>Range is specified by installed Z deivice.</param>
+            <param name="zDefocus">Z defocus (mm)<br/>Z+: Lower<br/>Z-: Upper<br/>A positive(+) value increases the focal length of the Dynamic focusing unit and shifts the focus position.<br/>Range is specified by installed Z deivice.</param>
             <returns><see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityZDefocus">EntityZDefocus</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityFactory.CreateZDelta(System.Double)">
