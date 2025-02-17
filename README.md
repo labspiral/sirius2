@@ -163,7 +163,7 @@
        - OpenTK.GLControl: v3.3.3 (https://www.nuget.org/packages/OpenTK.GLControl/)
        - OphirPhotonics StarLab v3.9 (https://www.ophiropt.com/en/g/starlab-for-usb)
        - Thorlabs OPM v5.0 (https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM)
-       - Zxing v0.16.9.0 (https://github.com/zxing/zxing/releases)
+       - Zxing v0.16.10.0 (https://github.com/zxing/zxing/releases)
        - Google OrTools 9.6.2534.0 (https://github.com/google/or-tools/releases)
  - (optional) spirallab.sirius2.vision.dll 
     - Target frameworks: .NET Framework 4.7.2
@@ -175,6 +175,8 @@
        - Euresys Multicam v6.19.0.5375 (https://www.euresys.com/en/download-area/)
        - Crevis MCam40 SDK v4.8.0.8354 (https://www.crevis.co.kr/Customer/download)
        - OpenCVSharp v4.8.0.20230708 (https://www.nuget.org/packages/OpenCvSharp4/4.8.0.20230708)
+       - Neodynamic.SDK.ZPLPrinter v6.0.25.201 (https://github.com/neodynamic/ZPL-Printer-Emulator-SDK)
+
 
 
 ----
@@ -274,6 +276,9 @@
 
 **9. Version history**
 
+* 2025.2.17 v.1.50.2140
+  - added) document can be cloned by IDocument.Clone()
+  - added) option for RealLink library 
 * 2025.1.21 v.1.49.2130
   - added) demo for stage x,y
      - editor_marker\markerstagexy.cs

@@ -139,36 +139,32 @@ namespace Demos
             get { return document; }
             set
             {
-                if (document == value)
-                    return;
-                this.Invoke(new MethodInvoker(delegate ()
+                if (document != null)
                 {
-                    if (document != null)
-                    {
-                        PropertyGridCtrl.SelecteObject = null;
-                        document.OnSaved -= Document_OnSaved;
-                        document.OnOpened -= Document_OnOpened;
-                    }
-                    document = value;
-                    MarkerCtrl.Document = document;
-                    PropertyGridCtrl.Document = document;
-                    PenCtrl.Document = document;
-                    TreeViewCtrl.Document = document;
-                    TreeViewBlockCtrl.Document = document;
-                    EditorCtrl.Document = document;
-                    PowerMapCtrl.Document = document;
-                    //RtcControl
-                    //LaserControl
-                    MarkerCtrl.View = EditorCtrl.View;
-                    TreeViewBlockCtrl.View = EditorCtrl.View;
-                    PropertyGridCtrl.View = EditorCtrl.View;
-                    if (document != null)
-                    {
-                        document.OnSaved += Document_OnSaved;
-                        document.OnOpened += Document_OnOpened;
-                        PropertyGridCtrl.SelecteObject = document.Selected;
-                    }
-                }));
+                    PropertyGridCtrl.SelecteObject = null;
+                    document.OnSaved -= Document_OnSaved;
+                    document.OnOpened -= Document_OnOpened;
+                }
+                document = value;
+
+                MarkerCtrl.Document = document;
+                PropertyGridCtrl.Document = document;
+                PenCtrl.Document = document;
+                TreeViewCtrl.Document = document;
+                TreeViewBlockCtrl.Document = document;
+                EditorCtrl.Document = document;
+                PowerMapCtrl.Document = document;
+                //RtcControl
+                //LaserControl
+                MarkerCtrl.View = EditorCtrl.View;
+                TreeViewBlockCtrl.View = EditorCtrl.View;
+                PropertyGridCtrl.View = EditorCtrl.View;
+                if (document != null)
+                {
+                    document.OnSaved += Document_OnSaved;
+                    document.OnOpened += Document_OnOpened;
+                    PropertyGridCtrl.SelecteObject = document.Selected;
+                }
             }
         }
         private SpiralLab.Sirius2.Winforms.IDocument document;
@@ -238,30 +234,25 @@ namespace Demos
             get { return laser; }
             set
             {
-                if (laser == value)
-                    return;
-                this.Invoke(new MethodInvoker(delegate ()
+                laser = value;
+                LaserCtrl.Laser = laser;
+                MarkerCtrl.Laser = laser;
+                ManualCtrl.Laser = laser;
+                PowerMeterCtrl.Laser = laser;
+                PowerMapCtrl.Laser = laser;
+                if (null != laser)
                 {
-                    laser = value;
-                    LaserCtrl.Laser = laser;
-                    MarkerCtrl.Laser = laser;
-                    ManualCtrl.Laser = laser;
-                    PowerMeterCtrl.Laser = laser;
-                    PowerMapCtrl.Laser = laser;
-                    if (null != laser)
+                    EntityPen.PropertyVisibility(laser);
+                    var powerControl = laser as ILaserPowerControl;
+                    foreach (var pen in document.InternalData.Pens)
                     {
-                        EntityPen.PropertyVisibility(laser);
-                        var powerControl = laser as ILaserPowerControl;
-                        foreach (var pen in document.InternalData.Pens)
-                        {
-                            pen.PowerMax = laser.MaxPowerWatt;
-                            if (null != powerControl)
-                                pen.PowerMap = powerControl.PowerMap;
-                            else
-                                pen.PowerMap = null;
-                        }
+                        pen.PowerMax = laser.MaxPowerWatt;
+                        if (null != powerControl)
+                            pen.PowerMap = powerControl.PowerMap;
+                        else
+                            pen.PowerMap = null;
                     }
-                }));
+                }
             }
         }
         private SpiralLab.Sirius2.Laser.ILaser laser;

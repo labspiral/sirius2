@@ -173,9 +173,9 @@
             license for Grid checker
             </summary>
         </member>
-        <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.IsPathOptimizerLicensed">
+        <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.IsRealLinkLicensed">
             <summary>
-            license for Path optimizer
+            license for optional <c>spirallab.reallink.exe</c> library
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.Is2ndHeadLicensed">
@@ -200,7 +200,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.IsVisionLicensed">
             <summary>
-            license for MachineVision
+            license for optional <c>spirallab.sirius2.vision.dll</c> library
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Common.Rockey4ND.VisionLicenseMax">
@@ -16325,6 +16325,15 @@
             </para>
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.LicenseInfo.IsRealLinkLicensed">
+            <summary>
+            Option for <c>RealLink</c> or not
+            <para>
+            Used with <c>spirallab.reallink.dll</c> <br/>
+            Checked option for reallink server program by <c>spirallab.reallink.exe</c><br/>
+            </para>
+            </summary>
+        </member>
         <member name="F:SpiralLab.Sirius2.LicenseInfo.IsVisionLicensed">
             <summary>
             Option for <c>Vision</c> or not
@@ -24649,9 +24658,9 @@
             <param name="mode"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.AutoDelayParamModes">AutoDelayParamModes</see></param>
             <param name="headNo"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see></param>
             <param name="tableNo"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables">CorrectionTables</see></param>
-            <param name="previewTime">Preview time (usec)</param>
-            <param name="vMax">Max velocity (mm/s)</param>
-            <param name="aMax">Max Acc (mm/s^2)</param>
+            <param name="previewTime">Preview time (usec)<br/>Used if <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.AutoDelayParamModes.Develop">AutoDelayParamModes.Develop</see> only.</param>
+            <param name="vMax">Max velocity (mm/s)<br/>Used if <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.AutoDelayParamModes.Develop">AutoDelayParamModes.Develop</see> only.</param>
+            <param name="aMax">Max Acc (mm/s^2)<br/>Used if <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.AutoDelayParamModes.Develop">AutoDelayParamModes.Develop</see> only.</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlDelayVariablePolygonTable(System.Collections.Generic.KeyValuePair{System.Double,System.Double}[])">
@@ -29799,13 +29808,13 @@
             <summary>
             Constructor
             </summary>
-            <param name="kFactor">Bits/mm</param>
+            <param name="kFactor">Bits/mm<br/>RTC4: 16 bits<br/>RTC5,6: 20bits</param>
             <param name="rows">Rows</param>
             <param name="cols">Cols</param>
             <param name="rowInterval">Row interval (mm)</param>
             <param name="colInterval">Col interval (mm)</param>
-            <param name="srcCtFile">Source(input) correction file</param>
-            <param name="targetCtFile">Target(output) correction file</param>
+            <param name="srcCtFile">Source(input) correction file<br/>*.ct5 (or *.ctb if <c>RTC4</c>)<br/></param>
+            <param name="targetCtFile">Target(output) correction file<br/>*.ct5 (or *.ctb if <c>RTC4</c>)<br/></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection2D.AddAbsolute(System.Int32,System.Int32,System.Numerics.Vector2,System.Numerics.Vector2)">
             <inheritdoc/>  
@@ -29921,14 +29930,14 @@
             <summary>
             Constructor
             </summary>
-            <param name="kFactor">Bits/mm</param>
+            <param name="kFactor">Bits/mm<br/>RTC4: 16 bits<br/>RTC5,6: 20bits</param>
             <param name="rows">Rows</param>
             <param name="cols">Cols</param>
             <param name="interval">Interval (mm)</param>
             <param name="zUpper">Z upper (mm)</param>
             <param name="zLower">Z lower (mm)</param>
-            <param name="srcCtFile">Source(input) correction file</param>
-            <param name="targetCtFile">Target(output) correction file</param>
+            <param name="srcCtFile">Source(input) correction file<br/>*.ct5 (or *.ctb if <c>RTC4</c>)<br/></param>
+            <param name="targetCtFile">Target(output) correction file<br/>*.ct5 (or *.ctb if <c>RTC4</c>)<br/></param>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcCorrection3D.AddAbsolute(System.Int32,System.Int32,System.Numerics.Vector3,System.Numerics.Vector3)">
             <inheritdoc/>  
@@ -35042,7 +35051,9 @@
             <summary>
             K-Factor (bits/mm)
             <para>
-            Must be assigned ( > 0)
+            Must be assigned ( > 0) <br/>
+            RTC4: 16 bits <br/>
+            RTC5,6: 20bits <br/>
             </para>
             </summary>
             <remarks>
@@ -35052,7 +35063,7 @@
             <summary>
             Source(Input) correction file
             <para>
-            *.ct5 or *.ctb <br/>
+            *.ct5 (or *.ctb if <c>RTC4</c>)<br/>
             </para>
             </summary>
         </member>
@@ -35060,7 +35071,7 @@
             <summary>
             Target(Output) correction file
             <para>
-            *.ct5 or *.ctb <br/>
+            *.ct5 (or *.ctb if <c>RTC4</c>)<br/>
             </para>
             </summary>
         </member>
@@ -35235,7 +35246,9 @@
             <summary>
             K-Factor (bits/mm)
             <para>
-            Must be assigned ( > 0)
+            Must be assigned ( > 0) <br/>
+            RTC4: 16 bits <br/>
+            RTC5,6: 20bits <br/>
             </para>
             </summary>
             <remarks>
@@ -35245,7 +35258,7 @@
             <summary>
             Source(Input) correction file
             <para>
-            *.ct5 or *.ctb <br/>
+            *.ct5 (or *.ctb if <c>RTC4</c>)<br/>
             </para>
             </summary>
         </member>
@@ -35253,7 +35266,7 @@
             <summary>
             Target(Output) correction file
             <para>
-            *.ct5 or *.ctb <br/>
+            *.ct5 (or *.ctb if <c>RTC4</c>)<br/>
             </para>
             </summary>
         </member>

@@ -14161,9 +14161,20 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.PowerMax">
             <summary>
             Laser source max power (W)
+            <code>
+            //Re-assigned if SiriusEditorUserControl.Laser has assigned 
+            foreach (var pen in document.InternalData.Pens)
+            {
+                pen.PowerMax = laser.MaxPowerWatt;
+                if (laser is ILaserPowerControl powerControl)
+                    pen.PowerMap = powerControl.PowerMap;
+            }
+            </code>
             </summary>
             <remarks>
-            Should be assigned <see cref="P:SpiralLab.Sirius2.Laser.ILaser.MaxPowerWatt">ILaser.MaxPowerWatt</see> at first. <br/>
+            Assigned <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.PowerMax">PowerMax</see> value by automatically. <br/>
+            Same value with <see cref="P:SpiralLab.Sirius2.Laser.ILaser.MaxPowerWatt">ILaser.MaxPowerWatt</see>. <br/>
+            So, must be <see cref="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.Laser">SiriusEditorUserControl.Laser</see> is valid. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.PowerPercentage">
@@ -14186,7 +14197,20 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.PowerMap">
             <summary>
             Assigned <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">IPowerMap</see> instance by automatically. <br/>
-            Used by internally. Do NOT edit. <br/>
+            <code>
+            //Re-assigned if SiriusEditorUserControl.Laser has assigned 
+            foreach (var pen in document.InternalData.Pens)
+            {
+                pen.PowerMax = laser.MaxPowerWatt;
+                if (laser is ILaserPowerControl powerControl)
+                    pen.PowerMap = powerControl.PowerMap;
+            }
+            </code>
+            <para>
+            Assigned <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.PowerMap">PowerMap</see> value by automatically. <br/>
+            Same value with <see cref="P:SpiralLab.Sirius2.Laser.ILaserPowerControl.PowerMap">ILaserPowerControl.PowerMap</see>. <br/>
+            So, must be <see cref="P:SpiralLab.Sirius2.Winforms.UI.SiriusEditorUserControl.Laser">SiriusEditorUserControl.Laser</see> is valid. <br/>
+            </para>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.Frequency">
@@ -24483,6 +24507,20 @@
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentData.Clone">
             <summary>
             Implement clone of <see cref="T:SpiralLab.Sirius2.Winforms.DocumentData">DocumentData</see>
+            <code>
+            var docOld = siriusEditorUserControl1.Document;
+            var docNew = DocumentFactory.CreateDefault();
+            var docBase = docNew as DocumentBase;
+            docBase.InternalData = docOld.InternalData.Clone() as IDocumentData;
+            docBase.ActiveLayer = docBase.InternalData.Layers[0];
+            ...
+            siriusEditorUserControl1.Document = docNew;
+            siriusEditorUserControl1.View.Render();
+            siriusEditorUserControl1.Marker.Ready(docNew);
+            </code>
+            <para>
+            Warning! assign <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">IDocument.ActiveLayer</see> after clone. <br/>
+            </para>
             </summary>
             <remarks>Deep clone of <see cref="T:SpiralLab.Sirius2.Winforms.DocumentData">DocumentData</see> </remarks>
             <returns>Cloned <see cref="T:SpiralLab.Sirius2.Winforms.DocumentData">DocumentData</see></returns>
@@ -24577,6 +24615,24 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.Dispose(System.Boolean)">
             <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.Clone">
+            <summary>
+            Clone <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see>
+            <code>
+            var docOld = siriusEditorUserControl1.Document;
+            ...
+            var docNew = docOld.Clone();
+            siriusEditorUserControl1.Document = docNew;
+            siriusEditorUserControl1.View.Render();
+            siriusEditorUserControl1.Marker.Ready(docNew);
+            </code>
+            <para>
+            Cloned <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">IDocument.InternalData</see> at source document only. <br/>
+            <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">IDocument.ActiveLayer</see> will be assiged first layer (index of 0). <br/>
+            </para>
+            </summary>
+            <returns>Cloned<see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActNew">
             <inheritdoc/>

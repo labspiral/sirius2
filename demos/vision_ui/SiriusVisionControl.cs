@@ -15,7 +15,7 @@
  *             `---'.|    '---'   |   |.'    `--''                              `--''          |   | ,'    
  *               `---`            `---'                                                        `----'   
  * 
- * 2024 Copyright to (c)SpiralLAB. All rights reserved.
+ * 2025 Copyright to (c)SpiralLAB. All rights reserved.
  * Description : SiriusVisionControl usercontrol
  * Author : hong chan, choi / hcchoi@spirallab.co.kr (http://spirallab.co.kr)
  * 
@@ -131,8 +131,6 @@ namespace Demos
             get { return document; }
             set
             {
-                if (document == value)
-                    return;
                 if (document != null)
                 {
                     propertyGridUserControl1.SelecteObjects = null;
@@ -140,6 +138,7 @@ namespace Demos
                     document.OnOpened -= Document_OnOpened;
                 }
                 document = value;
+
                 TreeViewCtrl.Document = document;
                 PropertyGridCtrl.Document = document;
                 CameraCtrl.Document = document;

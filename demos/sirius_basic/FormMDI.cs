@@ -193,7 +193,7 @@ namespace Demos
             int i = 0;
             using (var stream = new StreamWriter(fileName))
             {
-                stream.WriteLine($"; 2024 Copyright to (c)SpiralLAB");
+                stream.WriteLine($"; 2025 Copyright to (c)SpiralLAB");
                 stream.WriteLine($"; Data format : row, col, reference, measured");
                 stream.WriteLine($"# Correction data counts, {rows}, {cols}, {rowInterval}, {colInterval}, {kFactor}");
                 for (int row = 0; row < rows; ++row)

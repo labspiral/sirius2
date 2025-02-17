@@ -174,16 +174,13 @@ namespace Demos
             Console.Write("WARNING !!! Press any key to mark grids ... ");
             Console.ReadKey();
 
-            bool success = true;
-            var rtc3D = rtc as IRtc3D;
-
-            success &= rtc.ListBegin();
-
             float bottom = -interval * (int)(rows / 2);
             float top = -bottom;
             float left = -interval * (int)(cols / 2);
             float right = -left;
 
+            bool success = true;
+            success &= rtc.ListBegin();
             // Draw horizontal lines
             //___________
             //___________
@@ -208,15 +205,15 @@ namespace Demos
                 success &= rtc.ListMarkTo(new Vector2(0, top));
                 rtc.MatrixStack.Pop();
             }
-
+            var rtc3D = rtc as IRtc3D;
             if (null == rtc3D)
                 success &= rtc.ListJumpTo(Vector2.Zero);
             else
                 success &= rtc3D.ListJumpTo(Vector3.Zero);
             success &= rtc.ListEnd();
+
             if (success)
                 success &= rtc.ListExecute(true);
-
             return success;
         }
 
@@ -241,7 +238,8 @@ namespace Demos
             bool success = correction.Convert();
             if (success)
             {
-                Console.WriteLine($"Success to convert {targetFile} 2d file. so load by Table2");
+                var targetTable = CorrectionTables.Table2;
+                Console.WriteLine($"Success to convert {targetFile} 2d file. loading at {targetTable}");
                 success &= rtc.CtlLoadCorrectionFile(CorrectionTables.Table2, targetFile);
                 success &= rtc.CtlSelectCorrection(CorrectionTables.Table2);
             }
@@ -251,7 +249,7 @@ namespace Demos
         {
             // 9 points: 3x3
             // Interval: 20 mm
-            var correction = new RtcCorrection3D(kfactor20bits, rows, cols, interval, 5, 0, sourceFile, targetFile);
+            var correction = new RtcCorrection3D(kfactor20bits, rows, cols, interval, zUpper, zLower, sourceFile, targetFile);
 
             // Data for 3x3 with 20mm interval
             // Z upper
@@ -280,7 +278,7 @@ namespace Demos
             if (success)
             {
                 var targetTable = CorrectionTables.Table2;
-                Console.WriteLine($"Success to convert {targetFile} 3d file and loaded at {targetTable}");
+                Console.WriteLine($"Success to convert {targetFile} 3d file. loading at {targetTable}");
                 success &= rtc.CtlLoadCorrectionFile(targetTable, targetFile);
                 success &= rtc.CtlSelectCorrection(targetTable, targetTable);
             }
@@ -326,7 +324,7 @@ namespace Demos
             if (success)
             {
                 var targetTable = CorrectionTables.Table2;
-                Console.WriteLine($"Success to convert {targetFile} 2d file and loaded at {targetTable}");
+                Console.WriteLine($"Success to convert {targetFile} 2d file. loading at {targetTable}");
                 success &= rtc.CtlLoadCorrectionFile(targetTable, targetFile);
                 success &= rtc.CtlSelectCorrection(targetTable);
             }
@@ -371,7 +369,7 @@ namespace Demos
         {
             // 9 points: 3x3
             // Interval: 20 mm
-            var correction = new RtcCorrection3D(kfactor20bits, rows, cols, interval, 5, 0, sourceFile, targetFile);
+            var correction = new RtcCorrection3D(kfactor20bits, rows, cols, interval, zUpper, zLower, sourceFile, targetFile);
 
             // Data for 3x3 with 20mm interval
             // Z upper

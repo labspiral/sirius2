@@ -474,7 +474,9 @@ namespace Demos
                 case "rtc6e":
                     marker = MarkerFactory.CreateRtc(index);
                     //marker = MarkerFactory.CreateRtcFast(index);
+                    //marker = new MarkerStageXY(index);
                     //or your custom marker
+
                     break;
                 case "syncaxis":
                     marker = MarkerFactory.CreateSyncAxis(index);
