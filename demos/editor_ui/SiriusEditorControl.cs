@@ -199,11 +199,8 @@ namespace Demos
 
                 if (rtc != null)
                 {
-                    this.Invoke(new MethodInvoker(delegate ()
-                    {
-                        PropertyVisibility();
-                        MenuVisibility();
-                    }));
+                    PropertyVisibility();
+                    MenuVisibility();
                     if (rtc is IRtcMoF mof)
                     {
                         mof.OnEncoderChanged += Mof_OnEncoderChanged;
