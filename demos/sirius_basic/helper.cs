@@ -374,8 +374,8 @@ namespace Demos
                             }
                             break;
                         case "frequency":
-                            var freqMin = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "POWERCONTROL_FREQUENCY_MIN", 0);
-                            var freqMax = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "POWERCONTROL_FREQUENCY_MIN", 50000);
+                            var freqMin = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "POWERCONTROL_FREQUENCY_MIN", 40000);
+                            var freqMax = NativeMethods.ReadIni<float>(ConfigFileName, $"LASER{index}", "POWERCONTROL_FREQUENCY_MAX", 50000);
                             laser = LaserFactory.CreateVirtualFrequency(index, laserMaxPower, freqMin, freqMax);
                             break;
                         case "dutycycle":
