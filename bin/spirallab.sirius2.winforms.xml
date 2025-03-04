@@ -14216,6 +14216,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.Frequency">
             <summary>
             Pulse frequency (Hz)
+            <para>
+            This value is not used if <see cref="F:SpiralLab.Sirius2.Laser.PowerControlMethods.Frequency">PowerControlMethods.Frequency</see> are configured. <br/>
+            And user must do manupulate output frequency at <see cref="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.CtlPower(System.Double,System.String)">ILaser.CtlPower</see> by itself if using <see cref="F:SpiralLab.Sirius2.Laser.PowerControlMethods.Frequency">PowerControlMethods.Frequency</see>. <br/>
+            And user must do manupulate output frequency at <see cref="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.ListPower(System.Double,System.String)">ILaser.ListPower</see> by itself if using <see cref="F:SpiralLab.Sirius2.Laser.PowerControlMethods.Frequency">PowerControlMethods.Frequency</see>. <br/>
+            </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPen.frequency">
@@ -14226,6 +14231,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.PulseWidth">
             <summary>
             Pulse width (usec)
+            <para>
+            This value is not used if <see cref="F:SpiralLab.Sirius2.Laser.PowerControlMethods.DutyCycle">PowerControlMethods.DutyCycle</see> are configured. <br/>
+            And user must do manupulate output pulse width at <see cref="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.CtlPower(System.Double,System.String)">ILaser.CtlPower</see> by itself if using <see cref="F:SpiralLab.Sirius2.Laser.PowerControlMethods.DutyCycle">PowerControlMethods.DutyCycle</see>. <br/>
+            And user must do manupulate output pulse width at <see cref="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.ListPower(System.Double,System.String)">ILaser.ListPower</see> by itself if using <see cref="F:SpiralLab.Sirius2.Laser.PowerControlMethods.DutyCycle">PowerControlMethods.DutyCycle</see>. <br/>
+            </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPen.pulseWidth">
@@ -14249,6 +14259,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.PulseDutyCycle">
             <summary>
             Pulse duty cycle (%)
+            <para>
+            This value is not used if <see cref="F:SpiralLab.Sirius2.Laser.PowerControlMethods.DutyCycle">PowerControlMethods.DutyCycle</see> are configured. <br/>
+            And user must do manupulate output pulse width at <see cref="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.CtlPower(System.Double,System.String)">ILaser.CtlPower</see> by itself if using <see cref="F:SpiralLab.Sirius2.Laser.PowerControlMethods.DutyCycle">PowerControlMethods.DutyCycle</see>. <br/>
+            And user must do manupulate output pulse width at <see cref="M:SpiralLab.Sirius2.Laser.ILaserPowerControl.ListPower(System.Double,System.String)">ILaser.ListPower</see> by itself if using <see cref="F:SpiralLab.Sirius2.Laser.PowerControlMethods.DutyCycle">PowerControlMethods.DutyCycle</see>. <br/>
+            </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityPen.pulseDutyCycle">

@@ -276,6 +276,12 @@
 
 **9. Version history**
 
+* 2025.3.4 v.1.51.2150
+  - added) my frequency laser at demo
+  - fixed) laser power control
+     - invalid list control if using PowerControlMethods.Frequency, PowerControlMethods.DutyCycle 
+  - fixed) PhotonicsIndustryDX 
+     - can be reset if interlock error
 * 2025.2.17 v.1.50.2140
   - added) document can be cloned by IDocument.Clone()
   - added) option for RealLink library 

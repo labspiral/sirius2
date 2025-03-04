@@ -13994,6 +13994,8 @@
             <remarks>
             Consider as its working within async threads. <br/>
             Be aware it had called between <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListBegin(SpiralLab.Sirius2.Scanner.Rtc.ListTypes)">IRtc.ListBegin</see> and <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListEnd">IRtc.ListEnd</see>. <br/>
+            Must do call <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListFrequency(System.Double,System.Double)">ListFrequency</see> by itself if using <see cref="F:SpiralLab.Sirius2.Laser.PowerControlMethods.Frequency">PowerControlMethods.Frequency</see>. <br/>
+            Must do call <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.IRtc.ListFrequency(System.Double,System.Double)">ListFrequency</see> by itself if using <see cref="F:SpiralLab.Sirius2.Laser.PowerControlMethods.DutyCycle">PowerControlMethods.DutyCycle</see>. <br/>
             </remarks>
             <param name="targetWatt">Target x watt (W)</param>
             <param name="category">Target category name for look up.<br/>Used with <see cref="T:SpiralLab.Sirius2.PowerMap.IPowerMap">IPowerMap</see> to look up output y value if <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsEnableLookUp">IPowerMap.IsEnableLookUp</see> is <c>True</c> only.<br/></param>

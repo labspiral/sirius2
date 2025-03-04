@@ -82,7 +82,7 @@ namespace Demos
             Debug.Assert(success);
 
             int laserType = 1;
-            Console.Write("Select laser (1: Digital 8bits, 2: Digital 16bits, 3: Analog1, 4: Analog2, 5: Duty cycle, 6: RS232, 7: Digital 8bits+Guide 8: Custom, 9:External COM port) (Default= 1) : ");
+            Console.Write("Select laser (1: Digital 8bits, 2: Digital 16bits, 3: Analog1, 4: Analog2, 5: Frequency 6: Duty cycle, 7: RS232, 8: Digital 8bits+Guide 9: Custom, 0:External COM port) (Default= 1) : ");
             try {
                 laserType = Convert.ToInt32(Console.ReadLine());
             }
@@ -119,25 +119,30 @@ namespace Demos
                     laser = myLaserAnalog2;
                     break;
                 case 5:
-                    var myLaserPulseWidth = new MyDutyCycle(0, "My DutyCycle Laser", maxWatt);
+                    var myLaserFrequency = new MyLaserFrequency(0, "My Frequency Laser", maxWatt);
+                    myLaserFrequency.PowerControlMethod = PowerControlMethods.Frequency;
+                    laser = myLaserFrequency;
+                    break;
+                case 6:
+                    var myLaserPulseWidth = new MyLaserDutyCycle(0, "My DutyCycle Laser", maxWatt);
                     myLaserPulseWidth.PowerControlMethod = PowerControlMethods.DutyCycle;
                     laser = myLaserPulseWidth;
                     break;
-                case 6:
+                case 7:
                     var myLaserRS232 = new MyLaserRS232(0, "My Internal RS232 Communication Laser", maxWatt);
                     laser = myLaserRS232;
                     break;
-                case 7:
+                case 8:
                     var myLaserDOut82 = new MyLaserDOut2(0, "My DOut 8Bits Laser", maxWatt, 0, 255);
                     myLaserDOut82.PowerControlMethod = PowerControlMethods.DigitalBits;
                     myLaserDOut82.DigitalBitsPortNo = 2; //RTC EXTENSION2 PORT (8bits)
                     laser = myLaserDOut82;
                     break;
-                case 8:
+                case 9:
                     var myLaserCustom = new MyLaserCustom(0, "My Custom Communication Laser", maxWatt);
                     laser = myLaserCustom;
                     break;
-                case 9:
+                case 0:
                     int comPortNo = 1;
                     var myLaserExternalRS232 = new MyLaserRS232External(0, "My External RS232 Laser", maxWatt, comPortNo);
                     laser = myLaserExternalRS232;
@@ -162,8 +167,9 @@ namespace Demos
                 Console.WriteLine("'F2' : draw circles (by 16bits digital output)");
                 Console.WriteLine("'F3' : draw circles (by analog1 voltage output)");
                 Console.WriteLine("'F4' : draw circles (by analog2 voltage output)");
-                Console.WriteLine("'F5' : draw circles (by duty cycle output)");
-                Console.WriteLine("'F6' : draw circles (by custom)");
+                Console.WriteLine("'F5' : draw circles (by frequency)");
+                Console.WriteLine("'F6' : draw circles (by duty cycle output)");
+                Console.WriteLine("'F7' : draw circles (by custom)");
                 Console.WriteLine("'0' : laser off");
                 Console.WriteLine("'1' : laser on (warning !!!)");
                 Console.WriteLine("'2' : guide laser on");
@@ -197,11 +203,15 @@ namespace Demos
                         DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.ExtAO2, watt);
                         break;
                     case ConsoleKey.F5:
-                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.PulseLength, watt);
+                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.OutputPeriod, watt);
                         break;
                     case ConsoleKey.F6:
+                        DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.PulseLength, watt);
+                        break;
+                    case ConsoleKey.F7:
                         DrawCircleWithMeasurement(rtc, laser, MeasurementChannels.None, watt);
                         break;
+
                     case ConsoleKey.D0:
                         rtc.CtlLaserOff();
                         break;

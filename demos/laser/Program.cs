@@ -103,22 +103,27 @@ namespace Demos
                     break;
                 case 2:
                     // analog (V)
+                    // analog ch 1 or 2
                     laser = LaserFactory.CreateVirtualAnalog(laserId, maxWatt, 1, 0, 10);
                     break;
                 case 3:
                     // frequency (Hz)
-                    laser = LaserFactory.CreateVirtualFrequency(laserId, maxWatt, 0, 50*1000);
+                    // output frequency = 40 ~ 50 KHz 
+                    laser = LaserFactory.CreateVirtualFrequency(laserId, maxWatt, 40*1000, 50*1000);
                     break;
                 case 4:
                     // duty cycle (0~99%)
+                    // output pulse width = (1 / frequency ) * duty cycle / 100
                     laser = LaserFactory.CreateVirtualDutyCycle(laserId, maxWatt, 0, 99);
                     break;
                 case 5:
                     // 16bits (0~65535)
+                    // output D.OUT 16bits at EXTENSION1 port
                     laser = LaserFactory.CreateVirtualDO16Bits(laserId, maxWatt, 0, 65535);
                     break;
                 case 6:
                     // 8bits (0~255)
+                    // output D.OUT 8bits at EXTENSION2 port
                     laser = LaserFactory.CreateVirtualDO8Bits(laserId, maxWatt, 0, 255);
                     break;
             }
