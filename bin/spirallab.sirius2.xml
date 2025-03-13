@@ -2904,6 +2904,12 @@
             </summary>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.CheckWarns">
+            <summary>
+            Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsWarn">IsWarn</see> status
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveAOPico.CheckErrors">
             <summary>
             Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsError">IsError</see> status
@@ -3471,6 +3477,12 @@
         <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.CmdUser">
             <summary>
             User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.AdvancedOptoWaveFotia.CheckWarns">
+            <summary>
+            Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsWarn">IsWarn</see> status
             </summary>
             <returns>Success or failed</returns>
         </member>
@@ -4069,6 +4081,12 @@
             </summary>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.CheckWarns">
+            <summary>
+            Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsWarn">IsWarn</see> status
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentAviaLX.CheckErrors">
             <summary>
             Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsError">IsError</see> status
@@ -4192,6 +4210,12 @@
             <summary>
             Worker thread
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.CheckWarns">
+            <summary>
+            Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsWarn">IsWarn</see> status
+            </summary>
+            <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Laser.CoherentDiamondCSeries.CheckErrors">
             <summary>
@@ -4923,7 +4947,7 @@
             Options.Bit
             </summary>
             <remarks>
-             Read only. do not set operations. <br/>
+            Read only. do not set operations. <br/>
             </remarks>
         </member>
         <member name="T:SpiralLab.Sirius2.Laser.IPGYLPN.DeviceExtendedStatus">
@@ -5763,6 +5787,12 @@
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.CmdUser">
             <summary>
             User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPN.CheckWarns">
+            <summary>
+            Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsWarn">IsWarn</see> status
             </summary>
             <returns>Success or failed</returns>
         </member>
@@ -6633,6 +6663,12 @@
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.CmdUser">
             <summary>
             User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeD.CheckWarns">
+            <summary>
+            Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsWarn">IsWarn</see> status
             </summary>
             <returns>Success or failed</returns>
         </member>
@@ -8231,6 +8267,12 @@
             </summary>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.CheckWarns">
+            <summary>
+            Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsWarn">IsWarn</see> status
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPTypeE.CheckErrors">
             <summary>
             Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsError">IsError</see> status
@@ -8759,6 +8801,12 @@
         <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.CmdUser">
             <summary>
             User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.IPGYLPULPN.CheckWarns">
+            <summary>
+            Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsWarn">IsWarn</see> status
             </summary>
             <returns>Success or failed</returns>
         </member>
@@ -9422,6 +9470,12 @@
             </summary>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.CheckWarns">
+            <summary>
+            Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsWarn">IsWarn</see> status
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.JPTTypeE.CheckErrors">
             <summary>
             Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsError">IsError</see> status
@@ -9504,6 +9558,14 @@
         <member name="F:SpiralLab.Sirius2.Laser.LaserBase.isBusy">
             <summary>
             Busy status
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.LaserBase.IsWarn">
+            <inheritdoc/>  
+        </member>
+        <member name="F:SpiralLab.Sirius2.Laser.LaserBase.isWarn">
+            <summary>
+            Warn status
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.LaserBase.IsError">
@@ -10690,6 +10752,12 @@
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.CmdUser">
             <summary>
             User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryDX.CheckWarns">
+            <summary>
+            Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsWarn">IsWarn</see> status
             </summary>
             <returns>Success or failed</returns>
         </member>
@@ -12007,6 +12075,12 @@
             </summary>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.CheckWarns">
+            <summary>
+            Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsWarn">IsWarn</see> status
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.PhotonicsIndustryRGHAIO.CheckErrors">
             <summary>
             Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsError">IsError</see> status
@@ -12307,6 +12381,12 @@
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.CmdUser">
             <summary>
             User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsHippo.CheckWarns">
+            <summary>
+            Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsWarn">IsWarn</see> status
             </summary>
             <returns>Success or failed</returns>
         </member>
@@ -12829,6 +12909,12 @@
         <member name="M:SpiralLab.Sirius2.Laser.SPIG4.CmdUser">
             <summary>
             User can override and implement this function for addition communication
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SPIG4.CheckWarns">
+            <summary>
+            Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsWarn">IsWarn</see> status
             </summary>
             <returns>Success or failed</returns>
         </member>
@@ -13438,6 +13524,12 @@
             </summary>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.CheckWarns">
+            <summary>
+            Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsWarn">IsWarn</see> status
+            </summary>
+            <returns>Success or failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Laser.SpectraPhysicsTalon.CheckErrors">
             <summary>
             Check <see cref="P:SpiralLab.Sirius2.Laser.ILaser.IsError">IsError</see> status
@@ -13678,6 +13770,11 @@
             </summary>
             <remarks>
             </remarks>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Laser.ILaser.IsWarn">
+            <summary>
+            Warning status
+            </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Laser.ILaser.IsError">
             <summary>
@@ -14168,6 +14265,16 @@
         <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Type_DISP">
             <summary>
               Looks up a localized string similar to Type.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Warn_DESC">
+            <summary>
+              Looks up a localized string similar to Warning Status.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.src.laser.impl.laserbase.Warn_DISP">
+            <summary>
+              Looks up a localized string similar to Warn.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.src.laser.impl.laservirtual">
@@ -17056,6 +17163,9 @@
             <summary>
             Create <c>Offset</c> with zero values
             </summary>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Mathematics.Offset.Clone">
+            <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Mathematics.Offset.Equals(SpiralLab.Sirius2.Mathematics.Offset)">
             <summary>

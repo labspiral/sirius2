@@ -152,6 +152,31 @@ namespace Demos
         [Browsable(true)]
         [ReadOnly(false)]
         [Category("Status")]
+        [DisplayName("Warn")]
+        [Description("Warn Status")]
+        public virtual bool IsWarn
+        {
+            get { return isWarn; }
+            protected set
+            {
+                if (isWarn != value)
+                {
+                    isWarn = value;
+                    this.NotifyPropertyChanged();
+                    if (isWarn)
+                    {
+                        Logger.Log(Logger.Types.Info, $"laser [{this.Index}]: warn occurs");
+                    }
+                }
+            }
+        }
+        protected bool isWarn;
+
+        /// <inheritdoc/>  
+        [RefreshProperties(RefreshProperties.All)]
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Status")]
         [DisplayName("Error")]
         [Description("Error Status")]
         public virtual bool IsError

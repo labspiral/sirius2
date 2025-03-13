@@ -8245,7 +8245,7 @@
             Extract internal pathes as array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see>
             </summary>
             <remarks>
-            Returned <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> are not applied matrix transformation. <br/>
+            Returned <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> are not applied matrix transformation and used parent <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelMatrix">ModelMatrix</see>. <br/>
             Like as align, scale, rotate and translate matrixes are copied from it's parent entity. <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Config.DivideArcToLinesDistance">DivideArcToLinesDistance</see> for length of each lines. <br/>
             </remarks>
@@ -13304,6 +13304,7 @@
             <remarks>
             Should be one of <see cref="P:SpiralLab.Sirius2.Winforms.Config.PenColors">Config.PenColors</see> values. <br/>
             <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Color">Color</see> value is used when do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IMarkerable.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">Mark</see> or <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IRenderable.Render(SpiralLab.Sirius2.Winforms.IView)">Render</see>. <br/>
+            If <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Color">Color</see> value is changed during <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IMarkerable.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">Mark</see>, matched <see cref="P:SpiralLab.Sirius2.Winforms.IDocumentData.Pens">Pen</see> for color will be applied into <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see> and <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see> like as <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.Power">output laser power(W)</see>, ... <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Name">
@@ -13807,9 +13808,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.Explode">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.ToPolylines">
-            <inheritdoc/>
-        </member>
+        <!-- Badly formed XML comment ignored for member "M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.ToPolylines" -->
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
              Do hatch at closed path(or figure) within <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
@@ -14145,6 +14144,7 @@
             <remarks>
             Inherited from <c>IEntity</c> &lt;- <c>EntityBase</c> &lt;- <c>EntityControlBase</c> &lt;- <c>EntityPenRtc</c> &lt;- <c>EntityPenSyncAxis</c> &lt;- <c>EntityPen</c> <br/>
             When <see cref="T:SpiralLab.Sirius2.Winforms.IDocument">IDocument</see> has created, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see> are created by <see cref="E:SpiralLab.Sirius2.Winforms.Config.OnCreatePen">Config.OnCreatePen</see> event also. <br/>
+            During <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IMarkerable.Mark(SpiralLab.Sirius2.Winforms.Marker.IMarker)">Mark</see>, matched <see cref="P:SpiralLab.Sirius2.Winforms.IDocumentData.Pens">Pen</see> for <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Color">Color</see> will be applied into <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see> and <see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see> like as <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityPen.Power">output laser power(W)</see>, ... <br/>
             User can override do mark handler at <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPen">EntityPen</see> by <see cref="E:SpiralLab.Sirius2.Winforms.Marker.IMarker.OnMarkPen">IMarker.OnMarkPen</see> event. <br/>
             </remarks>
         </member>

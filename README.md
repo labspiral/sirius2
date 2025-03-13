@@ -163,20 +163,17 @@
        - OpenTK.GLControl: v3.3.3 (https://www.nuget.org/packages/OpenTK.GLControl/)
        - OphirPhotonics StarLab v3.9 (https://www.ophiropt.com/en/g/starlab-for-usb)
        - Thorlabs OPM v5.0 (https://www.thorlabs.com/software_pages/ViewSoftwarePage.cfm?Code=OPM)
-       - Zxing v0.16.10.0 (https://github.com/zxing/zxing/releases)
-       - Google OrTools 9.6.2534.0 (https://github.com/google/or-tools/releases)
+       - Neodynamic.SDK.ZPLPrinter v6.0.25.201 (https://github.com/neodynamic/ZPL-Printer-Emulator-SDK)
  - (optional) spirallab.sirius2.vision.dll 
     - Target frameworks: .NET Framework 4.7.2
     - Target platforms: Windows x64
     - Dependencies
        - Cognex VisionPro v9.8 (https://support.cognex.com/ko-kr/downloads/detail/visionpro/4464/1033)
+       - Euresys Multicam v6.19.0.5375 (https://www.euresys.com/en/download-area/)
        - Basler Pylon runtime v8.0.0 (https://www2.baslerweb.com/en/downloads/software-downloads/software-pylon-8-0-0-windows/)
        - Sentech v1.2.2 (https://sentech.co.jp/en/information/c/update)
-       - Euresys Multicam v6.19.0.5375 (https://www.euresys.com/en/download-area/)
        - Crevis MCam40 SDK v4.8.0.8354 (https://www.crevis.co.kr/Customer/download)
        - OpenCVSharp v4.8.0.20230708 (https://www.nuget.org/packages/OpenCvSharp4/4.8.0.20230708)
-       - Neodynamic.SDK.ZPLPrinter v6.0.25.201 (https://github.com/neodynamic/ZPL-Printer-Emulator-SDK)
-
 
 
 ----
@@ -276,6 +273,11 @@
 
 **9. Version history**
 
+* 2025.3.14 v.1.52.2160 
+  - added) warning status for laser source 
+     - ILaser.IsWarn
+  - fixed) explode bug 
+     - invalid rotate, scale and translate when exploded
 * 2025.3.4 v.1.51.2150
   - added) my frequency laser at demo
   - fixed) laser power control

@@ -40,7 +40,7 @@ using SpiralLab.Sirius2.Scanner.Rtc;
 namespace Demos
 {
     /// <summary>
-    /// 8bit digital output power control + guide laser control
+    /// 8bit digital output power control + guide laser control (extension port 1 or 2)
     /// </summary>
     public class MyLaserDOut2
         : ILaser
@@ -147,6 +147,31 @@ namespace Demos
             }
         }
         protected bool isBusy;
+
+        /// <inheritdoc/>  
+        [RefreshProperties(RefreshProperties.All)]
+        [Browsable(true)]
+        [ReadOnly(false)]
+        [Category("Status")]
+        [DisplayName("Warn")]
+        [Description("Warn Status")]
+        public virtual bool IsWarn
+        {
+            get { return isWarn; }
+            protected set
+            {
+                if (isWarn != value)
+                {
+                    isWarn = value;
+                    this.NotifyPropertyChanged();
+                    if (isWarn)
+                    {
+                        Logger.Log(Logger.Types.Info, $"laser [{this.Index}]: warn occurs");
+                    }
+                }
+            }
+        }
+        protected bool isWarn;
 
         /// <inheritdoc/>  
         [RefreshProperties(RefreshProperties.All)]

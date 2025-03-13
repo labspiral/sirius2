@@ -6,522 +6,532 @@
     <members>
         <member name="T:SpiralLab.Sirius2.Vision.camera.camerabase">
             <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
+              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.ResourceManager">
             <summary>
-              Returns the cached ResourceManager instance used by this class.
+              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Culture">
             <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
+              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
+              재정의합니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Basic_C">
             <summary>
-              Looks up a localized string similar to Basic.
+              Basic과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Busy_DESC">
             <summary>
-              Looks up a localized string similar to Busy Status.
+              Busy Status과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Busy_DISP">
             <summary>
-              Looks up a localized string similar to Busy.
+              Busy과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Calibrate_C">
             <summary>
-              Looks up a localized string similar to Calibrate.
+              Calibrate과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Calibrator_DESC">
             <summary>
-              Looks up a localized string similar to Calibrate Process.
+              Calibrate Process과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Calibrator_DISP">
             <summary>
-              Looks up a localized string similar to Calibrator.
+              Calibrator과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Calibrator_enabled_DESC">
             <summary>
-              Looks up a localized string similar to Calibrator Enabled or Not.
+              Calibrator Enabled or Not과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Calibrator_enabled_DISP">
             <summary>
-              Looks up a localized string similar to Enabled.
+              Enabled과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Calibrator_trained_DESC">
             <summary>
-              Looks up a localized string similar to Calibrator Trained or Not.
+              Calibrator Trained or Not과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Calibrator_trained_DISP">
             <summary>
-              Looks up a localized string similar to Trained.
+              Trained과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Center_cell_DESC">
             <summary>
-              Looks up a localized string similar to Center cell.
+              Center cell과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Center_cell_DISP">
             <summary>
-              Looks up a localized string similar to Center cell.
+              Center cell과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Cols_DESC">
             <summary>
-              Looks up a localized string similar to Stitched Col Counts.
+              Stitched Col Counts과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Cols_DISP">
             <summary>
-              Looks up a localized string similar to Cols.
+              Cols과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Description_DESC">
             <summary>
-              Looks up a localized string similar to Description of Process.
+              Description of Process과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Description_DISP">
             <summary>
-              Looks up a localized string similar to Description.
+              Description과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Error_DESC">
             <summary>
-              Looks up a localized string similar to Error Status.
+              Error Status과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Error_DISP">
             <summary>
-              Looks up a localized string similar to Error.
+              Error과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Exposure_DESC">
             <summary>
-              Looks up a localized string similar to Exposure Time (usec).
+              Exposure Time (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Exposure_DISP">
             <summary>
-              Looks up a localized string similar to Exposure.
+              Exposure과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Extension_C">
             <summary>
-              Looks up a localized string similar to Extension.
+              Extension과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Fov_DESC">
             <summary>
-              Looks up a localized string similar to Field of View Size (mm) .
+              Field of View Size (mm) 과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Fov_DISP">
             <summary>
-              Looks up a localized string similar to Fov (mm).
+              Fov (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Fov_stitch_large_mm_DESC">
             <summary>
-              Looks up a localized string similar to Large Stitched Field of View Size (mm) .
+              Large Stitched Field of View Size (mm) 과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Fov_stitch_large_mm_DISP">
             <summary>
-              Looks up a localized string similar to Fov large (mm).
+              Fov large (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Fov_stitch_large_pixel_DESC">
             <summary>
-              Looks up a localized string similar to Large Stitched Field of View Size (pixel) .
+              Large Stitched Field of View Size (pixel) 과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Fov_stitch_large_pixel_DISP">
             <summary>
-              Looks up a localized string similar to Fov large (px).
+              Fov large (px)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Fov_stitch_single_mm_DESC">
             <summary>
-              Looks up a localized string similar to Single Stitched Field of View Size (mm) .
+              Single Stitched Field of View Size (mm) 과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Fov_stitch_single_mm_DISP">
             <summary>
-              Looks up a localized string similar to Fov single (mm).
+              Fov single (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Fov_stitch_single_pixel_DESC">
             <summary>
-              Looks up a localized string similar to Single Stitched Field of View Size (pixel).
+              Single Stitched Field of View Size (pixel)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Fov_stitch_single_pixel_DISP">
             <summary>
-              Looks up a localized string similar to Fov single (px).
+              Fov single (px)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Fps_DESC">
             <summary>
-              Looks up a localized string similar to Camera Frames/sec.
+              Camera Frames/sec과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Fps_DISP">
             <summary>
-              Looks up a localized string similar to Fps.
+              Fps과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Height_DESC">
              <summary>
-               Looks up a localized string similar to Camera Height (px)
-            (Applied Rotation).
+               Camera Height (px)
+            (Applied Rotation)과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Height_DISP">
             <summary>
-              Looks up a localized string similar to Height.
+              Height과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Index_DESC">
             <summary>
-              Looks up a localized string similar to Camera ID.
+              Camera ID과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Index_DISP">
             <summary>
-              Looks up a localized string similar to ID.
+              ID과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.IPaddress_DESC">
+            <summary>
+              Camera IP Address과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.IPaddress_DISP">
+            <summary>
+              IP address과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Lens_magnification_DESC">
             <summary>
-              Looks up a localized string similar to Lens Magnification.
+              Lens Magnification과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Lens_magnification_DISP">
             <summary>
-              Looks up a localized string similar to Lens magnification.
+              Lens magnification과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Margin_height_DESC">
              <summary>
-               Looks up a localized string similar to Margin Height (px) 
-            Remove Edge Pixels.
+               Margin Height (px) 
+            Remove Edge Pixels과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Margin_height_DISP">
             <summary>
-              Looks up a localized string similar to Margin height.
+              Margin height과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Margin_width_DESC">
              <summary>
-               Looks up a localized string similar to Margin Width (px)
-            Remove Edge Pixels.
+               Margin Width (px)
+            Remove Edge Pixels과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Margin_width_DISP">
             <summary>
-              Looks up a localized string similar to Margin width.
+              Margin width과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Name_DESC">
             <summary>
-              Looks up a localized string similar to Name.
+              Name과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Name_DISP">
             <summary>
-              Looks up a localized string similar to Name.
+              Name과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Option_C">
             <summary>
-              Looks up a localized string similar to Option.
+              Option과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Pixel_size_DESC">
             <summary>
-              Looks up a localized string similar to Unit Pixel Size (mm).
+              Unit Pixel Size (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Pixel_size_DISP">
             <summary>
-              Looks up a localized string similar to Pixel size.
+              Pixel size과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Position_DESC">
             <summary>
-              Looks up a localized string similar to Stitched Positions.
+              Stitched Positions과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Position_DISP">
             <summary>
-              Looks up a localized string similar to Position.
+              Position과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.RawHeight_DESC">
              <summary>
-               Looks up a localized string similar to Camera Raw. Height (px)
-            (Not Applied Rotation).
+               Camera Raw. Height (px)
+            (Not Applied Rotation)과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.RawHeight_DISP">
             <summary>
-              Looks up a localized string similar to Raw height (px).
+              Raw height (px)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.RawWidth_DESC">
              <summary>
-               Looks up a localized string similar to Camera Raw. Width (px)
-            (Not Applied Rotation).
+               Camera Raw. Width (px)
+            (Not Applied Rotation)과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.RawWidth_DISP">
             <summary>
-              Looks up a localized string similar to Raw width (px).
+              Raw width (px)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Ready_DESC">
             <summary>
-              Looks up a localized string similar to Ready Status.
+              Ready Status과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Ready_DISP">
             <summary>
-              Looks up a localized string similar to Ready.
+              Ready과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Rotate_flip_DESC">
             <summary>
-              Looks up a localized string similar to Image is rotated and the axis used to flip the image..
+              Image is rotated and the axis used to flip the image.과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Rotate_flip_DISP">
             <summary>
-              Looks up a localized string similar to Rotate flip.
+              Rotate flip과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Rows_DESC">
             <summary>
-              Looks up a localized string similar to Stitched Row Counts.
+              Stitched Row Counts과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Rows_DISP">
             <summary>
-              Looks up a localized string similar to Rows.
+              Rows과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Sample_image_DESC">
             <summary>
-              Looks up a localized string similar to Sample Image File.
+              Sample Image File과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Sample_image_DISP">
             <summary>
-              Looks up a localized string similar to Image.
+              Image과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Status_C">
             <summary>
-              Looks up a localized string similar to Status.
+              Status과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitch_cells_DESC">
             <summary>
-              Looks up a localized string similar to Stitched Cells.
+              Stitched Cells과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitch_cells_DISP">
             <summary>
-              Looks up a localized string similar to Stitch cells.
+              Stitch cells과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitch_index_DESC">
             <summary>
-              Looks up a localized string similar to Stitch Cell Index.
+              Stitch Cell Index과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitch_index_DISP">
             <summary>
-              Looks up a localized string similar to Index.
+              Index과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_C">
             <summary>
-              Looks up a localized string similar to Stitched.
+              Stitched과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_calibrate_enabled_DESC">
             <summary>
-              Looks up a localized string similar to Stitched Calibrate Enabled.
+              Stitched Calibrate Enabled과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_calibrate_enabled_DISP">
             <summary>
-              Looks up a localized string similar to Calibrate enabled.
+              Calibrate enabled과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_calibrator_DESC">
             <summary>
-              Looks up a localized string similar to Stitched Calibration Process.
+              Stitched Calibration Process과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_calibrator_DISP">
             <summary>
-              Looks up a localized string similar to Calibration process.
+              Calibration process과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_center_offset_DESC">
             <summary>
-              Looks up a localized string similar to X, Y Center Offset (mm).
+              X, Y Center Offset (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_center_offset_DISP">
             <summary>
-              Looks up a localized string similar to Center offset.
+              Center offset과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_DESC">
             <summary>
-              Looks up a localized string similar to Supported Sitched(or Coaxial) Camera or Not.
+              Supported Sitched(or Coaxial) Camera or Not과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_DISP">
             <summary>
-              Looks up a localized string similar to Stitched.
+              Stitched과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_height_DESC">
             <summary>
-              Looks up a localized string similar to Stitched Camera Height (px).
+              Stitched Camera Height (px)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_height_DISP">
             <summary>
-              Looks up a localized string similar to Stitched height.
+              Stitched height과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_offset_DESC">
             <summary>
-              Looks up a localized string similar to Stitch X,Y Offset (mm).
+              Stitch X,Y Offset (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_offset_DISP">
             <summary>
-              Looks up a localized string similar to Offset.
+              Offset과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_position_DESC">
             <summary>
-              Looks up a localized string similar to Stitched X, Y Position (mm).
+              Stitched X, Y Position (mm)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_position_DISP">
             <summary>
-              Looks up a localized string similar to Position.
+              Position과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_position_finder_DESC">
             <summary>
-              Looks up a localized string similar to Target Process for Position Finder.
+              Target Process for Position Finder과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_position_finder_DISP">
             <summary>
-              Looks up a localized string similar to Position finder.
+              Position finder과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_width_DESC">
             <summary>
-              Looks up a localized string similar to Stitched Camera Width (px).
+              Stitched Camera Width (px)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Stitched_width_DISP">
             <summary>
-              Looks up a localized string similar to Stitched width.
+              Stitched width과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Transform_C">
             <summary>
-              Looks up a localized string similar to Transform.
+              Transform과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Trigger_delay_DESC">
             <summary>
-              Looks up a localized string similar to Trigger Delay (usec).
+              Trigger Delay (usec)과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Trigger_delay_DISP">
             <summary>
-              Looks up a localized string similar to Trigger delay.
+              Trigger delay과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Unit_transform_DESC">
              <summary>
-               Looks up a localized string similar to Unit Transform (px into mm)
-            Camera Unit to User Unit.
+               Unit Transform (px into mm)
+            Camera Unit to User Unit과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Unit_transform_DISP">
             <summary>
-              Looks up a localized string similar to Unit.
+              Unit과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.UnitAngle_DESC">
              <summary>
-               Looks up a localized string similar to  Rotate angle (degree)
+                Rotate angle (degree)
             + : CCW
-            - : CW.
+            - : CW과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.UnitAngle_DISP">
             <summary>
-              Looks up a localized string similar to Rotate.
+              Rotate과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Width_DESC">
              <summary>
-               Looks up a localized string similar to Camera Width (px)
-            (Applied Rotation).
+               Camera Width (px)
+            (Applied Rotation)과(와) 유사한 지역화된 문자열을 찾습니다.
              </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.Width_DISP">
             <summary>
-              Looks up a localized string similar to Width.
+              Width과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.XmmPerPixel_DESC">
             <summary>
-              Looks up a localized string similar to mm/pixel for x.
+              mm/pixel for x과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.XmmPerPixel_DISP">
             <summary>
-              Looks up a localized string similar to x mm/px.
+              x mm/px과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.YmmPerPixel_DESC">
             <summary>
-              Looks up a localized string similar to mm/pixel for y.
+              mm/pixel for y과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.camera.camerabase.YmmPerPixel_DISP">
             <summary>
-              Looks up a localized string similar to y mm/px.
+              y mm/px과(와) 유사한 지역화된 문자열을 찾습니다.
             </summary>
         </member>
         <member name="T:SpiralLab.Sirius2.Vision.Camera.CameraFactory">
@@ -3286,6 +3296,26 @@
               Looks up a localized string similar to Data.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Display_DESC">
+            <summary>
+              Looks up a localized string similar to Display.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Display_DISP">
+            <summary>
+              Looks up a localized string similar to Display.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.End_DESC">
+            <summary>
+              Looks up a localized string similar to End Time.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.End_DISP">
+            <summary>
+              Looks up a localized string similar to End.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Error_DESC">
             <summary>
               Looks up a localized string similar to Error Status.
@@ -3296,9 +3326,29 @@
               Looks up a localized string similar to Error.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Execute_DESC">
+            <summary>
+              Looks up a localized string similar to Execution TIme.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Execute_DISP">
+            <summary>
+              Looks up a localized string similar to Execute.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.History_C">
             <summary>
               Looks up a localized string similar to History.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Image_DESC">
+            <summary>
+              Looks up a localized string similar to Image.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Image_DISP">
+            <summary>
+              Looks up a localized string similar to Image.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Index_DESC">
@@ -3309,6 +3359,16 @@
         <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Index_DISP">
             <summary>
               Looks up a localized string similar to Index.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Inspector_DESC">
+            <summary>
+              Looks up a localized string similar to Inspector.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Inspector_DISP">
+            <summary>
+              Looks up a localized string similar to Inspector.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Layer_DESC">
@@ -3381,6 +3441,26 @@
               Looks up a localized string similar to Ready.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Result_DESC">
+            <summary>
+              Looks up a localized string similar to Process OverAll Result.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Result_DISP">
+            <summary>
+              Looks up a localized string similar to Result.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Results_DESC">
+            <summary>
+              Looks up a localized string similar to Process Result(s).
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Results_DISP">
+            <summary>
+              Looks up a localized string similar to Results.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Script_C">
             <summary>
               Looks up a localized string similar to Script.
@@ -3424,6 +3504,16 @@
         <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.ScriptLineIfError_DISP">
             <summary>
               Looks up a localized string similar to Script line.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Start_DESC">
+            <summary>
+              Looks up a localized string similar to Start Time.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Start_DISP">
+            <summary>
+              Looks up a localized string similar to Start.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.inspector.inspectorbase.Status_C">
@@ -10165,7 +10255,7 @@
             <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>
             </summary>
             <remarks>
-            Created by <see cref="T:SpiralLab.Sirius2.Scanner.ScannerFactory">ScannerFactory</see>. <br/>
+            Created by <see cref="T:SpiralLab.Sirius2.Scanner.ScannerFactory">ScannerFactory</see> from <c>spirallab.sirius2.dll</c>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.UI.SiriusVisionControlV2.Inspector">
@@ -10360,7 +10450,7 @@
             <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtc">IRtc</see>
             </summary>
             <remarks>
-            Created by <see cref="T:SpiralLab.Sirius2.Scanner.ScannerFactory">ScannerFactory</see>. <br/>
+            Created by <see cref="T:SpiralLab.Sirius2.Scanner.ScannerFactory">ScannerFactory</see> from <c>spirallab.sirius2.dll</c>. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.UI.SiriusVisionControl.Inspector">
