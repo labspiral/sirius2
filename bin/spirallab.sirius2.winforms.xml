@@ -22218,9 +22218,48 @@
             Aligned <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityStl">EntityStl</see> at lower position(or depth) as Z=0 plane by default. <br/>
             </remarks>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Config.ExtractPointsCloudMethods">
+            <summary>
+            ExtractPointsCloudMethods
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Config.ExtractPointsCloudMethods.NormalTest">
+            <summary>
+            Calculate Normal vectors
+            <para>
+            Fast but inaccurate.
+            </para>
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Config.ExtractPointsCloudMethods.FaceCenterRayHitTest">
+            <summary>
+             Calculate Normal vectors and ray hit test for face center 
+            <para>
+            Slow but more accurate.
+            </para>
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Config.ExtractPointsCloudMethods.FaceVerticesRayHitTest">
+            <summary>
+            Calculate Normal vectors and ray hit test for face vertices
+            <para>
+            Very slow but highly accurate.
+            </para>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.ExtractPointsCloudMethod">
+            <summary>
+            Extract points cloud method for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud">EntityPointsCloud</see>
+            <para>
+            Default: FaceCenterRayHitTest<br/>
+            </para>
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ExtractPointsCloudDirectionVector">
             <summary>
-            Directional vector for extract points cloud from STL model
+            Directional vector for extract points cloud from STL model for <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPointsCloud">EntityPointsCloud</see>
             <para>
             Default: 0,0,-1 (-Vector3.UnitZ)<br/>
             </para>

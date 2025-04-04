@@ -4454,6 +4454,17 @@
             Specifies how features on the calibration plate are found
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorCheckerBoardVP.DOFsToCompute">
+            <summary>
+            Specifies which degrees of freedom will be computed during checkerboard calibration.  
+            These enumeration values are applicable only if the computation mode is linear.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorCheckerBoardVP.ComputationMode">
+            <summary>
+            Modes for computing calibration and fixturing transformations.  Notice that N-Point calibration and fixturing support only linear computations in this release.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorCheckerBoardVP.CheckerBoardImage">
             <summary>
             Checkerboard image for train

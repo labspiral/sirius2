@@ -276,10 +276,11 @@
 * 2025.4.4 v.1.53.2165
   - updated) Config.IsCameraZoomAtCursor  
      - enabled zoom at cursor by default
-  - fixed) invalid render quality for 3D model 
-  - fixed) extract points cloud with higher accuracy
+  - added) Config.ExtractPointsCloudMethods
+     - extract points cloud with higher accuracy
      - works with STL 3D model 
 	 - support 3D calibration 
+  - fixed) invalid render quality for 3D model 
   - fixed) Config.IsWaitEncoderXForEachGlyph for reversed order
      - aka. 'MoF (auto wait)'
 * 2025.3.14 v.1.52.2160 
