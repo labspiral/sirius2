@@ -108,6 +108,7 @@ namespace Demos
              *                     |
              *                     |
              */
+            // adjust RtcEncoderWaitConditions contition to marks at scanner center area
 
             double x1 = -1;
             var mofWait1 = EntityFactory.CreateMoFWait(RtcEncoders.EncX, RtcEncoderWaitConditions.Over, -x1);
@@ -178,8 +179,8 @@ namespace Demos
             Debug.Assert(rtcMoF != null);
             Debug.Assert(rtcMoF.EncXCountsPerMm != 0);
 
-            // Start simulated encoders as x= -1, y=0 mm/s by rtcMoF.CtlMofEncoderSpeed(-1, 0);
-            rtcMoF.CtlMofEncoderSpeed(-1, 0);
+            // Start simulated encoders as x= 1, y=0 mm/s by rtcMoF.CtlMofEncoderSpeed(1, 0);
+            rtcMoF.CtlMofEncoderSpeed(1, 0);
             // or
             // Edit 'Simulated x speed at MoF = 1' at propertygrid of Laser page
             // and
