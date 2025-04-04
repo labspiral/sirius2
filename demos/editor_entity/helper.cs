@@ -787,13 +787,13 @@ namespace Demos
             }
 
             // Dxf entity
-            if (EntityFactory.CreateDxf(Path.Combine("sample", "BIKE.dxf"), out var dxf))
-            {
-                dxf.Alignment = Alignments.MiddleCenter;
-                dxf.Scale(0.01);
-                dxf.Translate(25, -40);
-                success &= document.ActAdd(dxf);
-            }
+            //if (EntityFactory.CreateDxf(Path.Combine("sample", "BIKE.dxf"), out var dxf))
+            //{
+            //    dxf.Alignment = Alignments.MiddleCenter;
+            //    dxf.Scale(0.01);
+            //    dxf.Translate(25, -40);
+            //    success &= document.ActAdd(dxf);
+            //}
 
             // HPGL entity
             if (EntityFactory.CreateHpgl(Path.Combine("sample", "SimplexOpt.plt"), out var hpgl))

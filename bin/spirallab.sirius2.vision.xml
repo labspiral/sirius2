@@ -6558,8 +6558,28 @@
             <summary>
             Internal do inspect routine
             </summary>
-            <param name="arg"></param>
-            <returns></returns>
+            <param name="arg"><see cref="T:SpiralLab.Sirius2.Vision.Inspector.InspectorArg">InspectorArg</see></param>
+            <returns>Success of failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Inspector.InspectorDefault.LayerWork(SpiralLab.Sirius2.Vision.Inspector.InspectorArg,System.Int32,SpiralLab.Sirius2.Vision.Process.ProcessLayer)">
+            <summary>
+            Do inspect for each layer
+            </summary>
+            <param name="arg"><see cref="T:SpiralLab.Sirius2.Vision.Inspector.InspectorArg">InspectorArg</see></param>
+            <param name="layerIndex">Index of <see cref="T:SpiralLab.Sirius2.Vision.Process.ProcessLayer">ProcessLayer</see></param>
+            <param name="layer"><see cref="T:SpiralLab.Sirius2.Vision.Process.ProcessLayer">ProcessLayer</see></param>
+            <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Vision.Inspector.InspectorDefault.ProcessWork(SpiralLab.Sirius2.Vision.Inspector.InspectorArg,System.Int32,SpiralLab.Sirius2.Vision.Process.ProcessLayer,System.Int32,SpiralLab.Sirius2.Vision.Process.IProcess)">
+             <summary>
+             Do inspect for each process
+             </summary>
+             <param name="arg"><see cref="T:SpiralLab.Sirius2.Vision.Inspector.InspectorArg">InspectorArg</see></param>
+             <param name="layerIndex">Index of <see cref="T:SpiralLab.Sirius2.Vision.Process.ProcessLayer">ProcessLayer</see></param>
+             <param name="layer"><see cref="T:SpiralLab.Sirius2.Vision.Process.ProcessLayer">ProcessLayer</see></param>
+             <param name="processIndex">Index of <see cref="T:SpiralLab.Sirius2.Vision.Process.IProcess">IProcess</see></param>
+             <param name="process"><see cref="T:SpiralLab.Sirius2.Vision.Process.IProcess">IProcess</see></param>
+            <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Vision.Inspector.IInspector">
             <summary>

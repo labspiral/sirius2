@@ -17571,6 +17571,19 @@
             </summary>
             <param name="matrix"><c>Matrix4</c></param>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper.RayIntersectsTriangle(OpenTK.Vector3,OpenTK.Vector3,OpenTK.Vector3,OpenTK.Vector3,OpenTK.Vector3,System.Single@,OpenTK.Vector3@)">
+            <summary>
+            Ray triangle intersection (Möller-Trumbore Algorithm)
+            </summary>
+            <param name="rayOrigin">Origin ray (from)</param>
+            <param name="rayDir">Direction ray (to dir)</param>
+            <param name="v0">Vertex0</param>
+            <param name="v1">Vertex1</param>
+            <param name="v2">Vertex2</param>
+            <param name="t">Hit distance (valid if <c>True</c> has returned)</param>
+            <param name="hitPoint">Hit point (valid if <c>True</c> has returned)</param>
+            <returns><c>True</c> means intersected<br/><c>False</c> means no intersected</returns>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Common.OpenTKExtension">
             <summary>
             OpenTK extension
@@ -21010,6 +21023,13 @@
             </para>
             </summary>
         </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.SetSize(System.Int32,System.Int32)">
+            <summary>
+            Set viewport width and height size
+            </summary>
+            <param name="width">Width (px)</param>
+            <param name="height">Height (px)</param>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.LookAt(OpenTK.Vector3)">
             <summary>
             Move look at position to target location
@@ -21035,12 +21055,13 @@
             <summary>
             Zoom in
             <para>
-            (Experimental) Zoom by interactively if <see cref="P:SpiralLab.Sirius2.Winforms.Config.IsCameraZoomAtCursor">Config.IsCameraZoomAtCursor</see> is <c>True</c>. <br/>
-            Modified <see cref="P:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.Fov">Fov</see> for zoom in <br/>
+            Zoom by interactively. <br/>
+            Modified <see cref="P:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.Position">Position</see> if <see cref="P:SpiralLab.Sirius2.Winforms.Config.IsCameraZoomAtCursor">Config.IsCameraZoomAtCursor</see> is <c>True</c> <br/>
+            Modified <see cref="P:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.Fov">Fov</see> if <see cref="P:SpiralLab.Sirius2.Winforms.Config.IsCameraZoomAtCursor">Config.IsCameraZoomAtCursor</see> is <c>False</c> <br/>
             </para>
             </summary>
             <remarks>
-            Zoom in and out with current cursor position. <br/>
+            Zoom in with current cursor position. <br/>
             </remarks>
             <param name="mouseLocation">Mouse x,y location</param>
         </member>
@@ -21048,12 +21069,13 @@
             <summary>
             Zoom out
             <para>
-            (Experimental) Zoom by interactively if <see cref="P:SpiralLab.Sirius2.Winforms.Config.IsCameraZoomAtCursor">Config.IsCameraZoomAtCursor</see> is <c>True</c>. <br/>
-            Modified <see cref="P:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.Fov">Fov</see> for zoom out <br/>        
+            Zoom by interactively. <br/>
+            Modified <see cref="P:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.Position">Position</see> if <see cref="P:SpiralLab.Sirius2.Winforms.Config.IsCameraZoomAtCursor">Config.IsCameraZoomAtCursor</see> is <c>True</c> <br/>
+            Modified <see cref="P:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.Fov">Fov</see> if <see cref="P:SpiralLab.Sirius2.Winforms.Config.IsCameraZoomAtCursor">Config.IsCameraZoomAtCursor</see> is <c>False</c> <br/>    
             </para>
             </summary>
             <remarks>
-            Zoom in and out with current cursor position. <br/>
+            Zoom out with current cursor position. <br/>
             </remarks>
             <param name="mouseLocation">Mouse x,y location</param>
         </member>
@@ -21062,7 +21084,7 @@
             Zoom fit by <see cref="T:SpiralLab.Sirius2.Winforms.Entity.BoundingBox">BoundingBox</see>
             <para>
             Shortcut by <c>CTRL + F</c>. <br/>
-            Modified <see cref="P:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.Fov">Fov</see> for zoom out <br/>        
+            Modified <see cref="P:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.Fov">Fov</see> and <see cref="P:SpiralLab.Sirius2.Winforms.OpenGL.ICamera.Position">Position</see> for zoom fit <br/>        
             </para>
             </summary>
             <param name="bbox"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.BoundingBox">BoundingBox</see></param>
@@ -21171,6 +21193,9 @@
             <param name="aspectRatio">Aspect ratio of width/height</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.StaticCamera.Reset">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.StaticCamera.SetSize(System.Int32,System.Int32)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.StaticCamera.LookAt(OpenTK.Vector3)">
@@ -21916,7 +21941,7 @@
                             if (!text.IsReversed)
                                 success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, -entity.BBox.Min.X, RtcEncoderWaitConditions.Under, true);
                             else
-                                success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, entity.BBox.Min.X, RtcEncoderWaitConditions.Over, true);
+                                success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, entity.BBox.Max.X, RtcEncoderWaitConditions.Over, true);
                             success &amp;= markerable.Mark(maker);
                         }
                         if (!success)
@@ -21964,7 +21989,7 @@
                         if (!text.IsReversed)
                             success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, -polyline.BBox.Min.X, RtcEncoderWaitConditions.Under, true);
                         else
-                            success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, polyline.BBox.Min.X, RtcEncoderWaitConditions.Over, true);
+                            success &amp;= rtcMoF.ListMofWait(RtcEncoders.EncX, -polyline.BBox.Max.X, RtcEncoderWaitConditions.Over, true);
                         success &amp;= polyline.Mark(marker);
                         if (!success)
                             break;
@@ -22708,9 +22733,9 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.IsCameraZoomAtCursor">
             <summary>
-            (Experimental) Camera zoom in and out at cursor position
+            Camera zoom in and out at cursor position
             <para>
-            Default: <c>False</c> <br/>
+            Default: <c>True</c> <br/>
             </para>
             </summary>
             <remarks>
@@ -22769,7 +22794,7 @@
             <summary>
             Camera yaw, pitch sensitivity 
             <para>
-            Default: 0.005 (Should be > 0)<br/>
+            Default: 0.01 (Should be > 0)<br/>
             </para>
             </summary>
             <remarks>
@@ -23911,6 +23936,7 @@
             </summary>
             <remarks>
             Default layer by name '0' would be created when do <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActNew">ActNew</see>. <br/>
+            Can be activated target layer by <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActSelect(SpiralLab.Sirius2.Winforms.Entity.IEntity)">ActSelect(layer)</see> also. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IDocument.IsModified">
@@ -23961,6 +23987,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActImport(System.String,SpiralLab.Sirius2.Winforms.Entity.IEntity@)">
             <summary>
             Import external target file and update <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">InternalData</see>, notify <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnAdded">OnAdded</see> event also.
+            <para>
+            Create and insert into current <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">ActiveLayer</see>. <br/> 
+            </para>
             </summary>
             <remarks>
             </remarks>
@@ -23988,6 +24017,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActAdd(SpiralLab.Sirius2.Winforms.Entity.IEntity,System.Boolean)">
             <summary>
             Add <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> into <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">InternalData</see> at <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">ActiveLayer</see> and notify <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnAdded">OnAdded</see> event.
+            <para>
+            Inserted into current <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">ActiveLayer</see>. <br/> 
+            </para>
             </summary>
             <remarks>
             </remarks>
@@ -23998,6 +24030,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActAdd(SpiralLab.Sirius2.Winforms.Entity.IEntity[])">
             <summary>
             Add array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> into <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">InternalData</see> at <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">ActiveLayer</see> and notify <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnAdded">OnAdded</see> event. 
+            <para>
+            Inserted into current <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">ActiveLayer</see>. <br/> 
+            </para>
             </summary>
             <param name="entities">Target array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>
             <returns>Success or failed</returns>
@@ -24045,11 +24080,15 @@
             </summary>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActGroup(SpiralLab.Sirius2.Winforms.Entity.IEntity[])">
+        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActGroup(SpiralLab.Sirius2.Winforms.Entity.IEntity[],System.String)">
             <summary>
             Convert(also. create) array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> into <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityGroup">EntityGroup</see> at <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">InternalData</see> and notify <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnAdded">OnAdded</see>, <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnRemoved">OnRemoved</see> event.
+            <para>
+            Create and insert into current <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">ActiveLayer</see>. <br/> 
+            </para>
             </summary>
             <param name="entities">Target array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>
+            <param name="groupName">Group name</param>
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActBlock(SpiralLab.Sirius2.Winforms.Entity.IEntity[],System.String)">
@@ -24057,6 +24096,7 @@
             Convert array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> into <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlock">EntityBlock</see> at <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">InternalData</see> and notify <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnAdded">OnAdded</see>, <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnRemoved">OnRemoved</see> event.
             <para>
             Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityBlockInsert">EntityBlockInsert</see>. <br/>
+            Create and insert into current <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">ActiveLayer</see>. <br/> 
             </para>
             </summary>
             <param name="entities">Target array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>
@@ -24068,6 +24108,7 @@
             Explode <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> to seperated <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>'s at <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">InternalData</see> and notify <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnRemoved">OnRemoved</see>, <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnAdded">OnAdded</see> event. 
             <para>
             Used with inherited <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> from <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IExplodable">IExplodable</see> interface. <br/>
+            Create and insert into current <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">ActiveLayer</see>. <br/> 
             </para>
             </summary>
             <param name="entity">Target <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> </param>
@@ -24083,6 +24124,7 @@
             Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">HatchJoints</see>, <c>isZigZag</c>, <c>angle</c>, <c>angle2</c>, <c>internal</c>, <c>exclude</c>, <c>shift</c> values for <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">HatchModes.CrossLine</see> mode. <br/>
             Used with <see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">HatchJoints</see>, <c>internal</c> values for <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Polygon">HatchModes.Polygon</see> mode. <br/>
             <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.ModelMatrix">IEntity.ModelMatrix</see> is not applied but accumulated into hatched <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityGroup">EntityGroup</see>. <br/>
+            Create and insert into current <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">ActiveLayer</see>. <br/> 
             </para>
             </summary>
             <param name="entity">Target <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>
@@ -24101,6 +24143,7 @@
             Extract array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> from <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> and notify <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnAdded">OnAdded</see> event.
             <para>
             Used with inherited <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> from <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IExtractPolyline">IExtractPolyline</see> interface. <br/>
+            Create and insert into current <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">ActiveLayer</see>. <br/> 
             </para>
             </summary>
             <param name="entity">Target <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>
@@ -24115,6 +24158,7 @@
             Expand(or shrink) <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> from <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>. <br/>
             Positive(+): Expand. <br/>
             Negative(-): Shrink. <br/>
+            Create and insert into current <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">ActiveLayer</see>. <br/> 
             </para>
             </summary>
             <param name="entity">Target <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>
@@ -24139,6 +24183,7 @@
             Used with inherited <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> from <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IClipRegion">IClipRegion</see> interface. <br/>
             Like as <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityLine">EntityLine</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityArc">EntityArc</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPoint">EntityPoint</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityCurve">EntityCurve</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle">EntityTriangle</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityRectangle">EntityRectangle</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see>, <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityGroup">EntityGroup</see>. <br/>
             Used with <see cref="P:SpiralLab.Sirius2.Config.DivideArcToLinesDistance">DivideArcToLinesDistance</see>. <br/>
+            Create and insert into current <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">ActiveLayer</see>. <br/> 
             </para>
             </summary>
             <param name="entities">Target array of  <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> to clipping(or divide)</param>
@@ -24167,6 +24212,9 @@
         <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActPaste(System.Nullable{OpenTK.Vector3})">
             <summary>
             Paste <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>(or array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>) from clipboard and notify <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnAdded">OnAdded</see> event.
+            <para>
+            Create and insert into current <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.ActiveLayer">ActiveLayer</see>. <br/> 
+            </para>
             </summary>
             <param name="location">Paste x,y,z location (if <c>null</c>, cloned at same position)</param>
             <returns>Pasted array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></returns>
@@ -24694,7 +24742,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActSelectClear">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActGroup(SpiralLab.Sirius2.Winforms.Entity.IEntity[])">
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActGroup(SpiralLab.Sirius2.Winforms.Entity.IEntity[],System.String)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActBlock(SpiralLab.Sirius2.Winforms.Entity.IEntity[],System.String)">

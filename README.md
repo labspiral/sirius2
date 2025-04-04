@@ -273,6 +273,15 @@
 
 **9. Version history**
 
+* 2025.4.4 v.1.53.2165
+  - updated) Config.IsCameraZoomAtCursor  
+     - enabled zoom at cursor by default
+  - fixed) invalid render quality for 3D model 
+  - fixed) extract points cloud with higher accuracy
+     - works with STL 3D model 
+	 - support 3D calibration 
+  - fixed) Config.IsWaitEncoderXForEachGlyph for reversed order
+     - aka. 'MoF (auto wait)'
 * 2025.3.14 v.1.52.2160 
   - added) warning status for laser source 
      - ILaser.IsWarn
