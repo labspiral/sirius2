@@ -106,8 +106,8 @@ namespace Demos
             string cameraType = NativeMethods.ReadIni(ConfigFileName, $"CAMERA{index}", "TYPE", "Virtual");
             var camearSerialNo = NativeMethods.ReadIni(ConfigFileName, $"CAMERA{index}", "SERIAL_NO", string.Empty);
             var camearIPaddress = NativeMethods.ReadIni(ConfigFileName, $"CAMERA{index}", "IP_ADDRESS", string.Empty);
-            var cameraRawWidth = NativeMethods.ReadIni<int>(ConfigFileName, $"CAMERA{index}", "WIDTH", 1024);
-            var cameraRawHeight = NativeMethods.ReadIni<int>(ConfigFileName, $"CAMERA{index}", "HEIGHT", 768);
+            var cameraRawWidth = NativeMethods.ReadIni<int>(ConfigFileName, $"CAMERA{index}", "WIDTH_PIXEL", 1024);
+            var cameraRawHeight = NativeMethods.ReadIni<int>(ConfigFileName, $"CAMERA{index}", "HEIGHT_PIXEL", 768);
             var cameraPixelSize = NativeMethods.ReadIni<double>(ConfigFileName, $"CAMERA{index}", "PIXEL_SIZE", 0.005);
             var lensMag = NativeMethods.ReadIni<double>(ConfigFileName, $"CAMERA{index}", "LENS_MAGNIFICATION", 1);
             var exposureTime = NativeMethods.ReadIni<double>(ConfigFileName, $"CAMERA{index}", "EXPOSURE_TIME", 50 * 1000);
@@ -117,8 +117,21 @@ namespace Demos
             int enableStitch = NativeMethods.ReadIni<int>(ConfigFileName, $"CAMERA{index}", $"STITCH_ENABLE");
             var stitchRows = NativeMethods.ReadIni<int>(ConfigFileName, $"CAMERA{index}", "STITCH_ROWS", 5);
             var stitchCols = NativeMethods.ReadIni<int>(ConfigFileName, $"CAMERA{index}", "STITCH_COLS", 7);
-            var stitchMarginWidth = NativeMethods.ReadIni<int>(ConfigFileName, $"CAMERA{index}", "STITCH_MARGIN_WIDTH", 5);
-            var stitchMarginHeight = NativeMethods.ReadIni<int>(ConfigFileName, $"CAMERA{index}", "STITCH_MARGIN_HEIGHT ", 7);
+            var stitchWidth = NativeMethods.ReadIni<int>(ConfigFileName, $"CAMERA{index}", "STITCH_WIDTH", 20);
+            var stitchHeight = NativeMethods.ReadIni<int>(ConfigFileName, $"CAMERA{index}", "STITCH_HEIGHT ", 15);
+            Debug.Assert(cameraRawWidth > 0);
+            Debug.Assert(cameraRawHeight > 0);
+            Debug.Assert(cameraPixelSize > 0);
+            Debug.Assert(lensMag > 0);
+            //Debug.Assert(cameraFps > 0);
+            if (0 != enableStitch)
+            {
+                Debug.Assert(stitchRows > 0);
+                Debug.Assert(stitchCols > 0);
+                Debug.Assert(stitchWidth > 0);
+                Debug.Assert(stitchHeight > 0);
+            }
+
             switch (cameraType.Trim().ToLower())
             {
                 default:
@@ -130,7 +143,7 @@ namespace Demos
                     }
                     else
                     {
-                        var virtualCam = CameraFactory.CreateVirtual(index, cameraRawWidth, cameraRawHeight, cameraPixelSize, lensMag, cameraFps, cameraRotateFlip, stitchRows, stitchCols, stitchMarginWidth, stitchMarginHeight);
+                        var virtualCam = CameraFactory.CreateVirtual(index, cameraRawWidth, cameraRawHeight, cameraPixelSize, lensMag, cameraFps, cameraRotateFlip, stitchRows, stitchCols, stitchWidth, stitchHeight);
                         camera = virtualCam;
                     }
                     break;
@@ -142,7 +155,7 @@ namespace Demos
                     }
                     else
                     {
-                        var pylon = CameraFactory.CreatePylon(index, camearSerialNo, cameraRawWidth, cameraRawHeight, cameraPixelSize, lensMag, cameraRotateFlip, stitchRows, stitchCols, stitchMarginWidth, stitchMarginHeight);
+                        var pylon = CameraFactory.CreatePylon(index, camearSerialNo, cameraRawWidth, cameraRawHeight, cameraPixelSize, lensMag, cameraRotateFlip, stitchRows, stitchCols, stitchWidth, stitchHeight);
                         camera = pylon;
                     }
                     break;
@@ -154,7 +167,7 @@ namespace Demos
                     }
                     else
                     {
-                        var sentech = CameraFactory.CreateSentech(index, camearIPaddress, cameraRawWidth, cameraRawHeight, cameraPixelSize, lensMag, cameraFps, cameraRotateFlip, stitchRows, stitchCols, stitchMarginWidth, stitchMarginHeight);
+                        var sentech = CameraFactory.CreateSentech(index, camearIPaddress, cameraRawWidth, cameraRawHeight, cameraPixelSize, lensMag, cameraFps, cameraRotateFlip, stitchRows, stitchCols, stitchWidth, stitchHeight);
                         camera = sentech;
                     }
                     break;
@@ -166,7 +179,7 @@ namespace Demos
                     }
                     else
                     {
-                        var pylon = CameraFactory.CreateCrevis(index, cameraRawWidth, cameraRawHeight, cameraPixelSize, lensMag, cameraFps, cameraRotateFlip, stitchRows, stitchCols, stitchMarginWidth, stitchMarginHeight);
+                        var pylon = CameraFactory.CreateCrevis(index, cameraRawWidth, cameraRawHeight, cameraPixelSize, lensMag, cameraFps, cameraRotateFlip, stitchRows, stitchCols, stitchWidth, stitchHeight);
                         camera = pylon;
                     }
                     break;
@@ -183,7 +196,7 @@ namespace Demos
                     }
                     else
                     {
-                        var pylon = CameraFactory.CreateEuresys(index, frameGraberIndex, cameraFilePath, connector, cameraRawWidth, cameraRawHeight, cameraPixelSize, lensMag, cameraFps, cameraRotateFlip, stitchRows, stitchCols, stitchMarginWidth, stitchMarginHeight);
+                        var pylon = CameraFactory.CreateEuresys(index, frameGraberIndex, cameraFilePath, connector, cameraRawWidth, cameraRawHeight, cameraPixelSize, lensMag, cameraFps, cameraRotateFlip, stitchRows, stitchCols, stitchWidth, stitchHeight);
                         camera = pylon;
                     }
                     break;
@@ -195,7 +208,7 @@ namespace Demos
                     }
                     else
                     {
-                        var cv = CameraFactory.CreateWebCam(index, cameraRawWidth, cameraRawHeight, cameraPixelSize, lensMag, cameraFps, cameraRotateFlip, stitchRows, stitchCols, stitchMarginWidth, stitchMarginHeight);
+                        var cv = CameraFactory.CreateWebCam(index, cameraRawWidth, cameraRawHeight, cameraPixelSize, lensMag, cameraFps, cameraRotateFlip, stitchRows, stitchCols, stitchWidth, stitchHeight);
                         camera = cv;
                     }
                     break;
@@ -208,7 +221,7 @@ namespace Demos
                     }
                     else
                     {
-                        var rtsp = CameraFactory.CreateRTSP(index, rtspAddress, cameraRawWidth, cameraRawHeight, cameraPixelSize, lensMag, cameraFps, cameraRotateFlip, stitchRows, stitchCols, stitchMarginWidth, stitchMarginHeight);
+                        var rtsp = CameraFactory.CreateRTSP(index, rtspAddress, cameraRawWidth, cameraRawHeight, cameraPixelSize, lensMag, cameraFps, cameraRotateFlip, stitchRows, stitchCols, stitchWidth, stitchHeight);
                         camera = rtsp;
                     }
                     break;
@@ -570,9 +583,9 @@ namespace Demos
                     success &= PowerMapSerializer.Open(powerMapFullPath, powerMap);
                 if (null != powerControl)
                 {
+                    powerControl.PowerMap = powerMap;
                     // Enable lookup powermap table 
                     powerMap.IsEnableLookUp = true;
-                    powerControl.PowerMap = powerMap;
                 }
             }
             // Assign RTC into laser source

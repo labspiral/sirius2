@@ -560,7 +560,7 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <returns><see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraVirtual">CameraVirtual</see></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreateVirtual(System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreateVirtual(System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Create <see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraVirtual">CameraVirtual</see> 
             <para>
@@ -577,8 +577,8 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <param name="rows">Stitched row counts</param>
             <param name="cols">Stitched col counts</param>
-            <param name="marginWidth">Stitched margin width (px)</param>
-            <param name="marginHeight">Stitched margin height (px)</param>
+            <param name="stitchWidth">Stitch width (mm)</param>
+            <param name="stitchHeight">Stitch height (mm)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraVirtual">CameraVirtual</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreatePylon(System.Int32,System.String,System.Int32,System.Int32,System.Double,System.Double,System.Drawing.RotateFlipType)">
@@ -597,7 +597,7 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <returns><see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraPylon">CameraPylon</see></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreatePylon(System.Int32,System.String,System.Int32,System.Int32,System.Double,System.Double,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreatePylon(System.Int32,System.String,System.Int32,System.Int32,System.Double,System.Double,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Create <see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraPylon">CameraPylon</see> 
             <para>
@@ -613,8 +613,8 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <param name="rows">Stitched row counts</param>
             <param name="cols">Stitched col counts</param>
-            <param name="marginWidth">Stitched margin width (px)</param>
-            <param name="marginHeight">Stitched margin height (px)</param>
+            <param name="stitchWidth">Stitch width (mm)</param>
+            <param name="stitchHeight">Stitch height (mm)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraPylon">CameraPylon</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreateSentech(System.Int32,System.String,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType)">
@@ -634,7 +634,7 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <returns><see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraSentech">CameraSentech</see></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreateSentech(System.Int32,System.String,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreateSentech(System.Int32,System.String,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Create <see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraSentech">CameraSentech</see> 
             <para>
@@ -651,8 +651,8 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <param name="rows">Stitched row counts</param>
             <param name="cols">Stitched col counts</param>
-            <param name="marginWidth">Stitched margin width (px)</param>
-            <param name="marginHeight">Stitched margin height (px)</param>
+            <param name="stitchWidth">Stitch width (mm)</param>
+            <param name="stitchHeight">Stitch height (mm)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraSentech">CameraSentech</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreateCrevis(System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType)">
@@ -710,7 +710,7 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <returns><see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraEuresys">CameraEuresys</see></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreateEuresys(System.Int32,System.UInt32,System.String,SpiralLab.Sirius2.Vision.Camera.CameraEuresys.Connectors,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreateEuresys(System.Int32,System.UInt32,System.String,SpiralLab.Sirius2.Vision.Camera.CameraEuresys.Connectors,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Create <see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraEuresys">CameraEuresys</see> 
             <para>
@@ -729,8 +729,8 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <param name="rows">Stitched row counts</param>
             <param name="cols">Stitched col counts</param>
-            <param name="marginWidth">Stitched margin width (px)</param>
-            <param name="marginHeight">Stitched margin height (px)</param>
+            <param name="stitchWidth">Stitch width (mm)</param>
+            <param name="stitchHeight">Stitch height (mm)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraEuresys">CameraEuresys</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreateWebCam(System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType)">
@@ -753,7 +753,7 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <returns><see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraWeb">CameraWeb</see></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreateWebCam(System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreateWebCam(System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Create <see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraWeb">CameraWeb</see> 
             <para>
@@ -769,8 +769,8 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <param name="rows">Stitched row counts</param>
             <param name="cols">Stitched col counts</param>
-            <param name="marginWidth">Stitched margin width (px)</param>
-            <param name="marginHeight">Stitched margin height (px)</param>
+            <param name="stitchWidth">Stitch width (mm)</param>
+            <param name="stitchHeight">Stitch height (mm)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraWeb">CameraVirtual</see></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreateRTSP(System.Int32,System.String,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType)">
@@ -794,7 +794,7 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <returns><see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraRTSP">CameraRTSP</see></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreateRTSP(System.Int32,System.String,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraFactory.CreateRTSP(System.Int32,System.String,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Create <see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraRTSP">CameraRTSP</see> 
             <para>
@@ -811,8 +811,8 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <param name="rows">Stitched row counts</param>
             <param name="cols">Stitched col counts</param>
-            <param name="marginWidth">Stitched margin width (px)</param>
-            <param name="marginHeight">Stitched margin height (px)</param>
+            <param name="stitchWidth">Stitch width (mm)</param>
+            <param name="stitchHeight">Stitch height (mm)</param>
             <returns><see cref="T:SpiralLab.Sirius2.Vision.Camera.CameraRTSP">CameraRTSP</see></returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Vision.Camera.CameraEuresys">
@@ -868,7 +868,7 @@
             <param name="fps">Frames/s</param>
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraEuresys.#ctor(System.Int32,System.UInt32,System.String,SpiralLab.Sirius2.Vision.Camera.CameraEuresys.Connectors,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraEuresys.#ctor(System.Int32,System.UInt32,System.String,SpiralLab.Sirius2.Vision.Camera.CameraEuresys.Connectors,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Constructor
             <para>
@@ -888,8 +888,8 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <param name="rows">Stitched row counts</param>
             <param name="cols">Stitched col counts</param>
-            <param name="marginWidth">Stitched margin width (px)</param>
-            <param name="marginHeight">Stitched margin height (px)</param>
+            <param name="stitchWidth">Stitch width (mm)</param>
+            <param name="stitchHeight">Stitch height (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraEuresys.Dispose(System.Boolean)">
             <summary>
@@ -947,7 +947,7 @@
             <param name="fps">Frames/s</param>
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraCrevis.#ctor(System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraCrevis.#ctor(System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Constructor
             <para>
@@ -964,8 +964,8 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <param name="rows">Stitched row counts</param>
             <param name="cols">Stitched col counts</param>
-            <param name="marginWidth">Stitched margin width (px)</param>
-            <param name="marginHeight">Stitched margin height (px)</param>
+            <param name="stitchWidth">Stitch width (mm)</param>
+            <param name="stitchHeight">Stitch height (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraCrevis.Dispose(System.Boolean)">
             <summary>
@@ -1027,7 +1027,7 @@
             <param name="fps">Frames/s</param>
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraRTSP.#ctor(System.Int32,System.String,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraRTSP.#ctor(System.Int32,System.String,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Constructor
             <para>
@@ -1045,8 +1045,8 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <param name="rows">Stitched row counts</param>
             <param name="cols">Stitched col counts</param>
-            <param name="marginWidth">Stitched margin width (px)</param>
-            <param name="marginHeight">Stitched margin height (px)</param>
+            <param name="stitchWidth">Stitch width (mm)</param>
+            <param name="stitchHeight">Stitch height (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraRTSP.Dispose(System.Boolean)">
             <summary>
@@ -1092,7 +1092,7 @@
             <param name="fps">Frames/s</param>
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraSentech.#ctor(System.Int32,System.String,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraSentech.#ctor(System.Int32,System.String,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Constructor
             <para>
@@ -1110,8 +1110,8 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <param name="rows">Stitched row counts</param>
             <param name="cols">Stitched col counts</param>
-            <param name="marginWidth">Stitched margin width (px)</param>
-            <param name="marginHeight">Stitched margin height (px)</param>
+            <param name="stitchWidth">Stitch width (mm)</param>
+            <param name="stitchHeight">Stitch height (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraSentech.Dispose(System.Boolean)">
             <inheritdoc/>
@@ -1374,7 +1374,7 @@
             <param name="fps">Frames/s</param>
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraWeb.#ctor(System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraWeb.#ctor(System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Constructor
             <para>
@@ -1391,8 +1391,8 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <param name="rows">Stitched row counts</param>
             <param name="cols">Stitched col counts</param>
-            <param name="marginWidth">Stitched margin width (px)</param>
-            <param name="marginHeight">Stitched margin height (px)</param>
+            <param name="stitchWidth">Stitch width (mm)</param>
+            <param name="stitchHeight">Stitch height (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraWeb.Dispose(System.Boolean)">
             <summary>
@@ -1426,7 +1426,7 @@
         </member>
         <member name="T:SpiralLab.Sirius2.Vision.Camera.CameraPylon">
             <summary>
-            CameraCrevis
+            CameraPylon
             <para>
             Turn off Windows Firewall for GigE camera. <br/>
             Set high jumbo frame size at ethernet card for speed performance. <br/>
@@ -1455,7 +1455,7 @@
             <param name="lensMagnification">Lens magnification</param>
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraPylon.#ctor(System.Int32,System.String,System.Int32,System.Int32,System.Double,System.Double,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraPylon.#ctor(System.Int32,System.String,System.Int32,System.Int32,System.Double,System.Double,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Constructor
             <para>
@@ -1472,8 +1472,8 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <param name="rows">Stitched row counts</param>
             <param name="cols">Stitched col counts</param>
-            <param name="marginWidth">Stitched margin width (px)</param>
-            <param name="marginHeight">Stitched margin height (px)</param>
+            <param name="stitchWidth">Stitch width (mm)</param>
+            <param name="stitchHeight">Stitch height (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraPylon.Dispose(System.Boolean)">
             <summary>
@@ -1543,7 +1543,7 @@
             <param name="fps">Frames/s</param>
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraVirtual.#ctor(System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraVirtual.#ctor(System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Drawing.RotateFlipType,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Constructor
             <para>
@@ -1560,8 +1560,8 @@
             <param name="rotateFlip">Rotate or flip image by <see cref="T:System.Drawing.RotateFlipType">RotateFlipType</see><br/>Default: <see cref="F:System.Drawing.RotateFlipType.RotateNoneFlipNone">RotateNoneFlipNone</see></param>
             <param name="rows">Stitched row counts</param>
             <param name="cols">Stitched col counts</param>
-            <param name="marginWidth">Stitched margin width (px)</param>
-            <param name="marginHeight">Stitched margin height (px)</param>
+            <param name="stitchWidth">Stitch width (mm)</param>
+            <param name="stitchHeight">Stitch height (mm)</param>
         </member>
         <member name="M:SpiralLab.Sirius2.Vision.Camera.CameraVirtual.Dispose(System.Boolean)">
             <inheritdoc/>
@@ -2970,7 +2970,7 @@
             Constructor
             </summary>
         </member>
-        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:SpiralLab.Sirius2.Vision.Common.CogImageColorStitched.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>
             Constructor
             </summary>
@@ -4452,17 +4452,6 @@
         <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorCheckerBoardVP.FeatureFinder">
             <summary>
             Specifies how features on the calibration plate are found
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorCheckerBoardVP.DOFsToCompute">
-            <summary>
-            Specifies which degrees of freedom will be computed during checkerboard calibration.  
-            These enumeration values are applicable only if the computation mode is linear.
-            </summary>
-        </member>
-        <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorCheckerBoardVP.ComputationMode">
-            <summary>
-            Modes for computing calibration and fixturing transformations.  Notice that N-Point calibration and fixturing support only linear computations in this release.
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Vision.Process.ProcessCalibratorCheckerBoardVP.CheckerBoardImage">

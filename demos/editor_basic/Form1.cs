@@ -137,5 +137,6 @@ namespace Demos
                 EditorHelper.DestroyDevices(rtc, laser, powerMeter, marker, remote);
             }
         }
+  
     }
 }

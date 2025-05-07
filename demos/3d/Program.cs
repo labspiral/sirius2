@@ -45,7 +45,7 @@ namespace Demos
 
             bool success = true;
 
-            // Fied of view : 60mm
+            // Field of view : 60mm
             var fov = 60.0;
             // RTC5,6 using 20bits resolution
             var kfactor = Math.Pow(2, 20) / fov;
@@ -153,7 +153,7 @@ namespace Demos
                     case ConsoleKey.O:
                         {
                             // Set z offset
-                            Console.Write("Z offset (mm) = ");
+                            Console.Write("Z offset (mm) (+:Upper, -:Lower)= ");
                             float zOffset = float.Parse(Console.ReadLine());
                             var oldOffset = rtc2ndHead.PrimaryHeadUserOffset;
                             var newOffset = new SpiralLab.Sirius2.Mathematics.Offset(oldOffset.Dz, oldOffset.Dy, zOffset);
@@ -163,7 +163,7 @@ namespace Demos
                     case ConsoleKey.D:
                         {
                             // Set z defocus
-                            Console.Write("Z defocus (mm) = ");
+                            Console.Write("Z defocus (mm) (+:Lower, -:Upper)= ");
                             rtc3D.ZDefocus = float.Parse(Console.ReadLine());
                         }
                         break;
@@ -179,7 +179,7 @@ namespace Demos
                         break;
                     case ConsoleKey.F2:
                         {
-                            Console.Write("Z height (mm) = ");
+                            Console.Write("Z height (mm) (+:Upper, -:Lower)= ");
                             float zHeight = float.Parse(Console.ReadLine());
                             float halfSquareSize = 10;
                             success &= rtc.ListBegin();

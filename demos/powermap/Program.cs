@@ -43,7 +43,7 @@ namespace Demos
     internal class Program
     {
         /// <summary>
-        /// Fied of view : 60mm
+        /// Field of view : 60mm
         /// </summary>
         static double fov = 60.0;
 
@@ -113,7 +113,11 @@ namespace Demos
                 powerControl.PowerMap = powerMap;
             // Open powermap file if exist already
             if (File.Exists(mapFile))
+            {
                 success &= PowerMapSerializer.Open(mapFile, powerMap);
+                // Enable lookup table
+                powerMap.IsEnableLookUp = true;
+            }
 
             // Assign RTC into laser
             laser.Scanner = rtc;

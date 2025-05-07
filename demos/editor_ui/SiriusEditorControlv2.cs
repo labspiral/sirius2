@@ -1554,8 +1554,17 @@ namespace Demos
             {
                 lblFileName.Text = fileName;
                 if (null != Laser)
+                {
+                    var powerControl = Laser as ILaserPowerControl;
                     foreach (var pen in document.InternalData.Pens)
+                    {
                         pen.PowerMax = Laser.MaxPowerWatt;
+                        if (null != powerControl)
+                            pen.PowerMap = powerControl.PowerMap;
+                        else
+                            pen.PowerMap = null;
+                    }
+                }
                 PropertyGridCtrl.Refresh();
             }));
         }

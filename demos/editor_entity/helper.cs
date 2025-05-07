@@ -445,9 +445,9 @@ namespace Demos
                     success &= PowerMapSerializer.Open(powerMapFullPath, powerMap);
                 if (null != powerControl)
                 {
+                    powerControl.PowerMap = powerMap;
                     // Enable lookup powermap table 
                     powerMap.IsEnableLookUp = true;
-                    powerControl.PowerMap = powerMap;
                 }
             }
             // Assign RTC into laser source

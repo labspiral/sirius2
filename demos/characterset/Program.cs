@@ -42,7 +42,7 @@ namespace Demos
 
             bool success = true;
 
-            // Fied of view : 60mm
+            // Field of view : 60mm
             var fov = 60.0;
             // RTC5,6 using 20bits resolution
             var kfactor = Math.Pow(2, 20) / fov;

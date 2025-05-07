@@ -30,6 +30,7 @@ using SpiralLab.Sirius2.Laser;
 using SpiralLab.Sirius2.Scanner.Rtc;
 using System.Windows.Forms;
 using SpiralLab.Sirius2.Scanner;
+using SpiralLab.Sirius2.Mathematics;
 
 namespace Demos
 {
@@ -43,7 +44,7 @@ namespace Demos
 
             bool success = true;
 
-            // Fied of view : 60mm
+            // Field of view : 60mm
             var fov = 60.0;
             // RTC5,6 using 20bits resolution
             var kfactor = Math.Pow(2, 20) / fov;
@@ -92,6 +93,7 @@ namespace Demos
                 Console.WriteLine("'3' : draw rectangle with scale -> rotate -> translate");
                 Console.WriteLine("'4' : draw rectangle with scale -> rotate -> translate (with pre-calculated matrix) + rotated scanner");
                 Console.WriteLine("'5' : draw rectangle with scale -> invert -> translate");
+                Console.WriteLine("'6' : draw rectangle with perspective transform");
                 Console.WriteLine("'Q' : quit");
                 Console.Write("Select your target : ");
                 key = Console.ReadKey(false);
@@ -118,6 +120,10 @@ namespace Demos
                     case ConsoleKey.D5:
                         DrawRectangle5(rtc, laser);
                         break;
+                    case ConsoleKey.D6:
+                        DrawRectangle6(rtc, laser);
+                        break;
+
                 }
             } while (true);
 
@@ -149,6 +155,25 @@ namespace Demos
                  MeasurementChannels.OutputPeriod, //Converted Raw Data to Frequency(KHz)
             };
 
+            // 4개의 원본 좌표
+            Vector2[] srcPoints = new Vector2[]
+            {
+            new Vector2(100, 150), // 좌상단
+            new Vector2(400, 150), // 우상단
+            new Vector2(400, 400), // 우하단
+            new Vector2(100, 400)  // 좌하단
+            };
+
+            // 4개의 대상 좌표
+            Vector2[] dstPoints = new Vector2[]
+            {
+            new Vector2(0, 0),         // 좌상단
+            new Vector2(300, 0),      // 우상단
+            new Vector2(300, 300),    // 우하단
+            new Vector2(0, 300)       // 좌하단
+            };
+
+            MatrixStack4.CreatePerspective(srcPoints, dstPoints);
             bool success = true;
             success &= rtc.ListBegin(ListTypes.Auto);
             success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
@@ -558,6 +583,103 @@ namespace Demos
             // Revert base matrix
             rtc.MatrixStack.BaseMatrix = Matrix4x4.Identity;
 
+            return success;
+        }
+
+        /// <summary>
+        /// Perpective transformation 
+        /// </summary>
+        /// <param name="rtc"></param>
+        /// <param name="laser"></param>
+        /// <param name="radius"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        private static bool DrawRectangle6(IRtc rtc, ILaser laser, float radius = 10, float width = 5, float height = 5)
+        {
+            var rtcMeasurement = rtc as IRtcMeasurement;
+            Debug.Assert(rtcMeasurement != null);
+            // 10KHz Sample rate (max 100KHz)
+            double sampleRateHz = 10 * 1000;
+            // Max 4 channels at RTC5
+            var channels = new MeasurementChannels[]
+            {
+                 MeasurementChannels.SampleX, //X commanded
+                 MeasurementChannels.SampleY, //Y commanded
+                 MeasurementChannels.LaserOn, //Gate signal 0/1
+                 //MeasurementChannels.OutputPeriod, //Converted Raw Data to Frequency(KHz)
+            };
+
+            // 4 source corner points
+            Vector2[] srcPoints = new Vector2[]
+            {
+                new Vector2(-10, 10), 
+                new Vector2(10, 10), 
+                new Vector2(10, -10), 
+                new Vector2(-10, -10)  
+            };
+            // 4 transformed corner points
+            Vector2[] dstPoints = new Vector2[]
+            {
+                new Vector2(-12, 11),
+                new Vector2(9, 11.6f),
+                new Vector2(9.5f, -9.8f),
+                new Vector2(-11, -9.2f)
+            };
+            //                        |
+            //                        |
+            //                        |
+            //                        |
+            //               +        |        +
+            //                . . . . . . . . .
+            //                .       |       .  
+            //                .       |       .   
+            //                .       |       .   
+            // ---------------.-------+-------.----------------
+            //                .       |       .   
+            //                .       |       .          
+            //                .       |       .          
+            //                . . . . . . . . .
+            //               +        |        +
+            //                        |
+            //                        |
+            //                        |
+            //                        |
+            // Calculate perspective transform by 4 corner points
+            var perspectiveMatrix4x4 = MatrixStack4.CreatePerspective(srcPoints, dstPoints);
+            // Convert into 3x2 matrix
+            var perspectiveMatrix3x2 = MatrixStack4.ConvertTo(ref perspectiveMatrix4x4);
+            // Assign 3x2 matrix into RTC inner matrix
+            rtc.CtlMatrix(ScannerHeads.Primary, perspectiveMatrix3x2);
+
+            bool success = true;
+            success &= rtc.ListBegin(ListTypes.Auto);
+            success &= rtcMeasurement.ListMeasurementBegin(sampleRateHz, channels);
+            success &= rtc.ListJumpTo(new Vector2(-width / 2, height / 2));
+            success &= rtc.ListMarkTo(new Vector2(width / 2, height / 2));
+            success &= rtc.ListMarkTo(new Vector2(width / 2, -height / 2));
+            success &= rtc.ListMarkTo(new Vector2(-width / 2, -height / 2));
+            success &= rtc.ListMarkTo(new Vector2(-width / 2, height / 2));
+            success &= rtc.ListJumpTo(Vector2.Zero);
+            success &= rtcMeasurement.ListMeasurementEnd();
+            if (success)
+            {
+                success &= rtc.ListEnd();
+                success &= rtc.ListExecute(true);
+            }
+            // Revert as identity matrix at RTC inner matrix
+            rtc.CtlMatrix(ScannerHeads.Primary, Matrix3x2.Identity);
+            if (success)
+            {
+                // Temporary measurement file
+                var measurementFile = Path.Combine(Config.MeasurementPath, "measurement_matrix6.txt");
+                // Adjust laser on scale factor if need to zoom
+                Config.MeasurementLaserOnFactor = 2;
+                // Save measurement result to file
+                success &= RtcMeasurementHelper.Save(measurementFile, rtcMeasurement);
+                // Plot as a graph
+                RtcMeasurementHelper.Plot(measurementFile, $"perpective transform");
+            }
             return success;
         }
     }

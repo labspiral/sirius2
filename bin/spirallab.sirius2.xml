@@ -17415,8 +17415,8 @@
             Enable(or disable) lookup
             </summary>
             <remarks>
-            If <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsEnableLookUp">IsEnableLookUp</see> is <c>True</c>, <see cref="M:SpiralLab.Sirius2.PowerMap.IPowerMap.LookUp(System.String,System.Double,System.Double@,System.Double@,System.Double@)">LookUp</see> woulde be calculate return value to compensate. <br/>
-            If <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsEnableLookUp">IsEnableLookUp</see> is <c>False</c>, <see cref="M:SpiralLab.Sirius2.PowerMap.IPowerMap.LookUp(System.String,System.Double,System.Double@,System.Double@,System.Double@)">LookUp</see> would be return without calcuate. <br/>
+            If <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsEnableLookUp">IsEnableLookUp</see> is <c>True</c>, <see cref="M:SpiralLab.Sirius2.PowerMap.IPowerMap.LookUp(System.String,System.Double,System.Double@,System.Double@,System.Double@)">LookUp</see> would be return with calculated(or compensated) value. <br/>
+            If <see cref="P:SpiralLab.Sirius2.PowerMap.IPowerMap.IsEnableLookUp">IsEnableLookUp</see> is <c>False</c>, <see cref="M:SpiralLab.Sirius2.PowerMap.IPowerMap.LookUp(System.String,System.Double,System.Double@,System.Double@,System.Double@)">LookUp</see> would be return without calculation. <br/>
             </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.PowerMap.IPowerMap.Tag">
@@ -17437,7 +17437,7 @@
             <summary>
             Clear category
             </summary>
-            <param name="category">Category (clear all by default)</param>
+            <param name="category">Category name<br/>if <c>null</c>, clear all categories</param>
         </member>
         <member name="M:SpiralLab.Sirius2.PowerMap.IPowerMap.Reset1to1(System.String,System.Double)">
             <summary>
@@ -19910,6 +19910,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.CtlConvertMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32,System.Double@)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.CtlGetStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.ListMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels[])">
             <inheritdoc/>  
         </member>
@@ -20969,6 +20972,9 @@
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.CtlConvertMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32,System.Double@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.CtlGetStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.ListMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels[])">
@@ -22582,6 +22588,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListHardJump(System.Numerics.Vector3,System.Double,System.Double)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlRangeChecking(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingActions,SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingData)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlGetMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32[]@)">
             <inheritdoc/>  
         </member>
@@ -22608,6 +22617,9 @@
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlConvertMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32,System.Double@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlGetStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels[])">
@@ -24758,17 +24770,18 @@
             </summary>
             <remarks>
             Used with <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.IsActivateAutoDelays">IsActivateAutoDelays</see>. <br/>
+            SCANAhead param will be applied by <see cref="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlScanAheadParams(SpiralLab.Sirius2.Scanner.Rtc.AutoDelayParamModes,SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,System.Double,System.Double,System.Double)">CtlScanAheadParams</see> with default. <br/>
             Must be exist <c>SCANahead</c> option. <br/>
             </remarks>
             <param name="onOff">On(or off)</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlAutoDelayParams(SpiralLab.Sirius2.Scanner.Rtc.AutoDelayParamModes,SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlScanAheadParams(SpiralLab.Sirius2.Scanner.Rtc.AutoDelayParamModes,SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,System.Double,System.Double,System.Double)">
             <summary>
             Auto delays params (only for SCANAhead)
             </summary>
             <param name="mode"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.AutoDelayParamModes">AutoDelayParamModes</see></param>
-            <param name="headNo"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see></param>
+            <param name="headNo"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see>. <br/></param>
             <param name="tableNo"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables">CorrectionTables</see></param>
             <param name="previewTime">Preview time (usec)<br/>Used if <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.AutoDelayParamModes.Develop">AutoDelayParamModes.Develop</see> only.</param>
             <param name="vMax">Max velocity (mm/s)<br/>Used if <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.AutoDelayParamModes.Develop">AutoDelayParamModes.Develop</see> only.</param>
@@ -25030,8 +25043,8 @@
             Above RTC6 <br/>
             </remarks>
             <param name="head"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see> </param>
-            <param name="xyUsec">Tracking errror time for xy axes (usec)<br/>Max. 2550 usec. <br/></param>
-            <param name="zUsec">Tracking error time for z axis (usec)<br/>Max. 2550 usec. <br/></param>
+            <param name="xyUsec">Tracking errror time for xy axes (usec)<br/>Max. 2550 usec. <br/>0: Disable</param>
+            <param name="zUsec">Tracking error time for z axis (usec)<br/>Max. 2550 usec. <br/>0: Disable</param>
             <returns>Success or failed</returns> 
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlPulseSynchronization(System.Boolean,System.Double)">
@@ -25130,16 +25143,21 @@
             List synchronizes laser power outputs at the output ports 
             </summary>
             <remarks>
-            ANALOG OUT1 <br/> 
-            ANALOG OUT2 <br/>
-            8-bit digital output port<br/>
-            16-bit digital output port<br/> 
-            and Laser Delays. <br/>
+            ANALOG OUT1. <br/> 
+            ANALOG OUT2. <br/>
+            8-bit digital output port.<br/>
+            16-bit digital output port.<br/> 
             </remarks>
             <typeparam name="T"><c>uint</c> or <c>double</c></typeparam>
             <param name="ch"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ExtensionChannels">ExtensionChannels</see></param>
             <param name="data">Write data</param>
             <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlRangeChecking(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingActions,SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingData)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlGetStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
+            <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlGetMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32[]@)">
             <inheritdoc/>  
@@ -31316,10 +31334,16 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListHardJump(System.Numerics.Vector3,System.Double,System.Double)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlRangeChecking(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingActions,SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingData)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlGetMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32[]@)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlConvertMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32,System.Double@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlGetStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels[])">
@@ -32727,6 +32751,15 @@
             Works correctly with SCANLAB scanner products only. <br/>
             </remarks>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcStatus.PositionAckOKFor2ndOrZ">
+            <summary>
+            Position acknowledge OK or not for 2nd head(or z axis head)
+            </summary>
+            <remarks>
+            Position Acknowledge = Position error(Command - Actual) over than 0.25% (default). <br/>
+            Works correctly with SCANLAB scanner products only. <br/>
+            </remarks>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcStatus.PowerOK">
             <summary>
             Power has supplied scan head or not
@@ -32735,9 +32768,25 @@
             Works correctly with SCANLAB scanner products only. <br/>
             </remarks>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcStatus.PowerOKFor2ndOrZ">
+            <summary>
+            Power has supplied scan head or not for 2nd head(or z axis head)
+            </summary>
+            <remarks>
+            Works correctly with SCANLAB scanner products only. <br/>
+            </remarks>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcStatus.TempOK">
             <summary>
             Temperature OK or not
+            </summary>
+            <remarks>
+            Works correctly with SCANLAB scanner products only. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RtcStatus.TempOKFor2ndOrZ">
+            <summary>
+            Temperature OK or not for 2nd head(or z axis head)
             </summary>
             <remarks>
             Works correctly with SCANLAB scanner products only. <br/>
@@ -36189,6 +36238,16 @@
             <remarks>
             </remarks>
         </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.FocusShift">
+            <summary>
+            Focus shift (see set_vector_control, set_defocus, set_defocus_list)
+            </summary>
+            <remarks>
+            Above RTC5. <br/>
+            Raw format: bits <br/>
+            Human readable format: mm <br/>
+            </remarks>
+        </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.ExtAO1">
             <summary>
             12-bit output value at the ANALOG OUT1 output port (see set_auto_laser_control, set_vector_control and chapter 9.1.4 ”12- Bit Analog Output Ports”)
@@ -36420,6 +36479,17 @@
             <param name="rawData">Raw data</param>
             <param name="convertedValue">Converted value from raw data to human readable format</param>
             <returns>Success or failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.CtlGetStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
+            <summary>
+            Get(or query) major status values of laser control parameters
+            </summary>
+            <param name="isLaserOn"><c>LASERON</c> is on or off<br/>Matched with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.LaserOn">MeasurementChannels.LaserOn</see>,</param>
+            <param name="samplePositionXyz">Scanner x,y,z position (mm)<br/>Matched with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleX">MeasurementChannels.SampleX</see>, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleY">MeasurementChannels.SampleY</see> , <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleZ">MeasurementChannels.SampleZ</see><br/></param>
+            <param name="correctedPositionXyz">Scanner x,y,z corrected position (mm)<br/>Matched with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAX_Coor">MeasurementChannels.SampleX</see>, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAY_Coor">MeasurementChannels.SampleY</see> , <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAZ_Coor">MeasurementChannels.SampleZ</see><br/></param>
+            <param name="zFocusShift">Focus(z) shift (mm)<br/>Matched with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.FocusShift">MeasurementChannels.FocusShift</see><br/>Above <c>RTC5</c> only</param>
+            <param name="markSpeed">Mark speed (mm/s)<br/>Matched with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.MarkSpeed">MeasurementChannels.MarkSpeed</see><br/>Above <c>RTC5</c> only</param>
+            <returns>Success of failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.ListMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels[])">
             <summary>
@@ -37432,6 +37502,85 @@
             </summary>
             <param name="jumpPosition">Jump x,y,z position (mm)<br/>Position would be transformed(or applied) by <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtc.MatrixStack">MatrixStack</see></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingActions">
+            <summary>
+            Do actions for if target data is out of range
+            <para>
+            Above RTC5 only. <br/>
+            </para>
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingActions.Suppress">
+            <summary>
+            The Signals for “Laser Active” Operation are suppressed immediately. <br/> List execution continues. 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingActions.SwitchOffAndStop">
+            <summary>
+             The Signals for “Laser Active” Operation are switched-off immediately. <br/>List execution is stopped immediately.
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingData">
+            <summary>
+            Target data to check range is out of range or not
+            <para>
+            Above RTC5 only. <br/>
+            </para>
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingData.SampleValues">
+            <summary>
+            Like set_trigger signal types 7…9. 
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingData.TransformedControlValues">
+            <summary>
+            Like set_trigger signal types 25…30.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingData.CorrectedControlValues">
+            <summary>
+            Like set_trigger signal types 10…15.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingData.ActualOutValues">
+            <summary>
+            Like set_trigger signal types 20…23.
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingData.ActualPositionOfGalvanometerScanners">
+            <summary>
+            Actual position of galvanometer scanners (only with iDRIVEsystems, varioSCAN is internally connected to an x axis). <br/>
+            Like set_trigger signal types[1, 2 and 4] or[4, 5 and 1].
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingData.ActualPositionOfGalvanometerScannersY">
+            <summary>
+            Actual position of galvanometer scanners(only with iDRIVE systems, varioSCAN is internally connected to a y axis). <br/>
+            Like set_trigger signal types[1, 2 and 5] or[4, 5 and 2]. 
+            </summary>
+        </member>
+        <member name="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcRangeCheck">
+            <summary>
+            IRtcRangeCheck interface
+            <para>
+            To support monitoring some data(like as position) are out of range or not. <br/>
+            Do not combine to use <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoF">IRtcMoF</see> or <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.IRtcMoFExtension">IRtcMoFExtension</see> together. <br/>
+            Above RTC5 only. <br/>
+            </para>
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcRangeCheck.CtlRangeChecking(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingActions,SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingData)">
+            <summary>
+            Do monitoring some data(like as position) are out of range and do action if condition has matched. <br/>
+            </summary>
+            <param name="head">Target <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see></param>
+            <param name="rangeCheckingAction"> Do <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingActions">RangeCheckingActions</see> action if conditon has matched. </param>
+            <param name="data">Target <see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingData">RangeCheckingData</see></param>
+            <returns>Success or failed</returns>
         </member>
         <member name="T:SpiralLab.Sirius2.Scanner.Rtc.RasterModes">
             <summary>

@@ -14344,14 +14344,6 @@
             </summary>
             <param name="laser"><see cref="T:SpiralLab.Sirius2.Laser.ILaser">ILaser</see></param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPen.InternalMark(SpiralLab.Sirius2.Winforms.Marker.IMarker,SpiralLab.Sirius2.Winforms.Entity.EntityPen)">
-            <summary>
-            Internal do mark for <c>EntityPen</c>
-            </summary>
-            <param name="marker"><c>IMarker</c></param>
-            <param name="pen"><c>EntityPen</c></param>
-            <returns>Success or failed</returns>
-        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.EntitySpiral">
             <summary>
             EntitySpiral entity
@@ -17571,7 +17563,7 @@
             </summary>
             <param name="matrix"><c>Matrix4</c></param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper.RayIntersectsTriangle(OpenTK.Vector3,OpenTK.Vector3,OpenTK.Vector3,OpenTK.Vector3,OpenTK.Vector3,System.Single@,OpenTK.Vector3@)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Common.OpenTKHelper.RayIntersectsTriangle(OpenTK.Vector3,OpenTK.Vector3,OpenTK.Vector3@,OpenTK.Vector3@,OpenTK.Vector3@,System.Single@,OpenTK.Vector3@)">
             <summary>
             Ray triangle intersection (Möller-Trumbore Algorithm)
             </summary>
@@ -21256,6 +21248,11 @@
             VAO handle
             </summary>
         </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.OpenGL.GLBuffer.Ebo">
+            <summary>
+            Element buffer(indices) handle
+            </summary>
+        </member>
         <member name="M:SpiralLab.Sirius2.Winforms.OpenGL.GLBuffer.Finalize">
             <summary>
             Finalizer
@@ -22225,25 +22222,28 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.ExtractPointsCloudMethods.NormalTest">
             <summary>
-            Calculate Normal vectors
+            Calculate direction by normal vectors only
             <para>
-            Fast but inaccurate.
+            Fast but inaccurate. <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Winforms.Config.ExtractPointsCloudDirectionVector">Config.ExtractPointsCloudDirectionVector</see>. <br/>
             </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.ExtractPointsCloudMethods.FaceCenterRayHitTest">
             <summary>
-             Calculate Normal vectors and ray hit test for face center 
+             Calculate direction by normal vectors and ray hit test for center of faces
             <para>
-            Slow but more accurate.
+            Slow but more accurate. <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Winforms.Config.ExtractPointsCloudDirectionVector">Config.ExtractPointsCloudDirectionVector</see>. <br/>
             </para>
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Winforms.Config.ExtractPointsCloudMethods.FaceVerticesRayHitTest">
             <summary>
-            Calculate Normal vectors and ray hit test for face vertices
+            Calculate direction by normal vectors and ray hit test for each vertices of faces
             <para>
-            Very slow but highly accurate.
+            Very slow but highly accurate. <br/>
+            Used with <see cref="P:SpiralLab.Sirius2.Winforms.Config.ExtractPointsCloudDirectionVector">Config.ExtractPointsCloudDirectionVector</see>. <br/>
             </para>
             </summary>
         </member>
@@ -30327,6 +30327,16 @@
             Name
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.IView.Width">
+            <summary>
+            Width size (px)
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.IView.Height">
+            <summary>
+            Height size (px)
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.IView.IsEditMode">
             <summary>
             Allow edit(or modify) operations or not
@@ -30561,6 +30571,12 @@
             <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ViewBase.Name">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ViewBase.Width">
+            <inheritdoc/>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.ViewBase.Height">
             <inheritdoc/>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.ViewBase.IsEditMode">

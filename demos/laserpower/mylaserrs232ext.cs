@@ -402,9 +402,11 @@ namespace Demos
             Debug.Assert(rtc != null);
             bool success = true;
             double compensatedWatt = targetWatt;
+            double maxWatt = this.MaxPowerWatt;
             if (null != PowerMap && !string.IsNullOrEmpty(category))
             {
                 success &= PowerMap.LookUp(category, targetWatt, out compensatedWatt, out double x1, out double x2);
+                //success &= PowerMap.MinMaxY(category, out var minYWatt, out maxWatt);
                 if (!success)
                     return false;
             }
@@ -428,11 +430,13 @@ namespace Demos
             Debug.Assert(this.MaxPowerWatt > 0);
             var rtc = Scanner as IRtc;
             Debug.Assert(rtc != null);
-            double compensatedWatt = targetWatt;
             bool success = true;
+            double compensatedWatt = targetWatt;
+            double maxWatt = this.MaxPowerWatt;
             if (null != PowerMap && !string.IsNullOrEmpty(category))
             {
                 success &= PowerMap.LookUp(category, targetWatt, out compensatedWatt, out double x1, out double x2);
+                //success &= PowerMap.MinMaxY(category, out var minYWatt, out maxWatt);
                 if (!success)
                     return false;
             }

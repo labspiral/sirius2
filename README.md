@@ -45,15 +45,15 @@
     - RTC4
     - RTC4e
     - RTC5
-    - RTC6 
-    - RTC6e 
+    - RTC6
+    - RTC6e
     - XL-SCAN(RTC6 + ACS) by syncAXIS
  - Support measure and profile scanner trajectory with output signals by plotted graph.
  - Support powerful options.
     - MoF(Marking on the Fly)
     - 2nd head
     - 3D 
-    - Sky writing
+ - Support Sky writing Mode 1,2,3
  - Support ramp(Automatic Laser Control) controls.
     - Position dependent
     - Velocity dependent 
@@ -65,12 +65,12 @@
     - Cone 
     - Cylinder 
     - Points cloud  
- - Support many kinds of laser controls.
+ - Support many kinds of laser power controls.
     - Frequency
     - Duty cycle
     - Analog output
     - Digital output 
- - Support specific laser source vendors to control and communication.
+ - Support specific laser source vendors to control with communication.
     - AdvancedOptoWave (AOPico, AOPico Precision, Fotia)
     - Coherent (Avia LX, Diamond C-Series)
     - IPG (YLP N, Type D, Type E, ULP N)
@@ -81,9 +81,6 @@
     - Coherent (PowerMax)
     - Thorlabs (by OPM)
     - Ophir (by StarLab)
- - Support remote controls.
-    - TCP/IP communication
-    - Serial(RS-232) communication
  - Various pre-built entities.
     - Point(s), Line, Arc, Polyline, Triangle, Rectangle, Spiral, Trepan, Curve, Raster
     - Layer, Group, Block and Block insert
@@ -91,8 +88,11 @@
     - Image, Stitched image, DXF, PDF, ZPL(zebra programming language)
     - QR code, DataMatrix, PDF417 and Barcodes
     - Plane, Cone(or cylinder), STL(Stereo lithography), Point cloud
-    - and more control entities
+    - and more various control entities
  - Support powerful external script by C# language.
+ - Support remote controls.
+    - TCP/IP communication
+    - Serial(RS-232) communication
  - Open source codes with editor, marker, remote and laser source control for customization.
  
 
@@ -101,7 +101,6 @@
 
 **3.(optional) Vision**
      
- - Release status: developer preview version
  - Support many kinds of cameras.
     - Basler Pylon camera
     - Sentech camera
@@ -272,6 +271,18 @@
 
 
 **9. Version history**
+
+* 2025.5.7 v.1.54.2185
+  - sirius2.dll
+     - added) IRtcRangeCheck interface
+        - can be monitored and do some action when invalid position 
+     - added) IRtc.CtlGetStatus : quriable status for 2nd(or z axis) head
+     - added) IRtcMeasurement.CtlGetStateValues: quries scanner position and laser on status at once
+  - sirius2.winform.dll
+     - fixed) invalid powermap categories at pen when document has opened
+  - sirius2.vision.dll
+     - fixed) sentech camera continous grab bug
+     - fixed) stitch margin size 
 
 * 2025.4.4 v.1.53.2165
   - updated) Config.IsCameraZoomAtCursor  

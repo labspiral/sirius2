@@ -392,15 +392,17 @@ namespace Demos
             Debug.Assert(rtc is IRtcSerialComm);
             bool success = true;
             double compensatedWatt = targetWatt;
+            double maxWatt = this.MaxPowerWatt;
             if (null != PowerMap && !string.IsNullOrEmpty(category))
             {
                 success &= PowerMap.LookUp(category, targetWatt, out compensatedWatt, out double x1, out double x2);
+                //success &= PowerMap.MinMaxY(category, out var minYWatt, out maxWatt);
                 if (!success)
                     return false;
             }
             lock (SyncRoot)
             {
-                double percentage = compensatedWatt / this.MaxPowerWatt * 100.0;
+                double percentage = compensatedWatt / maxWatt * 100.0;
                 if (percentage > 100)
                     percentage = 100;
                 if (percentage < 0)
@@ -455,17 +457,19 @@ namespace Demos
             var rtc = Scanner as IRtc;
             Debug.Assert(rtc != null);
             Debug.Assert(rtc is IRtcSerialComm);
-            double compensatedWatt = targetWatt;
             bool success = true;
+            double compensatedWatt = targetWatt;
+            double maxWatt = this.MaxPowerWatt;
             if (null != PowerMap && !string.IsNullOrEmpty(category))
             {
                 success &= PowerMap.LookUp(category, targetWatt, out compensatedWatt, out double x1, out double x2);
+                //success &= PowerMap.MinMaxY(category, out var minYWatt, out maxWatt);
                 if (!success)
                     return false;
             }
             lock (SyncRoot)
             {
-                double percentage = compensatedWatt / this.MaxPowerWatt * 100.0;
+                double percentage = compensatedWatt / maxWatt * 100.0;
                 if (percentage > 100)
                     percentage = 100;
                 if (percentage < 0)
