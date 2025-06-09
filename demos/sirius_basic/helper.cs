@@ -790,7 +790,7 @@ namespace Demos
             var rectangle1 = EntityFactory.CreateRectangle(new Vector2(10, -10), 10, 5);
             success &= document.ActAdd(rectangle1);
             // Hatch with polygon within rectangle
-            var rectanglehatch = rectangle1.Hatch(HatchModes.Polygon, HatchJoints.Miter, false, 0, 0, 0.2f, 0, 0);
+            var rectanglehatch = rectangle1.Hatch(HatchModes.Polygon, HatchJoints.Miter, HatchOrders.Ascending, false, 0, 0, 0.2f, 0, 0);
             foreach (var hatch in rectanglehatch.Children)
                 hatch.Color = SpiralLab.Sirius2.Winforms.Config.PenColors[1];
             success &= document.ActAdd(rectanglehatch);

@@ -810,7 +810,7 @@
             <summary>
             Step distance for divide arc into lines (mm)
             <para>
-            Default: 0.3 mm (Must be > 0) <br/>
+            Default: 0.2 mm (Must be > 0) <br/>
             </para>
             </summary>
             <remarks>
@@ -19518,7 +19518,7 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.KZScale">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.MeasurementChannels">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.MeasurementChannel">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.SamplingFrequency">
@@ -19910,7 +19910,10 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.CtlConvertMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32,System.Double@)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.CtlGetStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.CtlGetScannerStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.CtlGetTemperatureStateValues(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Double@,System.Double@)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4.ListMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels[])">
@@ -20580,7 +20583,7 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.KZScale">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.MeasurementChannels">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.MeasurementChannel">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.SamplingFrequency">
@@ -20974,7 +20977,10 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.CtlConvertMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32,System.Double@)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.CtlGetStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.CtlGetScannerStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.CtlGetTemperatureStateValues(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Double@,System.Double@)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc4Ethernet.ListMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels[])">
@@ -22084,7 +22090,7 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.AlcMaxValue">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.MeasurementChannels">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.MeasurementChannel">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.SamplingFrequency">
@@ -22277,6 +22283,14 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlMoveToBit(System.Numerics.Vector2)">
             <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.AlignTimeBase(System.Decimal,System.Decimal)">
+            <summary>
+            Align time value to the nearest multiple of timeBaseUnit
+            </summary>
+            <param name="timeValue">time value</param>
+            <param name="timeBaseUnit">multiplier of timebase. like as <c>usec</c></param>
+            <returns></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlFrequency(System.Double,System.Double)">
             <inheritdoc/>  
@@ -22499,6 +22513,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlJumpMode(SpiralLab.Sirius2.Scanner.Rtc.RtcJumpMode)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlGetTuningNumber(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Int32@,System.Int32@)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlLoadedCorrectionInfo(SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,SpiralLab.Sirius2.Scanner.Rtc.CorrectionFileHeaderParams,System.Double@)">
             <summary>
             Loaded correction table information
@@ -22619,7 +22636,10 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlConvertMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32,System.Double@)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlGetStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlGetScannerStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.CtlGetTemperatureStateValues(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Double@,System.Double@)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc5.ListMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels[])">
@@ -24546,7 +24566,7 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.AlcMaxValue">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.MeasurementChannels">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.MeasurementChannel">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.SamplingFrequency">
@@ -25009,6 +25029,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlJumpMode(SpiralLab.Sirius2.Scanner.Rtc.RtcJumpMode)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlGetTuningNumber(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Int32@,System.Int32@)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlLoadedCorrectionInfo(SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,SpiralLab.Sirius2.Scanner.Rtc.CorrectionFileHeaderParams,System.Double@)">
             <summary>
             Loaded correction table information
@@ -25156,7 +25179,7 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlRangeChecking(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingActions,SpiralLab.Sirius2.Scanner.Rtc.RangeCheckingData)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlGetStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlGetStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@,System.Double@)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlGetMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32[]@)">
@@ -25185,6 +25208,12 @@
             <returns>Success or failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlConvertMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32,System.Double@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlGetScannerStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.CtlGetTemperatureStateValues(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Double@,System.Double@)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.Rtc6.ListMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels[])">
@@ -30920,7 +30949,7 @@
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.AlcMaxValue">
             <inheritdoc/>  
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.MeasurementChannels">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.MeasurementChannel">
             <inheritdoc/>  
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.SamplingFrequency">
@@ -31245,6 +31274,9 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlJumpMode(SpiralLab.Sirius2.Scanner.Rtc.RtcJumpMode)">
             <inheritdoc/>  
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlGetTuningNumber(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Int32@,System.Int32@)">
+            <inheritdoc/>  
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlLoadedCorrectionInfo(SpiralLab.Sirius2.Scanner.Rtc.CorrectionTables,SpiralLab.Sirius2.Scanner.Rtc.CorrectionFileHeaderParams,System.Double@)">
             <summary>
             Loaded correction table information
@@ -31343,7 +31375,10 @@
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlConvertMeasurement(SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels,System.Int32,System.Double@)">
             <inheritdoc/>  
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlGetStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlGetScannerStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
+            <inheritdoc/>  
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.CtlGetTemperatureStateValues(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Double@,System.Double@)">
             <inheritdoc/>  
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.RtcVirtual.ListMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels[])">
@@ -35732,6 +35767,15 @@
             <param name="rtcJumpMode"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.RtcJumpMode">RtcJumpMode</see> </param>
             <returns>Success or failed</returns>
         </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcJumpMode.CtlGetTuningNumber(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Int32@,System.Int32@)">
+            <summary>
+            Get Tuning number at specific scan head
+            </summary>
+            <param name="scanHead"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see><br/><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads.Primary">Primary</see> or <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads.Secondary">Secondary</see>. <br/></param>
+            <param name="startingNo">Starting tuning number<br/>Above <c>RTC5</c> only</param>
+            <param name="currentNo">Current tuning number<br/>Above <c>RTC5</c> only</param>
+            <returns>Success of failed</returns>
+        </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcJumpMode.ListJumpMode(SpiralLab.Sirius2.Scanner.Rtc.JumpModeFlags)">
             <summary>
             List jump mode
@@ -35801,7 +35845,7 @@
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.JumpModeFlags.EnabledButDeactivated">
             <summary>
-            Enabled but deactivated
+            Enabled but de-activated
             </summary>
         </member>
         <member name="F:SpiralLab.Sirius2.Scanner.Rtc.JumpModeFlags.EnabledAndActivated">
@@ -35831,7 +35875,7 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcJumpMode.Flag">
             <summary>
-            JumpModeFlag
+            Jump Mode Flag
             <para>
             Default: <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.JumpModeFlags.EnabledButDeactivated">JumpModeFlags.EnabledButDeactivated</see>
             </para>
@@ -35851,11 +35895,11 @@
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.RtcJumpMode.VectorTuningPrimaryX">
             <summary>
-            VA1 
+            VA1
             <para>
-            Vector tuning <br/>
-            Primary head <br/>
-            X axis <br/>
+            Vector tuning. <br/>
+            Primary head. <br/>
+            X axis. <br/>
             </para>
             </summary>
         </member>
@@ -35863,9 +35907,9 @@
             <summary>
             VA2
             <para>
-            Vector tuning <br/>
-            Primary head <br/>
-            Y axis <br/>
+            Vector tuning. <br/>
+            Primary head. <br/>
+            Y axis. <br/>
             </para>
             </summary>
         </member>
@@ -35873,9 +35917,9 @@
             <summary>
             VB1
             <para>
-            Vector tuning <br/>
-            Secondary head <br/>
-            X axis <br/>
+            Vector tuning. <br/>
+            Secondary head. <br/>
+            X axis. <br/>
             </para>
             </summary>
         </member>
@@ -35883,9 +35927,9 @@
             <summary>
             VB2
             <para>
-            Vector tuning <br/>
-            Secondary head <br/>
-            Y axis <br/>
+            Vector tuning. <br/>
+            Secondary head. <br/>
+            Y axis. <br/>
             </para>
             </summary>
         </member>
@@ -35893,9 +35937,9 @@
             <summary>
             JA1
             <para>
-            Jump tuning <br/>
-            Primary head <br/>
-            X axis <br/>
+            Jump tuning. <br/>
+            Primary head. <br/>
+            X axis. <br/>
             </para>
             </summary>
         </member>
@@ -35913,9 +35957,9 @@
             <summary>
             JB1
             <para>
-            Jump tuning <br/>
-            Secondary head <br/>
-            X axis <br/>
+            Jump tuning. <br/>
+            Secondary head. <br/>
+            X axis. <br/>
             </para>
             </summary>
         </member>
@@ -35923,9 +35967,9 @@
             <summary>
             JB2
             <para>
-            Jump tuning <br/>
-            Secondary head <br/>
-            Y axis <br/>
+            Jump tuning. <br/>
+            Secondary head. <br/>
+            Y axis. <br/>
             </para>
             </summary>
         </member>
@@ -36450,9 +36494,9 @@
             Default path: <c>Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "gnuplot", "gnuplot.exe")</c>.<br/>
             </remarks>
         </member>
-        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.MeasurementChannels">
+        <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.MeasurementChannel">
             <summary>
-            Current(or last) array of <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.MeasurementChannels">MeasurementChannels</see>
+            Current(or last) array of <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.MeasurementChannel">MeasurementChannels</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.SamplingFrequency">
@@ -36467,7 +36511,7 @@
             <summary>
             Get measured data
             </summary>
-            <param name="channel"><see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.MeasurementChannels">MeasurementChannels</see></param>
+            <param name="channel"><see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.MeasurementChannel">MeasurementChannels</see></param>
             <param name="rawData">Array of raw data</param>
             <returns>Success or failed</returns>
         </member>
@@ -36475,20 +36519,32 @@
             <summary>
             Convert measured raw data to human readable format
             </summary>
-            <param name="channel">Array of <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.MeasurementChannels">MeasurementChannels</see></param>
+            <param name="channel">Array of <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.MeasurementChannel">MeasurementChannels</see></param>
             <param name="rawData">Raw data</param>
             <param name="convertedValue">Converted value from raw data to human readable format</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.CtlGetStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.CtlGetScannerStateValues(System.Boolean@,System.Numerics.Vector3@,System.Numerics.Vector3@,System.Double@,System.Double@)">
             <summary>
-            Get(or query) major status values of laser control parameters
+            Get(or query) status values for laser and scanner 
+            <para>
+            When using an <c>iDRIVE</c> scan system, after a reset or power-up of the scan system, it can take around 5 seconds before valid data starts being returned from the scan system.
+            </para>
             </summary>
             <param name="isLaserOn"><c>LASERON</c> is on or off<br/>Matched with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.LaserOn">MeasurementChannels.LaserOn</see>,</param>
             <param name="samplePositionXyz">Scanner x,y,z position (mm)<br/>Matched with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleX">MeasurementChannels.SampleX</see>, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleY">MeasurementChannels.SampleY</see> , <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleZ">MeasurementChannels.SampleZ</see><br/></param>
-            <param name="correctedPositionXyz">Scanner x,y,z corrected position (mm)<br/>Matched with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAX_Coor">MeasurementChannels.SampleX</see>, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAY_Coor">MeasurementChannels.SampleY</see> , <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAZ_Coor">MeasurementChannels.SampleZ</see><br/></param>
-            <param name="zFocusShift">Focus(z) shift (mm)<br/>Matched with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.FocusShift">MeasurementChannels.FocusShift</see><br/>Above <c>RTC5</c> only</param>
+            <param name="correctedPositionXyz">Scanner x,y,z corrected position (mm)<br/>Matched with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAX_Coor">MeasurementChannels.SampleX</see>, <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAY_Coor">MeasurementChannels.SampleY</see> , <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.SampleAZ_Coor">MeasurementChannels.SampleZ</see><br/></param>        
+            <param name="zFocusShift">Focus(z) shift (mm)<br/>Matched with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.FocusShift">MeasurementChannels.FocusShift</see><br/>Need to equipped z focusing device like as <c>varioSCAN</c><br/>Above <c>RTC5</c> only</param>
             <param name="markSpeed">Mark speed (mm/s)<br/>Matched with <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels.MarkSpeed">MeasurementChannels.MarkSpeed</see><br/>Above <c>RTC5</c> only</param>
+            <returns>Success of failed</returns>
+        </member>
+        <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.CtlGetTemperatureStateValues(SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads,System.Double@,System.Double@)">
+            <summary>
+            Get(or query) status values for scanner temperature 
+            </summary>
+            <param name="scanHead"><see cref="T:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads">ScannerHeads</see><br/><see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads.Primary">Primary</see> or <see cref="F:SpiralLab.Sirius2.Scanner.Rtc.ScannerHeads.Secondary">Secondary</see>. <br/></param>
+            <param name="galvoTemperature">Temperature of galvanometer scanner (°C)<br/><c>iDRIVE</c> scan system only</param>
+            <param name="servoBoardTemperature">Temperature of servo board scanner (°C)<br/><c>iDRIVE</c> scan system only</param>
             <returns>Success of failed</returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.ListMeasurementBegin(System.Double,SpiralLab.Sirius2.Scanner.Rtc.MeasurementChannels[])">
@@ -36525,7 +36581,7 @@
             </code>
             </summary>
             <param name="frequency">Sampling frequency (Hz)<br/>Max. frequency: ~100KHz <br/>Min. time resolution: 10 usec<br/></param>
-            <param name="channels">Array of <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.MeasurementChannels">MeasurementChannels</see><br/>RTC4: Max. 2 channels<br/>RTC5: Max. 4 channels<br/>RTC6: Max. 8 channels<br/></param>
+            <param name="channels">Array of <see cref="P:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.MeasurementChannel">MeasurementChannels</see><br/>RTC4: Max. 2 channels<br/>RTC5: Max. 4 channels<br/>RTC6: Max. 8 channels<br/></param>
             <returns>Success or failed<br/>If return failed, marker would be stopped(or aborted) immediately. <br/></returns>
         </member>
         <member name="M:SpiralLab.Sirius2.Scanner.Rtc.IRtcMeasurement.ListMeasurementEnd">

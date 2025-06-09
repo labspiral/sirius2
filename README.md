@@ -272,10 +272,20 @@
 
 **9. Version history**
 
+* 2025.6.9 v.1.55.2200
+  - added) hatch 
+     - hatch order by ascending, descending
+     - Config.IsSnapToGridHatchInterval
+  - updated) IRtcMeasurement 
+     - CtlGetScannerStateValues: can be queried scanner position and laser on status at once
+     - CtlGetTemperatureStateValues: can be queried scanner temperature values at once
+  - added) BitMatrix 2d array for barcode entity
+  - fixed) RTC dll wrappers are public now 
+
 * 2025.5.7 v.1.54.2185
   - sirius2.dll
      - added) IRtcRangeCheck interface
-        - can be monitored and do some action when invalid position 
+        - can be monitored and do some action when invalid position has reached
      - added) IRtc.CtlGetStatus : quriable status for 2nd(or z axis) head
      - added) IRtcMeasurement.CtlGetStateValues: quries scanner position and laser on status at once
   - sirius2.winform.dll

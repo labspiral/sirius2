@@ -362,6 +362,16 @@
               Looks up a localized string similar to Mode.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Order_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch Order.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Order_DISP">
+            <summary>
+              Looks up a localized string similar to Order.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.cellhatch.Outline_DESC">
             <summary>
               Looks up a localized string similar to Hatch Include Outline.
@@ -3535,6 +3545,16 @@
               Looks up a localized string similar to Hatch Mode.
             </summary>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Order_DESC">
+            <summary>
+              Looks up a localized string similar to Hatch Order.
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Order_DISP">
+            <summary>
+              Looks up a localized string similar to Hatch Order.
+            </summary>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.entity.entityhatchbase.Outline_DESC">
             <summary>
               Looks up a localized string similar to Include Outline(or Mark Outline) or Not.
@@ -5727,6 +5747,16 @@
             <remarks>
             </remarks>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.HatchOrder">
+            <summary>
+            <see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchOrders">HatchOrders</see>
+            <para>
+            Default: <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchOrders.Ascending">HatchOrders.Ascending</see>
+            </para>
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.CellHatch.IsZigZag">
             <summary>
             ZigZag
@@ -6567,7 +6597,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Explode">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.HatchOrders,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityCross.Regen">
@@ -7142,6 +7172,16 @@
             Used if <see cref="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchable">IsHatchable</see> is <c>True</c>. <br/>
             </para>
             </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.HatchOrder">
+            <summary>
+            <see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchOrders">HatchOrders</see>
+            <para>
+            Default: <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchOrders.Ascending">HatchOrders.Ascending</see>
+            </para>
+            </summary>
+            <remarks>
+            </remarks>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityHatchBase.IsHatchZigZag">
             <summary>
@@ -7931,6 +7971,26 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.IsClosed">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.DotMatrix">
+            <summary>
+            Array of 2x2 dot matrix for 2d barcode
+            </summary>
+            <remarks>
+            [x, y]: dot array for x, y <br/>
+            Bottom(or left) to top(or right). <br/>
+            X dot pitch (mm)= <c>Width</c> / (DotMatrix.GetLength(0) - 1)); <br/>
+            Y dot pitch (mm)= <c>Height</c> / (DotMatrix.GetLength(1) - 1)); <br/>
+            Modified(or updated) whenever do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.Regen">Regen</see>. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.dotMatrix">
+            <summary>
+            Array of 2x2 dot matrix of barcode
+            </summary>
+            <remarks>
+            Modified(or updated) whenever do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.Regen">Regen</see> <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase._SourceText">
             <summary>
             Used by internally (Do NOT edit)
@@ -7974,19 +8034,11 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.Dispose(System.Boolean)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.HatchOrders,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.Regen">
             <inheritdoc/>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.dotMatrix">
-            <summary>
-            Array of 2x2 dot matrix of barcode
-            </summary>
-            <remarks>
-            Modified(or updated) whenever do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.Regen">Regen</see> <br/>
-            </remarks>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode2DBase.RegenEncode">
             <summary>
@@ -8376,6 +8428,21 @@
             This hatch type leads to CPU burst. so need to consider optimized calls. <br/> 
             </remarks>
         </member>
+        <member name="T:SpiralLab.Sirius2.Winforms.Entity.HatchOrders">
+            <summary>
+            Hatch orders
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchOrders.Ascending">
+            <summary>
+            Ascending order
+            </summary>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.HatchOrders.Descending">
+            <summary>
+            Descending order
+            </summary>
+        </member>
         <member name="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">
             <summary>
             Hatch joints
@@ -8412,7 +8479,7 @@
             <summary>
             IHatchable interface
             <para>
-            Inherited instance must be implement <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IHatchable.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">Hatch</see> routine. <br/> 
+            Inherited instance must be implement <see cref="M:SpiralLab.Sirius2.Winforms.Entity.IHatchable.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.HatchOrders,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">Hatch</see> routine. <br/> 
             It works for closed path only. <br/>
             </para>
             <code>
@@ -8435,7 +8502,7 @@
             Determined by <see cref="P:SpiralLab.Sirius2.Winforms.Entity.IEntity.Children">IEntity.Children</see>'s pathes(or figures) are closed or not. <br/>
             </remarks>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IHatchable.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.IHatchable.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.HatchOrders,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
             Do hatch at closed path(or figure) within <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
             </summary>
@@ -8451,6 +8518,7 @@
             </remarks>
             <param name="hatchMode"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchModes">HatchModes</see></param>
             <param name="hatchJoint"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">HatchJoints</see></param>
+            <param name="hatchOrder"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchOrders">HatchOrders</see></param>
             <param name="isZigZag">ZigZag or not<br/>Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Line">Line</see>, <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see>. <br/></param>      
             <param name="angle">Angle 1st<br/>Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Line">Line</see>, <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see>. <br/></param>      
             <param name="angle2">Angle 2nd<br/>Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see> only. <br/></param>        
@@ -8808,6 +8876,24 @@
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.ConvertedText">
             <inheritdoc/>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.DotMatrix">
+            <summary>
+            Array of 2x2 dot matrix for 1d barcode
+            </summary>
+            <remarks>
+            [x, y]: dot array for x, y <br/>
+            Left to right. <br/>
+            Modified(or updated) whenever do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Regen">Regen</see>. <br/>
+            </remarks>
+        </member>
+        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.dotMatrix">
+            <summary>
+            Array of 2x2 dot matrix of barcode
+            </summary>
+            <remarks>
+            Modified(or updated) whenever do <see cref="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Regen">Regen</see> <br/>
+            </remarks>
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D._SourceText">
             <summary>
             Used by internally (Do NOT edit)
@@ -8854,11 +8940,6 @@
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.Regen">
             <inheritdoc/>
-        </member>
-        <member name="F:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.dotMatrix">
-            <summary>
-            2x2 dot matrix of barcode
-            </summary>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBarcode1D.RegenEncode">
             <inheritdoc/>
@@ -9592,7 +9673,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle.Explode">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.HatchOrders,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityTriangle.Regen">
@@ -10482,7 +10563,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.ToPolylines">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.HatchOrders,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityText.Regen">
@@ -10633,7 +10714,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRectangle.Explode">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRectangle.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRectangle.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.HatchOrders,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityRectangle.Regen">
@@ -11798,7 +11879,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityArc.Expand(SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Double)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityArc.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityArc.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.HatchOrders,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityArc.Regen">
@@ -13078,7 +13159,7 @@
             <param name="from">Origin <c>EntityBase</c></param>
             <param name="to">Target <c>EntityBase</c></param>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.InternalHatchByLine(SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D[],SpiralLab.Sirius2.Winforms.Entity.HatchJoints,OpenTK.Vector3,OpenTK.Vector3,SpiralLab.Sirius2.Winforms.Entity.EntityGroup,System.Boolean,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.InternalHatchByLine(SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D[],SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.HatchOrders,OpenTK.Vector3,OpenTK.Vector3,SpiralLab.Sirius2.Winforms.Entity.EntityGroup,System.Boolean,System.Double,System.Double,System.Double,System.Double)">
             <summary>
             Do hatch within <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> 
             </summary>
@@ -13088,6 +13169,7 @@
             </remarks>
             <param name="polylines">Source array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> </param>
             <param name="hatchJoint"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">HatchJoints</see></param>
+            <param name="hatchOrder"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchOrders">HatchOrders</see></param>
             <param name="min">Source dimension for min x,y,z</param>
             <param name="max">Source dimension for max x,y,z</param>
             <param name="hatchedGroup">Result hatch into <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityGroup">EntityGroup</see></param>
@@ -13098,7 +13180,7 @@
             <param name="shift">Shift (mm)</param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.InternalHatchByPolygon(SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D[],SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.EntityGroup,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityBase.InternalHatchByPolygon(SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D[],SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.HatchOrders,SpiralLab.Sirius2.Winforms.Entity.EntityGroup,System.Double)">
             <summary>
             Do hatch within <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> 
             </summary>
@@ -13108,6 +13190,7 @@
             </remarks>
             <param name="polylines">Source array of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D">EntityPolyline2D</see> </param>
             <param name="hatchJoint"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">HatchJoints</see></param>
+            <param name="hatchOrder"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchOrders">HatchOrders</see></param>
             <param name="hatchedGroup">Result hatch into <see cref="T:SpiralLab.Sirius2.Winforms.Entity.EntityGroup">EntityGroup</see></param>
             <param name="interval">Interval (mm)</param>
             <returns>Success or failed</returns>
@@ -13809,7 +13892,7 @@
             <inheritdoc/>
         </member>
         <!-- Badly formed XML comment ignored for member "M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.ToPolylines" -->
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityGroup.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.HatchOrders,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
              Do hatch at closed path(or figure) within <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see>
             <para>It would be hatched by 2D (Z=0) coordinates only</para>
@@ -13824,6 +13907,7 @@
             </remarks>
             <param name="hatchMode"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchModes">HatchModes</see></param>
             <param name="hatchJoint"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">HatchJoints</see></param>
+            <param name="hatchOrder"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchOrders">HatchOrders</see></param>
             <param name="isZigZag">ZigZag or not<br/>Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Line">Line</see>, <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see>. <br/></param>      
             <param name="angle">Angle 1st<br/>Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.Line">Line</see>, <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see>. <br/></param>      
             <param name="angle2">Angle 2nd<br/>Used with <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see> only. <br/></param>        
@@ -14872,7 +14956,7 @@
             <param name="matrix">4x4 matrix</param>
             <returns>Array of <c>Vector3</c></returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.Hatch(SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.HatchOrders,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D.Regen">
@@ -22109,6 +22193,19 @@
             <param name="text"><c>EntityImageText</c></param>
             <returns>Success or failed</returns>
         </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.Config.IsSnapToGridHatchInterval">
+            <summary>
+            Sanp to grid for hatch lines
+            <para>
+            Default: <c>False</c>
+            </para>
+            </summary>
+            <remarks>
+            If <c>False</c>, the position of the hatchline is aligned with each bounding region of the entity. <br/>
+            If <c>True</c>, position of hatched lines are aligned with hatch interval as globally. <br/>
+            Used when do <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IHatchable">IHatchable</see> <br/>.
+            </remarks>      
+        </member>
         <member name="P:SpiralLab.Sirius2.Winforms.Config.ScriptReferenceAssemblies">
             <summary>
             Script reference assemblies (*.dll)
@@ -24153,7 +24250,7 @@
             <param name="entity">Target <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> </param>
             <returns>Success or failed</returns>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActHatch(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.IDocument.ActHatch(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.HatchOrders,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
             Create hatch inside of <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see> at <see cref="P:SpiralLab.Sirius2.Winforms.IDocument.InternalData">InternalData</see> and notify <see cref="E:SpiralLab.Sirius2.Winforms.IDocument.OnAdded">OnAdded</see> event if succeed.
             <para>
@@ -24169,6 +24266,7 @@
             <param name="entity">Target <see cref="T:SpiralLab.Sirius2.Winforms.Entity.IEntity">IEntity</see></param>
             <param name="hatchMode"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchModes">HatchModes</see></param>
             <param name="hatchJoint"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">HatchJoints</see></param>
+            <param name="hatchOrder"><see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchOrders">HatchOrders</see></param>
             <param name="isZigZag">ZigZag</param>
             <param name="angle">Angle (1st)</param>
             <param name="angle2">Angle (2nd) for <see cref="F:SpiralLab.Sirius2.Winforms.Entity.HatchModes.CrossLine">CrossLine</see></param>
@@ -24793,7 +24891,7 @@
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActClip(SpiralLab.Sirius2.Winforms.Entity.IEntity[],SpiralLab.Sirius2.Winforms.Entity.BoundingBox[],System.Boolean)">
             <inheritdoc/>
         </member>
-        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActHatch(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActHatch(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.HatchOrders,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <inheritdoc/>
         </member>
         <member name="M:SpiralLab.Sirius2.Winforms.DocumentBase.ActExtractPolylines(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.EntityPolyline2D[]@)">
@@ -26679,7 +26777,7 @@
             </summary>
             <remarks>
             Used when extract hatch patterns. <br/>
-            To do hatch closed figured by <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActHatch(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">IDocument.ActHatch</see>. <br/>
+            To do hatch closed figured by <see cref="M:SpiralLab.Sirius2.Winforms.IDocument.ActHatch(SpiralLab.Sirius2.Winforms.Entity.IEntity,SpiralLab.Sirius2.Winforms.Entity.HatchModes,SpiralLab.Sirius2.Winforms.Entity.HatchJoints,SpiralLab.Sirius2.Winforms.Entity.HatchOrders,System.Boolean,System.Double,System.Double,System.Double,System.Double,System.Double)">IDocument.ActHatch</see>. <br/>
             <img src="images/hatch.png"/> <br/>
             </remarks>
         </member>
@@ -26691,6 +26789,11 @@
         <member name="P:SpiralLab.Sirius2.Winforms.UI.HatchForm.Joint">
             <summary>
             <see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchJoints">HatchJoints</see>
+            </summary>
+        </member>
+        <member name="P:SpiralLab.Sirius2.Winforms.UI.HatchForm.Order">
+            <summary>
+            <see cref="T:SpiralLab.Sirius2.Winforms.Entity.HatchOrders">HatchOrders</see>
             </summary>
         </member>
         <member name="P:SpiralLab.Sirius2.Winforms.UI.HatchForm.IsZigZag">
