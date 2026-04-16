@@ -1,7 +1,12 @@
 > [!IMPORTANT]
-> The new **SIRIUS3** product (https://github.com/labspiral/sirius3) has been released. This product (**SIRIUS2**) is no longer updated (Deprecated).
+> The new **SIRIUS3** product (https://github.com/labspiral/sirius3) has been released. 
+> This product (**SIRIUS2**) is no longer updated (Deprecated).
+
 > [!IMPORTANT]
-> **SIRIUS3** (https://github.com/labspiral/sirius3) 제품이 신규로 출시되었습니다. 이 제품(**SIRIUS2**)은 더 이상 업데이트되지 않습니다(Deprecated).
+> **SIRIUS3** (https://github.com/labspiral/sirius3) 제품이 신규로 출시되었습니다. 
+> 이 제품(**SIRIUS2**)은 더 이상 업데이트되지 않습니다(Deprecated).
+
+
 
 # SIRIUS2 
 
